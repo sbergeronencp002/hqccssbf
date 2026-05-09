@@ -24068,7 +24068,6 @@ function renderReponse(q) {
     const img = IMAGE_DB[q.reponse.ref];
     let html = '';
     if(img) html += '<div class="doc-img-wrap"><img src="' + img.src + '" class="doc-img" style="max-height:60px;max-width:100%" onclick="openLightbox(\'' + img.src + '\')" title="Cliquer pour agrandir"></div>';
-    html += '<div class="reponse-courte" style="text-align:center">__________</div>';
     return html;
   }
   return '';
