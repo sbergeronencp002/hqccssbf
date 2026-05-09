@@ -416,7 +416,7 @@ select:focus { outline: none; border-color: var(--ink-2); }
 .warn-toast.show { opacity: 1; }
 
 .q-docs-images { display:flex; flex-direction:column; gap:12px; margin-bottom:10px; }
-.doc-img-wrap { display:flex; flex-direction:column; gap:4px; }
+.doc-img-wrap { display:flex; flex-direction:column; gap:4px; align-items:center; }
 .doc-img { max-width:100%; max-height:150px; object-fit:contain; border:0.5px solid var(--border); border-radius:4px; cursor:pointer; }
 .doc-img-label { font-size:0.7rem; color:var(--ink-3); font-style:italic; }
 .btn-reponse {
@@ -24067,8 +24067,8 @@ function renderReponse(q) {
   if(q.reponse.type === 'image_ligne') {
     const img = IMAGE_DB[q.reponse.ref];
     let html = '';
-    if(img) html += '<div class="doc-img-wrap"><img src="' + img.src + '" class="doc-img" style="max-height:60px" onclick="openLightbox(\'' + img.src + '\')" title="Cliquer pour agrandir"></div>';
-    html += '<div class="reponse-courte">__________</div>';
+    if(img) html += '<div class="doc-img-wrap"><img src="' + img.src + '" class="doc-img" style="max-height:60px;max-width:100%" onclick="openLightbox(\'' + img.src + '\')" title="Cliquer pour agrandir"></div>';
+    html += '<div class="reponse-courte" style="text-align:center">__________</div>';
     return html;
   }
   return '';
