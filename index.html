@@ -23589,6 +23589,15 @@ var __async = (__this, __arguments, generator) => {
     <h2>Filtres</h2>
 
     <div class="filter-group">
+      <label class="filter-label">Niveau</label>
+      <select id="f-niveau" onchange="applyFilters()">
+        <option value="">Tous</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
       <label class="filter-label">Période</label>
       <select id="f-periode" onchange="onPeriodeChange()">
         <option value="">Toutes</option>
@@ -23700,6 +23709,7 @@ const IMAGE_DB = {
 const QUESTIONS = [
   {
     id: "Q1",
+    niveau: 3,
     oi: "Situer dans le temps",
     periode: "Des origines à 1608",
     realite: "Exploration et occupation du territoire par les Français",
@@ -23714,6 +23724,7 @@ const QUESTIONS = [
   },
   {
     id: "Q2",
+    niveau: 3,
     oi: "Mettre en relation des faits",
     periode: "1608 - 1760",
     realite: "Monopole des compagnies",
@@ -23730,6 +23741,7 @@ const QUESTIONS = [
   },
   {
     id: "Q3",
+    niveau: 3,
     oi: "Déterminer des causes et des conséquences",
     periode: "1760 - 1791",
     realite: "Statut des Indiens",
@@ -23744,6 +23756,7 @@ const QUESTIONS = [
   },
   {
     id: "Q4",
+    niveau: 3,
     oi: "Dégager des différences et des similitudes",
     periode: "1791 - 1840",
     realite: "Soulèvements de 1837-1838",
@@ -23758,6 +23771,7 @@ const QUESTIONS = [
   },
   {
     id: "Q5",
+    niveau: 3,
     oi: "Établir des liens de causalité",
     periode: "Des origines à 1608",
     realite: "Premiers occupants du territoire / Réseaux d'échanges autochtones",
@@ -23776,6 +23790,7 @@ const QUESTIONS = [
   },
   {
     id: "Q6",
+    niveau: 3,
     oi: "Mettre en relation des faits",
     periode: "Des origines à 1608",
     realite: "Premiers occupants du territoire / Réseaux d'échange autochtones",
@@ -23876,9 +23891,11 @@ function applyFilters() {
   const oi      = document.getElementById('f-oi').value;
   const aspect  = document.getElementById('f-aspect').value;
   const periode = document.getElementById('f-periode').value;
+  const niveau  = document.getElementById('f-niveau').value;
 
   // Rebuild OI filter based on current period+aspect selection
   const relevantQ = QUESTIONS.filter(q => {
+    if(niveau  && String(q.niveau) !== niveau) return false;
     if(periode && q.periode !== periode) return false;
     if(aspect && !q.aspects.some(a=>a.aspect===aspect)) return false;
     return true;
@@ -23891,6 +23908,7 @@ function applyFilters() {
   if(relevantOis.includes(currentOi)) document.getElementById('f-oi').value = currentOi;
 
   const filtered = QUESTIONS.filter(q=>{
+    if(niveau  && String(q.niveau) !== niveau) return false;
     if(oi      && q.oi !== oi) return false;
     if(aspect  && !q.aspects.some(a=>a.aspect===aspect)) return false;
     if(periode && q.periode !== periode) return false;
@@ -23907,7 +23925,7 @@ function applyFilters() {
 }
 
 function resetFilters() {
-  ['f-periode','f-aspect','f-oi'].forEach(id=>{
+  ['f-niveau','f-periode','f-aspect','f-oi'].forEach(id=>{
     document.getElementById(id).value='';
   });
   applyFilters();
