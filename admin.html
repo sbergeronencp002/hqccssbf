@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — HQC · CSSBF</title>
+<style>
+:root {
+  --ink: #1a1814; --ink-2: #4a4740; --ink-3: #8a8680;
+  --paper: #f7f4ef; --paper-2: #ede9e2; --paper-3: #e2ddd5;
+  --accent: #1B3B6F; --border: rgba(26,24,20,0.15);
+  --green: #1a5c3a; --red: #c0392b;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans','Segoe UI',Helvetica,Arial,sans-serif; background: var(--paper); color: var(--ink); min-height: 100vh; }
+
+/* ── LOGIN ── */
+#login-screen {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 100vh; flex-direction: column; gap: 1.5rem;
+}
+#login-screen h1 { font-size: 1.4rem; color: var(--accent); }
+#login-box { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 2rem; width: 320px; display: flex; flex-direction: column; gap: 1rem; }
+#login-box input { padding: .6rem .8rem; border: 1px solid var(--border); border-radius: 5px; font-size: .9rem; width: 100%; }
+#login-box button { padding: .65rem; background: var(--accent); color: #fff; border: none; border-radius: 5px; font-size: .9rem; cursor: pointer; }
+#login-box button:hover { opacity: .9; }
+#login-error { color: var(--red); font-size: .8rem; display: none; }
+
+/* ── HEADER ── */
+header { background: var(--accent); color: #fff; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+header h1 { font-size: 1.2rem; font-weight: 500; }
+header a { color: rgba(255,255,255,.7); font-size: .8rem; text-decoration: none; }
+header a:hover { color: #fff; }
+
+/* ── LAYOUT ── */
+#app { display: none; flex-direction: column; min-height: 100vh; }
+.container { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+/* ── TOKEN BAR ── */
+.token-bar { background: var(--paper-2); border: 1px solid var(--border); border-radius: 7px; padding: .75rem 1rem; display: flex; gap: .75rem; align-items: center; margin-bottom: 2rem; }
+.token-bar label { font-size: .75rem; font-weight: 600; color: var(--ink-3); letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
+.token-bar input { flex: 1; padding: .4rem .6rem; border: 1px solid var(--border); border-radius: 4px; font-size: .8rem; font-family: monospace; }
+.token-status { font-size: .75rem; white-space: nowrap; }
+.token-status.ok { color: var(--green); }
+.token-status.ko { color: var(--red); }
+
+/* ── SECTION ── */
+.section { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; }
+.section-title { font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; margin-bottom: 1rem; }
+
+/* ── FORM ── */
+.field { margin-bottom: 1rem; }
+.field label { display: block; font-size: .75rem; font-weight: 600; color: var(--ink-2); margin-bottom: .35rem; }
+.field input, .field select, .field textarea {
+  width: 100%; padding: .5rem .75rem; border: 1px solid var(--border);
+  border-radius: 5px; font-family: inherit; font-size: .85rem; color: var(--ink);
+  background: var(--paper); transition: border-color .15s;
+}
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--accent); }
+.field textarea { resize: vertical; min-height: 80px; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+
+/* ── DYNAMIC BLOCKS ── */
+.block { border: 1px solid var(--border); border-radius: 6px; padding: 1rem; margin-bottom: .75rem; position: relative; background: var(--paper); }
+.block-title { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-3); margin-bottom: .75rem; }
+.btn-remove { position: absolute; top: .6rem; right: .6rem; background: none; border: none; color: var(--ink-3); font-size: 1.1rem; cursor: pointer; padding: 0 .2rem; line-height: 1; }
+.btn-remove:hover { color: var(--red); }
+.btn-add { display: inline-flex; align-items: center; gap: .4rem; padding: .4rem .9rem; background: var(--paper-2); border: 1px dashed var(--border); border-radius: 5px; font-size: .78rem; color: var(--ink-2); cursor: pointer; margin-top: .25rem; transition: all .15s; }
+.btn-add:hover { background: var(--paper-3); color: var(--ink); border-style: solid; }
+
+/* ── COLS ── */
+.col-block { border: 1px solid var(--border); border-radius: 5px; padding: .75rem; margin-bottom: .5rem; background: #fff; position: relative; }
+.col-type-toggle { display: flex; gap: .4rem; margin-bottom: .6rem; }
+.col-type-toggle button { padding: .25rem .6rem; border: 1px solid var(--border); border-radius: 4px; font-size: .72rem; cursor: pointer; background: var(--paper); color: var(--ink-2); }
+.col-type-toggle button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* ── NIVEAU CHIPS ── */
+.niveau-row { display: flex; align-items: center; gap: .6rem; margin-bottom: .5rem; }
+.niveau-row input[type=number] { width: 60px; }
+.niveau-row input[type=text] { flex: 1; }
+.niveau-row .btn-remove { position: static; }
+
+/* ── ACTIONS ── */
+.actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-top: 1rem; }
+.btn-primary { padding: .65rem 1.5rem; background: var(--green); color: #fff; border: none; border-radius: 6px; font-size: .9rem; font-weight: 600; cursor: pointer; transition: opacity .15s; }
+.btn-primary:hover { opacity: .88; }
+.btn-primary:disabled { opacity: .45; cursor: not-allowed; }
+.btn-secondary { padding: .6rem 1.2rem; background: var(--paper-2); border: 1px solid var(--border); border-radius: 6px; font-size: .85rem; cursor: pointer; }
+.btn-secondary:hover { background: var(--paper-3); }
+
+/* ── TOAST ── */
+#toast { position: fixed; bottom: 1.5rem; right: 1.5rem; padding: .75rem 1.25rem; border-radius: 7px; font-size: .85rem; font-weight: 500; display: none; z-index: 999; color: #fff; }
+#toast.ok { background: var(--green); }
+#toast.err { background: var(--red); }
+
+/* ── ID badge ── */
+.id-badge { display: inline-block; background: var(--accent); color: #fff; font-size: .7rem; font-weight: 700; padding: .15rem .5rem; border-radius: 4px; letter-spacing: .05em; }
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login-screen">
+  <h1>HQC · CSSBF — Administration</h1>
+  <div id="login-box">
+    <input type="password" id="pwd-input" placeholder="Mot de passe" autocomplete="current-password">
+    <button onclick="checkLogin()">Connexion</button>
+    <span id="login-error">Mot de passe incorrect.</span>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app">
+  <header>
+    <h1>HQC · CSSBF — Ajout de question</h1>
+    <a href="index.html">← Retour au site</a>
+  </header>
+
+  <div class="container">
+
+    <!-- TOKEN -->
+    <div class="token-bar">
+      <label>Token GitHub</label>
+      <input type="password" id="gh-token" placeholder="ghp_..." autocomplete="off" oninput="saveToken()">
+      <span class="token-status" id="token-status"></span>
+    </div>
+
+    <!-- IDENTIFIANT -->
+    <div class="section">
+      <div class="section-title">Identifiant</div>
+      <div class="row">
+        <div class="field">
+          <label>ID de la question <span id="next-id-badge" class="id-badge"></span></label>
+          <input type="text" id="q-id" placeholder="Chargement…">
+        </div>
+        <div class="field">
+          <label>Niveau</label>
+          <select id="q-niveau">
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTEXTE -->
+    <div class="section">
+      <div class="section-title">Contexte</div>
+      <div class="row">
+        <div class="field">
+          <label>Période</label>
+          <select id="q-periode">
+            <option value="Des origines à 1608">Des origines à 1608</option>
+            <option value="1608 - 1760">1608 - 1760</option>
+            <option value="1760 - 1791">1760 - 1791</option>
+            <option value="1791 - 1840">1791 - 1840</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Points</label>
+          <input type="number" id="q-points" value="2" min="1" max="10">
+        </div>
+      </div>
+      <div class="field">
+        <label>Réalité sociale / aspect principal</label>
+        <input type="text" id="q-realite" placeholder="ex. Monopole des compagnies">
+      </div>
+      <div class="field">
+        <label>Aspect(s) <span style="font-weight:400;color:var(--ink-3)">(un par ligne)</span></label>
+        <textarea id="q-aspects" rows="2" placeholder="Monopole des compagnies"></textarea>
+      </div>
+      <div class="field">
+        <label>Opération intellectuelle</label>
+        <select id="q-oi">
+          <option>Situer dans le temps</option>
+          <option>Situer dans l'espace</option>
+          <option>Établir des liens de causalité</option>
+          <option>Dégager des différences et des similitudes</option>
+          <option>Déterminer des changements et des continuités</option>
+          <option>Déterminer des causes et des conséquences</option>
+          <option>Mettre en relation des faits</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- ÉNONCÉ -->
+    <div class="section">
+      <div class="section-title">Énoncé</div>
+      <div class="field">
+        <textarea id="q-enonce" rows="4" placeholder="Texte de la question…"></textarea>
+      </div>
+    </div>
+
+    <!-- DOCUMENTS -->
+    <div class="section">
+      <div class="section-title">Documents</div>
+      <div id="docs-list"></div>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <button class="btn-add" onclick="addDoc('textes')">+ Texte</button>
+        <button class="btn-add" onclick="addDoc('image')">+ Image</button>
+        <button class="btn-add" onclick="addDoc('textes-image')">+ Texte + Image (côte à côte)</button>
+      </div>
+    </div>
+
+    <!-- RÉPONSE -->
+    <div class="section">
+      <div class="section-title">Réponse</div>
+      <div class="field">
+        <label>Type de réponse</label>
+        <select id="rep-type" onchange="updateReponseUI()">
+          <option value="none">Aucune</option>
+          <option value="lignes">Lignes de réponse</option>
+          <option value="image_ligne">Image + ligne</option>
+          <option value="tableau">Tableau</option>
+        </select>
+      </div>
+      <div id="rep-extra"></div>
+    </div>
+
+    <!-- RÉGLETTE -->
+    <div class="section">
+      <div class="section-title">Réglette</div>
+      <div class="field">
+        <label>Variante spéciale</label>
+        <select id="reg-variante" onchange="updateRegletteUI()">
+          <option value="">Standard</option>
+          <option value="3 éléments — 2 liens">3 éléments — 2 liens (causalité complexe)</option>
+        </select>
+      </div>
+      <div id="reg-colonnes-wrap">
+        <div class="field">
+          <label>Colonnes <span style="font-weight:400;color:var(--ink-3)">(titres séparés par virgule, ex. : 2 points, 1 point, 0 point)</span></label>
+          <input type="text" id="reg-colonnes" placeholder="2 points, 1 point, 0 point">
+        </div>
+        <div class="section-title" style="margin-top:.5rem">Niveaux</div>
+        <div id="reg-niveaux-list"></div>
+        <button class="btn-add" onclick="addNiveau()">+ Ajouter un niveau</button>
+      </div>
+    </div>
+
+    <!-- GUIDE -->
+    <div class="section">
+      <div class="section-title">Guide de correction</div>
+      <div class="field">
+        <label>Type</label>
+        <select id="guide-type" onchange="updateGuideUI()">
+          <option value="texte">Texte</option>
+          <option value="tableau">Tableau (label → valeur)</option>
+        </select>
+      </div>
+      <div id="guide-extra">
+        <div class="field"><textarea id="guide-texte" rows="3" placeholder="Réponse attendue…"></textarea></div>
+      </div>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="actions">
+      <button class="btn-primary" id="btn-publier" onclick="publier()">Publier sur GitHub</button>
+      <button class="btn-secondary" onclick="resetForm()">Réinitialiser</button>
+      <span id="publish-status" style="font-size:.82rem;color:var(--ink-3)"></span>
+    </div>
+
+  </div><!-- /container -->
+</div><!-- /app -->
+
+<div id="toast"></div>
+
+<script>
+// ── AUTH ──────────────────────────────────────────────────────────────
+const PWD_HASH = '1b2a2bc472dfbeff664c8414e5cef2811928d5b68ad6588b2a3d87d8a066afc4';
+
+async function sha256(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+
+document.getElementById('pwd-input').addEventListener('keydown', e => { if(e.key==='Enter') checkLogin(); });
+
+async function checkLogin() {
+  const hash = await sha256(document.getElementById('pwd-input').value);
+  if(hash === PWD_HASH) {
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('app').style.display = 'flex';
+    init();
+  } else {
+    document.getElementById('login-error').style.display = 'block';
+    document.getElementById('pwd-input').value = '';
+  }
+}
+
+// ── TOKEN ─────────────────────────────────────────────────────────────
+function saveToken() {
+  sessionStorage.setItem('gh_token', document.getElementById('gh-token').value);
+  document.getElementById('token-status').textContent = '';
+}
+function getToken() { return document.getElementById('gh-token').value || sessionStorage.getItem('gh_token') || ''; }
+
+// ── INIT ──────────────────────────────────────────────────────────────
+const OWNER = 'sbergeronencp002';
+const REPO  = 'hqccssbf';
+const BRANCH = 'main';
+
+const IMAGES = [
+  'campement_algonquien_1500.png','image_jacques_cartier_1534.png',
+  'la_revolte_pontiac.jpg','ligne_1400_1550.jpg','mercantilisme_nf.png',
+  'nomade_1500.png','reseaux_echanges_1500.png','troc_1500.png','village_iroquoien_1500.png'
+];
+
+let currentQuestions = [];
+let currentReglettes = {};
+let currentImageDb = {};
+let questionsFileSha = '';
+
+async function init() {
+  const token = sessionStorage.getItem('gh_token');
+  if(token) document.getElementById('gh-token').value = token;
+  addNiveau(); addNiveau(); addNiveau();
+  await loadQuestionsJs();
+}
+
+async function loadQuestionsJs() {
+  try {
+    const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js?ref=${BRANCH}`,
+      { headers: { Authorization: `token ${getToken()}` } });
+    const data = await r.json();
+    questionsFileSha = data.sha;
+    const content = atob(data.content.replace(/\n/g,''));
+    // Eval safely to extract data
+    const fn = new Function(content + '\n return { REGLETTES, IMAGE_DB, QUESTIONS };');
+    const result = fn();
+    currentQuestions = result.QUESTIONS;
+    currentReglettes = result.REGLETTES;
+    currentImageDb   = result.IMAGE_DB;
+    // Next ID
+    const nums = currentQuestions.map(q => parseInt(q.id.replace(/\D/g,''))).filter(n=>!isNaN(n));
+    const nextNum = nums.length ? Math.max(...nums) + 1 : 1;
+    const nextId = 'Q' + nextNum;
+    document.getElementById('q-id').value = nextId;
+    document.getElementById('next-id-badge').textContent = nextId;
+    document.getElementById('token-status').textContent = '✓ Connecté';
+    document.getElementById('token-status').className = 'token-status ok';
+  } catch(e) {
+    document.getElementById('token-status').textContent = '✗ Erreur de connexion';
+    document.getElementById('token-status').className = 'token-status ko';
+  }
+}
+
+document.getElementById('gh-token').addEventListener('change', loadQuestionsJs);
+
+// ── DOCUMENTS ─────────────────────────────────────────────────────────
+let docCount = 0;
+
+function addDoc(type) {
+  const id = ++docCount;
+  const wrap = document.getElementById('docs-list');
+  const div = document.createElement('div');
+  div.className = 'block';
+  div.id = 'doc-' + id;
+  div.dataset.type = type;
+
+  if(type === 'textes') {
+    div.innerHTML = `
+      <div class="block-title">Document texte</div>
+      <button class="btn-remove" onclick="removeEl('doc-${id}')">✕</button>
+      <div class="field"><label>Titre</label><input type="text" id="doc-${id}-titre" placeholder="Document A"></div>
+      <div class="field"><label>Texte</label><textarea id="doc-${id}-texte" rows="4" placeholder="Contenu du document…"></textarea></div>`;
+  } else if(type === 'image') {
+    div.innerHTML = `
+      <div class="block-title">Document image</div>
+      <button class="btn-remove" onclick="removeEl('doc-${id}')">✕</button>
+      <div class="field"><label>Titre</label><input type="text" id="doc-${id}-titre" placeholder="Document A"></div>
+      <div class="field"><label>Image</label>${imageSelect('doc-'+id+'-ref')}</div>`;
+  } else if(type === 'textes-image') {
+    div.innerHTML = `
+      <div class="block-title">Colonnes texte / image</div>
+      <button class="btn-remove" onclick="removeEl('doc-${id}')">✕</button>
+      <div id="doc-${id}-cols"></div>
+      <div style="display:flex;gap:.4rem">
+        <button class="btn-add" onclick="addCol(${id},'texte')">+ Col. texte</button>
+        <button class="btn-add" onclick="addCol(${id},'image')">+ Col. image</button>
+      </div>`;
+  }
+  wrap.appendChild(div);
+}
+
+let colCount = 0;
+function addCol(docId, type) {
+  const id = ++colCount;
+  const wrap = document.getElementById('doc-'+docId+'-cols');
+  const div = document.createElement('div');
+  div.className = 'col-block';
+  div.id = 'col-'+id;
+  div.dataset.type = type;
+  if(type === 'texte') {
+    div.innerHTML = `
+      <button class="btn-remove" onclick="removeEl('col-${id}')">✕</button>
+      <div class="field"><label>Titre</label><input type="text" id="col-${id}-titre" placeholder="Document A"></div>
+      <div class="field"><label>Texte</label><textarea id="col-${id}-texte" rows="3"></textarea></div>`;
+  } else {
+    div.innerHTML = `
+      <button class="btn-remove" onclick="removeEl('col-${id}')">✕</button>
+      <div class="field"><label>Titre</label><input type="text" id="col-${id}-titre" placeholder="Document A"></div>
+      <div class="field"><label>Image</label>${imageSelect('col-'+id+'-ref')}</div>`;
+  }
+  wrap.appendChild(div);
+}
+
+function imageSelect(id) {
+  return `<select id="${id}"><option value="">— Choisir une image —</option>${IMAGES.map(f=>`<option value="${f}">${f}</option>`).join('')}</select>`;
+}
+
+function removeEl(id) { document.getElementById(id)?.remove(); }
+
+// ── RÉPONSE ───────────────────────────────────────────────────────────
+function updateReponseUI() {
+  const type = document.getElementById('rep-type').value;
+  const wrap = document.getElementById('rep-extra');
+  if(type === 'lignes') {
+    wrap.innerHTML = `<div class="field"><label>Nombre de lignes</label><input type="number" id="rep-nombre" value="2" min="1" max="10"></div>`;
+  } else if(type === 'image_ligne') {
+    wrap.innerHTML = `<div class="field"><label>Image de référence</label>${imageSelect('rep-ref')}</div>`;
+  } else if(type === 'tableau') {
+    wrap.innerHTML = `
+      <div class="field"><label>Lignes du tableau <span style="font-weight:400;color:var(--ink-3)">(une par ligne)</span></label>
+      <textarea id="rep-lignes" rows="3" placeholder="Mercantilisme\nObligations des compagnies\nPrivilèges des compagnies"></textarea></div>`;
+  } else {
+    wrap.innerHTML = '';
+  }
+}
+
+// ── RÉGLETTE ──────────────────────────────────────────────────────────
+function updateRegletteUI() {
+  const variante = document.getElementById('reg-variante').value;
+  document.getElementById('reg-colonnes-wrap').style.display = variante ? 'none' : '';
+}
+
+let niveauCount = 0;
+function addNiveau() {
+  const id = ++niveauCount;
+  const wrap = document.getElementById('reg-niveaux-list');
+  const div = document.createElement('div');
+  div.className = 'niveau-row';
+  div.id = 'niv-'+id;
+  div.innerHTML = `
+    <input type="number" id="niv-${id}-pts" placeholder="pts" min="0" max="10" style="width:65px">
+    <input type="text" id="niv-${id}-desc" placeholder="Description du niveau…">
+    <button class="btn-remove" onclick="removeEl('niv-${id}')">✕</button>`;
+  wrap.appendChild(div);
+}
+
+// ── GUIDE ─────────────────────────────────────────────────────────────
+function updateGuideUI() {
+  const type = document.getElementById('guide-type').value;
+  const wrap = document.getElementById('guide-extra');
+  if(type === 'texte') {
+    wrap.innerHTML = `<div class="field"><textarea id="guide-texte" rows="3" placeholder="Réponse attendue…"></textarea></div>`;
+  } else {
+    wrap.innerHTML = `
+      <div class="field"><label>Lignes <span style="font-weight:400;color:var(--ink-3)">(label | valeur, une par ligne)</span></label>
+      <textarea id="guide-tableau" rows="4" placeholder="Mercantilisme | B\nObligations des compagnies | C\nPrivilèges des compagnies | A"></textarea></div>`;
+  }
+}
+
+// ── BUILD QUESTION OBJECT ─────────────────────────────────────────────
+function buildQuestion() {
+  const id = document.getElementById('q-id').value.trim();
+  const niveau = parseInt(document.getElementById('q-niveau').value);
+  const oi = document.getElementById('q-oi').value;
+  const periode = document.getElementById('q-periode').value;
+  const realite = document.getElementById('q-realite').value.trim();
+  const points = parseInt(document.getElementById('q-points').value);
+  const enonce = document.getElementById('q-enonce').value.trim();
+  const aspectsRaw = document.getElementById('q-aspects').value.trim().split('\n').map(s=>s.trim()).filter(Boolean);
+  const aspects = aspectsRaw.map(a=>({ aspect: a }));
+
+  // Documents
+  const documents = [];
+  document.querySelectorAll('#docs-list > .block').forEach(docEl => {
+    const dtype = docEl.dataset.type;
+    if(dtype === 'textes') {
+      const titre = docEl.querySelector('[id$="-titre"]').value.trim();
+      const texte = docEl.querySelector('[id$="-texte"]').value.trim();
+      documents.push({ type: 'textes', cols: [{ titre, texte }] });
+    } else if(dtype === 'image') {
+      const titre = docEl.querySelector('[id$="-titre"]').value.trim();
+      const ref = docEl.querySelector('[id$="-ref"]').value;
+      documents.push({ type: 'textes', cols: [{ titre, ref }] });
+    } else if(dtype === 'textes-image') {
+      const cols = [];
+      docEl.querySelectorAll('.col-block').forEach(colEl => {
+        const ctype = colEl.dataset.type;
+        const titre = colEl.querySelector('[id$="-titre"]').value.trim();
+        if(ctype === 'texte') {
+          const texte = colEl.querySelector('[id$="-texte"]').value.trim();
+          cols.push({ titre, texte });
+        } else {
+          const ref = colEl.querySelector('[id$="-ref"]').value;
+          cols.push({ titre, ref });
+        }
+      });
+      if(cols.length) documents.push({ type: 'textes', cols });
+    }
+  });
+
+  // Réponse
+  let reponse = false;
+  const repType = document.getElementById('rep-type').value;
+  if(repType === 'lignes') {
+    reponse = { type: 'lignes', nombre: parseInt(document.getElementById('rep-nombre').value) };
+  } else if(repType === 'image_ligne') {
+    reponse = { type: 'image_ligne', ref: document.getElementById('rep-ref').value };
+  } else if(repType === 'tableau') {
+    const lignes = document.getElementById('rep-lignes').value.trim().split('\n').map(s=>s.trim()).filter(Boolean).map(s=>({ label: s }));
+    reponse = { type: 'tableau', lignes };
+  }
+
+  // Guide
+  let guide = false;
+  const guideType = document.getElementById('guide-type').value;
+  if(guideType === 'texte') {
+    guide = document.getElementById('guide-texte').value.trim() || false;
+  } else {
+    const lignes = document.getElementById('guide-tableau').value.trim().split('\n').map(s=>s.trim()).filter(Boolean).map(s => {
+      const [label, valeur=''] = s.split('|').map(x=>x.trim());
+      return { label, valeur };
+    });
+    guide = { type: 'tableau', lignes };
+  }
+
+  return { id, niveau, oi, periode, realite, points, enonce, aspects, documents, reponse, guide };
+}
+
+function buildReglette(id) {
+  const variante = document.getElementById('reg-variante').value;
+  const oi = document.getElementById('q-oi').value;
+  if(variante) {
+    return { oi, variante, colonnes: ['3 points','2 points','1 point','0 point'], niveaux: [
+      { pts:3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité." },
+      { pts:2, desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité." },
+      { pts:1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité." },
+      { pts:0, desc: "L'élève précise un seul élément ou n'en précise pas." }
+    ]};
+  }
+  const colonnes = document.getElementById('reg-colonnes').value.split(',').map(s=>s.trim()).filter(Boolean);
+  const niveaux = [];
+  document.querySelectorAll('#reg-niveaux-list .niveau-row').forEach(row => {
+    const pts = parseInt(row.querySelector('[id$="-pts"]').value);
+    const desc = row.querySelector('[id$="-desc"]').value.trim();
+    if(!isNaN(pts) && desc) niveaux.push({ pts, desc });
+  });
+  return { oi, colonnes, niveaux };
+}
+
+// ── GENERATE questions.js ─────────────────────────────────────────────
+function serializeValue(v, indent=0) {
+  const pad = '  '.repeat(indent);
+  const pad1 = '  '.repeat(indent+1);
+  if(v === null || v === false || v === true) return String(v);
+  if(typeof v === 'number') return String(v);
+  if(typeof v === 'string') return JSON.stringify(v);
+  if(Array.isArray(v)) {
+    if(!v.length) return '[]';
+    const items = v.map(i => pad1 + serializeValue(i, indent+1));
+    return '[\n' + items.join(',\n') + '\n' + pad + ']';
+  }
+  const pairs = Object.entries(v).map(([k,val]) => {
+    const key = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(k) ? k : JSON.stringify(k);
+    return pad1 + key + ': ' + serializeValue(val, indent+1);
+  });
+  return '{\n' + pairs.join(',\n') + '\n' + pad + '}';
+}
+
+function generateQuestionsJs(questions, reglettes, imageDb) {
+  let out = 'const REGLETTES = {\n';
+  out += Object.entries(reglettes).map(([k,v]) => `  ${JSON.stringify(k)}: ${serializeValue(v,1)}`).join(',\n');
+  out += '\n}\n\nconst IMAGE_DB = {\n';
+  out += Object.entries(imageDb).map(([k,v]) => `  ${JSON.stringify(k)}: ${serializeValue(v,1)}`).join(',\n');
+  out += '\n}\n\nconst QUESTIONS = [\n';
+  out += questions.map(q => '  ' + serializeValue(q,1)).join(',\n');
+  out += '\n]\n';
+  return out;
+}
+
+// ── PUBLIER ───────────────────────────────────────────────────────────
+async function publier() {
+  const token = getToken();
+  if(!token) { toast('Saisis ton token GitHub.', 'err'); return; }
+
+  const btn = document.getElementById('btn-publier');
+  const status = document.getElementById('publish-status');
+  btn.disabled = true;
+  btn.textContent = '⏳ Publication…';
+  status.textContent = '';
+
+  try {
+    // Reload SHA
+    const shaResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js?ref=${BRANCH}`,
+      { headers: { Authorization: `token ${token}` } });
+    const shaData = await shaResp.json();
+    questionsFileSha = shaData.sha;
+
+    const q = buildQuestion();
+    const r = buildReglette(q.id);
+
+    // Add image to IMAGE_DB if not present
+    const refsUsed = new Set();
+    q.documents.forEach(d => d.cols?.forEach(c => { if(c.ref) refsUsed.add(c.ref); }));
+    if(q.reponse?.ref) refsUsed.add(q.reponse.ref);
+    refsUsed.forEach(ref => {
+      if(!currentImageDb[ref]) currentImageDb[ref] = { src: 'images/' + ref };
+    });
+
+    currentQuestions.push(q);
+    currentReglettes[q.id] = r;
+
+    const newContent = generateQuestionsJs(currentQuestions, currentReglettes, currentImageDb);
+    const encoded = btoa(unescape(encodeURIComponent(newContent)));
+
+    const putResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js`, {
+      method: 'PUT',
+      headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        message: `Ajouter ${q.id} — ${q.oi} (${q.periode})`,
+        content: encoded,
+        sha: questionsFileSha,
+        branch: BRANCH
+      })
+    });
+
+    if(!putResp.ok) {
+      const err = await putResp.json();
+      throw new Error(err.message || putResp.status);
+    }
+
+    // Update local state
+    const result = await putResp.json();
+    questionsFileSha = result.content.sha;
+    // Next ID
+    const nums = currentQuestions.map(q=>parseInt(q.id.replace(/\D/g,''))).filter(n=>!isNaN(n));
+    const nextId = 'Q' + (Math.max(...nums)+1);
+    document.getElementById('q-id').value = nextId;
+    document.getElementById('next-id-badge').textContent = nextId;
+
+    toast(`${q.id} publié avec succès !`, 'ok');
+    status.textContent = `✓ ${q.id} ajouté — ${new Date().toLocaleTimeString('fr-CA')}`;
+    resetForm(true);
+
+  } catch(e) {
+    toast('Erreur : ' + e.message, 'err');
+    console.error(e);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Publier sur GitHub';
+  }
+}
+
+// ── RESET ─────────────────────────────────────────────────────────────
+function resetForm(keepId=false) {
+  if(!keepId) document.getElementById('q-id').value = '';
+  document.getElementById('q-niveau').value = '3';
+  document.getElementById('q-oi').value = document.getElementById('q-oi').options[0].value;
+  document.getElementById('q-periode').value = document.getElementById('q-periode').options[0].value;
+  document.getElementById('q-realite').value = '';
+  document.getElementById('q-points').value = '2';
+  document.getElementById('q-enonce').value = '';
+  document.getElementById('q-aspects').value = '';
+  document.getElementById('docs-list').innerHTML = '';
+  document.getElementById('rep-type').value = 'none';
+  document.getElementById('rep-extra').innerHTML = '';
+  document.getElementById('reg-variante').value = '';
+  document.getElementById('reg-colonnes').value = '';
+  document.getElementById('reg-niveaux-list').innerHTML = '';
+  document.getElementById('reg-colonnes-wrap').style.display = '';
+  niveauCount = 0; docCount = 0; colCount = 0;
+  addNiveau(); addNiveau(); addNiveau();
+  updateGuideUI();
+}
+
+// ── TOAST ─────────────────────────────────────────────────────────────
+function toast(msg, type='ok') {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = type;
+  el.style.display = 'block';
+  setTimeout(()=>{ el.style.display='none'; }, 3500);
+}
+</script>
+</body>
+</html>
