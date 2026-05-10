@@ -311,22 +311,34 @@ let currentQuestions = [];
 let currentReglettes = {};
 let currentImageDb = {};
 let questionsFileSha = '';
+let IMAGES = [];
 
 async function init() {
   const token = sessionStorage.getItem('gh_token');
   if(token) document.getElementById('gh-token').value = token;
   addNiveau(); addNiveau(); addNiveau();
-  await loadQuestionsJs();
+  await Promise.all([loadQuestionsJs(), loadImages()]);
+}
+
+async function loadImages() {
+  try {
+    const headers = getToken() ? { Authorization: `token ${getToken()}` } : {};
+    const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/images?ref=${BRANCH}`, { headers });
+    const data = await r.json();
+    if(Array.isArray(data)) {
+      IMAGES = data.filter(f => f.name !== '.gitkeep').map(f => f.name).sort();
+    }
+  } catch(e) { /* utilise la liste vide */ }
 }
 
 async function loadQuestionsJs() {
   try {
-    const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js?ref=${BRANCH}`,
-      { headers: { Authorization: `token ${getToken()}` } });
+    const headers = getToken() ? { Authorization: `token ${getToken()}` } : {};
+    const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js?ref=${BRANCH}`, { headers });
+    if(!r.ok) throw new Error(r.status);
     const data = await r.json();
     questionsFileSha = data.sha;
     const content = atob(data.content.replace(/\n/g,''));
-    // Eval safely to extract data
     const fn = new Function(content + '\n return { REGLETTES, IMAGE_DB, QUESTIONS };');
     const result = fn();
     currentQuestions = result.QUESTIONS;
@@ -582,10 +594,31 @@ function generateQuestionsJs(questions, reglettes, imageDb) {
   return out;
 }
 
+// ── VALIDATION ────────────────────────────────────────────────────────
+function validateForm() {
+  const errors = [];
+  if(!document.getElementById('q-id').value.trim()) errors.push('ID manquant');
+  if(!document.getElementById('q-enonce').value.trim()) errors.push('Énoncé vide');
+  if(!document.getElementById('q-realite').value.trim()) errors.push('Réalité sociale vide');
+  if(!document.getElementById('q-aspects').value.trim()) errors.push('Aspect(s) vide(s)');
+  const repType = document.getElementById('rep-type').value;
+  if(repType === 'image_ligne' && !document.getElementById('rep-ref')?.value) errors.push('Image de réponse non sélectionnée');
+  if(repType === 'tableau' && !document.getElementById('rep-lignes')?.value.trim()) errors.push('Lignes du tableau réponse vides');
+  const variante = document.getElementById('reg-variante').value;
+  if(!variante) {
+    if(!document.getElementById('reg-colonnes').value.trim()) errors.push('Colonnes de réglette vides');
+    const hasNiveau = [...document.querySelectorAll('#reg-niveaux-list .niveau-row')].some(r=>r.querySelector('[id$="-desc"]').value.trim());
+    if(!hasNiveau) errors.push('Aucun niveau de réglette rempli');
+  }
+  return errors;
+}
+
 // ── PUBLIER ───────────────────────────────────────────────────────────
 async function publier() {
   const token = getToken();
   if(!token) { toast('Saisis ton token GitHub.', 'err'); return; }
+  const errors = validateForm();
+  if(errors.length) { toast('Champs manquants : ' + errors.join(', '), 'err'); return; }
 
   const btn = document.getElementById('btn-publier');
   const status = document.getElementById('publish-status');
@@ -672,6 +705,7 @@ function resetForm(keepId=false) {
   document.getElementById('reg-colonnes').value = '';
   document.getElementById('reg-niveaux-list').innerHTML = '';
   document.getElementById('reg-colonnes-wrap').style.display = '';
+  document.getElementById('guide-type').value = 'texte';
   niveauCount = 0; docCount = 0; colCount = 0;
   addNiveau(); addNiveau(); addNiveau();
   updateGuideUI();

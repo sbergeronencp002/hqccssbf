@@ -23827,10 +23827,12 @@ function buildCopyText(q) {
   t += `QUESTION\n${q.enonce}\n\n`;
   if(q.documents.length) {
     t += `DOCUMENTS\n`;
-    q.documents.forEach(d=>{ t+=`• ${d.type} — ${d.ref}\n`; });
+    q.documents.forEach(d=>{
+      if(d.cols) d.cols.forEach(c=>{ t+=`• ${c.titre||''}${c.ref?' ['+c.ref+']':''}\n`; });
+      else t+=`• ${d.type}\n`;
+    });
     t+='\n';
   }
-
   return t;
 }
 
@@ -23913,7 +23915,7 @@ function copyAll(id, btn) {
   const html = '<div style="background:#fff;color:#000;font-family:Aptos,Arial,sans-serif">'
     + '<p style="' + baseStyle + '">' + q.enonce.replace(/\n/g,'<br>') + '</p>'
     + '<p style="font-family:Aptos,Arial,sans-serif;font-size:11pt;background:#fff;color:#000;margin:0;padding:0;line-height:1">&nbsp;</p>'
-    + (q.documents.length ? '<p style="font-family:Aptos,Arial,sans-serif;font-size:11pt;background:#fff;color:#000;margin:0;padding:0;line-height:1">' + q.documents.map(d=>'• '+d.type+' — '+d.ref).join('<br>') + '</p>' : '')
+    + (q.documents.length ? '<p style="font-family:Aptos,Arial,sans-serif;font-size:11pt;background:#fff;color:#000;margin:0;padding:0;line-height:1">' + q.documents.map(d=>d.cols ? d.cols.map(c=>'• '+(c.titre||'')).join(', ') : '• '+d.type).join('<br>') + '</p>' : '')
     + '<p style="font-family:Aptos,Arial,sans-serif;font-size:11pt;background:#fff;color:#000;margin:0;padding:0;line-height:1">&nbsp;</p>'
     + buildReglettHTML(q)
     + '</div>';
@@ -24068,6 +24070,21 @@ function renderReponse(q) {
     const img = IMAGE_DB[q.reponse.ref];
     let html = '';
     if(img) html += '<div class="doc-img-wrap"><img src="' + img.src + '" class="doc-img" style="max-height:60px;max-width:100%" onclick="openLightbox(\'' + img.src + '\')" title="Cliquer pour agrandir"></div>';
+    return html;
+  }
+  if(q.reponse.type === 'lignes') {
+    const n = q.reponse.nombre || 1;
+    return '<div>' + Array(n).fill('<div style="border-bottom:1px solid var(--border);height:28px;margin:6px 0"></div>').join('') + '</div>';
+  }
+  if(q.reponse.type === 'tableau') {
+    let html = '<table style="border-collapse:collapse;margin:8px 0;font-size:0.8rem;width:100%">'
+      + '<tr><th style="border:0.5px solid var(--border);padding:4px 8px;background:var(--paper-2);text-align:left"></th>'
+      + '<th style="border:0.5px solid var(--border);padding:4px 8px;background:var(--paper-2);text-align:center">Document</th></tr>';
+    q.reponse.lignes.forEach(l=>{
+      html += '<tr><td style="border:0.5px solid var(--border);padding:4px 8px">' + l.label + '</td>'
+            + '<td style="border:0.5px solid var(--border);padding:4px 30px"></td></tr>';
+    });
+    html += '</table>';
     return html;
   }
   return '';
