@@ -16,7 +16,10 @@ function oiStyle(oi) {
 }
 
 let aspects = [];
-let periodeOrder = ["Des origines à 1608","1608 - 1760","1760 - 1791","1791 - 1840"];
+let periodeOrder = [
+  "P1 — Des origines à 1608","P2 — 1608 – 1760","P3 — 1760 – 1791","P4 — 1791 – 1840",
+  "P5 — 1840 – 1896","P6 — 1896 – 1945","P7 — 1945 – 1980","P8 — De 1980 à nos jours"
+];
 
 function populateFilters() {
   const allOis = [...new Set(QUESTIONS.map(q=>q.oi))];
@@ -184,7 +187,7 @@ function buildCopyHTML(q) {
 
 function buildCopyText(q) {
   let t = `${q.id} — ${q.oi}\n`;
-  t += `Période : ${q.periode} | ${q.realite}\n\n`;
+  t += `Période : ${q.periode}${q.realite ? ' | ' + q.realite : ''}\n\n`;
   t += `QUESTION\n${q.enonce}\n\n`;
   if(q.documents.length) {
     t += `DOCUMENTS\n`;

@@ -129,18 +129,9 @@ header a:hover { color: #fff; }
     <!-- IDENTIFIANT -->
     <div class="section">
       <div class="section-title">Identifiant</div>
-      <div class="row">
-        <div class="field">
-          <label>ID de la question <span id="next-id-badge" class="id-badge"></span></label>
-          <input type="text" id="q-id" placeholder="Chargement…">
-        </div>
-        <div class="field">
-          <label>Niveau</label>
-          <select id="q-niveau">
-            <option value="3">3</option>
-            <option value="4">4</option>
-          </select>
-        </div>
+      <div class="field">
+        <label>ID de la question <span id="next-id-badge" class="id-badge"></span></label>
+        <input type="text" id="q-id" placeholder="Chargement…">
       </div>
     </div>
 
@@ -149,26 +140,29 @@ header a:hover { color: #fff; }
       <div class="section-title">Contexte</div>
       <div class="row">
         <div class="field">
-          <label>Période</label>
-          <select id="q-periode">
-            <option value="Des origines à 1608">Des origines à 1608</option>
-            <option value="1608 - 1760">1608 - 1760</option>
-            <option value="1760 - 1791">1760 - 1791</option>
-            <option value="1791 - 1840">1791 - 1840</option>
+          <label>Niveau</label>
+          <select id="q-niveau">
+            <option value="3">3</option>
+            <option value="4">4</option>
           </select>
         </div>
         <div class="field">
-          <label>Points</label>
-          <input type="number" id="q-points" value="2" min="1" max="10">
+          <label>Période</label>
+          <select id="q-periode" onchange="updateAspects()">
+            <option value="P1 — Des origines à 1608">P1 — Des origines à 1608</option>
+            <option value="P2 — 1608 – 1760">P2 — 1608 – 1760</option>
+            <option value="P3 — 1760 – 1791">P3 — 1760 – 1791</option>
+            <option value="P4 — 1791 – 1840">P4 — 1791 – 1840</option>
+            <option value="P5 — 1840 – 1896">P5 — 1840 – 1896</option>
+            <option value="P6 — 1896 – 1945">P6 — 1896 – 1945</option>
+            <option value="P7 — 1945 – 1980">P7 — 1945 – 1980</option>
+            <option value="P8 — De 1980 à nos jours">P8 — De 1980 à nos jours</option>
+          </select>
         </div>
       </div>
       <div class="field">
-        <label>Réalité sociale / aspect principal</label>
-        <input type="text" id="q-realite" placeholder="ex. Monopole des compagnies">
-      </div>
-      <div class="field">
-        <label>Aspect(s) <span style="font-weight:400;color:var(--ink-3)">(un par ligne)</span></label>
-        <textarea id="q-aspects" rows="2" placeholder="Monopole des compagnies"></textarea>
+        <label>Aspect(s)</label>
+        <div id="aspects-list" style="display:flex;flex-direction:column;gap:.3rem;margin-top:.3rem;padding:.5rem;background:var(--paper);border:1px solid var(--border);border-radius:5px;max-height:180px;overflow-y:auto"></div>
       </div>
       <div class="field">
         <label>Opération intellectuelle</label>
@@ -310,6 +304,72 @@ const OWNER = 'sbergeronencp002';
 const REPO  = 'hqccssbf';
 const BRANCH = 'main';
 
+const ASPECTS_PAR_PERIODE = {
+  'P1 — Des origines à 1608': [
+    'Alliances et rivalités au sein des Premières Nations',
+    'Exploration et occupation du territoire par les Français',
+    'Premiers contacts',
+    'Premiers occupants du territoire',
+    'Prise de décision chez les Autochtones',
+    'Rapports sociaux chez les Autochtones',
+    "Réseaux d'échange autochtones"
+  ],
+  'P2 — 1608 – 1760': [
+    'Adaptation des colons','Commerce des fourrures','Croissance de la population',
+    'Diversification économique','Église catholique','Gouvernement royal',
+    'Guerre et diplomatie chez les Premières Nations','Guerres intercoloniales',
+    'Monopole des compagnies','Populations autochtones','Régime seigneurial',
+    'Territoire français en Amérique','Villes du Canada'
+  ],
+  'P3 — 1760 – 1791': [
+    'Acte de Québec','Économie coloniale','Église anglicane','Église catholique',
+    'Guerre de la Conquête','Instructions au gouverneur Murray','Invasion américaine',
+    'Loyalistes','Mouvements de revendication','Proclamation royale',
+    'Régime militaire','Situation sociodémographique','Statut des Indiens'
+  ],
+  'P4 — 1791 – 1840': [
+    'Acte constitutionnel','Agriculture','Capitaux et infrastructures',
+    'Commerce des fourrures','Commerce du bois','Débats parlementaires',
+    'Église anglicane','Guerre anglo-américaine de 1812','Idées libérales et républicaines',
+    'Mouvements migratoires','Nationalismes','Population','Rapport Durham',
+    'Soulèvements de 1837-1838'
+  ],
+  'P5 — 1840 – 1896': [
+    "Acte de l'Amérique du Nord britannique",'Acte d\'Union','Affaires indiennes',
+    'Économie coloniale','Exploitations agricoles','Gouvernement responsable',
+    'Industrie forestière','Manifestations socioculturelles','Migrations',
+    'Politique nationale','Première phase d\'industrialisation',
+    "Présence de l'Église catholique",'Relations fédérales-provinciales','Rôle des femmes'
+  ],
+  'P6 — 1896 – 1945': [
+    'Clérico-nationalisme','Culture de masse','Deuxième phase d\'industrialisation',
+    'Église catholique','Luttes des femmes','Milieux urbains','Mouvement syndical',
+    'Politique intérieure canadienne','Statut du Canada dans l\'Empire britannique'
+  ],
+  'P7 — 1945 – 1980': [
+    'Accroissement naturel','Agglomération urbaine','Développement régional',
+    'Fédération canadienne','Mouvement indépendantiste','Nouveaux arrivants',
+    'Pensionnats indiens au Québec','Période duplessiste','Rapports de force en Occident',
+    'Réformes institutionnelles','Révolution tranquille','Société de consommation'
+  ],
+  'P8 — De 1980 à nos jours': [
+    'Droits des Autochtones','Égalité hommes-femmes','Évolution sociodémographique',
+    'Industrie culturelle','Mondialisation de l\'économie','Préoccupations environnementales',
+    'Question linguistique','Redéfinition du rôle de l\'État','Statut politique du Québec'
+  ]
+};
+
+function updateAspects() {
+  const periode = document.getElementById('q-periode').value;
+  const aspects = ASPECTS_PAR_PERIODE[periode] || [];
+  const wrap = document.getElementById('aspects-list');
+  wrap.innerHTML = aspects.map(a =>
+    `<label style="display:flex;align-items:center;gap:.5rem;font-size:.83rem;cursor:pointer">
+      <input type="checkbox" value="${a}" style="width:auto;cursor:pointer"> ${a}
+    </label>`
+  ).join('');
+}
+
 let IMAGES = [];
 let currentQuestions = [];
 let currentReglettes = {};
@@ -319,6 +379,7 @@ let questionsFileSha = '';
 async function init() {
   const token = sessionStorage.getItem('gh_token');
   if(token) document.getElementById('gh-token').value = token;
+  updateAspects();
   addNiveau(); addNiveau(); addNiveau();
   await Promise.all([loadQuestionsJs(), loadImages()]);
 }
@@ -483,11 +544,19 @@ function buildQuestion() {
   const niveau = parseInt(document.getElementById('q-niveau').value);
   const oi = document.getElementById('q-oi').value;
   const periode = document.getElementById('q-periode').value;
-  const realite = document.getElementById('q-realite').value.trim();
-  const points = parseInt(document.getElementById('q-points').value);
   const enonce = document.getElementById('q-enonce').value.trim();
-  const aspectsRaw = document.getElementById('q-aspects').value.trim().split('\n').map(s=>s.trim()).filter(Boolean);
-  const aspects = aspectsRaw.map(a=>({ aspect: a }));
+  const aspects = [...document.querySelectorAll('#aspects-list input[type=checkbox]:checked')]
+    .map(cb => ({ aspect: cb.value }));
+  // Auto-calculate points from réglette max
+  const variante = document.getElementById('reg-variante').value;
+  let points = 2;
+  if(variante) {
+    points = 3;
+  } else {
+    const niveauxPts = [...document.querySelectorAll('#reg-niveaux-list .niveau-row')]
+      .map(row => parseInt(row.querySelector('[id$="-pts"]').value)).filter(n => !isNaN(n));
+    if(niveauxPts.length) points = Math.max(...niveauxPts);
+  }
 
   // Documents
   const documents = [];
@@ -543,7 +612,7 @@ function buildQuestion() {
     guide = { type: 'tableau', lignes };
   }
 
-  return { id, niveau, oi, periode, realite, points, enonce, aspects, documents, reponse, guide };
+  return { id, niveau, oi, periode, points, enonce, aspects, documents, reponse, guide };
 }
 
 function buildReglette(id) {
@@ -602,8 +671,7 @@ function validateForm() {
   const errors = [];
   if(!document.getElementById('q-id').value.trim()) errors.push('ID manquant');
   if(!document.getElementById('q-enonce').value.trim()) errors.push('Énoncé vide');
-  if(!document.getElementById('q-realite').value.trim()) errors.push('Réalité sociale vide');
-  if(!document.getElementById('q-aspects').value.trim()) errors.push('Aspect(s) vide(s)');
+  if(!document.querySelectorAll('#aspects-list input[type=checkbox]:checked').length) errors.push('Aucun aspect sélectionné');
   const repType = document.getElementById('rep-type').value;
   if(repType === 'image_ligne' && !document.getElementById('rep-ref')?.value) errors.push('Image de réponse non sélectionnée');
   if(repType === 'tableau' && !document.getElementById('rep-lignes')?.value.trim()) errors.push('Lignes du tableau réponse vides');
@@ -697,10 +765,8 @@ function resetForm(keepId=false) {
   document.getElementById('q-niveau').value = '3';
   document.getElementById('q-oi').value = document.getElementById('q-oi').options[0].value;
   document.getElementById('q-periode').value = document.getElementById('q-periode').options[0].value;
-  document.getElementById('q-realite').value = '';
-  document.getElementById('q-points').value = '2';
   document.getElementById('q-enonce').value = '';
-  document.getElementById('q-aspects').value = '';
+  updateAspects();
   document.getElementById('docs-list').innerHTML = '';
   document.getElementById('rep-type').value = 'none';
   document.getElementById('rep-extra').innerHTML = '';
