@@ -278,14 +278,23 @@ async function sha256(str) {
 document.getElementById('pwd-input').addEventListener('keydown', e => { if(e.key==='Enter') checkLogin(); });
 
 async function checkLogin() {
-  const hash = await sha256(document.getElementById('pwd-input').value);
-  if(hash === PWD_HASH) {
-    document.getElementById('login-screen').style.display = 'none';
-    document.getElementById('app').style.display = 'flex';
-    init();
-  } else {
-    document.getElementById('login-error').style.display = 'block';
-    document.getElementById('pwd-input').value = '';
+  const errEl = document.getElementById('login-error');
+  errEl.style.display = 'none';
+  try {
+    const hash = await sha256(document.getElementById('pwd-input').value);
+    if(hash === PWD_HASH) {
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('app').style.display = 'flex';
+      init();
+    } else {
+      errEl.textContent = 'Mot de passe incorrect.';
+      errEl.style.display = 'block';
+      document.getElementById('pwd-input').value = '';
+    }
+  } catch(e) {
+    errEl.textContent = 'Erreur technique : ' + e.message;
+    errEl.style.display = 'block';
+    console.error('checkLogin error:', e);
   }
 }
 
