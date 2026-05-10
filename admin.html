@@ -141,7 +141,7 @@ header a:hover { color: #fff; }
       <div class="row">
         <div class="field">
           <label>Niveau</label>
-          <select id="q-niveau">
+          <select id="q-niveau" onchange="updatePeriodes()">
             <option value="3">3</option>
             <option value="4">4</option>
           </select>
@@ -359,6 +359,19 @@ const ASPECTS_PAR_PERIODE = {
   ]
 };
 
+const PERIODES_PAR_NIVEAU = {
+  '3': ['P1 — Des origines à 1608','P2 — 1608 – 1760','P3 — 1760 – 1791','P4 — 1791 – 1840'],
+  '4': ['P5 — 1840 – 1896','P6 — 1896 – 1945','P7 — 1945 – 1980','P8 — De 1980 à nos jours']
+};
+
+function updatePeriodes() {
+  const niveau = document.getElementById('q-niveau').value;
+  const periodes = PERIODES_PAR_NIVEAU[niveau] || [];
+  const sel = document.getElementById('q-periode');
+  sel.innerHTML = periodes.map(p => `<option value="${p}">${p}</option>`).join('');
+  updateAspects();
+}
+
 function updateAspects() {
   const periode = document.getElementById('q-periode').value;
   const aspects = ASPECTS_PAR_PERIODE[periode] || [];
@@ -379,7 +392,7 @@ let questionsFileSha = '';
 async function init() {
   const token = sessionStorage.getItem('gh_token');
   if(token) document.getElementById('gh-token').value = token;
-  updateAspects();
+  updatePeriodes();
   addNiveau(); addNiveau(); addNiveau();
   await Promise.all([loadQuestionsJs(), loadImages()]);
 }
@@ -766,7 +779,7 @@ function resetForm(keepId=false) {
   document.getElementById('q-oi').value = document.getElementById('q-oi').options[0].value;
   document.getElementById('q-periode').value = document.getElementById('q-periode').options[0].value;
   document.getElementById('q-enonce').value = '';
-  updateAspects();
+  updatePeriodes();
   document.getElementById('docs-list').innerHTML = '';
   document.getElementById('rep-type').value = 'none';
   document.getElementById('rep-extra').innerHTML = '';
