@@ -301,17 +301,11 @@ const OWNER = 'sbergeronencp002';
 const REPO  = 'hqccssbf';
 const BRANCH = 'main';
 
-const IMAGES = [
-  'campement_algonquien_1500.png','image_jacques_cartier_1534.png',
-  'la_revolte_pontiac.jpg','ligne_1400_1550.jpg','mercantilisme_nf.png',
-  'nomade_1500.png','reseaux_echanges_1500.png','troc_1500.png','village_iroquoien_1500.png'
-];
-
+let IMAGES = [];
 let currentQuestions = [];
 let currentReglettes = {};
 let currentImageDb = {};
 let questionsFileSha = '';
-let IMAGES = [];
 
 async function init() {
   const token = sessionStorage.getItem('gh_token');
