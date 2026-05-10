@@ -1046,4 +1046,3 @@ async function genererDocx(includeGuide=false) {
     btnOther.disabled = false;
   }
 }
-</script>

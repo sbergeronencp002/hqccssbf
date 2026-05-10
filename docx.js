@@ -1,4 +1,4 @@
-<script>var docx = (function(exports) {
+var docx = (function(exports) {
   "use strict";var __defProp = Object.defineProperty;
 var __defProps = Object.defineProperties;
 var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
