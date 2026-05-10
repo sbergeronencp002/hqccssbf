@@ -24225,7 +24225,7 @@ function updatePanierBar() {
     const q = QUESTIONS.find(x => x.id === id);
     return `<div class="panier-chip" draggable="true" data-id="${id}" data-i="${i}"
       ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="dropQ(event)" ondragend="dragEnd(event)">
-      <span>Q${q.numero} — ${q.oi.split(' ').slice(0,3).join(' ')}…</span>
+      <span>${q.id} — ${q.oi.split(' ').slice(0,3).join(' ')}…</span>
       <button class="panier-chip-remove" onclick="retirerPanier('${id}')">×</button>
     </div>`;
   }).join('');
