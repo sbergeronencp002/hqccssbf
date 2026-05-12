@@ -153,16 +153,7 @@ header a:hover { color: #fff; }
         </div>
         <div class="field">
           <label>Période</label>
-          <select id="q-periode" onchange="updateAspects()">
-            <option value="P1 — Des origines à 1608">P1 — Des origines à 1608</option>
-            <option value="P2 — 1608 – 1760">P2 — 1608 – 1760</option>
-            <option value="P3 — 1760 – 1791">P3 — 1760 – 1791</option>
-            <option value="P4 — 1791 – 1840">P4 — 1791 – 1840</option>
-            <option value="P5 — 1840 – 1896">P5 — 1840 – 1896</option>
-            <option value="P6 — 1896 – 1945">P6 — 1896 – 1945</option>
-            <option value="P7 — 1945 – 1980">P7 — 1945 – 1980</option>
-            <option value="P8 — De 1980 à nos jours">P8 — De 1980 à nos jours</option>
-          </select>
+          <select id="q-periode" onchange="updateAspects()"></select>
         </div>
       </div>
       <div class="field">
@@ -241,7 +232,7 @@ header a:hover { color: #fff; }
       <div class="section-title">Réglette</div>
       <div class="field">
         <label>Réglette prémémorisée</label>
-        <select id="reg-preset" onchange="applyPreset()">
+        <select id="reg-preset">
           <option value="">— Sélectionner —</option>
         </select>
       </div>
@@ -314,10 +305,6 @@ function updatePresets() {
   const sel = document.getElementById('reg-preset');
   sel.innerHTML = '<option value="">— Sélectionner —</option>'
     + presets.map((p,i) => `<option value="${i}">${p.label}</option>`).join('');
-}
-
-function applyPreset() {
-  // Selection is stored in reg-preset; no manual fields to populate
 }
 
 // ── MODE ÉDITION ──────────────────────────────────────────────────────

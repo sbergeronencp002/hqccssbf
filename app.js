@@ -1,14 +1,12 @@
 
 const OI_STYLES = {
-  "Situer dans le temps":                   {cls:"b-oi-sit", color:"var(--c-sit)", bg:"var(--c-sit-bg)"},
-  "Situer dans l'espace":                   {cls:"b-oi-sit", color:"var(--c-sit)", bg:"var(--c-sit-bg)"},
-  "Établir des liens de causalité":         {cls:"b-oi-cau", color:"var(--c-cau)", bg:"var(--c-cau-bg)"},
-  "Dégager des différences et des similitudes": {cls:"b-oi-dif", color:"var(--c-dif)", bg:"var(--c-dif-bg)"},
-  "Dégager des différences et des similitudes": {cls:"b-oi-dif", color:"var(--c-dif)", bg:"var(--c-dif-bg)"},
+  "Situer dans le temps":                       {cls:"b-oi-sit", color:"var(--c-sit)", bg:"var(--c-sit-bg)"},
+  "Situer dans l'espace":                       {cls:"b-oi-sit", color:"var(--c-sit)", bg:"var(--c-sit-bg)"},
+  "Établir des liens de causalité":             {cls:"b-oi-cau", color:"var(--c-cau)", bg:"var(--c-cau-bg)"},
   "Dégager des différences et des similitudes": {cls:"b-oi-dif", color:"var(--c-dif)", bg:"var(--c-dif-bg)"},
   "Déterminer des changements et des continuités": {cls:"b-oi-chg", color:"var(--c-chg)", bg:"var(--c-chg-bg)"},
-  "Déterminer des causes et des conséquences": {cls:"b-oi-rel", color:"var(--c-rel)", bg:"var(--c-rel-bg)"},
-  "Mettre en relation des faits":           {cls:"b-oi-mr",  color:"var(--c-mr)",  bg:"var(--c-mr-bg)"},
+  "Déterminer des causes et des conséquences":  {cls:"b-oi-rel", color:"var(--c-rel)", bg:"var(--c-rel-bg)"},
+  "Mettre en relation des faits":               {cls:"b-oi-mr",  color:"var(--c-mr)",  bg:"var(--c-mr-bg)"},
 };
 
 function oiStyle(oi) {
@@ -16,15 +14,10 @@ function oiStyle(oi) {
 }
 
 let aspects = [];
-let periodeOrder = [
-  "P1 — Des origines à 1608","P2 — 1608 – 1760","P3 — 1760 – 1791","P4 — 1791 – 1840",
-  "P5 — 1840 – 1896","P6 — 1896 – 1945","P7 — 1945 – 1980","P8 — De 1980 à nos jours"
-];
+const periodeOrder = [...PERIODES_PAR_NIVEAU['3'], ...PERIODES_PAR_NIVEAU['4']];
 
 function populateFilters() {
-  const allOis = [...new Set(QUESTIONS.map(q=>q.oi))];
-  const regularOis = allOis.filter(o=>!o.startsWith('C')).sort((a,b)=>a.localeCompare(b,'fr'));
-  const compOis    = allOis.filter(o=>o.startsWith('C')).sort((a,b)=>a.localeCompare(b,'fr'));
+  const allOis = [...new Set(QUESTIONS.map(q=>q.oi))].sort((a,b)=>a.localeCompare(b,'fr'));
   const aspectsByPeriode = {};
   QUESTIONS.forEach(q=>{
     q.aspects.forEach(a=>{
@@ -40,7 +33,7 @@ function populateFilters() {
 
   fill('f-periode', periodes, "Toutes");
   fillAspect('f-aspect', aspects, periodeOrder);
-  fillOi('f-oi', regularOis, compOis, "Toutes");
+  fillOi('f-oi', allOis, "Toutes");
 }
 
 function fill(id, vals, placeholder) {
@@ -67,10 +60,10 @@ function fillAspect(id, aspects, periodeOrder) {
   });
 }
 
-function fillOi(id, regular, comp, placeholder) {
+function fillOi(id, ois, placeholder) {
   const el = document.getElementById(id);
   el.innerHTML = `<option value="">${placeholder}</option>`;
-  regular.forEach(v=>{ const o=document.createElement('option'); o.value=v; o.textContent=v; el.appendChild(o); });
+  ois.forEach(v=>{ const o=document.createElement('option'); o.value=v; o.textContent=v; el.appendChild(o); });
 }
 
 function onPeriodeChange() {
@@ -94,11 +87,9 @@ function applyFilters() {
     if(aspect && !q.aspects.some(a=>a.aspect===aspect)) return false;
     return true;
   });
-  const relevantOis = [...new Set(relevantQ.map(q=>q.oi))];
-  const regularOis = relevantOis.filter(o=>!o.startsWith('C')).sort((a,b)=>a.localeCompare(b,'fr'));
-  const compOis    = relevantOis.filter(o=>o.startsWith('C')).sort((a,b)=>a.localeCompare(b,'fr'));
+  const relevantOis = [...new Set(relevantQ.map(q=>q.oi))].sort((a,b)=>a.localeCompare(b,'fr'));
   const currentOi  = document.getElementById('f-oi').value;
-  fillOi('f-oi', regularOis, compOis, "Toutes");
+  fillOi('f-oi', relevantOis, "Toutes");
   if(relevantOis.includes(currentOi)) document.getElementById('f-oi').value = currentOi;
 
   const filtered = QUESTIONS.filter(q=>{
@@ -961,8 +952,8 @@ async function genererDocx(includeGuide=false) {
               return new docx.TableCell({
                 width: { size: colW, type: docx.WidthType.DXA },
                 verticalAlign: VerticalAlign.CENTER,
-                borders: { top:{style:docx.BorderStyle.SINGLE,size:4,color:'000000'}, bottom:{style:docx.BorderStyle.SINGLE,size:4,color:'000000'}, left:{style:docx.BorderStyle.SINGLE,size:4,color:'000000'}, right:{style:docx.BorderStyle.SINGLE,size:4,color:'000000'} },
-                margins: { top:80, bottom:80, left:80, right:80 },
+                borders: BORDERS,
+                margins: CELL_MARGINS,
                 children: cellChildren
               });
             });
@@ -998,8 +989,8 @@ async function genererDocx(includeGuide=false) {
               return new docx.TableCell({
                 width: { size: colW2, type: docx.WidthType.DXA },
                 verticalAlign: VerticalAlign.TOP,
-                borders: { top:{style:docx.BorderStyle.SINGLE,size:4,color:'000000'}, bottom:{style:docx.BorderStyle.SINGLE,size:4,color:'000000'}, left:{style:docx.BorderStyle.SINGLE,size:4,color:'000000'}, right:{style:docx.BorderStyle.SINGLE,size:4,color:'000000'} },
-                margins: { top:80, bottom:80, left:80, right:80 },
+                borders: BORDERS,
+                margins: CELL_MARGINS,
                 children: cellChildren
               });
             });
@@ -1077,7 +1068,7 @@ async function genererDocx(includeGuide=false) {
               new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
                 children: [new Paragraph({ children: [new TextRun({ text: l.label, font: 'Aptos', size: 20 })] })] }),
               new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
-                children: [new Paragraph({ children: [new TextRun({ text: l.valeur, font: 'Aptos', size: 20 })] })] })
+                children: [new Paragraph({ children: [new TextRun({ text: '', font: 'Aptos', size: 20 })] })] })
             ]}));
           });
           children.push(new Table({ width: { size: PAGE_W, type: WidthType.DXA }, columnWidths: [colDoc, colVal], rows: repRows }));
