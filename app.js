@@ -165,6 +165,65 @@ function buildReglettHTML(q) {
     </table>`;
   }
 
+  if(r.variante === 'acteur-positions') {
+    return `<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%">
+      <tr>
+        <td style="${SB};width:22%" rowspan="5">${r.oi}</td>
+        <td style="${S};width:43%" rowspan="4">L'élève nomme correctement l'acteur qui présente une position différente</td>
+        <td style="${S}">et présente correctement les deux positions.</td>
+        <td style="${S};width:17%">3 points</td>
+      </tr>
+      <tr>
+        <td style="${S}">et présente correctement une position et plus ou moins correctement l'autre position.</td>
+        <td style="${S}">2 points</td>
+      </tr>
+      <tr>
+        <td style="${S}">et présente plus ou moins correctement les deux positions, ou présente correctement une position et incorrectement l'autre ou ne la présente pas.</td>
+        <td style="${S}">1 point</td>
+      </tr>
+      <tr>
+        <td style="${S}">et présente tout au plus une seule position plus ou moins correctement.</td>
+        <td style="${S}">0 point</td>
+      </tr>
+      <tr>
+        <td style="${S}" colspan="2">L'élève nomme incorrectement l'acteur qui présente une position différente ou ne le nomme pas.</td>
+        <td style="${S}">0 point</td>
+      </tr>
+    </table>`;
+  }
+
+  if(r.variante === 'changement-continuité') {
+    return `<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%">
+      <tr>
+        <td style="${SB};width:22%" rowspan="6">${r.oi}</td>
+        <td style="${S};width:37%" rowspan="3">L'élève indique s'il y a changement ou continuité</td>
+        <td style="${S}">et présente des faits qui le montrent correctement.</td>
+        <td style="${S};width:20%">3 points (ou 2 points)</td>
+      </tr>
+      <tr>
+        <td style="${S}">et présente des faits qui le montrent plus ou moins correctement.</td>
+        <td style="${S}">2 points (ou 1 point)</td>
+      </tr>
+      <tr>
+        <td style="${S}">et présente des faits qui le montrent incorrectement ou n'en présente pas.</td>
+        <td style="${S}">0 point</td>
+      </tr>
+      <tr>
+        <td style="${S}" rowspan="3">L'élève n'indique pas s'il y a changement ou continuité</td>
+        <td style="${S}">mais présente des faits exacts.</td>
+        <td style="${S}">2 points (ou 1 point)</td>
+      </tr>
+      <tr>
+        <td style="${S}">mais présente des faits plus ou moins exacts.</td>
+        <td style="${S}">1 point (ou 0 point)</td>
+      </tr>
+      <tr>
+        <td style="${S}">et présente des faits inexacts ou n'en présente pas.</td>
+        <td style="${S}">0 point</td>
+      </tr>
+    </table>`;
+  }
+
   // Standard layout — header row (points) + description row
   const colW = Math.floor(78 / r.colonnes.length);
   const headers = r.colonnes.map(c=>`<td style="${S};width:${colW}%">${c}</td>`).join('');
@@ -768,6 +827,31 @@ async function genererDocx(includeGuide=false) {
             new TableRow({ children: [mkCell("L'élève précise un seul élément ou n'en précise pas.", false, 1, 2), mkCell("0 point")] }),
           ]
         })];
+      }
+
+      if(r.variante === 'acteur-positions') {
+        const c1=Math.floor(PAGE_W*0.22), c2=Math.floor(PAGE_W*0.43), c3=Math.floor(PAGE_W*0.22), c4=PAGE_W-c1-c2-c3;
+        const mk=(t,bold=false,rs=1,cs=1)=>new TableCell({borders:BORDERS,margins:CELL_MARGINS,verticalAlign:VerticalAlign.CENTER,rowSpan:rs>1?rs:undefined,columnSpan:cs>1?cs:undefined,children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:t,font:'Aptos',size:12,bold})]})]});
+        return [new Table({width:{size:PAGE_W,type:WidthType.DXA},columnWidths:[c1,c2,c3,c4],rows:[
+          new TableRow({children:[mk(r.oi,true,5),mk("L'élève nomme correctement l'acteur qui présente une position différente",false,4),mk("et présente correctement les deux positions."),mk("3 points")]}),
+          new TableRow({children:[mk("et présente correctement une position et plus ou moins correctement l'autre position."),mk("2 points")]}),
+          new TableRow({children:[mk("et présente plus ou moins correctement les deux positions, ou présente correctement une position et incorrectement l'autre ou ne la présente pas."),mk("1 point")]}),
+          new TableRow({children:[mk("et présente tout au plus une seule position plus ou moins correctement."),mk("0 point")]}),
+          new TableRow({children:[mk("L'élève nomme incorrectement l'acteur qui présente une position différente ou ne le nomme pas.",false,1,2),mk("0 point")]}),
+        ]})];
+      }
+
+      if(r.variante === 'changement-continuité') {
+        const c1=Math.floor(PAGE_W*0.22), c2=Math.floor(PAGE_W*0.37), c3=Math.floor(PAGE_W*0.21), c4=PAGE_W-c1-c2-c3;
+        const mk=(t,bold=false,rs=1,cs=1)=>new TableCell({borders:BORDERS,margins:CELL_MARGINS,verticalAlign:VerticalAlign.CENTER,rowSpan:rs>1?rs:undefined,columnSpan:cs>1?cs:undefined,children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:t,font:'Aptos',size:12,bold})]})]});
+        return [new Table({width:{size:PAGE_W,type:WidthType.DXA},columnWidths:[c1,c2,c3,c4],rows:[
+          new TableRow({children:[mk(r.oi,true,6),mk("L'élève indique s'il y a changement ou continuité",false,3),mk("et présente des faits qui le montrent correctement."),mk("3 points (ou 2 points)")]}),
+          new TableRow({children:[mk("et présente des faits qui le montrent plus ou moins correctement."),mk("2 points (ou 1 point)")]}),
+          new TableRow({children:[mk("et présente des faits qui le montrent incorrectement ou n'en présente pas."),mk("0 point")]}),
+          new TableRow({children:[mk("L'élève n'indique pas s'il y a changement ou continuité",false,3),mk("mais présente des faits exacts."),mk("2 points (ou 1 point)")]}),
+          new TableRow({children:[mk("mais présente des faits plus ou moins exacts."),mk("1 point (ou 0 point)")]}),
+          new TableRow({children:[mk("et présente des faits inexacts ou n'en présente pas."),mk("0 point")]}),
+        ]})];
       }
 
       // Standard layout

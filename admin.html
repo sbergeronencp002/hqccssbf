@@ -113,7 +113,7 @@ header a:hover { color: #fff; }
 <!-- APP -->
 <div id="app">
   <header>
-    <h1>HQC · CSSBF — Ajout de question</h1>
+    <h1>HQC · CSSBF — Gestion des questions</h1>
     <a href="index.html">← Retour au site</a>
   </header>
 
@@ -124,6 +124,27 @@ header a:hover { color: #fff; }
       <label>Token GitHub</label>
       <input type="password" id="gh-token" placeholder="ghp_..." autocomplete="off" oninput="saveToken()">
       <span class="token-status" id="token-status"></span>
+    </div>
+
+    <!-- MODE -->
+    <div class="section">
+      <div class="section-title">Mode</div>
+      <div style="display:flex;gap:1.5rem;margin-bottom:.5rem">
+        <label style="display:flex;align-items:center;gap:.4rem;cursor:pointer;font-size:.85rem">
+          <input type="radio" name="mode" value="new" checked onchange="setMode('new')"> Nouvelle question
+        </label>
+        <label style="display:flex;align-items:center;gap:.4rem;cursor:pointer;font-size:.85rem">
+          <input type="radio" name="mode" value="edit" onchange="setMode('edit')"> Modifier une question existante
+        </label>
+      </div>
+      <div id="edit-select-wrap" style="display:none">
+        <div class="field" style="margin-bottom:0">
+          <label>Question à modifier</label>
+          <select id="edit-q-select" onchange="loadQuestion(this.value)">
+            <option value="">— Choisir —</option>
+          </select>
+        </div>
+      </div>
     </div>
 
     <!-- IDENTIFIANT -->
@@ -166,7 +187,7 @@ header a:hover { color: #fff; }
       </div>
       <div class="field">
         <label>Opération intellectuelle</label>
-        <select id="q-oi">
+        <select id="q-oi" onchange="updatePresets()">
           <option>Situer dans le temps</option>
           <option>Situer dans l'espace</option>
           <option>Établir des liens de causalité</option>
@@ -178,9 +199,9 @@ header a:hover { color: #fff; }
       </div>
     </div>
 
-    <!-- ÉNONCÉ -->
+    <!-- QUESTION -->
     <div class="section">
-      <div class="section-title">Énoncé</div>
+      <div class="section-title">Question</div>
       <div class="field">
         <textarea id="q-enonce" rows="4" placeholder="Texte de la question…"></textarea>
       </div>
@@ -194,6 +215,25 @@ header a:hover { color: #fff; }
         <button class="btn-add" onclick="addDoc('textes')">+ Texte</button>
         <button class="btn-add" onclick="addDoc('image')">+ Image</button>
         <button class="btn-add" onclick="addDoc('textes-image')">+ Texte + Image (côte à côte)</button>
+      </div>
+    </div>
+
+    <!-- UPLOAD IMAGE -->
+    <div class="section">
+      <div class="section-title">Téléverser une image</div>
+      <div class="row">
+        <div class="field">
+          <label>Fichier</label>
+          <input type="file" id="upload-file" accept="image/*" onchange="onUploadFileChange()" style="padding:.3rem">
+        </div>
+        <div class="field">
+          <label>Renommer <span style="font-weight:400;color:var(--ink-3)">(optionnel)</span></label>
+          <input type="text" id="upload-name" placeholder="nom_du_fichier.png">
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:1rem;margin-top:.5rem">
+        <button class="btn-secondary" id="btn-upload" onclick="uploadImage()">⬆ Téléverser dans GitHub</button>
+        <span id="upload-status" style="font-size:.82rem;color:var(--ink-3)"></span>
       </div>
     </div>
 
@@ -216,10 +256,18 @@ header a:hover { color: #fff; }
     <div class="section">
       <div class="section-title">Réglette</div>
       <div class="field">
+        <label>Réglette prémémorisée</label>
+        <select id="reg-preset" onchange="applyPreset()">
+          <option value="">— Sélectionner —</option>
+        </select>
+      </div>
+      <div class="field">
         <label>Variante spéciale</label>
         <select id="reg-variante" onchange="updateRegletteUI()">
           <option value="">Standard</option>
           <option value="3 éléments — 2 liens">3 éléments — 2 liens (causalité complexe)</option>
+          <option value="acteur-positions">Dégager — acteur et positions (complexe)</option>
+          <option value="changement-continuité">Déterminer — changement ou continuité (complexe)</option>
         </select>
       </div>
       <div id="reg-colonnes-wrap">
@@ -381,6 +429,225 @@ function updateAspects() {
       <input type="checkbox" value="${a}" style="width:auto;cursor:pointer"> ${a}
     </label>`
   ).join('');
+}
+
+const REGLETTES_PRESET = {
+  "Situer dans le temps": [
+    { label:"2 pts — tous les faits", colonnes:["2 points","0 point"], niveaux:[{pts:2,desc:"L'élève situe tous les faits dans le temps."},{pts:0,desc:"L'élève ne situe pas tous les faits dans le temps."}] },
+    { label:"1 pt — les faits",       colonnes:["1 point","0 point"],  niveaux:[{pts:1,desc:"L'élève situe les faits dans le temps."},{pts:0,desc:"L'élève ne situe pas les faits dans le temps."}] }
+  ],
+  "Situer dans l'espace": [
+    { label:"1 pt — le fait",   colonnes:["1 point","0 point"],  niveaux:[{pts:1,desc:"L'élève situe le fait dans l'espace."},{pts:0,desc:"L'élève ne situe pas le fait dans l'espace."}] },
+    { label:"2 pts — le fait",  colonnes:["2 points","0 point"], niveaux:[{pts:2,desc:"L'élève situe le fait dans l'espace."},{pts:0,desc:"L'élève ne situe pas le fait dans l'espace."}] },
+    { label:"2 pts — les faits",colonnes:["2 points","0 point"], niveaux:[{pts:2,desc:"L'élève situe les faits dans l'espace."},{pts:0,desc:"L'élève ne situe pas les faits dans l'espace."}] }
+  ],
+  "Dégager des différences et des similitudes": [
+    { label:"2 pts — différence",        colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève dégage correctement la différence."},{pts:1,desc:"L'élève dégage plus ou moins correctement la différence."},{pts:0,desc:"L'élève dégage incorrectement la différence ou ne la dégage pas."}] },
+    { label:"2 pts — similitude",        colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève dégage correctement la similitude."},{pts:1,desc:"L'élève dégage plus ou moins correctement la similitude."},{pts:0,desc:"L'élève dégage incorrectement la similitude ou ne la dégage pas."}] },
+    { label:"2 pts — point de divergence",  colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève établit correctement le point de divergence entre les points de vue."},{pts:1,desc:"L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."},{pts:0,desc:"L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}] },
+    { label:"2 pts — point de convergence", colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève établit correctement le point de convergence entre les points de vue."},{pts:1,desc:"L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},{pts:0,desc:"L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}] },
+    { label:"3 pts — acteur et positions (complexe)", variante:"acteur-positions" }
+  ],
+  "Déterminer des causes et des conséquences": [
+    { label:"2 pts — facteur explicatif",       colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève détermine correctement le facteur explicatif."},{pts:1,desc:"L'élève détermine plus ou moins correctement le facteur explicatif."},{pts:0,desc:"L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}] },
+    { label:"2 pts — conséquence",               colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève détermine correctement la conséquence."},{pts:1,desc:"L'élève détermine plus ou moins correctement la conséquence."},{pts:0,desc:"L'élève détermine incorrectement la conséquence ou ne la détermine pas."}] },
+    { label:"2 pts — deux facteurs (2 sur 2)",   colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève détermine les deux facteurs explicatifs. (2 sur 2)"},{pts:1,desc:"L'élève détermine l'un des facteurs explicatifs. (1 sur 2)"},{pts:0,desc:"L'élève ne détermine pas les facteurs explicatifs. (0 sur 2)"}] },
+    { label:"2 pts — facteur + conséquence (2 sur 2)", colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"},{pts:1,desc:"L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"},{pts:0,desc:"L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}] }
+  ],
+  "Mettre en relation des faits": [
+    { label:"2 pts — 2 sur 2", colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève met en relation tous les faits. (2 sur 2)"},{pts:1,desc:"L'élève met en relation certains faits. (1 sur 2)"},{pts:0,desc:"L'élève ne met pas en relation les faits. (0 sur 2)"}] },
+    { label:"2 pts — 3 sur 3", colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève met en relation tous les faits. (3 sur 3)"},{pts:1,desc:"L'élève met en relation certains faits. (2 sur 3)"},{pts:0,desc:"L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}] },
+    { label:"2 pts — 4 sur 4", colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève met en relation tous les faits. (4 sur 4)"},{pts:1,desc:"L'élève met en relation certains faits. (3 ou 2 sur 4)"},{pts:0,desc:"L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}] }
+  ],
+  "Déterminer des changements et des continuités": [
+    { label:"2 pts — changement", colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève détermine correctement le changement."},{pts:1,desc:"L'élève détermine plus ou moins correctement le changement."},{pts:0,desc:"L'élève détermine incorrectement le changement ou ne le détermine pas."}] },
+    { label:"2 pts — continuité", colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève détermine correctement la continuité."},{pts:1,desc:"L'élève détermine plus ou moins correctement la continuité."},{pts:0,desc:"L'élève détermine incorrectement la continuité ou ne la détermine pas."}] },
+    { label:"3 pts — changement ou continuité avec faits (complexe)", variante:"changement-continuité" }
+  ],
+  "Établir des liens de causalité": [
+    { label:"3 pts — 3 éléments, 2 liens (complexe)", variante:"3 éléments — 2 liens" }
+  ]
+};
+
+function updatePresets() {
+  const oi = document.getElementById('q-oi').value;
+  const presets = REGLETTES_PRESET[oi] || [];
+  const sel = document.getElementById('reg-preset');
+  sel.innerHTML = '<option value="">— Sélectionner —</option>'
+    + presets.map((p,i) => `<option value="${i}">${p.label}</option>`).join('');
+}
+
+function applyPreset() {
+  const oi = document.getElementById('q-oi').value;
+  const idx = parseInt(document.getElementById('reg-preset').value);
+  if(isNaN(idx)) return;
+  const preset = (REGLETTES_PRESET[oi] || [])[idx];
+  if(!preset) return;
+  if(preset.variante) {
+    document.getElementById('reg-variante').value = preset.variante;
+    updateRegletteUI();
+    return;
+  }
+  document.getElementById('reg-variante').value = '';
+  updateRegletteUI();
+  document.getElementById('reg-colonnes').value = preset.colonnes.join(', ');
+  document.getElementById('reg-niveaux-list').innerHTML = '';
+  niveauCount = 0;
+  preset.niveaux.forEach(n => {
+    addNiveau();
+    document.getElementById('niv-'+niveauCount+'-pts').value = n.pts;
+    document.getElementById('niv-'+niveauCount+'-desc').value = n.desc;
+  });
+}
+
+// ── MODE ÉDITION ──────────────────────────────────────────────────────
+let editingId = null;
+
+function setMode(mode) {
+  const wrap = document.getElementById('edit-select-wrap');
+  if(mode === 'edit') {
+    wrap.style.display = '';
+    populateEditSelect();
+  } else {
+    wrap.style.display = 'none';
+    editingId = null;
+    const nums = currentQuestions.map(q => parseInt(q.id.replace(/\D/g,''))).filter(n=>!isNaN(n));
+    const nextId = nums.length ? 'Q' + (Math.max(...nums)+1) : 'Q1';
+    document.getElementById('q-id').value = nextId;
+    document.getElementById('next-id-badge').textContent = nextId;
+    resetForm(true);
+  }
+}
+
+function populateEditSelect() {
+  const sel = document.getElementById('edit-q-select');
+  sel.innerHTML = '<option value="">— Choisir —</option>'
+    + currentQuestions.map(q => `<option value="${q.id}">${q.id} — ${q.oi.split(' ').slice(0,3).join(' ')} (${q.periode})</option>`).join('');
+}
+
+function loadQuestion(id) {
+  if(!id) { editingId = null; return; }
+  const q = currentQuestions.find(x => x.id === id);
+  const r = currentReglettes[id];
+  if(!q) return;
+  editingId = id;
+
+  document.getElementById('q-id').value = q.id;
+  document.getElementById('next-id-badge').textContent = q.id;
+  document.getElementById('q-niveau').value = String(q.niveau);
+  updatePeriodes();
+  document.getElementById('q-periode').value = q.periode;
+  updateAspects();
+  const aspectValues = new Set((q.aspects||[]).map(a=>a.aspect));
+  document.querySelectorAll('#aspects-list input[type=checkbox]').forEach(cb => { cb.checked = aspectValues.has(cb.value); });
+  document.getElementById('q-oi').value = q.oi;
+  updatePresets();
+  document.getElementById('q-enonce').value = q.enonce || '';
+
+  document.getElementById('docs-list').innerHTML = '';
+  docCount = 0; colCount = 0;
+  (q.documents||[]).forEach(d => {
+    if(d.type==='textes' && d.cols) {
+      if(d.cols.length===1) {
+        const col = d.cols[0];
+        if(col.ref) {
+          addDoc('image');
+          document.getElementById('doc-'+docCount+'-titre').value = col.titre||'';
+          const s = document.getElementById('doc-'+docCount+'-ref');
+          if(s) s.value = col.ref;
+        } else {
+          addDoc('textes');
+          document.getElementById('doc-'+docCount+'-titre').value = col.titre||'';
+          document.getElementById('doc-'+docCount+'-texte').value = col.texte||'';
+        }
+      } else {
+        addDoc('textes-image');
+        const docId = docCount;
+        d.cols.forEach(col => {
+          if(col.ref) {
+            addCol(docId,'image');
+            document.getElementById('col-'+colCount+'-titre').value = col.titre||'';
+            const s = document.getElementById('col-'+colCount+'-ref');
+            if(s) s.value = col.ref;
+          } else {
+            addCol(docId,'texte');
+            document.getElementById('col-'+colCount+'-titre').value = col.titre||'';
+            document.getElementById('col-'+colCount+'-texte').value = col.texte||'';
+          }
+        });
+      }
+    }
+  });
+
+  const repType = q.reponse ? (q.reponse===true?'none':q.reponse.type) : 'none';
+  document.getElementById('rep-type').value = repType;
+  updateReponseUI();
+  if(repType==='lignes') document.getElementById('rep-nombre').value = q.reponse.nombre||2;
+  else if(repType==='image_ligne') { const s=document.getElementById('rep-ref'); if(s) s.value=q.reponse.ref||''; }
+  else if(repType==='tableau') document.getElementById('rep-lignes').value = (q.reponse.lignes||[]).map(l=>l.label).join('\n');
+
+  if(r) {
+    document.getElementById('reg-variante').value = r.variante||'';
+    updateRegletteUI();
+    if(!r.variante) {
+      document.getElementById('reg-colonnes').value = (r.colonnes||[]).join(', ');
+      document.getElementById('reg-niveaux-list').innerHTML = '';
+      niveauCount = 0;
+      (r.niveaux||[]).forEach(n => { addNiveau(); document.getElementById('niv-'+niveauCount+'-pts').value=n.pts; document.getElementById('niv-'+niveauCount+'-desc').value=n.desc; });
+    }
+  }
+
+  if(q.guide && typeof q.guide==='string') {
+    document.getElementById('guide-type').value='texte'; updateGuideUI();
+    document.getElementById('guide-texte').value = q.guide;
+  } else if(q.guide && q.guide.type==='tableau') {
+    document.getElementById('guide-type').value='tableau'; updateGuideUI();
+    document.getElementById('guide-tableau').value = (q.guide.lignes||[]).map(l=>l.label+' | '+l.valeur).join('\n');
+  } else {
+    document.getElementById('guide-type').value='texte'; updateGuideUI();
+    document.getElementById('guide-texte').value='';
+  }
+}
+
+// ── UPLOAD IMAGE ──────────────────────────────────────────────────────
+function onUploadFileChange() {
+  const file = document.getElementById('upload-file').files[0];
+  if(!file) return;
+  const nameField = document.getElementById('upload-name');
+  if(!nameField.value) nameField.value = file.name;
+}
+
+async function uploadImage() {
+  const token = getToken();
+  if(!token) { toast('Saisis ton token GitHub.', 'err'); return; }
+  const file = document.getElementById('upload-file').files[0];
+  if(!file) { toast('Sélectionne un fichier image.', 'err'); return; }
+  const name = (document.getElementById('upload-name').value.trim() || file.name).replace(/\s+/g,'_');
+  const statusEl = document.getElementById('upload-status');
+  const btn = document.getElementById('btn-upload');
+  btn.disabled = true; statusEl.textContent = '⏳ Téléversement…';
+  try {
+    const b64 = await new Promise((res,rej) => {
+      const reader = new FileReader();
+      reader.onload = e => res(e.target.result.split(',')[1]);
+      reader.onerror = rej;
+      reader.readAsDataURL(file);
+    });
+    const putResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/images/${name}`, {
+      method:'PUT',
+      headers:{ Authorization:`token ${token}`, 'Content-Type':'application/json' },
+      body: JSON.stringify({ message:`Ajouter image : ${name}`, content:b64, branch:BRANCH })
+    });
+    if(!putResp.ok) { const err=await putResp.json(); throw new Error(err.message||putResp.status); }
+    statusEl.textContent = `✓ ${name} téléversé !`;
+    document.getElementById('upload-file').value='';
+    document.getElementById('upload-name').value='';
+    await loadImages();
+    toast(`"${name}" ajouté aux images.`, 'ok');
+  } catch(e) {
+    statusEl.textContent = '✗ ' + e.message;
+    toast('Erreur : ' + e.message, 'err');
+  } finally { btn.disabled = false; }
 }
 
 let IMAGES = [];
@@ -631,13 +898,22 @@ function buildQuestion() {
 function buildReglette(id) {
   const variante = document.getElementById('reg-variante').value;
   const oi = document.getElementById('q-oi').value;
-  if(variante) {
-    return { oi, variante, colonnes: ['3 points','2 points','1 point','0 point'], niveaux: [
-      { pts:3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité." },
-      { pts:2, desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité." },
-      { pts:1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité." },
-      { pts:0, desc: "L'élève précise un seul élément ou n'en précise pas." }
+  if(variante === '3 éléments — 2 liens') {
+    return { oi, variante, colonnes:['3 points','2 points','1 point','0 point'], niveaux:[
+      {pts:3,desc:"L'élève précise les trois éléments et établit correctement deux liens de causalité."},
+      {pts:2,desc:"L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."},
+      {pts:1,desc:"L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts:0,desc:"L'élève précise un seul élément ou n'en précise pas."}
     ]};
+  }
+  if(variante === 'acteur-positions') {
+    return { oi, variante, colonnes:['3 points','2 points','1 point','0 point'], niveaux:[] };
+  }
+  if(variante === 'changement-continuité') {
+    return { oi, variante, colonnes:['3 points','2 points','1 point','0 point'], niveaux:[] };
+  }
+  if(variante) {
+    return { oi, variante, colonnes:['3 points','2 points','1 point','0 point'], niveaux:[] };
   }
   const colonnes = document.getElementById('reg-colonnes').value.split(',').map(s=>s.trim()).filter(Boolean);
   const niveaux = [];
@@ -728,7 +1004,12 @@ async function publier() {
       if(!currentImageDb[ref]) currentImageDb[ref] = { src: 'images/' + ref };
     });
 
-    currentQuestions.push(q);
+    if(editingId) {
+      const idx = currentQuestions.findIndex(x => x.id === editingId);
+      if(idx !== -1) currentQuestions[idx] = q; else currentQuestions.push(q);
+    } else {
+      currentQuestions.push(q);
+    }
     currentReglettes[q.id] = r;
 
     const newContent = generateQuestionsJs(currentQuestions, currentReglettes, currentImageDb);
@@ -738,7 +1019,7 @@ async function publier() {
       method: 'PUT',
       headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        message: `Ajouter ${q.id} — ${q.oi} (${q.periode})`,
+        message: editingId ? `Modifier ${q.id} — ${q.oi}` : `Ajouter ${q.id} — ${q.oi} (${q.periode})`,
         content: encoded,
         sha: questionsFileSha,
         branch: BRANCH
@@ -759,8 +1040,9 @@ async function publier() {
     document.getElementById('q-id').value = nextId;
     document.getElementById('next-id-badge').textContent = nextId;
 
-    toast(`${q.id} publié avec succès !`, 'ok');
-    status.textContent = `✓ ${q.id} ajouté — ${new Date().toLocaleTimeString('fr-CA')}`;
+    toast(editingId ? `${q.id} modifié !` : `${q.id} publié !`, 'ok');
+    status.textContent = `✓ ${q.id} ${editingId?'modifié':'ajouté'} — ${new Date().toLocaleTimeString('fr-CA')}`;
+    editingId = null;
     resetForm(true);
 
   } catch(e) {
@@ -774,6 +1056,9 @@ async function publier() {
 
 // ── RESET ─────────────────────────────────────────────────────────────
 function resetForm(keepId=false) {
+  editingId = null;
+  const newRadio = document.querySelector('input[name="mode"][value="new"]');
+  if(newRadio) { newRadio.checked = true; document.getElementById('edit-select-wrap').style.display='none'; }
   if(!keepId) document.getElementById('q-id').value = '';
   document.getElementById('q-niveau').value = '3';
   document.getElementById('q-oi').value = document.getElementById('q-oi').options[0].value;
