@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin — HQC · CSSBF</title>
+<script src="reglettes.js"></script>
 <style>
 :root {
   --ink: #1a1814; --ink-2: #4a4740; --ink-3: #8a8680;
@@ -14,18 +15,6 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'DM Sans','Segoe UI',Helvetica,Arial,sans-serif; background: var(--paper); color: var(--ink); min-height: 100vh; }
 
-/* ── LOGIN ── */
-#login-screen {
-  display: flex; align-items: center; justify-content: center;
-  min-height: 100vh; flex-direction: column; gap: 1.5rem;
-}
-#login-screen h1 { font-size: 1.4rem; color: var(--accent); }
-#login-box { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 2rem; width: 320px; display: flex; flex-direction: column; gap: 1rem; }
-#login-box input { padding: .6rem .8rem; border: 1px solid var(--border); border-radius: 5px; font-size: .9rem; width: 100%; }
-#login-box button { padding: .65rem; background: var(--accent); color: #fff; border: none; border-radius: 5px; font-size: .9rem; cursor: pointer; }
-#login-box button:hover { opacity: .9; }
-#login-error { color: var(--red); font-size: .8rem; display: none; }
-
 /* ── HEADER ── */
 header { background: var(--accent); color: #fff; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
 header h1 { font-size: 1.2rem; font-weight: 500; }
@@ -33,7 +22,7 @@ header a { color: rgba(255,255,255,.7); font-size: .8rem; text-decoration: none;
 header a:hover { color: #fff; }
 
 /* ── LAYOUT ── */
-#app { display: none; flex-direction: column; min-height: 100vh; }
+#app { display: flex; flex-direction: column; min-height: 100vh; }
 .container { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; }
 
 /* ── TOKEN BAR ── */
@@ -99,16 +88,6 @@ header a:hover { color: #fff; }
 </style>
 </head>
 <body>
-
-<!-- LOGIN -->
-<div id="login-screen">
-  <h1>HQC · CSSBF — Administration</h1>
-  <div id="login-box">
-    <input type="password" id="pwd-input" placeholder="Mot de passe" autocomplete="current-password">
-    <button onclick="checkLogin()">Connexion</button>
-    <span id="login-error">Mot de passe incorrect.</span>
-  </div>
-</div>
 
 <!-- APP -->
 <div id="app">
@@ -261,24 +240,6 @@ header a:hover { color: #fff; }
           <option value="">— Sélectionner —</option>
         </select>
       </div>
-      <div class="field">
-        <label>Variante spéciale</label>
-        <select id="reg-variante" onchange="updateRegletteUI()">
-          <option value="">Standard</option>
-          <option value="3 éléments — 2 liens">3 éléments — 2 liens (causalité complexe)</option>
-          <option value="acteur-positions">Dégager — acteur et positions (complexe)</option>
-          <option value="changement-continuité">Déterminer — changement ou continuité (complexe)</option>
-        </select>
-      </div>
-      <div id="reg-colonnes-wrap">
-        <div class="field">
-          <label>Colonnes <span style="font-weight:400;color:var(--ink-3)">(titres séparés par virgule, ex. : 2 points, 1 point, 0 point)</span></label>
-          <input type="text" id="reg-colonnes" placeholder="2 points, 1 point, 0 point">
-        </div>
-        <div class="section-title" style="margin-top:.5rem">Niveaux</div>
-        <div id="reg-niveaux-list"></div>
-        <button class="btn-add" onclick="addNiveau()">+ Ajouter un niveau</button>
-      </div>
     </div>
 
     <!-- GUIDE -->
@@ -309,38 +270,9 @@ header a:hover { color: #fff; }
 <div id="toast"></div>
 
 <script>
-// ── AUTH ──────────────────────────────────────────────────────────────
-const PWD_HASH = '1b2a2bc472dfbeff664c8414e5cef2811928d5b68ad6588b2a3d87d8a066afc4';
-
-async function sha256(str) {
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
-  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
-}
-
-document.getElementById('pwd-input').addEventListener('keydown', e => { if(e.key==='Enter') checkLogin(); });
-
-async function checkLogin() {
-  const errEl = document.getElementById('login-error');
-  errEl.style.display = 'none';
-  try {
-    const hash = await sha256(document.getElementById('pwd-input').value);
-    if(hash === PWD_HASH) {
-      document.getElementById('login-screen').style.display = 'none';
-      document.getElementById('app').style.display = 'flex';
-      init();
-    } else {
-      errEl.textContent = 'Mot de passe incorrect.';
-      errEl.style.display = 'block';
-      document.getElementById('pwd-input').value = '';
-    }
-  } catch(e) {
-    errEl.textContent = 'Erreur technique : ' + e.message;
-    errEl.style.display = 'block';
-    console.error('checkLogin error:', e);
-  }
-}
-
 // ── TOKEN ─────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', init);
+
 function saveToken() {
   sessionStorage.setItem('gh_token', document.getElementById('gh-token').value);
   document.getElementById('token-status').textContent = '';
@@ -431,44 +363,6 @@ function updateAspects() {
   ).join('');
 }
 
-const REGLETTES_PRESET = {
-  "Situer dans le temps": [
-    { label:"2 pts — tous les faits", colonnes:["2 points","0 point"], niveaux:[{pts:2,desc:"L'élève situe tous les faits dans le temps."},{pts:0,desc:"L'élève ne situe pas tous les faits dans le temps."}] },
-    { label:"1 pt — les faits",       colonnes:["1 point","0 point"],  niveaux:[{pts:1,desc:"L'élève situe les faits dans le temps."},{pts:0,desc:"L'élève ne situe pas les faits dans le temps."}] }
-  ],
-  "Situer dans l'espace": [
-    { label:"1 pt — le fait",   colonnes:["1 point","0 point"],  niveaux:[{pts:1,desc:"L'élève situe le fait dans l'espace."},{pts:0,desc:"L'élève ne situe pas le fait dans l'espace."}] },
-    { label:"2 pts — le fait",  colonnes:["2 points","0 point"], niveaux:[{pts:2,desc:"L'élève situe le fait dans l'espace."},{pts:0,desc:"L'élève ne situe pas le fait dans l'espace."}] },
-    { label:"2 pts — les faits",colonnes:["2 points","0 point"], niveaux:[{pts:2,desc:"L'élève situe les faits dans l'espace."},{pts:0,desc:"L'élève ne situe pas les faits dans l'espace."}] }
-  ],
-  "Dégager des différences et des similitudes": [
-    { label:"2 pts — différence",        colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève dégage correctement la différence."},{pts:1,desc:"L'élève dégage plus ou moins correctement la différence."},{pts:0,desc:"L'élève dégage incorrectement la différence ou ne la dégage pas."}] },
-    { label:"2 pts — similitude",        colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève dégage correctement la similitude."},{pts:1,desc:"L'élève dégage plus ou moins correctement la similitude."},{pts:0,desc:"L'élève dégage incorrectement la similitude ou ne la dégage pas."}] },
-    { label:"2 pts — point de divergence",  colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève établit correctement le point de divergence entre les points de vue."},{pts:1,desc:"L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."},{pts:0,desc:"L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}] },
-    { label:"2 pts — point de convergence", colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève établit correctement le point de convergence entre les points de vue."},{pts:1,desc:"L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},{pts:0,desc:"L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}] },
-    { label:"3 pts — acteur et positions (complexe)", variante:"acteur-positions" }
-  ],
-  "Déterminer des causes et des conséquences": [
-    { label:"2 pts — facteur explicatif",       colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève détermine correctement le facteur explicatif."},{pts:1,desc:"L'élève détermine plus ou moins correctement le facteur explicatif."},{pts:0,desc:"L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}] },
-    { label:"2 pts — conséquence",               colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève détermine correctement la conséquence."},{pts:1,desc:"L'élève détermine plus ou moins correctement la conséquence."},{pts:0,desc:"L'élève détermine incorrectement la conséquence ou ne la détermine pas."}] },
-    { label:"2 pts — deux facteurs (2 sur 2)",   colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève détermine les deux facteurs explicatifs. (2 sur 2)"},{pts:1,desc:"L'élève détermine l'un des facteurs explicatifs. (1 sur 2)"},{pts:0,desc:"L'élève ne détermine pas les facteurs explicatifs. (0 sur 2)"}] },
-    { label:"2 pts — facteur + conséquence (2 sur 2)", colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"},{pts:1,desc:"L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"},{pts:0,desc:"L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}] }
-  ],
-  "Mettre en relation des faits": [
-    { label:"2 pts — 2 sur 2", colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève met en relation tous les faits. (2 sur 2)"},{pts:1,desc:"L'élève met en relation certains faits. (1 sur 2)"},{pts:0,desc:"L'élève ne met pas en relation les faits. (0 sur 2)"}] },
-    { label:"2 pts — 3 sur 3", colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève met en relation tous les faits. (3 sur 3)"},{pts:1,desc:"L'élève met en relation certains faits. (2 sur 3)"},{pts:0,desc:"L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}] },
-    { label:"2 pts — 4 sur 4", colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève met en relation tous les faits. (4 sur 4)"},{pts:1,desc:"L'élève met en relation certains faits. (3 ou 2 sur 4)"},{pts:0,desc:"L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}] }
-  ],
-  "Déterminer des changements et des continuités": [
-    { label:"2 pts — changement", colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève détermine correctement le changement."},{pts:1,desc:"L'élève détermine plus ou moins correctement le changement."},{pts:0,desc:"L'élève détermine incorrectement le changement ou ne le détermine pas."}] },
-    { label:"2 pts — continuité", colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève détermine correctement la continuité."},{pts:1,desc:"L'élève détermine plus ou moins correctement la continuité."},{pts:0,desc:"L'élève détermine incorrectement la continuité ou ne la détermine pas."}] },
-    { label:"3 pts — changement ou continuité avec faits (complexe)", variante:"changement-continuité" }
-  ],
-  "Établir des liens de causalité": [
-    { label:"3 pts — 3 éléments, 2 liens (complexe)", variante:"3 éléments — 2 liens" }
-  ]
-};
-
 function updatePresets() {
   const oi = document.getElementById('q-oi').value;
   const presets = REGLETTES_PRESET[oi] || [];
@@ -478,26 +372,7 @@ function updatePresets() {
 }
 
 function applyPreset() {
-  const oi = document.getElementById('q-oi').value;
-  const idx = parseInt(document.getElementById('reg-preset').value);
-  if(isNaN(idx)) return;
-  const preset = (REGLETTES_PRESET[oi] || [])[idx];
-  if(!preset) return;
-  if(preset.variante) {
-    document.getElementById('reg-variante').value = preset.variante;
-    updateRegletteUI();
-    return;
-  }
-  document.getElementById('reg-variante').value = '';
-  updateRegletteUI();
-  document.getElementById('reg-colonnes').value = preset.colonnes.join(', ');
-  document.getElementById('reg-niveaux-list').innerHTML = '';
-  niveauCount = 0;
-  preset.niveaux.forEach(n => {
-    addNiveau();
-    document.getElementById('niv-'+niveauCount+'-pts').value = n.pts;
-    document.getElementById('niv-'+niveauCount+'-desc').value = n.desc;
-  });
+  // Selection is stored in reg-preset; no manual fields to populate
 }
 
 // ── MODE ÉDITION ──────────────────────────────────────────────────────
@@ -587,14 +462,15 @@ function loadQuestion(id) {
   else if(repType==='tableau') document.getElementById('rep-lignes').value = (q.reponse.lignes||[]).map(l=>l.label).join('\n');
 
   if(r) {
-    document.getElementById('reg-variante').value = r.variante||'';
-    updateRegletteUI();
-    if(!r.variante) {
-      document.getElementById('reg-colonnes').value = (r.colonnes||[]).join(', ');
-      document.getElementById('reg-niveaux-list').innerHTML = '';
-      niveauCount = 0;
-      (r.niveaux||[]).forEach(n => { addNiveau(); document.getElementById('niv-'+niveauCount+'-pts').value=n.pts; document.getElementById('niv-'+niveauCount+'-desc').value=n.desc; });
+    const rOi = r.oi || q.oi;
+    const presets = REGLETTES_PRESET[rOi] || [];
+    let matchIdx = -1;
+    if(r.variante) {
+      matchIdx = presets.findIndex(p => p.variante === r.variante);
+    } else {
+      matchIdx = presets.findIndex(p => !p.variante && p.niveaux?.[0]?.desc === r.niveaux?.[0]?.desc);
     }
+    if(matchIdx !== -1) document.getElementById('reg-preset').value = String(matchIdx);
   }
 
   if(q.guide && typeof q.guide==='string') {
@@ -660,7 +536,7 @@ async function init() {
   const token = sessionStorage.getItem('gh_token');
   if(token) document.getElementById('gh-token').value = token;
   updatePeriodes();
-  addNiveau(); addNiveau(); addNiveau();
+  updatePresets();
   await Promise.all([loadQuestionsJs(), loadImages()]);
 }
 
@@ -785,26 +661,6 @@ function updateReponseUI() {
   }
 }
 
-// ── RÉGLETTE ──────────────────────────────────────────────────────────
-function updateRegletteUI() {
-  const variante = document.getElementById('reg-variante').value;
-  document.getElementById('reg-colonnes-wrap').style.display = variante ? 'none' : '';
-}
-
-let niveauCount = 0;
-function addNiveau() {
-  const id = ++niveauCount;
-  const wrap = document.getElementById('reg-niveaux-list');
-  const div = document.createElement('div');
-  div.className = 'niveau-row';
-  div.id = 'niv-'+id;
-  div.innerHTML = `
-    <input type="number" id="niv-${id}-pts" placeholder="pts" min="0" max="10" style="width:65px">
-    <input type="text" id="niv-${id}-desc" placeholder="Description du niveau…">
-    <button class="btn-remove" onclick="removeEl('niv-${id}')">✕</button>`;
-  wrap.appendChild(div);
-}
-
 // ── GUIDE ─────────────────────────────────────────────────────────────
 function updateGuideUI() {
   const type = document.getElementById('guide-type').value;
@@ -827,15 +683,13 @@ function buildQuestion() {
   const enonce = document.getElementById('q-enonce').value.trim();
   const aspects = [...document.querySelectorAll('#aspects-list input[type=checkbox]:checked')]
     .map(cb => ({ aspect: cb.value }));
-  // Auto-calculate points from réglette max
-  const variante = document.getElementById('reg-variante').value;
+  const presetIdx = parseInt(document.getElementById('reg-preset').value);
+  const presetOi = document.getElementById('q-oi').value;
+  const preset = !isNaN(presetIdx) ? (REGLETTES_PRESET[presetOi] || [])[presetIdx] : null;
   let points = 2;
-  if(variante) {
-    points = 3;
-  } else {
-    const niveauxPts = [...document.querySelectorAll('#reg-niveaux-list .niveau-row')]
-      .map(row => parseInt(row.querySelector('[id$="-pts"]').value)).filter(n => !isNaN(n));
-    if(niveauxPts.length) points = Math.max(...niveauxPts);
+  if(preset) {
+    if(preset.variante) points = 3;
+    else if(preset.niveaux?.length) points = Math.max(...preset.niveaux.map(n => n.pts));
   }
 
   // Documents
@@ -896,33 +750,13 @@ function buildQuestion() {
 }
 
 function buildReglette(id) {
-  const variante = document.getElementById('reg-variante').value;
   const oi = document.getElementById('q-oi').value;
-  if(variante === '3 éléments — 2 liens') {
-    return { oi, variante, colonnes:['3 points','2 points','1 point','0 point'], niveaux:[
-      {pts:3,desc:"L'élève précise les trois éléments et établit correctement deux liens de causalité."},
-      {pts:2,desc:"L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."},
-      {pts:1,desc:"L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
-      {pts:0,desc:"L'élève précise un seul élément ou n'en précise pas."}
-    ]};
-  }
-  if(variante === 'acteur-positions') {
-    return { oi, variante, colonnes:['3 points','2 points','1 point','0 point'], niveaux:[] };
-  }
-  if(variante === 'changement-continuité') {
-    return { oi, variante, colonnes:['3 points','2 points','1 point','0 point'], niveaux:[] };
-  }
-  if(variante) {
-    return { oi, variante, colonnes:['3 points','2 points','1 point','0 point'], niveaux:[] };
-  }
-  const colonnes = document.getElementById('reg-colonnes').value.split(',').map(s=>s.trim()).filter(Boolean);
-  const niveaux = [];
-  document.querySelectorAll('#reg-niveaux-list .niveau-row').forEach(row => {
-    const pts = parseInt(row.querySelector('[id$="-pts"]').value);
-    const desc = row.querySelector('[id$="-desc"]').value.trim();
-    if(!isNaN(pts) && desc) niveaux.push({ pts, desc });
-  });
-  return { oi, colonnes, niveaux };
+  const idx = parseInt(document.getElementById('reg-preset').value);
+  if(isNaN(idx)) return { oi, colonnes:[], niveaux:[] };
+  const preset = (REGLETTES_PRESET[oi] || [])[idx];
+  if(!preset) return { oi, colonnes:[], niveaux:[] };
+  const { label, ...rest } = preset;
+  return { oi, ...rest };
 }
 
 // ── GENERATE questions.js ─────────────────────────────────────────────
@@ -964,12 +798,7 @@ function validateForm() {
   const repType = document.getElementById('rep-type').value;
   if(repType === 'image_ligne' && !document.getElementById('rep-ref')?.value) errors.push('Image de réponse non sélectionnée');
   if(repType === 'tableau' && !document.getElementById('rep-lignes')?.value.trim()) errors.push('Lignes du tableau réponse vides');
-  const variante = document.getElementById('reg-variante').value;
-  if(!variante) {
-    if(!document.getElementById('reg-colonnes').value.trim()) errors.push('Colonnes de réglette vides');
-    const hasNiveau = [...document.querySelectorAll('#reg-niveaux-list .niveau-row')].some(r=>r.querySelector('[id$="-desc"]').value.trim());
-    if(!hasNiveau) errors.push('Aucun niveau de réglette rempli');
-  }
+  if(document.getElementById('reg-preset').value === '') errors.push('Réglette non sélectionnée');
   return errors;
 }
 
@@ -1068,13 +897,9 @@ function resetForm(keepId=false) {
   document.getElementById('docs-list').innerHTML = '';
   document.getElementById('rep-type').value = 'none';
   document.getElementById('rep-extra').innerHTML = '';
-  document.getElementById('reg-variante').value = '';
-  document.getElementById('reg-colonnes').value = '';
-  document.getElementById('reg-niveaux-list').innerHTML = '';
-  document.getElementById('reg-colonnes-wrap').style.display = '';
+  document.getElementById('reg-preset').value = '';
   document.getElementById('guide-type').value = 'texte';
-  niveauCount = 0; docCount = 0; colCount = 0;
-  addNiveau(); addNiveau(); addNiveau();
+  docCount = 0; colCount = 0;
   updateGuideUI();
 }
 
