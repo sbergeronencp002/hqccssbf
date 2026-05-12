@@ -246,7 +246,7 @@ function buildCopyHTML(q) {
 
 function buildCopyText(q) {
   let t = `${q.id} — ${q.oi}\n`;
-  t += `Période : ${q.periode}${q.realite ? ' | ' + q.realite : ''}\n\n`;
+  t += `Période : ${q.periode}\n\n`;
   t += `QUESTION\n${q.enonce}\n\n`;
   if(q.documents.length) {
     t += `DOCUMENTS\n`;
