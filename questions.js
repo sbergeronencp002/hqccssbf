@@ -3,8 +3,8 @@ const REGLETTES = {
     oi: "Situer dans le temps",
     colonnes: ["1 point", "0 point"],
     niveaux: [
-      { pts: 1, desc: "L'élève situe correctement la période dans le temps." },
-      { pts: 0, desc: "L'élève ne situe pas correctement la période dans le temps." }
+      { pts: 1, desc: "L'élève situe les faits dans le temps." },
+      { pts: 0, desc: "L'élève ne situe pas les faits dans le temps." }
     ]
   },
   "Q2": {
