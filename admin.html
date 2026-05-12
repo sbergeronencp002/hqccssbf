@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin — HQC · CSSBF</title>
 <script src="reglettes.js"></script>
+<script src="contexte.js"></script>
 <style>
 :root {
   --ink: #1a1814; --ink-2: #4a4740; --ink-3: #8a8680;
@@ -77,6 +78,9 @@ header a:hover { color: #fff; }
 .btn-primary:disabled { opacity: .45; cursor: not-allowed; }
 .btn-secondary { padding: .6rem 1.2rem; background: var(--paper-2); border: 1px solid var(--border); border-radius: 6px; font-size: .85rem; cursor: pointer; }
 .btn-secondary:hover { background: var(--paper-3); }
+.btn-danger { padding: .6rem 1.2rem; background: var(--red); color: #fff; border: none; border-radius: 6px; font-size: .85rem; cursor: pointer; opacity: .85; }
+.btn-danger:hover { opacity: 1; }
+.btn-danger:disabled { opacity: .35; cursor: not-allowed; }
 
 /* ── TOAST ── */
 #toast { position: fixed; bottom: 1.5rem; right: 1.5rem; padding: .75rem 1.25rem; border-radius: 7px; font-size: .85rem; font-weight: 500; display: none; z-index: 999; color: #fff; }
@@ -117,12 +121,13 @@ header a:hover { color: #fff; }
         </label>
       </div>
       <div id="edit-select-wrap" style="display:none">
-        <div class="field" style="margin-bottom:0">
+        <div class="field" style="margin-bottom:.75rem">
           <label>Question à modifier</label>
           <select id="edit-q-select" onchange="loadQuestion(this.value)">
             <option value="">— Choisir —</option>
           </select>
         </div>
+        <button class="btn-danger" id="btn-supprimer" onclick="supprimerQuestion()" disabled>🗑 Supprimer cette question</button>
       </div>
     </div>
 
@@ -274,75 +279,15 @@ header a:hover { color: #fff; }
 document.addEventListener('DOMContentLoaded', init);
 
 function saveToken() {
-  sessionStorage.setItem('gh_token', document.getElementById('gh-token').value);
+  localStorage.setItem('gh_token', document.getElementById('gh-token').value);
   document.getElementById('token-status').textContent = '';
 }
-function getToken() { return document.getElementById('gh-token').value || sessionStorage.getItem('gh_token') || ''; }
+function getToken() { return document.getElementById('gh-token').value || localStorage.getItem('gh_token') || ''; }
 
 // ── INIT ──────────────────────────────────────────────────────────────
 const OWNER = 'sbergeronencp002';
 const REPO  = 'hqccssbf';
 const BRANCH = 'main';
-
-const ASPECTS_PAR_PERIODE = {
-  'P1 — Des origines à 1608': [
-    'Alliances et rivalités au sein des Premières Nations',
-    'Exploration et occupation du territoire par les Français',
-    'Premiers contacts',
-    'Premiers occupants du territoire',
-    'Prise de décision chez les Autochtones',
-    'Rapports sociaux chez les Autochtones',
-    "Réseaux d'échange autochtones"
-  ],
-  'P2 — 1608 – 1760': [
-    'Adaptation des colons','Commerce des fourrures','Croissance de la population',
-    'Diversification économique','Église catholique','Gouvernement royal',
-    'Guerre et diplomatie chez les Premières Nations','Guerres intercoloniales',
-    'Monopole des compagnies','Populations autochtones','Régime seigneurial',
-    'Territoire français en Amérique','Villes du Canada'
-  ],
-  'P3 — 1760 – 1791': [
-    'Acte de Québec','Économie coloniale','Église anglicane','Église catholique',
-    'Guerre de la Conquête','Instructions au gouverneur Murray','Invasion américaine',
-    'Loyalistes','Mouvements de revendication','Proclamation royale',
-    'Régime militaire','Situation sociodémographique','Statut des Indiens'
-  ],
-  'P4 — 1791 – 1840': [
-    'Acte constitutionnel','Agriculture','Capitaux et infrastructures',
-    'Commerce des fourrures','Commerce du bois','Débats parlementaires',
-    'Église anglicane','Guerre anglo-américaine de 1812','Idées libérales et républicaines',
-    'Mouvements migratoires','Nationalismes','Population','Rapport Durham',
-    'Soulèvements de 1837-1838'
-  ],
-  'P5 — 1840 – 1896': [
-    "Acte de l'Amérique du Nord britannique",'Acte d\'Union','Affaires indiennes',
-    'Économie coloniale','Exploitations agricoles','Gouvernement responsable',
-    'Industrie forestière','Manifestations socioculturelles','Migrations',
-    'Politique nationale','Première phase d\'industrialisation',
-    "Présence de l'Église catholique",'Relations fédérales-provinciales','Rôle des femmes'
-  ],
-  'P6 — 1896 – 1945': [
-    'Clérico-nationalisme','Culture de masse','Deuxième phase d\'industrialisation',
-    'Église catholique','Luttes des femmes','Milieux urbains','Mouvement syndical',
-    'Politique intérieure canadienne','Statut du Canada dans l\'Empire britannique'
-  ],
-  'P7 — 1945 – 1980': [
-    'Accroissement naturel','Agglomération urbaine','Développement régional',
-    'Fédération canadienne','Mouvement indépendantiste','Nouveaux arrivants',
-    'Pensionnats indiens au Québec','Période duplessiste','Rapports de force en Occident',
-    'Réformes institutionnelles','Révolution tranquille','Société de consommation'
-  ],
-  'P8 — De 1980 à nos jours': [
-    'Droits des Autochtones','Égalité hommes-femmes','Évolution sociodémographique',
-    'Industrie culturelle','Mondialisation de l\'économie','Préoccupations environnementales',
-    'Question linguistique','Redéfinition du rôle de l\'État','Statut politique du Québec'
-  ]
-};
-
-const PERIODES_PAR_NIVEAU = {
-  '3': ['P1 — Des origines à 1608','P2 — 1608 – 1760','P3 — 1760 – 1791','P4 — 1791 – 1840'],
-  '4': ['P5 — 1840 – 1896','P6 — 1896 – 1945','P7 — 1945 – 1980','P8 — De 1980 à nos jours']
-};
 
 function updatePeriodes() {
   const niveau = document.getElementById('q-niveau').value;
@@ -401,11 +346,13 @@ function populateEditSelect() {
 }
 
 function loadQuestion(id) {
-  if(!id) { editingId = null; return; }
+  const btnSuppr = document.getElementById('btn-supprimer');
+  if(!id) { editingId = null; if(btnSuppr) btnSuppr.disabled = true; return; }
   const q = currentQuestions.find(x => x.id === id);
   const r = currentReglettes[id];
   if(!q) return;
   editingId = id;
+  if(btnSuppr) btnSuppr.disabled = false;
 
   document.getElementById('q-id').value = q.id;
   document.getElementById('next-id-badge').textContent = q.id;
@@ -485,6 +432,77 @@ function loadQuestion(id) {
   }
 }
 
+// ── SUPPRIMER QUESTION ────────────────────────────────────────────────
+async function supprimerQuestion() {
+  if(!editingId) return;
+  if(!confirm(`Supprimer ${editingId} et renuméroter toutes les questions ?`)) return;
+  const token = getToken();
+  if(!token) { toast('Saisis ton token GitHub.', 'err'); return; }
+
+  const btn = document.getElementById('btn-supprimer');
+  btn.disabled = true; btn.textContent = '⏳ Suppression…';
+
+  try {
+    const idSupp = editingId;
+
+    // Retirer la question et sa réglette
+    currentQuestions = currentQuestions.filter(q => q.id !== idSupp);
+    delete currentReglettes[idSupp];
+
+    // Renuméroter Q1, Q2, Q3…
+    const oldToNew = {};
+    currentQuestions = currentQuestions.map((q, i) => {
+      const newId = 'Q' + (i + 1);
+      oldToNew[q.id] = newId;
+      return { ...q, id: newId };
+    });
+
+    // Re-clé des réglettes
+    const newReglettes = {};
+    Object.entries(currentReglettes).forEach(([oldId, r]) => {
+      const newId = oldToNew[oldId];
+      if(newId) newReglettes[newId] = r;
+    });
+    currentReglettes = newReglettes;
+
+    // SHA frais
+    const shaResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js?ref=${BRANCH}`,
+      { headers: { Authorization: `token ${token}` } });
+    const shaData = await shaResp.json();
+    questionsFileSha = shaData.sha;
+
+    const newContent = generateQuestionsJs(currentQuestions, currentReglettes, currentImageDb);
+    const encoded = btoa(unescape(encodeURIComponent(newContent)));
+
+    const putResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js`, {
+      method: 'PUT',
+      headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        message: `Supprimer ${idSupp} et renuméroter`,
+        content: encoded, sha: questionsFileSha, branch: BRANCH
+      })
+    });
+    if(!putResp.ok) { const err = await putResp.json(); throw new Error(err.message || putResp.status); }
+
+    const result = await putResp.json();
+    questionsFileSha = result.content.sha;
+
+    toast(`${idSupp} supprimé, questions renumérotées.`, 'ok');
+    editingId = null;
+    resetForm(false);
+    const nextId = 'Q' + (currentQuestions.length + 1);
+    document.getElementById('q-id').value = nextId;
+    document.getElementById('next-id-badge').textContent = nextId;
+
+  } catch(e) {
+    toast('Erreur : ' + e.message, 'err');
+    console.error(e);
+  } finally {
+    btn.textContent = '🗑 Supprimer cette question';
+    btn.disabled = true;
+  }
+}
+
 // ── UPLOAD IMAGE ──────────────────────────────────────────────────────
 function onUploadFileChange() {
   const file = document.getElementById('upload-file').files[0];
@@ -533,7 +551,7 @@ let currentImageDb = {};
 let questionsFileSha = '';
 
 async function init() {
-  const token = sessionStorage.getItem('gh_token');
+  const token = localStorage.getItem('gh_token');
   if(token) document.getElementById('gh-token').value = token;
   updatePeriodes();
   updatePresets();
