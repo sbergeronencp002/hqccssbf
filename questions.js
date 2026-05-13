@@ -220,6 +220,9 @@ const IMAGE_DB = {
   },
   "recensement_colonie.png": {
     src: "images/recensement_colonie.png"
+  },
+  "commerce_fourrures.png": {
+    src: "images/commerce_fourrures.png"
   }
 }
 
@@ -536,7 +539,18 @@ const QUESTIONS = [
         aspect: "Guerres intercoloniales"
       }
     ],
-    documents: [],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "commerce_fourrures.png",
+            source: "MEES."
+          }
+        ]
+      }
+    ],
     reponse: {
       type: "lignes",
       nombre: 1
