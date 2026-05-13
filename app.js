@@ -300,6 +300,7 @@ function render(list) {
         ${(()=>{
           const r = REGLETTES[q.id];
           if(!r) return '<div style="font-size:0.8rem;color:var(--ink-3);font-style:italic">Réglette non disponible.</div>';
+          if(r.variante) return buildReglettHTML(q);
           return `<table class="reglette-table">
             ${r.niveaux.map(n=>`
               <tr>
@@ -787,14 +788,14 @@ async function genererDocx(includeGuide=false) {
 
       if(r.variante === 'changement-continuité') {
         const c1=Math.floor(PAGE_W*0.22), c2=Math.floor(PAGE_W*0.37), c3=Math.floor(PAGE_W*0.21), c4=PAGE_W-c1-c2-c3;
-        const mk=(t,bold=false,rs=1,cs=1)=>new TableCell({borders:BORDERS,margins:CELL_MARGINS,verticalAlign:VerticalAlign.CENTER,rowSpan:rs>1?rs:undefined,columnSpan:cs>1?cs:undefined,children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:t,font:'Aptos',size:12,bold})]})]});
+        const mk=(t,bold=false,rs=1,cs=1,w=0)=>new TableCell({borders:BORDERS,margins:CELL_MARGINS,verticalAlign:VerticalAlign.CENTER,rowSpan:rs>1?rs:undefined,columnSpan:cs>1?cs:undefined,width:w?{size:w,type:WidthType.DXA}:undefined,children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:t,font:'Aptos',size:12,bold})]})]});
         return [new Table({width:{size:PAGE_W,type:WidthType.DXA},columnWidths:[c1,c2,c3,c4],rows:[
-          new TableRow({children:[mk(r.oi,true,6),mk("L'élève indique s'il y a changement ou continuité",false,3),mk("et présente des faits qui le montrent correctement."),mk("3 points (ou 2 points)")]}),
-          new TableRow({children:[mk("et présente des faits qui le montrent plus ou moins correctement."),mk("2 points (ou 1 point)")]}),
-          new TableRow({children:[mk("et présente des faits qui le montrent incorrectement ou n'en présente pas."),mk("0 point")]}),
-          new TableRow({children:[mk("L'élève n'indique pas s'il y a changement ou continuité",false,3),mk("mais présente des faits exacts."),mk("2 points (ou 1 point)")]}),
-          new TableRow({children:[mk("mais présente des faits plus ou moins exacts."),mk("1 point (ou 0 point)")]}),
-          new TableRow({children:[mk("et présente des faits inexacts ou n'en présente pas."),mk("0 point")]}),
+          new TableRow({children:[mk(r.oi,true,6,1,c1),mk("L'élève indique s'il y a changement ou continuité",false,3,1,c2),mk("et présente des faits qui le montrent correctement.",false,1,1,c3),mk("3 points (ou 2 points)",false,1,1,c4)]}),
+          new TableRow({children:[mk("et présente des faits qui le montrent plus ou moins correctement.",false,1,1,c3),mk("2 points (ou 1 point)",false,1,1,c4)]}),
+          new TableRow({children:[mk("et présente des faits qui le montrent incorrectement ou n'en présente pas.",false,1,1,c3),mk("0 point",false,1,1,c4)]}),
+          new TableRow({children:[mk("L'élève n'indique pas s'il y a changement ou continuité",false,3,1,c2),mk("mais présente des faits exacts.",false,1,1,c3),mk("2 points (ou 1 point)",false,1,1,c4)]}),
+          new TableRow({children:[mk("mais présente des faits plus ou moins exacts.",false,1,1,c3),mk("1 point (ou 0 point)",false,1,1,c4)]}),
+          new TableRow({children:[mk("et présente des faits inexacts ou n'en présente pas.",false,1,1,c3),mk("0 point",false,1,1,c4)]}),
         ]})];
       }
 
