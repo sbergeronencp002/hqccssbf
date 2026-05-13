@@ -17,24 +17,19 @@ const REGLETTES = {
     ]
   },
   "Q2": {
-    oi: "Mettre en relation des faits",
+    oi: "Situer dans le temps",
     colonnes: [
       "2 points",
-      "1 point",
       "0 point"
     ],
     niveaux: [
       {
         pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
+        desc: "L'élève situe tous les faits dans le temps."
       },
       {
         pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
+        desc: "L'élève ne situe pas tous les faits dans le temps."
       }
     ]
   },
@@ -224,7 +219,12 @@ const REGLETTES = {
 }
 
 const IMAGE_DB = {
-
+  "fondation_quebec_1608": {
+    src: "images/fondation_quebec_1608"
+  },
+  "ligne_acBd.png": {
+    src: "images/ligne_acBd.png"
+  }
 }
 
 const QUESTIONS = [
@@ -257,5 +257,65 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Les Montagnais ou les Etchemins (ou les Malécites) ou les Algonquins ou les Hurons ou les Micmacs ou les Abénaquis."
+  },
+  {
+    id: "Q2",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    enonce: "Les documents A à D présentent des faits relatifs aux premières tentatives d’établissement d’Européens en Amérique du Nord. Placez-les par ordre chronologique.",
+    aspects: [
+      {
+        aspect: "Exploration et occupation du territoire par les Français"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A - Fondation de Québec",
+            ref: "fondation_quebec_1608",
+            source: "Samuel de Champlain/Bibliothèque et Archives Canada/MIKAN 3919911."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Pierre Chauvin se fait concéder par Henri IV un monopole de commerce pour la région de Tadoussac. […] Il veut établir à l’embouchure du Saguenay une colonie de 500 habitants. Au cours de l’été […], il vient faire la traite et laisse à Tadoussac 16 hommes qui doivent hiverner à cet endroit. Au printemps suivant, il ne reste plus que 5 survivants qui devaient la vie à la générosité amérindienne. »",
+            source: "Jacques LACOURSIÈRE, Jean PROVENCHER et Denis VAUGEOIS, Canada Québec, 1534-2010, nouvelle édition mise à jour, Québec, Les éditions du Septentrion, 2011, p. 32."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« […] Giovanni Caboto, navigateur d’origine italienne, entreprend pour le compte de marchands anglais de Bristol un voyage d’exploration. Muni d’une autorisation du roi d’Angleterre, il cherche à découvrir un chemin [vers l’Asie] situé plus au nord que celui que Colomb avait pris. »",
+            source: "Jean-François CARDIN et autres, Le Québec : héritages et projets, 2e éd., Laval, Éditions HRW, 1994, p. 26."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« [Cartier] choisit […] l’embouchure de la rivière Cap-Rouge, où il établit la colonie de Charlesbourg-Royal. Il y fait construire deux forts. En explorant les lieux, les Français croient découvrir des feuilles d’or et des diamants. Devant l’hostilité grandissante des Amérindiens, Cartier décide de rentrer en France […] »",
+            source: "Jean-Pierre CHARLAND, À l’aube du XXIe siècle, avec la collaboration de Jacques  \nSaint-Pierre, manuel de l’élève, histoire du Québec et du Canada, 4e secondaire, \nMontréal, Lidec, 1997, p. 17."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_acBd.png"
+    },
+    guide: "C - D - B - A"
   }
 ]
