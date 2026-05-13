@@ -429,12 +429,10 @@ function renderReponse(q) {
     return html;
   }
   if(q.reponse.type === 'tableau_2col') {
-    const CS = 'border:1px solid var(--ink-2);text-align:center;padding:6px 8px;font-size:0.8rem';
+    const CS = 'border:1px solid var(--ink-2);text-align:center;padding:6px 8px;font-size:0.8rem;width:113px';
     return '<table style="border-collapse:collapse;margin:8px 0;">'
-      + '<tr><th style="' + CS + ';font-weight:600;background:var(--paper-2);min-width:70px">Réponse</th>'
-      + '<th style="' + CS + ';font-weight:600;background:var(--paper-2);min-width:70px"></th></tr>'
-      + '<tr><td style="' + CS + ';height:40px;background:var(--paper)"></td>'
-      + '<td style="' + CS + ';height:40px;background:var(--paper)"></td></tr>'
+      + '<tr><td style="' + CS + ';font-weight:600;background:var(--paper-2)">Réponse</td>'
+      + '<td style="' + CS + ';background:var(--paper);height:40px"></td></tr>'
       + '</table>';
   }
   return '';
@@ -554,11 +552,9 @@ function previsualiser(guideMode) {
             + q.reponse.lignes.map(function(l){return '<tr><td style="border:0.5px solid #ccc;padding:4px 8px">' + l.label + '</td><td style="border:0.5px solid #ccc;padding:4px 30px"></td></tr>';}).join('')
             + '</table>';
         } else if(q.reponse.type === 'tableau_2col') {
-          const CS = 'border:1px solid #999;text-align:center;padding:6px 8px;font-size:0.8rem';
+          const CS = 'border:1px solid #999;text-align:center;padding:6px 8px;font-size:0.8rem;width:113px';
           previewReponse = '<table style="border-collapse:collapse;margin:8px 0;">'
-            + '<tr><th style="' + CS + ';font-weight:600;background:#f5f5f5;min-width:70px">Réponse</th>'
-            + '<th style="' + CS + ';font-weight:600;background:#f5f5f5;min-width:70px"></th></tr>'
-            + '<tr><td style="' + CS + ';height:40px"></td>'
+            + '<tr><td style="' + CS + ';font-weight:600;background:#f5f5f5">Réponse</td>'
             + '<td style="' + CS + ';height:40px"></td></tr>'
             + '</table>';
         }
@@ -1064,11 +1060,12 @@ async function genererDocx(includeGuide=false) {
           });
           children.push(new Table({ width: { size: 0, type: WidthType.AUTO }, rows: repRows }));
         } else if(q.reponse.type === 'tableau_2col') {
+          const c2 = 1701; // 3 cm in DXA
           const mk2 = (t, bold=false) => new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
+            width: { size: c2, type: WidthType.DXA },
             children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: t, font: 'Aptos', size: 20, bold })] })] });
-          children.push(new Table({ width: { size: 0, type: WidthType.AUTO }, rows: [
-            new TableRow({ children: [mk2('Réponse', true), mk2('', true)] }),
-            new TableRow({ children: [mk2(''), mk2('')] })
+          children.push(new Table({ width: { size: c2 * 2, type: WidthType.DXA }, columnWidths: [c2, c2], rows: [
+            new TableRow({ children: [mk2('Réponse', true), mk2('')] })
           ]}));
         }
         children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
