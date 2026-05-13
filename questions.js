@@ -187,6 +187,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
+  },
+  "Q11": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la continuité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la continuité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -220,6 +242,12 @@ const IMAGE_DB = {
   },
   "territoire_acte_const.png": {
     src: "images/territoire_acte_const.png"
+  },
+  "troc_1500": {
+    src: "images/troc_1500"
+  },
+  "troc_1700.png": {
+    src: "images/troc_1700.png"
   }
 }
 
@@ -636,5 +664,45 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Le territoire est divisé en Haut-Canada et Bas-Canada."
+  },
+  {
+    id: "Q11",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    enonce: "Indiquez un élément de continuité dans la façon de faire du commerce en Amérique du Nord durant les \npériodes présentées dans les documents A et B.",
+    aspects: [
+      {
+        aspect: "Commerce des fourrures"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A - Échanges vers 1600",
+            ref: "troc_1500",
+            source: "MEES."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B - Échanges vers 1700",
+            ref: "troc_1700.png",
+            source: "MEES."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le troc ou l’échange de fourrures contre d’autres produits."
   }
 ]
