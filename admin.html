@@ -330,7 +330,7 @@ function setMode(mode) {
 function populateEditSelect() {
   const sel = document.getElementById('edit-q-select');
   sel.innerHTML = '<option value="">— Choisir —</option>'
-    + currentQuestions.map(q => `<option value="${q.id}">${q.id} — ${q.oi.split(' ').slice(0,3).join(' ')} (${q.periode})</option>`).join('');
+    + currentQuestions.map(q => `<option value="${q.id}">${q.id} — ${q.oi.split(' ').slice(0,4).join(' ')} (${q.periode})</option>`).join('');
 }
 
 function loadQuestion(id) {
