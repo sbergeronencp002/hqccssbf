@@ -487,6 +487,11 @@ function renderReponse(q) {
     if(img) html += '<div class="doc-img-wrap"><img src="' + img.src + '" class="doc-img" style="max-height:60px;max-width:100%" onclick="openLightbox(\'' + img.src + '\')" title="Cliquer pour agrandir"></div>';
     return html;
   }
+  if(q.reponse.type === 'image') {
+    const img = IMAGE_DB[q.reponse.ref];
+    if(!img) return '';
+    return '<div class="doc-img-wrap"><img src="' + img.src + '" class="doc-img" onclick="openLightbox(\'' + img.src + '\')" title="Cliquer pour agrandir"></div>';
+  }
   if(q.reponse.type === 'lignes') {
     const n = q.reponse.nombre || 1;
     return '<div>' + Array(n).fill('<div style="border-bottom:1px solid var(--border);height:28px;margin:6px 0"></div>').join('') + '</div>';
@@ -597,6 +602,9 @@ function previsualiser(guideMode) {
           const imgPrev = IMAGE_DB[q.reponse.ref];
           if(imgPrev) previewReponse += '<img src="' + imgPrev.src + '" style="max-width:100%;max-height:80px;object-fit:contain;margin:8px 0;display:block">';
           previewReponse += '<div class="reponse-courte" style="margin:4px 0">__________</div>';
+        } else if(q.reponse.type === 'image') {
+          const imgPrev = IMAGE_DB[q.reponse.ref];
+          if(imgPrev) previewReponse += '<img src="' + imgPrev.src + '" style="max-width:100%;max-height:80px;object-fit:contain;margin:8px 0;display:block">';
         } else if(q.reponse.type === 'lignes') {
           previewReponse = Array(q.reponse.nombre).fill('<div class="reponse-ligne-pleine" style="border-bottom:1px solid #999;height:28px;margin:6px 0"></div>').join('');
         } else if(q.reponse.type === 'tableau') {
@@ -1028,6 +1036,19 @@ async function genererDocx(includeGuide=false) {
       if(q.reponse) {
         if(q.reponse === true) {
           children.push(new Paragraph({ children: [new TextRun({ text: '__________', font: 'Aptos', size: 22 })] }));
+        } else if(q.reponse.type === 'image') {
+          const imgData2 = IMAGE_DB[q.reponse.ref];
+          if(imgData2 && imgData2.src) {
+            const b64_2 = imgData2.src.split(',')[1];
+            const bStr_2 = atob(b64_2);
+            const bytes_2 = new Uint8Array(bStr_2.length);
+            for(let bi=0; bi<bStr_2.length; bi++) bytes_2[bi] = bStr_2.charCodeAt(bi);
+            const ext_2 = q.reponse.ref.split('.').pop().toLowerCase();
+            const imgType_2 = (ext_2 === 'jpg' || ext_2 === 'jpeg') ? 'jpg' : 'png';
+            const docW_2 = Math.min(400, imgData2.w);
+            const docH_2 = Math.round(docW_2 / (imgData2.w / imgData2.h));
+            children.push(new Paragraph({ children: [new docx.ImageRun({ data: bytes_2, type: imgType_2, transformation: { width: docW_2, height: docH_2 } })] }));
+          }
         } else if(q.reponse.type === 'image_ligne') {
           const imgData2 = IMAGE_DB[q.reponse.ref];
           if(imgData2 && imgData2.src) {
