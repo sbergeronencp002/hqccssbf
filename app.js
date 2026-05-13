@@ -145,33 +145,36 @@ function buildReglettHTML(q) {
 
   // Matrix layout for causalité (3 éléments — 2 liens)
   if(r.variante === '3 éléments — 2 liens') {
+    const S2 = S + ';border-right:none';
+    const S3 = S + ';border-left:none;border-right:none';
+    const S4 = S + ';border-left:none';
     return `<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%">
       <tr>
         <td style="${SB};width:22%" rowspan="6">${r.oi}</td>
-        <td style="${S};width:26%" rowspan="3">L'élève précise les trois éléments</td>
-        <td style="${S};width:35%">et établit correctement deux liens de causalité.</td>
-        <td style="${S};width:17%">3 points</td>
+        <td style="${S2};width:26%" rowspan="3">L'élève précise les trois éléments</td>
+        <td style="${S3};width:35%">et établit correctement deux liens de causalité.</td>
+        <td style="${S4};width:17%">3 points</td>
       </tr>
       <tr>
-        <td style="${S}">et établit correctement un lien de causalité.</td>
-        <td style="${S}">2 points</td>
+        <td style="${S3}">et établit correctement un lien de causalité.</td>
+        <td style="${S4}">2 points</td>
       </tr>
       <tr>
-        <td style="${S}">mais n'établit correctement aucun lien de causalité.</td>
-        <td style="${S}">1 point</td>
+        <td style="${S3}">mais n'établit correctement aucun lien de causalité.</td>
+        <td style="${S4}">1 point</td>
       </tr>
       <tr>
-        <td style="${S}" rowspan="2">L'élève précise deux éléments</td>
-        <td style="${S}">et établit correctement un lien de causalité.</td>
-        <td style="${S}">2 points</td>
+        <td style="${S2}" rowspan="2">L'élève précise deux éléments</td>
+        <td style="${S3}">et établit correctement un lien de causalité.</td>
+        <td style="${S4}">2 points</td>
       </tr>
       <tr>
-        <td style="${S}">mais n'établit correctement aucun lien de causalité.</td>
-        <td style="${S}">1 point</td>
+        <td style="${S3}">mais n'établit correctement aucun lien de causalité.</td>
+        <td style="${S4}">1 point</td>
       </tr>
       <tr>
-        <td style="${S}" colspan="2">L'élève précise un seul élément ou n'en précise pas.</td>
-        <td style="${S}">0 point</td>
+        <td style="${S2}" colspan="2">L'élève précise un seul élément ou n'en précise pas.</td>
+        <td style="${S4}">0 point</td>
       </tr>
     </table>`;
   }
@@ -752,8 +755,12 @@ async function genererDocx(includeGuide=false) {
         const col3 = Math.floor(PAGE_W * 0.35);
         const col4 = PAGE_W - col1 - col2 - col3;
 
-        const mkCell = (text, bold=false, rowSpan=1, colSpan=1, w=0) => new TableCell({
-          borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
+        const BN={style:BorderStyle.NONE,size:0,color:'FFFFFF'};
+        const BC2={top:BORDER,bottom:BORDER,left:BORDER,right:BN};
+        const BC3={top:BORDER,bottom:BORDER,left:BN,right:BN};
+        const BC4={top:BORDER,bottom:BORDER,left:BN,right:BORDER};
+        const mkCell = (text, bold=false, rowSpan=1, colSpan=1, w=0, b=BORDERS) => new TableCell({
+          borders: b, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
           rowSpan: rowSpan > 1 ? rowSpan : undefined,
           columnSpan: colSpan > 1 ? colSpan : undefined,
           width: w ? {size:w, type:WidthType.DXA} : undefined,
@@ -767,12 +774,12 @@ async function genererDocx(includeGuide=false) {
           width: { size: PAGE_W, type: WidthType.DXA },
           columnWidths: [col1, col2, col3, col4],
           rows: [
-            new TableRow({ children: [mkCell(r.oi, true, 6, 1, col1), mkCell("L'élève précise les trois éléments", false, 3, 1, col2), mkCell("et établit correctement deux liens de causalité.", false, 1, 1, col3), mkCell("3 points", false, 1, 1, col4)] }),
-            new TableRow({ children: [mkCell("et établit correctement un lien de causalité.", false, 1, 1, col3), mkCell("2 points", false, 1, 1, col4)] }),
-            new TableRow({ children: [mkCell("mais n'établit correctement aucun lien de causalité.", false, 1, 1, col3), mkCell("1 point", false, 1, 1, col4)] }),
-            new TableRow({ children: [mkCell("L'élève précise deux éléments", false, 2, 1, col2), mkCell("et établit correctement un lien de causalité.", false, 1, 1, col3), mkCell("2 points", false, 1, 1, col4)] }),
-            new TableRow({ children: [mkCell("mais n'établit correctement aucun lien de causalité.", false, 1, 1, col3), mkCell("1 point", false, 1, 1, col4)] }),
-            new TableRow({ children: [mkCell("L'élève précise un seul élément ou n'en précise pas.", false, 1, 2, col2+col3), mkCell("0 point", false, 1, 1, col4)] }),
+            new TableRow({ children: [mkCell(r.oi, true, 6, 1, col1), mkCell("L'élève précise les trois éléments", false, 3, 1, col2, BC2), mkCell("et établit correctement deux liens de causalité.", false, 1, 1, col3, BC3), mkCell("3 points", false, 1, 1, col4, BC4)] }),
+            new TableRow({ children: [mkCell("et établit correctement un lien de causalité.", false, 1, 1, col3, BC3), mkCell("2 points", false, 1, 1, col4, BC4)] }),
+            new TableRow({ children: [mkCell("mais n'établit correctement aucun lien de causalité.", false, 1, 1, col3, BC3), mkCell("1 point", false, 1, 1, col4, BC4)] }),
+            new TableRow({ children: [mkCell("L'élève précise deux éléments", false, 2, 1, col2, BC2), mkCell("et établit correctement un lien de causalité.", false, 1, 1, col3, BC3), mkCell("2 points", false, 1, 1, col4, BC4)] }),
+            new TableRow({ children: [mkCell("mais n'établit correctement aucun lien de causalité.", false, 1, 1, col3, BC3), mkCell("1 point", false, 1, 1, col4, BC4)] }),
+            new TableRow({ children: [mkCell("L'élève précise un seul élément ou n'en précise pas.", false, 1, 2, col2+col3, BC2), mkCell("0 point", false, 1, 1, col4, BC4)] }),
           ]
         })];
       }
