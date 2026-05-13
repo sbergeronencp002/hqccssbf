@@ -75,12 +75,12 @@ const REGLETTES = {
   "Q5": {
     oi: "Situer dans l'espace",
     colonnes: [
-      "2 points",
+      "1 point",
       "0 point"
     ],
     niveaux: [
       {
-        pts: 2,
+        pts: 1,
         desc: "L'élève situe le fait dans l'espace."
       },
       {
@@ -145,19 +145,24 @@ const REGLETTES = {
     ]
   },
   "Q9": {
-    oi: "Situer dans le temps",
+    oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
+      "1 point",
       "0 point"
     ],
     niveaux: [
       {
         pts: 2,
-        desc: "L'élève situe tous les faits dans le temps."
+        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
       },
       {
         pts: 0,
-        desc: "L'élève ne situe pas tous les faits dans le temps."
+        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
       }
     ]
   },
@@ -212,6 +217,12 @@ const IMAGE_DB = {
   },
   "loyalistes_province_quebec": {
     src: "images/loyalistes_province_quebec"
+  },
+  "recensement_colonie.png": {
+    src: "images/recensement_colonie.png"
+  },
+  "commerce_fourrures.png": {
+    src: "images/commerce_fourrures.png"
   }
 }
 
@@ -407,7 +418,7 @@ const QUESTIONS = [
     niveau: 3,
     oi: "Situer dans l'espace",
     periode: "P3 — 1760 – 1791",
-    points: 2,
+    points: 1,
     enonce: "À partir du document A, indiquez la lettre qui correspond à une région de la Province de Québec où s’établissent des Loyalistes.",
     aspects: [
       {
@@ -420,19 +431,13 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "loyalistes_province_quebec",
-            source: "Ministère de l’Éducation et de l’Enseignement supérieur (MEES)."
+            ref: "loyalistes_province_quebec"
           }
         ]
       }
     ],
     reponse: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Réponse"
-        }
-      ]
+      type: "tableau_2col"
     },
     guide: "A"
   },
@@ -528,11 +533,81 @@ const QUESTIONS = [
         aspect: "Guerres intercoloniales"
       }
     ],
-    documents: [],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "commerce_fourrures.png",
+            source: "MEES."
+          }
+        ]
+      }
+    ],
     reponse: {
       type: "lignes",
       nombre: 1
     },
     guide: "Le commerce des fourrures ou le contrôle du territoire ou la rivalité entre les métropoles."
+  },
+  {
+    id: "Q9",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    enonce: "Des politiques d’immigration et de natalité ont été mises en place en Nouvelle-France dans la deuxième moitié du 17e siècle. Inscrivez la lettre du document qui présente une cause de ces politiques et la lettre de celui qui en présente une conséquence.",
+    aspects: [
+      {
+        aspect: "Croissance de la population"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après avoir visité avec soin presque toutes les habitations du Canada […], j’ai trouvé partout des familles très nombreuses. Les pères et mères ont d’ordinaire 10 ou 12 enfants et, assez souvent, 15, 16, 17, et les ayant interrogés bien des fois combien il en était mort, la plupart ont répondu aucun […] »",
+            source: "Jacques de Meulles, intendant"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B - Données sur les célibataires lors d’un recensement dans la colonie",
+            ref: "recensement_colonie.png",
+            source: "MEES."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau",
+      lignes: [
+        {
+          label: "Cause"
+        },
+        {
+          label: "Conséquence"
+        }
+      ]
+    },
+    guide: {
+      type: "tableau",
+      lignes: [
+        {
+          label: "Cause",
+          valeur: "B"
+        },
+        {
+          label: "Conséquence",
+          valeur: "1"
+        }
+      ]
+    }
   }
 ]
