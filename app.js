@@ -398,14 +398,14 @@ function renderReponse(q) {
   if(q.reponse.type === 'tableau_3col') {
     const {col1='', col2='', col3=''} = q.reponse;
     const S = 'border:1px solid var(--ink-2);text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem';
-    return '<table style="width:100%;border-collapse:collapse;margin:8px 0;table-layout:fixed">'
+    return '<table style="border-collapse:collapse;margin:8px 0;">'
       + '<tr>'
-      + '<td style="width:33%;' + S + '">' + col1 + '</td>'
-      + '<td style="width:34%;' + S + ';vertical-align:middle" rowspan="2">' + col2 + '</td>'
-      + '<td style="width:33%;' + S + '">' + col3 + '</td>'
+      + '<td style="' + S + '">' + col1 + '</td>'
+      + '<td style="' + S + ';vertical-align:middle" rowspan="2">' + col2 + '</td>'
+      + '<td style="' + S + '">' + col3 + '</td>'
       + '</tr><tr>'
-      + '<td style="border:1px solid var(--ink-2);background:var(--paper-2);height:50px"></td>'
-      + '<td style="border:1px solid var(--ink-2);background:var(--paper-2);height:50px"></td>'
+      + '<td style="border:1px solid var(--ink-2);background:var(--paper-2);height:50px;min-width:80px"></td>'
+      + '<td style="border:1px solid var(--ink-2);background:var(--paper-2);height:50px;min-width:80px"></td>'
       + '</tr></table>';
   }
   if(q.reponse.type === 'image') {
@@ -418,7 +418,7 @@ function renderReponse(q) {
     return '<div>' + Array(n).fill('<div style="border-bottom:1px solid var(--border);height:28px;margin:6px 0"></div>').join('') + '</div>';
   }
   if(q.reponse.type === 'tableau') {
-    let html = '<table style="border-collapse:collapse;margin:8px 0;font-size:0.8rem;width:100%">'
+    let html = '<table style="border-collapse:collapse;margin:8px 0;font-size:0.8rem;">'
       + '<tr><th style="border:0.5px solid var(--border);padding:4px 8px;background:var(--paper-2);text-align:left"></th>'
       + '<th style="border:0.5px solid var(--border);padding:4px 8px;background:var(--paper-2);text-align:center">Document</th></tr>';
     q.reponse.lignes.forEach(l=>{
@@ -429,10 +429,10 @@ function renderReponse(q) {
     return html;
   }
   if(q.reponse.type === 'tableau_2col') {
-    const CS = 'border:1px solid var(--ink-2);text-align:center;padding:6px 8px;width:75px;font-size:0.8rem';
-    return '<table style="border-collapse:collapse;margin:8px 0;table-layout:fixed">'
-      + '<tr><th style="' + CS + ';font-weight:600;background:var(--paper-2)">Réponse</th>'
-      + '<th style="' + CS + ';font-weight:600;background:var(--paper-2)"></th></tr>'
+    const CS = 'border:1px solid var(--ink-2);text-align:center;padding:6px 8px;font-size:0.8rem';
+    return '<table style="border-collapse:collapse;margin:8px 0;">'
+      + '<tr><th style="' + CS + ';font-weight:600;background:var(--paper-2);min-width:70px">Réponse</th>'
+      + '<th style="' + CS + ';font-weight:600;background:var(--paper-2);min-width:70px"></th></tr>'
       + '<tr><td style="' + CS + ';height:40px;background:var(--paper)"></td>'
       + '<td style="' + CS + ';height:40px;background:var(--paper)"></td></tr>'
       + '</table>';
@@ -534,14 +534,14 @@ function previsualiser(guideMode) {
         } else if(q.reponse.type === 'tableau_3col') {
           const {col1='', col2='', col3=''} = q.reponse;
           const S = 'border:1px solid #999;text-align:center;font-weight:600;padding:6px 8px;font-size:0.75rem';
-          previewReponse = '<table style="width:100%;border-collapse:collapse;margin:8px 0;table-layout:fixed">'
+          previewReponse = '<table style="border-collapse:collapse;margin:8px 0;">'
             + '<tr>'
-            + '<td style="width:33%;' + S + '">' + col1 + '</td>'
-            + '<td style="width:34%;' + S + ';vertical-align:middle" rowspan="2">' + col2 + '</td>'
-            + '<td style="width:33%;' + S + '">' + col3 + '</td>'
+            + '<td style="' + S + '">' + col1 + '</td>'
+            + '<td style="' + S + ';vertical-align:middle" rowspan="2">' + col2 + '</td>'
+            + '<td style="' + S + '">' + col3 + '</td>'
             + '</tr><tr>'
-            + '<td style="border:1px solid #999;background:#f0f0f0;height:40px"></td>'
-            + '<td style="border:1px solid #999;background:#f0f0f0;height:40px"></td>'
+            + '<td style="border:1px solid #999;background:#f0f0f0;height:40px;min-width:80px"></td>'
+            + '<td style="border:1px solid #999;background:#f0f0f0;height:40px;min-width:80px"></td>'
             + '</tr></table>';
         } else if(q.reponse.type === 'image') {
           const imgPrev = IMAGE_DB[q.reponse.ref];
@@ -549,15 +549,15 @@ function previsualiser(guideMode) {
         } else if(q.reponse.type === 'lignes') {
           previewReponse = Array(q.reponse.nombre).fill('<div class="reponse-ligne-pleine" style="border-bottom:1px solid #999;height:28px;margin:6px 0"></div>').join('');
         } else if(q.reponse.type === 'tableau') {
-          previewReponse = '<table style="border-collapse:collapse;margin:8px 0;font-size:0.8rem">'
+          previewReponse = '<table style="border-collapse:collapse;margin:8px 0;font-size:0.8rem;">'
             + '<tr><th style="border:0.5px solid #ccc;padding:4px 8px;background:#f5f5f5"></th><th style="border:0.5px solid #ccc;padding:4px 8px;background:#f5f5f5">Document</th></tr>'
             + q.reponse.lignes.map(function(l){return '<tr><td style="border:0.5px solid #ccc;padding:4px 8px">' + l.label + '</td><td style="border:0.5px solid #ccc;padding:4px 30px"></td></tr>';}).join('')
             + '</table>';
         } else if(q.reponse.type === 'tableau_2col') {
-          const CS = 'border:1px solid #999;text-align:center;padding:6px 8px;width:75px;font-size:0.8rem';
-          previewReponse = '<table style="border-collapse:collapse;margin:8px 0;table-layout:fixed">'
-            + '<tr><th style="' + CS + ';font-weight:600;background:#f5f5f5">Réponse</th>'
-            + '<th style="' + CS + ';font-weight:600;background:#f5f5f5"></th></tr>'
+          const CS = 'border:1px solid #999;text-align:center;padding:6px 8px;font-size:0.8rem';
+          previewReponse = '<table style="border-collapse:collapse;margin:8px 0;">'
+            + '<tr><th style="' + CS + ';font-weight:600;background:#f5f5f5;min-width:70px">Réponse</th>'
+            + '<th style="' + CS + ';font-weight:600;background:#f5f5f5;min-width:70px"></th></tr>'
             + '<tr><td style="' + CS + ';height:40px"></td>'
             + '<td style="' + CS + ';height:40px"></td></tr>'
             + '</table>';
@@ -1008,24 +1008,18 @@ async function genererDocx(includeGuide=false) {
           }
         } else if(q.reponse.type === 'tableau_3col') {
           const {col1='', col2='', col3=''} = q.reponse;
-          const c1W = Math.floor(PAGE_W / 3);
-          const c2W = Math.floor(PAGE_W / 3);
-          const c3W = PAGE_W - c1W - c2W;
-          const mkHdr3 = (t, w) => new TableCell({ borders:BORDERS, margins:CELL_MARGINS, verticalAlign:VerticalAlign.CENTER,
-            width:{size:w,type:WidthType.DXA},
+          const mkHdr3 = (t) => new TableCell({ borders:BORDERS, margins:CELL_MARGINS, verticalAlign:VerticalAlign.CENTER,
             children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:t,font:'Aptos',size:20,bold:true})]})] });
-          const mkBlank3 = (w) => new TableCell({ borders:BORDERS, margins:CELL_MARGINS,
-            width:{size:w,type:WidthType.DXA},
+          const mkBlank3 = () => new TableCell({ borders:BORDERS, margins:CELL_MARGINS,
             children:[new Paragraph({children:[new TextRun({text:' '})]})] });
-          children.push(new Table({ width:{size:PAGE_W,type:WidthType.DXA}, columnWidths:[c1W,c2W,c3W], rows:[
+          children.push(new Table({ width:{size:0,type:WidthType.AUTO}, rows:[
             new TableRow({ children:[
-              mkHdr3(col1, c1W),
+              mkHdr3(col1),
               new TableCell({ borders:BORDERS, margins:CELL_MARGINS, verticalAlign:VerticalAlign.CENTER, rowSpan:2,
-                width:{size:c2W,type:WidthType.DXA},
                 children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:col2,font:'Aptos',size:20,bold:true})]})] }),
-              mkHdr3(col3, c3W)
+              mkHdr3(col3)
             ]}),
-            new TableRow({ height:{value:800,rule:'atLeast'}, children:[mkBlank3(c1W), mkBlank3(c3W)] })
+            new TableRow({ height:{value:800,rule:'atLeast'}, children:[mkBlank3(), mkBlank3()] })
           ]}));
         } else if(q.reponse.type === 'lignes') {
           const BN_L = { style: docx.BorderStyle.NONE, size: 0, color: 'FFFFFF' };
@@ -1052,9 +1046,6 @@ async function genererDocx(includeGuide=false) {
           }));
           children.push(new Paragraph({ children:[new TextRun({text:''})] }));
         } else if(q.reponse.type === 'tableau') {
-          // Tableau réponse
-          const colDoc = Math.floor(PAGE_W * 0.55);
-          const colVal = PAGE_W - colDoc;
           const repRows = [
             new TableRow({ children: [
               new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
@@ -1071,12 +1062,11 @@ async function genererDocx(includeGuide=false) {
                 children: [new Paragraph({ children: [new TextRun({ text: '', font: 'Aptos', size: 20 })] })] })
             ]}));
           });
-          children.push(new Table({ width: { size: PAGE_W, type: WidthType.DXA }, columnWidths: [colDoc, colVal], rows: repRows }));
+          children.push(new Table({ width: { size: 0, type: WidthType.AUTO }, rows: repRows }));
         } else if(q.reponse.type === 'tableau_2col') {
-          const col2c = 1134; // 2 cm in DXA
           const mk2 = (t, bold=false) => new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
             children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: t, font: 'Aptos', size: 20, bold })] })] });
-          children.push(new Table({ width: { size: col2c * 2, type: WidthType.DXA }, columnWidths: [col2c, col2c], rows: [
+          children.push(new Table({ width: { size: 0, type: WidthType.AUTO }, rows: [
             new TableRow({ children: [mk2('Réponse', true), mk2('', true)] }),
             new TableRow({ children: [mk2(''), mk2('')] })
           ]}));
