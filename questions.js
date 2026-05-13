@@ -153,6 +153,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q8": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -496,5 +518,34 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Obtenir une assistance militaire contre les Iroquois (ou leurs ennemis) ou s'assurer un approvisionnement en produits européens. \n\nDes réponses telles que Recevoir de l’aide de leur part ou Faire le commerce des \nfourrures sont plus ou moins correctes, car elles sont vagues."
+  },
+  {
+    id: "Q8",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    enonce: "La présence des Européens en Amérique amène un changement démographique chez les peuples autochtones. Quel est ce changement?",
+    aspects: [
+      {
+        aspect: "Populations autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "",
+            ref: ""
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "La population diminue ou Il y a une hausse de la mortalité (ou une forte mortalité) ou Les Amérindiens meurent en grand nombre.\n \nRemarques.  —  Une réponse telle que Les Autochtones meurent est plus ou moins correcte, car elle est \nvague. —  Des réponses telles que Ils attrapent des maladies européennes ou Le choc microbien sont incorrectes, car il s’agit de causes de ce changement."
   }
 ]
