@@ -175,6 +175,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
+  },
+  "Q9": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "2 points",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève situe tous les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas tous les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -208,6 +225,15 @@ const IMAGE_DB = {
   },
   "Population_autochtone_au_17e_siecle.png": {
     src: "images/Population_autochtone_au_17e_siecle.png"
+  },
+  "cartier_gaspe.png": {
+    src: "images/cartier_gaspe.png"
+  },
+  "chrono_acBd.png": {
+    src: "images/chrono_acBd.png"
+  },
+  "ligne_temps_1400-1600.png": {
+    src: "images/ligne_temps_1400-1600.png"
   }
 }
 
@@ -237,7 +263,7 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "image_ligne",
-      ref: "ligne_1400_1550.jpg"
+      ref: "ligne_temps_1400-1600.png"
     },
     guide: "C"
   },
@@ -555,7 +581,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document A",
+            titre: "Document A - Population autochtone",
             ref: "Population_autochtone_au_17e_siecle.png"
           }
         ]
@@ -566,5 +592,65 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "La population diminue ou Il y a une hausse de la mortalité (ou une forte mortalité) ou Les Amérindiens meurent en grand nombre.\n \nRemarques.  —  Une réponse telle que Les Autochtones meurent est plus ou moins correcte, car elle est \nvague. —  Des réponses telles que Ils attrapent des maladies européennes ou Le choc microbien sont incorrectes, car il s’agit de causes de ce changement."
+  },
+  {
+    id: "Q9",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    enonce: "Les documents A à D présentent des événements liés à des tentatives de colonisation par la France en Amérique du Nord. Placez ces documents par ordre chronologique.",
+    aspects: [
+      {
+        aspect: "Exploration et occupation du territoire par les Français"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« […] accompagné d’une centaine d’hommes, [Du Gua de Monts] s’installe sur l’île Sainte-Croix. Après un hiver éprouvant, les colons trouvent un emplacement […] où ils construisent l’habitation de Port-Royal. »",
+            source: "Christophe HORGUELIN et autres, Fresques, manuel de l’élève, histoire et éducation à la citoyenneté, 2e année du 2e cycle du secondaire, Montréal, Graficor, 2008, t. 1, p. 24."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« […] François Gravé du Pont, commandant d’une expédition de traite et d’exploration le long du \nfleuve, […] est accompagné des deux ambassadeurs montagnais qui ont rencontré Henri IV et de \nChamplain […] [Ils visitent] un groupe de Montagnais […] [qui] célèbrent une victoire récente sur les Iroquois […] La rencontre diplomatique est brève. […] Gravé du Pont partage un banquet en compagnie des Montagnais et de Champlain […] pour confirmer l’alliance. »",
+            source: "Mathieu D’AVIGNON, « L’alliance franco-montagnaise […] », Argument – Politique, société, histoire, vol. 16, no 2, printemps-été 2014, p. 31."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C - Jacques Cartier à Gaspé",
+            ref: "cartier_gaspe.png",
+            source: "Bibliothèque et Archives Canada/C-003278."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Roberval arrive […] à Cap-Rouge, en compagnie de 250 personnes, hommes et femmes. Il  renomme le fort abandonné […] “France-Roy” et s’y installe pour passer l’hiver. Toutefois, son  expérience est désastreuse et une grande partie des colons qui l’accompagnent meurent du scorbut.  Roberval retourne en France à la fin de l’hiver. »",
+            source: "Ève BERNIER CORMIER et autres, Chroniques du Québec et du Canada – Des origines à 1840, manuel de l’élève, histoire du Québec et du Canada, 3e secondaire, Montréal, ERPI, 2016, p. 55."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "chrono_acBd.png"
+    },
+    guide: "C - D - B - A"
   }
 ]
