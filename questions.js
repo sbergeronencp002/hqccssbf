@@ -205,6 +205,9 @@ const IMAGE_DB = {
   },
   "troc_1500.png": {
     src: "images/troc_1500.png"
+  },
+  "Population_autochtone_au_17e_siecle.png": {
+    src: "images/Population_autochtone_au_17e_siecle.png"
   }
 }
 
@@ -536,8 +539,8 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "",
-            ref: ""
+            titre: "Document A",
+            ref: "Population_autochtone_au_17e_siecle.png"
           }
         ]
       }
