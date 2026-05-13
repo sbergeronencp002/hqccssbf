@@ -581,7 +581,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document A",
+            titre: "Document A - Population autochtone",
             ref: "Population_autochtone_au_17e_siecle.png"
           }
         ]
