@@ -142,15 +142,15 @@ const REGLETTES = {
     niveaux: [
       {
         pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
+        desc: "L'élève détermine correctement le facteur explicatif."
       },
       {
         pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
       },
       {
         pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
   }
