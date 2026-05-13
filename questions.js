@@ -552,15 +552,14 @@ const QUESTIONS = [
         cols: [
           {
             titre: "",
-            texte: "« […] François Gravé du Pont, commandant d’une expédition de traite et d’exploration le long du \nfleuve, […] est accompagné des deux ambassadeurs montagnais qui ont rencontré Henri IV et de Champlain […] [Ils visitent] un groupe de Montagnais […] [qui] célèbrent une victoire récente sur les Iroquois […] La rencontre diplomatique est brève. […] Gravé du Pont pétune en compagnie des Montagnais et de Champlain […] pour confirmer l’alliance. »",
-            citation: "Mathieu D’AVIGNON, « L’alliance franco-montagnaise […] », Argument – Politique, société, histoire, vol. 16, no 2, printemps-été 2014, p. 31."
+            texte: "« […] François Gravé du Pont, commandant d’une expédition de traite et d’exploration le long du \nfleuve, […] est accompagné des deux ambassadeurs montagnais qui ont rencontré Henri IV et de Champlain […] [Ils visitent] un groupe de Montagnais […] [qui] célèbrent une victoire récente sur les Iroquois […] La rencontre diplomatique est brève. […] Gravé du Pont pétune en compagnie des Montagnais et de Champlain […] pour confirmer l’alliance. »"
           }
         ]
       }
     ],
     reponse: {
       type: "lignes",
-      nombre: 2
+      nombre: 3
     },
     guide: "Obtenir une assistance militaire contre les Iroquois (ou leurs ennemis) ou s'assurer un approvisionnement en produits européens. \n\nDes réponses telles que Recevoir de l’aide de leur part ou Faire le commerce des \nfourrures sont plus ou moins correctes, car elles sont vagues."
   },
