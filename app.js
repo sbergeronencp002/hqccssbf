@@ -651,6 +651,8 @@ function togglePanier(id, btn) {
     panier.push(id);
     btn.textContent = '✓ Dans le panier';
     btn.classList.add('in-panier');
+    const card = document.getElementById('card-' + id);
+    if(card) card.classList.remove('open');
   }
   updatePanierBar();
 }

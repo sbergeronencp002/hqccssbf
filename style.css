@@ -435,7 +435,7 @@ select:focus { outline: none; border-color: var(--ink-2); }
 }
 
 .espace-ligne { font-size:0.85rem; color:var(--ink-2); margin:4px 0; letter-spacing:2px; }
-.doc-spacer { height:2rem; }
+.doc-spacer { height:1rem; }
 .doc-img-titre { font-size:0.8rem; font-style:italic; color:var(--ink-2); margin-bottom:6px; }
 
 .lightbox {
