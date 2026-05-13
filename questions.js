@@ -30,11 +30,11 @@ const REGLETTES = {
       },
       {
         pts: 1,
-        desc: "L'élève met en relation certains faits. (2 ou 1 sur 3)"
+        desc: "L'élève met en relation certains faits. (2 sur 3)"
       },
       {
         pts: 0,
-        desc: "L'élève ne met en relation aucun fait. (0 sur 3)"
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
       }
     ]
   },
@@ -259,7 +259,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« D'avantage, Sa Majesté accordera aux associés, pour toujours, le trafic de tous cuirs, peaux et pelleteries de la Nouvelle-France et […] tout autre commerce, soit terrestre ou naval, qui se pourra faire, tirer, traiter et trafiquer, en quelque sorte ou manière que ce soit, en l'étendue du pays, et autant qu'il se pourra étendre […] »\nCARDINAL DE RICHELIEU. Édit, ordonnances royales, déclarations et arrêts du Conseil d'État du roi concernant le Canada, 1627."
+            texte: "« D'avantage, Sa Majesté accordera aux associés, pour toujours, le trafic de tous cuirs, peaux et pelleteries de la Nouvelle-France et […] tout autre commerce, soit terrestre ou naval, qui se pourra faire, tirer, traiter et trafiquer, en quelque sorte ou manière que ce soit, en l'étendue du pays, et autant qu'il se pourra étendre […] »",
+            citation: "CARDINAL DE RICHELIEU. Édit, ordonnances royales, déclarations et arrêts du Conseil d'État du roi concernant le Canada, 1627."
           }
         ]
       },
@@ -277,7 +278,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« C'est à savoir que [les Cent Associés] promettront de faire passer audit pays de la Nouvelle-France deux à trois cents hommes de tous les métiers dès l'année prochaine de 1628, et pendant les années suivantes en augmenter le nombre jusqu'à quatre mille de l'un et de l'autre sexe […] les y loger, nourrir et fournir toutes choses généralement nécessaires à la vie pendant trois ans […] »\nCARDINAL DE RICHELIEU. Édit, ordonnances royales, déclarations et arrêts du Conseil d'État du roi concernant le Canada, 1627."
+            texte: "« C'est à savoir que [les Cent Associés] promettront de faire passer audit pays de la Nouvelle-France deux à trois cents hommes de tous les métiers dès l'année prochaine de 1628, et pendant les années suivantes en augmenter le nombre jusqu'à quatre mille de l'un et de l'autre sexe […] les y loger, nourrir et fournir toutes choses généralement nécessaires à la vie pendant trois ans […] »",
+            citation: "CARDINAL DE RICHELIEU. Édit, ordonnances royales, déclarations et arrêts du Conseil d'État du roi concernant le Canada, 1627."
           }
         ]
       }
