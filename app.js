@@ -447,6 +447,7 @@ function renderDoc(d) {
           html += '<div class="doc-texte-full" style="display:none;font-size:0.75rem;color:var(--ink-2);line-height:1.5">' + col.texte.replace(/\n/g,'<br>') + '</div>';
           html += '<button onclick="toggleTexte(this)" style="font-size:0.7rem;color:var(--ink-3);background:none;border:none;cursor:pointer;padding:2px 0;text-decoration:underline">Lire la suite</button>';
         }
+        if(col.citation) html += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:4px;font-style:italic">' + col.citation + '</div>';
       } else if(col.ref) {
         const img2 = IMAGE_DB[col.ref];
         if(img2) html += '<img src="' + img2.src + '" style="max-width:100%;max-height:150px;object-fit:contain;cursor:pointer" onclick="openLightbox(\'' + img2.src + '\')">';
@@ -569,6 +570,7 @@ function previsualiser(guideMode) {
               if(col.texte) {
                 const short = col.texte.length > 400 ? col.texte.substring(0,400) + '...' : col.texte;
                 docsHtml += '<div style="font-size:0.72rem;color:var(--ink-2);line-height:1.5">' + short + '</div>';
+                if(col.citation) docsHtml += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:4px;font-style:italic">' + col.citation + '</div>';
               } else if(img) {
                 docsHtml += '<img src="' + img.src + '" style="max-width:100%;max-height:100px;object-fit:contain;cursor:pointer" onclick="openLightbox(\'' + img.src + '\')">';
               }
@@ -968,7 +970,13 @@ async function genererDocx(includeGuide=false) {
               // Texte
               if(col.texte) {
                 col.texte.split('\n').forEach(line => {
-                  cellChildren.push(new Paragraph({ children: [new TextRun({ text: line, font: 'Aptos', size: 18 })] }));
+                  cellChildren.push(new Paragraph({ children: [new TextRun({ text: line, font: 'Aptos', size: 20 })] }));
+                });
+              }
+              // Citation
+              if(col.citation) {
+                col.citation.split('\n').forEach(line => {
+                  cellChildren.push(new Paragraph({ children: [new TextRun({ text: line, font: 'Aptos', size: 12 })] }));
                 });
               }
               // Image
