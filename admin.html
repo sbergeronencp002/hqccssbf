@@ -368,8 +368,8 @@ function loadQuestion(id) {
           addDoc('textes');
           document.getElementById('doc-'+docCount+'-titre').value = col.titre||'';
           document.getElementById('doc-'+docCount+'-texte').value = col.texte||'';
-          const citEl = document.getElementById('doc-'+docCount+'-citation');
-          if(citEl) citEl.value = col.citation||'';
+          const srcEl = document.getElementById('doc-'+docCount+'-source');
+          if(srcEl) srcEl.value = col.source||'';
         }
       } else {
         addDoc('textes-image');
@@ -384,8 +384,8 @@ function loadQuestion(id) {
             addCol(docId,'texte');
             document.getElementById('col-'+colCount+'-titre').value = col.titre||'';
             document.getElementById('col-'+colCount+'-texte').value = col.texte||'';
-            const citEl = document.getElementById('col-'+colCount+'-citation');
-            if(citEl) citEl.value = col.citation||'';
+            const srcEl = document.getElementById('col-'+colCount+'-source');
+            if(srcEl) srcEl.value = col.source||'';
           }
         });
       }
@@ -599,6 +599,7 @@ let docCount = 0;
 function addDoc(type) {
   const id = ++docCount;
   const wrap = document.getElementById('docs-list');
+  const letter = String.fromCharCode(65 + wrap.querySelectorAll(':scope > .block').length);
   const div = document.createElement('div');
   div.className = 'block';
   div.id = 'doc-' + id;
@@ -608,15 +609,16 @@ function addDoc(type) {
     div.innerHTML = `
       <div class="block-title">Document texte</div>
       <button class="btn-remove" onclick="removeEl('doc-${id}')">✕</button>
-      <div class="field"><label>Titre</label><input type="text" id="doc-${id}-titre" placeholder="Document A"></div>
+      <div class="field"><label>Titre</label><input type="text" id="doc-${id}-titre" placeholder="Document ${letter}" value="Document ${letter}"></div>
       <div class="field"><label>Texte</label><textarea id="doc-${id}-texte" rows="4" placeholder="Contenu du document…"></textarea></div>
-      <div class="field"><label>Citation</label><textarea id="doc-${id}-citation" rows="2" placeholder="Source, auteur, date…"></textarea></div>`;
+      <div class="field"><label>Source</label><textarea id="doc-${id}-source" rows="2" placeholder="Auteur, date…"></textarea></div>`;
   } else if(type === 'image') {
     div.innerHTML = `
       <div class="block-title">Document image</div>
       <button class="btn-remove" onclick="removeEl('doc-${id}')">✕</button>
-      <div class="field"><label>Titre</label><input type="text" id="doc-${id}-titre" placeholder="Document A"></div>
-      <div class="field"><label>Image</label>${imageSelect('doc-'+id+'-ref')}</div>`;
+      <div class="field"><label>Titre</label><input type="text" id="doc-${id}-titre" placeholder="Document ${letter}" value="Document ${letter}"></div>
+      <div class="field"><label>Image</label>${imageSelect('doc-'+id+'-ref')}</div>
+      <div class="field"><label>Source</label><textarea id="doc-${id}-source" rows="2" placeholder="Auteur, date…"></textarea></div>`;
   } else if(type === 'textes-image') {
     div.innerHTML = `
       <div class="block-title">Colonnes texte / image</div>
@@ -643,7 +645,7 @@ function addCol(docId, type) {
       <button class="btn-remove" onclick="removeEl('col-${id}')">✕</button>
       <div class="field"><label>Titre</label><input type="text" id="col-${id}-titre" placeholder="Document A"></div>
       <div class="field"><label>Texte</label><textarea id="col-${id}-texte" rows="3"></textarea></div>
-      <div class="field"><label>Citation</label><textarea id="col-${id}-citation" rows="2" placeholder="Source, auteur, date…"></textarea></div>`;
+      <div class="field"><label>Source</label><textarea id="col-${id}-source" rows="2" placeholder="Auteur, date…"></textarea></div>`;
   } else {
     div.innerHTML = `
       <button class="btn-remove" onclick="removeEl('col-${id}')">✕</button>
@@ -714,14 +716,17 @@ function buildQuestion() {
     if(dtype === 'textes') {
       const titre = docEl.querySelector('[id$="-titre"]').value.trim();
       const texte = docEl.querySelector('[id$="-texte"]').value.trim();
-      const citation = docEl.querySelector('[id$="-citation"]')?.value.trim() || '';
+      const source = docEl.querySelector('[id$="-source"]')?.value.trim() || '';
       const col = { titre, texte };
-      if(citation) col.citation = citation;
+      if(source) col.source = source;
       documents.push({ type: 'textes', cols: [col] });
     } else if(dtype === 'image') {
       const titre = docEl.querySelector('[id$="-titre"]').value.trim();
       const ref = docEl.querySelector('[id$="-ref"]').value;
-      documents.push({ type: 'textes', cols: [{ titre, ref }] });
+      const source = docEl.querySelector('[id$="-source"]')?.value.trim() || '';
+      const col = { titre, ref };
+      if(source) col.source = source;
+      documents.push({ type: 'textes', cols: [col] });
     } else if(dtype === 'textes-image') {
       const cols = [];
       docEl.querySelectorAll('.col-block').forEach(colEl => {
@@ -729,9 +734,9 @@ function buildQuestion() {
         const titre = colEl.querySelector('[id$="-titre"]').value.trim();
         if(ctype === 'texte') {
           const texte = colEl.querySelector('[id$="-texte"]').value.trim();
-          const citation = colEl.querySelector('[id$="-citation"]')?.value.trim() || '';
+          const source = colEl.querySelector('[id$="-source"]')?.value.trim() || '';
           const col = { titre, texte };
-          if(citation) col.citation = citation;
+          if(source) col.source = source;
           cols.push(col);
         } else {
           const ref = colEl.querySelector('[id$="-ref"]').value;
