@@ -242,7 +242,7 @@ function buildCopyText(q) {
   if(q.documents.length) {
     t += `DOCUMENTS\n`;
     q.documents.forEach(d=>{
-      if(d.cols) d.cols.forEach(c=>{ t+=`• ${c.titre||''}${c.ref?' ['+c.ref+']':''}\n`; });
+      if(d.cols) d.cols.forEach(c=>{ t+=`• ${c.titre||''}${c.ref?' ['+c.ref+']':''}${c.citation?'\n  '+c.citation:''}\n`; });
       else t+=`• ${d.type}\n`;
     });
     t+='\n';
@@ -717,34 +717,34 @@ function dragEnd(e) {
 }
 
 // ===== RÉSOLUTION DES IMAGES (fetch → base64 + dimensions) =====
-async function resolveImages() {
+async function resolveImages(neededKeys) {
   const MAX_PX = 1200;
   const JPEG_Q = 0.78;
 
-  const promises = Object.entries(IMAGE_DB).map(async ([key, entry]) => {
-    if (entry.src && !entry.src.startsWith('data:')) {
-      try {
-        const resp = await fetch(entry.src);
-        const blob = await resp.blob();
-        const isJpeg = blob.type === 'image/jpeg' || key.match(/\.(jpg|jpeg)$/i);
-        const dataUrl = await new Promise((res, rej) => {
-          const img = new Image();
-          img.onload = () => {
-            const scale = Math.min(1, MAX_PX / Math.max(img.naturalWidth, img.naturalHeight));
-            const w = Math.round(img.naturalWidth * scale);
-            const h = Math.round(img.naturalHeight * scale);
-            const canvas = document.createElement('canvas');
-            canvas.width = w; canvas.height = h;
-            canvas.getContext('2d').drawImage(img, 0, 0, w, h);
-            res({ url: canvas.toDataURL(isJpeg ? 'image/jpeg' : 'image/png', isJpeg ? JPEG_Q : undefined), w, h });
-          };
-          img.onerror = rej;
-          img.src = URL.createObjectURL(blob);
-        });
-        IMAGE_DB[key] = { src: dataUrl.url, w: dataUrl.w, h: dataUrl.h };
-      } catch(e) {
-        console.warn('Impossible de charger l\'image :', key, e);
-      }
+  const promises = neededKeys.map(async key => {
+    const entry = IMAGE_DB[key];
+    if (!entry || entry.src.startsWith('data:')) return;
+    try {
+      const resp = await fetch(entry.src);
+      const blob = await resp.blob();
+      const isJpeg = blob.type === 'image/jpeg' || key.match(/\.(jpg|jpeg)$/i);
+      const dataUrl = await new Promise((res, rej) => {
+        const img = new Image();
+        img.onload = () => {
+          const scale = Math.min(1, MAX_PX / Math.max(img.naturalWidth, img.naturalHeight));
+          const w = Math.round(img.naturalWidth * scale);
+          const h = Math.round(img.naturalHeight * scale);
+          const canvas = document.createElement('canvas');
+          canvas.width = w; canvas.height = h;
+          canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+          res({ url: canvas.toDataURL(isJpeg ? 'image/jpeg' : 'image/png', isJpeg ? JPEG_Q : undefined), w, h });
+        };
+        img.onerror = rej;
+        img.src = URL.createObjectURL(blob);
+      });
+      IMAGE_DB[key] = { src: dataUrl.url, w: dataUrl.w, h: dataUrl.h };
+    } catch(e) {
+      console.warn('Impossible de charger l\'image :', key, e);
     }
   });
   await Promise.all(promises);
@@ -760,9 +760,16 @@ async function genererDocx(includeGuide=false) {
   btn.textContent = '⏳ Génération…';
 
   try {
-    await resolveImages();
-    console.log('Starting DOCX generation...');
-    console.log('Questions in panier:', panier);
+    const panierQuestions = panier.map(id => QUESTIONS.find(x => x.id === id)).filter(Boolean);
+    const neededKeys = new Set();
+    panierQuestions.forEach(q => {
+      q.documents.forEach(d => {
+        if(d.cols) d.cols.forEach(c => { if(c.ref && IMAGE_DB[c.ref]) neededKeys.add(c.ref); });
+        if(d.ref && IMAGE_DB[d.ref]) neededKeys.add(d.ref);
+      });
+      if(q.reponse && q.reponse.ref && IMAGE_DB[q.reponse.ref]) neededKeys.add(q.reponse.ref);
+    });
+    await resolveImages([...neededKeys]);
     const {
       Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
       AlignmentType, BorderStyle, WidthType, VerticalAlign
