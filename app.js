@@ -515,9 +515,13 @@ function previsualiser(guideMode) {
       }
       let regHtml = '';
       if(r) {
-        regHtml = '<div class="preview-reglette"><table><tr><td class="r-label" rowspan="2">' + r.oi + '</td>';
-        regHtml += r.colonnes.map(function(c) { return '<td style="text-align:center;background:var(--paper-2)">' + c + '</td>'; }).join('');
-        regHtml += '</tr><tr>' + r.niveaux.map(function(n) { return '<td>' + n.desc + '</td>'; }).join('') + '</tr></table></div>';
+        if(r.variante) {
+          regHtml = '<div class="preview-reglette">' + buildReglettHTML(q) + '</div>';
+        } else {
+          regHtml = '<div class="preview-reglette"><table><tr><td class="r-label" rowspan="2">' + r.oi + '</td>';
+          regHtml += r.colonnes.map(function(c) { return '<td style="text-align:center;background:var(--paper-2)">' + c + '</td>'; }).join('');
+          regHtml += '</tr><tr>' + r.niveaux.map(function(n) { return '<td>' + n.desc + '</td>'; }).join('') + '</tr></table></div>';
+        }
       }
       // Réponse in preview
       let previewReponse = '';
