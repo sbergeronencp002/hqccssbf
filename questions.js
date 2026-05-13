@@ -1,6 +1,6 @@
 const REGLETTES = {
   "Q1": {
-    oi: "Situer dans le temps",
+    oi: "Établir des faits",
     colonnes: [
       "1 point",
       "0 point"
@@ -8,11 +8,11 @@ const REGLETTES = {
     niveaux: [
       {
         pts: 1,
-        desc: "L'élève situe les faits dans le temps."
+        desc: "L'élève établit correctement le fait."
       },
       {
         pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
   },
@@ -223,6 +223,39 @@ const REGLETTES = {
   }
 }
 
-const IMAGE_DB = {}
+const IMAGE_DB = {
 
-const QUESTIONS = []
+}
+
+const QUESTIONS = [
+  {
+    id: "Q1",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document ci-dessous, nommez une nation autochtone qui conclut une alliance avec Champlain et François Gravé du Pont en 1603.",
+    aspects: [
+      {
+        aspect: "Exploration et occupation du territoire par les Français"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La rencontre diplomatique de 1603 […] contribue à jeter les bases d’un réseau d’alliance franco-amérindien. Cette rencontre ouvre aussi la voie à l’établissement d’une colonie française en Amérique du Nord […] Champlain […] renouvellera à deux reprises sa participation à des expéditions contre les Iroquois […] »",
+            source: "Raymonde LITALIEN (dir.) et Denis VAUGEOIS (dir.), Champlain : la naissance de l’Amérique française, Québec, Les éditions du Septentrion, 2004, p. 160."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les Montagnais ou les Etchemins (ou les Malécites) ou les Algonquins ou les Hurons ou les Micmacs ou les Abénaquis."
+  }
+]
