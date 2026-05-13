@@ -900,7 +900,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P4 — 1791 – 1840",
     points: 3,
-    enonce: "À partir des documents A à C, expliquez comment la réponse de Londres aux revendications des Patriotes entraîne des actions de protestation populaire au Bas-Canada dans la première moitié du \n19e siècle.\n  \nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux. \n\n• Une revendication des Patriotes \n• La réponse de Londres \n• Une action de protestation populaire",
+    enonce: "À partir des documents A à C, expliquez comment la réponse de Londres aux revendications des Patriotes entraîne des actions de protestation populaire au Bas-Canada dans la première moitié du 19e siècle.\n  \nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux. \n\n• Une revendication des Patriotes \n• La réponse de Londres \n• Une action de protestation populaire",
     aspects: [
       {
         aspect: "Soulèvements de 1837-1838"
@@ -912,8 +912,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A - Papineau devant une foule",
-            ref: "papineau_foule.png",
-            source: "Bibliothèque et Archives Canada/C-073725."
+            ref: "papineau_foule.png"
           }
         ]
       },
