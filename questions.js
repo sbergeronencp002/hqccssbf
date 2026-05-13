@@ -262,6 +262,9 @@ const IMAGE_DB = {
   },
   "org_pol_acte_constitutionnel.png": {
     src: "images/org_pol_acte_constitutionnel.png"
+  },
+  "troc_1600.png": {
+    src: "images/troc_1600.png"
   }
 }
 
@@ -697,8 +700,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A - Échanges vers 1600",
-            ref: "troc_1500",
-            source: "MEES."
+            ref: "troc_1600.png"
           }
         ]
       },
@@ -707,8 +709,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B - Échanges vers 1700",
-            ref: "troc_1700.png",
-            source: "MEES."
+            ref: "troc_1700.png"
           }
         ]
       }
