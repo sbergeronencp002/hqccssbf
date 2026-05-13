@@ -11,6 +11,7 @@ function formatTexte(text) {
     } else {
       if(inList) { html += '</ul>'; inList = false; }
       if(line.trim()) html += boldify(line) + '<br>';
+      else html += '<br>';
     }
   });
   if(inList) html += '</ul>';
