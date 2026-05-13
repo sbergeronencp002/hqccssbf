@@ -407,7 +407,7 @@ select:focus { outline: none; border-color: var(--ink-2); }
 .preview-question { margin-bottom:2.5rem; padding-bottom:2rem; border-bottom:1px solid var(--border); }
 .preview-question:last-child { border-bottom:none; }
 .preview-num { font-size:0.7rem; font-weight:600; color:var(--ink-3); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:6px; }
-.preview-enonce { font-size:0.9rem; line-height:1.7; color:var(--ink); margin-bottom:12px; white-space:pre-line; }
+.preview-enonce { font-size:0.9rem; line-height:1.7; color:var(--ink); margin-bottom:12px; }
 .preview-docs { font-size:0.8rem; color:var(--ink-2); margin-bottom:12px; }
 .preview-reponse { font-size:0.8rem; color:var(--ink-3); font-style:italic; letter-spacing:2px; margin-bottom:12px; }
 .preview-reglette table { border-collapse:collapse; width:100%; font-size:0.72rem; }

@@ -565,7 +565,7 @@ function previsualiser(guideMode) {
       }
 
       return '<div class="preview-question"><div class="preview-num">Question ' + (idx+1) + '</div>'
-        + '<div class="preview-enonce">' + q.enonce + '</div>'
+        + '<div class="preview-enonce">' + formatTexte(q.enonce) + '</div>'
         + docsHtml + previewReponse + regHtml + '</div>';
     }).join('');
   }
@@ -682,7 +682,9 @@ async function resolveImages(neededKeys) {
       const isJpeg = blob.type === 'image/jpeg' || key.match(/\.(jpg|jpeg)$/i);
       const dataUrl = await new Promise((res, rej) => {
         const img = new Image();
+        const blobUrl = URL.createObjectURL(blob);
         img.onload = () => {
+          URL.revokeObjectURL(blobUrl);
           const scale = Math.min(1, MAX_PX / Math.max(img.naturalWidth, img.naturalHeight));
           const w = Math.round(img.naturalWidth * scale);
           const h = Math.round(img.naturalHeight * scale);
@@ -691,8 +693,8 @@ async function resolveImages(neededKeys) {
           canvas.getContext('2d').drawImage(img, 0, 0, w, h);
           res({ url: canvas.toDataURL(isJpeg ? 'image/jpeg' : 'image/png', isJpeg ? JPEG_Q : undefined), w, h });
         };
-        img.onerror = rej;
-        img.src = URL.createObjectURL(blob);
+        img.onerror = () => { URL.revokeObjectURL(blobUrl); rej(); };
+        img.src = blobUrl;
       });
       IMAGE_DB[key] = { src: dataUrl.url, w: dataUrl.w, h: dataUrl.h };
     } catch(e) {
@@ -754,42 +756,40 @@ async function genererDocx(includeGuide=false) {
         const col3 = Math.floor(PAGE_W * 0.35);
         const col4 = PAGE_W - col1 - col2 - col3;
 
-        const mkCell = (text, bold=false, rowSpan=1, colSpan=1) => {
-          const cell = new TableCell({
-            borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
-            rowSpan: rowSpan > 1 ? rowSpan : undefined,
-            columnSpan: colSpan > 1 ? colSpan : undefined,
-            children: [new Paragraph({
-              alignment: AlignmentType.CENTER,
-              children: [new TextRun({ text, font: 'Aptos', size: 12, bold })]
-            })]
-          });
-          return cell;
-        };
+        const mkCell = (text, bold=false, rowSpan=1, colSpan=1, w=0) => new TableCell({
+          borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
+          rowSpan: rowSpan > 1 ? rowSpan : undefined,
+          columnSpan: colSpan > 1 ? colSpan : undefined,
+          width: w ? {size:w, type:WidthType.DXA} : undefined,
+          children: [new Paragraph({
+            alignment: AlignmentType.CENTER,
+            children: [new TextRun({ text, font: 'Aptos', size: 12, bold })]
+          })]
+        });
 
         return [new Table({
           width: { size: PAGE_W, type: WidthType.DXA },
           columnWidths: [col1, col2, col3, col4],
           rows: [
-            new TableRow({ children: [mkCell(r.oi, true, 6), mkCell("L'élève précise les trois éléments", false, 3), mkCell("et établit correctement deux liens de causalité."), mkCell("3 points")] }),
-            new TableRow({ children: [mkCell("et établit correctement un lien de causalité."), mkCell("2 points")] }),
-            new TableRow({ children: [mkCell("mais n'établit correctement aucun lien de causalité."), mkCell("1 point")] }),
-            new TableRow({ children: [mkCell("L'élève précise deux éléments", false, 2), mkCell("et établit correctement un lien de causalité."), mkCell("2 points")] }),
-            new TableRow({ children: [mkCell("mais n'établit correctement aucun lien de causalité."), mkCell("1 point")] }),
-            new TableRow({ children: [mkCell("L'élève précise un seul élément ou n'en précise pas.", false, 1, 2), mkCell("0 point")] }),
+            new TableRow({ children: [mkCell(r.oi, true, 6, 1, col1), mkCell("L'élève précise les trois éléments", false, 3, 1, col2), mkCell("et établit correctement deux liens de causalité.", false, 1, 1, col3), mkCell("3 points", false, 1, 1, col4)] }),
+            new TableRow({ children: [mkCell("et établit correctement un lien de causalité.", false, 1, 1, col3), mkCell("2 points", false, 1, 1, col4)] }),
+            new TableRow({ children: [mkCell("mais n'établit correctement aucun lien de causalité.", false, 1, 1, col3), mkCell("1 point", false, 1, 1, col4)] }),
+            new TableRow({ children: [mkCell("L'élève précise deux éléments", false, 2, 1, col2), mkCell("et établit correctement un lien de causalité.", false, 1, 1, col3), mkCell("2 points", false, 1, 1, col4)] }),
+            new TableRow({ children: [mkCell("mais n'établit correctement aucun lien de causalité.", false, 1, 1, col3), mkCell("1 point", false, 1, 1, col4)] }),
+            new TableRow({ children: [mkCell("L'élève précise un seul élément ou n'en précise pas.", false, 1, 2, col2+col3), mkCell("0 point", false, 1, 1, col4)] }),
           ]
         })];
       }
 
       if(r.variante === 'acteur-positions') {
         const c1=Math.floor(PAGE_W*0.22), c2=Math.floor(PAGE_W*0.43), c3=Math.floor(PAGE_W*0.22), c4=PAGE_W-c1-c2-c3;
-        const mk=(t,bold=false,rs=1,cs=1)=>new TableCell({borders:BORDERS,margins:CELL_MARGINS,verticalAlign:VerticalAlign.CENTER,rowSpan:rs>1?rs:undefined,columnSpan:cs>1?cs:undefined,children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:t,font:'Aptos',size:12,bold})]})]});
+        const mk=(t,bold=false,rs=1,cs=1,w=0)=>new TableCell({borders:BORDERS,margins:CELL_MARGINS,verticalAlign:VerticalAlign.CENTER,rowSpan:rs>1?rs:undefined,columnSpan:cs>1?cs:undefined,width:w?{size:w,type:WidthType.DXA}:undefined,children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:t,font:'Aptos',size:12,bold})]})]});
         return [new Table({width:{size:PAGE_W,type:WidthType.DXA},columnWidths:[c1,c2,c3,c4],rows:[
-          new TableRow({children:[mk(r.oi,true,5),mk("L'élève nomme correctement l'acteur qui présente une position différente",false,4),mk("et présente correctement les deux positions."),mk("3 points")]}),
-          new TableRow({children:[mk("et présente correctement une position et plus ou moins correctement l'autre position."),mk("2 points")]}),
-          new TableRow({children:[mk("et présente plus ou moins correctement les deux positions, ou présente correctement une position et incorrectement l'autre ou ne la présente pas."),mk("1 point")]}),
-          new TableRow({children:[mk("et présente tout au plus une seule position plus ou moins correctement."),mk("0 point")]}),
-          new TableRow({children:[mk("L'élève nomme incorrectement l'acteur qui présente une position différente ou ne le nomme pas.",false,1,2),mk("0 point")]}),
+          new TableRow({children:[mk(r.oi,true,5,1,c1),mk("L'élève nomme correctement l'acteur qui présente une position différente",false,4,1,c2),mk("et présente correctement les deux positions.",false,1,1,c3),mk("3 points",false,1,1,c4)]}),
+          new TableRow({children:[mk("et présente correctement une position et plus ou moins correctement l'autre position.",false,1,1,c3),mk("2 points",false,1,1,c4)]}),
+          new TableRow({children:[mk("et présente plus ou moins correctement les deux positions, ou présente correctement une position et incorrectement l'autre ou ne la présente pas.",false,1,1,c3),mk("1 point",false,1,1,c4)]}),
+          new TableRow({children:[mk("et présente tout au plus une seule position plus ou moins correctement.",false,1,1,c3),mk("0 point",false,1,1,c4)]}),
+          new TableRow({children:[mk("L'élève nomme incorrectement l'acteur qui présente une position différente ou ne le nomme pas.",false,1,2,c2+c3),mk("0 point",false,1,1,c4)]}),
         ]})];
       }
 
