@@ -471,7 +471,7 @@ const QUESTIONS = [
     oi: "Déterminer des causes et des conséquences",
     periode: "P1 — Des origines à 1608",
     points: 2,
-    enonce: "Pour quelle raison les Montagnais concluent-ils une alliance avec les représentants du roi de \nFrance Henri IV?",
+    enonce: "Pour quelle raison les Montagnais concluent-ils une alliance avec les représentants du roi de France Henri IV?",
     aspects: [
       {
         aspect: "Alliances et rivalités au sein des Premières Nations"
