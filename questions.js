@@ -231,6 +231,9 @@ const IMAGE_DB = {
   },
   "chrono_acBd.png": {
     src: "images/chrono_acBd.png"
+  },
+  "ligne_temps_1400-1600.png": {
+    src: "images/ligne_temps_1400-1600.png"
   }
 }
 
@@ -260,7 +263,7 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "image_ligne",
-      ref: "ligne_1400_1550.jpg"
+      ref: "ligne_temps_1400-1600.png"
     },
     guide: "C"
   },
