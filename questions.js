@@ -30,11 +30,11 @@ const REGLETTES = {
       },
       {
         pts: 1,
-        desc: "L'élève met en relation certains faits. (2 ou 1 sur 3)"
+        desc: "L'élève met en relation certains faits. (2 sur 3)"
       },
       {
         pts: 0,
-        desc: "L'élève ne met en relation aucun fait. (0 sur 3)"
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
       }
     ]
   },
@@ -128,7 +128,7 @@ const REGLETTES = {
       },
       {
         pts: 0,
-        desc: "L'élève ne met en relation aucun fait. (1 ou 0 sur 4)"
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
       }
     ]
   },
@@ -259,7 +259,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« D'avantage, Sa Majesté accordera aux associés, pour toujours, le trafic de tous cuirs, peaux et pelleteries de la Nouvelle-France et […] tout autre commerce, soit terrestre ou naval, qui se pourra faire, tirer, traiter et trafiquer, en quelque sorte ou manière que ce soit, en l'étendue du pays, et autant qu'il se pourra étendre […] »\nCARDINAL DE RICHELIEU. Édit, ordonnances royales, déclarations et arrêts du Conseil d'État du roi concernant le Canada, 1627."
+            texte: "« D'avantage, Sa Majesté accordera aux associés, pour toujours, le trafic de tous cuirs, peaux et pelleteries de la Nouvelle-France et […] tout autre commerce, soit terrestre ou naval, qui se pourra faire, tirer, traiter et trafiquer, en quelque sorte ou manière que ce soit, en l'étendue du pays, et autant qu'il se pourra étendre […] »",
+            citation: "CARDINAL DE RICHELIEU. Édit, ordonnances royales, déclarations et arrêts du Conseil d'État du roi concernant le Canada, 1627."
           }
         ]
       },
@@ -277,7 +278,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« C'est à savoir que [les Cent Associés] promettront de faire passer audit pays de la Nouvelle-France deux à trois cents hommes de tous les métiers dès l'année prochaine de 1628, et pendant les années suivantes en augmenter le nombre jusqu'à quatre mille de l'un et de l'autre sexe […] les y loger, nourrir et fournir toutes choses généralement nécessaires à la vie pendant trois ans […] »\nCARDINAL DE RICHELIEU. Édit, ordonnances royales, déclarations et arrêts du Conseil d'État du roi concernant le Canada, 1627."
+            texte: "« C'est à savoir que [les Cent Associés] promettront de faire passer audit pays de la Nouvelle-France deux à trois cents hommes de tous les métiers dès l'année prochaine de 1628, et pendant les années suivantes en augmenter le nombre jusqu'à quatre mille de l'un et de l'autre sexe […] les y loger, nourrir et fournir toutes choses généralement nécessaires à la vie pendant trois ans […] »",
+            citation: "CARDINAL DE RICHELIEU. Édit, ordonnances royales, déclarations et arrêts du Conseil d'État du roi concernant le Canada, 1627."
           }
         ]
       }
@@ -349,7 +351,7 @@ const QUESTIONS = [
     oi: "Dégager des différences et des similitudes",
     periode: "P4 — 1791 – 1840",
     points: 2,
-    enonce: "Le document A présente deux points de vue différents d'acteurs par rapport aux soulèvements de 1837-1838. Indiquez sur quel point précis les acteurs sont en désaccord.",
+    enonce: "Le documents A et B présentent deux points de vue différents d'acteurs par rapport aux soulèvements de 1837-1838. Indiquez sur quel point précis les acteurs sont en désaccord.",
     aspects: [
       {
         aspect: "Soulèvements de 1837-1838"
@@ -361,7 +363,18 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Serviteurs, soyez soumis et respectueux envers vos maîtres […] Ne vous laissez pas séduire si quelqu'un voulait vous engager dans la rébellion contre le gouvernement établi. »\nMgr Lartigue, évêque de Montréal\nDION-MCKENNON, D. et al. Notre histoire, ERPI, p. 138.\n\n« Eh bien! Moi je diffère d'opinion avec monsieur Papineau. Je prétends que le temps est arrivé de fondre nos plats et nos cuillères d'étain pour en faire des balles. »\nWolfred Nelson\nFILTEAU, G. Histoire des Patriotes, Montréal, Éditions de l'Aurore, 1975, p. 277."
+            texte: "« Serviteurs, soyez soumis et respectueux envers vos maîtres […] Ne vous laissez pas séduire si quelqu'un voulait vous engager dans la rébellion contre le gouvernement établi. »\n\nMgr Lartigue, évêque de Montréal.",
+            citation: "DION-MCKENNON, D. et al. Notre histoire, ERPI, p. 138."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Eh bien! Moi je diffère d'opinion avec monsieur Papineau. Je prétends que le temps est arrivé de fondre nos plats et nos cuillères d'étain pour en faire des balles. »\n\nWolfred Nelson",
+            citation: "FILTEAU, G. Histoire des Patriotes, Montréal, Éditions de l'Aurore, 1975, p. 277."
           }
         ]
       }
@@ -442,7 +455,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« Pour subvenir à leurs besoins, [les Cris, Ojibwés, Innus, Béothuks et Outaouais] suivent le gibier dans ses déplacements. Ils ont donc besoin d'un vaste territoire où abondent le gibier, le poisson et les fruits. »\nAlain DALONGEVILLE (dir.), Présences : une histoire thématique du Québec, manuel de l'élève, histoire et éducation à la citoyenneté, 2e année du 2e cycle du secondaire, Anjou, Les Éditions CEC, 2008, vol. 1, p. 28."
+            texte: "« Pour subvenir à leurs besoins, [les Cris, Ojibwés, Innus, Béothuks et Outaouais] suivent le gibier dans ses déplacements. Ils ont donc besoin d'un vaste territoire où abondent le gibier, le poisson et les fruits. »",
+            citation: "Alain DALONGEVILLE (dir.), Présences : une histoire thématique du Québec, manuel de l'élève, histoire et éducation à la citoyenneté, 2e année du 2e cycle du secondaire, Anjou, Les Éditions CEC, 2008, vol. 1, p. 28."
           }
         ]
       },
@@ -451,7 +465,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« La fertilité du sol et un climat favorable à l'agriculture leur permettent de cultiver le maïs, les courges et les haricots. Ils habitent des villages constitués de maisons longues pouvant abriter plusieurs familles et toutes leurs possessions. Chaque famille y entretient un feu pour y faire cuire la nourriture de ses membres. »\nDALONGEVILLE, A. Présences, volume 1, CEC, p. 55."
+            texte: "« La fertilité du sol et un climat favorable à l'agriculture leur permettent de cultiver le maïs, les courges et les haricots. Ils habitent des villages constitués de maisons longues pouvant abriter plusieurs familles et toutes leurs possessions. Chaque famille y entretient un feu pour y faire cuire la nourriture de ses membres. »",
+            citation: "DALONGEVILLE, A. Présences, volume 1, CEC, p. 55."
           }
         ]
       },
