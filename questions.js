@@ -167,30 +167,24 @@ const REGLETTES = {
     ]
   },
   "Q10": {
-    oi: "Établir des liens de causalité",
-    variante: "3 éléments — 2 liens",
+    oi: "Déterminer des changements et des continuités",
     colonnes: [
-      "3 points",
       "2 points",
       "1 point",
       "0 point"
     ],
     niveaux: [
       {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
-      {
         pts: 2,
-        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+        desc: "L'élève détermine correctement le changement."
       },
       {
         pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+        desc: "L'élève détermine plus ou moins correctement le changement."
       },
       {
         pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
   }
@@ -223,6 +217,9 @@ const IMAGE_DB = {
   },
   "commerce_fourrures.png": {
     src: "images/commerce_fourrures.png"
+  },
+  "territoire_acte_const.png": {
+    src: "images/territoire_acte_const.png"
   }
 }
 
@@ -609,5 +606,35 @@ const QUESTIONS = [
         }
       ]
     }
+  },
+  {
+    id: "Q10",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    enonce: "À partir du document A, indiquez le changement territorial qui survient avec l’adoption de l’Acte constitutionnel en 1791.",
+    aspects: [
+      {
+        aspect: "Acte constitutionnel"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "territoire_acte_const.png",
+            source: "MEES."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le territoire est divisé en Haut-Canada et Bas-Canada."
   }
 ]
