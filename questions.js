@@ -486,7 +486,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "",
-            texte: "« […] François Gravé du Pont, commandant d’une expédition de traite et d’exploration le long du \nfleuve, […] est accompagné des deux ambassadeurs montagnais qui ont rencontré Henri IV et de \nChamplain […] [Ils visitent] un groupe de Montagnais […] [qui] célèbrent une victoire récente sur les \nIroquois […] La rencontre diplomatique est brève. […] Gravé du Pont pétune1 en compagnie des Montagnais et de Champlain […] pour confirmer l’alliance. » \n1. Pétune : fume du tabac \nMathieu D’AVIGNON, « L’alliance franco-montagnaise […] », Argument – Politique, société, histoire, vol. 16, no 2, printemps-été 2014, p. 31."
+            texte: "« […] François Gravé du Pont, commandant d’une expédition de traite et d’exploration le long du \nfleuve, […] est accompagné des deux ambassadeurs montagnais qui ont rencontré Henri IV et de Champlain […] [Ils visitent] un groupe de Montagnais […] [qui] célèbrent une victoire récente sur les Iroquois […] La rencontre diplomatique est brève. […] Gravé du Pont pétune en compagnie des Montagnais et de Champlain […] pour confirmer l’alliance. » \n\nMathieu D’AVIGNON, « L’alliance franco-montagnaise […] », Argument – Politique, société, histoire, vol. 16, no 2, printemps-été 2014, p. 31."
           }
         ]
       }
