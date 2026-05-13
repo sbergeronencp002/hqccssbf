@@ -557,6 +557,12 @@ async function loadImages() {
     const data = await r.json();
     if(Array.isArray(data)) {
       IMAGES = data.filter(f => f.name !== '.gitkeep').map(f => f.name).sort();
+      const options = '<option value="">— Choisir une image —</option>' + IMAGES.map(f=>`<option value="${f}">${f}</option>`).join('');
+      document.querySelectorAll('select[id$="-ref"]').forEach(sel => {
+        const val = sel.value;
+        sel.innerHTML = options;
+        sel.value = val;
+      });
     }
   } catch(e) { /* utilise la liste vide */ }
 }
