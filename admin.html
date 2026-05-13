@@ -229,9 +229,9 @@ header a:hover { color: #fff; }
         <select id="rep-type" onchange="updateReponseUI()">
           <option value="none">Aucune</option>
           <option value="lignes">Lignes de réponse</option>
-          <option value="image_ligne">Image + ligne</option>
           <option value="image">Image seule</option>
           <option value="tableau">Tableau</option>
+          <option value="tableau_3col">Tableau 3 colonnes</option>
         </select>
       </div>
       <div id="rep-extra"></div>
@@ -406,7 +406,12 @@ function loadQuestion(id) {
   document.getElementById('rep-type').value = repType;
   updateReponseUI();
   if(repType==='lignes') document.getElementById('rep-nombre').value = q.reponse.nombre||2;
-  else if(repType==='image_ligne'||repType==='image') { const s=document.getElementById('rep-ref'); if(s) s.value=q.reponse.ref||''; }
+  else if(repType==='image') { const s=document.getElementById('rep-ref'); if(s) s.value=q.reponse.ref||''; }
+  else if(repType==='tableau_3col') {
+    const c1=document.getElementById('rep-col1'); if(c1) c1.value=q.reponse.col1||'';
+    const c2=document.getElementById('rep-col2'); if(c2) c2.value=q.reponse.col2||'';
+    const c3=document.getElementById('rep-col3'); if(c3) c3.value=q.reponse.col3||'';
+  }
   else if(repType==='tableau') document.getElementById('rep-lignes').value = (q.reponse.lignes||[]).map(l=>l.label).join('\n');
 
   if(r) {
@@ -719,8 +724,15 @@ function updateReponseUI() {
   const wrap = document.getElementById('rep-extra');
   if(type === 'lignes') {
     wrap.innerHTML = `<div class="field"><label>Nombre de lignes</label><input type="number" id="rep-nombre" value="2" min="1" max="10"></div>`;
-  } else if(type === 'image_ligne' || type === 'image') {
+  } else if(type === 'image') {
     wrap.innerHTML = `<div class="field"><label>Image de référence</label>${imageSelect('rep-ref')}</div>`;
+  } else if(type === 'tableau_3col') {
+    wrap.innerHTML = `
+      <div class="row-3">
+        <div class="field"><label>Col. gauche</label><input type="text" id="rep-col1" placeholder="Avant"></div>
+        <div class="field"><label>Col. centrale (événement)</label><input type="text" id="rep-col2" placeholder="La capitulation de Montréal"></div>
+        <div class="field"><label>Col. droite</label><input type="text" id="rep-col3" placeholder="Après"></div>
+      </div>`;
   } else if(type === 'tableau') {
     wrap.innerHTML = `
       <div class="field"><label>Lignes du tableau <span style="font-weight:400;color:var(--ink-3)">(une par ligne)</span></label>
@@ -804,10 +816,14 @@ function buildQuestion() {
   const repType = document.getElementById('rep-type').value;
   if(repType === 'lignes') {
     reponse = { type: 'lignes', nombre: parseInt(document.getElementById('rep-nombre').value) };
-  } else if(repType === 'image_ligne') {
-    reponse = { type: 'image_ligne', ref: document.getElementById('rep-ref').value };
   } else if(repType === 'image') {
     reponse = { type: 'image', ref: document.getElementById('rep-ref').value };
+  } else if(repType === 'tableau_3col') {
+    reponse = { type: 'tableau_3col',
+      col1: document.getElementById('rep-col1').value.trim(),
+      col2: document.getElementById('rep-col2').value.trim(),
+      col3: document.getElementById('rep-col3').value.trim()
+    };
   } else if(repType === 'tableau') {
     const lignes = document.getElementById('rep-lignes').value.trim().split('\n').map(s=>s.trim()).filter(Boolean).map(s=>({ label: s }));
     reponse = { type: 'tableau', lignes };
@@ -876,7 +892,8 @@ function validateForm() {
   if(!document.getElementById('q-enonce').value.trim()) errors.push('Énoncé vide');
   if(!document.querySelectorAll('#aspects-list input[type=checkbox]:checked').length) errors.push('Aucun aspect sélectionné');
   const repType = document.getElementById('rep-type').value;
-  if((repType === 'image_ligne' || repType === 'image') && !document.getElementById('rep-ref')?.value) errors.push('Image de réponse non sélectionnée');
+  if(repType === 'image' && !document.getElementById('rep-ref')?.value) errors.push('Image de réponse non sélectionnée');
+  if(repType === 'tableau_3col' && !document.getElementById('rep-col2')?.value.trim()) errors.push('Étiquette centrale du tableau manquante');
   if(repType === 'tableau' && !document.getElementById('rep-lignes')?.value.trim()) errors.push('Lignes du tableau réponse vides');
   if(document.getElementById('reg-preset').value === '') errors.push('Réglette non sélectionnée');
   return errors;

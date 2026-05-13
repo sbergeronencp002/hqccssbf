@@ -390,11 +390,18 @@ function renderDoc(d) {
 
 function renderReponse(q) {
   if(!q.reponse || q.reponse === false) return '';
-  if(q.reponse.type === 'image_ligne') {
-    const img = IMAGE_DB[q.reponse.ref];
-    let html = '';
-    if(img) html += '<div class="doc-img-wrap"><img src="' + img.src + '" class="doc-img" style="max-height:60px;max-width:100%" onclick="openLightbox(\'' + img.src + '\')" title="Cliquer pour agrandir"></div>';
-    return html;
+  if(q.reponse.type === 'tableau_3col') {
+    const {col1='', col2='', col3=''} = q.reponse;
+    const S = 'border:1px solid var(--ink-2);text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem';
+    return '<table style="width:100%;border-collapse:collapse;margin:8px 0">'
+      + '<tr>'
+      + '<td style="width:38%;' + S + '">' + col1 + '</td>'
+      + '<td style="width:24%;' + S + ';vertical-align:middle" rowspan="2">' + col2 + '</td>'
+      + '<td style="width:38%;' + S + '">' + col3 + '</td>'
+      + '</tr><tr>'
+      + '<td style="border:1px solid var(--ink-2);background:var(--paper-2);height:50px"></td>'
+      + '<td style="border:1px solid var(--ink-2);background:var(--paper-2);height:50px"></td>'
+      + '</tr></table>';
   }
   if(q.reponse.type === 'image') {
     const img = IMAGE_DB[q.reponse.ref];
@@ -506,10 +513,18 @@ function previsualiser(guideMode) {
       if(q.reponse && q.reponse !== false) {
         if(q.reponse === true) {
           previewReponse = '<div class="reponse-courte" style="margin:8px 0">__________</div>';
-        } else if(q.reponse.type === 'image_ligne') {
-          const imgPrev = IMAGE_DB[q.reponse.ref];
-          if(imgPrev) previewReponse += '<img src="' + imgPrev.src + '" style="max-width:100%;max-height:80px;object-fit:contain;margin:8px 0;display:block">';
-          previewReponse += '<div class="reponse-courte" style="margin:4px 0">__________</div>';
+        } else if(q.reponse.type === 'tableau_3col') {
+          const {col1='', col2='', col3=''} = q.reponse;
+          const S = 'border:1px solid #999;text-align:center;font-weight:600;padding:6px 8px;font-size:0.75rem';
+          previewReponse = '<table style="width:100%;border-collapse:collapse;margin:8px 0">'
+            + '<tr>'
+            + '<td style="width:38%;' + S + '">' + col1 + '</td>'
+            + '<td style="width:24%;' + S + ';vertical-align:middle" rowspan="2">' + col2 + '</td>'
+            + '<td style="width:38%;' + S + '">' + col3 + '</td>'
+            + '</tr><tr>'
+            + '<td style="border:1px solid #999;background:#f0f0f0;height:40px"></td>'
+            + '<td style="border:1px solid #999;background:#f0f0f0;height:40px"></td>'
+            + '</tr></table>';
         } else if(q.reponse.type === 'image') {
           const imgPrev = IMAGE_DB[q.reponse.ref];
           if(imgPrev) previewReponse += '<img src="' + imgPrev.src + '" style="max-width:100%;max-height:80px;object-fit:contain;margin:8px 0;display:block">';
@@ -958,20 +973,24 @@ async function genererDocx(includeGuide=false) {
             const docH_2 = Math.round(docW_2 / (imgData2.w / imgData2.h));
             children.push(new Paragraph({ children: [new docx.ImageRun({ data: bytes_2, type: imgType_2, transformation: { width: docW_2, height: docH_2 } })] }));
           }
-        } else if(q.reponse.type === 'image_ligne') {
-          const imgData2 = IMAGE_DB[q.reponse.ref];
-          if(imgData2 && imgData2.src) {
-            const b64_2 = imgData2.src.split(',')[1];
-            const bStr_2 = atob(b64_2);
-            const bytes_2 = new Uint8Array(bStr_2.length);
-            for(let bi=0; bi<bStr_2.length; bi++) bytes_2[bi] = bStr_2.charCodeAt(bi);
-            const ext_2 = q.reponse.ref.split('.').pop().toLowerCase();
-            const imgType_2 = (ext_2 === 'jpg' || ext_2 === 'jpeg') ? 'jpg' : 'png';
-            const docW_2 = Math.min(400, imgData2.w);
-            const docH_2 = Math.round(docW_2 / (imgData2.w / imgData2.h));
-            children.push(new Paragraph({ children: [new docx.ImageRun({ data: bytes_2, type: imgType_2, transformation: { width: docW_2, height: docH_2 } })] }));
-          }
-          children.push(new Paragraph({ children: [new TextRun({ text: '__________', font: 'Aptos', size: 22 })] }));
+        } else if(q.reponse.type === 'tableau_3col') {
+          const {col1='', col2='', col3=''} = q.reponse;
+          const c1W = Math.floor(PAGE_W * 0.38);
+          const c2W = Math.floor(PAGE_W * 0.24);
+          const c3W = PAGE_W - c1W - c2W;
+          const mkHdr3 = (t) => new TableCell({ borders:BORDERS, margins:CELL_MARGINS, verticalAlign:VerticalAlign.CENTER,
+            children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:t,font:'Aptos',size:20,bold:true})]})] });
+          const mkBlank3 = () => new TableCell({ borders:BORDERS, margins:CELL_MARGINS,
+            children:[new Paragraph({children:[new TextRun({text:' '})]})] });
+          children.push(new Table({ width:{size:PAGE_W,type:WidthType.DXA}, columnWidths:[c1W,c2W,c3W], rows:[
+            new TableRow({ children:[
+              mkHdr3(col1),
+              new TableCell({ borders:BORDERS, margins:CELL_MARGINS, verticalAlign:VerticalAlign.CENTER, rowSpan:2,
+                children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:col2,font:'Aptos',size:20,bold:true})]})] }),
+              mkHdr3(col3)
+            ]}),
+            new TableRow({ height:{value:800,rule:'atLeast'}, children:[mkBlank3(), mkBlank3()] })
+          ]}));
         } else if(q.reponse.type === 'lignes') {
           const BN_L = { style: docx.BorderStyle.NONE, size: 0, color: 'FFFFFF' };
           const BB_L = { style: docx.BorderStyle.SINGLE, size: 6, color: '000000' };
