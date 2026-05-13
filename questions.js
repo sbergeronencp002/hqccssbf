@@ -220,6 +220,28 @@ const REGLETTES = {
       "0 point"
     ],
     niveaux: []
+  },
+  "Q13": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (3 sur 3)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (2 sur 3)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
+      }
+    ]
   }
 }
 
@@ -759,5 +781,84 @@ const QUESTIONS = [
       nombre: 4
     },
     guide: "Il y a changement, car il y a une Assemblée législative à partir de 1791 (ou car il y a mise en place d’une chambre d’assemblée durant cette période). \nou \nIl y a continuité, car le gouverneur détient tous les pouvoirs de 1763 à 1840 (ou car le gouverneur a toujours les pleins pouvoirs durant cette période)."
+  },
+  {
+    id: "Q13",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    enonce: "Les documents A à C présentent la position de différents groupes sociaux lors de la crise politique qui secoue le Bas-Canada durant les années 1830. Inscrivez à l’endroit approprié la lettre du document correspondant à chacune des positions des groupes sociaux.",
+    aspects: [
+      {
+        aspect: "Idées libérales et républicaines"
+      },
+      {
+        aspect: "Population"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "Les membres de ce groupe constituent une élite montante. Inspirés par les idées libérales, bon nombre d’entre eux s’impliquent en politique en formant le groupe dirigeant du Parti patriote.",
+            source: "MEES."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "Ce groupe prêche la soumission à l’administration coloniale et dénonce les idées libérales défendues par les Patriotes. Par la suite, ce groupe augmentera son influence sociale et politique.",
+            source: "MEES."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "En majorité composé de personnes d’origine britannique, ce groupe occupe les postes importants de l’administration coloniale. Il est farouchement opposé aux revendications des Patriotes.",
+            source: "MEES."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau",
+      lignes: [
+        {
+          label: "Bourgeoisie professionnelle"
+        },
+        {
+          label: "Bourgeoisie d'affaires"
+        },
+        {
+          label: "Clergé catholique"
+        }
+      ]
+    },
+    guide: {
+      type: "tableau",
+      lignes: [
+        {
+          label: "Bourgeoisie professionnelle",
+          valeur: "1"
+        },
+        {
+          label: "Bourgeoisie d'affaires",
+          valeur: "3"
+        },
+        {
+          label: "Clergé catholique",
+          valeur: "2"
+        }
+      ]
+    }
   }
 ]
