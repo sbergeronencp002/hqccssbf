@@ -128,7 +128,7 @@ const REGLETTES = {
       },
       {
         pts: 0,
-        desc: "L'élève ne met en relation aucun fait. (1 ou 0 sur 4)"
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
       }
     ]
   },
@@ -455,7 +455,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« Pour subvenir à leurs besoins, [les Cris, Ojibwés, Innus, Béothuks et Outaouais] suivent le gibier dans ses déplacements. Ils ont donc besoin d'un vaste territoire où abondent le gibier, le poisson et les fruits. »\nAlain DALONGEVILLE (dir.), Présences : une histoire thématique du Québec, manuel de l'élève, histoire et éducation à la citoyenneté, 2e année du 2e cycle du secondaire, Anjou, Les Éditions CEC, 2008, vol. 1, p. 28."
+            texte: "« Pour subvenir à leurs besoins, [les Cris, Ojibwés, Innus, Béothuks et Outaouais] suivent le gibier dans ses déplacements. Ils ont donc besoin d'un vaste territoire où abondent le gibier, le poisson et les fruits. »",
+            citation: "Alain DALONGEVILLE (dir.), Présences : une histoire thématique du Québec, manuel de l'élève, histoire et éducation à la citoyenneté, 2e année du 2e cycle du secondaire, Anjou, Les Éditions CEC, 2008, vol. 1, p. 28."
           }
         ]
       },
@@ -464,7 +465,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« La fertilité du sol et un climat favorable à l'agriculture leur permettent de cultiver le maïs, les courges et les haricots. Ils habitent des villages constitués de maisons longues pouvant abriter plusieurs familles et toutes leurs possessions. Chaque famille y entretient un feu pour y faire cuire la nourriture de ses membres. »\nDALONGEVILLE, A. Présences, volume 1, CEC, p. 55."
+            texte: "« La fertilité du sol et un climat favorable à l'agriculture leur permettent de cultiver le maïs, les courges et les haricots. Ils habitent des villages constitués de maisons longues pouvant abriter plusieurs familles et toutes leurs possessions. Chaque famille y entretient un feu pour y faire cuire la nourriture de ses membres. »",
+            citation: "DALONGEVILLE, A. Présences, volume 1, CEC, p. 55."
           }
         ]
       },
