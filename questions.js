@@ -54,16 +54,21 @@ const REGLETTES = {
     oi: "Situer dans le temps",
     colonnes: [
       "2 points",
+      "1 point",
       "0 point"
     ],
     niveaux: [
       {
         pts: 2,
-        desc: "L'élève situe tous les faits dans le temps."
+        desc: "L'élève situe tous les faits dans le temps. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève situe certains faits dans le temps. (3 ou 2 sur 4)"
       },
       {
         pts: 0,
-        desc: "L'élève ne situe pas tous les faits dans le temps."
+        desc: "L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"
       }
     ]
   },
@@ -374,8 +379,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A - La déportation des Acadiens",
-            ref: "deportation_acadien.png",
-            source: "Bibliothèque et Archives Canada/C-070232."
+            ref: "deportation_acadien.png"
           }
         ]
       },
@@ -394,8 +398,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C - La révolte de Pontiac",
-            ref: "revolte_pontiact.png",
-            source: "Bibliothèque et Archives Canada/C-011250."
+            ref: "revolte_pontiact.png"
           }
         ]
       },
@@ -412,9 +415,9 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "tableau_3col",
-      col1: "",
+      col1: "Avant",
       col2: "La capitulation de Montréal",
-      col3: ""
+      col3: "Après"
     },
     guide: "1 et 4 / 2 et 3"
   }
