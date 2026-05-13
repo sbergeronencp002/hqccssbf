@@ -501,7 +501,6 @@ function previsualiser(guideMode) {
         });
         docsHtml += '</div>';
       }
-      const reponseHtml = q.reponse ? '<div class="preview-reponse">__________</div>' : '';
       let regHtml = '';
       if(r) {
         regHtml = '<div class="preview-reglette"><table><tr><td class="r-label" rowspan="2">' + r.oi + '</td>';
