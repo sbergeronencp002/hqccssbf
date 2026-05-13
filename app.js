@@ -99,6 +99,7 @@ function applyFilters() {
   const aspect  = document.getElementById('f-aspect').value;
   const periode = document.getElementById('f-periode').value;
   const niveau  = document.getElementById('f-niveau').value;
+  const search  = (document.getElementById('f-search')?.value || '').trim().toLowerCase();
 
   // Rebuild OI filter based on current period+aspect selection
   const relevantQ = QUESTIONS.filter(q => {
@@ -117,6 +118,7 @@ function applyFilters() {
     if(oi      && q.oi !== oi) return false;
     if(aspect  && !q.aspects.some(a=>a.aspect===aspect)) return false;
     if(periode && q.periode !== periode) return false;
+    if(search  && !q.enonce.toLowerCase().includes(search)) return false;
     return true;
   });
 
@@ -130,8 +132,9 @@ function applyFilters() {
 }
 
 function resetFilters() {
-  ['f-niveau','f-periode','f-aspect','f-oi'].forEach(id=>{
-    document.getElementById(id).value='';
+  ['f-niveau','f-periode','f-aspect','f-oi','f-search'].forEach(id=>{
+    const el = document.getElementById(id);
+    if(el) el.value = '';
   });
   applyFilters();
 }
@@ -180,28 +183,31 @@ function buildReglettHTML(q) {
   }
 
   if(r.variante === 'acteur-positions') {
+    const S2 = S + ';border-right:none';
+    const S3 = S + ';border-left:none;border-right:none';
+    const S4 = S + ';border-left:none';
     return `<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%">
       <tr>
         <td style="${SB};width:22%" rowspan="5">${r.oi}</td>
-        <td style="${S};width:43%" rowspan="4">L'élève nomme correctement l'acteur qui présente une position différente</td>
-        <td style="${S}">et présente correctement les deux positions.</td>
-        <td style="${S};width:17%">3 points</td>
+        <td style="${S2};width:43%" rowspan="4">L'élève nomme correctement l'acteur qui présente une position différente</td>
+        <td style="${S3}">et présente correctement les deux positions.</td>
+        <td style="${S4};width:17%">3 points</td>
       </tr>
       <tr>
-        <td style="${S}">et présente correctement une position et plus ou moins correctement l'autre position.</td>
-        <td style="${S}">2 points</td>
+        <td style="${S3}">et présente correctement une position et plus ou moins correctement l'autre position.</td>
+        <td style="${S4}">2 points</td>
       </tr>
       <tr>
-        <td style="${S}">et présente plus ou moins correctement les deux positions, ou présente correctement une position et incorrectement l'autre ou ne la présente pas.</td>
-        <td style="${S}">1 point</td>
+        <td style="${S3}">et présente plus ou moins correctement les deux positions, ou présente correctement une position et incorrectement l'autre ou ne la présente pas.</td>
+        <td style="${S4}">1 point</td>
       </tr>
       <tr>
-        <td style="${S}">et présente tout au plus une seule position plus ou moins correctement.</td>
-        <td style="${S}">0 point</td>
+        <td style="${S3}">et présente tout au plus une seule position plus ou moins correctement.</td>
+        <td style="${S4}">0 point</td>
       </tr>
       <tr>
-        <td style="${S}" colspan="2">L'élève nomme incorrectement l'acteur qui présente une position différente ou ne le nomme pas.</td>
-        <td style="${S}">0 point</td>
+        <td style="${S2}" colspan="2">L'élève nomme incorrectement l'acteur qui présente une position différente ou ne le nomme pas.</td>
+        <td style="${S4}">0 point</td>
       </tr>
     </table>`;
   }
@@ -325,8 +331,24 @@ function render(list) {
   }).join('');
 }
 
-populateFilters();
-applyFilters();
+async function initSite() {
+  document.getElementById('q-list').innerHTML =
+    '<div class="empty-state"><span class="big" style="font-size:2rem">…</span>Chargement…</div>';
+  try {
+    const resp = await fetch('questions.js', { cache: 'no-store' });
+    if(resp.ok) (new Function(await resp.text()))();
+  } catch(e) { /* utilise les globals déjà définis par <script src="questions.js"> */ }
+  populateFilters();
+  applyFilters();
+  try {
+    const saved = sessionStorage.getItem('hqc_panier');
+    if(saved) {
+      const ids = JSON.parse(saved).filter(id => QUESTIONS.some(q => q.id === id));
+      if(ids.length) { panier = ids; updatePanierBar(); refreshPanierButtons(); }
+    }
+  } catch(e) {}
+}
+initSite();
 
 // ===== PANIER =====
 let panier = [];
@@ -598,12 +620,21 @@ function togglePanier(id, btn) {
   updatePanierBar();
 }
 
+function refreshPanierButtons() {
+  panier.forEach(id => {
+    const btn = document.getElementById('btn-panier-' + id);
+    if(btn) { btn.textContent = '✓ Dans le panier'; btn.classList.add('in-panier'); }
+  });
+}
+
 function updatePanierBar() {
   const bar = document.getElementById('panier-bar');
   const count = document.getElementById('panier-count');
   const items = document.getElementById('panier-items');
-  count.textContent = panier.length + ' / 10';
+  const totalPts = panier.reduce((s, id) => { const q = QUESTIONS.find(x=>x.id===id); return s+(q?q.points:0); }, 0);
+  count.textContent = panier.length + ' / 10  ·  ' + totalPts + ' pt' + (totalPts !== 1 ? 's' : '');
   bar.classList.toggle('visible', panier.length > 0);
+  try { sessionStorage.setItem('hqc_panier', JSON.stringify(panier)); } catch(e) {}
 
   items.innerHTML = panier.map((id, i) => {
     const q = QUESTIONS.find(x => x.id === id);
@@ -713,6 +744,15 @@ async function genererDocx(includeGuide=false) {
   btn.textContent = '⏳ Génération…';
 
   try {
+    if(typeof docx === 'undefined') {
+      await new Promise((res, rej) => {
+        const s = document.createElement('script');
+        s.src = 'docx.js';
+        s.onload = res;
+        s.onerror = () => rej(new Error('Impossible de charger docx.js'));
+        document.head.appendChild(s);
+      });
+    }
     const panierQuestions = panier.map(id => QUESTIONS.find(x => x.id === id)).filter(Boolean);
     const neededKeys = new Set();
     panierQuestions.forEach(q => {
@@ -786,13 +826,17 @@ async function genererDocx(includeGuide=false) {
 
       if(r.variante === 'acteur-positions') {
         const c1=Math.floor(PAGE_W*0.22), c2=Math.floor(PAGE_W*0.43), c3=Math.floor(PAGE_W*0.22), c4=PAGE_W-c1-c2-c3;
-        const mk=(t,bold=false,rs=1,cs=1,w=0)=>new TableCell({borders:BORDERS,margins:CELL_MARGINS,verticalAlign:VerticalAlign.CENTER,rowSpan:rs>1?rs:undefined,columnSpan:cs>1?cs:undefined,width:w?{size:w,type:WidthType.DXA}:undefined,children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:t,font:'Aptos',size:12,bold})]})]});
+        const BN={style:BorderStyle.NONE,size:0,color:'FFFFFF'};
+        const BC2={top:BORDER,bottom:BORDER,left:BORDER,right:BN};
+        const BC3={top:BORDER,bottom:BORDER,left:BN,right:BN};
+        const BC4={top:BORDER,bottom:BORDER,left:BN,right:BORDER};
+        const mk=(t,bold=false,rs=1,cs=1,w=0,b=BORDERS)=>new TableCell({borders:b,margins:CELL_MARGINS,verticalAlign:VerticalAlign.CENTER,rowSpan:rs>1?rs:undefined,columnSpan:cs>1?cs:undefined,width:w?{size:w,type:WidthType.DXA}:undefined,children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:t,font:'Aptos',size:12,bold})]})]});
         return [new Table({width:{size:PAGE_W,type:WidthType.DXA},columnWidths:[c1,c2,c3,c4],rows:[
-          new TableRow({children:[mk(r.oi,true,5,1,c1),mk("L'élève nomme correctement l'acteur qui présente une position différente",false,4,1,c2),mk("et présente correctement les deux positions.",false,1,1,c3),mk("3 points",false,1,1,c4)]}),
-          new TableRow({children:[mk("et présente correctement une position et plus ou moins correctement l'autre position.",false,1,1,c3),mk("2 points",false,1,1,c4)]}),
-          new TableRow({children:[mk("et présente plus ou moins correctement les deux positions, ou présente correctement une position et incorrectement l'autre ou ne la présente pas.",false,1,1,c3),mk("1 point",false,1,1,c4)]}),
-          new TableRow({children:[mk("et présente tout au plus une seule position plus ou moins correctement.",false,1,1,c3),mk("0 point",false,1,1,c4)]}),
-          new TableRow({children:[mk("L'élève nomme incorrectement l'acteur qui présente une position différente ou ne le nomme pas.",false,1,2,c2+c3),mk("0 point",false,1,1,c4)]}),
+          new TableRow({children:[mk(r.oi,true,5,1,c1),mk("L'élève nomme correctement l'acteur qui présente une position différente",false,4,1,c2,BC2),mk("et présente correctement les deux positions.",false,1,1,c3,BC3),mk("3 points",false,1,1,c4,BC4)]}),
+          new TableRow({children:[mk("et présente correctement une position et plus ou moins correctement l'autre position.",false,1,1,c3,BC3),mk("2 points",false,1,1,c4,BC4)]}),
+          new TableRow({children:[mk("et présente plus ou moins correctement les deux positions, ou présente correctement une position et incorrectement l'autre ou ne la présente pas.",false,1,1,c3,BC3),mk("1 point",false,1,1,c4,BC4)]}),
+          new TableRow({children:[mk("et présente tout au plus une seule position plus ou moins correctement.",false,1,1,c3,BC3),mk("0 point",false,1,1,c4,BC4)]}),
+          new TableRow({children:[mk("L'élève nomme incorrectement l'acteur qui présente une position différente ou ne le nomme pas.",false,1,2,c2+c3,BC2),mk("0 point",false,1,1,c4,BC4)]}),
         ]})];
       }
 

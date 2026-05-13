@@ -99,6 +99,19 @@ select {
 }
 select:focus { outline: none; border-color: var(--ink-2); }
 
+.sidebar input[type=text] {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: 'DM Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 0.8rem;
+  color: var(--ink);
+}
+.sidebar input[type=text]:focus { outline: none; border-color: var(--ink-2); }
+.sidebar input[type=text]::placeholder { color: var(--ink-3); }
+
 .reset-btn {
   width: 100%;
   padding: 0.5rem;

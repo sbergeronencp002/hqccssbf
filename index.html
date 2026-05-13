@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<noscript><div style="padding:2rem;text-align:center;font-family:sans-serif;color:#1a1814">Ce site nécessite JavaScript pour fonctionner.</div></noscript>
 
 <header>
   <h1>HQC · CSSBF</h1>
@@ -19,6 +20,11 @@
 <div class="layout">
   <aside class="sidebar">
     <h2>Filtres</h2>
+
+    <div class="filter-group">
+      <label class="filter-label">Recherche</label>
+      <input type="text" id="f-search" placeholder="Mot-clé…" oninput="applyFilters()">
+    </div>
 
     <div class="filter-group">
       <label class="filter-label">Niveau</label>
@@ -100,7 +106,6 @@
 
 <div class="warn-toast" id="warn-toast"></div>
 
-<script src="docx.js"></script>
 <script src="questions.js"></script>
 <script src="contexte.js"></script>
 <script src="app.js"></script>
