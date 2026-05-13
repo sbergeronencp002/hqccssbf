@@ -123,7 +123,7 @@ const REGLETTES = {
     ]
   },
   "Q8": {
-    oi: "Déterminer des changements et des continuités",
+    oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
       "1 point",
@@ -132,15 +132,15 @@ const REGLETTES = {
     niveaux: [
       {
         pts: 2,
-        desc: "L'élève détermine correctement le changement."
+        desc: "L'élève détermine correctement le facteur explicatif."
       },
       {
         pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
       },
       {
         pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
   },
@@ -515,5 +515,24 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "L’appui de la population aux Rébellions."
+  },
+  {
+    id: "Q8",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    enonce: "À partir du document A, indiquez une cause de la rivalité entre la Nouvelle-France et les colonies britanniques à partir du 17e siècle.",
+    aspects: [
+      {
+        aspect: "Guerres intercoloniales"
+      }
+    ],
+    documents: [],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le commerce des fourrures ou le contrôle du territoire ou la rivalité entre les métropoles."
   }
 ]
