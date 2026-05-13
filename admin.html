@@ -578,7 +578,7 @@ async function init() {
   if(token) document.getElementById('gh-token').value = token;
   updatePeriodes();
   updatePresets();
-  await Promise.all([loadQuestionsJs(), loadImages()]);
+  await Promise.all([loadQuestionsJs(), loadImages(), loadReglettesJs()]);
 }
 
 async function loadImages() {
@@ -626,6 +626,24 @@ async function loadQuestionsJs() {
     document.getElementById('token-status').textContent = '✗ Erreur de connexion';
     document.getElementById('token-status').className = 'token-status ko';
   }
+}
+
+async function loadReglettesJs() {
+  try {
+    const headers = getToken() ? { Authorization: `token ${getToken()}` } : {};
+    const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/reglettes.js?ref=${BRANCH}`, { headers, cache: 'no-store' });
+    if(!r.ok) return;
+    const data = await r.json();
+    const binary = atob(data.content.replace(/\n/g,''));
+    const bytes = new Uint8Array(binary.length);
+    for(let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+    const content = new TextDecoder('utf-8').decode(bytes);
+    const fn = new Function(content + '\nreturn REGLETTES_PRESET;');
+    const fresh = fn();
+    for(const k in REGLETTES_PRESET) delete REGLETTES_PRESET[k];
+    Object.assign(REGLETTES_PRESET, fresh);
+    updatePresets();
+  } catch(e) { /* utilise la version statique */ }
 }
 
 document.getElementById('gh-token').addEventListener('change', loadQuestionsJs);
