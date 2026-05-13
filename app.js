@@ -204,33 +204,36 @@ function buildReglettHTML(q) {
   }
 
   if(r.variante === 'changement-continuité') {
+    const S2 = S + ';border-right:none';
+    const S3 = S + ';border-left:none;border-right:none';
+    const S4 = S + ';border-left:none';
     return `<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%">
       <tr>
         <td style="${SB};width:22%" rowspan="6">${r.oi}</td>
-        <td style="${S};width:37%" rowspan="3">L'élève indique s'il y a changement ou continuité</td>
-        <td style="${S}">et présente des faits qui le montrent correctement.</td>
-        <td style="${S};width:20%">3 points (ou 2 points)</td>
+        <td style="${S2};width:37%" rowspan="3">L'élève indique s'il y a changement ou continuité</td>
+        <td style="${S3}">et présente des faits qui le montrent correctement.</td>
+        <td style="${S4};width:20%">3 points (ou 2 points)</td>
       </tr>
       <tr>
-        <td style="${S}">et présente des faits qui le montrent plus ou moins correctement.</td>
-        <td style="${S}">2 points (ou 1 point)</td>
+        <td style="${S3}">et présente des faits qui le montrent plus ou moins correctement.</td>
+        <td style="${S4}">2 points (ou 1 point)</td>
       </tr>
       <tr>
-        <td style="${S}">et présente des faits qui le montrent incorrectement ou n'en présente pas.</td>
-        <td style="${S}">0 point</td>
+        <td style="${S3}">et présente des faits qui le montrent incorrectement ou n'en présente pas.</td>
+        <td style="${S4}">0 point</td>
       </tr>
       <tr>
-        <td style="${S}" rowspan="3">L'élève n'indique pas s'il y a changement ou continuité</td>
-        <td style="${S}">mais présente des faits exacts.</td>
-        <td style="${S}">2 points (ou 1 point)</td>
+        <td style="${S2}" rowspan="3">L'élève n'indique pas s'il y a changement ou continuité</td>
+        <td style="${S3}">mais présente des faits exacts.</td>
+        <td style="${S4}">2 points (ou 1 point)</td>
       </tr>
       <tr>
-        <td style="${S}">mais présente des faits plus ou moins exacts.</td>
-        <td style="${S}">1 point (ou 0 point)</td>
+        <td style="${S3}">mais présente des faits plus ou moins exacts.</td>
+        <td style="${S4}">1 point (ou 0 point)</td>
       </tr>
       <tr>
-        <td style="${S}">et présente des faits inexacts ou n'en présente pas.</td>
-        <td style="${S}">0 point</td>
+        <td style="${S3}">et présente des faits inexacts ou n'en présente pas.</td>
+        <td style="${S4}">0 point</td>
       </tr>
     </table>`;
   }
@@ -792,14 +795,18 @@ async function genererDocx(includeGuide=false) {
 
       if(r.variante === 'changement-continuité') {
         const c1=Math.floor(PAGE_W*0.22), c2=Math.floor(PAGE_W*0.37), c3=Math.floor(PAGE_W*0.21), c4=PAGE_W-c1-c2-c3;
-        const mk=(t,bold=false,rs=1,cs=1,w=0)=>new TableCell({borders:BORDERS,margins:CELL_MARGINS,verticalAlign:VerticalAlign.CENTER,rowSpan:rs>1?rs:undefined,columnSpan:cs>1?cs:undefined,width:w?{size:w,type:WidthType.DXA}:undefined,children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:t,font:'Aptos',size:12,bold})]})]});
+        const BN={style:BorderStyle.NONE,size:0,color:'FFFFFF'};
+        const BC2={top:BORDER,bottom:BORDER,left:BORDER,right:BN};
+        const BC3={top:BORDER,bottom:BORDER,left:BN,right:BN};
+        const BC4={top:BORDER,bottom:BORDER,left:BN,right:BORDER};
+        const mk=(t,bold=false,rs=1,cs=1,w=0,b=BORDERS)=>new TableCell({borders:b,margins:CELL_MARGINS,verticalAlign:VerticalAlign.CENTER,rowSpan:rs>1?rs:undefined,columnSpan:cs>1?cs:undefined,width:w?{size:w,type:WidthType.DXA}:undefined,children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:t,font:'Aptos',size:12,bold})]})]});
         return [new Table({width:{size:PAGE_W,type:WidthType.DXA},columnWidths:[c1,c2,c3,c4],rows:[
-          new TableRow({children:[mk(r.oi,true,6,1,c1),mk("L'élève indique s'il y a changement ou continuité",false,3,1,c2),mk("et présente des faits qui le montrent correctement.",false,1,1,c3),mk("3 points (ou 2 points)",false,1,1,c4)]}),
-          new TableRow({children:[mk("et présente des faits qui le montrent plus ou moins correctement.",false,1,1,c3),mk("2 points (ou 1 point)",false,1,1,c4)]}),
-          new TableRow({children:[mk("et présente des faits qui le montrent incorrectement ou n'en présente pas.",false,1,1,c3),mk("0 point",false,1,1,c4)]}),
-          new TableRow({children:[mk("L'élève n'indique pas s'il y a changement ou continuité",false,3,1,c2),mk("mais présente des faits exacts.",false,1,1,c3),mk("2 points (ou 1 point)",false,1,1,c4)]}),
-          new TableRow({children:[mk("mais présente des faits plus ou moins exacts.",false,1,1,c3),mk("1 point (ou 0 point)",false,1,1,c4)]}),
-          new TableRow({children:[mk("et présente des faits inexacts ou n'en présente pas.",false,1,1,c3),mk("0 point",false,1,1,c4)]}),
+          new TableRow({children:[mk(r.oi,true,6,1,c1),mk("L'élève indique s'il y a changement ou continuité",false,3,1,c2,BC2),mk("et présente des faits qui le montrent correctement.",false,1,1,c3,BC3),mk("3 points (ou 2 points)",false,1,1,c4,BC4)]}),
+          new TableRow({children:[mk("et présente des faits qui le montrent plus ou moins correctement.",false,1,1,c3,BC3),mk("2 points (ou 1 point)",false,1,1,c4,BC4)]}),
+          new TableRow({children:[mk("et présente des faits qui le montrent incorrectement ou n'en présente pas.",false,1,1,c3,BC3),mk("0 point",false,1,1,c4,BC4)]}),
+          new TableRow({children:[mk("L'élève n'indique pas s'il y a changement ou continuité",false,3,1,c2,BC2),mk("mais présente des faits exacts.",false,1,1,c3,BC3),mk("2 points (ou 1 point)",false,1,1,c4,BC4)]}),
+          new TableRow({children:[mk("mais présente des faits plus ou moins exacts.",false,1,1,c3,BC3),mk("1 point (ou 0 point)",false,1,1,c4,BC4)]}),
+          new TableRow({children:[mk("et présente des faits inexacts ou n'en présente pas.",false,1,1,c3,BC3),mk("0 point",false,1,1,c4,BC4)]}),
         ]})];
       }
 
