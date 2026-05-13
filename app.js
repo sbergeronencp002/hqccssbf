@@ -393,11 +393,11 @@ function renderReponse(q) {
   if(q.reponse.type === 'tableau_3col') {
     const {col1='', col2='', col3=''} = q.reponse;
     const S = 'border:1px solid var(--ink-2);text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem';
-    return '<table style="width:100%;border-collapse:collapse;margin:8px 0">'
+    return '<table style="width:100%;border-collapse:collapse;margin:8px 0;table-layout:fixed">'
       + '<tr>'
-      + '<td style="width:38%;' + S + '">' + col1 + '</td>'
-      + '<td style="width:24%;' + S + ';vertical-align:middle" rowspan="2">' + col2 + '</td>'
-      + '<td style="width:38%;' + S + '">' + col3 + '</td>'
+      + '<td style="width:33%;' + S + '">' + col1 + '</td>'
+      + '<td style="width:34%;' + S + ';vertical-align:middle" rowspan="2">' + col2 + '</td>'
+      + '<td style="width:33%;' + S + '">' + col3 + '</td>'
       + '</tr><tr>'
       + '<td style="border:1px solid var(--ink-2);background:var(--paper-2);height:50px"></td>'
       + '<td style="border:1px solid var(--ink-2);background:var(--paper-2);height:50px"></td>'
@@ -516,11 +516,11 @@ function previsualiser(guideMode) {
         } else if(q.reponse.type === 'tableau_3col') {
           const {col1='', col2='', col3=''} = q.reponse;
           const S = 'border:1px solid #999;text-align:center;font-weight:600;padding:6px 8px;font-size:0.75rem';
-          previewReponse = '<table style="width:100%;border-collapse:collapse;margin:8px 0">'
+          previewReponse = '<table style="width:100%;border-collapse:collapse;margin:8px 0;table-layout:fixed">'
             + '<tr>'
-            + '<td style="width:38%;' + S + '">' + col1 + '</td>'
-            + '<td style="width:24%;' + S + ';vertical-align:middle" rowspan="2">' + col2 + '</td>'
-            + '<td style="width:38%;' + S + '">' + col3 + '</td>'
+            + '<td style="width:33%;' + S + '">' + col1 + '</td>'
+            + '<td style="width:34%;' + S + ';vertical-align:middle" rowspan="2">' + col2 + '</td>'
+            + '<td style="width:33%;' + S + '">' + col3 + '</td>'
             + '</tr><tr>'
             + '<td style="border:1px solid #999;background:#f0f0f0;height:40px"></td>'
             + '<td style="border:1px solid #999;background:#f0f0f0;height:40px"></td>'
@@ -975,8 +975,8 @@ async function genererDocx(includeGuide=false) {
           }
         } else if(q.reponse.type === 'tableau_3col') {
           const {col1='', col2='', col3=''} = q.reponse;
-          const c1W = Math.floor(PAGE_W * 0.38);
-          const c2W = Math.floor(PAGE_W * 0.24);
+          const c1W = Math.floor(PAGE_W / 3);
+          const c2W = Math.floor(PAGE_W / 3);
           const c3W = PAGE_W - c1W - c2W;
           const mkHdr3 = (t) => new TableCell({ borders:BORDERS, margins:CELL_MARGINS, verticalAlign:VerticalAlign.CENTER,
             children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:t,font:'Aptos',size:20,bold:true})]})] });

@@ -11,13 +11,13 @@ const ASPECTS_PAR_PERIODE = {
   'P2 — 1608 – 1760': [
     'Adaptation des colons','Commerce des fourrures','Croissance de la population',
     'Diversification économique','Église catholique','Gouvernement royal',
-    'Guerre et diplomatie chez les Premières Nations','Guerres intercoloniales',
+    'Guerre de la Conquête','Guerre et diplomatie chez les Premières Nations','Guerres intercoloniales',
     'Monopole des compagnies','Populations autochtones','Régime seigneurial',
     'Territoire français en Amérique','Villes du Canada'
   ],
   'P3 — 1760 – 1791': [
     'Acte de Québec','Économie coloniale','Église anglicane','Église catholique',
-    'Guerre de la Conquête','Instructions au gouverneur Murray','Invasion américaine',
+    'Instructions au gouverneur Murray','Invasion américaine',
     'Loyalistes','Mouvements de revendication','Proclamation royale',
     'Régime militaire','Situation sociodémographique','Statut des Indiens'
   ],
