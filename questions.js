@@ -351,7 +351,7 @@ const QUESTIONS = [
     oi: "Dégager des différences et des similitudes",
     periode: "P4 — 1791 – 1840",
     points: 2,
-    enonce: "Le document A présente deux points de vue différents d'acteurs par rapport aux soulèvements de 1837-1838. Indiquez sur quel point précis les acteurs sont en désaccord.",
+    enonce: "Le documents A et B présentent deux points de vue différents d'acteurs par rapport aux soulèvements de 1837-1838. Indiquez sur quel point précis les acteurs sont en désaccord.",
     aspects: [
       {
         aspect: "Soulèvements de 1837-1838"
@@ -363,7 +363,18 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Serviteurs, soyez soumis et respectueux envers vos maîtres […] Ne vous laissez pas séduire si quelqu'un voulait vous engager dans la rébellion contre le gouvernement établi. »\nMgr Lartigue, évêque de Montréal\nDION-MCKENNON, D. et al. Notre histoire, ERPI, p. 138.\n\n« Eh bien! Moi je diffère d'opinion avec monsieur Papineau. Je prétends que le temps est arrivé de fondre nos plats et nos cuillères d'étain pour en faire des balles. »\nWolfred Nelson\nFILTEAU, G. Histoire des Patriotes, Montréal, Éditions de l'Aurore, 1975, p. 277."
+            texte: "« Serviteurs, soyez soumis et respectueux envers vos maîtres […] Ne vous laissez pas séduire si quelqu'un voulait vous engager dans la rébellion contre le gouvernement établi. »\n\nMgr Lartigue, évêque de Montréal.",
+            citation: "DION-MCKENNON, D. et al. Notre histoire, ERPI, p. 138."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Eh bien! Moi je diffère d'opinion avec monsieur Papineau. Je prétends que le temps est arrivé de fondre nos plats et nos cuillères d'étain pour en faire des balles. »\n\nWolfred Nelson",
+            citation: "FILTEAU, G. Histoire des Patriotes, Montréal, Éditions de l'Aurore, 1975, p. 277."
           }
         ]
       }
