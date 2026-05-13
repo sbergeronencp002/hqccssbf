@@ -490,4 +490,7 @@ select:focus { outline: none; border-color: var(--ink-2); }
   color: var(--ink-3);
 }
 .empty-state .big { font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-size: 3rem; display: block; margin-bottom: 0.5rem; }
+.rich-toolbar { display:flex; gap:4px; margin-bottom:4px; }
+.rich-toolbar button { font-size:0.75rem; padding:2px 8px; border:1px solid var(--border); border-radius:4px; background:var(--paper-2); cursor:pointer; color:var(--ink); }
+.rich-toolbar button:hover { background:var(--border); }
 

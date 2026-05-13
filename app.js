@@ -1,4 +1,22 @@
 
+function boldify(s) {
+  return s.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+}
+function formatTexte(text) {
+  let html = '', inList = false;
+  text.split('\n').forEach(line => {
+    if(line.startsWith('• ') || line.startsWith('- ')) {
+      if(!inList) { html += '<ul style="margin:2px 0 2px 14px;padding:0">'; inList = true; }
+      html += '<li>' + boldify(line.slice(2)) + '</li>';
+    } else {
+      if(inList) { html += '</ul>'; inList = false; }
+      if(line.trim()) html += boldify(line) + '<br>';
+    }
+  });
+  if(inList) html += '</ul>';
+  return html;
+}
+
 const OI_STYLES = {
   "Situer dans le temps":                       {cls:"b-oi-sit", color:"var(--c-sit)", bg:"var(--c-sit-bg)"},
   "Situer dans l'espace":                       {cls:"b-oi-sit", color:"var(--c-sit)", bg:"var(--c-sit-bg)"},
@@ -386,7 +404,7 @@ function render(list) {
       <div class="q-card-body">
 
         <div class="q-section-label">Question</div>
-        <div class="q-full-enonce">${q.enonce}</div>
+        <div class="q-full-enonce">${formatTexte(q.enonce)}</div>
         ${q.documents.length ? '<div class="q-section-label">Documents</div><div class="q-docs-images">' + q.documents.map(d=>renderDoc(d)).join('<div class="doc-spacer"></div>') + '</div>' : ''}
         ${renderReponse(q)}
         <div class="q-section-label">Réglette</div>
@@ -441,10 +459,12 @@ function renderDoc(d) {
       html += '<td style="width:' + Math.floor(100/d.cols.length) + '%;padding:6px;vertical-align:top;border:0.5px solid var(--border)">';
       html += '<div style="font-size:0.75rem;font-weight:600;margin-bottom:4px;color:var(--ink)">' + col.titre + '</div>';
       if(col.texte) {
-        const short = col.texte.length > 120 ? col.texte.substring(0,120) + '...' : col.texte;
-        html += '<div class="doc-texte-short" style="font-size:0.75rem;color:var(--ink-2);line-height:1.5">' + short.replace(/\n/g,'<br>') + '</div>';
-        if(col.texte.length > 120) {
-          html += '<div class="doc-texte-full" style="display:none;font-size:0.75rem;color:var(--ink-2);line-height:1.5">' + col.texte.replace(/\n/g,'<br>') + '</div>';
+        const plain = col.texte.replace(/\*\*(.*?)\*\*/g,'$1');
+        const isLong = plain.length > 120;
+        const shortHtml = isLong ? boldify(plain.substring(0,120)) + '...' : formatTexte(col.texte);
+        html += '<div class="doc-texte-short" style="font-size:0.75rem;color:var(--ink-2);line-height:1.5">' + shortHtml + '</div>';
+        if(isLong) {
+          html += '<div class="doc-texte-full" style="display:none;font-size:0.75rem;color:var(--ink-2);line-height:1.5">' + formatTexte(col.texte) + '</div>';
           html += '<button onclick="toggleTexte(this)" style="font-size:0.7rem;color:var(--ink-3);background:none;border:none;cursor:pointer;padding:2px 0;text-decoration:underline">Lire la suite</button>';
         }
       } else if(col.ref) {
@@ -573,8 +593,7 @@ function previsualiser(guideMode) {
               docsHtml += '<td style="width:' + Math.floor(100/d.cols.length) + '%;padding:6px;vertical-align:top;border:0.5px solid var(--border)">';
               docsHtml += '<div style="font-size:0.75rem;font-weight:600;margin-bottom:4px;color:var(--ink)">' + col.titre + '</div>';
               if(col.texte) {
-                const short = col.texte.length > 400 ? col.texte.substring(0,400) + '...' : col.texte;
-                docsHtml += '<div style="font-size:0.72rem;color:var(--ink-2);line-height:1.5">' + short + '</div>';
+                docsHtml += '<div style="font-size:0.72rem;color:var(--ink-2);line-height:1.5">' + formatTexte(col.texte) + '</div>';
               } else if(img) {
                 docsHtml += '<img src="' + img.src + '" style="max-width:100%;max-height:100px;object-fit:contain;cursor:pointer" onclick="openLightbox(\'' + img.src + '\')">';
               }
@@ -886,9 +905,21 @@ async function genererDocx(includeGuide=false) {
 
     function parseEnonce(enonce) {
       return enonce.split('\n').map(line => {
-        const run = new TextRun({ text: line, font: 'Aptos', size: 24 });
-        return new Paragraph({ children: [run] });
+        return new Paragraph({ children: mkRuns(line, 'Aptos', 24) });
       });
+    }
+    function mkRuns(line, font, size) {
+      const parts = line.split(/(\*\*.*?\*\*)/);
+      return parts.filter(p=>p).map(p => {
+        const bold = p.startsWith('**') && p.endsWith('**');
+        return new TextRun({ text: bold ? p.slice(2,-2) : p, font, size, bold });
+      });
+    }
+    function mkLine(line, font, size) {
+      if(line.startsWith('• ') || line.startsWith('- ')) {
+        return new Paragraph({ indent:{ left:200 }, children:[new TextRun({text:'• ',font,size}), ...mkRuns(line.slice(2),font,size)] });
+      }
+      return new Paragraph({ children: mkRuns(line, font, size) });
     }
 
     const children = [];
@@ -938,13 +969,9 @@ async function genererDocx(includeGuide=false) {
       const firstLine = q.enonce.split('\n')[0];
       const otherLines = q.enonce.split('\n').slice(1);
       children.push(new Paragraph({
-        children: [new TextRun({ text: qNum + '.  ' + firstLine, font: 'Aptos', size: 24 })]
+        children: [new TextRun({ text: qNum + '.  ', font: 'Aptos', size: 24 }), ...mkRuns(firstLine, 'Aptos', 24)]
       }));
-      otherLines.forEach(line => {
-        if(line.trim()) children.push(new Paragraph({
-          children: [new TextRun({ text: line, font: 'Aptos', size: 24 })]
-        }));
-      });
+      otherLines.forEach(line => { if(line.trim()) children.push(mkLine(line, 'Aptos', 24)); });
       children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
 
       // Documents
@@ -986,9 +1013,7 @@ async function genererDocx(includeGuide=false) {
               cellChildren.push(new Paragraph({ children: [new TextRun({ text: col.titre || '', font: 'Aptos', size: 20, bold: true })] }));
               // Texte
               if(col.texte) {
-                col.texte.split('\n').forEach(line => {
-                  cellChildren.push(new Paragraph({ children: [new TextRun({ text: line, font: 'Aptos', size: 20 })] }));
-                });
+                col.texte.split('\n').forEach(line => { cellChildren.push(mkLine(line, 'Aptos', 20)); });
               }
               // Image
               if(col.ref) {

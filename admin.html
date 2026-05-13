@@ -178,6 +178,10 @@ header a:hover { color: #fff; }
     <div class="section">
       <div class="section-title">Question</div>
       <div class="field">
+        <div class="rich-toolbar">
+          <button type="button" onclick="insertBold('q-enonce')"><b>G</b></button>
+          <button type="button" onclick="insertBullet('q-enonce')">• Puce</button>
+        </div>
         <textarea id="q-enonce" rows="4" placeholder="Texte de la question…"></textarea>
       </div>
     </div>
@@ -619,6 +623,26 @@ document.getElementById('gh-token').addEventListener('change', loadQuestionsJs);
 // ── DOCUMENTS ─────────────────────────────────────────────────────────
 let docCount = 0;
 
+function richToolbar(id) {
+  return `<div class="rich-toolbar">
+    <button type="button" onclick="insertBold('${id}')"><b>G</b></button>
+    <button type="button" onclick="insertBullet('${id}')">• Puce</button>
+  </div>`;
+}
+function insertBold(id) {
+  const ta = document.getElementById(id);
+  const s = ta.selectionStart, e = ta.selectionEnd;
+  const sel = ta.value.substring(s, e) || 'texte';
+  ta.value = ta.value.substring(0, s) + '**' + sel + '**' + ta.value.substring(e);
+  ta.focus(); ta.setSelectionRange(s+2, s+2+sel.length);
+}
+function insertBullet(id) {
+  const ta = document.getElementById(id);
+  const s = ta.selectionStart;
+  const ls = ta.value.lastIndexOf('\n', s-1) + 1;
+  ta.value = ta.value.substring(0, ls) + '• ' + ta.value.substring(ls);
+  ta.focus(); ta.setSelectionRange(ls+2, ls+2);
+}
 function addDoc(type) {
   const id = ++docCount;
   const wrap = document.getElementById('docs-list');
@@ -633,7 +657,7 @@ function addDoc(type) {
       <div class="block-title">Document texte</div>
       <button class="btn-remove" onclick="removeEl('doc-${id}')">✕</button>
       <div class="field"><label>Titre</label><input type="text" id="doc-${id}-titre" placeholder="Document ${letter}" value="Document ${letter}"></div>
-      <div class="field"><label>Texte</label><textarea id="doc-${id}-texte" rows="4" placeholder="Contenu du document…"></textarea></div>
+      <div class="field"><label>Texte</label>${richToolbar('doc-'+id+'-texte')}<textarea id="doc-${id}-texte" rows="4" placeholder="Contenu du document…"></textarea></div>
       <div class="field"><label>Source</label><textarea id="doc-${id}-source" rows="2" placeholder="Auteur, date…"></textarea></div>`;
   } else if(type === 'image') {
     div.innerHTML = `
@@ -667,7 +691,7 @@ function addCol(docId, type) {
     div.innerHTML = `
       <button class="btn-remove" onclick="removeEl('col-${id}')">✕</button>
       <div class="field"><label>Titre</label><input type="text" id="col-${id}-titre" placeholder="Document A"></div>
-      <div class="field"><label>Texte</label><textarea id="col-${id}-texte" rows="3"></textarea></div>
+      <div class="field"><label>Texte</label>${richToolbar('col-'+id+'-texte')}<textarea id="col-${id}-texte" rows="3"></textarea></div>
       <div class="field"><label>Source</label><textarea id="col-${id}-source" rows="2" placeholder="Auteur, date…"></textarea></div>`;
   } else {
     div.innerHTML = `
