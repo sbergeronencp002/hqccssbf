@@ -91,6 +91,17 @@ const REGLETTES = {
   },
   "Q6": {
     oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
+  },
+  "Q7": {
+    oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
       "1 point",
@@ -111,7 +122,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q7": {
+  "Q8": {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -130,28 +141,6 @@ const REGLETTES = {
       {
         pts: 0,
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
-    ]
-  },
-  "Q8": {
-    oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
   },
@@ -452,7 +441,7 @@ const QUESTIONS = [
     niveau: 3,
     oi: "Dégager des différences et des similitudes",
     periode: "P3 — 1760 – 1791",
-    points: 2,
+    points: 3,
     enonce: "Les documents A à C présentent la position de trois acteurs à l’égard de l’Acte de Québec. Nommez l’acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
     aspects: [
       {
@@ -496,5 +485,54 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Les marchands, car ils sont insatisfaits (ou ils s’y opposent) (la différence), alors que le clergé et les seigneurs l’appuient (la similitude)."
+  },
+  {
+    id: "Q7",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    enonce: "Les documents A et B le point de vue de deux historiens sur les Rébellions de 1837-1838. Sur quel point précis sont-ils en désaccord?",
+    aspects: [
+      {
+        aspect: "Soulèvements de 1837-1838"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Malgré toute l’énergie déployée par d’enthousiastes Fils de la liberté montréalais, la majeure partie de la population de la province n’était pas plus en faveur d’une action militaire que ne l’était Papineau lui-même jusqu’à la dernière minute. »\n\nElinor Kyte Senior, 1985",
+            source: "« Ces soulèvements avaient […] des racines assez solides dans la masse1. Ils n’ont pas échoué  faute de motivations suffisantes dans les milieux populaires ou par pénurie de fusils. […] Le problème se situe d’abord au niveau de la qualité du leadership fourni par les élites [professionnelles] qui encadraient le mouvement insurrectionnel. »\n \nFernand Ouellet, 196"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "L’appui de la population aux Rébellions."
+  },
+  {
+    id: "Q8",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    enonce: "À partir du document A, indiquez une cause de la rivalité entre la Nouvelle-France et les colonies britanniques à partir du 17e siècle.",
+    aspects: [
+      {
+        aspect: "Guerres intercoloniales"
+      }
+    ],
+    documents: [],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le commerce des fourrures ou le contrôle du territoire ou la rivalité entre les métropoles."
   }
 ]
