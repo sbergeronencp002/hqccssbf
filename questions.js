@@ -90,7 +90,7 @@ const REGLETTES = {
     ]
   },
   "Q6": {
-    oi: "Mettre en relation des faits",
+    oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
       "1 point",
@@ -99,15 +99,15 @@ const REGLETTES = {
     niveaux: [
       {
         pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+        desc: "L'élève établit correctement le point de divergence entre les points de vue."
       },
       {
         pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+        desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
       },
       {
         pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
       }
     ]
   },
@@ -446,5 +446,55 @@ const QUESTIONS = [
       ]
     },
     guide: "A"
+  },
+  {
+    id: "Q6",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    enonce: "Les documents A à C présentent la position de trois acteurs à l’égard de l’Acte de Québec. Nommez l’acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« […] les seigneurs, qui se voient offrir des fonctions civiles et militaires, qui […] assistent à la pleine restauration des lois traditionnelles sur la propriété (c’est-à-dire le régime seigneurial), pèseront […] de tout leur prestige en faveur de l’appui au gouvernement. »",
+            source: "Jean-Pierre CHARLAND, À l’aube du XXIe siècle, avec la collaboration de Jacques Saint-Pierre, manuel de l’élève, histoire du Québec et du Canada, 4e secondaire, Montréal, Lidec, \n1997, p. 166."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« [Les] marchands britanniques de la vallée du Saint-Laurent […] ne cachent pas leur indignation devant les concessions accordées aux Canadiens. […] ils acceptent difficilement le refus de créer une chambre d’assemblée, qu’ils espéraient contrôler. Ils entreprennent aussitôt, auprès des autorités, une campagne visant le retrait de l’Acte de Québec. »",
+            source: "Jean-François CARDIN et autres, Le Québec : héritages et projets, 2e éd., Laval, Éditions HRW, 1994, p.170."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« […] l’Acte de Québec confirme la tolérance accordée au catholicisme et rend obligatoire pour les catholiques le paiement de la dîme.\n\nEn contrepartie, le clergé catholique collabore avec les gouverneurs britanniques. L’évêque et les curés prêchent aux Canadiens la loyauté et la soumission envers le souverain d’Angleterre. »",
+            source: "Christophe HORGUELIN et autres, Fresques, manuel de l’élève, histoire et éducation à la citoyenneté, 2e année du 2e cycle du secondaire, Montréal, Graficor, 2009, t. 2, p. 120."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Les marchands, car ils sont insatisfaits (ou ils s’y opposent) (la différence), alors que le clergé et les seigneurs l’appuient (la similitude)."
   }
 ]
