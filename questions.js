@@ -634,15 +634,14 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "commerce_fourrures.png",
-            source: "MEES."
+            ref: "commerce_fourrures.png"
           }
         ]
       }
     ],
     reponse: {
       type: "lignes",
-      nombre: 1
+      nombre: 2
     },
     guide: "Le commerce des fourrures ou le contrôle du territoire ou la rivalité entre les métropoles."
   },
