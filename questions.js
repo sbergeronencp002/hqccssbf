@@ -34,24 +34,19 @@ const REGLETTES = {
     ]
   },
   "Q3": {
-    oi: "Déterminer des causes et des conséquences",
+    oi: "Situer dans le temps",
     colonnes: [
-      "2 points",
       "1 point",
       "0 point"
     ],
     niveaux: [
       {
-        pts: 2,
-        desc: "L'élève détermine correctement une conséquence."
-      },
-      {
         pts: 1,
-        desc: "L'élève détermine plus ou moins correctement une conséquence."
+        desc: "L'élève situe les faits dans le temps."
       },
       {
         pts: 0,
-        desc: "L'élève détermine incorrectement ou ne détermine aucune conséquence."
+        desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
   },
@@ -224,6 +219,12 @@ const IMAGE_DB = {
   },
   "ligne_acBd.png": {
     src: "images/ligne_acBd.png"
+  },
+  "bataille_lac_champlain.png": {
+    src: "images/bataille_lac_champlain.png"
+  },
+  "ligne_1550-1750.png": {
+    src: "images/ligne_1550-1750.png"
   }
 }
 
@@ -317,5 +318,35 @@ const QUESTIONS = [
       ref: "ligne_acBd.png"
     },
     guide: "C - D - B - A"
+  },
+  {
+    id: "Q3",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document ci-dessous.",
+    aspects: [
+      {
+        aspect: "Guerre et diplomatie chez les Premières Nations"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A - Champlain et ses alliés combattant les Iroquois",
+            ref: "bataille_lac_champlain.png",
+            source: "Bibliothèque et Archives Canada/C-005750."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1550-1750.png"
+    },
+    guide: "B"
   }
 ]
