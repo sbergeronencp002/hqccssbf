@@ -458,7 +458,8 @@ async function supprimerQuestion() {
 
     // SHA frais
     const shaResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js?ref=${BRANCH}`,
-      { headers: { Authorization: `token ${token}` } });
+      { headers: { Authorization: `token ${token}` }, cache: 'no-store' });
+    if(!shaResp.ok) throw new Error('Impossible de lire le SHA : ' + shaResp.status);
     const shaData = await shaResp.json();
     questionsFileSha = shaData.sha;
 
@@ -552,7 +553,7 @@ async function init() {
 async function loadImages() {
   try {
     const headers = getToken() ? { Authorization: `token ${getToken()}` } : {};
-    const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/images?ref=${BRANCH}`, { headers });
+    const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/images?ref=${BRANCH}`, { headers, cache: 'no-store' });
     const data = await r.json();
     if(Array.isArray(data)) {
       IMAGES = data.filter(f => f.name !== '.gitkeep').map(f => f.name).sort();
@@ -563,7 +564,7 @@ async function loadImages() {
 async function loadQuestionsJs() {
   try {
     const headers = getToken() ? { Authorization: `token ${getToken()}` } : {};
-    const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js?ref=${BRANCH}`, { headers });
+    const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js?ref=${BRANCH}`, { headers, cache: 'no-store' });
     if(!r.ok) throw new Error(r.status);
     const data = await r.json();
     questionsFileSha = data.sha;
@@ -838,7 +839,8 @@ async function publier() {
   try {
     // Reload SHA
     const shaResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js?ref=${BRANCH}`,
-      { headers: { Authorization: `token ${token}` } });
+      { headers: { Authorization: `token ${token}` }, cache: 'no-store' });
+    if(!shaResp.ok) throw new Error('Impossible de lire le SHA : ' + shaResp.status);
     const shaData = await shaResp.json();
     questionsFileSha = shaData.sha;
 
