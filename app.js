@@ -978,18 +978,21 @@ async function genererDocx(includeGuide=false) {
           const c1W = Math.floor(PAGE_W / 3);
           const c2W = Math.floor(PAGE_W / 3);
           const c3W = PAGE_W - c1W - c2W;
-          const mkHdr3 = (t) => new TableCell({ borders:BORDERS, margins:CELL_MARGINS, verticalAlign:VerticalAlign.CENTER,
+          const mkHdr3 = (t, w) => new TableCell({ borders:BORDERS, margins:CELL_MARGINS, verticalAlign:VerticalAlign.CENTER,
+            width:{size:w,type:WidthType.DXA},
             children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:t,font:'Aptos',size:20,bold:true})]})] });
-          const mkBlank3 = () => new TableCell({ borders:BORDERS, margins:CELL_MARGINS,
+          const mkBlank3 = (w) => new TableCell({ borders:BORDERS, margins:CELL_MARGINS,
+            width:{size:w,type:WidthType.DXA},
             children:[new Paragraph({children:[new TextRun({text:' '})]})] });
           children.push(new Table({ width:{size:PAGE_W,type:WidthType.DXA}, columnWidths:[c1W,c2W,c3W], rows:[
             new TableRow({ children:[
-              mkHdr3(col1),
+              mkHdr3(col1, c1W),
               new TableCell({ borders:BORDERS, margins:CELL_MARGINS, verticalAlign:VerticalAlign.CENTER, rowSpan:2,
+                width:{size:c2W,type:WidthType.DXA},
                 children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:col2,font:'Aptos',size:20,bold:true})]})] }),
-              mkHdr3(col3)
+              mkHdr3(col3, c3W)
             ]}),
-            new TableRow({ height:{value:800,rule:'atLeast'}, children:[mkBlank3(), mkBlank3()] })
+            new TableRow({ height:{value:800,rule:'atLeast'}, children:[mkBlank3(c1W), mkBlank3(c3W)] })
           ]}));
         } else if(q.reponse.type === 'lignes') {
           const BN_L = { style: docx.BorderStyle.NONE, size: 0, color: 'FFFFFF' };
