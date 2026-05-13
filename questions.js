@@ -51,24 +51,19 @@ const REGLETTES = {
     ]
   },
   "Q4": {
-    oi: "Dégager des différences et des similitudes",
+    oi: "Situer dans le temps",
     colonnes: [
       "2 points",
-      "1 point",
       "0 point"
     ],
     niveaux: [
       {
         pts: 2,
-        desc: "L'élève établit correctement le point de divergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
+        desc: "L'élève situe tous les faits dans le temps."
       },
       {
         pts: 0,
-        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
+        desc: "L'élève ne situe pas tous les faits dans le temps."
       }
     ]
   },
@@ -225,6 +220,12 @@ const IMAGE_DB = {
   },
   "ligne_1550-1750.png": {
     src: "images/ligne_1550-1750.png"
+  },
+  "deportation_acadien.png": {
+    src: "images/deportation_acadien.png"
+  },
+  "revolte_pontiact.png": {
+    src: "images/revolte_pontiact.png"
   }
 }
 
@@ -348,5 +349,73 @@ const QUESTIONS = [
       ref: "ligne_1550-1750.png"
     },
     guide: "B"
+  },
+  {
+    id: "Q4",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    enonce: "Les documents A à D font référence aux rapports de force entre les empires coloniaux français et britannique. Indiquez si les faits présentés dans ces documents se déroulent avant ou après la capitulation de Montréal.",
+    aspects: [
+      {
+        aspect: "Proclamation royale"
+      },
+      {
+        aspect: "Régime militaire"
+      },
+      {
+        aspect: "Statut des Indiens"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A - La déportation des Acadiens",
+            ref: "deportation_acadien.png",
+            source: "Bibliothèque et Archives Canada/C-070232."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Sa Majesté Britannique convient en outre, que les Habitants Français ou autres, qui auraient été Sujets du Roy Très Chrétien en Canada, pourront se retirer en toute Sûreté & Liberté, où bon leur semblera, et pourront vendre leurs Biens, pourvu que ce soit à des Sujets de Sa Majesté Britannique […] »",
+            source: "Adam SHORTT et Arthur G. DOUGHTY, Documents concernant l’histoire constitutionnelle du Canada : 1759-1791, Ottawa, C. H. Parmelee, 1911, p. 60. [Texte adapté]"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C - La révolte de Pontiac",
+            ref: "revolte_pontiact.png",
+            source: "Bibliothèque et Archives Canada/C-011250."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Au moment où Québec est assiégée, les forts de l’Ouest sont abandonnés et les garnisons transportées à Québec ou dans les forts de la vallée du Richelieu […] Le chevalier de Lévis remporte une […] victoire au printemps […] à Sainte-Foy, près de Québec. Mais comme les Anglais contrôlent la navigation sur le fleuve et que des renforts arrivent de la Grande-Bretagne, il doit retraiter […] »",
+            source: "Jean-Pierre CHARLAND, À l’aube du XXIe siècle, avec la collaboration de Jacques Saint-Pierre, manuel de l’élève, histoire du Québec et du Canada, 4e secondaire, Montréal, Lidec, 1997, p. 144."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau_3col",
+      col1: "",
+      col2: "La capitulation de Montréal",
+      col3: ""
+    },
+    guide: "1 et 4 / 2 et 3"
   }
 ]
