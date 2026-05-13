@@ -14,6 +14,7 @@
   --c-chg: #7a4a10; --c-chg-bg: #f5ead8;
   --c-rel: #7a2040; --c-rel-bg: #f5e0e8;
   --c-mr:  #1a6b6b; --c-mr-bg:  #d4f0f0;
+  --c-fai: #7a5200; --c-fai-bg: #fdf0d8;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 

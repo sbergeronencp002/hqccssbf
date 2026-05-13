@@ -26,6 +26,7 @@ const OI_STYLES = {
   "Déterminer des changements et des continuités": {cls:"b-oi-chg", color:"var(--c-chg)", bg:"var(--c-chg-bg)"},
   "Déterminer des causes et des conséquences":  {cls:"b-oi-rel", color:"var(--c-rel)", bg:"var(--c-rel-bg)"},
   "Mettre en relation des faits":               {cls:"b-oi-mr",  color:"var(--c-mr)",  bg:"var(--c-mr-bg)"},
+  "Établir des faits":                          {cls:"b-oi-fai", color:"var(--c-fai)", bg:"var(--c-fai-bg)"},
 };
 
 function oiStyle(oi) {

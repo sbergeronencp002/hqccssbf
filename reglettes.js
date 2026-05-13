@@ -31,6 +31,9 @@ const REGLETTES_PRESET = {
     { label:"2 pts — continuité", colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève détermine correctement la continuité."},{pts:1,desc:"L'élève détermine plus ou moins correctement la continuité."},{pts:0,desc:"L'élève détermine incorrectement la continuité ou ne la détermine pas."}] },
     { label:"3 pts — changement ou continuité avec faits (complexe)", variante:"changement-continuité", colonnes:["3 points","2 points","1 point","0 point"], niveaux:[] }
   ],
+  "Établir des faits": [
+    { label:"1 pt — le fait", colonnes:["1 point","0 point"], niveaux:[{pts:1,desc:"L'élève établit correctement le fait."},{pts:0,desc:"L'élève établit incorrectement le fait ou ne l'établit pas."}] }
+  ],
   "Établir des liens de causalité": [
     { label:"3 pts — 3 éléments, 2 liens (complexe)", variante:"3 éléments — 2 liens", colonnes:["3 points","2 points","1 point","0 point"], niveaux:[
       {pts:3,desc:"L'élève précise les trois éléments et établit correctement deux liens de causalité."},
