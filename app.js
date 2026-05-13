@@ -885,9 +885,9 @@ async function genererDocx(includeGuide=false) {
       panier.forEach((id, idx) => {
         const q = QUESTIONS.find(x => x.id === id);
         if(!q || !q.guide) return;
-        children.push(new Paragraph({ children: [new TextRun({ text: (idx+1) + '.', font: 'Aptos', size: 22, bold: true })] }));
+        children.push(new Paragraph({ children: [new TextRun({ text: (idx+1) + '.', font: 'Aptos', size: 20, bold: true })] }));
         if(typeof q.guide === 'string') {
-          children.push(new Paragraph({ children: [new TextRun({ text: q.guide, font: 'Aptos', size: 22 })] }));
+          children.push(new Paragraph({ children: [new TextRun({ text: q.guide, font: 'Aptos', size: 20 })] }));
         } else if(q.guide.type === 'tableau') {
           const colDoc = Math.floor(PAGE_W * 0.55);
           const colVal = PAGE_W - colDoc;
