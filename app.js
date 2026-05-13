@@ -303,7 +303,7 @@ function render(list) {
         ${(()=>{
           const r = REGLETTES[q.id];
           if(!r) return '<div style="font-size:0.8rem;color:var(--ink-3);font-style:italic">Réglette non disponible.</div>';
-          if(r.variante) return buildReglettHTML(q);
+          if(r.variante) return '<div style="font-size:0.78rem;color:var(--ink-3);font-style:italic">Réglette complexe — disponible dans le cahier généré.</div>';
           return `<table class="reglette-table">
             ${r.niveaux.map(n=>`
               <tr>
