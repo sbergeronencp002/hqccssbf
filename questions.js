@@ -374,8 +374,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A - La déportation des Acadiens",
-            ref: "deportation_acadien.png",
-            source: "Bibliothèque et Archives Canada/C-070232."
+            ref: "deportation_acadien.png"
           }
         ]
       },
@@ -394,8 +393,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C - La révolte de Pontiac",
-            ref: "revolte_pontiact.png",
-            source: "Bibliothèque et Archives Canada/C-011250."
+            ref: "revolte_pontiact.png"
           }
         ]
       },
@@ -412,9 +410,9 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "tableau_3col",
-      col1: "",
+      col1: "Avant",
       col2: "La capitulation de Montréal",
-      col3: ""
+      col3: "Après"
     },
     guide: "1 et 4 / 2 et 3"
   }
