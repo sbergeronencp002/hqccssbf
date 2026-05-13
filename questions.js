@@ -91,25 +91,14 @@ const REGLETTES = {
   },
   "Q6": {
     oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
     colonnes: [
+      "3 points",
       "2 points",
       "1 point",
       "0 point"
     ],
-    niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de divergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
-      }
-    ]
+    niveaux: []
   },
   "Q7": {
     oi: "Dégager des différences et des similitudes",
@@ -452,7 +441,7 @@ const QUESTIONS = [
     niveau: 3,
     oi: "Dégager des différences et des similitudes",
     periode: "P3 — 1760 – 1791",
-    points: 2,
+    points: 3,
     enonce: "Les documents A à C présentent la position de trois acteurs à l’égard de l’Acte de Québec. Nommez l’acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
     aspects: [
       {
