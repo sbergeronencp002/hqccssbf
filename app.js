@@ -360,7 +360,8 @@ function renderDoc(d) {
         const img2 = IMAGE_DB[col.ref];
         if(img2) html += '<img src="' + img2.src + '" style="max-width:100%;max-height:150px;object-fit:contain;cursor:pointer" onclick="openLightbox(\'' + img2.src + '\')">';
       }
-      if(col.source) html += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:4px;font-style:italic">' + col.source + '</div>';
+      if(col.auteur) html += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + col.auteur + '</div>';
+      if(col.source) html += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + col.source + '</div>';
       html += '</td>';
     });
     html += '</tr></table>';
@@ -502,7 +503,8 @@ function previsualiser(guideMode) {
               } else if(img) {
                 docsHtml += '<img src="' + img.src + '" style="max-width:100%;max-height:100px;object-fit:contain;cursor:pointer" onclick="openLightbox(\'' + img.src + '\')">';
               }
-              if(col.source) docsHtml += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:4px;font-style:italic">' + col.source + '</div>';
+              if(col.auteur) docsHtml += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + col.auteur + '</div>';
+              if(col.source) docsHtml += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + col.source + '</div>';
               docsHtml += '</td>';
             });
             docsHtml += '</tr></table>';
@@ -943,10 +945,13 @@ async function genererDocx(includeGuide=false) {
                   cellChildren.push(new Paragraph({ alignment: AlignmentType.CENTER, children: [new docx.ImageRun({ data: bytes, type: imgType, transformation: { width: docW, height: docH } })] }));
                 }
               }
-              // Source (Aptos 6pt)
+              // Auteur (Aptos 8pt) + Source (Aptos 6pt)
+              if(col.auteur) {
+                cellChildren.push(new Paragraph({ children: [new TextRun({ text: col.auteur, font: 'Aptos', size: 16, italics: true })] }));
+              }
               if(col.source) {
                 col.source.split('\n').forEach(line => {
-                  cellChildren.push(new Paragraph({ children: [new TextRun({ text: line, font: 'Aptos', size: 12 })] }));
+                  cellChildren.push(new Paragraph({ children: [new TextRun({ text: line, font: 'Aptos', size: 12, italics: true })] }));
                 });
               }
               return new docx.TableCell({

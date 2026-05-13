@@ -379,6 +379,8 @@ function loadQuestion(id) {
           addDoc('textes');
           document.getElementById('doc-'+docCount+'-titre').value = col.titre||'';
           document.getElementById('doc-'+docCount+'-texte').value = col.texte||'';
+          const autEl = document.getElementById('doc-'+docCount+'-auteur');
+          if(autEl) autEl.value = col.auteur||'';
           const srcEl = document.getElementById('doc-'+docCount+'-source');
           if(srcEl) srcEl.value = col.source||'';
         }
@@ -395,6 +397,8 @@ function loadQuestion(id) {
             addCol(docId,'texte');
             document.getElementById('col-'+colCount+'-titre').value = col.titre||'';
             document.getElementById('col-'+colCount+'-texte').value = col.texte||'';
+            const autEl = document.getElementById('col-'+colCount+'-auteur');
+            if(autEl) autEl.value = col.auteur||'';
             const srcEl = document.getElementById('col-'+colCount+'-source');
             if(srcEl) srcEl.value = col.source||'';
           }
@@ -687,14 +691,16 @@ function addDoc(type) {
       <button class="btn-remove" onclick="removeEl('doc-${id}')">✕</button>
       <div class="field"><label>Titre</label><input type="text" id="doc-${id}-titre" placeholder="Document ${letter}" value="Document ${letter}"></div>
       <div class="field"><label>Texte</label>${richToolbar('doc-'+id+'-texte')}<textarea id="doc-${id}-texte" rows="4" placeholder="Contenu du document…"></textarea></div>
-      <div class="field"><label>Source</label><textarea id="doc-${id}-source" rows="2" placeholder="Auteur, date…"></textarea></div>`;
+      <div class="field"><label>Auteur</label><input type="text" id="doc-${id}-auteur" placeholder="Prénom Nom, titre…"></div>
+      <div class="field"><label>Source</label><input type="text" id="doc-${id}-source" placeholder="Titre, éditeur, année…"></div>`;
   } else if(type === 'image') {
     div.innerHTML = `
       <div class="block-title">Document image</div>
       <button class="btn-remove" onclick="removeEl('doc-${id}')">✕</button>
       <div class="field"><label>Titre</label><input type="text" id="doc-${id}-titre" placeholder="Document ${letter}" value="Document ${letter}"></div>
       <div class="field"><label>Image</label>${imageSelect('doc-'+id+'-ref')}</div>
-      <div class="field"><label>Source</label><textarea id="doc-${id}-source" rows="2" placeholder="Auteur, date…"></textarea></div>`;
+      <div class="field"><label>Auteur</label><input type="text" id="doc-${id}-auteur" placeholder="Prénom Nom, titre…"></div>
+      <div class="field"><label>Source</label><input type="text" id="doc-${id}-source" placeholder="Titre, éditeur, année…"></div>`;
   } else if(type === 'textes-image') {
     div.innerHTML = `
       <div class="block-title">Colonnes texte / image</div>
@@ -721,7 +727,8 @@ function addCol(docId, type) {
       <button class="btn-remove" onclick="removeEl('col-${id}')">✕</button>
       <div class="field"><label>Titre</label><input type="text" id="col-${id}-titre" placeholder="Document A"></div>
       <div class="field"><label>Texte</label>${richToolbar('col-'+id+'-texte')}<textarea id="col-${id}-texte" rows="3"></textarea></div>
-      <div class="field"><label>Source</label><textarea id="col-${id}-source" rows="2" placeholder="Auteur, date…"></textarea></div>`;
+      <div class="field"><label>Auteur</label><input type="text" id="col-${id}-auteur" placeholder="Prénom Nom, titre…"></div>
+      <div class="field"><label>Source</label><input type="text" id="col-${id}-source" placeholder="Titre, éditeur, année…"></div>`;
   } else {
     div.innerHTML = `
       <button class="btn-remove" onclick="removeEl('col-${id}')">✕</button>
@@ -801,15 +808,19 @@ function buildQuestion() {
     if(dtype === 'textes') {
       const titre = docEl.querySelector('[id$="-titre"]').value.trim();
       const texte = docEl.querySelector('[id$="-texte"]').value.trim();
+      const auteur = docEl.querySelector('[id$="-auteur"]')?.value.trim() || '';
       const source = docEl.querySelector('[id$="-source"]')?.value.trim() || '';
       const col = { titre, texte };
+      if(auteur) col.auteur = auteur;
       if(source) col.source = source;
       documents.push({ type: 'textes', cols: [col] });
     } else if(dtype === 'image') {
       const titre = docEl.querySelector('[id$="-titre"]').value.trim();
       const ref = docEl.querySelector('[id$="-ref"]').value;
+      const auteur = docEl.querySelector('[id$="-auteur"]')?.value.trim() || '';
       const source = docEl.querySelector('[id$="-source"]')?.value.trim() || '';
       const col = { titre, ref };
+      if(auteur) col.auteur = auteur;
       if(source) col.source = source;
       documents.push({ type: 'textes', cols: [col] });
     } else if(dtype === 'textes-image') {
@@ -819,8 +830,10 @@ function buildQuestion() {
         const titre = colEl.querySelector('[id$="-titre"]').value.trim();
         if(ctype === 'texte') {
           const texte = colEl.querySelector('[id$="-texte"]').value.trim();
+          const auteur = colEl.querySelector('[id$="-auteur"]')?.value.trim() || '';
           const source = colEl.querySelector('[id$="-source"]')?.value.trim() || '';
           const col = { titre, texte };
+          if(auteur) col.auteur = auteur;
           if(source) col.source = source;
           cols.push(col);
         } else {
