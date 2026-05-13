@@ -251,118 +251,9 @@ function buildReglettHTML(q) {
   </table>`;
 }
 
-function buildCopyHTML(q) {
-  return buildReglettHTML(q);
-}
-
-function buildCopyText(q) {
-  let t = `${q.id} — ${q.oi}\n`;
-  t += `Période : ${q.periode}\n\n`;
-  t += `QUESTION\n${q.enonce}\n\n`;
-  if(q.documents.length) {
-    t += `DOCUMENTS\n`;
-    q.documents.forEach(d=>{
-      if(d.cols) d.cols.forEach(c=>{ t+=`• ${c.titre||''}${c.ref?' ['+c.ref+']':''}${c.source?'\n  '+c.source:''}\n`; });
-      else t+=`• ${d.type}\n`;
-    });
-    t+='\n';
-  }
-  return t;
-}
-
 function toggleCard(id) {
   const card = document.getElementById('card-'+id);
   card.classList.toggle('open');
-}
-
-function copyQ(id, btn) {
-  const q = QUESTIONS.find(x=>x.id===id);
-  if(!q) return;
-  const text = buildCopyText(q);
-
-  // Modern clipboard API
-  if(navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(text).then(()=>{ flashCopied(btn); }).catch(()=>{ fallbackCopy(text, btn); });
-  } else {
-    fallbackCopy(text, btn);
-  }
-}
-
-function fallbackCopy(text, btn) {
-  const ta = document.createElement('textarea');
-  ta.value = text;
-  ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none';
-  document.body.appendChild(ta);
-  ta.focus();
-  ta.select();
-  try {
-    document.execCommand('copy');
-    flashCopied(btn);
-  } catch(e) {
-    btn.textContent = '⚠ Erreur';
-    setTimeout(()=>{ btn.textContent='Copier la question'; }, 2000);
-  }
-  document.body.removeChild(ta);
-}
-
-function copyHTML(id, btn) {
-  const q = QUESTIONS.find(x=>x.id===id);
-  if(!q) return;
-  const html = buildCopyHTML(q);
-
-  if(navigator.clipboard && window.ClipboardItem) {
-    const blob = new Blob([html], {type:'text/html'});
-    const item = new ClipboardItem({'text/html': blob});
-    navigator.clipboard.write([item]).then(()=>{ flashBtn(btn,'✓ Tableau copié !'); }).catch(()=>{ fallbackHTML(html, btn); });
-  } else {
-    fallbackHTML(html, btn);
-  }
-}
-
-function fallbackHTML(html, btn) {
-  // Create a temporary contenteditable div, select it, copy
-  const div = document.createElement('div');
-  div.contentEditable = 'true';
-  div.innerHTML = html;
-  div.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none;width:600px';
-  document.body.appendChild(div);
-  const range = document.createRange();
-  range.selectNodeContents(div);
-  const sel = window.getSelection();
-  sel.removeAllRanges();
-  sel.addRange(range);
-  try {
-    document.execCommand('copy');
-    flashBtn(btn,'✓ Tableau copié !');
-  } catch(e) {
-    flashBtn(btn,'⚠ Erreur');
-  }
-  sel.removeAllRanges();
-  document.body.removeChild(div);
-}
-
-function copyAll(id, btn) {
-  const q = QUESTIONS.find(x=>x.id===id);
-  if(!q) return;
-  const text = buildCopyText(q);
-  const baseStyle = 'font-family:Aptos,Arial,sans-serif;font-size:11pt;background:#fff;color:#000;margin:0 0 6px 0';
-  const html = '<div style="background:#fff;color:#000;font-family:Aptos,Arial,sans-serif">'
-    + '<p style="' + baseStyle + '">' + q.enonce.replace(/\n/g,'<br>') + '</p>'
-    + '<p style="font-family:Aptos,Arial,sans-serif;font-size:11pt;background:#fff;color:#000;margin:0;padding:0;line-height:1">&nbsp;</p>'
-    + (q.documents.length ? '<p style="font-family:Aptos,Arial,sans-serif;font-size:11pt;background:#fff;color:#000;margin:0;padding:0;line-height:1">' + q.documents.map(d=>d.cols ? d.cols.map(c=>'• '+(c.titre||'')).join(', ') : '• '+d.type).join('<br>') + '</p>' : '')
-    + '<p style="font-family:Aptos,Arial,sans-serif;font-size:11pt;background:#fff;color:#000;margin:0;padding:0;line-height:1">&nbsp;</p>'
-    + buildReglettHTML(q)
-    + '</div>';
-
-  if(navigator.clipboard && window.ClipboardItem) {
-    const items = new ClipboardItem({
-      'text/html': new Blob([html], {type:'text/html'}),
-      'text/plain': new Blob([text], {type:'text/plain'})
-    });
-    navigator.clipboard.write([items]).then(()=>{ flashBtn(btn,'✓ Copié !'); }).catch(()=>{ fallbackHTML(html, btn); });
-  } else {
-    fallbackHTML(html, btn);
-  }
 }
 
 function flashBtn(btn, msg) {
@@ -370,10 +261,6 @@ function flashBtn(btn, msg) {
   btn.textContent = msg;
   btn.classList.add('copied');
   setTimeout(()=>{ btn.textContent=orig; btn.classList.remove('copied'); }, 2000);
-}
-
-function flashCopied(btn) {
-  flashBtn(btn, '✓ Copié !');
 }
 
 function render(list) {
@@ -650,13 +537,6 @@ function closePreview(e) {
 }
 function closePreviewBtn() {
   document.getElementById('preview-modal').classList.remove('open');
-}
-
-function toggleReponse(id, btn) {
-  const box = document.getElementById('rep-' + id);
-  const visible = box.style.display !== 'none';
-  box.style.display = visible ? 'none' : 'block';
-  btn.textContent = visible ? 'Afficher le guide' : 'Masquer le guide';
 }
 
 function togglePanier(id, btn) {
