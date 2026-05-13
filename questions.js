@@ -75,12 +75,12 @@ const REGLETTES = {
   "Q5": {
     oi: "Situer dans l'espace",
     colonnes: [
-      "2 points",
+      "1 point",
       "0 point"
     ],
     niveaux: [
       {
-        pts: 2,
+        pts: 1,
         desc: "L'élève situe le fait dans l'espace."
       },
       {
@@ -418,7 +418,7 @@ const QUESTIONS = [
     niveau: 3,
     oi: "Situer dans l'espace",
     periode: "P3 — 1760 – 1791",
-    points: 2,
+    points: 1,
     enonce: "À partir du document A, indiquez la lettre qui correspond à une région de la Province de Québec où s’établissent des Loyalistes.",
     aspects: [
       {
@@ -431,19 +431,13 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "loyalistes_province_quebec",
-            source: "Ministère de l’Éducation et de l’Enseignement supérieur (MEES)."
+            ref: "loyalistes_province_quebec"
           }
         ]
       }
     ],
     reponse: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Réponse"
-        }
-      ]
+      type: "tableau_2col"
     },
     guide: "A"
   },
