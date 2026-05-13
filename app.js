@@ -20,7 +20,7 @@ function formatTexte(text) {
 
 const OI_STYLES = {
   "Situer dans le temps":                       {cls:"b-oi-sit", color:"var(--c-sit)", bg:"var(--c-sit-bg)"},
-  "Situer dans l'espace":                       {cls:"b-oi-sit", color:"var(--c-sit)", bg:"var(--c-sit-bg)"},
+  "Situer dans l'espace":                       {cls:"b-oi-esp", color:"var(--c-esp)", bg:"var(--c-esp-bg)"},
   "Établir des liens de causalité":             {cls:"b-oi-cau", color:"var(--c-cau)", bg:"var(--c-cau-bg)"},
   "Dégager des différences et des similitudes": {cls:"b-oi-dif", color:"var(--c-dif)", bg:"var(--c-dif-bg)"},
   "Déterminer des changements et des continuités": {cls:"b-oi-chg", color:"var(--c-chg)", bg:"var(--c-chg-bg)"},
@@ -423,6 +423,15 @@ function renderReponse(q) {
     html += '</table>';
     return html;
   }
+  if(q.reponse.type === 'tableau_2col') {
+    const CS = 'border:1px solid var(--ink-2);text-align:center;padding:6px 8px;width:75px;font-size:0.8rem';
+    return '<table style="border-collapse:collapse;margin:8px 0;table-layout:fixed">'
+      + '<tr><th style="' + CS + ';font-weight:600;background:var(--paper-2)">Réponse</th>'
+      + '<th style="' + CS + ';font-weight:600;background:var(--paper-2)"></th></tr>'
+      + '<tr><td style="' + CS + ';height:40px;background:var(--paper)"></td>'
+      + '<td style="' + CS + ';height:40px;background:var(--paper)"></td></tr>'
+      + '</table>';
+  }
   return '';
 }
 
@@ -533,6 +542,14 @@ function previsualiser(guideMode) {
           previewReponse = '<table style="border-collapse:collapse;margin:8px 0;font-size:0.8rem">'
             + '<tr><th style="border:0.5px solid #ccc;padding:4px 8px;background:#f5f5f5"></th><th style="border:0.5px solid #ccc;padding:4px 8px;background:#f5f5f5">Document</th></tr>'
             + q.reponse.lignes.map(function(l){return '<tr><td style="border:0.5px solid #ccc;padding:4px 8px">' + l.label + '</td><td style="border:0.5px solid #ccc;padding:4px 30px"></td></tr>';}).join('')
+            + '</table>';
+        } else if(q.reponse.type === 'tableau_2col') {
+          const CS = 'border:1px solid #999;text-align:center;padding:6px 8px;width:75px;font-size:0.8rem';
+          previewReponse = '<table style="border-collapse:collapse;margin:8px 0;table-layout:fixed">'
+            + '<tr><th style="' + CS + ';font-weight:600;background:#f5f5f5">Réponse</th>'
+            + '<th style="' + CS + ';font-weight:600;background:#f5f5f5"></th></tr>'
+            + '<tr><td style="' + CS + ';height:40px"></td>'
+            + '<td style="' + CS + ';height:40px"></td></tr>'
             + '</table>';
         }
       }
@@ -1038,6 +1055,14 @@ async function genererDocx(includeGuide=false) {
             ]}));
           });
           children.push(new Table({ width: { size: PAGE_W, type: WidthType.DXA }, columnWidths: [colDoc, colVal], rows: repRows }));
+        } else if(q.reponse.type === 'tableau_2col') {
+          const col2c = 1134; // 2 cm in DXA
+          const mk2 = (t, bold=false) => new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
+            children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: t, font: 'Aptos', size: 20, bold })] })] });
+          children.push(new Table({ width: { size: col2c * 2, type: WidthType.DXA }, columnWidths: [col2c, col2c], rows: [
+            new TableRow({ children: [mk2('Réponse', true), mk2('', true)] }),
+            new TableRow({ children: [mk2(''), mk2('')] })
+          ]}));
         }
         children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
       }

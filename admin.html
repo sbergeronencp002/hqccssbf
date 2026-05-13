@@ -232,6 +232,7 @@ header a:hover { color: #fff; }
           <option value="image">Image seule</option>
           <option value="tableau">Tableau</option>
           <option value="tableau_3col">Tableau 3 colonnes</option>
+          <option value="tableau_2col">Tableau 2 colonnes (Réponse | vide)</option>
         </select>
       </div>
       <div id="rep-extra"></div>
@@ -755,6 +756,8 @@ function updateReponseUI() {
     wrap.innerHTML = `
       <div class="field"><label>Lignes du tableau <span style="font-weight:400;color:var(--ink-3)">(une par ligne)</span></label>
       <textarea id="rep-lignes" rows="3" placeholder="Mercantilisme\nObligations des compagnies\nPrivilèges des compagnies"></textarea></div>`;
+  } else if(type === 'tableau_2col') {
+    wrap.innerHTML = `<div class="field" style="color:var(--ink-3);font-size:.82rem">Tableau fixe : colonne « Réponse » + colonne vide, texte centré, cellules de 2 cm.</div>`;
   } else {
     wrap.innerHTML = '';
   }
@@ -845,6 +848,8 @@ function buildQuestion() {
   } else if(repType === 'tableau') {
     const lignes = document.getElementById('rep-lignes').value.trim().split('\n').map(s=>s.trim()).filter(Boolean).map(s=>({ label: s }));
     reponse = { type: 'tableau', lignes };
+  } else if(repType === 'tableau_2col') {
+    reponse = { type: 'tableau_2col' };
   }
 
   // Guide
