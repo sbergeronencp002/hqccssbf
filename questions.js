@@ -73,30 +73,19 @@ const REGLETTES = {
     ]
   },
   "Q5": {
-    oi: "Établir des liens de causalité",
-    variante: "3 éléments — 2 liens",
+    oi: "Situer dans l'espace",
     colonnes: [
-      "3 points",
       "2 points",
-      "1 point",
       "0 point"
     ],
     niveaux: [
       {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
-      {
         pts: 2,
-        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
-      },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+        desc: "L'élève situe le fait dans l'espace."
       },
       {
         pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
+        desc: "L'élève ne situe pas le fait dans l'espace."
       }
     ]
   },
@@ -231,6 +220,9 @@ const IMAGE_DB = {
   },
   "revolte_pontiact.png": {
     src: "images/revolte_pontiact.png"
+  },
+  "loyalistes_province_quebec": {
+    src: "images/loyalistes_province_quebec"
   }
 }
 
@@ -420,5 +412,39 @@ const QUESTIONS = [
       col3: "Après"
     },
     guide: "1 et 4 / 2 et 3"
+  },
+  {
+    id: "Q5",
+    niveau: 3,
+    oi: "Situer dans l'espace",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    enonce: "À partir du document A, indiquez la lettre qui correspond à une région de la Province de Québec où s’établissent des Loyalistes.",
+    aspects: [
+      {
+        aspect: "Loyalistes"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "loyalistes_province_quebec",
+            source: "Ministère de l’Éducation et de l’Enseignement supérieur (MEES)."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau",
+      lignes: [
+        {
+          label: "Réponse"
+        }
+      ]
+    },
+    guide: "A"
   }
 ]
