@@ -1888,20 +1888,24 @@ const QUESTIONS = [
       ]
     },
     guide: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Clérico-nationalisme",
-          valeur: "C"
-        },
-        {
-          label: "Impérialisme",
-          valeur: "A"
-        },
-        {
-          label: "Nationalisme canadien-français",
-          valeur: "B"
-        }
+      type: "grille",
+      entetes: [
+        "Élément",
+        "Document"
+      ],
+      rangees: [
+        [
+          "Clérico-nationalisme",
+          "C"
+        ],
+        [
+          "Impérialisme",
+          "A"
+        ],
+        [
+          "Nationalisme canadien-français",
+          "B"
+        ]
       ]
     }
   },
