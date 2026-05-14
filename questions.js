@@ -304,6 +304,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas tous les faits dans le temps."
       }
     ]
+  },
+  "Q17": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -361,6 +378,12 @@ const IMAGE_DB = {
   },
   "chrono_dbAc.png": {
     src: "images/chrono_dbAc.png"
+  },
+  "crise_oka.png": {
+    src: "images/crise_oka.png"
+  },
+  "ligne_1950-2010.png": {
+    src: "images/ligne_1950-2010.png"
   }
 }
 
@@ -1065,5 +1088,35 @@ const QUESTIONS = [
       ref: "chrono_dbAc.png"
     },
     guide: "D - B - A - C"
+  },
+  {
+    id: "Q17",
+    niveau: 4,
+    oi: "Situer dans le temps",
+    periode: "P8 — De 1980 à nos jours",
+    points: 1,
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Droits des Autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "crise_oka.png",
+            source: "Photo : Jacques Nadeau/Archives Le Devoir, dans « La crise d’Oka en huit dates », Le  Devoir, [En ligne], 4 juillet 2015. [http://www.ledevoir.com/societe/actualites-en societe/444276/la-crise-d-oka-en-sept-dates] (Consulté le 18 juin 2017)."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1950-2010.png"
+    },
+    guide: "C"
   }
 ]
