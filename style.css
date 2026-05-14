@@ -11,7 +11,7 @@
   --c-esp: #2E7D32; --c-esp-bg: #E8F5E9;  /* Situer dans l'espace    — vert forêt   */
   --c-cau: #E65100; --c-cau-bg: #FFF3E0;  /* Liens de causalité      — orange brûlé */
   --c-dif: #6A1B9A; --c-dif-bg: #F3E5F5;  /* Différences/similitudes — violet       */
-  --c-chg: #546E7A; --c-chg-bg: #ECEFF1;  /* Changements/continuités — gris ardoise */
+  --c-chg: #37474F; --c-chg-bg: #CFD8DC;  /* Changements/continuités — gris charbon */
   --c-rel: #B71C1C; --c-rel-bg: #FFEBEE;  /* Causes/conséquences     — rouge        */
   --c-mr:  #C2185B; --c-mr-bg:  #FCE4EC;  /* Mettre en relation      — framboise    */
   --c-fai: #F9A825; --c-fai-bg: #FFFDE7;  /* Établir des faits       — jaune        */
