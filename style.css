@@ -553,3 +553,17 @@ select:focus { outline: none; border-color: var(--ink-2); }
 }
 .empty-state .big { font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-size: 3rem; display: block; margin-bottom: 0.5rem; }
 
+@media (max-width: 768px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar {
+    position: static; height: auto;
+    border-right: none; border-bottom: 1px solid var(--border);
+  }
+  .q-grid { grid-template-columns: 1fr; }
+  .cahier-panel { width: 100%; }
+  .modal { width: 96vw; }
+  .panier-bar { padding: 10px 1rem; }
+  header { padding: 1rem; }
+  header h1 { font-size: 1.2rem; }
+}
+

@@ -149,7 +149,7 @@ function applyFilters() {
     if(oi      && q.oi !== oi) return false;
     if(aspect  && !q.aspects.some(a=>a.aspect===aspect)) return false;
     if(periode && q.periode !== periode) return false;
-    if(search  && !q.enonce.toLowerCase().includes(search)) return false;
+    if(search  && !(q.enonce||'').toLowerCase().includes(search)) return false;
     return true;
   });
 
@@ -320,7 +320,7 @@ function render(list) {
       <div class="q-card-top" onclick="toggleCard('${q.id}')">
         <div class="q-top-content">
           <div class="q-oi-badge" style="color:${st.color};background:${st.bg}">${q.oi}</div>
-          <div class="q-enonce-preview">${q.enonce.replace(/\n/g,' ')}</div>
+          <div class="q-enonce-preview">${(q.enonce||'').replace(/\n/g,' ')}</div>
           <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap">
             ${q.aspects.map(a=>`<span style="font-size:0.7rem;color:var(--ink-3)">${a.aspect}</span>`).join('<span style="color:var(--ink-3);font-size:0.7rem">·</span>')}
           </div>
@@ -742,7 +742,7 @@ function renderCahier() {
     if(!q) return '';
     const st = oiStyle(q.oi);
     const oiShort = q.oi.length > 30 ? q.oi.slice(0,30) + '…' : q.oi;
-    const rawEnonce = q.enonce.replace(/\*\*(.*?)\*\*/g,'$1').replace(/[•\-] /g,'').trim();
+    const rawEnonce = (q.enonce||'').replace(/\*\*(.*?)\*\*/g,'$1').replace(/[•\-] /g,'').trim();
     const preview = rawEnonce.length > 65 ? rawEnonce.slice(0,65) + '…' : rawEnonce;
     return `<div class="cahier-item" draggable="true" data-id="${id}"
       ondragstart="cahierDragStart(event)" ondragover="cahierDragOver(event)"
@@ -1038,8 +1038,8 @@ async function genererDocx(includeGuide=false) {
 
       // Énoncé avec numéro
       const qNum = idx + 1;
-      const firstLine = q.enonce.split('\n')[0];
-      const otherLines = q.enonce.split('\n').slice(1);
+      const firstLine = (q.enonce||'').split('\n')[0];
+      const otherLines = (q.enonce||'').split('\n').slice(1);
       children.push(new Paragraph({
         children: [new TextRun({ text: qNum + '.  ', font: 'Aptos', size: 24 }), ...mkRuns(firstLine, 'Aptos', 24)]
       }));
