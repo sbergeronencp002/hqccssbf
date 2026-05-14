@@ -287,6 +287,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q16": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "2 points",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève situe tous les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas tous les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -335,6 +352,15 @@ const IMAGE_DB = {
   },
   "papineau_foule.png": {
     src: "images/papineau_foule.png"
+  },
+  "camp_oui_1995.png": {
+    src: "images/camp_oui_1995.png"
+  },
+  "rapatriment_constitution.png": {
+    src: "images/rapatriment_constitution.png"
+  },
+  "chrono_dbAc.png": {
+    src: "images/chrono_dbAc.png"
   }
 }
 
@@ -978,5 +1004,66 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Les pensionnats indiens (ou autochtones) ou les écoles résidentielles."
+  },
+  {
+    id: "Q16",
+    niveau: 4,
+    oi: "Situer dans le temps",
+    periode: "P8 — De 1980 à nos jours",
+    points: 2,
+    enonce: "Les documents A à D présentent des événements liés au statut politique du Québec à partir de 1982. Placez-les par ordre chronologique.",
+    aspects: [
+      {
+        aspect: "Statut politique du Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A - Principaux porte-parole du camp du Oui",
+            ref: "camp_oui_1995.png",
+            source: "Jacques Boissinot/Presse canadienne/655078."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« […] le premier ministre du Québec, Robert Bourassa, s’entend avec le premier ministre fédéral Brian Mulroney pour reprendre les négociations dans le but de réintégrer le Québec dans la Constitution. […] L’Assemblée nationale du Québec et la Chambre des communes du Parlement fédéral approuvent l’entente. Cependant, au terme du délai, les provinces du Manitoba et de Terre-Neuve refusent de la ratifier. […] L’accord du lac Meech se solde donc par un échec. »",
+            source: "Sylvain FORTIN et autres, Fresques, manuel de l’élève B, histoire et éducation à la  citoyenneté, 1re année du 2e cycle du secondaire, Montréal, Graficor, 2007, p. 228."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Que cette Chambre reconnaisse que les Québécoises et les Québécois forment une nation au sein d’un Canada uni. »",
+            auteur: "Motion déposée par Stephen Harper",
+            source: "Isidore NDAYWEL NZIEM et Elisabeth MUDIMBE-BOYI, Images, mémoires et  savoirs : une histoire en partage avec Bogumil Koss Jewsiewicki, Paris, Éditions  Karthala, 2009, p. 62."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D - Signature de la Proclamation de la loi  constitutionnelle canadienne",
+            ref: "rapatriment_constitution.png",
+            source: "Robert Cooper/Bibliothèque et Archives Canada/PA-141503."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "chrono_dbAc.png"
+    },
+    guide: "D - B - A - C"
   }
 ]
