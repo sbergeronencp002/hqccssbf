@@ -404,10 +404,7 @@ function render(list) {
         <div class="q-tile-oi">${q.oi}</div>
         <div class="q-tile-aspect">${aspect}</div>
       </div>
-      <div class="q-tile-foot">
-        <span class="q-tile-pts" style="color:${st.color}">${q.points}&thinsp;pt${q.points > 1 ? 's' : ''}</span>
-        <span class="q-tile-check" onclick="event.stopPropagation();togglePanier('${q.id}')">✓</span>
-      </div>
+      <span class="q-tile-check" onclick="event.stopPropagation();togglePanier('${q.id}')">✓</span>
     </div>`;
   }).join('');
 }
