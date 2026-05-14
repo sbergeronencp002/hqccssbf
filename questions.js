@@ -553,6 +553,34 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
       }
     ]
+  },
+  "Q29": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -1876,5 +1904,53 @@ const QUESTIONS = [
         }
       ]
     }
+  },
+  {
+    id: "Q29",
+    niveau: 4,
+    oi: "Établir des liens de causalité",
+    periode: "P8 — De 1980 à nos jours",
+    points: 3,
+    enonce: "À partir des documents ci-dessous, expliquez comment la réponse du gouvernement américain aux accusations de l’industrie américaine du bois d’œuvre au début du 21e siècle entraîne une action de la part du gouvernement canadien.\n \nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux. \n \n• Une accusation portée contre le Canada par l’industrie américaine du bois d’œuvre \n• La réponse du gouvernement américain  \n• Une action du gouvernement canadien",
+    aspects: [
+      {
+        aspect: "Mondialisation de l'économie"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les décisions du [gouvernement américain] sont punitives […] et dénuées de tout fondement. Elles ont été prises pour apaiser les milieux protectionnistes américains. J’ai entièrement confiance dans les causes que nous avons présentées en vertu de l’ALENA et de l’OMC [Organisation mondiale du commerce] et j’engage [des] procédures aujourd’hui […] »",
+            auteur: "Pierre Pettigrew, ministre canadien du Commerce international, 2002",
+            source: "Gilles TOUPIN, « Le désaccord est terminé, la guerre commence... », La Presse, 23 mars 2002, cahier La Presse Affaires, p. E2."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les producteurs canadiens de bois d’œuvre devront […] payer dès le 23 mai [2002] des droits de plus de 27 % sur leurs exportations vers les États-Unis […] La décision a provoqué un tollé à Ottawa et dans les capitales provinciales, où on a accusé les États-Unis de se livrer à “un protectionnisme grossier” et d’“oublier qui sont leurs vrais amis”. »",
+            source: "« Bois d'œuvre - Ottawa accuse Washington de se livrer à \"un protectionnisme grossier\" », Le Devoir, [En ligne], 19 mai 2002. [http://www.ledevoir.com/economie/actualites economiques/1451/bois-d-oeuvre-ottawa-accuse-washington-de-se-livrer-a-un-protectionnisme-grossier] (Consulté le 18 juin 2017)."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« L’industrie américaine du bois d’œuvre […] a maintes fois soutenu que les droits de coupe pratiqués au Canada sont […] préjudiciables à l’industrie américaine sur le marché américain. »",
+            source: "« Bois d’œuvre I à IV : historique du différend canado-américain sur le bois d’œuvre résineux », Parlement du Canada, Bibliothèque du Parlement, [En ligne], 19 septembre 2005.  [http://www.bdp.parl.gc.ca/content/lop/ResearchPublications/tips/tip134-f.htm] (Consulté le 18 juin 2017)."
+          }
+        ]
+      }
+    ],
+    reponse: false,
+    guide: "L’industrie américaine accuse le Canada de subventionner son industrie ou de vendre son bois d’œuvre à un prix inférieur à celui du bois américain ou de faire du dumping sur le marché américain (Une accusation portée contre le Canada par l’industrie américaine du bois d’œuvre). Ces critiques amènent le gouvernement américain à imposer une taxe (ou une surtaxe) sur le bois d’œuvre canadien ou des droits \nantidumping sur les exportations canadiennes (La réponse du gouvernement américain). Cette décision pousse le gouvernement canadien à protester auprès de l’OMC et du tribunal de l’ALENA (Une action du gouvernement canadien)."
   }
 ]
