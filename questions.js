@@ -581,6 +581,23 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q30": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -665,6 +682,9 @@ const IMAGE_DB = {
   },
   "org_pol_acte_const.png": {
     src: "images/org_pol_acte_const.png"
+  },
+  "passage_beringie.png": {
+    src: "images/passage_beringie.png"
   }
 }
 
@@ -1994,5 +2014,34 @@ const QUESTIONS = [
     ],
     reponse: false,
     guide: "L’industrie américaine accuse le Canada de subventionner son industrie ou de vendre son bois d’œuvre à un prix inférieur à celui du bois américain ou de faire du dumping sur le marché américain (Une accusation portée contre le Canada par l’industrie américaine du bois d’œuvre). Ces critiques amènent le gouvernement américain à imposer une taxe (ou une surtaxe) sur le bois d’œuvre canadien ou des droits \nantidumping sur les exportations canadiennes (La réponse du gouvernement américain). Cette décision pousse le gouvernement canadien à protester auprès de l’OMC et du tribunal de l’ALENA (Une action du gouvernement canadien)."
+  },
+  {
+    id: "Q30",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, nommez le passage emprunté par les premiers occupants pour migrer de l’Asie vers l’Amérique.",
+    aspects: [
+      {
+        aspect: "Premiers occupants du territoire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "passage_beringie.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le détroit de Béring (ou la Béringie)."
   }
 ]
