@@ -2432,7 +2432,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document D",
-            ref: "campement_algonquien.png"
+            ref: "campement_algonquien.png",
+            source: "Thomas Mower Martin, Un campement […], 1880, huile sur toile, musée Glenbow, Calgary,  Canada, 58.6. [Détail]"
           }
         ]
       }
