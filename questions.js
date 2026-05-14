@@ -1240,20 +1240,24 @@ const QUESTIONS = [
       ]
     },
     guide: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Bourgeoisie professionnelle",
-          valeur: "1"
-        },
-        {
-          label: "Bourgeoisie d'affaires",
-          valeur: "3"
-        },
-        {
-          label: "Clergé catholique",
-          valeur: "2"
-        }
+      type: "grille",
+      entetes: [
+        "Élément",
+        "Document"
+      ],
+      rangees: [
+        [
+          "Bourgeoisie professionnelle",
+          "A"
+        ],
+        [
+          "Bourgeoisie d'affaires",
+          "C"
+        ],
+        [
+          "Clergé catholique",
+          "B"
+        ]
       ]
     }
   },
