@@ -2165,7 +2165,7 @@ const QUESTIONS = [
     oi: "Situer dans l'espace",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "À partir du document A, indiquez la lettre du territoire occupé par la famille linguistique algonquienne vers 1500.",
+    enonce: "À partir du document A, indiquez la lettre du territoire occupé par la famille linguistique iroquoienne vers 1500.",
     aspects: [
       {
         aspect: "Premiers occupants du territoire"
@@ -2185,6 +2185,6 @@ const QUESTIONS = [
     reponse: {
       type: "tableau_2col"
     },
-    guide: "C"
+    guide: "B"
   }
 ]
