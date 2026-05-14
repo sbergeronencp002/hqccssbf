@@ -122,6 +122,20 @@
   </div>
 </div>
 
+<div class="modal-overlay" id="q-modal-overlay" onclick="closeQModalOverlay(event)">
+  <div class="modal q-modal">
+    <div class="modal-header" id="q-modal-header">
+      <div id="q-modal-title" style="flex:1;min-width:0"></div>
+      <button class="modal-close" id="q-modal-close" onclick="closeQModal()">×</button>
+    </div>
+    <div class="modal-body" id="q-modal-body"></div>
+    <div class="modal-footer">
+      <button class="btn-modal-sec" onclick="closeQModal()">Fermer</button>
+      <button id="q-modal-panier-btn" onclick="togglePanierModal()"></button>
+    </div>
+  </div>
+</div>
+
 <div class="warn-toast" id="warn-toast"></div>
 
 <script src="questions.js"></script>

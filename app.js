@@ -294,9 +294,83 @@ function buildReglettHTML(q) {
   </table>`;
 }
 
-function toggleCard(id) {
-  const card = document.getElementById('card-'+id);
-  card.classList.toggle('open');
+function openQModal(id) {
+  const q = QUESTIONS.find(x => x.id === id);
+  if(!q) return;
+  const st = oiStyle(q.oi);
+
+  const header = document.getElementById('q-modal-header');
+  header.style.background = st.bg;
+  header.style.color = st.color;
+  header.style.borderBottom = '3px solid ' + st.color;
+
+  const closeBtn = document.getElementById('q-modal-close');
+  if(closeBtn) closeBtn.style.color = st.color;
+
+  const aspects = q.aspects.map(a => a.aspect).join(' · ');
+  document.getElementById('q-modal-title').innerHTML =
+    `<div class="q-oi-badge" style="color:${st.color};background:rgba(0,0,0,0.08)">${q.oi}</div>` +
+    `<div style="font-size:0.7rem;margin-top:3px;opacity:0.72">${aspects}</div>` +
+    `<div style="font-size:0.67rem;margin-top:2px;opacity:0.55;font-weight:600">${q.points}&thinsp;pt${q.points > 1 ? 's' : ''}</div>`;
+
+  let html = '<div class="q-section-label">Question</div>';
+  html += '<div class="q-full-enonce">' + formatTexte(q.enonce) + '</div>';
+
+  if(q.documents && q.documents.length) {
+    html += '<div class="q-section-label">Documents</div>';
+    html += '<div class="q-docs-images">' + q.documents.map(d => renderDoc(d)).join('<div class="doc-spacer"></div>') + '</div>';
+  }
+
+  const rep = renderReponse(q);
+  if(rep) {
+    html += '<div class="q-section-label">Espace réponse</div>' + rep;
+  }
+
+  const r = REGLETTES[q.id];
+  if(r) {
+    html += '<div class="q-section-label">Réglette</div>';
+    if(r.variante) {
+      html += '<div style="font-size:0.78rem;color:var(--ink-3);font-style:italic">Réglette complexe — disponible dans le cahier généré.</div>';
+    } else {
+      html += `<table class="reglette-table">${r.niveaux.map(n =>
+        `<tr><td class="r-pts-cell">${n.pts}&thinsp;pt${n.pts > 1 ? 's' : ''}</td><td class="r-desc-cell">${n.desc}</td></tr>`
+      ).join('')}</table>`;
+    }
+  }
+
+  document.getElementById('q-modal-body').innerHTML = html;
+
+  const btn = document.getElementById('q-modal-panier-btn');
+  btn.dataset.id = id;
+  updateQModalBtn(id);
+
+  document.getElementById('q-modal-overlay').classList.add('open');
+}
+
+function closeQModal() {
+  document.getElementById('q-modal-overlay').classList.remove('open');
+}
+
+function closeQModalOverlay(e) {
+  if(e.target === document.getElementById('q-modal-overlay')) closeQModal();
+}
+
+function updateTileState(id) {
+  const tile = document.getElementById('tile-' + id);
+  if(tile) tile.classList.toggle('in-panier', panier.includes(id));
+}
+
+function updateQModalBtn(id) {
+  const btn = document.getElementById('q-modal-panier-btn');
+  if(!btn || btn.dataset.id !== id) return;
+  const inPanier = panier.includes(id);
+  btn.textContent = inPanier ? '✓ Dans le panier' : '+ Ajouter au panier';
+  btn.classList.toggle('in-panier', inPanier);
+}
+
+function togglePanierModal() {
+  const btn = document.getElementById('q-modal-panier-btn');
+  if(btn && btn.dataset.id) togglePanier(btn.dataset.id);
 }
 
 function flashBtn(btn, msg) {
@@ -313,50 +387,20 @@ function render(list) {
     return;
   }
 
-  container.innerHTML = list.map(q=>{
+  container.innerHTML = list.map(q => {
     const st = oiStyle(q.oi);
-    return `
-    <div class="q-card" id="card-${q.id}">
-      <div class="q-card-top" onclick="toggleCard('${q.id}')">
-        <div class="q-top-content">
-          <div class="q-oi-badge" style="color:${st.color};background:${st.bg}">${q.oi}</div>
-          <div class="q-enonce-preview">${(q.enonce||'').replace(/\n/g,' ')}</div>
-          <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap">
-            ${q.aspects.map(a=>`<span style="font-size:0.7rem;color:var(--ink-3)">${a.aspect}</span>`).join('<span style="color:var(--ink-3);font-size:0.7rem">·</span>')}
-          </div>
-        </div>
-        <div class="q-right">
-          <div>
-            <div class="q-pts">${q.points}</div>
-            <div class="q-pts-label">pt${q.points>1?'s':''}</div>
-          </div>
-          <span class="expand-icon">▼</span>
-        </div>
+    const aspect = q.aspects.map(a => a.aspect).join(' · ');
+    const inPanier = panier.includes(q.id);
+    return `<div class="q-tile${inPanier ? ' in-panier' : ''}" id="tile-${q.id}"
+      style="--tile-color:${st.color}" onclick="openQModal('${q.id}')">
+      <div class="q-tile-bar" style="background:${st.color}"></div>
+      <div class="q-tile-content">
+        <div class="q-tile-oi">${q.oi}</div>
+        <div class="q-tile-aspect">${aspect}</div>
       </div>
-      <div class="q-card-body">
-
-        <div style="display:flex;gap:8px;margin-bottom:1rem;align-items:center;flex-wrap:wrap">
-          <button class="btn-add-panier" id="btn-panier-${q.id}" onclick="togglePanier('${q.id}',this)">+ Ajouter au panier</button>
-        </div>
-
-        <div class="q-section-label">Question</div>
-        <div class="q-full-enonce">${formatTexte(q.enonce)}</div>
-        ${q.documents.length ? '<div class="q-section-label">Documents</div><div class="q-docs-images">' + q.documents.map(d=>renderDoc(d)).join('<div class="doc-spacer"></div>') + '</div>' : ''}
-        ${renderReponse(q)}
-        <div class="q-section-label">Réglette</div>
-        ${(()=>{
-          const r = REGLETTES[q.id];
-          if(!r) return '<div style="font-size:0.8rem;color:var(--ink-3);font-style:italic">Réglette non disponible.</div>';
-          if(r.variante) return '<div style="font-size:0.78rem;color:var(--ink-3);font-style:italic">Réglette complexe — disponible dans le cahier généré.</div>';
-          return `<table class="reglette-table">
-            ${r.niveaux.map(n=>`
-              <tr>
-                <td class="r-pts-cell">${n.pts} pt${n.pts > 1 ? 's' : ''}</td>
-                <td class="r-desc-cell">${n.desc}</td>
-              </tr>`).join('')}
-          </table>`;
-        })()}
-
+      <div class="q-tile-foot">
+        <span class="q-tile-pts" style="color:${st.color}">${q.points}&thinsp;pt${q.points > 1 ? 's' : ''}</span>
+        <span class="q-tile-check">✓</span>
       </div>
     </div>`;
   }).join('');
@@ -380,6 +424,10 @@ async function initSite() {
   } catch(e) {}
 }
 initSite();
+
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape') { closeQModal(); closePreviewBtn(); }
+});
 
 // ===== PANIER =====
 let panier = [];
@@ -640,30 +688,23 @@ function closePreviewBtn() {
   document.getElementById('preview-modal').classList.remove('open');
 }
 
-function togglePanier(id, btn) {
+function togglePanier(id) {
   if(panier.includes(id)) {
     panier = panier.filter(x => x !== id);
-    btn.textContent = '+ Ajouter au panier';
-    btn.classList.remove('in-panier');
   } else {
     if(panier.length >= 10) {
       showWarn('Maximum 10 questions dans le panier.');
       return;
     }
     panier.push(id);
-    btn.textContent = '✓ Dans le panier';
-    btn.classList.add('in-panier');
-    const card = document.getElementById('card-' + id);
-    if(card) card.classList.remove('open');
   }
   updatePanierBar();
+  updateTileState(id);
+  updateQModalBtn(id);
 }
 
 function refreshPanierButtons() {
-  panier.forEach(id => {
-    const btn = document.getElementById('btn-panier-' + id);
-    if(btn) { btn.textContent = '✓ Dans le panier'; btn.classList.add('in-panier'); }
-  });
+  panier.forEach(id => updateTileState(id));
 }
 
 function updatePanierBar() {
@@ -678,17 +719,16 @@ function updatePanierBar() {
 
 function retirerPanier(id) {
   panier = panier.filter(x => x !== id);
-  const btn = document.getElementById('btn-panier-' + id);
-  if(btn) { btn.textContent = '+ Ajouter au panier'; btn.classList.remove('in-panier'); }
+  updateTileState(id);
+  updateQModalBtn(id);
   updatePanierBar();
 }
 
 function viderPanier() {
-  panier.forEach(id => {
-    const btn = document.getElementById('btn-panier-' + id);
-    if(btn) { btn.textContent = '+ Ajouter au panier'; btn.classList.remove('in-panier'); }
-  });
+  const ids = [...panier];
   panier = [];
+  ids.forEach(id => updateTileState(id));
+  updateQModalBtn('');
   updatePanierBar();
 }
 
