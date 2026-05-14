@@ -338,7 +338,9 @@ function openQModal(id) {
     }
   }
 
-  document.getElementById('q-modal-body').innerHTML = html;
+  const body = document.getElementById('q-modal-body');
+  body.innerHTML = html;
+  body.scrollTop = 0;
 
   const btn = document.getElementById('q-modal-panier-btn');
   btn.dataset.id = id;
@@ -728,7 +730,8 @@ function viderPanier() {
   const ids = [...panier];
   panier = [];
   ids.forEach(id => updateTileState(id));
-  updateQModalBtn('');
+  const modalBtn = document.getElementById('q-modal-panier-btn');
+  if(modalBtn && modalBtn.dataset.id) updateQModalBtn(modalBtn.dataset.id);
   updatePanierBar();
 }
 
