@@ -693,6 +693,14 @@ function showWarn(msg) {
 // === CAHIER EN CONSTRUCTION ===
 let cahierDragSrc = null;
 
+function melangerPanier() {
+  for(let i = panier.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [panier[i], panier[j]] = [panier[j], panier[i]];
+  }
+  updatePanierBar();
+}
+
 function openCahier() {
   renderCahier();
   document.getElementById('cahier-panel').classList.add('open');

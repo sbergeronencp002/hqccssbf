@@ -131,7 +131,10 @@ header a:hover { color: #fff; }
             <option value="">— Choisir —</option>
           </select>
         </div>
-        <button class="btn-danger" id="btn-supprimer" onclick="supprimerQuestion()" disabled>🗑 Supprimer cette question</button>
+        <div style="display:flex;gap:.75rem;flex-wrap:wrap">
+          <button class="btn-secondary" id="btn-dupliquer" onclick="dupliquerQuestion()" disabled>📋 Dupliquer cette question</button>
+          <button class="btn-danger" id="btn-supprimer" onclick="supprimerQuestion()" disabled>🗑 Supprimer cette question</button>
+        </div>
       </div>
     </div>
 
@@ -343,14 +346,32 @@ function populateEditSelect() {
     + currentQuestions.map(q => `<option value="${q.id}">${q.id} — ${q.oi.split(' ').slice(0,4).join(' ')} (${q.periode})</option>`).join('');
 }
 
+function dupliquerQuestion() {
+  if(!editingId) return;
+  // Génère un nouvel ID
+  const nums = currentQuestions.map(q => parseInt(q.id.replace(/\D/g,''))).filter(n=>!isNaN(n));
+  const newId = 'Q' + (nums.length ? Math.max(...nums) + 1 : 1);
+  // Bascule en mode "nouvelle question" sans effacer le formulaire
+  editingId = null;
+  document.querySelector('input[name="mode"][value="new"]').checked = true;
+  document.getElementById('edit-select-wrap').style.display = 'none';
+  document.getElementById('btn-supprimer').disabled = true;
+  document.getElementById('btn-dupliquer').disabled = true;
+  document.getElementById('q-id').value = newId;
+  document.getElementById('next-id-badge').textContent = newId;
+  toast('Formulaire dupliqué — modifie puis publie comme nouvelle question.', 'ok');
+}
+
 function loadQuestion(id) {
   const btnSuppr = document.getElementById('btn-supprimer');
-  if(!id) { editingId = null; if(btnSuppr) btnSuppr.disabled = true; return; }
+  const btnDupl  = document.getElementById('btn-dupliquer');
+  if(!id) { editingId = null; if(btnSuppr) btnSuppr.disabled = true; if(btnDupl) btnDupl.disabled = true; return; }
   const q = currentQuestions.find(x => x.id === id);
   const r = currentReglettes[id];
   if(!q) return;
   editingId = id;
   if(btnSuppr) btnSuppr.disabled = false;
+  if(btnDupl)  btnDupl.disabled  = false;
 
   document.getElementById('q-id').value = q.id;
   document.getElementById('next-id-badge').textContent = q.id;
