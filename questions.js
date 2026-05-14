@@ -1034,8 +1034,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B - Données sur les célibataires lors d’un recensement dans la colonie",
-            ref: "recensement_colonie.png",
-            source: "MEES."
+            ref: "recensement_colonie.png"
           }
         ]
       }
@@ -1052,16 +1051,20 @@ const QUESTIONS = [
       ]
     },
     guide: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Cause",
-          valeur: "B"
-        },
-        {
-          label: "Conséquence",
-          valeur: "1"
-        }
+      type: "grille",
+      entetes: [
+        "Élément",
+        "Document"
+      ],
+      rangees: [
+        [
+          "Cause",
+          "B"
+        ],
+        [
+          "Conséquence",
+          "A"
+        ]
       ]
     }
   },
