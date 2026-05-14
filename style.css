@@ -11,10 +11,10 @@
   --c-esp: #2E7D32; --c-esp-bg: #E8F5E9;  /* Situer dans l'espace    — vert forêt   */
   --c-cau: #E65100; --c-cau-bg: #FFF3E0;  /* Liens de causalité      — orange brûlé */
   --c-dif: #6A1B9A; --c-dif-bg: #F3E5F5;  /* Différences/similitudes — violet       */
-  --c-chg: #00695C; --c-chg-bg: #E0F2F1;  /* Changements/continuités — sarcelle     */
+  --c-chg: #546E7A; --c-chg-bg: #ECEFF1;  /* Changements/continuités — gris ardoise */
   --c-rel: #B71C1C; --c-rel-bg: #FFEBEE;  /* Causes/conséquences     — rouge        */
   --c-mr:  #00838F; --c-mr-bg:  #E0F7FA;  /* Mettre en relation      — cyan         */
-  --c-fai: #F57F17; --c-fai-bg: #FFFDE7;  /* Établir des faits       — ambre        */
+  --c-fai: #F9A825; --c-fai-bg: #FFFDE7;  /* Établir des faits       — jaune        */
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
