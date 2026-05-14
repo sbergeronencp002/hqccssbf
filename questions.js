@@ -343,6 +343,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"
       }
     ]
+  },
+  "Q19": {
+    oi: "Situer dans l'espace",
+    colonnes: [
+      "2 points",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève situe le fait dans l'espace."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas le fait dans l'espace."
+      }
+    ]
   }
 }
 
@@ -412,6 +429,9 @@ const IMAGE_DB = {
   },
   "barrages_hydro_baie_james.png": {
     src: "images/barrages_hydro_baie_james.png"
+  },
+  "territoire_exploite_minerai_fer.png": {
+    src: "images/territoire_exploite_minerai_fer.png"
   }
 }
 
@@ -1209,5 +1229,34 @@ const QUESTIONS = [
       col3: "Après"
     },
     guide: "B et D / A et C"
+  },
+  {
+    id: "Q19",
+    niveau: 4,
+    oi: "Situer dans l'espace",
+    periode: "P7 — 1945 – 1980",
+    points: 2,
+    enonce: "Selon le document A, quelle lettre correspond à un territoire exploité pour son minerai de fer dans la deuxième moitié du 20e siècle?",
+    aspects: [
+      {
+        aspect: "Développement régional"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "territoire_exploite_minerai_fer.png",
+            source: "MEES."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau_2col"
+    },
+    guide: "C"
   }
 ]
