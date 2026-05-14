@@ -432,6 +432,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q23": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -507,6 +529,9 @@ const IMAGE_DB = {
   },
   "victoire_parti_quebecois_1976.png": {
     src: "images/victoire_parti_quebecois_1976.png"
+  },
+  "org_pol_acte_union.png": {
+    src: "images/org_pol_acte_union.png"
   }
 }
 
@@ -1466,5 +1491,35 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "L’importance de coloniser les régions (ou la colonisation des régions)."
+  },
+  {
+    id: "Q23",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    enonce: "Dans quel but les Réformistes de la Province du Canada forment-ils une alliance en 1841?",
+    aspects: [
+      {
+        aspect: "Gouvernement responsable"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "org_pol_acte_union.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Obtenir la responsabilité ministérielle (ou le gouvernement responsable) ou obtenir que les membres du Conseil exécutif soient désormais choisis parmi les membres de l’Assemblée législative ou former la majorité à la Chambre d’assemblée."
   }
 ]
