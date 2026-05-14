@@ -442,7 +442,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "À partir du document ci-dessous, nommez une nation autochtone qui conclut une alliance avec Champlain et François Gravé du Pont en 1603.",
+    enonce: "À partir du document A, nommez une nation autochtone qui conclut une alliance avec Champlain et François Gravé du Pont en 1603.",
     aspects: [
       {
         aspect: "Exploration et occupation du territoire par les Français"
