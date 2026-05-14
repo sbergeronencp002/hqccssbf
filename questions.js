@@ -531,6 +531,28 @@ const REGLETTES = {
       "0 point"
     ],
     niveaux: []
+  },
+  "Q28": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (3 sur 3)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (2 sur 3)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
+      }
+    ]
   }
 }
 
@@ -1775,5 +1797,84 @@ const QUESTIONS = [
       nombre: 4
     },
     guide: "Il y a changement, car pour la première fois en 1961, une femme siège comme députée ou car une femme se présente pour la première fois comme candidate aux élections en 1947. \nou\nIl y a continuité, car des femmes sont élues députées depuis 1961 ou car les femmes sont toujours minoritaires comme députées à l’Assemblée nationale entre 1961 et 1989."
+  },
+  {
+    id: "Q28",
+    niveau: 4,
+    oi: "Mettre en relation des faits",
+    periode: "P6 — 1896 – 1945",
+    points: 2,
+    enonce: "Les documents A à C font référence à différents nationalismes au Québec au 20e siècle. Indiquez à l’endroit approprié la lettre du document correspondant à chacun des nationalismes.",
+    aspects: [
+      {
+        aspect: "Clérico-nationalisme"
+      },
+      {
+        aspect: "Politique intérieure canadienne"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Lorsque la Grande-Bretagne est en guerre, le Canada est en guerre. »",
+            auteur: "Wilfrid Laurier"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Laissons de côté nos divergences de partis, de races et de religions; unissons-nous et soyons fidèles à notre devise : notre religion, notre langue, nos institutions. »",
+            auteur: "Honoré Mercier"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Nous ne serons de bons Canadiens qu’en étant d’abord de bons Canadiens français catholiques. »",
+            auteur: "Lionel Groulx"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau",
+      lignes: [
+        {
+          label: "Clérico-nationalisme"
+        },
+        {
+          label: "Impérialisme"
+        },
+        {
+          label: "Nationalisme canadien-français"
+        }
+      ]
+    },
+    guide: {
+      type: "tableau",
+      lignes: [
+        {
+          label: "Clérico-nationalisme",
+          valeur: "C"
+        },
+        {
+          label: "Impérialisme",
+          valeur: "A"
+        },
+        {
+          label: "Nationalisme canadien-français",
+          valeur: "B"
+        }
+      ]
+    }
   }
 ]
