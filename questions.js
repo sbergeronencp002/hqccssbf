@@ -598,6 +598,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q31": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -685,6 +702,9 @@ const IMAGE_DB = {
   },
   "passage_beringie.png": {
     src: "images/passage_beringie.png"
+  },
+  "familles_linguistiques_autochtones.png": {
+    src: "images/familles_linguistiques_autochtones.png"
   }
 }
 
@@ -2043,5 +2063,34 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Le détroit de Béring (ou la Béringie)."
+  },
+  {
+    id: "Q31",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, nommez la famille linguistique autochtone qui occupe la vallée du fleuve Saint-Laurent vers 1500.",
+    aspects: [
+      {
+        aspect: "Premiers occupants du territoire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "familles_linguistiques_autochtones.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les Iroquoiens."
   }
 ]
