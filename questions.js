@@ -432,6 +432,94 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q23": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
+  },
+  "Q24": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
+      }
+    ]
+  },
+  "Q25": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
+  },
+  "Q26": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la continuité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la continuité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -507,6 +595,15 @@ const IMAGE_DB = {
   },
   "victoire_parti_quebecois_1976.png": {
     src: "images/victoire_parti_quebecois_1976.png"
+  },
+  "org_pol_acte_union.png": {
+    src: "images/org_pol_acte_union.png"
+  },
+  "tableau_traite_recipricite_exportations.png": {
+    src: "images/tableau_traite_recipricite_exportations.png"
+  },
+  "org_pol_acte_const.png": {
+    src: "images/org_pol_acte_const.png"
   }
 }
 
@@ -1466,5 +1563,165 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "L’importance de coloniser les régions (ou la colonisation des régions)."
+  },
+  {
+    id: "Q23",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    enonce: "Dans quel but les Réformistes de la Province du Canada forment-ils une alliance en 1841?",
+    aspects: [
+      {
+        aspect: "Gouvernement responsable"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "org_pol_acte_union.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Obtenir la responsabilité ministérielle (ou le gouvernement responsable) ou obtenir que les membres du Conseil exécutif soient désormais choisis parmi les membres de l’Assemblée législative ou former la majorité à la Chambre d’assemblée."
+  },
+  {
+    id: "Q24",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    enonce: "Au milieu du 19e siècle, la Grande-Bretagne adopte une politique de libre-échange. Inscrivez la lettre du document qui présente une cause de l’adoption de cette politique et la lettre de celui qui en présente une conséquence pour la Province du Canada.",
+    aspects: [
+      {
+        aspect: "Économie coloniale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« […] la Grande-Bretagne […] est alors la première puissance industrielle. Ses usines nécessitent d’importantes quantités de matières premières et produisent un grand nombre de produits manufacturés. […] [Les hommes d’affaires anglais] croient que les matières premières coûteraient moins cher s’il n’y avait pas de tarifs douaniers et que les produits manufacturés s’écouleraient mieux sur le marché international. »",
+            source: "Sébastien BRODEUR-GIRARD et autres, Le Québec, une histoire à construire, manuel de l’élève, histoire et éducation à la citoyenneté, 2e année du 2e cycle du secondaire, Laval,  Éditions Grand Duc, 2008, vol. 1, p. 149."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "tableau_traite_recipricite_exportations.png",
+            source: "MEES, d’après Michel ALLARD et autres, Les Deux-Canadas : 1810-1867, Montréal, Guérin, 1985, p. 175."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau",
+      lignes: [
+        {
+          label: "Cause"
+        },
+        {
+          label: "Conséquence"
+        }
+      ]
+    },
+    guide: {
+      type: "tableau",
+      lignes: [
+        {
+          label: "Cause",
+          valeur: "A"
+        },
+        {
+          label: "Conséquence",
+          valeur: "B"
+        }
+      ]
+    }
+  },
+  {
+    id: "Q25",
+    niveau: 4,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P6 — 1896 – 1945",
+    points: 2,
+    enonce: "À partir du document A, indiquez un changement survenu dans l’économie du Québec durant les années 1930.",
+    aspects: [
+      {
+        aspect: "Grande dépression"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les “Années folles” prennent fin subitement quand, le 24 octobre 1929, la Bourse de New York s’effondre. [...] Tous les pays du monde capitaliste sont touchés. »",
+            source: "Danielle DION-McKINNON et Pierre LALONGÉ, Notre histoire, Montréal, ERPI, 1984, p. 228."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "L’économie du Québec passe d’une période de prospérité à une période de dépression (ou de crise) ou le Québec est touché par une crise économique."
+  },
+  {
+    id: "Q26",
+    niveau: 4,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    enonce: "Les documents A et B présentent la structure politique de la colonie à deux périodes différentes. Quel pouvoir le gouverneur conserve-t-il d’une période à l’autre?",
+    aspects: [
+      {
+        aspect: "Acte d'Union"
+      },
+      {
+        aspect: "Gouvernement responsable"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A - 1791 à 1840",
+            ref: "org_pol_acte_const.png"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B - 1840 à 1848",
+            ref: "org_pol_acte_union.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le droit de veto (ou Le droit de rejeter des projets de loi soumis par la Chambre d’assemblée) ou le pouvoir exécutif (ou Le pouvoir de nommer les membres des conseils exécutif et législatif) ou le pouvoir de dissoudre la Chambre d’assemblée."
   }
 ]
