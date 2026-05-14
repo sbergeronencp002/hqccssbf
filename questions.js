@@ -666,6 +666,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas le fait dans l'espace."
       }
     ]
+  },
+  "Q35": {
+    oi: "Situer dans l'espace",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe le fait dans l'espace."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas le fait dans l'espace."
+      }
+    ]
   }
 }
 
@@ -2231,5 +2248,33 @@ const QUESTIONS = [
       type: "tableau_2col"
     },
     guide: "B"
+  },
+  {
+    id: "Q35",
+    niveau: 3,
+    oi: "Situer dans l'espace",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, indiquez la lettre du territoire occupé par la nation inuite vers 1500.",
+    aspects: [
+      {
+        aspect: "Premiers occupants du territoire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "familles_linguistiques_autochtones_lettres.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau_2col"
+    },
+    guide: "A"
   }
 ]
