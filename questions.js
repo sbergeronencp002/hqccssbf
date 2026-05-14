@@ -1704,8 +1704,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "tableau_traite_recipricite_exportations.png",
-            source: "MEES, d’après Michel ALLARD et autres, Les Deux-Canadas : 1810-1867, Montréal, Guérin, 1985, p. 175."
+            ref: "tableau_traite_recipricite_exportations.png"
           }
         ]
       }
@@ -1722,16 +1721,20 @@ const QUESTIONS = [
       ]
     },
     guide: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Cause",
-          valeur: "A"
-        },
-        {
-          label: "Conséquence",
-          valeur: "B"
-        }
+      type: "grille",
+      entetes: [
+        "Élément",
+        "Document"
+      ],
+      rangees: [
+        [
+          "Cause",
+          "A"
+        ],
+        [
+          "Conséquence",
+          "B"
+        ]
       ]
     }
   },
