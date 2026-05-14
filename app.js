@@ -1077,7 +1077,7 @@ async function genererDocx(includeGuide=false) {
           const mkRow = (first) => new docx.TableRow({
             height:{value:500,rule:'exact'},
             children:[new docx.TableCell({
-              borders:{top:first?BB_L:BN_L, bottom:BB_L, left:BN_L, right:BN_L},
+              borders:{top:(first && nb>1)?BB_L:BN_L, bottom:BB_L, left:BN_L, right:BN_L},
               margins:MC_L,
               children:[new Paragraph(MP_L)]
             })]
