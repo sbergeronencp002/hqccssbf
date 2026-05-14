@@ -44,10 +44,11 @@ const ASPECTS_PAR_PERIODE = {
     "Statut du Canada dans l'Empire britannique"
   ],
   'P7 — 1945 – 1980': [
-    'Accroissement naturel','Agglomération urbaine','Développement régional',
-    'Fédération canadienne','Mouvement indépendantiste','Nouveaux arrivants',
+    'Accroissement naturel','Affirmation des nations autochtones','Agglomération urbaine',
+    'Développement régional','Effervescence socioculturelle','Fédération canadienne',
+    'Féminisme','Néonationalisme','Nouveaux arrivants',
     'Pensionnats indiens au Québec','Période duplessiste','Rapports de force en Occident',
-    'Réformes institutionnelles','Révolution tranquille','Société de consommation'
+    'Relations patronales-syndicales','Révolution tranquille','Société de consommation'
   ],
   'P8 — De 1980 à nos jours': [
     'Droits des Autochtones','Égalité hommes-femmes','Évolution sociodémographique',
