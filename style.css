@@ -250,7 +250,10 @@ select:focus { outline: none; border-color: var(--ink-2); }
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  cursor: pointer;
+  transition: opacity 0.15s;
 }
+.q-tile-check:hover { opacity: 0.75; }
 .q-tile.in-panier .q-tile-check { display: flex; }
 
 /* === MODAL QUESTION === */

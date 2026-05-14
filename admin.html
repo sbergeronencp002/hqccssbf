@@ -481,6 +481,26 @@ function loadQuestion(id) {
 }
 
 // ── SUPPRIMER QUESTION ────────────────────────────────────────────────
+async function fetchFreshState(token) {
+  const r = await fetch(
+    `https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js?ref=${BRANCH}`,
+    { headers: { Authorization: `token ${token}` }, cache: 'no-store' }
+  );
+  if(!r.ok) throw new Error('Impossible de lire questions.js : ' + r.status);
+  const data = await r.json();
+  questionsFileSha = data.sha;
+  const binary = atob(data.content.replace(/\n/g,''));
+  const bytes = new Uint8Array(binary.length);
+  for(let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+  const content = new TextDecoder('utf-8').decode(bytes);
+  const fn = new Function(content + '\nreturn { REGLETTES, IMAGE_DB, QUESTIONS };');
+  const result = fn();
+  currentQuestions = result.QUESTIONS;
+  currentReglettes = result.REGLETTES;
+  currentImageDb   = result.IMAGE_DB;
+  return result;
+}
+
 async function supprimerQuestion() {
   if(!editingId) return;
   if(!confirm(`Supprimer ${editingId} et renuméroter toutes les questions ?`)) return;
@@ -492,6 +512,9 @@ async function supprimerQuestion() {
 
   try {
     const idSupp = editingId;
+
+    // Reload full content from GitHub before modifying
+    await fetchFreshState(token);
 
     // Retirer la question et sa réglette
     currentQuestions = currentQuestions.filter(q => q.id !== idSupp);
@@ -512,13 +535,6 @@ async function supprimerQuestion() {
       if(newId) newReglettes[newId] = r;
     });
     currentReglettes = newReglettes;
-
-    // SHA frais
-    const shaResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js?ref=${BRANCH}`,
-      { headers: { Authorization: `token ${token}` }, cache: 'no-store' });
-    if(!shaResp.ok) throw new Error('Impossible de lire le SHA : ' + shaResp.status);
-    const shaData = await shaResp.json();
-    questionsFileSha = shaData.sha;
 
     const newContent = generateQuestionsJs(currentQuestions, currentReglettes, currentImageDb);
     const encoded = btoa(unescape(encodeURIComponent(newContent)));
@@ -1031,12 +1047,8 @@ async function publier() {
   status.textContent = '';
 
   try {
-    // Reload SHA
-    const shaResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js?ref=${BRANCH}`,
-      { headers: { Authorization: `token ${token}` }, cache: 'no-store' });
-    if(!shaResp.ok) throw new Error('Impossible de lire le SHA : ' + shaResp.status);
-    const shaData = await shaResp.json();
-    questionsFileSha = shaData.sha;
+    // Reload full content from GitHub before modifying (prevents data loss from stale state)
+    await fetchFreshState(token);
 
     const q = buildQuestion();
     const r = buildReglette(q.id);
