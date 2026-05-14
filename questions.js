@@ -820,6 +820,9 @@ const IMAGE_DB = {
   },
   "familles_linguistiques_autochtones_lettres.png": {
     src: "images/familles_linguistiques_autochtones_lettres.png"
+  },
+  "campement_algonquien.png": {
+    src: "images/campement_algonquien.png"
   }
 }
 
@@ -2398,9 +2401,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Ils vivent de blé d’Inde, de fèves, de courges et de poissons qu’ils conservent pour l’hiver. »",
-            auteur: "Jacques Cartier",
-            source: "Relation du second voyage (1535)."
+            texte: "« [Ils] vivaient dans des villages palissadés, reliés entre eux par un réseau de sentiers. Les maisons […] mesuraient de vingt à trente mètres de long sur six ou sept de large. […] Chacune contenait cinq ou six foyers autour desquels plusieurs familles apparentées travaillaient, jouaient, mangeaient et dormaient. »",
+            source: "John A. DICKINSON et Brian YOUNG, Brève histoire socio-économique du Québec, 4e éd., Québec, Les éditions du Septentrion, 2009, p. 23."
           }
         ]
       },
@@ -2409,7 +2411,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« Ils vont de lieu en lieu selon les saisons, vivant de chasse, de pêche et de ce que le pays leur fournit. »",
+            texte: "« Ils n’ont point de demeure arrêtée, mais vont de lieu en lieu selon les saisons, transportant leurs cabanes et vivant de la chasse, de la pêche et de ce que le pays leur fournit pour subsister. »",
             auteur: "Marc Lescarbot",
             source: "Histoire de la Nouvelle-France (1609)."
           }
@@ -2420,9 +2422,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« Ils cultivent la terre avec grand soin pour nourrir leurs familles pendant toute l’année. »",
-            auteur: "Gabriel Sagard",
-            source: "Le Grand Voyage du pays des Hurons (1632)."
+            texte: "« [Ils] habitent la vallée du Saint-Laurent et les berges des Grands Lacs. [Ils] ont adopté un mode de vie sédentaire axé sur la culture des “trois sœurs” […] Comme ils vivent essentiellement de l’agriculture, [ils] ont besoin d’un territoire relativement petit mais fertile. »",
+            source: "Alain DALONGEVILLE (dir.), Présences : une histoire thématique du Québec, manuel de l’élève, histoire et éducation à la  citoyenneté, 2e année du 2e cycle du secondaire, Anjou, Les Éditions CEC, 2008, vol. 1, p. 28."
           }
         ]
       },
@@ -2431,9 +2432,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document D",
-            texte: "« Ils n’ont point de demeure arrêtée et transportent leurs cabanes là où ils trouvent leur subsistance. »",
-            auteur: "Pierre Biard",
-            source: "Relation de la Nouvelle-France (1616)."
+            ref: "campement_algonquien.png"
           }
         ]
       }
