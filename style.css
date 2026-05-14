@@ -9,9 +9,9 @@
   --border: rgba(26,24,20,0.12);
   --c-sit: #003DA5; --c-sit-bg: #E3EEF9;  /* Situer dans le temps    — bleu Québec  */
   --c-esp: #2E7D32; --c-esp-bg: #E8F5E9;  /* Situer dans l'espace    — vert forêt   */
-  --c-cau: #EF6C00; --c-cau-bg: #FFF3E0;  /* Liens de causalité      — orange       */
+  --c-cau: #E91E8C; --c-cau-bg: #FCE4EC;  /* Liens de causalité      — rose fuchsia */
   --c-dif: #6A1B9A; --c-dif-bg: #F3E5F5;  /* Différences/similitudes — violet       */
-  --c-chg: #455A64; --c-chg-bg: #ECEFF1;  /* Changements/continuités — gris         */
+  --c-chg: #8D6E63; --c-chg-bg: #EFEBE9;  /* Changements/continuités — brun terrac. */
   --c-rel: #D62829; --c-rel-bg: #FFEBEE;  /* Causes/conséquences     — rouge Canada */
   --c-mr:  #00ACC1; --c-mr-bg:  #E0F7FA;  /* Mettre en relation      — turquoise    */
   --c-fai: #FDD835; --c-fai-bg: #FFFDE7;  /* Établir des faits       — jaune        */
