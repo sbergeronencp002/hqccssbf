@@ -1704,8 +1704,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A - 1791 à 1840",
-            ref: "org_pol_acte_const.png",
-            source: "Récitus."
+            ref: "org_pol_acte_const.png"
           }
         ]
       },
@@ -1714,13 +1713,15 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B - 1840 à 1848",
-            ref: "org_pol_acte_union.png",
-            source: "Récitus."
+            ref: "org_pol_acte_union.png"
           }
         ]
       }
     ],
-    reponse: false,
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
     guide: "Le droit de veto (ou Le droit de rejeter des projets de loi soumis par la Chambre d’assemblée) ou le pouvoir exécutif (ou Le pouvoir de nommer les membres des conseils exécutif et législatif) ou le pouvoir de dissoudre la Chambre d’assemblée."
   }
 ]
