@@ -553,6 +553,180 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
       }
     ]
+  },
+  "Q29": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
+  },
+  "Q30": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q31": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q32": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q33": {
+    oi: "Situer dans l'espace",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe le fait dans l'espace."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas le fait dans l'espace."
+      }
+    ]
+  },
+  "Q34": {
+    oi: "Situer dans l'espace",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe le fait dans l'espace."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas le fait dans l'espace."
+      }
+    ]
+  },
+  "Q35": {
+    oi: "Situer dans l'espace",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe le fait dans l'espace."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas le fait dans l'espace."
+      }
+    ]
+  },
+  "Q36": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (2 sur 2)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (1 sur 2)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (0 sur 2)"
+      }
+    ]
+  },
+  "Q37": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (2 sur 2)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (1 sur 2)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (0 sur 2)"
+      }
+    ]
   }
 }
 
@@ -637,6 +811,18 @@ const IMAGE_DB = {
   },
   "org_pol_acte_const.png": {
     src: "images/org_pol_acte_const.png"
+  },
+  "passage_beringie.png": {
+    src: "images/passage_beringie.png"
+  },
+  "familles_linguistiques_autochtones.png": {
+    src: "images/familles_linguistiques_autochtones.png"
+  },
+  "familles_linguistiques_autochtones_lettres.png": {
+    src: "images/familles_linguistiques_autochtones_lettres.png"
+  },
+  "campement_algonquien.png": {
+    src: "images/campement_algonquien.png"
   }
 }
 
@@ -825,7 +1011,21 @@ const QUESTIONS = [
       col2: "La capitulation de Montréal",
       col3: "Après"
     },
-    guide: "1 et 4 / 2 et 3"
+    guide: {
+      type: "grille",
+      entetes: [
+        "Avant",
+        "",
+        "Après"
+      ],
+      rangees: [
+        [
+          "1 et 4",
+          "La capitulation de Montréal",
+          "2 et 3"
+        ]
+      ]
+    }
   },
   {
     id: "Q5",
@@ -992,8 +1192,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B - Données sur les célibataires lors d’un recensement dans la colonie",
-            ref: "recensement_colonie.png",
-            source: "MEES."
+            ref: "recensement_colonie.png"
           }
         ]
       }
@@ -1010,16 +1209,20 @@ const QUESTIONS = [
       ]
     },
     guide: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Cause",
-          valeur: "B"
-        },
-        {
-          label: "Conséquence",
-          valeur: "1"
-        }
+      type: "grille",
+      entetes: [
+        "Élément",
+        "Document"
+      ],
+      rangees: [
+        [
+          "Cause",
+          "B"
+        ],
+        [
+          "Conséquence",
+          "A"
+        ]
       ]
     }
   },
@@ -1195,20 +1398,24 @@ const QUESTIONS = [
       ]
     },
     guide: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Bourgeoisie professionnelle",
-          valeur: "1"
-        },
-        {
-          label: "Bourgeoisie d'affaires",
-          valeur: "3"
-        },
-        {
-          label: "Clergé catholique",
-          valeur: "2"
-        }
+      type: "grille",
+      entetes: [
+        "Élément",
+        "Document"
+      ],
+      rangees: [
+        [
+          "Bourgeoisie professionnelle",
+          "A"
+        ],
+        [
+          "Bourgeoisie d'affaires",
+          "C"
+        ],
+        [
+          "Clergé catholique",
+          "B"
+        ]
       ]
     }
   },
@@ -1433,7 +1640,21 @@ const QUESTIONS = [
       col2: "1960",
       col3: "Après"
     },
-    guide: "B et D / A et C"
+    guide: {
+      type: "grille",
+      entetes: [
+        "Avant",
+        "",
+        "Après"
+      ],
+      rangees: [
+        [
+          "B et D",
+          "1960",
+          "A et C"
+        ]
+      ]
+    }
   },
   {
     id: "Q19",
@@ -1655,8 +1876,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "tableau_traite_recipricite_exportations.png",
-            source: "MEES, d’après Michel ALLARD et autres, Les Deux-Canadas : 1810-1867, Montréal, Guérin, 1985, p. 175."
+            ref: "tableau_traite_recipricite_exportations.png"
           }
         ]
       }
@@ -1673,16 +1893,20 @@ const QUESTIONS = [
       ]
     },
     guide: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Cause",
-          valeur: "A"
-        },
-        {
-          label: "Conséquence",
-          valeur: "B"
-        }
+      type: "grille",
+      entetes: [
+        "Élément",
+        "Document"
+      ],
+      rangees: [
+        [
+          "Cause",
+          "A"
+        ],
+        [
+          "Conséquence",
+          "B"
+        ]
       ]
     }
   },
@@ -1860,20 +2084,382 @@ const QUESTIONS = [
       ]
     },
     guide: {
+      type: "grille",
+      entetes: [
+        "Élément",
+        "Document"
+      ],
+      rangees: [
+        [
+          "Clérico-nationalisme",
+          "C"
+        ],
+        [
+          "Impérialisme",
+          "A"
+        ],
+        [
+          "Nationalisme canadien-français",
+          "B"
+        ]
+      ]
+    }
+  },
+  {
+    id: "Q29",
+    niveau: 4,
+    oi: "Établir des liens de causalité",
+    periode: "P8 — De 1980 à nos jours",
+    points: 3,
+    enonce: "À partir des documents ci-dessous, expliquez comment la réponse du gouvernement américain aux accusations de l’industrie américaine du bois d’œuvre au début du 21e siècle entraîne une action de la part du gouvernement canadien.\n \nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux. \n \n• Une accusation portée contre le Canada par l’industrie américaine du bois d’œuvre \n• La réponse du gouvernement américain  \n• Une action du gouvernement canadien",
+    aspects: [
+      {
+        aspect: "Mondialisation de l'économie"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les décisions du [gouvernement américain] sont punitives […] et dénuées de tout fondement. Elles ont été prises pour apaiser les milieux protectionnistes américains. J’ai entièrement confiance dans les causes que nous avons présentées en vertu de l’ALENA et de l’OMC [Organisation mondiale du commerce] et j’engage [des] procédures aujourd’hui […] »",
+            auteur: "Pierre Pettigrew, ministre canadien du Commerce international, 2002",
+            source: "Gilles TOUPIN, « Le désaccord est terminé, la guerre commence... », La Presse, 23 mars 2002, cahier La Presse Affaires, p. E2."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les producteurs canadiens de bois d’œuvre devront […] payer dès le 23 mai [2002] des droits de plus de 27 % sur leurs exportations vers les États-Unis […] La décision a provoqué un tollé à Ottawa et dans les capitales provinciales, où on a accusé les États-Unis de se livrer à “un protectionnisme grossier” et d’“oublier qui sont leurs vrais amis”. »",
+            source: "« Bois d'œuvre - Ottawa accuse Washington de se livrer à \"un protectionnisme grossier\" », Le Devoir, [En ligne], 19 mai 2002. [http://www.ledevoir.com/economie/actualites economiques/1451/bois-d-oeuvre-ottawa-accuse-washington-de-se-livrer-a-un-protectionnisme-grossier] (Consulté le 18 juin 2017)."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« L’industrie américaine du bois d’œuvre […] a maintes fois soutenu que les droits de coupe pratiqués au Canada sont […] préjudiciables à l’industrie américaine sur le marché américain. »",
+            source: "« Bois d’œuvre I à IV : historique du différend canado-américain sur le bois d’œuvre résineux », Parlement du Canada, Bibliothèque du Parlement, [En ligne], 19 septembre 2005.  [http://www.bdp.parl.gc.ca/content/lop/ResearchPublications/tips/tip134-f.htm] (Consulté le 18 juin 2017)."
+          }
+        ]
+      }
+    ],
+    reponse: false,
+    guide: "L’industrie américaine accuse le Canada de subventionner son industrie ou de vendre son bois d’œuvre à un prix inférieur à celui du bois américain ou de faire du dumping sur le marché américain (Une accusation portée contre le Canada par l’industrie américaine du bois d’œuvre). Ces critiques amènent le gouvernement américain à imposer une taxe (ou une surtaxe) sur le bois d’œuvre canadien ou des droits \nantidumping sur les exportations canadiennes (La réponse du gouvernement américain). Cette décision pousse le gouvernement canadien à protester auprès de l’OMC et du tribunal de l’ALENA (Une action du gouvernement canadien)."
+  },
+  {
+    id: "Q30",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, nommez le passage emprunté par les premiers occupants pour migrer de l’Asie vers l’Amérique.",
+    aspects: [
+      {
+        aspect: "Premiers occupants du territoire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "passage_beringie.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le détroit de Béring (ou la Béringie)."
+  },
+  {
+    id: "Q31",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, nommez la famille linguistique autochtone qui occupe la vallée du fleuve Saint-Laurent vers 1500.",
+    aspects: [
+      {
+        aspect: "Premiers occupants du territoire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "familles_linguistiques_autochtones.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les Iroquoiens."
+  },
+  {
+    id: "Q32",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, nommez la famille linguistique autochtone qui occupe le Bouclier canadien et les Appalaches vers 1500.",
+    aspects: [
+      {
+        aspect: "Premiers occupants du territoire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "familles_linguistiques_autochtones.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les Algonquiens."
+  },
+  {
+    id: "Q33",
+    niveau: 3,
+    oi: "Situer dans l'espace",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, indiquez la lettre du territoire occupé par la famille linguistique algonquienne vers 1500.",
+    aspects: [
+      {
+        aspect: "Premiers occupants du territoire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "familles_linguistiques_autochtones_lettres.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau_2col"
+    },
+    guide: "C"
+  },
+  {
+    id: "Q34",
+    niveau: 3,
+    oi: "Situer dans l'espace",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, indiquez la lettre du territoire occupé par la famille linguistique iroquoienne vers 1500.",
+    aspects: [
+      {
+        aspect: "Premiers occupants du territoire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "familles_linguistiques_autochtones_lettres.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau_2col"
+    },
+    guide: "B"
+  },
+  {
+    id: "Q35",
+    niveau: 3,
+    oi: "Situer dans l'espace",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, indiquez la lettre du territoire occupé par la nation inuite vers 1500.",
+    aspects: [
+      {
+        aspect: "Premiers occupants du territoire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "familles_linguistiques_autochtones_lettres.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau_2col"
+    },
+    guide: "A"
+  },
+  {
+    id: "Q36",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    enonce: "À partir des documents A et B, indiquez la lettre du document qui fait références aux activités économiques pratiquées les groupes autochtones.",
+    aspects: [
+      {
+        aspect: "Réseaux d'échange autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Pour subvenir à leurs besoins, [les Cris, Ojibwés, Innus, Béothuks et Outaouais] suivent le gibier dans ses déplacements. Ils ont donc besoin d’un vaste territoire où abondent le gibier, le poisson et les fruits. »",
+            source: "lain DALONGEVILLE (dir.), Présences : une histoire thématique du Québec, manuel de l’élève, histoire et éducation à la citoyenneté, 2e année du 2e cycle du secondaire, Anjou, Les  Éditions CEC, 2008, vol. 1, p. 28."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« D’immenses champs potagers sont entretenus à l’extérieur des [palissades]; c’est là qu’on trouve, entre autres légumes, les maïs, fèves et courges de plusieurs variétés qui constituent pour eux une alimentation complète. »",
+            source: "Micheline BLANCHETTE, La vie traditionnelle des Premières Nations du Québec, Sherbrooke, Les Éditions G.G.C., 2011, p. 102.  (Patrimoine)."
+          }
+        ]
+      }
+    ],
+    reponse: {
       type: "tableau",
       lignes: [
         {
-          label: "Clérico-nationalisme",
-          valeur: "C"
+          label: "Algonquiens"
         },
         {
-          label: "Impérialisme",
-          valeur: "A"
-        },
-        {
-          label: "Nationalisme canadien-français",
-          valeur: "B"
+          label: "Iroquoiens"
         }
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Algonquiens",
+        "Iroquoiens"
+      ],
+      rangees: [
+        [
+          "",
+          ""
+        ]
+      ]
+    }
+  },
+  {
+    id: "Q37",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    enonce: "À partir des documents A et B, indiquez la lettre du document qui fait références à l'organisation territoriale des groupes autochtones.",
+    aspects: [
+      {
+        aspect: "Premiers occupants du territoire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« [Ils] vivaient dans des villages palissadés, reliés entre eux par un réseau de sentiers. Les maisons […] mesuraient de vingt à trente mètres de long sur six ou sept de large. […] Chacune contenait cinq ou six foyers autour desquels plusieurs familles apparentées travaillaient, jouaient, mangeaient et dormaient. »",
+            source: "John A. DICKINSON et Brian YOUNG, Brève histoire socio-économique du Québec, 4e éd., Québec, Les éditions du Septentrion, 2009, p. 23."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Ils n’ont point de demeure arrêtée, mais vont de lieu en lieu selon les saisons, transportant leurs cabanes et vivant de la chasse, de la pêche et de ce que le pays leur fournit pour subsister. »",
+            auteur: "Marc Lescarbot",
+            source: "Histoire de la Nouvelle-France (1609)."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« [Ils] habitent la vallée du Saint-Laurent et les berges des Grands Lacs. [Ils] ont adopté un mode de vie sédentaire axé sur la culture des “trois sœurs” […] Comme ils vivent essentiellement de l’agriculture, [ils] ont besoin d’un territoire relativement petit mais fertile. »",
+            source: "Alain DALONGEVILLE (dir.), Présences : une histoire thématique du Québec, manuel de l’élève, histoire et éducation à la  citoyenneté, 2e année du 2e cycle du secondaire, Anjou, Les Éditions CEC, 2008, vol. 1, p. 28."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            ref: "campement_algonquien.png",
+            source: "Thomas Mower Martin, Un campement […], 1880, huile sur toile, musée Glenbow, Calgary,  Canada, 58.6. [Détail]"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau",
+      lignes: [
+        {
+          label: "Algonquiens"
+        },
+        {
+          label: "Iroquoiens"
+        }
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Algonquiens",
+        "Iroquoiens"
+      ],
+      rangees: [
+        [
+          "B et D",
+          "A et C"
+        ]
       ]
     }
   }
