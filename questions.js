@@ -304,6 +304,62 @@ const REGLETTES = {
         desc: "L'élève ne situe pas tous les faits dans le temps."
       }
     ]
+  },
+  "Q17": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
+  },
+  "Q18": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève situe tous les faits dans le temps. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève situe certains faits dans le temps. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"
+      }
+    ]
+  },
+  "Q19": {
+    oi: "Situer dans l'espace",
+    colonnes: [
+      "2 points",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève situe le fait dans l'espace."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas le fait dans l'espace."
+      }
+    ]
   }
 }
 
@@ -361,6 +417,21 @@ const IMAGE_DB = {
   },
   "chrono_dbAc.png": {
     src: "images/chrono_dbAc.png"
+  },
+  "crise_oka.png": {
+    src: "images/crise_oka.png"
+  },
+  "ligne_1950-2010.png": {
+    src: "images/ligne_1950-2010.png"
+  },
+  "logos_societe_etat.png": {
+    src: "images/logos_societe_etat.png"
+  },
+  "barrages_hydro_baie_james.png": {
+    src: "images/barrages_hydro_baie_james.png"
+  },
+  "territoire_exploite_minerai_fer.png": {
+    src: "images/territoire_exploite_minerai_fer.png"
   }
 }
 
@@ -371,7 +442,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "À partir du document ci-dessous, nommez une nation autochtone qui conclut une alliance avec Champlain et François Gravé du Pont en 1603.",
+    enonce: "À partir du document A, nommez une nation autochtone qui conclut une alliance avec Champlain et François Gravé du Pont en 1603.",
     aspects: [
       {
         aspect: "Exploration et occupation du territoire par les Français"
@@ -1065,5 +1136,127 @@ const QUESTIONS = [
       ref: "chrono_dbAc.png"
     },
     guide: "D - B - A - C"
+  },
+  {
+    id: "Q17",
+    niveau: 4,
+    oi: "Situer dans le temps",
+    periode: "P8 — De 1980 à nos jours",
+    points: 1,
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Droits des Autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "crise_oka.png",
+            source: "Photo : Jacques Nadeau/Archives Le Devoir, dans « La crise d’Oka en huit dates », Le  Devoir, [En ligne], 4 juillet 2015. [http://www.ledevoir.com/societe/actualites-en societe/444276/la-crise-d-oka-en-sept-dates] (Consulté le 18 juin 2017)."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1950-2010.png"
+    },
+    guide: "C"
+  },
+  {
+    id: "Q18",
+    niveau: 4,
+    oi: "Situer dans le temps",
+    periode: "P7 — 1945 – 1980",
+    points: 2,
+    enonce: "Les documents A à D font référence à la modernisation de l’économie du Québec. Indiquez si les faits présentés dans ces documents se déroulent avant ou après 1960.",
+    aspects: [
+      {
+        aspect: "Développement régional"
+      },
+      {
+        aspect: "Révolution tranquille"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A - Deux nouvelles sociétés d'État",
+            ref: "logos_societe_etat.png"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« […] l’Office de l’électrification rurale est créé. Cette initiative entraîne la création de coopératives qui ont pour tâche de construire des réseaux de distribution dans les milieux ruraux. L’arrivée de l’électricité permet aux fermiers de […] développer de nouvelles techniques de conservation, dont la réfrigération. Leur productivité s’accroît […] »",
+            source: "Michel SARRA-BOURNET et autres, Repères, manuel de l’élève, histoire et éducation à la  citoyenneté, 2e année du 2e cycle du secondaire, Saint-Laurent, ERPI, 2008, p. 138."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "barrages_hydro_baie_james.png"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Le fer de la Côte-Nord devient un centre d’attrait. […] [La compagnie] Quebec North Shore fonde la ville de Schefferville. Certains reprocheront [au gouvernement] d’avoir “vendu” la Côte-Nord à des entreprises minières [américaines] pour la modique somme d’un cent la tonne de minerai. On oublie alors les autres clauses de la cession du droit d’exploitation qui représentaient d’importants revenus pour le gouvernement. »",
+            source: "Jacques LACOURSIÈRE, Une histoire du Québec, Sillery, Les Éditions du Septentrion, 2002,  p. 161."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau_3col",
+      col1: "Avant",
+      col2: "1960",
+      col3: "Après"
+    },
+    guide: "B et D / A et C"
+  },
+  {
+    id: "Q19",
+    niveau: 4,
+    oi: "Situer dans l'espace",
+    periode: "P7 — 1945 – 1980",
+    points: 2,
+    enonce: "Selon le document A, quelle lettre correspond à un territoire exploité pour son minerai de fer dans la deuxième moitié du 20e siècle?",
+    aspects: [
+      {
+        aspect: "Développement régional"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "territoire_exploite_minerai_fer.png",
+            source: "MEES."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau_2col"
+    },
+    guide: "C"
   }
 ]
