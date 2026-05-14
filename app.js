@@ -87,10 +87,41 @@ function fillOi(id, ois, placeholder) {
 }
 
 function onPeriodeChange() {
+  const niveau  = document.getElementById('f-niveau').value;
   const periode = document.getElementById('f-periode').value;
-  const filteredAspects = periode ? aspects.filter(a => a.periode === periode) : aspects;
+  const allowedPeriodes = niveau ? PERIODES_PAR_NIVEAU[niveau] : periodeOrder;
+  const filteredAspects = periode
+    ? aspects.filter(a => a.periode === periode)
+    : aspects.filter(a => allowedPeriodes.includes(a.periode));
   fillAspect('f-aspect', filteredAspects, periodeOrder);
   document.getElementById('f-aspect').value = '';
+  applyFilters();
+}
+
+function onNiveauChange() {
+  const niveau = document.getElementById('f-niveau').value;
+  const allowedPeriodes = niveau ? PERIODES_PAR_NIVEAU[niveau] : periodeOrder;
+
+  // Rebuild période dropdown
+  const periodeEl = document.getElementById('f-periode');
+  const currentPeriode = periodeEl.value;
+  periodeEl.innerHTML = '<option value="">Toutes</option>';
+  allowedPeriodes.forEach(p => {
+    const o = document.createElement('option');
+    o.value = o.textContent = p;
+    periodeEl.appendChild(o);
+  });
+  if(allowedPeriodes.includes(currentPeriode)) periodeEl.value = currentPeriode;
+  else periodeEl.value = '';
+
+  // Rebuild aspect dropdown
+  const periode = periodeEl.value;
+  const filteredAspects = periode
+    ? aspects.filter(a => a.periode === periode)
+    : aspects.filter(a => allowedPeriodes.includes(a.periode));
+  fillAspect('f-aspect', filteredAspects, periodeOrder);
+  document.getElementById('f-aspect').value = '';
+
   applyFilters();
 }
 
