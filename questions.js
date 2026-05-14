@@ -705,6 +705,28 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (0 sur 2)"
       }
     ]
+  },
+  "Q37": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (2 sur 2)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (1 sur 2)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (0 sur 2)"
+      }
+    ]
   }
 }
 
@@ -2354,6 +2376,89 @@ const QUESTIONS = [
         [
           "",
           ""
+        ]
+      ]
+    }
+  },
+  {
+    id: "Q37",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    enonce: "À partir des documents A et B, indiquez la lettre du document qui fait références à l'organisation territoriale des groupes autochtones.",
+    aspects: [
+      {
+        aspect: "Premiers occupants du territoire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Ils vivent de blé d’Inde, de fèves, de courges et de poissons qu’ils conservent pour l’hiver. »",
+            auteur: "Jacques Cartier",
+            source: "Relation du second voyage (1535)."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Ils vont de lieu en lieu selon les saisons, vivant de chasse, de pêche et de ce que le pays leur fournit. »",
+            auteur: "Marc Lescarbot",
+            source: "Histoire de la Nouvelle-France (1609)."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Ils cultivent la terre avec grand soin pour nourrir leurs familles pendant toute l’année. »",
+            auteur: "Gabriel Sagard",
+            source: "Le Grand Voyage du pays des Hurons (1632)."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Ils n’ont point de demeure arrêtée et transportent leurs cabanes là où ils trouvent leur subsistance. »",
+            auteur: "Pierre Biard",
+            source: "Relation de la Nouvelle-France (1616)."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau",
+      lignes: [
+        {
+          label: "Algonquiens"
+        },
+        {
+          label: "Iroquoiens"
+        }
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Algonquiens",
+        "Iroquoiens"
+      ],
+      rangees: [
+        [
+          "B et D",
+          "A et C"
         ]
       ]
     }
