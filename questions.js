@@ -507,6 +507,27 @@ const IMAGE_DB = {
   },
   "victoire_parti_quebecois_1976.png": {
     src: "images/victoire_parti_quebecois_1976.png"
+  },
+  "org_pol_acte_union.png": {
+    src: "images/org_pol_acte_union.png"
+  },
+  "tableau_traite_recipricite_exportations.png": {
+    src: "images/tableau_traite_recipricite_exportations.png"
+  },
+  "org_pol_acte_const.png": {
+    src: "images/org_pol_acte_const.png"
+  },
+  "passage_beringie.png": {
+    src: "images/passage_beringie.png"
+  },
+  "familles_linguistiques_autochtones.png": {
+    src: "images/familles_linguistiques_autochtones.png"
+  },
+  "familles_linguistiques_autochtones_lettres.png": {
+    src: "images/familles_linguistiques_autochtones_lettres.png"
+  },
+  "campement_algonquien.png": {
+    src: "images/campement_algonquien.png"
   }
 }
 
