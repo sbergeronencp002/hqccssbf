@@ -13,7 +13,7 @@
   --c-dif: #6A1B9A; --c-dif-bg: #F3E5F5;  /* Différences/similitudes — violet       */
   --c-chg: #546E7A; --c-chg-bg: #ECEFF1;  /* Changements/continuités — gris ardoise */
   --c-rel: #B71C1C; --c-rel-bg: #FFEBEE;  /* Causes/conséquences     — rouge        */
-  --c-mr:  #00838F; --c-mr-bg:  #E0F7FA;  /* Mettre en relation      — cyan         */
+  --c-mr:  #C2185B; --c-mr-bg:  #FCE4EC;  /* Mettre en relation      — framboise    */
   --c-fai: #F9A825; --c-fai-bg: #FFFDE7;  /* Établir des faits       — jaune        */
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
