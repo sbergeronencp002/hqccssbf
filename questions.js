@@ -321,6 +321,28 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
+  },
+  "Q18": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève situe tous les faits dans le temps. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève situe certains faits dans le temps. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"
+      }
+    ]
   }
 }
 
@@ -384,6 +406,12 @@ const IMAGE_DB = {
   },
   "ligne_1950-2010.png": {
     src: "images/ligne_1950-2010.png"
+  },
+  "logos_societe_etat.png": {
+    src: "images/logos_societe_etat.png"
+  },
+  "barrages_hydro_baie_james.png": {
+    src: "images/barrages_hydro_baie_james.png"
   }
 }
 
@@ -1118,5 +1146,68 @@ const QUESTIONS = [
       ref: "ligne_1950-2010.png"
     },
     guide: "C"
+  },
+  {
+    id: "Q18",
+    niveau: 4,
+    oi: "Situer dans le temps",
+    periode: "P7 — 1945 – 1980",
+    points: 2,
+    enonce: "Les documents A à D font référence à la modernisation de l’économie du Québec. Indiquez si les faits présentés dans ces documents se déroulent avant ou après 1960.",
+    aspects: [
+      {
+        aspect: "Développement régional"
+      },
+      {
+        aspect: "Révolution tranquille"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A - Deux nouvelles sociétés d'État",
+            ref: "logos_societe_etat.png"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« […] l’Office de l’électrification rurale est créé. Cette initiative entraîne la création de coopératives qui ont pour tâche de construire des réseaux de distribution dans les milieux ruraux. L’arrivée de l’électricité permet aux fermiers de […] développer de nouvelles techniques de conservation, dont la réfrigération. Leur productivité s’accroît […] »",
+            source: "Michel SARRA-BOURNET et autres, Repères, manuel de l’élève, histoire et éducation à la  citoyenneté, 2e année du 2e cycle du secondaire, Saint-Laurent, ERPI, 2008, p. 138."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "barrages_hydro_baie_james.png"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Le fer de la Côte-Nord devient un centre d’attrait. […] [La compagnie] Quebec North \nShore fonde la ville de Schefferville. Certains reprocheront [au gouvernement] d’avoir “vendu” la Côte-Nord à des entreprises minières [américaines] pour la modique somme d’un cent la tonne de minerai. On oublie alors les autres clauses de la cession du droit d’exploitation qui représentaient d’importants revenus pour le gouvernement. »",
+            source: "Jacques LACOURSIÈRE, Une histoire du Québec, Sillery, Les Éditions du Septentrion, 2002,  p. 161."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau_3col",
+      col1: "Avant",
+      col2: "1960",
+      col3: "Après"
+    },
+    guide: "B et D / A et C"
   }
 ]
