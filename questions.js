@@ -1482,7 +1482,21 @@ const QUESTIONS = [
       col2: "1960",
       col3: "Après"
     },
-    guide: "B et D / A et C"
+    guide: {
+      type: "grille",
+      entetes: [
+        "Avant",
+        "",
+        "Après"
+      ],
+      rangees: [
+        [
+          "B et D",
+          "1960",
+          "A et C"
+        ]
+      ]
+    }
   },
   {
     id: "Q19",
