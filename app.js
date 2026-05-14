@@ -335,6 +335,10 @@ function render(list) {
       </div>
       <div class="q-card-body">
 
+        <div style="display:flex;gap:8px;margin-bottom:1rem;align-items:center;flex-wrap:wrap">
+          <button class="btn-add-panier" id="btn-panier-${q.id}" onclick="togglePanier('${q.id}',this)">+ Ajouter au panier</button>
+        </div>
+
         <div class="q-section-label">Question</div>
         <div class="q-full-enonce">${formatTexte(q.enonce)}</div>
         ${q.documents.length ? '<div class="q-section-label">Documents</div><div class="q-docs-images">' + q.documents.map(d=>renderDoc(d)).join('<div class="doc-spacer"></div>') + '</div>' : ''}
@@ -353,10 +357,6 @@ function render(list) {
           </table>`;
         })()}
 
-
-        <div style="display:flex;gap:8px;margin-top:1rem;align-items:center;flex-wrap:wrap">
-          <button class="btn-add-panier" id="btn-panier-${q.id}" onclick="togglePanier('${q.id}',this)">+ Ajouter au panier</button>
-        </div>
       </div>
     </div>`;
   }).join('');
