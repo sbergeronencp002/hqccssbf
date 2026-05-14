@@ -352,7 +352,6 @@ initSite();
 
 // ===== PANIER =====
 let panier = [];
-let dragSrc = null;
 
 function toggleTexte(btn) {
   const cell = btn.parentElement;
@@ -630,20 +629,11 @@ function refreshPanierButtons() {
 function updatePanierBar() {
   const bar = document.getElementById('panier-bar');
   const count = document.getElementById('panier-count');
-  const items = document.getElementById('panier-items');
   const totalPts = panier.reduce((s, id) => { const q = QUESTIONS.find(x=>x.id===id); return s+(q?q.points:0); }, 0);
   count.textContent = panier.length + ' / 10  ·  ' + totalPts + ' pt' + (totalPts !== 1 ? 's' : '');
   bar.classList.toggle('visible', panier.length > 0);
   try { sessionStorage.setItem('hqc_panier', JSON.stringify(panier)); } catch(e) {}
-
-  items.innerHTML = panier.map((id, i) => {
-    const q = QUESTIONS.find(x => x.id === id);
-    return `<div class="panier-chip" draggable="true" data-id="${id}" data-i="${i}"
-      ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="dropQ(event)" ondragend="dragEnd(event)">
-      <span>${q.id} — ${q.oi.split(' ').slice(0,3).join(' ')}…</span>
-      <button class="panier-chip-remove" onclick="retirerPanier('${id}')">×</button>
-    </div>`;
-  }).join('');
+  if(document.getElementById('cahier-panel').classList.contains('open')) renderCahier();
 }
 
 function retirerPanier(id) {
@@ -669,33 +659,93 @@ function showWarn(msg) {
   setTimeout(() => t.classList.remove('show'), 2500);
 }
 
-// Drag & drop reorder
-function dragStart(e) {
-  dragSrc = e.currentTarget;
-  dragSrc.classList.add('dragging');
+// === CAHIER EN CONSTRUCTION ===
+let cahierDragSrc = null;
+
+function openCahier() {
+  renderCahier();
+  document.getElementById('cahier-panel').classList.add('open');
+  document.getElementById('cahier-backdrop').classList.add('open');
+}
+
+function closeCahier() {
+  document.getElementById('cahier-panel').classList.remove('open');
+  document.getElementById('cahier-backdrop').classList.remove('open');
+}
+
+function renderCahier() {
+  const body = document.getElementById('cahier-body');
+  const sub  = document.getElementById('cahier-panel-sub');
+  const stats = document.getElementById('cahier-footer-stats');
+  const totalPts = panier.reduce((s, id) => { const q = QUESTIONS.find(x=>x.id===id); return s+(q?q.points:0); }, 0);
+
+  const nQ = panier.length;
+  sub.textContent = nQ + ' question' + (nQ !== 1 ? 's' : '') + ' · ' + totalPts + ' pt' + (totalPts !== 1 ? 's' : '');
+  stats.innerHTML = '<strong>' + nQ + '</strong> question' + (nQ !== 1 ? 's' : '')
+    + ' — <strong>' + totalPts + '</strong> point' + (totalPts !== 1 ? 's' : '') + ' au total';
+
+  if(!nQ) {
+    body.innerHTML = '<div class="cahier-empty">Aucune question dans le panier.<br>Utilisez le bouton <em>+ Ajouter</em> sur les cartes.</div>';
+    return;
+  }
+
+  body.innerHTML = panier.map((id, i) => {
+    const q = QUESTIONS.find(x => x.id === id);
+    if(!q) return '';
+    const st = oiStyle(q.oi);
+    const oiShort = q.oi.length > 30 ? q.oi.slice(0,30) + '…' : q.oi;
+    const rawEnonce = q.enonce.replace(/\*\*(.*?)\*\*/g,'$1').replace(/[•\-] /g,'').trim();
+    const preview = rawEnonce.length > 65 ? rawEnonce.slice(0,65) + '…' : rawEnonce;
+    return `<div class="cahier-item" draggable="true" data-id="${id}"
+      ondragstart="cahierDragStart(event)" ondragover="cahierDragOver(event)"
+      ondrop="cahierDrop(event)" ondragend="cahierDragEnd(event)">
+      <div class="cahier-accent" style="background:${st.color}"></div>
+      <div class="cahier-handle">⋮⋮</div>
+      <div class="cahier-item-body">
+        <div class="cahier-item-row">
+          <span class="cahier-num">Q${i+1}</span>
+          <span class="cahier-badge" style="color:${st.color};background:${st.bg}" title="${q.oi}">${oiShort}</span>
+          <span class="cahier-pts">${q.points} pt${q.points !== 1 ? 's' : ''}</span>
+        </div>
+        <div class="cahier-enonce">${preview}</div>
+      </div>
+      <button class="cahier-remove" onclick="retirerPanier('${id}')">×</button>
+    </div>`;
+  }).join('');
+}
+
+function cahierDragStart(e) {
+  cahierDragSrc = e.currentTarget;
+  cahierDragSrc.classList.add('dragging');
   e.dataTransfer.effectAllowed = 'move';
 }
-function dragOver(e) {
+
+function cahierDragOver(e) {
   e.preventDefault();
-  document.querySelectorAll('.panier-chip').forEach(c => c.classList.remove('drag-over'));
-  e.currentTarget.classList.add('drag-over');
+  e.dataTransfer.dropEffect = 'move';
+  document.querySelectorAll('.cahier-item').forEach(el => el.classList.remove('drop-top','drop-bottom'));
+  const target = e.currentTarget;
+  if(target === cahierDragSrc) return;
+  const rect = target.getBoundingClientRect();
+  target.classList.add(e.clientY < rect.top + rect.height / 2 ? 'drop-top' : 'drop-bottom');
 }
-function dropQ(e) {
+
+function cahierDrop(e) {
   e.preventDefault();
-  const fromId = dragSrc.dataset.id;
-  const toId = e.currentTarget.dataset.id;
-  if(fromId === toId) return;
+  const fromId = cahierDragSrc?.dataset.id;
+  const toId   = e.currentTarget.dataset.id;
+  if(!fromId || fromId === toId) return;
+  const before = e.currentTarget.classList.contains('drop-top');
   const fi = panier.indexOf(fromId);
-  const ti = panier.indexOf(toId);
   panier.splice(fi, 1);
-  panier.splice(ti, 0, fromId);
+  const ti = panier.indexOf(toId);
+  panier.splice(before ? ti : ti + 1, 0, fromId);
   updatePanierBar();
 }
-function dragEnd(e) {
-  document.querySelectorAll('.panier-chip').forEach(c => {
-    c.classList.remove('dragging');
-    c.classList.remove('drag-over');
-  });
+
+function cahierDragEnd() {
+  document.querySelectorAll('.cahier-item').forEach(el => el.classList.remove('dragging','drop-top','drop-bottom'));
+  cahierDragSrc = null;
 }
 
 // ===== RÉSOLUTION DES IMAGES (fetch → base64 + dimensions) =====
@@ -739,9 +789,8 @@ async function genererDocx(includeGuide=false) {
   if(panier.length === 0) return;
   const btn = includeGuide ? document.getElementById('btn-generer-guide') : document.getElementById('btn-generer');
   const btnOther = includeGuide ? document.getElementById('btn-generer') : document.getElementById('btn-generer-guide');
-  btn.disabled = true;
-  btnOther.disabled = true;
-  btn.textContent = '⏳ Génération…';
+  if(btn) { btn.disabled = true; btn.textContent = '⏳ Génération…'; }
+  if(btnOther) btnOther.disabled = true;
 
   try {
     if(typeof docx === 'undefined') {
@@ -1156,17 +1205,15 @@ async function genererDocx(includeGuide=false) {
     a.click();
     URL.revokeObjectURL(url);
 
-    flashBtn(btn, '✓ Téléchargé !');
+    if(btn) flashBtn(btn, '✓ Téléchargé !');
     setTimeout(() => {
-      btn.textContent = includeGuide ? '⬇ Générer Guide' : '⬇ Générer Cahier';
-      btn.disabled = false;
-      btnOther.disabled = false;
+      if(btn) { btn.textContent = includeGuide ? '⬇ Guide' : '⬇ Cahier'; btn.disabled = false; }
+      if(btnOther) btnOther.disabled = false;
     }, 2500);
   } catch(e) {
     console.error(e);
     showWarn('Erreur : ' + e.message);
-    btn.textContent = includeGuide ? '⬇ Générer Guide' : '⬇ Générer Cahier';
-    btn.disabled = false;
-    btnOther.disabled = false;
+    if(btn) { btn.textContent = includeGuide ? '⬇ Guide' : '⬇ Cahier'; btn.disabled = false; }
+    if(btnOther) btnOther.disabled = false;
   }
 }

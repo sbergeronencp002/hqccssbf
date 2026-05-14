@@ -93,14 +93,31 @@
 </div>
 
 <div class="panier-bar" id="panier-bar">
-  <div class="panier-items" id="panier-items"></div>
+  <span class="panier-count" id="panier-count">0 / 10</span>
   <div class="panier-actions">
-    <span class="panier-count" id="panier-count">0 / 10</span>
     <button class="btn-vider" onclick="viderPanier()">Vider</button>
-    <button class="btn-generer" style="background:rgba(255,255,255,0.15);color:var(--paper);border:1px solid rgba(255,255,255,0.4)" onclick="previsualiser(false)">👁 Cahier</button>
-    <button class="btn-generer" style="background:rgba(255,255,255,0.15);color:var(--paper);border:1px solid rgba(255,255,255,0.4)" onclick="previsualiser(true)">👁 Guide</button>
-    <button class="btn-generer" id="btn-generer" onclick="genererDocx(false)">⬇ Générer Cahier</button>
-    <button class="btn-generer" id="btn-generer-guide" style="background:var(--paper-3);color:var(--ink)" onclick="genererDocx(true)">⬇ Générer Guide</button>
+    <button class="btn-organiser" onclick="openCahier()">📋 Cahier en construction</button>
+  </div>
+</div>
+
+<div class="cahier-backdrop" id="cahier-backdrop" onclick="closeCahier()"></div>
+<div class="cahier-panel" id="cahier-panel">
+  <div class="cahier-panel-header">
+    <div>
+      <h3>Cahier en construction</h3>
+      <div class="cahier-panel-sub" id="cahier-panel-sub">0 question · 0 pt</div>
+    </div>
+    <button class="cahier-panel-close" onclick="closeCahier()">×</button>
+  </div>
+  <div class="cahier-body" id="cahier-body"></div>
+  <div class="cahier-footer">
+    <div class="cahier-footer-stats" id="cahier-footer-stats"></div>
+    <div class="cahier-footer-btns">
+      <button class="btn-vider" onclick="viderPanier()">Vider</button>
+      <button class="btn-generer" style="background:rgba(27,59,111,0.1);color:#1B3B6F;border:1px solid rgba(27,59,111,0.3)" onclick="previsualiser(false)">👁 Aperçu</button>
+      <button class="btn-generer" id="btn-generer" onclick="genererDocx(false)">⬇ Cahier</button>
+      <button class="btn-generer" id="btn-generer-guide" style="background:var(--paper-3);color:var(--ink)" onclick="genererDocx(true)">⬇ Guide</button>
+    </div>
   </div>
 </div>
 

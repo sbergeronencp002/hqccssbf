@@ -284,9 +284,10 @@ select:focus { outline: none; border-color: var(--ink-2); }
   right: 0;
   background: #1B3B6F;
   color: var(--paper);
-  padding: 12px 2rem;
+  padding: 10px 2rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 12px;
   z-index: 100;
   font-size: 0.8rem;
@@ -294,30 +295,147 @@ select:focus { outline: none; border-color: var(--ink-2); }
   transition: transform 0.2s ease;
 }
 .panier-bar.visible { transform: translateY(0); }
-.panier-items { display: flex; gap: 8px; flex: 1; flex-wrap: wrap; align-items: center; }
-.panier-chip {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(255,255,255,0.12);
-  border-radius: 4px;
-  padding: 4px 10px;
-  font-size: 0.75rem;
-  cursor: grab;
-}
-.panier-chip.dragging { opacity: 0.4; }
-.panier-chip.drag-over { outline: 2px dashed rgba(255,255,255,0.5); }
-.panier-chip-remove {
-  background: none;
-  border: none;
-  color: rgba(255,255,255,0.6);
-  cursor: pointer;
-  font-size: 0.9rem;
-  line-height: 1;
-  padding: 0;
-}
-.panier-chip-remove:hover { color: #fff; }
 .panier-actions { display: flex; gap: 8px; align-items: center; }
+.btn-organiser {
+  display: flex; align-items: center; gap: 6px;
+  padding: 7px 16px;
+  background: rgba(255,255,255,0.15);
+  color: var(--paper);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 4px;
+  font-family: 'DM Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 0.8rem; font-weight: 500;
+  cursor: pointer; transition: background 0.15s;
+}
+.btn-organiser:hover { background: rgba(255,255,255,0.26); }
+
+/* === CAHIER EN CONSTRUCTION === */
+.cahier-backdrop {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.35); z-index: 300;
+}
+.cahier-backdrop.open { display: block; }
+
+.cahier-panel {
+  position: fixed; top: 0; right: 0; bottom: 0; width: 420px;
+  background: var(--paper); z-index: 301;
+  display: flex; flex-direction: column;
+  box-shadow: -4px 0 32px rgba(0,0,0,0.2);
+  transform: translateX(100%);
+  transition: transform 0.28s cubic-bezier(0.4,0,0.2,1);
+}
+.cahier-panel.open { transform: translateX(0); }
+
+.cahier-panel-header {
+  background: #1B3B6F; color: #fff;
+  padding: 14px 18px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-shrink: 0;
+}
+.cahier-panel-header h3 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.05rem; font-weight: 400; line-height: 1.2;
+}
+.cahier-panel-sub {
+  font-size: 0.65rem; color: rgba(255,255,255,0.55);
+  letter-spacing: 0.1em; text-transform: uppercase; margin-top: 2px;
+}
+.cahier-panel-close {
+  background: none; border: none; color: #fff;
+  font-size: 1.5rem; cursor: pointer; line-height: 1; padding: 0; flex-shrink: 0;
+}
+
+.cahier-body {
+  flex: 1; overflow-y: auto; padding: 10px;
+  display: flex; flex-direction: column; gap: 5px;
+}
+.cahier-empty {
+  display: flex; align-items: center; justify-content: center;
+  height: 100%; color: var(--ink-3); font-size: 0.85rem;
+  text-align: center; padding: 2rem; line-height: 1.6;
+}
+
+.cahier-item {
+  display: flex; align-items: stretch;
+  background: #fff; border: 1px solid var(--border);
+  border-radius: 6px; cursor: default; user-select: none;
+  position: relative; overflow: visible;
+  transition: box-shadow 0.12s;
+}
+.cahier-item:hover { box-shadow: 0 2px 10px rgba(0,0,0,0.09); }
+.cahier-item.dragging { opacity: 0.35; box-shadow: 0 6px 20px rgba(0,0,0,0.18); }
+
+.cahier-accent {
+  width: 4px; flex-shrink: 0;
+  border-radius: 6px 0 0 6px;
+}
+.cahier-handle {
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 9px; cursor: grab; color: var(--ink-3);
+  font-size: 1rem; letter-spacing: -2px; line-height: 1;
+}
+.cahier-handle:active { cursor: grabbing; }
+
+.cahier-item-body {
+  flex: 1; padding: 9px 6px 9px 0;
+  display: flex; flex-direction: column; gap: 4px; min-width: 0;
+}
+.cahier-item-row {
+  display: flex; align-items: center; gap: 6px; min-width: 0;
+}
+.cahier-num {
+  font-size: 0.62rem; font-weight: 700; color: var(--ink-3);
+  letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; flex-shrink: 0;
+}
+.cahier-badge {
+  font-size: 0.6rem; font-weight: 500;
+  padding: 2px 7px; border-radius: 3px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  max-width: 150px; flex-shrink: 1;
+}
+.cahier-pts {
+  margin-left: auto; flex-shrink: 0;
+  font-size: 0.65rem; font-weight: 600; color: var(--ink-2); white-space: nowrap;
+}
+.cahier-enonce {
+  font-size: 0.77rem; color: var(--ink-2);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.cahier-remove {
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 13px; background: none; border: none;
+  color: var(--ink-3); cursor: pointer; font-size: 1.1rem;
+  border-left: 1px solid var(--border); flex-shrink: 0;
+  transition: color 0.1s, background 0.1s;
+}
+.cahier-remove:hover { color: var(--accent); background: var(--paper-2); border-radius: 0 6px 6px 0; }
+
+/* Drop line indicators */
+.cahier-item::before, .cahier-item::after {
+  content: ''; display: none; position: absolute; left: 0; right: 0;
+  height: 2px; background: #2563eb; border-radius: 2px; pointer-events: none; z-index: 1;
+}
+.cahier-item::before { top: -3px; }
+.cahier-item::after  { bottom: -3px; }
+.cahier-item.drop-top::before    { display: block; }
+.cahier-item.drop-bottom::after  { display: block; }
+
+.cahier-footer {
+  padding: 12px 14px; background: var(--paper-2);
+  border-top: 1px solid var(--border); flex-shrink: 0;
+}
+.cahier-footer-stats {
+  font-size: 0.72rem; color: var(--ink-2);
+  margin-bottom: 10px; text-align: center; letter-spacing: 0.02em;
+}
+.cahier-footer-stats strong { color: var(--ink); }
+.cahier-footer-btns { display: flex; gap: 6px; }
+.cahier-footer-btns .btn-vider {
+  color: var(--ink-2); border-color: var(--border); background: transparent;
+}
+.cahier-footer-btns .btn-vider:hover { color: var(--ink); border-color: var(--ink); }
+.cahier-footer-btns .btn-generer { flex: 1; padding: 7px 10px; font-size: 0.75rem; }
+
 .panier-count { font-size: 0.7rem; color: rgba(255,255,255,0.6); white-space: nowrap; }
 .btn-generer {
   padding: 6px 16px;

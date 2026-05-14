@@ -37,8 +37,11 @@ const ASPECTS_PAR_PERIODE = {
   ],
   'P6 — 1896 – 1945': [
     'Clérico-nationalisme','Culture de masse',"Deuxième phase d'industrialisation",
-    'Église catholique','Luttes des femmes','Milieux urbains','Mouvement syndical',
-    'Politique intérieure canadienne',"Statut du Canada dans l'Empire britannique"
+    'Éducation et formation technique','Église catholique','Flux migratoires',
+    'Grande dépression','Luttes des femmes','Milieux urbains','Mouvement syndical',
+    'Politique intérieure canadienne','Première Guerre mondiale',
+    'Remise en question du capitalisme','Seconde Guerre mondiale',
+    "Statut du Canada dans l'Empire britannique"
   ],
   'P7 — 1945 – 1980': [
     'Accroissement naturel','Agglomération urbaine','Développement régional',
