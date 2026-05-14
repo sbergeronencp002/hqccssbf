@@ -360,6 +360,28 @@ const REGLETTES = {
         desc: "L'élève ne situe pas le fait dans l'espace."
       }
     ]
+  },
+  "Q20": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève dégage correctement la différence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève dégage plus ou moins correctement la différence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."
+      }
+    ]
   }
 }
 
@@ -1258,5 +1280,45 @@ const QUESTIONS = [
       type: "tableau_2col"
     },
     guide: "C"
+  },
+  {
+    id: "Q20",
+    niveau: 4,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P7 — 1945 – 1980",
+    points: 2,
+    enonce: "À partir du document A, indiquez la différence entre le moyen utilisé par le Front de libération du Québec et celui utilisé par le Parti québécois pour obtenir l’indépendance du Québec.",
+    aspects: [
+      {
+        aspect: "Néonationalisme"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« […] les agissements du FLQ [Front de libération du Québec] aboutissent [en 1970] à la crise d’Octobre […] le premier ministre du Québec, Robert Bourassa, demande l’aide d’Ottawa. Pierre Elliott Trudeau fait alors intervenir l’armée […] »",
+            source: "Christophe HORGUELIN et autres, Fresques, manuel de l’élève, histoire  et éducation à la citoyenneté, 2e année du 2e cycle du secondaire,  Montréal, Graficor, 2009, t. 2, p. 161."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B - Victoire du Parti québécois,  15 novembre 1976",
+            ref: "",
+            source: "Archives Le Devoir, « Il y a 35 ans, le PQ prenait le pouvoir », Le Devoir,  [En ligne], 15 novembre 2011.  [http://www.ledevoir.com/politique/quebec/336137/il-y-a-35-ans-le-pq prenait-le-pouvoir] (Consulté le 18 juin 2017)."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le Front de libération du Québec recourt à la violence (ex. : enlèvements, attentats à la bombe), alors que le Parti québécois recourt à l’exercice de la démocratie (ex. : élections, référendum)."
   }
 ]
