@@ -514,12 +514,21 @@ function previsualiser(guideMode) {
         let guideContent = '';
         if(typeof q.guide === 'string') {
           guideContent = '<span style="font-size:0.9rem;color:var(--ink)">' + q.guide + '</span>';
-        } else if(q.guide.type === 'tableau') {
+        } else if(q.guide.type === 'grille' || q.guide.type === 'tableau') {
+          const TH = 'border:0.5px solid var(--border);padding:3px 10px;background:var(--paper-2);font-weight:600';
+          const TD = 'border:0.5px solid var(--border);padding:3px 10px';
           guideContent = '<table style="border-collapse:collapse;font-size:0.8rem;margin-top:4px">';
-          guideContent += '<tr><th style="border:0.5px solid var(--border);padding:3px 8px;background:var(--paper-2)"></th><th style="border:0.5px solid var(--border);padding:3px 8px;background:var(--paper-2)">Document</th></tr>';
-          q.guide.lignes.forEach(function(l) {
-            guideContent += '<tr><td style="border:0.5px solid var(--border);padding:3px 8px">' + l.label + '</td><td style="border:0.5px solid var(--border);padding:3px 8px;text-align:center;font-weight:500">' + l.valeur + '</td></tr>';
-          });
+          if(q.guide.type === 'grille') {
+            guideContent += '<tr>' + q.guide.entetes.map(h=>`<th style="${TH}">${h}</th>`).join('') + '</tr>';
+            q.guide.rangees.forEach(function(row) {
+              guideContent += '<tr>' + row.map(function(cell,ci){ return `<td style="${TD}${ci===0?';font-weight:500':''}">${cell}</td>`; }).join('') + '</tr>';
+            });
+          } else {
+            guideContent += `<tr><th style="${TH}"></th><th style="${TH}">Document</th></tr>`;
+            q.guide.lignes.forEach(function(l) {
+              guideContent += `<tr><td style="${TD};font-weight:500">${l.label}</td><td style="${TD};text-align:center">${l.valeur}</td></tr>`;
+            });
+          }
           guideContent += '</table>';
         }
         html += '<div class="preview-question" style="margin-bottom:0.75rem;padding-bottom:0.75rem">'
@@ -998,26 +1007,27 @@ async function genererDocx(includeGuide=false) {
         children.push(new Paragraph({ children: [new TextRun({ text: (idx+1) + '.', font: 'Aptos', size: 20, bold: true })] }));
         if(typeof q.guide === 'string') {
           children.push(new Paragraph({ children: [new TextRun({ text: q.guide, font: 'Aptos', size: 20 })] }));
-        } else if(q.guide.type === 'tableau') {
-          const colDoc = Math.floor(PAGE_W * 0.55);
-          const colVal = PAGE_W - colDoc;
-          const guideRows = [
-            new TableRow({ children: [
-              new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
-                children: [new Paragraph({ children: [new TextRun({ text: '', font: 'Aptos', size: 20, bold: true })] })] }),
-              new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
-                children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: 'Document', font: 'Aptos', size: 20, bold: true })] })] })
-            ]})
-          ];
-          q.guide.lignes.forEach(l => {
-            guideRows.push(new TableRow({ children: [
-              new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
-                children: [new Paragraph({ children: [new TextRun({ text: l.label, font: 'Aptos', size: 20 })] })] }),
-              new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
-                children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: l.valeur, font: 'Aptos', size: 20 })] })] })
-            ]}));
+        } else if(q.guide.type === 'grille' || q.guide.type === 'tableau') {
+          const mkGCell = (text, bold) => new TableCell({
+            borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
+            children: [new Paragraph({ children: [new TextRun({ text: String(text||''), font:'Aptos', size:20, bold:!!bold })] })]
           });
-          children.push(new Table({ width: { size: PAGE_W, type: WidthType.DXA }, columnWidths: [colDoc, colVal], rows: guideRows }));
+          let headers, rows;
+          if(q.guide.type === 'grille') {
+            headers = q.guide.entetes || [];
+            rows    = q.guide.rangees || [];
+          } else {
+            headers = ['', 'Document'];
+            rows    = (q.guide.lignes||[]).map(l=>[l.label, l.valeur]);
+          }
+          const nCols   = headers.length || 2;
+          const colW    = Math.floor(PAGE_W / nCols);
+          const colWidths = Array(nCols).fill(colW);
+          const guideRows = [
+            new TableRow({ children: headers.map(h => mkGCell(h, true)) }),
+            ...rows.map(row => new TableRow({ children: row.map((cell,ci) => mkGCell(cell, ci===0)) }))
+          ];
+          children.push(new Table({ width:{ size:PAGE_W, type:WidthType.DXA }, columnWidths:colWidths, rows:guideRows }));
         }
         children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
       });

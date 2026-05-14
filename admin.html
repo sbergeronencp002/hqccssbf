@@ -89,7 +89,15 @@ header a:hover { color: #fff; }
 
 /* ── ID badge ── */
 .id-badge { display: inline-block; background: var(--accent); color: #fff; font-size: .7rem; font-weight: 700; padding: .15rem .5rem; border-radius: 4px; letter-spacing: .05em; }
-/* ── RICH TOOLBAR ── */
+/* ── GUIDE GRILLE ── */
+.guide-grille { border-collapse: collapse; width: 100%; margin-top: .25rem; }
+.guide-grille th, .guide-grille td { border: 1px solid var(--border); padding: 0; }
+.guide-grille-num { width: 26px; text-align: center; font-size: .68rem; color: var(--ink-3); background: var(--paper-2); padding: 0 4px; }
+.guide-grille th { background: var(--paper-2); }
+.guide-grille input { width: 100%; border: none; padding: .34rem .55rem; font-size: .82rem; background: transparent; font-family: inherit; color: var(--ink); min-width: 80px; }
+.guide-grille input:focus { outline: none; background: rgba(27,59,111,0.05); }
+.guide-grille-entete { font-weight: 600; }
+
 .rich-toolbar { display:flex; gap:4px; margin-bottom:10px; }
 .rich-toolbar button { font-size:.75rem; padding:2px 8px; border:1px solid var(--border); border-radius:4px; background:var(--paper-2); cursor:pointer; color:var(--ink); }
 .rich-toolbar button:hover { background:var(--paper-3); }
@@ -259,7 +267,7 @@ header a:hover { color: #fff; }
         <label>Type</label>
         <select id="guide-type" onchange="updateGuideUI()">
           <option value="texte">Texte</option>
-          <option value="tableau">Tableau (label → valeur)</option>
+          <option value="grille">Tableau (grille visuelle)</option>
         </select>
       </div>
       <div id="guide-extra">
@@ -455,12 +463,20 @@ function loadQuestion(id) {
   if(q.guide && typeof q.guide==='string') {
     document.getElementById('guide-type').value='texte'; updateGuideUI();
     document.getElementById('guide-texte').value = q.guide;
+  } else if(q.guide && q.guide.type==='grille') {
+    document.getElementById('guide-type').value='grille'; updateGuideUI();
+    document.getElementById('guide-cols').value = String(Math.max(2,(q.guide.entetes||[]).length));
+    document.getElementById('guide-rows').value = String(Math.max(1,(q.guide.rangees||[]).length));
+    updateGrille(q.guide);
   } else if(q.guide && q.guide.type==='tableau') {
-    document.getElementById('guide-type').value='tableau'; updateGuideUI();
-    document.getElementById('guide-tableau').value = (q.guide.lignes||[]).map(l=>l.label+' | '+l.valeur).join('\n');
+    // Conversion automatique ancien format → grille
+    document.getElementById('guide-type').value='grille'; updateGuideUI();
+    const converted = { entetes:['Élément','Document'], rangees:(q.guide.lignes||[]).map(l=>[l.label,l.valeur]) };
+    document.getElementById('guide-cols').value='2';
+    document.getElementById('guide-rows').value = String(Math.max(1,converted.rangees.length));
+    updateGrille(converted);
   } else {
-    document.getElementById('guide-type').value='texte'; updateGuideUI();
-    document.getElementById('guide-texte').value='';
+    document.getElementById('guide-type').value='grille'; updateGuideUI();
   }
 }
 
@@ -792,16 +808,63 @@ function updateReponseUI() {
 }
 
 // ── GUIDE ─────────────────────────────────────────────────────────────
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
 function updateGuideUI() {
   const type = document.getElementById('guide-type').value;
   const wrap = document.getElementById('guide-extra');
   if(type === 'texte') {
     wrap.innerHTML = `<div class="field"><textarea id="guide-texte" rows="3" placeholder="Réponse attendue…"></textarea></div>`;
   } else {
+    const sel = (id, vals, def) => `<select id="${id}" style="padding:.28rem .45rem;font-size:.82rem;border:1px solid var(--border);border-radius:4px;background:var(--paper)" onchange="updateGrille()">${vals.map(v=>`<option value="${v}"${v==def?' selected':''}>${v}</option>`).join('')}</select>`;
     wrap.innerHTML = `
-      <div class="field"><label>Lignes <span style="font-weight:400;color:var(--ink-3)">(label | valeur, une par ligne)</span></label>
-      <textarea id="guide-tableau" rows="4" placeholder="Mercantilisme | B\nObligations des compagnies | C\nPrivilèges des compagnies | A"></textarea></div>`;
+      <div style="display:flex;gap:1.2rem;align-items:center;margin-bottom:.75rem;flex-wrap:wrap">
+        <div style="display:flex;align-items:center;gap:.4rem">
+          <label style="font-size:.75rem;font-weight:600;color:var(--ink-2)">Colonnes</label>
+          ${sel('guide-cols',[2,3,4],2)}
+        </div>
+        <div style="display:flex;align-items:center;gap:.4rem">
+          <label style="font-size:.75rem;font-weight:600;color:var(--ink-2)">Rangées</label>
+          ${sel('guide-rows',[1,2,3,4,5,6,7,8],2)}
+        </div>
+      </div>
+      <div id="guide-grille-wrap"></div>`;
+    updateGrille();
   }
+}
+
+function updateGrille(data) {
+  const cols = parseInt(document.getElementById('guide-cols').value);
+  const rows = parseInt(document.getElementById('guide-rows').value);
+  const prev = data || getGrilleValues();
+  let html = '<table class="guide-grille"><tr><td class="guide-grille-num"></td>';
+  for(let c = 0; c < cols; c++) {
+    const v = escHtml((prev.entetes && prev.entetes[c]) || '');
+    html += `<th><input type="text" class="guide-grille-entete" placeholder="En-tête ${c+1}" value="${v}"></th>`;
+  }
+  html += '</tr>';
+  for(let r = 0; r < rows; r++) {
+    html += `<tr><td class="guide-grille-num">${r+1}</td>`;
+    for(let c = 0; c < cols; c++) {
+      const v = escHtml((prev.rangees && prev.rangees[r] && prev.rangees[r][c]) || '');
+      html += `<td><input type="text" class="guide-grille-cell" placeholder="…" value="${v}"></td>`;
+    }
+    html += '</tr>';
+  }
+  html += '</table>';
+  document.getElementById('guide-grille-wrap').innerHTML = html;
+}
+
+function getGrilleValues() {
+  const entetes = [...document.querySelectorAll('.guide-grille-entete')].map(i => i.value);
+  const rangees = [];
+  document.querySelectorAll('#guide-grille-wrap tr').forEach((tr, idx) => {
+    if(idx === 0) return;
+    rangees.push([...tr.querySelectorAll('.guide-grille-cell')].map(i => i.value));
+  });
+  return { entetes, rangees };
 }
 
 // ── BUILD QUESTION OBJECT ─────────────────────────────────────────────
@@ -892,11 +955,9 @@ function buildQuestion() {
   if(guideType === 'texte') {
     guide = document.getElementById('guide-texte').value.trim() || false;
   } else {
-    const lignes = document.getElementById('guide-tableau').value.trim().split('\n').map(s=>s.trim()).filter(Boolean).map(s => {
-      const [label, valeur=''] = s.split('|').map(x=>x.trim());
-      return { label, valeur };
-    });
-    guide = { type: 'tableau', lignes };
+    const { entetes, rangees } = getGrilleValues();
+    const hasContent = entetes.some(e=>e.trim()) || rangees.some(r=>r.some(c=>c.trim()));
+    if(hasContent) guide = { type:'grille', entetes, rangees };
   }
 
   return { id, niveau, oi, periode, points, enonce, aspects, documents, reponse, guide };
@@ -1054,7 +1115,7 @@ function resetForm(keepId=false) {
   document.getElementById('rep-type').value = 'none';
   document.getElementById('rep-extra').innerHTML = '';
   document.getElementById('reg-preset').value = '';
-  document.getElementById('guide-type').value = 'texte';
+  document.getElementById('guide-type').value = 'grille';
   docCount = 0; colCount = 0;
   updateGuideUI();
 }
