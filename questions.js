@@ -853,7 +853,21 @@ const QUESTIONS = [
       col2: "La capitulation de Montréal",
       col3: "Après"
     },
-    guide: "1 et 4 / 2 et 3"
+    guide: {
+      type: "grille",
+      entetes: [
+        "Avant",
+        "",
+        "Après"
+      ],
+      rangees: [
+        [
+          "1 et 4",
+          "La capitulation de Montréal",
+          "2 et 3"
+        ]
+      ]
+    }
   },
   {
     id: "Q5",
