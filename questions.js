@@ -1476,5 +1476,650 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "L’importance de coloniser les régions (ou la colonisation des régions)."
+  },
+  {
+    id: "Q23",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    enonce: "Dans quel but les Réformistes de la Province du Canada forment-ils une alliance en 1841?",
+    aspects: [
+      {
+        aspect: "Gouvernement responsable"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "org_pol_acte_union.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Obtenir la responsabilité ministérielle (ou le gouvernement responsable) ou obtenir que les membres du Conseil exécutif soient désormais choisis parmi les membres de l’Assemblée législative ou former la majorité à la Chambre d’assemblée."
+  },
+  {
+    id: "Q24",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    enonce: "Au milieu du 19e siècle, la Grande-Bretagne adopte une politique de libre-échange. Inscrivez la lettre du document qui présente une cause de l’adoption de cette politique et la lettre de celui qui en présente une conséquence pour la Province du Canada.",
+    aspects: [
+      {
+        aspect: "Économie coloniale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« […] la Grande-Bretagne […] est alors la première puissance industrielle. Ses usines nécessitent d’importantes quantités de matières premières et produisent un grand nombre de produits manufacturés. […] [Les hommes d’affaires anglais] croient que les matières premières coûteraient moins cher s’il n’y avait pas de tarifs douaniers et que les produits manufacturés s’écouleraient mieux sur le marché international. »",
+            source: "Sébastien BRODEUR-GIRARD et autres, Le Québec, une histoire à construire, manuel de l’élève, histoire et éducation à la citoyenneté, 2e année du 2e cycle du secondaire, Laval,  Éditions Grand Duc, 2008, vol. 1, p. 149."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "tableau_traite_recipricite_exportations.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau",
+      lignes: [
+        {
+          label: "Cause"
+        },
+        {
+          label: "Conséquence"
+        }
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Élément",
+        "Document"
+      ],
+      rangees: [
+        [
+          "Cause",
+          "A"
+        ],
+        [
+          "Conséquence",
+          "B"
+        ]
+      ]
+    }
+  },
+  {
+    id: "Q25",
+    niveau: 4,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P6 — 1896 – 1945",
+    points: 2,
+    enonce: "À partir du document A, indiquez un changement survenu dans l’économie du Québec durant les années 1930.",
+    aspects: [
+      {
+        aspect: "Grande dépression"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les “Années folles” prennent fin subitement quand, le 24 octobre 1929, la Bourse de New York s’effondre. [...] Tous les pays du monde capitaliste sont touchés. »",
+            source: "Danielle DION-McKINNON et Pierre LALONGÉ, Notre histoire, Montréal, ERPI, 1984, p. 228."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "L’économie du Québec passe d’une période de prospérité à une période de dépression (ou de crise) ou le Québec est touché par une crise économique."
+  },
+  {
+    id: "Q26",
+    niveau: 4,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    enonce: "Les documents A et B présentent la structure politique de la colonie à deux périodes différentes. Quel pouvoir le gouverneur conserve-t-il d’une période à l’autre?",
+    aspects: [
+      {
+        aspect: "Acte d'Union"
+      },
+      {
+        aspect: "Gouvernement responsable"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A - 1791 à 1840",
+            ref: "org_pol_acte_const.png"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B - 1840 à 1848",
+            ref: "org_pol_acte_union.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le droit de veto (ou Le droit de rejeter des projets de loi soumis par la Chambre d’assemblée) ou le pouvoir exécutif (ou Le pouvoir de nommer les membres des conseils exécutif et législatif) ou le pouvoir de dissoudre la Chambre d’assemblée."
+  },
+  {
+    id: "Q27",
+    niveau: 4,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P7 — 1945 – 1980",
+    points: 3,
+    enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans l’implication des femmes en politique au Québec. Justifiez votre choix par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Féminisme"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« […] c’est seulement en juillet 1947, dans une élection partielle, qu’une première femme, Mae O’Connor, s'est présentée devant l’électorat. On comptait trois candidates aux élections générales de 1952, sept en 1956, mais aucune en 1960. Marie-Claire Kirkland-Casgrain s’est présentée dans la circonscription de Jacques-Cartier à l’élection partielle du 14 décembre 1961 pour remplacer son père, décédé quatre mois plus tôt. Elle est devenue la première femme élue au Parlement de Québec. »",
+            source: "«Les femmes parlementaires depuis 1961 », Assemblée nationale du Québec, [En ligne].  [http://www.assnat.qc.ca/fr/patrimoine/femmes.html] (Consulté le 18 juin 2017)."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Vingt-trois femmes siégeront à l’Assemblée nationale comparativement à 102 hommes. Cinq de plus qu’à la dissolution de la Chambre, elles représentent environ un cinquième de la députation. \n \nC’est ce qu’indiquent les derniers résultats de l’élection de lundi. […] \n \nDevenir parlementaire [est] difficile pour les femmes et la progression se fait lentement. »",
+            auteur: "Le Devoir, 27 septembre 1989",
+            source: "Cité dans Louise CHARPENTIER et autres, Nouvelle histoire du Québec et du  Canada, 2e éd., Anjou, CEC, 1990, p. 407."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 4
+    },
+    guide: "Il y a changement, car pour la première fois en 1961, une femme siège comme députée ou car une femme se présente pour la première fois comme candidate aux élections en 1947. \nou\nIl y a continuité, car des femmes sont élues députées depuis 1961 ou car les femmes sont toujours minoritaires comme députées à l’Assemblée nationale entre 1961 et 1989."
+  },
+  {
+    id: "Q28",
+    niveau: 4,
+    oi: "Mettre en relation des faits",
+    periode: "P6 — 1896 – 1945",
+    points: 2,
+    enonce: "Les documents A à C font référence à différents nationalismes au Québec au 20e siècle. Indiquez à l’endroit approprié la lettre du document correspondant à chacun des nationalismes.",
+    aspects: [
+      {
+        aspect: "Clérico-nationalisme"
+      },
+      {
+        aspect: "Politique intérieure canadienne"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Lorsque la Grande-Bretagne est en guerre, le Canada est en guerre. »",
+            auteur: "Wilfrid Laurier"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Laissons de côté nos divergences de partis, de races et de religions; unissons-nous et soyons fidèles à notre devise : notre religion, notre langue, nos institutions. »",
+            auteur: "Honoré Mercier"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Nous ne serons de bons Canadiens qu’en étant d’abord de bons Canadiens français catholiques. »",
+            auteur: "Lionel Groulx"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau",
+      lignes: [
+        {
+          label: "Clérico-nationalisme"
+        },
+        {
+          label: "Impérialisme"
+        },
+        {
+          label: "Nationalisme canadien-français"
+        }
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Élément",
+        "Document"
+      ],
+      rangees: [
+        [
+          "Clérico-nationalisme",
+          "C"
+        ],
+        [
+          "Impérialisme",
+          "A"
+        ],
+        [
+          "Nationalisme canadien-français",
+          "B"
+        ]
+      ]
+    }
+  },
+  {
+    id: "Q29",
+    niveau: 4,
+    oi: "Établir des liens de causalité",
+    periode: "P8 — De 1980 à nos jours",
+    points: 3,
+    enonce: "À partir des documents ci-dessous, expliquez comment la réponse du gouvernement américain aux accusations de l’industrie américaine du bois d’œuvre au début du 21e siècle entraîne une action de la part du gouvernement canadien.\n \nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux. \n \n• Une accusation portée contre le Canada par l’industrie américaine du bois d’œuvre \n• La réponse du gouvernement américain  \n• Une action du gouvernement canadien",
+    aspects: [
+      {
+        aspect: "Mondialisation de l'économie"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les décisions du [gouvernement américain] sont punitives […] et dénuées de tout fondement. Elles ont été prises pour apaiser les milieux protectionnistes américains. J’ai entièrement confiance dans les causes que nous avons présentées en vertu de l’ALENA et de l’OMC [Organisation mondiale du commerce] et j’engage [des] procédures aujourd’hui […] »",
+            auteur: "Pierre Pettigrew, ministre canadien du Commerce international, 2002",
+            source: "Gilles TOUPIN, « Le désaccord est terminé, la guerre commence... », La Presse, 23 mars 2002, cahier La Presse Affaires, p. E2."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les producteurs canadiens de bois d’œuvre devront […] payer dès le 23 mai [2002] des droits de plus de 27 % sur leurs exportations vers les États-Unis […] La décision a provoqué un tollé à Ottawa et dans les capitales provinciales, où on a accusé les États-Unis de se livrer à “un protectionnisme grossier” et d’“oublier qui sont leurs vrais amis”. »",
+            source: "« Bois d'œuvre - Ottawa accuse Washington de se livrer à \"un protectionnisme grossier\" », Le Devoir, [En ligne], 19 mai 2002. [http://www.ledevoir.com/economie/actualites economiques/1451/bois-d-oeuvre-ottawa-accuse-washington-de-se-livrer-a-un-protectionnisme-grossier] (Consulté le 18 juin 2017)."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« L’industrie américaine du bois d’œuvre […] a maintes fois soutenu que les droits de coupe pratiqués au Canada sont […] préjudiciables à l’industrie américaine sur le marché américain. »",
+            source: "« Bois d’œuvre I à IV : historique du différend canado-américain sur le bois d’œuvre résineux », Parlement du Canada, Bibliothèque du Parlement, [En ligne], 19 septembre 2005.  [http://www.bdp.parl.gc.ca/content/lop/ResearchPublications/tips/tip134-f.htm] (Consulté le 18 juin 2017)."
+          }
+        ]
+      }
+    ],
+    reponse: false,
+    guide: "L’industrie américaine accuse le Canada de subventionner son industrie ou de vendre son bois d’œuvre à un prix inférieur à celui du bois américain ou de faire du dumping sur le marché américain (Une accusation portée contre le Canada par l’industrie américaine du bois d’œuvre). Ces critiques amènent le gouvernement américain à imposer une taxe (ou une surtaxe) sur le bois d’œuvre canadien ou des droits \nantidumping sur les exportations canadiennes (La réponse du gouvernement américain). Cette décision pousse le gouvernement canadien à protester auprès de l’OMC et du tribunal de l’ALENA (Une action du gouvernement canadien)."
+  },
+  {
+    id: "Q30",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, nommez le passage emprunté par les premiers occupants pour migrer de l’Asie vers l’Amérique.",
+    aspects: [
+      {
+        aspect: "Premiers occupants du territoire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "passage_beringie.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le détroit de Béring (ou la Béringie)."
+  },
+  {
+    id: "Q31",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, nommez la famille linguistique autochtone qui occupe la vallée du fleuve Saint-Laurent vers 1500.",
+    aspects: [
+      {
+        aspect: "Premiers occupants du territoire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "familles_linguistiques_autochtones.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les Iroquoiens."
+  },
+  {
+    id: "Q32",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, nommez la famille linguistique autochtone qui occupe le Bouclier canadien et les Appalaches vers 1500.",
+    aspects: [
+      {
+        aspect: "Premiers occupants du territoire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "familles_linguistiques_autochtones.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les Algonquiens."
+  },
+  {
+    id: "Q33",
+    niveau: 3,
+    oi: "Situer dans l'espace",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, indiquez la lettre du territoire occupé par la famille linguistique algonquienne vers 1500.",
+    aspects: [
+      {
+        aspect: "Premiers occupants du territoire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "familles_linguistiques_autochtones_lettres.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau_2col"
+    },
+    guide: "C"
+  },
+  {
+    id: "Q34",
+    niveau: 3,
+    oi: "Situer dans l'espace",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, indiquez la lettre du territoire occupé par la famille linguistique iroquoienne vers 1500.",
+    aspects: [
+      {
+        aspect: "Premiers occupants du territoire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "familles_linguistiques_autochtones_lettres.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau_2col"
+    },
+    guide: "B"
+  },
+  {
+    id: "Q35",
+    niveau: 3,
+    oi: "Situer dans l'espace",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, indiquez la lettre du territoire occupé par la nation inuite vers 1500.",
+    aspects: [
+      {
+        aspect: "Premiers occupants du territoire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "familles_linguistiques_autochtones_lettres.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau_2col"
+    },
+    guide: "A"
+  },
+  {
+    id: "Q36",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    enonce: "À partir des documents A et B, indiquez la lettre du document qui fait références aux activités économiques pratiquées les groupes autochtones.",
+    aspects: [
+      {
+        aspect: "Réseaux d'échange autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Pour subvenir à leurs besoins, [les Cris, Ojibwés, Innus, Béothuks et Outaouais] suivent le gibier dans ses déplacements. Ils ont donc besoin d’un vaste territoire où abondent le gibier, le poisson et les fruits. »",
+            source: "lain DALONGEVILLE (dir.), Présences : une histoire thématique du Québec, manuel de l’élève, histoire et éducation à la citoyenneté, 2e année du 2e cycle du secondaire, Anjou, Les  Éditions CEC, 2008, vol. 1, p. 28."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« D’immenses champs potagers sont entretenus à l’extérieur des [palissades]; c’est là qu’on trouve, entre autres légumes, les maïs, fèves et courges de plusieurs variétés qui constituent pour eux une alimentation complète. »",
+            source: "Micheline BLANCHETTE, La vie traditionnelle des Premières Nations du Québec, Sherbrooke, Les Éditions G.G.C., 2011, p. 102.  (Patrimoine)."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau",
+      lignes: [
+        {
+          label: "Algonquiens"
+        },
+        {
+          label: "Iroquoiens"
+        }
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Algonquiens",
+        "Iroquoiens"
+      ],
+      rangees: [
+        [
+          "",
+          ""
+        ]
+      ]
+    }
+  },
+  {
+    id: "Q37",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    enonce: "À partir des documents A et B, indiquez la lettre du document qui fait références à l'organisation territoriale des groupes autochtones.",
+    aspects: [
+      {
+        aspect: "Premiers occupants du territoire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« [Ils] vivaient dans des villages palissadés, reliés entre eux par un réseau de sentiers. Les maisons […] mesuraient de vingt à trente mètres de long sur six ou sept de large. […] Chacune contenait cinq ou six foyers autour desquels plusieurs familles apparentées travaillaient, jouaient, mangeaient et dormaient. »",
+            source: "John A. DICKINSON et Brian YOUNG, Brève histoire socio-économique du Québec, 4e éd., Québec, Les éditions du Septentrion, 2009, p. 23."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Ils n’ont point de demeure arrêtée, mais vont de lieu en lieu selon les saisons, transportant leurs cabanes et vivant de la chasse, de la pêche et de ce que le pays leur fournit pour subsister. »",
+            auteur: "Marc Lescarbot",
+            source: "Histoire de la Nouvelle-France (1609)."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« [Ils] habitent la vallée du Saint-Laurent et les berges des Grands Lacs. [Ils] ont adopté un mode de vie sédentaire axé sur la culture des “trois sœurs” […] Comme ils vivent essentiellement de l’agriculture, [ils] ont besoin d’un territoire relativement petit mais fertile. »",
+            source: "Alain DALONGEVILLE (dir.), Présences : une histoire thématique du Québec, manuel de l’élève, histoire et éducation à la  citoyenneté, 2e année du 2e cycle du secondaire, Anjou, Les Éditions CEC, 2008, vol. 1, p. 28."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            ref: "campement_algonquien.png",
+            source: "Thomas Mower Martin, Un campement […], 1880, huile sur toile, musée Glenbow, Calgary,  Canada, 58.6. [Détail]"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau",
+      lignes: [
+        {
+          label: "Algonquiens"
+        },
+        {
+          label: "Iroquoiens"
+        }
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Algonquiens",
+        "Iroquoiens"
+      ],
+      rangees: [
+        [
+          "B et D",
+          "A et C"
+        ]
+      ]
+    }
   }
 ]
