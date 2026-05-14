@@ -498,6 +498,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
+  },
+  "Q26": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la continuité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la continuité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -579,6 +601,9 @@ const IMAGE_DB = {
   },
   "tableau_traite_recipricite_exportations.png": {
     src: "images/tableau_traite_recipricite_exportations.png"
+  },
+  "org_pol_acte_const.png": {
+    src: "images/org_pol_acte_const.png"
   }
 }
 
@@ -1657,5 +1682,45 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "L’économie du Québec passe d’une période de prospérité à une période de dépression (ou de crise) ou le Québec est touché par une crise économique."
+  },
+  {
+    id: "Q26",
+    niveau: 4,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    enonce: "Les documents A et B présentent la structure politique de la colonie à deux périodes différentes. Quel pouvoir le gouverneur conserve-t-il d’une période à l’autre?",
+    aspects: [
+      {
+        aspect: "Acte d'Union"
+      },
+      {
+        aspect: "Gouvernement responsable"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A - 1791 à 1840",
+            ref: "org_pol_acte_const.png",
+            source: "Récitus."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B - 1840 à 1848",
+            ref: "org_pol_acte_union.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: false,
+    guide: "Le droit de veto (ou Le droit de rejeter des projets de loi soumis par la Chambre d’assemblée) ou le pouvoir exécutif (ou Le pouvoir de nommer les membres des conseils exécutif et législatif) ou le pouvoir de dissoudre la Chambre d’assemblée."
   }
 ]
