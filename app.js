@@ -372,7 +372,11 @@ function updateQModalBtn(id) {
 
 function togglePanierModal() {
   const btn = document.getElementById('q-modal-panier-btn');
-  if(btn && btn.dataset.id) togglePanier(btn.dataset.id);
+  if(!btn || !btn.dataset.id) return;
+  const id = btn.dataset.id;
+  const wasInPanier = panier.includes(id);
+  togglePanier(id);
+  if(!wasInPanier && panier.includes(id)) closeQModal();
 }
 
 function flashBtn(btn, msg) {
