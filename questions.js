@@ -1216,7 +1216,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document D",
-            texte: "« Le fer de la Côte-Nord devient un centre d’attrait. […] [La compagnie] Quebec North \nShore fonde la ville de Schefferville. Certains reprocheront [au gouvernement] d’avoir “vendu” la Côte-Nord à des entreprises minières [américaines] pour la modique somme d’un cent la tonne de minerai. On oublie alors les autres clauses de la cession du droit d’exploitation qui représentaient d’importants revenus pour le gouvernement. »",
+            texte: "« Le fer de la Côte-Nord devient un centre d’attrait. […] [La compagnie] Quebec North Shore fonde la ville de Schefferville. Certains reprocheront [au gouvernement] d’avoir “vendu” la Côte-Nord à des entreprises minières [américaines] pour la modique somme d’un cent la tonne de minerai. On oublie alors les autres clauses de la cession du droit d’exploitation qui représentaient d’importants revenus pour le gouvernement. »",
             source: "Jacques LACOURSIÈRE, Une histoire du Québec, Sillery, Les Éditions du Septentrion, 2002,  p. 161."
           }
         ]
