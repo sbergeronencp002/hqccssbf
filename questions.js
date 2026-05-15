@@ -749,6 +749,73 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q39": {
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
+  },
+  "Q40": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
+  },
+  "Q41": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -848,6 +915,9 @@ const IMAGE_DB = {
   },
   "victoire_pq_1976.png": {
     src: "images/victoire_pq_1976.png"
+  },
+  "chaman_1500.jpg": {
+    src: "images/chaman_1500.jpg"
   }
 }
 
@@ -2517,5 +2587,164 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les deux auteurs s’entendent pour dire que la société iroquoienne est matrilinéaire ou que l’appartenance au clan se transmet par la mère ou que les femmes occupent une place importante dans la communauté."
+  },
+  {
+    id: "Q39",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P1 — Des origines à 1608",
+    points: 3,
+    enonce: "Les documents A à C présentent la position de trois acteurs sur les alliances entre les Premières Nations. Nommez l’auteur qui présente un point de vue différent et comparez ce point de vue à celui des deux autres acteurs.",
+    aspects: [
+      {
+        aspect: "Réseaux d'échange autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les alliances entre nations autochtones visent souvent à préserver le contrôle des réseaux d’échange. Elles permettent d’assurer l’accès aux ressources, de sécuriser les routes commerciales et de maintenir des relations économiques avantageuses entre partenaires. »",
+            auteur: "Bruce G. Trigger"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Plusieurs alliances entre peuples autochtones servent à protéger les territoires de chasse et les routes commerciales. Elles favorisent l’échange de biens et garantissent l’accès aux ressources nécessaires à la subsistance des communautés. »",
+            auteur: "Olive Patricia Dickason"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les alliances entre nations autochtones répondent surtout à des besoins politiques et militaires. Elles permettent de se défendre contre des ennemis, de renforcer des relations diplomatiques et d’assurer la sécurité des communautés alliées. »",
+            auteur: "Denys Delâge"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Delâge soutient que les alliances entre les Premières Nations sont principalement motivées par des considérations politiques ou militaires, tandis que Trigger et Dickason estiment qu’elles reposent surtout sur des intérêts économiques ou commerciaux."
+  },
+  {
+    id: "Q40",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    enonce: "Les documents A à D présentent des informations sur la prise de décision chez les Iroquoiens et les Algonquiens vers 1500. Indiquez les lettres des documents qui correspondent à chacun des groupes.",
+    aspects: [
+      {
+        aspect: "Prise de décision chez les Autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Chez les Hurons, les femmes aînées de chaque clan désignent les chefs et peuvent les remplacer si elles jugent qu’ils ne remplissent pas adéquatement leurs responsabilités. Les décisions importantes sont prises en conseil, où les chefs recherchent l’accord des membres de la communauté. »",
+            auteur: "Bruce G. Trigger"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Chez les [nations nomades], les chefs exercent une autorité limitée. Ils dirigent par persuasion et leur influence dépend de leur expérience, de leurs talents de chasseurs et de la confiance du groupe. »",
+            auteur: "Denys Delâge"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Chez les Montagnais et les Malécites, le chef possède une autorité limitée. Il dirige grâce à son expérience, à son courage et à sa générosité. Ses décisions ne s’imposent pas par la force, mais reposent sur la confiance et l’adhésion volontaire des membres du groupe. »",
+            auteur: "Marc Lescarbot"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Dans les sociétés autochtone, les mères de clan choisissent les chefs et exercent une influence importante sur la vie politique. Les chefs ne décident pas seuls : ils consultent les autres membres du village et cherchent à obtenir un consensus avant d’agir. »",
+            auteur: "Olive Patricia Dickason"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau",
+      lignes: [
+        {
+          label: "Nations algonquiennes"
+        },
+        {
+          label: "Nations iroquoiennes"
+        }
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Nations algonquiennes",
+        "Nations iroquoiennes"
+      ],
+      rangees: [
+        [
+          "2 et 3",
+          "1 et 4"
+        ]
+      ]
+    }
+  },
+  {
+    id: "Q41",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, nommez un rôle joué par le chaman dans les sociétés autochtones.",
+    aspects: [
+      {
+        aspect: "Rapports sociaux chez les Autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "chaman_1500.jpg",
+            source: "C.W. Jefferys."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Il soigne les malades ou dirige des cérémonies ou interprète les rêves ou communique avec les esprits."
   }
 ]
