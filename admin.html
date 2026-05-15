@@ -553,7 +553,7 @@ async function supprimerQuestion() {
         content: encoded, sha: questionsFileSha, branch: BRANCH
       })
     });
-    if(!putResp.ok) { const err = await putResp.json(); throw new Error(err.message || putResp.status); }
+    if(!putResp.ok) { let m=putResp.status; try{const e=await putResp.json();m=e.message||m;}catch(_){} throw new Error(m); }
 
     const result = await putResp.json();
     questionsFileSha = result.content.sha;
@@ -1141,8 +1141,9 @@ async function publier() {
     });
 
     if(!putResp.ok) {
-      const err = await putResp.json();
-      throw new Error(err.message || putResp.status);
+      let msg = putResp.status;
+      try { const err = await putResp.json(); msg = err.message || msg; } catch(_) {}
+      throw new Error(msg);
     }
 
     // Update local state

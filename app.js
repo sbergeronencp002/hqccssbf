@@ -279,6 +279,7 @@ function buildReglettHTML(q) {
   }
 
   // Standard layout — header row (points) + description row
+  if(!r.colonnes.length) return '<p style="color:#999;font-size:0.8rem">Réglette non configurée.</p>';
   const colW = Math.floor(78 / r.colonnes.length);
   const headers = r.colonnes.map(c=>`<td style="${S};width:${colW}%">${c}</td>`).join('');
   const cells   = r.niveaux.map(n=>`<td style="${S}">${n.desc}</td>`).join('');
@@ -1044,6 +1045,7 @@ async function genererDocx(includeGuide=false) {
       }
 
       // Standard layout
+      if(!r.niveaux.length) return [];
       const colOI = Math.floor(PAGE_W * 0.22);
       const colW  = Math.floor((PAGE_W - colOI) / r.niveaux.length);
       const colLast = PAGE_W - colOI - colW * (r.niveaux.length - 1);

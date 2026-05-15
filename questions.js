@@ -1029,9 +1029,6 @@ const IMAGE_DB = {
   "troc_1700.png": {
     src: "images/troc_1700.png"
   },
-  "org_pol_acte_constitutionnel.png": {
-    src: "images/org_pol_acte_constitutionnel.png"
-  },
   "troc_1600.png": {
     src: "images/troc_1600.png"
   },
@@ -1061,9 +1058,6 @@ const IMAGE_DB = {
   },
   "territoire_exploite_minerai_fer.png": {
     src: "images/territoire_exploite_minerai_fer.png"
-  },
-  "victoire_parti_quebecois_1976.png": {
-    src: "images/victoire_parti_quebecois_1976.png"
   },
   "org_pol_acte_union.png": {
     src: "images/org_pol_acte_union.png"
@@ -1602,7 +1596,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B - 1791 à 1840",
-            ref: "org_pol_acte_constitutionnel.png",
+            ref: "org_pol_acte_const.png",
             source: "MEES."
           }
         ]
