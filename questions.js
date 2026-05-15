@@ -727,6 +727,28 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (0 sur 2)"
       }
     ]
+  },
+  "Q38": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -2453,5 +2475,47 @@ const QUESTIONS = [
         ]
       ]
     }
+  },
+  {
+    id: "Q38",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    enonce: "Les documents A et B présentent le point de vue de deux auteurs sur l’organisation sociale des Iroquoiens. Sur quel point précis ces deux auteurs sont-ils d’accord?",
+    aspects: [
+      {
+        aspect: "Rapports sociaux chez les Autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Chez les Iroquoiens, les enfants appartiennent au clan de leur mère et les femmes les plus âgées jouent un rôle important dans la désignation des chefs. »",
+            auteur: "Bruce G. Trigger",
+            source: "The Children of Aataentsic (McGill-Queen’s University Press)."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Dans les sociétés iroquoiennes, l’appartenance au clan se transmet par la mère, ce qui confère aux femmes une influence importante dans la famille et dans la communauté. »",
+            auteur: "Olive Patricia Dickason",
+            source: "Canada’s First Nations."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les deux auteurs s’entendent pour dire que la société iroquoienne est matrilinéaire ou que l’appartenance au clan se transmet par la mère ou que les femmes occupent une place importante dans la communauté."
   }
 ]
