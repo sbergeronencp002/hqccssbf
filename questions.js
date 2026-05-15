@@ -955,6 +955,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q49": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -3128,5 +3145,35 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les deux auteurs s’entendent pour dire que le don appelle un contre-don."
+  },
+  {
+    id: "Q49",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, nommez une obligation liée à l’échange de présents entre les groupes.",
+    aspects: [
+      {
+        aspect: "Rapports sociaux chez les Autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Lorsqu’un groupe reçoit un présent, il contracte une obligation envers celui qui l’a offert. Cette obligation consiste à répondre ultérieurement par un autre présent afin de préserver les relations entre les partenaires d’échange. »",
+            auteur: "Marcel Mauss"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Offrir un présent à son tour ou rendre un contre-don."
   }
 ]
