@@ -173,7 +173,7 @@ select:focus { outline: none; border-color: var(--ink-2); }
 }
 
 .q-tile {
-  background: #EEF2F8;
+  background: #fff;
   border-radius: 10px;
   border: 1.5px solid var(--border);
   border-left: 4px solid var(--tile-color, var(--border));
