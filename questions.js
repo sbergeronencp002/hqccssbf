@@ -799,6 +799,23 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
       }
     ]
+  },
+  "Q41": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -898,6 +915,9 @@ const IMAGE_DB = {
   },
   "victoire_pq_1976.png": {
     src: "images/victoire_pq_1976.png"
+  },
+  "chaman_1500.jpg": {
+    src: "images/chaman_1500.jpg"
   }
 }
 
@@ -2696,5 +2716,35 @@ const QUESTIONS = [
         ]
       ]
     }
+  },
+  {
+    id: "Q41",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, nommez un rôle joué par le chaman dans les sociétés autochtones.",
+    aspects: [
+      {
+        aspect: "Rapports sociaux chez les Autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "chaman_1500.jpg",
+            source: "C.W. Jefferys."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Il soigne les malades ou dirige des cérémonies ou interprète les rêves ou communique avec les esprits."
   }
 ]
