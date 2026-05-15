@@ -402,7 +402,7 @@ function render(list) {
       <div class="q-tile-bar" style="display:none"></div>
       <div class="q-tile-content">
         <div class="q-tile-oi" style="display:inline-block;font-size:0.72rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:3px 9px;border-radius:3px;color:${st.color};background:${st.bg}">${q.oi}</div>
-        <div class="q-tile-aspect" style="font-size:1.1rem;font-weight:600;color:#1A1714">${aspect}</div>
+        <div class="q-tile-aspect" style="font-size:1.35rem;font-weight:600;color:#1A1714">${aspect}</div>
       </div>
       <span class="q-tile-check" onclick="event.stopPropagation();togglePanier('${q.id}')">✓</span>
     </div>`;
