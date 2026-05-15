@@ -398,10 +398,10 @@ function render(list) {
     const aspect = q.aspects.map(a => a.aspect).join(' · ');
     const inPanier = panier.includes(q.id);
     return `<div class="q-tile${inPanier ? ' in-panier' : ''}" id="tile-${q.id}"
-      style="--tile-color:${st.color}" onclick="openQModal('${q.id}')">
-      <div class="q-tile-bar" style="background:${st.color}"></div>
+      style="--tile-color:${st.color};background:#fff" onclick="openQModal('${q.id}')">
+      <div class="q-tile-bar" style="display:none"></div>
       <div class="q-tile-content">
-        <div class="q-tile-oi">${q.oi}</div>
+        <div class="q-tile-oi" style="display:inline-block;font-size:0.68rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:3px 9px;border-radius:3px;color:${st.color};background:${st.bg}">${q.oi}</div>
         <div class="q-tile-aspect">${aspect}</div>
       </div>
       <span class="q-tile-check" onclick="event.stopPropagation();togglePanier('${q.id}')">✓</span>
