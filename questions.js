@@ -449,6 +449,28 @@ const REGLETTES = {
         desc: "L'élève ne situe pas le fait dans l'espace."
       }
     ]
+  },
+  "Q37": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
   }
 }
 
@@ -2129,8 +2151,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document D",
-            ref: "campement_algonquien.png",
-            source: "Thomas Mower Martin, Un campement […], 1880, huile sur toile, musée Glenbow, Calgary,  Canada, 58.6. [Détail]"
+            ref: "campement_algonquien.png"
           }
         ]
       }
