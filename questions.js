@@ -877,6 +877,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q45": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -2917,5 +2934,35 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "En accompagnant les adultes ou en participant à la vie quotidienne du groupe ou en prenant part aux déplacements et aux activités de la communauté."
+  },
+  {
+    id: "Q45",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, nommez une pratique qui favorise la solidarité au sein des sociétés autochtones.",
+    aspects: [
+      {
+        aspect: "Rapports sociaux chez les Autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Dans plusieurs sociétés autochtones, les ressources obtenues par la chasse, la pêche ou la cueillette sont redistribuées entre les membres du groupe. Le partage des biens contribue à assurer la subsistance de chacun et à renforcer les liens de solidarité. »",
+            auteur: "Denys Delâge"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le partage des biens."
   }
 ]
