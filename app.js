@@ -910,6 +910,9 @@ async function genererDocx(includeGuide=false) {
     const BORDERS = { top: BORDER, bottom: BORDER, left: BORDER, right: BORDER };
     const CELL_MARGINS = { top: 60, bottom: 60, left: 80, right: 80 };
     const PAGE_W = 9360; // 6.5 inches content width in DXA
+    const IMG_BRD = { color: '000000', space: 1, style: BorderStyle.SINGLE, size: 6 }; // 3/4 pt
+    const IMG_BORDERS = { top: IMG_BRD, bottom: IMG_BRD, left: IMG_BRD, right: IMG_BRD };
+    const COL_2CM = 1134; // 2 cm in DXA
 
     function cellText(text, bold=false) {
       return new TableCell({
@@ -1107,7 +1110,7 @@ async function genererDocx(includeGuide=false) {
                   const imgType = (ext === 'jpg' || ext === 'jpeg') ? 'jpg' : 'png';
                   const docW = Math.min(200, imgData.w);
                   const docH = Math.round(docW / (imgData.w / imgData.h));
-                  cellChildren.push(new Paragraph({ alignment: AlignmentType.CENTER, children: [new docx.ImageRun({ data: bytes, type: imgType, transformation: { width: docW, height: docH } })] }));
+                  cellChildren.push(new Paragraph({ alignment: AlignmentType.LEFT, border: IMG_BORDERS, children: [new docx.ImageRun({ data: bytes, type: imgType, transformation: { width: docW, height: docH } })] }));
                 }
               }
               return new docx.TableCell({
@@ -1143,7 +1146,7 @@ async function genererDocx(includeGuide=false) {
                     const imgType = (ext === 'jpg' || ext === 'jpeg') ? 'jpg' : 'png';
                     const docW = Math.min(180, imgData.w);
                     const docH = Math.round(docW / (imgData.w / imgData.h));
-                    cellChildren.push(new Paragraph({ alignment: AlignmentType.CENTER, children: [new docx.ImageRun({ data: bytes, type: imgType, transformation: { width: docW, height: docH } })] }));
+                    cellChildren.push(new Paragraph({ alignment: AlignmentType.LEFT, border: IMG_BORDERS, children: [new docx.ImageRun({ data: bytes, type: imgType, transformation: { width: docW, height: docH } })] }));
                   }
                 }
               }
@@ -1168,13 +1171,11 @@ async function genererDocx(includeGuide=false) {
           } else {
             children.push(new Paragraph({ children: [new TextRun({ text: '• ' + d.type + ' — ' + (d.ref||''), font: 'Aptos', size: 22 })] }));
           }
-          // Two empty paragraphs between documents
+          // One empty paragraph between documents
           if(di < q.documents.length - 1) {
-            children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
             children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
           }
         }
-        children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
       }
 
       children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
@@ -1195,23 +1196,27 @@ async function genererDocx(includeGuide=false) {
               const imgType_2 = (ext_2 === 'jpg' || ext_2 === 'jpeg') ? 'jpg' : 'png';
               const docW_2 = Math.min(400, imgData2.w);
               const docH_2 = Math.round(docW_2 / (imgData2.w / imgData2.h));
-              children.push(new Paragraph({ children: [new docx.ImageRun({ data: bytes_2, type: imgType_2, transformation: { width: docW_2, height: docH_2 } })] }));
+              children.push(new Paragraph({ border: IMG_BORDERS, children: [new docx.ImageRun({ data: bytes_2, type: imgType_2, transformation: { width: docW_2, height: docH_2 } })] }));
             }
           }
         } else if(q.reponse.type === 'tableau_3col') {
           const {col1='', col2='', col3=''} = q.reponse;
-          const mkHdr3 = (t) => new TableCell({ borders:BORDERS, margins:CELL_MARGINS, verticalAlign:VerticalAlign.CENTER,
+          const col2W = PAGE_W - COL_2CM * 2;
+          const mkHdr3 = (w) => (t) => new TableCell({ borders:BORDERS, margins:CELL_MARGINS, verticalAlign:VerticalAlign.CENTER,
+            width:{size:w, type:WidthType.DXA},
             children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:t,font:'Aptos',size:20,bold:true})]})] });
-          const mkBlank3 = () => new TableCell({ borders:BORDERS, margins:CELL_MARGINS,
+          const mkBlank3 = (w) => new TableCell({ borders:BORDERS, margins:CELL_MARGINS,
+            width:{size:w, type:WidthType.DXA},
             children:[new Paragraph({children:[new TextRun({text:' '})]})] });
-          children.push(new Table({ width:{size:0,type:WidthType.AUTO}, rows:[
-            new TableRow({ children:[
-              mkHdr3(col1),
+          children.push(new Table({ width:{size:PAGE_W, type:WidthType.DXA}, columnWidths:[COL_2CM, col2W, COL_2CM], rows:[
+            new TableRow({ height:{value:284,rule:'atLeast'}, children:[
+              mkHdr3(COL_2CM)(col1),
               new TableCell({ borders:BORDERS, margins:CELL_MARGINS, verticalAlign:VerticalAlign.CENTER, rowSpan:2,
+                width:{size:col2W, type:WidthType.DXA},
                 children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:col2,font:'Aptos',size:20,bold:true})]})] }),
-              mkHdr3(col3)
+              mkHdr3(COL_2CM)(col3)
             ]}),
-            new TableRow({ height:{value:800,rule:'atLeast'}, children:[mkBlank3(), mkBlank3()] })
+            new TableRow({ height:{value:284,rule:'atLeast'}, children:[mkBlank3(COL_2CM), mkBlank3(COL_2CM)] })
           ]}));
         } else if(q.reponse.type === 'lignes') {
           const BN_L = { style: docx.BorderStyle.NONE, size: 0, color: 'FFFFFF' };
@@ -1270,13 +1275,7 @@ async function genererDocx(includeGuide=false) {
       // Réglette
       buildReglette(id).forEach(t => children.push(t));
 
-      // (guide handled separately below)
       children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
-
-      // Separator between questions (empty paragraph)
-      if(idx < panier.length - 1) {
-        children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
-      }
     });
 
     } // end else (cahier mode)
