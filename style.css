@@ -7,14 +7,14 @@
   --paper-3: #e2ddd5;
   --accent: #c0392b;
   --border: rgba(26,24,20,0.12);
-  --c-sit: #1a4971; --c-sit-bg: #e8f0f8;
-  --c-esp: #1a5c46; --c-esp-bg: #e0f0ea;
-  --c-cau: #1a5c3a; --c-cau-bg: #e4f2ea;
-  --c-dif: #4a2d7a; --c-dif-bg: #ede8f5;
-  --c-chg: #7a4a10; --c-chg-bg: #f5ead8;
-  --c-rel: #7a2040; --c-rel-bg: #f5e0e8;
-  --c-mr:  #1a6b6b; --c-mr-bg:  #d4f0f0;
-  --c-fai: #7a5200; --c-fai-bg: #fdf0d8;
+  --c-sit: #003DA5; --c-sit-bg: #E3EEF9;  /* Situer dans le temps    — bleu Québec  */
+  --c-esp: #2E7D32; --c-esp-bg: #E8F5E9;  /* Situer dans l'espace    — vert forêt   */
+  --c-cau: #E91E8C; --c-cau-bg: #FCE4EC;  /* Liens de causalité      — rose fuchsia */
+  --c-dif: #6A1B9A; --c-dif-bg: #F3E5F5;  /* Différences/similitudes — violet       */
+  --c-chg: #8D6E63; --c-chg-bg: #EFEBE9;  /* Changements/continuités — brun terrac. */
+  --c-rel: #D62829; --c-rel-bg: #FFEBEE;  /* Causes/conséquences     — rouge Canada */
+  --c-mr:  #00ACC1; --c-mr-bg:  #E0F7FA;  /* Mettre en relation      — turquoise    */
+  --c-fai: #FDD835; --c-fai-bg: #FFFDE7;  /* Établir des faits       — jaune        */
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -162,67 +162,80 @@ select:focus { outline: none; border-color: var(--ink-2); }
   letter-spacing: 0.05em;
 }
 
+/* === GRILLE DE TUILES === */
 .q-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 
 .q-tile {
-  background: var(--paper);
-  border: 1px solid var(--border);
-  border-radius: 6px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1.5px solid var(--border);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  transition: box-shadow 0.15s;
+  transition: transform 0.16s, box-shadow 0.16s, border-color 0.16s;
   position: relative;
 }
-.q-tile:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.09); }
-.q-tile.in-panier { border-color: var(--accent); }
-
-.q-tile-head { cursor: pointer; }
-
-.q-tile-bar { height: 4px; width: 100%; }
-
-.q-tile-content { padding: 0.7rem 0.9rem 0.85rem; }
-
-.q-tile-aspect {
-  font-size: 0.69rem;
-  color: var(--ink-3);
-  margin-top: 5px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.q-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.11);
+  border-color: var(--tile-color, var(--ink-3));
 }
+.q-tile.in-panier {
+  border-color: var(--tile-color, var(--ink));
+  border-width: 2px;
+}
+
+.q-tile-bar { height: 8px; width: 100%; flex-shrink: 0; }
+
+.q-tile-content {
+  padding: 10px 14px 28px;
+  display: flex; flex-direction: column; gap: 5px;
+}
+
+.q-tile-oi { font-size: 0.82rem; font-weight: 600; color: var(--ink); line-height: 1.35; }
+
+.q-tile-aspect { font-size: 0.72rem; color: var(--ink-3); line-height: 1.3; }
 
 .q-tile-check {
-  position: absolute;
-  bottom: 8px;
-  right: 10px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--accent);
-  opacity: 0;
-  transition: opacity 0.2s;
-  line-height: 1;
-  pointer-events: none;
-}
-.q-tile.in-panier .q-tile-check { opacity: 1; }
-
-.q-card-body {
   display: none;
-  padding: 0 1rem 1rem;
-  border-top: 1px solid var(--border);
+  position: absolute; bottom: 8px; right: 10px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--tile-color, var(--ink)); color: #fff;
+  font-size: 0.65rem; align-items: center; justify-content: center;
+  cursor: pointer; transition: opacity 0.15s;
 }
-.q-tile.open .q-card-body { display: block; }
+.q-tile-check:hover { opacity: 0.75; }
+.q-tile.in-panier .q-tile-check { display: flex; }
+
+/* === MODAL QUESTION === */
+.q-modal { max-width: 680px; }
+
+#q-modal-panier-btn {
+  padding: 8px 20px; border-radius: 6px; font-size: 0.82rem; font-weight: 500;
+  cursor: pointer; border: 1.5px solid #1B3B6F; transition: all 0.15s;
+  background: #1B3B6F; color: #fff;
+  font-family: 'DM Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+#q-modal-panier-btn:hover:not(.in-panier) { opacity: 0.85; }
+#q-modal-panier-btn.in-panier { background: transparent; color: var(--accent); border-color: var(--accent); }
+
+.btn-modal-sec {
+  padding: 8px 14px; background: transparent; color: var(--ink-2);
+  border: 1px solid var(--border); border-radius: 6px;
+  font-family: 'DM Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 0.8rem; cursor: pointer; transition: all 0.15s;
+}
+.btn-modal-sec:hover { color: var(--ink); border-color: var(--ink-2); }
 
 .q-oi-badge {
-  display: inline-block;
-  font-size: 0.63rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  padding: 2px 7px;
-  border-radius: 2px;
-  font-weight: 500;
+  display: inline-block; font-size: 0.65rem; letter-spacing: 0.06em;
+  text-transform: uppercase; padding: 2px 8px; border-radius: 2px;
+  margin-bottom: 0.4rem; font-weight: 500;
 }
 
 .q-section-label {
@@ -546,7 +559,7 @@ select:focus { outline: none; border-color: var(--ink-2); }
     position: static; height: auto;
     border-right: none; border-bottom: 1px solid var(--border);
   }
-  .q-grid { grid-template-columns: 1fr; }
+  .q-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
   .cahier-panel { width: 100%; }
   .modal { width: 96vw; }
   .panier-bar { padding: 10px 1rem; }

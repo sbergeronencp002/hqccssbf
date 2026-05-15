@@ -432,301 +432,6 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
-  },
-  "Q23": {
-    oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
-    ]
-  },
-  "Q24": {
-    oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
-      }
-    ]
-  },
-  "Q25": {
-    oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
-    ]
-  },
-  "Q26": {
-    oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la continuité."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la continuité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
-      }
-    ]
-  },
-  "Q27": {
-    oi: "Déterminer des changements et des continuités",
-    variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
-    niveaux: []
-  },
-  "Q28": {
-    oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
-      }
-    ]
-  },
-  "Q29": {
-    oi: "Établir des liens de causalité",
-    variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
-      {
-        pts: 2,
-        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
-      },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
-    ]
-  },
-  "Q30": {
-    oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
-    ]
-  },
-  "Q31": {
-    oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
-    ]
-  },
-  "Q32": {
-    oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
-    ]
-  },
-  "Q33": {
-    oi: "Situer dans l'espace",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe le fait dans l'espace."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas le fait dans l'espace."
-      }
-    ]
-  },
-  "Q34": {
-    oi: "Situer dans l'espace",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe le fait dans l'espace."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas le fait dans l'espace."
-      }
-    ]
-  },
-  "Q35": {
-    oi: "Situer dans l'espace",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe le fait dans l'espace."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas le fait dans l'espace."
-      }
-    ]
-  },
-  "Q36": {
-    oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (2 sur 2)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (1 sur 2)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (0 sur 2)"
-      }
-    ]
-  },
-  "Q37": {
-    oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (2 sur 2)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (1 sur 2)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (0 sur 2)"
-      }
-    ]
   }
 }
 
@@ -1011,21 +716,7 @@ const QUESTIONS = [
       col2: "La capitulation de Montréal",
       col3: "Après"
     },
-    guide: {
-      type: "grille",
-      entetes: [
-        "Avant",
-        "",
-        "Après"
-      ],
-      rangees: [
-        [
-          "1 et 4",
-          "La capitulation de Montréal",
-          "2 et 3"
-        ]
-      ]
-    }
+    guide: "1 et 4 / 2 et 3"
   },
   {
     id: "Q5",
@@ -1123,8 +814,18 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Malgré toute l’énergie déployée par d’enthousiastes Fils de la liberté montréalais, la majeure partie de la population de la province n’était pas plus en faveur d’une action militaire que ne l’était Papineau lui-même jusqu’à la dernière minute. »\n\nElinor Kyte Senior, 1985",
-            source: "« Ces soulèvements avaient […] des racines assez solides dans la masse1. Ils n’ont pas échoué  faute de motivations suffisantes dans les milieux populaires ou par pénurie de fusils. […] Le problème se situe d’abord au niveau de la qualité du leadership fourni par les élites [professionnelles] qui encadraient le mouvement insurrectionnel. »\n \nFernand Ouellet, 196"
+            texte: "« Malgré toute l’énergie déployée par d’enthousiastes Fils de la liberté montréalais, la majeure partie de la population de la province n’était pas plus en faveur d’une action militaire que ne l’était Papineau lui-même jusqu’à la dernière minute. »",
+            auteur: "Elinor Kyte Senior, 1985."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Ces soulèvements avaient […] des racines assez solides dans la masse1. Ils n’ont pas échoué  faute de motivations suffisantes dans les milieux populaires ou par pénurie de fusils. […] Le problème se situe d’abord au niveau de la qualité du leadership fourni par les élites [professionnelles] qui encadraient le mouvement insurrectionnel. »",
+            auteur: "Fernand Ouellet, 1967."
           }
         ]
       }
@@ -1192,7 +893,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B - Données sur les célibataires lors d’un recensement dans la colonie",
-            ref: "recensement_colonie.png"
+            ref: "recensement_colonie.png",
+            source: "MEES."
           }
         ]
       }
@@ -1209,20 +911,16 @@ const QUESTIONS = [
       ]
     },
     guide: {
-      type: "grille",
-      entetes: [
-        "Élément",
-        "Document"
-      ],
-      rangees: [
-        [
-          "Cause",
-          "B"
-        ],
-        [
-          "Conséquence",
-          "A"
-        ]
+      type: "tableau",
+      lignes: [
+        {
+          label: "Cause",
+          valeur: "B"
+        },
+        {
+          label: "Conséquence",
+          valeur: "1"
+        }
       ]
     }
   },
@@ -1398,24 +1096,20 @@ const QUESTIONS = [
       ]
     },
     guide: {
-      type: "grille",
-      entetes: [
-        "Élément",
-        "Document"
-      ],
-      rangees: [
-        [
-          "Bourgeoisie professionnelle",
-          "A"
-        ],
-        [
-          "Bourgeoisie d'affaires",
-          "C"
-        ],
-        [
-          "Clergé catholique",
-          "B"
-        ]
+      type: "tableau",
+      lignes: [
+        {
+          label: "Bourgeoisie professionnelle",
+          valeur: "1"
+        },
+        {
+          label: "Bourgeoisie d'affaires",
+          valeur: "3"
+        },
+        {
+          label: "Clergé catholique",
+          valeur: "2"
+        }
       ]
     }
   },
@@ -1640,21 +1334,7 @@ const QUESTIONS = [
       col2: "1960",
       col3: "Après"
     },
-    guide: {
-      type: "grille",
-      entetes: [
-        "Avant",
-        "",
-        "Après"
-      ],
-      rangees: [
-        [
-          "B et D",
-          "1960",
-          "A et C"
-        ]
-      ]
-    }
+    guide: "B et D / A et C"
   },
   {
     id: "Q19",
