@@ -916,6 +916,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q47": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -1018,6 +1035,9 @@ const IMAGE_DB = {
   },
   "chaman_1500.jpg": {
     src: "images/chaman_1500.jpg"
+  },
+  "tradition_orale.jpg": {
+    src: "images/tradition_orale.jpg"
   }
 }
 
@@ -3016,5 +3036,35 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "La subsistance de tous est favorisée ou les membres du groupe peuvent répondre à leurs besoins."
+  },
+  {
+    id: "Q47",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, nommez une façon dont les connaissances sont transmises chez les Autochtones.",
+    aspects: [
+      {
+        aspect: "Rapports sociaux chez les Autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "tradition_orale.jpg",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Par la tradition orale ou par les récits et les légendes."
   }
 ]
