@@ -933,6 +933,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q48": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -3066,5 +3088,45 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Par la tradition orale ou par les récits et les légendes."
+  },
+  {
+    id: "Q48",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    enonce: "Les documents A et B présentent le point de vue de deux auteurs sur le don et le contre-don. Sur quel point précis ces deux auteurs sont-ils d’accord?",
+    aspects: [
+      {
+        aspect: "Rapports sociaux chez les Autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« L’échange de présents ne constitue pas un geste gratuit. Celui qui reçoit un don a l’obligation de rendre à son tour, ce qui entretient les relations et crée des engagements durables entre les groupes. »",
+            auteur: "Marcel Mauss"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Chez plusieurs peuples autochtones, les présents échangés entre alliés appellent une réciprocité. Le groupe qui reçoit doit offrir un contre-don, ce qui permet de maintenir les alliances et de renforcer les liens entre les communautés. »",
+            auteur: "Denys Delâge"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les deux auteurs s’entendent pour dire que le don appelle un contre-don."
   }
 ]
