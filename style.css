@@ -176,6 +176,7 @@ select:focus { outline: none; border-color: var(--ink-2); }
   background: #EEF2F8;
   border-radius: 10px;
   border: 1.5px solid var(--border);
+  border-left: 4px solid var(--tile-color, var(--border));
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -193,7 +194,7 @@ select:focus { outline: none; border-color: var(--ink-2); }
   border-width: 2px;
 }
 
-.q-tile-bar { height: 8px; width: 100%; flex-shrink: 0; }
+.q-tile-bar { display: none; }
 
 .q-tile-content {
   padding: 10px 14px 28px;
