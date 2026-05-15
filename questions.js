@@ -816,6 +816,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q42": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -2644,7 +2666,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P1 — Des origines à 1608",
     points: 2,
-    enonce: "Les documents A à D présentent des informations sur la prise de décision chez les Iroquoiens et les Algonquiens vers 1500. Indiquez les lettres des documents qui correspondent à chacun des groupes.",
+    enonce: "Les documents A à D présentent des faits sur la prise de décision chez les Iroquoiens et les Algonquiens vers 1500. Indiquez les lettres des documents qui correspondent à chacun des groupes.",
     aspects: [
       {
         aspect: "Prise de décision chez les Autochtones"
@@ -2746,5 +2768,45 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Il soigne les malades ou dirige des cérémonies ou interprète les rêves ou communique avec les esprits."
+  },
+  {
+    id: "Q42",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    enonce: "Les documents A et B présentent le point de vue de deux historiens sur le rôle du chaman. Sur quel point précis ces deux auteurs sont-ils d’accord?",
+    aspects: [
+      {
+        aspect: "Rapports sociaux chez les Autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le chaman joue un rôle important dans plusieurs sociétés autochtones. Il dirige des cérémonies, interprète les rêves, communique avec les esprits et intervient pour soigner les malades ou favoriser le succès de la chasse. »",
+            auteur: "Olive Patricia Dickason"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les chamans occupent une place particulière dans la communauté. On leur attribue des pouvoirs spirituels qui leur permettent de guérir, de protéger le groupe et de maintenir des relations avec le monde surnaturel. »",
+            auteur: "Bruce G. Trigger"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les deux auteurs s’entendent pour dire que le chaman occupe un rôle spirituel important dans la communauté."
   }
 ]
