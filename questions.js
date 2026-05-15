@@ -2636,7 +2636,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Les femmes aînées des clans [chez les Hurons] choisissent les chefs et peuvent les destituer. Les décisions importantes sont prises en conseil, où les chefs doivent rechercher l’accord des membres de la communauté. »",
+            texte: "« Chez les Hurons, les femmes aînées de chaque clan désignent les chefs et peuvent les remplacer si elles jugent qu’ils ne remplissent pas adéquatement leurs responsabilités. Les décisions importantes sont prises en conseil, où les chefs recherchent l’accord des membres de la communauté. »",
             auteur: "Bruce G. Trigger"
           }
         ]
@@ -2656,7 +2656,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« Les chefs de ces nations [Montagnais, Malécites ou les Algonquins] ne commandent pas par contrainte. Leur autorité repose sur leur courage, leur générosité et leur capacité à convaincre les membres du groupe de les suivre. »",
+            texte: "« Chez les Montagnais et les Malécites, le chef possède une autorité limitée. Il dirige grâce à son expérience, à son courage et à sa générosité. Ses décisions ne s’imposent pas par la force, mais reposent sur la confiance et l’adhésion volontaire des membres du groupe. »",
             auteur: "Marc Lescarbot"
           }
         ]
@@ -2666,7 +2666,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document D",
-            texte: "« Dans les sociétés sédentaires, les mères de clan désignent les chefs. Ceux-ci gouvernent par consensus et doivent tenir compte de l’opinion des femmes et des autres membres du village. »",
+            texte: "« Dans les sociétés autochtone, les mères de clan choisissent les chefs et exercent une influence importante sur la vie politique. Les chefs ne décident pas seuls : ils consultent les autres membres du village et cherchent à obtenir un consensus avant d’agir. »",
             auteur: "Olive Patricia Dickason"
           }
         ]
