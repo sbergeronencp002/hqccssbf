@@ -8,9 +8,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&display=swap">
 <link rel="stylesheet" href="style.css">
-<style>
-  .q-tile { background: #fff !important; }
-</style>
 </head>
 <body>
 <noscript><div style="padding:2rem;text-align:center;font-family:sans-serif;color:#1a1814">Ce site nécessite JavaScript pour fonctionner.</div></noscript>
@@ -25,12 +22,12 @@
     <h2>Filtres</h2>
 
     <div class="filter-group">
-      <label class="filter-label">Recherche</label>
+      <label class="filter-label" for="f-search">Recherche</label>
       <input type="text" id="f-search" placeholder="Mot-clé…" oninput="applyFilters()">
     </div>
 
     <div class="filter-group">
-      <label class="filter-label">Niveau</label>
+      <label class="filter-label" for="f-niveau">Niveau</label>
       <select id="f-niveau" onchange="onNiveauChange()">
         <option value="">Tous</option>
         <option value="3">3</option>
@@ -39,21 +36,21 @@
     </div>
 
     <div class="filter-group">
-      <label class="filter-label">Période</label>
+      <label class="filter-label" for="f-periode">Période</label>
       <select id="f-periode" onchange="onPeriodeChange()">
         <option value="">Toutes</option>
       </select>
     </div>
 
     <div class="filter-group">
-      <label class="filter-label">Aspect</label>
+      <label class="filter-label" for="f-aspect">Aspect</label>
       <select id="f-aspect" onchange="applyFilters()">
         <option value="">Tous</option>
       </select>
     </div>
 
     <div class="filter-group">
-      <label class="filter-label">Opération intellectuelle</label>
+      <label class="filter-label" for="f-oi">Opération intellectuelle</label>
       <select id="f-oi" onchange="applyFilters()">
         <option value="">Toutes</option>
       </select>
@@ -78,7 +75,7 @@
 <div class="modal-overlay" id="preview-modal" onclick="closePreview(event)">
   <div class="modal">
     <div class="modal-header">
-      <span>Prévisualisation du cahier</span>
+      <span id="preview-modal-label">Prévisualisation du cahier</span>
       <button class="modal-close" onclick="closePreviewBtn()">×</button>
     </div>
     <div class="modal-body" id="preview-body"></div>

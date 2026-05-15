@@ -501,6 +501,9 @@ function renderDoc(d) {
 
 function renderReponse(q) {
   if(!q.reponse || q.reponse === false) return '';
+  if(q.reponse === true) {
+    return '<div style="border-bottom:1px solid var(--border);height:28px;margin:6px 0"></div>';
+  }
   if(q.reponse.type === 'tableau_3col') {
     const {col1='', col2='', col3=''} = q.reponse;
     const S = 'border:1px solid var(--ink-2);text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem';
@@ -561,8 +564,9 @@ function previsualiser(guideMode) {
     let html = '<div style="font-size:0.85rem;font-weight:600;color:var(--ink);margin-bottom:1.5rem;letter-spacing:0.05em;text-transform:uppercase">Guide de correction</div>';
     panier.forEach(function(id, idx) {
       const q = QUESTIONS.find(function(x) { return x.id === id; });
-      if(q && q.guide) {
-        let guideContent = '';
+      if(!q) return;
+      let guideContent = '';
+      if(q.guide) {
         if(typeof q.guide === 'string') {
           guideContent = '<span style="font-size:0.9rem;color:var(--ink)">' + q.guide + '</span>';
         } else if(q.guide.type === 'grille' || q.guide.type === 'tableau') {
@@ -582,11 +586,13 @@ function previsualiser(guideMode) {
           }
           guideContent += '</table>';
         }
-        html += '<div class="preview-question" style="margin-bottom:0.75rem;padding-bottom:0.75rem">'
-          + '<span style="font-weight:500;color:var(--ink-2)">' + (idx+1) + '.&nbsp;&nbsp;</span>'
-          + guideContent
-          + '</div>';
+      } else {
+        guideContent = '<span style="font-size:0.9rem;color:var(--ink-3);font-style:italic">—</span>';
       }
+      html += '<div class="preview-question" style="margin-bottom:0.75rem;padding-bottom:0.75rem">'
+        + '<span style="font-weight:500;color:var(--ink-2)">' + (idx+1) + '.&nbsp;&nbsp;</span>'
+        + guideContent
+        + '</div>';
     });
     body.innerHTML = html;
   } else {
@@ -595,7 +601,7 @@ function previsualiser(guideMode) {
       const r = REGLETTES[id];
       if(!q) return '';
       let docsHtml = '';
-      if(q.documents.length) {
+      if(q.documents && q.documents.length) {
         docsHtml = '<div class="preview-docs">';
         q.documents.forEach(function(d) {
           if(d.type === 'tableau') {
@@ -660,7 +666,7 @@ function previsualiser(guideMode) {
           const imgPrev = IMAGE_DB[q.reponse.ref];
           if(imgPrev) previewReponse += '<img src="' + imgPrev.src + '" style="max-width:100%;max-height:80px;object-fit:contain;margin:8px 0;display:block">';
         } else if(q.reponse.type === 'lignes') {
-          previewReponse = Array(q.reponse.nombre).fill('<div class="reponse-ligne-pleine" style="border-bottom:1px solid #999;height:28px;margin:6px 0"></div>').join('');
+          previewReponse = Array(q.reponse.nombre || 1).fill('<div class="reponse-ligne-pleine" style="border-bottom:1px solid #999;height:28px;margin:6px 0"></div>').join('');
         } else if(q.reponse.type === 'tableau') {
           previewReponse = '<table style="border-collapse:collapse;margin:8px 0;font-size:0.8rem;">'
             + '<tr><th style="border:0.5px solid #ccc;padding:4px 8px;background:#f5f5f5"></th><th style="border:0.5px solid #ccc;padding:4px 8px;background:#f5f5f5">Document</th></tr>'
@@ -680,7 +686,7 @@ function previsualiser(guideMode) {
         + docsHtml + previewReponse + regHtml + '</div>';
     }).join('');
   }
-  document.querySelector('.modal-header span').textContent = guideMode ? 'Prévisualisation du guide' : 'Prévisualisation du cahier';
+  document.getElementById('preview-modal-label').textContent = guideMode ? 'Prévisualisation du guide' : 'Prévisualisation du cahier';
   document.getElementById('preview-modal').classList.add('open');
 }
 
@@ -742,6 +748,7 @@ function showWarn(msg) {
 
 // === CAHIER EN CONSTRUCTION ===
 let cahierDragSrc = null;
+let cahierDragLast = null;
 
 function melangerPanier() {
   for(let i = panier.length - 1; i > 0; i--) {
@@ -812,8 +819,9 @@ function cahierDragStart(e) {
 function cahierDragOver(e) {
   e.preventDefault();
   e.dataTransfer.dropEffect = 'move';
-  document.querySelectorAll('.cahier-item').forEach(el => el.classList.remove('drop-top','drop-bottom'));
   const target = e.currentTarget;
+  if(cahierDragLast && cahierDragLast !== target) cahierDragLast.classList.remove('drop-top','drop-bottom');
+  cahierDragLast = target;
   if(target === cahierDragSrc) return;
   const rect = target.getBoundingClientRect();
   target.classList.add(e.clientY < rect.top + rect.height / 2 ? 'drop-top' : 'drop-bottom');
@@ -833,8 +841,10 @@ function cahierDrop(e) {
 }
 
 function cahierDragEnd() {
-  document.querySelectorAll('.cahier-item').forEach(el => el.classList.remove('dragging','drop-top','drop-bottom'));
+  if(cahierDragSrc) cahierDragSrc.classList.remove('dragging');
+  if(cahierDragLast) cahierDragLast.classList.remove('drop-top','drop-bottom');
   cahierDragSrc = null;
+  cahierDragLast = null;
 }
 
 // ===== RÉSOLUTION DES IMAGES (fetch → base64 + dimensions) =====
@@ -894,7 +904,7 @@ async function genererDocx(includeGuide=false) {
     const panierQuestions = panier.map(id => QUESTIONS.find(x => x.id === id)).filter(Boolean);
     const neededKeys = new Set();
     panierQuestions.forEach(q => {
-      q.documents.forEach(d => {
+      (q.documents || []).forEach(d => {
         if(d.cols) d.cols.forEach(c => { if(c.ref && IMAGE_DB[c.ref]) neededKeys.add(c.ref); });
         if(d.ref && IMAGE_DB[d.ref]) neededKeys.add(d.ref);
       });
@@ -913,6 +923,15 @@ async function genererDocx(includeGuide=false) {
     const IMG_BRD = { color: '000000', space: 1, style: BorderStyle.SINGLE, size: 6 }; // 3/4 pt
     const IMG_BORDERS = { top: IMG_BRD, bottom: IMG_BRD, left: IMG_BRD, right: IMG_BRD };
     const COL_2CM = 1134; // 2 cm in DXA
+
+    function b64ToBytes(src) {
+      const b64 = src.split(',')[1];
+      if(!b64) return null;
+      const bStr = atob(b64);
+      const bytes = new Uint8Array(bStr.length);
+      for(let i = 0; i < bStr.length; i++) bytes[i] = bStr.charCodeAt(i);
+      return bytes;
+    }
 
     function cellText(text, bold=false) {
       return new TableCell({
@@ -1091,21 +1110,18 @@ async function genererDocx(includeGuide=false) {
       children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
 
       // Documents
-      if(q.documents.length) {
+      if(q.documents && q.documents.length) {
         for(let di=0; di<q.documents.length; di++) {
           const d = q.documents[di];
           if(d.type === 'tableau') {
-            const colW = Math.floor(9360 / d.cols.length);
+            const colW = Math.floor(PAGE_W / d.cols.length);
             const tableCells = d.cols.map(col => {
               const imgData = IMAGE_DB[col.ref];
               const cellChildren = [];
               if(col.titreDocx && col.titre) cellChildren.push(new Paragraph({ alignment: AlignmentType.LEFT, children: [new TextRun({ text: col.titre, font: 'Aptos', size: 20 })] }));
               if(imgData && imgData.src) {
-                const b64 = imgData.src.split(',')[1];
-                if(b64) {
-                  const bStr = atob(b64);
-                  const bytes = new Uint8Array(bStr.length);
-                  for(let bi=0; bi<bStr.length; bi++) bytes[bi] = bStr.charCodeAt(bi);
+                const bytes = b64ToBytes(imgData.src);
+                if(bytes) {
                   const ext = col.ref.split('.').pop().toLowerCase();
                   const imgType = (ext === 'jpg' || ext === 'jpeg') ? 'jpg' : 'png';
                   const docW = Math.min(200, imgData.w);
@@ -1121,27 +1137,20 @@ async function genererDocx(includeGuide=false) {
                 children: cellChildren
               });
             });
-            children.push(new docx.Table({ width:{size:9360,type:docx.WidthType.DXA}, columnWidths:d.cols.map(()=>colW), rows:[new docx.TableRow({children:tableCells})] }));
+            children.push(new docx.Table({ width:{size:PAGE_W,type:docx.WidthType.DXA}, columnWidths:d.cols.map(()=>colW), rows:[new docx.TableRow({children:tableCells})] }));
           } else if(d.type === 'textes') {
-            // Tableau de textes + images
-            const colW2 = Math.floor(9360 / d.cols.length);
+            const colW2 = Math.floor(PAGE_W / d.cols.length);
             const textCells = d.cols.map(col => {
               const cellChildren = [];
-              // Titre
               cellChildren.push(new Paragraph({ children: [new TextRun({ text: col.titre || '', font: 'Aptos', size: 20, bold: true })] }));
-              // Texte
               if(col.texte) {
                 col.texte.split('\n').forEach(line => { cellChildren.push(mkLine(line, 'Aptos', 20)); });
               }
-              // Image
               if(col.ref) {
                 const imgData = IMAGE_DB[col.ref];
                 if(imgData && imgData.src) {
-                  const b64 = imgData.src.split(',')[1];
-                  if(b64) {
-                    const bStr = atob(b64);
-                    const bytes = new Uint8Array(bStr.length);
-                    for(let bi=0; bi<bStr.length; bi++) bytes[bi] = bStr.charCodeAt(bi);
+                  const bytes = b64ToBytes(imgData.src);
+                  if(bytes) {
                     const ext = col.ref.split('.').pop().toLowerCase();
                     const imgType = (ext === 'jpg' || ext === 'jpeg') ? 'jpg' : 'png';
                     const docW = Math.min(180, imgData.w);
@@ -1150,7 +1159,6 @@ async function genererDocx(includeGuide=false) {
                   }
                 }
               }
-              // Auteur (Aptos 8pt) + Source (Aptos 6pt)
               if(col.auteur) {
                 cellChildren.push(new Paragraph({ children: [new TextRun({ text: col.auteur, font: 'Aptos', size: 16, italics: true })] }));
               }
@@ -1167,7 +1175,7 @@ async function genererDocx(includeGuide=false) {
                 children: cellChildren
               });
             });
-            children.push(new docx.Table({ width:{size:9360,type:docx.WidthType.DXA}, columnWidths:d.cols.map(()=>colW2), rows:[new docx.TableRow({children:textCells})] }));
+            children.push(new docx.Table({ width:{size:PAGE_W,type:docx.WidthType.DXA}, columnWidths:d.cols.map(()=>colW2), rows:[new docx.TableRow({children:textCells})] }));
           } else {
             children.push(new Paragraph({ children: [new TextRun({ text: '• ' + d.type + ' — ' + (d.ref||''), font: 'Aptos', size: 22 })] }));
           }
@@ -1187,11 +1195,8 @@ async function genererDocx(includeGuide=false) {
         } else if(q.reponse.type === 'image') {
           const imgData2 = IMAGE_DB[q.reponse.ref];
           if(imgData2 && imgData2.src) {
-            const b64_2 = imgData2.src.split(',')[1];
-            if(b64_2) {
-              const bStr_2 = atob(b64_2);
-              const bytes_2 = new Uint8Array(bStr_2.length);
-              for(let bi=0; bi<bStr_2.length; bi++) bytes_2[bi] = bStr_2.charCodeAt(bi);
+            const bytes_2 = b64ToBytes(imgData2.src);
+            if(bytes_2) {
               const ext_2 = q.reponse.ref.split('.').pop().toLowerCase();
               const imgType_2 = (ext_2 === 'jpg' || ext_2 === 'jpeg') ? 'jpg' : 'png';
               const docW_2 = Math.min(400, imgData2.w);
@@ -1233,7 +1238,7 @@ async function genererDocx(includeGuide=false) {
             })]
           });
           const ligneRows = [];
-          for(let i=0; i<nb-1; i++) ligneRows.push(mkRow(i===0));
+          for(let i=0; i<nb; i++) ligneRows.push(mkRow(i===0));
           if(ligneRows.length === 0) ligneRows.push(mkRow(true));
           children.push(new docx.Table({
             width:{size:PAGE_W,type:docx.WidthType.DXA},
