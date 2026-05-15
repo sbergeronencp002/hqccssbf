@@ -1099,14 +1099,16 @@ async function genererDocx(includeGuide=false) {
               if(col.titreDocx && col.titre) cellChildren.push(new Paragraph({ alignment: AlignmentType.LEFT, children: [new TextRun({ text: col.titre, font: 'Aptos', size: 20 })] }));
               if(imgData && imgData.src) {
                 const b64 = imgData.src.split(',')[1];
-                const bStr = atob(b64);
-                const bytes = new Uint8Array(bStr.length);
-                for(let bi=0; bi<bStr.length; bi++) bytes[bi] = bStr.charCodeAt(bi);
-                const ext = col.ref.split('.').pop().toLowerCase();
-                const imgType = (ext === 'jpg' || ext === 'jpeg') ? 'jpg' : 'png';
-                const docW = Math.min(200, imgData.w);
-                const docH = Math.round(docW / (imgData.w / imgData.h));
-                cellChildren.push(new Paragraph({ alignment: AlignmentType.CENTER, children: [new docx.ImageRun({ data: bytes, type: imgType, transformation: { width: docW, height: docH } })] }));
+                if(b64) {
+                  const bStr = atob(b64);
+                  const bytes = new Uint8Array(bStr.length);
+                  for(let bi=0; bi<bStr.length; bi++) bytes[bi] = bStr.charCodeAt(bi);
+                  const ext = col.ref.split('.').pop().toLowerCase();
+                  const imgType = (ext === 'jpg' || ext === 'jpeg') ? 'jpg' : 'png';
+                  const docW = Math.min(200, imgData.w);
+                  const docH = Math.round(docW / (imgData.w / imgData.h));
+                  cellChildren.push(new Paragraph({ alignment: AlignmentType.CENTER, children: [new docx.ImageRun({ data: bytes, type: imgType, transformation: { width: docW, height: docH } })] }));
+                }
               }
               return new docx.TableCell({
                 width: { size: colW, type: docx.WidthType.DXA },
@@ -1133,14 +1135,16 @@ async function genererDocx(includeGuide=false) {
                 const imgData = IMAGE_DB[col.ref];
                 if(imgData && imgData.src) {
                   const b64 = imgData.src.split(',')[1];
-                  const bStr = atob(b64);
-                  const bytes = new Uint8Array(bStr.length);
-                  for(let bi=0; bi<bStr.length; bi++) bytes[bi] = bStr.charCodeAt(bi);
-                  const ext = col.ref.split('.').pop().toLowerCase();
-                  const imgType = (ext === 'jpg' || ext === 'jpeg') ? 'jpg' : 'png';
-                  const docW = Math.min(180, imgData.w);
-                  const docH = Math.round(docW / (imgData.w / imgData.h));
-                  cellChildren.push(new Paragraph({ alignment: AlignmentType.CENTER, children: [new docx.ImageRun({ data: bytes, type: imgType, transformation: { width: docW, height: docH } })] }));
+                  if(b64) {
+                    const bStr = atob(b64);
+                    const bytes = new Uint8Array(bStr.length);
+                    for(let bi=0; bi<bStr.length; bi++) bytes[bi] = bStr.charCodeAt(bi);
+                    const ext = col.ref.split('.').pop().toLowerCase();
+                    const imgType = (ext === 'jpg' || ext === 'jpeg') ? 'jpg' : 'png';
+                    const docW = Math.min(180, imgData.w);
+                    const docH = Math.round(docW / (imgData.w / imgData.h));
+                    cellChildren.push(new Paragraph({ alignment: AlignmentType.CENTER, children: [new docx.ImageRun({ data: bytes, type: imgType, transformation: { width: docW, height: docH } })] }));
+                  }
                 }
               }
               // Auteur (Aptos 8pt) + Source (Aptos 6pt)
@@ -1183,14 +1187,16 @@ async function genererDocx(includeGuide=false) {
           const imgData2 = IMAGE_DB[q.reponse.ref];
           if(imgData2 && imgData2.src) {
             const b64_2 = imgData2.src.split(',')[1];
-            const bStr_2 = atob(b64_2);
-            const bytes_2 = new Uint8Array(bStr_2.length);
-            for(let bi=0; bi<bStr_2.length; bi++) bytes_2[bi] = bStr_2.charCodeAt(bi);
-            const ext_2 = q.reponse.ref.split('.').pop().toLowerCase();
-            const imgType_2 = (ext_2 === 'jpg' || ext_2 === 'jpeg') ? 'jpg' : 'png';
-            const docW_2 = Math.min(400, imgData2.w);
-            const docH_2 = Math.round(docW_2 / (imgData2.w / imgData2.h));
-            children.push(new Paragraph({ children: [new docx.ImageRun({ data: bytes_2, type: imgType_2, transformation: { width: docW_2, height: docH_2 } })] }));
+            if(b64_2) {
+              const bStr_2 = atob(b64_2);
+              const bytes_2 = new Uint8Array(bStr_2.length);
+              for(let bi=0; bi<bStr_2.length; bi++) bytes_2[bi] = bStr_2.charCodeAt(bi);
+              const ext_2 = q.reponse.ref.split('.').pop().toLowerCase();
+              const imgType_2 = (ext_2 === 'jpg' || ext_2 === 'jpeg') ? 'jpg' : 'png';
+              const docW_2 = Math.min(400, imgData2.w);
+              const docH_2 = Math.round(docW_2 / (imgData2.w / imgData2.h));
+              children.push(new Paragraph({ children: [new docx.ImageRun({ data: bytes_2, type: imgType_2, transformation: { width: docW_2, height: docH_2 } })] }));
+            }
           }
         } else if(q.reponse.type === 'tableau_3col') {
           const {col1='', col2='', col3=''} = q.reponse;
