@@ -8,16 +8,15 @@
   --accent: #1D4E9F;
   --border: rgba(0,0,0,0.09);
 
-  /* OI — palette sobre, une couleur par OI */
-  /* OI — palette vive sobre, une couleur par OI */
-  --c-sit: #3A6FA8; --c-sit-bg: #EEF2F8;   /* Situer dans le temps    — bleu vif        */
-  --c-esp: #3A8050; --c-esp-bg: #EEF2F8;   /* Situer dans l'espace    — vert vif        */
-  --c-cau: #C06030; --c-cau-bg: #EEF2F8;   /* Liens de causalité      — orange vif      */
-  --c-dif: #7A4A9A; --c-dif-bg: #EEF2F8;   /* Différences/similitudes — violet vif      */
-  --c-chg: #607880; --c-chg-bg: #EEF2F8;   /* Changements/continuités — ardoise         */
-  --c-rel: #B03A3A; --c-rel-bg: #EEF2F8;   /* Causes/conséquences     — rouge vif       */
-  --c-mr:  #2A8A8A; --c-mr-bg:  #EEF2F8;   /* Mettre en relation      — canard vif      */
-  --c-fai: #9A6030; --c-fai-bg: #EEF2F8;   /* Établir des faits       — brun vif        */
+  /* OI — couleur accent + fond clair distinct par OI */
+  --c-sit: #3A6FA8; --c-sit-bg: #E4EDF8;
+  --c-esp: #3A8050; --c-esp-bg: #E2F0E6;
+  --c-cau: #C06030; --c-cau-bg: #F8EBE0;
+  --c-dif: #7A4A9A; --c-dif-bg: #EDE4F5;
+  --c-chg: #607880; --c-chg-bg: #E6EAEC;
+  --c-rel: #B03A3A; --c-rel-bg: #F5E4E4;
+  --c-mr:  #2A8A8A; --c-mr-bg:  #DFF0F0;
+  --c-fai: #9A6030; --c-fai-bg: #F2E8DC;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
