@@ -823,6 +823,9 @@ const IMAGE_DB = {
   },
   "campement_algonquien.png": {
     src: "images/campement_algonquien.png"
+  },
+  "victoire_pq_1976.png": {
+    src: "images/victoire_pq_1976.png"
   }
 }
 
@@ -1699,7 +1702,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "victoire_parti_quebecois_1976.png",
+            ref: "victoire_pq_1976.png",
             source: "Archives Le Devoir, « Il y a 35 ans, le PQ prenait le pouvoir », Le Devoir,  [En ligne], 15 novembre 2011.  [http://www.ledevoir.com/politique/quebec/336137/il-y-a-35-ans-le-pq prenait-le-pouvoir] (Consulté le 18 juin 2017)."
           }
         ]
