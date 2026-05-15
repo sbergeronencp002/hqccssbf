@@ -167,7 +167,7 @@ select:focus { outline: none; border-color: var(--ink-2); }
 /* === GRILLE DE TUILES === */
 .q-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
   gap: 10px;
 }
 
@@ -545,8 +545,7 @@ select:focus { outline: none; border-color: var(--ink-2); }
     position: static; height: auto;
     border-right: none; border-bottom: 1px solid var(--border);
   }
-  .q-grid { grid-template-columns: 1fr; gap: 8px; }
-  .q-tile-oi { font-size: 0.95rem !important; }
+
   .cahier-panel { width: 100%; }
   .modal { width: 96vw; }
   .panier-bar { padding: 10px 1rem; }
