@@ -197,13 +197,13 @@ select:focus { outline: none; border-color: var(--ink-2); }
 .q-tile-bar { display: none; }
 
 .q-tile-content {
-  padding: 10px 14px 28px;
-  display: flex; flex-direction: column; gap: 5px;
+  padding: 14px 16px 32px;
+  display: flex; flex-direction: column; gap: 6px;
 }
 
-.q-tile-oi { font-size: 0.82rem; font-weight: 600; color: var(--tile-color, var(--ink)); line-height: 1.35; }
+.q-tile-oi { font-size: 0.95rem; font-weight: 700; color: var(--tile-color, var(--ink)); line-height: 1.3; letter-spacing: -0.01em; }
 
-.q-tile-aspect { font-size: 0.72rem; color: var(--ink-3); line-height: 1.3; }
+.q-tile-aspect { font-size: 0.78rem; color: var(--ink-3); line-height: 1.3; font-weight: 400; }
 
 .q-tile-check {
   display: none;
