@@ -838,6 +838,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q43": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -2808,5 +2830,45 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les deux auteurs s’entendent pour dire que le chaman occupe un rôle spirituel important dans la communauté."
+  },
+  {
+    id: "Q43",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    enonce: "Les documents A et B présentent le point de vue deux auteurs sur l’éducation des enfants chez les Autochtones. Sur quel point précis ces deux auteurs sont-ils d’accord?",
+    aspects: [
+      {
+        aspect: "Rapports sociaux chez les Autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« L’éducation des enfants autochtones repose sur l’observation, l’imitation et la participation aux activités quotidiennes. Les adultes transmettent les savoirs nécessaires à la survie et à l’intégration dans la communauté. »",
+            auteur: "Denys Delâge"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Chez les peuples autochtones, les enfants apprennent très tôt en accompagnant les adultes. Ils acquièrent progressivement les connaissances, les techniques et les valeurs qui assurent la continuité de la culture. »",
+            auteur: "José Mailhot"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les deux auteurs s’entendent pour dire que les enfants apprennent par l’observation ou par la participation aux activités quotidiennes de la communauté."
   }
 ]
