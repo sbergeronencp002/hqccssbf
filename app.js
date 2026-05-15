@@ -537,6 +537,18 @@ function renderReponse(q) {
     html += '</table>';
     return html;
   }
+  if(q.reponse.type === 'grille') {
+    const {entetes=[], rangees=[]} = q.reponse;
+    const TH = 'border:0.5px solid var(--border);padding:4px 8px;background:var(--paper-2);text-align:center;font-weight:600;font-size:0.8rem';
+    const TD = 'border:0.5px solid var(--border);padding:4px 8px;font-size:0.8rem';
+    let html = '<table style="border-collapse:collapse;margin:8px 0;">';
+    html += '<tr>' + entetes.map(h => `<th style="${TH}">${h}</th>`).join('') + '</tr>';
+    rangees.forEach(row => {
+      html += '<tr>' + row.map((cell, ci) => `<td style="${TD}${ci===0?';font-weight:500':';min-width:60px;height:24px'}">${cell}</td>`).join('') + '</tr>';
+    });
+    html += '</table>';
+    return html;
+  }
   if(q.reponse.type === 'tableau_2col') {
     const CS = 'border:1px solid var(--ink-2);text-align:center;padding:6px 8px;font-size:0.8rem;width:113px';
     return '<table style="border-collapse:collapse;margin:8px 0;">'
@@ -672,6 +684,16 @@ function previsualiser(guideMode) {
             + '<tr><th style="border:0.5px solid #ccc;padding:4px 8px;background:#f5f5f5"></th><th style="border:0.5px solid #ccc;padding:4px 8px;background:#f5f5f5">Document</th></tr>'
             + q.reponse.lignes.map(function(l){return '<tr><td style="border:0.5px solid #ccc;padding:4px 8px">' + l.label + '</td><td style="border:0.5px solid #ccc;padding:4px 30px"></td></tr>';}).join('')
             + '</table>';
+        } else if(q.reponse.type === 'grille') {
+          const {entetes=[], rangees=[]} = q.reponse;
+          const TH2 = 'border:0.5px solid #ccc;padding:4px 8px;background:#f5f5f5;text-align:center;font-weight:600;font-size:0.8rem';
+          const TD2 = 'border:0.5px solid #ccc;padding:4px 8px;font-size:0.8rem';
+          previewReponse = '<table style="border-collapse:collapse;margin:8px 0;">';
+          previewReponse += '<tr>' + entetes.map(h => `<th style="${TH2}">${h}</th>`).join('') + '</tr>';
+          rangees.forEach(row => {
+            previewReponse += '<tr>' + row.map((cell, ci) => `<td style="${TD2}${ci===0?';font-weight:500':';min-width:60px;height:24px'}">${cell}</td>`).join('') + '</tr>';
+          });
+          previewReponse += '</table>';
         } else if(q.reponse.type === 'tableau_2col') {
           const CS = 'border:1px solid #999;text-align:center;padding:6px 8px;font-size:0.8rem;width:113px';
           previewReponse = '<table style="border-collapse:collapse;margin:8px 0;">'
@@ -971,8 +993,7 @@ async function genererDocx(includeGuide=false) {
         });
 
         return [new Table({
-          width: { size: PAGE_W, type: WidthType.DXA },
-          columnWidths: [col1, col2, col3, col4],
+          width: { size: 0, type: WidthType.AUTO },
           rows: [
             new TableRow({ children: [mkCell(r.oi, true, 6, 1, col1), mkCell("L'élève précise les trois éléments", false, 3, 1, col2, BC2), mkCell("et établit correctement deux liens de causalité.", false, 1, 1, col3, BC3), mkCell("3 points", false, 1, 1, col4, BC4)] }),
             new TableRow({ children: [mkCell("et établit correctement un lien de causalité.", false, 1, 1, col3, BC3), mkCell("2 points", false, 1, 1, col4, BC4)] }),
@@ -991,7 +1012,7 @@ async function genererDocx(includeGuide=false) {
         const BC3={top:BORDER,bottom:BORDER,left:BN,right:BN};
         const BC4={top:BORDER,bottom:BORDER,left:BN,right:BORDER};
         const mk=(t,bold=false,rs=1,cs=1,w=0,b=BORDERS)=>new TableCell({borders:b,margins:CELL_MARGINS,verticalAlign:VerticalAlign.CENTER,rowSpan:rs>1?rs:undefined,columnSpan:cs>1?cs:undefined,width:w?{size:w,type:WidthType.DXA}:undefined,children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:t,font:'Aptos',size:12,bold})]})]});
-        return [new Table({width:{size:PAGE_W,type:WidthType.DXA},columnWidths:[c1,c2,c3,c4],rows:[
+        return [new Table({width:{size:0,type:WidthType.AUTO},rows:[
           new TableRow({children:[mk(r.oi,true,5,1,c1),mk("L'élève nomme correctement l'acteur qui présente une position différente",false,4,1,c2,BC2),mk("et présente correctement les deux positions.",false,1,1,c3,BC3),mk("3 points",false,1,1,c4,BC4)]}),
           new TableRow({children:[mk("et présente correctement une position et plus ou moins correctement l'autre position.",false,1,1,c3,BC3),mk("2 points",false,1,1,c4,BC4)]}),
           new TableRow({children:[mk("et présente plus ou moins correctement les deux positions, ou présente correctement une position et incorrectement l'autre ou ne la présente pas.",false,1,1,c3,BC3),mk("1 point",false,1,1,c4,BC4)]}),
@@ -1007,7 +1028,7 @@ async function genererDocx(includeGuide=false) {
         const BC3={top:BORDER,bottom:BORDER,left:BN,right:BN};
         const BC4={top:BORDER,bottom:BORDER,left:BN,right:BORDER};
         const mk=(t,bold=false,rs=1,cs=1,w=0,b=BORDERS)=>new TableCell({borders:b,margins:CELL_MARGINS,verticalAlign:VerticalAlign.CENTER,rowSpan:rs>1?rs:undefined,columnSpan:cs>1?cs:undefined,width:w?{size:w,type:WidthType.DXA}:undefined,children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:t,font:'Aptos',size:12,bold})]})]});
-        return [new Table({width:{size:PAGE_W,type:WidthType.DXA},columnWidths:[c1,c2,c3,c4],rows:[
+        return [new Table({width:{size:0,type:WidthType.AUTO},rows:[
           new TableRow({children:[mk(r.oi,true,6,1,c1),mk("L'élève indique s'il y a changement ou continuité",false,3,1,c2,BC2),mk("et présente des faits qui le montrent correctement.",false,1,1,c3,BC3),mk("3 points (ou 2 points)",false,1,1,c4,BC4)]}),
           new TableRow({children:[mk("et présente des faits qui le montrent plus ou moins correctement.",false,1,1,c3,BC3),mk("2 points (ou 1 point)",false,1,1,c4,BC4)]}),
           new TableRow({children:[mk("et présente des faits qui le montrent incorrectement ou n'en présente pas.",false,1,1,c3,BC3),mk("0 point",false,1,1,c4,BC4)]}),
@@ -1187,6 +1208,7 @@ async function genererDocx(includeGuide=false) {
       }
 
       children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
+      children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
 
       // Réponse
       if(q.reponse) {
@@ -1265,6 +1287,19 @@ async function genererDocx(includeGuide=false) {
             ]}));
           });
           children.push(new Table({ width: { size: 0, type: WidthType.AUTO }, rows: repRows }));
+        } else if(q.reponse.type === 'grille') {
+          const {entetes=[], rangees=[]} = q.reponse;
+          const nCols = entetes.length || 2;
+          const gColW = Math.floor(PAGE_W / nCols);
+          const mkGCell = (text, bold) => new TableCell({
+            borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
+            children: [new Paragraph({ children: [new TextRun({ text: String(text||''), font:'Aptos', size:20, bold:!!bold })] })]
+          });
+          const gRows = [
+            new TableRow({ children: entetes.map(h => mkGCell(h, true)) }),
+            ...rangees.map(row => new TableRow({ children: row.map((cell, ci) => mkGCell(cell, ci===0)) }))
+          ];
+          children.push(new Table({ width:{size:PAGE_W, type:WidthType.DXA}, columnWidths:Array(nCols).fill(gColW), rows:gRows }));
         } else if(q.reponse.type === 'tableau_2col') {
           const c2 = 1701; // 3 cm in DXA
           const mk2 = (t, bold=false) => new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
