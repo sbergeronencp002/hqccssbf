@@ -315,23 +315,17 @@ function render(list) {
 
   container.innerHTML = list.map(q=>{
     const st = oiStyle(q.oi);
+    const aspect = q.aspects.map(a=>a.aspect).join(' · ');
+    const inPanier = panier.includes(q.id) ? ' in-panier' : '';
     return `
-    <div class="q-card" id="card-${q.id}">
-      <div class="q-card-top" onclick="toggleCard('${q.id}')">
-        <div class="q-top-content">
+    <div class="q-tile${inPanier}" id="card-${q.id}">
+      <div class="q-tile-head" onclick="toggleCard('${q.id}')">
+        <div class="q-tile-bar" style="background:${st.color}"></div>
+        <div class="q-tile-content">
           <div class="q-oi-badge" style="color:${st.color};background:${st.bg}">${q.oi}</div>
-          <div class="q-enonce-preview">${(q.enonce||'').replace(/\n/g,' ')}</div>
-          <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap">
-            ${q.aspects.map(a=>`<span style="font-size:0.7rem;color:var(--ink-3)">${a.aspect}</span>`).join('<span style="color:var(--ink-3);font-size:0.7rem">·</span>')}
-          </div>
+          <div class="q-tile-aspect">${aspect}</div>
         </div>
-        <div class="q-right">
-          <div>
-            <div class="q-pts">${q.points}</div>
-            <div class="q-pts-label">pt${q.points>1?'s':''}</div>
-          </div>
-          <span class="expand-icon">▼</span>
-        </div>
+        <div class="q-tile-check">✓</div>
       </div>
       <div class="q-card-body">
 
@@ -641,20 +635,18 @@ function closePreviewBtn() {
 }
 
 function togglePanier(id, btn) {
+  const tile = document.getElementById('card-' + id);
   if(panier.includes(id)) {
     panier = panier.filter(x => x !== id);
     btn.textContent = '+ Ajouter au panier';
     btn.classList.remove('in-panier');
+    if(tile) tile.classList.remove('in-panier');
   } else {
-    if(panier.length >= 10) {
-      showWarn('Maximum 10 questions dans le panier.');
-      return;
-    }
+    if(panier.length >= 10) { showWarn('Maximum 10 questions dans le panier.'); return; }
     panier.push(id);
     btn.textContent = '✓ Dans le panier';
     btn.classList.add('in-panier');
-    const card = document.getElementById('card-' + id);
-    if(card) card.classList.remove('open');
+    if(tile) { tile.classList.add('in-panier'); tile.classList.remove('open'); }
   }
   updatePanierBar();
 }
@@ -663,6 +655,8 @@ function refreshPanierButtons() {
   panier.forEach(id => {
     const btn = document.getElementById('btn-panier-' + id);
     if(btn) { btn.textContent = '✓ Dans le panier'; btn.classList.add('in-panier'); }
+    const tile = document.getElementById('card-' + id);
+    if(tile) tile.classList.add('in-panier');
   });
 }
 
@@ -680,6 +674,8 @@ function retirerPanier(id) {
   panier = panier.filter(x => x !== id);
   const btn = document.getElementById('btn-panier-' + id);
   if(btn) { btn.textContent = '+ Ajouter au panier'; btn.classList.remove('in-panier'); }
+  const tile = document.getElementById('card-' + id);
+  if(tile) tile.classList.remove('in-panier');
   updatePanierBar();
 }
 
@@ -687,6 +683,8 @@ function viderPanier() {
   panier.forEach(id => {
     const btn = document.getElementById('btn-panier-' + id);
     if(btn) { btn.textContent = '+ Ajouter au panier'; btn.classList.remove('in-panier'); }
+    const tile = document.getElementById('card-' + id);
+    if(tile) tile.classList.remove('in-panier');
   });
   panier = [];
   updatePanierBar();
