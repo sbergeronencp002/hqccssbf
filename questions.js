@@ -716,15 +716,15 @@ const REGLETTES = {
     niveaux: [
       {
         pts: 2,
-        desc: "L'élève met en relation tous les faits."
+        desc: "L'élève met en relation tous les faits. (2 sur 2)"
       },
       {
         pts: 1,
-        desc: "L'élève met en relation certains faits."
+        desc: "L'élève met en relation certains faits. (1 sur 2)"
       },
       {
         pts: 0,
-        desc: "L'élève ne met pas en relation les faits."
+        desc: "L'élève ne met pas en relation les faits. (0 sur 2)"
       }
     ]
   }
@@ -923,7 +923,7 @@ const QUESTIONS = [
     oi: "Situer dans le temps",
     periode: "P2 — 1608 – 1760",
     points: 1,
-    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document ci-dessous.",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
     aspects: [
       {
         aspect: "Guerre et diplomatie chez les Premières Nations"
@@ -935,8 +935,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A - Champlain et ses alliés combattant les Iroquois",
-            ref: "bataille_lac_champlain.png",
-            source: "Bibliothèque et Archives Canada/C-005750."
+            ref: "bataille_lac_champlain.png"
           }
         ]
       }
@@ -2355,8 +2354,8 @@ const QUESTIONS = [
       ],
       rangees: [
         [
-          "",
-          ""
+          "A",
+          "B"
         ]
       ]
     }
