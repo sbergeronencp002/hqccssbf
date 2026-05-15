@@ -1094,6 +1094,9 @@ const IMAGE_DB = {
   },
   "tradition_orale.jpg": {
     src: "images/tradition_orale.jpg"
+  },
+  "1500_chaman.jpg": {
+    src: "images/1500_chaman.jpg"
   }
 }
 
@@ -2911,8 +2914,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "chaman_1500.jpg",
-            source: "C.W. Jefferys."
+            ref: "1500_chaman.jpg"
           }
         ]
       }
