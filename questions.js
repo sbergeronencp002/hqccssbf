@@ -2666,7 +2666,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P1 — Des origines à 1608",
     points: 2,
-    enonce: "Les documents A à D présentent des informations sur la prise de décision chez les Iroquoiens et les Algonquiens vers 1500. Indiquez les lettres des documents qui correspondent à chacun des groupes.",
+    enonce: "Les documents A à D présentent des faits sur la prise de décision chez les Iroquoiens et les Algonquiens vers 1500. Indiquez les lettres des documents qui correspondent à chacun des groupes.",
     aspects: [
       {
         aspect: "Prise de décision chez les Autochtones"
