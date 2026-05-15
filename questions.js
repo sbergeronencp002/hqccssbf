@@ -972,6 +972,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q50": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -3175,5 +3192,35 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Offrir un présent à son tour ou rendre un contre-don."
+  },
+  {
+    id: "Q50",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, nommez les personnes qui désignent les chefs dans les sociétés iroquoiennes.",
+    aspects: [
+      {
+        aspect: "Prise de décision chez les Autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Dans les sociétés iroquoiennes, les femmes aînées de chaque clan choisissent les chefs. Elles peuvent également les remplacer lorsqu’elles estiment qu’ils n’assument plus correctement les responsabilités qui leur ont été confiées. »",
+            auteur: "Bruce G. Trigger"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les femmes aînées du clan ou les mères de clan."
   }
 ]
