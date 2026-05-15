@@ -2182,8 +2182,8 @@ const QUESTIONS = [
       ],
       rangees: [
         [
-          "",
-          ""
+          "A",
+          "B"
         ]
       ]
     }
