@@ -942,8 +942,6 @@ async function genererDocx(includeGuide=false) {
     const BORDERS = { top: BORDER, bottom: BORDER, left: BORDER, right: BORDER };
     const CELL_MARGINS = { top: 60, bottom: 60, left: 80, right: 80 };
     const PAGE_W = 9360; // 6.5 inches content width in DXA
-    const IMG_BRD = { color: '000000', space: 1, style: BorderStyle.SINGLE, size: 6 }; // 3/4 pt
-    const IMG_BORDERS = { top: IMG_BRD, bottom: IMG_BRD, left: IMG_BRD, right: IMG_BRD };
     const COL_2CM = 1134; // 2 cm in DXA
 
     function b64ToBytes(src) {
@@ -956,18 +954,9 @@ async function genererDocx(includeGuide=false) {
     }
 
     function imgWithBorder(bytes, imgType, w, h) {
-      return new Table({
-        width: { size: 0, type: WidthType.AUTO },
-        rows: [new TableRow({
-          children: [new TableCell({
-            borders: IMG_BORDERS,
-            margins: { top: 40, bottom: 40, left: 40, right: 40 },
-            children: [new Paragraph({
-              alignment: AlignmentType.LEFT,
-              children: [new docx.ImageRun({ data: bytes, type: imgType, transformation: { width: w, height: h } })]
-            })]
-          })]
-        })]
+      return new Paragraph({
+        alignment: AlignmentType.LEFT,
+        children: [new docx.ImageRun({ data: bytes, type: imgType, transformation: { width: w, height: h } })]
       });
     }
 
