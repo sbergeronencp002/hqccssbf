@@ -9,14 +9,15 @@
   --border: rgba(0,0,0,0.09);
 
   /* OI — palette sobre, une couleur par OI */
-  --c-sit: #4A5F75; --c-sit-bg: #EEF2F8;   /* Situer dans le temps    — bleu marine     */
-  --c-esp: #4A6E52; --c-esp-bg: #EEF2F8;   /* Situer dans l'espace    — vert forêt      */
-  --c-cau: #9E5F35; --c-cau-bg: #EEF2F8;   /* Liens de causalité      — orange brûlé    */
-  --c-dif: #6A4E82; --c-dif-bg: #EEF2F8;   /* Différences/similitudes — prune           */
-  --c-chg: #606060; --c-chg-bg: #EEF2F8;   /* Changements/continuités — gris anthracite */
-  --c-rel: #8C3A3A; --c-rel-bg: #EEF2F8;   /* Causes/conséquences     — rouge sombre    */
-  --c-mr:  #2E6E70; --c-mr-bg:  #EEF2F8;   /* Mettre en relation      — canard          */
-  --c-fai: #7A5535; --c-fai-bg: #EEF2F8;   /* Établir des faits       — brun foncé      */
+  /* OI — palette sobre, une couleur par OI, 75% opacité */
+  --c-sit: #4A5F75BF; --c-sit-bg: #EEF2F8;   /* Situer dans le temps    — bleu marine     */
+  --c-esp: #4A6E52BF; --c-esp-bg: #EEF2F8;   /* Situer dans l'espace    — vert forêt      */
+  --c-cau: #9E5F35BF; --c-cau-bg: #EEF2F8;   /* Liens de causalité      — orange brûlé    */
+  --c-dif: #6A4E82BF; --c-dif-bg: #EEF2F8;   /* Différences/similitudes — prune           */
+  --c-chg: #606060BF; --c-chg-bg: #EEF2F8;   /* Changements/continuités — gris anthracite */
+  --c-rel: #8C3A3ABF; --c-rel-bg: #EEF2F8;   /* Causes/conséquences     — rouge sombre    */
+  --c-mr:  #2E6E70BF; --c-mr-bg:  #EEF2F8;   /* Mettre en relation      — canard          */
+  --c-fai: #7A5535BF; --c-fai-bg: #EEF2F8;   /* Établir des faits       — brun foncé      */
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
