@@ -777,6 +777,28 @@ const REGLETTES = {
         desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
       }
     ]
+  },
+  "Q40": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
   }
 }
 
@@ -2595,5 +2617,84 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Delâge soutient que les alliances entre les Premières Nations sont principalement motivées par des considérations politiques ou militaires, tandis que Trigger et Dickason estiment qu’elles reposent surtout sur des intérêts économiques ou commerciaux."
+  },
+  {
+    id: "Q40",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    enonce: "Les documents A à D présentent des informations sur la prise de décision chez les Iroquoiens et les Algonquiens vers 1500. Indiquez les lettres des documents qui correspondent à chacun des groupes.",
+    aspects: [
+      {
+        aspect: "Prise de décision chez les Autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les femmes aînées des clans [chez les Hurons] choisissent les chefs et peuvent les destituer. Les décisions importantes sont prises en conseil, où les chefs doivent rechercher l’accord des membres de la communauté. »",
+            auteur: "Bruce G. Trigger"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Chez les [nations nomades], les chefs exercent une autorité limitée. Ils dirigent par persuasion et leur influence dépend de leur expérience, de leurs talents de chasseurs et de la confiance du groupe. »",
+            auteur: "Denys Delâge"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les chefs de ces nations [Montagnais, Malécites ou les Algonquins] ne commandent pas par contrainte. Leur autorité repose sur leur courage, leur générosité et leur capacité à convaincre les membres du groupe de les suivre. »",
+            auteur: "Marc Lescarbot"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Dans les sociétés sédentaires, les mères de clan désignent les chefs. Ceux-ci gouvernent par consensus et doivent tenir compte de l’opinion des femmes et des autres membres du village. »",
+            auteur: "Olive Patricia Dickason"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau",
+      lignes: [
+        {
+          label: "Nations algonquiennes"
+        },
+        {
+          label: "Nations iroquoiennes"
+        }
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Nations algonquiennes",
+        "Nations iroquoiennes"
+      ],
+      rangees: [
+        [
+          "2 et 3",
+          "1 et 4"
+        ]
+      ]
+    }
   }
 ]
