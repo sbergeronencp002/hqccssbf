@@ -499,6 +499,28 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q28": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (3 sur 3)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (2 sur 3)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
+      }
+    ]
   }
 }
 
