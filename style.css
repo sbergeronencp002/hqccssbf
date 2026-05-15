@@ -1,22 +1,22 @@
 :root {
-  --ink: #111118;
-  --ink-2: #44424e;
-  --ink-3: #9490a0;
-  --paper: #f5f5f7;
-  --paper-2: #eaeaec;
-  --paper-3: #e0e0e2;
-  --accent: #0055FF;
-  --border: rgba(0,0,0,0.10);
+  --ink: #1A1714;
+  --ink-2: #4A453E;
+  --ink-3: #9A938A;
+  --paper: #F8F5F0;
+  --paper-2: #EDE9E2;
+  --paper-3: #E2DDD5;
+  --accent: #1D4E9F;
+  --border: rgba(0,0,0,0.09);
 
-  /* OI — palette 2026 : vives, distinctes, lisibles */
-  --c-sit: #0055FF; --c-sit-bg: #EEF3FF;   /* Situer dans le temps    — bleu électrique  */
-  --c-esp: #00B87A; --c-esp-bg: #E6FAF3;   /* Situer dans l'espace    — émeraude vif     */
-  --c-cau: #FF2D78; --c-cau-bg: #FFF0F5;   /* Liens de causalité      — magenta chaud    */
-  --c-dif: #7C3AED; --c-dif-bg: #F3EEFF;   /* Différences/similitudes — violet bold      */
-  --c-chg: #F97316; --c-chg-bg: #FFF4EB;   /* Changements/continuités — orange vif       */
-  --c-rel: #E8000D; --c-rel-bg: #FFF0F0;   /* Causes/conséquences     — rouge Canada     */
-  --c-mr:  #0EA5E9; --c-mr-bg:  #EDF8FF;   /* Mettre en relation      — bleu ciel        */
-  --c-fai: #16A34A; --c-fai-bg: #EDFAF3;   /* Établir des faits       — vert émeraude    */
+  /* OI — palette chaude et distincte */
+  --c-sit: #1D4E9F; --c-sit-bg: #E4EDF8;   /* Situer dans le temps    — bleu Québec      */
+  --c-esp: #2E7D32; --c-esp-bg: #E6F4E7;   /* Situer dans l'espace    — vert forêt       */
+  --c-cau: #E65100; --c-cau-bg: #FEF0E6;   /* Liens de causalité      — orange brûlé     */
+  --c-dif: #6A1B9A; --c-dif-bg: #F4E8FC;   /* Différences/similitudes — violet           */
+  --c-chg: #546E7A; --c-chg-bg: #EDF1F3;   /* Changements/continuités — ardoise          */
+  --c-rel: #C62828; --c-rel-bg: #FCEAEA;   /* Causes/conséquences     — rouge Canada     */
+  --c-mr:  #00838F; --c-mr-bg:  #E0F5F7;   /* Mettre en relation      — sarcelle         */
+  --c-fai: #795548; --c-fai-bg: #F1EBE8;   /* Établir des faits       — brun chaud       */
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
