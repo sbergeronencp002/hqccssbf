@@ -545,16 +545,12 @@ select:focus { outline: none; border-color: var(--ink-2); }
     position: static; height: auto;
     border-right: none; border-bottom: 1px solid var(--border);
   }
-  .q-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .q-grid { grid-template-columns: 1fr; gap: 8px; }
+  .q-tile-oi { font-size: 0.95rem !important; }
   .cahier-panel { width: 100%; }
   .modal { width: 96vw; }
   .panier-bar { padding: 10px 1rem; }
   header { padding: 1rem; }
   header h1 { font-size: 1.2rem; }
-}
-
-@media (max-width: 600px) {
-  .q-grid { grid-template-columns: 1fr; }
-  .q-tile-oi { font-size: 0.95rem !important; }
 }
 
