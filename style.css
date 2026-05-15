@@ -553,3 +553,8 @@ select:focus { outline: none; border-color: var(--ink-2); }
   header h1 { font-size: 1.2rem; }
 }
 
+@media (max-width: 480px) {
+  .q-grid { grid-template-columns: 1fr; }
+  .q-tile-oi { font-size: 0.95rem !important; }
+}
+

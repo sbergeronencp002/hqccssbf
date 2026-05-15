@@ -401,7 +401,7 @@ function render(list) {
       style="--tile-color:${st.color};background:#fff" onclick="openQModal('${q.id}')">
       <div class="q-tile-bar" style="display:none"></div>
       <div class="q-tile-content">
-        <div class="q-tile-oi" style="display:inline-block;font-size:1.1rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:5px 12px;border-radius:6px;color:${st.color};background:${st.bg};line-height:1.3">${q.oi}</div>
+        <div class="q-tile-oi" style="display:inline-block;font-size:1.1rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:5px 12px;border-radius:6px;color:${st.color};background:${st.bg};line-height:1.3;word-break:break-word;overflow-wrap:anywhere;max-width:100%">${q.oi}</div>
         <div class="q-tile-aspect" style="font-size:0.9rem;font-weight:400;color:#6B6560;margin-top:2px">${aspect}</div>
       </div>
       <span class="q-tile-check" onclick="event.stopPropagation();togglePanier('${q.id}')">✓</span>
