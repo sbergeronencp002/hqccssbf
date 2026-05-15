@@ -955,6 +955,22 @@ async function genererDocx(includeGuide=false) {
       return bytes;
     }
 
+    function imgWithBorder(bytes, imgType, w, h) {
+      return new Table({
+        width: { size: 0, type: WidthType.AUTO },
+        rows: [new TableRow({
+          children: [new TableCell({
+            borders: IMG_BORDERS,
+            margins: { top: 40, bottom: 40, left: 40, right: 40 },
+            children: [new Paragraph({
+              alignment: AlignmentType.LEFT,
+              children: [new docx.ImageRun({ data: bytes, type: imgType, transformation: { width: w, height: h } })]
+            })]
+          })]
+        })]
+      });
+    }
+
     function cellText(text, bold=false) {
       return new TableCell({
         borders: BORDERS,
@@ -1147,7 +1163,7 @@ async function genererDocx(includeGuide=false) {
                   const imgType = (ext === 'jpg' || ext === 'jpeg') ? 'jpg' : 'png';
                   const docW = Math.min(200, imgData.w);
                   const docH = Math.round(docW / (imgData.w / imgData.h));
-                  cellChildren.push(new Paragraph({ alignment: AlignmentType.LEFT, border: IMG_BORDERS, children: [new docx.ImageRun({ data: bytes, type: imgType, transformation: { width: docW, height: docH } })] }));
+                  cellChildren.push(imgWithBorder(bytes, imgType, docW, docH));
                 }
               }
               return new docx.TableCell({
@@ -1176,7 +1192,7 @@ async function genererDocx(includeGuide=false) {
                     const imgType = (ext === 'jpg' || ext === 'jpeg') ? 'jpg' : 'png';
                     const docW = Math.min(180, imgData.w);
                     const docH = Math.round(docW / (imgData.w / imgData.h));
-                    cellChildren.push(new Paragraph({ alignment: AlignmentType.LEFT, border: IMG_BORDERS, children: [new docx.ImageRun({ data: bytes, type: imgType, transformation: { width: docW, height: docH } })] }));
+                    cellChildren.push(imgWithBorder(bytes, imgType, docW, docH));
                   }
                 }
               }
@@ -1223,7 +1239,7 @@ async function genererDocx(includeGuide=false) {
               const imgType_2 = (ext_2 === 'jpg' || ext_2 === 'jpeg') ? 'jpg' : 'png';
               const docW_2 = Math.min(400, imgData2.w);
               const docH_2 = Math.round(docW_2 / (imgData2.w / imgData2.h));
-              children.push(new Paragraph({ border: IMG_BORDERS, children: [new docx.ImageRun({ data: bytes_2, type: imgType_2, transformation: { width: docW_2, height: docH_2 } })] }));
+              children.push(imgWithBorder(bytes_2, imgType_2, docW_2, docH_2));
             }
           }
         } else if(q.reponse.type === 'tableau_3col') {
