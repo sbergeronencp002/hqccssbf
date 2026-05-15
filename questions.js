@@ -1268,7 +1268,7 @@ const QUESTIONS = [
     oi: "Déterminer des changements et des continuités",
     periode: "P2 — 1608 – 1760",
     points: 2,
-    enonce: "Indiquez un élément de continuité dans la façon de faire du commerce en Amérique du Nord durant les \npériodes présentées dans les documents A et B.",
+    enonce: "Indiquez un élément de continuité dans la façon de faire du commerce en Amérique du Nord durant les périodes présentées dans les documents A et B.",
     aspects: [
       {
         aspect: "Commerce des fourrures"
@@ -1280,8 +1280,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A - Échanges vers 1600",
-            ref: "troc_1600.png",
-            source: "MEES."
+            ref: "troc_1600.png"
           }
         ]
       },
@@ -1290,8 +1289,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B - Échanges vers 1700",
-            ref: "troc_1700.png",
-            source: "Bibliothèque et Archives Canada/C-007024."
+            ref: "troc_1700.png"
           }
         ]
       }
