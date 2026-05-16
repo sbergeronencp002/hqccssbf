@@ -98,7 +98,24 @@ const REGLETTES = {
       "1 point",
       "0 point"
     ],
-    niveaux: []
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
   },
   "Q7": {
     oi: "Dégager des différences et des similitudes",
@@ -347,12 +364,12 @@ const REGLETTES = {
   "Q19": {
     oi: "Situer dans l'espace",
     colonnes: [
-      "2 points",
+      "1 point",
       "0 point"
     ],
     niveaux: [
       {
-        pts: 2,
+        pts: 1,
         desc: "L'élève situe le fait dans l'espace."
       },
       {
@@ -989,6 +1006,84 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q51": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q52": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
+  },
+  "Q53": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
+  },
+  "Q54": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -1091,6 +1186,9 @@ const IMAGE_DB = {
   },
   "1500_chaman.jpg": {
     src: "images/1500_chaman.jpg"
+  },
+  "1500_reseau_echanges.png": {
+    src: "images/1500_reseau_echanges.png"
   }
 }
 
@@ -1144,7 +1242,7 @@ const QUESTIONS = [
           {
             titre: "Document A - Fondation de Québec",
             ref: "fondation_quebec_1608",
-            source: "Samuel de Champlain/Bibliothèque et Archives Canada/MIKAN 3919911."
+            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
         ]
       },
@@ -1174,7 +1272,7 @@ const QUESTIONS = [
           {
             titre: "Document D",
             texte: "« [Cartier] choisit […] l’embouchure de la rivière Cap-Rouge, où il établit la colonie de Charlesbourg-Royal. Il y fait construire deux forts. En explorant les lieux, les Français croient découvrir des feuilles d’or et des diamants. Devant l’hostilité grandissante des Amérindiens, Cartier décide de rentrer en France […] »",
-            source: "Jean-Pierre CHARLAND, À l’aube du XXIe siècle, avec la collaboration de Jacques  \nSaint-Pierre, manuel de l’élève, histoire du Québec et du Canada, 4e secondaire, \nMontréal, Lidec, 1997, p. 17."
+            source: "Jean-Pierre CHARLAND, À l’aube du XXIe siècle, avec la collaboration de Jacques  Saint-Pierre, manuel de l’élève, histoire du Québec et du Canada, 4e secondaire, Montréal, Lidec, 1997, p. 17."
           }
         ]
       }
@@ -1203,7 +1301,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A - Champlain et ses alliés combattant les Iroquois",
-            ref: "bataille_lac_champlain.png"
+            ref: "bataille_lac_champlain.png",
+            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
         ]
       }
@@ -1238,7 +1337,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A - La déportation des Acadiens",
-            ref: "deportation_acadien.png"
+            ref: "deportation_acadien.png",
+            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
         ]
       },
@@ -1257,7 +1357,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C - La révolte de Pontiac",
-            ref: "revolte_pontiact.png"
+            ref: "revolte_pontiact.png",
+            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
         ]
       },
@@ -1312,7 +1413,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "loyalistes_province_quebec"
+            ref: "loyalistes_province_quebec",
+            source: "MEES."
           }
         ]
       }
@@ -1341,7 +1443,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             texte: "« […] les seigneurs, qui se voient offrir des fonctions civiles et militaires, qui […] assistent à la pleine restauration des lois traditionnelles sur la propriété (c’est-à-dire le régime seigneurial), pèseront […] de tout leur prestige en faveur de l’appui au gouvernement. »",
-            source: "Jean-Pierre CHARLAND, À l’aube du XXIe siècle, avec la collaboration de Jacques Saint-Pierre, manuel de l’élève, histoire du Québec et du Canada, 4e secondaire, Montréal, Lidec, \n1997, p. 166."
+            source: "Jean-Pierre CHARLAND, À l’aube du XXIe siècle, avec la collaboration de Jacques Saint-Pierre, manuel de l’élève, histoire du Québec et du Canada, 4e secondaire, Montréal, Lidec, 1997, p. 166."
           }
         ]
       },
@@ -1391,7 +1493,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             texte: "« Malgré toute l’énergie déployée par d’enthousiastes Fils de la liberté montréalais, la majeure partie de la population de la province n’était pas plus en faveur d’une action militaire que ne l’était Papineau lui-même jusqu’à la dernière minute. »",
-            auteur: "Elinor Kyte Senior, 1985."
+            source: "Greer, Allan. Habitants et Patriotes : la Rébellion de 1837 dans les campagnes du Bas-Canada. Montréal, Boréal, 1997."
           }
         ]
       },
@@ -1401,7 +1503,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             texte: "« Ces soulèvements avaient […] des racines assez solides dans la masse1. Ils n’ont pas échoué  faute de motivations suffisantes dans les milieux populaires ou par pénurie de fusils. […] Le problème se situe d’abord au niveau de la qualité du leadership fourni par les élites [professionnelles] qui encadraient le mouvement insurrectionnel. »",
-            auteur: "Fernand Ouellet, 1967."
+            source: "Ouellet, Fernand. Le Bas-Canada, 1791-1840 : changements structuraux et crise. Ottawa, Les Presses de l’Université d’Ottawa, 1976."
           }
         ]
       }
@@ -1430,7 +1532,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "commerce_fourrures.png"
+            ref: "commerce_fourrures.png",
+            source: "MEES."
           }
         ]
       }
@@ -1460,7 +1563,8 @@ const QUESTIONS = [
           {
             titre: "Document A",
             texte: "« Après avoir visité avec soin presque toutes les habitations du Canada […], j’ai trouvé partout des familles très nombreuses. Les pères et mères ont d’ordinaire 10 ou 12 enfants et, assez souvent, 15, 16, 17, et les ayant interrogés bien des fois combien il en était mort, la plupart ont répondu aucun […] »",
-            source: "Jacques de Meulles, intendant"
+            auteur: "Jacques de Meulles, intendant de la Nouvelle-France.",
+            source: "Kalm, Pehr. Voyage de Pehr Kalm au Canada en 1749. Traduction française publiée par Pierre-Georges Roy, Québec, 1880."
           }
         ]
       },
@@ -1487,16 +1591,20 @@ const QUESTIONS = [
       ]
     },
     guide: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Cause",
-          valeur: "B"
-        },
-        {
-          label: "Conséquence",
-          valeur: "1"
-        }
+      type: "grille",
+      entetes: [
+        "Élément",
+        "Document"
+      ],
+      rangees: [
+        [
+          "Cause",
+          "B"
+        ],
+        [
+          "Conséquence",
+          "1"
+        ]
       ]
     }
   },
@@ -1548,7 +1656,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A - Échanges vers 1600",
-            ref: "troc_1600.png"
+            ref: "troc_1600.png",
+            source: "MEES."
           }
         ]
       },
@@ -1557,7 +1666,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B - Échanges vers 1700",
-            ref: "troc_1700.png"
+            ref: "troc_1700.png",
+            source: "MEES."
           }
         ]
       }
@@ -1597,7 +1707,7 @@ const QUESTIONS = [
           {
             titre: "Document B - 1791 à 1840",
             ref: "org_pol_acte_const.png",
-            source: "MEES."
+            source: "Récitus."
           }
         ]
       }
@@ -1629,8 +1739,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "Les membres de ce groupe constituent une élite montante. Inspirés par les idées libérales, bon nombre d’entre eux s’impliquent en politique en formant le groupe dirigeant du Parti patriote.",
-            source: "MEES."
+            texte: "« [...] ce groupe est composé principalement d’avocats, de notaires, de médecins et de journalistes prend une place croissante dans la vie politique du Bas-Canada et revendique une plus grande influence au sein des institutions. »",
+            source: "Ouellet, Fernand. Le Bas-Canada, 1791-1840 : changements structuraux et crise. Ottawa, Presses de l’Université d’Ottawa, 1976."
           }
         ]
       },
@@ -1639,8 +1749,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "Ce groupe prêche la soumission à l’administration coloniale et dénonce les idées libérales défendues par les Patriotes. Par la suite, ce groupe augmentera son influence sociale et politique.",
-            source: "MEES."
+            texte: "« [...] ce groupe est composé principalement d'évêques et de prêtres invitent les fidèles à demeurer soumis aux autorités civiles. Ils présentent l’obéissance au gouvernement et le respect de l’ordre établi comme des devoirs essentiels du bon chrétien. »",
+            source: "Trudel, Marcel. Initiation à la Nouvelle-France. Montréal, Holt, Rinehart et Winston, 1968."
           }
         ]
       },
@@ -1649,8 +1759,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "En majorité composé de personnes d’origine britannique, ce groupe occupe les postes importants de l’administration coloniale. Il est farouchement opposé aux revendications des Patriotes.",
-            source: "MEES."
+            texte: "« « [...] au Bas-Canada ce groupe est composé principalement  de marchands, de négociants, de banquiers et d’armateurs. Elle tire sa richesse du commerce, du transport maritime et des activités financières. »",
+            source: "Dickinson, John A., et Brian Young. Brève histoire socio-économique du Québec. Québec, Septentrion, 2003."
           }
         ]
       }
@@ -1670,20 +1780,24 @@ const QUESTIONS = [
       ]
     },
     guide: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Bourgeoisie professionnelle",
-          valeur: "1"
-        },
-        {
-          label: "Bourgeoisie d'affaires",
-          valeur: "3"
-        },
-        {
-          label: "Clergé catholique",
-          valeur: "2"
-        }
+      type: "grille",
+      entetes: [
+        "Élément",
+        "Document"
+      ],
+      rangees: [
+        [
+          "Bourgeoisie professionnelle",
+          "1"
+        ],
+        [
+          "Bourgeoisie d'affaires",
+          "3"
+        ],
+        [
+          "Clergé catholique",
+          "2"
+        ]
       ]
     }
   },
@@ -1716,6 +1830,16 @@ const QUESTIONS = [
             titre: "Document B",
             texte: "« 4. – Dans la situation actuelle du Bas-Canada, on ne saurait recommander que le Conseil législatif de cette province devienne électif […]\n\n5. – S’il est bon de réformer la composition du Conseil exécutif dans le Bas-Canada, il n’est pas à conseiller de lui donner la responsabilité que réclame pour lui la Chambre d’Assemblée de cette province. […]\n\n8. – […] que le gouverneur de la province ait le pouvoir de prendre sur les autres revenus de Sa Majesté telle somme […] qui devra être versée entre les mains du receveur général de la province pour le paiement des comptes […] »",
             source: "Extraits des résolutions présentées par  le gouvernement britannique, 1837"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« [...] les demandes constituent un long exposé des griefs formulés par les députés patriotes. Elles dénoncent les abus du pouvoir colonial et réclament des réformes politiques destinées à accorder davantage de pouvoir aux représentants élus du Bas-Canada. »",
+            source: "Ouellet, Fernand. Le Bas-Canada, 1791-1840 : changements structuraux et crise. Ottawa, Presses de l’Université d’Ottawa, 1976."
           }
         ]
       }
@@ -1775,7 +1899,7 @@ const QUESTIONS = [
           {
             titre: "Document A - Principaux porte-parole du camp du Oui",
             ref: "camp_oui_1995.png",
-            source: "Jacques Boissinot/Presse canadienne/655078."
+            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
         ]
       },
@@ -1806,7 +1930,7 @@ const QUESTIONS = [
           {
             titre: "Document D - Signature de la Proclamation de la loi  constitutionnelle canadienne",
             ref: "rapatriment_constitution.png",
-            source: "Robert Cooper/Bibliothèque et Archives Canada/PA-141503."
+            source: "Bibliothèque et Archives Canada."
           }
         ]
       }
@@ -1836,7 +1960,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "crise_oka.png",
-            source: "Photo : Jacques Nadeau/Archives Le Devoir, dans « La crise d’Oka en huit dates », Le  Devoir, [En ligne], 4 juillet 2015. [http://www.ledevoir.com/societe/actualites-en societe/444276/la-crise-d-oka-en-sept-dates] (Consulté le 18 juin 2017)."
+            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
         ]
       }
@@ -1868,7 +1992,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A - Deux nouvelles sociétés d'État",
-            ref: "logos_societe_etat.png"
+            ref: "logos_societe_etat.png",
+            source: "MEES."
           }
         ]
       },
@@ -1887,7 +2012,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            ref: "barrages_hydro_baie_james.png"
+            ref: "barrages_hydro_baie_james.png",
+            source: "MEES."
           }
         ]
       },
@@ -1915,7 +2041,7 @@ const QUESTIONS = [
     niveau: 4,
     oi: "Situer dans l'espace",
     periode: "P7 — 1945 – 1980",
-    points: 2,
+    points: 1,
     enonce: "Selon le document A, quelle lettre correspond à un territoire exploité pour son minerai de fer dans la deuxième moitié du 20e siècle?",
     aspects: [
       {
@@ -1968,7 +2094,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             ref: "victoire_pq_1976.png",
-            source: "Archives Le Devoir, « Il y a 35 ans, le PQ prenait le pouvoir », Le Devoir,  [En ligne], 15 novembre 2011.  [http://www.ledevoir.com/politique/quebec/336137/il-y-a-35-ans-le-pq prenait-le-pouvoir] (Consulté le 18 juin 2017)."
+            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
         ]
       }
@@ -2001,7 +2127,8 @@ const QUESTIONS = [
           {
             titre: "Document A",
             texte: "« Je ne reconnais à aucun gouvernement le droit de nous imposer le service obligatoire pour prendre part aux guerres impériales. […] Je serai pendu ou fusillé, mais je demanderai toujours, avant la conscription, des élections et un référendum. »",
-            auteur: "Armand Lavergne"
+            auteur: "Armand Lavergne.",
+            source: "Levitt, Joseph (dir.). Henri Bourassa on Imperialism and Biculturalism, 1900–1918. Toronto, Macmillan of Canada, 1970."
           }
         ]
       },
@@ -2011,7 +2138,8 @@ const QUESTIONS = [
           {
             titre: "Document B",
             texte: "« Que l’on pèse bien ces paroles : la conscription marquerait, pour les Canadiens français, le commencement d’une évolution qui ne tarderait pas à transformer en un peuple révolutionnaire la population la plus paisible […] des deux Amériques. Une fois déchaîné, cet esprit révolutionnaire ne s’arrêterait pas en route; il ne s’attaquerait pas qu’au régime militaire : il se manifesterait à l’usine, dans les champs, partout, dans toutes les sphères de la vie industrielle, sociale et politique. »",
-            auteur: "Henri Bourassa"
+            auteur: "Henri Bourassa.",
+            source: "Bourassa, Henri. « La conscription ». Le Devoir, 1917."
           }
         ]
       },
@@ -2021,7 +2149,8 @@ const QUESTIONS = [
           {
             titre: "Document C",
             texte: "« Il faut obtenir des renforts ou les divisions vont s’émietter. Les renforts actuellement disponibles ne dureront que quelques mois […] [La] question qui se pose est celle-ci : le Canada accepte-t-il de diminuer son effort dans la période la plus critique de la guerre […]? Je suis sûr que la réponse de la Chambre et du pays sera la même, à savoir que le Canada ne peut et ne doit lâcher prise. […] Cette loi s’appuie sur un principe […] c’est que si l’État a des devoirs envers ses sujets, ces derniers ont de leur côté des devoirs à remplir envers l’État. »",
-            auteur: "Robert L. Borden, premier ministre du Canada"
+            auteur: "Robert L. Borden, premier ministre du Canada.",
+            source: "Borden, Robert. Discours sur la Loi du service militaire, Débats de la Chambre des communes du Canada, 18 mai 1917."
           }
         ]
       }
@@ -2051,7 +2180,8 @@ const QUESTIONS = [
           {
             titre: "Document A",
             texte: "« Chaque pas fait dans la forêt par le défrichement est une conquête qui fortifie nos droits, nos institutions et nos lois. “Emparons-nous du sol” est un motto qui devrait être écrit en lettres d’or au-dessus de la porte de chaque maison. Négliger [cela], c’est porter un coup fatal au pays et détruire l’œuvre glorieuse de nos ancêtres. »",
-            auteur: "Curé Antoine LABELLE, 1888"
+            auteur: "Curé Antoine LABELLE, 1888.",
+            source: "Labelle, Antoine. Discours et écrits sur la colonisation, vers 1870-1890."
           }
         ]
       },
@@ -2061,7 +2191,8 @@ const QUESTIONS = [
           {
             titre: "Document B",
             texte: "« Le Canada n’a rien à envier aux autres pays, et nous avons un vaste champ à exploiter. Que de millions de colons pourraient s’établir dans les belles vallées du lac Saint-Jean, du lac Témiscamingue, du lac Nipissing et de la rivière Matapédia […] \n\n[…] emparons-nous du sol si nous voulons être un peuple fort, grand, heureux et prospère. »",
-            auteur: "Charles-Edmond ROULEAU, 1896"
+            auteur: "Charles-Edmond ROULEAU, 1896.",
+            source: "Rouleau, Charles-Edmond. Nos lointaines campagnes. Québec, 1896."
           }
         ]
       }
@@ -3218,5 +3349,124 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Les femmes aînées du clan ou les mères de clan."
+  },
+  {
+    id: "Q51",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, nommez la pratique utilisée par les Premières Nations pour échanger des biens.",
+    aspects: [
+      {
+        aspect: "Réseaux d'échange autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les réseaux d’échange relient les nations autochtones sur de vastes territoires. Les Iroquoiens et les Algonquiens y obtiennent des ressources complémentaires et entretiennent des relations régulières fondées sur la réciprocité et les obligations mutuelles. »",
+            auteur: "Olive Patricia Dickason"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le troc."
+  },
+  {
+    id: "Q52",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    enonce: "À partir du document A, indiquez une conséquence des réseaux d’échange sur l’accès aux ressources des nations autochtones.",
+    aspects: [
+      {
+        aspect: "Réseaux d'échange autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "1500_reseau_echanges.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les nations autochtones ont accès à des ressources qu’elles ne trouvent pas sur leur propre territoire ou elles obtiennent des ressources provenant de régions éloignées ou des biens circulent sur de vastes territoires."
+  },
+  {
+    id: "Q53",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    enonce: "À partir du document A, indiquez une conséquence de l’utilisation des voies d’eau sur les échanges entre les nations autochtones.",
+    aspects: [
+      {
+        aspect: "Réseaux d'échange autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "1500_reseau_echanges.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les ressources peuvent être transportées sur de longues distances ou les échanges entre les nations sont facilités ou les réseaux d’échange s’étendent sur de vastes territoires."
+  },
+  {
+    id: "Q54",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, nommez un moyen utilisé par les nations autochtones pour transporter des ressources sur les voies d’eau.",
+    aspects: [
+      {
+        aspect: "Réseaux d'échange autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les Algonquiens utilisent de longues embarcations faites d’écorce de bouleau. Très légères, elles peuvent être transportées à la main lors des portages et permettent de circuler rapidement sur les rivières et les lacs avec des marchandises. »",
+            auteur: "Samuel de Champlain.",
+            source: "Champlain, Samuel de. Les Voyages de la Nouvelle-France occidentale, dite Canada. Paris, 1613."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le canot d’écorce."
   }
 ]
