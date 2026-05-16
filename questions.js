@@ -1706,7 +1706,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B - 1791 à 1840",
-            ref: "org_pol_acte_const.png"
+            ref: "org_pol_acte_const.png",
+            source: "Récitus."
           }
         ]
       }
