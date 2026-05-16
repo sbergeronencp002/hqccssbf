@@ -55,6 +55,16 @@ git push https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.gi
 git fetch origin claude/hqc-cssbf-project-Fuk0V
 ```
 
+### Fichiers clés (mis à jour)
+
+| Fichier | Rôle |
+|---------|------|
+| `backups/questions-YYYY-MM-DD_HH-MM.js` | Backups auto avant chaque publication (admin) |
+| `contexte.js` | Éditeur intégré dans admin.html — section « Contexte » en bas |
+
+### Cache-bust actuel
+`app.js?v=v10`, `style.css?v=v10` — incrémenter à chaque changement majeur dans index.html.
+
 ## Images
 
 Toujours compresser les PNG avec `pngquant` avant de commiter :
@@ -62,3 +72,19 @@ Toujours compresser les PNG avec `pngquant` avant de commiter :
 pngquant --force --quality=65-85 --output <fichier>.png <fichier>.png
 ```
 Vérifier que la taille est raisonnable (< 400 Ko idéalement) avant de pousser.
+
+## Renouvellement du PAT GitHub
+
+Le PAT `github_pat_11CA47PMQ0...` expire. Quand il expire :
+1. Aller sur https://github.com/settings/tokens
+2. Retrouver le token `hqccssbf-admin` (ou similaire) → cliquer « Regenerate »
+3. Copier le nouveau token
+4. Mettre à jour la remote push URL localement :
+   ```bash
+   PAT=github_pat_NOUVEAU_TOKEN
+   git remote set-url --push origin https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git
+   ```
+5. Mettre à jour ce fichier CLAUDE.md avec le nouveau PAT
+6. Le prof met à jour son token dans admin.html (champ Token GitHub)
+
+Permissions requises sur le PAT : `repo` (accès complet au dépôt).

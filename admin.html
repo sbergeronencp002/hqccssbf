@@ -286,6 +286,25 @@ header a:hover { color: #fff; }
       <span id="publish-status" style="font-size:.82rem;color:var(--ink-3)"></span>
     </div>
 
+    <!-- CONTEXTE (périodes & aspects) -->
+    <div class="section" style="margin-top:2rem">
+      <div class="section-title" style="cursor:pointer;user-select:none" onclick="this.nextElementSibling.classList.toggle('hidden')">
+        Contexte — périodes &amp; aspects <span style="font-size:.75rem;color:var(--ink-3);font-weight:400">(cliquer pour ouvrir)</span>
+      </div>
+      <div class="hidden">
+        <p style="font-size:.8rem;color:var(--ink-3);margin-bottom:.75rem">Modifie directement le contenu de <code>contexte.js</code>. Valider avant de publier.</p>
+        <div class="field">
+          <textarea id="contexte-raw" rows="18" spellcheck="false"
+            style="font-family:monospace;font-size:0.78rem;resize:vertical;background:var(--paper-2);border:1px solid var(--border);border-radius:6px;padding:.75rem;width:100%;box-sizing:border-box"></textarea>
+        </div>
+        <div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap">
+          <button class="btn-secondary" onclick="loadContexteJs()">⟳ Charger</button>
+          <button class="btn-primary" onclick="publierContexteJs()">⬆ Publier contexte</button>
+          <span id="contexte-status" style="font-size:.82rem;color:var(--ink-3)"></span>
+        </div>
+      </div>
+    </div>
+
   </div><!-- /container -->
 </div><!-- /app -->
 
@@ -501,7 +520,8 @@ async function fetchFreshState(token) {
   if(!r.ok) throw new Error('Impossible de lire questions.js : ' + r.status);
   const data = await r.json();
   questionsFileSha = data.sha;
-  const binary = atob(data.content.replace(/\n/g,''));
+  const rawB64 = data.content.replace(/\n/g,'');
+  const binary = atob(rawB64);
   const bytes = new Uint8Array(binary.length);
   for(let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
   const content = new TextDecoder('utf-8').decode(bytes);
@@ -510,7 +530,7 @@ async function fetchFreshState(token) {
   currentQuestions = result.QUESTIONS;
   currentReglettes = result.REGLETTES;
   currentImageDb   = result.IMAGE_DB;
-  return result;
+  return { ...result, rawB64 };
 }
 
 async function supprimerQuestion() {
@@ -604,7 +624,7 @@ async function uploadImage() {
   const btn = document.getElementById('btn-upload');
   btn.disabled = true; statusEl.textContent = '⏳ Téléversement…';
   try {
-    const b64 = await new Promise((res,rej) => {
+    const imgInfo = await new Promise((res,rej) => {
       const reader = new FileReader();
       reader.onload = e => {
         const isJpeg = file.type === 'image/jpeg';
@@ -618,7 +638,7 @@ async function uploadImage() {
           canvas.width = w; canvas.height = h;
           canvas.getContext('2d').drawImage(img, 0, 0, w, h);
           const dataUrl = canvas.toDataURL(isJpeg ? 'image/jpeg' : 'image/png', isJpeg ? 0.78 : undefined);
-          res(dataUrl.split(',')[1]);
+          res({ b64: dataUrl.split(',')[1], w, h });
         };
         img.onerror = rej;
         img.src = e.target.result;
@@ -629,9 +649,10 @@ async function uploadImage() {
     const putResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/images/${name}`, {
       method:'PUT',
       headers:{ Authorization:`token ${token}`, 'Content-Type':'application/json' },
-      body: JSON.stringify({ message:`Ajouter image : ${name}`, content:b64, branch:BRANCH })
+      body: JSON.stringify({ message:`Ajouter image : ${name}`, content:imgInfo.b64, branch:BRANCH })
     });
     if(!putResp.ok) { const err=await putResp.json(); throw new Error(err.message||putResp.status); }
+    currentImageDb[name] = { src: 'images/' + name, w: imgInfo.w, h: imgInfo.h };
     statusEl.textContent = `✓ ${name} téléversé !`;
     document.getElementById('upload-file').value='';
     document.getElementById('upload-name').value='';
@@ -1119,7 +1140,15 @@ async function publier() {
 
   try {
     // Reload full content from GitHub before modifying (prevents data loss from stale state)
-    await fetchFreshState(token);
+    const { rawB64 } = await fetchFreshState(token);
+
+    // Backup automatique (fire-and-forget)
+    const ts = new Date().toISOString().slice(0,16).replace('T','_').replace(':','-');
+    fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/backups/questions-${ts}.js`, {
+      method:'PUT',
+      headers:{ Authorization:`token ${token}`, 'Content-Type':'application/json' },
+      body: JSON.stringify({ message:`Backup auto ${ts}`, content: rawB64, branch: BRANCH })
+    }).catch(()=>{});
 
     const q = buildQuestion();
     const r = buildReglette(q.id);
@@ -1183,7 +1212,12 @@ async function publier() {
     document.getElementById('next-id-badge').textContent = nextId;
 
     toast(editingId ? `${q.id} modifié !` : `${q.id} publié !`, 'ok');
-    status.textContent = `✓ ${q.id} ${editingId?'modifié':'ajouté'} — ${new Date().toLocaleTimeString('fr-CA')}`;
+    const statusMsg = `✓ ${q.id} ${editingId?'modifié':'ajouté'}`;
+    let secs = 30;
+    const cd = setInterval(() => {
+      status.textContent = secs > 0 ? `${statusMsg} — visible dans ${secs}s` : `${statusMsg} — visible maintenant`;
+      if(secs-- <= 0) clearInterval(cd);
+    }, 1000);
     editingId = null;
     resetForm(true);
 
@@ -1215,6 +1249,59 @@ function resetForm(keepId=false) {
   document.getElementById('guide-type').value = 'grille';
   docCount = 0; colCount = 0;
   updateGuideUI();
+}
+
+// ── CONTEXTE ──────────────────────────────────────────────────────────
+let contexteFileSha = '';
+
+async function loadContexteJs() {
+  const token = getToken();
+  if(!token) { toast('Token manquant.', 'err'); return; }
+  const el = document.getElementById('contexte-status');
+  el.textContent = '⏳ Chargement…';
+  try {
+    const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/contexte.js?ref=${BRANCH}`,
+      { headers: { Authorization: `token ${token}` }, cache: 'no-store' });
+    if(!r.ok) throw new Error(r.status);
+    const data = await r.json();
+    contexteFileSha = data.sha;
+    const binary = atob(data.content.replace(/\n/g,''));
+    const bytes = new Uint8Array(binary.length);
+    for(let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+    document.getElementById('contexte-raw').value = new TextDecoder('utf-8').decode(bytes);
+    el.textContent = '✓ Chargé';
+  } catch(e) { el.textContent = '✗ ' + e.message; toast('Erreur : ' + e.message, 'err'); }
+}
+
+async function publierContexteJs() {
+  const token = getToken();
+  if(!token) { toast('Token manquant.', 'err'); return; }
+  if(!contexteFileSha) { toast('Chargez d\'abord le contexte.', 'err'); return; }
+  const content = document.getElementById('contexte-raw').value;
+  try { new Function(content); } catch(e) { toast('JS invalide : ' + e.message, 'err'); return; }
+  const el = document.getElementById('contexte-status');
+  el.textContent = '⏳ Publication…';
+  try {
+    const encoded = btoa(unescape(encodeURIComponent(content)));
+    const putResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/contexte.js`, {
+      method:'PUT',
+      headers:{ Authorization:`token ${token}`, 'Content-Type':'application/json' },
+      body: JSON.stringify({ message:'Mettre à jour contexte.js', content: encoded, sha: contexteFileSha, branch: BRANCH })
+    });
+    if(!putResp.ok) {
+      let msg = putResp.status;
+      try { const e = await putResp.json(); msg = e.message || msg; } catch(_) {}
+      throw new Error(msg);
+    }
+    const result = await putResp.json();
+    contexteFileSha = result.content.sha;
+    let secs = 30;
+    const cd = setInterval(() => {
+      el.textContent = secs > 0 ? `✓ Publié — visible dans ${secs}s` : '✓ Visible maintenant';
+      if(secs-- <= 0) clearInterval(cd);
+    }, 1000);
+    toast('contexte.js publié !', 'ok');
+  } catch(e) { el.textContent = '✗ ' + e.message; toast('Erreur : ' + e.message, 'err'); }
 }
 
 // ── TOAST ─────────────────────────────────────────────────────────────

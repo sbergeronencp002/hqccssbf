@@ -393,35 +393,52 @@ function flashBtn(btn, msg) {
   setTimeout(()=>{ btn.textContent=orig; btn.classList.remove('copied'); }, 2000);
 }
 
+const PAGE_SIZE = 50;
+let currentFiltered = [];
+
+function buildTileHtml(q) {
+  const st = oiStyle(q.oi);
+  const aspect = q.aspects.map(a => a.aspect).join(' · ');
+  const inPanier = panier.includes(q.id);
+  const pts = q.points || 0;
+  const diffColor = pts >= 3 ? '#c0392b' : pts >= 2 ? '#d35400' : '#27ae60';
+  const diffLabel = pts >= 3 ? 'Difficile' : pts >= 2 ? 'Modérée' : 'Facile';
+  return `<div class="q-tile${inPanier ? ' in-panier' : ''}" id="tile-${q.id}"
+    style="--tile-color:${st.color};background:#fff" onclick="openQModal('${q.id}')">
+    <div class="q-tile-bar" style="display:none"></div>
+    <div class="q-tile-content">
+      <div class="q-tile-oi" style="display:block;font-size:1.1rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:5px 12px;border-radius:6px;color:${st.color};background:${st.bg};line-height:1.3;word-break:break-word">${q.oi}</div>
+      <div class="q-tile-aspect" style="font-size:0.9rem;font-weight:400;color:#6B6560;margin-top:2px">${aspect}</div>
+      <div class="q-tile-diff" style="margin-top:6px;display:flex;align-items:center;gap:5px">
+        <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${diffColor};flex-shrink:0"></span>
+        <span style="font-size:0.72rem;color:${diffColor};font-weight:500">${diffLabel}</span>
+        <span style="font-size:0.72rem;color:var(--ink-3);margin-left:2px">${pts} pt${pts!==1?'s':''}</span>
+      </div>
+    </div>
+    <span class="q-tile-check" onclick="event.stopPropagation();togglePanier('${q.id}')">✓</span>
+  </div>`;
+}
+
 function render(list) {
+  currentFiltered = list;
   const container = document.getElementById('q-list');
   if(!list.length) {
     container.innerHTML = `<div class="empty-state"><span class="big">0</span>Aucune question ne correspond aux filtres.</div>`;
     return;
   }
+  container.innerHTML = currentFiltered.slice(0, PAGE_SIZE).map(buildTileHtml).join('');
+  const rem = currentFiltered.length - PAGE_SIZE;
+  if(rem > 0) {
+    container.insertAdjacentHTML('beforeend',
+      `<div class="voir-plus-wrap"><button class="voir-plus-btn" onclick="renderMore()">Voir ${rem} autre${rem>1?'s':''} →</button></div>`);
+  }
+}
 
-  container.innerHTML = list.map(q => {
-    const st = oiStyle(q.oi);
-    const aspect = q.aspects.map(a => a.aspect).join(' · ');
-    const inPanier = panier.includes(q.id);
-    const pts = q.points || 0;
-    const diffColor = pts >= 3 ? '#c0392b' : pts >= 2 ? '#d35400' : '#27ae60';
-    const diffLabel = pts >= 3 ? 'Difficile' : pts >= 2 ? 'Modérée' : 'Facile';
-    return `<div class="q-tile${inPanier ? ' in-panier' : ''}" id="tile-${q.id}"
-      style="--tile-color:${st.color};background:#fff" onclick="openQModal('${q.id}')">
-      <div class="q-tile-bar" style="display:none"></div>
-      <div class="q-tile-content">
-        <div class="q-tile-oi" style="display:block;font-size:1.1rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:5px 12px;border-radius:6px;color:${st.color};background:${st.bg};line-height:1.3;word-break:break-word">${q.oi}</div>
-        <div class="q-tile-aspect" style="font-size:0.9rem;font-weight:400;color:#6B6560;margin-top:2px">${aspect}</div>
-        <div class="q-tile-diff" style="margin-top:6px;display:flex;align-items:center;gap:5px">
-          <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${diffColor};flex-shrink:0"></span>
-          <span style="font-size:0.72rem;color:${diffColor};font-weight:500">${diffLabel}</span>
-          <span style="font-size:0.72rem;color:var(--ink-3);margin-left:2px">${pts} pt${pts!==1?'s':''}</span>
-        </div>
-      </div>
-      <span class="q-tile-check" onclick="event.stopPropagation();togglePanier('${q.id}')">✓</span>
-    </div>`;
-  }).join('');
+function renderMore() {
+  const container = document.getElementById('q-list');
+  container.querySelector('.voir-plus-wrap')?.remove();
+  const shown = container.querySelectorAll('.q-tile').length;
+  container.insertAdjacentHTML('beforeend', currentFiltered.slice(shown).map(buildTileHtml).join(''));
 }
 
 async function initSite() {
