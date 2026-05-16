@@ -1109,7 +1109,7 @@ async function genererDocx(includeGuide=false) {
       const showScore  = !!document.getElementById('exam-score')?.checked;
       const showComm   = !!document.getElementById('exam-commentaires')?.checked;
       const totalDocxPts = panierQuestions.reduce((s,q)=>s+(q.points||0), 0);
-      const hasHeader = examNom || showEleve || showGroupe || showDate || showScore || showComm;
+      const hasHeader = examNom || showEleve || showGroupe || showDate || showScore;
 
       if(hasHeader) {
         if(examNom) {
@@ -1123,14 +1123,6 @@ async function genererDocx(includeGuide=false) {
         if(showGroupe) children.push(new Paragraph({ children: [new TextRun({ text: 'Groupe : ________________________________', font:'Aptos', size:22 })] }));
         if(showDate)   children.push(new Paragraph({ children: [new TextRun({ text: 'Date : __________________________________', font:'Aptos', size:22 })] }));
         if(showScore)  children.push(new Paragraph({ alignment: AlignmentType.RIGHT, children: [new TextRun({ text: `Résultat : _____ / ${totalDocxPts} pts`, font:'Aptos', size:22 })] }));
-        if(showComm) {
-          children.push(new Paragraph({ children: [new TextRun({ text:'' })] }));
-          children.push(new Paragraph({ children: [new TextRun({ text: 'Commentaires :', font:'Aptos', size:20, bold:true })] }));
-          const ligne = '_'.repeat(72);
-          children.push(new Paragraph({ children: [new TextRun({ text: ligne, font:'Aptos', size:20, color:'AAAAAA' })] }));
-          children.push(new Paragraph({ children: [new TextRun({ text: ligne, font:'Aptos', size:20, color:'AAAAAA' })] }));
-          children.push(new Paragraph({ children: [new TextRun({ text: ligne, font:'Aptos', size:20, color:'AAAAAA' })] }));
-        }
         children.push(new Paragraph({ children: [new TextRun({ text:'' })] }));
         children.push(new Paragraph({ children: [new TextRun({ text:'' })] }));
       }
@@ -1374,6 +1366,25 @@ async function genererDocx(includeGuide=false) {
 
       children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
     });
+
+    // Commentaires à la fin du cahier
+    if(!includeGuide && !!document.getElementById('exam-commentaires')?.checked) {
+      children.push(new Paragraph({ children: [new TextRun({ text:'' })] }));
+      children.push(new Paragraph({ children: [new TextRun({ text: 'Commentaires :', font:'Aptos', size:20, bold:true })] }));
+      const BN = { style: BorderStyle.NONE, size: 0, color: 'FFFFFF' };
+      const BL = { style: BorderStyle.SINGLE, size: 4, color: 'AAAAAA' };
+      const mkCommRow = () => new TableRow({ children: [new TableCell({
+        width: { size: PAGE_W, type: WidthType.DXA },
+        borders: { top: BN, bottom: BL, left: BN, right: BN },
+        margins: { top: 180, bottom: 0, left: 0, right: 0 },
+        children: [new Paragraph({ children: [new TextRun({ text: '', font:'Aptos', size:22 })] })]
+      })] });
+      children.push(new Table({
+        width: { size: PAGE_W, type: WidthType.DXA },
+        columnWidths: [PAGE_W],
+        rows: [mkCommRow(), mkCommRow(), mkCommRow()]
+      }));
+    }
 
     } // end else (cahier mode)
 
