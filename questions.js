@@ -1493,7 +1493,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             texte: "« Malgré toute l’énergie déployée par d’enthousiastes Fils de la liberté montréalais, la majeure partie de la population de la province n’était pas plus en faveur d’une action militaire que ne l’était Papineau lui-même jusqu’à la dernière minute. »",
-            auteur: "Elinor Kyte Senior, 1985."
+            source: "Greer, Allan. Habitants et Patriotes : la Rébellion de 1837 dans les campagnes du Bas-Canada. Montréal, Boréal, 1997."
           }
         ]
       },
@@ -1503,7 +1503,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             texte: "« Ces soulèvements avaient […] des racines assez solides dans la masse1. Ils n’ont pas échoué  faute de motivations suffisantes dans les milieux populaires ou par pénurie de fusils. […] Le problème se situe d’abord au niveau de la qualité du leadership fourni par les élites [professionnelles] qui encadraient le mouvement insurrectionnel. »",
-            auteur: "Fernand Ouellet, 1967."
+            source: "Ouellet, Fernand. Le Bas-Canada, 1791-1840 : changements structuraux et crise. Ottawa, Les Presses de l’Université d’Ottawa, 1976."
           }
         ]
       }
