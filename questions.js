@@ -1656,7 +1656,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A - Échanges vers 1600",
-            ref: "troc_1600.png"
+            ref: "troc_1600.png",
+            source: "MEES."
           }
         ]
       },
@@ -1665,7 +1666,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B - Échanges vers 1700",
-            ref: "troc_1700.png"
+            ref: "troc_1700.png",
+            source: "MEES."
           }
         ]
       }
