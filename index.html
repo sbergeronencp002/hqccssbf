@@ -61,6 +61,7 @@
     <div class="stats" style="margin-top:2rem">
       <span class="stat-num" id="stat-num">0</span>
       question(s) affichée(s)
+      <div id="stat-pts" style="font-size:0.75rem;color:var(--ink-3);margin-top:2px"></div>
     </div>
   </aside>
 
@@ -111,6 +112,13 @@
   </div>
   <div class="cahier-body" id="cahier-body"></div>
   <div class="cahier-footer">
+    <div class="cahier-exam">
+      <input type="text" id="exam-nom" class="cahier-exam-input" placeholder="Nom de l'évaluation…">
+      <div class="cahier-exam-opts">
+        <label class="cahier-exam-label"><input type="checkbox" id="exam-eleve" checked> Champ Nom</label>
+        <label class="cahier-exam-label"><input type="checkbox" id="exam-score" checked> Résultat /pts</label>
+      </div>
+    </div>
     <div class="cahier-footer-stats" id="cahier-footer-stats"></div>
     <div class="cahier-footer-btns">
       <button class="btn-vider" onclick="viderPanier()">Vider</button>

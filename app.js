@@ -149,15 +149,21 @@ function applyFilters() {
     if(oi      && q.oi !== oi) return false;
     if(aspect  && !q.aspects.some(a=>a.aspect===aspect)) return false;
     if(periode && q.periode !== periode) return false;
-    if(search  && !(q.enonce||'').toLowerCase().includes(search)) return false;
+    if(search) {
+      const hay = [q.enonce||'', q.oi||'', ...q.aspects.map(a=>a.aspect)].join(' ').toLowerCase();
+      if(!hay.includes(search)) return false;
+    }
     return true;
   });
 
+  const totalPtsFilt = filtered.reduce((s,q)=>s+(q.points||0), 0);
   document.getElementById('stat-num').textContent = filtered.length;
+  const statPts = document.getElementById('stat-pts');
+  if(statPts) statPts.textContent = totalPtsFilt + ' pt' + (totalPtsFilt!==1?'s':'') + ' disponibles';
   document.getElementById('results-label').textContent =
     filtered.length === QUESTIONS.length
       ? `Toutes les questions (${filtered.length})`
-      : `${filtered.length} question${filtered.length!==1?'s':''} trouvée${filtered.length!==1?'s':''}`;
+      : `${filtered.length} question${filtered.length!==1?'s':''} · ${totalPtsFilt} pt${totalPtsFilt!==1?'s':''}`;
 
   render(filtered);
 }
@@ -398,12 +404,20 @@ function render(list) {
     const st = oiStyle(q.oi);
     const aspect = q.aspects.map(a => a.aspect).join(' · ');
     const inPanier = panier.includes(q.id);
+    const pts = q.points || 0;
+    const diffColor = pts >= 7 ? '#c0392b' : pts >= 4 ? '#d35400' : '#27ae60';
+    const diffLabel = pts >= 7 ? 'Difficile' : pts >= 4 ? 'Moyen' : 'Facile';
     return `<div class="q-tile${inPanier ? ' in-panier' : ''}" id="tile-${q.id}"
       style="--tile-color:${st.color};background:#fff" onclick="openQModal('${q.id}')">
       <div class="q-tile-bar" style="display:none"></div>
       <div class="q-tile-content">
         <div class="q-tile-oi" style="display:block;font-size:1.1rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:5px 12px;border-radius:6px;color:${st.color};background:${st.bg};line-height:1.3;word-break:break-word">${q.oi}</div>
         <div class="q-tile-aspect" style="font-size:0.9rem;font-weight:400;color:#6B6560;margin-top:2px">${aspect}</div>
+        <div class="q-tile-diff" style="margin-top:6px;display:flex;align-items:center;gap:5px">
+          <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${diffColor};flex-shrink:0"></span>
+          <span style="font-size:0.72rem;color:${diffColor};font-weight:500">${diffLabel}</span>
+          <span style="font-size:0.72rem;color:var(--ink-3);margin-left:2px">${pts} pt${pts!==1?'s':''}</span>
+        </div>
       </div>
       <span class="q-tile-check" onclick="event.stopPropagation();togglePanier('${q.id}')">✓</span>
     </div>`;
@@ -724,7 +738,7 @@ function togglePanier(id) {
   if(panier.includes(id)) {
     panier = panier.filter(x => x !== id);
   } else {
-    if(panier.length >= 10) { showWarn('Maximum 10 questions dans le panier.'); return; }
+    if(panier.length >= 20) { showWarn('Maximum 20 questions dans le panier.'); return; }
     panier.push(id);
   }
   updatePanierBar();
@@ -740,7 +754,7 @@ function updatePanierBar() {
   const bar = document.getElementById('panier-bar');
   const count = document.getElementById('panier-count');
   const totalPts = panier.reduce((s, id) => { const q = QUESTIONS.find(x=>x.id===id); return s+(q?q.points:0); }, 0);
-  count.textContent = panier.length + ' / 10  ·  ' + totalPts + ' pt' + (totalPts !== 1 ? 's' : '');
+  count.textContent = panier.length + ' / 20  ·  ' + totalPts + ' pt' + (totalPts !== 1 ? 's' : '');
   bar.classList.toggle('visible', panier.length > 0);
   try { sessionStorage.setItem('hqc_panier', JSON.stringify(panier)); } catch(e) {}
   if(document.getElementById('cahier-panel').classList.contains('open')) renderCahier();
@@ -1085,6 +1099,45 @@ async function genererDocx(includeGuide=false) {
     }
 
     const children = [];
+
+    // Exam header (cahier only)
+    if(!includeGuide) {
+      const examNom   = (document.getElementById('exam-nom')?.value || '').trim();
+      const showEleve = document.getElementById('exam-eleve')?.checked !== false;
+      const showScore = document.getElementById('exam-score')?.checked !== false;
+      const totalDocxPts = panierQuestions.reduce((s,q)=>s+(q.points||0), 0);
+
+      if(examNom) {
+        children.push(new Paragraph({
+          alignment: AlignmentType.CENTER,
+          children: [new TextRun({ text: examNom, font:'Aptos', size:36, bold:true })]
+        }));
+        children.push(new Paragraph({ children: [new TextRun({ text:'' })] }));
+      }
+      if(showEleve || showScore) {
+        const leftCell = new TableCell({
+          borders: { top:{style:BorderStyle.NONE,size:0,color:'FFFFFF'}, bottom:{style:BorderStyle.NONE,size:0,color:'FFFFFF'}, left:{style:BorderStyle.NONE,size:0,color:'FFFFFF'}, right:{style:BorderStyle.NONE,size:0,color:'FFFFFF'} },
+          children: showEleve ? [
+            new Paragraph({ children: [new TextRun({ text: 'Nom : _______________________________', font:'Aptos', size:22 })] }),
+            new Paragraph({ children: [new TextRun({ text: 'Groupe : ____________________________', font:'Aptos', size:22 })] }),
+          ] : [new Paragraph({ children: [new TextRun({ text:'' })] })]
+        });
+        const rightCell = new TableCell({
+          borders: { top:{style:BorderStyle.NONE,size:0,color:'FFFFFF'}, bottom:{style:BorderStyle.NONE,size:0,color:'FFFFFF'}, left:{style:BorderStyle.NONE,size:0,color:'FFFFFF'}, right:{style:BorderStyle.NONE,size:0,color:'FFFFFF'} },
+          width: { size: 2500, type: WidthType.DXA },
+          children: showScore ? [
+            new Paragraph({ alignment: AlignmentType.RIGHT, children: [new TextRun({ text: `Résultat : _______ / ${totalDocxPts} pts`, font:'Aptos', size:22 })] })
+          ] : [new Paragraph({ children: [new TextRun({ text:'' })] })]
+        });
+        children.push(new Table({
+          width: { size: PAGE_W, type: WidthType.DXA },
+          columnWidths: [PAGE_W - 2500, 2500],
+          rows: [new TableRow({ children: [leftCell, rightCell] })]
+        }));
+        children.push(new Paragraph({ children: [new TextRun({ text:'' })] }));
+        children.push(new Paragraph({ children: [new TextRun({ text:'' })] }));
+      }
+    }
 
     if(includeGuide) {
       // Guide — numéros + réponses seulement
