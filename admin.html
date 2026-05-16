@@ -1110,6 +1110,17 @@ async function publier() {
     const q = buildQuestion();
     const r = buildReglette(q.id);
 
+    // Warnings avant publication
+    const pubWarnings = [];
+    if(!q.guide) pubWarnings.push('• Cette question n\'a pas de guide de correction.');
+    const missingImgs = [];
+    q.documents.forEach(d => d.cols?.forEach(c => { if(c.ref && !currentImageDb[c.ref]) missingImgs.push(c.ref); }));
+    if(q.reponse?.ref && !currentImageDb[q.reponse.ref]) missingImgs.push(q.reponse.ref);
+    if(missingImgs.length) pubWarnings.push('• Images absentes du dépôt : ' + missingImgs.join(', '));
+    if(pubWarnings.length && !confirm('⚠️ Avertissements avant publication :\n\n' + pubWarnings.join('\n') + '\n\nPublier quand même ?')) {
+      btn.disabled = false; btn.textContent = 'Publier sur GitHub'; return;
+    }
+
     // Add image to IMAGE_DB if not present
     const refsUsed = new Set();
     q.documents.forEach(d => d.cols?.forEach(c => { if(c.ref) refsUsed.add(c.ref); }));

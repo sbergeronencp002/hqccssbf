@@ -623,7 +623,26 @@ function previsualiser(guideMode) {
     });
     body.innerHTML = html;
   } else {
-    body.innerHTML = panier.map(function(id, idx) {
+    const examNom    = (document.getElementById('exam-nom')?.value || '').trim();
+    const showEleve  = !!document.getElementById('exam-eleve')?.checked;
+    const showGroupe = !!document.getElementById('exam-groupe')?.checked;
+    const showDate   = !!document.getElementById('exam-date')?.checked;
+    const showScore  = !!document.getElementById('exam-score')?.checked;
+    const showComm   = !!document.getElementById('exam-commentaires')?.checked;
+    const totalPrevPts = panier.reduce((s,id) => { const q=QUESTIONS.find(x=>x.id===id); return s+(q?.points||0); }, 0);
+
+    let previewHtml = '';
+    if(examNom || showEleve || showGroupe || showDate || showScore) {
+      previewHtml += '<div style="border-bottom:1px solid #ccc;margin-bottom:1.5rem;padding-bottom:1rem">';
+      if(examNom)    previewHtml += '<div style="text-align:center;font-size:1.1rem;font-weight:700;margin-bottom:0.75rem">' + examNom + '</div>';
+      if(showEleve)  previewHtml += '<div style="margin-bottom:4px;font-size:0.9rem">Élève : _________________________________</div>';
+      if(showGroupe) previewHtml += '<div style="margin-bottom:4px;font-size:0.9rem">Groupe : ________________________________</div>';
+      if(showDate)   previewHtml += '<div style="margin-bottom:4px;font-size:0.9rem">Date : __________________________________</div>';
+      if(showScore)  previewHtml += '<div style="text-align:right;font-size:0.9rem;margin-top:4px">Résultat : _____ / ' + totalPrevPts + ' pts</div>';
+      previewHtml += '</div>';
+    }
+
+    previewHtml += panier.map(function(id, idx) {
       const q = QUESTIONS.find(function(x) { return x.id === id; });
       const r = REGLETTES[id];
       if(!q) return '';
@@ -722,6 +741,15 @@ function previsualiser(guideMode) {
         + '<div class="preview-enonce">' + formatTexte(q.enonce) + '</div>'
         + docsHtml + previewReponse + regHtml + '</div>';
     }).join('');
+
+    if(showComm) {
+      previewHtml += '<div style="margin-top:1.5rem;padding-top:1rem">'
+        + '<div style="font-weight:600;font-size:0.85rem;margin-bottom:0.5rem">Commentaires :</div>'
+        + '<div style="border-bottom:1px solid #bbb;height:28px;margin-bottom:6px"></div>'.repeat(3)
+        + '</div>';
+    }
+
+    body.innerHTML = previewHtml;
   }
   document.getElementById('preview-modal-label').textContent = guideMode ? 'Prévisualisation du guide' : 'Prévisualisation du cahier';
   document.getElementById('preview-modal').classList.add('open');
