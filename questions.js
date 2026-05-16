@@ -1396,7 +1396,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "loyalistes_province_quebec"
+            ref: "loyalistes_province_quebec",
+            source: "MEES."
           }
         ]
       }
