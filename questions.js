@@ -1532,7 +1532,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "commerce_fourrures.png"
+            ref: "commerce_fourrures.png",
+            source: "MEES."
           }
         ]
       }
