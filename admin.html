@@ -101,6 +101,26 @@ header a:hover { color: #fff; }
 .rich-toolbar { display:flex; gap:4px; margin-bottom:10px; }
 .rich-toolbar button { font-size:.75rem; padding:2px 8px; border:1px solid var(--border); border-radius:4px; background:var(--paper-2); cursor:pointer; color:var(--ink); }
 .rich-toolbar button:hover { background:var(--paper-3); }
+
+.edit-search-row { display:flex; gap:.5rem; margin-bottom:.6rem; flex-wrap:wrap; }
+.edit-search-row input { flex:1; min-width:160px; padding:.45rem .7rem; border:1px solid var(--border); border-radius:6px; font-size:.85rem; font-family:inherit; background:var(--paper); color:var(--ink); }
+.edit-search-row input:focus { outline:none; border-color:var(--accent); }
+.edit-search-row select { padding:.45rem .7rem; border:1px solid var(--border); border-radius:6px; font-size:.82rem; font-family:inherit; background:var(--paper); color:var(--ink); cursor:pointer; }
+.edit-search-row select:focus { outline:none; border-color:var(--accent); }
+
+.edit-results { max-height:260px; overflow-y:auto; border:1px solid var(--border); border-radius:6px; background:var(--paper); }
+.edit-result-card { padding:.55rem .85rem; cursor:pointer; border-bottom:1px solid var(--border); display:flex; align-items:baseline; gap:.5rem; transition:background .1s; }
+.edit-result-card:last-child { border-bottom:none; }
+.edit-result-card:hover { background:var(--paper-2); }
+.edit-result-card.selected { background:rgba(27,59,111,0.07); }
+.edit-card-id { font-size:.8rem; font-weight:700; color:var(--ink); white-space:nowrap; }
+.edit-card-warn { color:#c0392b; font-size:.75rem; }
+.edit-card-meta { font-size:.78rem; color:var(--ink-2); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.edit-card-sub { font-size:.72rem; color:var(--ink-3); margin-top:1px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.edit-results-empty { padding:.75rem 1rem; font-size:.82rem; color:var(--ink-3); font-style:italic; }
+
+.edit-selected-bar { margin-top:.75rem; padding:.6rem .85rem; background:rgba(27,59,111,0.06); border:1px solid rgba(27,59,111,0.18); border-radius:6px; display:flex; align-items:center; justify-content:space-between; gap:.75rem; flex-wrap:wrap; }
+.edit-selected-label { font-size:.82rem; font-weight:600; color:#1B3B6F; }
 </style>
 </head>
 <body>
@@ -136,15 +156,24 @@ header a:hover { color: #fff; }
         </label>
       </div>
       <div id="edit-select-wrap" style="display:none">
-        <div class="field" style="margin-bottom:.75rem">
-          <label>Question à modifier</label>
-          <select id="edit-q-select" onchange="loadQuestion(this.value)">
-            <option value="">— Choisir —</option>
+        <div class="edit-search-row">
+          <input type="text" id="edit-search" placeholder="Rechercher — ID, OI, période, énoncé…" oninput="filterEditList()">
+          <select id="edit-filter-niveau" onchange="filterEditList()">
+            <option value="">Tous les niveaux</option>
+            <option value="3">Niveau 3</option>
+            <option value="4">Niveau 4</option>
+          </select>
+          <select id="edit-filter-oi" onchange="filterEditList()">
+            <option value="">Toutes les OI</option>
           </select>
         </div>
-        <div style="display:flex;gap:.75rem;flex-wrap:wrap">
-          <button class="btn-secondary" id="btn-dupliquer" onclick="dupliquerQuestion()" disabled>📋 Dupliquer cette question</button>
-          <button class="btn-danger" id="btn-supprimer" onclick="supprimerQuestion()" disabled>🗑 Supprimer cette question</button>
+        <div id="edit-results" class="edit-results"></div>
+        <div id="edit-selected-bar" style="display:none" class="edit-selected-bar">
+          <span id="edit-selected-label" class="edit-selected-label"></span>
+          <div style="display:flex;gap:.5rem">
+            <button class="btn-secondary" id="btn-dupliquer" onclick="dupliquerQuestion()" disabled>📋 Dupliquer</button>
+            <button class="btn-danger" id="btn-supprimer" onclick="supprimerQuestion()" disabled>🗑 Supprimer</button>
+          </div>
         </div>
       </div>
     </div>
@@ -362,7 +391,7 @@ function setMode(mode) {
   const wrap = document.getElementById('edit-select-wrap');
   if(mode === 'edit') {
     wrap.style.display = '';
-    populateEditSelect();
+    populateEditSearch();
   } else {
     wrap.style.display = 'none';
     editingId = null;
@@ -374,10 +403,51 @@ function setMode(mode) {
   }
 }
 
-function populateEditSelect() {
-  const sel = document.getElementById('edit-q-select');
-  sel.innerHTML = '<option value="">— Choisir —</option>'
-    + currentQuestions.map(q => `<option value="${q.id}">${q.guide ? '' : '⚠ '}${q.id} — ${q.oi.split(' ').slice(0,4).join(' ')} (${q.periode})</option>`).join('');
+function populateEditSearch() {
+  // Remplir le filtre OI
+  const ois = [...new Set(currentQuestions.map(q => q.oi))].sort((a,b) => a.localeCompare(b,'fr'));
+  const selOi = document.getElementById('edit-filter-oi');
+  const prevOi = selOi.value;
+  selOi.innerHTML = '<option value="">Toutes les OI</option>'
+    + ois.map(oi => `<option value="${oi}">${oi}</option>`).join('');
+  if(prevOi) selOi.value = prevOi;
+  filterEditList();
+}
+
+function filterEditList() {
+  const search = (document.getElementById('edit-search')?.value || '').trim().toLowerCase();
+  const niveau = document.getElementById('edit-filter-niveau')?.value || '';
+  const oi     = document.getElementById('edit-filter-oi')?.value || '';
+
+  const results = currentQuestions.filter(q => {
+    if(niveau && String(q.niveau) !== niveau) return false;
+    if(oi     && q.oi !== oi) return false;
+    if(search) {
+      const hay = [q.id, q.oi, q.periode, q.enonce||'', ...(q.aspects||[]).map(a=>a.aspect)].join(' ').toLowerCase();
+      if(!hay.includes(search)) return false;
+    }
+    return true;
+  });
+
+  const container = document.getElementById('edit-results');
+  if(!results.length) {
+    container.innerHTML = '<div class="edit-results-empty">Aucune question trouvée.</div>';
+    return;
+  }
+  container.innerHTML = results.map(q => {
+    const aspects = (q.aspects||[]).map(a=>a.aspect).join(' · ');
+    const noGuide = !q.guide;
+    const isSelected = q.id === editingId;
+    return `<div class="edit-result-card${isSelected?' selected':''}" onclick="loadQuestion('${q.id}')">
+      <div style="min-width:0;flex:1">
+        <div class="edit-card-meta">
+          ${noGuide ? '<span class="edit-card-warn">⚠ </span>' : ''}<span class="edit-card-id">${q.id}</span>
+          &nbsp;—&nbsp;${q.oi}
+        </div>
+        <div class="edit-card-sub">Niv.${q.niveau} · ${q.periode} · ${aspects}</div>
+      </div>
+    </div>`;
+  }).join('');
 }
 
 function dupliquerQuestion() {
@@ -399,13 +469,29 @@ function dupliquerQuestion() {
 function loadQuestion(id) {
   const btnSuppr = document.getElementById('btn-supprimer');
   const btnDupl  = document.getElementById('btn-dupliquer');
-  if(!id) { editingId = null; if(btnSuppr) btnSuppr.disabled = true; if(btnDupl) btnDupl.disabled = true; return; }
+  const selBar   = document.getElementById('edit-selected-bar');
+  if(!id) {
+    editingId = null;
+    if(btnSuppr) btnSuppr.disabled = true;
+    if(btnDupl)  btnDupl.disabled  = true;
+    if(selBar)   selBar.style.display = 'none';
+    return;
+  }
   const q = currentQuestions.find(x => x.id === id);
   const r = currentReglettes[id];
   if(!q) return;
   editingId = id;
   if(btnSuppr) btnSuppr.disabled = false;
   if(btnDupl)  btnDupl.disabled  = false;
+
+  // Mettre à jour la barre de sélection et la liste
+  if(selBar) {
+    selBar.style.display = '';
+    const aspects = (q.aspects||[]).map(a=>a.aspect).join(' · ');
+    document.getElementById('edit-selected-label').textContent =
+      `${q.id} — ${q.oi} · Niv.${q.niveau} · ${q.periode}`;
+  }
+  filterEditList(); // rafraîchir pour highlighter la carte sélectionnée
 
   document.getElementById('q-id').value = q.id;
   document.getElementById('next-id-badge').textContent = q.id;
@@ -592,6 +678,8 @@ async function supprimerQuestion() {
 
     toast(`${idSupp} supprimé, questions renumérotées.`, 'ok');
     editingId = null;
+    document.getElementById('edit-selected-bar').style.display = 'none';
+    populateEditSearch();
     resetForm(false);
     const nextId = 'Q' + (currentQuestions.length + 1);
     document.getElementById('q-id').value = nextId;
