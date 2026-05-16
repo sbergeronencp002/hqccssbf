@@ -364,12 +364,12 @@ const REGLETTES = {
   "Q19": {
     oi: "Situer dans l'espace",
     colonnes: [
-      "2 points",
+      "1 point",
       "0 point"
     ],
     niveaux: [
       {
-        pts: 2,
+        pts: 1,
         desc: "L'élève situe le fait dans l'espace."
       },
       {
@@ -2041,7 +2041,7 @@ const QUESTIONS = [
     niveau: 4,
     oi: "Situer dans l'espace",
     periode: "P7 — 1945 – 1980",
-    points: 2,
+    points: 1,
     enonce: "Selon le document A, quelle lettre correspond à un territoire exploité pour son minerai de fer dans la deuxième moitié du 20e siècle?",
     aspects: [
       {
