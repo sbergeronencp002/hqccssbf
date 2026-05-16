@@ -2180,7 +2180,8 @@ const QUESTIONS = [
           {
             titre: "Document A",
             texte: "« Chaque pas fait dans la forêt par le défrichement est une conquête qui fortifie nos droits, nos institutions et nos lois. “Emparons-nous du sol” est un motto qui devrait être écrit en lettres d’or au-dessus de la porte de chaque maison. Négliger [cela], c’est porter un coup fatal au pays et détruire l’œuvre glorieuse de nos ancêtres. »",
-            auteur: "Curé Antoine LABELLE, 1888"
+            auteur: "Curé Antoine LABELLE, 1888.",
+            source: "Labelle, Antoine. Discours et écrits sur la colonisation, vers 1870-1890."
           }
         ]
       },
@@ -2190,7 +2191,8 @@ const QUESTIONS = [
           {
             titre: "Document B",
             texte: "« Le Canada n’a rien à envier aux autres pays, et nous avons un vaste champ à exploiter. Que de millions de colons pourraient s’établir dans les belles vallées du lac Saint-Jean, du lac Témiscamingue, du lac Nipissing et de la rivière Matapédia […] \n\n[…] emparons-nous du sol si nous voulons être un peuple fort, grand, heureux et prospère. »",
-            auteur: "Charles-Edmond ROULEAU, 1896"
+            auteur: "Charles-Edmond ROULEAU, 1896.",
+            source: "Rouleau, Charles-Edmond. Nos lointaines campagnes. Québec, 1896."
           }
         ]
       }
