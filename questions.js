@@ -1118,9 +1118,6 @@ const IMAGE_DB = {
   "territoire_acte_const.png": {
     src: "images/territoire_acte_const.png"
   },
-  "troc_1500": {
-    src: "images/troc_1500"
-  },
   "troc_1700.png": {
     src: "images/troc_1700.png"
   },
@@ -1177,9 +1174,6 @@ const IMAGE_DB = {
   },
   "victoire_pq_1976.png": {
     src: "images/victoire_pq_1976.png"
-  },
-  "chaman_1500.jpg": {
-    src: "images/chaman_1500.jpg"
   },
   "tradition_orale.jpg": {
     src: "images/tradition_orale.jpg"
