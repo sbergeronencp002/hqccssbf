@@ -405,8 +405,8 @@ function render(list) {
     const aspect = q.aspects.map(a => a.aspect).join(' · ');
     const inPanier = panier.includes(q.id);
     const pts = q.points || 0;
-    const diffColor = pts >= 7 ? '#c0392b' : pts >= 4 ? '#d35400' : '#27ae60';
-    const diffLabel = pts >= 7 ? 'Difficile' : pts >= 4 ? 'Moyen' : 'Facile';
+    const diffColor = pts >= 3 ? '#c0392b' : pts >= 2 ? '#d35400' : '#27ae60';
+    const diffLabel = pts >= 3 ? 'Difficile' : pts >= 2 ? 'Modérée' : 'Facile';
     return `<div class="q-tile${inPanier ? ' in-panier' : ''}" id="tile-${q.id}"
       style="--tile-color:${st.color};background:#fff" onclick="openQModal('${q.id}')">
       <div class="q-tile-bar" style="display:none"></div>
