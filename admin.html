@@ -116,7 +116,9 @@ header a:hover { color: #fff; }
 .edit-card-id { font-size:.8rem; font-weight:700; color:var(--ink); white-space:nowrap; }
 .edit-card-warn { color:#c0392b; font-size:.75rem; }
 .edit-card-meta { font-size:.78rem; color:var(--ink-2); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.edit-card-enonce { font-size:.76rem; color:var(--ink-3); margin-top:2px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-style:italic; }
 .edit-card-sub { font-size:.72rem; color:var(--ink-3); margin-top:1px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.edit-result-card.focused { background:var(--paper-2); outline:2px solid rgba(27,59,111,0.25); outline-offset:-2px; }
 .edit-results-empty { padding:.75rem 1rem; font-size:.82rem; color:var(--ink-3); font-style:italic; }
 
 .edit-selected-bar { margin-top:.75rem; padding:.6rem .85rem; background:rgba(27,59,111,0.06); border:1px solid rgba(27,59,111,0.18); border-radius:6px; display:flex; align-items:center; justify-content:space-between; gap:.75rem; flex-wrap:wrap; }
@@ -157,7 +159,8 @@ header a:hover { color: #fff; }
       </div>
       <div id="edit-select-wrap" style="display:none">
         <div class="edit-search-row">
-          <input type="text" id="edit-search" placeholder="Rechercher — ID, OI, période, énoncé…" oninput="filterEditList()">
+          <input type="text" id="edit-search" placeholder="Rechercher — ID, OI, période, énoncé…"
+            oninput="filterEditList()" onkeydown="editKeyNav(event)">
           <select id="edit-filter-niveau" onchange="filterEditList()">
             <option value="">Tous les niveaux</option>
             <option value="3">Niveau 3</option>
@@ -166,7 +169,11 @@ header a:hover { color: #fff; }
           <select id="edit-filter-oi" onchange="filterEditList()">
             <option value="">Toutes les OI</option>
           </select>
+          <label style="display:flex;align-items:center;gap:.3rem;font-size:.78rem;white-space:nowrap;cursor:pointer">
+            <input type="checkbox" id="edit-filter-noguide" onchange="filterEditList()"> ⚠ Sans guide
+          </label>
         </div>
+        <div id="edit-results-count" style="font-size:.72rem;color:var(--ink-3);margin-bottom:.3rem"></div>
         <div id="edit-results" class="edit-results"></div>
         <div id="edit-selected-bar" style="display:none" class="edit-selected-bar">
           <span id="edit-selected-label" class="edit-selected-label"></span>
@@ -414,40 +421,80 @@ function populateEditSearch() {
   filterEditList();
 }
 
-function filterEditList() {
-  const search = (document.getElementById('edit-search')?.value || '').trim().toLowerCase();
-  const niveau = document.getElementById('edit-filter-niveau')?.value || '';
-  const oi     = document.getElementById('edit-filter-oi')?.value || '';
+let editFocusIdx = -1;
+let editFilteredResults = [];
 
-  const results = currentQuestions.filter(q => {
-    if(niveau && String(q.niveau) !== niveau) return false;
-    if(oi     && q.oi !== oi) return false;
+function filterEditList() {
+  const search  = (document.getElementById('edit-search')?.value || '').trim().toLowerCase();
+  const niveau  = document.getElementById('edit-filter-niveau')?.value || '';
+  const oi      = document.getElementById('edit-filter-oi')?.value || '';
+  const noGuide = document.getElementById('edit-filter-noguide')?.checked;
+
+  editFilteredResults = currentQuestions.filter(q => {
+    if(niveau   && String(q.niveau) !== niveau) return false;
+    if(oi       && q.oi !== oi) return false;
+    if(noGuide  && q.guide) return false;
     if(search) {
       const hay = [q.id, q.oi, q.periode, q.enonce||'', ...(q.aspects||[]).map(a=>a.aspect)].join(' ').toLowerCase();
       if(!hay.includes(search)) return false;
     }
     return true;
   });
+  const results = editFilteredResults;
+
+  editFocusIdx = results.findIndex(q => q.id === editingId);
+
+  const countEl = document.getElementById('edit-results-count');
+  if(countEl) countEl.textContent = results.length
+    ? `${results.length} question${results.length > 1 ? 's' : ''} trouvée${results.length > 1 ? 's' : ''}`
+    : '';
 
   const container = document.getElementById('edit-results');
   if(!results.length) {
     container.innerHTML = '<div class="edit-results-empty">Aucune question trouvée.</div>';
     return;
   }
-  container.innerHTML = results.map(q => {
-    const aspects = (q.aspects||[]).map(a=>a.aspect).join(' · ');
-    const noGuide = !q.guide;
+
+  function highlight(text, term) {
+    if(!term) return text;
+    const idx = text.toLowerCase().indexOf(term);
+    if(idx < 0) return text;
+    return text.slice(0, idx) + '<mark style="background:#fff3b0;border-radius:2px">' + text.slice(idx, idx + term.length) + '</mark>' + text.slice(idx + term.length);
+  }
+
+  container.innerHTML = results.map((q, i) => {
+    const aspects = (q.aspects||[]).map(a => a.aspect).join(' · ');
+    const noG = !q.guide;
     const isSelected = q.id === editingId;
-    return `<div class="edit-result-card${isSelected?' selected':''}" onclick="loadQuestion('${q.id}')">
+    const isFocused  = i === editFocusIdx;
+    const enonce = (q.enonce||'').replace(/\*\*/g,'').slice(0, 90) + ((q.enonce||'').length > 90 ? '…' : '');
+    return `<div class="edit-result-card${isSelected ? ' selected' : ''}${isFocused ? ' focused' : ''}"
+      data-idx="${i}" onclick="loadQuestion('${q.id}')" onmouseenter="editFocusIdx=${i}">
       <div style="min-width:0;flex:1">
         <div class="edit-card-meta">
-          ${noGuide ? '<span class="edit-card-warn">⚠ </span>' : ''}<span class="edit-card-id">${q.id}</span>
-          &nbsp;—&nbsp;${q.oi}
+          ${noG ? '<span class="edit-card-warn">⚠ </span>' : ''}<span class="edit-card-id">${highlight(q.id, search)}</span>
+          &nbsp;—&nbsp;${highlight(q.oi, search)}
         </div>
-        <div class="edit-card-sub">Niv.${q.niveau} · ${q.periode} · ${aspects}</div>
+        <div class="edit-card-enonce">${highlight(enonce, search)}</div>
+        <div class="edit-card-sub">Niv.${q.niveau} · ${highlight(q.periode, search)} · ${highlight(aspects, search)}</div>
       </div>
     </div>`;
   }).join('');
+
+  // Scroll la carte sélectionnée dans la vue
+  const sel = container.querySelector('.selected');
+  if(sel) sel.scrollIntoView({ block: 'nearest' });
+}
+
+function editKeyNav(e) {
+  const cards = [...document.querySelectorAll('#edit-results .edit-result-card')];
+  if(!cards.length) return;
+  if(e.key === 'ArrowDown') { e.preventDefault(); editFocusIdx = Math.min(editFocusIdx + 1, cards.length - 1); }
+  else if(e.key === 'ArrowUp') { e.preventDefault(); editFocusIdx = Math.max(editFocusIdx - 1, 0); }
+  else if(e.key === 'Enter' && editFocusIdx >= 0) { e.preventDefault(); loadQuestion(editFilteredResults[editFocusIdx]?.id); return; }
+  else return;
+  cards.forEach((c, i) => c.classList.toggle('focused', i === editFocusIdx));
+  cards[editFocusIdx]?.scrollIntoView({ block: 'nearest' });
 }
 
 function dupliquerQuestion() {
