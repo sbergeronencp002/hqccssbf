@@ -113,10 +113,24 @@
   <div class="cahier-body" id="cahier-body"></div>
   <div class="cahier-footer">
     <div class="cahier-exam">
-      <input type="text" id="exam-nom" class="cahier-exam-input" placeholder="Nom de l'évaluation…">
-      <div class="cahier-exam-opts">
-        <label class="cahier-exam-label"><input type="checkbox" id="exam-eleve" checked> Champ Nom</label>
-        <label class="cahier-exam-label"><input type="checkbox" id="exam-score" checked> Résultat /pts</label>
+      <div class="cahier-exam-section">
+        <span class="cahier-exam-title">En-tête</span>
+        <input type="text" id="exam-nom" class="cahier-exam-input" placeholder="Nom de l'évaluation…">
+      </div>
+      <div class="cahier-exam-section">
+        <span class="cahier-exam-title">Identification</span>
+        <div class="cahier-exam-opts">
+          <label class="cahier-exam-label"><input type="checkbox" id="exam-eleve"> Élève</label>
+          <label class="cahier-exam-label"><input type="checkbox" id="exam-groupe"> Groupe</label>
+          <label class="cahier-exam-label"><input type="checkbox" id="exam-date"> Date</label>
+        </div>
+      </div>
+      <div class="cahier-exam-section">
+        <span class="cahier-exam-title">Résultat</span>
+        <div class="cahier-exam-opts">
+          <label class="cahier-exam-label"><input type="checkbox" id="exam-score"> _____ / pts</label>
+          <label class="cahier-exam-label"><input type="checkbox" id="exam-commentaires"> Commentaires</label>
+        </div>
       </div>
     </div>
     <div class="cahier-footer-stats" id="cahier-footer-stats"></div>

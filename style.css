@@ -424,17 +424,24 @@ select:focus { outline: none; border-color: var(--ink-2); }
 
 .cahier-exam {
   padding: 10px 14px 0;
-  display: flex; flex-direction: column; gap: 6px;
+  display: flex; flex-direction: column; gap: 8px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+.cahier-exam-section { display: flex; flex-direction: column; gap: 4px; }
+.cahier-exam-title {
+  font-size: 0.62rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink-3);
 }
 .cahier-exam-input {
-  width: 100%; padding: 7px 10px;
+  width: 100%; padding: 6px 10px;
   background: var(--paper); border: 1px solid var(--border); border-radius: 4px;
   font-family: 'DM Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
   font-size: 0.8rem; color: var(--ink);
 }
 .cahier-exam-input:focus { outline: none; border-color: var(--ink-2); }
 .cahier-exam-input::placeholder { color: var(--ink-3); }
-.cahier-exam-opts { display: flex; gap: 12px; }
+.cahier-exam-opts { display: flex; gap: 10px; flex-wrap: wrap; }
 .cahier-exam-label { font-size: 0.72rem; color: var(--ink-2); display: flex; align-items: center; gap: 4px; cursor: pointer; }
 .cahier-exam-label input { cursor: pointer; }
 
