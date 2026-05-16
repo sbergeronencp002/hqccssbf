@@ -118,6 +118,9 @@ header a:hover { color: #fff; }
     <div class="token-bar">
       <label>Token GitHub</label>
       <input type="password" id="gh-token" placeholder="ghp_..." autocomplete="off" oninput="saveToken()">
+      <label style="display:flex;align-items:center;gap:.3rem;font-size:.75rem;white-space:nowrap;cursor:pointer">
+        <input type="checkbox" id="gh-remember" onchange="saveToken()"> Mémoriser
+      </label>
       <span class="token-status" id="token-status"></span>
     </div>
 
@@ -293,10 +296,13 @@ header a:hover { color: #fff; }
 document.addEventListener('DOMContentLoaded', init);
 
 function saveToken() {
-  localStorage.setItem('gh_token', document.getElementById('gh-token').value);
+  const val = document.getElementById('gh-token').value;
+  const remember = document.getElementById('gh-remember').checked;
+  if(remember) { localStorage.setItem('gh_token', val); sessionStorage.removeItem('gh_token'); }
+  else { sessionStorage.setItem('gh_token', val); localStorage.removeItem('gh_token'); }
   document.getElementById('token-status').textContent = '';
 }
-function getToken() { return document.getElementById('gh-token').value || localStorage.getItem('gh_token') || ''; }
+function getToken() { return document.getElementById('gh-token').value || localStorage.getItem('gh_token') || sessionStorage.getItem('gh_token') || ''; }
 
 // ── INIT ──────────────────────────────────────────────────────────────
 const OWNER = 'sbergeronencp002';
@@ -352,7 +358,7 @@ function setMode(mode) {
 function populateEditSelect() {
   const sel = document.getElementById('edit-q-select');
   sel.innerHTML = '<option value="">— Choisir —</option>'
-    + currentQuestions.map(q => `<option value="${q.id}">${q.id} — ${q.oi.split(' ').slice(0,4).join(' ')} (${q.periode})</option>`).join('');
+    + currentQuestions.map(q => `<option value="${q.id}">${q.guide ? '' : '⚠ '}${q.id} — ${q.oi.split(' ').slice(0,4).join(' ')} (${q.periode})</option>`).join('');
 }
 
 function dupliquerQuestion() {
@@ -553,7 +559,13 @@ async function supprimerQuestion() {
         content: encoded, sha: questionsFileSha, branch: BRANCH
       })
     });
-    if(!putResp.ok) { let m=putResp.status; try{const e=await putResp.json();m=e.message||m;}catch(_){} throw new Error(m); }
+    if(!putResp.ok) {
+      let m = putResp.status;
+      try { const e = await putResp.json(); m = e.message || m; } catch(_) {}
+      if(putResp.status === 409 || String(m).toLowerCase().includes('fast forward') || String(m).toLowerCase().includes('conflict'))
+        throw new Error('Conflit : un·e collègue a publié en même temps. Rechargez la page (F5) et réessayez.');
+      throw new Error(m);
+    }
 
     const result = await putResp.json();
     questionsFileSha = result.content.sha;
@@ -638,8 +650,10 @@ let currentImageDb = {};
 let questionsFileSha = '';
 
 async function init() {
-  const token = localStorage.getItem('gh_token');
-  if(token) document.getElementById('gh-token').value = token;
+  const lsToken = localStorage.getItem('gh_token');
+  const ssToken = sessionStorage.getItem('gh_token');
+  if(lsToken) { document.getElementById('gh-token').value = lsToken; document.getElementById('gh-remember').checked = true; }
+  else if(ssToken) { document.getElementById('gh-token').value = ssToken; }
   updatePeriodes();
   updatePresets();
   await Promise.all([loadQuestionsJs(), loadImages(), loadReglettesJs()]);
@@ -1154,6 +1168,8 @@ async function publier() {
     if(!putResp.ok) {
       let msg = putResp.status;
       try { const err = await putResp.json(); msg = err.message || msg; } catch(_) {}
+      if(putResp.status === 409 || String(msg).toLowerCase().includes('fast forward') || String(msg).toLowerCase().includes('conflict'))
+        throw new Error('Conflit : un·e collègue a publié en même temps. Rechargez la page (F5) et réessayez.');
       throw new Error(msg);
     }
 

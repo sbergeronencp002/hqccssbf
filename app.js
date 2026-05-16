@@ -434,7 +434,7 @@ async function initSite() {
   populateFilters();
   applyFilters();
   try {
-    const saved = sessionStorage.getItem('hqc_panier');
+    const saved = localStorage.getItem('hqc_panier');
     if(saved) {
       const ids = JSON.parse(saved).filter(id => QUESTIONS.some(q => q.id === id));
       if(ids.length) { panier = ids; updatePanierBar(); refreshPanierButtons(); }
@@ -784,7 +784,7 @@ function updatePanierBar() {
   const totalPts = panier.reduce((s, id) => { const q = QUESTIONS.find(x=>x.id===id); return s+(q?q.points:0); }, 0);
   count.textContent = panier.length + ' / 20  ·  ' + totalPts + ' pt' + (totalPts !== 1 ? 's' : '');
   bar.classList.toggle('visible', panier.length > 0);
-  try { sessionStorage.setItem('hqc_panier', JSON.stringify(panier)); } catch(e) {}
+  try { localStorage.setItem('hqc_panier', JSON.stringify(panier)); } catch(e) {}
   if(document.getElementById('cahier-panel').classList.contains('open')) renderCahier();
 }
 
@@ -916,6 +916,7 @@ function cahierDragEnd() {
 async function resolveImages(neededKeys) {
   const MAX_PX = 1200;
   const JPEG_Q = 0.78;
+  const failed = [];
 
   const promises = neededKeys.map(async key => {
     const entry = IMAGE_DB[key];
@@ -942,10 +943,12 @@ async function resolveImages(neededKeys) {
       });
       IMAGE_DB[key] = { src: dataUrl.url, w: dataUrl.w, h: dataUrl.h };
     } catch(e) {
+      failed.push(key);
       console.warn('Impossible de charger l\'image :', key, e);
     }
   });
   await Promise.all(promises);
+  return failed;
 }
 
 // ===== GÉNÉRATION DOCX (browser) =====
@@ -975,7 +978,8 @@ async function genererDocx(includeGuide=false) {
       });
       if(q.reponse && q.reponse.ref && IMAGE_DB[q.reponse.ref]) neededKeys.add(q.reponse.ref);
     });
-    await resolveImages([...neededKeys]);
+    const failedImgs = await resolveImages([...neededKeys]);
+    if(failedImgs.length) showWarn('Images introuvables dans le DOCX : ' + failedImgs.join(', '));
     const {
       Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
       AlignmentType, BorderStyle, WidthType, VerticalAlign
