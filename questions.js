@@ -989,6 +989,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q51": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -3217,5 +3234,35 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Les femmes aînées du clan ou les mères de clan."
+  },
+  {
+    id: "Q51",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, nommez la pratique utilisée par les Premières Nations pour échanger des biens.",
+    aspects: [
+      {
+        aspect: "Réseaux d'échange autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les réseaux d’échange relient les nations autochtones sur de vastes territoires. Les Iroquoiens et les Algonquiens y obtiennent des ressources complémentaires et entretiennent des relations régulières fondées sur la réciprocité et les obligations mutuelles. »",
+            auteur: "Olive Patricia Dickason"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le troc."
   }
 ]
