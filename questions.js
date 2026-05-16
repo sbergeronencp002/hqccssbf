@@ -1050,6 +1050,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q54": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -3369,5 +3386,36 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les ressources peuvent être transportées sur de longues distances ou les échanges entre les nations sont facilités ou les réseaux d’échange s’étendent sur de vastes territoires."
+  },
+  {
+    id: "Q54",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "À partir du document A, nommez un moyen utilisé par les nations autochtones pour transporter des ressources sur les voies d’eau.",
+    aspects: [
+      {
+        aspect: "Réseaux d'échange autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les Algonquiens utilisent de longues embarcations faites d’écorce de bouleau. Très légères, elles peuvent être transportées à la main lors des portages et permettent de circuler rapidement sur les rivières et les lacs avec des marchandises. »",
+            auteur: "Samuel de Champlain.",
+            source: "Champlain, Samuel de. Les Voyages de la Nouvelle-France occidentale, dite Canada. Paris, 1613."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le canot d’écorce."
   }
 ]
