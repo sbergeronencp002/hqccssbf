@@ -2094,7 +2094,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             ref: "victoire_pq_1976.png",
-            source: "Archives Le Devoir, « Il y a 35 ans, le PQ prenait le pouvoir », Le Devoir,  [En ligne], 15 novembre 2011.  [http://www.ledevoir.com/politique/quebec/336137/il-y-a-35-ans-le-pq prenait-le-pouvoir] (Consulté le 18 juin 2017)."
+            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
         ]
       }
