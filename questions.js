@@ -1225,7 +1225,7 @@ const QUESTIONS = [
           {
             titre: "Document A - Fondation de Québec",
             ref: "fondation_quebec_1608",
-            source: "Samuel de Champlain/Bibliothèque et Archives Canada/MIKAN 3919911."
+            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
         ]
       },
@@ -1255,7 +1255,7 @@ const QUESTIONS = [
           {
             titre: "Document D",
             texte: "« [Cartier] choisit […] l’embouchure de la rivière Cap-Rouge, où il établit la colonie de Charlesbourg-Royal. Il y fait construire deux forts. En explorant les lieux, les Français croient découvrir des feuilles d’or et des diamants. Devant l’hostilité grandissante des Amérindiens, Cartier décide de rentrer en France […] »",
-            source: "Jean-Pierre CHARLAND, À l’aube du XXIe siècle, avec la collaboration de Jacques  \nSaint-Pierre, manuel de l’élève, histoire du Québec et du Canada, 4e secondaire, \nMontréal, Lidec, 1997, p. 17."
+            source: "Jean-Pierre CHARLAND, À l’aube du XXIe siècle, avec la collaboration de Jacques  Saint-Pierre, manuel de l’élève, histoire du Québec et du Canada, 4e secondaire, Montréal, Lidec, 1997, p. 17."
           }
         ]
       }
