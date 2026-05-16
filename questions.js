@@ -1006,6 +1006,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q52": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -1108,6 +1130,9 @@ const IMAGE_DB = {
   },
   "1500_chaman.jpg": {
     src: "images/1500_chaman.jpg"
+  },
+  "1500_reseau_echanges.png": {
+    src: "images/1500_reseau_echanges.png"
   }
 }
 
@@ -3264,5 +3289,34 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Le troc."
+  },
+  {
+    id: "Q52",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    enonce: "À partir du document A, indiquez une conséquence des réseaux d’échange sur l’accès aux ressources des nations autochtones.",
+    aspects: [
+      {
+        aspect: "Réseaux d'échange autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "1500_reseau_echanges.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les nations autochtones ont accès à des ressources qu’elles ne trouvent pas sur leur propre territoire ou elles obtiennent des ressources provenant de régions éloignées ou des biens circulent sur de vastes territoires."
   }
 ]
