@@ -1102,71 +1102,43 @@ async function genererDocx(includeGuide=false) {
 
     // Exam header (cahier only)
     if(!includeGuide) {
-      const examNom        = (document.getElementById('exam-nom')?.value || '').trim();
-      const showEleve      = document.getElementById('exam-eleve')?.checked;
-      const showGroupe     = document.getElementById('exam-groupe')?.checked;
-      const showDate       = document.getElementById('exam-date')?.checked;
-      const showScore      = document.getElementById('exam-score')?.checked;
-      const showComm       = document.getElementById('exam-commentaires')?.checked;
-      const totalDocxPts   = panierQuestions.reduce((s,q)=>s+(q.points||0), 0);
-      const BN = { style: BorderStyle.NONE, size: 0, color: 'FFFFFF' };
-      const BORDERS_NONE = { top: BN, bottom: BN, left: BN, right: BN };
+      const examNom    = (document.getElementById('exam-nom')?.value || '').trim();
+      const showEleve  = !!document.getElementById('exam-eleve')?.checked;
+      const showGroupe = !!document.getElementById('exam-groupe')?.checked;
+      const showDate   = !!document.getElementById('exam-date')?.checked;
+      const showScore  = !!document.getElementById('exam-score')?.checked;
+      const showComm   = !!document.getElementById('exam-commentaires')?.checked;
+      const totalDocxPts = panierQuestions.reduce((s,q)=>s+(q.points||0), 0);
+      const hasHeader = examNom || showEleve || showGroupe || showDate || showScore || showComm;
 
-      if(examNom) {
-        children.push(new Paragraph({
-          alignment: AlignmentType.CENTER,
-          children: [new TextRun({ text: examNom, font:'Aptos', size:36, bold:true })]
-        }));
+      if(hasHeader) {
+        if(examNom) {
+          children.push(new Paragraph({
+            alignment: AlignmentType.CENTER,
+            children: [new TextRun({ text: examNom, font:'Aptos', size:36, bold:true })]
+          }));
+          children.push(new Paragraph({ children: [new TextRun({ text:'' })] }));
+        }
+        if(showEleve)  children.push(new Paragraph({ children: [new TextRun({ text: 'Élève : _________________________________', font:'Aptos', size:22 })] }));
+        if(showGroupe) children.push(new Paragraph({ children: [new TextRun({ text: 'Groupe : ________________________________', font:'Aptos', size:22 })] }));
+        if(showDate)   children.push(new Paragraph({ children: [new TextRun({ text: 'Date : __________________________________', font:'Aptos', size:22 })] }));
+        if(showScore)  children.push(new Paragraph({ alignment: AlignmentType.RIGHT, children: [new TextRun({ text: `Résultat : _____ / ${totalDocxPts} pts`, font:'Aptos', size:22 })] }));
+        if(showComm) {
+          children.push(new Paragraph({ children: [new TextRun({ text:'' })] }));
+          const commBorder = { style: BorderStyle.SINGLE, size: 4, color: 'AAAAAA' };
+          children.push(new Table({
+            width: { size: PAGE_W, type: WidthType.DXA },
+            columnWidths: [PAGE_W],
+            rows: [new TableRow({ children: [new TableCell({
+              borders: { top: commBorder, bottom: commBorder, left: commBorder, right: commBorder },
+              margins: { top: 120, bottom: 300, left: 80, right: 80 },
+              children: [new Paragraph({ children: [new TextRun({ text: 'Commentaires :', font:'Aptos', size:20, bold:true })] })]
+            })]})]
+          }));
+        }
+        children.push(new Paragraph({ children: [new TextRun({ text:'' })] }));
         children.push(new Paragraph({ children: [new TextRun({ text:'' })] }));
       }
-
-      const idLines = [];
-      if(showEleve)  idLines.push('Élève : _________________________________');
-      if(showGroupe) idLines.push('Groupe : ________________________________');
-      if(showDate)   idLines.push('Date : __________________________________');
-
-      if(idLines.length || showScore) {
-        const leftChildren = idLines.map(l =>
-          new Paragraph({ children: [new TextRun({ text: l, font:'Aptos', size:22 })] })
-        );
-        if(!leftChildren.length) leftChildren.push(new Paragraph({ children: [new TextRun({ text:'' })] }));
-
-        const rightChildren = showScore
-          ? [new Paragraph({ alignment: AlignmentType.RIGHT, children: [new TextRun({ text: `_____ / ${totalDocxPts} pts`, font:'Aptos', size:22 })] })]
-          : [new Paragraph({ children: [new TextRun({ text:'' })] })];
-
-        children.push(new Table({
-          width: { size: PAGE_W, type: WidthType.DXA },
-          columnWidths: [PAGE_W - 2200, 2200],
-          rows: [new TableRow({ children: [
-            new TableCell({ borders: BORDERS_NONE, children: leftChildren }),
-            new TableCell({ borders: BORDERS_NONE, width: { size: 2200, type: WidthType.DXA }, children: rightChildren })
-          ]})]
-        }));
-        children.push(new Paragraph({ children: [new TextRun({ text:'' })] }));
-      }
-
-      if(showComm) {
-        const commBorder = { style: BorderStyle.SINGLE, size: 4, color: 'AAAAAA' };
-        const commBorders = { top: commBorder, bottom: commBorder, left: commBorder, right: commBorder };
-        children.push(new Table({
-          width: { size: PAGE_W, type: WidthType.DXA },
-          columnWidths: [PAGE_W],
-          rows: [new TableRow({ children: [new TableCell({
-            borders: commBorders,
-            margins: { top: 120, bottom: 120, left: 80, right: 80 },
-            children: [
-              new Paragraph({ children: [new TextRun({ text: 'Commentaires :', font:'Aptos', size:20, bold:true })] }),
-              new Paragraph({ children: [new TextRun({ text: '', font:'Aptos', size:20 })] }),
-              new Paragraph({ children: [new TextRun({ text: '', font:'Aptos', size:20 })] }),
-            ]
-          })] })]
-        }));
-        children.push(new Paragraph({ children: [new TextRun({ text:'' })] }));
-      }
-
-      if(examNom || idLines.length || showScore || showComm)
-        children.push(new Paragraph({ children: [new TextRun({ text:'' })] }));
     }
 
     if(includeGuide) {
