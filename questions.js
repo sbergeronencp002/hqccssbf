@@ -1899,7 +1899,7 @@ const QUESTIONS = [
           {
             titre: "Document A - Principaux porte-parole du camp du Oui",
             ref: "camp_oui_1995.png",
-            source: "Jacques Boissinot/Presse canadienne/655078."
+            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
         ]
       },
@@ -1930,7 +1930,7 @@ const QUESTIONS = [
           {
             titre: "Document D - Signature de la Proclamation de la loi  constitutionnelle canadienne",
             ref: "rapatriment_constitution.png",
-            source: "Robert Cooper/Bibliothèque et Archives Canada/PA-141503."
+            source: "Bibliothèque et Archives Canada."
           }
         ]
       }
