@@ -1739,8 +1739,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "Les membres de ce groupe constituent une élite montante. Inspirés par les idées libérales, bon nombre d’entre eux s’impliquent en politique en formant le groupe dirigeant du Parti patriote.",
-            source: "MEES."
+            texte: "« [...] ce groupe est composé principalement d’avocats, de notaires, de médecins et de journalistes prend une place croissante dans la vie politique du Bas-Canada et revendique une plus grande influence au sein des institutions. »",
+            source: "Ouellet, Fernand. Le Bas-Canada, 1791-1840 : changements structuraux et crise. Ottawa, Presses de l’Université d’Ottawa, 1976."
           }
         ]
       },
@@ -1749,8 +1749,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "Ce groupe prêche la soumission à l’administration coloniale et dénonce les idées libérales défendues par les Patriotes. Par la suite, ce groupe augmentera son influence sociale et politique.",
-            source: "MEES."
+            texte: "« [...] ce groupe est composé principalement d'évêques et de prêtres invitent les fidèles à demeurer soumis aux autorités civiles. Ils présentent l’obéissance au gouvernement et le respect de l’ordre établi comme des devoirs essentiels du bon chrétien. »",
+            source: "Trudel, Marcel. Initiation à la Nouvelle-France. Montréal, Holt, Rinehart et Winston, 1968."
           }
         ]
       },
@@ -1759,8 +1759,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "En majorité composé de personnes d’origine britannique, ce groupe occupe les postes importants de l’administration coloniale. Il est farouchement opposé aux revendications des Patriotes.",
-            source: "MEES."
+            texte: "« « [...] au Bas-Canada ce groupe est composé principalement  de marchands, de négociants, de banquiers et d’armateurs. Elle tire sa richesse du commerce, du transport maritime et des activités financières. »",
+            source: "Dickinson, John A., et Brian Young. Brève histoire socio-économique du Québec. Québec, Septentrion, 2003."
           }
         ]
       }
@@ -1780,20 +1780,24 @@ const QUESTIONS = [
       ]
     },
     guide: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Bourgeoisie professionnelle",
-          valeur: "1"
-        },
-        {
-          label: "Bourgeoisie d'affaires",
-          valeur: "3"
-        },
-        {
-          label: "Clergé catholique",
-          valeur: "2"
-        }
+      type: "grille",
+      entetes: [
+        "Élément",
+        "Document"
+      ],
+      rangees: [
+        [
+          "Bourgeoisie professionnelle",
+          "1"
+        ],
+        [
+          "Bourgeoisie d'affaires",
+          "3"
+        ],
+        [
+          "Clergé catholique",
+          "2"
+        ]
       ]
     }
   },
