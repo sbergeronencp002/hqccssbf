@@ -1960,7 +1960,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "crise_oka.png",
-            source: "Photo : Jacques Nadeau/Archives Le Devoir, dans « La crise d’Oka en huit dates », Le  Devoir, [En ligne], 4 juillet 2015. [http://www.ledevoir.com/societe/actualites-en societe/444276/la-crise-d-oka-en-sept-dates] (Consulté le 18 juin 2017)."
+            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
         ]
       }
