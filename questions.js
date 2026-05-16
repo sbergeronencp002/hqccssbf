@@ -1992,7 +1992,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A - Deux nouvelles sociétés d'État",
-            ref: "logos_societe_etat.png"
+            ref: "logos_societe_etat.png",
+            source: "MEES."
           }
         ]
       },
@@ -2011,7 +2012,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            ref: "barrages_hydro_baie_james.png"
+            ref: "barrages_hydro_baie_james.png",
+            source: "MEES."
           }
         ]
       },
