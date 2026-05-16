@@ -1125,16 +1125,11 @@ async function genererDocx(includeGuide=false) {
         if(showScore)  children.push(new Paragraph({ alignment: AlignmentType.RIGHT, children: [new TextRun({ text: `Résultat : _____ / ${totalDocxPts} pts`, font:'Aptos', size:22 })] }));
         if(showComm) {
           children.push(new Paragraph({ children: [new TextRun({ text:'' })] }));
-          const commBorder = { style: BorderStyle.SINGLE, size: 4, color: 'AAAAAA' };
-          children.push(new Table({
-            width: { size: PAGE_W, type: WidthType.DXA },
-            columnWidths: [PAGE_W],
-            rows: [new TableRow({ children: [new TableCell({
-              borders: { top: commBorder, bottom: commBorder, left: commBorder, right: commBorder },
-              margins: { top: 120, bottom: 300, left: 80, right: 80 },
-              children: [new Paragraph({ children: [new TextRun({ text: 'Commentaires :', font:'Aptos', size:20, bold:true })] })]
-            })]})]
-          }));
+          children.push(new Paragraph({ children: [new TextRun({ text: 'Commentaires :', font:'Aptos', size:20, bold:true })] }));
+          const ligne = '_'.repeat(72);
+          children.push(new Paragraph({ children: [new TextRun({ text: ligne, font:'Aptos', size:20, color:'AAAAAA' })] }));
+          children.push(new Paragraph({ children: [new TextRun({ text: ligne, font:'Aptos', size:20, color:'AAAAAA' })] }));
+          children.push(new Paragraph({ children: [new TextRun({ text: ligne, font:'Aptos', size:20, color:'AAAAAA' })] }));
         }
         children.push(new Paragraph({ children: [new TextRun({ text:'' })] }));
         children.push(new Paragraph({ children: [new TextRun({ text:'' })] }));
