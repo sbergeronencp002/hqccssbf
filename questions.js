@@ -1563,7 +1563,8 @@ const QUESTIONS = [
           {
             titre: "Document A",
             texte: "« Après avoir visité avec soin presque toutes les habitations du Canada […], j’ai trouvé partout des familles très nombreuses. Les pères et mères ont d’ordinaire 10 ou 12 enfants et, assez souvent, 15, 16, 17, et les ayant interrogés bien des fois combien il en était mort, la plupart ont répondu aucun […] »",
-            source: "Jacques de Meulles, intendant"
+            auteur: "Jacques de Meulles, intendant de la Nouvelle-France.",
+            source: "Kalm, Pehr. Voyage de Pehr Kalm au Canada en 1749. Traduction française publiée par Pierre-Georges Roy, Québec, 1880."
           }
         ]
       },
@@ -1590,16 +1591,20 @@ const QUESTIONS = [
       ]
     },
     guide: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Cause",
-          valeur: "B"
-        },
-        {
-          label: "Conséquence",
-          valeur: "1"
-        }
+      type: "grille",
+      entetes: [
+        "Élément",
+        "Document"
+      ],
+      rangees: [
+        [
+          "Cause",
+          "B"
+        ],
+        [
+          "Conséquence",
+          "1"
+        ]
       ]
     }
   },
