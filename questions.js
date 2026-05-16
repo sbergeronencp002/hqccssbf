@@ -2127,7 +2127,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             texte: "« Je ne reconnais à aucun gouvernement le droit de nous imposer le service obligatoire pour prendre part aux guerres impériales. […] Je serai pendu ou fusillé, mais je demanderai toujours, avant la conscription, des élections et un référendum. »",
-            auteur: "Armand Lavergne",
+            auteur: "Armand Lavergne.",
             source: "Levitt, Joseph (dir.). Henri Bourassa on Imperialism and Biculturalism, 1900–1918. Toronto, Macmillan of Canada, 1970."
           }
         ]
@@ -2138,7 +2138,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             texte: "« Que l’on pèse bien ces paroles : la conscription marquerait, pour les Canadiens français, le commencement d’une évolution qui ne tarderait pas à transformer en un peuple révolutionnaire la population la plus paisible […] des deux Amériques. Une fois déchaîné, cet esprit révolutionnaire ne s’arrêterait pas en route; il ne s’attaquerait pas qu’au régime militaire : il se manifesterait à l’usine, dans les champs, partout, dans toutes les sphères de la vie industrielle, sociale et politique. »",
-            auteur: "Henri Bourassa",
+            auteur: "Henri Bourassa.",
             source: "Bourassa, Henri. « La conscription ». Le Devoir, 1917."
           }
         ]
@@ -2149,7 +2149,7 @@ const QUESTIONS = [
           {
             titre: "Document C",
             texte: "« Il faut obtenir des renforts ou les divisions vont s’émietter. Les renforts actuellement disponibles ne dureront que quelques mois […] [La] question qui se pose est celle-ci : le Canada accepte-t-il de diminuer son effort dans la période la plus critique de la guerre […]? Je suis sûr que la réponse de la Chambre et du pays sera la même, à savoir que le Canada ne peut et ne doit lâcher prise. […] Cette loi s’appuie sur un principe […] c’est que si l’État a des devoirs envers ses sujets, ces derniers ont de leur côté des devoirs à remplir envers l’État. »",
-            auteur: "Robert L. Borden, premier ministre du Canada",
+            auteur: "Robert L. Borden, premier ministre du Canada.",
             source: "Borden, Robert. Discours sur la Loi du service militaire, Débats de la Chambre des communes du Canada, 18 mai 1917."
           }
         ]
