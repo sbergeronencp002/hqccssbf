@@ -1222,7 +1222,7 @@ const QUESTIONS = [
     niveau: 3,
     oi: "Situer dans le temps",
     periode: "P1 — Des origines à 1608",
-    points: 2,
+    points: 1,
     enonce: "Les documents A à D présentent des faits relatifs aux premières tentatives d’établissement d’Européens en Amérique du Nord. Placez-les par ordre chronologique.",
     aspects: [
       {
@@ -1312,7 +1312,7 @@ const QUESTIONS = [
     niveau: 3,
     oi: "Situer dans le temps",
     periode: "P3 — 1760 – 1791",
-    points: 2,
+    points: 1,
     enonce: "Les documents A à D font référence aux rapports de force entre les empires coloniaux français et britannique. Indiquez si les faits présentés dans ces documents se déroulent avant ou après la capitulation de Montréal.",
     aspects: [
       {
@@ -1879,7 +1879,7 @@ const QUESTIONS = [
     niveau: 4,
     oi: "Situer dans le temps",
     periode: "P8 — De 1980 à nos jours",
-    points: 2,
+    points: 1,
     enonce: "Les documents A à D présentent des événements liés au statut politique du Québec à partir de 1982. Placez-les par ordre chronologique.",
     aspects: [
       {
@@ -1970,7 +1970,7 @@ const QUESTIONS = [
     niveau: 4,
     oi: "Situer dans le temps",
     periode: "P7 — 1945 – 1980",
-    points: 2,
+    points: 1,
     enonce: "Les documents A à D font référence à la modernisation de l’économie du Québec. Indiquez si les faits présentés dans ces documents se déroulent avant ou après 1960.",
     aspects: [
       {
