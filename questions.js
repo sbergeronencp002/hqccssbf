@@ -3781,7 +3781,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 2,
     soustag: "Cause",
-    enonce: "À partir du document A, indiquez une cause du rappel de Guy Carleton en Angleterre.",
+    enonce: "À partir du document A, indiquez une cause du rappel de James Murray en Angleterre.",
     aspects: [
       {
         aspect: "Mouvements de revendication"
@@ -3803,7 +3803,7 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Les marchands anglophones s’opposent aux politiques de Guy Carleton ou ils demandent des changements à l’administration de la colonie."
+    guide: "Les marchands anglophones s’opposent aux politiques de James Murray ou ils demandent des changements à l’administration de la colonie."
   },
   {
     id: "Q59",
