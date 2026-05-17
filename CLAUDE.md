@@ -63,7 +63,7 @@ git fetch origin claude/hqc-cssbf-project-Fuk0V
 | `contexte.js` | Éditeur intégré dans admin.html — section « Contexte » en bas |
 
 ### Cache-bust actuel
-`app.js?v=v18`, `style.css?v=v18` — incrémenter à chaque changement majeur dans index.html.
+`app.js?v=v19`, `style.css?v=v19` — incrémenter à chaque changement majeur dans index.html.
 
 ## Images
 
