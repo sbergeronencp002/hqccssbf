@@ -420,7 +420,7 @@ function buildTileHtml(q) {
       <div class="q-tile-diff" style="margin-top:6px;display:flex;align-items:center;gap:5px;flex-wrap:wrap">
         <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${diffColor};flex-shrink:0"></span>
         <span style="font-size:0.72rem;color:${diffColor};font-weight:500">${diffLabel}</span>
-        ${q.soustag ? `<span style="font-size:0.7rem;color:#fff;background:#1B3B6F;border-radius:10px;padding:1px 8px;font-weight:500;margin-left:2px">${q.soustag}</span>` : ''}
+        ${q.soustag ? `<span style="font-size:0.7rem;color:${st.color};background:${st.bg};border-radius:10px;padding:1px 8px;font-weight:500;margin-left:2px">${q.soustag}</span>` : ''}
       </div>
     </div>
     <span class="q-tile-check" onclick="event.stopPropagation();togglePanier('${q.id}')">✓</span>
