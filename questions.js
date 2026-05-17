@@ -1350,6 +1350,9 @@ const IMAGE_DB = {
   },
   "portrait_guy_carleton.png": {
     src: "images/portrait_guy_carleton.png"
+  },
+  "james_murray.png": {
+    src: "images/james_murray.png"
   }
 }
 
@@ -3760,8 +3763,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "portrait_guy_carleton.png",
-            source: "Bibliothèque et Archives Canada, portrait des premiers gouverneurs britanniques (1724-1808)."
+            ref: "james_murray.png"
           }
         ]
       }
@@ -3770,7 +3772,7 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 1
     },
-    guide: "Guy Carleton."
+    guide: "James Murray."
   },
   {
     id: "Q58",
