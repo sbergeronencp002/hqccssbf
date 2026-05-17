@@ -1189,6 +1189,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q60": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -3789,5 +3811,46 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Le rappel de Guy Carleton en Angleterre."
+  },
+  {
+    id: "Q60",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux groupes de marchands britanniques sur l’administration de la Province de Québec. Sur quel point précis ces deux groupes sont-ils d’accord?",
+    aspects: [
+      {
+        aspect: "Mouvements de revendication"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les habitants britanniques de cette province demandent qu’une assemblée représentative soit établie et que les lois anglaises soient appliquées, afin de garantir dans cette colonie les mêmes droits et privilèges que ceux dont jouissent les autres sujets de Sa Majesté. »",
+            source: "Pétition des marchands britanniques de Québec au gouvernement britannique, 1764."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Plusieurs commerçants britanniques dénoncent une administration trop favorable aux Canadiens et réclament des changements au gouvernement de la colonie, notamment l’établissement d’institutions politiques qui permettraient aux sujets britanniques de mieux défendre leurs intérêts. »",
+            source: "Pétition des marchands britanniques de Montréal au gouvernement britannique, 1770."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les deux groupes de marchands britanniques s’opposent aux politiques de Guy Carleton ou demandent des changements dans l’administration de la colonie."
   }
 ]
