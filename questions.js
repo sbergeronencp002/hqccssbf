@@ -1473,7 +1473,7 @@ const QUESTIONS = [
     niveau: 3,
     oi: "Dégager des différences et des similitudes",
     periode: "P4 — 1791 – 1840",
-    points: 2,
+    points: 3,
     enonce: "Les documents A et B le point de vue de deux historiens sur les Rébellions de 1837-1838. Sur quel point précis sont-ils en désaccord?",
     aspects: [
       {
@@ -2160,7 +2160,7 @@ const QUESTIONS = [
     niveau: 4,
     oi: "Dégager des différences et des similitudes",
     periode: "P5 — 1840 – 1896",
-    points: 2,
+    points: 3,
     enonce: "Les documents A et B présentent le point de vue de deux acteurs à la fin du 19e siècle. Sur quel point précis ces deux personnages sont-ils d’accord?",
     aspects: [
       {
@@ -2849,7 +2849,7 @@ const QUESTIONS = [
     niveau: 3,
     oi: "Dégager des différences et des similitudes",
     periode: "P1 — Des origines à 1608",
-    points: 2,
+    points: 3,
     enonce: "Les documents A et B présentent le point de vue de deux auteurs sur l’organisation sociale des Iroquoiens. Sur quel point précis ces deux auteurs sont-ils d’accord?",
     aspects: [
       {
@@ -3049,7 +3049,7 @@ const QUESTIONS = [
     niveau: 3,
     oi: "Dégager des différences et des similitudes",
     periode: "P1 — Des origines à 1608",
-    points: 2,
+    points: 3,
     enonce: "Les documents A et B présentent le point de vue de deux historiens sur le rôle du chaman. Sur quel point précis ces deux auteurs sont-ils d’accord?",
     aspects: [
       {
@@ -3089,7 +3089,7 @@ const QUESTIONS = [
     niveau: 3,
     oi: "Dégager des différences et des similitudes",
     periode: "P1 — Des origines à 1608",
-    points: 2,
+    points: 3,
     enonce: "Les documents A et B présentent le point de vue deux auteurs sur l’éducation des enfants chez les Autochtones. Sur quel point précis ces deux auteurs sont-ils d’accord?",
     aspects: [
       {
@@ -3249,7 +3249,7 @@ const QUESTIONS = [
     niveau: 3,
     oi: "Dégager des différences et des similitudes",
     periode: "P1 — Des origines à 1608",
-    points: 2,
+    points: 3,
     enonce: "Les documents A et B présentent le point de vue de deux auteurs sur le don et le contre-don. Sur quel point précis ces deux auteurs sont-ils d’accord?",
     aspects: [
       {
