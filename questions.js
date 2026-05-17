@@ -1128,6 +1128,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q57": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -1242,6 +1259,9 @@ const IMAGE_DB = {
   },
   "echanges_canada_etats-unis_1850-1860.png": {
     src: "images/echanges_canada_etats-unis_1850-1860.png"
+  },
+  "portrait_guy_carleton.png": {
+    src: "images/portrait_guy_carleton.png"
   }
 }
 
@@ -3633,5 +3653,35 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les deux auteurs s’entendent pour dire que l’alliance entre les Français et les Hurons-Wendats favorise le commerce des fourrures ou entraîne les Français dans les conflits avec les Iroquois."
+  },
+  {
+    id: "Q57",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Quel gouverneur est rappelé en Angleterre à la suite de pressions exercées par les marchands \nanglophones de la Province de Québec au début du régime britannique?",
+    aspects: [
+      {
+        aspect: "Mouvements de revendication"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "portrait_guy_carleton.png",
+            source: "Bibliothèque et Archives Canada, portrait des premiers gouverneurs britanniques (1724-1808)."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Guy Carleton."
   }
 ]
