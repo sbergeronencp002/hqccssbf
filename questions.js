@@ -1211,6 +1211,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q61": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de divergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -3852,5 +3874,48 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les deux groupes de marchands britanniques s’opposent aux politiques de Guy Carleton ou demandent des changements dans l’administration de la colonie."
+  },
+  {
+    id: "Q61",
+    niveau: 4,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P7 — 1945 – 1980",
+    points: 2,
+    soustag: "Divergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue d’Antonio Barrette et de Lionel Groulx sur la Grève de l'amiante de 1949. Sur quel point précis ces deux auteurs sont-ils en désaccord?",
+    aspects: [
+      {
+        aspect: "Période duplessiste"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les revendications relatives à la poussière d’amiante ne justifient pas l’arrêt de travail. Rien ne permet de considérer cette question comme un motif valable pour déclencher une grève aussi importante. »",
+            auteur: "Antonio Barrette.",
+            source: "Déclaration d’Antonio Barrette au sujet de la Grève de l'amiante de 1949."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les travailleurs ont raison de dénoncer les effets de la poussière d’amiante sur leur santé. Cette situation constitue un motif légitime pour réclamer de meilleures conditions de travail. »",
+            auteur: "Lionel Groulx.",
+            source: "Commentaire de Lionel Groulx sur la Grève de l'amiante de 1949."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le motif de la grève ou la légitimité de la grève ou l’utilisation de la poussière d’amiante comme motif de la grève."
   }
 ]
