@@ -1540,7 +1540,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "cause_rivalites_coloniales.png",
-            source: "Illustration générée par intelligence artificielle inspirée d’une caricature historique."
+            source: "Adaptation contemporaine d’une caricature historique, réalisée avec l’aide de l’intelligence artificielle (ChatGPT, 2026)."
           }
         ]
       }
