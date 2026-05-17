@@ -1614,7 +1614,7 @@ const QUESTIONS = [
         ],
         [
           "Conséquence",
-          "1"
+          "A"
         ]
       ]
     }
