@@ -2081,7 +2081,7 @@ const QUESTIONS = [
     periode: "P7 — 1945 – 1980",
     points: 2,
     soustag: "Différence",
-    enonce: "À partir du document A, indiquez la différence entre le moyen utilisé par le Front de libération du Québec et celui utilisé par le Parti québécois pour obtenir l’indépendance du Québec.",
+    enonce: "À partir des documents A et B, indiquez la différence entre le moyen utilisé par le Front de libération du Québec et celui utilisé par le Parti québécois pour obtenir l’indépendance du Québec.",
     aspects: [
       {
         aspect: "Néonationalisme"
@@ -2103,8 +2103,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "victoire_pq_1976.png",
-            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
+            ref: "victoire_pq_1976.png"
           }
         ]
       }
