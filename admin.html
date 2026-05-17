@@ -164,10 +164,10 @@ header a:hover { color: #fff; }
         <span>Tableau de bord — Couverture</span>
         <div style="display:flex;align-items:center;gap:10px">
           <span id="dashboard-total" style="font-size:.75rem;font-weight:600;color:var(--ink-2)"></span>
-          <span id="dashboard-toggle-icon" style="font-size:.8rem;color:var(--ink-3);transition:transform .2s">▲</span>
+          <span id="dashboard-toggle-icon" style="font-size:.8rem;color:var(--ink-3);transition:transform .2s">▼</span>
         </div>
       </div>
-      <div id="dashboard-content"></div>
+      <div id="dashboard-content" style="display:none"></div>
     </div>
 
     <!-- MODE -->
@@ -1441,6 +1441,7 @@ function toggleDashboard() {
 function renderDashboard() {
   if(!currentQuestions.length) return;
   document.getElementById('dashboard-section').style.display = '';
+  // Garde l'état masqué/visible existant (pas de forçage)
 
   const totalQ   = currentQuestions.length;
   const totalPts = currentQuestions.reduce((s,q) => s + (q.points||0), 0);
