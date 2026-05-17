@@ -422,46 +422,99 @@ select:focus { outline: none; border-color: var(--ink-2); }
 .cahier-item.drop-top::before    { display: block; }
 .cahier-item.drop-bottom::after  { display: block; }
 
-.cahier-exam {
-  padding: 10px 14px 0;
-  display: flex; flex-direction: column; gap: 8px;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 8px;
-}
-.cahier-exam-section { display: flex; flex-direction: column; gap: 4px; }
-.cahier-exam-title {
-  font-size: 0.62rem; font-weight: 600; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--ink-3);
-}
-.cahier-exam-input {
-  width: 100%; padding: 6px 10px;
-  background: var(--paper); border: 1px solid var(--border); border-radius: 4px;
-  font-family: 'DM Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
-  font-size: 0.8rem; color: var(--ink);
-}
-.cahier-exam-input:focus { outline: none; border-color: var(--ink-2); }
-.cahier-exam-input::placeholder { color: var(--ink-3); }
-.cahier-exam-opts { display: flex; gap: 10px; flex-wrap: wrap; }
-.cahier-exam-label { font-size: 0.72rem; color: var(--ink-2); display: flex; align-items: center; gap: 4px; cursor: pointer; }
-.cahier-exam-label input { cursor: pointer; }
-
+/* ── Cahier footer modern ─────────────────────────── */
 .cahier-footer {
-  padding: 12px 14px; background: var(--paper-2);
+  padding: 12px 14px 14px; background: var(--paper-2);
   border-top: 1px solid var(--border); flex-shrink: 0;
+  display: flex; flex-direction: column; gap: 10px;
 }
+
+/* Input titre */
+.cahier-options { display: flex; flex-direction: column; gap: 8px; }
+.cahier-exam-input {
+  width: 100%; padding: 8px 12px; box-sizing: border-box;
+  background: var(--paper); border: 1.5px solid var(--border); border-radius: 8px;
+  font-family: 'DM Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 0.85rem; color: var(--ink);
+  transition: border-color 0.15s;
+}
+.cahier-exam-input:focus { outline: none; border-color: #1B3B6F; }
+.cahier-exam-input::placeholder { color: var(--ink-3); }
+
+/* Toggle pills */
+.cahier-toggles { display: flex; gap: 6px; flex-wrap: wrap; }
+.exam-toggle {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 11px; border-radius: 20px;
+  border: 1.5px solid var(--border);
+  font-size: 0.72rem; font-weight: 500; color: var(--ink-2);
+  cursor: pointer; user-select: none;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  background: var(--paper);
+}
+.exam-toggle input { position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none; }
+.exam-toggle:has(input:checked) {
+  background: #1B3B6F; color: #fff; border-color: #1B3B6F;
+}
+.exam-toggle:hover:not(:has(input:checked)) {
+  border-color: var(--ink-2); color: var(--ink);
+}
+
+/* Stats */
 .cahier-footer-stats {
   font-size: 0.72rem; color: var(--ink-2);
-  margin-bottom: 10px; text-align: center; letter-spacing: 0.02em;
+  text-align: center; letter-spacing: 0.02em;
 }
 .cahier-footer-stats strong { color: var(--ink); }
-.cahier-footer-btns { display: flex; gap: 6px; }
-.cahier-footer-btns .btn-vider,
+
+/* Boutons */
+.cahier-footer-btns { display: flex; gap: 6px; align-items: center; }
+.cfb-ghost {
+  padding: 7px 11px; border-radius: 7px; font-size: 0.74rem; font-weight: 500;
+  font-family: inherit; cursor: pointer;
+  background: transparent; color: var(--ink-3);
+  border: 1.5px solid var(--border);
+  transition: color 0.15s, border-color 0.15s;
+}
+.cfb-ghost:hover { color: #c0392b; border-color: #c0392b; }
+.cfb-icon {
+  padding: 7px 9px; border-radius: 7px; font-size: 0.85rem;
+  font-family: inherit; cursor: pointer;
+  background: transparent; color: var(--ink-2);
+  border: 1.5px solid var(--border);
+  transition: background 0.15s;
+}
+.cfb-icon:hover { background: var(--paper-3); }
+.cfb-outline {
+  padding: 7px 11px; border-radius: 7px; font-size: 0.74rem; font-weight: 500;
+  font-family: inherit; cursor: pointer;
+  background: transparent; color: #1B3B6F;
+  border: 1.5px solid rgba(27,59,111,0.35);
+  transition: background 0.15s;
+}
+.cfb-outline:hover { background: rgba(27,59,111,0.07); }
+.cfb-primary {
+  flex: 1; padding: 8px 10px; border-radius: 7px; font-size: 0.78rem; font-weight: 600;
+  font-family: inherit; cursor: pointer;
+  background: #1B3B6F; color: #fff; border: none;
+  transition: opacity 0.15s;
+}
+.cfb-primary:hover { opacity: 0.88; }
+.cfb-primary:disabled { opacity: 0.38; cursor: not-allowed; }
+.cfb-alt {
+  flex: 1; padding: 8px 10px; border-radius: 7px; font-size: 0.78rem; font-weight: 500;
+  font-family: inherit; cursor: pointer;
+  background: var(--paper-3); color: var(--ink); border: 1.5px solid var(--border);
+  transition: opacity 0.15s;
+}
+.cfb-alt:hover { opacity: 0.80; }
+.cfb-alt:disabled { opacity: 0.38; cursor: not-allowed; }
+
+/* Compat modal footer */
 .modal-footer .btn-vider {
   color: var(--ink-2); border-color: var(--border); background: transparent;
 }
-.cahier-footer-btns .btn-vider:hover,
 .modal-footer .btn-vider:hover { color: var(--ink); border-color: var(--ink); }
-.cahier-footer-btns .btn-generer { flex: 1; padding: 7px 10px; font-size: 0.75rem; }
 
 .panier-count { font-size: 0.7rem; color: rgba(255,255,255,0.6); white-space: nowrap; }
 .btn-generer {
