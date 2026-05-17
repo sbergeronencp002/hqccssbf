@@ -160,9 +160,12 @@ header a:hover { color: #fff; }
 
     <!-- TABLEAU DE BORD -->
     <div class="section" id="dashboard-section" style="display:none">
-      <div class="section-title" style="display:flex;justify-content:space-between;align-items:center">
+      <div class="section-title" style="display:flex;justify-content:space-between;align-items:center;cursor:pointer" onclick="toggleDashboard()">
         <span>Tableau de bord — Couverture</span>
-        <span id="dashboard-total" style="font-size:.75rem;font-weight:600;color:var(--ink-2)"></span>
+        <div style="display:flex;align-items:center;gap:10px">
+          <span id="dashboard-total" style="font-size:.75rem;font-weight:600;color:var(--ink-2)"></span>
+          <span id="dashboard-toggle-icon" style="font-size:.8rem;color:var(--ink-3);transition:transform .2s">▲</span>
+        </div>
       </div>
       <div id="dashboard-content"></div>
     </div>
@@ -1427,6 +1430,14 @@ function resetForm(keepId=false) {
 }
 
 // ── TABLEAU DE BORD ───────────────────────────────────────────────────
+function toggleDashboard() {
+  const content = document.getElementById('dashboard-content');
+  const icon = document.getElementById('dashboard-toggle-icon');
+  const hidden = content.style.display === 'none';
+  content.style.display = hidden ? '' : 'none';
+  icon.textContent = hidden ? '▲' : '▼';
+}
+
 function renderDashboard() {
   if(!currentQuestions.length) return;
   document.getElementById('dashboard-section').style.display = '';
