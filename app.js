@@ -446,7 +446,13 @@ function renderMore() {
   const container = document.getElementById('q-list');
   container.querySelector('.voir-plus-wrap')?.remove();
   const shown = container.querySelectorAll('.q-tile').length;
-  container.insertAdjacentHTML('beforeend', currentFiltered.slice(shown).map(buildTileHtml).join(''));
+  const next = currentFiltered.slice(shown, shown + PAGE_SIZE);
+  container.insertAdjacentHTML('beforeend', next.map(buildTileHtml).join(''));
+  const rem = currentFiltered.length - shown - next.length;
+  if(rem > 0) {
+    container.insertAdjacentHTML('beforeend',
+      `<div class="voir-plus-wrap"><button class="voir-plus-btn" onclick="renderMore()">Voir ${rem} autre${rem>1?'s':''} →</button></div>`);
+  }
 }
 
 async function initSite() {
