@@ -1388,31 +1388,41 @@ async function publier() {
     }
     currentReglettes[q.id] = r;
 
-    const newContent = generateQuestionsJs(currentQuestions, currentReglettes, currentImageDb);
-    const encoded = btoa(unescape(encodeURIComponent(newContent)));
+    const commitMsg = editingId ? `Modifier ${q.id} — ${q.oi}` : `Ajouter ${q.id} — ${q.oi} (${q.periode})`;
 
-    const putResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js`, {
-      method: 'PUT',
-      headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        message: editingId ? `Modifier ${q.id} — ${q.oi}` : `Ajouter ${q.id} — ${q.oi} (${q.periode})`,
-        content: encoded,
-        sha: questionsFileSha,
-        branch: BRANCH
-      })
-    });
-
-    if(!putResp.ok) {
+    // PUT avec retry automatique sur conflit SHA (jusqu'à 3 tentatives)
+    let putResp, putResult;
+    for(let attempt = 0; attempt < 3; attempt++) {
+      if(attempt > 0) {
+        // Rafraîchir le SHA avant de réessayer
+        await fetchFreshState(token);
+        // Reconstruire le contenu avec les questions à jour (évite d'écraser des publications concurrentes)
+        if(editingId) {
+          const idx2 = currentQuestions.findIndex(x => x.id === editingId);
+          if(idx2 !== -1) currentQuestions[idx2] = q; else currentQuestions.push(q);
+        } else if(!currentQuestions.find(x => x.id === q.id)) {
+          currentQuestions.push(q);
+        }
+        currentReglettes[q.id] = r;
+      }
+      const newContent2 = generateQuestionsJs(currentQuestions, currentReglettes, currentImageDb);
+      const encoded2 = btoa(unescape(encodeURIComponent(newContent2)));
+      putResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js`, {
+        method: 'PUT',
+        headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: commitMsg, content: encoded2, sha: questionsFileSha, branch: BRANCH })
+      });
+      if(putResp.ok) { putResult = await putResp.json(); break; }
       let msg = putResp.status;
       try { const err = await putResp.json(); msg = err.message || msg; } catch(_) {}
-      if(putResp.status === 409 || String(msg).toLowerCase().includes('fast forward') || String(msg).toLowerCase().includes('conflict'))
-        throw new Error('Conflit : un·e collègue a publié en même temps. Rechargez la page (F5) et réessayez.');
-      throw new Error(msg);
+      const isConflict = putResp.status === 409 || String(msg).toLowerCase().includes('fast forward') || String(msg).toLowerCase().includes('conflict');
+      if(!isConflict || attempt === 2) throw new Error(isConflict ? 'Conflit persistant après 3 tentatives. Rechargez la page (F5) et réessayez.' : msg);
+      await new Promise(r => setTimeout(r, 800 * (attempt + 1)));
     }
 
-    // Update local state
-    const result = await putResp.json();
-    questionsFileSha = result.content.sha;
+    // Update SHA
+    questionsFileSha = putResult.content.sha;
+
     // Next ID
     const nums = currentQuestions.map(q=>parseInt(q.id.replace(/\D/g,''))).filter(n=>!isNaN(n));
     const nextId = 'Q' + (Math.max(...nums)+1);
