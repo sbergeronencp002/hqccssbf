@@ -1189,6 +1189,9 @@ const IMAGE_DB = {
   },
   "cause_rivalites_coloniales.png": {
     src: "images/cause_rivalites_coloniales.png"
+  },
+  "recensement_colonie_n-f.png": {
+    src: "images/recensement_colonie_n-f.png"
   }
 }
 
@@ -1580,9 +1583,9 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document B - Données sur les célibataires lors d’un recensement dans la colonie",
-            ref: "recensement_colonie.png",
-            source: "MEES."
+            titre: "Document B - Recensement des célibataires de la Nouvelle-France en 1665",
+            ref: "recensement_colonie_n-f.png",
+            source: "Bibliothèque et Archives Canada – Recensement de 1666 en Nouvelle-France."
           }
         ]
       }
