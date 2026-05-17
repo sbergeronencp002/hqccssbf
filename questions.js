@@ -1192,6 +1192,9 @@ const IMAGE_DB = {
   },
   "recensement_colonie_n-f.png": {
     src: "images/recensement_colonie_n-f.png"
+  },
+  "echanges_canada_etats-unis_1850.png": {
+    src: "images/echanges_canada_etats-unis_1850.png"
   }
 }
 
@@ -2283,7 +2286,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "tableau_traite_recipricite_exportations.png",
+            ref: "echanges_canada_etats-unis_1850.png",
             source: "Statistique Canada, Historical Statistics of Canada, données sur le commerce entre le Canada et les États-Unis, 1852-1856."
           }
         ]
