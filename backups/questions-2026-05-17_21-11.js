@@ -1183,12 +1183,6 @@ const IMAGE_DB = {
   },
   "1500_reseau_echanges.png": {
     src: "images/1500_reseau_echanges.png"
-  },
-  "cause_rivalite_coloniale.png": {
-    src: "images/cause_rivalite_coloniale.png"
-  },
-  "cause_rivalites_coloniales.png": {
-    src: "images/cause_rivalites_coloniales.png"
   }
 }
 
@@ -1539,8 +1533,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "cause_rivalites_coloniales.png",
-            source: "Illustration générée par intelligence artificielle inspirée d’une caricature historique."
+            ref: "commerce_fourrures.png",
+            source: "MEES."
           }
         ]
       }
@@ -2745,7 +2739,6 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P1 — Des origines à 1608",
     points: 2,
-    soustag: "2 éléments",
     enonce: "À partir des documents A et B, indiquez la lettre du document qui fait références aux activités économiques pratiquées les groupes autochtones.",
     aspects: [
       {
@@ -2805,7 +2798,6 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P1 — Des origines à 1608",
     points: 2,
-    soustag: "2 éléments",
     enonce: "À partir des documents A et B, indiquez la lettre du document qui fait références à l'organisation territoriale des groupes autochtones.",
     aspects: [
       {
@@ -2979,7 +2971,6 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P1 — Des origines à 1608",
     points: 2,
-    soustag: "4 éléments",
     enonce: "Les documents A à D présentent des faits sur la prise de décision chez les Iroquoiens et les Algonquiens vers 1500. Indiquez les lettres des documents qui correspondent à chacun des groupes.",
     aspects: [
       {
