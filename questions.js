@@ -1233,6 +1233,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q62": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -3919,5 +3936,35 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Le motif de la grève ou la légitimité de la grève ou l’utilisation de la poussière d’amiante comme motif de la grève."
+  },
+  {
+    id: "Q62",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "À partir du document A, nommez le gouverneur qui succède à James Murray.",
+    aspects: [
+      {
+        aspect: "Mouvements de revendication"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "portrait_guy_carleton.png",
+            source: "Bibliothèque et Archives Canada, portrait des premiers gouverneurs (1724-1808)."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Guy Carleton."
   }
 ]
