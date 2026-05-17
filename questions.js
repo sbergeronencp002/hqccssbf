@@ -3748,7 +3748,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             texte: "« Les habitants britanniques de cette province demandent qu’une assemblée soit établie et que les lois anglaises soient pleinement appliquées, afin d’assurer à ses sujets les mêmes droits et privilèges que ceux dont jouissent les autres colonies de Sa Majesté. »",
-            source: "étition des marchands britanniques de la Province of Quebec au gouvernement britannique, 1764."
+            source: "Pétition des marchands britanniques de la Province de Québec au gouvernement britannique, 1764."
           }
         ]
       }
