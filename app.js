@@ -408,20 +408,13 @@ function buildTileHtml(q) {
   const st = oiStyle(q.oi);
   const aspect = q.aspects.map(a => a.aspect).join(' · ');
   const inPanier = panier.includes(q.id);
-  const pts = q.points || 0;
-  const diffColor = pts >= 3 ? '#c0392b' : pts >= 2 ? '#d35400' : '#27ae60';
-  const diffLabel = pts >= 3 ? 'Difficile' : pts >= 2 ? 'Modérée' : 'Facile';
   return `<div class="q-tile${inPanier ? ' in-panier' : ''}" id="tile-${q.id}"
     style="--tile-color:${st.color};background:#fff" onclick="openQModal('${q.id}')">
     <div class="q-tile-bar" style="display:none"></div>
     <div class="q-tile-content">
       <div class="q-tile-oi" style="display:block;font-size:1.1rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:5px 12px;border-radius:6px;color:${st.color};background:${st.bg};line-height:1.3;word-break:break-word">${q.oi}</div>
       <div class="q-tile-aspect" style="font-size:0.9rem;font-weight:400;color:#6B6560;margin-top:2px">${aspect}</div>
-      <div class="q-tile-diff" style="margin-top:6px;display:flex;align-items:center;gap:5px;flex-wrap:wrap">
-        <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${diffColor};flex-shrink:0"></span>
-        <span style="font-size:0.72rem;color:${diffColor};font-weight:500">${diffLabel}</span>
-        ${q.soustag ? `<span style="font-size:0.7rem;color:${st.color};background:${st.bg};border-radius:10px;padding:1px 8px;font-weight:500;margin-left:2px">${q.soustag}</span>` : ''}
-      </div>
+      ${q.soustag ? `<div style="margin-top:6px"><span style="font-size:0.7rem;color:${st.color};background:${st.bg};border-radius:10px;padding:1px 8px;font-weight:500">${q.soustag}</span></div>` : ''}
     </div>
     <span class="q-tile-check" onclick="event.stopPropagation();togglePanier('${q.id}')">✓</span>
   </div>`;
