@@ -1196,7 +1196,7 @@ async function genererDocx(includeGuide=false) {
         const r1L = showEleve  ? 'Élève : _________________________' : '';
         const r1R = showGroupe ? 'Groupe : ________________________' : '';
         const r2L = showDate   ? 'Date : __________________________' : '';
-        const r2R = showScore  ? \`_____ / \${totalDocxPts} pts\` : '';
+        const r2R = showScore  ? `_____ / ${totalDocxPts} pts` : '';
         if(r1L || r1R) fieldRows.push(new TableRow({ children: [mkHCell(r1L), mkHCell(r1R, AlignmentType.LEFT)] }));
         if(r2L || r2R) fieldRows.push(new TableRow({ children: [mkHCell(r2L), mkHCell(r2R, AlignmentType.RIGHT)] }));
         if(fieldRows.length) {
