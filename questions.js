@@ -1223,6 +1223,7 @@ const QUESTIONS = [
     oi: "Situer dans le temps",
     periode: "P1 — Des origines à 1608",
     points: 1,
+    soustag: "Ordre chronologique",
     enonce: "Les documents A à D présentent des faits relatifs aux premières tentatives d’établissement d’Européens en Amérique du Nord. Placez-les par ordre chronologique.",
     aspects: [
       {
@@ -1283,6 +1284,7 @@ const QUESTIONS = [
     oi: "Situer dans le temps",
     periode: "P2 — 1608 – 1760",
     points: 1,
+    soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
     aspects: [
       {
@@ -1313,6 +1315,7 @@ const QUESTIONS = [
     oi: "Situer dans le temps",
     periode: "P3 — 1760 – 1791",
     points: 1,
+    soustag: "Avant et après",
     enonce: "Les documents A à D font référence aux rapports de force entre les empires coloniaux français et britannique. Indiquez si les faits présentés dans ces documents se déroulent avant ou après la capitulation de Montréal.",
     aspects: [
       {
@@ -1395,6 +1398,7 @@ const QUESTIONS = [
     oi: "Situer dans l'espace",
     periode: "P3 — 1760 – 1791",
     points: 1,
+    soustag: "Situer 1 élément",
     enonce: "À partir du document A, indiquez la lettre qui correspond à une région de la Province de Québec où s’établissent des Loyalistes.",
     aspects: [
       {
@@ -1424,6 +1428,7 @@ const QUESTIONS = [
     oi: "Dégager des différences et des similitudes",
     periode: "P3 — 1760 – 1791",
     points: 3,
+    soustag: "Position – 3 acteurs",
     enonce: "Les documents A à C présentent la position de trois acteurs à l’égard de l’Acte de Québec. Nommez l’acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
     aspects: [
       {
@@ -1474,6 +1479,7 @@ const QUESTIONS = [
     oi: "Dégager des différences et des similitudes",
     periode: "P4 — 1791 – 1840",
     points: 3,
+    soustag: "Divergence – 2 acteurs",
     enonce: "Les documents A et B le point de vue de deux historiens sur les Rébellions de 1837-1838. Sur quel point précis sont-ils en désaccord?",
     aspects: [
       {
@@ -1610,6 +1616,7 @@ const QUESTIONS = [
     oi: "Déterminer des changements et des continuités",
     periode: "P4 — 1791 – 1840",
     points: 2,
+    soustag: "Changement",
     enonce: "À partir du document A, indiquez le changement territorial qui survient avec l’adoption de l’Acte constitutionnel en 1791.",
     aspects: [
       {
@@ -1640,6 +1647,7 @@ const QUESTIONS = [
     oi: "Déterminer des changements et des continuités",
     periode: "P2 — 1608 – 1760",
     points: 2,
+    soustag: "Continuité",
     enonce: "Indiquez un élément de continuité dans la façon de faire du commerce en Amérique du Nord durant les périodes présentées dans les documents A et B.",
     aspects: [
       {
@@ -1680,6 +1688,7 @@ const QUESTIONS = [
     oi: "Déterminer des changements et des continuités",
     periode: "P4 — 1791 – 1840",
     points: 3,
+    soustag: "Changement ou continuité",
     enonce: "À partir des document A et B, indiquez s’il y a changement ou continuité dans l’exercice du pouvoir politique dans la colonie. Justifiez votre choix par des faits et un repère de temps.",
     aspects: [
       {
@@ -1882,6 +1891,7 @@ const QUESTIONS = [
     oi: "Situer dans le temps",
     periode: "P8 — De 1980 à nos jours",
     points: 1,
+    soustag: "Ordre chronologique",
     enonce: "Les documents A à D présentent des événements liés au statut politique du Québec à partir de 1982. Placez-les par ordre chronologique.",
     aspects: [
       {
@@ -1943,6 +1953,7 @@ const QUESTIONS = [
     oi: "Situer dans le temps",
     periode: "P8 — De 1980 à nos jours",
     points: 1,
+    soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
     aspects: [
       {
@@ -1973,6 +1984,7 @@ const QUESTIONS = [
     oi: "Situer dans le temps",
     periode: "P7 — 1945 – 1980",
     points: 1,
+    soustag: "Avant et après",
     enonce: "Les documents A à D font référence à la modernisation de l’économie du Québec. Indiquez si les faits présentés dans ces documents se déroulent avant ou après 1960.",
     aspects: [
       {
@@ -2038,6 +2050,7 @@ const QUESTIONS = [
     oi: "Situer dans l'espace",
     periode: "P7 — 1945 – 1980",
     points: 1,
+    soustag: "Situer 1 élément",
     enonce: "Selon le document A, quelle lettre correspond à un territoire exploité pour son minerai de fer dans la deuxième moitié du 20e siècle?",
     aspects: [
       {
@@ -2067,6 +2080,7 @@ const QUESTIONS = [
     oi: "Dégager des différences et des similitudes",
     periode: "P7 — 1945 – 1980",
     points: 2,
+    soustag: "Différence",
     enonce: "À partir du document A, indiquez la différence entre le moyen utilisé par le Front de libération du Québec et celui utilisé par le Parti québécois pour obtenir l’indépendance du Québec.",
     aspects: [
       {
@@ -2107,6 +2121,7 @@ const QUESTIONS = [
     oi: "Dégager des différences et des similitudes",
     periode: "P6 — 1896 – 1945",
     points: 3,
+    soustag: "Position – 3 acteurs",
     enonce: "Les documents A à C présentent la position de trois acteurs sur la conscription en 1917. Nommez l’acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
     aspects: [
       {
@@ -2163,6 +2178,7 @@ const QUESTIONS = [
     oi: "Dégager des différences et des similitudes",
     periode: "P5 — 1840 – 1896",
     points: 3,
+    soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux acteurs à la fin du 19e siècle. Sur quel point précis ces deux personnages sont-ils d’accord?",
     aspects: [
       {
@@ -2299,6 +2315,7 @@ const QUESTIONS = [
     oi: "Déterminer des changements et des continuités",
     periode: "P6 — 1896 – 1945",
     points: 2,
+    soustag: "Changement",
     enonce: "À partir du document A, indiquez un changement survenu dans l’économie du Québec durant les années 1930.",
     aspects: [
       {
@@ -2329,6 +2346,7 @@ const QUESTIONS = [
     oi: "Déterminer des changements et des continuités",
     periode: "P5 — 1840 – 1896",
     points: 2,
+    soustag: "Continuité",
     enonce: "Les documents A et B présentent la structure politique de la colonie à deux périodes différentes. Quel pouvoir le gouverneur conserve-t-il d’une période à l’autre?",
     aspects: [
       {
@@ -2370,6 +2388,7 @@ const QUESTIONS = [
     oi: "Déterminer des changements et des continuités",
     periode: "P7 — 1945 – 1980",
     points: 3,
+    soustag: "Changement ou continuité",
     enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans l’implication des femmes en politique au Québec. Justifiez votre choix par des faits et un repère de temps.",
     aspects: [
       {
@@ -2632,6 +2651,7 @@ const QUESTIONS = [
     oi: "Situer dans l'espace",
     periode: "P1 — Des origines à 1608",
     points: 1,
+    soustag: "Situer 1 élément",
     enonce: "À partir du document A, indiquez la lettre du territoire occupé par la famille linguistique algonquienne vers 1500.",
     aspects: [
       {
@@ -2660,6 +2680,7 @@ const QUESTIONS = [
     oi: "Situer dans l'espace",
     periode: "P1 — Des origines à 1608",
     points: 1,
+    soustag: "Situer 1 élément",
     enonce: "À partir du document A, indiquez la lettre du territoire occupé par la famille linguistique iroquoienne vers 1500.",
     aspects: [
       {
@@ -2688,6 +2709,7 @@ const QUESTIONS = [
     oi: "Situer dans l'espace",
     periode: "P1 — Des origines à 1608",
     points: 1,
+    soustag: "Situer 1 élément",
     enonce: "À partir du document A, indiquez la lettre du territoire occupé par la nation inuite vers 1500.",
     aspects: [
       {
@@ -2854,6 +2876,7 @@ const QUESTIONS = [
     oi: "Dégager des différences et des similitudes",
     periode: "P1 — Des origines à 1608",
     points: 3,
+    soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux auteurs sur l’organisation sociale des Iroquoiens. Sur quel point précis ces deux auteurs sont-ils d’accord?",
     aspects: [
       {
@@ -2896,6 +2919,7 @@ const QUESTIONS = [
     oi: "Dégager des différences et des similitudes",
     periode: "P1 — Des origines à 1608",
     points: 3,
+    soustag: "Position – 3 acteurs",
     enonce: "Les documents A à C présentent la position de trois acteurs sur les alliances entre les Premières Nations. Nommez l’auteur qui présente un point de vue différent et comparez ce point de vue à celui des deux autres acteurs.",
     aspects: [
       {
@@ -3054,6 +3078,7 @@ const QUESTIONS = [
     oi: "Dégager des différences et des similitudes",
     periode: "P1 — Des origines à 1608",
     points: 3,
+    soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux historiens sur le rôle du chaman. Sur quel point précis ces deux auteurs sont-ils d’accord?",
     aspects: [
       {
@@ -3094,6 +3119,7 @@ const QUESTIONS = [
     oi: "Dégager des différences et des similitudes",
     periode: "P1 — Des origines à 1608",
     points: 3,
+    soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue deux auteurs sur l’éducation des enfants chez les Autochtones. Sur quel point précis ces deux auteurs sont-ils d’accord?",
     aspects: [
       {
@@ -3255,6 +3281,7 @@ const QUESTIONS = [
     oi: "Dégager des différences et des similitudes",
     periode: "P1 — Des origines à 1608",
     points: 3,
+    soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux auteurs sur le don et le contre-don. Sur quel point précis ces deux auteurs sont-ils d’accord?",
     aspects: [
       {

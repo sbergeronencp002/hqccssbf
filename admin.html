@@ -265,12 +265,7 @@ header a:hover { color: #fff; }
       </div>
       <div class="field" id="soustag-row" style="display:none">
         <label>Sous-tag</label>
-        <div style="display:flex;gap:6px;flex-wrap:wrap">
-          <label class="soustag-pill"><input type="radio" name="q-soustag" value="Cause"> Cause</label>
-          <label class="soustag-pill"><input type="radio" name="q-soustag" value="Conséquence"> Conséquence</label>
-          <label class="soustag-pill"><input type="radio" name="q-soustag" value="Cause et conséquence"> Cause et conséquence</label>
-          <label class="soustag-pill"><input type="radio" name="q-soustag" value=""> Aucun</label>
-        </div>
+        <div id="soustag-pills" style="display:flex;gap:6px;flex-wrap:wrap"></div>
       </div>
     </div>
 
@@ -411,15 +406,29 @@ function updateAspects() {
   ).join('');
 }
 
+const SOUSTAG_MAP = {
+  'Situer dans le temps': ['Avant et après', 'Ligne du temps', 'Ordre chronologique'],
+  "Situer dans l'espace": ['Situer 1 élément', 'Situer 2 éléments'],
+  'Dégager des différences et des similitudes': ['Convergence – 2 acteurs', 'Différence', 'Divergence – 2 acteurs', 'Similitude', 'Position – 3 acteurs'],
+  'Déterminer des changements et des continuités': ['Changement', 'Continuité', 'Changement ou continuité'],
+  'Déterminer des causes et des conséquences': ['Cause', 'Conséquence', 'Cause et conséquence'],
+};
+
 function updateSoustag() {
   const oi = document.getElementById('q-oi')?.value || '';
   const row = document.getElementById('soustag-row');
   if(!row) return;
-  const show = oi === 'Déterminer des causes et des conséquences';
-  row.style.display = show ? '' : 'none';
-  if(!show) {
+  const options = SOUSTAG_MAP[oi];
+  if(!options) {
+    row.style.display = 'none';
     document.querySelectorAll('input[name="q-soustag"]').forEach(r => r.checked = false);
+    return;
   }
+  const pills = document.getElementById('soustag-pills');
+  pills.innerHTML = options.map(v =>
+    `<label class="soustag-pill"><input type="radio" name="q-soustag" value="${v}"> ${v}</label>`
+  ).join('') + `<label class="soustag-pill"><input type="radio" name="q-soustag" value=""> Aucun</label>`;
+  row.style.display = '';
 }
 
 function getSoustag() {
