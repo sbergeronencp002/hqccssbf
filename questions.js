@@ -2430,6 +2430,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P6 — 1896 – 1945",
     points: 2,
+    soustag: "3 éléments",
     enonce: "Les documents A à C font référence à différents nationalismes au Québec au 20e siècle. Indiquez à l’endroit approprié la lettre du document correspondant à chacun des nationalismes.",
     aspects: [
       {
