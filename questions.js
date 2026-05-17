@@ -1729,6 +1729,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P4 — 1791 – 1840",
     points: 2,
+    soustag: "3 éléments",
     enonce: "Les documents A à C présentent la position de différents groupes sociaux lors de la crise politique qui secoue le Bas-Canada durant les années 1830. Inscrivez à l’endroit approprié la lettre du document correspondant à chacune des positions des groupes sociaux.",
     aspects: [
       {
