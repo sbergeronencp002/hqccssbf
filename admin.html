@@ -181,7 +181,7 @@ header a:hover { color: #fff; }
       <div id="edit-select-wrap" style="display:none">
         <div class="edit-search-row">
           <input type="text" id="edit-search" placeholder="Rechercher — ID, OI, période, énoncé…"
-            oninput="filterEditList()" onkeydown="editKeyNav(event)">
+            oninput="debouncedFilterEditList()" onkeydown="editKeyNav(event)">
           <select id="edit-filter-niveau" onchange="filterEditList()">
             <option value="">Tous les niveaux</option>
             <option value="3">Niveau 3</option>
@@ -444,6 +444,13 @@ function populateEditSearch() {
 
 let editFocusIdx = -1;
 let editFilteredResults = [];
+let _adminSearchTimer = 0;
+function debouncedFilterEditList() {
+  clearTimeout(_adminSearchTimer);
+  _adminSearchTimer = setTimeout(filterEditList, 260);
+}
+
+const ADMIN_PAGE = 100; // max cards rendues à la fois
 
 function filterEditList() {
   const search  = (document.getElementById('edit-search')?.value || '').trim().toLowerCase();
@@ -451,6 +458,7 @@ function filterEditList() {
   const oi      = document.getElementById('edit-filter-oi')?.value || '';
   const noGuide = document.getElementById('edit-filter-noguide')?.checked;
 
+  // Pré-construire l'index de recherche à la volée (currentQuestions peut changer)
   editFilteredResults = currentQuestions.filter(q => {
     if(niveau   && String(q.niveau) !== niveau) return false;
     if(oi       && q.oi !== oi) return false;
@@ -483,7 +491,9 @@ function filterEditList() {
     return text.slice(0, idx) + '<mark style="background:#fff3b0;border-radius:2px">' + text.slice(idx, idx + term.length) + '</mark>' + text.slice(idx + term.length);
   }
 
-  container.innerHTML = results.map((q, i) => {
+  const visible = results.slice(0, ADMIN_PAGE);
+  const remaining = results.length - ADMIN_PAGE;
+  container.innerHTML = visible.map((q, i) => {
     const aspects = (q.aspects||[]).map(a => a.aspect).join(' · ');
     const noG = !q.guide;
     const isSelected = q.id === editingId;
@@ -501,6 +511,12 @@ function filterEditList() {
       </div>
     </div>`;
   }).join('');
+  if(remaining > 0) {
+    container.insertAdjacentHTML('beforeend',
+      `<div style="padding:8px 12px;font-size:0.78rem;color:var(--ink-3);text-align:center;border-top:1px solid var(--border)">
+        + ${remaining} autre${remaining>1?'s':''} — affinez la recherche pour les voir
+      </div>`);
+  }
 
   // Scroll la carte sélectionnée dans la vue
   const sel = container.querySelector('.selected');

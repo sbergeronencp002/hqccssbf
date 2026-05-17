@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&display=swap">
-<link rel="stylesheet" href="style.css?v=v12">
+<link rel="stylesheet" href="style.css?v=v13">
 </head>
 <body>
 <noscript><div style="padding:2rem;text-align:center;font-family:sans-serif;color:#1a1814">Ce site nécessite JavaScript pour fonctionner.</div></noscript>
@@ -23,7 +23,7 @@
 
     <div class="filter-group">
       <label class="filter-label" for="f-search">Recherche</label>
-      <input type="text" id="f-search" placeholder="Mot-clé…" oninput="applyFilters()">
+      <input type="text" id="f-search" placeholder="Mot-clé…" oninput="debouncedApplyFilters()">
     </div>
 
     <div class="filter-group">
@@ -162,7 +162,7 @@
 
 <script src="questions.js"></script>
 <script src="contexte.js"></script>
-<script src="app.js?v=v12"></script>
+<script src="app.js?v=v13"></script>
 </body>
 </html>
 

@@ -35,8 +35,14 @@ function oiStyle(oi) {
 
 let aspects = [];
 const periodeOrder = [...PERIODES_PAR_NIVEAU['3'], ...PERIODES_PAR_NIVEAU['4']];
+let Q_MAP = new Map();          // id → question (O(1) lookup)
+let Q_SEARCH_IDX = new Map();   // id → lowercase search string (pre-built)
 
 function populateFilters() {
+  Q_MAP = new Map(QUESTIONS.map(q => [q.id, q]));
+  Q_SEARCH_IDX = new Map(QUESTIONS.map(q => [q.id,
+    [q.enonce||'', q.oi||'', q.periode||'', ...(q.aspects||[]).map(a=>a.aspect)].join(' ').toLowerCase()
+  ]));
   const allOis = [...new Set(QUESTIONS.map(q=>q.oi))].sort((a,b)=>a.localeCompare(b,'fr'));
   const aspectsByPeriode = {};
   QUESTIONS.forEach(q=>{
@@ -125,36 +131,38 @@ function onNiveauChange() {
   applyFilters();
 }
 
+// Debounce uniquement pour la frappe de recherche
+let _searchTimer = 0;
+function debouncedApplyFilters() {
+  clearTimeout(_searchTimer);
+  _searchTimer = setTimeout(applyFilters, 280);
+}
+
 function applyFilters() {
   const oi      = document.getElementById('f-oi').value;
   const aspect  = document.getElementById('f-aspect').value;
   const periode = document.getElementById('f-periode').value;
   const niveau  = document.getElementById('f-niveau').value;
   const search  = (document.getElementById('f-search')?.value || '').trim().toLowerCase();
+  const currentOi = oi;
 
-  // Rebuild OI filter based on current period+aspect selection
-  const relevantQ = QUESTIONS.filter(q => {
-    if(niveau  && String(q.niveau) !== niveau) return false;
-    if(periode && q.periode !== periode) return false;
-    if(aspect && !q.aspects.some(a=>a.aspect===aspect)) return false;
-    return true;
-  });
-  const relevantOis = [...new Set(relevantQ.map(q=>q.oi))].sort((a,b)=>a.localeCompare(b,'fr'));
-  const currentOi  = document.getElementById('f-oi').value;
+  // Parcours unique : construit filtered + relevantOis en même passe
+  const filtered = [];
+  const oiSet = new Set();
+  for(const q of QUESTIONS) {
+    const niveauOk  = !niveau  || String(q.niveau) === niveau;
+    const periodeOk = !periode || q.periode === periode;
+    const aspectOk  = !aspect  || q.aspects.some(a=>a.aspect===aspect);
+    if(niveauOk && periodeOk && aspectOk) oiSet.add(q.oi);
+    if(!niveauOk || !periodeOk || !aspectOk) continue;
+    if(oi && q.oi !== oi) continue;
+    if(search && !(Q_SEARCH_IDX.get(q.id)||'').includes(search)) continue;
+    filtered.push(q);
+  }
+
+  const relevantOis = [...oiSet].sort((a,b)=>a.localeCompare(b,'fr'));
   fillOi('f-oi', relevantOis, "Toutes");
   if(relevantOis.includes(currentOi)) document.getElementById('f-oi').value = currentOi;
-
-  const filtered = QUESTIONS.filter(q=>{
-    if(niveau  && String(q.niveau) !== niveau) return false;
-    if(oi      && q.oi !== oi) return false;
-    if(aspect  && !q.aspects.some(a=>a.aspect===aspect)) return false;
-    if(periode && q.periode !== periode) return false;
-    if(search) {
-      const hay = [q.enonce||'', q.oi||'', ...q.aspects.map(a=>a.aspect)].join(' ').toLowerCase();
-      if(!hay.includes(search)) return false;
-    }
-    return true;
-  });
 
   const totalPtsFilt = filtered.reduce((s,q)=>s+(q.points||0), 0);
   document.getElementById('stat-num').textContent = filtered.length;
@@ -302,7 +310,7 @@ function buildReglettHTML(q) {
 }
 
 function openQModal(id) {
-  const q = QUESTIONS.find(x => x.id === id);
+  const q = Q_MAP.get(id);
   if(!q) return;
   const st = oiStyle(q.oi);
 
@@ -607,7 +615,7 @@ function previsualiser(guideMode) {
     // Guide preview — numéros + réponses seulement
     let html = '<div style="font-size:0.85rem;font-weight:600;color:var(--ink);margin-bottom:1.5rem;letter-spacing:0.05em;text-transform:uppercase">Guide de correction</div>';
     panier.forEach(function(id, idx) {
-      const q = QUESTIONS.find(function(x) { return x.id === id; });
+      const q = Q_MAP.get(id);
       if(!q) return;
       let guideContent = '';
       if(q.guide) {
@@ -646,7 +654,7 @@ function previsualiser(guideMode) {
     const showDate   = !!document.getElementById('exam-date')?.checked;
     const showScore  = !!document.getElementById('exam-score')?.checked;
     const showComm   = !!document.getElementById('exam-commentaires')?.checked;
-    const totalPrevPts = panier.reduce((s,id) => { const q=QUESTIONS.find(x=>x.id===id); return s+(q?.points||0); }, 0);
+    const totalPrevPts = panier.reduce((s,id) => { const q=Q_MAP.get(id); return s+(q?.points||0); }, 0);
 
     let previewHtml = '';
     if(examNom || showEleve || showGroupe || showDate || showScore) {
@@ -667,7 +675,7 @@ function previsualiser(guideMode) {
     }
 
     previewHtml += panier.map(function(id, idx) {
-      const q = QUESTIONS.find(function(x) { return x.id === id; });
+      const q = Q_MAP.get(id);
       const r = REGLETTES[id];
       if(!q) return '';
       let docsHtml = '';
@@ -805,7 +813,7 @@ function refreshPanierButtons() {
 function updatePanierBar() {
   const bar = document.getElementById('panier-bar');
   const count = document.getElementById('panier-count');
-  const totalPts = panier.reduce((s, id) => { const q = QUESTIONS.find(x=>x.id===id); return s+(q?q.points:0); }, 0);
+  const totalPts = panier.reduce((s, id) => { const q = Q_MAP.get(id); return s+(q?q.points:0); }, 0);
   count.textContent = panier.length + ' / 20  ·  ' + totalPts + ' pt' + (totalPts !== 1 ? 's' : '');
   bar.classList.toggle('visible', panier.length > 0);
   try { localStorage.setItem('hqc_panier', JSON.stringify(panier)); } catch(e) {}
@@ -862,7 +870,7 @@ function renderCahier() {
   const body = document.getElementById('cahier-body');
   const sub  = document.getElementById('cahier-panel-sub');
   const stats = document.getElementById('cahier-footer-stats');
-  const totalPts = panier.reduce((s, id) => { const q = QUESTIONS.find(x=>x.id===id); return s+(q?q.points:0); }, 0);
+  const totalPts = panier.reduce((s, id) => { const q = Q_MAP.get(id); return s+(q?q.points:0); }, 0);
 
   const nQ = panier.length;
   sub.textContent = nQ + ' question' + (nQ !== 1 ? 's' : '') + ' · ' + totalPts + ' pt' + (totalPts !== 1 ? 's' : '');
@@ -875,7 +883,7 @@ function renderCahier() {
   }
 
   body.innerHTML = panier.map((id, i) => {
-    const q = QUESTIONS.find(x => x.id === id);
+    const q = Q_MAP.get(id);
     if(!q) return '';
     const st = oiStyle(q.oi);
     const oiShort = q.oi.length > 30 ? q.oi.slice(0,30) + '…' : q.oi;
@@ -993,7 +1001,7 @@ async function genererDocx(includeGuide=false) {
         document.head.appendChild(s);
       });
     }
-    const panierQuestions = panier.map(id => QUESTIONS.find(x => x.id === id)).filter(Boolean);
+    const panierQuestions = panier.map(id => Q_MAP.get(id)).filter(Boolean);
     const neededKeys = new Set();
     panierQuestions.forEach(q => {
       (q.documents || []).forEach(d => {
@@ -1219,7 +1227,7 @@ async function genererDocx(includeGuide=false) {
       }));
       children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
       panier.forEach((id, idx) => {
-        const q = QUESTIONS.find(x => x.id === id);
+        const q = Q_MAP.get(id);
         if(!q || !q.guide) return;
         children.push(new Paragraph({ children: [new TextRun({ text: (idx+1) + '.', font: 'Aptos', size: 20, bold: true })] }));
         if(typeof q.guide === 'string') {
@@ -1251,7 +1259,7 @@ async function genererDocx(includeGuide=false) {
     } else {
 
     panier.forEach((id, idx) => {
-      const q = QUESTIONS.find(x => x.id === id);
+      const q = Q_MAP.get(id);
 
       // Énoncé avec numéro
       const qNum = idx + 1;
