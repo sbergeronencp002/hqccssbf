@@ -1189,9 +1189,6 @@ const IMAGE_DB = {
   },
   "cause_rivalites_coloniales.png": {
     src: "images/cause_rivalites_coloniales.png"
-  },
-  "recensement_colonie_n-f.png": {
-    src: "images/recensement_colonie_n-f.png"
   }
 }
 
@@ -1583,8 +1580,9 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document B - Recensement des célibataires de la Nouvelle-France en 1666",
-            ref: "recensement_colonie_n-f.png"
+            titre: "Document B - Données sur les célibataires lors d’un recensement dans la colonie",
+            ref: "recensement_colonie.png",
+            source: "MEES."
           }
         ]
       }
@@ -1613,7 +1611,7 @@ const QUESTIONS = [
         ],
         [
           "Conséquence",
-          "A"
+          "1"
         ]
       ]
     }
