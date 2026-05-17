@@ -582,15 +582,15 @@ const REGLETTES = {
     niveaux: [
       {
         pts: 2,
-        desc: "L'élève détermine correctement la cause."
+        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
       },
       {
         pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la cause."
+        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
       },
       {
         pts: 0,
-        desc: "L'élève détermine incorrectement la cause ou ne la détermine pas."
+        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
       }
     ]
   },
@@ -2081,7 +2081,7 @@ const QUESTIONS = [
     periode: "P7 — 1945 – 1980",
     points: 2,
     soustag: "Différence",
-    enonce: "À partir du document A, indiquez la différence entre le moyen utilisé par le Front de libération du Québec et celui utilisé par le Parti québécois pour obtenir l’indépendance du Québec.",
+    enonce: "À partir des documents A et B, indiquez la différence entre le moyen utilisé par le Front de libération du Québec et celui utilisé par le Parti québécois pour obtenir l’indépendance du Québec.",
     aspects: [
       {
         aspect: "Néonationalisme"
@@ -2103,8 +2103,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "victoire_pq_1976.png",
-            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
+            ref: "victoire_pq_1976.png"
           }
         ]
       }
@@ -2252,7 +2251,7 @@ const QUESTIONS = [
     oi: "Déterminer des causes et des conséquences",
     periode: "P5 — 1840 – 1896",
     points: 2,
-    soustag: "Cause",
+    soustag: "Cause et conséquence",
     enonce: "Au milieu du 19e siècle, la Grande-Bretagne adopte une politique de libre-échange. Inscrivez la lettre du document qui présente une cause de l’adoption de cette politique et la lettre de celui qui en présente une conséquence pour la Province du Canada.",
     aspects: [
       {
