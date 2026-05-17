@@ -1183,6 +1183,9 @@ const IMAGE_DB = {
   },
   "1500_reseau_echanges.png": {
     src: "images/1500_reseau_echanges.png"
+  },
+  "cause_rivalite_coloniale.png": {
+    src: "images/cause_rivalite_coloniale.png"
   }
 }
 
@@ -1533,8 +1536,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "commerce_fourrures.png",
-            source: "MEES."
+            ref: "cause_rivalite_coloniale.png",
+            source: "Illustration générée par intelligence artificielle inspirée d’une caricature historique."
           }
         ]
       }
