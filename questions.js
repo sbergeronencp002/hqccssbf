@@ -2283,7 +2283,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "tableau_traite_recipricite_exportations.png"
+            ref: "tableau_traite_recipricite_exportations.png",
+            source: "Statistique Canada, Historical Statistics of Canada, données sur le commerce entre le Canada et les États-Unis, 1852-1856."
           }
         ]
       }
