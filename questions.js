@@ -3834,7 +3834,7 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Le rappel de Guy Carleton en Angleterre."
+    guide: "Le rappel de James Murray en Angleterre ou l'administration britannique remplace James Murray par Guy Carleton."
   },
   {
     id: "Q60",
