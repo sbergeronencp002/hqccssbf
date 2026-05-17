@@ -205,9 +205,6 @@ header a:hover { color: #fff; }
           <select id="edit-filter-oi" onchange="filterEditList()">
             <option value="">Toutes les OI</option>
           </select>
-          <label style="display:flex;align-items:center;gap:.3rem;font-size:.78rem;white-space:nowrap;cursor:pointer">
-            <input type="checkbox" id="edit-filter-noguide" onchange="filterEditList()"> ⚠ Sans guide
-          </label>
         </div>
         <div id="edit-results-count" style="font-size:.72rem;color:var(--ink-3);margin-bottom:.3rem"></div>
         <div id="edit-results" class="edit-results"></div>
@@ -412,6 +409,7 @@ const SOUSTAG_MAP = {
   'Dégager des différences et des similitudes': ['Convergence – 2 acteurs', 'Différence', 'Divergence – 2 acteurs', 'Similitude', 'Position – 3 acteurs'],
   'Déterminer des changements et des continuités': ['Changement', 'Continuité', 'Changement ou continuité'],
   'Déterminer des causes et des conséquences': ['Cause', 'Conséquence', 'Cause et conséquence'],
+  'Mettre en relation': ['2 éléments', '3 éléments', '4 éléments'],
 };
 
 function updateSoustag() {
@@ -494,13 +492,10 @@ function filterEditList() {
   const search  = (document.getElementById('edit-search')?.value || '').trim().toLowerCase();
   const niveau  = document.getElementById('edit-filter-niveau')?.value || '';
   const oi      = document.getElementById('edit-filter-oi')?.value || '';
-  const noGuide = document.getElementById('edit-filter-noguide')?.checked;
-
   // Pré-construire l'index de recherche à la volée (currentQuestions peut changer)
   editFilteredResults = currentQuestions.filter(q => {
-    if(niveau   && String(q.niveau) !== niveau) return false;
-    if(oi       && q.oi !== oi) return false;
-    if(noGuide  && q.guide) return false;
+    if(niveau && String(q.niveau) !== niveau) return false;
+    if(oi     && q.oi !== oi) return false;
     if(search) {
       const hay = [q.id, q.oi, q.periode, q.enonce||'', ...(q.aspects||[]).map(a=>a.aspect)].join(' ').toLowerCase();
       if(!hay.includes(search)) return false;
@@ -1521,7 +1516,7 @@ function renderDashboard() {
     oiMap[q.oi].q++;
     oiMap[q.oi].pts += q.points||0;
   });
-  const oiList = Object.entries(oiMap).sort((a,b) => b[1].q - a[1].q);
+  const oiList = Object.entries(oiMap).sort((a,b) => a[0].localeCompare(b[0], 'fr'));
   const maxOiQ = Math.max(...oiList.map(e => e[1].q), 1);
   const oiRows = oiList.map(([oi, val]) => {
     const pct = Math.round(val.q / maxOiQ * 100);
