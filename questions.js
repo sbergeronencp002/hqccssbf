@@ -2799,6 +2799,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P1 — Des origines à 1608",
     points: 2,
+    soustag: "2 éléments",
     enonce: "À partir des documents A et B, indiquez la lettre du document qui fait références à l'organisation territoriale des groupes autochtones.",
     aspects: [
       {
