@@ -1186,6 +1186,9 @@ const IMAGE_DB = {
   },
   "cause_rivalite_coloniale.png": {
     src: "images/cause_rivalite_coloniale.png"
+  },
+  "cause_rivalites_coloniales.png": {
+    src: "images/cause_rivalites_coloniales.png"
   }
 }
 
@@ -1536,7 +1539,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "cause_rivalite_coloniale.png",
+            ref: "cause_rivalites_coloniales.png",
             source: "Illustration générée par intelligence artificielle inspirée d’une caricature historique."
           }
         ]
