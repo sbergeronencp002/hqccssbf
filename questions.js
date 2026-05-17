@@ -1106,6 +1106,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q56": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -3568,5 +3590,48 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les Iroquois deviennent des ennemis des Français ou les relations entre les Iroquois et les Français se détériorent ou les Iroquois entrent en conflit avec les Français."
+  },
+  {
+    id: "Q56",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux auteurs sur l’alliance entre les Français et les Hurons-Wendats. Sur quel point précis ces deux auteurs sont-ils d’accord?",
+    aspects: [
+      {
+        aspect: "Exploration et occupation du territoire par les Français"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« L’alliance entre les Français et les Hurons-Wendats répond à des intérêts commerciaux et militaires. Elle donne aux Français accès au commerce des fourrures et les engage dans les rivalités opposant les Hurons-Wendats aux Iroquois. »",
+            auteur: "Bruce G. Trigger.",
+            source: "The Children of Aataentsic: A History of the Huron People to 1660 Montréal et Kingston, McGill-Queen’s University Press, 1976."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« En s’alliant aux Hurons-Wendats, les Français obtiennent des partenaires essentiels pour le commerce des fourrures. Cette alliance les entraîne aussi dans les conflits avec les Iroquois et modifie durablement les relations entre les peuples. »",
+            auteur: "Denys Delâge.",
+            source: "Le pays renversé : Amérindiens et Européens en Amérique du Nord-Est, 1600-1664 Montréal, Boréal Express, 1985."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les deux auteurs s’entendent pour dire que l’alliance entre les Français et les Hurons-Wendats favorise le commerce des fourrures ou entraîne les Français dans les conflits avec les Iroquois."
   }
 ]
