@@ -367,24 +367,7 @@ header a:hover { color: #fff; }
       <span id="publish-status" style="font-size:.82rem;color:var(--ink-3)"></span>
     </div>
 
-    <!-- CONTEXTE (périodes & aspects) -->
-    <div class="section" style="margin-top:2rem">
-      <div class="section-title" style="cursor:pointer;user-select:none" onclick="this.nextElementSibling.classList.toggle('hidden')">
-        Contexte — périodes &amp; aspects <span style="font-size:.75rem;color:var(--ink-3);font-weight:400">(cliquer pour ouvrir)</span>
-      </div>
-      <div class="hidden">
-        <p style="font-size:.8rem;color:var(--ink-3);margin-bottom:.75rem">Modifie directement le contenu de <code>contexte.js</code>. Valider avant de publier.</p>
-        <div class="field">
-          <textarea id="contexte-raw" rows="18" spellcheck="false"
-            style="font-family:monospace;font-size:0.78rem;resize:vertical;background:var(--paper-2);border:1px solid var(--border);border-radius:6px;padding:.75rem;width:100%;box-sizing:border-box"></textarea>
-        </div>
-        <div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap">
-          <button class="btn-secondary" onclick="loadContexteJs()">⟳ Charger</button>
-          <button class="btn-primary" onclick="publierContexteJs()">⬆ Publier contexte</button>
-          <span id="contexte-status" style="font-size:.82rem;color:var(--ink-3)"></span>
-        </div>
-      </div>
-    </div>
+
 
   </div><!-- /container -->
 </div><!-- /app -->
