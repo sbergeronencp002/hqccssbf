@@ -650,12 +650,19 @@ function previsualiser(guideMode) {
 
     let previewHtml = '';
     if(examNom || showEleve || showGroupe || showDate || showScore) {
-      previewHtml += '<div style="border-bottom:1px solid #ccc;margin-bottom:1.5rem;padding-bottom:1rem">';
-      if(examNom)    previewHtml += '<div style="text-align:center;font-size:1.1rem;font-weight:700;margin-bottom:0.75rem">' + examNom + '</div>';
-      if(showEleve)  previewHtml += '<div style="margin-bottom:4px;font-size:0.9rem">Élève : _________________________________</div>';
-      if(showGroupe) previewHtml += '<div style="margin-bottom:4px;font-size:0.9rem">Groupe : ________________________________</div>';
-      if(showDate)   previewHtml += '<div style="margin-bottom:4px;font-size:0.9rem">Date : __________________________________</div>';
-      if(showScore)  previewHtml += '<div style="text-align:right;font-size:0.9rem;margin-top:4px">Résultat : _____ / ' + totalPrevPts + ' pts</div>';
+      previewHtml += '<div style="margin-bottom:1.5rem">';
+      if(examNom) previewHtml += '<div style="text-align:center;font-size:1.15rem;font-weight:700;letter-spacing:0.04em;margin-bottom:0.6rem">' + examNom + '</div>';
+      previewHtml += '<div style="border-top:3px solid #000;margin-bottom:0.75rem"></div>';
+      const hasFields = showEleve || showGroupe || showDate || showScore;
+      if(hasFields) {
+        previewHtml += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 2rem;font-size:0.88rem">';
+        if(showEleve)  previewHtml += '<div>Élève : _________________________</div>';
+        if(showGroupe) previewHtml += '<div>Groupe : ________________________</div>';
+        else if(showEleve) previewHtml += '<div></div>';
+        if(showDate)   previewHtml += '<div>Date : __________________________</div>';
+        if(showScore)  previewHtml += '<div style="text-align:right">_____ / ' + totalPrevPts + ' pts</div>';
+        previewHtml += '</div>';
+      }
       previewHtml += '</div>';
     }
 
@@ -1166,12 +1173,40 @@ async function genererDocx(includeGuide=false) {
             alignment: AlignmentType.CENTER,
             children: [new TextRun({ text: examNom, font:'Aptos', size:36, bold:true })]
           }));
-          children.push(new Paragraph({ children: [new TextRun({ text:'' })] }));
         }
-        if(showEleve)  children.push(new Paragraph({ children: [new TextRun({ text: 'Élève : _________________________________', font:'Aptos', size:22 })] }));
-        if(showGroupe) children.push(new Paragraph({ children: [new TextRun({ text: 'Groupe : ________________________________', font:'Aptos', size:22 })] }));
-        if(showDate)   children.push(new Paragraph({ children: [new TextRun({ text: 'Date : __________________________________', font:'Aptos', size:22 })] }));
-        if(showScore)  children.push(new Paragraph({ alignment: AlignmentType.RIGHT, children: [new TextRun({ text: `Résultat : _____ / ${totalDocxPts} pts`, font:'Aptos', size:22 })] }));
+        // Thick black rule under title
+        children.push(new Paragraph({
+          border: { bottom: { style: BorderStyle.SINGLE, size: 24, color: '000000' } },
+          spacing: { before: 80, after: 80 },
+          children: [new TextRun({ text: '' })]
+        }));
+        // 2-col fields row (Élève | Groupe, Date | Résultat)
+        const BN_H = { style: BorderStyle.NONE, size: 0, color: 'FFFFFF' };
+        const HW = Math.floor(PAGE_W / 2);
+        const mkHCell = (txt, align) => new TableCell({
+          width: { size: HW, type: WidthType.DXA },
+          borders: { top: BN_H, bottom: BN_H, left: BN_H, right: BN_H },
+          margins: { top: 60, bottom: 60, left: 0, right: 0 },
+          children: [new Paragraph({
+            alignment: align || AlignmentType.LEFT,
+            children: [new TextRun({ text: txt, font:'Aptos', size:20 })]
+          })]
+        });
+        const fieldRows = [];
+        const r1L = showEleve  ? 'Élève : _________________________' : '';
+        const r1R = showGroupe ? 'Groupe : ________________________' : '';
+        const r2L = showDate   ? 'Date : __________________________' : '';
+        const r2R = showScore  ? \`_____ / \${totalDocxPts} pts\` : '';
+        if(r1L || r1R) fieldRows.push(new TableRow({ children: [mkHCell(r1L), mkHCell(r1R, AlignmentType.LEFT)] }));
+        if(r2L || r2R) fieldRows.push(new TableRow({ children: [mkHCell(r2L), mkHCell(r2R, AlignmentType.RIGHT)] }));
+        if(fieldRows.length) {
+          children.push(new Table({
+            width: { size: PAGE_W, type: WidthType.DXA },
+            columnWidths: [HW, HW],
+            borders: { top: BN_H, bottom: BN_H, left: BN_H, right: BN_H, insideH: BN_H, insideV: BN_H },
+            rows: fieldRows
+          }));
+        }
         children.push(new Paragraph({ children: [new TextRun({ text:'' })] }));
         children.push(new Paragraph({ children: [new TextRun({ text:'' })] }));
       }
