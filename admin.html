@@ -1367,8 +1367,9 @@ async function publier() {
     const pubWarnings = [];
     if(!q.guide) pubWarnings.push('• Cette question n\'a pas de guide de correction.');
     const missingImgs = [];
-    q.documents.forEach(d => d.cols?.forEach(c => { if(c.ref && !currentImageDb[c.ref]) missingImgs.push(c.ref); }));
-    if(q.reponse?.ref && !currentImageDb[q.reponse.ref]) missingImgs.push(q.reponse.ref);
+    const imgOk = ref => currentImageDb[ref] || IMAGES.includes(ref);
+    q.documents.forEach(d => d.cols?.forEach(c => { if(c.ref && !imgOk(c.ref)) missingImgs.push(c.ref); }));
+    if(q.reponse?.ref && !imgOk(q.reponse.ref)) missingImgs.push(q.reponse.ref);
     if(missingImgs.length) pubWarnings.push('• Images absentes du dépôt : ' + missingImgs.join(', '));
     if(pubWarnings.length && !confirm('⚠️ Avertissements avant publication :\n\n' + pubWarnings.join('\n') + '\n\nPublier quand même ?')) {
       btn.disabled = false; btn.textContent = 'Publier sur GitHub'; return;
