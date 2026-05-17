@@ -1583,9 +1583,8 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document B - Recensement des célibataires de la Nouvelle-France en 1665",
-            ref: "recensement_colonie_n-f.png",
-            source: "Bibliothèque et Archives Canada – Recensement de 1666 en Nouvelle-France."
+            titre: "Document B - Recensement des célibataires de la Nouvelle-France en 1666",
+            ref: "recensement_colonie_n-f.png"
           }
         ]
       }
