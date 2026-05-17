@@ -1167,6 +1167,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q59": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -3736,5 +3758,36 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les marchands anglophones s’opposent aux politiques de Guy Carleton ou ils demandent des changements à l’administration de la colonie."
+  },
+  {
+    id: "Q59",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "À partir du document A, indiquez une conséquence des demandes des marchands anglophones de la Province of Quebec.",
+    aspects: [
+      {
+        aspect: "Mouvements de revendication"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les habitants britanniques de cette province demandent qu’une assemblée soit établie et que les lois anglaises soient pleinement appliquées, afin d’assurer à ses sujets les mêmes droits et privilèges que ceux dont jouissent les autres colonies de Sa Majesté. »",
+            source: "Pétition des marchands britanniques de la Province of Quebec au gouvernement britannique, 1764."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le rappel de Guy Carleton en Angleterre."
   }
 ]
