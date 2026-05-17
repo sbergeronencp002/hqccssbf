@@ -1514,6 +1514,7 @@ const QUESTIONS = [
     oi: "Déterminer des causes et des conséquences",
     periode: "P2 — 1608 – 1760",
     points: 2,
+    soustag: "Cause",
     enonce: "À partir du document A, indiquez une cause de la rivalité entre la Nouvelle-France et les colonies britanniques à partir du 17e siècle.",
     aspects: [
       {
@@ -1544,6 +1545,7 @@ const QUESTIONS = [
     oi: "Déterminer des causes et des conséquences",
     periode: "P2 — 1608 – 1760",
     points: 2,
+    soustag: "Cause et conséquence",
     enonce: "Des politiques d’immigration et de natalité ont été mises en place en Nouvelle-France dans la deuxième moitié du 17e siècle. Inscrivez la lettre du document qui présente une cause de ces politiques et la lettre de celui qui en présente une conséquence.",
     aspects: [
       {
@@ -2203,6 +2205,7 @@ const QUESTIONS = [
     oi: "Déterminer des causes et des conséquences",
     periode: "P5 — 1840 – 1896",
     points: 2,
+    soustag: "Cause",
     enonce: "Dans quel but les Réformistes de la Province du Canada forment-ils une alliance en 1841?",
     aspects: [
       {
@@ -2233,6 +2236,7 @@ const QUESTIONS = [
     oi: "Déterminer des causes et des conséquences",
     periode: "P5 — 1840 – 1896",
     points: 2,
+    soustag: "Cause",
     enonce: "Au milieu du 19e siècle, la Grande-Bretagne adopte une politique de libre-échange. Inscrivez la lettre du document qui présente une cause de l’adoption de cette politique et la lettre de celui qui en présente une conséquence pour la Province du Canada.",
     aspects: [
       {
@@ -3190,6 +3194,7 @@ const QUESTIONS = [
     oi: "Déterminer des causes et des conséquences",
     periode: "P1 — Des origines à 1608",
     points: 2,
+    soustag: "Conséquence",
     enonce: "À partir du document A, indiquez une conséquence du partage des biens au sein des sociétés autochtones.",
     aspects: [
       {
@@ -3380,6 +3385,7 @@ const QUESTIONS = [
     oi: "Déterminer des causes et des conséquences",
     periode: "P1 — Des origines à 1608",
     points: 2,
+    soustag: "Conséquence",
     enonce: "À partir du document A, indiquez une conséquence des réseaux d’échange sur l’accès aux ressources des nations autochtones.",
     aspects: [
       {
@@ -3409,6 +3415,7 @@ const QUESTIONS = [
     oi: "Déterminer des causes et des conséquences",
     periode: "P1 — Des origines à 1608",
     points: 2,
+    soustag: "Conséquence",
     enonce: "À partir du document A, indiquez une conséquence de l’utilisation des voies d’eau sur les échanges entre les nations autochtones.",
     aspects: [
       {

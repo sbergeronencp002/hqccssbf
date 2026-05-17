@@ -98,6 +98,18 @@ header a:hover { color: #fff; }
 .guide-grille input:focus { outline: none; background: rgba(27,59,111,0.05); }
 .guide-grille-entete { font-weight: 600; }
 
+.soustag-pill {
+  display:inline-flex; align-items:center; gap:4px;
+  padding:4px 11px; border-radius:20px;
+  border:1.5px solid var(--border);
+  font-size:.75rem; font-weight:500; color:var(--ink-2);
+  cursor:pointer; user-select:none;
+  transition:background .15s, color .15s, border-color .15s;
+  background:var(--paper);
+}
+.soustag-pill input { position:absolute; opacity:0; width:0; height:0; pointer-events:none; }
+.soustag-pill:has(input:checked) { background:#1B3B6F; color:#fff; border-color:#1B3B6F; }
+.soustag-pill:hover:not(:has(input:checked)) { border-color:var(--ink-2); color:var(--ink); }
 .dash-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-bottom:1.25rem; }
 .dash-niv-title { font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-3); margin-bottom:.6rem; }
 .dash-row { display:flex; align-items:center; gap:.5rem; margin-bottom:.35rem; }
@@ -240,7 +252,7 @@ header a:hover { color: #fff; }
       </div>
       <div class="field">
         <label>Opération intellectuelle</label>
-        <select id="q-oi" onchange="updatePresets()">
+        <select id="q-oi" onchange="updatePresets();updateSoustag()">
           <option>Dégager des différences et des similitudes</option>
           <option>Déterminer des causes et des conséquences</option>
           <option>Déterminer des changements et des continuités</option>
@@ -250,6 +262,15 @@ header a:hover { color: #fff; }
           <option>Situer dans l'espace</option>
           <option>Situer dans le temps</option>
         </select>
+      </div>
+      <div class="field" id="soustag-row" style="display:none">
+        <label>Sous-tag</label>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <label class="soustag-pill"><input type="radio" name="q-soustag" value="Cause"> Cause</label>
+          <label class="soustag-pill"><input type="radio" name="q-soustag" value="Conséquence"> Conséquence</label>
+          <label class="soustag-pill"><input type="radio" name="q-soustag" value="Cause et conséquence"> Cause et conséquence</label>
+          <label class="soustag-pill"><input type="radio" name="q-soustag" value=""> Aucun</label>
+        </div>
       </div>
     </div>
 
@@ -405,6 +426,28 @@ function updateAspects() {
       <input type="checkbox" value="${a}" style="width:auto;cursor:pointer"> ${a}
     </label>`
   ).join('');
+}
+
+function updateSoustag() {
+  const oi = document.getElementById('q-oi')?.value || '';
+  const row = document.getElementById('soustag-row');
+  if(!row) return;
+  const show = oi === 'Déterminer des causes et des conséquences';
+  row.style.display = show ? '' : 'none';
+  if(!show) {
+    document.querySelectorAll('input[name="q-soustag"]').forEach(r => r.checked = false);
+  }
+}
+
+function getSoustag() {
+  const checked = document.querySelector('input[name="q-soustag"]:checked');
+  return checked ? checked.value : '';
+}
+
+function setSoustag(val) {
+  document.querySelectorAll('input[name="q-soustag"]').forEach(r => {
+    r.checked = (r.value === (val || ''));
+  });
 }
 
 function updatePresets() {
@@ -590,6 +633,8 @@ function loadQuestion(id) {
   document.querySelectorAll('#aspects-list input[type=checkbox]').forEach(cb => { cb.checked = aspectValues.has(cb.value); });
   document.getElementById('q-oi').value = q.oi;
   updatePresets();
+  updateSoustag();
+  setSoustag(q.soustag || '');
   document.getElementById('q-enonce').value = q.enonce || '';
 
   document.getElementById('docs-list').innerHTML = '';
@@ -1245,7 +1290,8 @@ function buildQuestion() {
     if(hasContent) guide = { type:'grille', entetes, rangees };
   }
 
-  return { id, niveau, oi, periode, points, enonce, aspects, documents, reponse, guide };
+  const soustag = getSoustag();
+  return { id, niveau, oi, periode, points, ...(soustag ? { soustag } : {}), enonce, aspects, documents, reponse, guide };
 }
 
 function buildReglette(id) {
@@ -1417,6 +1463,8 @@ function resetForm(keepId=false) {
   document.getElementById('q-niveau').value = '3';
   document.getElementById('q-oi').value = document.getElementById('q-oi').options[0].value;
   updatePresets();
+  updateSoustag();
+  setSoustag('');
   document.getElementById('q-periode').value = document.getElementById('q-periode').options[0].value;
   document.getElementById('q-enonce').value = '';
   updatePeriodes();
