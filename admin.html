@@ -98,6 +98,18 @@ header a:hover { color: #fff; }
 .guide-grille input:focus { outline: none; background: rgba(27,59,111,0.05); }
 .guide-grille-entete { font-weight: 600; }
 
+.dash-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-bottom:1.25rem; }
+.dash-niv-title { font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-3); margin-bottom:.6rem; }
+.dash-row { display:flex; align-items:center; gap:.5rem; margin-bottom:.35rem; }
+.dash-label { font-size:.72rem; color:var(--ink-2); white-space:nowrap; min-width:120px; overflow:hidden; text-overflow:ellipsis; }
+.dash-bar-wrap { flex:1; background:var(--paper-3); border-radius:4px; height:8px; min-width:40px; overflow:hidden; }
+.dash-bar { height:100%; border-radius:4px; transition:width .4s ease; }
+.dash-count { font-size:.7rem; color:var(--ink-3); white-space:nowrap; min-width:52px; text-align:right; }
+.dash-divider { border:none; border-top:1px solid var(--border); margin:.75rem 0; }
+.dash-oi-row { display:flex; align-items:center; gap:.5rem; margin-bottom:.3rem; }
+.dash-oi-label { font-size:.72rem; color:var(--ink-2); flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.dash-oi-count { font-size:.7rem; color:var(--ink-3); white-space:nowrap; min-width:60px; text-align:right; }
+
 .rich-toolbar { display:flex; gap:4px; margin-bottom:10px; }
 .rich-toolbar button { font-size:.75rem; padding:2px 8px; border:1px solid var(--border); border-radius:4px; background:var(--paper-2); cursor:pointer; color:var(--ink); }
 .rich-toolbar button:hover { background:var(--paper-3); }
@@ -144,6 +156,15 @@ header a:hover { color: #fff; }
         <input type="checkbox" id="gh-remember" onchange="saveToken()"> Mémoriser
       </label>
       <span class="token-status" id="token-status"></span>
+    </div>
+
+    <!-- TABLEAU DE BORD -->
+    <div class="section" id="dashboard-section" style="display:none">
+      <div class="section-title" style="display:flex;justify-content:space-between;align-items:center">
+        <span>Tableau de bord — Couverture</span>
+        <span id="dashboard-total" style="font-size:.75rem;font-weight:600;color:var(--ink-2)"></span>
+      </div>
+      <div id="dashboard-content"></div>
     </div>
 
     <!-- MODE -->
@@ -724,6 +745,7 @@ async function supprimerQuestion() {
     questionsFileSha = result.content.sha;
 
     toast(`${idSupp} supprimé, questions renumérotées.`, 'ok');
+    renderDashboard();
     editingId = null;
     document.getElementById('edit-selected-bar').style.display = 'none';
     populateEditSearch();
@@ -856,6 +878,7 @@ async function loadQuestionsJs() {
     document.getElementById('next-id-badge').textContent = nextId;
     document.getElementById('token-status').textContent = '✓ Connecté';
     document.getElementById('token-status').className = 'token-status ok';
+    renderDashboard();
   } catch(e) {
     document.getElementById('token-status').textContent = '✗ Erreur de connexion';
     document.getElementById('token-status').className = 'token-status ko';
@@ -1347,6 +1370,7 @@ async function publier() {
     document.getElementById('next-id-badge').textContent = nextId;
 
     toast(editingId ? `${q.id} modifié !` : `${q.id} publié !`, 'ok');
+    renderDashboard();
     const statusMsg = `✓ ${q.id} ${editingId?'modifié':'ajouté'}`;
     let secs = 30;
     const cd = setInterval(() => {
@@ -1384,6 +1408,80 @@ function resetForm(keepId=false) {
   document.getElementById('guide-type').value = 'grille';
   docCount = 0; colCount = 0;
   updateGuideUI();
+}
+
+// ── TABLEAU DE BORD ───────────────────────────────────────────────────
+function renderDashboard() {
+  if(!currentQuestions.length) return;
+  document.getElementById('dashboard-section').style.display = '';
+
+  const totalQ   = currentQuestions.length;
+  const totalPts = currentQuestions.reduce((s,q) => s + (q.points||0), 0);
+  document.getElementById('dashboard-total').textContent = `${totalQ} question${totalQ>1?'s':''} · ${totalPts} pts`;
+
+  // Périodes par niveau
+  const niveaux = [
+    { label: 'Niveau 3', num: '3', color: '#1B3B6F' },
+    { label: 'Niveau 4', num: '4', color: '#6B3FA0' }
+  ];
+  const periodes = Object.keys(ASPECTS_PAR_PERIODE || {});
+  const n3 = periodes.slice(0,4);
+  const n4 = periodes.slice(4,8);
+
+  function barRows(list, color) {
+    const counts = list.map(p => ({
+      p,
+      q: currentQuestions.filter(x => x.periode === p).length,
+      pts: currentQuestions.filter(x => x.periode === p).reduce((s,x) => s+(x.points||0), 0)
+    }));
+    const maxQ = Math.max(...counts.map(c => c.q), 1);
+    return counts.map(c => {
+      const pct = Math.round(c.q / maxQ * 100);
+      const shortLabel = c.p.replace(/^P\d+ — /, '');
+      return `<div class="dash-row">
+        <div class="dash-label" title="${c.p}">${c.p.match(/^P\d+/)?.[0]} — ${shortLabel.slice(0,22)}${shortLabel.length>22?'…':''}</div>
+        <div class="dash-bar-wrap"><div class="dash-bar" style="width:${pct}%;background:${color}${c.q===0?';opacity:.25':''}"></div></div>
+        <div class="dash-count">${c.q}q · ${c.pts}pts</div>
+      </div>`;
+    }).join('');
+  }
+
+  // OI distribution
+  const oiMap = {};
+  currentQuestions.forEach(q => {
+    if(!oiMap[q.oi]) oiMap[q.oi] = { q:0, pts:0 };
+    oiMap[q.oi].q++;
+    oiMap[q.oi].pts += q.points||0;
+  });
+  const oiList = Object.entries(oiMap).sort((a,b) => b[1].q - a[1].q);
+  const maxOiQ = Math.max(...oiList.map(e => e[1].q), 1);
+  const oiRows = oiList.map(([oi, val]) => {
+    const pct = Math.round(val.q / maxOiQ * 100);
+    return `<div class="dash-oi-row">
+      <div class="dash-oi-label" title="${oi}">${oi}</div>
+      <div class="dash-bar-wrap" style="max-width:120px"><div class="dash-bar" style="width:${pct}%;background:#888"></div></div>
+      <div class="dash-oi-count">${val.q}q · ${val.pts}pts</div>
+    </div>`;
+  }).join('');
+
+  const n3Total = currentQuestions.filter(q=>String(q.niveau)==='3');
+  const n4Total = currentQuestions.filter(q=>String(q.niveau)==='4');
+
+  document.getElementById('dashboard-content').innerHTML = `
+    <div class="dash-grid">
+      <div>
+        <div class="dash-niv-title">Niveau 3 — ${n3Total.length}q · ${n3Total.reduce((s,q)=>s+(q.points||0),0)}pts</div>
+        ${barRows(n3, '#1B3B6F')}
+      </div>
+      <div>
+        <div class="dash-niv-title">Niveau 4 — ${n4Total.length}q · ${n4Total.reduce((s,q)=>s+(q.points||0),0)}pts</div>
+        ${barRows(n4, '#6B3FA0')}
+      </div>
+    </div>
+    <hr class="dash-divider">
+    <div class="dash-niv-title">Par opération intellectuelle</div>
+    ${oiRows}
+  `;
 }
 
 // ── CONTEXTE ──────────────────────────────────────────────────────────
