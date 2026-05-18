@@ -616,8 +616,8 @@ function renderReponse(q) {
     const TC = B + ';text-align:center;padding:8px 4px';
     const colPct = Math.floor(100 / n) + '%';
     if(n === 2) {
-      return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin:8px 0">'
-        + els.map(e => '<tr><td style="' + TH + ';width:' + colPct + '">' + e + '</td><td style="' + TC + ';width:' + colPct + ';text-align:center">' + circle + '</td></tr>').join('')
+      return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:8px 0">'
+        + els.map(e => '<tr><td style="' + TH + ';white-space:nowrap">' + e + '</td><td style="' + TC + ';text-align:center;padding:8px 16px">' + circle + '</td></tr>').join('')
         + '</table>';
     }
     return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin:8px 0">'
@@ -819,8 +819,8 @@ function previsualiser(guideMode) {
           const TCM = BM + ';text-align:center;padding:8px 4px';
           const colPctM = Math.floor(100 / n) + '%';
           if(n === 2) {
-            previewReponse = '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin:8px 0">'
-              + els.map(e => '<tr><td style="' + THM + ';width:' + colPctM + '">' + e + '</td><td style="' + TCM + ';width:' + colPctM + ';text-align:center">' + circle3 + '</td></tr>').join('')
+            previewReponse = '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:8px 0">'
+              + els.map(e => '<tr><td style="' + THM + ';white-space:nowrap">' + e + '</td><td style="' + TCM + ';text-align:center;padding:8px 16px">' + circle3 + '</td></tr>').join('')
               + '</table>';
           } else {
             previewReponse = '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin:8px 0">'
@@ -1584,11 +1584,9 @@ async function genererDocx(includeGuide=false) {
             return new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, width: { size: w, type: WidthType.DXA }, children: [para] });
           };
           if(n === 2) {
-            // Vertical layout: 2 rows, each [label | circle], equal columns
-            const cHalf = Math.floor(PAGE_W / 2);
-            const cHalf2 = PAGE_W - cHalf;
-            children.push(new Table({ width: { size: PAGE_W, type: WidthType.DXA }, columnWidths: [cHalf, cHalf2], rows: els.map(e =>
-              new TableRow({ height: { value: 800, rule: 'atLeast' }, children: [mkLblCell(e, cHalf), mkMerCircCell(cHalf2)] })
+            // Vertical layout: auto-width to content
+            children.push(new Table({ width: { size: 0, type: WidthType.AUTO }, rows: els.map(e =>
+              new TableRow({ height: { value: 800, rule: 'atLeast' }, children: [mkLblCell(e, 0), mkMerCircCell(COL_2CM * 2)] })
             )}));
           } else {
             // Horizontal layout: row 1 labels, row 2 circles
