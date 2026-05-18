@@ -1681,6 +1681,9 @@ const IMAGE_DB = {
   },
   "james_murray.png": {
     src: "images/james_murray.png"
+  },
+  "image_jacques_cartier_1534.png": {
+    src: "images/image_jacques_cartier_1534.png"
   }
 }
 
