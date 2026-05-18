@@ -1,5 +1,5 @@
 const REGLETTES = {
-  "Q1": {
+  Q1: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -16,7 +16,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q2": {
+  Q2: {
     oi: "Situer dans le temps",
     colonnes: [
       "2 points",
@@ -33,7 +33,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q3": {
+  Q3: {
     oi: "Situer dans le temps",
     colonnes: [
       "1 point",
@@ -50,7 +50,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q4": {
+  Q4: {
     oi: "Situer dans le temps",
     colonnes: [
       "2 points",
@@ -72,7 +72,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q5": {
+  Q5: {
     oi: "Situer dans l'espace",
     colonnes: [
       "1 point",
@@ -89,7 +89,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q6": {
+  Q6: {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
     colonnes: [
@@ -98,26 +98,9 @@ const REGLETTES = {
       "1 point",
       "0 point"
     ],
-    niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
-      },
-      {
-        pts: 2,
-        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
-      },
-      {
-        pts: 1,
-        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
-      },
-      {
-        pts: 0,
-        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
-      }
-    ]
+    niveaux: []
   },
-  "Q7": {
+  Q7: {
     oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
@@ -139,7 +122,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q8": {
+  Q8: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -161,7 +144,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q9": {
+  Q9: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -183,7 +166,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q10": {
+  Q10: {
     oi: "Déterminer des changements et des continuités",
     colonnes: [
       "2 points",
@@ -205,7 +188,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q11": {
+  Q11: {
     oi: "Déterminer des changements et des continuités",
     colonnes: [
       "2 points",
@@ -227,7 +210,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q12": {
+  Q12: {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
     colonnes: [
@@ -238,7 +221,7 @@ const REGLETTES = {
     ],
     niveaux: []
   },
-  "Q13": {
+  Q13: {
     oi: "Mettre en relation des faits",
     colonnes: [
       "2 points",
@@ -260,7 +243,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q14": {
+  Q14: {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
     colonnes: [
@@ -269,26 +252,9 @@ const REGLETTES = {
       "1 point",
       "0 point"
     ],
-    niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
-      {
-        pts: 2,
-        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
-      },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
-    ]
+    niveaux: []
   },
-  "Q15": {
+  Q15: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -305,7 +271,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q16": {
+  Q16: {
     oi: "Situer dans le temps",
     colonnes: [
       "2 points",
@@ -322,7 +288,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q17": {
+  Q17: {
     oi: "Situer dans le temps",
     colonnes: [
       "1 point",
@@ -339,7 +305,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q18": {
+  Q18: {
     oi: "Situer dans le temps",
     colonnes: [
       "2 points",
@@ -361,7 +327,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q19": {
+  Q19: {
     oi: "Situer dans l'espace",
     colonnes: [
       "1 point",
@@ -378,7 +344,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q20": {
+  Q20: {
     oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
@@ -400,7 +366,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q21": {
+  Q21: {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
     colonnes: [
@@ -409,26 +375,9 @@ const REGLETTES = {
       "1 point",
       "0 point"
     ],
-    niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
-      },
-      {
-        pts: 2,
-        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
-      },
-      {
-        pts: 1,
-        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
-      },
-      {
-        pts: 0,
-        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
-      }
-    ]
+    niveaux: []
   },
-  "Q22": {
+  Q22: {
     oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
@@ -450,7 +399,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q33": {
+  Q33: {
     oi: "Situer dans l'espace",
     colonnes: [
       "1 point",
@@ -467,7 +416,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q37": {
+  Q37: {
     oi: "Mettre en relation des faits",
     colonnes: [
       "2 points",
@@ -489,7 +438,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q29": {
+  Q29: {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
     colonnes: [
@@ -498,26 +447,9 @@ const REGLETTES = {
       "1 point",
       "0 point"
     ],
-    niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
-      {
-        pts: 2,
-        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
-      },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
-    ]
+    niveaux: []
   },
-  "Q28": {
+  Q28: {
     oi: "Mettre en relation des faits",
     colonnes: [
       "2 points",
@@ -539,7 +471,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q27": {
+  Q27: {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
     colonnes: [
@@ -550,7 +482,7 @@ const REGLETTES = {
     ],
     niveaux: []
   },
-  "Q23": {
+  Q23: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -572,7 +504,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q24": {
+  Q24: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -594,7 +526,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q25": {
+  Q25: {
     oi: "Déterminer des changements et des continuités",
     colonnes: [
       "2 points",
@@ -616,7 +548,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q26": {
+  Q26: {
     oi: "Déterminer des changements et des continuités",
     colonnes: [
       "2 points",
@@ -638,7 +570,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q30": {
+  Q30: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -655,7 +587,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q31": {
+  Q31: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -672,7 +604,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q32": {
+  Q32: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -689,7 +621,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q34": {
+  Q34: {
     oi: "Situer dans l'espace",
     colonnes: [
       "1 point",
@@ -706,7 +638,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q35": {
+  Q35: {
     oi: "Situer dans l'espace",
     colonnes: [
       "1 point",
@@ -723,7 +655,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q36": {
+  Q36: {
     oi: "Mettre en relation des faits",
     colonnes: [
       "2 points",
@@ -745,7 +677,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q38": {
+  Q38: {
     oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
@@ -767,7 +699,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q39": {
+  Q39: {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
     colonnes: [
@@ -776,26 +708,9 @@ const REGLETTES = {
       "1 point",
       "0 point"
     ],
-    niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
-      },
-      {
-        pts: 2,
-        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
-      },
-      {
-        pts: 1,
-        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
-      },
-      {
-        pts: 0,
-        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
-      }
-    ]
+    niveaux: []
   },
-  "Q40": {
+  Q40: {
     oi: "Mettre en relation des faits",
     colonnes: [
       "2 points",
@@ -817,7 +732,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q41": {
+  Q41: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -834,7 +749,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q42": {
+  Q42: {
     oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
@@ -856,7 +771,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q43": {
+  Q43: {
     oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
@@ -878,7 +793,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q44": {
+  Q44: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -895,7 +810,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q45": {
+  Q45: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -912,7 +827,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q46": {
+  Q46: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -934,7 +849,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q47": {
+  Q47: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -951,7 +866,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q48": {
+  Q48: {
     oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
@@ -973,7 +888,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q49": {
+  Q49: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -990,7 +905,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q50": {
+  Q50: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -1007,7 +922,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q51": {
+  Q51: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -1024,7 +939,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q52": {
+  Q52: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -1046,7 +961,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q53": {
+  Q53: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -1068,7 +983,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q54": {
+  Q54: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -1085,7 +1000,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q55": {
+  Q55: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -1107,7 +1022,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q56": {
+  Q56: {
     oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
@@ -1129,7 +1044,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q57": {
+  Q57: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -1146,7 +1061,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q58": {
+  Q58: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -1168,7 +1083,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q59": {
+  Q59: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -1190,7 +1105,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q60": {
+  Q60: {
     oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
@@ -1212,7 +1127,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q61": {
+  Q61: {
     oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
@@ -1234,7 +1149,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q62": {
+  Q62: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -1251,7 +1166,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q63": {
+  Q63: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -1268,7 +1183,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q64": {
+  Q64: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -1290,7 +1205,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q65": {
+  Q65: {
     oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
@@ -1312,7 +1227,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q66": {
+  Q66: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -1334,7 +1249,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q67": {
+  Q67: {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
     colonnes: [
@@ -1343,26 +1258,9 @@ const REGLETTES = {
       "1 point",
       "0 point"
     ],
-    niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
-      {
-        pts: 2,
-        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
-      },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
-    ]
+    niveaux: []
   },
-  "Q68": {
+  Q68: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -1384,7 +1282,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q69": {
+  Q69: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -1406,7 +1304,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q70": {
+  Q70: {
     oi: "Situer dans le temps",
     colonnes: [
       "1 point",
@@ -1423,7 +1321,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q71": {
+  Q71: {
     oi: "Mettre en relation des faits",
     colonnes: [
       "2 points",
@@ -1445,7 +1343,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q72": {
+  Q72: {
     oi: "Mettre en relation des faits",
     colonnes: [
       "2 points",
@@ -1467,7 +1365,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q73": {
+  Q73: {
     oi: "Mettre en relation des faits",
     colonnes: [
       "2 points",
@@ -1489,7 +1387,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q74": {
+  Q74: {
     oi: "Mettre en relation des faits",
     colonnes: [
       "2 points",
@@ -1511,7 +1409,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q75": {
+  Q75: {
     oi: "Situer dans le temps",
     colonnes: [
       "1 point",
@@ -1528,7 +1426,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q76": {
+  Q76: {
     oi: "Situer dans le temps",
     colonnes: [
       "1 point",
@@ -1545,7 +1443,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q77": {
+  Q77: {
     oi: "Situer dans le temps",
     colonnes: [
       "2 points",
@@ -1562,7 +1460,7 @@ const REGLETTES = {
       }
     ]
   }
-}
+};
 
 const IMAGE_DB = {
   "fondation_quebec_1608.png": {
@@ -1688,7 +1586,7 @@ const IMAGE_DB = {
   "ligne_1475-1575.png": {
     src: "images/ligne_1475-1575.png"
   }
-}
+};
 
 const QUESTIONS = [
   {
@@ -4947,4 +4845,4 @@ const QUESTIONS = [
     },
     guide: "C - A - B - D"
   }
-]
+];
