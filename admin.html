@@ -869,10 +869,14 @@ async function uploadImage() {
       reader.onerror = rej;
       reader.readAsDataURL(file);
     });
+    // Récupère le SHA si le fichier existe déjà (nécessaire pour le remplacement)
+    let existingSha = '';
+    const checkResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/images/${name}?ref=${BRANCH}&t=${Date.now()}`, { headers:{ Authorization:`token ${token}` } });
+    if(checkResp.ok) { const checkData = await checkResp.json(); existingSha = checkData.sha || ''; }
     const putResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/images/${name}`, {
       method:'PUT',
       headers:{ Authorization:`token ${token}`, 'Content-Type':'application/json' },
-      body: JSON.stringify({ message:`Ajouter image : ${name}`, content:imgInfo.b64, branch:BRANCH })
+      body: JSON.stringify({ message:`Ajouter image : ${name}`, content:imgInfo.b64, branch:BRANCH, ...(existingSha ? { sha: existingSha } : {}) })
     });
     if(!putResp.ok) { const err=await putResp.json(); throw new Error(err.message||putResp.status); }
     currentImageDb[name] = { src: 'images/' + name, w: imgInfo.w, h: imgInfo.h };

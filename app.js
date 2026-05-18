@@ -690,7 +690,7 @@ function previsualiser(guideMode) {
     let previewHtml = '';
     if(examNom || showEleve || showGroupe || showDate || showScore) {
       previewHtml += '<div style="margin-bottom:1.5rem">';
-      if(examNom) previewHtml += '<div style="text-align:center;font-size:1.15rem;font-weight:700;letter-spacing:0.04em;margin-bottom:0.6rem">' + examNom + '</div>';
+      if(examNom) previewHtml += '<div style="text-align:center;font-size:1.15rem;font-weight:700;letter-spacing:0.04em;margin-bottom:0.6rem">' + examNom.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</div>';
       previewHtml += '<div style="border-top:3px solid #000;margin-bottom:0.75rem"></div>';
       const hasFields = showEleve || showGroupe || showDate || showScore;
       if(hasFields) {
