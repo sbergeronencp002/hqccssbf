@@ -1488,6 +1488,28 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
       }
     ]
+  },
+  "Q74": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
   }
 }
 
@@ -4719,6 +4741,96 @@ const QUESTIONS = [
           "C",
           "A",
           "B"
+        ]
+      ]
+    }
+  },
+  {
+    id: "Q74",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    soustag: "4 éléments",
+    enonce: "Les documents A à C présentent des faits relatifs aux tentatives de colonisation françaises en Amérique du Nord. Inscrivez à l’endroit approprié la lettre du document correspondant à chacune de ces tentatives.",
+    aspects: [
+      {
+        aspect: "Exploration et occupation du territoire par les Français"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« [...], en Acadie, Pierre Dugua de Mons et Samuel de Champlain fondent, au nom du roi Henri IV, une colonie dans un lieu mieux protégé et plus favorable à l’agriculture. »",
+            source: "Raymonde Litalien (dir.) et Denis Vaugeois (dir.), Champlain : la naissance de l’Amérique française. Québec, Les Éditions du Septentrion, 2004."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les colons installés à la colonie, près de Cap-Rouge, affrontent un hiver difficile, des tensions avec les Iroquoiens et découvrent que les prétendus diamants et pépites d’or sont en réalité du quartz et de la pyrite de fer. »",
+            source: "Jacques Lacoursière, Canada-Québec, 1534-2010. Québec, Les Éditions du Septentrion, 2011."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Cartier[...] au nom du roi François Ier, fonde un établissement à Cap-Rouge [...]. Cette tentative de colonisation vise à établir une présence française permanente et à exploiter les richesses que les Français croient avoir découvertes sur le territoire. »",
+            source: "Jacques Lacoursière, Canada-Québec, 1534-2010. Québec, Les Éditions du Septentrion, 2011."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Une trentaine de colons sont abandonnés sur cette île sablonneuse, où les tempêtes, l’isolement et le manque de ressources rendent les conditions de vie extrêmement difficiles. »",
+            source: "Marcel Trudel, Histoire de la Nouvelle-France. Montréal, Fides."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau",
+      lignes: [
+        {
+          label: "Charlesbourg-Royal"
+        },
+        {
+          label: "Île de Sable"
+        },
+        {
+          label: "Port-Royal"
+        },
+        {
+          label: "Tadoussac"
+        }
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Charlesbourg-Royal",
+        "Île de Sable",
+        "Port-Royal",
+        "Tadoussac"
+      ],
+      rangees: [
+        [
+          "B",
+          "D",
+          "C",
+          "A"
         ]
       ]
     }
