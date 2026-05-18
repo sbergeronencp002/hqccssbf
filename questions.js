@@ -1311,6 +1311,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q66": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -4129,5 +4151,36 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Le contrôle des territoires ou des routes commerciales par les nations autochtones."
+  },
+  {
+    id: "Q66",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    soustag: "Cause",
+    enonce: "À partir du document A, expliquez pourquoi certaines nations autochtones concluent des alliances.",
+    aspects: [
+      {
+        aspect: "Alliances et rivalités au sein des Premières Nations"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les alliances entre nations autochtones reposent sur des intérêts communs. Elles permettent de faire face à des ennemis, de sécuriser les routes d’échange et de maintenir des relations politiques et commerciales avantageuses entre les peuples. »",
+            source: "Denys Delâge, Le pays renversé. Montréal, Les Éditions du Boréal, 2005."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Certaines nations autochtones concluent des alliances afin de se protéger contre des ennemis communs ou afin de faciliter les échanges commerciaux."
   }
 ]
