@@ -4734,20 +4734,12 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Charlesbourg-Royal"
-        },
-        {
-          label: "Île de Sable"
-        },
-        {
-          label: "Port-Royal"
-        },
-        {
-          label: "Tadoussac"
-        }
+      type: "mettre-en-relation",
+      elements: [
+        "Charlesbourg-Royal",
+        "Île de Sable",
+        "Port-Royal",
+        "Tadoussac"
       ]
     },
     guide: {
