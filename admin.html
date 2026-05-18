@@ -333,9 +333,13 @@ header a:hover { color: #fff; }
       <div class="section-title">Réglette</div>
       <div class="field">
         <label>Réglette prémémorisée</label>
-        <select id="reg-preset">
+        <select id="reg-preset" onchange="updateAvantApresLabel()">
           <option value="">— Sélectionner —</option>
         </select>
+      </div>
+      <div class="field" id="avant-apres-row" style="display:none">
+        <label>Événement repère (colonne centrale)</label>
+        <input type="text" id="avant-apres-label" placeholder="ex. : la capitulation de Montréal">
       </div>
     </div>
 
@@ -448,6 +452,15 @@ function updatePresets() {
   const sel = document.getElementById('reg-preset');
   sel.innerHTML = '<option value="">— Sélectionner —</option>'
     + presets.map((p,i) => `<option value="${i}">${p.label}</option>`).join('');
+  updateAvantApresLabel();
+}
+
+function updateAvantApresLabel() {
+  const oi = document.getElementById('q-oi').value;
+  const idx = parseInt(document.getElementById('reg-preset').value);
+  const preset = !isNaN(idx) ? (REGLETTES_PRESET[oi] || [])[idx] : null;
+  const row = document.getElementById('avant-apres-row');
+  if(row) row.style.display = (preset?.variante === 'avant-apres') ? '' : 'none';
 }
 
 // ── MODE ÉDITION ──────────────────────────────────────────────────────
@@ -704,6 +717,11 @@ function loadQuestion(id) {
       matchIdx = presets.findIndex(p => !p.variante && p.niveaux?.[0]?.desc === r.niveaux?.[0]?.desc);
     }
     if(matchIdx !== -1) document.getElementById('reg-preset').value = String(matchIdx);
+    updateAvantApresLabel();
+    if(r.variante === 'avant-apres') {
+      const lbl = document.getElementById('avant-apres-label');
+      if(lbl) lbl.value = r.label || '';
+    }
   }
 
   if(q.guide && typeof q.guide==='string') {
@@ -1305,6 +1323,10 @@ function buildReglette(id) {
   const preset = (REGLETTES_PRESET[oi] || [])[idx];
   if(!preset) return { oi, colonnes:[], niveaux:[] };
   const { label, ...rest } = preset;
+  if(preset.variante === 'avant-apres') {
+    const eventLabel = document.getElementById('avant-apres-label')?.value.trim() || '';
+    return { oi, ...rest, ...(eventLabel ? { label: eventLabel } : {}) };
+  }
   return { oi, ...rest };
 }
 
@@ -1482,6 +1504,9 @@ function resetForm(keepId=false) {
   document.getElementById('rep-type').value = 'none';
   document.getElementById('rep-extra').innerHTML = '';
   document.getElementById('reg-preset').value = '';
+  const aaLbl = document.getElementById('avant-apres-label');
+  if(aaLbl) aaLbl.value = '';
+  updateAvantApresLabel();
   document.getElementById('guide-type').value = 'grille';
   docCount = 0; colCount = 0;
   updateGuideUI();

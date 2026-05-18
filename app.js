@@ -236,6 +236,22 @@ function buildReglettHTML(q) {
     </table>`;
   }
 
+  if(r.variante === 'avant-apres') {
+    const lbl = r.label || '';
+    const circ = '○ &nbsp; et &nbsp; ○';
+    return `<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%">
+      <tr>
+        <td style="${SB};width:33%">Avant</td>
+        <td style="${S};width:34%" rowspan="2">${lbl}</td>
+        <td style="${SB};width:33%">Après</td>
+      </tr>
+      <tr>
+        <td style="${S}">${circ}</td>
+        <td style="${S}">${circ}</td>
+      </tr>
+    </table>`;
+  }
+
   if(r.variante === 'acteur-positions') {
     const S2 = S + ';border-right:none';
     const S3 = S + ';border-left:none;border-right:none';
@@ -1098,6 +1114,27 @@ async function genererDocx(includeGuide=false) {
             new TableRow({ children: [mkCell("L'élève précise un seul élément ou n'en précise pas.", false, 1, 2, col2+col3, BC2), mkCell("0 point", false, 1, 1, col4, BC4)] }),
           ]
         })];
+      }
+
+      if(r.variante === 'avant-apres') {
+        const cW = Math.floor(PAGE_W / 3);
+        const cMid = PAGE_W - cW * 2;
+        const mk = (text, bold=false, rs=1) => new TableCell({
+          borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
+          rowSpan: rs > 1 ? rs : undefined,
+          width: { size: cW, type: WidthType.DXA },
+          children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: 12, bold })] })]
+        });
+        const mkMid = (text) => new TableCell({
+          borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
+          rowSpan: 2,
+          width: { size: cMid, type: WidthType.DXA },
+          children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: 12 })] })]
+        });
+        return [new Table({ width: { size: PAGE_W, type: WidthType.DXA }, rows: [
+          new TableRow({ children: [mk('Avant', true), mkMid(r.label || ''), mk('Après', true)] }),
+          new TableRow({ children: [mk('○   et   ○'), mk('○   et   ○')] }),
+        ]})];
       }
 
       if(r.variante === 'acteur-positions') {
