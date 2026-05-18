@@ -1498,6 +1498,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
+  },
+  "Q80": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -4956,5 +4978,36 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Une diminution importante de la population autochtone."
+  },
+  {
+    id: "Q80",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Cause",
+    enonce: "À partir du document A, indiquez une cause de la diminution de la population autochtone dans la première moitié du 17e siècle.",
+    aspects: [
+      {
+        aspect: "Populations autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les Amérindiens n’avaient aucune immunité contre les maladies infectieuses introduites par les Européens, comme la variole, la rougeole et la grippe. [...] »",
+            source: "Denys Delâge, « Épidémies et colonisation. Un aperçu historique des premiers explorateurs au XVIIIe siècle », 2022."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les maladies infectieuses apportées par les Européens (variole, rougeole, grippe)."
   }
 ]
