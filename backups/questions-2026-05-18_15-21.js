@@ -1820,7 +1820,7 @@ const QUESTIONS = [
     niveau: 3,
     oi: "Situer dans le temps",
     periode: "P3 — 1760 – 1791",
-    points: 2,
+    points: 1,
     soustag: "Avant et après",
     enonce: "Les documents A à D font référence aux rapports de force entre les empires coloniaux français et britannique. Indiquez si les faits présentés dans ces documents se déroulent avant ou après la capitulation de Montréal.",
     aspects: [
@@ -1877,8 +1877,10 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "avant-apres",
-      label: "La capitulation de Montréal"
+      type: "tableau_3col",
+      col1: "Avant",
+      col2: "La capitulation de Montréal",
+      col3: "Après"
     },
     guide: {
       type: "grille",
