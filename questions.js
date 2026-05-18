@@ -1250,6 +1250,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q63": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -3966,5 +3983,35 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Guy Carleton."
+  },
+  {
+    id: "Q63",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "A partir du document A, nommez un objet de rivalité entre les nations autochtones vers 1500.",
+    aspects: [
+      {
+        aspect: "Alliances et rivalités au sein des Premières Nations"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les conflits entre les nations autochtones portent souvent sur le contrôle des territoires de chasse, des zones de pêche et des routes commerciales. La maîtrise de ces espaces assure l’accès aux ressources nécessaires à la subsistance et permet de maintenir des réseaux d’échanges entre les peuples. »",
+            source: "Olive Patricia Dickason, Les Premières Nations du Canada. Québec, Les Éditions du Septentrion, 1996. Les Éditions du Septentrion."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le contrôle des territoires de chasse ou le contrôle des routes commerciales ou l’accès aux ressources naturelles."
   }
 ]
