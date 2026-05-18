@@ -238,7 +238,8 @@ function buildReglettHTML(q) {
 
   if(r.variante === 'avant-apres') {
     const lbl = r.label || '';
-    const circ = '○ &nbsp; et &nbsp; ○';
+    const circle = `<span style="display:inline-block;width:1cm;height:1cm;border-radius:50%;border:1.5px solid #000;vertical-align:middle"></span>`;
+    const circ = `<div style="display:flex;align-items:center;justify-content:center;gap:6px;padding:6px 0">${circle}<span>et</span>${circle}</div>`;
     return `<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%">
       <tr>
         <td style="${SB};width:33%">Avant</td>
@@ -246,8 +247,8 @@ function buildReglettHTML(q) {
         <td style="${SB};width:33%">Après</td>
       </tr>
       <tr>
-        <td style="${S}">${circ}</td>
-        <td style="${S}">${circ}</td>
+        <td style="${S};padding:0">${circ}</td>
+        <td style="${S};padding:0">${circ}</td>
       </tr>
     </table>`;
   }
@@ -1119,9 +1120,9 @@ async function genererDocx(includeGuide=false) {
       if(r.variante === 'avant-apres') {
         const cW = Math.floor(PAGE_W / 3);
         const cMid = PAGE_W - cW * 2;
-        const mk = (text, bold=false, rs=1) => new TableCell({
+        const CIRC_SIZE = 56; // 28pt ≈ 1cm
+        const mkHeader = (text, bold=false) => new TableCell({
           borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
-          rowSpan: rs > 1 ? rs : undefined,
           width: { size: cW, type: WidthType.DXA },
           children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: 12, bold })] })]
         });
@@ -1131,9 +1132,18 @@ async function genererDocx(includeGuide=false) {
           width: { size: cMid, type: WidthType.DXA },
           children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: 12 })] })]
         });
+        const mkCircles = () => new TableCell({
+          borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
+          width: { size: cW, type: WidthType.DXA },
+          children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [
+            new TextRun({ text: '○', font: 'Arial', size: CIRC_SIZE }),
+            new TextRun({ text: '   et   ', font: 'Aptos', size: 12 }),
+            new TextRun({ text: '○', font: 'Arial', size: CIRC_SIZE }),
+          ]})]
+        });
         return [new Table({ width: { size: PAGE_W, type: WidthType.DXA }, rows: [
-          new TableRow({ children: [mk('Avant', true), mkMid(r.label || ''), mk('Après', true)] }),
-          new TableRow({ children: [mk('○   et   ○'), mk('○   et   ○')] }),
+          new TableRow({ children: [mkHeader('Avant', true), mkMid(r.label || ''), mkHeader('Après', true)] }),
+          new TableRow({ children: [mkCircles(), mkCircles()] }),
         ]})];
       }
 
