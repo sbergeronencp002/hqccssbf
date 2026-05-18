@@ -2275,17 +2275,11 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Bourgeoisie professionnelle"
-        },
-        {
-          label: "Bourgeoisie d'affaires"
-        },
-        {
-          label: "Clergé catholique"
-        }
+      type: "mettre-en-relation",
+      elements: [
+        "Bourgeoisie professionnelle",
+        "Bourgeoisie d'affaires",
+        "Clergé catholique"
       ]
     },
     guide: {
