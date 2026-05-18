@@ -1413,7 +1413,17 @@ function serializeValue(v, indent=0) {
   return '{\n' + pairs.join(',\n') + '\n' + pad + '}';
 }
 
+function ensureImageDbComplete(questions, imageDb) {
+  questions.forEach(q => {
+    q.documents?.forEach(d => d.cols?.forEach(c => {
+      if(c.ref && !imageDb[c.ref]) imageDb[c.ref] = { src: 'images/' + c.ref };
+    }));
+    if(q.reponse?.ref && !imageDb[q.reponse.ref]) imageDb[q.reponse.ref] = { src: 'images/' + q.reponse.ref };
+  });
+}
+
 function generateQuestionsJs(questions, reglettes, imageDb) {
+  ensureImageDbComplete(questions, imageDb);
   let out = 'const REGLETTES = {\n';
   out += Object.entries(reglettes).map(([k,v]) => `  ${JSON.stringify(k)}: ${serializeValue(v,1)}`).join(',\n');
   out += '\n}\n\nconst IMAGE_DB = {\n';
