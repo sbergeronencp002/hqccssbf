@@ -721,6 +721,8 @@ function loadQuestion(id) {
     const els = q.reponse.elements || [];
     const nSel = document.getElementById('rep-mer-n');
     if(nSel) { nSel.value = String(els.length || 2); updateReponseUI(); }
+    const dbl = document.getElementById('rep-mer-double');
+    if(dbl) { dbl.checked = !!q.reponse.double; updateReponseUI(); }
     els.forEach((v, i) => {
       const el = document.getElementById('rep-mer-el-' + i);
       if(el) el.value = v;
@@ -1143,12 +1145,20 @@ function updateReponseUI() {
       updateSoustag();
     }
     const n = parseInt(document.getElementById('rep-mer-n')?.value || '2') || 2;
+    const doubleCirc = n === 2 && (document.getElementById('rep-mer-double')?.checked || false);
     const MER_EX = {2:['Iroquoiens','Algonquiens'], 3:['Cartier','Champlain','Frontenac'], 4:['Cabot','Cartier','Champlain','Talon']};
     const sel = (id, vals, def) => `<select id="${id}" style="padding:.28rem .45rem;font-size:.82rem;border:1px solid var(--border);border-radius:4px;background:var(--paper)" onchange="updateReponseUI()">${vals.map(v=>`<option value="${v}"${v==def?' selected':''}>${v}</option>`).join('')}</select>`;
-    let fields = `<div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem">
-      <label style="font-size:.75rem;font-weight:600;color:var(--ink-2)">Nombre d'éléments</label>
-      ${sel('rep-mer-n',[2,3,4],n)}
-    </div><div style="display:grid;grid-template-columns:repeat(${n},1fr);gap:.5rem">`;
+    let fields = `<div style="display:flex;align-items:center;gap:1.2rem;margin-bottom:.75rem;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:.6rem">
+        <label style="font-size:.75rem;font-weight:600;color:var(--ink-2)">Nombre d'éléments</label>
+        ${sel('rep-mer-n',[2,3,4],n)}
+      </div>`;
+    if(n === 2) {
+      fields += `<label style="display:flex;align-items:center;gap:.4rem;font-size:.78rem;cursor:pointer">
+        <input type="checkbox" id="rep-mer-double" onchange="updateReponseUI()"${doubleCirc?' checked':''}> Deux cercles (avec et)
+      </label>`;
+    }
+    fields += `</div><div style="display:grid;grid-template-columns:repeat(${n},1fr);gap:.5rem">`;
     for(let i = 0; i < n; i++) {
       const ex = (MER_EX[n] || [])[i] || 'Élément ' + (i+1);
       fields += `<div class="field" style="margin:0"><label style="font-size:.72rem">Élément ${i+1}</label><input type="text" id="rep-mer-el-${i}" placeholder="ex. : ${ex}"></div>`;
@@ -1350,7 +1360,8 @@ function buildQuestion() {
     for(let i = 0; i < n; i++) {
       elements.push((document.getElementById('rep-mer-el-' + i)?.value || '').trim());
     }
-    reponse = { type: 'mettre-en-relation', elements };
+    const double = n === 2 && !!document.getElementById('rep-mer-double')?.checked;
+    reponse = { type: 'mettre-en-relation', elements, ...(double ? { double: true } : {}) };
   }
 
   // Guide

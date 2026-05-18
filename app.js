@@ -615,6 +615,17 @@ function renderReponse(q) {
     const TH = B + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem';
     const TC = B + ';text-align:center;padding:8px 4px';
     const colPct = Math.floor(100 / n) + '%';
+    if(n === 2 && q.reponse.double) {
+      const SN = B + ';border-left:none;border-right:none;text-align:center;padding:8px 6px;font-size:0.8rem';
+      return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:8px 0">'
+        + els.map(e => '<tr>'
+          + '<td style="' + TH + ';white-space:nowrap">' + e + '</td>'
+          + '<td style="' + TC + ';text-align:center;padding:8px 10px">' + circle + '</td>'
+          + '<td style="' + SN + '">et</td>'
+          + '<td style="' + TC + ';text-align:center;padding:8px 10px">' + circle + '</td>'
+          + '</tr>').join('')
+        + '</table>';
+    }
     if(n === 2) {
       return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:8px 0">'
         + els.map(e => '<tr><td style="' + TH + ';white-space:nowrap">' + e + '</td><td style="' + TC + ';text-align:center;padding:8px 16px">' + circle + '</td></tr>').join('')
@@ -818,7 +829,17 @@ function previsualiser(guideMode) {
           const THM = BM + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.75rem';
           const TCM = BM + ';text-align:center;padding:8px 4px';
           const colPctM = Math.floor(100 / n) + '%';
-          if(n === 2) {
+          if(n === 2 && q.reponse.double) {
+            const SNM = BM + ';border-left:none;border-right:none;text-align:center;padding:8px 6px;font-size:0.75rem';
+            previewReponse = '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:8px 0">'
+              + els.map(e => '<tr>'
+                + '<td style="' + THM + ';white-space:nowrap">' + e + '</td>'
+                + '<td style="' + TCM + ';text-align:center;padding:8px 10px">' + circle3 + '</td>'
+                + '<td style="' + SNM + '">et</td>'
+                + '<td style="' + TCM + ';text-align:center;padding:8px 10px">' + circle3 + '</td>'
+                + '</tr>').join('')
+              + '</table>';
+          } else if(n === 2) {
             previewReponse = '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:8px 0">'
               + els.map(e => '<tr><td style="' + THM + ';white-space:nowrap">' + e + '</td><td style="' + TCM + ';text-align:center;padding:8px 16px">' + circle3 + '</td></tr>').join('')
               + '</table>';
@@ -1583,7 +1604,14 @@ async function genererDocx(includeGuide=false) {
             para.root.push(new EllipseRun(CIRC_MER, CIRC_MER));
             return new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, width: { size: w, type: WidthType.DXA }, children: [para] });
           };
-          if(n === 2) {
+          if(n === 2 && q.reponse.double) {
+            // Vertical layout: [label | ○ | et | ○], auto-width
+            const BNN = { style: BorderStyle.NONE, size: 0, color: 'FFFFFF' };
+            const mkEtMer = () => new TableCell({ borders: { top: BORDER, bottom: BORDER, left: BNN, right: BNN }, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: 'et', font: 'Aptos', size: 20 })] })] });
+            children.push(new Table({ width: { size: 0, type: WidthType.AUTO }, rows: els.map(e =>
+              new TableRow({ height: { value: 800, rule: 'atLeast' }, children: [mkLblCell(e, 0), mkMerCircCell(COL_2CM * 2), mkEtMer(), mkMerCircCell(COL_2CM * 2)] })
+            )}));
+          } else if(n === 2) {
             // Vertical layout: auto-width to content
             children.push(new Table({ width: { size: 0, type: WidthType.AUTO }, rows: els.map(e =>
               new TableRow({ height: { value: 800, rule: 'atLeast' }, children: [mkLblCell(e, 0), mkMerCircCell(COL_2CM * 2)] })
