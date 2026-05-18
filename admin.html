@@ -1505,6 +1505,10 @@ async function publier() {
           currentQuestions.push(q);
         }
         currentReglettes[q.id] = r;
+        // Re-apply IMAGE_DB entries (fetchFreshState reset currentImageDb)
+        refsUsed.forEach(ref => {
+          if(!currentImageDb[ref]) currentImageDb[ref] = { src: 'images/' + ref };
+        });
       }
       const newContent2 = generateQuestionsJs(currentQuestions, currentReglettes, currentImageDb);
       const encoded2 = btoa(unescape(encodeURIComponent(newContent2)));
