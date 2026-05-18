@@ -4278,7 +4278,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P1 — Des origines à 1608",
     points: 3,
-    enonce: "Expliquez comment les objets de rivalité entre les nations autochtones entraînent la formation d’alliances.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Un objets de rivalité entre les nations autochtones\n• L’objectif des alliances entre les nations autochtones\n• Le sort des prisonniers",
+    enonce: "Expliquez comment les objets de rivalité entre les nations autochtones entraînent la formation d’alliances.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Un objet de rivalité entre les nations autochtones\n• L’objectif des alliances entre les nations autochtones\n• Le sort des prisonniers",
     aspects: [
       {
         aspect: "Alliances et rivalités au sein des Premières Nations"
