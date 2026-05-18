@@ -4363,7 +4363,7 @@ const QUESTIONS = [
     enonce: "À partir du document A, expliquez pourquoi certaines nations autochtones concluent une alliance avec Samuel de Champlain en 1603 ?",
     aspects: [
       {
-        aspect: "Premiers contacts"
+        aspect: "Exploration et occupation du territoire par les Français"
       }
     ],
     documents: [
