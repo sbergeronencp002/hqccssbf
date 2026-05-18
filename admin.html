@@ -324,6 +324,7 @@ header a:hover { color: #fff; }
           <option value="grille">Tableau (grille visuelle)</option>
           <option value="avant-apres">Tableau Avant / Après</option>
           <option value="mettre-en-relation">Tableau Mettre en relation</option>
+          <option value="cause-consequence">Tableau Cause / Conséquence</option>
         </select>
       </div>
       <div id="rep-extra"></div>
@@ -445,7 +446,7 @@ function setSoustag(val) {
 
 const OI_AUTO_REPONSE = {
   'Établir des faits':                          { type: 'lignes', nombre: 1 },
-  'Déterminer des causes et des conséquences':  { type: 'lignes', nombre: 2 },
+  'Déterminer des causes et des conséquences':  { type: 'cause-consequence' },
 };
 
 function autoReponseFromOI() {
@@ -1165,6 +1166,8 @@ function updateReponseUI() {
     }
     fields += '</div>';
     wrap.innerHTML = fields;
+  } else if(type === 'cause-consequence') {
+    wrap.innerHTML = `<div class="field" style="color:var(--ink-3);font-size:.82rem">Tableau fixe : Cause et Conséquence avec cercle de réponse (1,25 cm).</div>`;
   } else {
     wrap.innerHTML = '';
   }
@@ -1354,6 +1357,8 @@ function buildQuestion() {
   } else if(repType === 'avant-apres') {
     const eventLabel = document.getElementById('rep-avant-apres-label')?.value.trim() || '';
     reponse = { type: 'avant-apres', ...(eventLabel ? { label: eventLabel } : {}) };
+  } else if(repType === 'cause-consequence') {
+    reponse = { type: 'cause-consequence' };
   } else if(repType === 'mettre-en-relation') {
     const n = parseInt(document.getElementById('rep-mer-n')?.value || '2') || 2;
     const elements = [];

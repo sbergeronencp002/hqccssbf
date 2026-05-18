@@ -607,6 +607,15 @@ function renderReponse(q) {
       + '<td style="' + CS + ';background:var(--paper);height:40px"></td></tr>'
       + '</table>';
   }
+  if(q.reponse.type === 'cause-consequence') {
+    const B = 'border:1px solid var(--ink-2)';
+    const TH = B + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem;white-space:nowrap';
+    const TC = B + ';text-align:center;padding:8px 16px';
+    const circle = '<span style="display:inline-block;width:1.25cm;height:1.25cm;border-radius:50%;border:1.5px solid #000"></span>';
+    return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:8px 0">'
+      + ['Cause','Conséquence'].map(l => '<tr><td style="' + TH + '">' + l + '</td><td style="' + TC + '">' + circle + '</td></tr>').join('')
+      + '</table>';
+  }
   if(q.reponse.type === 'mettre-en-relation') {
     const els = q.reponse.elements || [];
     const n = els.length;
@@ -818,6 +827,14 @@ function previsualiser(guideMode) {
             previewReponse += '<tr>' + row.map((cell, ci) => `<td style="${TD2}${ci===0?';font-weight:500':';min-width:60px;height:24px'}">${cell}</td>`).join('') + '</tr>';
           });
           previewReponse += '</table>';
+        } else if(q.reponse.type === 'cause-consequence') {
+          const BCC = 'border:1px solid #999';
+          const THCC = BCC + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.75rem;white-space:nowrap';
+          const TCCC = BCC + ';text-align:center;padding:8px 16px';
+          const circleCC = '<span style="display:inline-block;width:1.25cm;height:1.25cm;border-radius:50%;border:1.5px solid #000"></span>';
+          previewReponse = '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:8px 0">'
+            + ['Cause','Conséquence'].map(l => '<tr><td style="' + THCC + '">' + l + '</td><td style="' + TCCC + '">' + circleCC + '</td></tr>').join('')
+            + '</table>';
         } else if(q.reponse.type === 'tableau_2col') {
           const CS = 'border:1px solid #999;text-align:center;padding:6px 8px;font-size:0.8rem;width:113px';
           previewReponse = '<table style="border-collapse:collapse;margin:8px 0;">'
@@ -1586,6 +1603,14 @@ async function genererDocx(includeGuide=false) {
             ...rangees.map(row => new TableRow({ children: row.map((cell, ci) => mkGCell(cell, ci===0)) }))
           ];
           children.push(new Table({ width:{size:PAGE_W, type:WidthType.DXA}, columnWidths:Array(nCols).fill(gColW), rows:gRows }));
+        } else if(q.reponse.type === 'cause-consequence') {
+          const CIRC_CC = 450000;
+          const mkCCLbl = (text) => new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: 20, bold: true })] })] });
+          const mkCCCirc = () => { const p = new Paragraph({ alignment: AlignmentType.CENTER, spacing:{before:80,after:80}, children:[] }); p.root.push(new EllipseRun(CIRC_CC, CIRC_CC)); return new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, width:{size:COL_2CM*2,type:WidthType.DXA}, children:[p] }); };
+          children.push(new Table({ width: { size: 0, type: WidthType.AUTO }, rows: [
+            new TableRow({ height:{value:800,rule:'atLeast'}, children:[mkCCLbl('Cause'),       mkCCCirc()] }),
+            new TableRow({ height:{value:800,rule:'atLeast'}, children:[mkCCLbl('Conséquence'), mkCCCirc()] }),
+          ]}));
         } else if(q.reponse.type === 'tableau_2col') {
           const c2 = 1701; // 3 cm in DXA
           const mk2 = (t, bold=false) => new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,

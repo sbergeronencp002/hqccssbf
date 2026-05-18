@@ -2085,15 +2085,7 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Cause"
-        },
-        {
-          label: "Conséquence"
-        }
-      ]
+      type: "cause-consequence"
     },
     guide: {
       type: "grille",
@@ -2778,15 +2770,7 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Cause"
-        },
-        {
-          label: "Conséquence"
-        }
-      ]
+      type: "cause-consequence"
     },
     guide: {
       type: "grille",
