@@ -2210,7 +2210,7 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "lignes",
-      nombre: 5
+      nombre: 2
     },
     guide: "Les Patriotes revendiquent l’obtention de la responsabilité ministérielle ou le contrôle du budget par l’Assemblée ou l’élection des membres du conseil législatif (Une revendication des Patriotes). \nCes revendications sont refusées par Londres (La réponse de Londres). Devant le refus de Londres, les Patriotes invitent la population à boycotter les produits britanniques ou organisent des assemblées populaires ou se soulèvent (Une action de protestation populaire)."
   },
