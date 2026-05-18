@@ -614,14 +614,15 @@ function renderReponse(q) {
     const circle = '<span style="display:inline-block;width:1.25cm;height:1.25cm;border-radius:50%;border:1.5px solid #000"></span>';
     const TH = B + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem';
     const TC = B + ';text-align:center;padding:8px 4px';
+    const colPct = Math.floor(100 / n) + '%';
     if(n === 2) {
-      return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:8px 0">'
-        + els.map(e => '<tr><td style="' + TH + ';width:160px">' + e + '</td><td style="' + TC + ';width:80px">' + circle + '</td></tr>').join('')
+      return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin:8px 0">'
+        + els.map(e => '<tr><td style="' + TH + ';width:' + colPct + '">' + e + '</td><td style="' + TC + ';width:' + colPct + ';text-align:center">' + circle + '</td></tr>').join('')
         + '</table>';
     }
     return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin:8px 0">'
-      + '<tr>' + els.map(e => '<td style="' + TH + '">' + e + '</td>').join('') + '</tr>'
-      + '<tr>' + els.map(() => '<td style="' + TC + '">' + circle + '</td>').join('') + '</tr>'
+      + '<tr>' + els.map(e => '<td style="' + TH + ';width:' + colPct + '">' + e + '</td>').join('') + '</tr>'
+      + '<tr>' + els.map(() => '<td style="' + TC + ';text-align:center">' + circle + '</td>').join('') + '</tr>'
       + '</table>';
   }
   if(q.reponse.type === 'avant-apres') {
@@ -816,14 +817,15 @@ function previsualiser(guideMode) {
           const circle3 = '<span style="display:inline-block;width:1.25cm;height:1.25cm;border-radius:50%;border:1.5px solid #000"></span>';
           const THM = BM + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.75rem';
           const TCM = BM + ';text-align:center;padding:8px 4px';
+          const colPctM = Math.floor(100 / n) + '%';
           if(n === 2) {
-            previewReponse = '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:8px 0">'
-              + els.map(e => '<tr><td style="' + THM + ';width:160px">' + e + '</td><td style="' + TCM + ';width:80px">' + circle3 + '</td></tr>').join('')
+            previewReponse = '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin:8px 0">'
+              + els.map(e => '<tr><td style="' + THM + ';width:' + colPctM + '">' + e + '</td><td style="' + TCM + ';width:' + colPctM + ';text-align:center">' + circle3 + '</td></tr>').join('')
               + '</table>';
           } else {
             previewReponse = '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin:8px 0">'
-              + '<tr>' + els.map(e => '<td style="' + THM + '">' + e + '</td>').join('') + '</tr>'
-              + '<tr>' + els.map(() => '<td style="' + TCM + '">' + circle3 + '</td>').join('') + '</tr>'
+              + '<tr>' + els.map(e => '<td style="' + THM + ';width:' + colPctM + '">' + e + '</td>').join('') + '</tr>'
+              + '<tr>' + els.map(() => '<td style="' + TCM + ';text-align:center">' + circle3 + '</td>').join('') + '</tr>'
               + '</table>';
           }
         } else if(q.reponse.type === 'avant-apres') {
@@ -1582,11 +1584,11 @@ async function genererDocx(includeGuide=false) {
             return new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, width: { size: w, type: WidthType.DXA }, children: [para] });
           };
           if(n === 2) {
-            // Vertical layout: 2 rows, each [label | circle]
-            const cLabel = Math.floor(PAGE_W * 0.55);
-            const cCircM = PAGE_W - cLabel;
-            children.push(new Table({ width: { size: PAGE_W, type: WidthType.DXA }, columnWidths: [cLabel, cCircM], rows: els.map(e =>
-              new TableRow({ height: { value: 800, rule: 'atLeast' }, children: [mkLblCell(e, cLabel), mkMerCircCell(cCircM)] })
+            // Vertical layout: 2 rows, each [label | circle], equal columns
+            const cHalf = Math.floor(PAGE_W / 2);
+            const cHalf2 = PAGE_W - cHalf;
+            children.push(new Table({ width: { size: PAGE_W, type: WidthType.DXA }, columnWidths: [cHalf, cHalf2], rows: els.map(e =>
+              new TableRow({ height: { value: 800, rule: 'atLeast' }, children: [mkLblCell(e, cHalf), mkMerCircCell(cHalf2)] })
             )}));
           } else {
             // Horizontal layout: row 1 labels, row 2 circles
