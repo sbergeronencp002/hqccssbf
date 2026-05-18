@@ -1581,12 +1581,15 @@ const QUESTIONS = [
     niveau: 3,
     oi: "Situer dans le temps",
     periode: "P1 — Des origines à 1608",
-    points: 1,
+    points: 2,
     soustag: "Ordre chronologique",
     enonce: "Les documents A à D présentent des faits relatifs aux premières tentatives d’établissement d’Européens en Amérique du Nord. Placez-les par ordre chronologique.",
     aspects: [
       {
         aspect: "Exploration et occupation du territoire par les Français"
+      },
+      {
+        aspect: "Premiers contacts"
       }
     ],
     documents: [
@@ -1595,8 +1598,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A - Fondation de Québec",
-            ref: "fondation_quebec_1608",
-            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
+            ref: "fondation_quebec_1608"
           }
         ]
       },
