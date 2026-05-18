@@ -323,6 +323,7 @@ header a:hover { color: #fff; }
           <option value="tableau_3col">Tableau 3 colonnes</option>
           <option value="tableau_2col">Tableau 2 colonnes (Réponse | vide)</option>
           <option value="grille">Tableau (grille visuelle)</option>
+          <option value="avant-apres">Tableau Avant / Après</option>
         </select>
       </div>
       <div id="rep-extra"></div>
@@ -333,13 +334,9 @@ header a:hover { color: #fff; }
       <div class="section-title">Réglette</div>
       <div class="field">
         <label>Réglette prémémorisée</label>
-        <select id="reg-preset" onchange="updateAvantApresLabel()">
+        <select id="reg-preset">
           <option value="">— Sélectionner —</option>
         </select>
-      </div>
-      <div class="field" id="avant-apres-row" style="display:none">
-        <label>Événement repère (colonne centrale)</label>
-        <input type="text" id="avant-apres-label" placeholder="ex. : la capitulation de Montréal">
       </div>
     </div>
 
@@ -452,15 +449,6 @@ function updatePresets() {
   const sel = document.getElementById('reg-preset');
   sel.innerHTML = '<option value="">— Sélectionner —</option>'
     + presets.map((p,i) => `<option value="${i}">${p.label}</option>`).join('');
-  updateAvantApresLabel();
-}
-
-function updateAvantApresLabel() {
-  const oi = document.getElementById('q-oi').value;
-  const idx = parseInt(document.getElementById('reg-preset').value);
-  const preset = !isNaN(idx) ? (REGLETTES_PRESET[oi] || [])[idx] : null;
-  const row = document.getElementById('avant-apres-row');
-  if(row) row.style.display = (preset?.variante === 'avant-apres') ? '' : 'none';
 }
 
 // ── MODE ÉDITION ──────────────────────────────────────────────────────
@@ -706,6 +694,10 @@ function loadQuestion(id) {
     document.getElementById('rep-rows').value = String(Math.max(1,(q.reponse.rangees||[]).length));
     updateRepGrille(q.reponse);
   }
+  else if(repType==='avant-apres') {
+    const lbl = document.getElementById('rep-avant-apres-label');
+    if(lbl) lbl.value = q.reponse.label || '';
+  }
 
   if(r) {
     const rOi = r.oi || q.oi;
@@ -717,11 +709,6 @@ function loadQuestion(id) {
       matchIdx = presets.findIndex(p => !p.variante && p.niveaux?.[0]?.desc === r.niveaux?.[0]?.desc);
     }
     if(matchIdx !== -1) document.getElementById('reg-preset').value = String(matchIdx);
-    updateAvantApresLabel();
-    if(r.variante === 'avant-apres') {
-      const lbl = document.getElementById('avant-apres-label');
-      if(lbl) lbl.value = r.label || '';
-    }
   }
 
   if(q.guide && typeof q.guide==='string') {
@@ -1113,6 +1100,8 @@ function updateReponseUI() {
       </div>
       <div id="rep-grille-wrap"></div>`;
     updateRepGrille();
+  } else if(type === 'avant-apres') {
+    wrap.innerHTML = `<div class="field"><label>Événement repère (colonne centrale)</label><input type="text" id="rep-avant-apres-label" placeholder="ex. : la capitulation de Montréal"></div>`;
   } else {
     wrap.innerHTML = '';
   }
@@ -1299,6 +1288,9 @@ function buildQuestion() {
     const { entetes, rangees } = getRepGrilleValues();
     const hasContent = entetes.some(e=>e.trim()) || rangees.some(r=>r.some(c=>c.trim()));
     if(hasContent) reponse = { type: 'grille', entetes, rangees };
+  } else if(repType === 'avant-apres') {
+    const eventLabel = document.getElementById('rep-avant-apres-label')?.value.trim() || '';
+    reponse = { type: 'avant-apres', ...(eventLabel ? { label: eventLabel } : {}) };
   }
 
   // Guide
@@ -1323,10 +1315,6 @@ function buildReglette(id) {
   const preset = (REGLETTES_PRESET[oi] || [])[idx];
   if(!preset) return { oi, colonnes:[], niveaux:[] };
   const { label, ...rest } = preset;
-  if(preset.variante === 'avant-apres') {
-    const eventLabel = document.getElementById('avant-apres-label')?.value.trim() || '';
-    return { oi, ...rest, ...(eventLabel ? { label: eventLabel } : {}) };
-  }
   return { oi, ...rest };
 }
 
@@ -1504,9 +1492,6 @@ function resetForm(keepId=false) {
   document.getElementById('rep-type').value = 'none';
   document.getElementById('rep-extra').innerHTML = '';
   document.getElementById('reg-preset').value = '';
-  const aaLbl = document.getElementById('avant-apres-label');
-  if(aaLbl) aaLbl.value = '';
-  updateAvantApresLabel();
   document.getElementById('guide-type').value = 'grille';
   docCount = 0; colCount = 0;
   updateGuideUI();

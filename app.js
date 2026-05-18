@@ -236,23 +236,6 @@ function buildReglettHTML(q) {
     </table>`;
   }
 
-  if(r.variante === 'avant-apres') {
-    const lbl = r.label || '';
-    const circle = `<span style="display:inline-block;width:1cm;height:1cm;border-radius:50%;border:1.5px solid #000;vertical-align:middle"></span>`;
-    const circ = `<div style="display:flex;align-items:center;justify-content:center;gap:6px;padding:6px 0">${circle}<span>et</span>${circle}</div>`;
-    return `<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%">
-      <tr>
-        <td style="${SB};width:33%">Avant</td>
-        <td style="${S};width:34%" rowspan="2">${lbl}</td>
-        <td style="${SB};width:33%">Après</td>
-      </tr>
-      <tr>
-        <td style="${S};padding:0">${circ}</td>
-        <td style="${S};padding:0">${circ}</td>
-      </tr>
-    </table>`;
-  }
-
   if(r.variante === 'acteur-positions') {
     const S2 = S + ';border-right:none';
     const S3 = S + ';border-left:none;border-right:none';
@@ -624,6 +607,22 @@ function renderReponse(q) {
       + '<td style="' + CS + ';background:var(--paper);height:40px"></td></tr>'
       + '</table>';
   }
+  if(q.reponse.type === 'avant-apres') {
+    const lbl = q.reponse.label || '';
+    const SB = 'border:1px solid var(--ink-2);text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem';
+    const S  = 'border:1px solid var(--ink-2);text-align:center;padding:6px 8px;font-size:0.8rem';
+    const circle = '<span style="display:inline-block;width:1cm;height:1cm;border-radius:50%;border:1.5px solid #000;vertical-align:middle"></span>';
+    const circ = '<div style="display:flex;align-items:center;justify-content:center;gap:6px;padding:6px 0">' + circle + '<span>et</span>' + circle + '</div>';
+    return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin:8px 0">'
+      + '<tr>'
+      + '<td style="' + SB + ';width:33%">Avant</td>'
+      + '<td style="' + S  + ';width:34%" rowspan="2">' + lbl + '</td>'
+      + '<td style="' + SB + ';width:33%">Après</td>'
+      + '</tr><tr>'
+      + '<td style="' + S + ';padding:0">' + circ + '</td>'
+      + '<td style="' + S + ';padding:0">' + circ + '</td>'
+      + '</tr></table>';
+  }
   return '';
 }
 
@@ -794,6 +793,18 @@ function previsualiser(guideMode) {
             + '<tr><td style="' + CS + ';font-weight:600;background:#f5f5f5">Réponse</td>'
             + '<td style="' + CS + ';height:40px"></td></tr>'
             + '</table>';
+        } else if(q.reponse.type === 'avant-apres') {
+          const lbl = q.reponse.label || '';
+          const SB2 = 'border:1px solid #999;text-align:center;font-weight:600;padding:6px 8px;font-size:0.75rem';
+          const S2  = 'border:1px solid #999;text-align:center;padding:6px 8px;font-size:0.75rem';
+          const circle2 = '<span style="display:inline-block;width:1cm;height:1cm;border-radius:50%;border:1.5px solid #000;vertical-align:middle"></span>';
+          const circ2 = '<div style="display:flex;align-items:center;justify-content:center;gap:6px;padding:4px 0">' + circle2 + '<span>et</span>' + circle2 + '</div>';
+          previewReponse = '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin:8px 0">'
+            + '<tr><td style="' + SB2 + ';width:33%">Avant</td>'
+            + '<td style="' + S2 + ';width:34%" rowspan="2">' + lbl + '</td>'
+            + '<td style="' + SB2 + ';width:33%">Après</td></tr>'
+            + '<tr><td style="' + S2 + ';padding:0">' + circ2 + '</td>'
+            + '<td style="' + S2 + ';padding:0">' + circ2 + '</td></tr></table>';
         }
       }
 
@@ -1115,36 +1126,6 @@ async function genererDocx(includeGuide=false) {
             new TableRow({ children: [mkCell("L'élève précise un seul élément ou n'en précise pas.", false, 1, 2, col2+col3, BC2), mkCell("0 point", false, 1, 1, col4, BC4)] }),
           ]
         })];
-      }
-
-      if(r.variante === 'avant-apres') {
-        const cW = Math.floor(PAGE_W / 3);
-        const cMid = PAGE_W - cW * 2;
-        const CIRC_SIZE = 56; // 28pt ≈ 1cm
-        const mkHeader = (text, bold=false) => new TableCell({
-          borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
-          width: { size: cW, type: WidthType.DXA },
-          children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: 12, bold })] })]
-        });
-        const mkMid = (text) => new TableCell({
-          borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
-          rowSpan: 2,
-          width: { size: cMid, type: WidthType.DXA },
-          children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: 12 })] })]
-        });
-        const mkCircles = () => new TableCell({
-          borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
-          width: { size: cW, type: WidthType.DXA },
-          children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [
-            new TextRun({ text: '○', font: 'Arial', size: CIRC_SIZE }),
-            new TextRun({ text: '   et   ', font: 'Aptos', size: 12 }),
-            new TextRun({ text: '○', font: 'Arial', size: CIRC_SIZE }),
-          ]})]
-        });
-        return [new Table({ width: { size: PAGE_W, type: WidthType.DXA }, rows: [
-          new TableRow({ children: [mkHeader('Avant', true), mkMid(r.label || ''), mkHeader('Après', true)] }),
-          new TableRow({ children: [mkCircles(), mkCircles()] }),
-        ]})];
       }
 
       if(r.variante === 'acteur-positions') {
@@ -1506,6 +1487,34 @@ async function genererDocx(includeGuide=false) {
             children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: t, font: 'Aptos', size: 20, bold })] })] });
           children.push(new Table({ width: { size: c2 * 2, type: WidthType.DXA }, columnWidths: [c2, c2], rows: [
             new TableRow({ children: [mk2('Réponse', true), mk2('')] })
+          ]}));
+        } else if(q.reponse.type === 'avant-apres') {
+          const cW = Math.floor(PAGE_W / 3);
+          const cMid = PAGE_W - cW * 2;
+          const CIRC_SIZE = 56;
+          const mkHdr = (text) => new TableCell({
+            borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
+            width: { size: cW, type: WidthType.DXA },
+            children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: 20, bold: true })] })]
+          });
+          const mkMid = (text) => new TableCell({
+            borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
+            rowSpan: 2,
+            width: { size: cMid, type: WidthType.DXA },
+            children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: 20 })] })]
+          });
+          const mkCircles = () => new TableCell({
+            borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
+            width: { size: cW, type: WidthType.DXA },
+            children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [
+              new TextRun({ text: '○', font: 'Arial', size: CIRC_SIZE }),
+              new TextRun({ text: '   et   ', font: 'Aptos', size: 20 }),
+              new TextRun({ text: '○', font: 'Arial', size: CIRC_SIZE }),
+            ]})]
+          });
+          children.push(new Table({ width: { size: PAGE_W, type: WidthType.DXA }, rows: [
+            new TableRow({ children: [mkHdr('Avant'), mkMid(q.reponse.label || ''), mkHdr('Après')] }),
+            new TableRow({ children: [mkCircles(), mkCircles()] }),
           ]}));
         }
         children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));

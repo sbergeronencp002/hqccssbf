@@ -2,8 +2,7 @@ const REGLETTES_PRESET = {
   "Situer dans le temps": [
     { label:"2 pts — tous les faits",   colonnes:["2 points","0 point"], niveaux:[{pts:2,desc:"L'élève situe tous les faits dans le temps."},{pts:0,desc:"L'élève ne situe pas tous les faits dans le temps."}] },
     { label:"1 pt — les faits",          colonnes:["1 point","0 point"],  niveaux:[{pts:1,desc:"L'élève situe les faits dans le temps."},{pts:0,desc:"L'élève ne situe pas les faits dans le temps."}] },
-    { label:"2 pts — 4 sur 4",           colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève situe tous les faits dans le temps. (4 sur 4)"},{pts:1,desc:"L'élève situe certains faits dans le temps. (3 ou 2 sur 4)"},{pts:0,desc:"L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"}] },
-    { label:"1 pt — avant et après (tableau)", variante:"avant-apres", colonnes:[], niveaux:[] }
+    { label:"2 pts — 4 sur 4",           colonnes:["2 points","1 point","0 point"], niveaux:[{pts:2,desc:"L'élève situe tous les faits dans le temps. (4 sur 4)"},{pts:1,desc:"L'élève situe certains faits dans le temps. (3 ou 2 sur 4)"},{pts:0,desc:"L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"}] }
   ],
   "Situer dans l'espace": [
     { label:"1 pt — le fait",    colonnes:["1 point","0 point"],  niveaux:[{pts:1,desc:"L'élève situe le fait dans l'espace."},{pts:0,desc:"L'élève ne situe pas le fait dans l'espace."}] },
