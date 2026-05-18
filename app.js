@@ -1060,7 +1060,7 @@ async function genererDocx(includeGuide=false) {
     if(failedImgs.length) showWarn('Images introuvables dans le DOCX : ' + failedImgs.join(', '));
     const {
       Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
-      AlignmentType, BorderStyle, WidthType, VerticalAlign
+      AlignmentType, BorderStyle, WidthType, VerticalAlign, XmlComponent
     } = docx;
 
     const BORDER = { style: BorderStyle.SINGLE, size: 4, color: '000000' };
@@ -1068,6 +1068,48 @@ async function genererDocx(includeGuide=false) {
     const CELL_MARGINS = { top: 60, bottom: 60, left: 80, right: 80 };
     const PAGE_W = 9360; // 6.5 inches content width in DXA
     const COL_2CM = 1134; // 2 cm in DXA
+
+    // DrawingML ellipse shape: injects raw wp:inline XML into a w:r run
+    let _aaShapeId = 10000 + Math.floor(Math.random() * 1000);
+    class EllipseRun extends XmlComponent {
+      constructor(cx, cy) {
+        super('w:r');
+        this._id = String(++_aaShapeId);
+        this._cx = String(cx);
+        this._cy = String(cy);
+      }
+      prepForXml(ctx) {
+        if(ctx && ctx.stack) { ctx.stack.push(this); ctx.stack.pop(); }
+        const { _cx: cx, _cy: cy, _id: id } = this;
+        return { 'w:r': [{ 'w:drawing': [{ 'wp:inline': [
+          { _attr: { distT:'0', distB:'0', distL:'0', distR:'0' } },
+          { 'wp:extent':         [{ _attr: { cx, cy } }] },
+          { 'wp:effectExtent':   [{ _attr: { l:'0', t:'0', r:'0', b:'0' } }] },
+          { 'wp:docPr':          [{ _attr: { id, name:'Ellipse '+id } }] },
+          { 'wp:cNvGraphicFramePr': {} },
+          { 'a:graphic': [
+            { _attr: { 'xmlns:a':'http://schemas.openxmlformats.org/drawingml/2006/main' } },
+            { 'a:graphicData': [
+              { _attr: { uri:'http://schemas.microsoft.com/office/word/2010/wordprocessingShape' } },
+              { 'wps:wsp': [
+                { _attr: { 'xmlns:wps':'http://schemas.microsoft.com/office/word/2010/wordprocessingShape' } },
+                { 'wps:cNvSpPr': {} },
+                { 'wps:spPr': [
+                  { 'a:xfrm': [
+                    { 'a:off': [{ _attr: { x:'0', y:'0' } }] },
+                    { 'a:ext': [{ _attr: { cx, cy } }] }
+                  ] },
+                  { 'a:prstGeom': [{ _attr: { prst:'ellipse' } }, { 'a:avLst': {} }] },
+                  { 'a:noFill': {} },
+                  { 'a:ln': [{ 'a:solidFill': [{ 'a:srgbClr': [{ _attr: { val:'000000' } }] }] }] }
+                ] },
+                { 'wps:bodyPr': [{ _attr: { anchor:'ctr' } }] }
+              ] }
+            ] }
+          ] }
+        ] }] }] };
+      }
+    }
 
     function b64ToBytes(src) {
       const b64 = src.split(',')[1];
@@ -1496,47 +1538,35 @@ async function genererDocx(includeGuide=false) {
             new TableRow({ children: [mk2('Réponse', true), mk2('')] })
           ]}));
         } else if(q.reponse.type === 'avant-apres') {
-          const cSide = Math.floor(PAGE_W / 3);
-          const cMid  = PAGE_W - cSide * 2;
-          const CIRC_AA = 180; // 90pt — ○ Arial visuellement ~2cm
-          const BNN = { style: BorderStyle.NONE, size: 0, color: 'FFFFFF' };
-          const ALL_NONE = { top: BNN, bottom: BNN, left: BNN, right: BNN };
-          const mkNestedCircles = (w) => {
-            const etWn = 560;
-            const cW1 = Math.floor((w - etWn) / 2);
-            const cW2 = w - etWn - cW1;
-            return new Table({
-              width: { size: w, type: WidthType.DXA },
-              borders: { top: BNN, bottom: BNN, left: BNN, right: BNN, insideH: BNN, insideV: BNN },
-              columnWidths: [cW1, etWn, cW2],
-              rows: [new TableRow({ height: { value: 1700, rule: 'atLeast' }, children: [
-                new TableCell({ borders: ALL_NONE, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, width: { size: cW1, type: WidthType.DXA },
-                  children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: '○', font: 'Arial', size: CIRC_AA })] })] }),
-                new TableCell({ borders: ALL_NONE, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, width: { size: etWn, type: WidthType.DXA },
-                  children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: 'et', font: 'Aptos', size: 20 })] })] }),
-                new TableCell({ borders: ALL_NONE, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, width: { size: cW2, type: WidthType.DXA },
-                  children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: '○', font: 'Arial', size: CIRC_AA })] })] }),
-              ]})]
-            });
+          // 7 colonnes : [○][et][○] | événement | [○][et][○]
+          // Cercles = formes DrawingML ellipse 2cm×2cm (720000 EMU)
+          const CIRC_EMU = 720000; // 2cm
+          const cMid  = Math.floor(PAGE_W * 0.38);
+          const cSide = Math.floor((PAGE_W - cMid) / 2);
+          const etW   = 680;
+          const cCirc = Math.floor((cSide - etW) / 2);
+          const cCircL= cSide - etW - cCirc;
+          const BNN   = { style: BorderStyle.NONE, size: 0, color: 'FFFFFF' };
+          const mkCircCell = (w, bl, br) => {
+            const para = new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 80, after: 80 }, children: [] });
+            para.root.push(new EllipseRun(CIRC_EMU, CIRC_EMU));
+            return new TableCell({ borders: { top: BORDER, bottom: BORDER, left: bl, right: br }, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, width: { size: w, type: WidthType.DXA }, children: [para] });
           };
-          const mkHdrAA = (text, w) => new TableCell({
-            borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
-            width: { size: w, type: WidthType.DXA },
-            children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: 20, bold: true })] })]
-          });
-          children.push(new Table({ width: { size: PAGE_W, type: WidthType.DXA }, columnWidths: [cSide, cMid, cSide], rows: [
+          const mkEtCell = (w) => new TableCell({ borders: { top: BORDER, bottom: BORDER, left: BNN, right: BNN }, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, width: { size: w, type: WidthType.DXA }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: 'et', font: 'Aptos', size: 20, bold: true })] })] });
+          const mkHdrAA = (text, cs, w) => new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, columnSpan: cs > 1 ? cs : undefined, width: { size: w, type: WidthType.DXA }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: 20, bold: true })] })] });
+          children.push(new Table({ width: { size: PAGE_W, type: WidthType.DXA }, columnWidths: [cCirc, etW, cCircL, cMid, cCirc, etW, cCircL], rows: [
             new TableRow({ children: [
-              mkHdrAA('Avant', cSide),
-              new TableCell({
-                borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
-                rowSpan: 2, width: { size: cMid, type: WidthType.DXA },
-                children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: q.reponse.label || '', font: 'Aptos', size: 20, bold: true })] })]
-              }),
-              mkHdrAA('Après', cSide),
+              mkHdrAA('Avant', 3, cSide),
+              new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, rowSpan: 2, width: { size: cMid, type: WidthType.DXA }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: q.reponse.label || '', font: 'Aptos', size: 20, bold: true })] })] }),
+              mkHdrAA('Après', 3, cSide),
             ]}),
-            new TableRow({ children: [
-              new TableCell({ borders: BORDERS, margins: { top: 0, bottom: 0, left: 0, right: 0 }, verticalAlign: VerticalAlign.CENTER, width: { size: cSide, type: WidthType.DXA }, children: [mkNestedCircles(cSide)] }),
-              new TableCell({ borders: BORDERS, margins: { top: 0, bottom: 0, left: 0, right: 0 }, verticalAlign: VerticalAlign.CENTER, width: { size: cSide, type: WidthType.DXA }, children: [mkNestedCircles(cSide)] }),
+            new TableRow({ height: { value: 1300, rule: 'atLeast' }, children: [
+              mkCircCell(cCirc,  BORDER, BNN),
+              mkEtCell(etW),
+              mkCircCell(cCircL, BNN, BORDER),
+              mkCircCell(cCirc,  BORDER, BNN),
+              mkEtCell(etW),
+              mkCircCell(cCircL, BNN, BORDER),
             ]}),
           ]}));
         }
