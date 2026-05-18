@@ -1565,8 +1565,8 @@ const REGLETTES = {
 }
 
 const IMAGE_DB = {
-  "fondation_quebec_1608": {
-    src: "images/fondation_quebec_1608"
+  "fondation_quebec_1608.png": {
+    src: "images/fondation_quebec_1608.png"
   },
   "ligne_acBd.png": {
     src: "images/ligne_acBd.png"
@@ -1583,8 +1583,8 @@ const IMAGE_DB = {
   "revolte_pontiact.png": {
     src: "images/revolte_pontiact.png"
   },
-  "loyalistes_province_quebec": {
-    src: "images/loyalistes_province_quebec"
+  "loyalistes_province_quebec.png": {
+    src: "images/loyalistes_province_quebec.png"
   },
   "recensement_colonie.png": {
     src: "images/recensement_colonie.png"
@@ -1743,7 +1743,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A - Fondation de Québec",
-            ref: "fondation_quebec_1608"
+            ref: "fondation_quebec_1608.png"
           }
         ]
       },
@@ -1915,7 +1915,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "loyalistes_province_quebec",
+            ref: "loyalistes_province_quebec.png",
             source: "MEES."
           }
         ]
