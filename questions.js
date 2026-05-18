@@ -2473,7 +2473,7 @@ const QUESTIONS = [
     niveau: 4,
     oi: "Situer dans le temps",
     periode: "P7 — 1945 – 1980",
-    points: 1,
+    points: 2,
     soustag: "Avant et après",
     enonce: "Les documents A à D font référence à la modernisation de l’économie du Québec. Indiquez si les faits présentés dans ces documents se déroulent avant ou après 1960.",
     aspects: [
@@ -2527,12 +2527,24 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "tableau_3col",
-      col1: "Avant",
-      col2: "1960",
-      col3: "Après"
+      type: "avant-apres",
+      label: "1960"
     },
-    guide: "B et D / A et C"
+    guide: {
+      type: "grille",
+      entetes: [
+        "Avant",
+        "1960",
+        "Après"
+      ],
+      rangees: [
+        [
+          "B et D",
+          "",
+          "A et C"
+        ]
+      ]
+    }
   },
   {
     id: "Q19",
