@@ -2970,17 +2970,11 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Clérico-nationalisme"
-        },
-        {
-          label: "Impérialisme"
-        },
-        {
-          label: "Nationalisme canadien-français"
-        }
+      type: "mettre-en-relation",
+      elements: [
+        "Clérico-nationalisme",
+        "Impérialisme",
+        "Nationalisme canadien-français"
       ]
     },
     guide: {
