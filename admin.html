@@ -721,7 +721,7 @@ function loadQuestion(id) {
 // ── SUPPRIMER QUESTION ────────────────────────────────────────────────
 async function fetchFreshState(token) {
   const r = await fetch(
-    `https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js?ref=${BRANCH}`,
+    `https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js?ref=${BRANCH}&t=${Date.now()}`,
     { headers: { Authorization: `token ${token}` }, cache: 'no-store' }
   );
   if(!r.ok) throw new Error('Impossible de lire questions.js : ' + r.status);
@@ -893,7 +893,7 @@ async function init() {
 async function loadImages() {
   try {
     const headers = getToken() ? { Authorization: `token ${getToken()}` } : {};
-    const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/images?ref=${BRANCH}`, { headers, cache: 'no-store' });
+    const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/images?ref=${BRANCH}&t=${Date.now()}`, { headers, cache: 'no-store' });
     const data = await r.json();
     if(Array.isArray(data)) {
       IMAGES = data.filter(f => f.name !== '.gitkeep').map(f => f.name).sort();
@@ -910,7 +910,7 @@ async function loadImages() {
 async function loadQuestionsJs() {
   try {
     const headers = getToken() ? { Authorization: `token ${getToken()}` } : {};
-    const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js?ref=${BRANCH}`, { headers, cache: 'no-store' });
+    const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js?ref=${BRANCH}&t=${Date.now()}`, { headers, cache: 'no-store' });
     if(!r.ok) throw new Error(r.status);
     const data = await r.json();
     questionsFileSha = data.sha;
@@ -941,7 +941,7 @@ async function loadQuestionsJs() {
 async function loadReglettesJs() {
   try {
     const headers = getToken() ? { Authorization: `token ${getToken()}` } : {};
-    const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/reglettes.js?ref=${BRANCH}`, { headers, cache: 'no-store' });
+    const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/reglettes.js?ref=${BRANCH}&t=${Date.now()}`, { headers, cache: 'no-store' });
     if(!r.ok) return;
     const data = await r.json();
     const binary = atob(data.content.replace(/\n/g,''));
