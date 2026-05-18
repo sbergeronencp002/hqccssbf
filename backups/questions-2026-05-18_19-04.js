@@ -3457,7 +3457,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 2,
     soustag: "4 éléments",
-    enonce: "Les documents A à D présentent des faits sur la prise de décision chez les Algonquiens et les Iroquoiens vers 1500. Indiquez les lettres des documents qui correspondent à chacun des groupes.",
+    enonce: "Les documents A à D présentent des faits sur la prise de décision chez les Iroquoiens et les Algonquiens vers 1500. Indiquez les lettres des documents qui correspondent à chacun des groupes.",
     aspects: [
       {
         aspect: "Prise de décision chez les Autochtones"
@@ -3506,23 +3506,26 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "mettre-en-relation",
-      elements: [
-        "Algonquiens",
-        "Iroquoiens"
-      ],
-      double: true
+      type: "tableau",
+      lignes: [
+        {
+          label: "Nations algonquiennes"
+        },
+        {
+          label: "Nations iroquoiennes"
+        }
+      ]
     },
     guide: {
       type: "grille",
       entetes: [
-        "Algonquiens",
-        "Iroquoiens"
+        "Nations algonquiennes",
+        "Nations iroquoiennes"
       ],
       rangees: [
         [
-          "B et D",
-          "A et C"
+          "2 et 3",
+          "1 et 4"
         ]
       ]
     }
