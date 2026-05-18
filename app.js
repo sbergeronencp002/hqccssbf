@@ -1498,20 +1498,31 @@ async function genererDocx(includeGuide=false) {
         } else if(q.reponse.type === 'avant-apres') {
           const cSide = Math.floor(PAGE_W / 3);
           const cMid  = PAGE_W - cSide * 2;
-          const CIRC_AA = 112; // 56pt ≈ 2cm (double du 28pt = 1cm)
+          const CIRC_AA = 180; // 90pt — ○ Arial visuellement ~2cm
+          const BNN = { style: BorderStyle.NONE, size: 0, color: 'FFFFFF' };
+          const ALL_NONE = { top: BNN, bottom: BNN, left: BNN, right: BNN };
+          const mkNestedCircles = (w) => {
+            const etWn = 560;
+            const cW1 = Math.floor((w - etWn) / 2);
+            const cW2 = w - etWn - cW1;
+            return new Table({
+              width: { size: w, type: WidthType.DXA },
+              borders: { top: BNN, bottom: BNN, left: BNN, right: BNN, insideH: BNN, insideV: BNN },
+              columnWidths: [cW1, etWn, cW2],
+              rows: [new TableRow({ height: { value: 1700, rule: 'atLeast' }, children: [
+                new TableCell({ borders: ALL_NONE, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, width: { size: cW1, type: WidthType.DXA },
+                  children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: '○', font: 'Arial', size: CIRC_AA })] })] }),
+                new TableCell({ borders: ALL_NONE, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, width: { size: etWn, type: WidthType.DXA },
+                  children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: 'et', font: 'Aptos', size: 20 })] })] }),
+                new TableCell({ borders: ALL_NONE, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, width: { size: cW2, type: WidthType.DXA },
+                  children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: '○', font: 'Arial', size: CIRC_AA })] })] }),
+              ]})]
+            });
+          };
           const mkHdrAA = (text, w) => new TableCell({
             borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
             width: { size: w, type: WidthType.DXA },
             children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: 20, bold: true })] })]
-          });
-          const mkSideAA = (w) => new TableCell({
-            borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
-            width: { size: w, type: WidthType.DXA },
-            children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [
-              new TextRun({ text: '○', font: 'Arial', size: CIRC_AA }),
-              new TextRun({ text: '  et  ', font: 'Aptos', size: 20 }),
-              new TextRun({ text: '○', font: 'Arial', size: CIRC_AA }),
-            ]})]
           });
           children.push(new Table({ width: { size: PAGE_W, type: WidthType.DXA }, columnWidths: [cSide, cMid, cSide], rows: [
             new TableRow({ children: [
@@ -1523,9 +1534,9 @@ async function genererDocx(includeGuide=false) {
               }),
               mkHdrAA('Après', cSide),
             ]}),
-            new TableRow({ height: { value: 1600, rule: 'atLeast' }, children: [
-              mkSideAA(cSide),
-              mkSideAA(cSide),
+            new TableRow({ children: [
+              new TableCell({ borders: BORDERS, margins: { top: 0, bottom: 0, left: 0, right: 0 }, verticalAlign: VerticalAlign.CENTER, width: { size: cSide, type: WidthType.DXA }, children: [mkNestedCircles(cSide)] }),
+              new TableCell({ borders: BORDERS, margins: { top: 0, bottom: 0, left: 0, right: 0 }, verticalAlign: VerticalAlign.CENTER, width: { size: cSide, type: WidthType.DXA }, children: [mkNestedCircles(cSide)] }),
             ]}),
           ]}));
         }
