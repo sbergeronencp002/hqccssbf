@@ -610,17 +610,21 @@ function renderReponse(q) {
   if(q.reponse.type === 'avant-apres') {
     const lbl = q.reponse.label || '';
     const SB = 'border:1px solid var(--ink-2);text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem';
-    const S  = 'border:1px solid var(--ink-2);text-align:center;padding:6px 8px;font-size:0.8rem';
-    const circle = '<span style="display:inline-block;width:1cm;height:1cm;border-radius:50%;border:1.5px solid #000;vertical-align:middle"></span>';
-    const circ = '<div style="display:flex;align-items:center;justify-content:center;gap:6px;padding:6px 0">' + circle + '<span>et</span>' + circle + '</div>';
+    const S  = 'border:1px solid var(--ink-2);text-align:center;padding:8px 4px;font-size:0.8rem';
+    const SN = 'border-top:1px solid var(--ink-2);border-bottom:1px solid var(--ink-2);border-left:none;border-right:none;text-align:center;padding:8px 4px;font-size:0.8rem';
+    const circle = '<span style="display:inline-block;width:2cm;height:2cm;border-radius:50%;border:1.5px solid #000;vertical-align:middle"></span>';
+    const mkSide = (bLeft) =>
+      '<td style="' + (bLeft ? S : SN) + ';width:11%">' + circle + '</td>'
+      + '<td style="' + SN + ';width:11%">et</td>'
+      + '<td style="' + (!bLeft ? S : SN) + ';width:11%">' + circle + '</td>';
     return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin:8px 0">'
       + '<tr>'
-      + '<td style="' + SB + ';width:33%">Avant</td>'
+      + '<td style="' + SB + ';width:33%" colspan="3">Avant</td>'
       + '<td style="' + S  + ';width:34%" rowspan="2">' + lbl + '</td>'
-      + '<td style="' + SB + ';width:33%">Après</td>'
+      + '<td style="' + SB + ';width:33%" colspan="3">Après</td>'
       + '</tr><tr>'
-      + '<td style="' + S + ';padding:0">' + circ + '</td>'
-      + '<td style="' + S + ';padding:0">' + circ + '</td>'
+      + mkSide(true)
+      + mkSide(false)
       + '</tr></table>';
   }
   return '';
@@ -796,15 +800,18 @@ function previsualiser(guideMode) {
         } else if(q.reponse.type === 'avant-apres') {
           const lbl = q.reponse.label || '';
           const SB2 = 'border:1px solid #999;text-align:center;font-weight:600;padding:6px 8px;font-size:0.75rem';
-          const S2  = 'border:1px solid #999;text-align:center;padding:6px 8px;font-size:0.75rem';
-          const circle2 = '<span style="display:inline-block;width:1cm;height:1cm;border-radius:50%;border:1.5px solid #000;vertical-align:middle"></span>';
-          const circ2 = '<div style="display:flex;align-items:center;justify-content:center;gap:6px;padding:4px 0">' + circle2 + '<span>et</span>' + circle2 + '</div>';
+          const S2  = 'border:1px solid #999;text-align:center;padding:6px 4px;font-size:0.75rem';
+          const SN2 = 'border-top:1px solid #999;border-bottom:1px solid #999;border-left:none;border-right:none;text-align:center;padding:6px 4px;font-size:0.75rem';
+          const circle2 = '<span style="display:inline-block;width:2cm;height:2cm;border-radius:50%;border:1.5px solid #000;vertical-align:middle"></span>';
+          const mkSide2 = (bLeft) =>
+            '<td style="' + (bLeft ? S2 : SN2) + ';width:11%">' + circle2 + '</td>'
+            + '<td style="' + SN2 + ';width:11%">et</td>'
+            + '<td style="' + (!bLeft ? S2 : SN2) + ';width:11%">' + circle2 + '</td>';
           previewReponse = '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin:8px 0">'
-            + '<tr><td style="' + SB2 + ';width:33%">Avant</td>'
+            + '<tr><td style="' + SB2 + ';width:33%" colspan="3">Avant</td>'
             + '<td style="' + S2 + ';width:34%" rowspan="2">' + lbl + '</td>'
-            + '<td style="' + SB2 + ';width:33%">Après</td></tr>'
-            + '<tr><td style="' + S2 + ';padding:0">' + circ2 + '</td>'
-            + '<td style="' + S2 + ';padding:0">' + circ2 + '</td></tr></table>';
+            + '<td style="' + SB2 + ';width:33%" colspan="3">Après</td></tr>'
+            + '<tr>' + mkSide2(true) + mkSide2(false) + '</tr></table>';
         }
       }
 
@@ -1489,33 +1496,50 @@ async function genererDocx(includeGuide=false) {
             new TableRow({ children: [mk2('Réponse', true), mk2('')] })
           ]}));
         } else if(q.reponse.type === 'avant-apres') {
-          const cW = Math.floor(PAGE_W / 3);
-          const cMid = PAGE_W - cW * 2;
-          const CIRC_SIZE = 56;
-          const mkHdr = (text) => new TableCell({
+          const cSide = Math.floor(PAGE_W / 3);
+          const cMid  = PAGE_W - cSide * 2;
+          const etW   = 700;
+          const circW = Math.floor((cSide - etW) / 2);
+          const circLast = cSide - etW - circW;
+          const CIRC_SIZE_AA = 114; // 57pt ≈ 2cm
+          const BN_AA = { style: BorderStyle.NONE, size: 0, color: 'FFFFFF' };
+          const mkHdrAA = (text, cs, w) => new TableCell({
             borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
-            width: { size: cW, type: WidthType.DXA },
+            columnSpan: cs,
+            width: { size: w, type: WidthType.DXA },
             children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: 20, bold: true })] })]
           });
-          const mkMid = (text) => new TableCell({
+          const mkMidAA = (text) => new TableCell({
             borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
-            rowSpan: 2,
-            width: { size: cMid, type: WidthType.DXA },
+            rowSpan: 2, width: { size: cMid, type: WidthType.DXA },
             children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: 20 })] })]
           });
-          const mkCircles = () => new TableCell({
-            borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
-            width: { size: cW, type: WidthType.DXA },
+          const mkCircAA = (text, w, bl, br) => new TableCell({
+            borders: { top: BORDER, bottom: BORDER, left: bl, right: br },
+            margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
+            width: { size: w, type: WidthType.DXA },
             children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [
-              new TextRun({ text: '○', font: 'Arial', size: CIRC_SIZE }),
-              new TextRun({ text: '   et   ', font: 'Aptos', size: 20 }),
-              new TextRun({ text: '○', font: 'Arial', size: CIRC_SIZE }),
+              new TextRun({ text, font: text === 'et' ? 'Aptos' : 'Arial', size: text === 'et' ? 20 : CIRC_SIZE_AA })
             ]})]
           });
-          children.push(new Table({ width: { size: PAGE_W, type: WidthType.DXA }, rows: [
-            new TableRow({ children: [mkHdr('Avant'), mkMid(q.reponse.label || ''), mkHdr('Après')] }),
-            new TableRow({ children: [mkCircles(), mkCircles()] }),
-          ]}));
+          children.push(new Table({ width: { size: PAGE_W, type: WidthType.DXA },
+            columnWidths: [circW, etW, circLast, cMid, circW, etW, circLast],
+            rows: [
+              new TableRow({ children: [
+                mkHdrAA('Avant', 3, cSide),
+                mkMidAA(q.reponse.label || ''),
+                mkHdrAA('Après', 3, cSide),
+              ]}),
+              new TableRow({ children: [
+                mkCircAA('○',  circW,    BORDER, BN_AA),
+                mkCircAA('et', etW,      BN_AA,  BN_AA),
+                mkCircAA('○',  circLast, BN_AA,  BORDER),
+                mkCircAA('○',  circW,    BORDER, BN_AA),
+                mkCircAA('et', etW,      BN_AA,  BN_AA),
+                mkCircAA('○',  circLast, BN_AA,  BORDER),
+              ]}),
+            ]
+          }));
         }
         children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
       }
