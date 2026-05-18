@@ -1267,6 +1267,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q64": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -4013,5 +4035,36 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Le contrôle des territoires de chasse ou le contrôle des routes commerciales ou l’accès aux ressources naturelles."
+  },
+  {
+    id: "Q64",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    soustag: "Cause",
+    enonce: "À partir du document A, expliquez pourquoi certaines nations autochtones se disputent le contrôle de certains territoires.",
+    aspects: [
+      {
+        aspect: "Alliances et rivalités au sein des Premières Nations"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les rivalités entre les nations iroquoiennes et algonquiennes portent notamment sur le contrôle des territoires et des réseaux d’échanges. Ces affrontements permettent aux groupes de préserver leur influence et de sécuriser leur approvisionnement en ressources. »",
+            source: "Bruce G. Trigger, Les Enfants d’Aataentsic. Montréal, Les Éditions Libre Expression."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Certaines nations autochtones se disputent le contrôle de certains territoires afin de protéger leurs ressources ou de contrôler les routes commerciales."
   }
 ]
