@@ -3272,14 +3272,10 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Algonquiens"
-        },
-        {
-          label: "Iroquoiens"
-        }
+      type: "mettre-en-relation",
+      elements: [
+        "Iroquoiens",
+        "Algonquiens"
       ]
     },
     guide: {
@@ -3352,14 +3348,10 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Algonquiens"
-        },
-        {
-          label: "Iroquoiens"
-        }
+      type: "mettre-en-relation",
+      elements: [
+        "Iroquoiens",
+        "Algonquiens"
       ]
     },
     guide: {
