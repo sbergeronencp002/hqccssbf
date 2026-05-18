@@ -3506,26 +3506,23 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Nations algonquiennes"
-        },
-        {
-          label: "Nations iroquoiennes"
-        }
-      ]
+      type: "mettre-en-relation",
+      elements: [
+        "Algonquiens",
+        "Iroquoiens"
+      ],
+      double: true
     },
     guide: {
       type: "grille",
       entetes: [
-        "Nations algonquiennes",
-        "Nations iroquoiennes"
+        "Algonquiens",
+        "Iroquoiens"
       ],
       rangees: [
         [
-          "2 et 3",
-          "1 et 4"
+          "B et D",
+          "A et C"
         ]
       ]
     }
