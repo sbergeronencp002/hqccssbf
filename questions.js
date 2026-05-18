@@ -1361,6 +1361,28 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q68": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -4260,5 +4282,36 @@ const QUESTIONS = [
       nombre: 5
     },
     guide: "Les nations autochtones se disputent le contrôle des territoires de chasse, des ressources et des routes commerciales. (les objets de rivalités entre nations autochtones) Pour renforcer leur position, elles concluent des alliances avec d’autres nations. (systèmes d'alliances) Lors des conflits entraînent la capture de prisonniers qui peuvent être adoptés ou réduits en esclavage ou torturés ou exécutés. (le sort des prisonniers)"
+  },
+  {
+    id: "Q68",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    soustag: "Cause",
+    enonce: "À partir du document A, expliquez pourquoi certaines nations autochtones choisissent-elles d’adopter des prisonniers?",
+    aspects: [
+      {
+        aspect: "Alliances et rivalités au sein des Premières Nations"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après les affrontements, les captifs ne connaissent pas tous le même destin. Les décisions prises à leur égard dépendent des coutumes du groupe victorieux ainsi que des besoins de la communauté au moment du retour des guerriers. »",
+            source: "Olive Patricia Dickason, Les Premières Nations du Canada. Québec, Les Éditions du Septentrion, 1996"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Pour remplacer des membres de la communauté morts lors de conflits ou de maladies."
   }
 ]
