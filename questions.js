@@ -1444,6 +1444,28 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
       }
     ]
+  },
+  "Q72": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (3 sur 3)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (2 sur 3)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
+      }
+    ]
   }
 }
 
@@ -4509,6 +4531,81 @@ const QUESTIONS = [
           "C",
           "A",
           "B"
+        ]
+      ]
+    }
+  },
+  {
+    id: "Q72",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    soustag: "3 éléments",
+    enonce: "Les documents A à C présentent des faits relatifs aux voyages de Jacques Cartier. Inscrivez à l’endroit approprié la lettre du document correspondant à chacun de ses trois voyages.",
+    aspects: [
+      {
+        aspect: "Exploration et occupation du territoire par les Français"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« En explorant les environs de Charlesbourg-Royal, les Français croient avoir découvert de l’or et des diamants. De retour en France, ils constatent toutefois qu’il s’agit plutôt de pyrite de fer et de quartz, des minéraux sans grande valeur. »",
+            source: "Jacques Lacoursière, Canada-Québec, 1534-2010. Québec, Les Éditions du Septentrion, 2011"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« À Gaspé, Cartier revendique le territoire pour la France et entre en contact avec des Iroquoiens du Saint-Laurent. »",
+            source: "Jean-François Cardin et autres, Le Québec : héritages et projets. Laval, Éditions HRW."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Cartier remonte le fleuve Saint-Laurent jusqu’à Stadaconé et Hochelaga, révélant l’importance de cette voie de navigation pour l’exploration du continent. »",
+            source: "Jean-Pierre Charland, À l’aube du XXIe siècle. Montréal, Lidec."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau",
+      lignes: [
+        {
+          label: "Premier voyage"
+        },
+        {
+          label: "Deuxième voyage"
+        },
+        {
+          label: "Troisième voyage"
+        }
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Premier voyage",
+        "Deuxième voyage",
+        "Troisième voyage"
+      ],
+      rangees: [
+        [
+          "B",
+          "C",
+          "A"
         ]
       ]
     }
