@@ -1,5 +1,5 @@
 const REGLETTES = {
-  "Q1": {
+  Q1: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -16,7 +16,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q2": {
+  Q2: {
     oi: "Situer dans le temps",
     colonnes: [
       "2 points",
@@ -33,7 +33,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q3": {
+  Q3: {
     oi: "Situer dans le temps",
     colonnes: [
       "1 point",
@@ -50,7 +50,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q4": {
+  Q4: {
     oi: "Situer dans le temps",
     colonnes: [
       "2 points",
@@ -72,7 +72,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q5": {
+  Q5: {
     oi: "Situer dans l'espace",
     colonnes: [
       "1 point",
@@ -89,7 +89,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q6": {
+  Q6: {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
     colonnes: [
@@ -100,7 +100,7 @@ const REGLETTES = {
     ],
     niveaux: []
   },
-  "Q7": {
+  Q7: {
     oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
@@ -122,7 +122,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q8": {
+  Q8: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -144,7 +144,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q9": {
+  Q9: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -166,7 +166,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q10": {
+  Q10: {
     oi: "Déterminer des changements et des continuités",
     colonnes: [
       "2 points",
@@ -188,7 +188,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q11": {
+  Q11: {
     oi: "Déterminer des changements et des continuités",
     colonnes: [
       "2 points",
@@ -210,7 +210,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q12": {
+  Q12: {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
     colonnes: [
@@ -221,7 +221,7 @@ const REGLETTES = {
     ],
     niveaux: []
   },
-  "Q13": {
+  Q13: {
     oi: "Mettre en relation des faits",
     colonnes: [
       "2 points",
@@ -243,7 +243,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q14": {
+  Q14: {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
     colonnes: [
@@ -254,7 +254,7 @@ const REGLETTES = {
     ],
     niveaux: []
   },
-  "Q15": {
+  Q15: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -271,7 +271,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q16": {
+  Q16: {
     oi: "Situer dans le temps",
     colonnes: [
       "2 points",
@@ -288,7 +288,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q17": {
+  Q17: {
     oi: "Situer dans le temps",
     colonnes: [
       "1 point",
@@ -305,7 +305,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q18": {
+  Q18: {
     oi: "Situer dans le temps",
     colonnes: [
       "2 points",
@@ -327,7 +327,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q19": {
+  Q19: {
     oi: "Situer dans l'espace",
     colonnes: [
       "1 point",
@@ -344,7 +344,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q20": {
+  Q20: {
     oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
@@ -366,7 +366,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q21": {
+  Q21: {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
     colonnes: [
@@ -377,7 +377,7 @@ const REGLETTES = {
     ],
     niveaux: []
   },
-  "Q22": {
+  Q22: {
     oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
@@ -399,7 +399,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q33": {
+  Q33: {
     oi: "Situer dans l'espace",
     colonnes: [
       "1 point",
@@ -416,7 +416,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q37": {
+  Q37: {
     oi: "Mettre en relation des faits",
     colonnes: [
       "2 points",
@@ -438,7 +438,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q29": {
+  Q29: {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
     colonnes: [
@@ -449,7 +449,7 @@ const REGLETTES = {
     ],
     niveaux: []
   },
-  "Q28": {
+  Q28: {
     oi: "Mettre en relation des faits",
     colonnes: [
       "2 points",
@@ -471,7 +471,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q27": {
+  Q27: {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
     colonnes: [
@@ -482,7 +482,7 @@ const REGLETTES = {
     ],
     niveaux: []
   },
-  "Q23": {
+  Q23: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -504,7 +504,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q24": {
+  Q24: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -526,7 +526,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q25": {
+  Q25: {
     oi: "Déterminer des changements et des continuités",
     colonnes: [
       "2 points",
@@ -548,7 +548,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q26": {
+  Q26: {
     oi: "Déterminer des changements et des continuités",
     colonnes: [
       "2 points",
@@ -570,7 +570,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q30": {
+  Q30: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -587,7 +587,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q31": {
+  Q31: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -604,7 +604,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q32": {
+  Q32: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -621,7 +621,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q34": {
+  Q34: {
     oi: "Situer dans l'espace",
     colonnes: [
       "1 point",
@@ -638,7 +638,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q35": {
+  Q35: {
     oi: "Situer dans l'espace",
     colonnes: [
       "1 point",
@@ -655,7 +655,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q36": {
+  Q36: {
     oi: "Mettre en relation des faits",
     colonnes: [
       "2 points",
@@ -677,7 +677,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q38": {
+  Q38: {
     oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
@@ -699,7 +699,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q39": {
+  Q39: {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
     colonnes: [
@@ -710,7 +710,7 @@ const REGLETTES = {
     ],
     niveaux: []
   },
-  "Q40": {
+  Q40: {
     oi: "Mettre en relation des faits",
     colonnes: [
       "2 points",
@@ -732,7 +732,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q41": {
+  Q41: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -749,7 +749,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q42": {
+  Q42: {
     oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
@@ -771,7 +771,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q43": {
+  Q43: {
     oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
@@ -793,7 +793,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q44": {
+  Q44: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -810,7 +810,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q45": {
+  Q45: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -827,7 +827,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q46": {
+  Q46: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -849,7 +849,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q47": {
+  Q47: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -866,7 +866,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q48": {
+  Q48: {
     oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
@@ -888,7 +888,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q49": {
+  Q49: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -905,7 +905,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q50": {
+  Q50: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -922,7 +922,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q51": {
+  Q51: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -939,7 +939,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q52": {
+  Q52: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -961,7 +961,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q53": {
+  Q53: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -983,7 +983,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q54": {
+  Q54: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -1000,7 +1000,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q55": {
+  Q55: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -1022,7 +1022,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q56": {
+  Q56: {
     oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
@@ -1044,7 +1044,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q57": {
+  Q57: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -1061,7 +1061,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q58": {
+  Q58: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -1083,7 +1083,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q59": {
+  Q59: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -1105,7 +1105,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q60": {
+  Q60: {
     oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
@@ -1127,7 +1127,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q61": {
+  Q61: {
     oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
@@ -1149,7 +1149,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q62": {
+  Q62: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -1166,7 +1166,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q63": {
+  Q63: {
     oi: "Établir des faits",
     colonnes: [
       "1 point",
@@ -1183,7 +1183,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q64": {
+  Q64: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -1205,7 +1205,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q65": {
+  Q65: {
     oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
@@ -1227,7 +1227,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q66": {
+  Q66: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -1249,7 +1249,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q67": {
+  Q67: {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
     colonnes: [
@@ -1260,7 +1260,7 @@ const REGLETTES = {
     ],
     niveaux: []
   },
-  "Q68": {
+  Q68: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -1282,7 +1282,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q69": {
+  Q69: {
     oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
@@ -1304,7 +1304,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q70": {
+  Q70: {
     oi: "Situer dans le temps",
     colonnes: [
       "1 point",
@@ -1321,7 +1321,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q71": {
+  Q71: {
     oi: "Mettre en relation des faits",
     colonnes: [
       "2 points",
@@ -1343,7 +1343,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q72": {
+  Q72: {
     oi: "Mettre en relation des faits",
     colonnes: [
       "2 points",
@@ -1365,7 +1365,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q73": {
+  Q73: {
     oi: "Mettre en relation des faits",
     colonnes: [
       "2 points",
@@ -1387,7 +1387,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q74": {
+  Q74: {
     oi: "Mettre en relation des faits",
     colonnes: [
       "2 points",
@@ -1409,7 +1409,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q75": {
+  Q75: {
     oi: "Situer dans le temps",
     colonnes: [
       "1 point",
@@ -1426,7 +1426,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q76": {
+  Q76: {
     oi: "Situer dans le temps",
     colonnes: [
       "1 point",
@@ -1443,7 +1443,7 @@ const REGLETTES = {
       }
     ]
   },
-  "Q77": {
+  Q77: {
     oi: "Situer dans le temps",
     colonnes: [
       "2 points",
@@ -1459,135 +1459,8 @@ const REGLETTES = {
         desc: "L'élève ne situe pas tous les faits dans le temps."
       }
     ]
-  },
-  "Q78": {
-    oi: "Situer dans l'espace",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe le fait dans l'espace."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas le fait dans l'espace."
-      }
-    ]
-  },
-  "Q79": {
-    oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
-    ]
-  },
-  "Q80": {
-    oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
-    ]
-  },
-  "Q81": {
-    oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
-    ]
-  },
-  "Q82": {
-    oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
-    ]
-  },
-  "Q83": {
-    oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
-    ]
   }
-}
+};
 
 const IMAGE_DB = {
   "fondation_quebec_1608.png": {
@@ -1713,14 +1586,7 @@ const IMAGE_DB = {
   "ligne_1475-1575.png": {
     src: "images/ligne_1475-1575.png"
   }
-,
-  "carte_seigneurie_n-f.png": {
-    src: "images/carte_seigneurie_n-f.png"
-  },
-  "graphique_pop_autochtone_n-f.png": {
-    src: "images/graphique_pop_autochtone_n-f.png"
-  }
-}
+};
 
 const QUESTIONS = [
   {
@@ -4990,189 +4856,5 @@ const QUESTIONS = [
       ref: "ligne_acBd.png"
     },
     guide: "C - A - B - D"
-  },
-  {
-    id: "Q78",
-    niveau: 3,
-    oi: "Situer dans l'espace",
-    periode: "P2 — 1608 – 1760",
-    points: 1,
-    soustag: "Situer 1 élément",
-    enonce: "À partir du document A, indiquez la lettre qui correspond au territoire sur lequel les seigneuries ont été concédées avant 1663.",
-    aspects: [
-      {
-        aspect: "Régime seigneurial"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_seigneurie_n-f.png",
-            source: "MEES."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "tableau_2col"
-    },
-    guide: "B."
-  },
-  {
-    id: "Q79",
-    niveau: 3,
-    oi: "Déterminer des changements et des continuités",
-    periode: "P2 — 1608 – 1760",
-    points: 2,
-    soustag: "Changement",
-    enonce: "À partir du document A, indiquez un changement de la population autochtone à la suite de la présence européenne dans la vallée du Saint-Laurent.",
-    aspects: [
-      {
-        aspect: "Populations autochtones"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "graphique_pop_autochtone_n-f.png",
-            source: "Serge COURVILLE (dir.), Population et territoire,  Québec, PUL, 1996, p. 19. (Coll. Atlas historique du Québec)."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
-    guide: "Une diminution importante de la population autochtone."
-  },
-  {
-    id: "Q80",
-    niveau: 3,
-    oi: "Déterminer des causes et des conséquences",
-    periode: "P2 — 1608 – 1760",
-    points: 2,
-    soustag: "Cause",
-    enonce: "À partir du document A, indiquez une cause de la diminution de la population autochtone dans la première moitié du 17e siècle.",
-    aspects: [
-      {
-        aspect: "Populations autochtones"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            texte: "« Les Amérindiens n’avaient aucune immunité contre les maladies infectieuses introduites par les Européens, comme la variole, la rougeole et la grippe. [...] »",
-            source: "Denys Delâge, « Épidémies et colonisation. Un aperçu historique des premiers explorateurs au XVIIIe siècle », 2022."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
-    guide: "Les maladies infectieuses apportées par les Européens (variole, rougeole, grippe)."
-  },
-  {
-    id: "Q81",
-    niveau: 3,
-    oi: "Déterminer des causes et des conséquences",
-    periode: "P2 — 1608 – 1760",
-    points: 2,
-    soustag: "Conséquence",
-    enonce: "À partir du document A, indiquez une conséquence de la présence européenne sur la population autochtone dans la vallée du Saint-Laurent au cours de la première moitié du 17e siècle.",
-    aspects: [
-      {
-        aspect: "Populations autochtones"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            texte: "« Les maladies apportées par les Européens eurent des effets catastrophiques sur les peuples autochtones, dont les populations furent décimées en quelques décennies seulement. »",
-            source: "Olive Patricia Dickason, Les Premières Nations du Canada, Québec, Septentrion, 1996, p. 135."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
-    guide: "La population autochtone diminue fortement."
-  },
-  {
-    id: "Q82",
-    niveau: 3,
-    oi: "Déterminer des causes et des conséquences",
-    periode: "P2 — 1608 – 1760",
-    points: 2,
-    soustag: "Cause",
-    enonce: "À partir du document A, quelle est la cause de l’adoption d’une politique d’immigration par les autorités françaises dans les années 1660?",
-    aspects: [
-      {
-        aspect: "Croissance de la population"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            texte: "« Malgré les privilèges accordés par la métropole, les compagnies de commerce ne parviennent pas à remplir leurs obligations de peuplement. En 1663, la Nouvelle-France ne compte qu’environ 3 000 habitants, un nombre jugé insuffisant pour assurer le développement et la défense de la colonie. »",
-            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1, Québec, Septentrion, 1995."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
-    guide: "Les compagnies de fourrures ont peu contribué au peuplement de la colonie. \nou \nLa colonie a une faible population (ou présente un faible taux de croissance naturelle). \nou \nIl y a moins de femmes que d’hommes (ou un déséquilibre démographique) dans la colonie."
-  },
-  {
-    id: "Q83",
-    niveau: 3,
-    oi: "Déterminer des causes et des conséquences",
-    periode: "P2 — 1608 – 1760",
-    points: 2,
-    soustag: "Conséquence",
-    enonce: "À partir du document A, indiquez une conséquence de l’échec des compagnies à peupler la Nouvelle-France.",
-    aspects: [
-      {
-        aspect: "Croissance de la population"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            texte: "« Au début des années 1660, la population de la Nouvelle-France demeure très faible. Pour assurer le développement et la défense de la colonie, le roi met en place des mesures visant à augmenter rapidement le nombre de colons [...]. »",
-            source: "Marcel Trudel, Histoire de la Nouvelle-France, tome 3, Montréal, Fides."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "cause-consequence"
-    },
-    guide: "Les autorités françaises adoptent une politique d’immigration afin d’augmenter la population de la Nouvelle-France."
   }
-]
+];
