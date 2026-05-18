@@ -2970,17 +2970,11 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Clérico-nationalisme"
-        },
-        {
-          label: "Impérialisme"
-        },
-        {
-          label: "Nationalisme canadien-français"
-        }
+      type: "mettre-en-relation",
+      elements: [
+        "Clérico-nationalisme",
+        "Impérialisme",
+        "Nationalisme canadien-français"
       ]
     },
     guide: {
@@ -3268,8 +3262,8 @@ const QUESTIONS = [
     reponse: {
       type: "mettre-en-relation",
       elements: [
-        "Iroquoiens",
-        "Algonquiens"
+        "Algonquiens",
+        "Iroquoiens"
       ]
     },
     guide: {
@@ -3344,8 +3338,8 @@ const QUESTIONS = [
     reponse: {
       type: "mettre-en-relation",
       elements: [
-        "Iroquoiens",
-        "Algonquiens"
+        "Algonquiens",
+        "Iroquoiens"
       ]
     },
     guide: {
@@ -4592,17 +4586,11 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Premier voyage"
-        },
-        {
-          label: "Deuxième voyage"
-        },
-        {
-          label: "Troisième voyage"
-        }
+      type: "mettre-en-relation",
+      elements: [
+        "Premier voyage",
+        "Deuxième voyage",
+        "Troisième voyage"
       ]
     },
     guide: {
@@ -4667,17 +4655,11 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Premier voyage"
-        },
-        {
-          label: "Deuxième voyage"
-        },
-        {
-          label: "Troisième voyage"
-        }
+      type: "mettre-en-relation",
+      elements: [
+        "Premier voyage",
+        "Deuxième voyage",
+        "Troisième voyage"
       ]
     },
     guide: {
@@ -4752,20 +4734,12 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Charlesbourg-Royal"
-        },
-        {
-          label: "Île de Sable"
-        },
-        {
-          label: "Port-Royal"
-        },
-        {
-          label: "Tadoussac"
-        }
+      type: "mettre-en-relation",
+      elements: [
+        "Charlesbourg-Royal",
+        "Île de Sable",
+        "Port-Royal",
+        "Tadoussac"
       ]
     },
     guide: {
@@ -4842,20 +4816,12 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Charlesbourg-Royal"
-        },
-        {
-          label: "Île de Sable"
-        },
-        {
-          label: "Port-Royal"
-        },
-        {
-          label: "Tadoussac"
-        }
+      type: "mettre-en-relation",
+      elements: [
+        "Charlesbourg-Royal",
+        "Île de Sable",
+        "Port-Royal",
+        "Tadoussac"
       ]
     },
     guide: {
