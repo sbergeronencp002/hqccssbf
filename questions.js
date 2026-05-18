@@ -1466,6 +1466,28 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
       }
     ]
+  },
+  "Q73": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
   }
 }
 
@@ -4607,6 +4629,96 @@ const QUESTIONS = [
           "B",
           "C",
           "A"
+        ]
+      ]
+    }
+  },
+  {
+    id: "Q73",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    soustag: "4 éléments",
+    enonce: "Les documents A à C présentent des faits relatifs aux tentatives de colonisation françaises en Amérique du Nord. Inscrivez à l’endroit approprié la lettre du document correspondant à chacune de ces tentatives.",
+    aspects: [
+      {
+        aspect: "Exploration et occupation du territoire par les Français"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« [En Acadie], les Français déplacent leur établissement vers un lieu mieux protégé, où les terres sont plus fertiles et les conditions de vie plus favorables au maintien d’une colonie durable. »",
+            source: "Samuel de Champlain, Les Voyages de la Nouvelle-France occidentale, dicte Canada. Paris, 1613."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« [...], des marchands français tentent d’établir un poste permanent à l’embouchure du Saguenay afin de soutenir le commerce des fourrures et d’assurer une présence durable sur le territoire. »",
+            source: "Jacques Lacoursière, Canada-Québec, 1534-2010. Québec, Les Éditions du Septentrion, 2011."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« [...] Troilus de La Roche de Mesgouez tente, au nom du roi Henri IV, d’établir une colonie sur une île sablonneuse située au large de l’Acadie afin d’assurer une présence française permanente en Amérique du Nord. »",
+            source: "Marcel Trudel, Histoire de la Nouvelle-France. Montréal, Fides."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« [...] Jacques Cartier établit une colonie près de Cap-Rouge dans l’espoir de fonder un établissement permanent et d’exploiter les richesses qu’il croit avoir découvertes dans la région. »",
+            source: "Jacques Lacoursière, Canada-Québec, 1534-2010. Québec, Les Éditions du Septentrion, 2011."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau",
+      lignes: [
+        {
+          label: "Charlesbourg-Royal"
+        },
+        {
+          label: "Île de Sable"
+        },
+        {
+          label: "Port-Royal"
+        },
+        {
+          label: "Tadoussac"
+        }
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Charlesbourg-Royal",
+        "Île de Sable",
+        "Port-Royal",
+        "Tadoussac"
+      ],
+      rangees: [
+        [
+          "D",
+          "C",
+          "A",
+          "B"
         ]
       ]
     }
