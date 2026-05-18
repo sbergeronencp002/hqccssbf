@@ -251,7 +251,7 @@ header a:hover { color: #fff; }
       </div>
       <div class="field">
         <label>Opération intellectuelle</label>
-        <select id="q-oi" onchange="updatePresets();updateSoustag()">
+        <select id="q-oi" onchange="updatePresets();updateSoustag();autoReponseFromOI()">
           <option>Dégager des différences et des similitudes</option>
           <option>Déterminer des causes et des conséquences</option>
           <option>Déterminer des changements et des continuités</option>
@@ -441,6 +441,25 @@ function setSoustag(val) {
   document.querySelectorAll('input[name="q-soustag"]').forEach(r => {
     r.checked = (r.value === (val || ''));
   });
+}
+
+const OI_AUTO_REPONSE = {
+  'Établir des faits':                          { type: 'lignes', nombre: 1 },
+  'Déterminer des causes et des conséquences':  { type: 'lignes', nombre: 2 },
+};
+
+function autoReponseFromOI() {
+  const oi = document.getElementById('q-oi')?.value || '';
+  const auto = OI_AUTO_REPONSE[oi];
+  if(!auto) return;
+  const repSel = document.getElementById('rep-type');
+  if(!repSel) return;
+  repSel.value = auto.type;
+  updateReponseUI();
+  if(auto.type === 'lignes') {
+    const nb = document.getElementById('rep-nombre');
+    if(nb) nb.value = String(auto.nombre);
+  }
 }
 
 function updatePresets() {
