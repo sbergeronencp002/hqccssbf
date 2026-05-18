@@ -1476,6 +1476,28 @@ const REGLETTES = {
         desc: "L'élève ne situe pas le fait dans l'espace."
       }
     ]
+  },
+  "Q79": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -4903,5 +4925,36 @@ const QUESTIONS = [
       type: "tableau_2col"
     },
     guide: "B."
+  },
+  {
+    id: "Q79",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Changement",
+    enonce: "À partir du document A, indiquez un changement de la population autochtone à la suite de la présence européenne dans la vallée du Saint-Laurent.",
+    aspects: [
+      {
+        aspect: "Populations autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "graphique_pop_autochtone_n-f.png",
+            source: "Serge COURVILLE (dir.), Population et territoire,  Québec, PUL, 1996, p. 19. (Coll. Atlas historique du Québec)."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Une diminution importante de la population autochtone."
   }
 ]
