@@ -37,12 +37,15 @@ let aspects = [];
 const periodeOrder = [...PERIODES_PAR_NIVEAU['3'], ...PERIODES_PAR_NIVEAU['4']];
 let Q_MAP = new Map();          // id → question (O(1) lookup)
 let Q_SEARCH_IDX = new Map();   // id → lowercase search string (pre-built)
+let NEW_IDS = new Set();        // 10 questions les plus récentes
 
 function populateFilters() {
   Q_MAP = new Map(QUESTIONS.map(q => [q.id, q]));
   Q_SEARCH_IDX = new Map(QUESTIONS.map(q => [q.id,
     [q.enonce||'', q.oi||'', q.periode||'', ...(q.aspects||[]).map(a=>a.aspect)].join(' ').toLowerCase()
   ]));
+  const sorted = [...QUESTIONS].sort((a,b) => (parseInt(b.id.replace(/\D/g,''))||0) - (parseInt(a.id.replace(/\D/g,''))||0));
+  NEW_IDS = new Set(sorted.slice(0,10).map(q=>q.id));
   const allOis = [...new Set(QUESTIONS.map(q=>q.oi))].sort((a,b)=>a.localeCompare(b,'fr'));
   const aspectsByPeriode = {};
   QUESTIONS.forEach(q=>{
@@ -420,7 +423,10 @@ function buildTileHtml(q) {
     <div class="q-tile-content">
       <div class="q-tile-oi" style="display:block;font-size:1.1rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:5px 12px;border-radius:6px;color:${st.color};background:${st.bg};line-height:1.3;word-break:break-word">${q.oi}</div>
       <div class="q-tile-aspect" style="font-size:0.9rem;font-weight:400;color:#6B6560;margin-top:2px">${aspect}</div>
-      ${q.soustag ? `<div style="margin-top:6px"><span style="font-size:0.7rem;color:${st.color};background:${st.bg};border-radius:10px;padding:1px 8px;font-weight:500">${q.soustag}</span></div>` : ''}
+      ${(NEW_IDS.has(q.id) || q.soustag) ? `<div style="margin-top:6px;display:flex;gap:5px;flex-wrap:wrap">
+        ${NEW_IDS.has(q.id) ? `<span style="font-size:0.7rem;color:${st.color};background:${st.bg};border-radius:10px;padding:1px 8px;font-weight:700;letter-spacing:0.03em">Nouveauté</span>` : ''}
+        ${q.soustag ? `<span style="font-size:0.7rem;color:${st.color};background:${st.bg};border-radius:10px;padding:1px 8px;font-weight:500">${q.soustag}</span>` : ''}
+      </div>` : ''}
     </div>
     <span class="q-tile-check" onclick="event.stopPropagation();togglePanier('${q.id}')">✓</span>
   </div>`;
