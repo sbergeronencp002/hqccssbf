@@ -3338,8 +3338,8 @@ const QUESTIONS = [
     reponse: {
       type: "mettre-en-relation",
       elements: [
-        "",
-        ""
+        "Algonquiens",
+        "Iroquoiens"
       ],
       double: true
     },
