@@ -3340,8 +3340,7 @@ const QUESTIONS = [
       elements: [
         "Algonquiens",
         "Iroquoiens"
-      ],
-      double: true
+      ]
     },
     guide: {
       type: "grille",
@@ -3457,7 +3456,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P1 — Des origines à 1608",
     points: 2,
-    soustag: "2 éléments",
+    soustag: "4 éléments",
     enonce: "Les documents A à D présentent des faits sur la prise de décision chez les Algonquiens et les Iroquoiens vers 1500. Indiquez les lettres des documents qui correspondent à chacun des groupes.",
     aspects: [
       {
