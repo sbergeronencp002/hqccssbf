@@ -161,9 +161,9 @@ function applyFilters() {
   }
 
   filtered.sort((a, b) => {
-    const pA = parseInt((a.periode || '').match(/P(\d+)/)?.[1] || 0);
-    const pB = parseInt((b.periode || '').match(/P(\d+)/)?.[1] || 0);
-    return pB - pA;
+    const nA = parseInt(a.id.replace(/\D/g, '')) || 0;
+    const nB = parseInt(b.id.replace(/\D/g, '')) || 0;
+    return nB - nA;
   });
 
   const relevantOis = [...oiSet].sort((a,b)=>a.localeCompare(b,'fr'));
