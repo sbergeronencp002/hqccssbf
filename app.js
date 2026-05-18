@@ -1498,48 +1498,36 @@ async function genererDocx(includeGuide=false) {
         } else if(q.reponse.type === 'avant-apres') {
           const cSide = Math.floor(PAGE_W / 3);
           const cMid  = PAGE_W - cSide * 2;
-          const etW   = 700;
-          const circW = Math.floor((cSide - etW) / 2);
-          const circLast = cSide - etW - circW;
-          const CIRC_SIZE_AA = 114; // 57pt ≈ 2cm
-          const BN_AA = { style: BorderStyle.NONE, size: 0, color: 'FFFFFF' };
-          const mkHdrAA = (text, cs, w) => new TableCell({
+          const CIRC_AA = 112; // 56pt ≈ 2cm (double du 28pt = 1cm)
+          const mkHdrAA = (text, w) => new TableCell({
             borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
-            columnSpan: cs,
             width: { size: w, type: WidthType.DXA },
             children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: 20, bold: true })] })]
           });
-          const mkMidAA = (text) => new TableCell({
+          const mkSideAA = (w) => new TableCell({
             borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
-            rowSpan: 2, width: { size: cMid, type: WidthType.DXA },
-            children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: 20 })] })]
-          });
-          const mkCircAA = (text, w, bl, br) => new TableCell({
-            borders: { top: BORDER, bottom: BORDER, left: bl, right: br },
-            margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
             width: { size: w, type: WidthType.DXA },
             children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [
-              new TextRun({ text, font: text === 'et' ? 'Aptos' : 'Arial', size: text === 'et' ? 20 : CIRC_SIZE_AA })
+              new TextRun({ text: '○', font: 'Arial', size: CIRC_AA }),
+              new TextRun({ text: '  et  ', font: 'Aptos', size: 20 }),
+              new TextRun({ text: '○', font: 'Arial', size: CIRC_AA }),
             ]})]
           });
-          children.push(new Table({ width: { size: PAGE_W, type: WidthType.DXA },
-            columnWidths: [circW, etW, circLast, cMid, circW, etW, circLast],
-            rows: [
-              new TableRow({ children: [
-                mkHdrAA('Avant', 3, cSide),
-                mkMidAA(q.reponse.label || ''),
-                mkHdrAA('Après', 3, cSide),
-              ]}),
-              new TableRow({ children: [
-                mkCircAA('○',  circW,    BORDER, BN_AA),
-                mkCircAA('et', etW,      BN_AA,  BN_AA),
-                mkCircAA('○',  circLast, BN_AA,  BORDER),
-                mkCircAA('○',  circW,    BORDER, BN_AA),
-                mkCircAA('et', etW,      BN_AA,  BN_AA),
-                mkCircAA('○',  circLast, BN_AA,  BORDER),
-              ]}),
-            ]
-          }));
+          children.push(new Table({ width: { size: PAGE_W, type: WidthType.DXA }, columnWidths: [cSide, cMid, cSide], rows: [
+            new TableRow({ children: [
+              mkHdrAA('Avant', cSide),
+              new TableCell({
+                borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
+                rowSpan: 2, width: { size: cMid, type: WidthType.DXA },
+                children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: q.reponse.label || '', font: 'Aptos', size: 20, bold: true })] })]
+              }),
+              mkHdrAA('Après', cSide),
+            ]}),
+            new TableRow({ height: { value: 1600, rule: 'atLeast' }, children: [
+              mkSideAA(cSide),
+              mkSideAA(cSide),
+            ]}),
+          ]}));
         }
         children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
       }
