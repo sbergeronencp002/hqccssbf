@@ -4586,17 +4586,11 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "tableau",
-      lignes: [
-        {
-          label: "Premier voyage"
-        },
-        {
-          label: "Deuxième voyage"
-        },
-        {
-          label: "Troisième voyage"
-        }
+      type: "mettre-en-relation",
+      elements: [
+        "Premier voyage",
+        "Deuxième voyage",
+        "Troisième voyage"
       ]
     },
     guide: {
