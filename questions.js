@@ -4950,7 +4950,7 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "image",
-      ref: "ligne_1550-1750.png"
+      ref: "ligne_1475-1575.png"
     },
     guide: "C."
   },
