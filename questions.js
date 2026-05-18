@@ -2171,7 +2171,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P4 — 1791 – 1840",
     points: 3,
-    enonce: "À partir des documents A à C, expliquez comment la réponse de Londres aux revendications des Patriotes entraîne des actions de protestation populaire au Bas-Canada dans la première moitié du 19e siècle.\n  \nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux. \n\n• Une revendication des Patriotes \n• La réponse de Londres \n• Une action de protestation populaire",
+    enonce: "Expliquez comment la réponse de Londres aux revendications des Patriotes entraîne des actions de protestation populaire au Bas-Canada dans la première moitié du 19e siècle.\n  \nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux. \n\n• Une revendication des Patriotes \n• La réponse de Londres \n• Une action de protestation populaire",
     aspects: [
       {
         aspect: "Soulèvements de 1837-1838"
@@ -2210,7 +2210,7 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "lignes",
-      nombre: 2
+      nombre: 4
     },
     guide: "Les Patriotes revendiquent l’obtention de la responsabilité ministérielle ou le contrôle du budget par l’Assemblée ou l’élection des membres du conseil législatif (Une revendication des Patriotes). \nCes revendications sont refusées par Londres (La réponse de Londres). Devant le refus de Londres, les Patriotes invitent la population à boycotter les produits britanniques ou organisent des assemblées populaires ou se soulèvent (Une action de protestation populaire)."
   },
