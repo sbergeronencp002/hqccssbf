@@ -1510,6 +1510,23 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
       }
     ]
+  },
+  "Q75": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -4834,5 +4851,36 @@ const QUESTIONS = [
         ]
       ]
     }
+  },
+  {
+    id: "Q75",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Exploration et occupation du territoire par les Français"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "image_jacques_cartier_1534.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1550-1750.png"
+    },
+    guide: "C."
   }
 ]
