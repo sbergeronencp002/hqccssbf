@@ -3445,7 +3445,7 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 3
     },
-    guide: "Delâge soutient que les alliances entre les Premières Nations sont principalement motivées par des considérations politiques ou militaires, tandis que Trigger et Dickason estiment qu’elles reposent surtout sur des intérêts économiques ou commerciaux."
+    guide: "Delâge soutient que les alliances entre les Premières Nations sont principalement motivées par des considérations politiques ou militaires (différence), tandis que Trigger et Dickason estiment qu’elles reposent surtout sur des intérêts économiques ou commerciaux (similitude)."
   },
   {
     id: "Q40",
