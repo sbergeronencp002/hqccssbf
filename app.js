@@ -160,6 +160,12 @@ function applyFilters() {
     filtered.push(q);
   }
 
+  filtered.sort((a, b) => {
+    const pA = parseInt((a.periode || '').match(/P(\d+)/)?.[1] || 0);
+    const pB = parseInt((b.periode || '').match(/P(\d+)/)?.[1] || 0);
+    return pB - pA;
+  });
+
   const relevantOis = [...oiSet].sort((a,b)=>a.localeCompare(b,'fr'));
   fillOi('f-oi', relevantOis, "Toutes");
   if(relevantOis.includes(currentOi)) document.getElementById('f-oi').value = currentOi;
