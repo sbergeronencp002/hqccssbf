@@ -4467,6 +4467,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P1 — Des origines à 1608",
     points: 2,
+    soustag: "3 éléments",
     enonce: "Les documents A à C présentent des faits relatifs aux voyages de Jacques Cartier. Inscrivez à l’endroit approprié la lettre du document correspondant à chacun de ses trois voyages.",
     aspects: [
       {
