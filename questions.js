@@ -3262,8 +3262,8 @@ const QUESTIONS = [
     reponse: {
       type: "mettre-en-relation",
       elements: [
-        "Iroquoiens",
-        "Algonquiens"
+        "Algonquiens",
+        "Iroquoiens"
       ]
     },
     guide: {
