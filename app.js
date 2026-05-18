@@ -609,22 +609,17 @@ function renderReponse(q) {
   }
   if(q.reponse.type === 'avant-apres') {
     const lbl = q.reponse.label || '';
-    const SB = 'border:1px solid var(--ink-2);text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem';
-    const S  = 'border:1px solid var(--ink-2);text-align:center;padding:8px 4px;font-size:0.8rem';
-    const SN = 'border-top:1px solid var(--ink-2);border-bottom:1px solid var(--ink-2);border-left:none;border-right:none;text-align:center;padding:8px 4px;font-size:0.8rem';
-    const circle = '<span style="display:inline-block;width:2cm;height:2cm;border-radius:50%;border:1.5px solid #000;vertical-align:middle"></span>';
-    const mkSide = (bLeft) =>
-      '<td style="' + (bLeft ? S : SN) + ';width:11%">' + circle + '</td>'
-      + '<td style="' + SN + ';width:11%">et</td>'
-      + '<td style="' + (!bLeft ? S : SN) + ';width:11%">' + circle + '</td>';
+    const B = 'border:1px solid var(--ink-2)';
+    const circle = '<span style="display:inline-block;width:2cm;height:2cm;border-radius:50%;border:1.5px solid #000"></span>';
+    const sideCell = '<div style="display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 4px">' + circle + '<span style="font-size:0.8rem">et</span>' + circle + '</div>';
     return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin:8px 0">'
       + '<tr>'
-      + '<td style="' + SB + ';width:33%" colspan="3">Avant</td>'
-      + '<td style="' + S  + ';width:34%" rowspan="2">' + lbl + '</td>'
-      + '<td style="' + SB + ';width:33%" colspan="3">Après</td>'
+      + '<td style="' + B + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem;width:33%">Avant</td>'
+      + '<td style="' + B + ';text-align:center;font-weight:700;padding:8px;font-size:0.85rem;width:34%;vertical-align:middle" rowspan="2">' + lbl + '</td>'
+      + '<td style="' + B + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem;width:33%">Après</td>'
       + '</tr><tr>'
-      + mkSide(true)
-      + mkSide(false)
+      + '<td style="' + B + '">' + sideCell + '</td>'
+      + '<td style="' + B + '">' + sideCell + '</td>'
       + '</tr></table>';
   }
   return '';
@@ -799,19 +794,18 @@ function previsualiser(guideMode) {
             + '</table>';
         } else if(q.reponse.type === 'avant-apres') {
           const lbl = q.reponse.label || '';
-          const SB2 = 'border:1px solid #999;text-align:center;font-weight:600;padding:6px 8px;font-size:0.75rem';
-          const S2  = 'border:1px solid #999;text-align:center;padding:6px 4px;font-size:0.75rem';
-          const SN2 = 'border-top:1px solid #999;border-bottom:1px solid #999;border-left:none;border-right:none;text-align:center;padding:6px 4px;font-size:0.75rem';
-          const circle2 = '<span style="display:inline-block;width:2cm;height:2cm;border-radius:50%;border:1.5px solid #000;vertical-align:middle"></span>';
-          const mkSide2 = (bLeft) =>
-            '<td style="' + (bLeft ? S2 : SN2) + ';width:11%">' + circle2 + '</td>'
-            + '<td style="' + SN2 + ';width:11%">et</td>'
-            + '<td style="' + (!bLeft ? S2 : SN2) + ';width:11%">' + circle2 + '</td>';
+          const B2 = 'border:1px solid #999';
+          const circle2 = '<span style="display:inline-block;width:2cm;height:2cm;border-radius:50%;border:1.5px solid #000"></span>';
+          const sideCell2 = '<div style="display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 4px">' + circle2 + '<span style="font-size:0.75rem">et</span>' + circle2 + '</div>';
           previewReponse = '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin:8px 0">'
-            + '<tr><td style="' + SB2 + ';width:33%" colspan="3">Avant</td>'
-            + '<td style="' + S2 + ';width:34%" rowspan="2">' + lbl + '</td>'
-            + '<td style="' + SB2 + ';width:33%" colspan="3">Après</td></tr>'
-            + '<tr>' + mkSide2(true) + mkSide2(false) + '</tr></table>';
+            + '<tr>'
+            + '<td style="' + B2 + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.75rem;width:33%">Avant</td>'
+            + '<td style="' + B2 + ';text-align:center;font-weight:700;padding:8px;font-size:0.8rem;width:34%;vertical-align:middle" rowspan="2">' + lbl + '</td>'
+            + '<td style="' + B2 + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.75rem;width:33%">Après</td>'
+            + '</tr><tr>'
+            + '<td style="' + B2 + '">' + sideCell2 + '</td>'
+            + '<td style="' + B2 + '">' + sideCell2 + '</td>'
+            + '</tr></table>';
         }
       }
 
