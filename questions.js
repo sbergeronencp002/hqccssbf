@@ -1684,6 +1684,9 @@ const IMAGE_DB = {
   },
   "image_jacques_cartier_1534.png": {
     src: "images/image_jacques_cartier_1534.png"
+  },
+  "ligne_1475-1575.png": {
+    src: "images/ligne_1475-1575.png"
   }
 }
 
@@ -4916,7 +4919,7 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "image",
-      ref: "ligne_1550-1750.png"
+      ref: "ligne_1475-1575.png"
     },
     guide: "C."
   },
