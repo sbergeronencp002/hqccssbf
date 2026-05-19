@@ -4510,7 +4510,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 2,
     soustag: "Cause",
-    enonce: "À partir du document A, expliquez pourquoi certaines nations autochtones concluent une alliance avec Samuel de Champlain en 1603 ?",
+    enonce: "Indiquez une cause de l’alliance conclue entre certaines nations autochtones et Samuel de Champlain en 1603.",
     aspects: [
       {
         aspect: "Exploration et occupation du territoire par les Français"
