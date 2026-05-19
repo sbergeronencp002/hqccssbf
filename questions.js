@@ -3763,7 +3763,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "À partir du document A, nommez une façon dont les connaissances sont transmises chez les Autochtones.",
+    enonce: "Nommez une façon dont les connaissances sont transmises chez les Autochtones.",
     aspects: [
       {
         aspect: "Rapports sociaux chez les Autochtones"
