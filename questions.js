@@ -1603,6 +1603,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q84": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -1735,6 +1757,9 @@ const IMAGE_DB = {
   },
   "graphique_pop_autochtone_n-f.png": {
     src: "images/graphique_pop_autochtone_n-f.png"
+  },
+  "carte_amerique_nord_1700.png": {
+    src: "images/carte_amerique_nord_1700.png"
   }
 }
 
@@ -5200,5 +5225,39 @@ const QUESTIONS = [
       type: "cause-consequence"
     },
     guide: "Les autorités françaises adoptent une politique d’immigration afin d’augmenter la population de la Nouvelle-France."
+  },
+  {
+    id: "Q84",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indique une conséquence de l'occupation française en Amérique du Nord sur le territoire des Treize colonies.",
+    aspects: [
+      {
+        aspect: "Guerres intercoloniales"
+      },
+      {
+        aspect: "Territoire français en Amérique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "carte_amerique_nord_1700.png",
+            soustitre: "Carte de l'Amérique du Nord vers 1700"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les Treize colonies ne peuvent prendre de l’expansion ou l’occupation française limite leur expansion ou leur territoire est limité."
   }
 ]
