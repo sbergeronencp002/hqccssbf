@@ -2056,7 +2056,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 2,
     soustag: "Cause",
-    enonce: "À partir du document A, indiquez une cause de la rivalité entre la Nouvelle-France et les colonies britanniques à partir du 17e siècle.",
+    enonce: "Indiquez une cause de la rivalité entre la Nouvelle-France et les colonies britanniques à partir du 17e siècle.",
     aspects: [
       {
         aspect: "Guerres intercoloniales"
