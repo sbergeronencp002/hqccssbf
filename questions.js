@@ -2209,6 +2209,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "troc_1600.png",
+            soustitre: "Vers 1600",
             source: "MEES."
           }
         ]
@@ -2219,6 +2220,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             ref: "troc_1700.png",
+            soustitre: "Vers 1700",
             source: "MEES."
           }
         ]
