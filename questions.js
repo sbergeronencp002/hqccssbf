@@ -5027,7 +5027,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 2,
     soustag: "Changement",
-    enonce: "À partir du document A, indiquez un changement de la population autochtone à la suite de la présence européenne dans la vallée du Saint-Laurent.",
+    enonce: "Indiquez un changement de la population autochtone à la suite de la présence européenne dans la vallée du Saint-Laurent.",
     aspects: [
       {
         aspect: "Populations autochtones"
