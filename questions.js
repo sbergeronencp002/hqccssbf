@@ -1712,8 +1712,7 @@ const IMAGE_DB = {
   },
   "ligne_1475-1575.png": {
     src: "images/ligne_1475-1575.png"
-  }
-,
+  },
   "carte_seigneurie_n-f.png": {
     src: "images/carte_seigneurie_n-f.png"
   },
@@ -1729,7 +1728,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "À partir du document A, nommez une nation autochtone qui conclut une alliance avec Champlain et François Gravé du Pont en 1603.",
+    enonce: "Nommez une nation autochtone qui conclut une alliance avec Champlain et François Gravé du Pont en 1603.",
     aspects: [
       {
         aspect: "Exploration et occupation du territoire par les Français"
