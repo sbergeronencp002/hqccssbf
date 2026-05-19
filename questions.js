@@ -4265,7 +4265,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P3 — 1760 – 1791",
     points: 1,
-    enonce: "À partir du document A, nommez le gouverneur qui succède à James Murray.",
+    enonce: "Nommez le gouverneur qui succède à James Murray.",
     aspects: [
       {
         aspect: "Mouvements de revendication"
