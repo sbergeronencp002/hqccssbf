@@ -3141,7 +3141,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "À partir du document A, nommez la famille linguistique autochtone qui occupe le Bouclier canadien et les Appalaches vers 1500.",
+    enonce: "Nommez la famille linguistique autochtone qui occupe le Bouclier canadien et les Appalaches vers 1500.",
     aspects: [
       {
         aspect: "Premiers occupants du territoire"
