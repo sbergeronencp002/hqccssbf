@@ -3834,7 +3834,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "À partir du document A, nommez une obligation liée à l’échange de présents entre les groupes.",
+    enonce: "Nommez une obligation liée à l’échange de présents entre les groupes autochtones.",
     aspects: [
       {
         aspect: "Rapports sociaux chez les Autochtones"
