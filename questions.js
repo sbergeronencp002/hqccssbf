@@ -1791,7 +1791,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "fondation_quebec_1608.png"
+            ref: "fondation_quebec_1608.png",
+            soustitre: "Fondation de Québec et construction de l’Habitation"
           }
         ]
       },
@@ -1852,6 +1853,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "bataille_lac_champlain.png",
+            soustitre: "Bataille du lac Champlain",
             source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
         ]
@@ -1889,6 +1891,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "deportation_acadien.png",
+            soustitre: "La déportation des Acadiens",
             source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
         ]
@@ -1909,6 +1912,7 @@ const QUESTIONS = [
           {
             titre: "Document C",
             ref: "revolte_pontiact.png",
+            soustitre: "La révolte de Pontiac",
             source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
         ]
@@ -2126,8 +2130,9 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document B - Recensement des célibataires de la Nouvelle-France en 1666",
-            ref: "recensement_colonie_n-f.png"
+            titre: "Document B",
+            ref: "recensement_colonie_n-f.png",
+            soustitre: "Recensement des célibataires de la Nouvelle-France en 1666"
           }
         ]
       }
@@ -2204,6 +2209,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "troc_1600.png",
+            soustitre: "Vers 1600",
             source: "MEES."
           }
         ]
@@ -2214,6 +2220,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             ref: "troc_1700.png",
+            soustitre: "Vers 1700",
             source: "MEES."
           }
         ]
@@ -2245,6 +2252,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             texte: "« […] le gouverneur [est] le personnage politique le plus important dans la colonie britannique. Il a le pouvoir de promulguer des lois et des règlements et le devoir d’assurer la sécurité des sujets dans la \ncolonie. »",
+            soustitre: "De 1763 à 1791",
             source: "Alain DALONGEVILLE (dir.), Présences : une histoire thématique du Québec, manuel de l’élève, histoire et éducation à la citoyenneté, 2e année du 2e cycle du secondaire, Anjou, Les Éditions CEC, 2008, vol. 2, p. 96."
           }
         ]
@@ -2255,6 +2263,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             ref: "org_pol_acte_const.png",
+            soustitre: "De 1791 à 1840",
             source: "Récitus."
           }
         ]
@@ -2362,7 +2371,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "papineau_foule.png"
+            ref: "papineau_foule.png",
+            soustitre: "Louis-Joseph Papineau  s’adressant à la foule"
           }
         ]
       },
@@ -4975,7 +4985,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« E[...] Jacques Cartier ramène en France le chef Donnacona, espérant que son témoignage sur les territoires explorés et sur les richesses du continent convaincra François Ier de soutenir de nouvelles expéditions. »",
+            texte: "« [...] Jacques Cartier ramène en France le chef Donnacona, espérant que son témoignage sur les territoires explorés et sur les richesses du continent convaincra François Ier de soutenir de nouvelles expéditions. »",
             source: "Jacques Mathieu, La Nouvelle-France. Québec, Les Presses de l’Université Laval."
           }
         ]
