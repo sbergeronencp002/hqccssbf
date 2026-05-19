@@ -2252,6 +2252,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             texte: "« […] le gouverneur [est] le personnage politique le plus important dans la colonie britannique. Il a le pouvoir de promulguer des lois et des règlements et le devoir d’assurer la sécurité des sujets dans la \ncolonie. »",
+            soustitre: "De 1763 à 1791",
             source: "Alain DALONGEVILLE (dir.), Présences : une histoire thématique du Québec, manuel de l’élève, histoire et éducation à la citoyenneté, 2e année du 2e cycle du secondaire, Anjou, Les Éditions CEC, 2008, vol. 2, p. 96."
           }
         ]
@@ -2262,6 +2263,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             ref: "org_pol_acte_const.png",
+            soustitre: "De 1791 à 1840",
             source: "Récitus."
           }
         ]
