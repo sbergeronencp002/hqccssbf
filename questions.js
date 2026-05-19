@@ -1870,7 +1870,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document A - La déportation des Acadiens",
+            titre: "Document A",
             ref: "deportation_acadien.png",
             source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
@@ -1890,7 +1890,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document C - La révolte de Pontiac",
+            titre: "Document C",
             ref: "revolte_pontiact.png",
             source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
