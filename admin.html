@@ -324,6 +324,7 @@ header a:hover { color: #fff; }
           <option value="grille">Tableau (grille visuelle)</option>
           <option value="avant-apres">Tableau Avant / Après</option>
           <option value="mettre-en-relation">Tableau Mettre en relation</option>
+          <option value="situer-dans-lespace">Tableau Situer dans l'espace</option>
           <option value="cause-consequence">Tableau Cause / Conséquence</option>
         </select>
       </div>
@@ -734,6 +735,13 @@ function loadQuestion(id) {
     if(dbl) { dbl.checked = !!q.reponse.double; updateReponseUI(); }
     els.forEach((v, i) => {
       const el = document.getElementById('rep-mer-el-' + i);
+      if(el) el.value = v;
+    });
+  }
+  else if(repType==='situer-dans-lespace') {
+    const els = q.reponse.elements || [];
+    els.forEach((v, i) => {
+      const el = document.getElementById('rep-sde-el-' + i);
       if(el) el.value = v;
     });
   }
@@ -1178,6 +1186,14 @@ function updateReponseUI() {
     }
     fields += '</div>';
     wrap.innerHTML = fields;
+  } else if(type === 'situer-dans-lespace') {
+    const SDE_EX = ['Nouvelle-France', 'Treize colonies'];
+    let fields = `<div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem">`;
+    for(let i = 0; i < 2; i++) {
+      fields += `<div class="field" style="margin:0"><label style="font-size:.72rem">Élément ${i+1}</label><input type="text" id="rep-sde-el-${i}" placeholder="ex. : ${SDE_EX[i]}"></div>`;
+    }
+    fields += '</div>';
+    wrap.innerHTML = fields;
   } else if(type === 'cause-consequence') {
     wrap.innerHTML = `<div class="field" style="color:var(--ink-3);font-size:.82rem">Tableau fixe : Cause et Conséquence avec cercle de réponse (1,25 cm).</div>`;
   } else {
@@ -1378,6 +1394,9 @@ function buildQuestion() {
     reponse = { type: 'avant-apres', ...(eventLabel ? { label: eventLabel } : {}) };
   } else if(repType === 'cause-consequence') {
     reponse = { type: 'cause-consequence' };
+  } else if(repType === 'situer-dans-lespace') {
+    const elements = [0,1].map(i => (document.getElementById('rep-sde-el-' + i)?.value || '').trim());
+    reponse = { type: 'situer-dans-lespace', elements };
   } else if(repType === 'mettre-en-relation') {
     const n = parseInt(document.getElementById('rep-mer-n')?.value || '2') || 2;
     const elements = [];
