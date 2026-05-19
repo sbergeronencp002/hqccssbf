@@ -4985,7 +4985,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« E[...] Jacques Cartier ramène en France le chef Donnacona, espérant que son témoignage sur les territoires explorés et sur les richesses du continent convaincra François Ier de soutenir de nouvelles expéditions. »",
+            texte: "« [...] Jacques Cartier ramène en France le chef Donnacona, espérant que son témoignage sur les territoires explorés et sur les richesses du continent convaincra François Ier de soutenir de nouvelles expéditions. »",
             source: "Jacques Mathieu, La Nouvelle-France. Québec, Les Presses de l’Université Laval."
           }
         ]
