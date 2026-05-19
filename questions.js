@@ -1773,7 +1773,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document A - Fondation de Québec",
+            titre: "Document A",
             ref: "fondation_quebec_1608.png"
           }
         ]
