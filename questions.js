@@ -4295,7 +4295,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "A partir du document A, nommez un objet de rivalité entre les nations autochtones vers 1500.",
+    enonce: "Nommez un objet de rivalité entre les nations autochtones vers 1500.",
     aspects: [
       {
         aspect: "Alliances et rivalités au sein des Premières Nations"
