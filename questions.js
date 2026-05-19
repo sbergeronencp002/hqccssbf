@@ -4326,7 +4326,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 2,
     soustag: "Cause",
-    enonce: "À partir du document A, expliquez pourquoi certaines nations autochtones se disputent le contrôle de certains territoires.",
+    enonce: "Indiquez une cause des rivalités entre certaines nations autochtones pour le contrôle de certains territoires.",
     aspects: [
       {
         aspect: "Alliances et rivalités au sein des Premières Nations"
