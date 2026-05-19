@@ -1853,6 +1853,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "bataille_lac_champlain.png",
+            soustitre: "Bataille du lac Champlain",
             source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
         ]
