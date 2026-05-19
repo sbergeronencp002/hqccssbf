@@ -3083,7 +3083,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "À partir du document A, nommez le passage emprunté par les premiers occupants pour migrer de l’Asie vers l’Amérique.",
+    enonce: "Nommez le passage emprunté par les premiers occupants pour migrer de l’Asie vers l’Amérique.",
     aspects: [
       {
         aspect: "Premiers occupants du territoire"
