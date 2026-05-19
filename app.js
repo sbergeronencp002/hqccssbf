@@ -653,10 +653,10 @@ function renderReponse(q) {
   if(q.reponse.type === 'situer-dans-lespace') {
     const els = q.reponse.elements || ['Élément 1','Élément 2'];
     const B = 'border:1px solid var(--ink-2)';
-    const TH = B + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem;width:50%';
-    const TC = B + ';text-align:center;padding:12px 8px';
+    const TH = B + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem';
+    const TC = B + ';text-align:center;padding:12px 16px';
     const circle = '<span style="display:inline-block;width:1.25cm;height:1.25cm;border-radius:50%;border:1.5px solid #000"></span>';
-    return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin:8px 0">'
+    return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:8px 0">'
       + '<tr>' + els.map(e => '<td style="' + TH + '">' + e + '</td>').join('') + '</tr>'
       + '<tr>' + els.map(() => '<td style="' + TC + '">' + circle + '</td>').join('') + '</tr>'
       + '</table>';
@@ -890,10 +890,10 @@ function previsualiser(guideMode) {
         } else if(q.reponse.type === 'situer-dans-lespace') {
           const elsS = q.reponse.elements || ['Élément 1','Élément 2'];
           const BSde = 'border:1px solid #999';
-          const THSde = BSde + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.75rem;width:50%';
-          const TCSde = BSde + ';text-align:center;padding:12px 8px';
+          const THSde = BSde + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.75rem';
+          const TCSde = BSde + ';text-align:center;padding:12px 16px';
           const circleSde = '<span style="display:inline-block;width:1.25cm;height:1.25cm;border-radius:50%;border:1.5px solid #000"></span>';
-          previewReponse = '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin:8px 0">'
+          previewReponse = '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:8px 0">'
             + '<tr>' + elsS.map(e => '<td style="' + THSde + '">' + e + '</td>').join('') + '</tr>'
             + '<tr>' + elsS.map(() => '<td style="' + TCSde + '">' + circleSde + '</td>').join('') + '</tr>'
             + '</table>';
@@ -1686,21 +1686,18 @@ async function genererDocx(includeGuide=false) {
           // 2 colonnes : row 1 = labels, row 2 = cercles (comme MER horizontal n=2)
           const CIRC_SDE = 450000; // 1.25cm
           const elsS = q.reponse.elements || ['Élément 1','Élément 2'];
-          const halfW = Math.floor(PAGE_W / 2);
-          const colWS = [halfW, PAGE_W - halfW];
-          const mkSdeLbl = (text, w) => new TableCell({
+          const mkSdeLbl = (text) => new TableCell({
             borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
-            width: { size: w, type: WidthType.DXA },
             children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: 20, bold: true })] })]
           });
-          const mkSdeCirc = (w) => {
+          const mkSdeCirc = () => {
             const para = new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 80, after: 80 }, children: [] });
             para.root.push(new EllipseRun(CIRC_SDE, CIRC_SDE));
-            return new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, width: { size: w, type: WidthType.DXA }, children: [para] });
+            return new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, children: [para] });
           };
-          children.push(new Table({ width: { size: PAGE_W, type: WidthType.DXA }, columnWidths: colWS, rows: [
-            new TableRow({ children: elsS.map((e, i) => mkSdeLbl(e, colWS[i])) }),
-            new TableRow({ height: { value: 800, rule: 'atLeast' }, children: colWS.map(w => mkSdeCirc(w)) })
+          children.push(new Table({ width: { size: 0, type: WidthType.AUTO }, rows: [
+            new TableRow({ children: elsS.map(e => mkSdeLbl(e)) }),
+            new TableRow({ height: { value: 800, rule: 'atLeast' }, children: elsS.map(() => mkSdeCirc()) })
           ]}));
         } else if(q.reponse.type === 'avant-apres') {
           // 7 colonnes : [○][et][○] | événement | [○][et][○]
