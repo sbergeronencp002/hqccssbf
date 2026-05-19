@@ -1833,7 +1833,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document A - Champlain et ses alliés combattant les Iroquois",
+            titre: "Document A",
             ref: "bataille_lac_champlain.png",
             source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
