@@ -3733,7 +3733,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 2,
     soustag: "Conséquence",
-    enonce: "À partir du document A, indiquez une conséquence du partage des biens au sein des sociétés autochtones.",
+    enonce: "Indiquez une conséquence du partage des biens au sein des sociétés autochtones.",
     aspects: [
       {
         aspect: "Rapports sociaux chez les Autochtones"
