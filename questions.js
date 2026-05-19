@@ -2143,7 +2143,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Changement",
-    enonce: "À partir du document A, indiquez le changement territorial qui survient avec l’adoption de l’Acte constitutionnel en 1791.",
+    enonce: "Indiquez le changement territorial qui survient avec l’adoption de l’Acte constitutionnel en 1791.",
     aspects: [
       {
         aspect: "Acte constitutionnel"
