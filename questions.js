@@ -3925,7 +3925,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 2,
     soustag: "Conséquence",
-    enonce: "À partir du document A, indiquez une conséquence des réseaux d’échange sur l’accès aux ressources des nations autochtones.",
+    enonce: "Indiquez une conséquence des réseaux d’échange sur l’accès des nations autochtones aux ressources.",
     aspects: [
       {
         aspect: "Réseaux d'échange autochtones"
