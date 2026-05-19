@@ -2185,7 +2185,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document A - Échanges vers 1600",
+            titre: "Document A",
             ref: "troc_1600.png",
             source: "MEES."
           }
@@ -2195,7 +2195,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document B - Échanges vers 1700",
+            titre: "Document B",
             ref: "troc_1700.png",
             source: "MEES."
           }
