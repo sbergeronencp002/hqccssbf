@@ -2902,7 +2902,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document A - 1791 à 1840",
+            titre: "Document A",
             ref: "org_pol_acte_const.png"
           }
         ]
@@ -2911,7 +2911,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document B - 1840 à 1848",
+            titre: "Document B",
             ref: "org_pol_acte_union.png"
           }
         ]
