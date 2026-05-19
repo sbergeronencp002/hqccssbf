@@ -5408,7 +5408,8 @@ const QUESTIONS = [
       elements: [
         "Missions",
         "Villages domiciliés"
-      ]
+      ],
+      double: true
     },
     guide: {
       type: "grille",
