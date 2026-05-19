@@ -252,7 +252,24 @@ const REGLETTES = {
       "1 point",
       "0 point"
     ],
-    niveaux: []
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   },
   "Q15": {
     oi: "Établir des faits",
@@ -2344,7 +2361,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document A - Papineau devant une foule",
+            titre: "Document A",
             ref: "papineau_foule.png"
           }
         ]
