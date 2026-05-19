@@ -2371,7 +2371,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "papineau_foule.png"
+            ref: "papineau_foule.png",
+            soustitre: "Louis-Joseph Papineau  s’adressant à la foule"
           }
         ]
       },
