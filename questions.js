@@ -1791,7 +1791,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "fondation_quebec_1608.png"
+            ref: "fondation_quebec_1608.png",
+            soustitre: "Fondation de Québec et construction de l’Habitation"
           }
         ]
       },
