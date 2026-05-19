@@ -2537,7 +2537,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document A - Deux nouvelles sociétés d'État",
+            titre: "Document A",
             ref: "logos_societe_etat.png",
             source: "MEES."
           }
