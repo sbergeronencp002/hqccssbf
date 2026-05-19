@@ -252,24 +252,7 @@ const REGLETTES = {
       "1 point",
       "0 point"
     ],
-    niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
-      {
-        pts: 2,
-        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
-      },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
-    ]
+    niveaux: []
   },
   "Q15": {
     oi: "Établir des faits",
@@ -1790,7 +1773,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document A",
+            titre: "Document A - Fondation de Québec",
             ref: "fondation_quebec_1608.png"
           }
         ]
@@ -1850,7 +1833,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document A",
+            titre: "Document A - Champlain et ses alliés combattant les Iroquois",
             ref: "bataille_lac_champlain.png",
             source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
@@ -1887,7 +1870,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document A",
+            titre: "Document A - La déportation des Acadiens",
             ref: "deportation_acadien.png",
             source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
@@ -1907,7 +1890,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document C",
+            titre: "Document C - La révolte de Pontiac",
             ref: "revolte_pontiact.png",
             source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
@@ -2202,7 +2185,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document A",
+            titre: "Document A - Échanges vers 1600",
             ref: "troc_1600.png",
             source: "MEES."
           }
@@ -2212,7 +2195,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document B",
+            titre: "Document B - Échanges vers 1700",
             ref: "troc_1700.png",
             source: "MEES."
           }
@@ -2243,7 +2226,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document A",
+            titre: "Document A - 1763 à 1791",
             texte: "« […] le gouverneur [est] le personnage politique le plus important dans la colonie britannique. Il a le pouvoir de promulguer des lois et des règlements et le devoir d’assurer la sécurité des sujets dans la \ncolonie. »",
             source: "Alain DALONGEVILLE (dir.), Présences : une histoire thématique du Québec, manuel de l’élève, histoire et éducation à la citoyenneté, 2e année du 2e cycle du secondaire, Anjou, Les Éditions CEC, 2008, vol. 2, p. 96."
           }
@@ -2253,7 +2236,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document B",
+            titre: "Document B - 1791 à 1840",
             ref: "org_pol_acte_const.png",
             source: "Récitus."
           }
@@ -2361,7 +2344,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document A",
+            titre: "Document A - Papineau devant une foule",
             ref: "papineau_foule.png"
           }
         ]
@@ -2428,7 +2411,7 @@ const QUESTIONS = [
     niveau: 4,
     oi: "Situer dans le temps",
     periode: "P8 — De 1980 à nos jours",
-    points: 2,
+    points: 1,
     soustag: "Ordre chronologique",
     enonce: "Les documents A à D présentent des événements liés au statut politique du Québec à partir de 1982. Placez-les par ordre chronologique.",
     aspects: [
@@ -2441,7 +2424,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document A",
+            titre: "Document A - Principaux porte-parole du camp du Oui",
             ref: "camp_oui_1995.png",
             source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
@@ -2472,7 +2455,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document D",
+            titre: "Document D - Signature de la Proclamation de la loi  constitutionnelle canadienne",
             ref: "rapatriment_constitution.png",
             source: "Bibliothèque et Archives Canada."
           }
@@ -2537,7 +2520,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document A",
+            titre: "Document A - Deux nouvelles sociétés d'État",
             ref: "logos_societe_etat.png",
             source: "MEES."
           }
@@ -2902,7 +2885,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document A",
+            titre: "Document A - 1791 à 1840",
             ref: "org_pol_acte_const.png"
           }
         ]
@@ -2911,7 +2894,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document B",
+            titre: "Document B - 1840 à 1848",
             ref: "org_pol_acte_union.png"
           }
         ]
@@ -3972,7 +3955,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 2,
     soustag: "Conséquence",
-    enonce: "Indiquez une conséquence de l’utilisation des voies d’eau sur les échanges entre les nations autochtones.",
+    enonce: "À partir du document A, indiquez une conséquence de l’utilisation des voies d’eau sur les échanges entre les nations autochtones.",
     aspects: [
       {
         aspect: "Réseaux d'échange autochtones"
@@ -4137,7 +4120,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 2,
     soustag: "Cause",
-    enonce: "Indiquez une cause du rappel de James Murray en Angleterre au début du Régime britannique.",
+    enonce: "À partir du document A, indiquez une cause du rappel de James Murray en Angleterre.",
     aspects: [
       {
         aspect: "Mouvements de revendication"
@@ -4168,7 +4151,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 2,
     soustag: "Conséquence",
-    enonce: "Indiquez une conséquence des demandes des marchands anglophones de la Province de Québec sur l’administration de la colonie.",
+    enonce: "À partir du document A, indiquez une conséquence des demandes des marchands anglophones de la Province of Quebec.",
     aspects: [
       {
         aspect: "Mouvements de revendication"
@@ -4343,7 +4326,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 2,
     soustag: "Cause",
-    enonce: "Indiquez une cause des rivalités entre certaines nations autochtones pour le contrôle de certains territoires.",
+    enonce: "À partir du document A, expliquez pourquoi certaines nations autochtones se disputent le contrôle de certains territoires.",
     aspects: [
       {
         aspect: "Alliances et rivalités au sein des Premières Nations"
@@ -4415,7 +4398,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 2,
     soustag: "Cause",
-    enonce: "Indiquez une cause des alliances entre certaines nations autochtones.",
+    enonce: "À partir du document A, expliquez pourquoi certaines nations autochtones concluent des alliances.",
     aspects: [
       {
         aspect: "Alliances et rivalités au sein des Premières Nations"
@@ -4496,7 +4479,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 2,
     soustag: "Cause",
-    enonce: "Indiquez une cause de l’adoption de prisonniers par certaines nations autochtones.",
+    enonce: "À partir du document A, expliquez pourquoi certaines nations autochtones choisissent-elles d’adopter des prisonniers?",
     aspects: [
       {
         aspect: "Alliances et rivalités au sein des Premières Nations"
@@ -4527,7 +4510,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 2,
     soustag: "Cause",
-    enonce: "Indiquez une cause de l’alliance conclue entre certaines nations autochtones et Samuel de Champlain en 1603.",
+    enonce: "À partir du document A, expliquez pourquoi certaines nations autochtones concluent une alliance avec Samuel de Champlain en 1603 ?",
     aspects: [
       {
         aspect: "Exploration et occupation du territoire par les Français"
@@ -5075,7 +5058,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 2,
     soustag: "Cause",
-    enonce: "Indiquez une cause de la diminution de la population autochtone dans la première moitié du 17e siècle.",
+    enonce: "À partir du document A, indiquez une cause de la diminution de la population autochtone dans la première moitié du 17e siècle.",
     aspects: [
       {
         aspect: "Populations autochtones"
@@ -5106,7 +5089,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 2,
     soustag: "Conséquence",
-    enonce: "Indiquez une conséquence de la présence européenne sur la population autochtone dans la vallée du Saint-Laurent au cours de la première moitié du 17e siècle.",
+    enonce: "À partir du document A, indiquez une conséquence de la présence européenne sur la population autochtone dans la vallée du Saint-Laurent au cours de la première moitié du 17e siècle.",
     aspects: [
       {
         aspect: "Populations autochtones"
@@ -5137,7 +5120,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 2,
     soustag: "Cause",
-    enonce: "Indiquez la cause de l’adoption d’une politique d’immigration par les autorités françaises dans les années 1660.",
+    enonce: "À partir du document A, quelle est la cause de l’adoption d’une politique d’immigration par les autorités françaises dans les années 1660?",
     aspects: [
       {
         aspect: "Croissance de la population"
@@ -5168,7 +5151,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 2,
     soustag: "Conséquence",
-    enonce: "Indiquez une conséquence de l’échec des compagnies à peupler la Nouvelle-France.",
+    enonce: "À partir du document A, indiquez une conséquence de l’échec des compagnies à peupler la Nouvelle-France.",
     aspects: [
       {
         aspect: "Croissance de la population"

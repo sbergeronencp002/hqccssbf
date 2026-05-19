@@ -2428,7 +2428,7 @@ const QUESTIONS = [
     niveau: 4,
     oi: "Situer dans le temps",
     periode: "P8 — De 1980 à nos jours",
-    points: 2,
+    points: 1,
     soustag: "Ordre chronologique",
     enonce: "Les documents A à D présentent des événements liés au statut politique du Québec à partir de 1982. Placez-les par ordre chronologique.",
     aspects: [
@@ -2441,7 +2441,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document A",
+            titre: "Document A - Principaux porte-parole du camp du Oui",
             ref: "camp_oui_1995.png",
             source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
@@ -2472,7 +2472,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document D",
+            titre: "Document D - Signature de la Proclamation de la loi  constitutionnelle canadienne",
             ref: "rapatriment_constitution.png",
             source: "Bibliothèque et Archives Canada."
           }
@@ -2537,7 +2537,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document A",
+            titre: "Document A - Deux nouvelles sociétés d'État",
             ref: "logos_societe_etat.png",
             source: "MEES."
           }
@@ -2902,7 +2902,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document A",
+            titre: "Document A - 1791 à 1840",
             ref: "org_pol_acte_const.png"
           }
         ]
@@ -2911,7 +2911,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document B",
+            titre: "Document B - 1840 à 1848",
             ref: "org_pol_acte_union.png"
           }
         ]
