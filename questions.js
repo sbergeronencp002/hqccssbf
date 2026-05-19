@@ -1625,6 +1625,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q85": {
+    oi: "Situer dans l'espace",
+    colonnes: [
+      "2 points",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève situe les faits dans l'espace."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans l'espace."
+      }
+    ]
   }
 }
 
@@ -1760,6 +1777,9 @@ const IMAGE_DB = {
   },
   "carte_amerique_nord_1700.png": {
     src: "images/carte_amerique_nord_1700.png"
+  },
+  "carte_amerique_nord_1700_lettres.png": {
+    src: "images/carte_amerique_nord_1700_lettres.png"
   }
 }
 
@@ -5259,5 +5279,51 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les Treize colonies ne peuvent prendre de l’expansion ou l’occupation française limite leur expansion ou leur territoire est limité."
+  },
+  {
+    id: "Q85",
+    niveau: 3,
+    oi: "Situer dans l'espace",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Situer 2 éléments",
+    enonce: "À partir du document A, indique les deux lettres correspondant à la Nouvelle-France et aux Treize colonies.",
+    aspects: [
+      {
+        aspect: "Territoire français en Amérique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "carte_amerique_nord_1700_lettres.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "situer-dans-lespace",
+      elements: [
+        "Nouvelle-France",
+        "Treize colonies"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Nouvelle-France",
+        "Treize colonies"
+      ],
+      rangees: [
+        [
+          "B",
+          "C"
+        ]
+      ]
+    }
   }
 ]
