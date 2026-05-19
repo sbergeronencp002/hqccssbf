@@ -1891,6 +1891,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "deportation_acadien.png",
+            soustitre: "La déportation des Acadiens",
             source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
         ]
@@ -1911,6 +1912,7 @@ const QUESTIONS = [
           {
             titre: "Document C",
             ref: "revolte_pontiact.png",
+            soustitre: "La révolte de Pontiac",
             source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
         ]
