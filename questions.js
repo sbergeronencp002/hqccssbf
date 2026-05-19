@@ -3955,7 +3955,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 2,
     soustag: "Conséquence",
-    enonce: "À partir du document A, indiquez une conséquence de l’utilisation des voies d’eau sur les échanges entre les nations autochtones.",
+    enonce: "Indiquez une conséquence de l’utilisation des voies d’eau sur les échanges entre les nations autochtones.",
     aspects: [
       {
         aspect: "Réseaux d'échange autochtones"
