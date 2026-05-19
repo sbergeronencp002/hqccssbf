@@ -4120,7 +4120,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 2,
     soustag: "Cause",
-    enonce: "indiquez une cause du rappel de James Murray en Angleterre au début du Régime britannique.",
+    enonce: "Indiquez une cause du rappel de James Murray en Angleterre au début du Régime britannique.",
     aspects: [
       {
         aspect: "Mouvements de revendication"
