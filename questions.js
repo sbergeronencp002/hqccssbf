@@ -5120,7 +5120,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 2,
     soustag: "Cause",
-    enonce: "À partir du document A, quelle est la cause de l’adoption d’une politique d’immigration par les autorités françaises dans les années 1660?",
+    enonce: "Indiquez la cause de l’adoption d’une politique d’immigration par les autorités françaises dans les années 1660.",
     aspects: [
       {
         aspect: "Croissance de la population"
