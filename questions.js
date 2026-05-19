@@ -5151,7 +5151,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 2,
     soustag: "Conséquence",
-    enonce: "À partir du document A, indiquez une conséquence de l’échec des compagnies à peupler la Nouvelle-France.",
+    enonce: "Indiquez une conséquence de l’échec des compagnies à peupler la Nouvelle-France.",
     aspects: [
       {
         aspect: "Croissance de la population"
