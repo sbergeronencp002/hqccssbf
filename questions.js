@@ -1642,6 +1642,28 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans l'espace."
       }
     ]
+  },
+  "Q86": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
   }
 }
 
@@ -5322,6 +5344,82 @@ const QUESTIONS = [
         [
           "B",
           "C"
+        ]
+      ]
+    }
+  },
+  {
+    id: "Q86",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "4 éléments",
+    enonce: "Les documents A à D présentent des faits liés aux missions et aux villages domiciliés en Nouvelle-France. Indiquez à l’endroit approprié la lettre de chacun des documents.",
+    aspects: [
+      {
+        aspect: "Populations autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les missionnaires jésuites établissent [des postes religieux] dans les territoires autochtones afin d’y annoncer l’Évangile et de convertir les Amérindiens au catholicisme. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1, Québec, Septentrion, 1995."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Kahnawake, Odanak et Wendake [...] où vivent des Autochtones alliés aux Français tout en conservant plusieurs de leurs traditions. »",
+            source: "acques Lacoursière, Histoire populaire du Québec, tome 1, Québec, Septentrion, 1995."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« En Huronie, les Jésuites fondent des [...] permanentes pour évangéliser les Wendats et renforcer l’influence française auprès de leurs alliés. »",
+            source: "Allan Greer, Brève histoire des peuples de la Nouvelle-France, Montréal, Boréal, 1998."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Ces communautés établies près de Montréal, Québec ou Trois-Rivières permettent aux autorités françaises de consolider leurs alliances militaires et commerciales avec les Premières Nations. »",
+            source: "Denys Delâge, Le pays renversé, Montréal, Boréal, 1991."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Missions",
+        "Villages domiciliés"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Missions",
+        "Villages domiciliés"
+      ],
+      rangees: [
+        [
+          "A et C",
+          "B et D"
         ]
       ]
     }
