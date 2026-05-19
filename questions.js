@@ -3702,7 +3702,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "À partir du document A, nommez une pratique qui favorise la solidarité au sein des sociétés autochtones.",
+    enonce: "Nommez une pratique qui favorise la solidarité au sein des sociétés autochtones.",
     aspects: [
       {
         aspect: "Rapports sociaux chez les Autochtones"
