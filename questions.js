@@ -2840,7 +2840,7 @@ const QUESTIONS = [
     periode: "P6 — 1896 – 1945",
     points: 2,
     soustag: "Changement",
-    enonce: "À partir du document A, indiquez un changement survenu dans l’économie du Québec durant les années 1930.",
+    enonce: "Indiquez un changement survenu dans l’économie du Québec durant les années 1930.",
     aspects: [
       {
         aspect: "Grande dépression"
