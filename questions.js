@@ -3672,7 +3672,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "À partir du document A, nommez une façon dont les enfants autochtones acquièrent les connaissances nécessaires à la vie en communauté.",
+    enonce: "Nommez une façon dont les enfants autochtones acquièrent les connaissances nécessaires à la vie en communauté.",
     aspects: [
       {
         aspect: "Rapports sociaux chez les Autochtones"
