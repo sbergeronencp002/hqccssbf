@@ -3561,7 +3561,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "À partir du document A, nommez un rôle joué par le chaman dans les sociétés autochtones.",
+    enonce: "Nommez un rôle joué par le chaman chez les sociétés autochtones.",
     aspects: [
       {
         aspect: "Rapports sociaux chez les Autochtones"
