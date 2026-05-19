@@ -2130,8 +2130,9 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document B - Recensement des célibataires de la Nouvelle-France en 1666",
-            ref: "recensement_colonie_n-f.png"
+            titre: "Document B",
+            ref: "recensement_colonie_n-f.png",
+            soustitre: "Recensement des célibataires de la Nouvelle-France en 1666"
           }
         ]
       }
