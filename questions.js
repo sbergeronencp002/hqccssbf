@@ -3864,7 +3864,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "À partir du document A, nommez les personnes qui désignent les chefs dans les sociétés iroquoiennes.",
+    enonce: "Nommez le groupe de personnes qui désignent les chefs dans les sociétés iroquoiennes.",
     aspects: [
       {
         aspect: "Prise de décision chez les Autochtones"
