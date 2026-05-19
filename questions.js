@@ -4151,7 +4151,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 2,
     soustag: "Conséquence",
-    enonce: "À partir du document A, indiquez une conséquence des demandes des marchands anglophones de la Province of Quebec.",
+    enonce: "Indiquez une conséquence des demandes des marchands anglophones de la Province de Québec sur l’administration de la colonie.",
     aspects: [
       {
         aspect: "Mouvements de revendication"
