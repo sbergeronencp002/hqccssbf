@@ -507,7 +507,9 @@ function renderDoc(d) {
     let html = '<table style="width:100%;border-collapse:collapse;margin-bottom:8px"><tr>';
     d.cols.forEach(function(col) {
       html += '<td style="width:' + Math.floor(100/d.cols.length) + '%;padding:6px;vertical-align:top;border:0.5px solid var(--border)">';
-      html += '<div style="font-size:0.75rem;font-weight:600;margin-bottom:4px;color:var(--ink)">' + col.titre + '</div>';
+      html += '<div style="font-size:0.75rem;font-weight:600;color:var(--ink)">' + col.titre + '</div>';
+      if(col.soustitre) html += '<div style="font-size:0.7rem;font-style:italic;color:var(--ink-2);margin-bottom:4px">' + col.soustitre + '</div>';
+      else html += '<div style="margin-bottom:4px"></div>';
       if(col.texte) {
         const plain = col.texte.replace(/\*\*(.*?)\*\*/g,'$1');
         const isLong = plain.length > 120;
@@ -765,7 +767,9 @@ function previsualiser(guideMode) {
             d.cols.forEach(function(col) {
               const img = IMAGE_DB[col.ref];
               docsHtml += '<td style="width:' + Math.floor(100/d.cols.length) + '%;padding:6px;vertical-align:top;border:0.5px solid var(--border)">';
-              docsHtml += '<div style="font-size:0.75rem;font-weight:600;margin-bottom:4px;color:var(--ink)">' + col.titre + '</div>';
+              docsHtml += '<div style="font-size:0.75rem;font-weight:600;color:var(--ink)">' + col.titre + '</div>';
+              if(col.soustitre) docsHtml += '<div style="font-size:0.7rem;font-style:italic;color:var(--ink-2);margin-bottom:4px">' + col.soustitre + '</div>';
+              else docsHtml += '<div style="margin-bottom:4px"></div>';
               if(col.texte) {
                 docsHtml += '<div style="font-size:0.72rem;color:var(--ink-2);line-height:1.5">' + formatTexte(col.texte) + '</div>';
               } else if(img) {
@@ -1467,6 +1471,7 @@ async function genererDocx(includeGuide=false) {
             const textCells = d.cols.map(col => {
               const cellChildren = [];
               cellChildren.push(new Paragraph({ children: [new TextRun({ text: col.titre || '', font: 'Aptos', size: 20, bold: true })] }));
+              if(col.soustitre) cellChildren.push(new Paragraph({ children: [new TextRun({ text: col.soustitre, font: 'Aptos', size: 18, italics: true })] }));
               if(col.texte) {
                 col.texte.split('\n').forEach(line => { cellChildren.push(mkLine(line, 'Aptos', 20)); });
               }
