@@ -3894,7 +3894,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "À partir du document A, nommez la pratique utilisée par les Premières Nations pour échanger des biens.",
+    enonce: "Nommez la pratique utilisée par les groupes autochtones pour échanger des biens.",
     aspects: [
       {
         aspect: "Réseaux d'échange autochtones"
