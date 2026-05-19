@@ -4398,7 +4398,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 2,
     soustag: "Cause",
-    enonce: "À partir du document A, expliquez pourquoi certaines nations autochtones concluent des alliances.",
+    enonce: "Indiquez une cause des alliances entre certaines nations autochtones.",
     aspects: [
       {
         aspect: "Alliances et rivalités au sein des Premières Nations"
