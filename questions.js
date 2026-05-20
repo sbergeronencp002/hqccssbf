@@ -1969,6 +1969,28 @@ const REGLETTES = {
         desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
       }
     ]
+  },
+  "Q101": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (3 sur 3)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (2 sur 3)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
+      }
+    ]
   }
 }
 
@@ -6517,5 +6539,73 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "La bourgeoisie anglophone est en faveur (ou en faveur de l’union) (la différence), alors que le clergé et la bourgeoisie professionnelle francophone s’y opposent (la similitude). \noo\nLa bourgeoisie anglophone est en faveur (ou en faveur de l’union) (la différence), contrairement aux deux autres groupes (la similitude)."
+  },
+  {
+    id: "Q101",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    enonce: "Les documents A à C présentent les réactions de différents groupes à la suite du Rapport Durham. Associez chaque position au groupe correspondant.",
+    aspects: [
+      {
+        aspect: "Rapport Durham"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les professions libérales rejettent vigoureusement les conclusions de Durham, voyant dans l’union un instrument destiné à faire disparaître la nationalité canadienne-française. »",
+            source: "Jean-Paul BERNARD, Les Rouges, Montréal, Presses de l’Université du Québec, 1971."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les marchands britanniques appuient l’union des deux Canadas, convaincus qu’elle facilitera le commerce et permettra de mieux financer les infrastructures nécessaires au développement économique. »",
+            source: "Brian YOUNG, In Its Corporate Capacity, Montréal, McGill-Queen’s University Press, 1986."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« [...] Mgr Jean-Jacques Lartigue, considère que l’union des deux Canadas pourrait favoriser le retour à la paix et à l’ordre, à condition que les droits de l’Église catholique soient respectés. »",
+            source: "Jean HAMELIN et Nicole GAGNON, Histoire du catholicisme québécois, Montréal, Boréal, 1984."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Bourgeoisie anglophone",
+        "Bourgeoisie professionnelle francophone",
+        "Clergé catholique"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Bourgeoisie anglophone ",
+        "Bourgeoisie professionnelle francophone ",
+        "Clergé catholique"
+      ],
+      rangees: [
+        [
+          "B",
+          "A",
+          "C"
+        ]
+      ]
+    }
   }
 ]
