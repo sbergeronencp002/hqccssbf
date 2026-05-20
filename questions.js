@@ -1725,6 +1725,23 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
       }
     ]
+  },
+  "Q90": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "2 points",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève situe tous les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas tous les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -1878,6 +1895,9 @@ const IMAGE_DB = {
   },
   "jacques_cartier_1534.png": {
     src: "images/jacques_cartier_1534.png"
+  },
+  "ligne_abDc.png": {
+    src: "images/ligne_abDc.png"
   }
 }
 
@@ -5693,5 +5713,76 @@ const QUESTIONS = [
         ]
       ]
     }
+  },
+  {
+    id: "Q90",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Ordre chronologique",
+    enonce: "Les documents A à D présentent des événements survenus durant le Régime britannique. Placez ces documents par ordre chronologique.",
+    aspects: [
+      {
+        aspect: "Instructions au gouverneur Murray"
+      },
+      {
+        aspect: "Proclamation royale"
+      },
+      {
+        aspect: "Régime militaire"
+      },
+      {
+        aspect: "Statut des Indiens"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Frères! […] Quand les Anglais vous ont offensés, ils nous ont offensés aussi. Je sais qu’ils vous ont désarmés et vous ont contraints de signer un traité […] Je ne vous demande pas votre concours direct, car vous ne pouvez me l’apporter : je ne demande que des provisions pour mes combattants. »",
+            auteur: "Un chef amérindien s’adressant aux Canadiens  établis dans la région de Détroit",
+            source: "Noël VALLERAND et Robert LAHAISE, L’Amérique du Nord britannique, 1760-1867 : les Canadiens  français, la colonisation britannique et la formation du Canada continental, Montréal, Kébékédit, 1974,  p. 11."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« […] sous la haute autorité du général en chef Amherst […], tout le pays sera sous la surveillance de l’armée anglaise […] \n\nComme le Canada n’est que provisoirement possession britannique, […] [on] va respecter autant que possible les structures du régime français. »",
+            source: "Marcel TRUDEL, Initiation à la Nouvelle-France : histoire et  institutions, Montréal, Éditions HRW, 1971, p. 111 et 113."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Le 8 septembre 1760, le gouverneur Pierre de Rigaud de Vaudreuil signe [...]. Par cet acte, toute la Nouvelle-France passe sous le contrôle de la Grande-Bretagne, mettant fin au Régime français en Amérique du Nord. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1, Éditions du Septentrion, 1995."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Après la Conquête, les Britanniques réorganisent la colonie selon leurs institutions politiques et juridiques, ce qui transforme le gouvernement et réduit les droits politiques des Canadiens catholiques. »",
+            source: "Beaulieu, Alain, et al. Les Autochtones du Québec : des premières alliances aux revendications contemporaines. Montréal : Boréal, 2013."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_abDc.png"
+    },
+    guide: "C – B – D – A."
   }
 ]
