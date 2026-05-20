@@ -1825,6 +1825,28 @@ const REGLETTES = {
       "0 point"
     ],
     niveaux: []
+  },
+  "Q95": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
   }
 }
 
@@ -1984,6 +2006,12 @@ const IMAGE_DB = {
   },
   "commence_fourrure_n-f.png": {
     src: "images/commence_fourrure_n-f.png"
+  },
+  "carte_terr_acte_quebec.png": {
+    src: "images/carte_terr_acte_quebec.png"
+  },
+  "carte_terr_proclamation_royale.png": {
+    src: "images/carte_terr_proclamation_royale.png"
   }
 }
 
@@ -6053,5 +6081,85 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Il y a changement, car après la Conquête, des marchands britanniques prennent part au commerce des fourrures. OU Il y a continuité, car entre 1713 et 1783, les Amérindiens (ou les Canadiens) sont des acteurs importants dans le commerce des fourrures. OU Il y a continuité, car après la Conquête, la fourrure est toujours le principal produit d’exportation dans la colonie."
+  },
+  {
+    id: "Q95",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "4 éléments",
+    enonce: "Les documents A à D font référence à la Proclamation royale et à l’Acte de Québec. Indiquez à l’endroit approprié la lettre correspondant à chacun des documents.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      },
+      {
+        aspect: "Proclamation royale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« [...] les autorités britanniques réservent aux Premières Nations les territoires situés à l’ouest des Appalaches afin de limiter l’expansion des Treize colonies et de maintenir la paix sur la frontière. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 2, Québec, Septentrion, 1995."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "carte_terr_acte_quebec.png",
+            source: "Récitus."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "carte_terr_proclamation_royale.png",
+            source: "Récitus."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« [...] les limites de la Province de Québec sont étendues jusqu’aux Grands Lacs et à la vallée de l’Ohio, ce qui agrandit considérablement le territoire administré depuis Québec. »",
+            source: "Marcel Trudel, Initiation à la Nouvelle-France, Montréal, Holt, Rinehart et Winston, 1968."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Proclamation royale",
+        "Acte de Québec"
+      ],
+      double: true
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Proclamation royale",
+        "Acte de Québec"
+      ],
+      rangees: [
+        [
+          "A et C",
+          "B et D"
+        ]
+      ]
+    }
   }
 ]
