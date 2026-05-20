@@ -2035,6 +2035,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"
       }
     ]
+  },
+  "Q104": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "2 points",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève situe tous les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas tous les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -6784,5 +6801,68 @@ const QUESTIONS = [
         ]
       ]
     }
+  },
+  {
+    id: "Q104",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Ordre chronologique",
+    enonce: "Les documents A à D présentent des événements liés aux soulèvements de 1837-1838. Placez ces documents par ordre chronologique.",
+    aspects: [
+      {
+        aspect: "Soulèvements de 1837-1838"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "execution_patriotes.png",
+            soustitre: "Exécution des Patriotes",
+            source: "Bibliothèque et Archives Canada/C-013493."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les résolutions Russell ferment la porte à toute réforme constitutionnelle sérieuse. En refusant les principales revendications des Patriotes, Londres confirme que les Canadiens français n’obtiendront aucun véritable contrôle sur leur gouvernement. »",
+            source: "Gilles Laporte, Patriotes et Loyaux : mobilisation politique et leadership régional en 1837 et 1838, Québec, Septentrion, 2004."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les 92 Résolutions constituent le programme politique le plus complet jamais formulé par le Parti patriote pour réclamer une véritable démocratie parlementaire. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 3, Québec, Septentrion, 1996."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            ref: "bataille_st-eustache.png",
+            soustitre: "Bataille de Saint-Eustache",
+            source: "Bibliothèque et Archives Canada/C-000396."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_abDc.png"
+    },
+    guide: "C - B - D - A"
   }
 ]
