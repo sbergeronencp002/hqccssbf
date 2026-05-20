@@ -2052,6 +2052,28 @@ const REGLETTES = {
         desc: "L'élève ne situe pas tous les faits dans le temps."
       }
     ]
+  },
+  "Q105": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -2220,6 +2242,9 @@ const IMAGE_DB = {
   },
   "bataille_st-eustache.png": {
     src: "images/bataille_st-eustache.png"
+  },
+  "exportations_bois_1800_1840.png": {
+    src: "images/exportations_bois_1800_1840.png"
   }
 }
 
@@ -6864,5 +6889,37 @@ const QUESTIONS = [
       ref: "ligne_abDc.png"
     },
     guide: "C - B - D - A"
+  },
+  {
+    id: "Q105",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de la mise en place de tarifs préférentiels par la métropole britannique sur le commerce du bois dans les colonies.",
+    aspects: [
+      {
+        aspect: "Commerce du bois"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "exportations_bois_1800_1840.png",
+            soustitre: "Exportations de bois vers la Grande-Bretagne",
+            source: "Données approximatives reconstituées à des fins pédagogiques à partir de synthèses historiques sur le commerce du bois au Bas-Canada."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les exportations de bois des colonies vers la Grande-Bretagne augmentent fortement."
   }
 ]
