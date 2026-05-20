@@ -58,7 +58,8 @@ function populateFilters() {
     if(!aspectsByPeriode[p]) return [];
     return [...aspectsByPeriode[p]].sort((a,b)=>a.localeCompare(b,'fr')).map(a=>({aspect:a, periode:p}));
   });
-  const periodes = [...new Set(QUESTIONS.map(q=>q.periode))];
+  const periodesPresentes = new Set(QUESTIONS.map(q=>q.periode));
+  const periodes = periodeOrder.filter(p => periodesPresentes.has(p));
 
   fill('f-periode', periodes, "Toutes");
   fillAspect('f-aspect', aspects, periodeOrder);
