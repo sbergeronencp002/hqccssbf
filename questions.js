@@ -1913,6 +1913,34 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
       }
     ]
+  },
+  "Q99": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -2087,6 +2115,12 @@ const IMAGE_DB = {
   },
   "1760-1840_accroissement_naturel.png": {
     src: "images/1760-1840_accroissement_naturel.png"
+  },
+  "1791-1840_grosse_ile.png": {
+    src: "images/1791-1840_grosse_ile.png"
+  },
+  "1820_immigration_irlandaise.png": {
+    src: "images/1820_immigration_irlandaise.png"
   }
 }
 
@@ -6350,5 +6384,56 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Le nombre de naissances demeure supérieur au nombre de décès ou le taux de natalité demeure élevé ou l’accroissement naturel demeure la principale cause de la croissance de la population."
+  },
+  {
+    id: "Q99",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    enonce: "Expliquez comment l’état de santé des immigrants des îles Britanniques à leur arrivée dans la colonie amène les autorités à agir au cours de la première moitié du 19e siècle. \n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux. \n\n• L’état de santé des immigrants des îles Britanniques à leur arrivée dans la colonie\n• Un problème de santé publique dans la colonie\n• Une action des autorités coloniales à Grosse-Île",
+    aspects: [
+      {
+        aspect: "Mouvements migratoires"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "1791-1840_grosse_ile.png",
+            soustitre: "Grosse-Île et l’accueil des immigrants",
+            source: "Bibliothèque et Archives Canada, C-013656; image modifiée par Sébastien Bergeron, 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Depuis lundi matin, Montréal est dans la consternation et l’alarme croît à chaque instant. Il n’y a plus de doute sur l’existence du choléra, et nous recommandons au public la stricte observation des Règlements du Bureau sanitaire. »",
+            source: "Extrait du journal La Minerve, 14 juin 1832."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "1820_immigration_irlandaise.png",
+            source: "The Illustrated London News/Bibliothèque et Archives Canada/C-006556; image modifiée par Sébastien Bergeron, 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 5
+    },
+    guide: "Les immigrants sont malades (ou affaiblis) à leur arrivée dans la colonie (L’état de santé des immigrants des îles Britanniques à leur arrivée dans la colonie), ce qui contribue à propager des épidémies (ou le choléra) dans la population (Un problème de santé publique dans la colonie). Cette situation amène les autorités coloniales à mettre en place une station de quarantaine (ou un hôpital) à Grosse-Île ou à isoler les immigrants à Grosse-Île (Une action des autorités coloniales à Grosse-Île)."
   }
 ]
