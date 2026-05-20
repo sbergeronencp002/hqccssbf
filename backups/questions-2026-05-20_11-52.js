@@ -1969,50 +1969,6 @@ const REGLETTES = {
         desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
       }
     ]
-  },
-  "Q101": {
-    oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
-      }
-    ]
-  },
-  "Q102": {
-    oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
-      }
-    ]
   }
 }
 
@@ -2037,6 +1993,12 @@ const IMAGE_DB = {
   },
   "loyalistes_province_quebec.png": {
     src: "images/loyalistes_province_quebec.png"
+  },
+  "recensement_colonie.png": {
+    src: "images/recensement_colonie.png"
+  },
+  "commerce_fourrures.png": {
+    src: "images/commerce_fourrures.png"
   },
   "territoire_acte_const.png": {
     src: "images/territoire_acte_const.png"
@@ -2077,6 +2039,9 @@ const IMAGE_DB = {
   "org_pol_acte_union.png": {
     src: "images/org_pol_acte_union.png"
   },
+  "tableau_traite_recipricite_exportations.png": {
+    src: "images/tableau_traite_recipricite_exportations.png"
+  },
   "org_pol_acte_const.png": {
     src: "images/org_pol_acte_const.png"
   },
@@ -2104,11 +2069,17 @@ const IMAGE_DB = {
   "1500_reseau_echanges.png": {
     src: "images/1500_reseau_echanges.png"
   },
+  "cause_rivalite_coloniale.png": {
+    src: "images/cause_rivalite_coloniale.png"
+  },
   "cause_rivalites_coloniales.png": {
     src: "images/cause_rivalites_coloniales.png"
   },
   "recensement_colonie_n-f.png": {
     src: "images/recensement_colonie_n-f.png"
+  },
+  "echanges_canada_etats-unis_1850.png": {
+    src: "images/echanges_canada_etats-unis_1850.png"
   },
   "echanges_canada_etats-unis_1850-1860.png": {
     src: "images/echanges_canada_etats-unis_1850-1860.png"
@@ -2118,6 +2089,9 @@ const IMAGE_DB = {
   },
   "james_murray.png": {
     src: "images/james_murray.png"
+  },
+  "image_jacques_cartier_1534.png": {
+    src: "images/image_jacques_cartier_1534.png"
   },
   "ligne_1475-1575.png": {
     src: "images/ligne_1475-1575.png"
@@ -6543,141 +6517,5 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "La bourgeoisie anglophone est en faveur (ou en faveur de l’union) (la différence), alors que le clergé et la bourgeoisie professionnelle francophone s’y opposent (la similitude). \noo\nLa bourgeoisie anglophone est en faveur (ou en faveur de l’union) (la différence), contrairement aux deux autres groupes (la similitude)."
-  },
-  {
-    id: "Q101",
-    niveau: 3,
-    oi: "Mettre en relation des faits",
-    periode: "P4 — 1791 – 1840",
-    points: 2,
-    enonce: "Les documents A à C présentent les réactions de différents groupes à la suite du Rapport Durham. Associez chaque position au groupe correspondant.",
-    aspects: [
-      {
-        aspect: "Rapport Durham"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            texte: "« Les professions libérales rejettent vigoureusement les conclusions de Durham, voyant dans l’union un instrument destiné à faire disparaître la nationalité canadienne-française. »",
-            source: "Jean-Paul BERNARD, Les Rouges, Montréal, Presses de l’Université du Québec, 1971."
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            texte: "« Les marchands britanniques appuient l’union des deux Canadas, convaincus qu’elle facilitera le commerce et permettra de mieux financer les infrastructures nécessaires au développement économique. »",
-            source: "Brian YOUNG, In Its Corporate Capacity, Montréal, McGill-Queen’s University Press, 1986."
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document C",
-            texte: "« [...] Mgr Jean-Jacques Lartigue, considère que l’union des deux Canadas pourrait favoriser le retour à la paix et à l’ordre, à condition que les droits de l’Église catholique soient respectés. »",
-            source: "Jean HAMELIN et Nicole GAGNON, Histoire du catholicisme québécois, Montréal, Boréal, 1984."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "mettre-en-relation",
-      elements: [
-        "Bourgeoisie anglophone",
-        "Bourgeoisie professionnelle francophone",
-        "Clergé catholique"
-      ]
-    },
-    guide: {
-      type: "grille",
-      entetes: [
-        "Bourgeoisie anglophone ",
-        "Bourgeoisie professionnelle francophone ",
-        "Clergé catholique"
-      ],
-      rangees: [
-        [
-          "B",
-          "A",
-          "C"
-        ]
-      ]
-    }
-  },
-  {
-    id: "Q102",
-    niveau: 3,
-    oi: "Mettre en relation des faits",
-    periode: "P4 — 1791 – 1840",
-    points: 2,
-    enonce: "Les documents A à C présentent les réactions de différents groupes à la suite du Rapport Durham. Associez chaque position au groupe correspondant.",
-    aspects: [
-      {
-        aspect: "Rapport Durham"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            texte: "« [Il] accueille favorablement les recommandations de Durham, car il espère que l’union politique mettra fin aux tensions et permettra à l’Église de conserver son influence sur la société canadienne-française. »",
-            source: "Jacques LACOURSIÈRE, Histoire populaire du Québec, tome 3, Québec, Septentrion, 1996."
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            texte: "« Les milieux d’affaires voient dans l’union des Canadas une mesure nécessaire pour assurer la stabilité politique et stimuler la croissance économique de la colonie. »",
-            source: "Gilles PAQUET et Jean-Pierre WALLOT, Patronage et pouvoir, Montréal, Boréal, 1973."
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document C",
-            texte: "« Pour [ses membres], l’union des Canadas signifie la perte du contrôle politique exercé par la majorité canadienne-française au Bas-Canada. »",
-            source: "Allan GREER, Patriotes et peuple du Bas-Canada, Montréal, Boréal, 1997."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "mettre-en-relation",
-      elements: [
-        "Bourgeoisie anglophone",
-        "Bourgeoisie professionnelle francophone",
-        "Clergé catholique"
-      ]
-    },
-    guide: {
-      type: "grille",
-      entetes: [
-        "Bourgeoisie anglophone ",
-        "Bourgeoisie professionnelle francophone ",
-        "Clergé catholique"
-      ],
-      rangees: [
-        [
-          "B",
-          "C",
-          "A"
-        ]
-      ]
-    }
   }
 ]
