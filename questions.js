@@ -1814,6 +1814,17 @@ const REGLETTES = {
         desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
       }
     ]
+  },
+  "Q94": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
   }
 }
 
@@ -1970,6 +1981,9 @@ const IMAGE_DB = {
   },
   "ligne_abDc.png": {
     src: "images/ligne_abDc.png"
+  },
+  "commence_fourrure_n-f.png": {
+    src: "images/commence_fourrure_n-f.png"
   }
 }
 
@@ -5996,5 +6010,48 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Gilles Havard soutient que le départ des élites françaises est important, tandis que Marcel Trudel et Jean Hamelin estiment qu’il est limité."
+  },
+  {
+    id: "Q94",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A à C, indiquez s’il y a changement ou continuité dans le commerce des fourrures dans la colonie. Justifiez votre choix par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Économie coloniale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "commence_fourrure_n-f.png",
+            soustitre: "1713 à 1760",
+            source: "Illustration générée par ChatGPT (OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« La traite des fourrures [est] une activité économique importante après la Conquête. La nouvelle \nbourgeoisie marchande d’origine britannique, déjà très active dans le commerce transatlantique, \nparticipe de plus en plus au commerce [des fourrures]. Toutefois, ce sont les Canadiens qui \ntravaillent sur le terrain, car ils connaissent le territoire et possèdent l’expertise nécessaire pour \nfaire la traite avec les Autochtones. »",
+            soustitre: "1760 à 1783",
+            source: "Christophe HORGUELIN et autres, Fresques, manuel de l’élève, histoire et éducation à la citoyenneté, 2e année du 2e cycle du secondaire, Montréal, Graficor, 2008, t. 1, p. 177."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Il y a changement, car après la Conquête, des marchands britanniques prennent part au commerce des fourrures. OU Il y a continuité, car entre 1713 et 1783, les Amérindiens (ou les Canadiens) sont des acteurs importants dans le commerce des fourrures. OU Il y a continuité, car après la Conquête, la fourrure est toujours le principal produit d’exportation dans la colonie."
   }
 ]
