@@ -2013,6 +2013,28 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
       }
     ]
+  },
+  "Q103": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève situe tous les faits dans le temps. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève situe certains faits dans le temps. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"
+      }
+    ]
   }
 }
 
@@ -2175,6 +2197,12 @@ const IMAGE_DB = {
   },
   "1820_immigration_irlandaise.png": {
     src: "images/1820_immigration_irlandaise.png"
+  },
+  "execution_patriotes.png": {
+    src: "images/execution_patriotes.png"
+  },
+  "bataille_st-eustache.png": {
+    src: "images/bataille_st-eustache.png"
   }
 }
 
@@ -6676,6 +6704,83 @@ const QUESTIONS = [
           "B",
           "C",
           "A"
+        ]
+      ]
+    }
+  },
+  {
+    id: "Q103",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Avant et après",
+    enonce: "Les documents A à D font référence aux soulèvements de 1837-1838. Indiquez si les faits présentés dans ces documents se déroulent avant ou après l’Assemblée des Six-Comtés.",
+    aspects: [
+      {
+        aspect: "Soulèvements de 1837-1838"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "execution_patriotes.png",
+            soustitre: "Exécution des Patriotes",
+            source: "Bibliothèque et Archives Canada/C-013493."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les résolutions Russell ferment la porte à toute réforme constitutionnelle sérieuse. En refusant les principales revendications des Patriotes, Londres confirme que les Canadiens français n’obtiendront aucun véritable contrôle sur leur gouvernement. »",
+            source: "Gilles Laporte, Patriotes et Loyaux : mobilisation politique et leadership régional en 1837 et 1838, Québec, Septentrion, 2004."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les 92 Résolutions constituent le programme politique le plus complet jamais formulé par le Parti patriote pour réclamer une véritable démocratie parlementaire. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 3, Québec, Septentrion, 1996."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            ref: "bataille_st-eustache.png",
+            soustitre: "Bataille de Saint-Eustache",
+            source: "Bibliothèque et Archives Canada/C-000396."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "avant-apres",
+      label: "L’Assemblée des Six-Comtés"
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Avant",
+        "Assemblée des Six-Comtés",
+        "Après"
+      ],
+      rangees: [
+        [
+          "B et C",
+          "",
+          "A et D"
         ]
       ]
     }
