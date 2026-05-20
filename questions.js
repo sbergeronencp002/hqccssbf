@@ -1686,6 +1686,23 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
       }
     ]
+  },
+  "Q88": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -1830,6 +1847,12 @@ const IMAGE_DB = {
   },
   "education_n-f.jpg": {
     src: "images/education_n-f.jpg"
+  },
+  "debarquement_plaines_abraham.png": {
+    src: "images/debarquement_plaines_abraham.png"
+  },
+  "ligne_1600-1800.png": {
+    src: "images/ligne_1600-1800.png"
   }
 }
 
@@ -5521,5 +5544,36 @@ const QUESTIONS = [
         ]
       ]
     }
+  },
+  {
+    id: "Q88",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Guerre de la Conquête"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "debarquement_plaines_abraham.png",
+            source: "Hervey Smyth, A View of the Taking of Quebec, September 13, 1759, vers 1760, Library and Archives Canada, C-000342."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1600-1800.png"
+    },
+    guide: "D"
   }
 ]
