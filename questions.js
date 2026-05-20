@@ -1853,6 +1853,9 @@ const IMAGE_DB = {
   },
   "ligne_1600-1800.png": {
     src: "images/ligne_1600-1800.png"
+  },
+  "jacques_cartier_1534.png": {
+    src: "images/jacques_cartier_1534.png"
   }
 }
 
@@ -5031,8 +5034,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "image_jacques_cartier_1534.png",
-            source: "Récitus."
+            ref: "jacques_cartier_1534.png",
+            source: "C. W. Jefferys, Jacques Cartier at Gaspé, 1534, domaine public."
           }
         ]
       }
