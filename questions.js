@@ -1847,6 +1847,28 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
       }
     ]
+  },
+  "Q96": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -6161,5 +6183,45 @@ const QUESTIONS = [
         ]
       ]
     }
+  },
+  {
+    id: "Q96",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    enonce: "Indiquez un changement dans le commerce des fourrures dans la colonie à la suite de la guerre de la Conquête.",
+    aspects: [
+      {
+        aspect: "Économie coloniale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après 1760, les négociants britanniques prennent rapidement le contrôle du commerce des fourrures, activité jusque-là dominée par les marchands canadiens et français. »",
+            source: "Marcel Trudel, Initiation à la Nouvelle-France, Montréal, Holt, Rinehart et Winston, 1968."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« À la suite de la Conquête, des marchands venus de Grande-Bretagne s’imposent dans les réseaux commerciaux de la colonie et prennent une place importante dans la traite des fourrures. »",
+            source: "Jacques Mathieu, La Nouvelle-France : Les Français en Amérique du Nord, Québec, Les Presses de l'Université Laval, 1991."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Après la Conquête, des marchands britanniques remplacent progressivement les marchands français dans le commerce des fourrures."
   }
 ]
