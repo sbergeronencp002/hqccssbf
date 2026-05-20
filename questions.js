@@ -2074,6 +2074,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q106": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -6921,5 +6943,37 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les exportations de bois des colonies vers la Grande-Bretagne augmentent fortement."
+  },
+  {
+    id: "Q106",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Changement",
+    enonce: "Indiquez un changement dans les exportations de bois vers la Grande-Bretagne au début du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Commerce du bois"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "exportations_bois_1800_1840.png",
+            soustitre: "Exportations de bois vers la Grande-Bretagne",
+            source: "Données approximatives reconstituées à des fins pédagogiques à partir de synthèses historiques sur le commerce du bois au Bas-Canada."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les exportations de bois des colonies vers la Grande-Bretagne augmentent fortement après 1806."
   }
 ]
