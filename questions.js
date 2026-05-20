@@ -1916,12 +1916,6 @@ const IMAGE_DB = {
   "loyalistes_province_quebec.png": {
     src: "images/loyalistes_province_quebec.png"
   },
-  "recensement_colonie.png": {
-    src: "images/recensement_colonie.png"
-  },
-  "commerce_fourrures.png": {
-    src: "images/commerce_fourrures.png"
-  },
   "territoire_acte_const.png": {
     src: "images/territoire_acte_const.png"
   },
@@ -1961,9 +1955,6 @@ const IMAGE_DB = {
   "org_pol_acte_union.png": {
     src: "images/org_pol_acte_union.png"
   },
-  "tableau_traite_recipricite_exportations.png": {
-    src: "images/tableau_traite_recipricite_exportations.png"
-  },
   "org_pol_acte_const.png": {
     src: "images/org_pol_acte_const.png"
   },
@@ -1991,17 +1982,11 @@ const IMAGE_DB = {
   "1500_reseau_echanges.png": {
     src: "images/1500_reseau_echanges.png"
   },
-  "cause_rivalite_coloniale.png": {
-    src: "images/cause_rivalite_coloniale.png"
-  },
   "cause_rivalites_coloniales.png": {
     src: "images/cause_rivalites_coloniales.png"
   },
   "recensement_colonie_n-f.png": {
     src: "images/recensement_colonie_n-f.png"
-  },
-  "echanges_canada_etats-unis_1850.png": {
-    src: "images/echanges_canada_etats-unis_1850.png"
   },
   "echanges_canada_etats-unis_1850-1860.png": {
     src: "images/echanges_canada_etats-unis_1850-1860.png"
@@ -2011,9 +1996,6 @@ const IMAGE_DB = {
   },
   "james_murray.png": {
     src: "images/james_murray.png"
-  },
-  "image_jacques_cartier_1534.png": {
-    src: "images/image_jacques_cartier_1534.png"
   },
   "ligne_1475-1575.png": {
     src: "images/ligne_1475-1575.png"
