@@ -1869,6 +1869,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
+  },
+  "Q97": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la continuité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la continuité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -2034,6 +2056,12 @@ const IMAGE_DB = {
   },
   "carte_terr_proclamation_royale.png": {
     src: "images/carte_terr_proclamation_royale.png"
+  },
+  "exportations_nouvelle_france_1755.png": {
+    src: "images/exportations_nouvelle_france_1755.png"
+  },
+  "exportations_province_quebec_1770.png": {
+    src: "images/exportations_province_quebec_1770.png"
   }
 }
 
@@ -6223,5 +6251,48 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Après la Conquête, des marchands britanniques remplacent progressivement les marchands français dans le commerce des fourrures."
+  },
+  {
+    id: "Q97",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Continuité",
+    enonce: "Indiquez une continuité dans le commerce des fourrures dans la colonie à la suite de la guerre de la Conquête.",
+    aspects: [
+      {
+        aspect: "Économie coloniale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "exportations_nouvelle_france_1755.png",
+            soustitre: "Les exportations de la Nouvelle-France vers 1755",
+            source: "Fernand Ouellet, Histoire économique et sociale du Québec."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "exportations_province_quebec_1770.png",
+            soustitre: "Les exportations de la Province de Québec vers 1770",
+            source: "Alain Laberge, Le Québec sous le régime britannique."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "La traite des fourrures demeure une activité économique importante dans la colonie ou la fourrure demeure un important produit d’exportation ou le commerce des fourrures se poursuit après la Conquête."
   }
 ]
