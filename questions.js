@@ -5568,6 +5568,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "debarquement_plaines_abraham.png",
+            soustitre: "La bataille des plaines d’Abraham à Québec",
             source: "Hervey Smyth, A View of the Taking of Quebec, September 13, 1759, vers 1760, Library and Archives Canada, C-000342."
           }
         ]
