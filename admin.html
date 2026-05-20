@@ -930,6 +930,12 @@ async function uploadImage() {
     statusEl.textContent = `✓ ${name} téléversé !`;
     document.getElementById('upload-file').value='';
     document.getElementById('upload-name').value='';
+    if (!IMAGES.includes(name)) {
+      IMAGES.push(name);
+      IMAGES.sort();
+      const opts = '<option value="">— Choisir une image —</option>' + IMAGES.map(f=>`<option value="${f}">${f}</option>`).join('');
+      document.querySelectorAll('select[id$="-ref"]').forEach(sel => { const v=sel.value; sel.innerHTML=opts; sel.value=v; });
+    }
     await loadImages();
     toast(`"${name}" ajouté aux images.`, 'ok');
   } catch(e) {
