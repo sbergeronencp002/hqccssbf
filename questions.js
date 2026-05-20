@@ -1742,6 +1742,28 @@ const REGLETTES = {
         desc: "L'élève ne situe pas tous les faits dans le temps."
       }
     ]
+  },
+  "Q91": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -5784,5 +5806,48 @@ const QUESTIONS = [
       ref: "ligne_abDc.png"
     },
     guide: "C – B – D – A."
+  },
+  {
+    id: "Q91",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux historiens. Sur quel point précis sont-ils d’accord?",
+    aspects: [
+      {
+        aspect: "Régime militaire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« À l’exception d’un petit nombre d’administrateurs, de militaires et de marchands, la population canadienne demeure sur place après la Conquête et poursuit ses activités dans la colonie désormais administrée par les Britanniques. »",
+            auteur: "Jacques Mathieu",
+            source: "Mathieu, Jacques. La Nouvelle-France : Les Français en Amérique du Nord, XVIe-XVIIIe siècle. Québec : Les Presses de l’Université Laval, 1991."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« On calcule qu’au moins deux mille Canadiens quittèrent leur pays natal durant les dix années qui suivirent la capitulation de Montréal. […] Pour la masse de la population canadienne, il n’était pas question d’émigrer. »",
+            auteur: "Marcel Trudel",
+            source: "Marcel Trudel, Initiation à la Nouvelle-France : histoire et institutions, Holt, Rinehart et Winston, 1968."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le départ de Canadiens après la Conquête ou la majorité de la population canadienne demeure dans la colonie après la Conquête ou peu de Canadiens quittent après la Conquête."
   }
 ]
