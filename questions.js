@@ -1991,6 +1991,28 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
       }
     ]
+  },
+  "Q102": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (3 sur 3)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (2 sur 3)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
+      }
+    ]
   }
 }
 
@@ -6604,6 +6626,74 @@ const QUESTIONS = [
           "B",
           "A",
           "C"
+        ]
+      ]
+    }
+  },
+  {
+    id: "Q102",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    enonce: "Les documents A à C présentent les réactions de différents groupes à la suite du Rapport Durham. Associez chaque position au groupe correspondant.",
+    aspects: [
+      {
+        aspect: "Rapport Durham"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« [Il] accueille favorablement les recommandations de Durham, car il espère que l’union politique mettra fin aux tensions et permettra à l’Église de conserver son influence sur la société canadienne-française. »",
+            source: "Jacques LACOURSIÈRE, Histoire populaire du Québec, tome 3, Québec, Septentrion, 1996."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les milieux d’affaires voient dans l’union des Canadas une mesure nécessaire pour assurer la stabilité politique et stimuler la croissance économique de la colonie. »",
+            source: "Gilles PAQUET et Jean-Pierre WALLOT, Patronage et pouvoir, Montréal, Boréal, 1973."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Pour [ses membres], l’union des Canadas signifie la perte du contrôle politique exercé par la majorité canadienne-française au Bas-Canada. »",
+            source: "Allan GREER, Patriotes et peuple du Bas-Canada, Montréal, Boréal, 1997."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Bourgeoisie anglophone",
+        "Bourgeoisie professionnelle francophone",
+        "Clergé catholique"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Bourgeoisie anglophone ",
+        "Bourgeoisie professionnelle francophone ",
+        "Clergé catholique"
+      ],
+      rangees: [
+        [
+          "B",
+          "C",
+          "A"
         ]
       ]
     }
