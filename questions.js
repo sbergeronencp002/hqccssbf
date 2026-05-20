@@ -1891,6 +1891,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
       }
     ]
+  },
+  "Q98": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la continuité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la continuité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -2062,6 +2084,9 @@ const IMAGE_DB = {
   },
   "exportations_province_quebec_1770.png": {
     src: "images/exportations_province_quebec_1770.png"
+  },
+  "1760-1840_accroissement_naturel.png": {
+    src: "images/1760-1840_accroissement_naturel.png"
   }
 }
 
@@ -6294,5 +6319,36 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "La traite des fourrures demeure une activité économique importante dans la colonie ou la fourrure demeure un important produit d’exportation ou le commerce des fourrures se poursuit après la Conquête."
+  },
+  {
+    id: "Q98",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    enonce: "Indiquez un élément de continuité lié à la croissance de la population canadienne entre \n1760 et 1840.",
+    aspects: [
+      {
+        aspect: "Population"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "1760-1840_accroissement_naturel.png",
+            soustitre: "Naissances et décès dans la population canadienne entre 1760 et 1840",
+            source: "Données approximatives inspirées de Jean Hamelin, Marcel Trudel et Fernand Ouellet; graphique réalisé par Sébastien Bergeron, 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le nombre de naissances demeure supérieur au nombre de décès ou le taux de natalité demeure élevé ou l’accroissement naturel demeure la principale cause de la croissance de la population."
   }
 ]
