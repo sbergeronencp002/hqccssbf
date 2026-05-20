@@ -1664,28 +1664,6 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
       }
     ]
-  },
-  "Q87": {
-    oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
-      }
-    ]
   }
 }
 
@@ -1824,12 +1802,6 @@ const IMAGE_DB = {
   },
   "carte_amerique_nord_1700_lettres.png": {
     src: "images/carte_amerique_nord_1700_lettres.png"
-  },
-  "evangelisation_n-f.jpg": {
-    src: "images/evangelisation_n-f.jpg"
-  },
-  "education_n-f.jpg": {
-    src: "images/education_n-f.jpg"
   }
 }
 
@@ -5449,75 +5421,6 @@ const QUESTIONS = [
         [
           "A et C",
           "B et D"
-        ]
-      ]
-    }
-  },
-  {
-    id: "Q87",
-    niveau: 3,
-    oi: "Mettre en relation des faits",
-    periode: "P2 — 1608 – 1760",
-    points: 2,
-    soustag: "3 éléments",
-    enonce: "Indiquez la lettre du document qui correspond à chacun des rôles de l’Église catholique durant le Régime français.",
-    aspects: [
-      {
-        aspect: "Église catholique"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "evangelisation_n-f.jpg",
-            source: "C. W. Jefferys, Jesuit missionary preaching to Indigenous people, domaine public."
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            texte: "« Arrivées à Québec en 1639, les Hospitalières fondent l’Hôtel-Dieu, où elles accueillent et soignent les colons, les soldats et les Autochtones [...]. Elles jouent ainsi un rôle essentiel [...] en Nouvelle-France. »",
-            source: "Augustines de la Miséricorde de Jésus. Histoire des Augustines. Monastère des Augustines, Québec."
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document C",
-            ref: "education_n-f.jpg",
-            source: "C. W. Jefferys, The Ursulines Teaching Indian Girls, domaine public."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "mettre-en-relation",
-      elements: [
-        "Éducation",
-        "Évangélisation",
-        "Soins et santé"
-      ]
-    },
-    guide: {
-      type: "grille",
-      entetes: [
-        "Éducation",
-        "Évangélisation",
-        "Soins et santé"
-      ],
-      rangees: [
-        [
-          "C",
-          "A",
-          "B"
         ]
       ]
     }
