@@ -1941,6 +1941,34 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q100": {
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
   }
 }
 
@@ -6435,5 +6463,59 @@ const QUESTIONS = [
       nombre: 5
     },
     guide: "Les immigrants sont malades (ou affaiblis) à leur arrivée dans la colonie (L’état de santé des immigrants des îles Britanniques à leur arrivée dans la colonie), ce qui contribue à propager des épidémies (ou le choléra) dans la population (Un problème de santé publique dans la colonie). Cette situation amène les autorités coloniales à mettre en place une station de quarantaine (ou un hôpital) à Grosse-Île ou à isoler les immigrants à Grosse-Île (Une action des autorités coloniales à Grosse-Île)."
+  },
+  {
+    id: "Q100",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    soustag: "Position – 3 acteurs",
+    enonce: "Les documents A à C présentent la position de trois groupes à l’égard de l’union des deux Canadas recommandée dans le Rapport Durham. Nommez le groupe qui présente une position différente et comparez sa position à celle des deux autres groupes.",
+    aspects: [
+      {
+        aspect: "Rapport Durham"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« […] on organise tant bien que mal    en l’absence des principaux chefs canadiens-français une résistance au projet d’union [des deux Canadas]. Le clergé  par la bouche de Monseigneur Signay et de Monseigneur Lartigue  s’oppose fermement. »",
+            auteur: "Le clergé catholique",
+            source: "Jacques LACOURSIÈRE, Jean PROVENCHER et Denis VAUGEOIS, Canada-Québec, 1534-2010, nouvelle édition mise à jour, Québec, Les éditions du Septentrion, 2011, p. 253."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« […] alors que la responsabilité ministérielle est [une idée] bien acceptée par les membres de la bourgeoisie professionnelle [francophone], l’union, pour sa part, suscite l’opposition de tous. »",
+            auteur: "La bourgeoisie professionnelle francophone",
+            source: "Jean-François CARDIN et autres, Le Québec : héritages et projets, 2e éd., Laval, Éditions HRW, 1994, p. 227."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Quant à l’union des deux colonies, les grands bourgeois anglophones du Bas-Canada sont d’avis que cette mesure serait bénéfique à l’économie et qu’elle diminuerait l’emprise des Canadiens à la Chambre d’assemblée. »",
+            auteur: "La bourgeoisie anglophone",
+            source: "Sylvain FORTIN et autres, Fresques, manuel de l’élève B, histoire et éducation à la citoyenneté, 1re année du 2e cycle du secondaire, Montréal, Graficor, 2007, p. 37."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "La bourgeoisie anglophone est en faveur (ou en faveur de l’union) (la différence), alors que le clergé et la bourgeoisie professionnelle francophone s’y opposent (la similitude). \noo\nLa bourgeoisie anglophone est en faveur (ou en faveur de l’union) (la différence), contrairement aux deux autres groupes (la similitude)."
   }
 ]
