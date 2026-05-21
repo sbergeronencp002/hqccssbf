@@ -2835,7 +2835,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P4 — 1791 – 1840",
     points: 2,
-    soustag: "3 éléments",
+    soustag: "3 documents",
     enonce: "Les documents A à C présentent la position de différents groupes sociaux lors de la crise politique qui secoue le Bas-Canada durant les années 1830. Inscrivez à l’endroit approprié la lettre du document correspondant à chacune des positions des groupes sociaux.",
     aspects: [
       {
@@ -3535,7 +3535,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P6 — 1896 – 1945",
     points: 2,
-    soustag: "3 éléments",
+    soustag: "3 documents",
     enonce: "Les documents A à C font référence à différents nationalismes au Québec au 20e siècle. Indiquez à l’endroit approprié la lettre du document correspondant à chacun des nationalismes.",
     aspects: [
       {
@@ -3838,7 +3838,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P1 — Des origines à 1608",
     points: 2,
-    soustag: "2 éléments",
+    soustag: "2 documents",
     enonce: "À partir des documents A et B, indiquez la lettre du document qui fait références aux activités économiques pratiquées les groupes autochtones.",
     aspects: [
       {
@@ -3894,7 +3894,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P1 — Des origines à 1608",
     points: 2,
-    soustag: "2 éléments",
+    soustag: "2 documents",
     enonce: "À partir des documents A et B, indiquez la lettre du document qui fait références à l'organisation territoriale des groupes autochtones.",
     aspects: [
       {
@@ -4065,7 +4065,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P1 — Des origines à 1608",
     points: 2,
-    soustag: "4 éléments",
+    soustag: "4 documents",
     enonce: "Les documents A à D présentent des faits sur la prise de décision chez les Algonquiens et les Iroquoiens vers 1500. Indiquez les lettres des documents qui correspondent à chacun des groupes.",
     aspects: [
       {
@@ -5152,7 +5152,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P1 — Des origines à 1608",
     points: 2,
-    soustag: "3 éléments",
+    soustag: "3 documents",
     enonce: "Les documents A à C présentent des faits relatifs aux voyages de Jacques Cartier. Inscrivez à l’endroit approprié la lettre du document correspondant à chacun de ses trois voyages.",
     aspects: [
       {
@@ -5221,7 +5221,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P1 — Des origines à 1608",
     points: 2,
-    soustag: "3 éléments",
+    soustag: "3 documents",
     enonce: "Les documents A à C présentent des faits relatifs aux voyages de Jacques Cartier. Inscrivez à l’endroit approprié la lettre du document correspondant à chacun de ses trois voyages.",
     aspects: [
       {
@@ -5290,7 +5290,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P1 — Des origines à 1608",
     points: 2,
-    soustag: "4 éléments",
+    soustag: "4 documents",
     enonce: "Les documents A à C présentent des faits relatifs aux tentatives de colonisation françaises en Amérique du Nord. Inscrivez à l’endroit approprié la lettre du document correspondant à chacune de ces tentatives.",
     aspects: [
       {
@@ -5372,7 +5372,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P1 — Des origines à 1608",
     points: 2,
-    soustag: "4 éléments",
+    soustag: "4 documents",
     enonce: "Les documents A à C présentent des faits relatifs aux tentatives de colonisation françaises en Amérique du Nord. Inscrivez à l’endroit approprié la lettre du document correspondant à chacune de ces tentatives.",
     aspects: [
       {
@@ -5841,7 +5841,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P2 — 1608 – 1760",
     points: 2,
-    soustag: "4 éléments",
+    soustag: "4 documents",
     enonce: "Les documents A à D présentent des faits liés aux missions et aux villages domiciliés en Nouvelle-France. Indiquez à l’endroit approprié la lettre de chacun des documents.",
     aspects: [
       {
@@ -5918,7 +5918,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P2 — 1608 – 1760",
     points: 2,
-    soustag: "3 éléments",
+    soustag: "3 documents",
     enonce: "Indiquez la lettre du document qui correspond à chacun des rôles de l’Église catholique durant le Régime français.",
     aspects: [
       {
@@ -6019,7 +6019,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P3 — 1760 – 1791",
     points: 2,
-    soustag: "4 éléments",
+    soustag: "4 documents",
     enonce: "Les documents A à D présentent des événements survenus durant le Régime britannique. Indiquez à l’endroit approprié la lettre correspondant à chacun de ces événements.",
     aspects: [
       {
@@ -6365,7 +6365,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P3 — 1760 – 1791",
     points: 2,
-    soustag: "4 éléments",
+    soustag: "4 documents",
     enonce: "Les documents A à D font référence à la Proclamation royale et à l’Acte de Québec. Indiquez à l’endroit approprié la lettre correspondant à chacun des documents.",
     aspects: [
       {
