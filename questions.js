@@ -7099,7 +7099,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 2,
     soustag: "Changement",
-    enonce: "À partir des documents A et B, indiquez un changement dans la composition de la population de la colonie entre 1763 et 1784.",
+    enonce: "Indiquez un changement dans la composition de la population de la colonie entre 1763 et 1784.",
     aspects: [
       {
         aspect: "Situation sociodémographique"
