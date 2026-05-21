@@ -2162,6 +2162,17 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
+  },
+  "Q110": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
   }
 }
 
@@ -7166,5 +7177,48 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "La population francophone demeure majoritaire dans la colonie entre 1763 et 1784 ou la population anglophone demeure minoritaire dans la colonie entre 1763 et 1784."
+  },
+  {
+    id: "Q110",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans la composition de la population de la colonie entre 1763 et 1784. Justifiez votre choix par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "1763.png",
+            soustitre: "Composition de la population de la colonie en 1763",
+            source: "adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "1783.png",
+            soustitre: "Composition de la population de la colonie en 1783",
+            source: "adapté de Jean Hamelin et Yves Roby, Histoire économique du Québec, 1851-1896."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Il y a une continuité dans la composition de la population de la colonie entre 1763 et 1784 puisque les francophones demeurent majoritaires.\n\nIl y a un changement dans la composition de la population de la colonie puisque la proportion de la population anglophone augmente entre 1763 et 1784. Elle passe de 1 % à 15 % de la population."
   }
 ]
