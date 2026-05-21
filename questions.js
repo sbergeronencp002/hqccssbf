@@ -7142,7 +7142,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 2,
     soustag: "Continuité",
-    enonce: "À partir des documents A et B, indiquez une continuité dans la composition de la population de la colonie entre 1763 et 1784.",
+    enonce: "Indiquez une continuité dans la composition de la population de la colonie entre 1763 et 1784.",
     aspects: [
       {
         aspect: "Situation sociodémographique"
