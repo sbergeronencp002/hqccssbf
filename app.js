@@ -418,21 +418,19 @@ function buildTileHtml(q) {
   const st = oiStyle(q.oi);
   const aspect = q.aspects.map(a => a.aspect).join(' · ');
   const inPanier = panier.includes(q.id);
+  const merTag = (q.oi === 'Mettre en relation des faits' && q.reponse && q.reponse.elements && q.reponse.elements.length) ? q.reponse.elements.length + ' documents' : '';
+  const badge = s => `<span style="font-size:0.7rem;color:${st.color};background:${st.bg};border-radius:10px;padding:1px 8px;font-weight:500">${s}</span>`;
+  const badgeNew = `<span style="font-size:0.7rem;color:${st.color};background:${st.bg};border-radius:10px;padding:1px 8px;font-weight:700;letter-spacing:0.03em">Nouveauté</span>`;
+  const tagsHtml = (NEW_IDS.has(q.id) || q.soustag || merTag)
+    ? `<div style="margin-top:6px;display:flex;gap:5px;flex-wrap:wrap">${NEW_IDS.has(q.id) ? badgeNew : ''}${q.soustag ? badge(q.soustag) : ''}${merTag ? badge(merTag) : ''}</div>`
+    : '';
   return `<div class="q-tile${inPanier ? ' in-panier' : ''}" id="tile-${q.id}"
     style="--tile-color:${st.color};background:#fff" onclick="openQModal('${q.id}')">
     <div class="q-tile-bar" style="display:none"></div>
     <div class="q-tile-content">
       <div class="q-tile-oi" style="display:block;font-size:1.1rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:5px 12px;border-radius:6px;color:${st.color};background:${st.bg};line-height:1.3;word-break:break-word">${q.oi}</div>
       <div class="q-tile-aspect" style="font-size:0.9rem;font-weight:400;color:#6B6560;margin-top:2px">${aspect}</div>
-      ${(() => {
-        const merTag = (q.oi === 'Mettre en relation des faits' && q.reponse?.elements?.length) ? `${q.reponse.elements.length} documents` : '';
-        const hasTag = NEW_IDS.has(q.id) || q.soustag || merTag;
-        return hasTag ? `<div style="margin-top:6px;display:flex;gap:5px;flex-wrap:wrap">
-          ${NEW_IDS.has(q.id) ? `<span style="font-size:0.7rem;color:${st.color};background:${st.bg};border-radius:10px;padding:1px 8px;font-weight:700;letter-spacing:0.03em">Nouveauté</span>` : ''}
-          ${q.soustag ? `<span style="font-size:0.7rem;color:${st.color};background:${st.bg};border-radius:10px;padding:1px 8px;font-weight:500">${q.soustag}</span>` : ''}
-          ${merTag ? `<span style="font-size:0.7rem;color:${st.color};background:${st.bg};border-radius:10px;padding:1px 8px;font-weight:500">${merTag}</span>` : ''}
-        </div>` : '';
-      })()}
+      ${tagsHtml}
     </div>
     <span class="q-tile-check" onclick="event.stopPropagation();togglePanier('${q.id}')">✓</span>
   </div>`;
