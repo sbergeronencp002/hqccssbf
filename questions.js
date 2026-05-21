@@ -2096,6 +2096,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
+  },
+  "Q107": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -6975,5 +6997,36 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les exportations de bois des colonies vers la Grande-Bretagne augmentent fortement après 1806."
+  },
+  {
+    id: "Q107",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence du Traité de 1783 sur le commerce des fourrures dans la Province de Québec.",
+    aspects: [
+      {
+        aspect: "Économie coloniale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le Traité de 1783 […] créa de vives inquiétudes chez les commerçants de la fourrure [de la Province de Québec], les deux tiers des approvisionnements venant de cette région [cédée aux \nÉtats-Unis]. »",
+            source: "Noël VALLERAND et Robert LAHAISE, L’Amérique du Nord britannique, 1760-1867 : les Canadiens français, la colonisation britannique et la formation du Canada continental, Montréal,  Kébékédit, 1974, p. 70."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les commerçants de la Province de Québec perdent une partie importante de leur territoire d’approvisionnement en fourrures au profit des États-Unis."
   }
 ]
