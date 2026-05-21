@@ -418,11 +418,10 @@ function buildTileHtml(q) {
   const st = oiStyle(q.oi);
   const aspect = q.aspects.map(a => a.aspect).join(' · ');
   const inPanier = panier.includes(q.id);
-  const merTag = (q.oi === 'Mettre en relation des faits' && q.reponse && q.reponse.elements && q.reponse.elements.length) ? q.reponse.elements.length + ' documents' : '';
   const badge = s => `<span style="font-size:0.7rem;color:${st.color};background:${st.bg};border-radius:10px;padding:1px 8px;font-weight:500">${s}</span>`;
   const badgeNew = `<span style="font-size:0.7rem;color:${st.color};background:${st.bg};border-radius:10px;padding:1px 8px;font-weight:700;letter-spacing:0.03em">Nouveauté</span>`;
-  const tagsHtml = (NEW_IDS.has(q.id) || q.soustag || merTag)
-    ? `<div style="margin-top:6px;display:flex;gap:5px;flex-wrap:wrap">${NEW_IDS.has(q.id) ? badgeNew : ''}${q.soustag ? badge(q.soustag) : ''}${merTag ? badge(merTag) : ''}</div>`
+  const tagsHtml = (NEW_IDS.has(q.id) || q.soustag)
+    ? `<div style="margin-top:6px;display:flex;gap:5px;flex-wrap:wrap">${NEW_IDS.has(q.id) ? badgeNew : ''}${q.soustag ? badge(q.soustag) : ''}</div>`
     : '';
   return `<div class="q-tile${inPanier ? ' in-panier' : ''}" id="tile-${q.id}"
     style="--tile-color:${st.color};background:#fff" onclick="openQModal('${q.id}')">
