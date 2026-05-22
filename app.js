@@ -576,7 +576,9 @@ function renderReponse(q) {
   if(q.reponse.type === 'image') {
     const img = IMAGE_DB[q.reponse.ref];
     if(!img) return '';
-    return '<div class="doc-img-wrap"><img src="' + img.src + '" class="doc-img" onclick="openLightbox(\'' + img.src + '\')" title="Cliquer pour agrandir"></div>';
+    const reduire = q.soustag === 'Ordre chronologique' || q.soustag === 'Ligne du temps';
+    const imgStyle = reduire ? ' style="max-width:75%"' : '';
+    return '<div class="doc-img-wrap"><img src="' + img.src + '" class="doc-img"' + imgStyle + ' onclick="openLightbox(\'' + img.src + '\')" title="Cliquer pour agrandir"></div>';
   }
   if(q.reponse.type === 'lignes') {
     const n = q.reponse.nombre || 1;
