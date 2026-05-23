@@ -7261,9 +7261,6 @@ const QUESTIONS = [
     enonce: "Expliquez comment le résultat de la guerre d’indépendance américaine en 1783 entraîne un changement démographique dans la Province de Québec.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Le résultat de la guerre d’indépendance américaine en 1783\n• Un groupe qui migre vers la Province de Québec\n• Un changement démographique dans la Province de Québec",
     aspects: [
       {
-        aspect: "Invasion américaine"
-      },
-      {
         aspect: "Loyalistes"
       }
     ],
