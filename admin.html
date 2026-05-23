@@ -398,6 +398,10 @@ header a:hover { color: #fff; }
 // ── TOKEN ─────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', init);
 
+function utf8b64(str) {
+  return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, (_, p) => String.fromCharCode(parseInt(p, 16))));
+}
+
 let formDirty = false;
 window.addEventListener('beforeunload', e => { if(formDirty) e.preventDefault(); });
 
@@ -863,7 +867,7 @@ async function supprimerQuestion() {
     currentReglettes = newReglettes;
 
     const newContent = generateQuestionsJs(currentQuestions, currentReglettes, currentImageDb);
-    const encoded = btoa(unescape(encodeURIComponent(newContent)));
+    const encoded = utf8b64(newContent);
 
     const putResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js`, {
       method: 'PUT',
@@ -1532,7 +1536,8 @@ function validateForm() {
   if(repType === 'image' && !document.getElementById('rep-ref')?.value) errors.push('Image de réponse non sélectionnée');
   if(repType === 'tableau_3col' && !document.getElementById('rep-col2')?.value.trim()) errors.push('Étiquette centrale du tableau manquante');
   if(repType === 'tableau' && !document.getElementById('rep-lignes')?.value.trim()) errors.push('Lignes du tableau réponse vides');
-  if(document.getElementById('reg-preset').value === '') errors.push('Réglette non sélectionnée');
+  const oi = document.getElementById('q-oi').value;
+  if((REGLETTES_PRESET[oi] || []).length > 0 && document.getElementById('reg-preset').value === '') errors.push('Réglette non sélectionnée');
   return errors;
 }
 
@@ -1563,6 +1568,12 @@ async function publier() {
 
     const q = buildQuestion();
     const r = buildReglette(q.id);
+
+    if(!editingId && currentQuestions.find(x => x.id === q.id)) {
+      toast(`L'identifiant ${q.id} existe déjà — rechargez (F5) pour obtenir le prochain ID libre.`, 'err');
+      btn.disabled = false; btn.textContent = 'Publier sur GitHub';
+      return;
+    }
 
     // Warnings avant publication
     const pubWarnings = [];
@@ -1609,7 +1620,7 @@ async function publier() {
         });
       }
       const newContent2 = generateQuestionsJs(currentQuestions, currentReglettes, currentImageDb);
-      const encoded2 = btoa(unescape(encodeURIComponent(newContent2)));
+      const encoded2 = utf8b64(newContent2);
       putResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js`, {
         method: 'PUT',
         headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
@@ -1790,7 +1801,7 @@ async function publierContexteJs() {
   const el = document.getElementById('contexte-status');
   el.textContent = '⏳ Publication…';
   try {
-    const encoded = btoa(unescape(encodeURIComponent(content)));
+    const encoded = utf8b64(content);
     const putResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/contexte.js`, {
       method:'PUT',
       headers:{ Authorization:`token ${token}`, 'Content-Type':'application/json' },

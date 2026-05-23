@@ -1,4 +1,7 @@
 
+function escLine(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
 function boldify(s) {
   return s.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 }
@@ -7,10 +10,10 @@ function formatTexte(text) {
   text.split('\n').forEach(line => {
     if(line.startsWith('• ') || line.startsWith('- ')) {
       if(!inList) { html += '<ul style="margin:2px 0 2px 14px;padding:0">'; inList = true; }
-      html += '<li>' + boldify(line.slice(2)) + '</li>';
+      html += '<li>' + boldify(escLine(line.slice(2))) + '</li>';
     } else {
       if(inList) { html += '</ul>'; inList = false; }
-      if(line.trim()) html += boldify(line) + '<br>';
+      if(line.trim()) html += boldify(escLine(line)) + '<br>';
       else html += '<br>';
     }
   });
@@ -481,6 +484,15 @@ async function initSite() {
   } catch(e) {}
 }
 initSite();
+
+window.addEventListener('storage', e => {
+  if(e.key !== 'hqc_panier') return;
+  try {
+    panier = JSON.parse(e.newValue || '[]').filter(id => QUESTIONS.some(q => q.id === id));
+    updatePanierBar();
+    refreshPanierButtons();
+  } catch(_) {}
+});
 
 document.addEventListener('keydown', e => {
   if(e.key === 'Escape') { closeQModal(); closePreviewBtn(); }
