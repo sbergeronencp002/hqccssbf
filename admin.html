@@ -961,12 +961,10 @@ async function uploadImage() {
     statusEl.textContent = `✓ ${name} téléversé !`;
     document.getElementById('upload-file').value='';
     document.getElementById('upload-name').value='';
-    if (!IMAGES.includes(name)) {
-      IMAGES.push(name);
-      IMAGES.sort();
-      const opts = '<option value="">— Choisir une image —</option>' + IMAGES.map(f=>`<option value="${f}">${f}</option>`).join('');
-      document.querySelectorAll('select[id$="-ref"]').forEach(sel => { const v=sel.value; sel.innerHTML=opts; sel.value=v; });
-    }
+    if (!IMAGES.includes(name)) { IMAGES.push(name); IMAGES.sort(); }
+    addRecentImage(name);
+    const opts = buildImageOptions();
+    document.querySelectorAll('select[id$="-ref"]').forEach(sel => { const v=sel.value; sel.innerHTML=opts; sel.value=v; });
     await loadImages();
     toast(`"${name}" ajouté aux images.`, 'ok');
   } catch(e) {
@@ -976,12 +974,32 @@ async function uploadImage() {
 }
 
 let IMAGES = [];
+let RECENT_IMAGES = [];
 let currentQuestions = [];
 let currentReglettes = {};
 let currentImageDb = {};
 let questionsFileSha = '';
 
+function loadRecentImages() {
+  try { RECENT_IMAGES = JSON.parse(localStorage.getItem('hqc_recent_images') || '[]'); } catch(_) { RECENT_IMAGES = []; }
+}
+function addRecentImage(name) {
+  RECENT_IMAGES = [name, ...RECENT_IMAGES.filter(x => x !== name)].slice(0, 3);
+  try { localStorage.setItem('hqc_recent_images', JSON.stringify(RECENT_IMAGES)); } catch(_) {}
+}
+function buildImageOptions() {
+  const recent = RECENT_IMAGES.filter(r => IMAGES.includes(r)).sort((a,b) => a.localeCompare(b,'fr'));
+  const rest = IMAGES.filter(i => !recent.includes(i));
+  let opts = '<option value="">— Choisir une image —</option>';
+  if(recent.length) {
+    opts += recent.map(f => `<option value="${f}">⭐ ${f}</option>`).join('');
+    opts += '<option value="" disabled>──────────────────</option>';
+  }
+  return opts + rest.map(f => `<option value="${f}">${f}</option>`).join('');
+}
+
 async function init() {
+  loadRecentImages();
   const lsToken = localStorage.getItem('gh_token');
   const ssToken = sessionStorage.getItem('gh_token');
   if(lsToken) { document.getElementById('gh-token').value = lsToken; document.getElementById('gh-remember').checked = true; }
@@ -999,7 +1017,7 @@ async function loadImages() {
     const data = await r.json();
     if(Array.isArray(data)) {
       IMAGES = data.filter(f => f.name !== '.gitkeep').map(f => f.name).sort();
-      const options = '<option value="">— Choisir une image —</option>' + IMAGES.map(f=>`<option value="${f}">${f}</option>`).join('');
+      const options = buildImageOptions();
       document.querySelectorAll('select[id$="-ref"]').forEach(sel => {
         const val = sel.value;
         sel.innerHTML = options;
@@ -1158,7 +1176,7 @@ function addCol(docId, type) {
 }
 
 function imageSelect(id) {
-  return `<select id="${id}"><option value="">— Choisir une image —</option>${IMAGES.map(f=>`<option value="${f}">${f}</option>`).join('')}</select>`;
+  return `<select id="${id}">${buildImageOptions()}</select>`;
 }
 
 function removeEl(id) { document.getElementById(id)?.remove(); }
