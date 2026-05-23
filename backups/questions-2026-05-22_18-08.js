@@ -2173,34 +2173,6 @@ const REGLETTES = {
       "0 point"
     ],
     niveaux: []
-  },
-  "Q111": {
-    oi: "Établir des liens de causalité",
-    variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
-      {
-        pts: 2,
-        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
-      },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
-    ]
   }
 }
 
@@ -2378,9 +2350,6 @@ const IMAGE_DB = {
   },
   "1783.png": {
     src: "images/1783.png"
-  },
-  "loyalistes.png": {
-    src: "images/loyalistes.png"
   }
 }
 
@@ -7251,58 +7220,5 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Il y a une continuité dans la composition de la population de la colonie entre 1763 et 1784 puisque les francophones demeurent majoritaires.\n\nIl y a un changement dans la composition de la population de la colonie puisque la proportion de la population anglophone augmente entre 1763 et 1784. Elle passe de 1 % à 15 % de la population."
-  },
-  {
-    id: "Q111",
-    niveau: 3,
-    oi: "Établir des liens de causalité",
-    periode: "P3 — 1760 – 1791",
-    points: 3,
-    enonce: "Expliquez comment le résultat de la guerre d’indépendance américaine en 1783 entraîne un changement démographique dans la Province de Québec.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Le résultat de la guerre d’indépendance américaine en 1783\n• Un groupe qui migre vers la Province de Québec\n• Un changement démographique dans la Province de Québec",
-    aspects: [
-      {
-        aspect: "Invasion américaine"
-      },
-      {
-        aspect: "Loyalistes"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            texte: "« À la suite du traité de Paris de 1783, la Grande-Bretagne reconnaît l’indépendance des États-Unis et cède les territoires situés au sud des Grands Lacs. Cette nouvelle frontière bouleverse l’organisation territoriale de l’Amérique du Nord britannique et entraîne le déplacement de milliers [de personnes] vers la Province de Québec. »",
-            source: "— Jean Hamelin, Histoire du Québec, Toulouse, Privat, coll. « Univers de la France et des pays francophones », 1976, p. 153."
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            ref: "loyalistes.png",
-            source: "Bibliothèque et Archives Canada/C-020587."
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document C",
-            texte: "« Après la guerre d’Indépendance américaine, l’arrivée de nouveaux habitants venus des anciennes colonies britanniques modifie progressivement l’équilibre démographique de la Province de Québec. Bien que les Canadiens francophones demeurent majoritaires, la présence anglophone devient davantage visible dans plusieurs régions de la colonie. »",
-            source: "Paul-André Linteau, René Durocher, Jean-Claude Robert et François Ricard, Histoire du Québec contemporain, tome 1 : De la Confédération à la crise (1867-1929), Montréal, Boréal, 1989."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "lignes",
-      nombre: 5
-    },
-    guide: "En 1783, la Grande-Bretagne reconnaît l’indépendance des États-Unis à la suite de la victoire américaine lors de la guerre d’indépendance (le résultat de la guerre d’indépendance américaine en 1783). Plusieurs Loyalistes quittent les États-Unis pour s’établir dans la Province de Québec (un groupe qui migre vers la Province de Québec. Cette migration augmente la population anglophone dans la colonie et modifie la composition démographique de la Province de Québec (un changement démographique dans la Province de Québec)."
   }
 ]
