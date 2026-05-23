@@ -2229,6 +2229,28 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q113": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -2412,6 +2434,9 @@ const IMAGE_DB = {
   },
   "voyages_exploration.png": {
     src: "images/voyages_exploration.png"
+  },
+  "premiers_contacts": {
+    src: "images/premiers_contacts"
   }
 }
 
@@ -7382,5 +7407,36 @@ const QUESTIONS = [
       nombre: 5
     },
     guide: "La prise de Constantinople par les Ottomans modifie le commerce entre l’Europe et l’Asie (changement dans le commerce européen). Plusieurs royaumes européens cherchent alors une nouvelle route maritime pour accéder à l'Asie (un objectif des royaumes européens). Pour atteindre cet objectif, plusieurs États européens financent des voyages d’exploration au 16e siècle (un moyen utilisé)."
+  },
+  {
+    id: "Q113",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une raison qui explique la fréquentation du golfe du Saint-Laurent par les pêcheurs européens au 16e siècle.",
+    aspects: [
+      {
+        aspect: "Premiers contacts"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "premiers_contacts",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les pêcheurs européens fréquentent le golfe du Saint-Laurent afin d’exploiter les importantes ressources halieutiques, notamment la morue ou les Européens fréquentent le golfe du Saint-Laurent pour pratiquer la pêche à la morue."
   }
 ]
