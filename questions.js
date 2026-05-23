@@ -2301,6 +2301,28 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q116": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
   }
 }
 
@@ -7568,5 +7590,90 @@ const QUESTIONS = [
       nombre: 5
     },
     guide: "Les Européens fréquentent le golfe du Saint-Laurent pour pratiquer la pêche et la chasse à la baleine (une activité pratiquée par les Européens dans le golfe du Saint-Laurent). Leur présence favorise des rencontres avec certaines nations autochtones dans des lieux de séchage de la morue situés sur les rives du golfe (un lieu d’échange entre les groupes autochtones et européens). Des produits européens, comme des couteaux, et des produits autochtones, comme des fourrures, sont alors échangés sous forme de troc (des produits échangés entre les Européens et certaines nations autochtones)."
+  },
+  {
+    id: "Q116",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    soustag: "4 documents",
+    enonce: "Les documents A à D présentent des faits liés aux explorations européennes et aux premiers contacts en Amérique du Nord. Indiquez à l’endroit approprié la lettre correspondant à chacun des éléments suivants.",
+    aspects: [
+      {
+        aspect: "Exploration et occupation du territoire par les Français"
+      },
+      {
+        aspect: "Premiers contacts"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "Au cours du 16e siècle, un navigateur français explore le golfe puis le fleuve Saint-Laurent, rencontre des populations iroquoiennes et prend possession du territoire au nom du roi de France. »",
+            source: "Gilles Havard et Cécile Vidal, Histoire de l’Amérique française, Paris, Flammarion, 2003."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« À la fin du 15e siècle, un navigateur au service de la couronne anglaise longe les côtes de l’Atlantique nord et signale l’abondance des eaux poissonneuses fréquentées par plusieurs pêcheurs européens. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1 : Des origines à 1791, Québec, Septentrion, 1995."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Bien avant l’arrivée des Français dans la vallée du Saint-Laurent, des navigateurs venus du Groenland auraient établi un campement saisonnier à l’extrémité nord de Terre-Neuve, dans une région riche en ressources naturelles. »",
+            source: "Marcel Trudel, Histoire de la Nouvelle-France, tome 1 : Les vaines tentatives, 1524-1603, Montréal, Fides, 1963."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Au début du 17e siècle, des représentants français concluent des ententes avec certaines nations autochtones afin de favoriser le commerce et de consolider des alliances dans un contexte de rivalités intertribales. »",
+            source: "Denys Delâge, Le pays renversé : Amérindiens et Européens en Amérique du Nord-Est, 1600-1664, Montréal, Boréal, 1991."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Alliance franco-amérindienne",
+        "Établissement viking à l’Anse-aux-Meadows",
+        "Voyage de Jean Cabot",
+        "Voyages de Jacques Cartier"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Alliance franco-amérindienne",
+        "Établissement viking à l’Anse-aux-Meadows",
+        "Voyage de Jean Cabot",
+        "Voyages de Jacques Cartier"
+      ],
+      rangees: [
+        [
+          "D",
+          "C",
+          "B",
+          "A"
+        ]
+      ]
+    }
   }
 ]
