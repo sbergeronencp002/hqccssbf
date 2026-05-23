@@ -980,8 +980,27 @@ let currentReglettes = {};
 let currentImageDb = {};
 let questionsFileSha = '';
 
-function loadRecentImages() {
+async function loadRecentImages() {
   try { RECENT_IMAGES = JSON.parse(localStorage.getItem('hqc_recent_images') || '[]'); } catch(_) { RECENT_IMAGES = []; }
+  if(!getToken()) return;
+  try {
+    const r = await fetch(
+      `https://api.github.com/repos/${OWNER}/${REPO}/commits?path=images&per_page=15&ref=${BRANCH}`,
+      { headers: { Authorization: `token ${getToken()}` }, cache: 'no-store' }
+    );
+    if(!r.ok) return;
+    const commits = await r.json();
+    const seen = [];
+    for(const c of commits) {
+      const m = (c.commit?.message || '').match(/^Ajouter image\s*:\s*(.+)/m);
+      if(m) { const name = m[1].trim(); if(!seen.includes(name)) seen.push(name); }
+      if(seen.length >= 3) break;
+    }
+    if(seen.length) {
+      RECENT_IMAGES = seen;
+      try { localStorage.setItem('hqc_recent_images', JSON.stringify(RECENT_IMAGES)); } catch(_) {}
+    }
+  } catch(_) {}
 }
 function addRecentImage(name) {
   RECENT_IMAGES = [name, ...RECENT_IMAGES.filter(x => x !== name)].slice(0, 3);
@@ -999,7 +1018,6 @@ function buildImageOptions() {
 }
 
 async function init() {
-  loadRecentImages();
   const lsToken = localStorage.getItem('gh_token');
   const ssToken = sessionStorage.getItem('gh_token');
   if(lsToken) { document.getElementById('gh-token').value = lsToken; document.getElementById('gh-remember').checked = true; }
@@ -1007,7 +1025,10 @@ async function init() {
   updatePeriodes();
   updatePresets();
   document.querySelector('.container').addEventListener('input', e => { if(!e.target.closest('.token-bar')) formDirty = true; });
-  await Promise.all([loadQuestionsJs(), loadImages(), loadReglettesJs()]);
+  await Promise.all([loadQuestionsJs(), loadImages(), loadReglettesJs(), loadRecentImages()]);
+  // Rafraîchit les selects après que loadRecentImages ait rempli RECENT_IMAGES
+  const opts = buildImageOptions();
+  document.querySelectorAll('select[id$="-ref"]').forEach(sel => { const v = sel.value; sel.innerHTML = opts; sel.value = v; });
 }
 
 async function loadImages() {
