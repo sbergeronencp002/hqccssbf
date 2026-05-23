@@ -2273,6 +2273,34 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q115": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -7490,5 +7518,55 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "es nations autochtones développent des échanges commerciaux avec les Européens ou certaines nations autochtones entrent en contact avec les Européens par le commerce ou les contacts entre Autochtones et Européens deviennent plus fréquents dans le golfe du Saint-Laurent."
+  },
+  {
+    id: "Q115",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P1 — Des origines à 1608",
+    points: 3,
+    enonce: "Expliquez comment les activités économiques pratiquées par les Européens dans le golfe du Saint-Laurent favorisent le développement d’échanges avec certaines nations autochtones au 16e siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• Une activité pratiquée par les Européens dans le golfe du Saint-Laurent\n• Un lieu d’échange entre les groupes autochtones et européens\n• Des produits échangés entre les Européens et les nations autochtones",
+    aspects: [
+      {
+        aspect: "Premiers contacts"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Sur certaines côtes du golfe du Saint-Laurent, des groupes autochtones fréquentent les endroits utilisés par les Européens pour préparer et faire sécher la morue durant la belle saison. »",
+            source: "Adapté de Laurier Turgeon, Pêcheurs basques et Amérindiens au XVIe siècle, Québec, Septentrion, 2003."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "premiers_contacts",
+            source: "Récitus."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les contacts entre Européens et Autochtones favorisent la circulation de produits provenant des deux groupes, comme des peaux d’animaux et des objets fabriqués en Europe. »",
+            source: "Adapté de Bruce G. Trigger, Les Enfants d’Aataentsic : l’histoire du peuple huron, Montréal, Libre Expression, 1991."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 5
+    },
+    guide: "Les Européens fréquentent le golfe du Saint-Laurent pour pratiquer la pêche et la chasse à la baleine (une activité pratiquée par les Européens dans le golfe du Saint-Laurent). Leur présence favorise des rencontres avec certaines nations autochtones dans des lieux de séchage de la morue situés sur les rives du golfe (un lieu d’échange entre les groupes autochtones et européens). Des produits européens, comme des couteaux, et des produits autochtones, comme des fourrures, sont alors échangés sous forme de troc (des produits échangés entre les Européens et certaines nations autochtones)."
   }
 ]
