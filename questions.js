@@ -2201,6 +2201,34 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q112": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -2381,6 +2409,9 @@ const IMAGE_DB = {
   },
   "loyalistes.png": {
     src: "images/loyalistes.png"
+  },
+  "voyages_exploration.png": {
+    src: "images/voyages_exploration.png"
   }
 }
 
@@ -7301,5 +7332,55 @@ const QUESTIONS = [
       nombre: 5
     },
     guide: "En 1783, la Grande-Bretagne reconnaît l’indépendance des États-Unis à la suite de la victoire américaine lors de la guerre d’indépendance (le résultat de la guerre d’indépendance américaine en 1783). Plusieurs Loyalistes quittent les États-Unis pour s’établir dans la Province de Québec (un groupe qui migre vers la Province de Québec. Cette migration augmente la population anglophone dans la colonie et modifie la composition démographique de la Province de Québec (un changement démographique dans la Province de Québec)."
+  },
+  {
+    id: "Q112",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P1 — Des origines à 1608",
+    points: 3,
+    enonce: "Expliquez comment des changements dans le commerce européen favorisent les voyages d’exploration au 16e siècle. \n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Un changement dans le commerce européen\n• Un objectif des royaumes européens\n• Un moyen utilisé par les royaumes européens",
+    aspects: [
+      {
+        aspect: "Premiers contacts"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Au cours du 15e siècle, plusieurs routes commerciales utilisées par les marchands européens deviennent plus difficiles d’accès. Certains produits provenant de l’Orient circulent moins facilement vers l’Europe. »",
+            source: "Adapté de Marcel Trudel, Initiation à la Nouvelle-France : histoire et institutions, Montréal, Holt, Rinehart et Winston, 1968."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "voyages_exploration.png",
+            source: "Récitus."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les royaumes européens cherchent à développer de nouvelles voies maritimes afin d’accroître leurs échanges commerciaux avec les régions orientales. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 1 : Des origines à 1791, Québec, Septentrion, 1995."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 5
+    },
+    guide: "La prise de Constantinople par les Ottomans modifie le commerce entre l’Europe et l’Asie (changement dans le commerce européen). Plusieurs royaumes européens cherchent alors une nouvelle route maritime pour accéder à l'Asie (un objectif des royaumes européens). Pour atteindre cet objectif, plusieurs États européens financent des voyages d’exploration au 16e siècle (un moyen utilisé)."
   }
 ]
