@@ -149,6 +149,17 @@ header a:hover { color: #fff; }
 
 .edit-selected-bar { margin-top:.75rem; padding:.6rem .85rem; background:rgba(27,59,111,0.06); border:1px solid rgba(27,59,111,0.18); border-radius:6px; display:flex; align-items:center; justify-content:space-between; gap:.75rem; flex-wrap:wrap; }
 .edit-selected-label { font-size:.82rem; font-weight:600; color:#1B3B6F; }
+
+/* ── ANCHOR NAV ── */
+.anchor-nav { position:sticky; top:0; z-index:20; background:var(--paper-2); border-bottom:1px solid var(--border); margin:0 -1.5rem 1.5rem; padding:.4rem 1.5rem; display:flex; gap:.25rem; flex-wrap:wrap; }
+.anchor-nav a { font-size:.72rem; font-weight:600; color:var(--ink-2); text-decoration:none; padding:.22rem .65rem; border-radius:4px; transition:background .12s,color .12s; white-space:nowrap; }
+.anchor-nav a:hover { background:var(--paper-3); color:var(--ink); }
+
+/* ── MOVE BUTTONS ── */
+.btn-move { position:absolute; top:.55rem; background:none; border:none; color:var(--ink-3); font-size:.85rem; cursor:pointer; padding:0 .15rem; line-height:1.2; }
+.btn-move-up { right:3.8rem; }
+.btn-move-dn { right:2.5rem; }
+.btn-move:hover { color:var(--accent); }
 </style>
 </head>
 <body>
@@ -171,6 +182,18 @@ header a:hover { color: #fff; }
       </label>
       <span class="token-status" id="token-status"></span>
     </div>
+
+    <!-- ANCHOR NAV -->
+    <nav class="anchor-nav">
+      <a href="#section-contexte">Contexte</a>
+      <a href="#section-question">Question</a>
+      <a href="#section-docs">Documents</a>
+      <a href="#section-upload">Image</a>
+      <a href="#section-reponse">Réponse</a>
+      <a href="#section-reglette">Réglette</a>
+      <a href="#section-guide">Guide</a>
+      <a href="#section-actions">Publier ↓</a>
+    </nav>
 
     <!-- TABLEAU DE BORD -->
     <div class="section" id="dashboard-section" style="display:none">
@@ -230,7 +253,7 @@ header a:hover { color: #fff; }
     </div>
 
     <!-- CONTEXTE -->
-    <div class="section">
+    <div class="section" id="section-contexte">
       <div class="section-title">Contexte</div>
       <div class="row">
         <div class="field">
@@ -269,7 +292,7 @@ header a:hover { color: #fff; }
     </div>
 
     <!-- QUESTION -->
-    <div class="section">
+    <div class="section" id="section-question">
       <div class="section-title">Question</div>
       <div class="field">
         <div class="rich-toolbar">
@@ -281,7 +304,7 @@ header a:hover { color: #fff; }
     </div>
 
     <!-- DOCUMENTS -->
-    <div class="section">
+    <div class="section" id="section-docs">
       <div class="section-title">Documents</div>
       <div id="docs-list"></div>
       <div style="display:flex;gap:.5rem;flex-wrap:wrap">
@@ -292,7 +315,7 @@ header a:hover { color: #fff; }
     </div>
 
     <!-- UPLOAD IMAGE -->
-    <div class="section">
+    <div class="section" id="section-upload">
       <div class="section-title">Téléverser une image</div>
       <div class="row">
         <div class="field">
@@ -311,7 +334,7 @@ header a:hover { color: #fff; }
     </div>
 
     <!-- RÉPONSE -->
-    <div class="section">
+    <div class="section" id="section-reponse">
       <div class="section-title">Réponse</div>
       <div class="field">
         <label>Type de réponse</label>
@@ -332,7 +355,7 @@ header a:hover { color: #fff; }
     </div>
 
     <!-- RÉGLETTE -->
-    <div class="section">
+    <div class="section" id="section-reglette">
       <div class="section-title">Réglette</div>
       <div class="field">
         <label>Réglette prémémorisée</label>
@@ -343,7 +366,7 @@ header a:hover { color: #fff; }
     </div>
 
     <!-- GUIDE -->
-    <div class="section">
+    <div class="section" id="section-guide">
       <div class="section-title">Guide de correction</div>
       <div class="field">
         <label>Type</label>
@@ -358,7 +381,7 @@ header a:hover { color: #fff; }
     </div>
 
     <!-- ACTIONS -->
-    <div class="actions">
+    <div class="actions" id="section-actions">
       <button class="btn-primary" id="btn-publier" onclick="publier()">Publier sur GitHub</button>
       <button class="btn-secondary" onclick="resetForm()">Réinitialiser</button>
       <span id="publish-status" style="font-size:.82rem;color:var(--ink-3)"></span>
@@ -374,6 +397,9 @@ header a:hover { color: #fff; }
 <script>
 // ── TOKEN ─────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', init);
+
+let formDirty = false;
+window.addEventListener('beforeunload', e => { if(formDirty) e.preventDefault(); });
 
 function saveToken() {
   const val = document.getElementById('gh-token').value;
@@ -776,6 +802,7 @@ function loadQuestion(id) {
   } else {
     document.getElementById('guide-type').value='grille'; updateGuideUI();
   }
+  formDirty = false;
 }
 
 // ── SUPPRIMER QUESTION ────────────────────────────────────────────────
@@ -957,6 +984,7 @@ async function init() {
   else if(ssToken) { document.getElementById('gh-token').value = ssToken; }
   updatePeriodes();
   updatePresets();
+  document.querySelector('.container').addEventListener('input', e => { if(!e.target.closest('.token-bar')) formDirty = true; });
   await Promise.all([loadQuestionsJs(), loadImages(), loadReglettesJs()]);
 }
 
@@ -1063,6 +1091,8 @@ function addDoc(type) {
   if(type === 'textes') {
     div.innerHTML = `
       <div class="block-title">Document texte</div>
+      <button class="btn-move btn-move-up" onclick="moveDoc('doc-${id}',-1)" title="Monter">↑</button>
+      <button class="btn-move btn-move-dn" onclick="moveDoc('doc-${id}',1)" title="Descendre">↓</button>
       <button class="btn-remove" onclick="removeEl('doc-${id}')">✕</button>
       <div class="field"><label>Titre</label><input type="text" id="doc-${id}-titre" placeholder="Document ${letter}" value="Document ${letter}"></div>
       <div class="field"><label>Sous-titre <span style="font-weight:400;color:var(--ink-3)">(optionnel)</span></label><input type="text" id="doc-${id}-soustitre" placeholder="ex. : Champlain et ses alliés…"></div>
@@ -1072,6 +1102,8 @@ function addDoc(type) {
   } else if(type === 'image') {
     div.innerHTML = `
       <div class="block-title">Document image</div>
+      <button class="btn-move btn-move-up" onclick="moveDoc('doc-${id}',-1)" title="Monter">↑</button>
+      <button class="btn-move btn-move-dn" onclick="moveDoc('doc-${id}',1)" title="Descendre">↓</button>
       <button class="btn-remove" onclick="removeEl('doc-${id}')">✕</button>
       <div class="field"><label>Titre</label><input type="text" id="doc-${id}-titre" placeholder="Document ${letter}" value="Document ${letter}"></div>
       <div class="field"><label>Sous-titre <span style="font-weight:400;color:var(--ink-3)">(optionnel)</span></label><input type="text" id="doc-${id}-soustitre" placeholder="ex. : Carte du territoire en 1763…"></div>
@@ -1081,6 +1113,8 @@ function addDoc(type) {
   } else if(type === 'textes-image') {
     div.innerHTML = `
       <div class="block-title">Colonnes texte / image</div>
+      <button class="btn-move btn-move-up" onclick="moveDoc('doc-${id}',-1)" title="Monter">↑</button>
+      <button class="btn-move btn-move-dn" onclick="moveDoc('doc-${id}',1)" title="Descendre">↓</button>
       <button class="btn-remove" onclick="removeEl('doc-${id}')">✕</button>
       <div id="doc-${id}-cols"></div>
       <div style="display:flex;gap:.4rem">
@@ -1124,6 +1158,16 @@ function imageSelect(id) {
 }
 
 function removeEl(id) { document.getElementById(id)?.remove(); }
+
+function moveDoc(id, dir) {
+  const el = document.getElementById(id);
+  if(!el) return;
+  const parent = el.parentNode;
+  const sibs = [...parent.querySelectorAll(':scope > .block')];
+  const idx = sibs.indexOf(el);
+  if(dir < 0 && idx > 0) parent.insertBefore(el, sibs[idx - 1]);
+  else if(dir > 0 && idx < sibs.length - 1) parent.insertBefore(sibs[idx + 1], el);
+}
 
 // ── RÉPONSE ───────────────────────────────────────────────────────────
 function updateReponseUI() {
@@ -1611,6 +1655,7 @@ async function publier() {
 // ── RESET ─────────────────────────────────────────────────────────────
 function resetForm(keepId=false) {
   editingId = null;
+  formDirty = false;
   const newRadio = document.querySelector('input[name="mode"][value="new"]');
   if(newRadio) { newRadio.checked = true; document.getElementById('edit-select-wrap').style.display='none'; }
   if(!keepId) document.getElementById('q-id').value = '';
