@@ -7339,7 +7339,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P1 — Des origines à 1608",
     points: 3,
-    enonce: "Expliquez comment des changements dans le commerce européen favorisent les voyages d’exploration au 16e siècle. \n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Un changement dans le commerce européen\n• Un objectif des royaumes européens\n• Un moyen utilisé par les royaumes européens",
+    enonce: "Expliquez comment des changements dans le commerce européen favorisent les voyages d’exploration au 16e siècle. \n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Un changement dans le commerce en Europe\n• Un objectif des puissances européennes\n• Un moyen utilisé par les royaumes européens",
     aspects: [
       {
         aspect: "Premiers contacts"
