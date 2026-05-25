@@ -2758,6 +2758,9 @@ const IMAGE_DB = {
   },
   "ligne_1575-1775.png": {
     src: "images/ligne_1575-1775.png"
+  },
+  "grahique_b_exportations_fourrures_huronie.png": {
+    src: "images/grahique_b_exportations_fourrures_huronie.png"
   }
 }
 
@@ -8300,8 +8303,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "exportations_fourrures_huronie.png",
-            soustitre: "Nombre estimé de peaux exportées en Nouvelle-France",
+            ref: "grahique_b_exportations_fourrures_huronie.png",
+            soustitre: "Exportations estimées de pelleteries vers la France",
             source: "adaptation pédagogique à partir des Archives de la Nouvelle-France et de travaux d’historiens sur le commerce des fourrures."
           }
         ]
