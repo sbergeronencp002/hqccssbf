@@ -7921,7 +7921,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "destruction_huronie.png",
+            ref: "gravure_destruction_huronie.png",
             source: "Récitus."
           }
         ]
