@@ -2616,6 +2616,9 @@ const IMAGE_DB = {
   },
   "ligne_bcAd.png": {
     src: "images/ligne_bcAd.png"
+  },
+  "gravure_destruction_huronie.png": {
+    src: "images/gravure_destruction_huronie.png"
   }
 }
 
@@ -7980,7 +7983,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "destruction_huronie.png",
+            ref: "gravure_destruction_huronie.png",
             source: "Récitus."
           }
         ]
