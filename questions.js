@@ -2551,6 +2551,34 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
+  },
+  "Q128": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -8441,5 +8469,56 @@ const QUESTIONS = [
       ref: "ligne_1550-1750.png"
     },
     guide: "B"
+  },
+  {
+    id: "Q128",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P2 — 1608 – 1760",
+    points: 3,
+    enonce: "Expliquez comment la destruction de la Huronie entraîne un changement dans l’occupation du territoire par les Hurons-Wendats au 17e siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• un conflit impliquant les Haudenosaunee (Iroquois)\n• une conséquence territoriale chez les Hurons-Wendats\n• une région d’accueil des populations déplacées",
+    aspects: [
+      {
+        aspect: "Guerre et diplomatie chez les Premières Nations"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "gravure_destruction_huronie.png",
+            soustitre: "Raids iroquoiens en Huronie",
+            source: "llustration pédagogique inspirée des gravures de Theodor de Bry portant sur les conflits autochtones en Amérique du Nord."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« La disparition de la Huronie ne signifie pas seulement la destruction de quelques villages, mais bien l’éclatement d’une société entière, dont les survivants se dispersent vers différentes régions sous la pression des guerres iroquoises. Cette situation transforme profondément la présence huronne sur le territoire au milieu du XVIIe siècle. »",
+            source: "Olive Patricia Dickason, Canada’s First Nations: A History of Founding Peoples from Earliest Times, Toronto, Oxford University Press, 2002."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "destruction_huronie.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 5
+    },
+    guide: "Au milieu du 17e siècle, les Haudenosaunee (Iroquois) attaquent les villages hurons afin de contrôler le commerce des fourrures (un conflit impliquant les Haudenosaunee (Iroquois)). Ces conflits entraînent la destruction de la Huronie en 1648-1649 et forcent plusieurs Hurons-Wendats à abandonner leur territoire (une conséquence territoriale chez les Hurons-Wendats). Une partie des survivants se réfugie près de Québec, notamment dans la région de Lorette (une région d’accueil des populations déplacées)."
   }
 ]
