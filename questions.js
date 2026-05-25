@@ -7749,7 +7749,7 @@ const QUESTIONS = [
           {
             titre: "Document C",
             ref: "graphique_poste_de_traite_1780.png",
-            soustitre: "Postes de traite établis vers l'Ouest"
+            soustitre: "Nombre de postes de traite établis vers l'Ouest"
           }
         ]
       }
