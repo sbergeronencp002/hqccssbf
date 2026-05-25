@@ -2396,6 +2396,28 @@ const REGLETTES = {
         desc: "L'élève ne situe pas tous les faits dans le temps."
       }
     ]
+  },
+  "Q120": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
   }
 }
 
@@ -7928,5 +7950,88 @@ const QUESTIONS = [
       ref: "ligne_bcAd.png"
     },
     guide: "C - B - A - D"
+  },
+  {
+    id: "Q120",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "4 documents",
+    enonce: "Les documents A à D présentent des faits liés aux relations franco-amérindiennes sous le régime français. Associez chaque document à l’événement correspondant.",
+    aspects: [
+      {
+        aspect: "Guerre et diplomatie chez les Premières Nations"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les troupes du régiment de Carignan-Salières construisent des forts le long de la rivière Richelieu afin de limiter les incursions iroquoises vers les établissements français. »",
+            source: "Allan Greer, Brève histoire des peuples de la Nouvelle-France, Boréal, 1998."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "destruction_huronie.png",
+            source: "Récitus."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "bataille_lac_champlain.png",
+            soustitre: "Bataille du lac Champlain",
+            source: "Theodor de Bry, gravure du 17e siècle, Bibliothèque et Archives Canada."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« La signature [de l'entente] permet aux Français de sécuriser leurs alliances et de poursuivre plus facilement le commerce des fourrures dans l’intérieur du continent. »",
+            source: "John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec, Septentrion, 2003."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Alliance franco-amérindienne",
+        "Arrivée du régiment Carignan-Salières",
+        "Destruction de la Huronie",
+        "Grande Paix de Montréal"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Alliance franco-amérindienne",
+        "Arrivée du régiment Carignan-Salières",
+        "Destruction de la Huronie",
+        "Grande Paix de Montréal"
+      ],
+      rangees: [
+        [
+          "C",
+          "A",
+          "B",
+          "D"
+        ]
+      ]
+    }
   }
 ]
