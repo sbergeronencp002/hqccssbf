@@ -2495,6 +2495,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
+  },
+  "Q125": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -2699,6 +2716,9 @@ const IMAGE_DB = {
   },
   "exportations_fourrures_huronie.png": {
     src: "images/exportations_fourrures_huronie.png"
+  },
+  "ligne_1575-1775.png": {
+    src: "images/ligne_1575-1775.png"
   }
 }
 
@@ -8253,5 +8273,37 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les exportations de fourrures diminuent fortement autour de 1650."
+  },
+  {
+    id: "Q125",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Guerre et diplomatie chez les Premières Nations"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "gravure_destruction_huronie.png",
+            soustitre: "Destruction de la Huronie",
+            source: "« Illustration pédagogique inspirée des gravures de Theodor de Bry portant sur les conflits autochtones en Amérique du Nord. »"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1575-1775.png"
+    },
+    guide: "B"
   }
 ]
