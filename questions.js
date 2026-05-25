@@ -2534,6 +2534,23 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (0 sur 2)"
       }
     ]
+  },
+  "Q127": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -8386,5 +8403,40 @@ const QUESTIONS = [
         ]
       ]
     }
+  },
+  {
+    id: "Q127",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Commerce des fourrures"
+      },
+      {
+        aspect: "Monopole des compagnies"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« En fondant une nouvelle compagnie au XVIIe siècle, la monarchie française cherche à mieux organiser le commerce, accroître le peuplement et consolider son autorité dans la vallée du Saint-Laurent. »",
+            soustitre: "Création de la Compagnie des Cent Associés",
+            source: "Gilles Havard et Cécile Vidal, Histoire de l’Amérique française, Paris, Flammarion, 2003."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1550-1750.png"
+    },
+    guide: "B"
   }
 ]
