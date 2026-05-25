@@ -2512,6 +2512,28 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
+  },
+  "Q126": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (2 sur 2)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (1 sur 2)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (0 sur 2)"
+      }
+    ]
   }
 }
 
@@ -8305,5 +8327,64 @@ const QUESTIONS = [
       ref: "ligne_1575-1775.png"
     },
     guide: "B"
+  },
+  {
+    id: "Q126",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "2 documents",
+    enonce: "Les documents A et B présentent deux compagnies commerciales fondées au XVIIe siècle. Associez chaque document à la compagnie correspondante.",
+    aspects: [
+      {
+        aspect: "Commerce des fourrures"
+      },
+      {
+        aspect: "Monopole des compagnies"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Grâce à sa charte royale [la compagnie] devient un acteur majeur de l’expansion britannique dans le Nord canadien. [...] [la fondation d'une telle entreprise] transforme profondément le commerce des fourrures en Amérique du Nord. »",
+            source: "John S. Galbraith, The Hudson’s Bay Company as an Imperial Factor, Berkeley, University of California Press, 1957."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Richelieu voit dans [la création de cette compagnie] un moyen de renforcer à la fois la colonisation et l’influence française en Amérique du Nord. »",
+            source: "Gilles Havard et Cécile Vidal, Histoire de l’Amérique française, Paris, Flammarion, 2003."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Compagnie de la Baie d'Hudson",
+        "Compagnie des Cent Associés"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Compagnie de la Baie d'Hudson",
+        "Compagnie des Cent Associés"
+      ],
+      rangees: [
+        [
+          "A",
+          "B"
+        ]
+      ]
+    }
   }
 ]
