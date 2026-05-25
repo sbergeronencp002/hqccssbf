@@ -7922,7 +7922,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             ref: "gravure_destruction_huronie.png",
-            source: "Récitus."
+            source: "llustration pédagogique inspirée des gravures de Theodor de Bry portant sur les conflits autochtones en Amérique du Nord."
           }
         ]
       },
