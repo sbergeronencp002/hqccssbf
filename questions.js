@@ -7970,7 +7970,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Les troupes du régiment de Carignan-Salières construisent des forts le long de la rivière Richelieu afin de limiter les incursions iroquoises vers les établissements français. »",
+            texte: "« Les troupes [...] construisent des forts le long de la rivière Richelieu afin de limiter les incursions iroquoises vers les établissements français. »",
             source: "Allan Greer, Brève histoire des peuples de la Nouvelle-France, Boréal, 1998."
           }
         ]
