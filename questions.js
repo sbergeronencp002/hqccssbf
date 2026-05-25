@@ -7717,6 +7717,9 @@ const QUESTIONS = [
     aspects: [
       {
         aspect: "Économie coloniale"
+      },
+      {
+        aspect: "Invasion américaine"
       }
     ],
     documents: [
