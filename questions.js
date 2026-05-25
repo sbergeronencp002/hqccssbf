@@ -8103,7 +8103,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 2,
     soustag: "Conséquence",
-    enonce: "Indiquez une conséquence des guerres iroquoises sur les Hurons au 17e siècle.",
+    enonce: "Indiquez une conséquence des guerres iroquoises sur les populations huronnes au 17e siècle.",
     aspects: [
       {
         aspect: "Guerre et diplomatie chez les Premières Nations"
