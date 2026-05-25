@@ -2440,6 +2440,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q122": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -2641,6 +2663,9 @@ const IMAGE_DB = {
   },
   "gravure_destruction_huronie.png": {
     src: "images/gravure_destruction_huronie.png"
+  },
+  "exportations_fourrures_huronie.png": {
+    src: "images/exportations_fourrures_huronie.png"
   }
 }
 
@@ -8090,5 +8115,40 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "La destruction des villages hurons ou la destruction de la Huronie ou la dispersion des Hurons après les attaques iroquoises."
+  },
+  {
+    id: "Q122",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence des attaques iroquoises sur le commerce des fourrures en Nouvelle-France au 17e siècle.",
+    aspects: [
+      {
+        aspect: "Commerce des fourrures"
+      },
+      {
+        aspect: "Guerre et diplomatie chez les Premières Nations"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "exportations_fourrures_huronie.png",
+            soustitre: "Nombre estimé de peaux exportées en Nouvelle-France",
+            source: "adaptation pédagogique à partir des Archives de la Nouvelle-France et de travaux d’historiens sur le commerce des fourrures."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Il y a une diminution des exportations de fourrures ou il y a un affaiblissement des alliances commerciales ou difficulté pour les Français d’obtenir des fourrures ou insécurité sur les routes commerciales."
   }
 ]
