@@ -2323,6 +2323,34 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
       }
     ]
+  },
+  "Q117": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -2509,6 +2537,9 @@ const IMAGE_DB = {
   },
   "premiers_contacts": {
     src: "images/premiers_contacts"
+  },
+  "graphique_poste_de_traite_1780.png": {
+    src: "images/graphique_poste_de_traite_1780.png"
   }
 }
 
@@ -7675,5 +7706,55 @@ const QUESTIONS = [
         ]
       ]
     }
+  },
+  {
+    id: "Q117",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    enonce: "Expliquez comment la guerre d’Indépendance américaine entraîne une réorganisation du commerce des fourrures dans la Province de Québec et la région des Grands Lacs.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• un territoire perdu à la suite du traité de Paris de 1783;\n• une conséquence sur les activités des compagnies de fourrures;\n• une action entreprise par les compagnies afin de développer le commerce vers le Nord-Ouest.",
+    aspects: [
+      {
+        aspect: "Économie coloniale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après 1783, les Britanniques doivent composer avec la perte d’une vaste région qui servait auparavant aux échanges et aux déplacements commerciaux vers l’intérieur du continent. »",
+            source: "Paul-André Linteau et al., Histoire du Québec contemporain, Boréal, 1989."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les marchands de Montréal doivent revoir leurs réseaux commerciaux après la perte des territoires situés au sud des Grands Lacs. »",
+            source: "Gilles Havard et Cécile Vidal, Histoire de l’Amérique française, Flammarion, 2003."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "graphique_poste_de_traite_1780.png",
+            soustitre: "Postes de traite établis vers l'Ouest"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 5
+    },
+    guide: "Le traité de Paris de 1783 accorde aux États-Unis les territoires situés au sud des Grands Lacs (un territoire perdu à la suite du traité de Paris de 1783). Cette perte territoriale complique les activités des compagnies de fourrures et l’accès à certaines routes commerciales (une conséquence sur les activités des compagnies de fourrures). Afin de poursuivre et développer le commerce des fourrures, les compagnies déplacent leurs activités vers le Nord-Ouest et établissent de nouveaux postes de traite (une action entreprise par les compagnies afin de développer le commerce vers le Nord-Ouest)."
   }
 ]
