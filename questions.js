@@ -2473,6 +2473,28 @@ const REGLETTES = {
       "0 point"
     ],
     niveaux: []
+  },
+  "Q124": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -8196,5 +8218,40 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Il y a un changement dans le commerce des fourrures. Les exportations diminuent fortement autour de 1650.\n\nOU\n\nIl y a une continuité dans le commerce des fourrures puisque les exportations demeurent présentes durant toute la période entre 1620 et 1670."
+  },
+  {
+    id: "Q124",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Changement",
+    enonce: "Indiquez un changement observé dans les exportations de fourrures autour de 1650.",
+    aspects: [
+      {
+        aspect: "Commerce des fourrures"
+      },
+      {
+        aspect: "Guerre et diplomatie chez les Premières Nations"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "exportations_fourrures_huronie.png",
+            soustitre: "Nombre estimé de peaux exportées en Nouvelle-France",
+            source: "adaptation pédagogique à partir des Archives de la Nouvelle-France et de travaux d’historiens sur le commerce des fourrures."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les exportations de fourrures diminuent fortement autour de 1650."
   }
 ]
