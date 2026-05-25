@@ -2379,6 +2379,23 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q119": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "2 points",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève situe tous les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas tous les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -2571,6 +2588,12 @@ const IMAGE_DB = {
   },
   "mercantilisme_fourrures_n-f.png": {
     src: "images/mercantilisme_fourrures_n-f.png"
+  },
+  "destruction_huronie.png": {
+    src: "images/destruction_huronie.png"
+  },
+  "ligne_bcAd.png": {
+    src: "images/ligne_bcAd.png"
   }
 }
 
@@ -7843,5 +7866,67 @@ const QUESTIONS = [
       nombre: 5
     },
     guide: "Les habitants de la Nouvelle-France exploitent des ressources comme les fourrures de castor (une ressource exploitée dans la colonie). La métropole française impose une politique économique où la colonie doit fournir des matières premières à la France et acheter les produits transformés provenant de la métropole (une mesure économique imposée par la métropole). Cette situation favorise le développement du commerce des fourrures ou plusieurs compagnies privilégient les profits commerciaux plutôt que le peuplement et le développement de la colonie (une conséquence économique pour la colonie)."
+  },
+  {
+    id: "Q119",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Ordre chronologique",
+    enonce: "Les documents A à D présentent des faits liés aux relations franco-amérindiennes sous le régime français. Placez les documents en ordre chronologique.",
+    aspects: [
+      {
+        aspect: "Guerre et diplomatie chez les Premières Nations"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« [...] le roi de France envoie le régiment de Carignan-Salières en Nouvelle-France afin de protéger la colonie contre les attaques iroquoises et de rétablir la sécurité dans la vallée du Saint-Laurent. »",
+            source: "Marcel Trudel, Initiation à la Nouvelle-France, Holt, Rinehart et Winston, 1968."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "destruction_huronie.png",
+            source: "Récitus."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "bataille_lac_champlain.png",
+            soustitre: "Alliance franco-amérindienne",
+            source: "Theodor de Bry, gravure du 17e siècle, Bibliothèque et Archives Canada."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« [...] les Français et plusieurs Premières Nations concluent la Grande Paix de Montréal, mettant fin à des décennies de conflits et favorisant la stabilité dans la région des Grands Lacs. »",
+            source: "Gilles Havard et Cécile Vidal, Histoire de l’Amérique française, Flammarion, 2003."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_bcAd.png"
+    },
+    guide: "C - B - A - D"
   }
 ]
