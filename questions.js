@@ -2351,6 +2351,34 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q118": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -2540,6 +2568,9 @@ const IMAGE_DB = {
   },
   "graphique_poste_de_traite_1780.png": {
     src: "images/graphique_poste_de_traite_1780.png"
+  },
+  "mercantilisme_fourrures_n-f.png": {
+    src: "images/mercantilisme_fourrures_n-f.png"
   }
 }
 
@@ -7759,5 +7790,58 @@ const QUESTIONS = [
       nombre: 5
     },
     guide: "Le traité de Paris de 1783 accorde aux États-Unis les territoires situés au sud des Grands Lacs (un territoire perdu à la suite du traité de Paris de 1783). Cette perte territoriale complique les activités des compagnies de fourrures et l’accès à certaines routes commerciales (une conséquence sur les activités des compagnies de fourrures). Afin de poursuivre et développer le commerce des fourrures, les compagnies déplacent leurs activités vers le Nord-Ouest et établissent de nouveaux postes de traite (une action entreprise par les compagnies afin de développer le commerce vers le Nord-Ouest)."
+  },
+  {
+    id: "Q118",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P2 — 1608 – 1760",
+    points: 3,
+    enonce: "Expliquez comment le commerce des fourrures favorise les relations économiques entre la métropole française et sa colonie au début du 17e siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• une ressource exploitée dans la colonie;\n• une mesure économique imposée par la métropole;\n• une conséquence économique pour la colonie.",
+    aspects: [
+      {
+        aspect: "Commerce des fourrures"
+      },
+      {
+        aspect: "Monopole des compagnies"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "mercantilisme_fourrures_n-f.png",
+            source: "Récitus."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les Européens accordent une grande valeur aux peaux de castor provenant de l’Amérique du Nord, car elles servent largement à la fabrication de chapeaux de feutre très populaires sur les marchés européens au 17e siècle. »",
+            source: "Allan Greer, Brève histoire des peuples de la Nouvelle-France, Boréal, 1998."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Malgré les engagements pris envers la monarchie française, plusieurs compagnies privilégient l’exploitation des ressources et investissent peu dans le peuplement et les infrastructures de la colonie. »",
+            source: "Gilles Havard et Cécile Vidal, Histoire de l’Amérique française, Flammarion, 2003."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 5
+    },
+    guide: "Les habitants de la Nouvelle-France exploitent des ressources comme les fourrures de castor (une ressource exploitée dans la colonie). La métropole française impose une politique économique où la colonie doit fournir des matières premières à la France et acheter les produits transformés provenant de la métropole (une mesure économique imposée par la métropole). Cette situation favorise le développement du commerce des fourrures ou plusieurs compagnies privilégient les profits commerciaux plutôt que le peuplement et le développement de la colonie (une conséquence économique pour la colonie)."
   }
 ]
