@@ -52,7 +52,7 @@ function populateFilters() {
   const allOis = [...new Set(QUESTIONS.map(q=>q.oi))].sort((a,b)=>a.localeCompare(b,'fr'));
   const aspectsByPeriode = {};
   QUESTIONS.forEach(q=>{
-    q.aspects.forEach(a=>{
+    (q.aspects||[]).forEach(a=>{
       if(!aspectsByPeriode[q.periode]) aspectsByPeriode[q.periode]=new Set();
       aspectsByPeriode[q.periode].add(a.aspect);
     });
@@ -159,7 +159,7 @@ function applyFilters() {
   for(const q of QUESTIONS) {
     const niveauOk  = !niveau  || String(q.niveau) === niveau;
     const periodeOk = !periode || q.periode === periode;
-    const aspectOk  = !aspect  || q.aspects.some(a=>a.aspect===aspect);
+    const aspectOk  = !aspect  || (q.aspects||[]).some(a=>a.aspect===aspect);
     if(niveauOk && periodeOk && aspectOk) oiSet.add(q.oi);
     if(!niveauOk || !periodeOk || !aspectOk) continue;
     if(oi && q.oi !== oi) continue;
@@ -335,7 +335,7 @@ function openQModal(id) {
   const closeBtn = document.getElementById('q-modal-close');
   if(closeBtn) closeBtn.style.color = st.color;
 
-  const aspects = q.aspects.map(a => a.aspect).join(' · ');
+  const aspects = (q.aspects||[]).map(a => a.aspect).join(' · ');
   document.getElementById('q-modal-title').innerHTML =
     `<div class="q-oi-badge" style="color:${st.color};background:rgba(0,0,0,0.08)">${q.oi}</div>` +
     `<div style="font-size:0.7rem;margin-top:3px;opacity:0.72">${aspects}</div>` +
@@ -419,7 +419,7 @@ let currentFiltered = [];
 
 function buildTileHtml(q) {
   const st = oiStyle(q.oi);
-  const aspect = q.aspects.map(a => a.aspect).join(' · ');
+  const aspect = (q.aspects||[]).map(a => a.aspect).join(' · ');
   const inPanier = panier.includes(q.id);
   const badge = s => `<span style="font-size:0.7rem;color:${st.color};background:${st.bg};border-radius:10px;padding:1px 8px;font-weight:500">${s}</span>`;
   const badgeNew = `<span style="font-size:0.7rem;color:${st.color};background:${st.bg};border-radius:10px;padding:1px 8px;font-weight:700;letter-spacing:0.03em">Nouveauté</span>`;
@@ -1093,6 +1093,7 @@ function cahierDrop(e) {
   if(!fromId || fromId === toId) return;
   const before = e.currentTarget.classList.contains('drop-top');
   const fi = panier.indexOf(fromId);
+  if(fi === -1) return;
   panier.splice(fi, 1);
   const ti = panier.indexOf(toId);
   panier.splice(before ? ti : ti + 1, 0, fromId);
