@@ -8865,7 +8865,8 @@ const QUESTIONS = [
       elements: [
         "Frontenac",
         "Samuel de Champlain"
-      ]
+      ],
+      double: true
     },
     guide: {
       type: "grille",
