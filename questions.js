@@ -9110,6 +9110,7 @@ const QUESTIONS = [
           {
             titre: "Document D",
             ref: "fondation_t-r.png",
+            soustitre: "Fondation de Trois-Rivières",
             source: "Illustration générée à partir de représentations historiques de la Nouvelle-France."
           }
         ]
