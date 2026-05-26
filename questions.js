@@ -2862,6 +2862,9 @@ const IMAGE_DB = {
   },
   "filles_du_roy.png": {
     src: "images/filles_du_roy.png"
+  },
+  "ligne_1600-1700.png": {
+    src: "images/ligne_1600-1700.png"
   }
 }
 
@@ -8730,7 +8733,7 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "image",
-      ref: "ligne_1550-1750.png"
+      ref: "ligne_1600-1700.png"
     },
     guide: "C"
   }
