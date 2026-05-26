@@ -2646,62 +2646,6 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
-  },
-  "Q133": {
-    oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
-      }
-    ]
-  },
-  "Q134": {
-    oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
-    ]
-  },
-  "Q135": {
-    oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
-    ]
   }
 }
 
@@ -2921,12 +2865,6 @@ const IMAGE_DB = {
   },
   "ligne_1600-1700.png": {
     src: "images/ligne_1600-1700.png"
-  },
-  "quebec_frere_kirke.png": {
-    src: "images/quebec_frere_kirke.png"
-  },
-  "siege_quebec_1690.png": {
-    src: "images/siege_quebec_1690.png"
   }
 }
 
@@ -8777,9 +8715,6 @@ const QUESTIONS = [
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
     aspects: [
       {
-        aspect: "Croissance de la population"
-      },
-      {
         aspect: "Gouvernement royal"
       }
     ],
@@ -8791,7 +8726,7 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "filles_du_roy.png",
             soustitre: "Arrivée des Filles du Roy",
-            source: "Bibliothèque et Archives Canada, L’arrivée des Filles du Roy à Québec, domaine public."
+            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
         ]
       }
@@ -8801,149 +8736,5 @@ const QUESTIONS = [
       ref: "ligne_1600-1700.png"
     },
     guide: "C"
-  },
-  {
-    id: "Q133",
-    niveau: 3,
-    oi: "Mettre en relation des faits",
-    periode: "P2 — 1608 – 1760",
-    points: 2,
-    soustag: "2 documents",
-    enonce: "Les documents A à D présentent des événements militaires liés à la ville de Québec sous le Régime français. Indiquez les deux documents correspondant à chacun des gouverneurs.",
-    aspects: [
-      {
-        aspect: "Guerres intercoloniales"
-      },
-      {
-        aspect: "Territoire français en Amérique"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            texte: "« [Il] affirme qu’il répondra aux Anglais “par la bouche de ses canons”, symbole de la résistance française lors du siège de Québec de 1690. »",
-            source: "Gilles Havard et Cécile Vidal, Histoire de l’Amérique française, Paris, Flammarion, 2003."
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            ref: "quebec_frere_kirke.png",
-            source: "Bibliothèque et Archives Canada, Occupation de Québec par les Britanniques, domaine public."
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document C",
-            ref: "siege_quebec_1690.png",
-            source: "Bibliothèque et Archives Canada, Siège de Québec par les Britanniques, domaine public."
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document D",
-            texte: "« Privée de ravitaillement et affaiblie par la famine, Québec doit finalement capituler [...] en 1629, ce qui interrompt temporairement la présence française dans la vallée du Saint-Laurent. »",
-            source: "Marcel Trudel, Histoire de la Nouvelle-France, Montréal, Fides, 1963."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "mettre-en-relation",
-      elements: [
-        "Frontenac",
-        "Samuel de Champlain"
-      ],
-      double: true
-    },
-    guide: {
-      type: "grille",
-      entetes: [
-        "Frontenac",
-        "Samuel de Champlain"
-      ],
-      rangees: [
-        [
-          "A et C",
-          "B et D"
-        ]
-      ]
-    }
-  },
-  {
-    id: "Q134",
-    niveau: 3,
-    oi: "Situer dans le temps",
-    periode: "P2 — 1608 – 1760",
-    points: 1,
-    soustag: "Ligne du temps",
-    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Guerres intercoloniales"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "siege_quebec_1690.png",
-            soustitre: "Siège de Québec par Phips",
-            source: "Bibliothèque et Archives Canada, Siège de Québec par Phips, domaine public."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1600-1700.png"
-    },
-    guide: "D"
-  },
-  {
-    id: "Q135",
-    niveau: 3,
-    oi: "Situer dans le temps",
-    periode: "P2 — 1608 – 1760",
-    points: 1,
-    soustag: "Ligne du temps",
-    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Territoire français en Amérique"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "quebec_frere_kirke.png",
-            soustitre: "Occupation de Québec par les frères Kirke",
-            source: "Bibliothèque et Archives Canada, Occupation de Québec par les frères Kirke, domaine public."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1600-1700.png"
-    },
-    guide: "B"
   }
 ]

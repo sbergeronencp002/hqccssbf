@@ -8865,8 +8865,7 @@ const QUESTIONS = [
       elements: [
         "Frontenac",
         "Samuel de Champlain"
-      ],
-      double: true
+      ]
     },
     guide: {
       type: "grille",
@@ -8934,8 +8933,8 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "quebec_frere_kirke.png",
-            soustitre: "Occupation de Québec par les frères Kirke",
-            source: "Bibliothèque et Archives Canada, Occupation de Québec par les frères Kirke, domaine public."
+            soustitre: "Occupation de Québec par les frère Kirke",
+            source: "Bibliothèque et Archives Canada, Occupation de Québec par les frère Kirke, domaine public."
           }
         ]
       }
