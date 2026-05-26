@@ -2719,6 +2719,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas tous les faits dans le temps."
       }
     ]
+  },
+  "Q137": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "2 points",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève situe tous les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas tous les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -2950,6 +2967,12 @@ const IMAGE_DB = {
   },
   "fondation_quebec.png": {
     src: "images/fondation_quebec.png"
+  },
+  "fondation_mtl.png": {
+    src: "images/fondation_mtl.png"
+  },
+  "fondation_t-r.png": {
+    src: "images/fondation_t-r.png"
   }
 }
 
@@ -9024,6 +9047,70 @@ const QUESTIONS = [
             texte: "« Le poste de Trois-Rivières occupe une position importante dans les échanges commerciaux entre les Français et les nations autochtones de la vallée du Saint-Laurent. »",
             soustitre: "Fondation de Trois-Rivières",
             source: "Jacques Lacoursière, Notre histoire, Québec, Septentrion, 2012."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_abDc.png"
+    },
+    guide: "B - C - D - A"
+  },
+  {
+    id: "Q137",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Ordre chronologique",
+    enonce: "Les documents A à D présentent des événements liés à la fondation d’établissements français en Nouvelle-France. Placez-les par ordre chronologique.",
+    aspects: [
+      {
+        aspect: "Territoire français en Amérique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "fondation_mtl.png",
+            soustitre: "Fondation de Ville-Marie",
+            source: "Illustration générée à partir de représentations historiques de la Nouvelle-France."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Situé à l’embouchure du Saguenay, Tadoussac devient dès le début du XVIIe siècle un lieu stratégique pour les échanges entre les Français et plusieurs nations autochtones. »",
+            soustitre: "Fondation de Tadoussac",
+            source: "Denys Delâge, Le pays renversé, Montréal, Boréal, 1991."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« [...] Champlain établit Québec afin d’assurer une présence française permanente dans la vallée du Saint-Laurent. »",
+            soustitre: "Fondation de Québec",
+            source: "Marcel Trudel, Histoire de la Nouvelle-France, Montréal, Fides, 1963."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            ref: "fondation_t-r.png",
+            source: "Illustration générée à partir de représentations historiques de la Nouvelle-France."
           }
         ]
       }
