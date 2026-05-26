@@ -8726,7 +8726,7 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "filles_du_roy.png",
             soustitre: "Arrivée des Filles du Roy",
-            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
+            source: "Bibliothèque et Archives Canada, L’arrivée des Filles du Roy à Québec, domaine public."
           }
         ]
       }
