@@ -8743,6 +8743,9 @@ const QUESTIONS = [
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
     aspects: [
       {
+        aspect: "Croissance de la population"
+      },
+      {
         aspect: "Gouvernement royal"
       }
     ],
