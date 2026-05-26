@@ -2579,6 +2579,23 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q129": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -2789,6 +2806,9 @@ const IMAGE_DB = {
   },
   "grahique_b_exportations_fourrures_huronie.png": {
     src: "images/grahique_b_exportations_fourrures_huronie.png"
+  },
+  "village_domicilie_autochtone.png": {
+    src: "images/village_domicilie_autochtone.png"
   }
 }
 
@@ -8520,5 +8540,34 @@ const QUESTIONS = [
       nombre: 5
     },
     guide: "Au milieu du 17e siècle, les Haudenosaunee (Iroquois) attaquent les villages hurons afin de contrôler le commerce des fourrures (un conflit impliquant les Haudenosaunee (Iroquois)). Ces conflits entraînent la destruction de la Huronie en 1648-1649 et forcent plusieurs Hurons-Wendats à abandonner leur territoire (une conséquence territoriale chez les Hurons-Wendats). Une partie des survivants se réfugie près de Québec, notamment dans la région de Lorette (une région d’accueil des populations déplacées)."
+  },
+  {
+    id: "Q129",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez un village domicilié situé à proximité de Montréal.",
+    aspects: [
+      {
+        aspect: "Populations autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "village_domicilie_autochtone.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Kahnawake ou Kanesatake."
   }
 ]
