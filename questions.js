@@ -2629,6 +2629,23 @@ const REGLETTES = {
       "0 point"
     ],
     niveaux: []
+  },
+  "Q132": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -2842,6 +2859,9 @@ const IMAGE_DB = {
   },
   "village_domicilie_autochtone.png": {
     src: "images/village_domicilie_autochtone.png"
+  },
+  "filles_du_roy.png": {
+    src: "images/filles_du_roy.png"
   }
 }
 
@@ -8681,5 +8701,37 @@ const QUESTIONS = [
       nombre: 4
     },
     guide: "Il y a changement puisque certaines communautés vivent maintenant près des établissements français dans la vallée du Saint-Laurent vers 1750.\n\nou \n\nIl y a continuité puisque plusieurs groupes autochtones fréquentent encore leurs territoires de chasse et leurs campements saisonniers entre 1700 et 1750."
+  },
+  {
+    id: "Q132",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Gouvernement royal"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "filles_du_roy.png",
+            soustitre: "Arrivée des Filles du Roy",
+            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1550-1750.png"
+    },
+    guide: "C"
   }
 ]
