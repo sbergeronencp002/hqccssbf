@@ -2944,6 +2944,12 @@ const IMAGE_DB = {
   },
   "siege_quebec_1690.png": {
     src: "images/siege_quebec_1690.png"
+  },
+  "fondation_tadoussac.png": {
+    src: "images/fondation_tadoussac.png"
+  },
+  "fondation_quebec.png": {
+    src: "images/fondation_quebec.png"
   }
 }
 
@@ -8981,7 +8987,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document D",
+            titre: "Document A",
             texte: "« Les fondateurs de Ville-Marie souhaitent créer une communauté missionnaire destinée à l’évangélisation des Autochtones. »",
             soustitre: "Fondation de Ville-Marie",
             source: "Gilles Havard et Cécile Vidal, Histoire de l’Amérique française, Paris, Flammarion, 2003."
@@ -8993,9 +8999,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« Situé à l’embouchure du Saguenay, Tadoussac devient dès le début du XVIIe siècle un lieu stratégique pour les échanges entre les Français et plusieurs nations autochtones. »",
+            ref: "fondation_tadoussac.png",
             soustitre: "Fondation de Tadoussac",
-            source: "Denys Delâge, Le pays renversé, Montréal, Boréal, 1991."
+            source: "Illustration générée à partir de représentations historiques de la Nouvelle-France."
           }
         ]
       },
@@ -9004,9 +9010,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« [...] Champlain établit Québec afin d’assurer une présence française permanente dans la vallée du Saint-Laurent. »",
+            ref: "fondation_quebec.png",
             soustitre: "Fondation de Québec",
-            source: "Marcel Trudel, Histoire de la Nouvelle-France, Montréal, Fides, 1963."
+            source: "Illustration générée à partir de représentations historiques de la Nouvelle-France."
           }
         ]
       },
@@ -9017,8 +9023,7 @@ const QUESTIONS = [
             titre: "Document D",
             texte: "« Le poste de Trois-Rivières occupe une position importante dans les échanges commerciaux entre les Français et les nations autochtones de la vallée du Saint-Laurent. »",
             soustitre: "Fondation de Trois-Rivières",
-            auteur: "Jacques Lacoursière, Notre histoire, Québec, Septentrion, 2012.",
-            source: "Jean-Pierre CHARLAND, À l’aube du XXIe siècle, avec la collaboration de Jacques  Saint-Pierre, manuel de l’élève, histoire du Québec et du Canada, 4e secondaire, Montréal, Lidec, 1997, p. 17."
+            source: "Jacques Lacoursière, Notre histoire, Québec, Septentrion, 2012."
           }
         ]
       }
