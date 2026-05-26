@@ -2596,6 +2596,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q130": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -8570,5 +8592,41 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Kahnawake ou Kanesatake."
+  },
+  {
+    id: "Q130",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une raison qui explique l’établissement de villages domiciliés à proximité des établissements français vers 1750.",
+    aspects: [
+      {
+        aspect: "Populations autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "",
+            texte: "« Plusieurs communautés autochtones établies dans la vallée du Saint-Laurent vivent près des établissements français, où missionnaires, commerçants et autorités coloniales entretiennent des relations étroites avec elles. »",
+            source: "Adapté de Denys Delâge, Le pays renversé, Boréal, 1991."
+          },
+          {
+            titre: "",
+            ref: "village_domicilie_autochtone.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les villages domiciliés sont établis près des établissements français afin de favoriser les alliances entre les Français et certaines nations autochtones."
   }
 ]
