@@ -7337,6 +7337,7 @@ const QUESTIONS = [
     oi: "Déterminer des changements et des continuités",
     periode: "P4 — 1791 – 1840",
     points: 2,
+    soustag: "Continuité",
     enonce: "Indiquez un élément de continuité lié à la croissance de la population canadienne entre \n1760 et 1840.",
     aspects: [
       {
