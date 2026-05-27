@@ -268,15 +268,15 @@ const BC4 = {top:BORDER,bottom:BORDER,left:BN,     right:BORDER}; // col4
 
 Le proxy local est en lecture seule. Pousser via HTTPS direct :
 ```bash
-PAT=github_pat_11CA47PMQ0...
+PAT=github_pat_11CA47PMQ0MsIxCQ4RttwI_...
 git fetch https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git main:refs/remotes/origin/main_fresh
 git merge refs/remotes/origin/main_fresh --no-edit
 git push https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git HEAD:main
-git push https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git HEAD:claude/tender-turing-uZTbH
-git fetch https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git claude/tender-turing-uZTbH:refs/remotes/origin/claude/tender-turing-uZTbH
+git push https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git HEAD:claude/festive-maxwell-WBDGF
+git fetch https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git claude/festive-maxwell-WBDGF:refs/remotes/origin/claude/festive-maxwell-WBDGF
 ```
 
-**Branche de travail active :** `claude/tender-turing-uZTbH`
+**Branche de travail active :** `claude/festive-maxwell-WBDGF`
 
 ---
 
@@ -292,7 +292,7 @@ Vérifier que la taille est raisonnable (< 400 Ko idéalement) avant de pousser.
 
 ## Renouvellement du PAT GitHub
 
-Le PAT `github_pat_11CA47PMQ0...` expire. Quand il expire :
+Le PAT `github_pat_11CA47PMQ0MsIxCQ4RttwI_...` expire. Quand il expire :
 1. Aller sur https://github.com/settings/tokens
 2. Retrouver le token `hqccssbf-admin` → cliquer « Regenerate »
 3. Copier le nouveau token
