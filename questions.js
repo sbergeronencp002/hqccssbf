@@ -2753,6 +2753,28 @@ const REGLETTES = {
         desc: "L'élève ne situe pas tous les faits dans le temps."
       }
     ]
+  },
+  "Q139": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
   }
 }
 
@@ -2996,6 +3018,9 @@ const IMAGE_DB = {
   },
   "regiment_car-salieres.png": {
     src: "images/regiment_car-salieres.png"
+  },
+  "fondation_qubec_1608.png": {
+    src: "images/fondation_qubec_1608.png"
   }
 }
 
@@ -9221,6 +9246,91 @@ const QUESTIONS = [
           "A - C",
           "",
           "B - D"
+        ]
+      ]
+    }
+  },
+  {
+    id: "Q139",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "4 documents",
+    enonce: "Les documents A à D présentent différentes mesures et événements ayant contribué au développement de la Nouvelle-France sous le régime français. Indiquez l’événement historique correspondant à chacun des documents.",
+    aspects: [
+      {
+        aspect: "Gouvernement royal"
+      },
+      {
+        aspect: "Territoire français en Amérique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Avec [leur arrivée], la colonie cesse progressivement d’être uniquement un comptoir commercial pour devenir un véritable lieu de peuplement. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1, Sillery, Septentrion, 1995."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "filles_du_roy.png",
+            source: "Illustration générée à partir de représentations historiques de la Nouvelle-France."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "fondation_qubec_1608.png",
+            source: "Illustration générée à partir de représentations historiques de la Nouvelle-France."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Après leur service militaire, plusieurs [...] choisissent de demeurer dans la colonie, contribuant ainsi au peuplement de la Nouvelle-France. »",
+            source: "Gilles Havard et Cécile Vidal, Histoire de l’Amérique française, Paris, Flammarion, 2003."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Arrivée des Filles du Roy",
+        "Arrivée des premiers colons",
+        "Arrivée du régiment Carignan-Salières",
+        "Fondation de Québec"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Arrivée des Filles du Roy",
+        "Arrivée des premiers colons",
+        "Arrivée du régiment Carignan-Salières",
+        "Fondation de Québec"
+      ],
+      rangees: [
+        [
+          "B",
+          "A",
+          "D",
+          "C"
         ]
       ]
     }
