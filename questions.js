@@ -2792,6 +2792,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
+  },
+  "Q141": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -9390,5 +9407,37 @@ const QUESTIONS = [
       ref: "ligne_1600-1700.png"
     },
     guide: "B"
+  },
+  {
+    id: "Q141",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Guerres intercoloniales"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« À la suite des ententes conclues avec la Grande-Bretagne, la France perd notamment l’Acadie, Terre-Neuve et la baie d’Hudson. »",
+            soustitre: "Traité d’Utrecht",
+            source: "Jacques Mathieu, La Nouvelle-France : Les Français en Amérique du Nord, Québec, Presses de l’Université Laval."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1600-1800.png"
+    },
+    guide: "C"
   }
 ]
