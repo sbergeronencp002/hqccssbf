@@ -1597,14 +1597,6 @@ async function publier() {
     // Reload full content from GitHub before modifying (prevents data loss from stale state)
     const { rawB64 } = await fetchFreshState(token);
 
-    // Backup automatique (fire-and-forget)
-    const ts = new Date().toISOString().slice(0,16).replace('T','_').replace(':','-');
-    fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/backups/questions-${ts}.js`, {
-      method:'PUT',
-      headers:{ Authorization:`token ${token}`, 'Content-Type':'application/json' },
-      body: JSON.stringify({ message:`Backup auto ${ts}`, content: rawB64, branch: BRANCH })
-    }).catch(()=>{});
-
     const q = buildQuestion();
     const r = buildReglette(q.id);
 
@@ -1669,12 +1661,21 @@ async function publier() {
       let msg = putResp.status;
       try { const err = await putResp.json(); msg = err.message || msg; } catch(_) {}
       const isConflict = putResp.status === 409 || String(msg).toLowerCase().includes('fast forward') || String(msg).toLowerCase().includes('conflict');
-      if(!isConflict || attempt === 2) throw new Error(isConflict ? 'Conflit persistant après 3 tentatives. Rechargez la page (F5) et réessayez.' : msg);
+      const isServerError = putResp.status >= 500;
+      if((!isConflict && !isServerError) || attempt === 2) throw new Error(isConflict ? 'Conflit persistant après 3 tentatives. Rechargez la page (F5) et réessayez.' : isServerError ? `Erreur serveur GitHub (${putResp.status}) après 3 tentatives — réessayez dans quelques secondes.` : msg);
       await new Promise(r => setTimeout(r, 800 * (attempt + 1)));
     }
 
     // Update SHA
     questionsFileSha = putResult.content.sha;
+
+    // Backup automatique APRÈS le PUT principal (évite les concurrent writes sur la même branche)
+    const ts = new Date().toISOString().slice(0,16).replace('T','_').replace(':','-');
+    fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/backups/questions-${ts}.js`, {
+      method:'PUT',
+      headers:{ Authorization:`token ${token}`, 'Content-Type':'application/json' },
+      body: JSON.stringify({ message:`Backup auto ${ts}`, content: rawB64, branch: BRANCH })
+    }).catch(()=>{});
 
     // Next ID
     const nums = currentQuestions.map(q=>parseInt(q.id.replace(/\D/g,''))).filter(n=>!isNaN(n));
