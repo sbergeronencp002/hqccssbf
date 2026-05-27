@@ -2736,6 +2736,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas tous les faits dans le temps."
       }
     ]
+  },
+  "Q138": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "2 points",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève situe tous les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas tous les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -2973,6 +2990,12 @@ const IMAGE_DB = {
   },
   "fondation_t-r.png": {
     src: "images/fondation_t-r.png"
+  },
+  "colon_louis_hebert.png": {
+    src: "images/colon_louis_hebert.png"
+  },
+  "regiment_car-salieres.png": {
+    src: "images/regiment_car-salieres.png"
   }
 }
 
@@ -9121,5 +9144,85 @@ const QUESTIONS = [
       ref: "ligne_abDc.png"
     },
     guide: "B - C - D - A"
+  },
+  {
+    id: "Q138",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Avant et après",
+    enonce: "Les documents A à D présentent des faits liés à l’évolution de la Nouvelle-France.\nIndiquez si chacun des faits se déroule avant ou après l’instauration du Gouvernement royal.",
+    aspects: [
+      {
+        aspect: "Gouvernement royal"
+      },
+      {
+        aspect: "Territoire français en Amérique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "colon_louis_hebert.png",
+            soustitre: "Arrivée de la première famille française"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« L’arrivée des Filles du Roy contribue fortement à l’augmentation de la population coloniale dans la seconde moitié du XVIIe siècle. »",
+            soustitre: "Arrivée des Filles du Roy",
+            source: "Jacques Mathieu, La Nouvelle-France : Les Français en Amérique du Nord, Québec, Presses de l’Université Laval, 1991."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Québec occupe une position stratégique exceptionnelle, à l’endroit où le rétrécissement du fleuve facilite la défense et le contrôle du territoire. »",
+            soustitre: "Fondation de Québec",
+            source: "Gilles Havard et Cécile Vidal, Histoire de l’Amérique française, Paris, Flammarion, 2003."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            ref: "regiment_car-salieres.png",
+            soustitre: "Arrivée du régiment Carignan-Salières"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "avant-apres",
+      label: "Gouvernement royal"
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Avant",
+        "Gouvernement royal",
+        "Après"
+      ],
+      rangees: [
+        [
+          "A - C",
+          "",
+          "B - D"
+        ]
+      ]
+    }
   }
 ]
