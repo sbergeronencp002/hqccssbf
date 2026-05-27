@@ -9193,7 +9193,8 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "colon_louis_hebert.png",
-            soustitre: "Arrivée de la première famille française"
+            soustitre: "Arrivée de la première famille française",
+            source: "Illustration générée à partir de représentations historiques de la Nouvelle-France."
           }
         ]
       },
@@ -9225,7 +9226,8 @@ const QUESTIONS = [
           {
             titre: "Document D",
             ref: "regiment_car-salieres.png",
-            soustitre: "Arrivée du régiment Carignan-Salières"
+            soustitre: "Arrivée du régiment Carignan-Salières",
+            source: "Illustration générée à partir de représentations historiques de la Nouvelle-France."
           }
         ]
       }
