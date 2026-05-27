@@ -2775,6 +2775,23 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
       }
     ]
+  },
+  "Q140": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -9341,5 +9358,37 @@ const QUESTIONS = [
         ]
       ]
     }
+  },
+  {
+    id: "Q140",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Territoire français en Amérique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Par cette entente, la France récupère ses possessions en Amérique du Nord et reprend la ville de Québec, ce qui lui permet de rétablir sa présence sur le Saint-Laurent. »",
+            soustitre: "Traité de Saint-Germain-en-Laye",
+            source: "Marcel Trudel, Histoire de la Nouvelle-France, Montréal, Fides."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1600-1700.png"
+    },
+    guide: "B"
   }
 ]
