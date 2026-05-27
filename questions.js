@@ -7253,6 +7253,7 @@ const QUESTIONS = [
     oi: "Déterminer des changements et des continuités",
     periode: "P3 — 1760 – 1791",
     points: 2,
+    soustag: "Changement",
     enonce: "Indiquez un changement dans le commerce des fourrures dans la colonie à la suite de la guerre de la Conquête.",
     aspects: [
       {
