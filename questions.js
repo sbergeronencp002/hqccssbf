@@ -9193,7 +9193,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "colon_louis_hebert.png",
-            soustitre: "Arrivée de la première famille française",
+            soustitre: "Arrivée des premiers colons",
             source: "Illustration générée à partir de représentations historiques de la Nouvelle-France."
           }
         ]
