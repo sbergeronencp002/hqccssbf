@@ -306,7 +306,7 @@ function buildReglettHTML(q) {
   }
 
   // Standard layout — header row (points) + description row
-  if(!r.colonnes.length) return '<p style="color:#999;font-size:0.8rem">Réglette non configurée.</p>';
+  if(!(r.colonnes||[]).length) return '<p style="color:#999;font-size:0.8rem">Réglette non configurée.</p>';
   const colW = Math.floor(78 / r.colonnes.length);
   const headers = r.colonnes.map(c=>`<td style="${S};width:${colW}%">${c}</td>`).join('');
   const cells   = r.niveaux.map(n=>`<td style="${S}">${n.desc}</td>`).join('');
@@ -522,8 +522,8 @@ function renderDoc(d) {
     let html = '<table style="width:100%;border-collapse:collapse;margin-bottom:8px"><tr>';
     d.cols.forEach(function(col) {
       html += '<td style="width:' + Math.floor(100/d.cols.length) + '%;padding:6px;vertical-align:top;border:0.5px solid var(--border)">';
-      html += '<div style="font-size:0.75rem;font-weight:600;color:var(--ink)">' + col.titre + '</div>';
-      if(col.soustitre) html += '<div style="font-size:0.7rem;font-style:italic;color:var(--ink-2);margin-bottom:4px">' + col.soustitre + '</div>';
+      html += '<div style="font-size:0.75rem;font-weight:600;color:var(--ink)">' + escLine(col.titre) + '</div>';
+      if(col.soustitre) html += '<div style="font-size:0.7rem;font-style:italic;color:var(--ink-2);margin-bottom:4px">' + escLine(col.soustitre) + '</div>';
       else html += '<div style="margin-bottom:4px"></div>';
       if(col.texte) {
         const plain = col.texte.replace(/\*\*(.*?)\*\*/g,'$1');
@@ -538,8 +538,8 @@ function renderDoc(d) {
         const img2 = IMAGE_DB[col.ref];
         if(img2) html += '<img src="' + img2.src + '" style="max-width:100%;max-height:150px;object-fit:contain;cursor:pointer" onclick="openLightbox(\'' + img2.src + '\')">';
       }
-      if(col.auteur) html += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + col.auteur + '</div>';
-      if(col.source) html += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + col.source + '</div>';
+      if(col.auteur) html += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + escLine(col.auteur) + '</div>';
+      if(col.source) html += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + escLine(col.source) + '</div>';
       html += '</td>';
     });
     html += '</tr></table>';
@@ -600,7 +600,7 @@ function renderReponse(q) {
     let html = '<table style="border-collapse:collapse;margin:8px 0;font-size:0.8rem;">'
       + '<tr><th style="border:0.5px solid var(--border);padding:4px 8px;background:var(--paper-2);text-align:left"></th>'
       + '<th style="border:0.5px solid var(--border);padding:4px 8px;background:var(--paper-2);text-align:center">Document</th></tr>';
-    q.reponse.lignes.forEach(l=>{
+    (q.reponse.lignes||[]).forEach(l=>{
       html += '<tr><td style="border:0.5px solid var(--border);padding:4px 8px">' + l.label + '</td>'
             + '<td style="border:0.5px solid var(--border);padding:4px 30px"></td></tr>';
     });
@@ -795,16 +795,16 @@ function previsualiser(guideMode) {
             d.cols.forEach(function(col) {
               const img = IMAGE_DB[col.ref];
               docsHtml += '<td style="width:' + Math.floor(100/d.cols.length) + '%;padding:6px;vertical-align:top;border:0.5px solid var(--border)">';
-              docsHtml += '<div style="font-size:0.75rem;font-weight:600;color:var(--ink)">' + col.titre + '</div>';
-              if(col.soustitre) docsHtml += '<div style="font-size:0.7rem;font-style:italic;color:var(--ink-2);margin-bottom:4px">' + col.soustitre + '</div>';
+              docsHtml += '<div style="font-size:0.75rem;font-weight:600;color:var(--ink)">' + escLine(col.titre) + '</div>';
+              if(col.soustitre) docsHtml += '<div style="font-size:0.7rem;font-style:italic;color:var(--ink-2);margin-bottom:4px">' + escLine(col.soustitre) + '</div>';
               else docsHtml += '<div style="margin-bottom:4px"></div>';
               if(col.texte) {
                 docsHtml += '<div style="font-size:0.72rem;color:var(--ink-2);line-height:1.5">' + formatTexte(col.texte) + '</div>';
               } else if(img) {
                 docsHtml += '<img src="' + img.src + '" style="max-width:100%;max-height:100px;object-fit:contain;cursor:pointer" onclick="openLightbox(\'' + img.src + '\')">';
               }
-              if(col.auteur) docsHtml += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + col.auteur + '</div>';
-              if(col.source) docsHtml += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + col.source + '</div>';
+              if(col.auteur) docsHtml += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + escLine(col.auteur) + '</div>';
+              if(col.source) docsHtml += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + escLine(col.source) + '</div>';
               docsHtml += '</td>';
             });
             docsHtml += '</tr></table>';
@@ -847,7 +847,7 @@ function previsualiser(guideMode) {
         } else if(q.reponse.type === 'tableau') {
           previewReponse = '<table style="border-collapse:collapse;margin:8px 0;font-size:0.8rem;">'
             + '<tr><th style="border:0.5px solid #ccc;padding:4px 8px;background:#f5f5f5"></th><th style="border:0.5px solid #ccc;padding:4px 8px;background:#f5f5f5">Document</th></tr>'
-            + q.reponse.lignes.map(function(l){return '<tr><td style="border:0.5px solid #ccc;padding:4px 8px">' + l.label + '</td><td style="border:0.5px solid #ccc;padding:4px 30px"></td></tr>';}).join('')
+            + (q.reponse.lignes||[]).map(function(l){return '<tr><td style="border:0.5px solid #ccc;padding:4px 8px">' + l.label + '</td><td style="border:0.5px solid #ccc;padding:4px 30px"></td></tr>';}).join('')
             + '</table>';
         } else if(q.reponse.type === 'grille') {
           const {entetes=[], rangees=[]} = q.reponse;
@@ -1096,6 +1096,7 @@ function cahierDrop(e) {
   if(fi === -1) return;
   panier.splice(fi, 1);
   const ti = panier.indexOf(toId);
+  if(ti === -1) return;
   panier.splice(before ? ti : ti + 1, 0, fromId);
   updatePanierBar();
 }
@@ -1625,7 +1626,7 @@ async function genererDocx(includeGuide=false) {
                 children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: 'Document', font: 'Aptos', size: 20, bold: true })] })] })
             ]})
           ];
-          q.reponse.lignes.forEach(l => {
+          (q.reponse.lignes||[]).forEach(l => {
             repRows.push(new TableRow({ children: [
               new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
                 children: [new Paragraph({ children: [new TextRun({ text: l.label, font: 'Aptos', size: 20 })] })] }),

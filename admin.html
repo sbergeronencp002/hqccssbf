@@ -433,7 +433,7 @@ function updateAspects() {
   const wrap = document.getElementById('aspects-list');
   wrap.innerHTML = aspects.map(a =>
     `<label style="display:flex;align-items:center;gap:.5rem;font-size:.83rem;cursor:pointer">
-      <input type="checkbox" value="${a}" style="width:auto;cursor:pointer"> ${a}
+      <input type="checkbox" value="${escHtml(a)}" style="width:auto;cursor:pointer"> ${escHtml(a)}
     </label>`
   ).join('');
 }
@@ -459,7 +459,7 @@ function updateSoustag() {
   }
   const pills = document.getElementById('soustag-pills');
   pills.innerHTML = options.map(v =>
-    `<label class="soustag-pill"><input type="radio" name="q-soustag" value="${v}"> ${v}</label>`
+    `<label class="soustag-pill"><input type="radio" name="q-soustag" value="${escHtml(v)}"> ${escHtml(v)}</label>`
   ).join('') + `<label class="soustag-pill"><input type="radio" name="q-soustag" value=""> Aucun</label>`;
   row.style.display = '';
 }
@@ -572,10 +572,11 @@ function filterEditList() {
   }
 
   function highlight(text, term) {
-    if(!term) return text;
-    const idx = text.toLowerCase().indexOf(term);
-    if(idx < 0) return text;
-    return text.slice(0, idx) + '<mark style="background:#fff3b0;border-radius:2px">' + text.slice(idx, idx + term.length) + '</mark>' + text.slice(idx + term.length);
+    const safe = escHtml(text);
+    if(!term) return safe;
+    const idx = safe.toLowerCase().indexOf(term.toLowerCase());
+    if(idx < 0) return safe;
+    return safe.slice(0, idx) + '<mark style="background:#fff3b0;border-radius:2px">' + safe.slice(idx, idx + term.length) + '</mark>' + safe.slice(idx + term.length);
   }
 
   const visible = results.slice(0, ADMIN_PAGE);
@@ -1651,6 +1652,7 @@ async function publier() {
         });
       }
       const newContent2 = generateQuestionsJs(currentQuestions, currentReglettes, currentImageDb);
+      try { new Function(newContent2 + '\nreturn {REGLETTES, IMAGE_DB, QUESTIONS}')(); } catch(e) { throw new Error('JS généré invalide : ' + e.message); }
       const encoded2 = utf8b64(newContent2);
       putResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js`, {
         method: 'PUT',
@@ -1837,7 +1839,7 @@ async function publierContexteJs() {
   if(!token) { toast('Token manquant.', 'err'); return; }
   if(!contexteFileSha) { toast('Chargez d\'abord le contexte.', 'err'); return; }
   const content = document.getElementById('contexte-raw').value;
-  try { new Function(content); } catch(e) { toast('JS invalide : ' + e.message, 'err'); return; }
+  try { new Function(content + '; return {PERIODES_PAR_NIVEAU, ASPECTS_PAR_PERIODE};')(); } catch(e) { toast('JS invalide ou exports manquants : ' + e.message, 'err'); return; }
   const el = document.getElementById('contexte-status');
   el.textContent = '⏳ Publication…';
   try {

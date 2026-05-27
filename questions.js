@@ -6115,7 +6115,7 @@ const QUESTIONS = [
       type: "image",
       ref: "ligne_1475-1575.png"
     },
-    guide: "C."
+    guide: "C"
   },
   {
     id: "Q76",
@@ -6146,7 +6146,7 @@ const QUESTIONS = [
       type: "image",
       ref: "ligne_1475-1575.png"
     },
-    guide: "C."
+    guide: "C"
   },
   {
     id: "Q77",
@@ -6237,7 +6237,7 @@ const QUESTIONS = [
     reponse: {
       type: "tableau_2col"
     },
-    guide: "B."
+    guide: "B"
   },
   {
     id: "Q79",
@@ -7083,6 +7083,7 @@ const QUESTIONS = [
     oi: "Déterminer des changements et des continuités",
     periode: "P3 — 1760 – 1791",
     points: 2,
+    soustag: "Changement",
     enonce: "Indiquez un changement dans le commerce des fourrures dans la colonie à la suite de la guerre de la Conquête.",
     aspects: [
       {
@@ -7166,6 +7167,7 @@ const QUESTIONS = [
     oi: "Déterminer des changements et des continuités",
     periode: "P4 — 1791 – 1840",
     points: 2,
+    soustag: "Continuité",
     enonce: "Indiquez un élément de continuité lié à la croissance de la population canadienne entre \n1760 et 1840.",
     aspects: [
       {
