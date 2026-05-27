@@ -6727,7 +6727,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 2,
     soustag: "3 documents",
-    enonce: "Indiquez la lettre du document qui correspond à chacun des rôles de l’Église catholique durant le Régime français.",
+    enonce: "Les documents A à D présentent des faits liés aux différents rôles de l’Église catholique en Nouvelle-France. Indiquez à l’endroit approprié la lettre correspondant à chacun des faits.",
     aspects: [
       {
         aspect: "Église catholique"
