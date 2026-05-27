@@ -2826,6 +2826,28 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
+  },
+  "Q143": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
   }
 }
 
@@ -9491,5 +9513,85 @@ const QUESTIONS = [
       ref: "ligne_1600-1800.png"
     },
     guide: "C"
+  },
+  {
+    id: "Q143",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "4 documents",
+    enonce: "Les documents A à D présentent des faits liés aux traités conclus entre la France et l’Angleterre concernant leurs possessions en Amérique du Nord. Indiquez à l’endroit approprié la lettre correspondant à chacun des traités.",
+    aspects: [
+      {
+        aspect: "Guerres intercoloniales"
+      },
+      {
+        aspect: "Territoire français en Amérique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La perte de l’Acadie et de Terre-Neuve réduit considérablement l’influence française dans les pêcheries atlantiques et fragilise la défense de la colonie du Canada. »",
+            source: "Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord, Québec, Presses de l’Université Laval."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« La restitution de Québec à la France permet à la colonie de reprendre son développement après plusieurs années marquées par l’occupation anglaise des frères Kirke. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1, Québec, Septentrion."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« L’acquisition de nouveaux territoires par l’Empire britannique modifie profondément l’équilibre des forces en Amérique du Nord et fragilise la présence française autour du Saint-Laurent. »",
+            source: "Allan Greer, Brève histoire des peuples de la Nouvelle-France, Montréal, Boréal."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Le retour des possessions françaises en Amérique du Nord confirme l’importance stratégique du commerce des fourrures et de l’alliance avec plusieurs nations autochtones pour la monarchie française. »",
+            source: "Gilles Havard et Cécile Vidal, Histoire de l’Amérique française, Paris, Flammarion."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Traité de Saint-Germain-en-Laye",
+        "Traité d’Utrecht"
+      ],
+      double: true
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Traité de Saint-Germain-en-Laye",
+        "Traité d’Utrecht"
+      ],
+      rangees: [
+        [
+          "B et D",
+          "A et C"
+        ]
+      ]
+    }
   }
 ]
