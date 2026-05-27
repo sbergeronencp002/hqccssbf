@@ -9480,6 +9480,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "grande_paix_mtl.png",
+            soustitre: "Grande Paix de Montréal",
             source: "Illustration générée à partir de représentations historiques de la Nouvelle-France."
           }
         ]
