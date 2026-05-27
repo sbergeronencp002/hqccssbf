@@ -8978,7 +8978,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P2 — 1608 – 1760",
     points: 2,
-    soustag: "2 documents",
+    soustag: "4 documents",
     enonce: "Les documents A à D présentent des événements militaires liés à la ville de Québec sous le Régime français. Indiquez les deux documents correspondant à chacun des gouverneurs.",
     aspects: [
       {
