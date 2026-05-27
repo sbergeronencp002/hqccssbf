@@ -9296,6 +9296,11 @@ const QUESTIONS = [
             titre: "Document C",
             ref: "fondation_qubec_1608.png",
             source: "Illustration générée à partir de représentations historiques de la Nouvelle-France."
+          },
+          {
+            titre: "",
+            texte: "« Champlain choisit [son emplacement] afin d’établir un poste permanent qui permettrait à la France de contrôler le commerce et la navigation sur le fleuve Saint-Laurent. »",
+            source: "Marcel Trudel, Histoire de la Nouvelle-France, tome 1 : Les vaines tentatives (1524-1603), Montréal, Fides, 1963."
           }
         ]
       },
