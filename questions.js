@@ -7472,7 +7472,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P4 — 1791 – 1840",
     points: 2,
-    soustag: "3 éléments",
+    soustag: "3 documents",
     enonce: "Les documents A à C présentent les réactions de différents groupes à la suite du Rapport Durham. Associez chaque position au groupe correspondant.",
     aspects: [
       {
