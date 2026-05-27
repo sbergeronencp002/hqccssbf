@@ -2809,6 +2809,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
+  },
+  "Q142": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -3055,6 +3072,9 @@ const IMAGE_DB = {
   },
   "fondation_qubec_1608.png": {
     src: "images/fondation_qubec_1608.png"
+  },
+  "grande_paix_mtl.png": {
+    src: "images/grande_paix_mtl.png"
   }
 }
 
@@ -9430,6 +9450,37 @@ const QUESTIONS = [
             texte: "« À la suite des ententes conclues avec la Grande-Bretagne, la France perd notamment l’Acadie, Terre-Neuve et la baie d’Hudson. »",
             soustitre: "Traité d’Utrecht",
             source: "Jacques Mathieu, La Nouvelle-France : Les Français en Amérique du Nord, Québec, Presses de l’Université Laval."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1600-1800.png"
+    },
+    guide: "C"
+  },
+  {
+    id: "Q142",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Guerre et diplomatie chez les Premières Nations"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "grande_paix_mtl.png",
+            source: "Illustration générée à partir de représentations historiques de la Nouvelle-France."
           }
         ]
       }
