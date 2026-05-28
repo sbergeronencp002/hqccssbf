@@ -2931,6 +2931,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q148": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -9892,5 +9914,36 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Dépendance économique envers la France ou faible développement manufacturier dans la colonie ou exportation des ressources naturelles vers la métropole ou importation de produits manufacturés européens."
+  },
+  {
+    id: "Q148",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une raison qui explique pourquoi la métropole française impose une politique économique à la Nouvelle-France.",
+    aspects: [
+      {
+        aspect: "Monopole des compagnies"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les colonies doivent fournir des matières premières à la métropole et acheter en retour les produits fabriqués en Europe, afin d’enrichir le royaume et de renforcer sa puissance économique. »",
+            source: "Marcel Trudel, Histoire de la Nouvelle-France, Montréal, Fides."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Enrichir la métropole française ou augmenter la puissance économique de la France ou exploiter les ressources de la colonie ou contrôler le commerce colonial."
   }
 ]
