@@ -2870,6 +2870,28 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
       }
     ]
+  },
+  "Q145": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (3 sur 3)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (2 sur 3)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
+      }
+    ]
   }
 }
 
@@ -9692,6 +9714,81 @@ const QUESTIONS = [
           "A",
           "C",
           "B"
+        ]
+      ]
+    }
+  },
+  {
+    id: "Q145",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "3 documents",
+    enonce: "Les documents A à C présentent des mesures mises en place en Nouvelle-France sous l’administration de l’intendant. Indiquez à l’endroit approprié la lettre correspondant à chacune des mesures suivantes",
+    aspects: [
+      {
+        aspect: "Croissance de la population"
+      },
+      {
+        aspect: "Diversification économique"
+      },
+      {
+        aspect: "Gouvernement royal"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les autorités coloniales tentent de diversifier l’économie afin de réduire la dépendance envers le commerce des fourrures et de favoriser le développement d’activités manufacturières locales. »",
+            source: "Jean Hamelin, Histoire du Québec, Toulouse, Privat."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Devant la multiplication des attaques iroquoises, la monarchie française envoie des soldats afin de sécuriser la vallée du Saint-Laurent et de rétablir les conditions nécessaires au commerce et au peuplement. »",
+            source: "Marcel Trudel, Histoire de la Nouvelle-France, Montréal, Fides."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Afin d’assurer une croissance durable de la population, la monarchie française soutient l’arrivée de jeunes femmes destinées à fonder des foyers dans la colonie. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1, Québec, Septentrion."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Mesure pour défendre la colonie",
+        "Mesure pour développer la colonie",
+        "Mesure pour peupler la colonie"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Mesure pour défendre la colonie",
+        "Mesure pour développer la colonie",
+        "Mesure pour peupler la colonie"
+      ],
+      rangees: [
+        [
+          "B",
+          "A",
+          "C"
         ]
       ]
     }
