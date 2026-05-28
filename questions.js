@@ -2848,6 +2848,28 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
       }
     ]
+  },
+  "Q144": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (3 sur 3)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (2 sur 3)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
+      }
+    ]
   }
 }
 
@@ -3097,6 +3119,9 @@ const IMAGE_DB = {
   },
   "grande_paix_mtl.png": {
     src: "images/grande_paix_mtl.png"
+  },
+  "chantier_naval.png": {
+    src: "images/chantier_naval.png"
   }
 }
 
@@ -9592,6 +9617,81 @@ const QUESTIONS = [
         [
           "B et D",
           "A et C"
+        ]
+      ]
+    }
+  },
+  {
+    id: "Q144",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "3 documents",
+    enonce: "Les documents A à C présentent des mesures mises en place en Nouvelle-France sous l’administration de l’intendant. Indiquez à l’endroit approprié la lettre correspondant à chacune des mesures suivantes",
+    aspects: [
+      {
+        aspect: "Croissance de la population"
+      },
+      {
+        aspect: "Diversification économique"
+      },
+      {
+        aspect: "Gouvernement royal"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "regiment_car-salieres.png",
+            source: "Illustration générée à partir de représentations historiques de la Nouvelle-France."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "filles_du_roy.png",
+            source: "Illustration générée à partir de représentations historiques de la Nouvelle-France."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "chantier_naval.png",
+            source: "Illustration générée à partir de représentations historiques de la Nouvelle-France."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Mesure pour défendre la colonie",
+        "Mesure pour développer la colonie",
+        "Mesure pour peupler la colonie"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Mesure pour défendre la colonie",
+        "Mesure pour développer la colonie",
+        "Mesure pour peupler la colonie"
+      ],
+      rangees: [
+        [
+          "A",
+          "C",
+          "B"
         ]
       ]
     }
