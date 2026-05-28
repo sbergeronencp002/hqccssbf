@@ -3249,6 +3249,9 @@ const IMAGE_DB = {
   },
   "chantier_naval.png": {
     src: "images/chantier_naval.png"
+  },
+  "mercantilisme_nf.png": {
+    src: "images/mercantilisme_nf.png"
   }
 }
 
@@ -9916,8 +9919,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Les dirigeants français veulent limiter le développement industriel de la colonie afin qu’elle demeure dépendante des produits manufacturés provenant de la métropole. »",
-            source: "Gilles Havard et Cécile Vidal, Histoire de l’Amérique française, Paris, Flammarion."
+            ref: "mercantilisme_nf.png",
+            source: "Illustration générée à partir de représentations historiques de la Nouvelle-France."
           }
         ]
       }
