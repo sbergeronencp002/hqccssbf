@@ -2997,6 +2997,28 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
       }
     ]
+  },
+  "Q151": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (3 sur 3)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (2 sur 3)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
+      }
+    ]
   }
 }
 
@@ -10118,6 +10140,77 @@ const QUESTIONS = [
         [
           "B et C",
           "A et D"
+        ]
+      ]
+    }
+  },
+  {
+    id: "Q151",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    enonce: "Les documents A à C présentent des éléments liés à l’administration de la Nouvelle-France sous le Régime français. Indiquez le document qui correspond à chacun des rôles",
+    aspects: [
+      {
+        aspect: "Gouvernement royal"
+      },
+      {
+        aspect: "Monopole des compagnies"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Ce personnage administre la justice, les finances et le développement économique de la colonie. Il joue un rôle central dans l’organisation de la société canadienne sous le Régime français. »",
+            source: "Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord, Presses de l’Université Laval, 1991."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« En plus de son rôle religieux, ce membre du clergé exerce une influence importante sur la société coloniale par son autorité morale et son intervention dans plusieurs domaines sociaux. »",
+            source: "Micheline Dumont et Louise Toupin, La pensée féministe au Québec, Remue-ménage, 2003."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Le représentant du roi dans la colonie dirige les affaires militaires, entretient les relations diplomatiques avec les nations autochtones et veille à la défense du territoire français en Amérique. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1, Septentrion, 1995."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Évêque",
+        "Gouverneur",
+        "Intendant"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Évêque",
+        "Gouverneur",
+        "Intendant"
+      ],
+      rangees: [
+        [
+          "B",
+          "C",
+          "A"
         ]
       ]
     }
