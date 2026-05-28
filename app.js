@@ -761,11 +761,11 @@ function previsualiser(guideMode) {
       const hasFields = showEleve || showGroupe || showDate || showScore;
       if(hasFields) {
         previewHtml += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 2rem;font-size:0.88rem">';
-        if(showEleve)  previewHtml += '<div>Élève : _________________________</div>';
+        if(showEleve)  previewHtml += '<div style="font-weight:700;font-size:0.97rem">Nom de l'élève : ________________</div>';
         if(showGroupe) previewHtml += '<div>Groupe : ________________________</div>';
         else if(showEleve) previewHtml += '<div></div>';
         if(showDate)   previewHtml += '<div>Date : __________________________</div>';
-        if(showScore)  previewHtml += '<div style="text-align:right">_____ / ' + totalPrevPts + ' pts</div>';
+        if(showScore)  previewHtml += '<div style="text-align:right;font-weight:700;font-size:0.97rem">Résultat : _____ / ' + totalPrevPts + ' pts</div>';
         previewHtml += '</div>';
       }
       previewHtml += '</div>';
@@ -1397,22 +1397,22 @@ async function genererDocx(includeGuide=false) {
         // 2-col fields row (Élève | Groupe, Date | Résultat)
         const BN_H = { style: BorderStyle.NONE, size: 0, color: 'FFFFFF' };
         const HW = Math.floor(PAGE_W / 2);
-        const mkHCell = (txt, align) => new TableCell({
+        const mkHCell = (txt, align, size, bold) => new TableCell({
           width: { size: HW, type: WidthType.DXA },
           borders: { top: BN_H, bottom: BN_H, left: BN_H, right: BN_H },
           margins: { top: 60, bottom: 60, left: 0, right: 0 },
           children: [new Paragraph({
             alignment: align || AlignmentType.LEFT,
-            children: [new TextRun({ text: txt, font:'Aptos', size:20 })]
+            children: [new TextRun({ text: txt, font:'Aptos', size: size||20, bold: !!bold })]
           })]
         });
         const fieldRows = [];
-        const r1L = showEleve  ? 'Élève : _________________________' : '';
+        const r1L = showEleve  ? 'Nom de l\'élève : ________________' : '';
         const r1R = showGroupe ? 'Groupe : ________________________' : '';
         const r2L = showDate   ? 'Date : __________________________' : '';
-        const r2R = showScore  ? `_____ / ${totalDocxPts} pts` : '';
-        if(r1L || r1R) fieldRows.push(new TableRow({ children: [mkHCell(r1L), mkHCell(r1R, AlignmentType.LEFT)] }));
-        if(r2L || r2R) fieldRows.push(new TableRow({ children: [mkHCell(r2L), mkHCell(r2R, AlignmentType.RIGHT)] }));
+        const r2R = showScore  ? `Résultat : _____ / ${totalDocxPts} pts` : '';
+        if(r1L || r1R) fieldRows.push(new TableRow({ children: [mkHCell(r1L, AlignmentType.LEFT, 24, true), mkHCell(r1R, AlignmentType.LEFT)] }));
+        if(r2L || r2R) fieldRows.push(new TableRow({ children: [mkHCell(r2L), mkHCell(r2R, AlignmentType.RIGHT, 24, true)] }));
         if(fieldRows.length) {
           children.push(new Table({
             width: { size: PAGE_W, type: WidthType.DXA },
