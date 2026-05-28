@@ -2975,6 +2975,28 @@ const REGLETTES = {
         desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
       }
     ]
+  },
+  "Q150": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
   }
 }
 
@@ -10016,6 +10038,83 @@ const QUESTIONS = [
         [
           "B",
           "A"
+        ]
+      ]
+    }
+  },
+  {
+    id: "Q150",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "2 documents",
+    enonce: "Les documents A à D présentent des éléments liés aux compagnies de commerce en Nouvelle-France. Associez chaque document à l’élément correspondant.",
+    aspects: [
+      {
+        aspect: "Monopole des compagnies"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« En échange de leurs engagements envers la colonie, certaines compagnies reçoivent le droit exclusif de pratiquer le commerce des fourrures en Nouvelle-France. »",
+            source: "Marcel Trudel, Histoire de la Nouvelle-France, Montréal, Fides."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les autorités françaises attendent des compagnies qu’elles assurent la croissance de la colonie et le maintien d’une présence française durable en Amérique du Nord. »",
+            source: "Jean Hamelin, Histoire du Québec, Toulouse, Privat."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les compagnies doivent contribuer au développement de la colonie en transportant des colons et en soutenant l’occupation du territoire. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1, Québec, Septentrion."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« La monarchie française accorde à des groupes de marchands le contrôle du commerce colonial afin d’encourager l’exploitation des ressources du territoire. »",
+            source: "Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord, Québec, Presses de l’Université Laval."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Obligations des compagnies",
+        "Privilèges des compagnies"
+      ],
+      double: true
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Obligations des compagnies",
+        "Privilèges des compagnies"
+      ],
+      rangees: [
+        [
+          "B et C",
+          "A et D"
         ]
       ]
     }
