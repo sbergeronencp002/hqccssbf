@@ -3036,6 +3036,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q153": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -10264,5 +10281,35 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Le Conseil souverain."
+  },
+  {
+    id: "Q153",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez la forme de gouvernement exercée par le roi de France sous le régime français.",
+    aspects: [
+      {
+        aspect: "Gouvernement royal"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le roi concentre entre ses mains l’ensemble des pouvoirs politiques et administratifs de la colonie par l’intermédiaire de ses représentants. »",
+            source: "Marcel Trudel, Histoire de la Nouvelle-France, Montréal, Fides."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "L'absolutisme de droit divin."
   }
 ]
