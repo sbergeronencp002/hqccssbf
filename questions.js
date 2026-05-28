@@ -2909,6 +2909,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q147": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -9839,5 +9861,36 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Le mercantilisme."
+  },
+  {
+    id: "Q147",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de la politique économique imposée par la métropole française sur l’économie de la colonie.",
+    aspects: [
+      {
+        aspect: "Monopole des compagnies"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La France considère ses possessions d’Amérique comme des territoires destinés à soutenir l’économie du royaume grâce au commerce des ressources naturelles et au contrôle des échanges. »",
+            source: "Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord, Québec, Presses de l’Université Laval."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Dépendance économique envers la France ou faible développement manufacturier dans la colonie ou exportation des ressources naturelles vers la métropole ou importation de produits manufacturés européens."
   }
 ]
