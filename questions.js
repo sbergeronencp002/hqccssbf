@@ -3019,6 +3019,23 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
       }
     ]
+  },
+  "Q152": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -3274,6 +3291,9 @@ const IMAGE_DB = {
   },
   "mercantilisme_nf.png": {
     src: "images/mercantilisme_nf.png"
+  },
+  "conseil_souverain.png": {
+    src: "images/conseil_souverain.png"
   }
 }
 
@@ -10214,5 +10234,35 @@ const QUESTIONS = [
         ]
       ]
     }
+  },
+  {
+    id: "Q152",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez le nom de l’institution chargée de rendre la justice en Nouvelle-France.",
+    aspects: [
+      {
+        aspect: "Gouvernement royal"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "conseil_souverain.png",
+            source: "Illustration générée à partir de représentations historiques de la Nouvelle-France."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le Conseil souverain."
   }
 ]
