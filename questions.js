@@ -3180,6 +3180,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
+  },
+  "Q160": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -10640,5 +10662,46 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Le territoire occupé par les Français s’étend davantage vers l’ouest et le sud.\nLes Français établissent davantage de forts et de postes de traite.\nLes Français explorent davantage l’intérieur du continent.\nLe réseau territorial français devient plus vaste entre 1650 et 1700."
+  },
+  {
+    id: "Q160",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Continuité",
+    enonce: "À partir des documents A et B, indiquez une continuité dans la répartition du peuplement français en Amérique du Nord entre 1650 et 1700.",
+    aspects: [
+      {
+        aspect: "Territoire français en Amérique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "territoire_occupe_1650.png",
+            source: "Récitus."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "territoire_occupe_1700.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le peuplement français demeure concentré dans la vallée du Saint-Laurent.\nQuébec, Trois-Rivières et Montréal restent les principaux centres de peuplement.\nLes établissements français demeurent situés près des voies navigables."
   }
 ]
