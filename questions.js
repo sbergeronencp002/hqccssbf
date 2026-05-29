@@ -3097,6 +3097,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q156": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -10420,5 +10437,35 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "La concentration des établissements français dans la vallée du Saint-Laurent favorise le développement du peuplement et des échanges commerciaux vers 1650."
+  },
+  {
+    id: "Q156",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez le nom de la région où se concentrent principalement les établissements français vers 1650.",
+    aspects: [
+      {
+        aspect: "Territoire français en Amérique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les établissements français se développent principalement le long du [fleuve], véritable axe de circulation et de peuplement de la colonie au XVIIe siècle. »",
+            source: "Marcel Trudel, Histoire de la Nouvelle-France, tome II : Le comptoir, 1604-1627, Montréal, Fides, 1966."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "La vallée du Saint-Laurent."
   }
 ]
