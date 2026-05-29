@@ -54,6 +54,7 @@ const periodeOrder = [...PERIODES_PAR_NIVEAU['3'], ...PERIODES_PAR_NIVEAU['4']];
 let Q_MAP = new Map();          // id → question (O(1) lookup)
 let Q_SEARCH_IDX = new Map();   // id → lowercase search string (pre-built)
 let NEW_IDS = new Set();        // 10 questions les plus récentes
+let panier = [];                // ids du panier (déclaré ici : utilisé dès initSite via render → buildTileHtml)
 
 function populateFilters() {
   Q_MAP = new Map(QUESTIONS.map(q => [q.id, q]));
@@ -514,7 +515,7 @@ document.addEventListener('keydown', e => {
 });
 
 // ===== PANIER =====
-let panier = [];
+// (let panier = [] est déclaré en tête de fichier — voir plus haut)
 
 function toggleTexte(btn) {
   const cell = btn.parentElement;
