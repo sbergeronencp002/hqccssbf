@@ -3241,6 +3241,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q163": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de divergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -10819,5 +10841,46 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Les Basques ou les Bretons ou les Normands."
+  },
+  {
+    id: "Q163",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Divergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs sur le commerce des fourrures en Nouvelle-France. Sur quel point précis sont-ils en désaccord?",
+    aspects: [
+      {
+        aspect: "Commerce des fourrures"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les congés de traite sont nécessaires au maintien du commerce des fourrures. Ils permettent aux marchands d'étendre leurs échanges avec les nations autochtones et d'assurer un approvisionnement régulier pour la colonie. »",
+            source: "Adapté de Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord, PUL."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les congés de traite causent de nombreux problèmes dans la colonie. Trop d'habitants quittent leurs terres pour participer à la traite, ce qui ralentit le peuplement et le développement agricole. »",
+            source: "Adapté de Marcel Trudel, Initiation à la Nouvelle-France."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "La pertinence ou l'utilité des congés de traite sur le développement de la colonie."
   }
 ]
