@@ -3202,6 +3202,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
+  },
+  "Q161": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -10703,5 +10725,46 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Le peuplement français demeure concentré dans la vallée du Saint-Laurent.\nQuébec, Trois-Rivières et Montréal restent les principaux centres de peuplement.\nLes établissements français demeurent situés près des voies navigables."
+  },
+  {
+    id: "Q161",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Continuité",
+    enonce: "À partir des documents A et B, indiquez un changement et une continuité dans l’occupation du territoire par les Français en Amérique du Nord entre 1650 et 1700.",
+    aspects: [
+      {
+        aspect: "Territoire français en Amérique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "territoire_occupe_1650.png",
+            source: "Récitus."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "territoire_occupe_1700.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Il y a un changement dans l’étendue du territoire occupé par les Français entre 1650 et 1700. Vers 1700, les Français occupent un territoire beaucoup plus vaste qui s’étend jusqu’aux Grands Lacs et au fleuve Mississippi, alors qu’en 1650 le territoire occupé est principalement concentré dans la vallée du Saint-Laurent.\n\nRéponse attendue — Continuité\n\nIl y a une continuité dans l’étendue du territoire occupé par les Français entre 1650 et 1700. En 1650 comme en 1700, les Français occupent toujours la vallée du Saint-Laurent, notamment autour de Québec, Trois-Rivières et Montréal."
   }
 ]
