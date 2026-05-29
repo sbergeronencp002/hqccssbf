@@ -3136,6 +3136,28 @@ const REGLETTES = {
         desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."
       }
     ]
+  },
+  "Q158": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -10522,5 +10544,35 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les possessions françaises couvrent un territoire plus vaste que les possessions britanniques."
+  },
+  {
+    id: "Q158",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence des territoires contestés entre les Français et les Britanniques en Amérique du Nord vers 1700.",
+    aspects: [
+      {
+        aspect: "Territoire français en Amérique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "territoire_revendique_france_1700.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "La présence de territoires contestés entraîne une augmentation des rivalités et des conflits entre les Français et les Britanniques en Amérique du Nord vers 1700."
   }
 ]
