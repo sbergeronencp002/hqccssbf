@@ -3313,6 +3313,28 @@ const REGLETTES = {
         desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
       }
     ]
+  },
+  "Q166": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -11064,5 +11086,46 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Dechêne considère que le travail de Colbert a eu un impact limité (la différence) tandis que Trudel et Lacoursière sont considèrent que Colbert favorise le développement de la Nouvelle-France."
+  },
+  {
+    id: "Q166",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux historiens sur la milice en Nouvelle-France. Sur quel point précis sont-ils en accord?",
+    aspects: [
+      {
+        aspect: "Gouvernement royal"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La milice constitue une composante essentielle du système défensif colonial. Bien qu'elle ne remplace pas les troupes régulières, elle fournit aux autorités un effectif rapidement mobilisable lors des conflits. »",
+            source: "Gilles Proulx, Combattre en Nouvelle-France, Athéna Éditions, 2009."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« La milice fait partie intégrante de l'organisation militaire de la Nouvelle-France. Les autorités coloniales peuvent mobiliser rapidement les hommes des paroisses afin de participer à la défense du territoire. »",
+            source: "Louise Dechêne, Le peuple, l'État et la guerre au Canada sous le Régime français, Boréal, 2008."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "L'importance de la milice dans la défense de la Nouvelle-France ou le rôle de la milice dans la défense du territoire."
   }
 ]
