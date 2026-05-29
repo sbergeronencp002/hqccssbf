@@ -8,6 +8,7 @@
 <title>Admin — HQC · CSSBF</title>
 <script src="reglettes.js?v=v2"></script>
 <script src="contexte.js"></script>
+<script src="oi-config.js?v=v1"></script>
 <style>
 :root {
   --ink: #1a1814; --ink-2: #4a4740; --ink-3: #8a8680;
@@ -274,16 +275,8 @@ header a:hover { color: #fff; }
       </div>
       <div class="field">
         <label>Opération intellectuelle</label>
-        <select id="q-oi" onchange="updatePresets();updateSoustag();autoReponseFromOI()">
-          <option>Dégager des différences et des similitudes</option>
-          <option>Déterminer des causes et des conséquences</option>
-          <option>Déterminer des changements et des continuités</option>
-          <option>Établir des faits</option>
-          <option>Établir des liens de causalité</option>
-          <option>Mettre en relation des faits</option>
-          <option>Situer dans l'espace</option>
-          <option>Situer dans le temps</option>
-        </select>
+        <!-- Options générées depuis OI_CONFIG (oi-config.js) par populateOiSelect() -->
+        <select id="q-oi" onchange="updatePresets();updateSoustag();autoReponseFromOI()"></select>
       </div>
       <div class="field" id="soustag-row" style="display:none">
         <label>Sous-tag</label>
@@ -443,14 +436,9 @@ function updateAspects() {
   ).join('');
 }
 
-const SOUSTAG_MAP = {
-  'Situer dans le temps': ['Avant et après', 'Ligne du temps', 'Ordre chronologique'],
-  "Situer dans l'espace": ['Situer 1 élément', 'Situer 2 éléments'],
-  'Dégager des différences et des similitudes': ['Convergence – 2 acteurs', 'Différence', 'Divergence – 2 acteurs', 'Similitude', 'Position – 3 acteurs'],
-  'Déterminer des changements et des continuités': ['Changement', 'Continuité', 'Changement ou continuité'],
-  'Déterminer des causes et des conséquences': ['Cause', 'Conséquence', 'Cause et conséquence'],
-  'Mettre en relation des faits': ['2 documents', '3 documents', '4 documents'],
-};
+// Dérivé de la source unique OI_CONFIG (oi-config.js).
+const SOUSTAG_MAP = {};
+OI_LIST.forEach(oi => { if(OI_CONFIG[oi].soustags) SOUSTAG_MAP[oi] = OI_CONFIG[oi].soustags; });
 
 function updateSoustag() {
   const oi = document.getElementById('q-oi')?.value || '';
@@ -480,10 +468,9 @@ function setSoustag(val) {
   });
 }
 
-const OI_AUTO_REPONSE = {
-  'Établir des faits':                          { type: 'lignes', nombre: 1 },
-  'Déterminer des causes et des conséquences':  { type: 'cause-consequence' },
-};
+// Dérivé de la source unique OI_CONFIG (oi-config.js).
+const OI_AUTO_REPONSE = {};
+OI_LIST.forEach(oi => { if(OI_CONFIG[oi].autoReponse) OI_AUTO_REPONSE[oi] = OI_CONFIG[oi].autoReponse; });
 
 function autoReponseFromOI() {
   const oi = document.getElementById('q-oi')?.value || '';
@@ -1019,7 +1006,15 @@ function buildImageOptions() {
   return opts + rest.map(f => `<option value="${f}">${f}</option>`).join('');
 }
 
+// Remplit le menu OI depuis la source unique OI_CONFIG (ordre = OI_LIST).
+function populateOiSelect() {
+  const sel = document.getElementById('q-oi');
+  if(!sel || typeof OI_LIST === 'undefined') return;
+  sel.innerHTML = OI_LIST.map(oi => `<option>${oi}</option>`).join('');
+}
+
 async function init() {
+  populateOiSelect();
   const lsToken = localStorage.getItem('gh_token');
   const ssToken = sessionStorage.getItem('gh_token');
   if(lsToken) { document.getElementById('gh-token').value = lsToken; document.getElementById('gh-remember').checked = true; }

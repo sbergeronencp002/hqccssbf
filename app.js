@@ -34,16 +34,9 @@ function fold(s) {
   return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
 
-const OI_STYLES = {
-  "Situer dans le temps":                       {cls:"b-oi-sit", color:"var(--c-sit)", bg:"var(--c-sit-bg)"},
-  "Situer dans l'espace":                       {cls:"b-oi-esp", color:"var(--c-esp)", bg:"var(--c-esp-bg)"},
-  "Établir des liens de causalité":             {cls:"b-oi-cau", color:"var(--c-cau)", bg:"var(--c-cau-bg)"},
-  "Dégager des différences et des similitudes": {cls:"b-oi-dif", color:"var(--c-dif)", bg:"var(--c-dif-bg)"},
-  "Déterminer des changements et des continuités": {cls:"b-oi-chg", color:"var(--c-chg)", bg:"var(--c-chg-bg)"},
-  "Déterminer des causes et des conséquences":  {cls:"b-oi-rel", color:"var(--c-rel)", bg:"var(--c-rel-bg)"},
-  "Mettre en relation des faits":               {cls:"b-oi-mr",  color:"var(--c-mr)",  bg:"var(--c-mr-bg)"},
-  "Établir des faits":                          {cls:"b-oi-fai", color:"var(--c-fai)", bg:"var(--c-fai-bg)"},
-};
+// Styles des OI : dérivés de la source unique OI_CONFIG (oi-config.js, chargé avant app.js).
+// Repli défensif si oi-config.js n'a pas pu être chargé.
+const OI_STYLES = (typeof OI_CONFIG !== 'undefined') ? OI_CONFIG : {};
 
 function oiStyle(oi) {
   return OI_STYLES[oi] || {color:"var(--ink-2)", bg:"var(--paper-3)"};

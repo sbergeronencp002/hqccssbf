@@ -14,12 +14,13 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 | `questions.js` | Données : `REGLETTES`, `IMAGE_DB`, `QUESTIONS` — généré et écrit par admin |
 | `reglettes.js` | Préréglages de réglettes par OI (`REGLETTES_PRESET`) — chargé par admin uniquement |
 | `contexte.js` | Données statiques : `PERIODES_PAR_NIVEAU`, `ASPECTS_PAR_PERIODE` |
+| `oi-config.js` | **Source unique des OI** : `OI_CONFIG` (styles, sous-tags, auto-réponse) + `OI_LIST` (ordre du menu). Chargé par index.html ET admin.html |
 | `style.css` | Styles du site public |
 | `docx.js` | Librairie docx.js (857 Ko) — chargée en lazy au 1er clic « Générer » |
 | `backups/questions-YYYY-MM-DD_HH-MM.js` | Backups auto avant chaque publication (admin) |
 
 ### Cache-bust actuel
-`app.js?v=v40`, `style.css?v=v25`, `reglettes.js?v=v2` (admin) — incrémenter à chaque changement majeur.
+`app.js?v=v40`, `style.css?v=v25`, `oi-config.js?v=v1`, `reglettes.js?v=v2` (admin) — incrémenter à chaque changement majeur.
 
 ---
 
