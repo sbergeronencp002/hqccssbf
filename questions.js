@@ -10288,7 +10288,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P2 — 1608 – 1760",
     points: 1,
-    enonce: "Indiquez la forme de gouvernement exercée par le roi de France sous le régime français.",
+    enonce: "Indiquez le type de pouvoir exercé par le roi de France sous le Régime français.",
     aspects: [
       {
         aspect: "Gouvernement royal"
@@ -10300,8 +10300,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Le roi concentre entre ses mains l’ensemble des pouvoirs politiques et administratifs de la colonie par l’intermédiaire de ses représentants. »",
-            source: "Marcel Trudel, Histoire de la Nouvelle-France, Montréal, Fides."
+            texte: "« Dans la monarchie française du XVIIe siècle, le souverain gouverne sans partage et considère son pouvoir comme un droit accordé par la volonté divine. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1, Québec, Septentrion."
           }
         ]
       }
