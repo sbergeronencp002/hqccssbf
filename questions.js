@@ -10633,7 +10633,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "territoire_revendique_france_1700.png"
+            ref: "territoire_revendique_france_1700.png",
+            source: "Récitus."
           }
         ]
       }
