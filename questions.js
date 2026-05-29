@@ -10519,13 +10519,13 @@ const QUESTIONS = [
     id: "Q157",
     niveau: 3,
     oi: "Dégager des différences et des similitudes",
-    periode: "P1 — Des origines à 1608",
+    periode: "P2 — 1608 – 1760",
     points: 2,
     soustag: "Différence",
     enonce: "Indiquez une différence entre les possessions françaises et les possessions britanniques en Amérique du Nord vers 1700.",
     aspects: [
       {
-        aspect: "Exploration et occupation du territoire par les Français"
+        aspect: "Territoire français en Amérique"
       }
     ],
     documents: [
