@@ -10621,7 +10621,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 2,
     soustag: "Conséquence",
-    enonce: "Indiquez une conséquence des territoires contestés entre les Français et les Britanniques en Amérique du Nord vers 1700.",
+    enonce: "Indiquez une conséquence des rivalités territoriales entre les Français et les Britanniques en Amérique du Nord vers 1700.",
     aspects: [
       {
         aspect: "Territoire français en Amérique"
