@@ -11043,6 +11043,7 @@ const QUESTIONS = [
     oi: "Dégager des différences et des similitudes",
     periode: "P2 — 1608 – 1760",
     points: 3,
+    soustag: "Position – 3 acteurs",
     enonce: "Les documents A à C présentent la position de trois historiens à l'égard du rôle joué par Colbert en Nouvelle-France. Nommez l'historien qui présente une position différente et comparez sa position à celle des deux autres historiens.",
     aspects: [
       {
