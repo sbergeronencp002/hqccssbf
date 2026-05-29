@@ -3114,6 +3114,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q157": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève dégage correctement la différence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève dégage plus ou moins correctement la différence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."
+      }
+    ]
   }
 }
 
@@ -3375,6 +3397,9 @@ const IMAGE_DB = {
   },
   "territoire_occupe_1650.png": {
     src: "images/territoire_occupe_1650.png"
+  },
+  "territoire_revendique_france_1700.png": {
+    src: "images/territoire_revendique_france_1700.png"
   }
 }
 
@@ -10467,5 +10492,35 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "La vallée du Saint-Laurent."
+  },
+  {
+    id: "Q157",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    soustag: "Différence",
+    enonce: "Indiquez une différence entre les possessions françaises et les possessions britanniques en Amérique du Nord vers 1700.",
+    aspects: [
+      {
+        aspect: "Exploration et occupation du territoire par les Français"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "territoire_revendique_france_1700.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les possessions françaises couvrent un territoire plus vaste que les possessions britanniques."
   }
 ]
