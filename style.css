@@ -188,6 +188,12 @@ select:focus { outline: none; border-color: var(--ink-2); }
   box-shadow: 0 8px 24px rgba(0,0,0,0.11);
   border-color: var(--tile-color, var(--ink-3));
 }
+/* Focus clavier visible (accessibilité) */
+.q-tile:focus-visible,
+.q-tile-check:focus-visible {
+  outline: 3px solid var(--tile-color, var(--ink));
+  outline-offset: 2px;
+}
 .q-tile.in-panier {
   border-color: var(--tile-color, var(--ink));
   border-width: 2px;

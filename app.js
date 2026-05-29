@@ -2,6 +2,14 @@
 function escLine(s) {
   return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
+// Échappe pour un attribut HTML entre guillemets doubles (ex. alt, aria-label).
+function escAttr(s) {
+  return escLine(String(s)).replace(/"/g,'&quot;');
+}
+// Échappe pour une chaîne JS entre apostrophes (ex. dans un onclick="…('…')").
+function jsStr(s) {
+  return String(s).replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+}
 function boldify(s) {
   return s.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 }
@@ -432,14 +440,18 @@ function buildTileHtml(q) {
     ? `<div style="margin-top:6px;display:flex;gap:5px;flex-wrap:wrap">${NEW_IDS.has(q.id) ? badgeNew : ''}${q.soustag ? badge(q.soustag) : ''}</div>`
     : '';
   return `<div class="q-tile${inPanier ? ' in-panier' : ''}" id="tile-${q.id}"
-    style="--tile-color:${st.color};background:#fff" onclick="openQModal('${q.id}')">
+    role="button" tabindex="0" aria-label="${escAttr(q.oi + (aspect ? ' — ' + aspect : ''))}"
+    style="--tile-color:${st.color};background:#fff" onclick="openQModal('${q.id}')"
+    onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openQModal('${q.id}')}">
     <div class="q-tile-bar" style="display:none"></div>
     <div class="q-tile-content">
       <div class="q-tile-oi" style="display:block;font-size:1.1rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:5px 12px;border-radius:6px;color:${st.color};background:${st.bg};line-height:1.3;word-break:break-word">${q.oi}</div>
       <div class="q-tile-aspect" style="font-size:0.9rem;font-weight:400;color:#6B6560;margin-top:2px">${aspect}</div>
       ${tagsHtml}
     </div>
-    <span class="q-tile-check" onclick="event.stopPropagation();togglePanier('${q.id}')">✓</span>
+    <span class="q-tile-check" role="button" tabindex="0" aria-label="Ajouter ou retirer du panier"
+      onclick="event.stopPropagation();togglePanier('${q.id}')"
+      onkeydown="if(event.key==='Enter'||event.key===' '){event.stopPropagation();event.preventDefault();togglePanier('${q.id}')}">✓</span>
   </div>`;
 }
 
@@ -539,7 +551,7 @@ function renderDoc(d) {
         }
       } else if(col.ref) {
         const img2 = IMAGE_DB[col.ref];
-        if(img2) html += '<img src="' + img2.src + '" style="max-width:100%;max-height:150px;object-fit:contain;cursor:pointer" onclick="openLightbox(\'' + img2.src + '\')">';
+        if(img2) html += '<img src="' + img2.src + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:150px;object-fit:contain;cursor:pointer" onclick="openLightbox(\'' + jsStr(img2.src) + '\')">';
       }
       if(col.auteur) html += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + col.auteur + '</div>';
       if(col.source) html += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + col.source + '</div>';
@@ -555,7 +567,7 @@ function renderDoc(d) {
       const img = IMAGE_DB[col.ref];
       html += '<td style="width:' + Math.floor(100/d.cols.length) + '%;padding:4px;vertical-align:top;border:0.5px solid var(--border)">';
       if(col.titreWeb && col.titre) html += '<div class="doc-img-titre">' + col.titre + '</div>';
-      if(img) html += '<img src="' + img.src + '" class="doc-img" style="max-height:150px" onclick="openLightbox(\'' + img.src + '\')">';
+      if(img) html += '<img src="' + img.src + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" class="doc-img" style="max-height:150px" onclick="openLightbox(\'' + jsStr(img.src) + '\')">';
       html += '</td>';
     });
     html += '</tr></table>';
@@ -565,7 +577,7 @@ function renderDoc(d) {
   const img = IMAGE_DB[d.ref];
   if(img) {
     const titre = d.titre ? '<div class="doc-img-titre">' + d.titre + '</div>' : '';
-    return '<div class="doc-img-wrap">' + titre + '<img src="' + img.src + '" class="doc-img" onclick="openLightbox(\'' + img.src + '\')" title="Cliquer pour agrandir"></div>';
+    return '<div class="doc-img-wrap">' + titre + '<img src="' + img.src + '" alt="' + escAttr(d.titre||d.ref||'Document') + '" class="doc-img" onclick="openLightbox(\'' + jsStr(img.src) + '\')" title="Cliquer pour agrandir"></div>';
   }
   return '<div><span class="doc-chip">' + d.type + ' — ' + d.ref + '</span></div>';
 }
@@ -593,7 +605,7 @@ function renderReponse(q) {
     if(!img) return '';
     const reduire = q.soustag === 'Ordre chronologique' || q.soustag === 'Ligne du temps';
     const imgStyle = reduire ? ' style="max-width:75%"' : '';
-    return '<div class="doc-img-wrap"><img src="' + img.src + '" class="doc-img"' + imgStyle + ' onclick="openLightbox(\'' + img.src + '\')" title="Cliquer pour agrandir"></div>';
+    return '<div class="doc-img-wrap"><img src="' + img.src + '" alt="Image de réponse" class="doc-img"' + imgStyle + ' onclick="openLightbox(\'' + jsStr(img.src) + '\')" title="Cliquer pour agrandir"></div>';
   }
   if(q.reponse.type === 'lignes') {
     const n = q.reponse.nombre || 1;
@@ -789,7 +801,7 @@ function previsualiser(guideMode) {
               const titre = (col.titreWeb && col.titre) ? col.titre : col.ref;
               docsHtml += '<td style="width:' + Math.floor(100/d.cols.length) + '%;padding:6px;vertical-align:top;border:0.5px solid var(--border)">';
               docsHtml += '<div style="font-size:0.75rem;font-style:italic;margin-bottom:4px;color:var(--ink-2)">' + titre + '</div>';
-              if(img) docsHtml += '<img src="' + img.src + '" style="max-width:100%;max-height:100px;object-fit:contain;cursor:pointer" onclick="openLightbox(\'' + img.src + '\')">';
+              if(img) docsHtml += '<img src="' + img.src + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:100px;object-fit:contain;cursor:pointer" onclick="openLightbox(\'' + jsStr(img.src) + '\')">';
               docsHtml += '</td>';
             });
             docsHtml += '</tr></table>';
@@ -804,7 +816,7 @@ function previsualiser(guideMode) {
               if(col.texte) {
                 docsHtml += '<div style="font-size:0.72rem;color:var(--ink-2);line-height:1.5">' + formatTexte(col.texte) + '</div>';
               } else if(img) {
-                docsHtml += '<img src="' + img.src + '" style="max-width:100%;max-height:100px;object-fit:contain;cursor:pointer" onclick="openLightbox(\'' + img.src + '\')">';
+                docsHtml += '<img src="' + img.src + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:100px;object-fit:contain;cursor:pointer" onclick="openLightbox(\'' + jsStr(img.src) + '\')">';
               }
               if(col.auteur) docsHtml += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + col.auteur + '</div>';
               if(col.source) docsHtml += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + col.source + '</div>';

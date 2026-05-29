@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&display=swap">
-<link rel="stylesheet" href="style.css?v=v24">
+<link rel="stylesheet" href="style.css?v=v25">
 </head>
 <body>
 <noscript><div style="padding:2rem;text-align:center;font-family:sans-serif;color:#1a1814">Ce site nécessite JavaScript pour fonctionner.</div></noscript>
@@ -74,7 +74,7 @@
 </div>
 
 <div class="modal-overlay" id="preview-modal" onclick="closePreview(event)">
-  <div class="modal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="preview-modal-label">
     <div class="modal-header">
       <span id="preview-modal-label">Prévisualisation du cahier</span>
       <button class="modal-close" onclick="closePreviewBtn()">×</button>
@@ -90,7 +90,7 @@
 
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
   <button class="lightbox-close" onclick="closeLightbox()">×</button>
-  <img id="lightbox-img" src="" alt="">
+  <img id="lightbox-img" src="" alt="Image agrandie">
 </div>
 
 <div class="panier-bar" id="panier-bar">
@@ -134,7 +134,7 @@
 </div>
 
 <div class="modal-overlay" id="q-modal-overlay" onclick="closeQModalOverlay(event)">
-  <div class="modal q-modal">
+  <div class="modal q-modal" role="dialog" aria-modal="true" aria-labelledby="q-modal-title">
     <div class="modal-header" id="q-modal-header">
       <div id="q-modal-title" style="flex:1;min-width:0"></div>
       <button class="modal-close" id="q-modal-close" onclick="closeQModal()">×</button>
@@ -151,7 +151,7 @@
 
 <script src="questions.js"></script>
 <script src="contexte.js"></script>
-<script src="app.js?v=v38"></script>
+<script src="app.js?v=v39"></script>
 </body>
 </html>
 
