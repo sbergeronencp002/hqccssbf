@@ -3075,6 +3075,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q155": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -10367,5 +10389,36 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les Français concentrent leurs établissements le long du fleuve Saint-Laurent parce qu’il constitue la principale voie de transport ou de commerce en Nouvelle-France vers 1650."
+  },
+  {
+    id: "Q155",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de la concentration des établissements français dans la vallée du Saint-Laurent vers 1650.",
+    aspects: [
+      {
+        aspect: "Territoire français en Amérique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "territoire_occupe_1650.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "La concentration des établissements français dans la vallée du Saint-Laurent favorise le développement du peuplement et des échanges commerciaux vers 1650."
   }
 ]
