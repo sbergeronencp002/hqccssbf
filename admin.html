@@ -743,7 +743,17 @@ function loadQuestion(id) {
   });
 
   const repType = q.reponse ? (q.reponse===true?'none':q.reponse.type) : 'none';
-  document.getElementById('rep-type').value = repType;
+  const repSel = document.getElementById('rep-type');
+  // Garde-fou : si la question utilise un type de réponse de format hérité
+  // (retiré du menu, ex. tableau_3col / tableau), on injecte une option à la
+  // volée pour que la valeur tienne et soit réécrite telle quelle à la sauvegarde
+  // (sinon le <select> retomberait sur « Aucune » et la réponse serait perdue).
+  if(repType && ![...repSel.options].some(o => o.value === repType)) {
+    const o = document.createElement('option');
+    o.value = repType; o.textContent = repType + ' (format hérité)';
+    repSel.appendChild(o);
+  }
+  repSel.value = repType;
   updateReponseUI();
   if(repType==='lignes') document.getElementById('rep-nombre').value = q.reponse.nombre||2;
   else if(repType==='image') { const s=document.getElementById('rep-ref'); if(s) s.value=q.reponse.ref||''; }
@@ -911,7 +921,8 @@ async function uploadImage() {
   if(!token) { toast('Saisis ton token GitHub.', 'err'); return; }
   const file = document.getElementById('upload-file').files[0];
   if(!file) { toast('Sélectionne un fichier image.', 'err'); return; }
-  const name = (document.getElementById('upload-name').value.trim() || file.name).replace(/\s+/g,'_');
+  const name = (document.getElementById('upload-name').value.trim() || file.name)
+    .replace(/\s+/g,'_').replace(/[\\'"`]/g,'');   // pas d'espaces ni de quotes/antislash (cassent onclick/attributs)
   const statusEl = document.getElementById('upload-status');
   const btn = document.getElementById('btn-upload');
   btn.disabled = true; statusEl.textContent = '⏳ Téléversement…';
@@ -1600,6 +1611,31 @@ function validateForm() {
   return errors;
 }
 
+// Rétention des backups : conserve les plus récents, supprime les plus anciens.
+// Best-effort, fire-and-forget, plafonné pour éviter les rafales d'appels API.
+// (Le contenu supprimé reste récupérable dans l'historique git.)
+async function pruneBackups(token) {
+  const KEEP = 40;        // backups conservés
+  const MAX_DEL = 12;     // suppressions max par publication
+  try {
+    const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/backups?ref=${BRANCH}&t=${Date.now()}`,
+      { headers: { Authorization: `token ${token}` }, cache: 'no-store' });
+    if(!r.ok) return;
+    const files = (await r.json())
+      .filter(f => f.type === 'file' && /^questions-.*\.js$/.test(f.name))
+      .sort((a,b) => a.name.localeCompare(b.name));   // noms ISO → ordre chronologique
+    const excess = files.length - KEEP;
+    if(excess <= 0) return;
+    for(const f of files.slice(0, Math.min(excess, MAX_DEL))) {
+      await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/backups/${encodeURIComponent(f.name)}`, {
+        method: 'DELETE',
+        headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: `Élaguer backup ${f.name}`, sha: f.sha, branch: BRANCH })
+      }).catch(()=>{});
+    }
+  } catch(_) {}
+}
+
 // ── PUBLIER ───────────────────────────────────────────────────────────
 async function publier() {
   const token = getToken();
@@ -1617,13 +1653,14 @@ async function publier() {
     // Reload full content from GitHub before modifying (prevents data loss from stale state)
     const { rawB64 } = await fetchFreshState(token);
 
-    // Backup automatique (fire-and-forget)
-    const ts = new Date().toISOString().slice(0,16).replace('T','_').replace(':','-');
+    // Backup automatique (fire-and-forget) — horodatage à la seconde pour
+    // éviter les collisions de nom (deux publications dans la même minute).
+    const ts = new Date().toISOString().slice(0,19).replace('T','_').replace(/:/g,'-');
     fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/backups/questions-${ts}.js`, {
       method:'PUT',
       headers:{ Authorization:`token ${token}`, 'Content-Type':'application/json' },
       body: JSON.stringify({ message:`Backup auto ${ts}`, content: rawB64, branch: BRANCH })
-    }).catch(()=>{});
+    }).then(() => pruneBackups(token)).catch(()=>{});
 
     const q = buildQuestion();
     const r = buildReglette(q.id);

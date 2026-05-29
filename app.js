@@ -8,7 +8,7 @@ function boldify(s) {
 function formatTexte(text) {
   let html = '', inList = false;
   text.split('\n').forEach(line => {
-    if(line.startsWith('• ') || line.startsWith('- ')) {
+    if(line.startsWith('• ')) {   // puce canonique uniquement (bouton « • Puce »)
       if(!inList) { html += '<ul style="margin:2px 0 2px 14px;padding:0">'; inList = true; }
       html += '<li>' + boldify(escLine(line.slice(2))) + '</li>';
     } else {
@@ -1364,7 +1364,7 @@ async function genererDocx(includeGuide=false) {
       });
     }
     function mkLine(line, font, size) {
-      if(line.startsWith('• ') || line.startsWith('- ')) {
+      if(line.startsWith('• ')) {
         return new Paragraph({ indent:{ left:200 }, children:[new TextRun({text:'• ',font,size}), ...mkRuns(line.slice(2),font,size)] });
       }
       return new Paragraph({ children: mkRuns(line, font, size) });
