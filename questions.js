@@ -3491,6 +3491,9 @@ const IMAGE_DB = {
   },
   "territoire_occupe_1700.png": {
     src: "images/territoire_occupe_1700.png"
+  },
+  "carte_premiers_occ_peuplement.png": {
+    src: "images/carte_premiers_occ_peuplement.png"
   }
 }
 
@@ -4866,7 +4869,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "Nommez le passage emprunté par les premiers occupants pour migrer de l’Asie vers l’Amérique.",
+    enonce: "Indiquez le nom du passage emprunté par les premiers occupants pour migrer de l’Asie vers l’Amérique.",
     aspects: [
       {
         aspect: "Premiers occupants du territoire"
@@ -4878,7 +4881,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "passage_beringie.png"
+            ref: "carte_premiers_occ_peuplement.png"
           }
         ]
       }
