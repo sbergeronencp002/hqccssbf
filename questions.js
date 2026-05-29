@@ -10849,7 +10849,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 2,
     soustag: "Divergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux acteurs sur le commerce des fourrures en Nouvelle-France. Sur quel point précis sont-ils en désaccord?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs sur le commerce des fourrures en Nouvelle-France. Sur quel point précis sont-ils en accord?",
     aspects: [
       {
         aspect: "Commerce des fourrures"
@@ -10861,8 +10861,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Les congés de traite sont nécessaires au maintien du commerce des fourrures. Ils permettent aux marchands d'étendre leurs échanges avec les nations autochtones et d'assurer un approvisionnement régulier pour la colonie. »",
-            source: "Adapté de Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord, PUL."
+            texte: "« Les congés de traite favorisent la dispersion des habitants dans l'intérieur du continent et privent souvent les établissements agricoles d'une partie de la main-d'œuvre dont ils ont besoin. »",
+            source: "Marcel Trudel, Histoire de la Nouvelle-France, tome 3 : La seigneurie de la Compagnie des Cent-Associés, 1627-1663, Montréal, Fides, 1979."
           }
         ]
       },
@@ -10871,8 +10871,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« Les congés de traite causent de nombreux problèmes dans la colonie. Trop d'habitants quittent leurs terres pour participer à la traite, ce qui ralentit le peuplement et le développement agricole. »",
-            source: "Adapté de Marcel Trudel, Initiation à la Nouvelle-France."
+            texte: "« Les autorités s'inquiètent du nombre croissant d'hommes attirés par la traite des fourrures, activité qui détourne plusieurs colons du travail agricole et du peuplement de la vallée du Saint-Laurent. »",
+            source: "Louise Dechêne, Habitants et marchands de Montréal au XVIIe siècle, Montréal, Boréal, 1988."
           }
         ]
       }
@@ -10881,6 +10881,6 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "La pertinence ou l'utilité des congés de traite sur le développement de la colonie."
+    guide: "Les congé de traite nuisent au développement de la colonie."
   }
 ]
