@@ -11126,6 +11126,6 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Les deux historiens considèrent que la milice contribue à la défense de la Nouvelle-France ou qu'elle peut être mobilisée pour protéger la colonie."
+    guide: "L'importance de la milice dans la défense de la Nouvelle-France ou le rôle de la milice dans la défense du territoire."
   }
 ]
