@@ -403,7 +403,7 @@ function utf8b64(str) {
 }
 
 let formDirty = false;
-window.addEventListener('beforeunload', e => { if(formDirty) e.preventDefault(); });
+window.addEventListener('beforeunload', e => { if(formDirty) { e.preventDefault(); e.returnValue = ''; } });
 
 function saveToken() {
   const val = document.getElementById('gh-token').value;

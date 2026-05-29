@@ -528,7 +528,7 @@ function renderDoc(d) {
       if(col.texte) {
         const plain = col.texte.replace(/\*\*(.*?)\*\*/g,'$1');
         const isLong = plain.length > 120;
-        const shortHtml = isLong ? boldify(plain.substring(0,120)) + '...' : formatTexte(col.texte);
+        const shortHtml = isLong ? escLine(plain.substring(0,120)) + '…' : formatTexte(col.texte);
         html += '<div class="doc-texte-short" style="font-size:0.75rem;color:var(--ink-2);line-height:1.5">' + shortHtml + '</div>';
         if(isLong) {
           html += '<div class="doc-texte-full" style="display:none;font-size:0.75rem;color:var(--ink-2);line-height:1.5">' + formatTexte(col.texte) + '</div>';
@@ -1062,7 +1062,7 @@ function renderCahier() {
           <span class="cahier-badge" style="color:${st.color};background:${st.bg}" title="${q.oi}">${oiShort}</span>
           <span class="cahier-pts">${q.points} pt${q.points !== 1 ? 's' : ''}</span>
         </div>
-        <div class="cahier-enonce">${preview}</div>
+        <div class="cahier-enonce">${escLine(preview)}</div>
       </div>
       <button class="cahier-remove" onclick="retirerPanier('${id}')">×</button>
     </div>`;
@@ -1800,7 +1800,7 @@ async function genererDocx(includeGuide=false) {
     a.click();
     URL.revokeObjectURL(url);
 
-    if(btn) flashBtn(btn, '✓ Téléchargé !');
+    if(btn) btn.textContent = '✓ Téléchargé !';
     setTimeout(() => {
       if(btn) { btn.textContent = includeGuide ? '⬇ Guide' : '⬇ Cahier'; btn.disabled = false; }
       if(btnOther) btnOther.disabled = false;
