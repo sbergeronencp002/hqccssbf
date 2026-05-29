@@ -402,6 +402,11 @@ function utf8b64(str) {
   return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, (_, p) => String.fromCharCode(parseInt(p, 16))));
 }
 
+// Normalise pour la recherche : minuscules + suppression des accents (é → e)
+function fold(s) {
+  return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
 let formDirty = false;
 window.addEventListener('beforeunload', e => { if(formDirty) { e.preventDefault(); e.returnValue = ''; } });
 
@@ -543,7 +548,7 @@ function debouncedFilterEditList() {
 const ADMIN_PAGE = 100; // max cards rendues à la fois
 
 function filterEditList() {
-  const search  = (document.getElementById('edit-search')?.value || '').trim().toLowerCase();
+  const search  = fold((document.getElementById('edit-search')?.value || '').trim());
   const niveau  = document.getElementById('edit-filter-niveau')?.value || '';
   const oi      = document.getElementById('edit-filter-oi')?.value || '';
   // Pré-construire l'index de recherche à la volée (currentQuestions peut changer)
@@ -551,7 +556,7 @@ function filterEditList() {
     if(niveau && String(q.niveau) !== niveau) return false;
     if(oi     && q.oi !== oi) return false;
     if(search) {
-      const hay = [q.id, q.oi, q.periode, q.enonce||'', ...(q.aspects||[]).map(a=>a.aspect)].join(' ').toLowerCase();
+      const hay = fold([q.id, q.oi, q.periode, q.enonce||'', ...(q.aspects||[]).map(a=>a.aspect)].join(' '));
       if(!hay.includes(search)) return false;
     }
     return true;
@@ -833,7 +838,7 @@ async function fetchFreshState(token) {
 
 async function supprimerQuestion() {
   if(!editingId) return;
-  if(!confirm(`Supprimer ${editingId} et renuméroter toutes les questions ?`)) return;
+  if(!confirm(`Supprimer ${editingId} ? (les autres questions conservent leur identifiant)`)) return;
   const token = getToken();
   if(!token) { toast('Saisis ton token GitHub.', 'err'); return; }
 
@@ -846,25 +851,10 @@ async function supprimerQuestion() {
     // Reload full content from GitHub before modifying
     await fetchFreshState(token);
 
-    // Retirer la question et sa réglette
+    // Retirer la question et sa réglette (IDs stables : pas de renumérotation,
+    // pour ne pas casser les paniers enregistrés ni les cahiers déjà imprimés)
     currentQuestions = currentQuestions.filter(q => q.id !== idSupp);
     delete currentReglettes[idSupp];
-
-    // Renuméroter Q1, Q2, Q3…
-    const oldToNew = {};
-    currentQuestions = currentQuestions.map((q, i) => {
-      const newId = 'Q' + (i + 1);
-      oldToNew[q.id] = newId;
-      return { ...q, id: newId };
-    });
-
-    // Re-clé des réglettes
-    const newReglettes = {};
-    Object.entries(currentReglettes).forEach(([oldId, r]) => {
-      const newId = oldToNew[oldId];
-      if(newId) newReglettes[newId] = r;
-    });
-    currentReglettes = newReglettes;
 
     const newContent = generateQuestionsJs(currentQuestions, currentReglettes, currentImageDb);
     const encoded = utf8b64(newContent);
@@ -873,7 +863,7 @@ async function supprimerQuestion() {
       method: 'PUT',
       headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        message: `Supprimer ${idSupp} et renuméroter`,
+        message: `Supprimer ${idSupp}`,
         content: encoded, sha: questionsFileSha, branch: BRANCH
       })
     });
@@ -888,13 +878,14 @@ async function supprimerQuestion() {
     const result = await putResp.json();
     questionsFileSha = result.content.sha;
 
-    toast(`${idSupp} supprimé, questions renumérotées.`, 'ok');
+    toast(`${idSupp} supprimé.`, 'ok');
     renderDashboard();
     editingId = null;
     document.getElementById('edit-selected-bar').style.display = 'none';
     populateEditSearch();
     resetForm(false);
-    const nextId = 'Q' + (currentQuestions.length + 1);
+    const delNums = currentQuestions.map(q => parseInt(q.id.replace(/\D/g,''))).filter(n=>!isNaN(n));
+    const nextId = 'Q' + (delNums.length ? Math.max(...delNums)+1 : 1);
     document.getElementById('q-id').value = nextId;
     document.getElementById('next-id-badge').textContent = nextId;
 

@@ -21,6 +21,11 @@ function formatTexte(text) {
   return html;
 }
 
+// Normalise pour la recherche : minuscules + suppression des accents (é → e)
+function fold(s) {
+  return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
 const OI_STYLES = {
   "Situer dans le temps":                       {cls:"b-oi-sit", color:"var(--c-sit)", bg:"var(--c-sit-bg)"},
   "Situer dans l'espace":                       {cls:"b-oi-esp", color:"var(--c-esp)", bg:"var(--c-esp-bg)"},
@@ -45,7 +50,7 @@ let NEW_IDS = new Set();        // 10 questions les plus récentes
 function populateFilters() {
   Q_MAP = new Map(QUESTIONS.map(q => [q.id, q]));
   Q_SEARCH_IDX = new Map(QUESTIONS.map(q => [q.id,
-    [q.enonce||'', q.oi||'', q.periode||'', ...(q.aspects||[]).map(a=>a.aspect)].join(' ').toLowerCase()
+    fold([q.enonce||'', q.oi||'', q.periode||'', ...(q.aspects||[]).map(a=>a.aspect)].join(' '))
   ]));
   const sorted = [...QUESTIONS].sort((a,b) => (parseInt(b.id.replace(/\D/g,''))||0) - (parseInt(a.id.replace(/\D/g,''))||0));
   NEW_IDS = new Set(sorted.slice(0,10).map(q=>q.id));
@@ -150,7 +155,7 @@ function applyFilters() {
   const aspect  = document.getElementById('f-aspect').value;
   const periode = document.getElementById('f-periode').value;
   const niveau  = document.getElementById('f-niveau').value;
-  const search  = (document.getElementById('f-search')?.value || '').trim().toLowerCase();
+  const search  = fold((document.getElementById('f-search')?.value || '').trim());
   const currentOi = oi;
 
   // Parcours unique : construit filtered + relevantOis en même passe
@@ -466,13 +471,11 @@ function renderMore() {
   }
 }
 
-async function initSite() {
-  document.getElementById('q-list').innerHTML =
-    '<div class="empty-state"><span class="big" style="font-size:2rem">…</span>Chargement…</div>';
-  try {
-    const resp = await fetch('questions.js', { cache: 'no-store' });
-    if(resp.ok) (new Function(await resp.text()))();
-  } catch(e) { /* utilise les globals déjà définis par <script src="questions.js"> */ }
+function initSite() {
+  // Les données sont déjà chargées par <script src="questions.js"> (globals
+  // QUESTIONS / REGLETTES / IMAGE_DB). Un re-fetch via new Function() ne
+  // fuiterait pas ses const en global : c'était du code mort qui doublait
+  // le téléchargement. On s'appuie donc directement sur les globals.
   populateFilters();
   applyFilters();
   try {
