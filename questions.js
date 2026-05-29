@@ -3285,6 +3285,34 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
       }
     ]
+  },
+  "Q165": {
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
   }
 }
 
@@ -10986,5 +11014,55 @@ const QUESTIONS = [
         ]
       ]
     }
+  },
+  {
+    id: "Q165",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P2 — 1608 – 1760",
+    points: 3,
+    enonce: "Les documents A à C présentent la position de trois historiens à l'égard du rôle joué par Colbert en Nouvelle-France. Nommez l'historien qui présente une position différente et comparez sa position à celle des deux autres historiens.",
+    aspects: [
+      {
+        aspect: "Gouvernement royal"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« L'œuvre de Colbert marque un tournant dans l'histoire de la Nouvelle-France. Le gouvernement royal, l'arrivée de nouveaux colons et l'organisation plus efficace de l'administration contribuent à consolider durablement la présence française en Amérique du Nord. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Sous l'impulsion de Colbert, la monarchie reprend directement en main l'administration de la Nouvelle-France. Les mesures adoptées pour accroître la population et renforcer les institutions permettent à la colonie de connaître une période de croissance soutenue à partir des années 1660. »",
+            source: "Marcel Trudel, Histoire de la Nouvelle-France."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les réformes de Colbert améliorent certes l'organisation de la colonie, mais elles ne parviennent pas à corriger ses principales faiblesses. La population demeure peu nombreuse et les ressources limitées comparativement à celles des colonies anglaises. »",
+            source: "Louise Dechêne, Le peuple, l'État et la guerre au Canada sous le Régime français."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Dechêne considère que le travail de Colbert a eu un impact limité (la différence) tandis que Trudel et Lacoursière sont considèrent que Colbert favorise le développement de la Nouvelle-France."
   }
 ]
