@@ -1204,6 +1204,7 @@ function moveDoc(id, dir) {
 }
 
 // ── RÉPONSE ───────────────────────────────────────────────────────────
+let _prevRepType = '';
 function updateReponseUI() {
   const type = document.getElementById('rep-type').value;
   const wrap = document.getElementById('rep-extra');
@@ -1266,7 +1267,7 @@ function updateReponseUI() {
     fields += `</div><div style="display:grid;grid-template-columns:repeat(${n},1fr);gap:.5rem">`;
     for(let i = 0; i < n; i++) {
       const ex = (MER_EX[n] || [])[i] || 'Élément ' + (i+1);
-      fields += `<div class="field" style="margin:0"><label style="font-size:.72rem">Élément ${i+1}</label><input type="text" id="rep-mer-el-${i}" placeholder="ex. : ${ex}"></div>`;
+      fields += `<div class="field" style="margin:0"><label style="font-size:.72rem">Élément ${i+1}</label><input type="text" id="rep-mer-el-${i}" placeholder="ex. : ${ex}" oninput="syncGuideFromMer(false)"></div>`;
     }
     fields += '</div>';
     wrap.innerHTML = fields;
@@ -1283,6 +1284,34 @@ function updateReponseUI() {
   } else {
     wrap.innerHTML = '';
   }
+
+  // Guide « miroir » pour Mettre en relation : on bascule le guide en grille
+  // reprenant les éléments en en-têtes + une rangée pour la lettre du document.
+  const merJustOpened = (type === 'mettre-en-relation' && _prevRepType !== 'mettre-en-relation');
+  if(type === 'mettre-en-relation') syncGuideFromMer(merJustOpened);
+  _prevRepType = type;
+}
+
+// Reprend les éléments de la réponse « Mettre en relation » dans le guide,
+// sous forme de grille : en-têtes = éléments, une rangée vide pour les lettres.
+// forceCreate = true → bascule le guide en grille (à l'ouverture du type MER) ;
+// sinon, resynchronise seulement si le guide est déjà une grille (respecte un
+// guide « Texte » choisi volontairement). Les lettres déjà saisies sont conservées.
+function syncGuideFromMer(forceCreate) {
+  if(document.getElementById('rep-type').value !== 'mettre-en-relation') return;
+  const guideTypeSel = document.getElementById('guide-type');
+  if(forceCreate) { guideTypeSel.value = 'grille'; updateGuideUI(); }
+  if(guideTypeSel.value !== 'grille') return;
+  const n = parseInt(document.getElementById('rep-mer-n')?.value || '2') || 2;
+  const els = [];
+  for(let i = 0; i < n; i++) {
+    els.push((document.getElementById('rep-mer-el-' + i)?.value || '').trim() || ('Élément ' + (i + 1)));
+  }
+  const prevRow = (getGrilleValues().rangees || [])[0] || [];
+  const row = Array.from({ length: n }, (_, i) => prevRow[i] || '');
+  document.getElementById('guide-cols').value = String(n);
+  document.getElementById('guide-rows').value = '1';
+  updateGrille({ entetes: els, rangees: [row] });
 }
 
 function updateRepGrille(data) {
