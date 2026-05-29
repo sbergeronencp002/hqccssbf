@@ -3263,6 +3263,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q164": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
   }
 }
 
@@ -10882,5 +10904,87 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les congé de traite nuisent au développement de la colonie."
+  },
+  {
+    id: "Q164",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "4 documents",
+    enonce: "Les documents A à D présentent différents agents du commerce des fourrures. Associez chaque document à l’agent correspondant.",
+    aspects: [
+      {
+        aspect: "Commerce des fourrures"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« À bord de canots chargés de marchandises, ils assurent le transport entre les centres de la colonie et les postes de traite éloignés. »",
+            source: "Adapté de Carolyn Podruchny, Making the Voyageur World: Travelers and Traders in the North American Fur Trade, Lincoln, University of Nebraska Press, 2006."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Grâce à leur connaissance du territoire et des routes de transport, certains groupes jouent un rôle essentiel dans l’approvisionnement des postes de traite. »",
+            source: "Adapté de Gilles Havard, Empire et métissages : Indiens et Français dans le Pays d’en Haut, 1660-1715, Québec, Septentrion, 2003."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Leur rôle consiste notamment à acheter les fourrures, à les entreposer puis à les expédier vers les marchés européens. »",
+            source: "Adapté de Louise Dechêne, Habitants et marchands de Montréal au XVIIe siècle, Montréal, Boréal, 1988."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Certains parcourent de longues distances pour obtenir des fourrures sans toujours détenir l’autorisation officielle exigée par l’administration coloniale. »",
+            source: "Adapté de W. J. Eccles, La société canadienne sous le Régime français, Montréal, Hurtubise HMH, 1972."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Autochtones",
+        "Coureurs des bois",
+        "Marchands",
+        "Voyageurs"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Autochtones",
+        "Coureurs des bois",
+        "Marchands",
+        "Voyageurs"
+      ],
+      rangees: [
+        [
+          "B",
+          "D",
+          "C",
+          "A"
+        ]
+      ]
+    }
   }
 ]
