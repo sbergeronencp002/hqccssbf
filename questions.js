@@ -3224,6 +3224,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
+  },
+  "Q162": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -10772,5 +10789,35 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Il y a un changement dans l’étendue du territoire occupé par les Français entre 1650 et 1700. Vers 1700, les Français occupent un territoire beaucoup plus vaste qui s’étend jusqu’aux Grands Lacs et au fleuve Mississippi, alors qu’en 1650 le territoire occupé est principalement concentré dans la vallée du Saint-Laurent.\n\nRéponse attendue — Continuité\n\nIl y a une continuité dans l’étendue du territoire occupé par les Français entre 1650 et 1700. En 1650 comme en 1700, les Français occupent toujours la vallée du Saint-Laurent, notamment autour de Québec, Trois-Rivières et Montréal."
+  },
+  {
+    id: "Q162",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "Indiquez le nom d’un groupe européen qui fréquente le golfe du Saint-Laurent pour y pratiquer la pêche au 16e siècle.",
+    aspects: [
+      {
+        aspect: "Premiers contacts"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« À la belle saison, des navires jettent l’ancre dans plusieurs anses du golfe. On y construit des installations rudimentaires destinées au traitement des prises avant leur transport outre-Atlantique. »",
+            source: "Adapté de Denys Delâge, Le pays renversé, Montréal, Boréal, 1991."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les Basques ou les Bretons ou les Normands."
   }
 ]
