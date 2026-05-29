@@ -3241,8 +3241,8 @@ const IMAGE_DB = {
   "regiment_car-salieres.png": {
     src: "images/regiment_car-salieres.png"
   },
-  "fondation_qubec_1608.png": {
-    src: "images/fondation_qubec_1608.png"
+  "fondation_champlain_1608.png": {
+    src: "images/fondation_champlain_1608.png"
   },
   "grande_paix_mtl.png": {
     src: "images/grande_paix_mtl.png"
@@ -9524,7 +9524,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            ref: "fondation_qubec_1608.png",
+            ref: "fondation_champlain_1608.png",
             source: "Illustration générée à partir de représentations historiques de la Nouvelle-France."
           },
           {
