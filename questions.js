@@ -4881,7 +4881,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "carte_premiers_occ_peuplement.png"
+            ref: "carte_premiers_occ_peuplement.png",
+            source: "Adaptation pédagogique inspirée de cartes historiques du peuplement de l'Amérique par la Béringie."
           }
         ]
       }
