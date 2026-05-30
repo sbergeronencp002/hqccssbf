@@ -3335,6 +3335,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q167": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
   }
 }
 
@@ -11128,5 +11150,85 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les deux historiens considèrent que la milice contribue à la défense de la Nouvelle-France ou qu'elle peut être mobilisée pour protéger la colonie."
+  },
+  {
+    id: "Q167",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "4 documents",
+    enonce: "Les documents A à D présentent des responsabilités associées au gouverneur et à l'intendant. Indiquez à quel membre de l'administration coloniale correspond chacun des documents.",
+    aspects: [
+      {
+        aspect: "Gouvernement royal"
+      },
+      {
+        aspect: "Monopole des compagnies"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« [Il] est responsable de la défense de la Nouvelle-France. Il commande les troupes, supervise les fortifications et organise la protection du territoire contre les ennemis de la colonie. »",
+            source: "Marcel Trudel, Initiation à la Nouvelle-France, Holt, Rinehart et Winston, 1968."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« [Il] intervient dans l'organisation économique de la colonie. Il encourage l'agriculture, soutient le commerce et favorise les mesures destinées à accroître la population. »",
+            source: "Source : Allan Greer, Brève histoire des peuples de la Nouvelle-France, Boréal, 1998."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« [Il] joue un rôle essentiel dans les alliances conclues avec les nations autochtones. Il représente les intérêts de la France lors des négociations diplomatiques et des conseils tenus avec les alliés amérindiens. »",
+            source: "Gilles Havard, Empire et métissages, Septentrion, 2003."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Chargé des finances royales, [il] contrôle les dépenses de l'administration coloniale et surveille l'utilisation des fonds envoyés par la métropole. »",
+            source: "Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord, XVIe-XVIIIe siècle, PUL, 1991."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Gouverneur",
+        "Intendant"
+      ],
+      double: true
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Gouverneur",
+        "Intendant"
+      ],
+      rangees: [
+        [
+          "A et C",
+          "B et D"
+        ]
+      ]
+    }
   }
 ]
