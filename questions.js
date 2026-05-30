@@ -11204,7 +11204,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« [Il] est responsable de la défense de la Nouvelle-France. Il commande les troupes, supervise les fortifications et organise la protection du territoire contre les ennemis de la colonie. »",
+            texte: "« [Philippe de Rigaud de Vaudreuil] est responsable de la défense de la Nouvelle-France. Il commande les troupes, supervise les fortifications et organise la protection du territoire contre les ennemis de la colonie. »",
             source: "Marcel Trudel, Initiation à la Nouvelle-France, Holt, Rinehart et Winston, 1968."
           }
         ]
@@ -11214,7 +11214,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« [Il] intervient dans l'organisation économique de la colonie. Il encourage l'agriculture, soutient le commerce et favorise les mesures destinées à accroître la population. »",
+            texte: "« [Jean Talon] intervient dans l'organisation économique de la colonie. Il encourage l'agriculture, soutient le commerce et favorise les mesures destinées à accroître la population. »",
             source: "Source : Allan Greer, Brève histoire des peuples de la Nouvelle-France, Boréal, 1998."
           }
         ]
@@ -11224,7 +11224,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« [Il] joue un rôle essentiel dans les alliances conclues avec les nations autochtones. Il représente les intérêts de la France lors des négociations diplomatiques et des conseils tenus avec les alliés amérindiens. »",
+            texte: "« [Charles de Beauharnois de La Boische] joue un rôle essentiel dans les alliances conclues avec les nations autochtones. Il représente les intérêts de la France lors des négociations diplomatiques et des conseils tenus avec les alliés amérindiens. »",
             source: "Gilles Havard, Empire et métissages, Septentrion, 2003."
           }
         ]
@@ -11234,7 +11234,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document D",
-            texte: "« Chargé des finances royales, [il] contrôle les dépenses de l'administration coloniale et surveille l'utilisation des fonds envoyés par la métropole. »",
+            texte: "« Chargé des finances royales, [Gilles Hocquart] contrôle les dépenses de l'administration coloniale et surveille l'utilisation des fonds envoyés par la métropole. »",
             source: "Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord, XVIe-XVIIIe siècle, PUL, 1991."
           }
         ]
