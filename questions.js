@@ -11280,7 +11280,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Dans la colonie, [il] agit comme le principal représentant du roi pour les affaires militaires et diplomatiques. Son autorité symbolise la présence de la monarchie française en Amérique. »",
+            texte: "« Dans la colonie, [Louis de Buade de Frontenac] agit comme le principal représentant du roi pour les affaires militaires et diplomatiques. Son autorité symbolise la présence de la monarchie française en Amérique. »",
             source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1, Québec Amérique, 1995."
           }
         ]
