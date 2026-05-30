@@ -3424,6 +3424,34 @@ const REGLETTES = {
         desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
       }
     ]
+  },
+  "Q172": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -3700,6 +3728,9 @@ const IMAGE_DB = {
   },
   "territoire_revendique_1700.png": {
     src: "images/territoire_revendique_1700.png"
+  },
+  "exploration_territoire_1700.png": {
+    src: "images/exploration_territoire_1700.png"
   }
 }
 
@@ -11456,5 +11487,58 @@ const QUESTIONS = [
         ]
       ]
     }
+  },
+  {
+    id: "Q172",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P2 — 1608 – 1760",
+    points: 3,
+    enonce: "Expliquez comment l'exploration du territoire contribue à l'expansion du territoire revendiqué par les Français en Amérique du Nord.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un motif des voyages d'exploration sur le continent\n• un moyen utilisé pour assurer une présence française\n• une conséquence sur le territoire revendiqué par la France",
+    aspects: [
+      {
+        aspect: "Commerce des fourrures"
+      },
+      {
+        aspect: "Territoire français en Amérique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les Français cherchent à étendre leurs activités dans le commerce des fourrures. Pour obtenir davantage de peaux de castor, ils explorent de nouvelles régions à l'intérieur du continent et établissent des contacts avec diverses nations autochtones. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1, Québec Amérique, 1995."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "exploration_territoire_1700.png",
+            source: "Récitus."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Au fur et à mesure de leur progression dans l'intérieur du continent, les Français construisent des forts et des postes de traite. Ces établissements servent à protéger les intérêts de la colonie et à maintenir une présence française dans les territoires explorés. »",
+            source: "Marcel Trudel, Initiation à la Nouvelle-France, Holt, Rinehart et Winston, 1968."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Les Français explorent de nouveaux territoires afin de développer le commerce des fourrures (un motif des voyages d'exploration sur le continent). Ils y établissent des forts et des postes de traite pour assurer une présence française (un moyen utilisé pour assurer une présence française). Cette présence permet à la France de revendiquer de nouveaux territoires, ce qui contribue à l'expansion de son territoire en Amérique du Nord (une conséquence sur le territoire revendiqué par la France)."
   }
 ]
