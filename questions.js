@@ -3695,8 +3695,8 @@ const IMAGE_DB = {
   "carte_premiers_occ_peuplement.png": {
     src: "images/carte_premiers_occ_peuplement.png"
   },
-  "territoire_occupe_1713.png": {
-    src: "images/territoire_occupe_1713.png"
+  "territoire_revendique_1713.png": {
+    src: "images/territoire_revendique_1713.png"
   },
   "territoire_revendique_1700.png": {
     src: "images/territoire_revendique_1700.png"
@@ -11390,7 +11390,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "territoire_occupe_1713.png",
+            ref: "territoire_revendique_1713.png",
             source: "Récitus."
           }
         ]
