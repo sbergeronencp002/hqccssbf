@@ -181,13 +181,13 @@ function tileHtml(q) {
   // Build question list with images
   const questions = [];
   QUESTIONS.forEach(q => {
-    const imgs = [];
+    const docImgs = [];
     (q.documents || []).forEach(doc => {
-      (doc.cols || []).forEach(col => { if (col.ref) imgs.push(col.ref); });
+      (doc.cols || []).forEach(col => { if (col.ref) docImgs.push(col.ref); });
     });
-    if (q.reponse && q.reponse.ref) imgs.push(q.reponse.ref);
-    const unique = [...new Set(imgs)];
-    if (unique.length) { q._imgs = unique; questions.push(q); }
+    if (!docImgs.length) return; // ignorer si image seulement dans Réponse
+    const unique = [...new Set(docImgs)];
+    q._imgs = unique; questions.push(q);
   });
 
   // Build imgMap
