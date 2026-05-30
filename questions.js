@@ -3374,6 +3374,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q169": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -11274,5 +11291,35 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Le gouverneur."
+  },
+  {
+    id: "Q169",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez le membre de l'administration coloniale responsable de l'administration de la justice.",
+    aspects: [
+      {
+        aspect: "Gouvernement royal"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« [Il] veille à l'administration de la justice. Il participe à l'application des lois et s'assure du bon fonctionnement des institutions civiles de la colonie. »",
+            source: "Marcel Trudel, La Nouvelle-France par les textes, Hurtubise HMH, 2003."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "L'intendant."
   }
 ]
