@@ -3452,6 +3452,23 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q173": {
+    oi: "Situer dans l'espace",
+    colonnes: [
+      "2 points",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève situe les faits dans l'espace."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans l'espace."
+      }
+    ]
   }
 }
 
@@ -3731,6 +3748,9 @@ const IMAGE_DB = {
   },
   "exploration_territoire_1700.png": {
     src: "images/exploration_territoire_1700.png"
+  },
+  "territoires_perdus_1713.png": {
+    src: "images/territoires_perdus_1713.png"
   }
 }
 
@@ -11540,5 +11560,54 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Les Français explorent de nouveaux territoires afin de développer le commerce des fourrures (un motif des voyages d'exploration sur le continent). Ils y établissent des forts et des postes de traite pour assurer une présence française (un moyen utilisé pour assurer une présence française). Cette présence permet à la France de revendiquer de nouveaux territoires, ce qui contribue à l'expansion de son territoire en Amérique du Nord (une conséquence sur le territoire revendiqué par la France)."
+  },
+  {
+    id: "Q173",
+    niveau: 3,
+    oi: "Situer dans l'espace",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Situer 2 éléments",
+    enonce: "À partir du document A, indiquez les lettres correspondant aux territoires cédés à la Grande-Bretagne à la suite du traité d’Utrecht de 1713.",
+    aspects: [
+      {
+        aspect: "Guerres intercoloniales"
+      },
+      {
+        aspect: "Territoire français en Amérique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "territoires_perdus_1713.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "situer-dans-lespace",
+      elements: [
+        "Acadie",
+        "Terre-Neuve"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Acadie",
+        "Terre-Neuve"
+      ],
+      rangees: [
+        [
+          "C",
+          "B"
+        ]
+      ]
+    }
   }
 ]
