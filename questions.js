@@ -10507,10 +10507,10 @@ const QUESTIONS = [
     enonce: "Les documents A à C présentent des éléments liés à l’administration de la Nouvelle-France sous le Régime français. Indiquez le document qui correspond à chacun des rôles",
     aspects: [
       {
-        aspect: "Gouvernement royal"
+        aspect: "Église catholique"
       },
       {
-        aspect: "Monopole des compagnies"
+        aspect: "Gouvernement royal"
       }
     ],
     documents: [
