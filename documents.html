@@ -1,0 +1,2426 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Questions avec images — HQC CSSBF</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh}
+header{padding:1.5rem 2rem;background:#1e293b;border-bottom:1px solid #334155;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+header h1{font-size:1.4rem;font-weight:700}
+.stats{color:#94a3b8;font-size:.9rem}
+.stats b{color:#e2e8f0}
+nav{display:flex;gap:.5rem;margin-left:auto;flex-wrap:wrap}
+nav a{padding:.4rem .9rem;border-radius:6px;background:#334155;color:#cbd5e1;text-decoration:none;font-size:.85rem;white-space:nowrap}
+nav a:hover,nav a.active{background:#3b82f6;color:#fff}
+section{padding:2rem}
+h2{font-size:1.1rem;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:.08em;margin-bottom:1.5rem;padding-bottom:.5rem;border-bottom:1px solid #1e293b}
+.shared-group{margin-bottom:2.5rem;background:#1e293b;border-radius:12px;padding:1.2rem 1.5rem}
+.shared-img-title{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;flex-wrap:wrap}
+.shared-img-title img{height:48px;width:80px;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid #334155}
+.shared-img-title span{font-size:1rem;font-weight:600}
+.badge-lg{background:#f59e0b;color:#000;border-radius:20px;padding:.2rem .7rem;font-size:.8rem;font-weight:700;margin-left:auto}
+.tiles-row{display:flex;flex-wrap:wrap;gap:.75rem}
+.all-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.75rem}
+.tile{background:#1e293b;border-radius:10px;padding:1rem;cursor:default;transition:transform .15s;position:relative}
+.tile:hover{transform:translateY(-2px)}
+.tile-id{font-weight:700;font-size:.85rem;color:#94a3b8;margin-bottom:.25rem}
+.tile-oi{font-size:.8rem;font-weight:600;margin-bottom:.2rem}
+.tile-periode{font-size:.75rem;color:#64748b;margin-bottom:.5rem}
+.tile-enonce{font-size:.8rem;color:#cbd5e1;margin-bottom:.75rem;line-height:1.4}
+.tile-imgs{display:flex;flex-wrap:wrap;gap:.5rem}
+.img-wrap{position:relative;display:flex;flex-direction:column;align-items:center;gap:.2rem}
+.img-wrap img{width:80px;height:52px;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid #334155;transition:border-color .15s}
+.img-wrap img:hover{border-color:#3b82f6}
+.img-wrap.shared img{border-color:#f59e0b}
+.img-name{font-size:.6rem;color:#64748b;max-width:80px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center}
+.badge{position:absolute;top:-6px;right:-6px;background:#f59e0b;color:#000;border-radius:50%;width:18px;height:18px;font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+/* lightbox */
+#lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:999;align-items:center;justify-content:center;flex-direction:column;gap:1rem}
+#lb.open{display:flex}
+#lb img{max-width:90vw;max-height:80vh;border-radius:8px}
+#lb span{color:#fff;font-size:.9rem}
+#lb-close{position:fixed;top:1rem;right:1.5rem;font-size:2rem;cursor:pointer;color:#fff;line-height:1}
+/* filtre */
+.filter-bar{display:flex;gap:.75rem;margin-bottom:1.5rem;flex-wrap:wrap;align-items:center}
+.filter-bar input{padding:.45rem .9rem;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#e2e8f0;font-size:.85rem;width:220px}
+.filter-bar select{padding:.45rem .9rem;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#e2e8f0;font-size:.85rem}
+</style>
+</head>
+<body>
+<header>
+  <h1>Questions avec images</h1>
+  <div class="stats"><b>95</b> questions · <b>29</b> images partagées</div>
+  <nav>
+    <a href="#shared" class="active" onclick="setActive(this)">Images partagées</a>
+    <a href="#all" onclick="setActive(this)">Toutes les questions</a>
+  </nav>
+</header>
+
+<section id="shared">
+  <h2>Images utilisées par plusieurs questions</h2>
+  <div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/territoire_occupe_1650.png" onclick="showImg('territoire_occupe_1650.png')" title="territoire_occupe_1650.png">
+    <span>territoire_occupe_1650</span>
+    <span class="badge-lg">5 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="territoire_occupe_1650.png">
+  <div class="tile-id">Q154</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Indiquez une raison expliquant pourquoi les Français concentrent leurs établissements le long du fleuve Saint-Laurent ve…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/territoire_occupe_1650.png" loading="lazy" title="territoire_occupe_1650.png" onclick="showImg('territoire_occupe_1650.png')">
+      <span class="img-name">territoire_occupe_1650</span>
+      <span class="badge">5</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="territoire_occupe_1650.png">
+  <div class="tile-id">Q155</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Indiquez une conséquence de la concentration des établissements français dans la vallée du Saint-Laurent vers 1650.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/territoire_occupe_1650.png" loading="lazy" title="territoire_occupe_1650.png" onclick="showImg('territoire_occupe_1650.png')">
+      <span class="img-name">territoire_occupe_1650</span>
+      <span class="badge">5</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="territoire_occupe_1650.png,territoire_occupe_1700.png">
+  <div class="tile-id">Q159</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">À partir des documents A et B, indiquez un changement dans l’occupation du territoire par les Français en Amérique du No…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/territoire_occupe_1650.png" loading="lazy" title="territoire_occupe_1650.png" onclick="showImg('territoire_occupe_1650.png')">
+      <span class="img-name">territoire_occupe_1650</span>
+      <span class="badge">5</span>
+    </div><div class="img-wrap shared">
+      <img src="images/territoire_occupe_1700.png" loading="lazy" title="territoire_occupe_1700.png" onclick="showImg('territoire_occupe_1700.png')">
+      <span class="img-name">territoire_occupe_1700</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="territoire_occupe_1650.png,territoire_occupe_1700.png">
+  <div class="tile-id">Q160</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">À partir des documents A et B, indiquez une continuité dans la répartition du peuplement français en Amérique du Nord en…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/territoire_occupe_1650.png" loading="lazy" title="territoire_occupe_1650.png" onclick="showImg('territoire_occupe_1650.png')">
+      <span class="img-name">territoire_occupe_1650</span>
+      <span class="badge">5</span>
+    </div><div class="img-wrap shared">
+      <img src="images/territoire_occupe_1700.png" loading="lazy" title="territoire_occupe_1700.png" onclick="showImg('territoire_occupe_1700.png')">
+      <span class="img-name">territoire_occupe_1700</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="territoire_occupe_1650.png,territoire_occupe_1700.png">
+  <div class="tile-id">Q161</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">À partir des documents A et B, indiquez un changement et une continuité dans l’occupation du territoire par les Français…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/territoire_occupe_1650.png" loading="lazy" title="territoire_occupe_1650.png" onclick="showImg('territoire_occupe_1650.png')">
+      <span class="img-name">territoire_occupe_1650</span>
+      <span class="badge">5</span>
+    </div><div class="img-wrap shared">
+      <img src="images/territoire_occupe_1700.png" loading="lazy" title="territoire_occupe_1700.png" onclick="showImg('territoire_occupe_1700.png')">
+      <span class="img-name">territoire_occupe_1700</span>
+      <span class="badge">3</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/ligne_abDc.png" onclick="showImg('ligne_abDc.png')" title="ligne_abDc.png">
+    <span>ligne_abDc</span>
+    <span class="badge-lg">4 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="ligne_abDc.png">
+  <div class="tile-id">Q90</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1760 – 1791</div>
+  <div class="tile-enonce">Les documents A à D présentent des événements survenus durant le Régime britannique. Placez ces documents par ordre chro…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/ligne_abDc.png" loading="lazy" title="ligne_abDc.png" onclick="showImg('ligne_abDc.png')">
+      <span class="img-name">ligne_abDc</span>
+      <span class="badge">4</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="execution_patriotes.png,bataille_st-eustache.png,ligne_abDc.png">
+  <div class="tile-id">Q104</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1791 – 1840</div>
+  <div class="tile-enonce">Les documents A à D présentent des événements liés aux soulèvements de 1837-1838. Placez ces documents par ordre chronol…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/execution_patriotes.png" loading="lazy" title="execution_patriotes.png" onclick="showImg('execution_patriotes.png')">
+      <span class="img-name">execution_patriotes</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/bataille_st-eustache.png" loading="lazy" title="bataille_st-eustache.png" onclick="showImg('bataille_st-eustache.png')">
+      <span class="img-name">bataille_st-eustache</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_abDc.png" loading="lazy" title="ligne_abDc.png" onclick="showImg('ligne_abDc.png')">
+      <span class="img-name">ligne_abDc</span>
+      <span class="badge">4</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="fondation_tadoussac.png,fondation_quebec.png,ligne_abDc.png">
+  <div class="tile-id">Q136</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Les documents A à D présentent des événements liés à la fondation d’établissements français en Nouvelle-France. Placez-l…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/fondation_tadoussac.png" loading="lazy" title="fondation_tadoussac.png" onclick="showImg('fondation_tadoussac.png')">
+      <span class="img-name">fondation_tadoussac</span>
+      
+    </div><div class="img-wrap ">
+      <img src="images/fondation_quebec.png" loading="lazy" title="fondation_quebec.png" onclick="showImg('fondation_quebec.png')">
+      <span class="img-name">fondation_quebec</span>
+      
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_abDc.png" loading="lazy" title="ligne_abDc.png" onclick="showImg('ligne_abDc.png')">
+      <span class="img-name">ligne_abDc</span>
+      <span class="badge">4</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="fondation_mtl.png,fondation_t-r.png,ligne_abDc.png">
+  <div class="tile-id">Q137</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Les documents A à D présentent des événements liés à la fondation d’établissements français en Nouvelle-France. Placez-l…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/fondation_mtl.png" loading="lazy" title="fondation_mtl.png" onclick="showImg('fondation_mtl.png')">
+      <span class="img-name">fondation_mtl</span>
+      
+    </div><div class="img-wrap ">
+      <img src="images/fondation_t-r.png" loading="lazy" title="fondation_t-r.png" onclick="showImg('fondation_t-r.png')">
+      <span class="img-name">fondation_t-r</span>
+      
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_abDc.png" loading="lazy" title="ligne_abDc.png" onclick="showImg('ligne_abDc.png')">
+      <span class="img-name">ligne_abDc</span>
+      <span class="badge">4</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/gravure_destruction_huronie.png" onclick="showImg('gravure_destruction_huronie.png')" title="gravure_destruction_huronie.png">
+    <span>gravure_destruction_huronie</span>
+    <span class="badge-lg">4 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="gravure_destruction_huronie.png,bataille_lac_champlain.png,ligne_bcAd.png">
+  <div class="tile-id">Q119</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Les documents A à D présentent des faits liés aux relations franco-amérindiennes sous le régime français. Placez les doc…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/gravure_destruction_huronie.png" loading="lazy" title="gravure_destruction_huronie.png" onclick="showImg('gravure_destruction_huronie.png')">
+      <span class="img-name">gravure_destruction_huronie</span>
+      <span class="badge">4</span>
+    </div><div class="img-wrap shared">
+      <img src="images/bataille_lac_champlain.png" loading="lazy" title="bataille_lac_champlain.png" onclick="showImg('bataille_lac_champlain.png')">
+      <span class="img-name">bataille_lac_champlain</span>
+      <span class="badge">3</span>
+    </div><div class="img-wrap ">
+      <img src="images/ligne_bcAd.png" loading="lazy" title="ligne_bcAd.png" onclick="showImg('ligne_bcAd.png')">
+      <span class="img-name">ligne_bcAd</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #ec4899;" data-imgs="gravure_destruction_huronie.png,bataille_lac_champlain.png">
+  <div class="tile-id">Q120</div>
+  <div class="tile-oi" style="color:#ec4899">Mettre en relation des faits</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Les documents A à D présentent des faits liés aux relations franco-amérindiennes sous le régime français. Associez chaqu…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/gravure_destruction_huronie.png" loading="lazy" title="gravure_destruction_huronie.png" onclick="showImg('gravure_destruction_huronie.png')">
+      <span class="img-name">gravure_destruction_huronie</span>
+      <span class="badge">4</span>
+    </div><div class="img-wrap shared">
+      <img src="images/bataille_lac_champlain.png" loading="lazy" title="bataille_lac_champlain.png" onclick="showImg('bataille_lac_champlain.png')">
+      <span class="img-name">bataille_lac_champlain</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="gravure_destruction_huronie.png,ligne_1575-1775.png">
+  <div class="tile-id">Q125</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/gravure_destruction_huronie.png" loading="lazy" title="gravure_destruction_huronie.png" onclick="showImg('gravure_destruction_huronie.png')">
+      <span class="img-name">gravure_destruction_huronie</span>
+      <span class="badge">4</span>
+    </div><div class="img-wrap ">
+      <img src="images/ligne_1575-1775.png" loading="lazy" title="ligne_1575-1775.png" onclick="showImg('ligne_1575-1775.png')">
+      <span class="img-name">ligne_1575-1775</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f97316;" data-imgs="gravure_destruction_huronie.png,destruction_huronie.png">
+  <div class="tile-id">Q128</div>
+  <div class="tile-oi" style="color:#f97316">Établir des liens de causalité</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Expliquez comment la destruction de la Huronie entraîne un changement dans l’occupation du territoire par les Hurons-Wen…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/gravure_destruction_huronie.png" loading="lazy" title="gravure_destruction_huronie.png" onclick="showImg('gravure_destruction_huronie.png')">
+      <span class="img-name">gravure_destruction_huronie</span>
+      <span class="badge">4</span>
+    </div><div class="img-wrap shared">
+      <img src="images/destruction_huronie.png" loading="lazy" title="destruction_huronie.png" onclick="showImg('destruction_huronie.png')">
+      <span class="img-name">destruction_huronie</span>
+      <span class="badge">2</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/ligne_1600-1700.png" onclick="showImg('ligne_1600-1700.png')" title="ligne_1600-1700.png">
+    <span>ligne_1600-1700</span>
+    <span class="badge-lg">4 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="filles_du_roy.png,ligne_1600-1700.png">
+  <div class="tile-id">Q132</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/filles_du_roy.png" loading="lazy" title="filles_du_roy.png" onclick="showImg('filles_du_roy.png')">
+      <span class="img-name">filles_du_roy</span>
+      <span class="badge">3</span>
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_1600-1700.png" loading="lazy" title="ligne_1600-1700.png" onclick="showImg('ligne_1600-1700.png')">
+      <span class="img-name">ligne_1600-1700</span>
+      <span class="badge">4</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="siege_quebec_1690.png,ligne_1600-1700.png">
+  <div class="tile-id">Q134</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/siege_quebec_1690.png" loading="lazy" title="siege_quebec_1690.png" onclick="showImg('siege_quebec_1690.png')">
+      <span class="img-name">siege_quebec_1690</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_1600-1700.png" loading="lazy" title="ligne_1600-1700.png" onclick="showImg('ligne_1600-1700.png')">
+      <span class="img-name">ligne_1600-1700</span>
+      <span class="badge">4</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="quebec_frere_kirke.png,ligne_1600-1700.png">
+  <div class="tile-id">Q135</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/quebec_frere_kirke.png" loading="lazy" title="quebec_frere_kirke.png" onclick="showImg('quebec_frere_kirke.png')">
+      <span class="img-name">quebec_frere_kirke</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_1600-1700.png" loading="lazy" title="ligne_1600-1700.png" onclick="showImg('ligne_1600-1700.png')">
+      <span class="img-name">ligne_1600-1700</span>
+      <span class="badge">4</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="ligne_1600-1700.png">
+  <div class="tile-id">Q140</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/ligne_1600-1700.png" loading="lazy" title="ligne_1600-1700.png" onclick="showImg('ligne_1600-1700.png')">
+      <span class="img-name">ligne_1600-1700</span>
+      <span class="badge">4</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/bataille_lac_champlain.png" onclick="showImg('bataille_lac_champlain.png')" title="bataille_lac_champlain.png">
+    <span>bataille_lac_champlain</span>
+    <span class="badge-lg">3 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="bataille_lac_champlain.png,ligne_1550-1750.png">
+  <div class="tile-id">Q3</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/bataille_lac_champlain.png" loading="lazy" title="bataille_lac_champlain.png" onclick="showImg('bataille_lac_champlain.png')">
+      <span class="img-name">bataille_lac_champlain</span>
+      <span class="badge">3</span>
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_1550-1750.png" loading="lazy" title="ligne_1550-1750.png" onclick="showImg('ligne_1550-1750.png')">
+      <span class="img-name">ligne_1550-1750</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="gravure_destruction_huronie.png,bataille_lac_champlain.png,ligne_bcAd.png">
+  <div class="tile-id">Q119</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Les documents A à D présentent des faits liés aux relations franco-amérindiennes sous le régime français. Placez les doc…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/gravure_destruction_huronie.png" loading="lazy" title="gravure_destruction_huronie.png" onclick="showImg('gravure_destruction_huronie.png')">
+      <span class="img-name">gravure_destruction_huronie</span>
+      <span class="badge">4</span>
+    </div><div class="img-wrap shared">
+      <img src="images/bataille_lac_champlain.png" loading="lazy" title="bataille_lac_champlain.png" onclick="showImg('bataille_lac_champlain.png')">
+      <span class="img-name">bataille_lac_champlain</span>
+      <span class="badge">3</span>
+    </div><div class="img-wrap ">
+      <img src="images/ligne_bcAd.png" loading="lazy" title="ligne_bcAd.png" onclick="showImg('ligne_bcAd.png')">
+      <span class="img-name">ligne_bcAd</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #ec4899;" data-imgs="gravure_destruction_huronie.png,bataille_lac_champlain.png">
+  <div class="tile-id">Q120</div>
+  <div class="tile-oi" style="color:#ec4899">Mettre en relation des faits</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Les documents A à D présentent des faits liés aux relations franco-amérindiennes sous le régime français. Associez chaqu…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/gravure_destruction_huronie.png" loading="lazy" title="gravure_destruction_huronie.png" onclick="showImg('gravure_destruction_huronie.png')">
+      <span class="img-name">gravure_destruction_huronie</span>
+      <span class="badge">4</span>
+    </div><div class="img-wrap shared">
+      <img src="images/bataille_lac_champlain.png" loading="lazy" title="bataille_lac_champlain.png" onclick="showImg('bataille_lac_champlain.png')">
+      <span class="img-name">bataille_lac_champlain</span>
+      <span class="badge">3</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/ligne_1550-1750.png" onclick="showImg('ligne_1550-1750.png')" title="ligne_1550-1750.png">
+    <span>ligne_1550-1750</span>
+    <span class="badge-lg">3 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="bataille_lac_champlain.png,ligne_1550-1750.png">
+  <div class="tile-id">Q3</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/bataille_lac_champlain.png" loading="lazy" title="bataille_lac_champlain.png" onclick="showImg('bataille_lac_champlain.png')">
+      <span class="img-name">bataille_lac_champlain</span>
+      <span class="badge">3</span>
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_1550-1750.png" loading="lazy" title="ligne_1550-1750.png" onclick="showImg('ligne_1550-1750.png')">
+      <span class="img-name">ligne_1550-1750</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="ligne_1550-1750.png">
+  <div class="tile-id">Q70</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/ligne_1550-1750.png" loading="lazy" title="ligne_1550-1750.png" onclick="showImg('ligne_1550-1750.png')">
+      <span class="img-name">ligne_1550-1750</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="ligne_1550-1750.png">
+  <div class="tile-id">Q127</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/ligne_1550-1750.png" loading="lazy" title="ligne_1550-1750.png" onclick="showImg('ligne_1550-1750.png')">
+      <span class="img-name">ligne_1550-1750</span>
+      <span class="badge">3</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/familles_linguistiques_autochtones_lettres.png" onclick="showImg('familles_linguistiques_autochtones_lettres.png')" title="familles_linguistiques_autochtones_lettres.png">
+    <span>familles_linguistiques_autochtones_lettres</span>
+    <span class="badge-lg">3 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #14b8a6;" data-imgs="familles_linguistiques_autochtones_lettres.png">
+  <div class="tile-id">Q33</div>
+  <div class="tile-oi" style="color:#14b8a6">Situer dans l'espace</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">À partir du document A, indiquez la lettre du territoire occupé par la famille linguistique algonquienne vers 1500.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/familles_linguistiques_autochtones_lettres.png" loading="lazy" title="familles_linguistiques_autochtones_lettres.png" onclick="showImg('familles_linguistiques_autochtones_lettres.png')">
+      <span class="img-name">familles_linguistiques_autochtones_lettres</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #14b8a6;" data-imgs="familles_linguistiques_autochtones_lettres.png">
+  <div class="tile-id">Q34</div>
+  <div class="tile-oi" style="color:#14b8a6">Situer dans l'espace</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">À partir du document A, indiquez la lettre du territoire occupé par la famille linguistique iroquoienne vers 1500.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/familles_linguistiques_autochtones_lettres.png" loading="lazy" title="familles_linguistiques_autochtones_lettres.png" onclick="showImg('familles_linguistiques_autochtones_lettres.png')">
+      <span class="img-name">familles_linguistiques_autochtones_lettres</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #14b8a6;" data-imgs="familles_linguistiques_autochtones_lettres.png">
+  <div class="tile-id">Q35</div>
+  <div class="tile-oi" style="color:#14b8a6">Situer dans l'espace</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">À partir du document A, indiquez la lettre du territoire occupé par la nation inuite vers 1500.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/familles_linguistiques_autochtones_lettres.png" loading="lazy" title="familles_linguistiques_autochtones_lettres.png" onclick="showImg('familles_linguistiques_autochtones_lettres.png')">
+      <span class="img-name">familles_linguistiques_autochtones_lettres</span>
+      <span class="badge">3</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/ligne_1600-1800.png" onclick="showImg('ligne_1600-1800.png')" title="ligne_1600-1800.png">
+    <span>ligne_1600-1800</span>
+    <span class="badge-lg">3 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="debarquement_plaines_abraham.png,ligne_1600-1800.png">
+  <div class="tile-id">Q88</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/debarquement_plaines_abraham.png" loading="lazy" title="debarquement_plaines_abraham.png" onclick="showImg('debarquement_plaines_abraham.png')">
+      <span class="img-name">debarquement_plaines_abraham</span>
+      
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_1600-1800.png" loading="lazy" title="ligne_1600-1800.png" onclick="showImg('ligne_1600-1800.png')">
+      <span class="img-name">ligne_1600-1800</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="ligne_1600-1800.png">
+  <div class="tile-id">Q141</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/ligne_1600-1800.png" loading="lazy" title="ligne_1600-1800.png" onclick="showImg('ligne_1600-1800.png')">
+      <span class="img-name">ligne_1600-1800</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="grande_paix_mtl.png,ligne_1600-1800.png">
+  <div class="tile-id">Q142</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/grande_paix_mtl.png" loading="lazy" title="grande_paix_mtl.png" onclick="showImg('grande_paix_mtl.png')">
+      <span class="img-name">grande_paix_mtl</span>
+      
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_1600-1800.png" loading="lazy" title="ligne_1600-1800.png" onclick="showImg('ligne_1600-1800.png')">
+      <span class="img-name">ligne_1600-1800</span>
+      <span class="badge">3</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/1763.png" onclick="showImg('1763.png')" title="1763.png">
+    <span>1763</span>
+    <span class="badge-lg">3 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="1763.png,1783.png">
+  <div class="tile-id">Q108</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1760 – 1791</div>
+  <div class="tile-enonce">Indiquez un changement dans la composition de la population de la colonie entre 1763 et 1784.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/1763.png" loading="lazy" title="1763.png" onclick="showImg('1763.png')">
+      <span class="img-name">1763</span>
+      <span class="badge">3</span>
+    </div><div class="img-wrap shared">
+      <img src="images/1783.png" loading="lazy" title="1783.png" onclick="showImg('1783.png')">
+      <span class="img-name">1783</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="1763.png,1783.png">
+  <div class="tile-id">Q109</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1760 – 1791</div>
+  <div class="tile-enonce">Indiquez une continuité dans la composition de la population de la colonie entre 1763 et 1784.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/1763.png" loading="lazy" title="1763.png" onclick="showImg('1763.png')">
+      <span class="img-name">1763</span>
+      <span class="badge">3</span>
+    </div><div class="img-wrap shared">
+      <img src="images/1783.png" loading="lazy" title="1783.png" onclick="showImg('1783.png')">
+      <span class="img-name">1783</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="1763.png,1783.png">
+  <div class="tile-id">Q110</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1760 – 1791</div>
+  <div class="tile-enonce">À partir des documents A et B, indiquez s’il y a changement ou continuité dans la composition de la population de la col…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/1763.png" loading="lazy" title="1763.png" onclick="showImg('1763.png')">
+      <span class="img-name">1763</span>
+      <span class="badge">3</span>
+    </div><div class="img-wrap shared">
+      <img src="images/1783.png" loading="lazy" title="1783.png" onclick="showImg('1783.png')">
+      <span class="img-name">1783</span>
+      <span class="badge">3</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/1783.png" onclick="showImg('1783.png')" title="1783.png">
+    <span>1783</span>
+    <span class="badge-lg">3 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="1763.png,1783.png">
+  <div class="tile-id">Q108</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1760 – 1791</div>
+  <div class="tile-enonce">Indiquez un changement dans la composition de la population de la colonie entre 1763 et 1784.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/1763.png" loading="lazy" title="1763.png" onclick="showImg('1763.png')">
+      <span class="img-name">1763</span>
+      <span class="badge">3</span>
+    </div><div class="img-wrap shared">
+      <img src="images/1783.png" loading="lazy" title="1783.png" onclick="showImg('1783.png')">
+      <span class="img-name">1783</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="1763.png,1783.png">
+  <div class="tile-id">Q109</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1760 – 1791</div>
+  <div class="tile-enonce">Indiquez une continuité dans la composition de la population de la colonie entre 1763 et 1784.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/1763.png" loading="lazy" title="1763.png" onclick="showImg('1763.png')">
+      <span class="img-name">1763</span>
+      <span class="badge">3</span>
+    </div><div class="img-wrap shared">
+      <img src="images/1783.png" loading="lazy" title="1783.png" onclick="showImg('1783.png')">
+      <span class="img-name">1783</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="1763.png,1783.png">
+  <div class="tile-id">Q110</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1760 – 1791</div>
+  <div class="tile-enonce">À partir des documents A et B, indiquez s’il y a changement ou continuité dans la composition de la population de la col…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/1763.png" loading="lazy" title="1763.png" onclick="showImg('1763.png')">
+      <span class="img-name">1763</span>
+      <span class="badge">3</span>
+    </div><div class="img-wrap shared">
+      <img src="images/1783.png" loading="lazy" title="1783.png" onclick="showImg('1783.png')">
+      <span class="img-name">1783</span>
+      <span class="badge">3</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/premiers_contacts" onclick="showImg('premiers_contacts')" title="premiers_contacts">
+    <span>premiers_contacts</span>
+    <span class="badge-lg">3 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="premiers_contacts">
+  <div class="tile-id">Q113</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Indiquez une raison qui explique la fréquentation du golfe du Saint-Laurent par les pêcheurs européens au 16e siècle.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/premiers_contacts" loading="lazy" title="premiers_contacts" onclick="showImg('premiers_contacts')">
+      <span class="img-name">premiers_contacts</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="premiers_contacts">
+  <div class="tile-id">Q114</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Indiquez une conséquence de la fréquentation du golfe du Saint-Laurent par les Européens au 16e siècle pour les nations …</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/premiers_contacts" loading="lazy" title="premiers_contacts" onclick="showImg('premiers_contacts')">
+      <span class="img-name">premiers_contacts</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f97316;" data-imgs="premiers_contacts">
+  <div class="tile-id">Q115</div>
+  <div class="tile-oi" style="color:#f97316">Établir des liens de causalité</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Expliquez comment les activités économiques pratiquées par les Européens dans le golfe du Saint-Laurent favorisent le dé…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/premiers_contacts" loading="lazy" title="premiers_contacts" onclick="showImg('premiers_contacts')">
+      <span class="img-name">premiers_contacts</span>
+      <span class="badge">3</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/village_domicilie_autochtone.png" onclick="showImg('village_domicilie_autochtone.png')" title="village_domicilie_autochtone.png">
+    <span>village_domicilie_autochtone</span>
+    <span class="badge-lg">3 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #6366f1;" data-imgs="village_domicilie_autochtone.png">
+  <div class="tile-id">Q129</div>
+  <div class="tile-oi" style="color:#6366f1">Établir des faits</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Indiquez un village domicilié situé à proximité de Montréal.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/village_domicilie_autochtone.png" loading="lazy" title="village_domicilie_autochtone.png" onclick="showImg('village_domicilie_autochtone.png')">
+      <span class="img-name">village_domicilie_autochtone</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="village_domicilie_autochtone.png">
+  <div class="tile-id">Q130</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Indiquez une raison qui explique l’établissement de villages domiciliés à proximité des établissements français vers 175…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/village_domicilie_autochtone.png" loading="lazy" title="village_domicilie_autochtone.png" onclick="showImg('village_domicilie_autochtone.png')">
+      <span class="img-name">village_domicilie_autochtone</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="village_domicilie_autochtone.png">
+  <div class="tile-id">Q131</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">À partir des documents A et B, indiquez s’il y a changement ou continuité dans l’occupation du territoire autochtone dan…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/village_domicilie_autochtone.png" loading="lazy" title="village_domicilie_autochtone.png" onclick="showImg('village_domicilie_autochtone.png')">
+      <span class="img-name">village_domicilie_autochtone</span>
+      <span class="badge">3</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/filles_du_roy.png" onclick="showImg('filles_du_roy.png')" title="filles_du_roy.png">
+    <span>filles_du_roy</span>
+    <span class="badge-lg">3 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="filles_du_roy.png,ligne_1600-1700.png">
+  <div class="tile-id">Q132</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/filles_du_roy.png" loading="lazy" title="filles_du_roy.png" onclick="showImg('filles_du_roy.png')">
+      <span class="img-name">filles_du_roy</span>
+      <span class="badge">3</span>
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_1600-1700.png" loading="lazy" title="ligne_1600-1700.png" onclick="showImg('ligne_1600-1700.png')">
+      <span class="img-name">ligne_1600-1700</span>
+      <span class="badge">4</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #ec4899;" data-imgs="filles_du_roy.png,fondation_qubec_1608.png">
+  <div class="tile-id">Q139</div>
+  <div class="tile-oi" style="color:#ec4899">Mettre en relation des faits</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Les documents A à D présentent différentes mesures et événements ayant contribué au développement de la Nouvelle-France …</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/filles_du_roy.png" loading="lazy" title="filles_du_roy.png" onclick="showImg('filles_du_roy.png')">
+      <span class="img-name">filles_du_roy</span>
+      <span class="badge">3</span>
+    </div><div class="img-wrap ">
+      <img src="images/fondation_qubec_1608.png" loading="lazy" title="fondation_qubec_1608.png" onclick="showImg('fondation_qubec_1608.png')">
+      <span class="img-name">fondation_qubec_1608</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #ec4899;" data-imgs="regiment_car-salieres.png,filles_du_roy.png,chantier_naval.png">
+  <div class="tile-id">Q144</div>
+  <div class="tile-oi" style="color:#ec4899">Mettre en relation des faits</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Les documents A à C présentent des mesures mises en place en Nouvelle-France sous l’administration de l’intendant. Indiq…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/regiment_car-salieres.png" loading="lazy" title="regiment_car-salieres.png" onclick="showImg('regiment_car-salieres.png')">
+      <span class="img-name">regiment_car-salieres</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/filles_du_roy.png" loading="lazy" title="filles_du_roy.png" onclick="showImg('filles_du_roy.png')">
+      <span class="img-name">filles_du_roy</span>
+      <span class="badge">3</span>
+    </div><div class="img-wrap ">
+      <img src="images/chantier_naval.png" loading="lazy" title="chantier_naval.png" onclick="showImg('chantier_naval.png')">
+      <span class="img-name">chantier_naval</span>
+      
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/territoire_occupe_1700.png" onclick="showImg('territoire_occupe_1700.png')" title="territoire_occupe_1700.png">
+    <span>territoire_occupe_1700</span>
+    <span class="badge-lg">3 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="territoire_occupe_1650.png,territoire_occupe_1700.png">
+  <div class="tile-id">Q159</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">À partir des documents A et B, indiquez un changement dans l’occupation du territoire par les Français en Amérique du No…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/territoire_occupe_1650.png" loading="lazy" title="territoire_occupe_1650.png" onclick="showImg('territoire_occupe_1650.png')">
+      <span class="img-name">territoire_occupe_1650</span>
+      <span class="badge">5</span>
+    </div><div class="img-wrap shared">
+      <img src="images/territoire_occupe_1700.png" loading="lazy" title="territoire_occupe_1700.png" onclick="showImg('territoire_occupe_1700.png')">
+      <span class="img-name">territoire_occupe_1700</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="territoire_occupe_1650.png,territoire_occupe_1700.png">
+  <div class="tile-id">Q160</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">À partir des documents A et B, indiquez une continuité dans la répartition du peuplement français en Amérique du Nord en…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/territoire_occupe_1650.png" loading="lazy" title="territoire_occupe_1650.png" onclick="showImg('territoire_occupe_1650.png')">
+      <span class="img-name">territoire_occupe_1650</span>
+      <span class="badge">5</span>
+    </div><div class="img-wrap shared">
+      <img src="images/territoire_occupe_1700.png" loading="lazy" title="territoire_occupe_1700.png" onclick="showImg('territoire_occupe_1700.png')">
+      <span class="img-name">territoire_occupe_1700</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="territoire_occupe_1650.png,territoire_occupe_1700.png">
+  <div class="tile-id">Q161</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">À partir des documents A et B, indiquez un changement et une continuité dans l’occupation du territoire par les Français…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/territoire_occupe_1650.png" loading="lazy" title="territoire_occupe_1650.png" onclick="showImg('territoire_occupe_1650.png')">
+      <span class="img-name">territoire_occupe_1650</span>
+      <span class="badge">5</span>
+    </div><div class="img-wrap shared">
+      <img src="images/territoire_occupe_1700.png" loading="lazy" title="territoire_occupe_1700.png" onclick="showImg('territoire_occupe_1700.png')">
+      <span class="img-name">territoire_occupe_1700</span>
+      <span class="badge">3</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/ligne_acBd.png" onclick="showImg('ligne_acBd.png')" title="ligne_acBd.png">
+    <span>ligne_acBd</span>
+    <span class="badge-lg">2 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="fondation_quebec_1608.png,ligne_acBd.png">
+  <div class="tile-id">Q2</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Les documents A à D présentent des faits relatifs aux premières tentatives d’établissement d’Européens en Amérique du No…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/fondation_quebec_1608.png" loading="lazy" title="fondation_quebec_1608.png" onclick="showImg('fondation_quebec_1608.png')">
+      <span class="img-name">fondation_quebec_1608</span>
+      
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_acBd.png" loading="lazy" title="ligne_acBd.png" onclick="showImg('ligne_acBd.png')">
+      <span class="img-name">ligne_acBd</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="ligne_acBd.png">
+  <div class="tile-id">Q77</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Les documents A à D présentent des faits relatifs aux voyages de Jacques Cartier. Placez-les par ordre chronologique.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/ligne_acBd.png" loading="lazy" title="ligne_acBd.png" onclick="showImg('ligne_acBd.png')">
+      <span class="img-name">ligne_acBd</span>
+      <span class="badge">2</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/org_pol_acte_const.png" onclick="showImg('org_pol_acte_const.png')" title="org_pol_acte_const.png">
+    <span>org_pol_acte_const</span>
+    <span class="badge-lg">2 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="org_pol_acte_const.png">
+  <div class="tile-id">Q12</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1791 – 1840</div>
+  <div class="tile-enonce">À partir des document A et B, indiquez s’il y a changement ou continuité dans l’exercice du pouvoir politique dans la co…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/org_pol_acte_const.png" loading="lazy" title="org_pol_acte_const.png" onclick="showImg('org_pol_acte_const.png')">
+      <span class="img-name">org_pol_acte_const</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="org_pol_acte_const.png,org_pol_acte_union.png">
+  <div class="tile-id">Q26</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1840 – 1896</div>
+  <div class="tile-enonce">Les documents A et B présentent la structure politique de la colonie à deux périodes différentes. Quel pouvoir le gouver…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/org_pol_acte_const.png" loading="lazy" title="org_pol_acte_const.png" onclick="showImg('org_pol_acte_const.png')">
+      <span class="img-name">org_pol_acte_const</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/org_pol_acte_union.png" loading="lazy" title="org_pol_acte_union.png" onclick="showImg('org_pol_acte_union.png')">
+      <span class="img-name">org_pol_acte_union</span>
+      <span class="badge">2</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/org_pol_acte_union.png" onclick="showImg('org_pol_acte_union.png')" title="org_pol_acte_union.png">
+    <span>org_pol_acte_union</span>
+    <span class="badge-lg">2 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="org_pol_acte_union.png">
+  <div class="tile-id">Q23</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">1840 – 1896</div>
+  <div class="tile-enonce">Dans quel but les Réformistes de la Province du Canada forment-ils une alliance en 1841?</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/org_pol_acte_union.png" loading="lazy" title="org_pol_acte_union.png" onclick="showImg('org_pol_acte_union.png')">
+      <span class="img-name">org_pol_acte_union</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="org_pol_acte_const.png,org_pol_acte_union.png">
+  <div class="tile-id">Q26</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1840 – 1896</div>
+  <div class="tile-enonce">Les documents A et B présentent la structure politique de la colonie à deux périodes différentes. Quel pouvoir le gouver…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/org_pol_acte_const.png" loading="lazy" title="org_pol_acte_const.png" onclick="showImg('org_pol_acte_const.png')">
+      <span class="img-name">org_pol_acte_const</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/org_pol_acte_union.png" loading="lazy" title="org_pol_acte_union.png" onclick="showImg('org_pol_acte_union.png')">
+      <span class="img-name">org_pol_acte_union</span>
+      <span class="badge">2</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/familles_linguistiques_autochtones.png" onclick="showImg('familles_linguistiques_autochtones.png')" title="familles_linguistiques_autochtones.png">
+    <span>familles_linguistiques_autochtones</span>
+    <span class="badge-lg">2 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #6366f1;" data-imgs="familles_linguistiques_autochtones.png">
+  <div class="tile-id">Q31</div>
+  <div class="tile-oi" style="color:#6366f1">Établir des faits</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Nommez la famille linguistique autochtone qui occupe la vallée du fleuve Saint-Laurent vers 1500.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/familles_linguistiques_autochtones.png" loading="lazy" title="familles_linguistiques_autochtones.png" onclick="showImg('familles_linguistiques_autochtones.png')">
+      <span class="img-name">familles_linguistiques_autochtones</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #6366f1;" data-imgs="familles_linguistiques_autochtones.png">
+  <div class="tile-id">Q32</div>
+  <div class="tile-oi" style="color:#6366f1">Établir des faits</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Nommez la famille linguistique autochtone qui occupe le Bouclier canadien et les Appalaches vers 1500.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/familles_linguistiques_autochtones.png" loading="lazy" title="familles_linguistiques_autochtones.png" onclick="showImg('familles_linguistiques_autochtones.png')">
+      <span class="img-name">familles_linguistiques_autochtones</span>
+      <span class="badge">2</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/1500_reseau_echanges.png" onclick="showImg('1500_reseau_echanges.png')" title="1500_reseau_echanges.png">
+    <span>1500_reseau_echanges</span>
+    <span class="badge-lg">2 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="1500_reseau_echanges.png">
+  <div class="tile-id">Q52</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Indiquez une conséquence des réseaux d’échange sur l’accès des nations autochtones aux ressources.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/1500_reseau_echanges.png" loading="lazy" title="1500_reseau_echanges.png" onclick="showImg('1500_reseau_echanges.png')">
+      <span class="img-name">1500_reseau_echanges</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="1500_reseau_echanges.png">
+  <div class="tile-id">Q53</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Indiquez une conséquence de l’utilisation des voies d’eau sur les échanges entre les nations autochtones.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/1500_reseau_echanges.png" loading="lazy" title="1500_reseau_echanges.png" onclick="showImg('1500_reseau_echanges.png')">
+      <span class="img-name">1500_reseau_echanges</span>
+      <span class="badge">2</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/ligne_1475-1575.png" onclick="showImg('ligne_1475-1575.png')" title="ligne_1475-1575.png">
+    <span>ligne_1475-1575</span>
+    <span class="badge-lg">2 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="jacques_cartier_1534.png,ligne_1475-1575.png">
+  <div class="tile-id">Q75</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/jacques_cartier_1534.png" loading="lazy" title="jacques_cartier_1534.png" onclick="showImg('jacques_cartier_1534.png')">
+      <span class="img-name">jacques_cartier_1534</span>
+      
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_1475-1575.png" loading="lazy" title="ligne_1475-1575.png" onclick="showImg('ligne_1475-1575.png')">
+      <span class="img-name">ligne_1475-1575</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="ligne_1475-1575.png">
+  <div class="tile-id">Q76</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/ligne_1475-1575.png" loading="lazy" title="ligne_1475-1575.png" onclick="showImg('ligne_1475-1575.png')">
+      <span class="img-name">ligne_1475-1575</span>
+      <span class="badge">2</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/execution_patriotes.png" onclick="showImg('execution_patriotes.png')" title="execution_patriotes.png">
+    <span>execution_patriotes</span>
+    <span class="badge-lg">2 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="execution_patriotes.png,bataille_st-eustache.png">
+  <div class="tile-id">Q103</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1791 – 1840</div>
+  <div class="tile-enonce">Les documents A à D font référence aux soulèvements de 1837-1838. Indiquez si les faits présentés dans ces documents se …</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/execution_patriotes.png" loading="lazy" title="execution_patriotes.png" onclick="showImg('execution_patriotes.png')">
+      <span class="img-name">execution_patriotes</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/bataille_st-eustache.png" loading="lazy" title="bataille_st-eustache.png" onclick="showImg('bataille_st-eustache.png')">
+      <span class="img-name">bataille_st-eustache</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="execution_patriotes.png,bataille_st-eustache.png,ligne_abDc.png">
+  <div class="tile-id">Q104</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1791 – 1840</div>
+  <div class="tile-enonce">Les documents A à D présentent des événements liés aux soulèvements de 1837-1838. Placez ces documents par ordre chronol…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/execution_patriotes.png" loading="lazy" title="execution_patriotes.png" onclick="showImg('execution_patriotes.png')">
+      <span class="img-name">execution_patriotes</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/bataille_st-eustache.png" loading="lazy" title="bataille_st-eustache.png" onclick="showImg('bataille_st-eustache.png')">
+      <span class="img-name">bataille_st-eustache</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_abDc.png" loading="lazy" title="ligne_abDc.png" onclick="showImg('ligne_abDc.png')">
+      <span class="img-name">ligne_abDc</span>
+      <span class="badge">4</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/bataille_st-eustache.png" onclick="showImg('bataille_st-eustache.png')" title="bataille_st-eustache.png">
+    <span>bataille_st-eustache</span>
+    <span class="badge-lg">2 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="execution_patriotes.png,bataille_st-eustache.png">
+  <div class="tile-id">Q103</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1791 – 1840</div>
+  <div class="tile-enonce">Les documents A à D font référence aux soulèvements de 1837-1838. Indiquez si les faits présentés dans ces documents se …</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/execution_patriotes.png" loading="lazy" title="execution_patriotes.png" onclick="showImg('execution_patriotes.png')">
+      <span class="img-name">execution_patriotes</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/bataille_st-eustache.png" loading="lazy" title="bataille_st-eustache.png" onclick="showImg('bataille_st-eustache.png')">
+      <span class="img-name">bataille_st-eustache</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="execution_patriotes.png,bataille_st-eustache.png,ligne_abDc.png">
+  <div class="tile-id">Q104</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1791 – 1840</div>
+  <div class="tile-enonce">Les documents A à D présentent des événements liés aux soulèvements de 1837-1838. Placez ces documents par ordre chronol…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/execution_patriotes.png" loading="lazy" title="execution_patriotes.png" onclick="showImg('execution_patriotes.png')">
+      <span class="img-name">execution_patriotes</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/bataille_st-eustache.png" loading="lazy" title="bataille_st-eustache.png" onclick="showImg('bataille_st-eustache.png')">
+      <span class="img-name">bataille_st-eustache</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_abDc.png" loading="lazy" title="ligne_abDc.png" onclick="showImg('ligne_abDc.png')">
+      <span class="img-name">ligne_abDc</span>
+      <span class="badge">4</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/exportations_bois_1800_1840.png" onclick="showImg('exportations_bois_1800_1840.png')" title="exportations_bois_1800_1840.png">
+    <span>exportations_bois_1800_1840</span>
+    <span class="badge-lg">2 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="exportations_bois_1800_1840.png">
+  <div class="tile-id">Q105</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">1791 – 1840</div>
+  <div class="tile-enonce">Indiquez une conséquence de la mise en place de tarifs préférentiels par la métropole britannique sur le commerce du boi…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/exportations_bois_1800_1840.png" loading="lazy" title="exportations_bois_1800_1840.png" onclick="showImg('exportations_bois_1800_1840.png')">
+      <span class="img-name">exportations_bois_1800_1840</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="exportations_bois_1800_1840.png">
+  <div class="tile-id">Q106</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1791 – 1840</div>
+  <div class="tile-enonce">Indiquez un changement dans les exportations de bois vers la Grande-Bretagne au début du XIXe siècle.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/exportations_bois_1800_1840.png" loading="lazy" title="exportations_bois_1800_1840.png" onclick="showImg('exportations_bois_1800_1840.png')">
+      <span class="img-name">exportations_bois_1800_1840</span>
+      <span class="badge">2</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/destruction_huronie.png" onclick="showImg('destruction_huronie.png')" title="destruction_huronie.png">
+    <span>destruction_huronie</span>
+    <span class="badge-lg">2 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="destruction_huronie.png">
+  <div class="tile-id">Q121</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Indiquez une conséquence des guerres iroquoises sur les populations huronnes au 17e siècle.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/destruction_huronie.png" loading="lazy" title="destruction_huronie.png" onclick="showImg('destruction_huronie.png')">
+      <span class="img-name">destruction_huronie</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f97316;" data-imgs="gravure_destruction_huronie.png,destruction_huronie.png">
+  <div class="tile-id">Q128</div>
+  <div class="tile-oi" style="color:#f97316">Établir des liens de causalité</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Expliquez comment la destruction de la Huronie entraîne un changement dans l’occupation du territoire par les Hurons-Wen…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/gravure_destruction_huronie.png" loading="lazy" title="gravure_destruction_huronie.png" onclick="showImg('gravure_destruction_huronie.png')">
+      <span class="img-name">gravure_destruction_huronie</span>
+      <span class="badge">4</span>
+    </div><div class="img-wrap shared">
+      <img src="images/destruction_huronie.png" loading="lazy" title="destruction_huronie.png" onclick="showImg('destruction_huronie.png')">
+      <span class="img-name">destruction_huronie</span>
+      <span class="badge">2</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/exportations_fourrures_huronie.png" onclick="showImg('exportations_fourrures_huronie.png')" title="exportations_fourrures_huronie.png">
+    <span>exportations_fourrures_huronie</span>
+    <span class="badge-lg">2 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="exportations_fourrures_huronie.png">
+  <div class="tile-id">Q122</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Indiquez une conséquence des attaques iroquoises sur le commerce des fourrures en Nouvelle-France au 17e siècle.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/exportations_fourrures_huronie.png" loading="lazy" title="exportations_fourrures_huronie.png" onclick="showImg('exportations_fourrures_huronie.png')">
+      <span class="img-name">exportations_fourrures_huronie</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="exportations_fourrures_huronie.png">
+  <div class="tile-id">Q123</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">À partir du document A, indiquez s’il y a un changement ou une continuité dans le commerce des fourrures dans la colonie…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/exportations_fourrures_huronie.png" loading="lazy" title="exportations_fourrures_huronie.png" onclick="showImg('exportations_fourrures_huronie.png')">
+      <span class="img-name">exportations_fourrures_huronie</span>
+      <span class="badge">2</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/quebec_frere_kirke.png" onclick="showImg('quebec_frere_kirke.png')" title="quebec_frere_kirke.png">
+    <span>quebec_frere_kirke</span>
+    <span class="badge-lg">2 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #ec4899;" data-imgs="quebec_frere_kirke.png,siege_quebec_1690.png">
+  <div class="tile-id">Q133</div>
+  <div class="tile-oi" style="color:#ec4899">Mettre en relation des faits</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Les documents A à D présentent des événements militaires liés à la ville de Québec sous le Régime français. Indiquez les…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/quebec_frere_kirke.png" loading="lazy" title="quebec_frere_kirke.png" onclick="showImg('quebec_frere_kirke.png')">
+      <span class="img-name">quebec_frere_kirke</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/siege_quebec_1690.png" loading="lazy" title="siege_quebec_1690.png" onclick="showImg('siege_quebec_1690.png')">
+      <span class="img-name">siege_quebec_1690</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="quebec_frere_kirke.png,ligne_1600-1700.png">
+  <div class="tile-id">Q135</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/quebec_frere_kirke.png" loading="lazy" title="quebec_frere_kirke.png" onclick="showImg('quebec_frere_kirke.png')">
+      <span class="img-name">quebec_frere_kirke</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_1600-1700.png" loading="lazy" title="ligne_1600-1700.png" onclick="showImg('ligne_1600-1700.png')">
+      <span class="img-name">ligne_1600-1700</span>
+      <span class="badge">4</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/siege_quebec_1690.png" onclick="showImg('siege_quebec_1690.png')" title="siege_quebec_1690.png">
+    <span>siege_quebec_1690</span>
+    <span class="badge-lg">2 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #ec4899;" data-imgs="quebec_frere_kirke.png,siege_quebec_1690.png">
+  <div class="tile-id">Q133</div>
+  <div class="tile-oi" style="color:#ec4899">Mettre en relation des faits</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Les documents A à D présentent des événements militaires liés à la ville de Québec sous le Régime français. Indiquez les…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/quebec_frere_kirke.png" loading="lazy" title="quebec_frere_kirke.png" onclick="showImg('quebec_frere_kirke.png')">
+      <span class="img-name">quebec_frere_kirke</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/siege_quebec_1690.png" loading="lazy" title="siege_quebec_1690.png" onclick="showImg('siege_quebec_1690.png')">
+      <span class="img-name">siege_quebec_1690</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="siege_quebec_1690.png,ligne_1600-1700.png">
+  <div class="tile-id">Q134</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/siege_quebec_1690.png" loading="lazy" title="siege_quebec_1690.png" onclick="showImg('siege_quebec_1690.png')">
+      <span class="img-name">siege_quebec_1690</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_1600-1700.png" loading="lazy" title="ligne_1600-1700.png" onclick="showImg('ligne_1600-1700.png')">
+      <span class="img-name">ligne_1600-1700</span>
+      <span class="badge">4</span>
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/regiment_car-salieres.png" onclick="showImg('regiment_car-salieres.png')" title="regiment_car-salieres.png">
+    <span>regiment_car-salieres</span>
+    <span class="badge-lg">2 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="colon_louis_hebert.png,regiment_car-salieres.png">
+  <div class="tile-id">Q138</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Les documents A à D présentent des faits liés à l’évolution de la Nouvelle-France.
+Indiquez si chacun des faits se dérou…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/colon_louis_hebert.png" loading="lazy" title="colon_louis_hebert.png" onclick="showImg('colon_louis_hebert.png')">
+      <span class="img-name">colon_louis_hebert</span>
+      
+    </div><div class="img-wrap shared">
+      <img src="images/regiment_car-salieres.png" loading="lazy" title="regiment_car-salieres.png" onclick="showImg('regiment_car-salieres.png')">
+      <span class="img-name">regiment_car-salieres</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #ec4899;" data-imgs="regiment_car-salieres.png,filles_du_roy.png,chantier_naval.png">
+  <div class="tile-id">Q144</div>
+  <div class="tile-oi" style="color:#ec4899">Mettre en relation des faits</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Les documents A à C présentent des mesures mises en place en Nouvelle-France sous l’administration de l’intendant. Indiq…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/regiment_car-salieres.png" loading="lazy" title="regiment_car-salieres.png" onclick="showImg('regiment_car-salieres.png')">
+      <span class="img-name">regiment_car-salieres</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/filles_du_roy.png" loading="lazy" title="filles_du_roy.png" onclick="showImg('filles_du_roy.png')">
+      <span class="img-name">filles_du_roy</span>
+      <span class="badge">3</span>
+    </div><div class="img-wrap ">
+      <img src="images/chantier_naval.png" loading="lazy" title="chantier_naval.png" onclick="showImg('chantier_naval.png')">
+      <span class="img-name">chantier_naval</span>
+      
+    </div></div>
+</div></div>
+</div><div class="shared-group">
+  <h3 class="shared-img-title">
+    <img src="images/territoire_revendique_france_1700.png" onclick="showImg('territoire_revendique_france_1700.png')" title="territoire_revendique_france_1700.png">
+    <span>territoire_revendique_france_1700</span>
+    <span class="badge-lg">2 questions</span>
+  </h3>
+  <div class="tiles-row"><div class="tile" style="border-top:3px solid #8b5cf6;" data-imgs="territoire_revendique_france_1700.png">
+  <div class="tile-id">Q157</div>
+  <div class="tile-oi" style="color:#8b5cf6">Dégager des différences et des similitudes</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Indiquez une différence entre les possessions françaises et les possessions britanniques en Amérique du Nord vers 1700.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/territoire_revendique_france_1700.png" loading="lazy" title="territoire_revendique_france_1700.png" onclick="showImg('territoire_revendique_france_1700.png')">
+      <span class="img-name">territoire_revendique_france_1700</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="territoire_revendique_france_1700.png">
+  <div class="tile-id">Q158</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Indiquez une conséquence des rivalités territoriales entre les Français et les Britanniques en Amérique du Nord vers 170…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/territoire_revendique_france_1700.png" loading="lazy" title="territoire_revendique_france_1700.png" onclick="showImg('territoire_revendique_france_1700.png')">
+      <span class="img-name">territoire_revendique_france_1700</span>
+      <span class="badge">2</span>
+    </div></div>
+</div></div>
+</div>
+</section>
+
+<section id="all">
+  <h2>Toutes les questions avec image</h2>
+  <div class="filter-bar">
+    <input type="search" id="search" placeholder="Rechercher…" oninput="filterAll()">
+    <select id="filterOi" onchange="filterAll()">
+      <option value="">Toutes les OI</option>
+      <option>Dégager des différences et des similitudes</option><option>Déterminer des causes et des conséquences</option><option>Déterminer des changements et des continuités</option><option>Mettre en relation des faits</option><option>Situer dans l'espace</option><option>Situer dans le temps</option><option>Établir des faits</option><option>Établir des liens de causalité</option>
+    </select>
+  </div>
+  <div class="all-grid" id="allGrid"><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="fondation_quebec_1608.png,ligne_acBd.png">
+  <div class="tile-id">Q2</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Les documents A à D présentent des faits relatifs aux premières tentatives d’établissement d’Européens en Amérique du No…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/fondation_quebec_1608.png" loading="lazy" title="fondation_quebec_1608.png" onclick="showImg('fondation_quebec_1608.png')">
+      <span class="img-name">fondation_quebec_1608</span>
+      
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_acBd.png" loading="lazy" title="ligne_acBd.png" onclick="showImg('ligne_acBd.png')">
+      <span class="img-name">ligne_acBd</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="bataille_lac_champlain.png,ligne_1550-1750.png">
+  <div class="tile-id">Q3</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/bataille_lac_champlain.png" loading="lazy" title="bataille_lac_champlain.png" onclick="showImg('bataille_lac_champlain.png')">
+      <span class="img-name">bataille_lac_champlain</span>
+      <span class="badge">3</span>
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_1550-1750.png" loading="lazy" title="ligne_1550-1750.png" onclick="showImg('ligne_1550-1750.png')">
+      <span class="img-name">ligne_1550-1750</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="deportation_acadien.png,revolte_pontiact.png">
+  <div class="tile-id">Q4</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1760 – 1791</div>
+  <div class="tile-enonce">Les documents A à D font référence aux rapports de force entre les empires coloniaux français et britannique. Indiquez s…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/deportation_acadien.png" loading="lazy" title="deportation_acadien.png" onclick="showImg('deportation_acadien.png')">
+      <span class="img-name">deportation_acadien</span>
+      
+    </div><div class="img-wrap ">
+      <img src="images/revolte_pontiact.png" loading="lazy" title="revolte_pontiact.png" onclick="showImg('revolte_pontiact.png')">
+      <span class="img-name">revolte_pontiact</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #14b8a6;" data-imgs="loyalistes_province_quebec.png">
+  <div class="tile-id">Q5</div>
+  <div class="tile-oi" style="color:#14b8a6">Situer dans l'espace</div>
+  <div class="tile-periode">1760 – 1791</div>
+  <div class="tile-enonce">À partir du document A, indiquez la lettre qui correspond à une région de la Province de Québec où s’établissent des Loy…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/loyalistes_province_quebec.png" loading="lazy" title="loyalistes_province_quebec.png" onclick="showImg('loyalistes_province_quebec.png')">
+      <span class="img-name">loyalistes_province_quebec</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="cause_rivalites_coloniales.png">
+  <div class="tile-id">Q8</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Indiquez une cause de la rivalité entre la Nouvelle-France et les colonies britanniques à partir du 17e siècle.</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/cause_rivalites_coloniales.png" loading="lazy" title="cause_rivalites_coloniales.png" onclick="showImg('cause_rivalites_coloniales.png')">
+      <span class="img-name">cause_rivalites_coloniales</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="recensement_colonie_n-f.png">
+  <div class="tile-id">Q9</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Des politiques d’immigration et de natalité ont été mises en place en Nouvelle-France dans la deuxième moitié du 17e siè…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/recensement_colonie_n-f.png" loading="lazy" title="recensement_colonie_n-f.png" onclick="showImg('recensement_colonie_n-f.png')">
+      <span class="img-name">recensement_colonie_n-f</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="territoire_acte_const.png">
+  <div class="tile-id">Q10</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1791 – 1840</div>
+  <div class="tile-enonce">Indiquez le changement territorial qui survient avec l’adoption de l’Acte constitutionnel en 1791.</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/territoire_acte_const.png" loading="lazy" title="territoire_acte_const.png" onclick="showImg('territoire_acte_const.png')">
+      <span class="img-name">territoire_acte_const</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="troc_1600.png,troc_1700.png">
+  <div class="tile-id">Q11</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Indiquez un élément de continuité dans la façon de faire du commerce en Amérique du Nord durant les périodes présentées …</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/troc_1600.png" loading="lazy" title="troc_1600.png" onclick="showImg('troc_1600.png')">
+      <span class="img-name">troc_1600</span>
+      
+    </div><div class="img-wrap ">
+      <img src="images/troc_1700.png" loading="lazy" title="troc_1700.png" onclick="showImg('troc_1700.png')">
+      <span class="img-name">troc_1700</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="org_pol_acte_const.png">
+  <div class="tile-id">Q12</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1791 – 1840</div>
+  <div class="tile-enonce">À partir des document A et B, indiquez s’il y a changement ou continuité dans l’exercice du pouvoir politique dans la co…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/org_pol_acte_const.png" loading="lazy" title="org_pol_acte_const.png" onclick="showImg('org_pol_acte_const.png')">
+      <span class="img-name">org_pol_acte_const</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f97316;" data-imgs="papineau_foule.png">
+  <div class="tile-id">Q14</div>
+  <div class="tile-oi" style="color:#f97316">Établir des liens de causalité</div>
+  <div class="tile-periode">1791 – 1840</div>
+  <div class="tile-enonce">Expliquez comment la réponse de Londres aux revendications des Patriotes entraîne des actions de protestation populaire …</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/papineau_foule.png" loading="lazy" title="papineau_foule.png" onclick="showImg('papineau_foule.png')">
+      <span class="img-name">papineau_foule</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="camp_oui_1995.png,rapatriment_constitution.png,chrono_dbAc.png">
+  <div class="tile-id">Q16</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">De 1980 à nos jours</div>
+  <div class="tile-enonce">Les documents A à D présentent des événements liés au statut politique du Québec à partir de 1982. Placez-les par ordre …</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/camp_oui_1995.png" loading="lazy" title="camp_oui_1995.png" onclick="showImg('camp_oui_1995.png')">
+      <span class="img-name">camp_oui_1995</span>
+      
+    </div><div class="img-wrap ">
+      <img src="images/rapatriment_constitution.png" loading="lazy" title="rapatriment_constitution.png" onclick="showImg('rapatriment_constitution.png')">
+      <span class="img-name">rapatriment_constitution</span>
+      
+    </div><div class="img-wrap ">
+      <img src="images/chrono_dbAc.png" loading="lazy" title="chrono_dbAc.png" onclick="showImg('chrono_dbAc.png')">
+      <span class="img-name">chrono_dbAc</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="crise_oka.png,ligne_1950-2010.png">
+  <div class="tile-id">Q17</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">De 1980 à nos jours</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/crise_oka.png" loading="lazy" title="crise_oka.png" onclick="showImg('crise_oka.png')">
+      <span class="img-name">crise_oka</span>
+      
+    </div><div class="img-wrap ">
+      <img src="images/ligne_1950-2010.png" loading="lazy" title="ligne_1950-2010.png" onclick="showImg('ligne_1950-2010.png')">
+      <span class="img-name">ligne_1950-2010</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="logos_societe_etat.png,barrages_hydro_baie_james.png">
+  <div class="tile-id">Q18</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1945 – 1980</div>
+  <div class="tile-enonce">Les documents A à D font référence à la modernisation de l’économie du Québec. Indiquez si les faits présentés dans ces …</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/logos_societe_etat.png" loading="lazy" title="logos_societe_etat.png" onclick="showImg('logos_societe_etat.png')">
+      <span class="img-name">logos_societe_etat</span>
+      
+    </div><div class="img-wrap ">
+      <img src="images/barrages_hydro_baie_james.png" loading="lazy" title="barrages_hydro_baie_james.png" onclick="showImg('barrages_hydro_baie_james.png')">
+      <span class="img-name">barrages_hydro_baie_james</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #14b8a6;" data-imgs="territoire_exploite_minerai_fer.png">
+  <div class="tile-id">Q19</div>
+  <div class="tile-oi" style="color:#14b8a6">Situer dans l'espace</div>
+  <div class="tile-periode">1945 – 1980</div>
+  <div class="tile-enonce">Selon le document A, quelle lettre correspond à un territoire exploité pour son minerai de fer dans la deuxième moitié d…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/territoire_exploite_minerai_fer.png" loading="lazy" title="territoire_exploite_minerai_fer.png" onclick="showImg('territoire_exploite_minerai_fer.png')">
+      <span class="img-name">territoire_exploite_minerai_fer</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #8b5cf6;" data-imgs="victoire_pq_1976.png">
+  <div class="tile-id">Q20</div>
+  <div class="tile-oi" style="color:#8b5cf6">Dégager des différences et des similitudes</div>
+  <div class="tile-periode">1945 – 1980</div>
+  <div class="tile-enonce">À partir des documents A et B, indiquez la différence entre le moyen utilisé par le Front de libération du Québec et cel…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/victoire_pq_1976.png" loading="lazy" title="victoire_pq_1976.png" onclick="showImg('victoire_pq_1976.png')">
+      <span class="img-name">victoire_pq_1976</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="org_pol_acte_union.png">
+  <div class="tile-id">Q23</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">1840 – 1896</div>
+  <div class="tile-enonce">Dans quel but les Réformistes de la Province du Canada forment-ils une alliance en 1841?</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/org_pol_acte_union.png" loading="lazy" title="org_pol_acte_union.png" onclick="showImg('org_pol_acte_union.png')">
+      <span class="img-name">org_pol_acte_union</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="echanges_canada_etats-unis_1850-1860.png">
+  <div class="tile-id">Q24</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">1840 – 1896</div>
+  <div class="tile-enonce">Au milieu du 19e siècle, la Grande-Bretagne adopte une politique de libre-échange. Inscrivez la lettre du document qui p…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/echanges_canada_etats-unis_1850-1860.png" loading="lazy" title="echanges_canada_etats-unis_1850-1860.png" onclick="showImg('echanges_canada_etats-unis_1850-1860.png')">
+      <span class="img-name">echanges_canada_etats-unis_1850-1860</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="org_pol_acte_const.png,org_pol_acte_union.png">
+  <div class="tile-id">Q26</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1840 – 1896</div>
+  <div class="tile-enonce">Les documents A et B présentent la structure politique de la colonie à deux périodes différentes. Quel pouvoir le gouver…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/org_pol_acte_const.png" loading="lazy" title="org_pol_acte_const.png" onclick="showImg('org_pol_acte_const.png')">
+      <span class="img-name">org_pol_acte_const</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/org_pol_acte_union.png" loading="lazy" title="org_pol_acte_union.png" onclick="showImg('org_pol_acte_union.png')">
+      <span class="img-name">org_pol_acte_union</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #6366f1;" data-imgs="carte_premiers_occ_peuplement.png">
+  <div class="tile-id">Q30</div>
+  <div class="tile-oi" style="color:#6366f1">Établir des faits</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Indiquez le nom du passage emprunté par les premiers occupants pour migrer de l’Asie vers l’Amérique.</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/carte_premiers_occ_peuplement.png" loading="lazy" title="carte_premiers_occ_peuplement.png" onclick="showImg('carte_premiers_occ_peuplement.png')">
+      <span class="img-name">carte_premiers_occ_peuplement</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #6366f1;" data-imgs="familles_linguistiques_autochtones.png">
+  <div class="tile-id">Q31</div>
+  <div class="tile-oi" style="color:#6366f1">Établir des faits</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Nommez la famille linguistique autochtone qui occupe la vallée du fleuve Saint-Laurent vers 1500.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/familles_linguistiques_autochtones.png" loading="lazy" title="familles_linguistiques_autochtones.png" onclick="showImg('familles_linguistiques_autochtones.png')">
+      <span class="img-name">familles_linguistiques_autochtones</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #6366f1;" data-imgs="familles_linguistiques_autochtones.png">
+  <div class="tile-id">Q32</div>
+  <div class="tile-oi" style="color:#6366f1">Établir des faits</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Nommez la famille linguistique autochtone qui occupe le Bouclier canadien et les Appalaches vers 1500.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/familles_linguistiques_autochtones.png" loading="lazy" title="familles_linguistiques_autochtones.png" onclick="showImg('familles_linguistiques_autochtones.png')">
+      <span class="img-name">familles_linguistiques_autochtones</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #14b8a6;" data-imgs="familles_linguistiques_autochtones_lettres.png">
+  <div class="tile-id">Q33</div>
+  <div class="tile-oi" style="color:#14b8a6">Situer dans l'espace</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">À partir du document A, indiquez la lettre du territoire occupé par la famille linguistique algonquienne vers 1500.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/familles_linguistiques_autochtones_lettres.png" loading="lazy" title="familles_linguistiques_autochtones_lettres.png" onclick="showImg('familles_linguistiques_autochtones_lettres.png')">
+      <span class="img-name">familles_linguistiques_autochtones_lettres</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #14b8a6;" data-imgs="familles_linguistiques_autochtones_lettres.png">
+  <div class="tile-id">Q34</div>
+  <div class="tile-oi" style="color:#14b8a6">Situer dans l'espace</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">À partir du document A, indiquez la lettre du territoire occupé par la famille linguistique iroquoienne vers 1500.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/familles_linguistiques_autochtones_lettres.png" loading="lazy" title="familles_linguistiques_autochtones_lettres.png" onclick="showImg('familles_linguistiques_autochtones_lettres.png')">
+      <span class="img-name">familles_linguistiques_autochtones_lettres</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #14b8a6;" data-imgs="familles_linguistiques_autochtones_lettres.png">
+  <div class="tile-id">Q35</div>
+  <div class="tile-oi" style="color:#14b8a6">Situer dans l'espace</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">À partir du document A, indiquez la lettre du territoire occupé par la nation inuite vers 1500.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/familles_linguistiques_autochtones_lettres.png" loading="lazy" title="familles_linguistiques_autochtones_lettres.png" onclick="showImg('familles_linguistiques_autochtones_lettres.png')">
+      <span class="img-name">familles_linguistiques_autochtones_lettres</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #ec4899;" data-imgs="campement_algonquien.png">
+  <div class="tile-id">Q37</div>
+  <div class="tile-oi" style="color:#ec4899">Mettre en relation des faits</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">À partir des documents A à D, indiquez la lettre du document qui fait références à l'organisation territoriale des group…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/campement_algonquien.png" loading="lazy" title="campement_algonquien.png" onclick="showImg('campement_algonquien.png')">
+      <span class="img-name">campement_algonquien</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #6366f1;" data-imgs="1500_chaman.jpg">
+  <div class="tile-id">Q41</div>
+  <div class="tile-oi" style="color:#6366f1">Établir des faits</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Nommez un rôle joué par le chaman chez les sociétés autochtones.</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/1500_chaman.jpg" loading="lazy" title="1500_chaman.jpg" onclick="showImg('1500_chaman.jpg')">
+      <span class="img-name">1500_chaman.jpg</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #6366f1;" data-imgs="tradition_orale.jpg">
+  <div class="tile-id">Q47</div>
+  <div class="tile-oi" style="color:#6366f1">Établir des faits</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Nommez une façon dont les connaissances sont transmises chez les Autochtones.</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/tradition_orale.jpg" loading="lazy" title="tradition_orale.jpg" onclick="showImg('tradition_orale.jpg')">
+      <span class="img-name">tradition_orale.jpg</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="1500_reseau_echanges.png">
+  <div class="tile-id">Q52</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Indiquez une conséquence des réseaux d’échange sur l’accès des nations autochtones aux ressources.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/1500_reseau_echanges.png" loading="lazy" title="1500_reseau_echanges.png" onclick="showImg('1500_reseau_echanges.png')">
+      <span class="img-name">1500_reseau_echanges</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="1500_reseau_echanges.png">
+  <div class="tile-id">Q53</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Indiquez une conséquence de l’utilisation des voies d’eau sur les échanges entre les nations autochtones.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/1500_reseau_echanges.png" loading="lazy" title="1500_reseau_echanges.png" onclick="showImg('1500_reseau_echanges.png')">
+      <span class="img-name">1500_reseau_echanges</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #6366f1;" data-imgs="james_murray.png">
+  <div class="tile-id">Q57</div>
+  <div class="tile-oi" style="color:#6366f1">Établir des faits</div>
+  <div class="tile-periode">1760 – 1791</div>
+  <div class="tile-enonce">Quel gouverneur est rappelé en Angleterre à la suite de pressions exercées par les marchands 
+anglophones de la Province…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/james_murray.png" loading="lazy" title="james_murray.png" onclick="showImg('james_murray.png')">
+      <span class="img-name">james_murray</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #6366f1;" data-imgs="portrait_guy_carleton.png">
+  <div class="tile-id">Q62</div>
+  <div class="tile-oi" style="color:#6366f1">Établir des faits</div>
+  <div class="tile-periode">1760 – 1791</div>
+  <div class="tile-enonce">Nommez le gouverneur qui succède à James Murray.</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/portrait_guy_carleton.png" loading="lazy" title="portrait_guy_carleton.png" onclick="showImg('portrait_guy_carleton.png')">
+      <span class="img-name">portrait_guy_carleton</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="ligne_1550-1750.png">
+  <div class="tile-id">Q70</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/ligne_1550-1750.png" loading="lazy" title="ligne_1550-1750.png" onclick="showImg('ligne_1550-1750.png')">
+      <span class="img-name">ligne_1550-1750</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="jacques_cartier_1534.png,ligne_1475-1575.png">
+  <div class="tile-id">Q75</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/jacques_cartier_1534.png" loading="lazy" title="jacques_cartier_1534.png" onclick="showImg('jacques_cartier_1534.png')">
+      <span class="img-name">jacques_cartier_1534</span>
+      
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_1475-1575.png" loading="lazy" title="ligne_1475-1575.png" onclick="showImg('ligne_1475-1575.png')">
+      <span class="img-name">ligne_1475-1575</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="ligne_1475-1575.png">
+  <div class="tile-id">Q76</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/ligne_1475-1575.png" loading="lazy" title="ligne_1475-1575.png" onclick="showImg('ligne_1475-1575.png')">
+      <span class="img-name">ligne_1475-1575</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="ligne_acBd.png">
+  <div class="tile-id">Q77</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Les documents A à D présentent des faits relatifs aux voyages de Jacques Cartier. Placez-les par ordre chronologique.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/ligne_acBd.png" loading="lazy" title="ligne_acBd.png" onclick="showImg('ligne_acBd.png')">
+      <span class="img-name">ligne_acBd</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #14b8a6;" data-imgs="carte_seigneurie_n-f.png">
+  <div class="tile-id">Q78</div>
+  <div class="tile-oi" style="color:#14b8a6">Situer dans l'espace</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">À partir du document A, indiquez la lettre qui correspond au territoire sur lequel les seigneuries ont été concédées ava…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/carte_seigneurie_n-f.png" loading="lazy" title="carte_seigneurie_n-f.png" onclick="showImg('carte_seigneurie_n-f.png')">
+      <span class="img-name">carte_seigneurie_n-f</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="graphique_pop_autochtone_n-f.png">
+  <div class="tile-id">Q79</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Indiquez un changement de la population autochtone à la suite de la présence européenne dans la vallée du Saint-Laurent.…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/graphique_pop_autochtone_n-f.png" loading="lazy" title="graphique_pop_autochtone_n-f.png" onclick="showImg('graphique_pop_autochtone_n-f.png')">
+      <span class="img-name">graphique_pop_autochtone_n-f</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="carte_amerique_nord_1700.png">
+  <div class="tile-id">Q84</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Indique une conséquence de l'occupation française en Amérique du Nord sur le territoire des Treize colonies.</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/carte_amerique_nord_1700.png" loading="lazy" title="carte_amerique_nord_1700.png" onclick="showImg('carte_amerique_nord_1700.png')">
+      <span class="img-name">carte_amerique_nord_1700</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #14b8a6;" data-imgs="carte_amerique_nord_1700_lettres.png">
+  <div class="tile-id">Q85</div>
+  <div class="tile-oi" style="color:#14b8a6">Situer dans l'espace</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">À partir du document A, indique les deux lettres correspondant à la Nouvelle-France et aux Treize colonies.</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/carte_amerique_nord_1700_lettres.png" loading="lazy" title="carte_amerique_nord_1700_lettres.png" onclick="showImg('carte_amerique_nord_1700_lettres.png')">
+      <span class="img-name">carte_amerique_nord_1700_lettres</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #ec4899;" data-imgs="evangelisation_n-f.jpg,education_n-f.jpg">
+  <div class="tile-id">Q87</div>
+  <div class="tile-oi" style="color:#ec4899">Mettre en relation des faits</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Les documents A à D présentent des faits liés aux différents rôles de l’Église catholique en Nouvelle-France. Indiquez à…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/evangelisation_n-f.jpg" loading="lazy" title="evangelisation_n-f.jpg" onclick="showImg('evangelisation_n-f.jpg')">
+      <span class="img-name">evangelisation_n-f.jpg</span>
+      
+    </div><div class="img-wrap ">
+      <img src="images/education_n-f.jpg" loading="lazy" title="education_n-f.jpg" onclick="showImg('education_n-f.jpg')">
+      <span class="img-name">education_n-f.jpg</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="debarquement_plaines_abraham.png,ligne_1600-1800.png">
+  <div class="tile-id">Q88</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/debarquement_plaines_abraham.png" loading="lazy" title="debarquement_plaines_abraham.png" onclick="showImg('debarquement_plaines_abraham.png')">
+      <span class="img-name">debarquement_plaines_abraham</span>
+      
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_1600-1800.png" loading="lazy" title="ligne_1600-1800.png" onclick="showImg('ligne_1600-1800.png')">
+      <span class="img-name">ligne_1600-1800</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="ligne_abDc.png">
+  <div class="tile-id">Q90</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1760 – 1791</div>
+  <div class="tile-enonce">Les documents A à D présentent des événements survenus durant le Régime britannique. Placez ces documents par ordre chro…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/ligne_abDc.png" loading="lazy" title="ligne_abDc.png" onclick="showImg('ligne_abDc.png')">
+      <span class="img-name">ligne_abDc</span>
+      <span class="badge">4</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="commence_fourrure_n-f.png">
+  <div class="tile-id">Q94</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1760 – 1791</div>
+  <div class="tile-enonce">À partir des documents A à C, indiquez s’il y a changement ou continuité dans le commerce des fourrures dans la colonie.…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/commence_fourrure_n-f.png" loading="lazy" title="commence_fourrure_n-f.png" onclick="showImg('commence_fourrure_n-f.png')">
+      <span class="img-name">commence_fourrure_n-f</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #ec4899;" data-imgs="carte_terr_acte_quebec.png,carte_terr_proclamation_royale.png">
+  <div class="tile-id">Q95</div>
+  <div class="tile-oi" style="color:#ec4899">Mettre en relation des faits</div>
+  <div class="tile-periode">1760 – 1791</div>
+  <div class="tile-enonce">Les documents A à D font référence à la Proclamation royale et à l’Acte de Québec. Indiquez à l’endroit approprié la let…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/carte_terr_acte_quebec.png" loading="lazy" title="carte_terr_acte_quebec.png" onclick="showImg('carte_terr_acte_quebec.png')">
+      <span class="img-name">carte_terr_acte_quebec</span>
+      
+    </div><div class="img-wrap ">
+      <img src="images/carte_terr_proclamation_royale.png" loading="lazy" title="carte_terr_proclamation_royale.png" onclick="showImg('carte_terr_proclamation_royale.png')">
+      <span class="img-name">carte_terr_proclamation_royale</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="exportations_nouvelle_france_1755.png,exportations_province_quebec_1770.png">
+  <div class="tile-id">Q97</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1760 – 1791</div>
+  <div class="tile-enonce">Indiquez une continuité dans le commerce des fourrures dans la colonie à la suite de la guerre de la Conquête.</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/exportations_nouvelle_france_1755.png" loading="lazy" title="exportations_nouvelle_france_1755.png" onclick="showImg('exportations_nouvelle_france_1755.png')">
+      <span class="img-name">exportations_nouvelle_france_1755</span>
+      
+    </div><div class="img-wrap ">
+      <img src="images/exportations_province_quebec_1770.png" loading="lazy" title="exportations_province_quebec_1770.png" onclick="showImg('exportations_province_quebec_1770.png')">
+      <span class="img-name">exportations_province_quebec_1770</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="1760-1840_accroissement_naturel.png">
+  <div class="tile-id">Q98</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1791 – 1840</div>
+  <div class="tile-enonce">Indiquez un élément de continuité lié à la croissance de la population canadienne entre 
+1760 et 1840.</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/1760-1840_accroissement_naturel.png" loading="lazy" title="1760-1840_accroissement_naturel.png" onclick="showImg('1760-1840_accroissement_naturel.png')">
+      <span class="img-name">1760-1840_accroissement_naturel</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f97316;" data-imgs="1791-1840_grosse_ile.png,1820_immigration_irlandaise.png">
+  <div class="tile-id">Q99</div>
+  <div class="tile-oi" style="color:#f97316">Établir des liens de causalité</div>
+  <div class="tile-periode">1791 – 1840</div>
+  <div class="tile-enonce">Expliquez comment l’état de santé des immigrants des îles Britanniques à leur arrivée dans la colonie amène les autorité…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/1791-1840_grosse_ile.png" loading="lazy" title="1791-1840_grosse_ile.png" onclick="showImg('1791-1840_grosse_ile.png')">
+      <span class="img-name">1791-1840_grosse_ile</span>
+      
+    </div><div class="img-wrap ">
+      <img src="images/1820_immigration_irlandaise.png" loading="lazy" title="1820_immigration_irlandaise.png" onclick="showImg('1820_immigration_irlandaise.png')">
+      <span class="img-name">1820_immigration_irlandaise</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="execution_patriotes.png,bataille_st-eustache.png">
+  <div class="tile-id">Q103</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1791 – 1840</div>
+  <div class="tile-enonce">Les documents A à D font référence aux soulèvements de 1837-1838. Indiquez si les faits présentés dans ces documents se …</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/execution_patriotes.png" loading="lazy" title="execution_patriotes.png" onclick="showImg('execution_patriotes.png')">
+      <span class="img-name">execution_patriotes</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/bataille_st-eustache.png" loading="lazy" title="bataille_st-eustache.png" onclick="showImg('bataille_st-eustache.png')">
+      <span class="img-name">bataille_st-eustache</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="execution_patriotes.png,bataille_st-eustache.png,ligne_abDc.png">
+  <div class="tile-id">Q104</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1791 – 1840</div>
+  <div class="tile-enonce">Les documents A à D présentent des événements liés aux soulèvements de 1837-1838. Placez ces documents par ordre chronol…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/execution_patriotes.png" loading="lazy" title="execution_patriotes.png" onclick="showImg('execution_patriotes.png')">
+      <span class="img-name">execution_patriotes</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/bataille_st-eustache.png" loading="lazy" title="bataille_st-eustache.png" onclick="showImg('bataille_st-eustache.png')">
+      <span class="img-name">bataille_st-eustache</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_abDc.png" loading="lazy" title="ligne_abDc.png" onclick="showImg('ligne_abDc.png')">
+      <span class="img-name">ligne_abDc</span>
+      <span class="badge">4</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="exportations_bois_1800_1840.png">
+  <div class="tile-id">Q105</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">1791 – 1840</div>
+  <div class="tile-enonce">Indiquez une conséquence de la mise en place de tarifs préférentiels par la métropole britannique sur le commerce du boi…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/exportations_bois_1800_1840.png" loading="lazy" title="exportations_bois_1800_1840.png" onclick="showImg('exportations_bois_1800_1840.png')">
+      <span class="img-name">exportations_bois_1800_1840</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="exportations_bois_1800_1840.png">
+  <div class="tile-id">Q106</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1791 – 1840</div>
+  <div class="tile-enonce">Indiquez un changement dans les exportations de bois vers la Grande-Bretagne au début du XIXe siècle.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/exportations_bois_1800_1840.png" loading="lazy" title="exportations_bois_1800_1840.png" onclick="showImg('exportations_bois_1800_1840.png')">
+      <span class="img-name">exportations_bois_1800_1840</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="1763.png,1783.png">
+  <div class="tile-id">Q108</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1760 – 1791</div>
+  <div class="tile-enonce">Indiquez un changement dans la composition de la population de la colonie entre 1763 et 1784.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/1763.png" loading="lazy" title="1763.png" onclick="showImg('1763.png')">
+      <span class="img-name">1763</span>
+      <span class="badge">3</span>
+    </div><div class="img-wrap shared">
+      <img src="images/1783.png" loading="lazy" title="1783.png" onclick="showImg('1783.png')">
+      <span class="img-name">1783</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="1763.png,1783.png">
+  <div class="tile-id">Q109</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1760 – 1791</div>
+  <div class="tile-enonce">Indiquez une continuité dans la composition de la population de la colonie entre 1763 et 1784.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/1763.png" loading="lazy" title="1763.png" onclick="showImg('1763.png')">
+      <span class="img-name">1763</span>
+      <span class="badge">3</span>
+    </div><div class="img-wrap shared">
+      <img src="images/1783.png" loading="lazy" title="1783.png" onclick="showImg('1783.png')">
+      <span class="img-name">1783</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="1763.png,1783.png">
+  <div class="tile-id">Q110</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1760 – 1791</div>
+  <div class="tile-enonce">À partir des documents A et B, indiquez s’il y a changement ou continuité dans la composition de la population de la col…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/1763.png" loading="lazy" title="1763.png" onclick="showImg('1763.png')">
+      <span class="img-name">1763</span>
+      <span class="badge">3</span>
+    </div><div class="img-wrap shared">
+      <img src="images/1783.png" loading="lazy" title="1783.png" onclick="showImg('1783.png')">
+      <span class="img-name">1783</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f97316;" data-imgs="loyalistes.png">
+  <div class="tile-id">Q111</div>
+  <div class="tile-oi" style="color:#f97316">Établir des liens de causalité</div>
+  <div class="tile-periode">1760 – 1791</div>
+  <div class="tile-enonce">Expliquez comment le résultat de la guerre d’indépendance américaine en 1783 entraîne un changement démographique dans l…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/loyalistes.png" loading="lazy" title="loyalistes.png" onclick="showImg('loyalistes.png')">
+      <span class="img-name">loyalistes</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f97316;" data-imgs="voyages_exploration.png">
+  <div class="tile-id">Q112</div>
+  <div class="tile-oi" style="color:#f97316">Établir des liens de causalité</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Expliquez comment des changements dans le commerce européen favorisent les voyages d’exploration au 16e siècle. 
+
+Répond…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/voyages_exploration.png" loading="lazy" title="voyages_exploration.png" onclick="showImg('voyages_exploration.png')">
+      <span class="img-name">voyages_exploration</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="premiers_contacts">
+  <div class="tile-id">Q113</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Indiquez une raison qui explique la fréquentation du golfe du Saint-Laurent par les pêcheurs européens au 16e siècle.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/premiers_contacts" loading="lazy" title="premiers_contacts" onclick="showImg('premiers_contacts')">
+      <span class="img-name">premiers_contacts</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="premiers_contacts">
+  <div class="tile-id">Q114</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Indiquez une conséquence de la fréquentation du golfe du Saint-Laurent par les Européens au 16e siècle pour les nations …</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/premiers_contacts" loading="lazy" title="premiers_contacts" onclick="showImg('premiers_contacts')">
+      <span class="img-name">premiers_contacts</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f97316;" data-imgs="premiers_contacts">
+  <div class="tile-id">Q115</div>
+  <div class="tile-oi" style="color:#f97316">Établir des liens de causalité</div>
+  <div class="tile-periode">Des origines à 1608</div>
+  <div class="tile-enonce">Expliquez comment les activités économiques pratiquées par les Européens dans le golfe du Saint-Laurent favorisent le dé…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/premiers_contacts" loading="lazy" title="premiers_contacts" onclick="showImg('premiers_contacts')">
+      <span class="img-name">premiers_contacts</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f97316;" data-imgs="graphique_poste_de_traite_1780.png">
+  <div class="tile-id">Q117</div>
+  <div class="tile-oi" style="color:#f97316">Établir des liens de causalité</div>
+  <div class="tile-periode">1760 – 1791</div>
+  <div class="tile-enonce">Expliquez comment la guerre d’Indépendance américaine entraîne une réorganisation du commerce des fourrures dans la Prov…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/graphique_poste_de_traite_1780.png" loading="lazy" title="graphique_poste_de_traite_1780.png" onclick="showImg('graphique_poste_de_traite_1780.png')">
+      <span class="img-name">graphique_poste_de_traite_1780</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f97316;" data-imgs="mercantilisme_fourrures_n-f.png">
+  <div class="tile-id">Q118</div>
+  <div class="tile-oi" style="color:#f97316">Établir des liens de causalité</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Expliquez comment le commerce des fourrures favorise les relations économiques entre la métropole française et sa coloni…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/mercantilisme_fourrures_n-f.png" loading="lazy" title="mercantilisme_fourrures_n-f.png" onclick="showImg('mercantilisme_fourrures_n-f.png')">
+      <span class="img-name">mercantilisme_fourrures_n-f</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="gravure_destruction_huronie.png,bataille_lac_champlain.png,ligne_bcAd.png">
+  <div class="tile-id">Q119</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Les documents A à D présentent des faits liés aux relations franco-amérindiennes sous le régime français. Placez les doc…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/gravure_destruction_huronie.png" loading="lazy" title="gravure_destruction_huronie.png" onclick="showImg('gravure_destruction_huronie.png')">
+      <span class="img-name">gravure_destruction_huronie</span>
+      <span class="badge">4</span>
+    </div><div class="img-wrap shared">
+      <img src="images/bataille_lac_champlain.png" loading="lazy" title="bataille_lac_champlain.png" onclick="showImg('bataille_lac_champlain.png')">
+      <span class="img-name">bataille_lac_champlain</span>
+      <span class="badge">3</span>
+    </div><div class="img-wrap ">
+      <img src="images/ligne_bcAd.png" loading="lazy" title="ligne_bcAd.png" onclick="showImg('ligne_bcAd.png')">
+      <span class="img-name">ligne_bcAd</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #ec4899;" data-imgs="gravure_destruction_huronie.png,bataille_lac_champlain.png">
+  <div class="tile-id">Q120</div>
+  <div class="tile-oi" style="color:#ec4899">Mettre en relation des faits</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Les documents A à D présentent des faits liés aux relations franco-amérindiennes sous le régime français. Associez chaqu…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/gravure_destruction_huronie.png" loading="lazy" title="gravure_destruction_huronie.png" onclick="showImg('gravure_destruction_huronie.png')">
+      <span class="img-name">gravure_destruction_huronie</span>
+      <span class="badge">4</span>
+    </div><div class="img-wrap shared">
+      <img src="images/bataille_lac_champlain.png" loading="lazy" title="bataille_lac_champlain.png" onclick="showImg('bataille_lac_champlain.png')">
+      <span class="img-name">bataille_lac_champlain</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="destruction_huronie.png">
+  <div class="tile-id">Q121</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Indiquez une conséquence des guerres iroquoises sur les populations huronnes au 17e siècle.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/destruction_huronie.png" loading="lazy" title="destruction_huronie.png" onclick="showImg('destruction_huronie.png')">
+      <span class="img-name">destruction_huronie</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="exportations_fourrures_huronie.png">
+  <div class="tile-id">Q122</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Indiquez une conséquence des attaques iroquoises sur le commerce des fourrures en Nouvelle-France au 17e siècle.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/exportations_fourrures_huronie.png" loading="lazy" title="exportations_fourrures_huronie.png" onclick="showImg('exportations_fourrures_huronie.png')">
+      <span class="img-name">exportations_fourrures_huronie</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="exportations_fourrures_huronie.png">
+  <div class="tile-id">Q123</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">À partir du document A, indiquez s’il y a un changement ou une continuité dans le commerce des fourrures dans la colonie…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/exportations_fourrures_huronie.png" loading="lazy" title="exportations_fourrures_huronie.png" onclick="showImg('exportations_fourrures_huronie.png')">
+      <span class="img-name">exportations_fourrures_huronie</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="grahique_b_exportations_fourrures_huronie.png">
+  <div class="tile-id">Q124</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Indiquez un changement observé dans les exportations de fourrures autour de 1650.</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/grahique_b_exportations_fourrures_huronie.png" loading="lazy" title="grahique_b_exportations_fourrures_huronie.png" onclick="showImg('grahique_b_exportations_fourrures_huronie.png')">
+      <span class="img-name">grahique_b_exportations_fourrures_huronie</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="gravure_destruction_huronie.png,ligne_1575-1775.png">
+  <div class="tile-id">Q125</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/gravure_destruction_huronie.png" loading="lazy" title="gravure_destruction_huronie.png" onclick="showImg('gravure_destruction_huronie.png')">
+      <span class="img-name">gravure_destruction_huronie</span>
+      <span class="badge">4</span>
+    </div><div class="img-wrap ">
+      <img src="images/ligne_1575-1775.png" loading="lazy" title="ligne_1575-1775.png" onclick="showImg('ligne_1575-1775.png')">
+      <span class="img-name">ligne_1575-1775</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="ligne_1550-1750.png">
+  <div class="tile-id">Q127</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/ligne_1550-1750.png" loading="lazy" title="ligne_1550-1750.png" onclick="showImg('ligne_1550-1750.png')">
+      <span class="img-name">ligne_1550-1750</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f97316;" data-imgs="gravure_destruction_huronie.png,destruction_huronie.png">
+  <div class="tile-id">Q128</div>
+  <div class="tile-oi" style="color:#f97316">Établir des liens de causalité</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Expliquez comment la destruction de la Huronie entraîne un changement dans l’occupation du territoire par les Hurons-Wen…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/gravure_destruction_huronie.png" loading="lazy" title="gravure_destruction_huronie.png" onclick="showImg('gravure_destruction_huronie.png')">
+      <span class="img-name">gravure_destruction_huronie</span>
+      <span class="badge">4</span>
+    </div><div class="img-wrap shared">
+      <img src="images/destruction_huronie.png" loading="lazy" title="destruction_huronie.png" onclick="showImg('destruction_huronie.png')">
+      <span class="img-name">destruction_huronie</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #6366f1;" data-imgs="village_domicilie_autochtone.png">
+  <div class="tile-id">Q129</div>
+  <div class="tile-oi" style="color:#6366f1">Établir des faits</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Indiquez un village domicilié situé à proximité de Montréal.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/village_domicilie_autochtone.png" loading="lazy" title="village_domicilie_autochtone.png" onclick="showImg('village_domicilie_autochtone.png')">
+      <span class="img-name">village_domicilie_autochtone</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="village_domicilie_autochtone.png">
+  <div class="tile-id">Q130</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Indiquez une raison qui explique l’établissement de villages domiciliés à proximité des établissements français vers 175…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/village_domicilie_autochtone.png" loading="lazy" title="village_domicilie_autochtone.png" onclick="showImg('village_domicilie_autochtone.png')">
+      <span class="img-name">village_domicilie_autochtone</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="village_domicilie_autochtone.png">
+  <div class="tile-id">Q131</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">À partir des documents A et B, indiquez s’il y a changement ou continuité dans l’occupation du territoire autochtone dan…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/village_domicilie_autochtone.png" loading="lazy" title="village_domicilie_autochtone.png" onclick="showImg('village_domicilie_autochtone.png')">
+      <span class="img-name">village_domicilie_autochtone</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="filles_du_roy.png,ligne_1600-1700.png">
+  <div class="tile-id">Q132</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/filles_du_roy.png" loading="lazy" title="filles_du_roy.png" onclick="showImg('filles_du_roy.png')">
+      <span class="img-name">filles_du_roy</span>
+      <span class="badge">3</span>
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_1600-1700.png" loading="lazy" title="ligne_1600-1700.png" onclick="showImg('ligne_1600-1700.png')">
+      <span class="img-name">ligne_1600-1700</span>
+      <span class="badge">4</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #ec4899;" data-imgs="quebec_frere_kirke.png,siege_quebec_1690.png">
+  <div class="tile-id">Q133</div>
+  <div class="tile-oi" style="color:#ec4899">Mettre en relation des faits</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Les documents A à D présentent des événements militaires liés à la ville de Québec sous le Régime français. Indiquez les…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/quebec_frere_kirke.png" loading="lazy" title="quebec_frere_kirke.png" onclick="showImg('quebec_frere_kirke.png')">
+      <span class="img-name">quebec_frere_kirke</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/siege_quebec_1690.png" loading="lazy" title="siege_quebec_1690.png" onclick="showImg('siege_quebec_1690.png')">
+      <span class="img-name">siege_quebec_1690</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="siege_quebec_1690.png,ligne_1600-1700.png">
+  <div class="tile-id">Q134</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/siege_quebec_1690.png" loading="lazy" title="siege_quebec_1690.png" onclick="showImg('siege_quebec_1690.png')">
+      <span class="img-name">siege_quebec_1690</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_1600-1700.png" loading="lazy" title="ligne_1600-1700.png" onclick="showImg('ligne_1600-1700.png')">
+      <span class="img-name">ligne_1600-1700</span>
+      <span class="badge">4</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="quebec_frere_kirke.png,ligne_1600-1700.png">
+  <div class="tile-id">Q135</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/quebec_frere_kirke.png" loading="lazy" title="quebec_frere_kirke.png" onclick="showImg('quebec_frere_kirke.png')">
+      <span class="img-name">quebec_frere_kirke</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_1600-1700.png" loading="lazy" title="ligne_1600-1700.png" onclick="showImg('ligne_1600-1700.png')">
+      <span class="img-name">ligne_1600-1700</span>
+      <span class="badge">4</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="fondation_tadoussac.png,fondation_quebec.png,ligne_abDc.png">
+  <div class="tile-id">Q136</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Les documents A à D présentent des événements liés à la fondation d’établissements français en Nouvelle-France. Placez-l…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/fondation_tadoussac.png" loading="lazy" title="fondation_tadoussac.png" onclick="showImg('fondation_tadoussac.png')">
+      <span class="img-name">fondation_tadoussac</span>
+      
+    </div><div class="img-wrap ">
+      <img src="images/fondation_quebec.png" loading="lazy" title="fondation_quebec.png" onclick="showImg('fondation_quebec.png')">
+      <span class="img-name">fondation_quebec</span>
+      
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_abDc.png" loading="lazy" title="ligne_abDc.png" onclick="showImg('ligne_abDc.png')">
+      <span class="img-name">ligne_abDc</span>
+      <span class="badge">4</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="fondation_mtl.png,fondation_t-r.png,ligne_abDc.png">
+  <div class="tile-id">Q137</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Les documents A à D présentent des événements liés à la fondation d’établissements français en Nouvelle-France. Placez-l…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/fondation_mtl.png" loading="lazy" title="fondation_mtl.png" onclick="showImg('fondation_mtl.png')">
+      <span class="img-name">fondation_mtl</span>
+      
+    </div><div class="img-wrap ">
+      <img src="images/fondation_t-r.png" loading="lazy" title="fondation_t-r.png" onclick="showImg('fondation_t-r.png')">
+      <span class="img-name">fondation_t-r</span>
+      
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_abDc.png" loading="lazy" title="ligne_abDc.png" onclick="showImg('ligne_abDc.png')">
+      <span class="img-name">ligne_abDc</span>
+      <span class="badge">4</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="colon_louis_hebert.png,regiment_car-salieres.png">
+  <div class="tile-id">Q138</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Les documents A à D présentent des faits liés à l’évolution de la Nouvelle-France.
+Indiquez si chacun des faits se dérou…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/colon_louis_hebert.png" loading="lazy" title="colon_louis_hebert.png" onclick="showImg('colon_louis_hebert.png')">
+      <span class="img-name">colon_louis_hebert</span>
+      
+    </div><div class="img-wrap shared">
+      <img src="images/regiment_car-salieres.png" loading="lazy" title="regiment_car-salieres.png" onclick="showImg('regiment_car-salieres.png')">
+      <span class="img-name">regiment_car-salieres</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #ec4899;" data-imgs="filles_du_roy.png,fondation_qubec_1608.png">
+  <div class="tile-id">Q139</div>
+  <div class="tile-oi" style="color:#ec4899">Mettre en relation des faits</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Les documents A à D présentent différentes mesures et événements ayant contribué au développement de la Nouvelle-France …</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/filles_du_roy.png" loading="lazy" title="filles_du_roy.png" onclick="showImg('filles_du_roy.png')">
+      <span class="img-name">filles_du_roy</span>
+      <span class="badge">3</span>
+    </div><div class="img-wrap ">
+      <img src="images/fondation_qubec_1608.png" loading="lazy" title="fondation_qubec_1608.png" onclick="showImg('fondation_qubec_1608.png')">
+      <span class="img-name">fondation_qubec_1608</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="ligne_1600-1700.png">
+  <div class="tile-id">Q140</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/ligne_1600-1700.png" loading="lazy" title="ligne_1600-1700.png" onclick="showImg('ligne_1600-1700.png')">
+      <span class="img-name">ligne_1600-1700</span>
+      <span class="badge">4</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="ligne_1600-1800.png">
+  <div class="tile-id">Q141</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/ligne_1600-1800.png" loading="lazy" title="ligne_1600-1800.png" onclick="showImg('ligne_1600-1800.png')">
+      <span class="img-name">ligne_1600-1800</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #0ea5e9;" data-imgs="grande_paix_mtl.png,ligne_1600-1800.png">
+  <div class="tile-id">Q142</div>
+  <div class="tile-oi" style="color:#0ea5e9">Situer dans le temps</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés d…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/grande_paix_mtl.png" loading="lazy" title="grande_paix_mtl.png" onclick="showImg('grande_paix_mtl.png')">
+      <span class="img-name">grande_paix_mtl</span>
+      
+    </div><div class="img-wrap shared">
+      <img src="images/ligne_1600-1800.png" loading="lazy" title="ligne_1600-1800.png" onclick="showImg('ligne_1600-1800.png')">
+      <span class="img-name">ligne_1600-1800</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #ec4899;" data-imgs="regiment_car-salieres.png,filles_du_roy.png,chantier_naval.png">
+  <div class="tile-id">Q144</div>
+  <div class="tile-oi" style="color:#ec4899">Mettre en relation des faits</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Les documents A à C présentent des mesures mises en place en Nouvelle-France sous l’administration de l’intendant. Indiq…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/regiment_car-salieres.png" loading="lazy" title="regiment_car-salieres.png" onclick="showImg('regiment_car-salieres.png')">
+      <span class="img-name">regiment_car-salieres</span>
+      <span class="badge">2</span>
+    </div><div class="img-wrap shared">
+      <img src="images/filles_du_roy.png" loading="lazy" title="filles_du_roy.png" onclick="showImg('filles_du_roy.png')">
+      <span class="img-name">filles_du_roy</span>
+      <span class="badge">3</span>
+    </div><div class="img-wrap ">
+      <img src="images/chantier_naval.png" loading="lazy" title="chantier_naval.png" onclick="showImg('chantier_naval.png')">
+      <span class="img-name">chantier_naval</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #6366f1;" data-imgs="mercantilisme_nf.png">
+  <div class="tile-id">Q146</div>
+  <div class="tile-oi" style="color:#6366f1">Établir des faits</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Nommez le nom de la politique économique mise en place par la métropole française en Nouvelle-France.</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/mercantilisme_nf.png" loading="lazy" title="mercantilisme_nf.png" onclick="showImg('mercantilisme_nf.png')">
+      <span class="img-name">mercantilisme_nf</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #6366f1;" data-imgs="conseil_souverain.png">
+  <div class="tile-id">Q152</div>
+  <div class="tile-oi" style="color:#6366f1">Établir des faits</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Indiquez le nom de l’institution chargée de rendre la justice en Nouvelle-France.</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/conseil_souverain.png" loading="lazy" title="conseil_souverain.png" onclick="showImg('conseil_souverain.png')">
+      <span class="img-name">conseil_souverain</span>
+      
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="territoire_occupe_1650.png">
+  <div class="tile-id">Q154</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Indiquez une raison expliquant pourquoi les Français concentrent leurs établissements le long du fleuve Saint-Laurent ve…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/territoire_occupe_1650.png" loading="lazy" title="territoire_occupe_1650.png" onclick="showImg('territoire_occupe_1650.png')">
+      <span class="img-name">territoire_occupe_1650</span>
+      <span class="badge">5</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="territoire_occupe_1650.png">
+  <div class="tile-id">Q155</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Indiquez une conséquence de la concentration des établissements français dans la vallée du Saint-Laurent vers 1650.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/territoire_occupe_1650.png" loading="lazy" title="territoire_occupe_1650.png" onclick="showImg('territoire_occupe_1650.png')">
+      <span class="img-name">territoire_occupe_1650</span>
+      <span class="badge">5</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #8b5cf6;" data-imgs="territoire_revendique_france_1700.png">
+  <div class="tile-id">Q157</div>
+  <div class="tile-oi" style="color:#8b5cf6">Dégager des différences et des similitudes</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Indiquez une différence entre les possessions françaises et les possessions britanniques en Amérique du Nord vers 1700.</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/territoire_revendique_france_1700.png" loading="lazy" title="territoire_revendique_france_1700.png" onclick="showImg('territoire_revendique_france_1700.png')">
+      <span class="img-name">territoire_revendique_france_1700</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #f59e0b;" data-imgs="territoire_revendique_france_1700.png">
+  <div class="tile-id">Q158</div>
+  <div class="tile-oi" style="color:#f59e0b">Déterminer des causes et des conséquences</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">Indiquez une conséquence des rivalités territoriales entre les Français et les Britanniques en Amérique du Nord vers 170…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/territoire_revendique_france_1700.png" loading="lazy" title="territoire_revendique_france_1700.png" onclick="showImg('territoire_revendique_france_1700.png')">
+      <span class="img-name">territoire_revendique_france_1700</span>
+      <span class="badge">2</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="territoire_occupe_1650.png,territoire_occupe_1700.png">
+  <div class="tile-id">Q159</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">À partir des documents A et B, indiquez un changement dans l’occupation du territoire par les Français en Amérique du No…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/territoire_occupe_1650.png" loading="lazy" title="territoire_occupe_1650.png" onclick="showImg('territoire_occupe_1650.png')">
+      <span class="img-name">territoire_occupe_1650</span>
+      <span class="badge">5</span>
+    </div><div class="img-wrap shared">
+      <img src="images/territoire_occupe_1700.png" loading="lazy" title="territoire_occupe_1700.png" onclick="showImg('territoire_occupe_1700.png')">
+      <span class="img-name">territoire_occupe_1700</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="territoire_occupe_1650.png,territoire_occupe_1700.png">
+  <div class="tile-id">Q160</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">À partir des documents A et B, indiquez une continuité dans la répartition du peuplement français en Amérique du Nord en…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/territoire_occupe_1650.png" loading="lazy" title="territoire_occupe_1650.png" onclick="showImg('territoire_occupe_1650.png')">
+      <span class="img-name">territoire_occupe_1650</span>
+      <span class="badge">5</span>
+    </div><div class="img-wrap shared">
+      <img src="images/territoire_occupe_1700.png" loading="lazy" title="territoire_occupe_1700.png" onclick="showImg('territoire_occupe_1700.png')">
+      <span class="img-name">territoire_occupe_1700</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="territoire_occupe_1650.png,territoire_occupe_1700.png">
+  <div class="tile-id">Q161</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">À partir des documents A et B, indiquez un changement et une continuité dans l’occupation du territoire par les Français…</div>
+  <div class="tile-imgs"><div class="img-wrap shared">
+      <img src="images/territoire_occupe_1650.png" loading="lazy" title="territoire_occupe_1650.png" onclick="showImg('territoire_occupe_1650.png')">
+      <span class="img-name">territoire_occupe_1650</span>
+      <span class="badge">5</span>
+    </div><div class="img-wrap shared">
+      <img src="images/territoire_occupe_1700.png" loading="lazy" title="territoire_occupe_1700.png" onclick="showImg('territoire_occupe_1700.png')">
+      <span class="img-name">territoire_occupe_1700</span>
+      <span class="badge">3</span>
+    </div></div>
+</div><div class="tile" style="border-top:3px solid #22c55e;" data-imgs="territoire_revendique_1700.png,territoire_revendique_1713.png">
+  <div class="tile-id">Q170</div>
+  <div class="tile-oi" style="color:#22c55e">Déterminer des changements et des continuités</div>
+  <div class="tile-periode">1608 – 1760</div>
+  <div class="tile-enonce">À partir des documents A et B, indiquez s’il y a changement ou continuité concernant les possessions françaises en Améri…</div>
+  <div class="tile-imgs"><div class="img-wrap ">
+      <img src="images/territoire_revendique_1700.png" loading="lazy" title="territoire_revendique_1700.png" onclick="showImg('territoire_revendique_1700.png')">
+      <span class="img-name">territoire_revendique_1700</span>
+      
+    </div><div class="img-wrap ">
+      <img src="images/territoire_revendique_1713.png" loading="lazy" title="territoire_revendique_1713.png" onclick="showImg('territoire_revendique_1713.png')">
+      <span class="img-name">territoire_revendique_1713</span>
+      
+    </div></div>
+</div></div>
+</section>
+
+<div id="lb" onclick="closeLb()">
+  <span id="lb-close">&times;</span>
+  <img id="lb-img" src="">
+  <span id="lb-caption"></span>
+</div>
+
+<script>
+function showImg(img){
+  document.getElementById('lb-img').src='images/'+img;
+  document.getElementById('lb-caption').textContent=img;
+  document.getElementById('lb').classList.add('open');
+}
+function closeLb(){document.getElementById('lb').classList.remove('open');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
+function setActive(el){document.querySelectorAll('nav a').forEach(a=>a.classList.remove('active'));el.classList.add('active');}
+function filterAll(){
+  const s=document.getElementById('search').value.toLowerCase();
+  const oi=document.getElementById('filterOi').value;
+  document.querySelectorAll('#allGrid .tile').forEach(t=>{
+    const txt=t.textContent.toLowerCase();
+    const tOi=t.querySelector('.tile-oi').textContent;
+    const show=(!s||txt.includes(s))&&(!oi||tOi===oi);
+    t.style.display=show?'':'none';
+  });
+}
+</script>
+</body>
+</html>
