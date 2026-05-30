@@ -3391,6 +3391,17 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q170": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
   }
 }
 
@@ -3661,6 +3672,9 @@ const IMAGE_DB = {
   },
   "carte_premiers_occ_peuplement.png": {
     src: "images/carte_premiers_occ_peuplement.png"
+  },
+  "territoire_occupe_1713.png": {
+    src: "images/territoire_occupe_1713.png"
   }
 }
 
@@ -11321,5 +11335,46 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "L'intendant."
+  },
+  {
+    id: "Q170",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P2 — 1608 – 1760",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité concernant les possessions françaises en Amérique du Nord entre 1700 et 1713. Justifiez votre choix par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Territoire français en Amérique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "territoire_occupe_1700.png",
+            source: "Récitus."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "territoire_occupe_1713.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Il y a changement puisque, en 1713, à la suite du traité d’Utrecht, la France perd plusieurs de ses possessions, notamment l’Acadie, Terre-Neuve et la baie d’Hudson, au profit de la Grande-Bretagne.\n\nIl y a continuité puisque la France possède toujours des territoires en Amérique du Nord en 1700 comme en 1713, notamment dans la vallée du Saint-Laurent."
   }
 ]
