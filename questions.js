@@ -11310,7 +11310,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« [Il] veille à l'administration de la justice. Il participe à l'application des lois et s'assure du bon fonctionnement des institutions civiles de la colonie. »",
+            texte: "« [François Bigot] veille à l'administration de la justice. Il participe à l'application des lois et s'assure du bon fonctionnement des institutions civiles de la colonie. »",
             source: "Marcel Trudel, La Nouvelle-France par les textes, Hurtubise HMH, 2003."
           }
         ]
