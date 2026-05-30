@@ -3402,6 +3402,28 @@ const REGLETTES = {
       "0 point"
     ],
     niveaux: []
+  },
+  "Q171": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
+      }
+    ]
   }
 }
 
@@ -11376,5 +11398,60 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Il y a changement puisque, en 1713, à la suite du traité d’Utrecht, la France perd plusieurs de ses possessions, notamment l’Acadie, Terre-Neuve et la baie d’Hudson, au profit de la Grande-Bretagne.\n\nIl y a continuité puisque la France possède toujours des territoires en Amérique du Nord en 1700 comme en 1713, notamment dans la vallée du Saint-Laurent."
+  },
+  {
+    id: "Q171",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Cause et conséquence",
+    enonce: "Les documents A et B présentent des faits liés au traité d’Utrecht de 1713. Indiquez la lettre du document qui représente une cause et celle du document qui représente une conséquence de ce traité.",
+    aspects: [
+      {
+        aspect: "Guerres intercoloniales"
+      },
+      {
+        aspect: "Territoire français en Amérique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Au début du XVIIIe siècle, la présence française en Amérique du Nord se trouve réduite par la perte de plusieurs territoires, notamment l'Acadie, Terre-Neuve et les régions entourant la baie d'Hudson. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1, Québec Amérique, 1995."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« La fin du XVIIe siècle est marquée par une série de conflits opposant la France et l'Angleterre. En Amérique du Nord, ces rivalités portent notamment sur le contrôle du commerce et des territoires. »",
+            source: "Gilles Havard et Cécile Vidal, Histoire de l'Amérique française, Paris, Flammarion, 2003."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "cause-consequence"
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Cause",
+        "Conséquence"
+      ],
+      rangees: [
+        [
+          "B",
+          "A"
+        ]
+      ]
+    }
   }
 ]
