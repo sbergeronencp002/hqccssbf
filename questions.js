@@ -11162,9 +11162,6 @@ const QUESTIONS = [
     aspects: [
       {
         aspect: "Gouvernement royal"
-      },
-      {
-        aspect: "Monopole des compagnies"
       }
     ],
     documents: [
