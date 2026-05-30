@@ -3469,6 +3469,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans l'espace."
       }
     ]
+  },
+  "Q174": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -11609,5 +11626,35 @@ const QUESTIONS = [
         ]
       ]
     }
+  },
+  {
+    id: "Q174",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez le membre de l'administration coloniale responsable de l'organisation de l'Église catholique en Nouvelle-France.",
+    aspects: [
+      {
+        aspect: "Église catholique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« À la tête de l'Église catholique en Nouvelle-France, [Monseigneur de Laval] veille à l'organisation du diocèse et à l'encadrement religieux de la population coloniale. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1, Québec Amérique, 1995."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "L'évêque."
   }
 ]
