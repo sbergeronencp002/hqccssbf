@@ -3525,6 +3525,23 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q177": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -3813,6 +3830,9 @@ const IMAGE_DB = {
   },
   "graphique_population_nouvelle_france_1627-1663.png": {
     src: "images/graphique_population_nouvelle_france_1627-1663.png"
+  },
+  "paroisse_n-f.png": {
+    src: "images/paroisse_n-f.png"
   }
 }
 
@@ -11795,5 +11815,35 @@ const QUESTIONS = [
       nombre: 4
     },
     guide: "La Compagnie des Cent-Associés a pour responsabilité de favoriser le développement et le peuplement de la Nouvelle-France. Cependant, la population de la colonie demeure faible et son développement progresse lentement. Comme la compagnie ne remplit pas adéquatement ses obligations, le roi de France instaure le gouvernement royal en 1663 afin de mieux administrer et développer la colonie."
+  },
+  {
+    id: "Q177",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez le nom du territoire religieux placé sous la responsabilité d'un curé en Nouvelle-France.",
+    aspects: [
+      {
+        aspect: "Église catholique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "paroisse_n-f.png",
+            source: "Adapté de BAnQ et de Bibliothèque et Archives Canada."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "La paroisse."
   }
 ]
