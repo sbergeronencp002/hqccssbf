@@ -3833,6 +3833,9 @@ const IMAGE_DB = {
   },
   "paroisse_n-f.png": {
     src: "images/paroisse_n-f.png"
+  },
+  "org_pol_avant_1663.png": {
+    src: "images/org_pol_avant_1663.png"
   }
 }
 
@@ -11741,7 +11744,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "org_pol_apres_1663.png",
+            ref: "org_pol_avant_1663.png",
             source: "adapté de Récitus."
           }
         ]
