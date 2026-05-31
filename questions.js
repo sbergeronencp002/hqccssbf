@@ -11722,7 +11722,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "org_pol_apres_1663.png",
-            source: "adapté"
+            source: "adapté de Récitus."
           }
         ]
       },
@@ -11731,7 +11731,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "org_pol_apres_1663.png"
+            ref: "org_pol_apres_1663.png",
+            source: "adapté de Récitus."
           }
         ]
       }
