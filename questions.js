@@ -3853,6 +3853,9 @@ const IMAGE_DB = {
   },
   "org_pol_avant_1663.png": {
     src: "images/org_pol_avant_1663.png"
+  },
+  "regime_seigneurial_n-f.png": {
+    src: "images/regime_seigneurial_n-f.png"
   }
 }
 
@@ -11884,7 +11887,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: ""
+            ref: "regime_seigneurial_n-f.png",
+            source: "Adapté de BAnQ et de Bibliothèque et Archives Canada."
           }
         ]
       }
