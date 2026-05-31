@@ -3592,6 +3592,28 @@ const REGLETTES = {
       "0 point"
     ],
     niveaux: []
+  },
+  "Q181": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -12021,5 +12043,36 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Continuité. \n\nEn 1670 comme en 1740, les immigrants français proviennent principalement des mêmes régions de France. La Normandie demeure la principale région d'origine, représentant 28 % des immigrants en 1670 et 26 % en 1740. L'Île-de-France et l'Aunis figurent également parmi les régions les plus représentées durant toute la période.\n\nChangement. \n\nEntre 1670 et 1740, la proportion d'immigrants provenant de certaines régions varie. Par exemple, la part des immigrants originaires de la Normandie passe de 28 % à 26 %, tandis que celle des « autres régions » augmente de 14 % à 16 %. La répartition géographique des immigrants se modifie donc légèrement entre 1670 et 1740."
+  },
+  {
+    id: "Q181",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de l’arrivée d’immigrants français sur l’origine de la population de la Nouvelle-France.",
+    aspects: [
+      {
+        aspect: "Croissance de la population"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La plupart des immigrants qui s'établissent dans la vallée du Saint-Laurent proviennent d'un nombre restreint de provinces françaises, principalement situées dans l'ouest du royaume. »",
+            source: "Yves Landry, Orphelines en France, pionnières au Canada, Montréal, Leméac, 1992."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "La population de la Nouvelle-France est composée majoritairement de personnes d'origine française."
   }
 ]
