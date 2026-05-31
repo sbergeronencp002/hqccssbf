@@ -3486,6 +3486,17 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q175": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
   }
 }
 
@@ -3768,6 +3779,9 @@ const IMAGE_DB = {
   },
   "territoires_perdus_1713.png": {
     src: "images/territoires_perdus_1713.png"
+  },
+  "org_pol_apres_1663.png": {
+    src: "images/org_pol_apres_1663.png"
   }
 }
 
@@ -11656,5 +11670,45 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "L'évêque."
+  },
+  {
+    id: "Q175",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P2 — 1608 – 1760",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans l’administration de la Nouvelle-France entre 1627 et 1663. Justifiez votre choix par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Gouvernement royal"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "org_pol_apres_1663.png",
+            source: "adapté"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "org_pol_apres_1663.png"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Changement\n\nIl y a un changement dans l’administration de la Nouvelle-France entre 1627 et 1663. En 1627, la colonie est administrée par la Compagnie des Cent-Associés. En 1663, le gouvernement royal est instauré et l’administration est confiée au gouverneur, à l’intendant et au Conseil souverain.\n\nContinuité\n\nIl y a une continuité dans l’administration de la Nouvelle-France entre 1627 et 1663. En 1627 comme en 1663, la colonie demeure sous l’autorité du roi de France et de la métropole française."
   }
 ]
