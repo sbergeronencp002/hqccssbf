@@ -3581,6 +3581,17 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q180": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
   }
 }
 
@@ -3878,6 +3889,12 @@ const IMAGE_DB = {
   },
   "regime_seigneurial_n-f.png": {
     src: "images/regime_seigneurial_n-f.png"
+  },
+  "origines_geo_1670.png": {
+    src: "images/origines_geo_1670.png"
+  },
+  "origines_geo_1740.png": {
+    src: "images/origines_geo_1740.png"
   }
 }
 
@@ -11961,5 +11978,48 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Les deux historiens s'entendent pour dire que le clergé catholique joue un rôle important dans l'encadrement des habitants de la Nouvelle-France."
+  },
+  {
+    id: "Q180",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P2 — 1608 – 1760",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans les origines géographiques des immigrants français en Nouvelle-France entre 1670 et 1740. Justifiez votre choix par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Croissance de la population"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "origines_geo_1670.png",
+            soustitre: "Origines sociales des immigrants vers 1670",
+            source: "Données adaptées à partir des travaux de Yves Landry et Hubert Charbonneau sur les origines régionales des immigrants français en Nouvelle-France."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "origines_geo_1740.png",
+            soustitre: "Origines sociales des immigrants vers 1740",
+            source: "Données adaptées à partir des travaux de Yves Landry et Hubert Charbonneau sur les origines régionales des immigrants français en Nouvelle-France."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Continuité. \n\nEn 1670 comme en 1740, les immigrants français proviennent principalement des mêmes régions de France. La Normandie demeure la principale région d'origine, représentant 28 % des immigrants en 1670 et 26 % en 1740. L'Île-de-France et l'Aunis figurent également parmi les régions les plus représentées durant toute la période.\n\nChangement. \n\nEntre 1670 et 1740, la proportion d'immigrants provenant de certaines régions varie. Par exemple, la part des immigrants originaires de la Normandie passe de 28 % à 26 %, tandis que celle des « autres régions » augmente de 14 % à 16 %. La répartition géographique des immigrants se modifie donc légèrement entre 1670 et 1740."
   }
 ]
