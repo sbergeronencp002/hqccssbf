@@ -3497,6 +3497,34 @@ const REGLETTES = {
       "0 point"
     ],
     niveaux: []
+  },
+  "Q176": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -3782,6 +3810,9 @@ const IMAGE_DB = {
   },
   "org_pol_apres_1663.png": {
     src: "images/org_pol_apres_1663.png"
+  },
+  "graphique_population_nouvelle_france_1627-1663.png": {
+    src: "images/graphique_population_nouvelle_france_1627-1663.png"
   }
 }
 
@@ -11710,5 +11741,58 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Changement\n\nIl y a un changement dans l’administration de la Nouvelle-France entre 1627 et 1663. En 1627, la colonie est administrée par la Compagnie des Cent-Associés. En 1663, le gouvernement royal est instauré et l’administration est confiée au gouverneur, à l’intendant et au Conseil souverain.\n\nContinuité\n\nIl y a une continuité dans l’administration de la Nouvelle-France entre 1627 et 1663. En 1627 comme en 1663, la colonie demeure sous l’autorité du roi de France et de la métropole française."
+  },
+  {
+    id: "Q176",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P2 — 1608 – 1760",
+    points: 3,
+    enonce: "Expliquez comment les difficultés rencontrées par la Compagnie des Cent-Associés contribuent à l’instauration du gouvernement royal en 1663.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• une responsabilité de la Compagnie des Cent-Associés;\n• une difficulté rencontrée dans le développement de la colonie;\n• une intervention du roi de France en 1663.",
+    aspects: [
+      {
+        aspect: "Gouvernement royal"
+      },
+      {
+        aspect: "Monopole des compagnies"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le roi accorde à la compagnie l’exclusivité de certaines activités commerciales. En retour, celle-ci s’engage à soutenir l’établissement de sujets français dans la colonie et à contribuer à son organisation matérielle et économique. »",
+            source: "Adapté de la charte de la Compagnie des Cent-Associés (1627), citée dans Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord, XVIe-XVIIIe siècle, Québec, Presses de l'Université Laval, 1991."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "graphique_population_nouvelle_france_1627-1663.png",
+            source: "Données adaptées à des fins pédagogiques à partir de l'évolution démographique de la Nouvelle-France."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "org_pol_apres_1663.png",
+            source: "adapté de Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 4
+    },
+    guide: "La Compagnie des Cent-Associés a pour responsabilité de favoriser le développement et le peuplement de la Nouvelle-France. Cependant, la population de la colonie demeure faible et son développement progresse lentement. Comme la compagnie ne remplit pas adéquatement ses obligations, le roi de France instaure le gouvernement royal en 1663 afin de mieux administrer et développer la colonie."
   }
 ]
