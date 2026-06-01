@@ -3914,6 +3914,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q197": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la continuité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la continuité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -4235,6 +4257,12 @@ const IMAGE_DB = {
   },
   "huron_1700.png": {
     src: "images/huron_1700.png"
+  },
+  "agriculture_1670.png": {
+    src: "images/agriculture_1670.png"
+  },
+  "agriculture_1750.png": {
+    src: "images/agriculture_1750.png"
   }
 }
 
@@ -12991,5 +13019,48 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "L'animisme ou les croyances animistes."
+  },
+  {
+    id: "Q197",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Continuité",
+    enonce: "Indiquez un élément de continuité dans les activités de subsistance pratiquées par les colons en Nouvelle-France entre 1670 et 1750.",
+    aspects: [
+      {
+        aspect: "Régime seigneurial"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "agriculture_1670.png",
+            soustitre: "Vers 1670",
+            source: "Adaptation et reconstitution historique réalisée à partir des caractéristiques générales de l'agriculture en Nouvelle-France. Illustration générée par IA (OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "agriculture_1750.png",
+            soustitre: "Vers 1750",
+            source: "Adaptation et reconstitution historique réalisée à partir des caractéristiques générales de l'agriculture en Nouvelle-France. Illustration générée par IA (OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "L'agriculture demeure la principale activité de subsistance pratiquée par les colons français en Nouvelle-France."
   }
 ]
