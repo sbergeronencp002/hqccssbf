@@ -4019,6 +4019,17 @@ const REGLETTES = {
         desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
       }
     ]
+  },
+  "Q202": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
   }
 }
 
@@ -4349,6 +4360,12 @@ const IMAGE_DB = {
   },
   "commerce_triangulaire.png": {
     src: "images/commerce_triangulaire.png"
+  },
+  "activites_eco_1670.png": {
+    src: "images/activites_eco_1670.png"
+  },
+  "activites_eco_1750.png": {
+    src: "images/activites_eco_1750.png"
   }
 }
 
@@ -13329,5 +13346,48 @@ const QUESTIONS = [
         ]
       ]
     }
+  },
+  {
+    id: "Q202",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P2 — 1608 – 1760",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s'il y a changement ou continuité dans les activités économiques pratiquées dans la colonie après l'instauration du gouvernement royal. Justifiez votre réponse à l'aide de faits et d'un repère de temps.",
+    aspects: [
+      {
+        aspect: "Diversification économique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "activites_eco_1670.png",
+            soustitre: "Principales activités économiques de la colonie vers 1663",
+            source: "adapté de Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord, XVIe-XVIIIe siècle."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "activites_eco_1750.png",
+            soustitre: "Principales activités économiques de la colonie vers 1700",
+            source: "adapté de Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord, XVIe-XVIIIe siècle."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Changement\nIl y a changement, car après l'instauration du gouvernement royal en 1663, de nouvelles activités économiques apparaissent dans la colonie. Vers 1700, on retrouve notamment la construction navale, les forges et les tanneries.\n\nContinuité\nIl y a continuité, car le commerce des fourrures, l'agriculture et la pêche sont pratiqués avant et après l'instauration du gouvernement royal. Ces activités sont présentes vers 1663 comme vers 1700."
   }
 ]
