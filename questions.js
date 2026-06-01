@@ -3936,6 +3936,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
       }
     ]
+  },
+  "Q198": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -4263,6 +4280,9 @@ const IMAGE_DB = {
   },
   "agriculture_1750.png": {
     src: "images/agriculture_1750.png"
+  },
+  "commerce_triangulaire.png": {
+    src: "images/commerce_triangulaire.png"
   }
 }
 
@@ -13062,5 +13082,35 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "L'agriculture demeure la principale activité de subsistance pratiquée par les colons français en Nouvelle-France."
+  },
+  {
+    id: "Q198",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez le nom du système commercial associé aux échanges entre la France, la Nouvelle-France et les Antilles.",
+    aspects: [
+      {
+        aspect: "Diversification économique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "commerce_triangulaire.png",
+            source: "Reconstitution pédagogique des échanges entre la France, la Nouvelle-France et les Antilles. Schéma généré par IA (OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le commerce triangulaire."
   }
 ]
