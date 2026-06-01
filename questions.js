@@ -3735,6 +3735,23 @@ const REGLETTES = {
         desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."
       }
     ]
+  },
+  "Q188": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -12462,5 +12479,35 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les échanges commerciaux (le troc, le commerce)."
+  },
+  {
+    id: "Q188",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez une fonction de la place publique en Nouvelle-France.",
+    aspects: [
+      {
+        aspect: "Villes du Canada"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le marché constitue un lieu central de la vie urbaine où les habitants viennent vendre leurs produits, s’approvisionner et entretenir des relations économiques indispensables au fonctionnement de la colonie. »",
+            source: "Dechêne, Louise. Habitants et marchands de Montréal au XVIIe siècle. Montréal, Boréal Compact, 1988 (1re éd. 1974)."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Lieu d'échanges commerciaux ou de troc."
   }
 ]
