@@ -3975,6 +3975,28 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
       }
     ]
+  },
+  "Q200": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -13203,5 +13225,35 @@ const QUESTIONS = [
         ]
       ]
     }
+  },
+  {
+    id: "Q200",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    enonce: "Indiquez une conséquence des mesures mises en place par les intendants sur l'économie de la colonie.",
+    aspects: [
+      {
+        aspect: "Diversification économique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Au cours du 18e siècle, on observe l'apparition de chantiers navals, de forges, de tanneries et d'autres métiers spécialisés qui s'ajoutent aux activités déjà pratiquées dans la vallée du Saint-Laurent. »",
+            source: "Alain Beaulieu, Yves Bergeron et Jacques Mathieu, Les Québécois : héritage et projets, CEC, édition secondaire."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "La diviersification économique ou l'économie de la colonie se diversifie."
   }
 ]
