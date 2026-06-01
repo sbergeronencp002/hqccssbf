@@ -3636,6 +3636,17 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
       }
     ]
+  },
+  "Q183": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
   }
 }
 
@@ -3939,6 +3950,12 @@ const IMAGE_DB = {
   },
   "origines_geo_1740.png": {
     src: "images/origines_geo_1740.png"
+  },
+  "origines_sociale_1670.png": {
+    src: "images/origines_sociale_1670.png"
+  },
+  "origines_sociale_1740.png": {
+    src: "images/origines_sociale_1740.png"
   }
 }
 
@@ -12139,5 +12156,48 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "La Normandie demeure la principale région d'origine des immigrants français. Elle représente 28 % des immigrants vers 1670 et 26 % vers 1740."
+  },
+  {
+    id: "Q183",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P2 — 1608 – 1760",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans les origines sociales des immigrants français en Nouvelle-France entre 1670 et 1740.",
+    aspects: [
+      {
+        aspect: "Croissance de la population"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "origines_sociale_1670.png",
+            soustitre: "Origines sociales des immigrants vers 1670",
+            source: "Données adaptées à partir des travaux de Yves Landry et Hubert Charbonneau sur les origines régionales des immigrants français en Nouvelle-France."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "origines_sociale_1740.png",
+            soustitre: "Origines sociales des immigrants vers 1740",
+            source: "Données adaptées à partir des travaux de Yves Landry et Hubert Charbonneau sur les origines régionales des immigrants français en Nouvelle-France."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Continuité.\n\nEn 1670 comme en 1740, les artisans constituent le principal groupe social parmi les immigrants français en Nouvelle-France. Ils représentent 35 % des immigrants vers 1670 et 38 % vers 1740.\n\nChangement.\n\nChangement. Entre 1670 et 1740, la répartition des origines sociales des immigrants français se modifie. La proportion de bourgeois et marchands augmente de 5 % à 8 %, tandis que celle des soldats passe de 10 % à 8 %."
   }
 ]
