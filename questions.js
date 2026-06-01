@@ -12060,7 +12060,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "origines_geo_1670.png",
-            soustitre: "Origines sociales des immigrants vers 1670",
+            soustitre: "Origines géographiques des immigrants vers 1670",
             source: "Données adaptées à partir des travaux de Yves Landry et Hubert Charbonneau sur les origines régionales des immigrants français en Nouvelle-France."
           }
         ]
@@ -12071,7 +12071,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             ref: "origines_geo_1740.png",
-            soustitre: "Origines sociales des immigrants vers 1740",
+            soustitre: "Origines géographiques des immigrants vers 1740",
             source: "Données adaptées à partir des travaux de Yves Landry et Hubert Charbonneau sur les origines régionales des immigrants français en Nouvelle-France."
           }
         ]
