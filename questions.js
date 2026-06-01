@@ -3802,6 +3802,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
+  },
+  "Q191": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -12669,5 +12686,35 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "L'adoption d'éléments culturels européens, notamment dans l'habillement ou les armes (arquebuse)."
+  },
+  {
+    id: "Q191",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez le phénomène illustré par l'adoption de certains éléments de la culture européenne par des Autochtones en Nouvelle-France.",
+    aspects: [
+      {
+        aspect: "Populations autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les échanges avec les Européens modifient les modes de vie autochtones, notamment par l'utilisation de nouveaux outils, vêtements et armes. »",
+            source: "Bruce G. Trigger, Les Enfants d'Aataentsic (1976)."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Acculturation."
   }
 ]
