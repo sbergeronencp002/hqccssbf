@@ -3691,6 +3691,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q186": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève dégage correctement la similitude."
+      },
+      {
+        pts: 1,
+        desc: "L'élève dégage plus ou moins correctement la similitude."
+      },
+      {
+        pts: 0,
+        desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."
+      }
+    ]
   }
 }
 
@@ -4000,6 +4022,12 @@ const IMAGE_DB = {
   },
   "origines_sociale_1740.png": {
     src: "images/origines_sociale_1740.png"
+  },
+  "place_publique_qc.png": {
+    src: "images/place_publique_qc.png"
+  },
+  "place_publique_mtl.png": {
+    src: "images/place_publique_mtl.png"
   }
 }
 
@@ -12326,5 +12354,48 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les historiens sont en désaccord sur l'importance de l'esclavage dans la société de la Nouvelle-France. L'un considère qu'il occupe une place limitée, tandis que l'autre estime qu'il est bien intégré à la société coloniale."
+  },
+  {
+    id: "Q186",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Similitude",
+    enonce: "À partir des documents A et B, indiquez une fonction commune de la place publique de Québec et de Ville-Marie.",
+    aspects: [
+      {
+        aspect: "Villes du Canada"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "place_publique_qc.png",
+            soustitre: "Place publique de Québec vers 1700",
+            source: "Reconstitution historique (IA), inspirée de l'organisation de la place publique de Québec au XVIIe siècle."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "place_publique_mtl.png",
+            soustitre: "Place publique de Ville-Marie vers 1700",
+            source: "Reconstitution historique (IA), inspirée de l'organisation de la place publique de Ville-Marie au XVIIe siècle."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les deux places publiques servent de lieu d'échanges commerciaux (ou de commerce)."
   }
 ]
