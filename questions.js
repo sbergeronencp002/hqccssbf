@@ -3997,6 +3997,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q201": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
+      }
+    ]
   }
 }
 
@@ -13255,5 +13277,57 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "La diviersification économique ou l'économie de la colonie se diversifie."
+  },
+  {
+    id: "Q201",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Cause et conséquence",
+    enonce: "Les documents A et B présentent des informations sur l'économie de la Nouvelle-France. Indiquez quel document présente une cause et quel document présente une conséquence des mesures mises en place par les intendants.",
+    aspects: [
+      {
+        aspect: "Diversification économique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« L'administration coloniale encourage la création de manufactures, soutient certains chantiers de construction navale et favorise l'établissement de nouvelles activités de production dans la colonie. »",
+            source: "Marcel Trudel, Initiation à la Nouvelle-France : histoire et institutions, Montréal, Holt, Rinehart et Winston, 1968."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Au XVIIe siècle, la colonie demeure largement dépendante du commerce des fourrures, qui constitue l'essentiel de ses exportations et mobilise une grande partie de ses activités économiques. »",
+            source: "Allan Greer, Brève histoire des peuples de la Nouvelle-France, Montréal, Boréal, 1998."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "cause-consequence"
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Cause",
+        "Conséquence"
+      ],
+      rangees: [
+        [
+          "B",
+          "A"
+        ]
+      ]
+    }
   }
 ]
