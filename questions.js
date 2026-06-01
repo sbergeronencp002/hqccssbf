@@ -3647,6 +3647,28 @@ const REGLETTES = {
       "0 point"
     ],
     niveaux: []
+  },
+  "Q184": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -12199,5 +12221,46 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Continuité.\n\nEn 1670 comme en 1740, les artisans constituent le principal groupe social parmi les immigrants français en Nouvelle-France. Ils représentent 35 % des immigrants vers 1670 et 38 % vers 1740.\n\nChangement.\n\nChangement. Entre 1670 et 1740, la répartition des origines sociales des immigrants français se modifie. La proportion de bourgeois et marchands augmente de 5 % à 8 %, tandis que celle des soldats passe de 10 % à 8 %."
+  },
+  {
+    id: "Q184",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux historiens sur l'évolution démographique de la Nouvelle-France. Sur quel point précis ces historiens sont-ils d'accord ?",
+    aspects: [
+      {
+        aspect: "Croissance de la population"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Au début du XVIIIe siècle, la population canadienne augmente rapidement grâce à la fécondité élevée des familles établies dans la colonie. »",
+            source: "Yves Landry, Les Filles du roi au XVIIe siècle, Montréal, Leméac, 2013."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« La croissance de la population découle principalement du grand nombre de naissances, bien davantage que de l'arrivée de nouveaux immigrants en provenance de France. »",
+            source: "Hubert Charbonneau, Naissance d'une population : les Français établis au Canada au XVIIe siècle, Montréal, Presses de l'Université de Montréal, 1987."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les deux historiens sont d'accord pour dire que la croissance de la population de la Nouvelle-France s'explique principalement par l'accroissement naturel, c'est-à-dire par les naissances."
   }
 ]
