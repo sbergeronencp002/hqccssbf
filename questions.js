@@ -3819,6 +3819,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q192": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -12716,5 +12733,35 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Acculturation."
+  },
+  {
+    id: "Q192",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez le phénomène qui résulte des unions entre Autochtones et Européens en Nouvelle-France.",
+    aspects: [
+      {
+        aspect: "Populations autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "Les unions entre Autochtones et Européens contribuent à l'apparition d'une population métissée dans plusieurs régions de l'Amérique française. »",
+            source: "Delâge, Denys. Le pays renversé : Amérindiens et Européens en Amérique du Nord-Est, 1600-1664. Montréal, Boréal, 1991."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Métissage."
   }
 ]
