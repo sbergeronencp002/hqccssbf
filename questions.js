@@ -3780,6 +3780,28 @@ const REGLETTES = {
         desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
       }
     ]
+  },
+  "Q190": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -4095,6 +4117,12 @@ const IMAGE_DB = {
   },
   "place_publique_mtl.png": {
     src: "images/place_publique_mtl.png"
+  },
+  "huron_1600.png": {
+    src: "images/huron_1600.png"
+  },
+  "huron_1700.png": {
+    src: "images/huron_1700.png"
   }
 }
 
@@ -12588,5 +12616,58 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Marcel Trudel estime que le métissage a eu une importance limitée (la différence), alors que Denys Delâge et Olive Patricia Dickason estiment qu'il a contribué de façon importante à l'évolution de la population de la Nouvelle-France (la similitude)."
+  },
+  {
+    id: "Q190",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Changement",
+    enonce: "À partir des documents A et B, indiquez un changement dans le mode de vie des Hurons-Wendat entre 1600 et 1700.",
+    aspects: [
+      {
+        aspect: "Populations autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "",
+            soustitre: "Représentation d'un homme huron-wendat vers 1600",
+            source: "Représentation historique (IA) inspirée"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "huron_1600.png",
+            soustitre: "Représentation d'un homme huron-wendat vers 1700",
+            source: "Reconstitution historique (IA), inspirée des travaux de Bruce G. Trigger sur les Hurons-Wendat."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "huron_1700.png",
+            source: "Reconstitution historique (IA), inspirée des travaux de Bruce G. Trigger sur les Hurons-Wendat."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "L'adoption d'éléments culturels européens, notamment dans l'habillement ou les armes (arquebuse)."
   }
 ]
