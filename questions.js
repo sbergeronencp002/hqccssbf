@@ -7441,7 +7441,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "cause-consequence"
+      type: "lignes",
+      nombre: 2
     },
     guide: "Les autorités françaises adoptent une politique d’immigration afin d’augmenter la population de la Nouvelle-France."
   },
