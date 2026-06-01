@@ -3875,6 +3875,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q195": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (3 sur 3)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (2 sur 3)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
+      }
+    ]
   }
 }
 
@@ -12853,5 +12875,74 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Le transport des personnes et des marchandises ou les communications ou l'accès au commerce ou l'accès à l'eau."
+  },
+  {
+    id: "Q195",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "3 documents",
+    enonce: "Les documents A à C présentent des descriptions de différents seigneurs en Nouvelle-France. Associez chaque document au type de seigneur correspondant.",
+    aspects: [
+      {
+        aspect: "Régime seigneurial"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Il participe aux campagnes militaires de la colonie et obtient un vaste domaine après plusieurs années de service auprès du roi. »",
+            source: "Louise Dechêne, Le partage des subsistances au Canada sous le Régime français, Montréal, Boréal, 1994."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les revenus tirés du domaine servent notamment à financer un hôpital, une école et diverses œuvres de bienfaisance. »",
+            source: "Jean Hamelin, Histoire du catholicisme québécois, Montréal, Boréal, 1984."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Sa fortune provient principalement du commerce. Au fil du temps, il investit dans des terres afin d'accroître son influence au sein de la société coloniale. »",
+            source: "Allan Greer, Brève histoire des peuples de la Nouvelle-France, Montréal, Boréal, 1998."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Bourgeois",
+        "Communauté religieuse",
+        "Noble"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Bourgeois",
+        "Communauté religieuse",
+        "Noble"
+      ],
+      rangees: [
+        [
+          "B",
+          "C",
+          "A"
+        ]
+      ]
+    }
   }
 ]
