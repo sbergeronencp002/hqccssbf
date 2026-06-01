@@ -3897,6 +3897,23 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
       }
     ]
+  },
+  "Q196": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -12944,5 +12961,35 @@ const QUESTIONS = [
         ]
       ]
     }
+  },
+  {
+    id: "Q196",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "Indiquez le type de croyance religieuse pratiqué par plusieurs peuples autochtones vers 1500.",
+    aspects: [
+      {
+        aspect: "Rapports sociaux chez les Autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les peuples autochtones considèrent que les animaux, les plantes, les cours d’eau et les phénomènes naturels sont habités par des esprits avec lesquels il est possible d’entrer en relation. »",
+            source: "Denys Delâge, Le pays renversé. Amérindiens et Européens en Amérique du Nord-Est, 1600-1664, Montréal, Boréal, 1991."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "L'animisme ou les croyances animistes."
   }
 ]
