@@ -12670,19 +12670,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "",
-            soustitre: "Représentation d'un homme huron-wendat vers 1600",
-            source: "Représentation historique (IA) inspirée"
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document B",
             ref: "huron_1600.png",
-            soustitre: "Représentation d'un homme huron-wendat vers 1700",
+            soustitre: "Représentation d'un homme huron-wendat vers 1600",
             source: "Reconstitution historique (IA), inspirée des travaux de Bruce G. Trigger sur les Hurons-Wendat."
           }
         ]
@@ -12691,8 +12680,9 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document C",
+            titre: "Document B",
             ref: "huron_1700.png",
+            soustitre: "Représentation d'un homme huron-wendat vers 1700",
             source: "Reconstitution historique (IA), inspirée des travaux de Bruce G. Trigger sur les Hurons-Wendat."
           }
         ]
