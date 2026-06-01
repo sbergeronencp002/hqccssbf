@@ -3669,6 +3669,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q185": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de divergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -12263,5 +12285,46 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les deux historiens sont d'accord pour dire que la croissance de la population de la Nouvelle-France s'explique principalement par l'accroissement naturel, c'est-à-dire par les naissances."
+  },
+  {
+    id: "Q185",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Divergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux historiens sur l'esclavage en Nouvelle-France. Sur quel point précis ces historiens sont-ils en désaccord ?",
+    aspects: [
+      {
+        aspect: "Villes du Canada"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le nombre relativement limité d'esclaves en Nouvelle-France fait en sorte que l'esclavage occupe une place moins importante dans la vie économique de la colonie que dans plusieurs autres colonies américaines. »",
+            source: "Marcel Trudel, L'esclavage au Canada français, Montréal, Hurtubise HMH, 1960."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Même si leur nombre demeure modeste, les esclaves sont présents dans plusieurs villes et foyers de la colonie, ce qui témoigne d'une intégration réelle de l'esclavage à la société de la Nouvelle-France. »",
+            source: "Brett Rushforth, Bonds of Alliance: Indigenous and Atlantic Slaveries in New France, Chapel Hill, University of North Carolina Press, 2012."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les historiens sont en désaccord sur l'importance de l'esclavage dans la société de la Nouvelle-France. L'un considère qu'il occupe une place limitée, tandis que l'autre estime qu'il est bien intégré à la société coloniale."
   }
 ]
