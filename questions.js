@@ -3953,6 +3953,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q199": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (3 sur 3)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (2 sur 3)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
+      }
+    ]
   }
 }
 
@@ -13112,5 +13134,74 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Le commerce triangulaire."
+  },
+  {
+    id: "Q199",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "3 documents",
+    enonce: "Les documents A à C présentent des rôles joués par différents territoires dans les échanges commerciaux de l'Empire français au 18e siècle. Associez chaque document au rôle correspondant.",
+    aspects: [
+      {
+        aspect: "Diversification économique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Selon les principes du mercantilisme, [la métropole] reçoit les matières premières produites dans ses colonies, les transforme dans ses manufactures puis réexporte des produits finis vers les différents territoires de son empire colonial. » (36 mots)",
+            source: "Allan Greer, Brève histoire des peuples de la Nouvelle-France, Montréal, Boréal, 1998, p. 95-97."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« [La colonie] approvisionne les Antilles françaises en bois, poisson et farine. Ces échanges permettent à la colonie de participer davantage au commerce impérial et de réduire sa dépendance envers le seul marché métropolitain. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1 : Des origines à 1791, Québec Amérique, 1995, p. 171-173."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« [Elles] offrent un débouché important aux produits canadiens. En retour, elles expédient du sucre, du rhum et d'autres produits tropicaux qui circulent ensuite dans les réseaux commerciaux de l'Empire français. »",
+            source: "Gilles Havard et Cécile Vidal, Histoire de l'Amérique française, Paris, Flammarion, 2003, p. 337-339."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Antilles",
+        "France",
+        "Nouvelle-France"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Antilles",
+        "France",
+        "Nouvelle-France"
+      ],
+      rangees: [
+        [
+          "C",
+          "A",
+          "B"
+        ]
+      ]
+    }
   }
 ]
