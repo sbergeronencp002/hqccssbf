@@ -4471,6 +4471,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
+  },
+  "Q224": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -4846,6 +4863,9 @@ const IMAGE_DB = {
   },
   "revolte_pontiac.png": {
     src: "images/revolte_pontiac.png"
+  },
+  "arrivee_loyalistes.png": {
+    src: "images/arrivee_loyalistes.png"
   }
 }
 
@@ -14702,6 +14722,37 @@ const QUESTIONS = [
             titre: "Document A",
             texte: "« Les habitants de la colonie peuvent désormais pratiquer librement leur religion et les membres du clergé catholique retrouvent le droit de percevoir la dîme auprès des fidèles. »\n\n« Les autorités britanniques permettent à la population de conserver plusieurs règles juridiques héritées du régime français, notamment en ce qui concerne la propriété et l'héritage des biens. »",
             source: "Marcel Trudel, Initiation à la Nouvelle-France, Holt, Rinehart et Winston, 1968."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1760-1800.png"
+    },
+    guide: "B"
+  },
+  {
+    id: "Q224",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Loyalistes"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "arrivee_loyalistes.png",
+            source: "econstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de l'arrivée des Loyalistes, 2026."
           }
         ]
       }
