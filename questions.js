@@ -4386,6 +4386,23 @@ const REGLETTES = {
         desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
       }
     ]
+  },
+  "Q219": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -4746,6 +4763,12 @@ const IMAGE_DB = {
   },
   "canot_ecorce.png": {
     src: "images/canot_ecorce.png"
+  },
+  "invasion_americaine.png": {
+    src: "images/invasion_americaine.png"
+  },
+  "ligne_1760-1800.png": {
+    src: "images/ligne_1760-1800.png"
   }
 }
 
@@ -14454,5 +14477,37 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Gaston Deschênes considère que la résistance française se poursuit après la bataille (la différence), alors que Jacques Lacoursière et Marcel Trudel considèrent que la bataille marque un tournant dans la Guerre de la Conquête (la similitude)."
+  },
+  {
+    id: "Q219",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Invasion américaine"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "invasion_americaine.png",
+            soustitre: "Combats dans les rue de Québec lors de l'invasion américaine",
+            source: "Reconstitution historique réalisée à l'aide de l'intelligence artificielle (ChatGPT/OpenAI), inspirée de représentations de l'invasion américaine de Québec en 1775, 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1760-1800.png"
+    },
+    guide: "B"
   }
 ]
