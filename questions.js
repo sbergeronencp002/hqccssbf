@@ -4136,6 +4136,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q208": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -4481,6 +4503,9 @@ const IMAGE_DB = {
   },
   "eglise_catholique_n-f_1700.png": {
     src: "images/eglise_catholique_n-f_1700.png"
+  },
+  "traversee_atlantique_1700.png": {
+    src: "images/traversee_atlantique_1700.png"
   }
 }
 
@@ -13688,5 +13713,37 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "La pratique de la religion catholique."
+  },
+  {
+    id: "Q208",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de l'éloignement de la Nouvelle-France par rapport à la France sur la vie des colons.",
+    aspects: [
+      {
+        aspect: "Église catholique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "traversee_atlantique_1700.png",
+            soustitre: "Le transport entre la colonie et la métropole vers 1700",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les colons produisent davantage de biens localement ou les colons s'adaptent aux ressources du territoire ou les colons deviennent plus autonomes ou les marchandises arrivent moins rapidement de France."
   }
 ]
