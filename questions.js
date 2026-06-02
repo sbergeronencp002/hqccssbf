@@ -13526,6 +13526,9 @@ const QUESTIONS = [
     enonce: "Indiquez une conséquence du développement de l'agriculture sur la population de la Nouvelle-France.",
     aspects: [
       {
+        aspect: "Croissance de la population"
+      },
+      {
         aspect: "Diversification économique"
       }
     ],
