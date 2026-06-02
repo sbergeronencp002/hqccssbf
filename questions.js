@@ -4403,6 +4403,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
+  },
+  "Q220": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -4769,6 +4786,12 @@ const IMAGE_DB = {
   },
   "ligne_1760-1800.png": {
     src: "images/ligne_1760-1800.png"
+  },
+  "capitulation_mtl_1760.png": {
+    src: "images/capitulation_mtl_1760.png"
+  },
+  "ligne_1755-1795.png": {
+    src: "images/ligne_1755-1795.png"
   }
 }
 
@@ -14509,5 +14532,37 @@ const QUESTIONS = [
       ref: "ligne_1760-1800.png"
     },
     guide: "B"
+  },
+  {
+    id: "Q220",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Régime militaire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "capitulation_mtl_1760.png",
+            soustitre: "Capitulation de Montréal",
+            source: "Reconstitution historique réalisée à l'aide de l'intelligence artificielle (ChatGPT/OpenAI), inspirée de représentations de l'invasion américaine de Québec en 1775, 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1755-1795.png"
+    },
+    guide: "A"
   }
 ]
