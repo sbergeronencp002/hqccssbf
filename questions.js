@@ -14559,7 +14559,7 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "invasion_americaine.png",
             soustitre: "Combats dans les rue de Québec lors de l'invasion américaine",
-            source: "Reconstitution historique réalisée à l'aide de l'intelligence artificielle (ChatGPT/OpenAI), inspirée de représentations de l'invasion américaine de Québec en 1775, 2026."
+            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de l'invasion américaine, 2026."
           }
         ]
       }
