@@ -4314,6 +4314,28 @@ const REGLETTES = {
         desc: "L'élève ne situe pas tous les faits dans le temps."
       }
     ]
+  },
+  "Q216": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
   }
 }
 
@@ -14211,5 +14233,87 @@ const QUESTIONS = [
       ref: "ligne_abDc.png"
     },
     guide: "C - A - D - B"
+  },
+  {
+    id: "Q216",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "4 documents",
+    enonce: "Les documents A à D présentent des événements liés à la Guerre de la Conquête. Associez chaque document à l’événement correspondant.",
+    aspects: [
+      {
+        aspect: "Guerre de la Conquête"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La capture d’un important poste militaire situé à l’est de la colonie modifie l’équilibre des forces et ouvre une nouvelle voie d’attaque vers le cœur du territoire français. »",
+            source: "Marcel Trudel, Histoire de la Nouvelle-France, adaptation pédagogique."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Quelques mois après la perte de la capitale, les forces françaises remportent une importante victoire terrestre, sans toutefois réussir à reprendre la ville. »",
+            source: "Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord, adaptation pédagogique."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« La mort des commandants des deux armées marque cet affrontement dont l’issue modifie profondément le cours de la guerre en Amérique du Nord. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1, adaptation pédagogique."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Avant l’affrontement décisif qui oppose les deux armées près de la capitale, la ville subit pendant plusieurs semaines les attaques des forces britanniques. »",
+            source: "Gaston Deschênes, La Guerre de la Conquête, adaptation pédagogique."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Bataille de Sainte-Foy",
+        "Bataille des Plaines d'Abraham",
+        "Prise de Louisbourg",
+        "Siège de Québec"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Bataille de Sainte-Foy",
+        "Bataille des Plaines d'Abraham",
+        "Prise de Louisbourg",
+        "Siège de Québec"
+      ],
+      rangees: [
+        [
+          "B",
+          "C",
+          "A",
+          "D"
+        ]
+      ]
+    }
   }
 ]
