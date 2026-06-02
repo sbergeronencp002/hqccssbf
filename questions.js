@@ -4297,6 +4297,23 @@ const REGLETTES = {
         desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
       }
     ]
+  },
+  "Q215": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "2 points",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève situe tous les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas tous les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -14133,5 +14150,66 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Marcel Trudel considère que les alliances autochtones favorisent les Français (la différence), alors que Jacques Lacoursière et Gilles Havard considèrent que les Britanniques sont avantagés par leur plus grande population (la similitude)."
+  },
+  {
+    id: "Q215",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Ordre chronologique",
+    enonce: "Les documents A à D présentent des événements liés à la Guerre de la Conquête. Placez-les en ordre chronologique.",
+    aspects: [
+      {
+        aspect: "Guerre de la Conquête"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Craignant que certains habitants demeurent loyaux à la France, les autorités britanniques entreprennent une vaste opération visant à disperser une population établie depuis plusieurs générations dans les Maritimes. »",
+            source: "Naomi Griffiths, From Migrant to Acadian, Montréal, McGill-Queen's University Press, adaptation pédagogique."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Après plusieurs mois de préparatifs, les forces britanniques parviennent à établir leur position à proximité de la principale ville de la colonie, où se joue l’issue du conflit. »",
+            source: "Marcel Trudel, Histoire de la Nouvelle-France, adaptation pédagogique."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Dans la vallée de l’Ohio, des affrontements opposent des troupes françaises et britanniques avant que le conflit ne s’étende à l’ensemble de l’Amérique du Nord. »",
+            source: "Gilles Havard et Cécile Vidal, Histoire de l’Amérique française, Paris, Flammarion, adaptation pédagogique."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« La chute de cette importante forteresse du golfe du Saint-Laurent prive la Nouvelle-France d’un poste militaire essentiel à la défense de ses accès maritimes. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1, Septentrion, adaptation pédagogique."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_abDc.png"
+    },
+    guide: "C - A - D - B"
   }
 ]
