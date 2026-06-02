@@ -228,7 +228,7 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
   </div>
 </div>
 
-<script src="questions.js"></script>
+<script src="questions.js?v=1"></script>
 <script>
 const TOKEN = 'github_pat_11CA47PMQ0' + 'MsIxCQ4RttwI_6f38LK8y8LKrivbEO95apaombhHhZovhcxymDmIS3LtL45WPYORziUciWLm';
 const REPO  = 'sbergeronencp002/hqccssbf';
@@ -574,13 +574,17 @@ async function confirmRename() {
     });
     if (!rq.ok) throw new Error('Impossible de lire questions.js (' + rq.status + ')');
     const dq = await rq.json();
-    const oldContent = decodeURIComponent(escape(atob(dq.content.replace(/\n/g,''))));
+    const rawBytes = Uint8Array.from(atob(dq.content.replace(/\n/g,'')), c => c.charCodeAt(0));
+    const oldContent = new TextDecoder('utf-8').decode(rawBytes);
     const newContent = oldContent.split(renameTarget).join(newName);
     if (newContent === oldContent) {
       status.className = 'rename-status warn';
       status.textContent = 'Avertissement : aucune référence à ' + renameTarget + ' trouvée dans questions.js.';
     } else {
-      const encoded = btoa(unescape(encodeURIComponent(newContent)));
+      const encBytes = new TextEncoder().encode(newContent);
+      let binary = '';
+      encBytes.forEach(b => binary += String.fromCharCode(b));
+      const encoded = btoa(binary);
       const rp = await fetch(API + 'questions.js', {
         method: 'PUT',
         headers: {Authorization: 'token ' + TOKEN, 'Content-Type': 'application/json'},
@@ -590,10 +594,11 @@ async function confirmRename() {
     }
 
     status.className = 'rename-status ok';
-    status.textContent = '✓ Renommé avec succès. Rechargez la page.';
+    status.textContent = '✓ Renommé avec succès.';
     updateDomAfterRename(renameTarget, newName);
     renameTarget = newName;
     document.getElementById('rename-old-label').textContent = 'Image actuelle : ' + newName;
+    setTimeout(closeRenameModal, 1800);
 
   } catch(err) {
     status.className = 'rename-status err';
@@ -617,10 +622,14 @@ function updateDomAfterRename(oldName, newName) {
     if (label && label.textContent === oldName.replace('.png','')) {
       label.textContent = newName.replace('.png','');
     }
-    // Update rename button onclick
+    // Update rename + replace buttons onclick
     const btn = h.querySelector('.btn-rename');
     if (btn && btn.getAttribute('onclick').includes(oldName)) {
       btn.setAttribute('onclick', `event.stopPropagation();openRename('${newName}')`);
+    }
+    const btnR = h.querySelector('.btn-replace');
+    if (btnR && btnR.getAttribute('onclick').includes(oldName)) {
+      btnR.setAttribute('onclick', `event.stopPropagation();openReplace('${newName}')`);
     }
     // Update header img title/onclick
     const hImg = h.querySelector('img');

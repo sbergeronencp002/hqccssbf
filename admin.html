@@ -1730,7 +1730,7 @@ async function publier() {
 
     // Next ID
     const nums = currentQuestions.map(q=>parseInt(q.id.replace(/\D/g,''))).filter(n=>!isNaN(n));
-    const nextId = 'Q' + (Math.max(...nums)+1);
+    const nextId = 'Q' + (nums.length ? Math.max(...nums)+1 : 1);
     document.getElementById('q-id').value = nextId;
     document.getElementById('next-id-badge').textContent = nextId;
 
