@@ -4420,6 +4420,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
+  },
+  "Q221": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -14562,6 +14579,37 @@ const QUESTIONS = [
     reponse: {
       type: "image",
       ref: "ligne_1755-1795.png"
+    },
+    guide: "A"
+  },
+  {
+    id: "Q221",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Proclamation royale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les nouveaux dirigeants imposent désormais les lois civiles anglaises et cherchent à remplacer plusieurs institutions héritées du régime français. »\n\n« Le territoire administré par les autorités britanniques est désormais limité principalement à la vallée du Saint-Laurent, alors que plusieurs régions sont détachées de la colonie. »",
+            source: "Denis Vaugeois, L'Amour du livre : l'édition au Québec, ses petits secrets et ses mystères, Septentrion, 2005."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1760-1800.png"
     },
     guide: "A"
   }
