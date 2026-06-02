@@ -4158,6 +4158,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q209": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -4506,6 +4528,12 @@ const IMAGE_DB = {
   },
   "traversee_atlantique_1700.png": {
     src: "images/traversee_atlantique_1700.png"
+  },
+  "maison_1650.png": {
+    src: "images/maison_1650.png"
+  },
+  "maison_1700.png": {
+    src: "images/maison_1700.png"
   }
 }
 
@@ -13745,5 +13773,48 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les colons produisent davantage de biens localement ou les colons s'adaptent aux ressources du territoire ou les colons deviennent plus autonomes ou les marchandises arrivent moins rapidement de France."
+  },
+  {
+    id: "Q209",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Changement",
+    enonce: "À partir des documents A et B, indiquez un changement apporté aux habitations des colons en Nouvelle-France entre 1650 et 1700.",
+    aspects: [
+      {
+        aspect: "Adaptation des colons"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "maison_1650.png",
+            soustitre: "Habitation en Nouvelle-France vers 1650",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "maison_1700.png",
+            soustitre: "Habitation en Nouvelle-France vers 1700",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Entre 1650 et 1700, les habitations des colons changent. Les maisons d'abord construites en bois avec une toiture peu inclinée sont de plus en plus construites en pierre avec une toiture plus inclinée."
   }
 ]
