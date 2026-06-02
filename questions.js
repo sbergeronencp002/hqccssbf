@@ -14803,7 +14803,7 @@ const QUESTIONS = [
             titre: "Document A",
             texte: "« Sa Majesté Britannique reconnaît lesdits États-Unis, à savoir le New Hampshire, le Massachusetts, le Rhode Island, le Connecticut, New York, le New Jersey, la Pennsylvanie, le Delaware, le Maryland, la Virginie, la Caroline du Nord, la Caroline du Sud et la Géorgie, comme États libres, souverains et indépendants. »",
             soustitre: "Extrait du traité de Paris",
-            source: "Traité de Paris, article I."
+            source: "Traité de Paris - document officiel."
           }
         ]
       }
