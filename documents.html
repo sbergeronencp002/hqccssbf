@@ -82,8 +82,9 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
 .size-badge.loading{background:var(--paper-3);color:var(--ink-3)}
 
 /* Rename button */
-.btn-rename{background:none;border:none;cursor:pointer;color:var(--ink-3);font-size:.8rem;padding:.15rem .3rem;border-radius:4px;transition:color .15s,background .15s;flex-shrink:0;line-height:1}
+.btn-rename,.btn-replace{background:none;border:none;cursor:pointer;color:var(--ink-3);font-size:.8rem;padding:.15rem .3rem;border-radius:4px;transition:color .15s,background .15s;flex-shrink:0;line-height:1}
 .btn-rename:hover{color:var(--accent);background:rgba(29,78,159,.08)}
+.btn-replace:hover{color:#276539;background:rgba(39,101,57,.08)}
 
 .all-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.7rem}
 .all-grid .tile{width:auto}
@@ -107,6 +108,26 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
 #lb-rename:hover{background:rgba(255,255,255,.22)}
 #lb-close{position:fixed;top:1rem;right:1.5rem;font-size:2rem;cursor:pointer;color:rgba(255,255,255,.7);line-height:1}
 #lb-close:hover{color:#fff}
+
+/* Replace modal */
+#replace-modal{display:none;position:fixed;inset:0;background:rgba(26,23,20,.6);z-index:1000;align-items:center;justify-content:center}
+#replace-modal.open{display:flex}
+.replace-box{background:#fff;border-radius:12px;padding:1.5rem;width:420px;max-width:92vw;box-shadow:0 8px 40px rgba(0,0,0,.18)}
+.replace-box h3{font-family:'DM Serif Display',Georgia,serif;font-size:1rem;font-weight:400;margin-bottom:.25rem}
+.replace-box p{font-size:.78rem;color:var(--ink-3);margin-bottom:1rem}
+.replace-drop{border:2px dashed var(--border);border-radius:8px;padding:1.25rem;text-align:center;cursor:pointer;transition:border-color .15s,background .15s;margin-bottom:.9rem}
+.replace-drop:hover,.replace-drop.drag{border-color:var(--accent);background:rgba(29,78,159,.04)}
+.replace-drop input{display:none}
+.replace-drop-label{font-size:.82rem;color:var(--ink-3)}
+.replace-preview{display:none;flex-direction:column;align-items:center;gap:.6rem;margin-bottom:.9rem}
+.replace-preview.show{display:flex}
+.replace-preview img{max-width:100%;max-height:200px;border-radius:6px;border:1px solid var(--border)}
+.replace-preview-meta{font-size:.75rem;color:var(--ink-3);text-align:center}
+.replace-actions{display:flex;gap:.6rem;justify-content:flex-end}
+.replace-actions button{padding:.42rem .95rem;border-radius:7px;font-family:inherit;font-size:.8rem;font-weight:500;cursor:pointer;border:1px solid transparent;transition:background .15s}
+.replace-status{font-size:.78rem;margin-top:.6rem;min-height:1.2em;text-align:right}
+.replace-status.err{color:#842029}
+.replace-status.ok{color:#276539}
 
 /* Rename modal */
 #rename-modal{display:none;position:fixed;inset:0;background:rgba(26,23,20,.6);z-index:1000;align-items:center;justify-content:center}
@@ -165,6 +186,31 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
     <span id="lb-caption"></span>
     <span id="lb-size" class="size-badge loading"></span>
     <button id="lb-rename" onclick="event.stopPropagation();openRename(currentLbImg)">✏ Renommer</button>
+    <button id="lb-replace" onclick="event.stopPropagation();openReplace(currentLbImg)" style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:6px;padding:.35rem .8rem;font-size:.78rem;cursor:pointer;font-family:inherit;transition:background .15s">⇪ Remplacer</button>
+  </div>
+</div>
+
+<!-- Replace modal -->
+<div id="replace-modal" onclick="closeReplaceModal(event)">
+  <div class="replace-box" onclick="event.stopPropagation()">
+    <h3>Remplacer l'image</h3>
+    <p id="replace-old-label"></p>
+    <div class="replace-drop" id="replace-drop" onclick="document.getElementById('replace-file').click()"
+         ondragover="event.preventDefault();this.classList.add('drag')"
+         ondragleave="this.classList.remove('drag')"
+         ondrop="event.preventDefault();this.classList.remove('drag');handleReplaceFile(event.dataTransfer.files[0])">
+      <input type="file" id="replace-file" accept="image/png,image/jpeg" onchange="handleReplaceFile(this.files[0])">
+      <span class="replace-drop-label">Cliquez ou déposez une image PNG/JPEG</span>
+    </div>
+    <div class="replace-preview" id="replace-preview">
+      <img id="replace-preview-img" src="">
+      <div class="replace-preview-meta" id="replace-preview-meta"></div>
+    </div>
+    <div class="replace-actions">
+      <button class="btn-cancel" onclick="closeReplaceModal()">Annuler</button>
+      <button class="btn-confirm" id="replace-confirm-btn" onclick="confirmReplace()" disabled>Remplacer</button>
+    </div>
+    <div class="replace-status" id="replace-status"></div>
   </div>
 </div>
 
@@ -271,6 +317,7 @@ function tileHtml(q) {
         <span class="img-label">${img.replace('.png','')}</span>
         ${sizeBadgeHtml(img)}
         <button class="btn-rename" title="Renommer" onclick="event.stopPropagation();openRename('${img}')">✏</button>
+        <button class="btn-replace" title="Remplacer l'image" onclick="event.stopPropagation();openReplace('${img}')">⇪</button>
         <span class="badge">${ids.length} questions</span>
         <span class="chevron">▾</span>
       </div>
@@ -369,7 +416,99 @@ function closeLb(e) {
     document.getElementById('lb').classList.remove('open');
   }
 }
-document.addEventListener('keydown', e => { if (e.key==='Escape') { closeLb(); closeRenameModal(); } });
+document.addEventListener('keydown', e => { if (e.key==='Escape') { closeLb(); closeRenameModal(); closeReplaceModal(); } });
+
+// ── Replace ─────────────────────────────────────────────────────────────────
+
+let replaceTarget = '';
+let replaceB64 = '';
+
+function openReplace(img) {
+  replaceTarget = img;
+  replaceB64 = '';
+  document.getElementById('replace-old-label').textContent = 'Image actuelle : ' + img;
+  document.getElementById('replace-file').value = '';
+  document.getElementById('replace-preview').classList.remove('show');
+  document.getElementById('replace-preview-img').src = '';
+  document.getElementById('replace-status').textContent = '';
+  document.getElementById('replace-status').className = 'replace-status';
+  document.getElementById('replace-confirm-btn').disabled = true;
+  document.getElementById('replace-modal').classList.add('open');
+}
+
+function closeReplaceModal(e) {
+  if (!e || e.target === document.getElementById('replace-modal')) {
+    document.getElementById('replace-modal').classList.remove('open');
+  }
+}
+
+function handleReplaceFile(file) {
+  if (!file) return;
+  const status = document.getElementById('replace-status');
+  status.textContent = '';
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    const img = new Image();
+    img.onload = function() {
+      const MAX = 1200;
+      let w = img.width, h = img.height;
+      if (w > MAX || h > MAX) {
+        if (w >= h) { h = Math.round(h * MAX / w); w = MAX; }
+        else        { w = Math.round(w * MAX / h); h = MAX; }
+      }
+      const canvas = document.createElement('canvas');
+      canvas.width = w; canvas.height = h;
+      canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+      const dataUrl = canvas.toDataURL('image/png');
+      replaceB64 = dataUrl.split(',')[1];
+      const bytes = Math.round(replaceB64.length * 3 / 4);
+      const ko = Math.round(bytes / 1024);
+      const cls = ko < 400 ? 'ok' : ko < 800 ? 'warn' : 'big';
+      document.getElementById('replace-preview-img').src = dataUrl;
+      document.getElementById('replace-preview-meta').innerHTML =
+        `${w} × ${h} px — <span class="size-badge ${cls}">${ko} Ko</span>`;
+      document.getElementById('replace-preview').classList.add('show');
+      document.getElementById('replace-confirm-btn').disabled = false;
+    };
+    img.src = ev.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+async function confirmReplace() {
+  if (!replaceB64) return;
+  const btn = document.getElementById('replace-confirm-btn');
+  const status = document.getElementById('replace-status');
+  btn.disabled = true;
+  status.className = 'replace-status';
+  status.textContent = 'Récupération du SHA…';
+  try {
+    const r = await fetch(API + 'images/' + encodeURIComponent(replaceTarget), {
+      headers: {Authorization: 'token ' + TOKEN}
+    });
+    if (!r.ok) throw new Error('Impossible de lire ' + replaceTarget + ' (' + r.status + ')');
+    const d = await r.json();
+    status.textContent = 'Envoi…';
+    const rp = await fetch(API + 'images/' + encodeURIComponent(replaceTarget), {
+      method: 'PUT',
+      headers: {Authorization: 'token ' + TOKEN, 'Content-Type': 'application/json'},
+      body: JSON.stringify({message: 'Remplacer ' + replaceTarget, content: replaceB64, sha: d.sha})
+    });
+    if (!rp.ok) throw new Error('Échec de l\'envoi (' + rp.status + ')');
+    // Update DOM
+    const newSrc = document.getElementById('replace-preview-img').src;
+    document.querySelectorAll(`img[src="images/${replaceTarget}"], img[src^="images/${replaceTarget}?"]`).forEach(el => {
+      el.src = newSrc;
+    });
+    if (currentLbImg === replaceTarget) document.getElementById('lb-img').src = newSrc;
+    status.className = 'replace-status ok';
+    status.textContent = '✓ Image remplacée. Le cache GitHub Pages peut prendre quelques minutes.';
+  } catch(err) {
+    status.className = 'replace-status err';
+    status.textContent = '✗ ' + err.message;
+    btn.disabled = false;
+  }
+}
 
 // ── Rename ──────────────────────────────────────────────────────────────────
 
