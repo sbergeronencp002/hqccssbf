@@ -4091,6 +4091,34 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q206": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -4430,6 +4458,9 @@ const IMAGE_DB = {
   },
   "activites_habitants_n-f_1740.png": {
     src: "images/activites_habitants_n-f_1740.png"
+  },
+  "activies_econiques_1663_1740.png": {
+    src: "images/activies_econiques_1663_1740.png"
   }
 }
 
@@ -13550,5 +13581,56 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Le développement de l'agriculture."
+  },
+  {
+    id: "Q206",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P2 — 1608 – 1760",
+    points: 3,
+    enonce: "Expliquez comment les mesures mises en place par les autorités coloniales contribuent au développement économique de la Nouvelle-France.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• une mesure mise en place par les autorités coloniales\n• une activité artisanale qui se développe\n• une conséquence sur le développement économique de la colonie",
+    aspects: [
+      {
+        aspect: "Diversification économique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Au milieu du 18e siècle, un établissement industriel est aménagé près de Trois-Rivières. On y transforme une ressource extraite localement afin de produire divers objets destinés à la colonie. »",
+            source: "Marcel Moussette, Les Forges du Saint-Maurice : les débuts de l'industrie au Canada, Québec, Les Publications du Québec, 1985. (adaptation pédagogique)"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "activies_econiques_1663_1740.png",
+            soustitre: "Les activités économiques de la Nouvelle-France",
+            source: "Source pédagogique inspirée des travaux de Louise Dechêne, Allan Greer et Jacques Lacoursière sur l'économie de la Nouvelle-France."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Sous l'administration de Gilles Hocquart, les autorités coloniales investissent dans plusieurs projets économiques et accordent leur appui à certaines entreprises. Ces interventions visent à développer la production locale et à répondre davantage aux besoins de la colonie. »",
+            source: "Adapté de Gilles Proulx, Gilles Hocquart, intendant de la Nouvelle-France, Québec, Septentrion, 2009."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Les autorités coloniales investissent dans plusieurs projets économiques (une mesure mise en place par les autorités coloniales). Cette intervention favorise le développement du travail du fer aux Forges du Saint-Maurice (une activité artisanale qui se développe). L'apparition de cette nouvelle activité contribue à diversifier les activités économiques de la colonie (une conséquence sur la diversification de l'économie de la colonie)."
   }
 ]
