@@ -4047,6 +4047,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q204": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -13440,5 +13462,37 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "L'agriculture."
+  },
+  {
+    id: "Q204",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence du développement de l'agriculture sur la population de la Nouvelle-France.",
+    aspects: [
+      {
+        aspect: "Diversification économique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "activites_habitants_n-f_1740.png",
+            soustitre: "Population de la Nouvelle-France (1663-1760)",
+            source: "Adapté des données démographiques présentées par Marcel Trudel, Initiation à la Nouvelle-France : histoire et institutions, 1968."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "L'augmentation de la population ou la croissance de la population."
   }
 ]
