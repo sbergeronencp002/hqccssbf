@@ -6,9 +6,9 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <title>Admin — HQC · CSSBF</title>
-<script src="reglettes.js?v=v2"></script>
+<script src="reglettes.js?v=2"></script>
 <script src="contexte.js"></script>
-<script src="oi-config.js?v=v1"></script>
+<script src="oi-config.js?v=1"></script>
 <style>
 :root {
   --ink: #1a1814; --ink-2: #4a4740; --ink-3: #8a8680;
@@ -194,6 +194,7 @@ header a:hover { color: #fff; }
       <a href="#section-reglette">Réglette</a>
       <a href="#section-guide">Guide</a>
       <a href="#section-actions">Publier ↓</a>
+      <a href="#section-contexte-js">contexte.js</a>
     </nav>
 
     <!-- TABLEAU DE BORD -->
@@ -380,7 +381,22 @@ header a:hover { color: #fff; }
       <span id="publish-status" style="font-size:.82rem;color:var(--ink-3)"></span>
     </div>
 
-
+    <!-- ÉDITEUR CONTEXTE.JS -->
+    <div class="section" id="section-contexte-js" style="margin-top:2rem">
+      <div class="section-title" style="display:flex;justify-content:space-between;align-items:center;cursor:pointer" onclick="toggleContexteSection()">
+        <span>Éditeur — contexte.js</span>
+        <span id="contexte-toggle-icon" style="font-size:.8rem;color:var(--ink-3);transition:transform .2s">▼</span>
+      </div>
+      <div id="contexte-section-body" style="display:none;margin-top:.9rem">
+        <p style="font-size:.78rem;color:var(--ink-3);margin-bottom:.75rem">Modifier directement <code>contexte.js</code> (périodes et aspects par niveau). Le contenu sera validé syntaxiquement avant publication.</p>
+        <div style="display:flex;gap:.6rem;align-items:center;margin-bottom:.6rem;flex-wrap:wrap">
+          <button class="btn-secondary" onclick="loadContexteJs()">⬇ Charger contexte.js</button>
+          <button class="btn-primary" onclick="publierContexteJs()">⬆ Publier contexte.js</button>
+          <span id="contexte-status" style="font-size:.8rem;color:var(--ink-3)"></span>
+        </div>
+        <textarea id="contexte-raw" rows="18" style="width:100%;font-family:'Courier New',monospace;font-size:.75rem;padding:.6rem;border:1px solid var(--border);border-radius:6px;resize:vertical;background:var(--paper);color:var(--ink)" placeholder="Cliquez « Charger contexte.js » pour afficher le contenu…" spellcheck="false"></textarea>
+      </div>
+    </div>
 
   </div><!-- /container -->
 </div><!-- /app -->
@@ -1435,9 +1451,9 @@ function buildQuestion() {
   document.querySelectorAll('#docs-list > .block').forEach(docEl => {
     const dtype = docEl.dataset.type;
     if(dtype === 'textes') {
-      const titre = docEl.querySelector('[id$="-titre"]').value.trim();
+      const titre = docEl.querySelector('[id$="-titre"]')?.value.trim() || '';
       const soustitre = docEl.querySelector('[id$="-soustitre"]')?.value.trim() || '';
-      const texte = docEl.querySelector('[id$="-texte"]').value.trim();
+      const texte = docEl.querySelector('[id$="-texte"]')?.value.trim() || '';
       const auteur = docEl.querySelector('[id$="-auteur"]')?.value.trim() || '';
       const source = docEl.querySelector('[id$="-source"]')?.value.trim() || '';
       const col = { titre, texte };
@@ -1446,9 +1462,9 @@ function buildQuestion() {
       if(source) col.source = source;
       documents.push({ type: 'textes', cols: [col] });
     } else if(dtype === 'image') {
-      const titre = docEl.querySelector('[id$="-titre"]').value.trim();
+      const titre = docEl.querySelector('[id$="-titre"]')?.value.trim() || '';
       const soustitre = docEl.querySelector('[id$="-soustitre"]')?.value.trim() || '';
-      const ref = docEl.querySelector('[id$="-ref"]').value;
+      const ref = docEl.querySelector('[id$="-ref"]')?.value || '';
       const auteur = docEl.querySelector('[id$="-auteur"]')?.value.trim() || '';
       const source = docEl.querySelector('[id$="-source"]')?.value.trim() || '';
       const col = { titre, ref };
@@ -1460,10 +1476,10 @@ function buildQuestion() {
       const cols = [];
       docEl.querySelectorAll('.col-block').forEach(colEl => {
         const ctype = colEl.dataset.type;
-        const titre = colEl.querySelector('[id$="-titre"]').value.trim();
+        const titre = colEl.querySelector('[id$="-titre"]')?.value.trim() || '';
         const soustitre = colEl.querySelector('[id$="-soustitre"]')?.value.trim() || '';
         if(ctype === 'texte') {
-          const texte = colEl.querySelector('[id$="-texte"]').value.trim();
+          const texte = colEl.querySelector('[id$="-texte"]')?.value.trim() || '';
           const auteur = colEl.querySelector('[id$="-auteur"]')?.value.trim() || '';
           const source = colEl.querySelector('[id$="-source"]')?.value.trim() || '';
           const col = { titre, texte };
@@ -1472,7 +1488,7 @@ function buildQuestion() {
           if(source) col.source = source;
           cols.push(col);
         } else {
-          const ref = colEl.querySelector('[id$="-ref"]').value;
+          const ref = colEl.querySelector('[id$="-ref"]')?.value || '';
           const auteurImg = colEl.querySelector('[id$="-auteur"]')?.value.trim() || '';
           const sourceImg = colEl.querySelector('[id$="-source"]')?.value.trim() || '';
           const col = { titre, ref };
@@ -1596,6 +1612,7 @@ function validateForm() {
   const errors = [];
   if(!document.getElementById('q-id').value.trim()) errors.push('ID manquant');
   if(!document.getElementById('q-enonce').value.trim()) errors.push('Énoncé vide');
+  if(!document.getElementById('q-periode').value) errors.push('Période non sélectionnée');
   if(!document.querySelectorAll('#aspects-list input[type=checkbox]:checked').length) errors.push('Aucun aspect sélectionné');
   const repType = document.getElementById('rep-type').value;
   if(repType === 'image' && !document.getElementById('rep-ref')?.value) errors.push('Image de réponse non sélectionnée');
@@ -1862,6 +1879,14 @@ function renderDashboard() {
 }
 
 // ── CONTEXTE ──────────────────────────────────────────────────────────
+function toggleContexteSection() {
+  const body = document.getElementById('contexte-section-body');
+  const icon = document.getElementById('contexte-toggle-icon');
+  const hidden = body.style.display === 'none';
+  body.style.display = hidden ? '' : 'none';
+  icon.style.transform = hidden ? '' : 'rotate(-90deg)';
+}
+
 let contexteFileSha = '';
 
 async function loadContexteJs() {
