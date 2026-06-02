@@ -14769,7 +14769,8 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "arrivee_loyalistes.png",
-            source: "econstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de l'arrivée des Loyalistes, 2026."
+            soustitre: "Arrivée des premiers Loyalistes",
+            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de l'arrivée des Loyalistes, 2026."
           }
         ]
       }
