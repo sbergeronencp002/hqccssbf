@@ -14737,8 +14737,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Les habitants de la colonie peuvent désormais pratiquer librement leur religion et les membres du clergé catholique retrouvent le droit de percevoir la dîme auprès des fidèles. »\n\n« Les autorités britanniques permettent à la population de conserver plusieurs règles juridiques héritées du régime français, notamment en ce qui concerne la propriété et l'héritage des biens. »",
-            source: "Marcel Trudel, Initiation à la Nouvelle-France, Holt, Rinehart et Winston, 1968."
+            texte: "« Les habitants professant la religion de l'Église de Rome pourront en conserver le libre exercice. »\n\n« Dans toutes les causes relatives à la propriété et aux droits civils, les lois du Canada serviront de règle pour décider. »\n\n« Les limites de la province sont étendues et comprennent les territoires décrits dans le présent acte. »",
+            soustitre: "Extraits de l'Acte de Québec",
+            source: "Acte de Québec - document officiel."
           }
         ]
       }
