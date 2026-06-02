@@ -4336,6 +4336,28 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
       }
     ]
+  },
+  "Q217": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -14315,5 +14337,43 @@ const QUESTIONS = [
         ]
       ]
     }
+  },
+  {
+    id: "Q217",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux historiens sur la milice canadienne durant la Guerre de la Conquête. Sur quel point précis ces historiens sont-ils d’accord ?",
+    aspects: [
+      {
+        aspect: "Guerre de la Conquête"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les miliciens canadiens connaissent bien le territoire et utilisent des tactiques adaptées aux forêts nord-américaines, ce qui constitue un atout important pour les forces françaises durant le conflit. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1, adaptation pédagogique."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Bien qu’ils ne soient pas des soldats professionnels, les membres de la milice participent activement à la défense de la colonie grâce à leur expérience du territoire et à leur capacité de combattre dans des conditions difficiles. »",
+            source: "Marcel Trudel, Histoire de la Nouvelle-France, adaptation pédagogique."
+          }
+        ]
+      }
+    ],
+    reponse: false,
+    guide: "Jacques Lacoursière et Marcel Trudel considèrent que la connaissance du territoire constitue un avantage important de la milice canadienne durant la Guerre de la Conquête."
   }
 ]
