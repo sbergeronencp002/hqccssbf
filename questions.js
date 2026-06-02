@@ -4030,6 +4030,23 @@ const REGLETTES = {
       "0 point"
     ],
     niveaux: []
+  },
+  "Q203": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -4366,6 +4383,9 @@ const IMAGE_DB = {
   },
   "activites_eco_1750.png": {
     src: "images/activites_eco_1750.png"
+  },
+  "activites_habitants_n-f_1740.png": {
+    src: "images/activites_habitants_n-f_1740.png"
   }
 }
 
@@ -13389,5 +13409,36 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Changement\nIl y a changement, car après l'instauration du gouvernement royal en 1663, de nouvelles activités économiques apparaissent dans la colonie. Vers 1700, on retrouve notamment la construction navale, les forges et les tanneries.\n\nContinuité\nIl y a continuité, car le commerce des fourrures, l'agriculture et la pêche sont pratiqués avant et après l'instauration du gouvernement royal. Ces activités sont présentes vers 1663 comme vers 1700."
+  },
+  {
+    id: "Q203",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez l'activité économique pratiquée par la majorité des habitants de la Nouvelle-France au 18e siècle.",
+    aspects: [
+      {
+        aspect: "Diversification économique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "activites_habitants_n-f_1740.png",
+            soustitre: "Activités économiques pratiques par les habitants vers 1740",
+            source: "Adapté de synthèses historiques sur la structure économique de la Nouvelle-France au XVIIIe siècle."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "L'agriculture."
   }
 ]
