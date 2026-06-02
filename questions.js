@@ -4202,6 +4202,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q211": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -4559,6 +4581,9 @@ const IMAGE_DB = {
   },
   "coureur_bois_n-f.png": {
     src: "images/coureur_bois_n-f.png"
+  },
+  "canot_ecorce.png": {
+    src: "images/canot_ecorce.png"
   }
 }
 
@@ -13872,5 +13897,36 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Adaptation des vêtements ou adaptation des habitations ou adaptation des déplacements."
+  },
+  {
+    id: "Q211",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence des relations avec les Autochtones sur les déplacements des colons.",
+    aspects: [
+      {
+        aspect: "Adaptation des colons"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "canot_ecorce.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les colons adoptent le canot comme moyen de transport."
   }
 ]
