@@ -54,6 +54,7 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
 .shared-group-header img{height:42px;width:68px;object-fit:cover;border-radius:5px;border:1px solid var(--border);flex-shrink:0;cursor:zoom-in}
 .shared-group-header .img-label{font-size:.85rem;font-weight:500;color:var(--ink);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .badge{display:inline-flex;align-items:center;justify-content:center;background:#1B3B6F;color:#fff;border-radius:20px;padding:.15rem .6rem;font-size:.7rem;font-weight:500;white-space:nowrap;flex-shrink:0}
+.badge-single{background:var(--paper-3);color:var(--ink-3)}
 .chevron{color:var(--ink-3);font-size:.8rem;margin-left:.25rem;transition:transform .2s;flex-shrink:0}
 .shared-group-header.collapsed .chevron{transform:rotate(-90deg)}
 .shared-group-body{padding:.85rem 1rem}
@@ -160,7 +161,7 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
     </div>
   </div>
   <nav>
-    <a id="nav-shared" class="active" onclick="setActive('shared')">Images partagées</a>
+    <a id="nav-shared" class="active" onclick="setActive('shared')">Toutes les images</a>
     <a id="nav-all" onclick="setActive('all')">Toutes les questions</a>
   </nav>
 </header>
@@ -172,7 +173,7 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
 </div>
 
 <div id="sec-shared" class="section">
-  <div class="section-title">Images utilisées par plusieurs questions</div>
+  <div class="section-title">Toutes les images</div>
   <div id="shared-container"></div>
 </div>
 <div id="sec-all" class="section" style="display:none">
@@ -313,25 +314,30 @@ function tileHtml(q) {
   const qById = {};
   questions.forEach(q => qById[q.id] = q);
 
-  const sharedGroups = Object.entries(imgMap)
-    .filter(([,ids]) => ids.length > 1)
-    .sort((a,b) => b[1].length - a[1].length);
+  const allImgGroups = Object.entries(imgMap)
+    .sort((a,b) => b[1].length - a[1].length || a[0].localeCompare(b[0]));
 
-  document.getElementById('shared-container').innerHTML = sharedGroups.map(([img, ids]) => `
-    <div class="shared-group">
+  const sharedCount = allImgGroups.filter(([,ids]) => ids.length > 1).length;
+
+  document.getElementById('shared-container').innerHTML = allImgGroups.map(([img, ids]) => {
+    const isShared = ids.length > 1;
+    const badgeLabel = ids.length === 1 ? '1 question' : `${ids.length} questions`;
+    return `
+    <div class="shared-group" data-img-name="${img.replace('.png','').toLowerCase()}">
       <div class="shared-group-header" onclick="toggleGroup(this)">
         <img src="images/${img}" loading="lazy" title="${img}" onclick="event.stopPropagation();showImg('${img}')">
         <span class="img-label">${img.replace('.png','')}</span>
         ${sizeBadgeHtml(img)}
         <button class="btn-rename" title="Renommer" onclick="event.stopPropagation();openRename('${img}')">✏</button>
         <button class="btn-replace" title="Remplacer l'image" onclick="event.stopPropagation();openReplace('${img}')">⇪</button>
-        <span class="badge">${ids.length} questions</span>
+        <span class="badge${isShared ? '' : ' badge-single'}">${badgeLabel}</span>
         <span class="chevron">▾</span>
       </div>
       <div class="shared-group-body">
         <div class="tiles-row">${ids.filter(id=>qById[id]).map(id=>tileHtml(qById[id])).join('')}</div>
       </div>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 
   document.getElementById('allGrid').innerHTML = questions.map(q => tileHtml(q)).join('');
 
@@ -339,8 +345,8 @@ function tileHtml(q) {
   const sel = document.getElementById('filterOi');
   ois.forEach(oi => { const o = document.createElement('option'); o.value=oi; o.textContent=oi; sel.appendChild(o); });
 
-  const shared = sharedGroups.length;
-  document.getElementById('stat-chip').innerHTML = `<b>${questions.length}</b> questions · <b>${shared}</b> images partagées`;
+  document.getElementById('stat-chip').innerHTML =
+    `<b>${Object.keys(imgMap).length}</b> images · <b>${sharedCount}</b> partagées · <b>${questions.length}</b> questions`;
 
   fetchSizes(Object.keys(imgMap));
 })();
@@ -397,9 +403,15 @@ function setActive(id) {
 function filterAll() {
   const s = document.getElementById('search').value.toLowerCase();
   const oi = document.getElementById('filterOi').value;
+  // Filtrer la grille "toutes les questions"
   document.querySelectorAll('#allGrid .tile').forEach(t => {
     const show = (!s || t.dataset.text.includes(s)) && (!oi || t.dataset.oi===oi);
     t.style.display = show ? '' : 'none';
+  });
+  // Filtrer la section images par nom
+  document.querySelectorAll('#shared-container .shared-group').forEach(g => {
+    const nameMatch = !s || g.dataset.imgName.includes(s);
+    g.style.display = nameMatch ? '' : 'none';
   });
 }
 
