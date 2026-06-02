@@ -14591,7 +14591,7 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "capitulation_mtl_1760.png",
             soustitre: "Capitulation de Montréal",
-            source: "Reconstitution historique réalisée à l'aide de l'intelligence artificielle (ChatGPT/OpenAI), inspirée de représentations de l'invasion américaine de Québec en 1775, 2026."
+            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de la capitulation de Montréal, 2026."
           }
         ]
       }
