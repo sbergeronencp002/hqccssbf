@@ -14675,9 +14675,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Les habitants de la province devront bénéficier des lois de l'Angleterre autant que les circonstances le permettront. »\n\n« Dès que l'état et les circonstances de la colonie le permettront, une assemblée générale pourra être convoquée. »\n\n« Le territoire de la Province de Québec est plus restreint que celui de l'ancienne Nouvelle-France. »",
-            soustitre: "Extraits de la Proclamation royale",
-            source: "Proclamation royale - document officiel."
+            texte: "« Les nouveaux dirigeants imposent désormais les lois civiles anglaises et cherchent à remplacer plusieurs institutions héritées du régime français. »\n\n« Le territoire administré par les autorités britanniques est désormais limité principalement à la vallée du Saint-Laurent, alors que plusieurs régions sont détachées de la colonie. »",
+            source: "Denis Vaugeois, L'Amour du livre : l'édition au Québec, ses petits secrets et ses mystères, Septentrion, 2005."
           }
         ]
       }
@@ -14708,7 +14707,6 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "revolte_pontiac.png",
-            soustitre: "Révolte de Pontiac",
             source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de la révolte de Pontiac, 2026."
           }
         ]
@@ -14805,7 +14803,7 @@ const QUESTIONS = [
             titre: "Document A",
             texte: "« Sa Majesté Britannique reconnaît lesdits États-Unis, à savoir le New Hampshire, le Massachusetts, le Rhode Island, le Connecticut, New York, le New Jersey, la Pennsylvanie, le Delaware, le Maryland, la Virginie, la Caroline du Nord, la Caroline du Sud et la Géorgie, comme États libres, souverains et indépendants. »",
             soustitre: "Extrait du traité de Paris",
-            source: "Traité de Paris - document officiel."
+            source: "Traité de Paris, article I."
           }
         ]
       }

@@ -3263,6 +3263,640 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q164": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
+  },
+  "Q165": {
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
+  },
+  "Q166": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q167": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
+  },
+  "Q168": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q169": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q170": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
+  },
+  "Q171": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
+      }
+    ]
+  },
+  "Q172": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
+  },
+  "Q173": {
+    oi: "Situer dans l'espace",
+    colonnes: [
+      "2 points",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève situe les faits dans l'espace."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans l'espace."
+      }
+    ]
+  },
+  "Q174": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q175": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
+  },
+  "Q176": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
+  },
+  "Q177": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q178": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q179": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q180": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
+  },
+  "Q181": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
+  },
+  "Q182": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la continuité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la continuité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
+      }
+    ]
+  },
+  "Q183": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
+  },
+  "Q184": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q185": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de divergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q186": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève dégage correctement la similitude."
+      },
+      {
+        pts: 1,
+        desc: "L'élève dégage plus ou moins correctement la similitude."
+      },
+      {
+        pts: 0,
+        desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."
+      }
+    ]
+  },
+  "Q187": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève dégage correctement la similitude."
+      },
+      {
+        pts: 1,
+        desc: "L'élève dégage plus ou moins correctement la similitude."
+      },
+      {
+        pts: 0,
+        desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."
+      }
+    ]
+  },
+  "Q188": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q189": {
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
+  },
+  "Q190": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
+  },
+  "Q191": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q192": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q193": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q194": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
+  },
+  "Q195": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (3 sur 3)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (2 sur 3)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
+      }
+    ]
   }
 }
 
@@ -3533,6 +4167,57 @@ const IMAGE_DB = {
   },
   "carte_premiers_occ_peuplement.png": {
     src: "images/carte_premiers_occ_peuplement.png"
+  },
+  "territoire_revendique_1713.png": {
+    src: "images/territoire_revendique_1713.png"
+  },
+  "territoire_revendique_1700.png": {
+    src: "images/territoire_revendique_1700.png"
+  },
+  "exploration_territoire_1700.png": {
+    src: "images/exploration_territoire_1700.png"
+  },
+  "territoires_perdus_1713.png": {
+    src: "images/territoires_perdus_1713.png"
+  },
+  "org_pol_apres_1663.png": {
+    src: "images/org_pol_apres_1663.png"
+  },
+  "graphique_population_nouvelle_france_1627-1663.png": {
+    src: "images/graphique_population_nouvelle_france_1627-1663.png"
+  },
+  "paroisse_n-f.png": {
+    src: "images/paroisse_n-f.png"
+  },
+  "org_pol_avant_1663.png": {
+    src: "images/org_pol_avant_1663.png"
+  },
+  "regime_seigneurial_n-f.png": {
+    src: "images/regime_seigneurial_n-f.png"
+  },
+  "origines_geo_1670.png": {
+    src: "images/origines_geo_1670.png"
+  },
+  "origines_geo_1740.png": {
+    src: "images/origines_geo_1740.png"
+  },
+  "origines_sociale_1670.png": {
+    src: "images/origines_sociale_1670.png"
+  },
+  "origines_sociale_1740.png": {
+    src: "images/origines_sociale_1740.png"
+  },
+  "place_publique_qc.png": {
+    src: "images/place_publique_qc.png"
+  },
+  "place_publique_mtl.png": {
+    src: "images/place_publique_mtl.png"
+  },
+  "huron_1600.png": {
+    src: "images/huron_1600.png"
+  },
+  "huron_1700.png": {
+    src: "images/huron_1700.png"
   }
 }
 
@@ -6996,7 +7681,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "cause-consequence"
+      type: "lignes",
+      nombre: 2
     },
     guide: "Les autorités françaises adoptent une politique d’immigration afin d’augmenter la population de la Nouvelle-France."
   },
@@ -10413,10 +11099,10 @@ const QUESTIONS = [
     enonce: "Les documents A à C présentent des éléments liés à l’administration de la Nouvelle-France sous le Régime français. Indiquez le document qui correspond à chacun des rôles",
     aspects: [
       {
-        aspect: "Gouvernement royal"
+        aspect: "Église catholique"
       },
       {
-        aspect: "Monopole des compagnies"
+        aspect: "Gouvernement royal"
       }
     ],
     documents: [
@@ -10882,5 +11568,1381 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les congé de traite nuisent au développement de la colonie."
+  },
+  {
+    id: "Q164",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "4 documents",
+    enonce: "Les documents A à D présentent différents agents du commerce des fourrures. Associez chaque document à l’agent correspondant.",
+    aspects: [
+      {
+        aspect: "Commerce des fourrures"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« À bord de canots chargés de marchandises, ils assurent le transport entre les centres de la colonie et les postes de traite éloignés. »",
+            source: "Adapté de Carolyn Podruchny, Making the Voyageur World: Travelers and Traders in the North American Fur Trade, Lincoln, University of Nebraska Press, 2006."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Grâce à leur connaissance du territoire et des routes de transport, certains groupes jouent un rôle essentiel dans l’approvisionnement des postes de traite. »",
+            source: "Adapté de Gilles Havard, Empire et métissages : Indiens et Français dans le Pays d’en Haut, 1660-1715, Québec, Septentrion, 2003."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Leur rôle consiste notamment à acheter les fourrures, à les entreposer puis à les expédier vers les marchés européens. »",
+            source: "Adapté de Louise Dechêne, Habitants et marchands de Montréal au XVIIe siècle, Montréal, Boréal, 1988."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Certains parcourent de longues distances pour obtenir des fourrures sans toujours détenir l’autorisation officielle exigée par l’administration coloniale. »",
+            source: "Adapté de W. J. Eccles, La société canadienne sous le Régime français, Montréal, Hurtubise HMH, 1972."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Autochtones",
+        "Coureurs des bois",
+        "Marchands",
+        "Voyageurs"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Autochtones",
+        "Coureurs des bois",
+        "Marchands",
+        "Voyageurs"
+      ],
+      rangees: [
+        [
+          "B",
+          "D",
+          "C",
+          "A"
+        ]
+      ]
+    }
+  },
+  {
+    id: "Q165",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P2 — 1608 – 1760",
+    points: 3,
+    soustag: "Position – 3 acteurs",
+    enonce: "Les documents A à C présentent la position de trois historiens à l'égard du rôle joué par Colbert en Nouvelle-France. Nommez l'historien qui présente une position différente et comparez sa position à celle des deux autres historiens.",
+    aspects: [
+      {
+        aspect: "Gouvernement royal"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« L'œuvre de Colbert marque un tournant dans l'histoire de la Nouvelle-France. Le gouvernement royal, l'arrivée de nouveaux colons et l'organisation plus efficace de l'administration contribuent à consolider durablement la présence française en Amérique du Nord. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Sous l'impulsion de Colbert, la monarchie reprend directement en main l'administration de la Nouvelle-France. Les mesures adoptées pour accroître la population et renforcer les institutions permettent à la colonie de connaître une période de croissance soutenue à partir des années 1660. »",
+            source: "Marcel Trudel, Histoire de la Nouvelle-France."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les réformes de Colbert améliorent certes l'organisation de la colonie, mais elles ne parviennent pas à corriger ses principales faiblesses. La population demeure peu nombreuse et les ressources limitées comparativement à celles des colonies anglaises. »",
+            source: "Louise Dechêne, Le peuple, l'État et la guerre au Canada sous le Régime français."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Dechêne considère que le travail de Colbert a eu un impact limité (la différence) tandis que Trudel et Lacoursière sont considèrent que Colbert favorise le développement de la Nouvelle-France."
+  },
+  {
+    id: "Q166",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux historiens sur la milice en Nouvelle-France. Sur quel point précis sont-ils en accord?",
+    aspects: [
+      {
+        aspect: "Gouvernement royal"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La milice constitue une composante essentielle du système défensif colonial. Bien qu'elle ne remplace pas les troupes régulières, elle fournit aux autorités un effectif rapidement mobilisable lors des conflits. »",
+            source: "Gilles Proulx, Combattre en Nouvelle-France, Athéna Éditions, 2009."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« La milice fait partie intégrante de l'organisation militaire de la Nouvelle-France. Les autorités coloniales peuvent mobiliser rapidement les hommes des paroisses afin de participer à la défense du territoire. »",
+            source: "Louise Dechêne, Le peuple, l'État et la guerre au Canada sous le Régime français, Boréal, 2008."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les deux historiens considèrent que la milice contribue à la défense de la Nouvelle-France ou qu'elle peut être mobilisée pour protéger la colonie."
+  },
+  {
+    id: "Q167",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "4 documents",
+    enonce: "Les documents A à D présentent des responsabilités associées au gouverneur et à l'intendant. Indiquez à quel membre de l'administration coloniale correspond chacun des documents.",
+    aspects: [
+      {
+        aspect: "Gouvernement royal"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« [Philippe de Rigaud de Vaudreuil] est responsable de la défense de la Nouvelle-France. Il commande les troupes, supervise les fortifications et organise la protection du territoire contre les ennemis de la colonie. »",
+            source: "Marcel Trudel, Initiation à la Nouvelle-France, Holt, Rinehart et Winston, 1968."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« [Jean Talon] intervient dans l'organisation économique de la colonie. Il encourage l'agriculture, soutient le commerce et favorise les mesures destinées à accroître la population. »",
+            source: "Source : Allan Greer, Brève histoire des peuples de la Nouvelle-France, Boréal, 1998."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« [Charles de Beauharnois de La Boische] joue un rôle essentiel dans les alliances conclues avec les nations autochtones. Il représente les intérêts de la France lors des négociations diplomatiques et des conseils tenus avec les alliés amérindiens. »",
+            source: "Gilles Havard, Empire et métissages, Septentrion, 2003."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Chargé des finances royales, [Gilles Hocquart] contrôle les dépenses de l'administration coloniale et surveille l'utilisation des fonds envoyés par la métropole. »",
+            source: "Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord, XVIe-XVIIIe siècle, PUL, 1991."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Gouverneur",
+        "Intendant"
+      ],
+      double: true
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Gouverneur",
+        "Intendant"
+      ],
+      rangees: [
+        [
+          "A et C",
+          "B et D"
+        ]
+      ]
+    }
+  },
+  {
+    id: "Q168",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez le membre de l'administration coloniale qui représente le roi pour les affaires militaires et diplomatiques.",
+    aspects: [
+      {
+        aspect: "Gouvernement royal"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Dans la colonie, [Louis de Buade de Frontenac] agit comme le principal représentant du roi pour les affaires militaires et diplomatiques. Son autorité symbolise la présence de la monarchie française en Amérique. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1, Québec Amérique, 1995."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le gouverneur."
+  },
+  {
+    id: "Q169",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez le membre de l'administration coloniale responsable de l'administration de la justice.",
+    aspects: [
+      {
+        aspect: "Gouvernement royal"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« [François Bigot] veille à l'administration de la justice. Il participe à l'application des lois et s'assure du bon fonctionnement des institutions civiles de la colonie. »",
+            source: "Marcel Trudel, La Nouvelle-France par les textes, Hurtubise HMH, 2003."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "L'intendant."
+  },
+  {
+    id: "Q170",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P2 — 1608 – 1760",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité concernant les possessions françaises en Amérique du Nord entre 1700 et 1713. Justifiez votre choix par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Territoire français en Amérique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "territoire_revendique_1700.png",
+            source: "Récitus."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "territoire_revendique_1713.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Il y a changement puisque, en 1713, à la suite du traité d’Utrecht, la France perd plusieurs de ses possessions, notamment l’Acadie, Terre-Neuve et la baie d’Hudson, au profit de la Grande-Bretagne.\n\nIl y a continuité puisque la France possède toujours des territoires en Amérique du Nord en 1700 comme en 1713, notamment dans la vallée du Saint-Laurent."
+  },
+  {
+    id: "Q171",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Cause et conséquence",
+    enonce: "Les documents A et B présentent des faits liés au traité d’Utrecht de 1713. Indiquez la lettre du document qui représente une cause et celle du document qui représente une conséquence de ce traité.",
+    aspects: [
+      {
+        aspect: "Guerres intercoloniales"
+      },
+      {
+        aspect: "Territoire français en Amérique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Au début du XVIIIe siècle, la présence française en Amérique du Nord se trouve réduite par la perte de plusieurs territoires, notamment l'Acadie, Terre-Neuve et les régions entourant la baie d'Hudson. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1, Québec Amérique, 1995."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« La fin du XVIIe siècle est marquée par une série de conflits opposant la France et l'Angleterre. En Amérique du Nord, ces rivalités portent notamment sur le contrôle du commerce et des territoires. »",
+            source: "Gilles Havard et Cécile Vidal, Histoire de l'Amérique française, Paris, Flammarion, 2003."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "cause-consequence"
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Cause",
+        "Conséquence"
+      ],
+      rangees: [
+        [
+          "B",
+          "A"
+        ]
+      ]
+    }
+  },
+  {
+    id: "Q172",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P2 — 1608 – 1760",
+    points: 3,
+    enonce: "Expliquez comment l'exploration du territoire contribue à l'expansion du territoire revendiqué par les Français en Amérique du Nord.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un motif des voyages d'exploration sur le continent\n• un moyen utilisé pour assurer une présence française\n• une conséquence sur le territoire revendiqué par la France",
+    aspects: [
+      {
+        aspect: "Commerce des fourrures"
+      },
+      {
+        aspect: "Territoire français en Amérique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les Français cherchent à étendre leurs activités dans le commerce des fourrures. Pour obtenir davantage de peaux de castor, ils explorent de nouvelles régions à l'intérieur du continent et établissent des contacts avec diverses nations autochtones. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1, Québec Amérique, 1995."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "exploration_territoire_1700.png",
+            source: "Récitus."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Au fur et à mesure de leur progression dans l'intérieur du continent, les Français construisent des forts et des postes de traite. Ces établissements servent à protéger les intérêts de la colonie et à maintenir une présence française dans les territoires explorés. »",
+            source: "Marcel Trudel, Initiation à la Nouvelle-France, Holt, Rinehart et Winston, 1968."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Les Français explorent de nouveaux territoires afin de développer le commerce des fourrures (un motif des voyages d'exploration sur le continent). Ils y établissent des forts et des postes de traite pour assurer une présence française (un moyen utilisé pour assurer une présence française). Cette présence permet à la France de revendiquer de nouveaux territoires, ce qui contribue à l'expansion de son territoire en Amérique du Nord (une conséquence sur le territoire revendiqué par la France)."
+  },
+  {
+    id: "Q173",
+    niveau: 3,
+    oi: "Situer dans l'espace",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Situer 2 éléments",
+    enonce: "À partir du document A, indiquez les lettres correspondant aux territoires cédés à la Grande-Bretagne à la suite du traité d’Utrecht de 1713.",
+    aspects: [
+      {
+        aspect: "Guerres intercoloniales"
+      },
+      {
+        aspect: "Territoire français en Amérique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "territoires_perdus_1713.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "situer-dans-lespace",
+      elements: [
+        "Acadie",
+        "Terre-Neuve"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Acadie",
+        "Terre-Neuve"
+      ],
+      rangees: [
+        [
+          "C",
+          "B"
+        ]
+      ]
+    }
+  },
+  {
+    id: "Q174",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez le membre de l'administration coloniale responsable de l'organisation de l'Église catholique en Nouvelle-France.",
+    aspects: [
+      {
+        aspect: "Église catholique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« À la tête de l'Église catholique en Nouvelle-France, [Monseigneur de Laval] veille à l'organisation du diocèse et à l'encadrement religieux de la population coloniale. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1, Québec Amérique, 1995."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "L'évêque."
+  },
+  {
+    id: "Q175",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P2 — 1608 – 1760",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans l’administration de la Nouvelle-France entre 1627 et 1663. Justifiez votre choix par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Gouvernement royal"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "org_pol_avant_1663.png",
+            source: "adapté de Récitus."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "org_pol_apres_1663.png",
+            source: "adapté de Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Changement\n\nIl y a un changement dans l’administration de la Nouvelle-France entre 1627 et 1663. En 1627, la colonie est administrée par la Compagnie des Cent-Associés. En 1663, le gouvernement royal est instauré et l’administration est confiée au gouverneur, à l’intendant et au Conseil souverain.\n\nContinuité\n\nIl y a une continuité dans l’administration de la Nouvelle-France entre 1627 et 1663. En 1627 comme en 1663, la colonie demeure sous l’autorité du roi de France et de la métropole française."
+  },
+  {
+    id: "Q176",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P2 — 1608 – 1760",
+    points: 3,
+    enonce: "Expliquez comment les difficultés rencontrées par la Compagnie des Cent-Associés contribuent à l’instauration du gouvernement royal en 1663.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• une responsabilité de la Compagnie des Cent-Associés;\n• une difficulté rencontrée dans le développement de la colonie;\n• une intervention du roi de France en 1663.",
+    aspects: [
+      {
+        aspect: "Gouvernement royal"
+      },
+      {
+        aspect: "Monopole des compagnies"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le roi accorde à la compagnie l’exclusivité de certaines activités commerciales. En retour, celle-ci s’engage à soutenir l’établissement de sujets français dans la colonie et à contribuer à son organisation matérielle et économique. »",
+            source: "Adapté de la charte de la Compagnie des Cent-Associés (1627), citée dans Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord, XVIe-XVIIIe siècle, Québec, Presses de l'Université Laval, 1991."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "graphique_population_nouvelle_france_1627-1663.png",
+            source: "Données adaptées à des fins pédagogiques à partir de l'évolution démographique de la Nouvelle-France."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "org_pol_apres_1663.png",
+            source: "adapté de Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 4
+    },
+    guide: "La Compagnie des Cent-Associés a pour responsabilité de favoriser le développement et le peuplement de la Nouvelle-France. Cependant, la population de la colonie demeure faible et son développement progresse lentement. Comme la compagnie ne remplit pas adéquatement ses obligations, le roi de France instaure le gouvernement royal en 1663 afin de mieux administrer et développer la colonie."
+  },
+  {
+    id: "Q177",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez le nom du territoire religieux placé sous la responsabilité d'un curé en Nouvelle-France.",
+    aspects: [
+      {
+        aspect: "Église catholique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "paroisse_n-f.png",
+            source: "Adapté de BAnQ et de Bibliothèque et Archives Canada."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "La paroisse."
+  },
+  {
+    id: "Q178",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez le nom du mode de répartition des terres utilisé en Nouvelle-France.",
+    aspects: [
+      {
+        aspect: "Régime seigneurial"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "regime_seigneurial_n-f.png",
+            source: "Adapté de BAnQ et de Bibliothèque et Archives Canada."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le régime seigneurial."
+  },
+  {
+    id: "Q179",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux historiens sur le rôle de l'Église catholique en Nouvelle-France. Sur quel point précis ces historiens sont-ils d'accord ?",
+    aspects: [
+      {
+        aspect: "Église catholique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La paroisse constitue le principal cadre de la vie collective en Nouvelle-France. Autour de l'église et du curé s'organisent plusieurs aspects de l'existence quotidienne des habitants. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1, Québec, Septentrion, 1995."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Dans les campagnes de la colonie, le clergé exerce une influence importante sur les communautés en accompagnant les fidèles lors des principaux événements de leur vie. »",
+            source: "Louise Dechêne, Habitants et marchands de Montréal au XVIIe siècle, Montréal, Boréal, 1988."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Les deux historiens s'entendent pour dire que le clergé catholique joue un rôle important dans l'encadrement des habitants de la Nouvelle-France."
+  },
+  {
+    id: "Q180",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P2 — 1608 – 1760",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans les origines géographiques des immigrants français en Nouvelle-France entre 1670 et 1740. Justifiez votre choix par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Croissance de la population"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "origines_geo_1670.png",
+            soustitre: "Origines géographiques des immigrants vers 1670",
+            source: "Données adaptées à partir des travaux de Yves Landry et Hubert Charbonneau sur les origines régionales des immigrants français en Nouvelle-France."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "origines_geo_1740.png",
+            soustitre: "Origines géographiques des immigrants vers 1740",
+            source: "Données adaptées à partir des travaux de Yves Landry et Hubert Charbonneau sur les origines régionales des immigrants français en Nouvelle-France."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Continuité. \n\nEn 1670 comme en 1740, les immigrants français proviennent principalement des mêmes régions de France. La Normandie demeure la principale région d'origine, représentant 28 % des immigrants en 1670 et 26 % en 1740. L'Île-de-France et l'Aunis figurent également parmi les régions les plus représentées durant toute la période.\n\nChangement. \n\nEntre 1670 et 1740, la proportion d'immigrants provenant de certaines régions varie. Par exemple, la part des immigrants originaires de la Normandie passe de 28 % à 26 %, tandis que celle des « autres régions » augmente de 14 % à 16 %. La répartition géographique des immigrants se modifie donc légèrement entre 1670 et 1740."
+  },
+  {
+    id: "Q181",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de l’arrivée d’immigrants français sur l’origine de la population de la Nouvelle-France.",
+    aspects: [
+      {
+        aspect: "Croissance de la population"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La plupart des immigrants qui s'établissent dans la vallée du Saint-Laurent proviennent d'un nombre restreint de provinces françaises, principalement situées dans l'ouest du royaume. »",
+            source: "Yves Landry, Orphelines en France, pionnières au Canada, Montréal, Leméac, 1992."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "La population de la Nouvelle-France est composée majoritairement de personnes d'origine française."
+  },
+  {
+    id: "Q182",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Continuité",
+    enonce: "À partir des documents A et B, indiquez un élément de continuité dans la principale région d'origine des immigrants français en Nouvelle-France entre 1670 et 1740.",
+    aspects: [
+      {
+        aspect: "Croissance de la population"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "origines_geo_1670.png",
+            soustitre: "Origines sociales des immigrants vers 1670",
+            source: "Données adaptées à partir des travaux de Yves Landry et Hubert Charbonneau sur les origines régionales des immigrants français en Nouvelle-France."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "origines_geo_1740.png",
+            soustitre: "Origines sociales des immigrants vers 1740",
+            source: "Données adaptées à partir des travaux de Yves Landry et Hubert Charbonneau sur les origines régionales des immigrants français en Nouvelle-France."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "La Normandie demeure la principale région d'origine des immigrants français. Elle représente 28 % des immigrants vers 1670 et 26 % vers 1740."
+  },
+  {
+    id: "Q183",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P2 — 1608 – 1760",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans les origines sociales des immigrants français en Nouvelle-France entre 1670 et 1740.",
+    aspects: [
+      {
+        aspect: "Croissance de la population"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "origines_sociale_1670.png",
+            soustitre: "Origines sociales des immigrants vers 1670",
+            source: "Données adaptées à partir des travaux de Yves Landry et Hubert Charbonneau sur les origines régionales des immigrants français en Nouvelle-France."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "origines_sociale_1740.png",
+            soustitre: "Origines sociales des immigrants vers 1740",
+            source: "Données adaptées à partir des travaux de Yves Landry et Hubert Charbonneau sur les origines régionales des immigrants français en Nouvelle-France."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Continuité.\n\nEn 1670 comme en 1740, les artisans constituent le principal groupe social parmi les immigrants français en Nouvelle-France. Ils représentent 35 % des immigrants vers 1670 et 38 % vers 1740.\n\nChangement.\n\nChangement. Entre 1670 et 1740, la répartition des origines sociales des immigrants français se modifie. La proportion de bourgeois et marchands augmente de 5 % à 8 %, tandis que celle des soldats passe de 10 % à 8 %."
+  },
+  {
+    id: "Q184",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux historiens sur l'évolution démographique de la Nouvelle-France. Sur quel point précis ces historiens sont-ils d'accord ?",
+    aspects: [
+      {
+        aspect: "Croissance de la population"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Au début du XVIIIe siècle, la population canadienne augmente rapidement grâce à la fécondité élevée des familles établies dans la colonie. »",
+            source: "Yves Landry, Les Filles du roi au XVIIe siècle, Montréal, Leméac, 2013."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« La croissance de la population découle principalement du grand nombre de naissances, bien davantage que de l'arrivée de nouveaux immigrants en provenance de France. »",
+            source: "Hubert Charbonneau, Naissance d'une population : les Français établis au Canada au XVIIe siècle, Montréal, Presses de l'Université de Montréal, 1987."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les deux historiens sont d'accord pour dire que la croissance de la population de la Nouvelle-France s'explique principalement par l'accroissement naturel, c'est-à-dire par les naissances."
+  },
+  {
+    id: "Q185",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Divergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux historiens sur l'esclavage en Nouvelle-France. Sur quel point précis ces historiens sont-ils en désaccord ?",
+    aspects: [
+      {
+        aspect: "Villes du Canada"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le nombre relativement limité d'esclaves en Nouvelle-France fait en sorte que l'esclavage occupe une place moins importante dans la vie économique de la colonie que dans plusieurs autres colonies américaines. »",
+            source: "Marcel Trudel, L'esclavage au Canada français, Montréal, Hurtubise HMH, 1960."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Même si leur nombre demeure modeste, les esclaves sont présents dans plusieurs villes et foyers de la colonie, ce qui témoigne d'une intégration réelle de l'esclavage à la société de la Nouvelle-France. »",
+            source: "Brett Rushforth, Bonds of Alliance: Indigenous and Atlantic Slaveries in New France, Chapel Hill, University of North Carolina Press, 2012."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les historiens sont en désaccord sur l'importance de l'esclavage dans la société de la Nouvelle-France. L'un considère qu'il occupe une place limitée, tandis que l'autre estime qu'il est bien intégré à la société coloniale."
+  },
+  {
+    id: "Q186",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Similitude",
+    enonce: "À partir des documents A et B, indiquez une fonction commune de la place publique de Québec et de Ville-Marie.",
+    aspects: [
+      {
+        aspect: "Villes du Canada"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "place_publique_qc.png",
+            soustitre: "Place publique de Québec vers 1700",
+            source: "Reconstitution historique (IA), inspirée de l'organisation de la place publique de Québec au XVIIe siècle."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "place_publique_mtl.png",
+            soustitre: "Place publique de Ville-Marie vers 1700",
+            source: "Reconstitution historique (IA), inspirée de l'organisation de la place publique de Ville-Marie au XVIIe siècle."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les deux places publiques servent de lieu d'échanges commerciaux (ou de commerce)."
+  },
+  {
+    id: "Q187",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Similitude",
+    enonce: "À partir des documents A et B, indiquez une activité commune qui se déroule sur la place publique de Québec et de Ville-Marie.",
+    aspects: [
+      {
+        aspect: "Villes du Canada"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "place_publique_qc.png",
+            soustitre: "Place publique de Québec vers 1700",
+            source: "Reconstitution historique (IA), inspirée de l'organisation de la place publique de Québec au XVIIe siècle."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "place_publique_mtl.png",
+            soustitre: "Place publique de Ville-Marie vers 1700",
+            source: "Reconstitution historique (IA), inspirée de l'organisation de la place publique de Ville-Marie au XVIIe siècle."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les échanges commerciaux (le troc, le commerce)."
+  },
+  {
+    id: "Q188",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez une fonction de la place publique en Nouvelle-France.",
+    aspects: [
+      {
+        aspect: "Villes du Canada"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le marché constitue un lieu central de la vie urbaine où les habitants viennent vendre leurs produits, s’approvisionner et entretenir des relations économiques indispensables au fonctionnement de la colonie. »",
+            source: "Dechêne, Louise. Habitants et marchands de Montréal au XVIIe siècle. Montréal, Boréal Compact, 1988 (1re éd. 1974)."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Lieu d'échanges commerciaux ou de troc."
+  },
+  {
+    id: "Q189",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P2 — 1608 – 1760",
+    points: 3,
+    soustag: "Position – 3 acteurs",
+    enonce: "Les documents A, B et C présentent le point de vue de trois historiens sur les effets du métissage en Nouvelle-France. Nommez l'historien qui présente une position différente et comparez sa position à celle des deux autres historiens.",
+    aspects: [
+      {
+        aspect: "Populations autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les alliances et les unions entre Français et Autochtones favorisent l'émergence de communautés métissées dans plusieurs régions de l'Amérique française. »",
+            source: "Denys Delâge, Le pays renversé (1985)."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les contacts quotidiens entre Français et Autochtones ont contribué à la formation d'une population métissée ainsi qu'au partage de nombreuses pratiques culturelles. »",
+            source: "Olive Patricia Dickason, Canada's First Nations (1992)."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Malgré certaines unions mixtes, la population du Canada demeure principalement d'origine française et le métissage ne transforme pas profondément sa composition démographique. »",
+            source: "Marcel Trudel, Histoire de la Nouvelle-France."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Marcel Trudel estime que le métissage a eu une importance limitée (la différence), alors que Denys Delâge et Olive Patricia Dickason estiment qu'il a contribué de façon importante à l'évolution de la population de la Nouvelle-France (la similitude)."
+  },
+  {
+    id: "Q190",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Changement",
+    enonce: "À partir des documents A et B, indiquez un changement dans le mode de vie des Hurons-Wendat entre 1600 et 1700.",
+    aspects: [
+      {
+        aspect: "Populations autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "huron_1600.png",
+            soustitre: "Représentation d'un homme huron-wendat vers 1600",
+            source: "Reconstitution historique (IA), inspirée des travaux de Bruce G. Trigger sur les Hurons-Wendat."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "huron_1700.png",
+            soustitre: "Représentation d'un homme huron-wendat vers 1700",
+            source: "Reconstitution historique (IA), inspirée des travaux de Bruce G. Trigger sur les Hurons-Wendat."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "L'adoption d'éléments culturels européens, notamment dans l'habillement ou les armes (arquebuse)."
+  },
+  {
+    id: "Q191",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez le phénomène illustré par l'adoption de certains éléments de la culture européenne par des Autochtones en Nouvelle-France.",
+    aspects: [
+      {
+        aspect: "Populations autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les échanges avec les Européens modifient les modes de vie autochtones, notamment par l'utilisation de nouveaux outils, vêtements et armes. »",
+            source: "Bruce G. Trigger, Les Enfants d'Aataentsic (1976)."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Acculturation."
+  },
+  {
+    id: "Q192",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez le phénomène qui résulte des unions entre Autochtones et Européens en Nouvelle-France.",
+    aspects: [
+      {
+        aspect: "Populations autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "Les unions entre Autochtones et Européens contribuent à l'apparition d'une population métissée dans plusieurs régions de l'Amérique française. »",
+            source: "Delâge, Denys. Le pays renversé : Amérindiens et Européens en Amérique du Nord-Est, 1600-1664. Montréal, Boréal, 1991."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Métissage."
+  },
+  {
+    id: "Q193",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez le groupe social qui accorde des terres aux censitaires en échange de redevances.",
+    aspects: [
+      {
+        aspect: "Régime seigneurial"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les terres étaient accordées à des habitants qui s'engageaient à les défricher et à les mettre en valeur, conformément aux obligations imposées par le détenteur de la seigneurie. »",
+            source: "Allan Greer, Habitants et Patriotes : la vie rurale au Bas-Canada, Montréal, Boréal, 1997."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les seigneurs."
+  },
+  {
+    id: "Q194",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une raison qui explique pourquoi les seigneuries sont généralement établies le long du fleuve Saint-Laurent.",
+    aspects: [
+      {
+        aspect: "Régime seigneurial"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le Saint-Laurent constitue l’axe principal de circulation de la colonie. Les déplacements des personnes, des marchandises et des informations s’effectuent principalement par cette voie navigable. »",
+            source: "Louise Dechêne, Le peuple, l'État et la guerre au Canada sous le Régime français, Montréal, Boréal, 2008."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le transport des personnes et des marchandises ou les communications ou l'accès au commerce ou l'accès à l'eau."
+  },
+  {
+    id: "Q195",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "3 documents",
+    enonce: "Les documents A à C présentent des descriptions de différents seigneurs en Nouvelle-France. Associez chaque document au type de seigneur correspondant.",
+    aspects: [
+      {
+        aspect: "Régime seigneurial"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Il participe aux campagnes militaires de la colonie et obtient un vaste domaine après plusieurs années de service auprès du roi. »",
+            source: "Louise Dechêne, Le partage des subsistances au Canada sous le Régime français, Montréal, Boréal, 1994."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les revenus tirés du domaine servent notamment à financer un hôpital, une école et diverses œuvres de bienfaisance. »",
+            source: "Jean Hamelin, Histoire du catholicisme québécois, Montréal, Boréal, 1984."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Sa fortune provient principalement du commerce. Au fil du temps, il investit dans des terres afin d'accroître son influence au sein de la société coloniale. »",
+            source: "Allan Greer, Brève histoire des peuples de la Nouvelle-France, Montréal, Boréal, 1998."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Bourgeois",
+        "Communauté religieuse",
+        "Noble"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Bourgeois",
+        "Communauté religieuse",
+        "Noble"
+      ],
+      rangees: [
+        [
+          "B",
+          "C",
+          "A"
+        ]
+      ]
+    }
   }
 ]

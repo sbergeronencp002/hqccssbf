@@ -4454,57 +4454,6 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
-  },
-  "Q223": {
-    oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
-    ]
-  },
-  "Q224": {
-    oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
-    ]
-  },
-  "Q225": {
-    oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
-    ]
   }
 }
 
@@ -4880,9 +4829,6 @@ const IMAGE_DB = {
   },
   "revolte_pontiac.png": {
     src: "images/revolte_pontiac.png"
-  },
-  "arrivee_loyalistes.png": {
-    src: "images/arrivee_loyalistes.png"
   }
 }
 
@@ -14675,9 +14621,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Les habitants de la province devront bénéficier des lois de l'Angleterre autant que les circonstances le permettront. »\n\n« Dès que l'état et les circonstances de la colonie le permettront, une assemblée générale pourra être convoquée. »\n\n« Le territoire de la Province de Québec est plus restreint que celui de l'ancienne Nouvelle-France. »",
-            soustitre: "Extraits de la Proclamation royale",
-            source: "Proclamation royale - document officiel."
+            texte: "« Les nouveaux dirigeants imposent désormais les lois civiles anglaises et cherchent à remplacer plusieurs institutions héritées du régime français. »\n\n« Le territoire administré par les autorités britanniques est désormais limité principalement à la vallée du Saint-Laurent, alors que plusieurs régions sont détachées de la colonie. »",
+            source: "Denis Vaugeois, L'Amour du livre : l'édition au Québec, ses petits secrets et ses mystères, Septentrion, 2005."
           }
         ]
       }
@@ -14708,7 +14653,6 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "revolte_pontiac.png",
-            soustitre: "Révolte de Pontiac",
             source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de la révolte de Pontiac, 2026."
           }
         ]
@@ -14719,101 +14663,5 @@ const QUESTIONS = [
       ref: "ligne_1760-1800.png"
     },
     guide: "A"
-  },
-  {
-    id: "Q223",
-    niveau: 3,
-    oi: "Situer dans le temps",
-    periode: "P3 — 1760 – 1791",
-    points: 1,
-    soustag: "Ligne du temps",
-    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Acte de Québec"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            texte: "« Les habitants professant la religion de l'Église de Rome pourront en conserver le libre exercice. »\n\n« Dans toutes les causes relatives à la propriété et aux droits civils, les lois du Canada serviront de règle pour décider. »\n\n« Les limites de la province sont étendues et comprennent les territoires décrits dans le présent acte. »",
-            soustitre: "Extraits de l'Acte de Québec",
-            source: "Acte de Québec - document officiel."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1760-1800.png"
-    },
-    guide: "B"
-  },
-  {
-    id: "Q224",
-    niveau: 3,
-    oi: "Situer dans le temps",
-    periode: "P3 — 1760 – 1791",
-    points: 1,
-    soustag: "Ligne du temps",
-    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Loyalistes"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "arrivee_loyalistes.png",
-            soustitre: "Arrivée des premiers Loyalistes",
-            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de l'arrivée des Loyalistes, 2026."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1760-1800.png"
-    },
-    guide: "B"
-  },
-  {
-    id: "Q225",
-    niveau: 3,
-    oi: "Situer dans le temps",
-    periode: "P3 — 1760 – 1791",
-    points: 1,
-    soustag: "Ligne du temps",
-    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Invasion américaine"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            texte: "« Sa Majesté Britannique reconnaît lesdits États-Unis, à savoir le New Hampshire, le Massachusetts, le Rhode Island, le Connecticut, New York, le New Jersey, la Pennsylvanie, le Delaware, le Maryland, la Virginie, la Caroline du Nord, la Caroline du Sud et la Géorgie, comme États libres, souverains et indépendants. »",
-            soustitre: "Extrait du traité de Paris",
-            source: "Traité de Paris - document officiel."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1760-1800.png"
-    },
-    guide: "C"
   }
 ]
