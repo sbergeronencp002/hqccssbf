@@ -13913,7 +13913,7 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Adaptation des vêtements ou adaptation des habitations ou adaptation des déplacements."
+    guide: "Les colons utilisent des raquettes pour se déplacer durant l'hiver. (ou toute réponse équivalente démontrant l'adaptation des déplacements à la neige.)"
   },
   {
     id: "Q211",
