@@ -13721,7 +13721,7 @@ const QUESTIONS = [
     enonce: "Indiquez une pratique culturelle européenne maintenue par les colons en Nouvelle-France.",
     aspects: [
       {
-        aspect: "Église catholique"
+        aspect: "Adaptation des colons"
       }
     ],
     documents: [
