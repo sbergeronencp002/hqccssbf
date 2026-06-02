@@ -4358,6 +4358,34 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q218": {
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
   }
 }
 
@@ -14375,5 +14403,56 @@ const QUESTIONS = [
     ],
     reponse: false,
     guide: "Jacques Lacoursière et Marcel Trudel considèrent que la connaissance du territoire constitue un avantage important de la milice canadienne durant la Guerre de la Conquête."
+  },
+  {
+    id: "Q218",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P2 — 1608 – 1760",
+    points: 3,
+    soustag: "Position – 3 acteurs",
+    enonce: "Les documents A, B et C présentent le point de vue de trois historiens sur la bataille des Plaines d'Abraham. Nommez l’historien qui présente un point de vue différent et comparez sa position à celle des deux autres historiens.",
+    aspects: [
+      {
+        aspect: "Guerre de la Conquête"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La victoire britannique lors de cet affrontement constitue un tournant majeur de la Guerre de la Conquête puisqu’elle ouvre la voie à la prise de la capitale de la colonie. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, adaptation pédagogique."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les conséquences militaires de cette bataille favorisent les Britanniques et affaiblissent considérablement la capacité de résistance de la Nouvelle-France. »",
+            source: "Marcel Trudel, Histoire de la Nouvelle-France, adaptation pédagogique."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Bien que cette bataille soit importante, elle ne met pas immédiatement fin à la résistance française puisque les combats se poursuivent l'année suivante. »",
+            source: "Gaston Deschênes, La Guerre de la Conquête, adaptation pédagogique."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Gaston Deschênes considère que la résistance française se poursuit après la bataille (la différence), alors que Jacques Lacoursière et Marcel Trudel considèrent que la bataille marque un tournant dans la Guerre de la Conquête (la similitude)."
   }
 ]
