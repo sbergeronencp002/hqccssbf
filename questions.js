@@ -4069,6 +4069,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q205": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -13494,5 +13516,39 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "L'augmentation de la population ou la croissance de la population."
+  },
+  {
+    id: "Q205",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une cause liée à l'économie qui contribue à la croissance de la population en Nouvelle-France au 18e siècle.",
+    aspects: [
+      {
+        aspect: "Croissance de la population"
+      },
+      {
+        aspect: "Diversification économique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Dans la vallée du Saint-Laurent, les habitants cultivent principalement le blé et élèvent divers animaux. Ces activités procurent des ressources alimentaires importantes et occupent une place centrale dans la vie économique de la colonie. »",
+            source: "Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord, XVIe-XVIIIe siècle, Québec, Presses de l'Université Laval, 1991."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le développement de l'agriculture."
   }
 ]
