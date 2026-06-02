@@ -4269,6 +4269,34 @@ const REGLETTES = {
         desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
       }
     ]
+  },
+  "Q214": {
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
   }
 }
 
@@ -14054,5 +14082,56 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Allan Greer considère que les colons demeurent dépendants de la métropole (la différence), alors que Jacques Lacoursière et Gilles Havard considèrent que l’éloignement géographique favorise l’autonomie des colons (la similitude)."
+  },
+  {
+    id: "Q214",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P2 — 1608 – 1760",
+    points: 3,
+    soustag: "Position – 3 acteurs",
+    enonce: "Les documents A, B et C présentent le point de vue de trois historiens sur les rapports de force durant les guerres intercoloniales. Nommez l’historien qui présente un point de vue différent et comparez sa position à celle des deux autres historiens.",
+    aspects: [
+      {
+        aspect: "Guerres intercoloniales"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le rapport de force entre les empires européens en Amérique du Nord est largement influencé par la supériorité démographique des colonies britanniques, qui disposent de davantage de soldats et de ressources. »",
+            source: "Gilles Havard et Cécile Vidal, Histoire de l'Amérique française, Paris, Flammarion, adaptation pédagogique."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Malgré leur infériorité numérique, les Français réussissent souvent à maintenir l'équilibre grâce à leurs alliances avec plusieurs nations autochtones et à leur connaissance du territoire. »",
+            source: "Marcel Trudel, Histoire de la Nouvelle-France, adaptation pédagogique."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Au début du 18e siècle, la population de la Nouvelle-France demeure beaucoup moins nombreuse que celle des colonies britanniques. Cet écart démographique limite la capacité militaire de la colonie française. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1 : Des origines à 1791, Québec, Septentrion, adaptation pédagogique."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Marcel Trudel considère que les alliances autochtones favorisent les Français (la différence), alors que Jacques Lacoursière et Gilles Havard considèrent que les Britanniques sont avantagés par leur plus grande population (la similitude)."
   }
 ]
