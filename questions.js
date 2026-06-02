@@ -4488,6 +4488,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
+  },
+  "Q225": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -14762,5 +14779,37 @@ const QUESTIONS = [
       ref: "ligne_1760-1800.png"
     },
     guide: "B"
+  },
+  {
+    id: "Q225",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Invasion américaine"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Sa Majesté Britannique reconnaît lesdits États-Unis, à savoir le New Hampshire, le Massachusetts, le Rhode Island, le Connecticut, New York, le New Jersey, la Pennsylvanie, le Delaware, le Maryland, la Virginie, la Caroline du Nord, la Caroline du Sud et la Géorgie, comme États libres, souverains et indépendants. »",
+            soustitre: "Extrait du traité de Paris",
+            source: "Traité de Paris, article I."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1760-1800.png"
+    },
+    guide: "C"
   }
 ]
