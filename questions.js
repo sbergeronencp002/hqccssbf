@@ -4241,6 +4241,34 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q213": {
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
   }
 }
 
@@ -13975,5 +14003,56 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Le canot."
+  },
+  {
+    id: "Q213",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P2 — 1608 – 1760",
+    points: 3,
+    soustag: "Position – 3 acteurs",
+    enonce: "Les documents A, B et C présentent le point de vue de trois historiens sur les effets de l'éloignement géographique de la métropole. Nommez l'historien qui présente un point de vue différent et comparez sa position à celle des deux autres historiens.",
+    aspects: [
+      {
+        aspect: "Adaptation des colons"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La distance qui sépare la Nouvelle-France de la France oblige souvent les habitants à répondre eux-mêmes à leurs besoins quotidiens. Cette réalité favorise le développement d'une plus grande autonomie dans la colonie. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, adaptation pédagogique."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Malgré l'éloignement de la métropole, la colonie demeure largement dépendante de la France pour son administration, son commerce et plusieurs produits essentiels. »",
+            source: "Allan Greer, Brève histoire des peuples de la Nouvelle-France, adaptation pédagogique."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les longs délais de communication avec la métropole amènent les colons à prendre plusieurs décisions sans attendre les directives venues de France. Cette situation contribue à leur adaptation aux réalités locales. »",
+            source: "Gilles Havard et Cécile Vidal, Histoire de l'Amérique française, adaptation pédagogique."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Allan Greer considère que les colons demeurent dépendants de la métropole (la différence), alors que Jacques Lacoursière et Gilles Havard considèrent que l’éloignement géographique favorise l’autonomie des colons (la similitude)."
   }
 ]
