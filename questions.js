@@ -13495,6 +13495,9 @@ const QUESTIONS = [
     aspects: [
       {
         aspect: "Diversification économique"
+      },
+      {
+        aspect: "Régime seigneurial"
       }
     ],
     documents: [
