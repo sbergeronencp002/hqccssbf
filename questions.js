@@ -4119,6 +4119,23 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q207": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -4461,6 +4478,9 @@ const IMAGE_DB = {
   },
   "activies_econiques_1663_1740.png": {
     src: "images/activies_econiques_1663_1740.png"
+  },
+  "eglise_catholique_n-f_1700.png": {
+    src: "images/eglise_catholique_n-f_1700.png"
   }
 }
 
@@ -13638,5 +13658,35 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Les autorités coloniales investissent dans plusieurs projets économiques (une mesure mise en place par les autorités coloniales). Cette intervention favorise le développement du travail du fer aux Forges du Saint-Maurice (une activité artisanale qui se développe). L'apparition de cette nouvelle activité contribue à diversifier les activités économiques de la colonie (une conséquence sur la diversification de l'économie de la colonie)."
+  },
+  {
+    id: "Q207",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez une pratique culturelle européenne maintenue par les colons en Nouvelle-France.",
+    aspects: [
+      {
+        aspect: "Église catholique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "eglise_catholique_n-f_1700.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "La pratique de la religion catholique."
   }
 ]
