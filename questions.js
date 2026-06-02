@@ -13752,7 +13752,7 @@ const QUESTIONS = [
     enonce: "Indiquez une conséquence de l'éloignement de la Nouvelle-France par rapport à la France sur la vie des colons.",
     aspects: [
       {
-        aspect: "Église catholique"
+        aspect: "Adaptation des colons"
       }
     ],
     documents: [
