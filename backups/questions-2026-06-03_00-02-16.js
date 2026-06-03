@@ -5020,7 +5020,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 2,
     soustag: "Avant et après",
-    enonce: "Les documents A à D présentent des événements marquants de l'histoire de la Province de Québec. Indiquez si chacun de ces événements se déroule avant ou après l'Acte de Québec (1774).",
+    enonce: "Les documents A à D font référence aux rapports de force entre les empires coloniaux français et britannique. Indiquez si les faits présentés dans ces documents se déroulent avant ou après la capitulation de Montréal.",
     aspects: [
       {
         aspect: "Proclamation royale"
@@ -5038,9 +5038,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Les représentants des Treize Colonies en viennent à la conclusion que leurs droits ne peuvent plus être protégés au sein de l'Empire britannique. Ils choisissent alors de rompre leurs liens politiques avec la métropole et d'affirmer leur droit de se gouverner eux-mêmes. »",
-            soustitre: "Déclaration d'indépendance des États-Unis",
-            source: "Texte adapté de Alan Taylor, American Revolutions: A Continental History, 1750-1804, W. W. Norton & Company, 2016."
+            ref: "deportation_acadien.png",
+            soustitre: "La déportation des Acadiens",
+            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
         ]
       },
@@ -5049,9 +5049,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "invasion_americaine.png",
-            soustitre: "Combats dans les rue de Québec lors de l'invasion américaine",
-            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de l'invasion américaine, 2026."
+            texte: "« Sa Majesté Britannique convient en outre, que les Habitants Français ou autres, qui auraient été Sujets du Roy Très Chrétien en Canada, pourront se retirer en toute Sûreté & Liberté, où bon leur semblera, et pourront vendre leurs Biens, pourvu que ce soit à des Sujets de Sa Majesté Britannique […] »",
+            source: "Adam SHORTT et Arthur G. DOUGHTY, Documents concernant l’histoire constitutionnelle du Canada : 1759-1791, Ottawa, C. H. Parmelee, 1911, p. 60. [Texte adapté]"
           }
         ]
       },
@@ -5060,9 +5059,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            ref: "capitulation_mtl_1760.png",
-            soustitre: "Capitulation de Montréal",
-            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de la capitulation de Montréal, 2026."
+            ref: "revolte_pontiact.png",
+            soustitre: "La révolte de Pontiac",
+            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
           }
         ]
       },
@@ -5071,29 +5070,28 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document D",
-            texte: "« Les autorités britanniques souhaitent transformer la nouvelle colonie en introduisant les institutions politiques et juridiques anglaises. Elles espèrent ainsi intégrer progressivement les Canadiens au modèle britannique et favoriser l'arrivée d'immigrants anglophones. »",
-            soustitre: "Proclamation royale",
-            source: "Texte adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 2 : De 1760 à 1791, Québec Amérique, 1995."
+            texte: "« Au moment où Québec est assiégée, les forts de l’Ouest sont abandonnés et les garnisons transportées à Québec ou dans les forts de la vallée du Richelieu […] Le chevalier de Lévis remporte une […] victoire au printemps […] à Sainte-Foy, près de Québec. Mais comme les Anglais contrôlent la navigation sur le fleuve et que des renforts arrivent de la Grande-Bretagne, il doit retraiter […] »",
+            source: "Jean-Pierre CHARLAND, À l’aube du XXIe siècle, avec la collaboration de Jacques Saint-Pierre, manuel de l’élève, histoire du Québec et du Canada, 4e secondaire, Montréal, Lidec, 1997, p. 144."
           }
         ]
       }
     ],
     reponse: {
       type: "avant-apres",
-      label: "Acte de Québec (1774)"
+      label: "La capitulation de Montréal"
     },
     guide: {
       type: "grille",
       entetes: [
         "Avant",
-        "Acte de Québec",
+        "La capitulation de Montréal",
         "Après"
       ],
       rangees: [
         [
-          "C et D",
+          "1 et 4",
           "",
-          "A et B"
+          "2 et 3"
         ]
       ]
     }
