@@ -180,6 +180,9 @@ function applyFilters() {
   }
 
   filtered.sort((a, b) => {
+    const ta = a.updatedAt || '';
+    const tb = b.updatedAt || '';
+    if(tb !== ta) return tb < ta ? -1 : 1;
     const nA = parseInt(a.id.replace(/\D/g, '')) || 0;
     const nB = parseInt(b.id.replace(/\D/g, '')) || 0;
     return nB - nA;
