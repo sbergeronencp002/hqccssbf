@@ -1554,7 +1554,8 @@ function buildQuestion() {
   }
 
   const soustag = getSoustag();
-  return { id, niveau, oi, periode, points, ...(soustag ? { soustag } : {}), enonce, aspects, documents, reponse, guide };
+  const updatedAt = new Date().toISOString();
+  return { id, niveau, oi, periode, points, ...(soustag ? { soustag } : {}), enonce, aspects, documents, reponse, guide, updatedAt };
 }
 
 function buildReglette(id) {

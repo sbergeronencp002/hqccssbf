@@ -54,7 +54,12 @@ function populateFilters() {
   Q_SEARCH_IDX = new Map(QUESTIONS.map(q => [q.id,
     fold([q.enonce||'', q.oi||'', q.periode||'', ...(q.aspects||[]).map(a=>a.aspect)].join(' '))
   ]));
-  const sorted = [...QUESTIONS].sort((a,b) => (parseInt(b.id.replace(/\D/g,''))||0) - (parseInt(a.id.replace(/\D/g,''))||0));
+  const sorted = [...QUESTIONS].sort((a,b) => {
+    const ta = a.updatedAt || '';
+    const tb = b.updatedAt || '';
+    if(tb !== ta) return tb < ta ? -1 : 1;
+    return (parseInt(b.id.replace(/\D/g,''))||0) - (parseInt(a.id.replace(/\D/g,''))||0);
+  });
   NEW_IDS = new Set(sorted.slice(0,10).map(q=>q.id));
   const allOis = [...new Set(QUESTIONS.map(q=>q.oi))].sort((a,b)=>a.localeCompare(b,'fr'));
   const aspectsByPeriode = {};
