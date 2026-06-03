@@ -4544,28 +4544,6 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
-  },
-  "Q228": {
-    oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
-    ]
   }
 }
 
@@ -14945,37 +14923,5 @@ const QUESTIONS = [
     },
     guide: "Le gouvernement de la colonie passe sous l'autorité britannique ou la colonie est divisée en trois districts administrés par des gouverneurs britanniques.",
     updatedAt: "2026-06-03T11:54:22.346Z"
-  },
-  {
-    id: "Q228",
-    niveau: 3,
-    oi: "Déterminer des changements et des continuités",
-    periode: "P3 — 1760 – 1791",
-    points: 2,
-    soustag: "Changement",
-    enonce: "Indiquez un changement dans la gouvernance de la colonie suite à la capitulation de Montréal.",
-    aspects: [
-      {
-        aspect: "Régime militaire"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            texte: "« La capitulation de Montréal marque la fin du gouvernement français. Les autorités britanniques prennent désormais en charge l'administration de la colonie. »",
-            source: "Alain Beaulieu, Stéphane Gervais et Martin Papillon, Histoire du Québec et du Canada, CEC."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
-    guide: "Les autorités britanniques remplacent les autorités françaises.",
-    updatedAt: "2026-06-03T12:09:53.746Z"
   }
 ]

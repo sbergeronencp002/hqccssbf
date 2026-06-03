@@ -4505,67 +4505,6 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
-  },
-  "Q226": {
-    oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
-    ]
-  },
-  "Q227": {
-    oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
-    ]
-  },
-  "Q228": {
-    oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
-    ]
   }
 }
 
@@ -4944,9 +4883,6 @@ const IMAGE_DB = {
   },
   "arrivee_loyalistes.png": {
     src: "images/arrivee_loyalistes.png"
-  },
-  "regime_militaire_org_pol.png": {
-    src: "images/regime_militaire_org_pol.png"
   }
 }
 
@@ -14882,100 +14818,5 @@ const QUESTIONS = [
       ref: "ligne_1760-1800.png"
     },
     guide: "C"
-  },
-  {
-    id: "Q226",
-    niveau: 3,
-    oi: "Établir des faits",
-    periode: "P3 — 1760 – 1791",
-    points: 1,
-    enonce: "Indiquez le nom de la période durant laquelle la colonie est administrée par des autorités britanniques entre la capitulation de Montréal et le Traité de Paris.",
-    aspects: [
-      {
-        aspect: "Régime militaire"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            texte: "« Après la capitulation de Montréal, le territoire est divisé en trois districts administratifs : Québec, Trois-Rivières et Montréal. Chacun de ces districts est placé sous l'autorité d'un gouverneur britannique chargé d'assurer l'administration de la colonie jusqu'à ce que son statut soit officiellement déterminé. »",
-            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 2, Septentrion."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
-    guide: "Le régime militaire.",
-    updatedAt: "2026-06-03T11:42:12.905Z"
-  },
-  {
-    id: "Q227",
-    niveau: 3,
-    oi: "Déterminer des causes et des conséquences",
-    periode: "P3 — 1760 – 1791",
-    points: 2,
-    soustag: "Conséquence",
-    enonce: "Indiquez une conséquence de la capitulation de Montréal sur l'administration de la colonie.",
-    aspects: [
-      {
-        aspect: "Régime militaire"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "regime_militaire_org_pol.png",
-            source: "chéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
-    guide: "Le gouvernement de la colonie passe sous l'autorité britannique ou la colonie est divisée en trois districts administrés par des gouverneurs britanniques.",
-    updatedAt: "2026-06-03T11:54:22.346Z"
-  },
-  {
-    id: "Q228",
-    niveau: 3,
-    oi: "Déterminer des changements et des continuités",
-    periode: "P3 — 1760 – 1791",
-    points: 2,
-    soustag: "Changement",
-    enonce: "Indiquez un changement dans la gouvernance de la colonie suite à la capitulation de Montréal.",
-    aspects: [
-      {
-        aspect: "Régime militaire"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            texte: "« La capitulation de Montréal marque la fin du gouvernement français. Les autorités britanniques prennent désormais en charge l'administration de la colonie. »",
-            source: "Alain Beaulieu, Stéphane Gervais et Martin Papillon, Histoire du Québec et du Canada, CEC."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
-    guide: "Les autorités britanniques remplacent les autorités françaises.",
-    updatedAt: "2026-06-03T12:09:53.746Z"
   }
 ]
