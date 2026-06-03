@@ -5023,13 +5023,13 @@ const QUESTIONS = [
     enonce: "Les documents A à D présentent des événements marquants de l'histoire de la Province de Québec. Indiquez si chacun de ces événements se déroule avant ou après l'Acte de Québec (1774).",
     aspects: [
       {
+        aspect: "Invasion américaine"
+      },
+      {
         aspect: "Proclamation royale"
       },
       {
         aspect: "Régime militaire"
-      },
-      {
-        aspect: "Statut des Indiens"
       }
     ],
     documents: [
@@ -5096,7 +5096,8 @@ const QUESTIONS = [
           "A et B"
         ]
       ]
-    }
+    },
+    updatedAt: "2026-06-03T11:31:34.474Z"
   },
   {
     id: "Q5",
