@@ -4522,6 +4522,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q227": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -4900,6 +4922,9 @@ const IMAGE_DB = {
   },
   "arrivee_loyalistes.png": {
     src: "images/arrivee_loyalistes.png"
+  },
+  "regime_militaire_org_pol.png": {
+    src: "images/regime_militaire_org_pol.png"
   }
 }
 
@@ -14866,5 +14891,37 @@ const QUESTIONS = [
     },
     guide: "Le régime militaire.",
     updatedAt: "2026-06-03T11:42:12.905Z"
+  },
+  {
+    id: "Q227",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de la capitulation de Montréal sur l'administration de la colonie.",
+    aspects: [
+      {
+        aspect: "Régime militaire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "regime_militaire_org_pol.png",
+            source: "chéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le gouvernement de la colonie passe sous l'autorité britannique ou la colonie est divisée en trois districts administrés par des gouverneurs britanniques.",
+    updatedAt: "2026-06-03T11:54:22.346Z"
   }
 ]
