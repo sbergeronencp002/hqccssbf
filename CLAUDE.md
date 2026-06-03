@@ -20,7 +20,7 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 | `backups/questions-YYYY-MM-DD_HH-MM.js` | Backups auto avant chaque publication (admin) |
 
 ### Cache-bust actuel
-`app.js?v=v40`, `style.css?v=v25`, `oi-config.js?v=v1`, `reglettes.js?v=v2` (admin) — incrémenter à chaque changement majeur.
+`app.js?v=40`, `style.css?v=25`, `oi-config.js?v=1`, `reglettes.js?v=2` (admin) — incrémenter à chaque changement majeur.
 
 ---
 
@@ -36,7 +36,7 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 | `boldify(s)` | 5 | Convertit `**x**` → `<strong>` |
 | `formatTexte(text)` | 8 | Formate énoncés (listes • et gras) |
 | `oiStyle(oi)` | 35 | Retourne classe CSS + couleur pour une OI |
-| `buildTileHtml(q)` | 420 | HTML d'une carte question dans la grille |
+| `buildTileHtml(q)` | 420 | HTML d'une carte question dans la grille (badge « Nouveauté » si NEW_IDS) |
 | `render(list)` | 441 | Affiche les cartes filtrées (pagination 50/page) |
 | `renderMore()` | 456 | Charge 50 cartes supplémentaires |
 | `renderDoc(d)` | 519 | HTML d'un document (texte/image/colonnes) |
@@ -44,6 +44,7 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 | `buildReglettHTML(q)` | 200 | HTML de la réglette (+ variantes complexes hardcodées) |
 | `openQModal(id)` | 325 | Ouvre le modal détail d'une question |
 | `closeQModal()` | 380 | Ferme le modal |
+| `copyQuestion()` | ~395 | Copie OI + aspects + période + énoncé dans le presse-papier |
 | `toggleTexte(btn)` | 504 | Expand/collapse texte long dans un document |
 | `openLightbox(src)` | 699 | Ouvre l'image en plein écran |
 
@@ -51,7 +52,7 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `populateFilters()` | 45 | Initialise tous les filtres depuis les données |
+| `populateFilters()` | 45 | Initialise tous les filtres + calcule NEW_IDS (10 dernières questions par updatedAt) |
 | `fill(id, vals, placeholder)` | 72 | Remplit un `<select>` |
 | `fillAspect(id, aspects, periodeOrder)` | 78 | Remplit le filtre aspect avec optgroups |
 | `fillOi(id, ois, placeholder)` | 96 | Remplit le filtre OI |
@@ -94,6 +95,23 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
 | `initSite()` | 469 | Point d'entrée : fetch questions.js + populateFilters + applyFilters + panier |
+
+---
+
+## Index des fonctions — documents.html
+
+> Gestionnaire d'images : affiche toutes les images, renommage, remplacement, suppression des orphelins.
+
+| Fonction | Rôle |
+|----------|------|
+| `loadAll()` | Charge images GitHub + questions.js, construit imgMap (ref → [ids]) |
+| `renderImages(tab)` | Affiche les cartes images selon l'onglet actif (`all` / `shared` / `orphans`) |
+| `openRenameModal(img)` | Ouvre le modal renommage |
+| `doRename()` | Copie fichier (nouveau nom) + supprime ancien + met à jour questions.js |
+| `openReplaceModal(img)` | Ouvre le modal remplacement avec aperçu et badge de taille |
+| `doReplace()` | Redimensionne (max 1200px canvas) + PUT même nom sur GitHub |
+| `deleteOrphan(img)` | Supprime fichier image + retire entrée IMAGE_DB dans questions.js (TextDecoder/TextEncoder) |
+| `loadSizeBadges()` | HEAD requests en parallèle → badges vert/orange/rouge selon taille |
 
 ---
 
@@ -164,7 +182,7 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `buildQuestion()` | 1369 | Construit l'objet `q` à partir du formulaire |
+| `buildQuestion()` | 1369 | Construit l'objet `q` à partir du formulaire (inclut `updatedAt`) |
 | `buildReglette(id)` | 1497 | Construit l'objet réglette depuis le preset sélectionné |
 | `validateForm()` | 1548 | Valide les champs requis, retourne tableau d'erreurs |
 | `publier()` | 1563 | Fetch SHA → backup → build → PUT GitHub (3 tentatives) |
@@ -187,8 +205,9 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 |----------|-------|------|
 | `renderDashboard()` | 1717 | Calcule et affiche les stats (barres par période/OI) |
 | `toggleDashboard()` | 1709 | Expand/collapse le tableau de bord |
-| `loadContexteJs()` | 1794 | Charge contexte.js depuis GitHub pour édition |
-| `publierContexteJs()` | 1813 | Valide syntaxe + pousse contexte.js sur GitHub |
+| `loadContexteJs()` | 1794 | Charge contexte.js depuis GitHub pour édition dans le textarea |
+| `publierContexteJs()` | 1813 | Valide syntaxe JS + pousse contexte.js sur GitHub |
+| `toggleContexteSection()` | ~1790 | Expand/collapse la section contexte.js |
 | `toast(msg, type)` | 1845 | Affiche un toast 3,5 s (type: `'ok'` ou `'err'`) |
 
 ---
@@ -225,7 +244,8 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
   // reponse: { type: 'situer-dans-lespace', elements: ['NF','TC'] }
   // reponse: { type: 'tableau_2col' }
   // reponse: { type: 'grille', entetes: [], rangees: [[]] }
-  guide: 'Texte réponse attendue'     // ou { type:'grille', entetes:[], rangees:[[]] } ou false
+  guide: 'Texte réponse attendue',    // ou { type:'grille', entetes:[], rangees:[[]] } ou false
+  updatedAt: '2026-06-03T14:30:00Z'  // ISO 8601 — posé par buildQuestion() à chaque publication
 }
 ```
 
@@ -273,11 +293,11 @@ PAT=github_pat_11CA47PMQ0...
 git fetch https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git main:refs/remotes/origin/main_fresh
 git merge refs/remotes/origin/main_fresh --no-edit
 git push https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git HEAD:main
-git push https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git HEAD:claude/tender-turing-uZTbH
-git fetch https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git claude/tender-turing-uZTbH:refs/remotes/origin/claude/tender-turing-uZTbH
+git push https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git HEAD:claude/lucid-keller-vtjgs
+git fetch https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git claude/lucid-keller-vtjgs:refs/remotes/origin/claude/lucid-keller-vtjgs
 ```
 
-**Branche de travail active :** `claude/tender-turing-uZTbH`
+**Branche de travail active :** `claude/lucid-keller-vtjgs`
 
 ---
 
@@ -288,6 +308,14 @@ Toujours compresser les PNG avec `pngquant` avant de commiter :
 pngquant --force --quality=65-85 --output <fichier>.png <fichier>.png
 ```
 Vérifier que la taille est raisonnable (< 400 Ko idéalement) avant de pousser.
+
+---
+
+## Fichiers JSON — statut
+
+| Fichier | Statut |
+|---------|--------|
+| `exam/exam_p1.json` | **Orphelin** — aucun code ne le lit. Contient une liste de questions pour un examen P1. À intégrer ou supprimer selon les besoins futurs. |
 
 ---
 
