@@ -4505,6 +4505,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
+  },
+  "Q226": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -14818,5 +14835,36 @@ const QUESTIONS = [
       ref: "ligne_1760-1800.png"
     },
     guide: "C"
+  },
+  {
+    id: "Q226",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez le nom de la période durant laquelle la colonie est administrée par des autorités britanniques entre la capitulation de Montréal et le Traité de Paris.",
+    aspects: [
+      {
+        aspect: "Régime militaire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après la capitulation de Montréal, le territoire est divisé en trois districts administratifs : Québec, Trois-Rivières et Montréal. Chacun de ces districts est placé sous l'autorité d'un gouverneur britannique chargé d'assurer l'administration de la colonie jusqu'à ce que son statut soit officiellement déterminé. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 2, Septentrion."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le régime militaire.",
+    updatedAt: "2026-06-03T11:42:12.905Z"
   }
 ]
