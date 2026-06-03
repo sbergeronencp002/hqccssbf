@@ -1628,7 +1628,7 @@ function validateForm() {
 // Best-effort, fire-and-forget, plafonné pour éviter les rafales d'appels API.
 // (Le contenu supprimé reste récupérable dans l'historique git.)
 async function pruneBackups(token) {
-  const KEEP = 40;        // backups conservés
+  const KEEP = 20;        // backups conservés
   const MAX_DEL = 12;     // suppressions max par publication
   try {
     const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/backups?ref=${BRANCH}&t=${Date.now()}`,
@@ -1655,6 +1655,19 @@ async function publier() {
   if(!token) { toast('Saisis ton token GitHub.', 'err'); return; }
   const errors = validateForm();
   if(errors.length) { toast('Champs manquants : ' + errors.join(', '), 'err'); return; }
+
+  // Avertissement doublon : même OI + même période, question différente
+  const qOi  = document.getElementById('q-oi').value;
+  const qPer = document.getElementById('q-periode').value;
+  const qId  = document.getElementById('q-id').value.trim();
+  const doublons = currentQuestions.filter(x => x.id !== qId && x.oi === qOi && x.periode === qPer);
+  if(doublons.length && !publier._confirmDoublon) {
+    publier._confirmDoublon = true;
+    toast(`⚠ Doublon potentiel : ${doublons.length} question(s) avec la même OI et période (${doublons.map(x=>x.id).join(', ')}). Clique à nouveau pour confirmer.`, 'err');
+    setTimeout(() => { publier._confirmDoublon = false; }, 6000);
+    return;
+  }
+  publier._confirmDoublon = false;
 
   const btn = document.getElementById('btn-publier');
   const status = document.getElementById('publish-status');

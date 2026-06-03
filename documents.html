@@ -55,6 +55,12 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
 .shared-group-header .img-label{font-size:.85rem;font-weight:500;color:var(--ink);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .badge{display:inline-flex;align-items:center;justify-content:center;background:#1B3B6F;color:#fff;border-radius:20px;padding:.15rem .6rem;font-size:.7rem;font-weight:500;white-space:nowrap;flex-shrink:0}
 .badge-single{background:var(--paper-3);color:var(--ink-3)}
+
+.orphan-row{display:flex;align-items:center;gap:.9rem;padding:.65rem 1rem;background:#fff;border:1px solid #f5c6c6;border-radius:8px;margin-bottom:.5rem}
+.orphan-row img{height:42px;width:68px;object-fit:cover;border-radius:5px;border:1px solid var(--border);flex-shrink:0;cursor:zoom-in}
+.orphan-row .img-label{font-size:.85rem;font-weight:500;color:var(--ink);flex:1}
+.btn-delete{background:none;border:1px solid #f5c6c6;cursor:pointer;color:#842029;font-size:.78rem;padding:.28rem .7rem;border-radius:5px;transition:background .15s,color .15s;flex-shrink:0;font-family:inherit}
+.btn-delete:hover{background:#f8d7da;color:#5a0f16}
 .chevron{color:var(--ink-3);font-size:.8rem;margin-left:.25rem;transition:transform .2s;flex-shrink:0}
 .shared-group-header.collapsed .chevron{transform:rotate(-90deg)}
 .shared-group-body{padding:.85rem 1rem}
@@ -162,6 +168,7 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
   <nav>
     <a id="nav-shared" class="active" onclick="setActive('shared')">Toutes les images</a>
     <a id="nav-all" onclick="setActive('all')">Toutes les questions</a>
+    <a id="nav-orphans" onclick="setActive('orphans')">Non utilisées</a>
   </nav>
 </header>
 
@@ -178,6 +185,10 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
 <div id="sec-all" class="section" style="display:none">
   <div class="section-title">Toutes les questions avec image</div>
   <div class="all-grid" id="allGrid"></div>
+</div>
+<div id="sec-orphans" class="section" style="display:none">
+  <div class="section-title" style="color:#842029">Images non utilisées</div>
+  <div id="orphans-container"></div>
 </div>
 
 <div id="lb" onclick="closeLb(event)">
@@ -339,8 +350,25 @@ function tileHtml(q) {
   const sel = document.getElementById('filterOi');
   ois.forEach(oi => { const o = document.createElement('option'); o.value=oi; o.textContent=oi; sel.appendChild(o); });
 
+  // Images orphelines : dans IMAGE_DB mais non référencées dans aucune question
+  const usedImgs = new Set(Object.keys(imgMap));
+  const orphans = Object.keys(IMAGE_DB).filter(img => !usedImgs.has(img)).sort();
+  if (orphans.length) {
+    document.getElementById('orphans-container').innerHTML = orphans.map(img => `
+      <div class="orphan-row" id="orphan-${CSS.escape(img)}">
+        <img src="images/${img}" loading="lazy" title="${img}" onclick="showImg('${img}')">
+        <span class="img-label">${img.replace('.png','')}</span>
+        ${sizeBadgeHtml(img)}
+        <button class="btn-delete" onclick="deleteOrphan('${img}')">🗑 Supprimer</button>
+      </div>`).join('');
+    document.getElementById('nav-orphans').style.display = '';
+    fetchSizes(orphans);
+  } else {
+    document.getElementById('nav-orphans').style.display = 'none';
+  }
+
   document.getElementById('stat-chip').innerHTML =
-    `<b>${Object.keys(imgMap).length}</b> images · <b>${sharedCount}</b> partagées · <b>${questions.length}</b> questions`;
+    `<b>${Object.keys(imgMap).length}</b> images · <b>${sharedCount}</b> partagées · <b>${questions.length}</b> questions${orphans.length ? ` · <b style="color:#842029">${orphans.length} non utilisée${orphans.length>1?'s':''}</b>` : ''}`;
 
   fetchSizes(Object.keys(imgMap));
 })();
@@ -389,8 +417,10 @@ function toggleGroup(header) {
 function setActive(id) {
   document.getElementById('nav-shared').classList.toggle('active', id==='shared');
   document.getElementById('nav-all').classList.toggle('active', id==='all');
+  document.getElementById('nav-orphans').classList.toggle('active', id==='orphans');
   document.getElementById('sec-shared').style.display = id==='shared' ? '' : 'none';
   document.getElementById('sec-all').style.display = id==='all' ? '' : 'none';
+  document.getElementById('sec-orphans').style.display = id==='orphans' ? '' : 'none';
   document.getElementById('search').value = '';
 }
 
@@ -430,6 +460,61 @@ function closeLb(e) {
   }
 }
 document.addEventListener('keydown', e => { if (e.key==='Escape') { closeLb(); closeRenameModal(); closeReplaceModal(); } });
+
+// ── Delete orphan ────────────────────────────────────────────────────────────
+
+async function deleteOrphan(img) {
+  if (!confirm(`Supprimer définitivement « ${img} » du dépôt GitHub ?\nCette action est irréversible (hors historique git).`)) return;
+  const btn = document.querySelector(`#orphan-${CSS.escape(img)} .btn-delete`);
+  if (btn) { btn.disabled = true; btn.textContent = '⏳…'; }
+  try {
+    // 1. Get SHA of image file
+    const r1 = await fetch(API + 'images/' + encodeURIComponent(img), {
+      headers: {Authorization: 'token ' + TOKEN}
+    });
+    if (!r1.ok) throw new Error('Impossible de lire ' + img + ' (' + r1.status + ')');
+    const d1 = await r1.json();
+
+    // 2. Delete image file
+    const r2 = await fetch(API + 'images/' + encodeURIComponent(img), {
+      method: 'DELETE',
+      headers: {Authorization: 'token ' + TOKEN, 'Content-Type': 'application/json'},
+      body: JSON.stringify({message: 'Supprimer image orpheline ' + img, sha: d1.sha})
+    });
+    if (!r2.ok) throw new Error('Échec suppression (' + r2.status + ')');
+
+    // 3. Remove from IMAGE_DB in questions.js
+    const rq = await fetch(API + 'questions.js', {headers: {Authorization: 'token ' + TOKEN}});
+    if (!rq.ok) throw new Error('Impossible de lire questions.js (' + rq.status + ')');
+    const dq = await rq.json();
+    const rawBytes = Uint8Array.from(atob(dq.content.replace(/\n/g,'')), c => c.charCodeAt(0));
+    const oldContent = new TextDecoder('utf-8').decode(rawBytes);
+    // Remove the IMAGE_DB entry (key + object block)
+    const escaped = img.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const newContent = oldContent.replace(new RegExp(`\\s*"${escaped}":\\s*\\{[^}]*\\},?`, 'g'), '');
+    if (newContent !== oldContent) {
+      const encBytes = new TextEncoder().encode(newContent);
+      let binary = ''; encBytes.forEach(b => binary += String.fromCharCode(b));
+      const rp = await fetch(API + 'questions.js', {
+        method: 'PUT',
+        headers: {Authorization: 'token ' + TOKEN, 'Content-Type': 'application/json'},
+        body: JSON.stringify({message: 'Retirer ' + img + ' de IMAGE_DB', content: btoa(binary), sha: dq.sha})
+      });
+      if (!rp.ok) throw new Error('Échec mise à jour questions.js (' + rp.status + ')');
+    }
+
+    // Remove row from DOM
+    document.getElementById('orphan-' + CSS.escape(img))?.remove();
+    if (!document.querySelector('#orphans-container .orphan-row')) {
+      document.getElementById('sec-orphans').style.display = 'none';
+      document.getElementById('nav-orphans').style.display = 'none';
+      setActive('shared');
+    }
+  } catch(err) {
+    if (btn) { btn.disabled = false; btn.textContent = '🗑 Supprimer'; }
+    alert('Erreur : ' + err.message);
+  }
+}
 
 // ── Replace ─────────────────────────────────────────────────────────────────
 

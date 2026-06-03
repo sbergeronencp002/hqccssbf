@@ -400,6 +400,24 @@ function closeQModalOverlay(e) {
   if(e.target === document.getElementById('q-modal-overlay')) closeQModal();
 }
 
+function copyQuestion() {
+  const btn = document.getElementById('q-modal-panier-btn');
+  const id = btn?.dataset.id;
+  const q = id && Q_MAP.get(id);
+  if(!q) return;
+  const aspects = (q.aspects||[]).map(a=>a.aspect).join(', ');
+  const periode = (q.periode||'').replace(/P\d+ — /,'');
+  const enonce = (q.enonce||'').replace(/\*\*(.*?)\*\*/g,'$1').replace(/^• /gm,'- ');
+  const text = [q.oi, aspects && `Aspects : ${aspects}`, periode && `Période : ${periode}`, '', enonce]
+    .filter(l=>l!==undefined).join('\n');
+  navigator.clipboard.writeText(text).then(() => {
+    const copyBtn = document.getElementById('q-modal-copy-btn');
+    const orig = copyBtn.textContent;
+    copyBtn.textContent = '✓ Copié';
+    setTimeout(()=>{ copyBtn.textContent = orig; }, 2000);
+  });
+}
+
 function updateTileState(id) {
   const tile = document.getElementById('tile-' + id);
   if(tile) tile.classList.toggle('in-panier', panier.includes(id));
@@ -777,7 +795,7 @@ function previsualiser(guideMode) {
       previewHtml += '<div style="border-top:3px solid #000;margin-bottom:0.75rem"></div>';
       const hasFields = showEleve || showGroupe || showDate || showScore;
       if(hasFields) {
-        previewHtml += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 2rem;font-size:0.88rem">';
+        previewHtml += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 2rem;font-size:1rem;font-weight:700">';
         if(showEleve)  previewHtml += '<div>Élève : _________________________</div>';
         if(showGroupe) previewHtml += '<div>Groupe : ________________________</div>';
         else if(showEleve) previewHtml += '<div></div>';
@@ -1419,7 +1437,7 @@ async function genererDocx(includeGuide=false) {
           margins: { top: 60, bottom: 60, left: 0, right: 0 },
           children: [new Paragraph({
             alignment: align || AlignmentType.LEFT,
-            children: [new TextRun({ text: txt, font:'Aptos', size:20 })]
+            children: [new TextRun({ text: txt, font:'Aptos', size:24, bold:true })]
           })]
         });
         const fieldRows = [];
