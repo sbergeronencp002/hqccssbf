@@ -4600,6 +4600,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q231": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
   }
 }
 
@@ -15073,5 +15095,84 @@ const QUESTIONS = [
     },
     guide: "Traité de Paris.",
     updatedAt: "2026-06-04T11:44:38.528Z"
+  },
+  {
+    id: "Q231",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    enonce: "Les documents A à D font référence aux traités de Paris. Indiquez à l’endroit approprié la lettre des documents correspondants.",
+    aspects: [
+      {
+        aspect: "Invasion américaine"
+      },
+      {
+        aspect: "Proclamation royale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après la guerre de Sept Ans, la France conserve seulement quelques îles de l'Atlantique afin de maintenir certaines activités liées à la pêche. »",
+            source: "Trudel, Marcel. Initiation à la Nouvelle-France. Montréal, Holt, Rinehart et Winston, 1968."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« La Grande-Bretagne reconnaît officiellement l'indépendance des États-Unis, mettant fin au conflit qui oppose les colonies américaines à la métropole britannique depuis plusieurs années. »",
+            source: "Beaulieu, Alain, Stéphane Gervais et Martin Papillon. Histoire du Québec et du Canada. Montréal, CEC, 2018."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Le territoire situé au sud des Grands Lacs est désormais intégré aux États-Unis, ce qui modifie l'équilibre territorial établi depuis la Conquête. »",
+            source: "Dickinson, John A. et Brian Young. Brève histoire socio-économique du Québec. Sillery, Septentrion, 2009."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« [...] la France cède le Canada à la Grande-Bretagne. Cette décision met fin à plusieurs années de guerre et modifie profondément l'organisation politique de la colonie. »",
+            source: "Beaulieu, Alain, Stéphane Gervais et Martin Papillon. Histoire du Québec et du Canada. Montréal, CEC, 2018."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Traité de Paris - 1763",
+        "Traité de Paris - 1783"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Traité de Paris - 1763",
+        "Traité de Paris - 1783"
+      ],
+      rangees: [
+        [
+          "A et D",
+          "B et C"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-04T12:00:01.235Z"
   }
 ]
