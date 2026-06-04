@@ -194,7 +194,6 @@ header a:hover { color: #fff; }
       <a href="#section-reglette">Réglette</a>
       <a href="#section-guide">Guide</a>
       <a href="#section-actions">Publier ↓</a>
-      <a href="#section-contexte-js">contexte.js</a>
     </nav>
 
     <!-- TABLEAU DE BORD -->
@@ -379,23 +378,6 @@ header a:hover { color: #fff; }
       <button class="btn-primary" id="btn-publier" onclick="publier()">Publier sur GitHub</button>
       <button class="btn-secondary" onclick="resetForm()">Réinitialiser</button>
       <span id="publish-status" style="font-size:.82rem;color:var(--ink-3)"></span>
-    </div>
-
-    <!-- ÉDITEUR CONTEXTE.JS -->
-    <div class="section" id="section-contexte-js" style="margin-top:2rem">
-      <div class="section-title" style="display:flex;justify-content:space-between;align-items:center;cursor:pointer" onclick="toggleContexteSection()">
-        <span>Éditeur — contexte.js</span>
-        <span id="contexte-toggle-icon" style="font-size:.8rem;color:var(--ink-3);transition:transform .2s">▼</span>
-      </div>
-      <div id="contexte-section-body" style="display:none;margin-top:.9rem">
-        <p style="font-size:.78rem;color:var(--ink-3);margin-bottom:.75rem">Modifier directement <code>contexte.js</code> (périodes et aspects par niveau). Le contenu sera validé syntaxiquement avant publication.</p>
-        <div style="display:flex;gap:.6rem;align-items:center;margin-bottom:.6rem;flex-wrap:wrap">
-          <button class="btn-secondary" onclick="loadContexteJs()">⬇ Charger contexte.js</button>
-          <button class="btn-primary" onclick="publierContexteJs()">⬆ Publier contexte.js</button>
-          <span id="contexte-status" style="font-size:.8rem;color:var(--ink-3)"></span>
-        </div>
-        <textarea id="contexte-raw" rows="18" style="width:100%;font-family:'Courier New',monospace;font-size:.75rem;padding:.6rem;border:1px solid var(--border);border-radius:6px;resize:vertical;background:var(--paper);color:var(--ink)" placeholder="Cliquez « Charger contexte.js » pour afficher le contenu…" spellcheck="false"></textarea>
-      </div>
     </div>
 
   </div><!-- /container -->
@@ -1656,19 +1638,6 @@ async function publier() {
   const errors = validateForm();
   if(errors.length) { toast('Champs manquants : ' + errors.join(', '), 'err'); return; }
 
-  // Avertissement doublon : même OI + même période, question différente
-  const qOi  = document.getElementById('q-oi').value;
-  const qPer = document.getElementById('q-periode').value;
-  const qId  = document.getElementById('q-id').value.trim();
-  const doublons = currentQuestions.filter(x => x.id !== qId && x.oi === qOi && x.periode === qPer);
-  if(doublons.length && !publier._confirmDoublon) {
-    publier._confirmDoublon = true;
-    toast(`⚠ Doublon potentiel : ${doublons.length} question(s) avec la même OI et période (${doublons.map(x=>x.id).join(', ')}). Clique à nouveau pour confirmer.`, 'err');
-    setTimeout(() => { publier._confirmDoublon = false; }, 6000);
-    return;
-  }
-  publier._confirmDoublon = false;
-
   const btn = document.getElementById('btn-publier');
   const status = document.getElementById('publish-status');
   btn.disabled = true;
@@ -1890,67 +1859,6 @@ function renderDashboard() {
     <div class="dash-niv-title">Par opération intellectuelle</div>
     ${oiRows}
   `;
-}
-
-// ── CONTEXTE ──────────────────────────────────────────────────────────
-function toggleContexteSection() {
-  const body = document.getElementById('contexte-section-body');
-  const icon = document.getElementById('contexte-toggle-icon');
-  const hidden = body.style.display === 'none';
-  body.style.display = hidden ? '' : 'none';
-  icon.style.transform = hidden ? '' : 'rotate(-90deg)';
-}
-
-let contexteFileSha = '';
-
-async function loadContexteJs() {
-  const token = getToken();
-  if(!token) { toast('Token manquant.', 'err'); return; }
-  const el = document.getElementById('contexte-status');
-  el.textContent = '⏳ Chargement…';
-  try {
-    const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/contexte.js?ref=${BRANCH}`,
-      { headers: { Authorization: `token ${token}` }, cache: 'no-store' });
-    if(!r.ok) throw new Error(r.status);
-    const data = await r.json();
-    contexteFileSha = data.sha;
-    const binary = atob(data.content.replace(/\n/g,''));
-    const bytes = new Uint8Array(binary.length);
-    for(let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
-    document.getElementById('contexte-raw').value = new TextDecoder('utf-8').decode(bytes);
-    el.textContent = '✓ Chargé';
-  } catch(e) { el.textContent = '✗ ' + e.message; toast('Erreur : ' + e.message, 'err'); }
-}
-
-async function publierContexteJs() {
-  const token = getToken();
-  if(!token) { toast('Token manquant.', 'err'); return; }
-  if(!contexteFileSha) { toast('Chargez d\'abord le contexte.', 'err'); return; }
-  const content = document.getElementById('contexte-raw').value;
-  try { new Function(content); } catch(e) { toast('JS invalide : ' + e.message, 'err'); return; }
-  const el = document.getElementById('contexte-status');
-  el.textContent = '⏳ Publication…';
-  try {
-    const encoded = utf8b64(content);
-    const putResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/contexte.js`, {
-      method:'PUT',
-      headers:{ Authorization:`token ${token}`, 'Content-Type':'application/json' },
-      body: JSON.stringify({ message:'Mettre à jour contexte.js', content: encoded, sha: contexteFileSha, branch: BRANCH })
-    });
-    if(!putResp.ok) {
-      let msg = putResp.status;
-      try { const e = await putResp.json(); msg = e.message || msg; } catch(_) {}
-      throw new Error(msg);
-    }
-    const result = await putResp.json();
-    contexteFileSha = result.content.sha;
-    let secs = 30;
-    const cd = setInterval(() => {
-      el.textContent = secs > 0 ? `✓ Publié — visible dans ${secs}s` : '✓ Visible maintenant';
-      if(secs-- <= 0) clearInterval(cd);
-    }, 1000);
-    toast('contexte.js publié !', 'ok');
-  } catch(e) { el.textContent = '✗ ' + e.message; toast('Erreur : ' + e.message, 'err'); }
 }
 
 // ── TOAST ─────────────────────────────────────────────────────────────
