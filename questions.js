@@ -4583,6 +4583,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q230": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -15025,5 +15042,36 @@ const QUESTIONS = [
     },
     guide: "Distribution de vivres aux habitants et réparation ou reconstruction des bâtiments et réparation des infrastructures.",
     updatedAt: "2026-06-04T01:00:23.723Z"
+  },
+  {
+    id: "Q230",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez le nom du traité qui met fin à la guerre entre la France et la Grande-Bretagne en 1763.",
+    aspects: [
+      {
+        aspect: "Proclamation royale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« En 1763, la guerre qui oppose la France et la Grande-Bretagne depuis plusieurs années prend officiellement fin. À cette occasion, la France cède le Canada à la Grande-Bretagne. »",
+            source: "Alain Beaulieu, Stéphane Gervais et Martin Papillon, Histoire du Québec et du Canada, CEC."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Traité de Paris.",
+    updatedAt: "2026-06-04T11:44:38.528Z"
   }
 ]
