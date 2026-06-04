@@ -4566,6 +4566,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
+  },
+  "Q229": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -14977,5 +14994,36 @@ const QUESTIONS = [
     },
     guide: "Les autorités britanniques remplacent les autorités françaises.",
     updatedAt: "2026-06-03T12:09:53.746Z"
+  },
+  {
+    id: "Q229",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez un moyen utilisé par les autorités militaires britanniques pour favoriser la reprise des activités dans la colonie entre 1760 et 1763.",
+    aspects: [
+      {
+        aspect: "Régime militaire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les autorités militaires britanniques permettent aux habitants de retourner sur leurs terres. Elles distribuent des vivres dans certaines régions touchées par la guerre et contribuent à la réparation de bâtiments et d'infrastructures endommagés. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 2 : De 1760 à 1791, Québec Amérique, 1995."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Distribution de vivres aux habitants et réparation ou reconstruction des bâtiments et réparation des infrastructures.",
+    updatedAt: "2026-06-04T01:00:23.723Z"
   }
 ]
