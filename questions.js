@@ -4622,6 +4622,34 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
       }
     ]
+  },
+  "Q232": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -5003,6 +5031,9 @@ const IMAGE_DB = {
   },
   "regime_militaire_org_pol.png": {
     src: "images/regime_militaire_org_pol.png"
+  },
+  "carte_proclamation_royale_territoire.png": {
+    src: "images/carte_proclamation_royale_territoire.png"
   }
 }
 
@@ -15174,5 +15205,62 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-04T12:00:01.235Z"
+  },
+  {
+    id: "Q232",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    enonce: "Expliquez comment la fin de la guerre de la Conquête transforme le territoire de l’Amérique du Nord.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• un résultat de la guerre de la Conquête\n• le traité qui met fin à cette guerre\n• une modification du territoire de l’Amérique du Nord",
+    aspects: [
+      {
+        aspect: "Proclamation royale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "capitulation_mtl_1760.png",
+            soustitre: "Capitulation de Montréal",
+            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de la capitulation de Montréal, 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« En 1763, un traité met officiellement fin à la guerre entre la France et la Grande-Bretagne. Les représentants des deux puissances y définissent le sort de leurs possessions nord-américaines. »",
+            source: "Beaulieu, Alain, Stéphane Gervais et Martin Papillon. Histoire du Québec et du Canada. Montréal, CEC, 2018."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "",
+            texte: "« Après la signature de l'entente, les possessions britanniques s'étendent désormais de l'Atlantique jusqu'au Mississippi, alors que la présence française en Amérique du Nord est fortement réduite. »",
+            source: "Dickinson, John A. et Brian Young. Brève histoire socio-économique du Québec. Sillery, Septentrion, 2009."
+          },
+          {
+            titre: "",
+            ref: "carte_proclamation_royale_territoire.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "La victoire britannique (le résultat de la guerre de la Conquête) lors de la guerre de la Conquête est confirmée par le Traité de Paris de 1763 (le traité qui met fin à la guerre). Par ce traité, la France cède le Canada à la Grande-Bretagne, ce qui agrandit les possessions britanniques et réduit le territoire français en Amérique du Nord (une modification du territoire).",
+    updatedAt: "2026-06-04T12:15:52.494Z"
   }
 ]
