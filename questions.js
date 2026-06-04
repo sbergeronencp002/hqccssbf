@@ -15244,12 +15244,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "",
-            texte: "« Après la signature de l'entente, les possessions britanniques s'étendent désormais de l'Atlantique jusqu'au Mississippi, alors que la présence française en Amérique du Nord est fortement réduite. »",
-            source: "Dickinson, John A. et Brian Young. Brève histoire socio-économique du Québec. Sillery, Septentrion, 2009."
-          },
-          {
-            titre: "",
+            titre: "Document C",
             ref: "carte_proclamation_royale_territoire.png",
             source: "Récitus."
           }
@@ -15261,6 +15256,6 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "La victoire britannique (le résultat de la guerre de la Conquête) lors de la guerre de la Conquête est confirmée par le Traité de Paris de 1763 (le traité qui met fin à la guerre). Par ce traité, la France cède le Canada à la Grande-Bretagne, ce qui agrandit les possessions britanniques et réduit le territoire français en Amérique du Nord (une modification du territoire).",
-    updatedAt: "2026-06-04T12:15:52.494Z"
+    updatedAt: "2026-06-04T12:22:19.834Z"
   }
 ]
