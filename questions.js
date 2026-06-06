@@ -15395,7 +15395,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 2,
     soustag: "Conséquence",
-    enonce: "Quelle est une conséquence de la reconnaissance des droits territoriaux des Autochtones par la Proclamation royale de 1763?",
+    enonce: "Indiquez une conséquence de la reconnaissance des droits territoriaux des Autochtones par la Proclamation royale de 1763?",
     aspects: [
       {
         aspect: "Proclamation royale"
@@ -15418,6 +15418,6 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "L'expansion du peuplement britannique vers l'ouest est limitée. ou Les colons britanniques ne peuvent pas s'établir librement sur les territoires autochtones. ou L'occupation de certains territoires par les Britanniques est restreinte.",
-    updatedAt: "2026-06-06T19:48:48.312Z"
+    updatedAt: "2026-06-06T19:51:00.256Z"
   }
 ]
