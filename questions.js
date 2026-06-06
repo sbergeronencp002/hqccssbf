@@ -4873,6 +4873,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q244": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -15899,5 +15916,36 @@ const QUESTIONS = [
     },
     guide: "Imposer les institutions britanniques ou onstaurer un gouvernement civil britannique ou appliquer les lois britanniques",
     updatedAt: "2026-06-06T21:12:22.247Z"
+  },
+  {
+    id: "Q244",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez un objectif poursuivi par le roi dans les instructions transmises au gouverneur Murray.",
+    aspects: [
+      {
+        aspect: "Instructions au gouverneur Murray"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les autorités britanniques souhaitent transformer progressivement leur nouvelle colonie afin qu'elle ressemble davantage aux autres colonies de l'Empire. Elles espèrent notamment que les habitants adopteront les institutions, les lois et les pratiques britanniques. »",
+            source: "Beaulieu, Alain, Stéphane Gervais et Martin Papillon. Histoire du Québec et du Canada. Montréal, CEC, 2018."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Assimiler les Canadiens.",
+    updatedAt: "2026-06-06T21:14:06.575Z"
   }
 ]
