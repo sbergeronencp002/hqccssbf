@@ -4890,6 +4890,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q245": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
   }
 }
 
@@ -15947,5 +15969,87 @@ const QUESTIONS = [
     },
     guide: "Assimiler les Canadiens.",
     updatedAt: "2026-06-06T21:14:06.575Z"
+  },
+  {
+    id: "Q245",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    enonce: "Les documents A à D présentent des faits liés à l'administration de la colonie entre 1760 et 1774. Associez chaque document au type de gouvernement correspondant.",
+    aspects: [
+      {
+        aspect: "Instructions au gouverneur Murray"
+      },
+      {
+        aspect: "Proclamation royale"
+      },
+      {
+        aspect: "Régime militaire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Durant les premières années qui suivent la Conquête, les autorités britanniques permettent aux habitants de reprendre progressivement leurs activités économiques tout en administrant directement la colonie. »",
+            source: "Dickinson, John A. et Brian Young. Brève histoire socio-économique du Québec. Septentrion, 2009."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "org_pol_apres_1763.png",
+            source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "regime_militaire_org_pol.png",
+            source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Les nouvelles institutions mises en place dans la colonie s'inspirent de celles des autres possessions britanniques d'Amérique du Nord. »",
+            source: "Dickinson, John A. et Brian Young. Brève histoire socio-économique du Québec. Septentrion, 2009."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Gouvernement civil",
+        "Gouvernement militaire"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Gouvernement civil",
+        "Gouvernement militaire"
+      ],
+      rangees: [
+        [
+          "B et D",
+          "A et C"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-06T21:26:53.038Z"
   }
 ]
