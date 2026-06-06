@@ -4828,6 +4828,34 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q242": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -15771,5 +15799,57 @@ const QUESTIONS = [
     },
     guide: "Le Serment du Test.",
     updatedAt: "2026-06-06T21:02:50.524Z"
+  },
+  {
+    id: "Q242",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    enonce: "Expliquez comment la composition de la population influence les décisions prises par le gouverneur Murray.\n\nRépondez à la question en précisant :\n\n• la composition de la population de la colonie\n• une décision prise par Murray\n• une conséquence pour les Canadiens",
+    aspects: [
+      {
+        aspect: "Instructions au gouverneur Murray"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "1763.png",
+            soustitre: "Composition de la population de la Province de Québec en 1763",
+            source: "adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Le gouverneur Murray estime qu'il est préférable de tenir compte des habitudes et des croyances de la population canadienne afin d'assurer la stabilité de la colonie. »",
+            source: "Lacoursière, Jacques. Histoire populaire du Québec, tome 2. Sillery, Septentrion, 1995."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Malgré certaines restrictions imposées par les autorités britanniques, plusieurs Canadiens continuent de pratiquer leur religion et de participer à la vie de leur communauté après la Conquête. »",
+            source: "Dickinson, John A. et Brian Young. Brève histoire socio-économique du Québec. Sillery, Septentrion, 2009."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Les Canadiens catholiques forment la majorité de la population de la colonie (la composition de la population de la colonie). Le gouverneur Murray leur accorde certaines concessions, notamment sur le plan religieux (une décision prise par Murray). Les Canadiens peuvent ainsi continuer à pratiquer leur religion catholique (une conséquence pour les Canadiens).",
+    updatedAt: "2026-06-06T21:10:21.698Z"
   }
 ]
