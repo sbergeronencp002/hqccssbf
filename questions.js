@@ -15470,6 +15470,7 @@ const QUESTIONS = [
     oi: "Déterminer des causes et des conséquences",
     periode: "P3 — 1760 – 1791",
     points: 2,
+    soustag: "Cause",
     enonce: "Indiquez une cause de la révolte de Pontiac.",
     aspects: [
       {
@@ -15493,7 +15494,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "L'expansion du peuplement britannique sur les territoires autochtones ou l'empiètement des Britanniques sur les territoires autochtones.",
-    updatedAt: "2026-06-06T19:59:26.440Z"
+    updatedAt: "2026-06-06T20:03:38.063Z"
   },
   {
     id: "Q237",
