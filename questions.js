@@ -4761,6 +4761,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q239": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -15587,5 +15609,37 @@ const QUESTIONS = [
     },
     guide: "Le Département des Affaires indiennes.",
     updatedAt: "2026-06-06T20:40:00.174Z"
+  },
+  {
+    id: "Q239",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une raison qui explique la création du Département des Affaires indiennes par les autorités britanniques.",
+    aspects: [
+      {
+        aspect: "Statut des Indiens"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Au lendemain de la Conquête, les autorités britanniques doivent composer avec la présence de nombreuses nations autochtones sur un vaste territoire. Elles cherchent à assurer la stabilité de leurs possessions nord-américaines et à éviter de nouveaux affrontements. »",
+            source: "Dickinson, John A. et Brian Young. Brève histoire socio-économique du Québec. Sillery, Septentrion, 2009."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Maintenir de bonnes relations avec les Autochtones.",
+    updatedAt: "2026-06-06T20:41:51.403Z"
   }
 ]
