@@ -4678,6 +4678,28 @@ const REGLETTES = {
       "0 point"
     ],
     niveaux: []
+  },
+  "Q235": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -15365,5 +15387,37 @@ const QUESTIONS = [
     },
     guide: "Changement\n\nIl y a changement, car après 1763, le régime militaire est remplacé par une administration civile britannique. ou Il y a changement, car entre 1760 et 1770, la colonie passe d'un régime militaire à un régime civil britannique.\n\nContinuité\n\nIl y a continuité, car entre 1760 et 1770, la colonie demeure sous l'autorité de la Couronne britannique. ou Il y a continuité, car entre 1760 et 1770, la colonie est administrée par des autorités britanniques.",
     updatedAt: "2026-06-06T19:44:05.058Z"
+  },
+  {
+    id: "Q235",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Quelle est une conséquence de la reconnaissance des droits territoriaux des Autochtones par la Proclamation royale de 1763?",
+    aspects: [
+      {
+        aspect: "Proclamation royale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les terres situées à l'ouest des Appalaches ne peuvent être occupées par les sujets britanniques sans l'autorisation de la Couronne. Les nations indiennes qui y habitent conservent la possession de leurs territoires jusqu'à ce qu'ils soient cédés officiellement. »",
+            source: "Adapté de la Proclamation royale, 1763."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "L'expansion du peuplement britannique vers l'ouest est limitée. ou Les colons britanniques ne peuvent pas s'établir librement sur les territoires autochtones. ou L'occupation de certains territoires par les Britanniques est restreinte.",
+    updatedAt: "2026-06-06T19:48:48.312Z"
   }
 ]
