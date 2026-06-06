@@ -4667,6 +4667,17 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q234": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
   }
 }
 
@@ -5051,6 +5062,9 @@ const IMAGE_DB = {
   },
   "carte_proclamation_royale_territoire.png": {
     src: "images/carte_proclamation_royale_territoire.png"
+  },
+  "org_pol_apres_1763.png": {
+    src: "images/org_pol_apres_1763.png"
   }
 }
 
@@ -15305,5 +15319,51 @@ const QUESTIONS = [
     },
     guide: "La Proclamation royale.",
     updatedAt: "2026-06-06T18:20:48.863Z"
+  },
+  {
+    id: "Q234",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans l’organisation politique de la colonie entre 1760 et 1770. Justifiez votre choix par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Proclamation royale"
+      },
+      {
+        aspect: "Régime militaire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "regime_militaire_org_pol.png",
+            soustitre: "Organisation politique de la colonie entre 1760-1763",
+            source: "chéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "org_pol_apres_1763.png",
+            soustitre: "Organisation politique de la colonie après 1763"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Changement\n\nIl y a changement, car après 1763, le régime militaire est remplacé par une administration civile britannique. ou Il y a changement, car entre 1760 et 1770, la colonie passe d'un régime militaire à un régime civil britannique.\n\nContinuité\n\nIl y a continuité, car entre 1760 et 1770, la colonie demeure sous l'autorité de la Couronne britannique. ou Il y a continuité, car entre 1760 et 1770, la colonie est administrée par des autorités britanniques.",
+    updatedAt: "2026-06-06T19:44:05.058Z"
   }
 ]
