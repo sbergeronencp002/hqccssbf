@@ -4722,6 +4722,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q237": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -15472,5 +15494,49 @@ const QUESTIONS = [
     },
     guide: "L'expansion du peuplement britannique sur les territoires autochtones ou l'empiètement des Britanniques sur les territoires autochtones.",
     updatedAt: "2026-06-06T19:59:26.440Z"
+  },
+  {
+    id: "Q237",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Changement",
+    enonce: "Indiquez un changement dans les relations entre les Autochtones et les autorités britanniques après la guerre de la Conquête.",
+    aspects: [
+      {
+        aspect: "Statut des Indiens"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les autorités françaises entretiennent leurs alliances avec plusieurs nations autochtones par des rencontres diplomatiques régulières et par la distribution de présents. Ces pratiques contribuent au maintien de relations généralement harmonieuses. »",
+            soustitre: "Sous le régime français",
+            source: "Havard, Gilles et Cécile Vidal. Histoire de l'Amérique française. Paris, Flammarion, 2003."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Après 1760, plusieurs chefs autochtones constatent que les autorités britanniques réduisent la distribution de présents et modifient certaines pratiques diplomatiques qui existaient auparavant avec les Français. »",
+            soustitre: "Sous le régime britannique",
+            source: "Beaulieu, Alain, Stéphane Gervais et Martin Papillon. Histoire du Québec et du Canada. Montréal, CEC, 2018."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les Britanniques réduisent ou cessent la distribution de présents aux Autochtones ou les Britanniques modifient les alliances établies sous le Régime français.",
+    updatedAt: "2026-06-06T20:03:15.483Z"
   }
 ]
