@@ -4700,6 +4700,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q236": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -15419,5 +15441,36 @@ const QUESTIONS = [
     },
     guide: "L'expansion du peuplement britannique vers l'ouest est limitée. ou Les colons britanniques ne peuvent pas s'établir librement sur les territoires autochtones. ou L'occupation de certains territoires par les Britanniques est restreinte.",
     updatedAt: "2026-06-06T19:51:00.256Z"
+  },
+  {
+    id: "Q236",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    enonce: "Indiquez une cause de la révolte de Pontiac.",
+    aspects: [
+      {
+        aspect: "Statut des Indiens"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Plusieurs nations autochtones s'inquiètent de voir les colons britanniques s'établir dans les régions situées à l'ouest des Appalaches. Elles considèrent que ces terres leur appartiennent et refusent cette progression. »",
+            source: "Dickinson, John A. et Brian Young. Brève histoire socio-économique du Québec. Sillery, Septentrion, 2009."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "L'expansion du peuplement britannique sur les territoires autochtones ou l'empiètement des Britanniques sur les territoires autochtones.",
+    updatedAt: "2026-06-06T19:59:26.440Z"
   }
 ]
