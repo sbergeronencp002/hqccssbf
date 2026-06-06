@@ -15102,7 +15102,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P3 — 1760 – 1791",
     points: 1,
-    enonce: "Indiquez le nom du traité qui met fin à la guerre entre la France et la Grande-Bretagne en 1763.",
+    enonce: "Indiquez le nom du traité signé en 1763 qui met fin à la guerre de Setp Ans entre la France et la Grande-Bretagne.",
     aspects: [
       {
         aspect: "Proclamation royale"
@@ -15125,7 +15125,7 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Traité de Paris.",
-    updatedAt: "2026-06-04T11:44:38.528Z"
+    updatedAt: "2026-06-06T17:50:01.019Z"
   },
   {
     id: "Q231",
