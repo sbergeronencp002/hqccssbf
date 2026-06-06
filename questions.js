@@ -4856,6 +4856,23 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q243": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -15851,5 +15868,36 @@ const QUESTIONS = [
     },
     guide: "Les Canadiens catholiques forment la majorité de la population de la colonie (la composition de la population de la colonie). Le gouverneur Murray leur accorde certaines concessions, notamment sur le plan religieux (une décision prise par Murray). Les Canadiens peuvent ainsi continuer à pratiquer leur religion catholique (une conséquence pour les Canadiens).",
     updatedAt: "2026-06-06T21:10:21.698Z"
+  },
+  {
+    id: "Q243",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez un moyen proposé dans les instructions du roi pour favoriser l'assimilation des Canadiens.",
+    aspects: [
+      {
+        aspect: "Instructions au gouverneur Murray"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les autorités britanniques souhaitent que les habitants de la nouvelle colonie adoptent progressivement les usages et les institutions en vigueur dans les autres possessions de l'Empire britannique. »",
+            source: "Dickinson, John A. et Brian Young. Brève histoire socio-économique du Québec. Sillery, Septentrion, 2009."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Imposer les institutions britanniques ou onstaurer un gouvernement civil britannique ou appliquer les lois britanniques",
+    updatedAt: "2026-06-06T21:12:22.247Z"
   }
 ]
