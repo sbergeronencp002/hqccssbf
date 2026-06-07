@@ -5301,8 +5301,8 @@ const IMAGE_DB = {
   "exportations_bois_1800_1840.png": {
     src: "images/exportations_bois_1800_1840.png"
   },
-  "1763.png": {
-    src: "images/1763.png"
+  "population_1763.png": {
+    src: "images/population_1763.png"
   },
   "1783.png": {
     src: "images/1783.png"
@@ -5514,8 +5514,8 @@ const IMAGE_DB = {
   "carte_proclamation_royale_territoire.png": {
     src: "images/carte_proclamation_royale_territoire.png"
   },
-  "org_pol_apres_1763.png": {
-    src: "images/org_pol_apres_1763.png"
+  "org_pol_apres_population_1763.png": {
+    src: "images/org_pol_apres_population_1763.png"
   },
   "org_pol_apres_1784.png": {
     src: "images/org_pol_apres_1784.png"
@@ -10288,7 +10288,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "1763.png",
+            ref: "population_1763.png",
             soustitre: "Composition de la population de la colonie en 1763",
             source: "adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal."
           }
@@ -10331,7 +10331,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "1763.png",
+            ref: "population_1763.png",
             soustitre: "Composition de la population de la colonie en 1763",
             source: "adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal."
           }
@@ -10374,7 +10374,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "1763.png",
+            ref: "population_1763.png",
             soustitre: "Composition de la population de la colonie en 1763",
             source: "adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal."
           }
@@ -15808,7 +15808,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "org_pol_apres_1763.png",
+            ref: "org_pol_apres_population_1763.png",
             soustitre: "Organisation politique de la colonie après 1763",
             source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
           }
@@ -16096,7 +16096,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "1763.png",
+            ref: "population_1763.png",
             soustitre: "Composition de la population de la Province de Québec en 1763",
             source: "adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal."
           }
@@ -16226,7 +16226,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "org_pol_apres_1763.png",
+            ref: "org_pol_apres_population_1763.png",
             source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
           }
         ]
@@ -16341,7 +16341,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "org_pol_apres_1763.png",
+            ref: "org_pol_apres_population_1763.png",
             source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
           }
         ]
