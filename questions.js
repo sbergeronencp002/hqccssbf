@@ -5017,6 +5017,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q252": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de divergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -16458,5 +16480,47 @@ const QUESTIONS = [
     },
     guide: "Le maintien des lois civiles françaises.",
     updatedAt: "2026-06-07T12:21:02.631Z"
+  },
+  {
+    id: "Q252",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Divergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs de la Province de Québec après l'adoption de l'Acte de Québec de 1774. Sur quel point précis ces acteurs sont-ils en désaccord?",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Plusieurs habitants voient dans cette nouvelle constitution un moyen d'assurer la stabilité de la province sans qu'il soit nécessaire d'établir immédiatement une assemblée représentative. »",
+            source: "Adapté de la correspondance de François Chardon, vers 1775."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les sujets britanniques de cette province devraient jouir du droit d'être représentés dans une assemblée élue plutôt que d'être gouvernés par des conseils nommés. »",
+            source: "Adapté des pétitions et mémoires de Thomas Walker, marchand britannique de Québec, vers 1775."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les deux acteurs sont en désaccord sur l'établissement d'une assemblée élue dans la Province de Québec.",
+    updatedAt: "2026-06-07T12:22:19.114Z"
   }
 ]
