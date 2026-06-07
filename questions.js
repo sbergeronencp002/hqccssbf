@@ -4912,6 +4912,28 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
       }
     ]
+  },
+  "Q246": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
+  },
+  "Q247": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
   }
 }
 
@@ -5299,6 +5321,9 @@ const IMAGE_DB = {
   },
   "org_pol_apres_1763.png": {
     src: "images/org_pol_apres_1763.png"
+  },
+  "org_pol_apres_1784.png": {
+    src: "images/org_pol_apres_1784.png"
   }
 }
 
@@ -7685,7 +7710,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P3 — 1760 – 1791",
     points: 1,
-    enonce: "Quel gouverneur est rappelé en Angleterre à la suite de pressions exercées par les marchands \nanglophones de la Province de Québec au début du régime britannique?",
+    enonce: "Quel gouverneur est rappelé en Angleterre à la suite de pressions exercées par les marchands \nanglophones?",
     aspects: [
       {
         aspect: "Mouvements de revendication"
@@ -7706,7 +7731,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 1
     },
-    guide: "James Murray."
+    guide: "James Murray.",
+    updatedAt: "2026-06-07T00:44:24.446Z"
   },
   {
     id: "Q58",
@@ -16052,5 +16078,95 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-06T21:26:53.038Z"
+  },
+  {
+    id: "Q246",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans le territoire de la Province de Québec entre 1763 et 1774. Justifiez votre choix par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      },
+      {
+        aspect: "Proclamation royale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "carte_terr_proclamation_royale.png",
+            source: "Récitus."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "carte_terr_acte_quebec.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Changement :\nIl y a changement, car en 1774, la Province de Québec est beaucoup plus grande qu’en 1763. Elle s’étend maintenant vers les Grands Lacs et la vallée de l’Ohio.\n\nContinuité :\nIl y a continuité, car entre 1763 et 1774, la Province de Québec demeure une possession britannique située dans la région de la vallée du Saint-Laurent.",
+    updatedAt: "2026-06-07T00:48:22.548Z"
+  },
+  {
+    id: "Q247",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans l’organisation politique de la Province de Québec entre 1763 et 1774. Justifiez votre choix par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      },
+      {
+        aspect: "Proclamation royale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "org_pol_apres_1763.png",
+            source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "org_pol_apres_1784.png",
+            source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Changement :\nIl y a changement, car en 1774, le Conseil de Québec devient le Conseil exécutif et le Conseil législatif.\n\nContinuité :\nIl y a continuité, car entre 1763 et 1774, la Province de Québec demeure dirigée par un gouverneur britannique nommé par le roi.",
+    updatedAt: "2026-06-07T00:57:20.378Z"
   }
 ]

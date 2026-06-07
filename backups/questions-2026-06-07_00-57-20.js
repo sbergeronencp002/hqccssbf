@@ -4505,6 +4505,424 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
+  },
+  "Q226": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q227": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
+  },
+  "Q228": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
+  },
+  "Q229": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q230": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q231": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
+  },
+  "Q232": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
+  },
+  "Q233": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q234": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
+  },
+  "Q235": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
+  },
+  "Q236": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
+  },
+  "Q237": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
+  },
+  "Q238": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q239": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
+  },
+  "Q240": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
+  },
+  "Q241": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q242": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
+  },
+  "Q243": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q244": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q245": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
+  },
+  "Q246": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
   }
 }
 
@@ -4883,6 +5301,15 @@ const IMAGE_DB = {
   },
   "arrivee_loyalistes.png": {
     src: "images/arrivee_loyalistes.png"
+  },
+  "regime_militaire_org_pol.png": {
+    src: "images/regime_militaire_org_pol.png"
+  },
+  "carte_proclamation_royale_territoire.png": {
+    src: "images/carte_proclamation_royale_territoire.png"
+  },
+  "org_pol_apres_1763.png": {
+    src: "images/org_pol_apres_1763.png"
   }
 }
 
@@ -5020,16 +5447,16 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 2,
     soustag: "Avant et après",
-    enonce: "Les documents A à D font référence aux rapports de force entre les empires coloniaux français et britannique. Indiquez si les faits présentés dans ces documents se déroulent avant ou après la capitulation de Montréal.",
+    enonce: "Les documents A à D présentent des événements marquants de l'histoire de la Province de Québec. Indiquez si chacun de ces événements se déroule avant ou après l'Acte de Québec (1774).",
     aspects: [
+      {
+        aspect: "Invasion américaine"
+      },
       {
         aspect: "Proclamation royale"
       },
       {
         aspect: "Régime militaire"
-      },
-      {
-        aspect: "Statut des Indiens"
       }
     ],
     documents: [
@@ -5038,9 +5465,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "deportation_acadien.png",
-            soustitre: "La déportation des Acadiens",
-            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
+            texte: "« Les représentants des Treize Colonies en viennent à la conclusion que leurs droits ne peuvent plus être protégés au sein de l'Empire britannique. Ils choisissent alors de rompre leurs liens politiques avec la métropole et d'affirmer leur droit de se gouverner eux-mêmes. »",
+            soustitre: "Déclaration d'indépendance des États-Unis",
+            source: "Texte adapté de Alan Taylor, American Revolutions: A Continental History, 1750-1804, W. W. Norton & Company, 2016."
           }
         ]
       },
@@ -5049,8 +5476,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« Sa Majesté Britannique convient en outre, que les Habitants Français ou autres, qui auraient été Sujets du Roy Très Chrétien en Canada, pourront se retirer en toute Sûreté & Liberté, où bon leur semblera, et pourront vendre leurs Biens, pourvu que ce soit à des Sujets de Sa Majesté Britannique […] »",
-            source: "Adam SHORTT et Arthur G. DOUGHTY, Documents concernant l’histoire constitutionnelle du Canada : 1759-1791, Ottawa, C. H. Parmelee, 1911, p. 60. [Texte adapté]"
+            ref: "invasion_americaine.png",
+            soustitre: "Combats dans les rue de Québec lors de l'invasion américaine",
+            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de l'invasion américaine, 2026."
           }
         ]
       },
@@ -5059,9 +5487,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            ref: "revolte_pontiact.png",
-            soustitre: "La révolte de Pontiac",
-            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
+            ref: "capitulation_mtl_1760.png",
+            soustitre: "Capitulation de Montréal",
+            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de la capitulation de Montréal, 2026."
           }
         ]
       },
@@ -5070,31 +5498,33 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document D",
-            texte: "« Au moment où Québec est assiégée, les forts de l’Ouest sont abandonnés et les garnisons transportées à Québec ou dans les forts de la vallée du Richelieu […] Le chevalier de Lévis remporte une […] victoire au printemps […] à Sainte-Foy, près de Québec. Mais comme les Anglais contrôlent la navigation sur le fleuve et que des renforts arrivent de la Grande-Bretagne, il doit retraiter […] »",
-            source: "Jean-Pierre CHARLAND, À l’aube du XXIe siècle, avec la collaboration de Jacques Saint-Pierre, manuel de l’élève, histoire du Québec et du Canada, 4e secondaire, Montréal, Lidec, 1997, p. 144."
+            texte: "« Les autorités britanniques souhaitent transformer la nouvelle colonie en introduisant les institutions politiques et juridiques anglaises. Elles espèrent ainsi intégrer progressivement les Canadiens au modèle britannique et favoriser l'arrivée d'immigrants anglophones. »",
+            soustitre: "Proclamation royale",
+            source: "Texte adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 2 : De 1760 à 1791, Québec Amérique, 1995."
           }
         ]
       }
     ],
     reponse: {
       type: "avant-apres",
-      label: "La capitulation de Montréal"
+      label: "Acte de Québec (1774)"
     },
     guide: {
       type: "grille",
       entetes: [
         "Avant",
-        "La capitulation de Montréal",
+        "Acte de Québec",
         "Après"
       ],
       rangees: [
         [
-          "1 et 4",
+          "C et D",
           "",
-          "2 et 3"
+          "A et B"
         ]
       ]
-    }
+    },
+    updatedAt: "2026-06-03T11:31:34.474Z"
   },
   {
     id: "Q5",
@@ -7266,7 +7696,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P3 — 1760 – 1791",
     points: 1,
-    enonce: "Quel gouverneur est rappelé en Angleterre à la suite de pressions exercées par les marchands \nanglophones de la Province de Québec au début du régime britannique?",
+    enonce: "Quel gouverneur est rappelé en Angleterre à la suite de pressions exercées par les marchands \nanglophones?",
     aspects: [
       {
         aspect: "Mouvements de revendication"
@@ -7287,7 +7717,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 1
     },
-    guide: "James Murray."
+    guide: "James Murray.",
+    updatedAt: "2026-06-07T00:44:24.446Z"
   },
   {
     id: "Q58",
@@ -14675,8 +15106,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Les nouveaux dirigeants imposent désormais les lois civiles anglaises et cherchent à remplacer plusieurs institutions héritées du régime français. »\n\n« Le territoire administré par les autorités britanniques est désormais limité principalement à la vallée du Saint-Laurent, alors que plusieurs régions sont détachées de la colonie. »",
-            source: "Denis Vaugeois, L'Amour du livre : l'édition au Québec, ses petits secrets et ses mystères, Septentrion, 2005."
+            texte: "« Les habitants de la province devront bénéficier des lois de l'Angleterre autant que les circonstances le permettront. »\n\n« Dès que l'état et les circonstances de la colonie le permettront, une assemblée générale pourra être convoquée. »\n\n« Le territoire de la Province de Québec est plus restreint que celui de l'ancienne Nouvelle-France. »",
+            soustitre: "Extraits de la Proclamation royale",
+            source: "Proclamation royale - document officiel."
           }
         ]
       }
@@ -14814,5 +15246,868 @@ const QUESTIONS = [
       ref: "ligne_1760-1800.png"
     },
     guide: "C"
+  },
+  {
+    id: "Q226",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez le nom de la période durant laquelle la colonie est administrée par des autorités britanniques entre la capitulation de Montréal et le Traité de Paris.",
+    aspects: [
+      {
+        aspect: "Régime militaire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après la capitulation de Montréal, le territoire est divisé en trois districts administratifs : Québec, Trois-Rivières et Montréal. Chacun de ces districts est placé sous l'autorité d'un gouverneur britannique chargé d'assurer l'administration de la colonie jusqu'à ce que son statut soit officiellement déterminé. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 2, Septentrion."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le régime militaire.",
+    updatedAt: "2026-06-03T11:42:12.905Z"
+  },
+  {
+    id: "Q227",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de la capitulation de Montréal sur l'administration de la colonie.",
+    aspects: [
+      {
+        aspect: "Régime militaire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "regime_militaire_org_pol.png",
+            source: "chéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le gouvernement de la colonie passe sous l'autorité britannique ou la colonie est divisée en trois districts administrés par des gouverneurs britanniques.",
+    updatedAt: "2026-06-03T11:54:22.346Z"
+  },
+  {
+    id: "Q228",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Changement",
+    enonce: "Indiquez un changement dans la gouvernance de la colonie suite à la capitulation de Montréal.",
+    aspects: [
+      {
+        aspect: "Régime militaire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La capitulation de Montréal marque la fin du gouvernement français. Les autorités britanniques prennent désormais en charge l'administration de la colonie. »",
+            source: "Alain Beaulieu, Stéphane Gervais et Martin Papillon, Histoire du Québec et du Canada, CEC."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les autorités britanniques remplacent les autorités françaises.",
+    updatedAt: "2026-06-03T12:09:53.746Z"
+  },
+  {
+    id: "Q229",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez un moyen utilisé par les autorités militaires britanniques pour favoriser la reprise des activités dans la colonie entre 1760 et 1763.",
+    aspects: [
+      {
+        aspect: "Régime militaire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les autorités militaires britanniques permettent aux habitants de retourner sur leurs terres. Elles distribuent des vivres dans certaines régions touchées par la guerre et contribuent à la réparation de bâtiments et d'infrastructures endommagés. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 2 : De 1760 à 1791, Québec Amérique, 1995."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Distribution de vivres aux habitants et réparation ou reconstruction des bâtiments et réparation des infrastructures.",
+    updatedAt: "2026-06-04T01:00:23.723Z"
+  },
+  {
+    id: "Q230",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez le nom du traité signé en 1763 qui met fin à la guerre de Setp Ans entre la France et la Grande-Bretagne.",
+    aspects: [
+      {
+        aspect: "Proclamation royale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« En 1763, la guerre qui oppose la France et la Grande-Bretagne depuis plusieurs années prend officiellement fin. À cette occasion, la France cède le Canada à la Grande-Bretagne. »",
+            source: "Alain Beaulieu, Stéphane Gervais et Martin Papillon, Histoire du Québec et du Canada, CEC."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Traité de Paris.",
+    updatedAt: "2026-06-06T17:50:01.019Z"
+  },
+  {
+    id: "Q231",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    enonce: "Les documents A à D font référence aux traités de Paris. Indiquez à l’endroit approprié la lettre des documents correspondants.",
+    aspects: [
+      {
+        aspect: "Invasion américaine"
+      },
+      {
+        aspect: "Proclamation royale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après la guerre de Sept Ans, la France conserve seulement quelques îles de l'Atlantique afin de maintenir certaines activités liées à la pêche. »",
+            source: "Trudel, Marcel. Initiation à la Nouvelle-France. Montréal, Holt, Rinehart et Winston, 1968."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« La Grande-Bretagne reconnaît officiellement l'indépendance des États-Unis, mettant fin au conflit qui oppose les colonies américaines à la métropole britannique depuis plusieurs années. »",
+            source: "Beaulieu, Alain, Stéphane Gervais et Martin Papillon. Histoire du Québec et du Canada. Montréal, CEC, 2018."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Le territoire situé au sud des Grands Lacs est désormais intégré aux États-Unis, ce qui modifie l'équilibre territorial établi depuis la Conquête. »",
+            source: "Dickinson, John A. et Brian Young. Brève histoire socio-économique du Québec. Sillery, Septentrion, 2009."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« [...] la France cède le Canada à la Grande-Bretagne. Cette décision met fin à plusieurs années de guerre et modifie profondément l'organisation politique de la colonie. »",
+            source: "Beaulieu, Alain, Stéphane Gervais et Martin Papillon. Histoire du Québec et du Canada. Montréal, CEC, 2018."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Traité de Paris - 1763",
+        "Traité de Paris - 1783"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Traité de Paris - 1763",
+        "Traité de Paris - 1783"
+      ],
+      rangees: [
+        [
+          "A et D",
+          "B et C"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-04T12:00:01.235Z"
+  },
+  {
+    id: "Q232",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    enonce: "Expliquez comment la fin de la guerre de la Conquête transforme le territoire de l’Amérique du Nord.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• un résultat de la guerre de la Conquête\n• le traité qui met fin à cette guerre\n• une modification du territoire de l’Amérique du Nord",
+    aspects: [
+      {
+        aspect: "Proclamation royale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "capitulation_mtl_1760.png",
+            soustitre: "Capitulation de Montréal",
+            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de la capitulation de Montréal, 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« En 1763, un traité met officiellement fin à la guerre entre la France et la Grande-Bretagne. Les représentants des deux puissances y définissent le sort de leurs possessions nord-américaines. »",
+            source: "Beaulieu, Alain, Stéphane Gervais et Martin Papillon. Histoire du Québec et du Canada. Montréal, CEC, 2018."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "carte_proclamation_royale_territoire.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "La victoire britannique (le résultat de la guerre de la Conquête) lors de la guerre de la Conquête est confirmée par le Traité de Paris de 1763 (le traité qui met fin à la guerre). Par ce traité, la France cède le Canada à la Grande-Bretagne, ce qui agrandit les possessions britanniques et réduit le territoire français en Amérique du Nord (une modification du territoire).",
+    updatedAt: "2026-06-04T12:22:19.834Z"
+  },
+  {
+    id: "Q233",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez le nom de la constitution mise en place par les autorités britanniques suite au Traité de Paris de 1763.",
+    aspects: [
+      {
+        aspect: "Proclamation royale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La Province de Québec est créée en 1763. Un texte adopté par les autorités britanniques établit alors les structures politiques, juridiques et administratives de la colonie. »",
+            source: "Dickinson, John A. et Brian Young. Brève histoire socio-économique du Québec. Sillery, Septentrion, 2009."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "La Proclamation royale.",
+    updatedAt: "2026-06-06T18:20:48.863Z"
+  },
+  {
+    id: "Q234",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans l’organisation politique de la colonie entre 1760 et 1770. Justifiez votre choix par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Proclamation royale"
+      },
+      {
+        aspect: "Régime militaire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "regime_militaire_org_pol.png",
+            soustitre: "Organisation politique de la colonie entre 1760-1763",
+            source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "org_pol_apres_1763.png",
+            soustitre: "Organisation politique de la colonie après 1763",
+            source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Changement\n\nIl y a changement, car après 1763, le régime militaire est remplacé par une administration civile britannique. ou Il y a changement, car entre 1760 et 1770, la colonie passe d'un régime militaire à un régime civil britannique.\n\nContinuité\n\nIl y a continuité, car entre 1760 et 1770, la colonie demeure sous l'autorité de la Couronne britannique. ou Il y a continuité, car entre 1760 et 1770, la colonie est administrée par des autorités britanniques.",
+    updatedAt: "2026-06-06T21:27:14.923Z"
+  },
+  {
+    id: "Q235",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de la reconnaissance des droits territoriaux des Autochtones par la Proclamation royale de 1763?",
+    aspects: [
+      {
+        aspect: "Proclamation royale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les terres situées à l'ouest des Appalaches ne peuvent être occupées par les sujets britanniques sans l'autorisation de la Couronne. Les nations indiennes qui y habitent conservent la possession de leurs territoires jusqu'à ce qu'ils soient cédés officiellement. »",
+            source: "Adapté de la Proclamation royale, 1763."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "L'expansion du peuplement britannique vers l'ouest est limitée. ou Les colons britanniques ne peuvent pas s'établir librement sur les territoires autochtones. ou L'occupation de certains territoires par les Britanniques est restreinte.",
+    updatedAt: "2026-06-06T19:51:00.256Z"
+  },
+  {
+    id: "Q236",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une cause de la révolte de Pontiac.",
+    aspects: [
+      {
+        aspect: "Statut des Indiens"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Plusieurs nations autochtones s'inquiètent de voir les colons britanniques s'établir dans les régions situées à l'ouest des Appalaches. Elles considèrent que ces terres leur appartiennent et refusent cette progression. »",
+            source: "Dickinson, John A. et Brian Young. Brève histoire socio-économique du Québec. Sillery, Septentrion, 2009."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "L'expansion du peuplement britannique sur les territoires autochtones ou l'empiètement des Britanniques sur les territoires autochtones.",
+    updatedAt: "2026-06-06T20:03:38.063Z"
+  },
+  {
+    id: "Q237",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Changement",
+    enonce: "Indiquez un changement dans les relations entre les Autochtones et les autorités britanniques après la guerre de la Conquête.",
+    aspects: [
+      {
+        aspect: "Statut des Indiens"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les autorités françaises entretiennent leurs alliances avec plusieurs nations autochtones par des rencontres diplomatiques régulières et par la distribution de présents. Ces pratiques contribuent au maintien de relations généralement harmonieuses. »",
+            soustitre: "Sous le régime français",
+            source: "Havard, Gilles et Cécile Vidal. Histoire de l'Amérique française. Paris, Flammarion, 2003."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Après 1760, plusieurs chefs autochtones constatent que les autorités britanniques réduisent la distribution de présents et modifient certaines pratiques diplomatiques qui existaient auparavant avec les Français. »",
+            soustitre: "Sous le régime britannique",
+            source: "Beaulieu, Alain, Stéphane Gervais et Martin Papillon. Histoire du Québec et du Canada. Montréal, CEC, 2018."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les Britanniques réduisent ou cessent la distribution de présents aux Autochtones ou les Britanniques modifient les alliances établies sous le Régime français.",
+    updatedAt: "2026-06-06T20:03:15.483Z"
+  },
+  {
+    id: "Q238",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez le nom de l'organisme britannique chargé des relations avec les Autochtones après la Conquête.",
+    aspects: [
+      {
+        aspect: "Statut des Indiens"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après la Conquête, les autorités britanniques mettent sur pied un organisme chargé de maintenir les relations diplomatiques avec les nations autochtones et de veiller aux questions concernant leurs territoires. »",
+            source: "Beaulieu, Alain, Stéphane Gervais et Martin Papillon. Histoire du Québec et du Canada. Montréal, CEC, 2018."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le Département des Affaires indiennes.",
+    updatedAt: "2026-06-06T20:40:00.174Z"
+  },
+  {
+    id: "Q239",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une raison qui explique la création du Département des Affaires indiennes par les autorités britanniques.",
+    aspects: [
+      {
+        aspect: "Statut des Indiens"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Au lendemain de la Conquête, les autorités britanniques doivent composer avec la présence de nombreuses nations autochtones sur un vaste territoire. Elles cherchent à assurer la stabilité de leurs possessions nord-américaines et à éviter de nouveaux affrontements. »",
+            source: "Dickinson, John A. et Brian Young. Brève histoire socio-économique du Québec. Sillery, Septentrion, 2009."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Maintenir de bonnes relations avec les Autochtones.",
+    updatedAt: "2026-06-06T20:41:51.403Z"
+  },
+  {
+    id: "Q240",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    enonce: "Expliquez comment une action d'un chef autochtone influence les décisions prises par les autorités britanniques concernant les territoires nord-américains.\n\nRépondez à la question en précisant :\n\n• une action d'un chef autochtone\n• un droit reconnu aux Autochtone par la Proclamation royale\n• un effet sur les territoires britanniques nord-américains",
+    aspects: [
+      {
+        aspect: "Proclamation royale"
+      },
+      {
+        aspect: "Statut des Indiens"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "revolte_pontiac.png",
+            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de la révolte de Pontiac, 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Après les événements de 1763, les autorités britanniques cherchent à éviter de nouveaux conflits dans les régions situées à l'ouest des Appalaches. Elles adoptent des mesures visant à mieux définir les rapports entre les colons et les nations autochtones. »",
+            source: "Dickinson, John A. et Brian Young. Brève histoire socio-économique du Québec. Sillery, Septentrion, 2009."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "carte_terr_proclamation_royale.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "La révolte menée par Pontiac (une action d'un chef autochtone) pousse les autorités britanniques à reconnaître certains droits territoriaux aux Autochtones dans la Proclamation royale (un droit reconnu aux Autochtones). Cette décision entraîne la création d'un territoire réservé aux Autochtones (un effet sur les territoires britanniques nord-américains).",
+    updatedAt: "2026-06-06T20:58:01.074Z"
+  },
+  {
+    id: "Q241",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez le nom de l'obligation imposée aux catholiques qui souhaitent occuper certaines fonctions publiques après la Conquête.",
+    aspects: [
+      {
+        aspect: "Instructions au gouverneur Murray"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Pour occuper certaines fonctions dans l'administration britannique, une personne doit reconnaître la suprématie du roi comme chef de l'Église anglicane et renoncer à certaines croyances associées à l'Église catholique. »",
+            source: "Lacoursière, Jacques. Histoire populaire du Québec, tome 2. Sillery, Septentrion, 1995."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le Serment du Test.",
+    updatedAt: "2026-06-06T21:02:50.524Z"
+  },
+  {
+    id: "Q242",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    enonce: "Expliquez comment la composition de la population influence les décisions prises par le gouverneur Murray.\n\nRépondez à la question en précisant :\n\n• la composition de la population de la colonie\n• une décision prise par Murray\n• une conséquence pour les Canadiens",
+    aspects: [
+      {
+        aspect: "Instructions au gouverneur Murray"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "1763.png",
+            soustitre: "Composition de la population de la Province de Québec en 1763",
+            source: "adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Le gouverneur Murray estime qu'il est préférable de tenir compte des habitudes et des croyances de la population canadienne afin d'assurer la stabilité de la colonie. »",
+            source: "Lacoursière, Jacques. Histoire populaire du Québec, tome 2. Sillery, Septentrion, 1995."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Malgré certaines restrictions imposées par les autorités britanniques, plusieurs Canadiens continuent de pratiquer leur religion et de participer à la vie de leur communauté après la Conquête. »",
+            source: "Dickinson, John A. et Brian Young. Brève histoire socio-économique du Québec. Sillery, Septentrion, 2009."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Les Canadiens catholiques forment la majorité de la population de la colonie (la composition de la population de la colonie). Le gouverneur Murray leur accorde certaines concessions, notamment sur le plan religieux (une décision prise par Murray). Les Canadiens peuvent ainsi continuer à pratiquer leur religion catholique (une conséquence pour les Canadiens).",
+    updatedAt: "2026-06-06T21:10:21.698Z"
+  },
+  {
+    id: "Q243",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez un moyen proposé dans les instructions du roi pour favoriser l'assimilation des Canadiens.",
+    aspects: [
+      {
+        aspect: "Instructions au gouverneur Murray"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les autorités britanniques souhaitent que les habitants de la nouvelle colonie adoptent progressivement les usages et les institutions en vigueur dans les autres possessions de l'Empire britannique. »",
+            source: "Dickinson, John A. et Brian Young. Brève histoire socio-économique du Québec. Sillery, Septentrion, 2009."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Imposer les institutions britanniques ou onstaurer un gouvernement civil britannique ou appliquer les lois britanniques",
+    updatedAt: "2026-06-06T21:12:22.247Z"
+  },
+  {
+    id: "Q244",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez un objectif poursuivi par le roi dans les instructions transmises au gouverneur Murray.",
+    aspects: [
+      {
+        aspect: "Instructions au gouverneur Murray"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les autorités britanniques souhaitent transformer progressivement leur nouvelle colonie afin qu'elle ressemble davantage aux autres colonies de l'Empire. Elles espèrent notamment que les habitants adopteront les institutions, les lois et les pratiques britanniques. »",
+            source: "Beaulieu, Alain, Stéphane Gervais et Martin Papillon. Histoire du Québec et du Canada. Montréal, CEC, 2018."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Assimiler les Canadiens.",
+    updatedAt: "2026-06-06T21:14:06.575Z"
+  },
+  {
+    id: "Q245",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    enonce: "Les documents A à D présentent des faits liés à l'administration de la colonie entre 1760 et 1774. Associez chaque document au type de gouvernement correspondant.",
+    aspects: [
+      {
+        aspect: "Instructions au gouverneur Murray"
+      },
+      {
+        aspect: "Proclamation royale"
+      },
+      {
+        aspect: "Régime militaire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Durant les premières années qui suivent la Conquête, les autorités britanniques permettent aux habitants de reprendre progressivement leurs activités économiques tout en administrant directement la colonie. »",
+            source: "Dickinson, John A. et Brian Young. Brève histoire socio-économique du Québec. Septentrion, 2009."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "org_pol_apres_1763.png",
+            source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "regime_militaire_org_pol.png",
+            source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Les nouvelles institutions mises en place dans la colonie s'inspirent de celles des autres possessions britanniques d'Amérique du Nord. »",
+            source: "Dickinson, John A. et Brian Young. Brève histoire socio-économique du Québec. Septentrion, 2009."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Gouvernement civil",
+        "Gouvernement militaire"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Gouvernement civil",
+        "Gouvernement militaire"
+      ],
+      rangees: [
+        [
+          "B et D",
+          "A et C"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-06T21:26:53.038Z"
+  },
+  {
+    id: "Q246",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans le territoire de la Province de Québec entre 1763 et 1774. Justifiez votre choix par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      },
+      {
+        aspect: "Proclamation royale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "carte_terr_proclamation_royale.png",
+            source: "Récitus."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "carte_terr_acte_quebec.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Changement :\nIl y a changement, car en 1774, la Province de Québec est beaucoup plus grande qu’en 1763. Elle s’étend maintenant vers les Grands Lacs et la vallée de l’Ohio.\n\nContinuité :\nIl y a continuité, car entre 1763 et 1774, la Province de Québec demeure une possession britannique située dans la région de la vallée du Saint-Laurent.",
+    updatedAt: "2026-06-07T00:48:22.548Z"
   }
 ]
