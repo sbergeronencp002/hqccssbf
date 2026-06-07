@@ -5039,6 +5039,17 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q253": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
   }
 }
 
@@ -16522,5 +16533,50 @@ const QUESTIONS = [
     },
     guide: "Les deux acteurs sont en désaccord sur l'établissement d'une assemblée élue dans la Province de Québec.",
     updatedAt: "2026-06-07T12:22:19.114Z"
+  },
+  {
+    id: "Q253",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s'il y a changement ou continuité dans les lois en vigueur dans la Province de Québec entre 1763 et 1774. Justifiez votre choix par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      },
+      {
+        aspect: "Proclamation royale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après la Conquête, les autorités britanniques cherchent à instaurer les lois anglaises dans la colonie. Les tribunaux doivent désormais s'inspirer du droit anglais pour régler les affaires des habitants. »",
+            source: "Adapté de Marcel Trudel, Initiation à la Nouvelle-France, 1968."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« En 1774, les habitants de la Province de Québec continuent d'utiliser leurs anciennes lois dans les affaires de propriété et de droits civils. Les lois criminelles anglaises demeurent toutefois en vigueur dans la colonie. »",
+            source: "Adapté de l'Acte de Québec, 1774."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Changement\nIl y a changement, car en 1774, les lois civiles françaises sont appliquées dans la Province de Québec, alors qu'en 1763, les autorités britanniques cherchent à appliquer les lois anglaises.\n\nContinuité :\nIl y a continuité, car en 1763 comme en 1774, les lois criminelles anglaises demeurent en vigueur dans la Province de Québec.",
+    updatedAt: "2026-06-07T13:00:03.984Z"
   }
 ]
