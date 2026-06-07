@@ -5267,6 +5267,34 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q264": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -5648,6 +5676,9 @@ const IMAGE_DB = {
   },
   "org_pol_apres_1784.png": {
     src: "images/org_pol_apres_1784.png"
+  },
+  "territoire_province_quebec_1783.png": {
+    src: "images/territoire_province_quebec_1783.png"
   }
 }
 
@@ -17161,5 +17192,56 @@ const QUESTIONS = [
     },
     guide: "La victoire britannique (un résultat de la guerre de Succession d'Espagne) mène à la signature du traité d'Utrecht (le traité qui met fin à cette guerre). À la suite de ce traité, la France perd l'Acadie, Terre-Neuve et la baie d'Hudson (une modification du territoire de l'Amérique du Nord).",
     updatedAt: "2026-06-07T17:28:49.160Z"
+  },
+  {
+    id: "Q264",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    enonce: "Expliquez comment la fin de la guerre d'Indépendance des États-Unis transforme le territoire de l'Amérique du Nord.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\nl'issue de la guerre de l'indépendance des États-Unis\nle traité qui met fin à cette guerre\nune modification du territoire de l'Amérique du Nord",
+    aspects: [
+      {
+        aspect: "Invasion américaine"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après plusieurs années de combats, les colonies américaines obtiennent leur indépendance et cessent d'être sous l'autorité de la Grande-Bretagne. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 1."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« À la fin du conflit, des représentants britanniques et américains concluent une entente qui reconnaît officiellement la nouvelle situation politique en Amérique du Nord et fixe certaines frontières territoriales. »",
+            source: "Adapté du Traité de Paris, 1783."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "territoire_province_quebec_1783.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Les Treize colonies obtiennent leur indépendance (l'issue de la guerre de l'indépendance des États-Unis). Le traité de Paris de 1783 met fin au conflit (le traité qui met fin à cette guerre). Les États-Unis sont reconnus et leur territoire s'étend jusqu'au Mississippi (une modification du territoire de l'Amérique du Nord) ou la Province de Québec perd la région au sud des Grands Lacs ou la vallée de l'Ohio.",
+    updatedAt: "2026-06-07T17:36:40.569Z"
   }
 ]
