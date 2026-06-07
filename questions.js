@@ -4934,6 +4934,23 @@ const REGLETTES = {
       "0 point"
     ],
     niveaux: []
+  },
+  "Q248": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -16168,5 +16185,36 @@ const QUESTIONS = [
     },
     guide: "Changement :\nIl y a changement, car en 1774, le Conseil de Québec devient le Conseil exécutif et le Conseil législatif.\n\nContinuité :\nIl y a continuité, car entre 1763 et 1774, la Province de Québec demeure dirigée par un gouverneur britannique nommé par le roi.",
     updatedAt: "2026-06-07T00:57:20.378Z"
+  },
+  {
+    id: "Q248",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez le nom de la constitution mise en place par les autorités britanniques dans la Province de Québec en 1774.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« En juin 1774, le Parlement britannique adopte une nouvelle loi pour organiser le gouvernement de la Province de Québec. Cette loi remplace une partie des règles établies après la Conquête et modifie l’administration de la colonie. »",
+            source: "Adapté d’une loi adoptée par le Parlement britannique, 1774."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "L’Acte de Québec.",
+    updatedAt: "2026-06-07T01:01:10.193Z"
   }
 ]
