@@ -4989,9 +4989,6 @@ const IMAGE_DB = {
   "ligne_1550-1750.png": {
     src: "images/ligne_1550-1750.png"
   },
-  "revolte_pontiact.png": {
-    src: "images/revolte_pontiact.png"
-  },
   "loyalistes_province_quebec.png": {
     src: "images/loyalistes_province_quebec.png"
   },
