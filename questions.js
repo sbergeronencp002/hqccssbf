@@ -5418,6 +5418,23 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q271": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -17590,5 +17607,36 @@ const QUESTIONS = [
     },
     guide: "Les États-Unis obtiennent leur indépendance (l'issue de la guerre d'Indépendance des États-Unis). Des Loyalistes, demeurés fidèles à la Couronne britannique (un groupe britannique qui demeure fidèle à la Couronne), quittent les États-Unis et s'établissent notamment en Gaspésie ou en Estrie (une région qui accueille les migrants).",
     updatedAt: "2026-06-07T20:12:32.247Z"
+  },
+  {
+    id: "Q271",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez le nom du groupe demeuré fidèle à la Couronne britannique à la suite de la guerre d'Indépendance des États-Unis.",
+    aspects: [
+      {
+        aspect: "Loyalistes"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« À la fin du conflit, plusieurs sujets britanniques conservent leur attachement à la monarchie malgré la création d'un nouvel État indépendant en Amérique du Nord. »",
+            source: "Adapté de Marcel Trudel, Initiation à la Nouvelle-France."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les Loyalistes.",
+    updatedAt: "2026-06-07T20:14:54.337Z"
   }
 ]
