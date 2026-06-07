@@ -5390,6 +5390,34 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q270": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -5774,6 +5802,9 @@ const IMAGE_DB = {
   },
   "territoire_province_quebec_1783.png": {
     src: "images/territoire_province_quebec_1783.png"
+  },
+  "migration_loyalistes.png": {
+    src: "images/migration_loyalistes.png"
   }
 }
 
@@ -17505,5 +17536,59 @@ const QUESTIONS = [
     },
     guide: "La Déclaration d'indépendance des États-Unis",
     updatedAt: "2026-06-07T20:03:49.852Z"
+  },
+  {
+    id: "Q270",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    enonce: "Expliquez comment l'issue de la guerre d'Indépendance des États-Unis entraîne la migration de populations britanniques vers la Province de Québec.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• l'issue de la guerre d'Indépendance des États-Unis\n• un groupe britannique qui demeure fidèle à la Couronne\n• une région qui accueille les migrants",
+    aspects: [
+      {
+        aspect: "Invasion américaine"
+      },
+      {
+        aspect: "Loyalistes"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« En 1783, la Grande-Bretagne accepte officiellement l'indépendance de ses anciennes colonies d'Amérique. Cette décision met fin à plusieurs années de conflit et modifie profondément la situation politique du continent. »",
+            source: "Adapté du Traité de Paris, 1783."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Certains habitants des anciennes colonies refusent de reconnaître le nouveau gouvernement américain. Ils demeurent attachés au roi de Grande-Bretagne et choisissent de quitter leur lieu de résidence après la guerre. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 2."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "migration_loyalistes.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Les États-Unis obtiennent leur indépendance (l'issue de la guerre d'Indépendance des États-Unis). Des Loyalistes, demeurés fidèles à la Couronne britannique (un groupe britannique qui demeure fidèle à la Couronne), quittent les États-Unis et s'établissent notamment en Gaspésie ou en Estrie (une région qui accueille les migrants).",
+    updatedAt: "2026-06-07T20:12:32.247Z"
   }
 ]
