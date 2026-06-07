@@ -56,6 +56,15 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
 .badge{display:inline-flex;align-items:center;justify-content:center;background:#1B3B6F;color:#fff;border-radius:20px;padding:.15rem .6rem;font-size:.7rem;font-weight:500;white-space:nowrap;flex-shrink:0}
 .badge-single{background:var(--paper-3);color:var(--ink-3)}
 
+/* Grille d'images uniformes (vue « Toutes les images ») */
+.img-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem}
+.img-card{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer;position:relative;transition:box-shadow .15s,transform .15s}
+.img-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.12);transform:translateY(-2px)}
+.img-card img{display:block;width:100%;height:150px;object-fit:cover;background:#fff}
+.img-card .ic-label{font-size:.72rem;color:var(--ink-2);padding:.45rem .55rem;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border-top:1px solid var(--border)}
+.img-card .ic-count{position:absolute;top:.4rem;right:.4rem;background:#1B3B6F;color:#fff;border-radius:20px;padding:.1rem .5rem;font-size:.68rem;font-weight:600}
+.img-card .ic-count.single{background:rgba(255,255,255,.92);color:var(--ink-3)}
+
 .orphan-row{display:flex;align-items:center;gap:.9rem;padding:.65rem 1rem;background:#fff;border:1px solid #f5c6c6;border-radius:8px;margin-bottom:.5rem}
 .orphan-row img{height:42px;width:68px;object-fit:cover;border-radius:5px;border:1px solid var(--border);flex-shrink:0;cursor:zoom-in}
 .orphan-row .img-label{font-size:.85rem;font-weight:500;color:var(--ink);flex:1}
@@ -105,10 +114,19 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
 .oi-rel{color:var(--c-rel);background:var(--c-rel-bg)}
 .oi-fai{color:var(--c-fai);background:var(--c-fai-bg)}
 
-#lb{display:none;position:fixed;inset:0;background:rgba(26,23,20,.88);z-index:999;align-items:center;justify-content:center;flex-direction:column;gap:.75rem}
+#lb{display:none;position:fixed;inset:0;background:rgba(26,23,20,.88);z-index:999;align-items:center;justify-content:center;padding:2rem}
 #lb.open{display:flex}
-#lb img{max-width:90vw;max-height:82vh;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,.5)}
-#lb-footer{display:flex;align-items:center;gap:.75rem}
+#lb-body{display:flex;gap:1.25rem;align-items:stretch;max-width:94vw;max-height:88vh}
+#lb-imgcol{display:flex;flex-direction:column;align-items:center;gap:.75rem;min-width:0}
+#lb img{max-width:62vw;max-height:78vh;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,.5);object-fit:contain}
+#lb-questions{width:340px;flex-shrink:0;background:#fff;border-radius:10px;padding:1rem;overflow-y:auto;max-height:88vh}
+.lbq-title{font-family:'DM Serif Display',Georgia,serif;font-size:.95rem;color:var(--ink-2);margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+.lbq{padding:.55rem 0;border-bottom:1px solid var(--border)}
+.lbq:last-child{border-bottom:none}
+.lbq-top{display:flex;align-items:center;gap:.35rem;flex-wrap:wrap;margin-bottom:.25rem}
+.lbq-per{font-size:.66rem;color:var(--ink-3)}
+.lbq-en{font-size:.74rem;color:var(--ink-2);line-height:1.4}
+#lb-footer{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:center}
 #lb-caption{color:rgba(255,255,255,.55);font-size:.78rem}
 #lb-size{font-size:.72rem;font-weight:500;border-radius:10px;padding:.1rem .5rem}
 #lb-rename{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:6px;padding:.35rem .8rem;font-size:.78rem;cursor:pointer;font-family:inherit;transition:background .15s}
@@ -193,12 +211,17 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
 
 <div id="lb" onclick="closeLb(event)">
   <span id="lb-close">&times;</span>
-  <img id="lb-img" src="">
-  <div id="lb-footer">
-    <span id="lb-caption"></span>
-    <span id="lb-size" class="size-badge loading"></span>
-    <button id="lb-rename" onclick="event.stopPropagation();openRename(currentLbImg)">✏ Renommer</button>
-    <button id="lb-replace" onclick="event.stopPropagation();openReplace(currentLbImg)" style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:6px;padding:.35rem .8rem;font-size:.78rem;cursor:pointer;font-family:inherit;transition:background .15s">⇪ Remplacer</button>
+  <div id="lb-body">
+    <div id="lb-imgcol">
+      <img id="lb-img" src="">
+      <div id="lb-footer">
+        <span id="lb-caption"></span>
+        <span id="lb-size" class="size-badge loading"></span>
+        <button id="lb-rename" onclick="event.stopPropagation();openRename(currentLbImg)">✏ Renommer</button>
+        <button id="lb-replace" onclick="event.stopPropagation();openReplace(currentLbImg)" style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:6px;padding:.35rem .8rem;font-size:.78rem;cursor:pointer;font-family:inherit;transition:background .15s">⇪ Remplacer</button>
+      </div>
+    </div>
+    <div id="lb-questions"></div>
   </div>
 </div>
 
@@ -268,6 +291,7 @@ const OI_SHORT = {
 };
 
 let imgMap = {};
+let qById = {};      // id -> question (global, utilisé par la lightbox)
 let sizeCache = {};  // img -> bytes
 let currentLbImg = '';
 let renameTarget = '';
@@ -316,7 +340,6 @@ function tileHtml(q) {
     imgMap[img].push(q.id);
   }));
 
-  const qById = {};
   questions.forEach(q => qById[q.id] = q);
 
   const allImgGroups = Object.entries(imgMap)
@@ -324,25 +347,18 @@ function tileHtml(q) {
 
   const sharedCount = allImgGroups.filter(([,ids]) => ids.length > 1).length;
 
-  document.getElementById('shared-container').innerHTML = allImgGroups.map(([img, ids]) => {
-    const isShared = ids.length > 1;
-    const badgeLabel = ids.length === 1 ? '1 question' : `${ids.length} questions`;
-    return `
-    <div class="shared-group" data-img-name="${img.replace('.png','').toLowerCase()}">
-      <div class="shared-group-header" onclick="toggleGroup(this)">
-        <img src="images/${img}" loading="lazy" title="${img}" onclick="event.stopPropagation();showImg('${img}')">
-        <span class="img-label">${img.replace('.png','')}</span>
-        ${sizeBadgeHtml(img)}
-        <button class="btn-rename" title="Renommer" onclick="event.stopPropagation();openRename('${img}')">✏</button>
-        <button class="btn-replace" title="Remplacer l'image" onclick="event.stopPropagation();openReplace('${img}')">⇪</button>
-        <span class="badge${isShared ? '' : ' badge-single'}">${badgeLabel}</span>
-        <span class="chevron">▾</span>
-      </div>
-      <div class="shared-group-body">
-        <div class="tiles-row">${ids.filter(id=>qById[id]).map(id=>tileHtml(qById[id])).join('')}</div>
-      </div>
-    </div>`;
-  }).join('');
+  // Grille d'images uniformes : chaque tuile = une image. Clic → image + questions.
+  document.getElementById('shared-container').innerHTML =
+    '<div class="img-grid">' + allImgGroups.map(([img, ids]) => {
+      const isShared = ids.length > 1;
+      const ois = [...new Set(ids.filter(id=>qById[id]).map(id=>qById[id].oi))].join(' ');
+      return `
+      <div class="img-card" data-img-name="${img.replace('.png','').toLowerCase()}" data-ois="${ois}" onclick="showImg('${img}')">
+        <span class="ic-count${isShared ? '' : ' single'}">${ids.length}</span>
+        <img src="images/${img}" loading="lazy" alt="${img}">
+        <div class="ic-label" title="${img}">${img.replace('.png','')}</div>
+      </div>`;
+    }).join('') + '</div>';
 
   document.getElementById('allGrid').innerHTML = questions.map(q => tileHtml(q)).join('');
 
@@ -432,10 +448,11 @@ function filterAll() {
     const show = (!s || t.dataset.text.includes(s)) && (!oi || t.dataset.oi===oi);
     t.style.display = show ? '' : 'none';
   });
-  // Filtrer la section images par nom
-  document.querySelectorAll('#shared-container .shared-group').forEach(g => {
-    const nameMatch = !s || g.dataset.imgName.includes(s);
-    g.style.display = nameMatch ? '' : 'none';
+  // Filtrer la grille d'images par nom + OI
+  document.querySelectorAll('#shared-container .img-card').forEach(c => {
+    const nameMatch = !s || c.dataset.imgName.includes(s);
+    const oiMatch = !oi || (c.dataset.ois || '').includes(oi);
+    c.style.display = (nameMatch && oiMatch) ? '' : 'none';
   });
 }
 
@@ -451,6 +468,26 @@ function showImg(img) {
     lbSize.className = 'size-badge loading';
     lbSize.textContent = '…';
   }
+  // Liste des questions utilisant cette image
+  const ids = (imgMap[img] || []).filter(id => qById[id]);
+  const qhtml = ids.map(id => {
+    const q = qById[id];
+    const cls = OI_CLASS[q.oi] || '';
+    const short = OI_SHORT[q.oi] || q.oi;
+    const per = (q.periode || '').replace(/P\d+ — /, '');
+    const en = (q.enonce || '').replace(/\*\*/g, '');
+    const enCut = en.length > 160 ? en.substring(0,160) + '…' : en;
+    return `<div class="lbq">
+      <div class="lbq-top">
+        <span class="tile-id">${q.id}</span>
+        <span class="tile-oi-tag ${cls}">${short}</span>
+        <span class="lbq-per">${per}</span>
+      </div>
+      <div class="lbq-en">${enCut}</div>
+    </div>`;
+  }).join('');
+  document.getElementById('lb-questions').innerHTML =
+    `<div class="lbq-title">${ids.length} question${ids.length>1?'s':''} avec cette image</div>` + qhtml;
   document.getElementById('lb').classList.add('open');
 }
 
