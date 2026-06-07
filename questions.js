@@ -5138,6 +5138,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
       }
     ]
+  },
+  "Q258": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -16806,5 +16823,39 @@ const QUESTIONS = [
     },
     guide: "Le gouverneur demeure le représentant du roi dans la colonie ou le gouverneur continue de diriger l'administration de la colonie.",
     updatedAt: "2026-06-07T13:18:20.625Z"
+  },
+  {
+    id: "Q258",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez le nom de l'obligation imposée aux catholiques qui souhaitent exercer une fonction dans l'administration coloniale avant 1774.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      },
+      {
+        aspect: "Proclamation royale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Pour obtenir une charge publique dans la Province de Québec, les candidats doivent prêter un serment affirmant certaines croyances religieuses reconnues par les autorités britanniques. »",
+            source: "Adapté de la Proclamation royale de 1763."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le serment du Test.",
+    updatedAt: "2026-06-07T13:22:29.963Z"
   }
 ]
