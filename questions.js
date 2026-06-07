@@ -17397,7 +17397,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Après la destruction d'une cargaison de thé dans le port de Boston, Londres adopte une série de mesures destinées à accroître son contrôle sur l'une de ses colonies américaines. »",
+            texte: "« Après la destruction d'une cargaison de thé dans le port de Boston, Londres adopte une série de mesures destinées à accroître son contrôle sur l'une de ses colonies nord-américaines. »",
             source: "Adapté de Marcel Trudel, Initiation à la Nouvelle-France, 1968."
           }
         ]
@@ -17408,6 +17408,6 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Les Lois intolérables.",
-    updatedAt: "2026-06-07T17:44:58.418Z"
+    updatedAt: "2026-06-07T17:50:44.295Z"
   }
 ]
