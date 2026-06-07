@@ -5726,8 +5726,8 @@ const IMAGE_DB = {
   "arrivee_loyalistes.png": {
     src: "images/arrivee_loyalistes.png"
   },
-  "regime_militaire_org_pol.png": {
-    src: "images/regime_militaire_org_pol.png"
+  "org_pol_regime_militaire.png": {
+    src: "images/org_pol_regime_militaire.png"
   },
   "carte_proclamation_royale_territoire.png": {
     src: "images/carte_proclamation_royale_territoire.png"
@@ -15727,7 +15727,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "regime_militaire_org_pol.png",
+            ref: "org_pol_regime_militaire.png",
             source: "chéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
           }
         ]
@@ -16018,7 +16018,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "regime_militaire_org_pol.png",
+            ref: "org_pol_regime_militaire.png",
             soustitre: "Organisation politique de la colonie entre 1760-1763",
             source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
           }
@@ -16457,7 +16457,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            ref: "regime_militaire_org_pol.png",
+            ref: "org_pol_regime_militaire.png",
             source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
           }
         ]
