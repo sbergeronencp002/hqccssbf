@@ -4951,6 +4951,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q249": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (3 sur 3)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (2 sur 3)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
+      }
+    ]
   }
 }
 
@@ -16216,5 +16238,75 @@ const QUESTIONS = [
     },
     guide: "L’Acte de Québec.",
     updatedAt: "2026-06-07T01:01:10.193Z"
+  },
+  {
+    id: "Q249",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "3 documents",
+    enonce: "Les documents A à C présentent des éléments de l’organisation politique de la Province de Québec après l’Acte de Québec de 1774. Associez chaque document au pouvoir auquel il se rapporte.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« L'Acte de Québec maintient les lois criminelles anglaises tout en rétablissant les lois civiles françaises concernant la propriété et les droits civils. »",
+            source: "Adapté de Marcel Trudel, Initiation à la Nouvelle-France, Éditions Holt, Rinehart et Winston, 1968."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Le gouverneur demeure le principal représentant de la Couronne dans la colonie et conserve un rôle central dans l'administration du territoire. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 1, Québec Amérique, 1995."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les ordonnances destinées à assurer le bon gouvernement de la province sont adoptées par un conseil nommé plutôt que par une assemblée élue. »",
+            source: "Adapté de Christian Blais, Histoire parlementaire du Québec, Assemblée nationale du Québec, 2012."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Exécutif",
+        "Judiciaire",
+        "Législatif"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Exécutif",
+        "Judiciaire",
+        "Législatif"
+      ],
+      rangees: [
+        [
+          "C",
+          "A",
+          "C"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-07T01:16:25.630Z"
   }
 ]
