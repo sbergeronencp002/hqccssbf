@@ -5339,6 +5339,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q267": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -17361,5 +17378,36 @@ const QUESTIONS = [
     },
     guide: "La Province de Québec perd la vallée de l'Ohio ou la Province de Québec perd le territoire situé au sud des Grands Lacs ou une partie du territoire de la Province de Québec est intégrée aux États-Unis.",
     updatedAt: "2026-06-07T17:41:04.701Z"
+  },
+  {
+    id: "Q267",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez le nom des mesures adoptées par le Parlement britannique en 1774 à la suite des événements survenus lors du Boston Tea Party.",
+    aspects: [
+      {
+        aspect: "Invasion américaine"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après la destruction d'une cargaison de thé dans le port de Boston, Londres adopte une série de mesures destinées à accroître son contrôle sur l'une de ses colonies américaines. »",
+            source: "Adapté de Marcel Trudel, Initiation à la Nouvelle-France, 1968."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les Lois intolérables.",
+    updatedAt: "2026-06-07T17:44:58.418Z"
   }
 ]
