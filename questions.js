@@ -5356,6 +5356,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q268": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -17409,5 +17426,36 @@ const QUESTIONS = [
     },
     guide: "Les Lois intolérables.",
     updatedAt: "2026-06-07T17:50:44.295Z"
+  },
+  {
+    id: "Q268",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez le nom du nouveau pays reconnu par la Grande-Bretagne à la suite du traité de Paris de 1783.",
+    aspects: [
+      {
+        aspect: "Invasion américaine"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le règlement de 1783 marque l'entrée d'un nouvel État sur la scène internationale et met fin à l'autorité britannique sur les Treize colonies. »",
+            source: "Adapté de Marcel Trudel, Initiation à la Nouvelle-France."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les États-Unis.",
+    updatedAt: "2026-06-07T19:56:02.272Z"
   }
 ]
