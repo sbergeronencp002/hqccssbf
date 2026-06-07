@@ -5373,6 +5373,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q269": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -17457,5 +17474,36 @@ const QUESTIONS = [
     },
     guide: "Les États-Unis.",
     updatedAt: "2026-06-07T19:56:02.272Z"
+  },
+  {
+    id: "Q269",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez le nom du document adopté par les représentants des Treize colonies le 4 juillet 1776 pour proclamer leur indépendance.",
+    aspects: [
+      {
+        aspect: "Invasion américaine"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le 4 juillet 1776, les représentants des Treize colonies adoptent un texte dans lequel ils affirment que ces colonies sont désormais des États libres et indépendants de la Grande-Bretagne. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, adaptation."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "La Déclaration d'indépendance des États-Unis",
+    updatedAt: "2026-06-07T20:03:49.852Z"
   }
 ]
