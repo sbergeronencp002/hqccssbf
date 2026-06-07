@@ -5172,6 +5172,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q260": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -16905,5 +16922,36 @@ const QUESTIONS = [
     },
     guide: "Les catholiques peuvent pratiquer leur religion.",
     updatedAt: "2026-06-07T13:24:51.349Z"
+  },
+  {
+    id: "Q260",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez un droit accordé à l'Église catholique par l'Acte de Québec.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La nouvelle constitution confirme le droit du clergé de percevoir certaines contributions auprès des fidèles afin d'assurer le fonctionnement des paroisses de la colonie. »",
+            source: "Adapté de l'Acte de Québec, 1774."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le droit de percevoir la dîme.",
+    updatedAt: "2026-06-07T13:25:36.767Z"
   }
 ]
