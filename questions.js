@@ -16706,7 +16706,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 2,
     soustag: "Cause",
-    enonce: "Indiquez une raison qui explique pourquoi les Canadiens catholiques peuvent occuper un poste dans l'administration coloniale après 1774",
+    enonce: "Indiquez une raison qui explique pourquoi les Canadiens catholiques peuvent occuper un poste dans l'administration coloniale après 1774.",
     aspects: [
       {
         aspect: "Acte de Québec"
@@ -16729,7 +16729,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Le serment du Test est aboli ou le serment du Test est remplacé par un nouveau serment d'allégeance.",
-    updatedAt: "2026-06-07T13:11:49.877Z"
+    updatedAt: "2026-06-07T13:18:57.177Z"
   },
   {
     id: "Q256",
