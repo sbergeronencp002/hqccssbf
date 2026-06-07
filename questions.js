@@ -5239,6 +5239,123 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q263": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
+  },
+  "Q264": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
+  },
+  "Q265": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
+  },
+  "Q266": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
+  },
+  "Q267": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -5609,8 +5726,8 @@ const IMAGE_DB = {
   "arrivee_loyalistes.png": {
     src: "images/arrivee_loyalistes.png"
   },
-  "regime_militaire_org_pol.png": {
-    src: "images/regime_militaire_org_pol.png"
+  "org_pol_regime_militaire.png": {
+    src: "images/org_pol_regime_militaire.png"
   },
   "carte_proclamation_royale_territoire.png": {
     src: "images/carte_proclamation_royale_territoire.png"
@@ -5620,6 +5737,9 @@ const IMAGE_DB = {
   },
   "org_pol_apres_1784.png": {
     src: "images/org_pol_apres_1784.png"
+  },
+  "territoire_province_quebec_1783.png": {
+    src: "images/territoire_province_quebec_1783.png"
   }
 }
 
@@ -15607,7 +15727,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "regime_militaire_org_pol.png",
+            ref: "org_pol_regime_militaire.png",
             source: "chéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
           }
         ]
@@ -15898,7 +16018,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "regime_militaire_org_pol.png",
+            ref: "org_pol_regime_militaire.png",
             soustitre: "Organisation politique de la colonie entre 1760-1763",
             source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
           }
@@ -16337,7 +16457,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            ref: "regime_militaire_org_pol.png",
+            ref: "org_pol_regime_militaire.png",
             source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
           }
         ]
@@ -17082,5 +17202,212 @@ const QUESTIONS = [
     },
     guide: "Les tensions ou le mécontentement dans les Treize colonies (événements dans les Treize colonies) inquiètent les autorités britanniques. Pour maintenir stabilité de la Province de Québec et assurer la loyauté de ses habitants (objectif poursuivi par les autorités britanniques), les autorités adoptent l'Acte de Québec (nom d'une nouvelle constitution mise en place en 1774).",
     updatedAt: "2026-06-07T17:19:01.919Z"
+  },
+  {
+    id: "Q263",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P2 — 1608 – 1760",
+    points: 3,
+    enonce: "Expliquez comment la fin de la guerre de Succession d'Espagne transforme le territoire de l’Amérique du Nord. \n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n• un résultat de la la guerre de Succession d'Espagne\n• le traité qui met fin à cette guerre\n• une modification du territoire de l’Amérique du Nord",
+    aspects: [
+      {
+        aspect: "Guerres intercoloniales"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après plusieurs années de combats, la France et ses alliés ne parviennent pas à atteindre leurs objectifs. La Grande-Bretagne sort renforcée du conflit et accroît son influence sur la scène internationale. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 1."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "territoire_revendique_1713.png",
+            source: "Récitus."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« En 1713, des représentants de plusieurs puissances européennes se réunissent afin de mettre officiellement fin au conflit qui oppose leurs États depuis le début du XVIIIe siècle. »",
+            source: "Adapté de Marcel Trudel, Initiation à la Nouvelle-France."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "La victoire britannique (un résultat de la guerre de Succession d'Espagne) mène à la signature du traité d'Utrecht (le traité qui met fin à cette guerre). À la suite de ce traité, la France perd l'Acadie, Terre-Neuve et la baie d'Hudson (une modification du territoire de l'Amérique du Nord).",
+    updatedAt: "2026-06-07T17:28:49.160Z"
+  },
+  {
+    id: "Q264",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    enonce: "Expliquez comment la fin de la guerre d'Indépendance des États-Unis transforme le territoire de l'Amérique du Nord.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\nl'issue de la guerre de l'indépendance des États-Unis\nle traité qui met fin à cette guerre\nune modification du territoire de l'Amérique du Nord",
+    aspects: [
+      {
+        aspect: "Invasion américaine"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après plusieurs années de combats, les colonies américaines obtiennent leur indépendance et cessent d'être sous l'autorité de la Grande-Bretagne. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 1."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« À la fin du conflit, des représentants britanniques et américains concluent une entente qui reconnaît officiellement la nouvelle situation politique en Amérique du Nord et fixe certaines frontières territoriales. »",
+            source: "Adapté du Traité de Paris, 1783."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "territoire_province_quebec_1783.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Les Treize colonies obtiennent leur indépendance (l'issue de la guerre de l'indépendance des États-Unis). Le traité de Paris de 1783 met fin au conflit (le traité qui met fin à cette guerre). Les États-Unis sont reconnus et leur territoire s'étend jusqu'au Mississippi (une modification du territoire de l'Amérique du Nord) ou la Province de Québec perd la région au sud des Grands Lacs ou la vallée de l'Ohio.",
+    updatedAt: "2026-06-07T17:36:40.569Z"
+  },
+  {
+    id: "Q265",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Changement",
+    enonce: "À partir des documents A et B, indiquez un changement dans le territoire de la Province de Québec entre 1774 et 1783.",
+    aspects: [
+      {
+        aspect: "Invasion américaine"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "carte_terr_acte_quebec.png",
+            source: "Récitus."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "territoire_province_quebec_1783.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Il y a changement, car en 1783, la Province de Québec perd la vallée de l'Ohio ou le territoire situé au sud des Grands Lacs.",
+    updatedAt: "2026-06-07T17:39:22.175Z"
+  },
+  {
+    id: "Q266",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence du Traité de Paris de 1783 sur le territoire de la Province de Québec.",
+    aspects: [
+      {
+        aspect: "Invasion américaine"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« En 1783, une entente entre la Grande-Bretagne et les États-Unis redéfinit certaines frontières en Amérique du Nord. Les nouvelles limites territoriales réduisent l'étendue des terres administrées depuis la Province de Québec. »",
+            source: "Adapté du Traité de Paris, 1783."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "La Province de Québec perd la vallée de l'Ohio ou la Province de Québec perd le territoire situé au sud des Grands Lacs ou une partie du territoire de la Province de Québec est intégrée aux États-Unis.",
+    updatedAt: "2026-06-07T17:41:04.701Z"
+  },
+  {
+    id: "Q267",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez le nom des mesures adoptées par le Parlement britannique en 1774 à la suite des événements survenus lors du Boston Tea Party.",
+    aspects: [
+      {
+        aspect: "Invasion américaine"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après la destruction d'une cargaison de thé dans le port de Boston, Londres adopte une série de mesures destinées à accroître son contrôle sur l'une de ses colonies nord-américaines. »",
+            source: "Adapté de Marcel Trudel, Initiation à la Nouvelle-France, 1968."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les Lois intolérables.",
+    updatedAt: "2026-06-07T17:50:44.295Z"
   }
 ]

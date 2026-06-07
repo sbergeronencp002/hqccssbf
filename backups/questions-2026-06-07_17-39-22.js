@@ -4828,6 +4828,473 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q242": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
+  },
+  "Q243": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q244": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q245": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
+  },
+  "Q246": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
+  },
+  "Q247": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
+  },
+  "Q248": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q249": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (3 sur 3)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (2 sur 3)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
+      }
+    ]
+  },
+  "Q250": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (3 sur 3)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (2 sur 3)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
+      }
+    ]
+  },
+  "Q251": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q252": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de divergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q253": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
+  },
+  "Q254": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
+  },
+  "Q255": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
+  },
+  "Q256": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
+  },
+  "Q257": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la continuité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la continuité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
+      }
+    ]
+  },
+  "Q258": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q259": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q260": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q261": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
+  },
+  "Q262": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
+  },
+  "Q263": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
+  },
+  "Q264": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -4843,12 +5310,6 @@ const IMAGE_DB = {
   },
   "ligne_1550-1750.png": {
     src: "images/ligne_1550-1750.png"
-  },
-  "deportation_acadien.png": {
-    src: "images/deportation_acadien.png"
-  },
-  "revolte_pontiact.png": {
-    src: "images/revolte_pontiact.png"
   },
   "loyalistes_province_quebec.png": {
     src: "images/loyalistes_province_quebec.png"
@@ -4894,9 +5355,6 @@ const IMAGE_DB = {
   },
   "org_pol_acte_const.png": {
     src: "images/org_pol_acte_const.png"
-  },
-  "passage_beringie.png": {
-    src: "images/passage_beringie.png"
   },
   "familles_linguistiques_autochtones.png": {
     src: "images/familles_linguistiques_autochtones.png"
@@ -5000,11 +5458,11 @@ const IMAGE_DB = {
   "exportations_bois_1800_1840.png": {
     src: "images/exportations_bois_1800_1840.png"
   },
-  "1763.png": {
-    src: "images/1763.png"
+  "population_1763.png": {
+    src: "images/population_1763.png"
   },
-  "1783.png": {
-    src: "images/1783.png"
+  "population_1783.png": {
+    src: "images/population_1783.png"
   },
   "loyalistes.png": {
     src: "images/loyalistes.png"
@@ -5215,6 +5673,12 @@ const IMAGE_DB = {
   },
   "org_pol_apres_1763.png": {
     src: "images/org_pol_apres_1763.png"
+  },
+  "org_pol_apres_1784.png": {
+    src: "images/org_pol_apres_1784.png"
+  },
+  "territoire_province_quebec_1783.png": {
+    src: "images/territoire_province_quebec_1783.png"
   }
 }
 
@@ -7601,7 +8065,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P3 — 1760 – 1791",
     points: 1,
-    enonce: "Quel gouverneur est rappelé en Angleterre à la suite de pressions exercées par les marchands \nanglophones de la Province de Québec au début du régime britannique?",
+    enonce: "Quel gouverneur est rappelé en Angleterre à la suite de pressions exercées par les marchands \nanglophones?",
     aspects: [
       {
         aspect: "Mouvements de revendication"
@@ -7622,7 +8086,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 1
     },
-    guide: "James Murray."
+    guide: "James Murray.",
+    updatedAt: "2026-06-07T00:44:24.446Z"
   },
   {
     id: "Q58",
@@ -9983,7 +10448,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "1763.png",
+            ref: "population_1763.png",
             soustitre: "Composition de la population de la colonie en 1763",
             source: "adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal."
           }
@@ -9994,7 +10459,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "1783.png",
+            ref: "population_1783.png",
             soustitre: "Composition de la population de la colonie en 1783",
             source: "adapté de Jean Hamelin et Yves Roby, Histoire économique du Québec, 1851-1896."
           }
@@ -10026,7 +10491,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "1763.png",
+            ref: "population_1763.png",
             soustitre: "Composition de la population de la colonie en 1763",
             source: "adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal."
           }
@@ -10037,7 +10502,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "1783.png",
+            ref: "population_1783.png",
             soustitre: "Composition de la population de la colonie en 1783",
             source: "adapté de Jean Hamelin et Yves Roby, Histoire économique du Québec, 1851-1896."
           }
@@ -10069,7 +10534,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "1763.png",
+            ref: "population_1763.png",
             soustitre: "Composition de la population de la colonie en 1763",
             source: "adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal."
           }
@@ -10080,7 +10545,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "1783.png",
+            ref: "population_1783.png",
             soustitre: "Composition de la population de la colonie en 1783",
             source: "adapté de Jean Hamelin et Yves Roby, Histoire économique du Québec, 1851-1896."
           }
@@ -15494,7 +15959,7 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "regime_militaire_org_pol.png",
             soustitre: "Organisation politique de la colonie entre 1760-1763",
-            source: "chéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+            source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
           }
         ]
       },
@@ -15504,7 +15969,8 @@ const QUESTIONS = [
           {
             titre: "Document B",
             ref: "org_pol_apres_1763.png",
-            soustitre: "Organisation politique de la colonie après 1763"
+            soustitre: "Organisation politique de la colonie après 1763",
+            source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
           }
         ]
       }
@@ -15514,7 +15980,7 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Changement\n\nIl y a changement, car après 1763, le régime militaire est remplacé par une administration civile britannique. ou Il y a changement, car entre 1760 et 1770, la colonie passe d'un régime militaire à un régime civil britannique.\n\nContinuité\n\nIl y a continuité, car entre 1760 et 1770, la colonie demeure sous l'autorité de la Couronne britannique. ou Il y a continuité, car entre 1760 et 1770, la colonie est administrée par des autorités britanniques.",
-    updatedAt: "2026-06-06T19:44:05.058Z"
+    updatedAt: "2026-06-06T21:27:14.923Z"
   },
   {
     id: "Q235",
@@ -15771,5 +16237,1011 @@ const QUESTIONS = [
     },
     guide: "Le Serment du Test.",
     updatedAt: "2026-06-06T21:02:50.524Z"
+  },
+  {
+    id: "Q242",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    enonce: "Expliquez comment la composition de la population influence les décisions prises par le gouverneur Murray.\n\nRépondez à la question en précisant :\n\n• la composition de la population de la colonie\n• une décision prise par Murray\n• une conséquence pour les Canadiens",
+    aspects: [
+      {
+        aspect: "Instructions au gouverneur Murray"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "population_1763.png",
+            soustitre: "Composition de la population de la Province de Québec en 1763",
+            source: "adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Le gouverneur Murray estime qu'il est préférable de tenir compte des habitudes et des croyances de la population canadienne afin d'assurer la stabilité de la colonie. »",
+            source: "Lacoursière, Jacques. Histoire populaire du Québec, tome 2. Sillery, Septentrion, 1995."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Malgré certaines restrictions imposées par les autorités britanniques, plusieurs Canadiens continuent de pratiquer leur religion et de participer à la vie de leur communauté après la Conquête. »",
+            source: "Dickinson, John A. et Brian Young. Brève histoire socio-économique du Québec. Sillery, Septentrion, 2009."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Les Canadiens catholiques forment la majorité de la population de la colonie (la composition de la population de la colonie). Le gouverneur Murray leur accorde certaines concessions, notamment sur le plan religieux (une décision prise par Murray). Les Canadiens peuvent ainsi continuer à pratiquer leur religion catholique (une conséquence pour les Canadiens).",
+    updatedAt: "2026-06-06T21:10:21.698Z"
+  },
+  {
+    id: "Q243",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez un moyen proposé dans les instructions du roi pour favoriser l'assimilation des Canadiens.",
+    aspects: [
+      {
+        aspect: "Instructions au gouverneur Murray"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les autorités britanniques souhaitent que les habitants de la nouvelle colonie adoptent progressivement les usages et les institutions en vigueur dans les autres possessions de l'Empire britannique. »",
+            source: "Dickinson, John A. et Brian Young. Brève histoire socio-économique du Québec. Sillery, Septentrion, 2009."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Imposer les institutions britanniques ou onstaurer un gouvernement civil britannique ou appliquer les lois britanniques",
+    updatedAt: "2026-06-06T21:12:22.247Z"
+  },
+  {
+    id: "Q244",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez un objectif poursuivi par le roi dans les instructions transmises au gouverneur Murray.",
+    aspects: [
+      {
+        aspect: "Instructions au gouverneur Murray"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les autorités britanniques souhaitent transformer progressivement leur nouvelle colonie afin qu'elle ressemble davantage aux autres colonies de l'Empire. Elles espèrent notamment que les habitants adopteront les institutions, les lois et les pratiques britanniques. »",
+            source: "Beaulieu, Alain, Stéphane Gervais et Martin Papillon. Histoire du Québec et du Canada. Montréal, CEC, 2018."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Assimiler les Canadiens.",
+    updatedAt: "2026-06-06T21:14:06.575Z"
+  },
+  {
+    id: "Q245",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    enonce: "Les documents A à D présentent des faits liés à l'administration de la colonie entre 1760 et 1774. Associez chaque document au type de gouvernement correspondant.",
+    aspects: [
+      {
+        aspect: "Instructions au gouverneur Murray"
+      },
+      {
+        aspect: "Proclamation royale"
+      },
+      {
+        aspect: "Régime militaire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Durant les premières années qui suivent la Conquête, les autorités britanniques permettent aux habitants de reprendre progressivement leurs activités économiques tout en administrant directement la colonie. »",
+            source: "Dickinson, John A. et Brian Young. Brève histoire socio-économique du Québec. Septentrion, 2009."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "org_pol_apres_1763.png",
+            source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "regime_militaire_org_pol.png",
+            source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Les nouvelles institutions mises en place dans la colonie s'inspirent de celles des autres possessions britanniques d'Amérique du Nord. »",
+            source: "Dickinson, John A. et Brian Young. Brève histoire socio-économique du Québec. Septentrion, 2009."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Gouvernement civil",
+        "Gouvernement militaire"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Gouvernement civil",
+        "Gouvernement militaire"
+      ],
+      rangees: [
+        [
+          "B et D",
+          "A et C"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-06T21:26:53.038Z"
+  },
+  {
+    id: "Q246",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans le territoire de la Province de Québec entre 1763 et 1774. Justifiez votre choix par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      },
+      {
+        aspect: "Proclamation royale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "carte_terr_proclamation_royale.png",
+            source: "Récitus."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "carte_terr_acte_quebec.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Changement :\nIl y a changement, car en 1774, la Province de Québec est beaucoup plus grande qu’en 1763. Elle s’étend maintenant vers les Grands Lacs et la vallée de l’Ohio.\n\nContinuité :\nIl y a continuité, car entre 1763 et 1774, la Province de Québec demeure une possession britannique située dans la région de la vallée du Saint-Laurent.",
+    updatedAt: "2026-06-07T00:48:22.548Z"
+  },
+  {
+    id: "Q247",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans l’organisation politique de la Province de Québec entre 1763 et 1774. Justifiez votre choix par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      },
+      {
+        aspect: "Proclamation royale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "org_pol_apres_1763.png",
+            source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "org_pol_apres_1784.png",
+            source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Changement :\nIl y a changement, car en 1774, le Conseil de Québec devient le Conseil exécutif et le Conseil législatif.\n\nContinuité :\nIl y a continuité, car entre 1763 et 1774, la Province de Québec demeure dirigée par un gouverneur britannique nommé par le roi.",
+    updatedAt: "2026-06-07T00:57:20.378Z"
+  },
+  {
+    id: "Q248",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez le nom de la constitution mise en place par les autorités britanniques dans la Province de Québec en 1774.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« En juin 1774, le Parlement britannique adopte une nouvelle loi pour organiser le gouvernement de la Province de Québec. Cette loi remplace une partie des règles établies après la Conquête et modifie l’administration de la colonie. »",
+            source: "Adapté d’une loi adoptée par le Parlement britannique, 1774."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "L’Acte de Québec.",
+    updatedAt: "2026-06-07T01:01:10.193Z"
+  },
+  {
+    id: "Q249",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "3 documents",
+    enonce: "Les documents A à C présentent des éléments de l’organisation politique de la Province de Québec après l’Acte de Québec de 1774. Associez chaque document au pouvoir correspondant.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« L'Acte de Québec maintient les lois criminelles anglaises tout en rétablissant les lois civiles françaises concernant la propriété et les droits civils. »",
+            source: "Adapté de Marcel Trudel, Initiation à la Nouvelle-France, Éditions Holt, Rinehart et Winston, 1968."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Le gouverneur demeure le principal représentant de la Couronne dans la colonie et conserve un rôle central dans l'administration du territoire. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 1, Québec Amérique, 1995."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les ordonnances destinées à assurer le bon gouvernement de la province sont adoptées par un conseil nommé plutôt que par une assemblée élue. »",
+            source: "Adapté de Christian Blais, Histoire parlementaire du Québec, Assemblée nationale du Québec, 2012."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Exécutif",
+        "Judiciaire",
+        "Législatif"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Exécutif",
+        "Judiciaire",
+        "Législatif"
+      ],
+      rangees: [
+        [
+          "C",
+          "A",
+          "C"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-07T12:02:18.346Z"
+  },
+  {
+    id: "Q250",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "3 documents",
+    enonce: "Les documents A à C présentent les réactions de différents groupes à l'adoption de l'Acte de Québec de 1774. Associez chaque document au groupe correspondant.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Cette loi nous permet de continuer à exercer notre ministère et à percevoir les revenus nécessaires à l'entretien de l'Église dans la province. »",
+            auteur: "Jean-Olivier Briand, évêque de Québec.",
+            source: "Adapté de Mandements, lettres pastorales et circulaires des évêques de Québec, vol. 1, Québec, 1887."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les Canadiens retrouvent leurs anciennes lois civiles et peuvent désormais participer plus pleinement à l'administration de leur pays. »",
+            auteur: "Pierre du Calvet",
+            source: "Adapté de Pierre du Calvet, Appel à la justice de l'État, 1784."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Cette mesure accorde trop de privilèges aux Canadiens et prive les sujets britanniques des institutions auxquelles ils ont droit. »",
+            auteur: "William Hey, juge en chef de la Province de Québec.",
+            source: "Adapté de William Hey, Observations on the Act of Quebec, vers 1775."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "British Party",
+        "Clergé catholique",
+        "French Party"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "British Party",
+        "Clergé catholique",
+        "French Party"
+      ],
+      rangees: [
+        [
+          "",
+          "A",
+          "B"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-07T12:09:55.180Z"
+  },
+  {
+    id: "Q251",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs de la Province de Québec après l'adoption de l'Acte de Québec de 1774. Sur quel point précis ces acteurs sont-ils en accord?",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les Canadiens conservent leurs usages et leurs lois dans les affaires qui concernent leurs biens et leurs héritages, ce qui contribue à la tranquillité de la province. »",
+            source: "Adapté de la correspondance de Jean-Olivier Briand, évêque de Québec, vers 1775."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« La nouvelle constitution assure aux habitants la conservation de leurs anciennes lois civiles, avantage que plusieurs considèrent essentiel au bien du pays. »",
+            source: "Adapté de la correspondance de François Chardon, marchand et membre du French Party, vers 1775."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le maintien des lois civiles françaises.",
+    updatedAt: "2026-06-07T12:21:02.631Z"
+  },
+  {
+    id: "Q252",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Divergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs de la Province de Québec après l'adoption de l'Acte de Québec de 1774. Sur quel point précis ces acteurs sont-ils en désaccord?",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Plusieurs habitants voient dans cette nouvelle constitution un moyen d'assurer la stabilité de la province sans qu'il soit nécessaire d'établir immédiatement une assemblée représentative. »",
+            source: "Adapté de la correspondance de François Chardon, vers 1775."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les sujets britanniques de cette province devraient jouir du droit d'être représentés dans une assemblée élue plutôt que d'être gouvernés par des conseils nommés. »",
+            source: "Adapté des pétitions et mémoires de Thomas Walker, marchand britannique de Québec, vers 1775."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les deux acteurs sont en désaccord sur l'établissement d'une assemblée élue dans la Province de Québec.",
+    updatedAt: "2026-06-07T12:22:19.114Z"
+  },
+  {
+    id: "Q253",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s'il y a changement ou continuité dans les lois en vigueur dans la Province de Québec entre 1763 et 1774. Justifiez votre choix par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      },
+      {
+        aspect: "Proclamation royale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après la Conquête, les autorités britanniques cherchent à instaurer les lois anglaises dans la colonie. Les tribunaux doivent désormais s'inspirer du droit anglais pour régler les affaires des habitants. »",
+            source: "Adapté de Marcel Trudel, Initiation à la Nouvelle-France, 1968."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« En 1774, les habitants de la Province de Québec continuent d'utiliser leurs anciennes lois dans les affaires de propriété et de droits civils. Les lois criminelles anglaises demeurent toutefois en vigueur dans la colonie. »",
+            source: "Adapté de l'Acte de Québec, 1774."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Changement\nIl y a changement, car en 1774, les lois civiles françaises sont appliquées dans la Province de Québec, alors qu'en 1763, les autorités britanniques cherchent à appliquer les lois anglaises.\n\nContinuité :\nIl y a continuité, car en 1763 comme en 1774, les lois criminelles anglaises demeurent en vigueur dans la Province de Québec.",
+    updatedAt: "2026-06-07T13:00:03.984Z"
+  },
+  {
+    id: "Q254",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Changement",
+    enonce: "Indiquez un changement concernant les conditions pour occuper un poste dans l'administration coloniale entre 1763 et 1774.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La nouvelle constitution modifie les conditions d'accès aux charges publiques et permet à un plus grand nombre d'habitants de participer à l'administration de la province. »",
+            source: "Adapté de Christian Blais, Histoire parlementaire du Québec, Assemblée nationale du Québec, 2012"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le serment du Test n'est plus exigé pour occuper un poste dans l'administration coloniale.",
+    updatedAt: "2026-06-07T13:08:53.602Z"
+  },
+  {
+    id: "Q255",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une raison qui explique pourquoi les Canadiens catholiques peuvent occuper un poste dans l'administration coloniale après 1774.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« L'une des modifications apportées en 1774 concerne le serment exigé des titulaires de charges publiques, ce qui élargit l'accès à certaines fonctions dans la colonie. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 1, Québec Amérique, 1995."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le serment du Test est aboli ou le serment du Test est remplacé par un nouveau serment d'allégeance.",
+    updatedAt: "2026-06-07T13:18:57.177Z"
+  },
+  {
+    id: "Q256",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de l'abolition du serment du Test dans la Province de Québec après 1774.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "En 1774, les autorités britanniques remplacent le serment auparavant exigé des titulaires de charges publiques. Cette modification permet à davantage d'habitants de satisfaire aux conditions requises pour participer à l'administration de la province. »",
+            source: "Adapté de l'Acte de Québec, 1774."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les Canadiens catholiques peuvent occuper des postes dans l'administration coloniale.",
+    updatedAt: "2026-06-07T13:13:18.433Z"
+  },
+  {
+    id: "Q257",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Continuité",
+    enonce: "À partir des documents A et B, indiquez un élément de continuité dans les fonctions exercées par le gouverneur de la Province de Québec entre 1763 et 1774.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Dans la Province de Québec, le gouverneur agit au nom du roi de Grande-Bretagne. Il veille à l'administration de la colonie et s'assure de l'application des décisions prises par les autorités britanniques. »",
+            soustitre: "1763",
+            source: "Adapté de la Proclamation royale de 1763."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Après l'adoption de l'Acte de Québec, le gouverneur demeure le principal représentant de la Couronne britannique. Il continue d'exercer d'importantes responsabilités dans l'administration de la province. »",
+            soustitre: "1774",
+            source: "Adapté de Christian Blais, Histoire parlementaire du Québec, Assemblée nationale du Québec, 2012."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le gouverneur demeure le représentant du roi dans la colonie ou le gouverneur continue de diriger l'administration de la colonie.",
+    updatedAt: "2026-06-07T13:18:20.625Z"
+  },
+  {
+    id: "Q258",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez le nom de l'obligation imposée aux catholiques qui souhaitent exercer une fonction dans l'administration coloniale avant 1774.",
+    aspects: [
+      {
+        aspect: "Proclamation royale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Pour obtenir une charge publique dans la Province de Québec, les candidats doivent prêter un serment affirmant certaines croyances religieuses reconnues par les autorités britanniques. »",
+            source: "Adapté de la Proclamation royale de 1763."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le serment du Test.",
+    updatedAt: "2026-06-07T13:26:15.151Z"
+  },
+  {
+    id: "Q259",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez un droit accordé aux catholiques par l'Acte de Québec.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La nouvelle constitution permet aux habitants de pratiquer leur religion et confirme certains privilèges déjà exercés par l'Église dans la Province de Québec. »",
+            source: "Adapté de l'Acte de Québec, 1774."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les catholiques peuvent pratiquer leur religion.",
+    updatedAt: "2026-06-07T13:24:51.349Z"
+  },
+  {
+    id: "Q260",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez un droit accordé à l'Église catholique par l'Acte de Québec.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La nouvelle constitution confirme le droit du clergé de percevoir certaines contributions auprès des fidèles afin d'assurer le fonctionnement des paroisses de la colonie. »",
+            source: "Adapté de l'Acte de Québec, 1774."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le droit de percevoir la dîme.",
+    updatedAt: "2026-06-07T13:25:36.767Z"
+  },
+  {
+    id: "Q261",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une raison qui explique l'adoption de l'Acte de Québec par les autorités britanniques en 1774.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Dans les colonies britanniques du sud, plusieurs habitants contestent les décisions prises par Londres. Les autorités cherchent alors des moyens d'assurer la fidélité des habitants de la Province de Québec. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 2, Québec Amérique, 1995."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "cause-consequence"
+    },
+    guide: "Les autorités britanniques veulent s'assurer de la loyauté des habitants de la Province de Québec face aux tensions dans les Treize colonies.",
+    updatedAt: "2026-06-07T13:30:33.036Z"
+  },
+  {
+    id: "Q262",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    enonce: "Expliquez comment les événements dans les Treize colonies contribuent à l'adoption d'une nouvelle constitution en 1774.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• un événement dans les Treize colonies\n• un objectif poursuivi par les autorités britanniques\n• le nom d'une nouvelle constitution mise en place en 1774",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Au début des années 1770, plusieurs habitants des Treize colonies contestent les taxes imposées par le Parlement britannique. Les tensions augmentent et les relations entre Londres et ses colonies américaines se détériorent. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 1, Québec Amérique, 1995."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les autorités britanniques cherchent à préserver la stabilité de leurs possessions nord-américaines et à éviter que les mécontentements observés ailleurs ne gagnent les habitants de la Province de Québec. »",
+            source: "Adapté de Marcel Trudel, Initiation à la Nouvelle-France."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "org_pol_apres_1784.png",
+            source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Les tensions ou le mécontentement dans les Treize colonies (événements dans les Treize colonies) inquiètent les autorités britanniques. Pour maintenir stabilité de la Province de Québec et assurer la loyauté de ses habitants (objectif poursuivi par les autorités britanniques), les autorités adoptent l'Acte de Québec (nom d'une nouvelle constitution mise en place en 1774).",
+    updatedAt: "2026-06-07T17:19:01.919Z"
+  },
+  {
+    id: "Q263",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P2 — 1608 – 1760",
+    points: 3,
+    enonce: "Expliquez comment la fin de la guerre de Succession d'Espagne transforme le territoire de l’Amérique du Nord. \n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n• un résultat de la la guerre de Succession d'Espagne\n• le traité qui met fin à cette guerre\n• une modification du territoire de l’Amérique du Nord",
+    aspects: [
+      {
+        aspect: "Guerres intercoloniales"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après plusieurs années de combats, la France et ses alliés ne parviennent pas à atteindre leurs objectifs. La Grande-Bretagne sort renforcée du conflit et accroît son influence sur la scène internationale. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 1."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "territoire_revendique_1713.png",
+            source: "Récitus."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« En 1713, des représentants de plusieurs puissances européennes se réunissent afin de mettre officiellement fin au conflit qui oppose leurs États depuis le début du XVIIIe siècle. »",
+            source: "Adapté de Marcel Trudel, Initiation à la Nouvelle-France."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "La victoire britannique (un résultat de la guerre de Succession d'Espagne) mène à la signature du traité d'Utrecht (le traité qui met fin à cette guerre). À la suite de ce traité, la France perd l'Acadie, Terre-Neuve et la baie d'Hudson (une modification du territoire de l'Amérique du Nord).",
+    updatedAt: "2026-06-07T17:28:49.160Z"
+  },
+  {
+    id: "Q264",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    enonce: "Expliquez comment la fin de la guerre d'Indépendance des États-Unis transforme le territoire de l'Amérique du Nord.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\nl'issue de la guerre de l'indépendance des États-Unis\nle traité qui met fin à cette guerre\nune modification du territoire de l'Amérique du Nord",
+    aspects: [
+      {
+        aspect: "Invasion américaine"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après plusieurs années de combats, les colonies américaines obtiennent leur indépendance et cessent d'être sous l'autorité de la Grande-Bretagne. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 1."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« À la fin du conflit, des représentants britanniques et américains concluent une entente qui reconnaît officiellement la nouvelle situation politique en Amérique du Nord et fixe certaines frontières territoriales. »",
+            source: "Adapté du Traité de Paris, 1783."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "territoire_province_quebec_1783.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Les Treize colonies obtiennent leur indépendance (l'issue de la guerre de l'indépendance des États-Unis). Le traité de Paris de 1783 met fin au conflit (le traité qui met fin à cette guerre). Les États-Unis sont reconnus et leur territoire s'étend jusqu'au Mississippi (une modification du territoire de l'Amérique du Nord) ou la Province de Québec perd la région au sud des Grands Lacs ou la vallée de l'Ohio.",
+    updatedAt: "2026-06-07T17:36:40.569Z"
   }
 ]
