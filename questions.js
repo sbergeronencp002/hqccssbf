@@ -5211,6 +5211,34 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q262": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -17003,5 +17031,56 @@ const QUESTIONS = [
     },
     guide: "Les autorités britanniques veulent s'assurer de la loyauté des habitants de la Province de Québec face aux tensions dans les Treize colonies.",
     updatedAt: "2026-06-07T13:30:33.036Z"
+  },
+  {
+    id: "Q262",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    enonce: "Expliquez comment les événements dans les Treize colonies contribuent à l'adoption d'une nouvelle constitution en 1774.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• un événement dans les Treize colonies\n• un objectif poursuivi par les autorités britanniques\n• le nom d'une nouvelle constitution mise en place en 1774",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Au début des années 1770, plusieurs habitants des Treize colonies contestent les taxes imposées par le Parlement britannique. Les tensions augmentent et les relations entre Londres et ses colonies américaines se détériorent. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 1, Québec Amérique, 1995."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les autorités britanniques cherchent à préserver la stabilité de leurs possessions nord-américaines et à éviter que les mécontentements observés ailleurs ne gagnent les habitants de la Province de Québec. »",
+            source: "Adapté de Marcel Trudel, Initiation à la Nouvelle-France."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "org_pol_apres_1784.png",
+            source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Les tensions ou le mécontentement dans les Treize colonies (événements dans les Treize colonies) inquiètent les autorités britanniques. Pour maintenir stabilité de la Province de Québec et assurer la loyauté de ses habitants (objectif poursuivi par les autorités britanniques), les autorités adoptent l'Acte de Québec (nom d'une nouvelle constitution mise en place en 1774).",
+    updatedAt: "2026-06-07T17:19:01.919Z"
   }
 ]
