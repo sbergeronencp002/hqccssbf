@@ -5094,6 +5094,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q256": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -16686,5 +16708,37 @@ const QUESTIONS = [
     },
     guide: "Le serment du Test est aboli ou le serment du Test est remplacé par un nouveau serment d'allégeance.",
     updatedAt: "2026-06-07T13:11:49.877Z"
+  },
+  {
+    id: "Q256",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de l'abolition du serment du Test dans la Province de Québec après 1774.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "En 1774, les autorités britanniques remplacent le serment auparavant exigé des titulaires de charges publiques. Cette modification permet à davantage d'habitants de satisfaire aux conditions requises pour participer à l'administration de la province. »",
+            source: "Adapté de l'Acte de Québec, 1774."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les Canadiens catholiques peuvent occuper des postes dans l'administration coloniale.",
+    updatedAt: "2026-06-07T13:13:18.433Z"
   }
 ]
