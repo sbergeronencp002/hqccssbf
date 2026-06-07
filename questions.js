@@ -4973,6 +4973,28 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
       }
     ]
+  },
+  "Q250": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (3 sur 3)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (2 sur 3)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
+      }
+    ]
   }
 }
 
@@ -16299,5 +16321,78 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-07T12:02:18.346Z"
+  },
+  {
+    id: "Q250",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "3 documents",
+    enonce: "Les documents A à C présentent les réactions de différents groupes à l'adoption de l'Acte de Québec de 1774. Associez chaque document au groupe correspondant.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Cette loi nous permet de continuer à exercer notre ministère et à percevoir les revenus nécessaires à l'entretien de l'Église dans la province. »",
+            auteur: "Jean-Olivier Briand, évêque de Québec.",
+            source: "Adapté de Mandements, lettres pastorales et circulaires des évêques de Québec, vol. 1, Québec, 1887."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les Canadiens retrouvent leurs anciennes lois civiles et peuvent désormais participer plus pleinement à l'administration de leur pays. »",
+            auteur: "Pierre du Calvet",
+            source: "Adapté de Pierre du Calvet, Appel à la justice de l'État, 1784."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Cette mesure accorde trop de privilèges aux Canadiens et prive les sujets britanniques des institutions auxquelles ils ont droit. »",
+            auteur: "William Hey, juge en chef de la Province de Québec.",
+            source: "Adapté de William Hey, Observations on the Act of Quebec, vers 1775."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "British Party",
+        "Clergé catholique",
+        "French Party"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "British Party",
+        "Clergé catholique",
+        "French Party"
+      ],
+      rangees: [
+        [
+          "",
+          "A",
+          "B"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-07T12:09:55.180Z"
   }
 ]
