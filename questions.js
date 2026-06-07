@@ -5155,6 +5155,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q259": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -16857,5 +16874,36 @@ const QUESTIONS = [
     },
     guide: "Le serment du Test.",
     updatedAt: "2026-06-07T13:22:29.963Z"
+  },
+  {
+    id: "Q259",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez un droit accordé aux catholiques par l'Acte de Québec.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La nouvelle constitution permet aux habitants de pratiquer leur religion et confirme certains privilèges déjà exercés par l'Église dans la Province de Québec. »",
+            source: "Adapté de l'Acte de Québec, 1774."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les catholiques peuvent pratiquer leur religion.",
+    updatedAt: "2026-06-07T13:24:51.349Z"
   }
 ]
