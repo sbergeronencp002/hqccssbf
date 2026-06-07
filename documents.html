@@ -172,6 +172,7 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
 .rename-status{font-size:.78rem;margin-top:.6rem;min-height:1.2em;text-align:right}
 .rename-status.err{color:#842029}
 .rename-status.ok{color:#276539}
+.rename-status.warn{color:#856404}
 </style>
 </head>
 <body>
@@ -290,6 +291,8 @@ const OI_SHORT = {
   "Établir des faits":                             "Établir faits",
 };
 
+function escH(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+
 let imgMap = {};
 let qById = {};      // id -> question (global, utilisé par la lightbox)
 let sizeCache = {};  // img -> bytes
@@ -309,15 +312,15 @@ function tileHtml(q) {
   const imgsHtml = q._imgs.map(img => {
     const shared = imgMap[img] && imgMap[img].length > 1;
     return `<div class="img-wrap${shared?' shared':''}">
-      <img src="images/${img}" loading="lazy" title="${img}" onclick="showImg('${img}')">
-      <span class="img-name">${img.replace('.png','')}</span>
+      <img src="images/${escH(img)}" loading="lazy" title="${escH(img)}" onclick="showImg(${JSON.stringify(img)})">
+      <span class="img-name">${escH(img.replace('.png',''))}</span>
       ${shared ? `<span class="share-badge">${imgMap[img].length}</span>` : ''}
     </div>`;
   }).join('');
-  return `<div class="tile" data-oi="${q.oi}" data-text="${q.id} ${q.oi} ${q.periode||''} ${enonce.toLowerCase()}">
-  <div class="tile-top"><span class="tile-id">${q.id}</span><span class="tile-oi-tag ${cls}">${short}</span></div>
-  <div class="tile-periode">${periodeShort}</div>
-  <div class="tile-enonce">${enonceCut}</div>
+  return `<div class="tile" data-oi="${escH(q.oi)}" data-text="${escH(q.id+' '+q.oi+' '+(q.periode||'')+' '+enonce.toLowerCase())}">
+  <div class="tile-top"><span class="tile-id">${escH(q.id)}</span><span class="tile-oi-tag ${cls}">${escH(short)}</span></div>
+  <div class="tile-periode">${escH(periodeShort)}</div>
+  <div class="tile-enonce">${escH(enonceCut)}</div>
   <div class="tile-imgs">${imgsHtml}</div>
 </div>`;
 }
@@ -353,10 +356,10 @@ function tileHtml(q) {
       const isShared = ids.length > 1;
       const ois = [...new Set(ids.filter(id=>qById[id]).map(id=>qById[id].oi))].join(' ');
       return `
-      <div class="img-card" data-img-name="${img.replace('.png','').toLowerCase()}" data-ois="${ois}" onclick="showImg('${img}')">
+      <div class="img-card" data-img-name="${escH(img.replace('.png','').toLowerCase())}" data-ois="${escH(ois)}" onclick="showImg(${JSON.stringify(img)})">
         <span class="ic-count${isShared ? '' : ' single'}">${ids.length}</span>
-        <img src="images/${img}" loading="lazy" alt="${img}">
-        <div class="ic-label" title="${img}">${img.replace('.png','')}</div>
+        <img src="images/${escH(img)}" loading="lazy" alt="${escH(img)}">
+        <div class="ic-label" title="${escH(img)}">${escH(img.replace('.png',''))}</div>
       </div>`;
     }).join('') + '</div>';
 
@@ -372,10 +375,10 @@ function tileHtml(q) {
   if (orphans.length) {
     document.getElementById('orphans-container').innerHTML = orphans.map(img => `
       <div class="orphan-row" id="orphan-${CSS.escape(img)}">
-        <img src="images/${img}" loading="lazy" title="${img}" onclick="showImg('${img}')">
-        <span class="img-label">${img.replace('.png','')}</span>
+        <img src="images/${escH(img)}" loading="lazy" title="${escH(img)}" onclick="showImg(${JSON.stringify(img)})">
+        <span class="img-label">${escH(img.replace('.png',''))}</span>
         ${sizeBadgeHtml(img)}
-        <button class="btn-delete" onclick="deleteOrphan('${img}')">🗑 Supprimer</button>
+        <button class="btn-delete" onclick="deleteOrphan(${JSON.stringify(img)})">🗑 Supprimer</button>
       </div>`).join('');
     document.getElementById('nav-orphans').style.display = '';
     fetchSizes(orphans);
@@ -479,11 +482,11 @@ function showImg(img) {
     const enCut = en.length > 160 ? en.substring(0,160) + '…' : en;
     return `<div class="lbq">
       <div class="lbq-top">
-        <span class="tile-id">${q.id}</span>
-        <span class="tile-oi-tag ${cls}">${short}</span>
-        <span class="lbq-per">${per}</span>
+        <span class="tile-id">${escH(q.id)}</span>
+        <span class="tile-oi-tag ${cls}">${escH(short)}</span>
+        <span class="lbq-per">${escH(per)}</span>
       </div>
-      <div class="lbq-en">${enCut}</div>
+      <div class="lbq-en">${escH(enCut)}</div>
     </div>`;
   }).join('');
   document.getElementById('lb-questions').innerHTML =
@@ -748,36 +751,26 @@ function updateDomAfterRename(oldName, newName) {
     el.src = 'images/' + newName;
   });
   // Update data-size-badge attributes
-  document.querySelectorAll(`[data-size-badge="${oldName}"]`).forEach(el => {
+  document.querySelectorAll(`[data-size-badge="${CSS.escape(oldName)}"]`).forEach(el => {
     el.dataset.sizeBadge = newName;
   });
-  // Update img-label text in shared headers
-  document.querySelectorAll('.shared-group-header').forEach(h => {
-    const label = h.querySelector('.img-label');
-    if (label && label.textContent === oldName.replace('.png','')) {
-      label.textContent = newName.replace('.png','');
-    }
-    // Update rename + replace buttons onclick
-    const btn = h.querySelector('.btn-rename');
-    if (btn && btn.getAttribute('onclick').includes(oldName)) {
-      btn.setAttribute('onclick', `event.stopPropagation();openRename('${newName}')`);
-    }
-    const btnR = h.querySelector('.btn-replace');
-    if (btnR && btnR.getAttribute('onclick').includes(oldName)) {
-      btnR.setAttribute('onclick', `event.stopPropagation();openReplace('${newName}')`);
-    }
-    // Update header img title/onclick
-    const hImg = h.querySelector('img');
-    if (hImg && hImg.title === oldName) {
-      hImg.title = newName;
-      hImg.setAttribute('onclick', `event.stopPropagation();showImg('${newName}')`);
-    }
+  // Update img-card dans la grille
+  document.querySelectorAll('#shared-container .img-card').forEach(card => {
+    const im = card.querySelector('img');
+    if (!im || im.getAttribute('src') !== 'images/' + oldName) return;
+    im.src = 'images/' + newName;
+    im.alt = newName;
+    card.dataset.imgName = newName.replace('.png','').toLowerCase();
+    card.setAttribute('onclick', 'showImg(' + JSON.stringify(newName) + ')');
+    const label = card.querySelector('.ic-label');
+    if (label) { label.textContent = newName.replace('.png',''); label.title = newName; }
   });
-  // Update tile img-name spans and img titles
+  // Update tile img-wraps (vue "toutes les questions")
   document.querySelectorAll('.img-wrap').forEach(wrap => {
     const im = wrap.querySelector('img');
     if (im && im.title === oldName) {
       im.title = newName;
+      im.setAttribute('onclick', 'showImg(' + JSON.stringify(newName) + ')');
       const nameSpan = wrap.querySelector('.img-name');
       if (nameSpan) nameSpan.textContent = newName.replace('.png','');
     }

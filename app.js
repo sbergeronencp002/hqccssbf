@@ -43,7 +43,9 @@ function oiStyle(oi) {
 }
 
 let aspects = [];
-const periodeOrder = [...PERIODES_PAR_NIVEAU['3'], ...PERIODES_PAR_NIVEAU['4']];
+const periodeOrder = (typeof PERIODES_PAR_NIVEAU !== 'undefined')
+  ? [...PERIODES_PAR_NIVEAU['3'], ...PERIODES_PAR_NIVEAU['4']]
+  : [];
 let Q_MAP = new Map();          // id → question (O(1) lookup)
 let Q_SEARCH_IDX = new Map();   // id → lowercase search string (pre-built)
 let NEW_IDS = new Set();        // 10 questions les plus récentes
@@ -352,8 +354,8 @@ function openQModal(id) {
 
   const aspects = (q.aspects||[]).map(a => a.aspect).join(' · ');
   document.getElementById('q-modal-title').innerHTML =
-    `<div class="q-oi-badge" style="color:${st.color};background:rgba(0,0,0,0.08)">${q.oi}</div>` +
-    `<div style="font-size:0.7rem;margin-top:3px;opacity:0.72">${aspects}</div>` +
+    `<div class="q-oi-badge" style="color:${st.color};background:rgba(0,0,0,0.08)">${escLine(q.oi)}</div>` +
+    `<div style="font-size:0.7rem;margin-top:3px;opacity:0.72">${escLine(aspects)}</div>` +
     `<div style="font-size:0.67rem;margin-top:2px;opacity:0.55;font-weight:600">${q.points}&thinsp;pt${q.points > 1 ? 's' : ''}</div>`;
 
   let html = '<div class="q-section-label">Question</div>';
@@ -376,7 +378,7 @@ function openQModal(id) {
       html += '<div style="font-size:0.78rem;color:var(--ink-3);font-style:italic">Réglette complexe — disponible dans le cahier généré.</div>';
     } else {
       html += `<table class="reglette-table">${r.niveaux.map(n =>
-        `<tr><td class="r-pts-cell">${n.pts}&thinsp;pt${n.pts > 1 ? 's' : ''}</td><td class="r-desc-cell">${n.desc}</td></tr>`
+        `<tr><td class="r-pts-cell">${n.pts}&thinsp;pt${n.pts > 1 ? 's' : ''}</td><td class="r-desc-cell">${escLine(n.desc)}</td></tr>`
       ).join('')}</table>`;
     }
   }
@@ -557,8 +559,8 @@ function renderDoc(d) {
     let html = '<table style="width:100%;border-collapse:collapse;margin-bottom:8px"><tr>';
     d.cols.forEach(function(col) {
       html += '<td style="width:' + Math.floor(100/d.cols.length) + '%;padding:6px;vertical-align:top;border:0.5px solid var(--border)">';
-      html += '<div style="font-size:0.75rem;font-weight:600;color:var(--ink)">' + col.titre + '</div>';
-      if(col.soustitre) html += '<div style="font-size:0.7rem;font-style:italic;color:var(--ink-2);margin-bottom:4px">' + col.soustitre + '</div>';
+      html += '<div style="font-size:0.75rem;font-weight:600;color:var(--ink)">' + escLine(col.titre||'') + '</div>';
+      if(col.soustitre) html += '<div style="font-size:0.7rem;font-style:italic;color:var(--ink-2);margin-bottom:4px">' + escLine(col.soustitre) + '</div>';
       else html += '<div style="margin-bottom:4px"></div>';
       if(col.texte) {
         const plain = col.texte.replace(/\*\*(.*?)\*\*/g,'$1');
@@ -573,8 +575,8 @@ function renderDoc(d) {
         const img2 = IMAGE_DB[col.ref];
         if(img2) html += '<div class="doc-img-tile" style="max-width:100%" onclick="openLightbox(\'' + jsStr(img2.src) + '\')"><img src="' + img2.src + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:180px;object-fit:contain"></div>';
       }
-      if(col.auteur) html += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + col.auteur + '</div>';
-      if(col.source) html += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + col.source + '</div>';
+      if(col.auteur) html += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + escLine(col.auteur) + '</div>';
+      if(col.source) html += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + escLine(col.source) + '</div>';
       html += '</td>';
     });
     html += '</tr></table>';
@@ -604,7 +606,7 @@ function renderDoc(d) {
     html += '</div></div>';
     return html;
   }
-  return '<div><span class="doc-chip">' + d.type + ' — ' + d.ref + '</span></div>';
+  return '<div><span class="doc-chip">' + escLine(d.type||'') + ' — ' + escLine(d.ref||'') + '</span></div>';
 }
 
 function renderReponse(q) {
@@ -757,20 +759,20 @@ function previsualiser(guideMode) {
       let guideContent = '';
       if(q.guide) {
         if(typeof q.guide === 'string') {
-          guideContent = '<span style="font-size:0.9rem;color:var(--ink)">' + q.guide + '</span>';
+          guideContent = '<span style="font-size:0.9rem;color:var(--ink)">' + formatTexte(q.guide) + '</span>';
         } else if(q.guide.type === 'grille' || q.guide.type === 'tableau') {
           const TH = 'border:0.5px solid var(--border);padding:3px 10px;background:var(--paper-2);font-weight:600';
           const TD = 'border:0.5px solid var(--border);padding:3px 10px';
           guideContent = '<table style="border-collapse:collapse;font-size:0.8rem;margin-top:4px">';
           if(q.guide.type === 'grille') {
-            guideContent += '<tr>' + q.guide.entetes.map(h=>`<th style="${TH}">${h}</th>`).join('') + '</tr>';
+            guideContent += '<tr>' + q.guide.entetes.map(h=>`<th style="${TH}">${escLine(h)}</th>`).join('') + '</tr>';
             q.guide.rangees.forEach(function(row) {
-              guideContent += '<tr>' + row.map(function(cell,ci){ return `<td style="${TD}${ci===0?';font-weight:500':''}">${cell}</td>`; }).join('') + '</tr>';
+              guideContent += '<tr>' + row.map(function(cell,ci){ return `<td style="${TD}${ci===0?';font-weight:500':''}">${escLine(cell)}</td>`; }).join('') + '</tr>';
             });
           } else {
             guideContent += `<tr><th style="${TH}"></th><th style="${TH}">Document</th></tr>`;
             q.guide.lignes.forEach(function(l) {
-              guideContent += `<tr><td style="${TD};font-weight:500">${l.label}</td><td style="${TD};text-align:center">${l.valeur}</td></tr>`;
+              guideContent += `<tr><td style="${TD};font-weight:500">${escLine(l.label)}</td><td style="${TD};text-align:center">${escLine(l.valeur)}</td></tr>`;
             });
           }
           guideContent += '</table>';
@@ -835,16 +837,16 @@ function previsualiser(guideMode) {
             d.cols.forEach(function(col) {
               const img = IMAGE_DB[col.ref];
               docsHtml += '<td style="width:' + Math.floor(100/d.cols.length) + '%;padding:6px;vertical-align:top;border:0.5px solid var(--border)">';
-              docsHtml += '<div style="font-size:0.75rem;font-weight:600;color:var(--ink)">' + col.titre + '</div>';
-              if(col.soustitre) docsHtml += '<div style="font-size:0.7rem;font-style:italic;color:var(--ink-2);margin-bottom:4px">' + col.soustitre + '</div>';
+              docsHtml += '<div style="font-size:0.75rem;font-weight:600;color:var(--ink)">' + escLine(col.titre||'') + '</div>';
+              if(col.soustitre) docsHtml += '<div style="font-size:0.7rem;font-style:italic;color:var(--ink-2);margin-bottom:4px">' + escLine(col.soustitre) + '</div>';
               else docsHtml += '<div style="margin-bottom:4px"></div>';
               if(col.texte) {
                 docsHtml += '<div style="font-size:0.72rem;color:var(--ink-2);line-height:1.5">' + formatTexte(col.texte) + '</div>';
               } else if(img) {
                 docsHtml += '<img src="' + img.src + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:100px;object-fit:contain;cursor:pointer" onclick="openLightbox(\'' + jsStr(img.src) + '\')">';
               }
-              if(col.auteur) docsHtml += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + col.auteur + '</div>';
-              if(col.source) docsHtml += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + col.source + '</div>';
+              if(col.auteur) docsHtml += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + escLine(col.auteur) + '</div>';
+              if(col.source) docsHtml += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + escLine(col.source) + '</div>';
               docsHtml += '</td>';
             });
             docsHtml += '</tr></table>';

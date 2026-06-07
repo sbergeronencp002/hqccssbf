@@ -562,10 +562,12 @@ function filterEditList() {
   }
 
   function highlight(text, term) {
-    if(!term) return text;
+    if(!term) return escHtml(text);
     const idx = text.toLowerCase().indexOf(term);
-    if(idx < 0) return text;
-    return text.slice(0, idx) + '<mark style="background:#fff3b0;border-radius:2px">' + text.slice(idx, idx + term.length) + '</mark>' + text.slice(idx + term.length);
+    if(idx < 0) return escHtml(text);
+    return escHtml(text.slice(0, idx))
+      + '<mark style="background:#fff3b0;border-radius:2px">' + escHtml(text.slice(idx, idx + term.length)) + '</mark>'
+      + escHtml(text.slice(idx + term.length));
   }
 
   const visible = results.slice(0, ADMIN_PAGE);
@@ -1816,7 +1818,7 @@ function renderDashboard() {
       const pct = Math.round(c.q / maxQ * 100);
       const shortLabel = c.p.replace(/^P\d+ — /, '');
       return `<div class="dash-row">
-        <div class="dash-label" title="${c.p}">${c.p.match(/^P\d+/)?.[0]} — ${shortLabel.slice(0,22)}${shortLabel.length>22?'…':''}</div>
+        <div class="dash-label" title="${escHtml(c.p)}">${escHtml(c.p.match(/^P\d+/)?.[0]||'')} — ${escHtml(shortLabel.slice(0,22))}${shortLabel.length>22?'…':''}</div>
         <div class="dash-bar-wrap"><div class="dash-bar" style="width:${pct}%;background:${color}${c.q===0?';opacity:.25':''}"></div></div>
         <div class="dash-count">${c.q}q · ${c.pts}pts</div>
       </div>`;
@@ -1835,7 +1837,7 @@ function renderDashboard() {
   const oiRows = oiList.map(([oi, val]) => {
     const pct = Math.round(val.q / maxOiQ * 100);
     return `<div class="dash-oi-row">
-      <div class="dash-oi-label" title="${oi}">${oi}</div>
+      <div class="dash-oi-label" title="${escHtml(oi)}">${escHtml(oi)}</div>
       <div class="dash-bar-wrap" style="max-width:120px"><div class="dash-bar" style="width:${pct}%;background:#888"></div></div>
       <div class="dash-oi-count">${val.q}q · ${val.pts}pts</div>
     </div>`;
