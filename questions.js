@@ -7685,7 +7685,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P3 — 1760 – 1791",
     points: 1,
-    enonce: "Quel gouverneur est rappelé en Angleterre à la suite de pressions exercées par les marchands \nanglophones de la Province de Québec au début du régime britannique?",
+    enonce: "Quel gouverneur est rappelé en Angleterre à la suite de pressions exercées par les marchands \nanglophones?",
     aspects: [
       {
         aspect: "Mouvements de revendication"
@@ -7706,7 +7706,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 1
     },
-    guide: "James Murray."
+    guide: "James Murray.",
+    updatedAt: "2026-06-07T00:44:24.446Z"
   },
   {
     id: "Q58",
