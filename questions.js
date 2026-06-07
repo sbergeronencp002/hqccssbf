@@ -4995,6 +4995,28 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
       }
     ]
+  },
+  "Q251": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -16394,5 +16416,47 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-07T12:09:55.180Z"
+  },
+  {
+    id: "Q251",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs de la Province de Québec après l'adoption de l'Acte de Québec de 1774. Sur quel point précis ces acteurs sont-ils en accord?",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les Canadiens conservent leurs usages et leurs lois dans les affaires qui concernent leurs biens et leurs héritages, ce qui contribue à la tranquillité de la province. »",
+            source: "Adapté de la correspondance de Jean-Olivier Briand, évêque de Québec, vers 1775."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« La nouvelle constitution assure aux habitants la conservation de leurs anciennes lois civiles, avantage que plusieurs considèrent essentiel au bien du pays. »",
+            source: "Adapté de la correspondance de François Chardon, marchand et membre du French Party, vers 1775."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le maintien des lois civiles françaises.",
+    updatedAt: "2026-06-07T12:21:02.631Z"
   }
 ]
