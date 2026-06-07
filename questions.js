@@ -5615,8 +5615,8 @@ const IMAGE_DB = {
   "carte_proclamation_royale_territoire.png": {
     src: "images/carte_proclamation_royale_territoire.png"
   },
-  "org_pol_apres_population_1763.png": {
-    src: "images/org_pol_apres_population_1763.png"
+  "org_pol_apres_1763.png": {
+    src: "images/org_pol_apres_1763.png"
   },
   "org_pol_apres_1784.png": {
     src: "images/org_pol_apres_1784.png"
@@ -15909,7 +15909,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "org_pol_apres_population_1763.png",
+            ref: "org_pol_apres_1763.png",
             soustitre: "Organisation politique de la colonie après 1763",
             source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
           }
@@ -16327,7 +16327,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "org_pol_apres_population_1763.png",
+            ref: "org_pol_apres_1763.png",
             source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
           }
         ]
@@ -16442,7 +16442,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "org_pol_apres_population_1763.png",
+            ref: "org_pol_apres_1763.png",
             source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
           }
         ]
