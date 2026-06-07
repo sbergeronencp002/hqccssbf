@@ -5050,6 +5050,28 @@ const REGLETTES = {
       "0 point"
     ],
     niveaux: []
+  },
+  "Q254": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -16578,5 +16600,37 @@ const QUESTIONS = [
     },
     guide: "Changement\nIl y a changement, car en 1774, les lois civiles françaises sont appliquées dans la Province de Québec, alors qu'en 1763, les autorités britanniques cherchent à appliquer les lois anglaises.\n\nContinuité :\nIl y a continuité, car en 1763 comme en 1774, les lois criminelles anglaises demeurent en vigueur dans la Province de Québec.",
     updatedAt: "2026-06-07T13:00:03.984Z"
+  },
+  {
+    id: "Q254",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Changement",
+    enonce: "Indiquez un changement concernant les conditions pour occuper un poste dans l'administration coloniale entre 1763 et 1774.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La nouvelle constitution modifie les conditions d'accès aux charges publiques et permet à un plus grand nombre d'habitants de participer à l'administration de la province. »",
+            source: "Adapté de Christian Blais, Histoire parlementaire du Québec, Assemblée nationale du Québec, 2012"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le serment du Test n'est plus exigé pour occuper un poste dans l'administration coloniale.",
+    updatedAt: "2026-06-07T13:08:53.602Z"
   }
 ]
