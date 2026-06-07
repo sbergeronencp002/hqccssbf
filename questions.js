@@ -5304,8 +5304,8 @@ const IMAGE_DB = {
   "population_1763.png": {
     src: "images/population_1763.png"
   },
-  "1783.png": {
-    src: "images/1783.png"
+  "population_1783.png": {
+    src: "images/population_1783.png"
   },
   "loyalistes.png": {
     src: "images/loyalistes.png"
@@ -10299,7 +10299,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "1783.png",
+            ref: "population_1783.png",
             soustitre: "Composition de la population de la colonie en 1783",
             source: "adapté de Jean Hamelin et Yves Roby, Histoire économique du Québec, 1851-1896."
           }
@@ -10342,7 +10342,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "1783.png",
+            ref: "population_1783.png",
             soustitre: "Composition de la population de la colonie en 1783",
             source: "adapté de Jean Hamelin et Yves Roby, Histoire économique du Québec, 1851-1896."
           }
@@ -10385,7 +10385,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "1783.png",
+            ref: "population_1783.png",
             soustitre: "Composition de la population de la colonie en 1783",
             source: "adapté de Jean Hamelin et Yves Roby, Histoire économique du Québec, 1851-1896."
           }
