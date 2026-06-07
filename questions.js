@@ -5317,6 +5317,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
+  },
+  "Q266": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -17307,5 +17329,37 @@ const QUESTIONS = [
     },
     guide: "Il y a changement, car en 1783, la Province de Québec perd la vallée de l'Ohio ou le territoire situé au sud des Grands Lacs.",
     updatedAt: "2026-06-07T17:39:22.175Z"
+  },
+  {
+    id: "Q266",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence du Traité de Paris de 1783 sur le territoire de la Province de Québec.",
+    aspects: [
+      {
+        aspect: "Invasion américaine"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« En 1783, une entente entre la Grande-Bretagne et les États-Unis redéfinit certaines frontières en Amérique du Nord. Les nouvelles limites territoriales réduisent l'étendue des terres administrées depuis la Province de Québec. »",
+            source: "Adapté du Traité de Paris, 1783."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "La Province de Québec perd la vallée de l'Ohio ou la Province de Québec perd le territoire situé au sud des Grands Lacs ou une partie du territoire de la Province de Québec est intégrée aux États-Unis.",
+    updatedAt: "2026-06-07T17:41:04.701Z"
   }
 ]
