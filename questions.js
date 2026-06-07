@@ -16237,7 +16237,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 2,
     soustag: "3 documents",
-    enonce: "Les documents A à C présentent des éléments de l’organisation politique de la Province de Québec après l’Acte de Québec de 1774. Associez chaque document au pouvoir auquel il se rapporte.",
+    enonce: "Les documents A à C présentent des éléments de l’organisation politique de la Province de Québec après l’Acte de Québec de 1774. Associez chaque document au pouvoir correspondant.",
     aspects: [
       {
         aspect: "Acte de Québec"
@@ -16298,6 +16298,6 @@ const QUESTIONS = [
         ]
       ]
     },
-    updatedAt: "2026-06-07T01:16:25.630Z"
+    updatedAt: "2026-06-07T12:02:18.346Z"
   }
 ]
