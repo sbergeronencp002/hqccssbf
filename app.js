@@ -571,7 +571,7 @@ function renderDoc(d) {
         }
       } else if(col.ref) {
         const img2 = IMAGE_DB[col.ref];
-        if(img2) html += '<img src="' + img2.src + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:150px;object-fit:contain;cursor:pointer" onclick="openLightbox(\'' + jsStr(img2.src) + '\')">';
+        if(img2) html += '<div class="doc-img-tile" style="max-width:100%" onclick="openLightbox(\'' + jsStr(img2.src) + '\')"><img src="' + img2.src + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:180px;object-fit:contain"></div>';
       }
       if(col.auteur) html += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + col.auteur + '</div>';
       if(col.source) html += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + col.source + '</div>';
@@ -580,24 +580,29 @@ function renderDoc(d) {
     html += '</tr></table>';
     return html;
   }
-  // Tableau 2 colonnes
+  // Tableau 2 colonnes → tuiles
   if(d.type === 'tableau') {
-    let html = '<table style="width:100%;border-collapse:collapse;margin-bottom:8px"><tr>';
+    let html = '<div class="doc-img-tiles">';
     d.cols.forEach(function(col) {
       const img = IMAGE_DB[col.ref];
-      html += '<td style="width:' + Math.floor(100/d.cols.length) + '%;padding:4px;vertical-align:top;border:0.5px solid var(--border)">';
-      if(col.titreWeb && col.titre) html += '<div class="doc-img-titre">' + col.titre + '</div>';
-      if(img) html += '<img src="' + img.src + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" class="doc-img" style="max-height:150px" onclick="openLightbox(\'' + jsStr(img.src) + '\')">';
-      html += '</td>';
+      if(!img) return;
+      html += '<div class="doc-img-tile" onclick="openLightbox(\'' + jsStr(img.src) + '\')">';
+      html += '<img src="' + img.src + '" alt="' + escAttr(col.titre||col.ref||'Document') + '">';
+      if(col.titre) html += '<div class="doc-img-tile-label">' + escLine(col.titre) + '</div>';
+      if(col.soustitre) html += '<div class="doc-img-tile-sub">' + escLine(col.soustitre) + '</div>';
+      html += '</div>';
     });
-    html += '</tr></table>';
+    html += '</div>';
     return html;
   }
   // Image simple
   const img = IMAGE_DB[d.ref];
   if(img) {
-    const titre = d.titre ? '<div class="doc-img-titre">' + d.titre + '</div>' : '';
-    return '<div class="doc-img-wrap">' + titre + '<img src="' + img.src + '" alt="' + escAttr(d.titre||d.ref||'Document') + '" class="doc-img" onclick="openLightbox(\'' + jsStr(img.src) + '\')" title="Cliquer pour agrandir"></div>';
+    let html = '<div class="doc-img-tiles"><div class="doc-img-tile" onclick="openLightbox(\'' + jsStr(img.src) + '\')">';
+    html += '<img src="' + img.src + '" alt="' + escAttr(d.titre||d.ref||'Document') + '" style="max-width:200px;max-height:200px;object-fit:contain">';
+    if(d.titre) html += '<div class="doc-img-tile-label">' + escLine(d.titre) + '</div>';
+    html += '</div></div>';
+    return html;
   }
   return '<div><span class="doc-chip">' + d.type + ' — ' + d.ref + '</span></div>';
 }
