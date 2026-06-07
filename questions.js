@@ -5189,6 +5189,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q261": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -16950,5 +16972,36 @@ const QUESTIONS = [
     },
     guide: "Le droit de percevoir la dîme.",
     updatedAt: "2026-06-07T13:25:36.767Z"
+  },
+  {
+    id: "Q261",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une raison qui explique l'adoption de l'Acte de Québec par les autorités britanniques en 1774.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Dans les colonies britanniques du sud, plusieurs habitants contestent les décisions prises par Londres. Les autorités cherchent alors des moyens d'assurer la fidélité des habitants de la Province de Québec. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 2, Québec Amérique, 1995."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "cause-consequence"
+    },
+    guide: "Les autorités britanniques veulent s'assurer de la loyauté des habitants de la Province de Québec face aux tensions dans les Treize colonies.",
+    updatedAt: "2026-06-07T13:30:33.036Z"
   }
 ]
