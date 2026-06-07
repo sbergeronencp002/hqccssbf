@@ -5034,9 +5034,6 @@ const IMAGE_DB = {
   "org_pol_acte_const.png": {
     src: "images/org_pol_acte_const.png"
   },
-  "passage_beringie.png": {
-    src: "images/passage_beringie.png"
-  },
   "familles_linguistiques_autochtones.png": {
     src: "images/familles_linguistiques_autochtones.png"
   },
