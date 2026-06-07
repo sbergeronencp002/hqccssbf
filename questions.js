@@ -16867,9 +16867,6 @@ const QUESTIONS = [
     enonce: "Indiquez le nom de l'obligation imposée aux catholiques qui souhaitent exercer une fonction dans l'administration coloniale avant 1774.",
     aspects: [
       {
-        aspect: "Acte de Québec"
-      },
-      {
         aspect: "Proclamation royale"
       }
     ],
@@ -16890,7 +16887,7 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Le serment du Test.",
-    updatedAt: "2026-06-07T13:22:29.963Z"
+    updatedAt: "2026-06-07T13:26:15.151Z"
   },
   {
     id: "Q259",
