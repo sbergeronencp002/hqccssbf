@@ -5116,6 +5116,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q257": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la continuité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la continuité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -16740,5 +16762,49 @@ const QUESTIONS = [
     },
     guide: "Les Canadiens catholiques peuvent occuper des postes dans l'administration coloniale.",
     updatedAt: "2026-06-07T13:13:18.433Z"
+  },
+  {
+    id: "Q257",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Continuité",
+    enonce: "À partir des documents A et B, indiquez un élément de continuité dans les fonctions exercées par le gouverneur de la Province de Québec entre 1763 et 1774.",
+    aspects: [
+      {
+        aspect: "Acte de Québec"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Dans la Province de Québec, le gouverneur agit au nom du roi de Grande-Bretagne. Il veille à l'administration de la colonie et s'assure de l'application des décisions prises par les autorités britanniques. »",
+            soustitre: "1763",
+            source: "Adapté de la Proclamation royale de 1763."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Après l'adoption de l'Acte de Québec, le gouverneur demeure le principal représentant de la Couronne britannique. Il continue d'exercer d'importantes responsabilités dans l'administration de la province. »",
+            soustitre: "1774",
+            source: "Adapté de Christian Blais, Histoire parlementaire du Québec, Assemblée nationale du Québec, 2012."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le gouverneur demeure le représentant du roi dans la colonie ou le gouverneur continue de diriger l'administration de la colonie.",
+    updatedAt: "2026-06-07T13:18:20.625Z"
   }
 ]
