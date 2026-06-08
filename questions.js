@@ -5674,6 +5674,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q283": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -6064,6 +6086,9 @@ const IMAGE_DB = {
   },
   "mercantilisme_britannique.png": {
     src: "images/mercantilisme_britannique.png"
+  },
+  "production_blé_minots.png": {
+    src: "images/production_blé_minots.png"
   }
 }
 
@@ -18356,5 +18381,38 @@ const QUESTIONS = [
     },
     guide: "L'agriculture.",
     updatedAt: "2026-06-08T12:23:18.955Z"
+  },
+  {
+    id: "Q283",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de l'augmentation de la production de blé dans la Province de Québec au XVIIIe siècle.",
+    aspects: [
+      {
+        aspect: "Économie coloniale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "production_blé_minots.png",
+            soustitre: "Production de blé (minots) dans la Province de Québec (1750-1790)",
+            source: "Graphique réalisé à partir de données pédagogiques inspirées de Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord (1991)."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "L'augmentation des surplus agricoles ou l'augmentation des exportations de blé.",
+    updatedAt: "2026-06-08T12:38:17.314Z"
   }
 ]
