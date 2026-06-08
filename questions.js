@@ -5952,6 +5952,34 @@ const REGLETTES = {
       "0 point"
     ],
     niveaux: []
+  },
+  "Q298": {
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
   }
 }
 
@@ -19209,5 +19237,60 @@ const QUESTIONS = [
     },
     guide: "Changement\nIl y a changement, car en 1750 les institutions religieuses présentes dans la colonie sont principalement catholiques, tandis qu'en 1790 des institutions religieuses britanniques (ou anglicanes) sont également présentes.\n\n\nContinuité\nIl y a continuité, car en 1750 comme en 1790, l'Église catholique est présente dans la colonie.",
     updatedAt: "2026-06-08T14:20:42.537Z"
+  },
+  {
+    id: "Q298",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    soustag: "Position – 3 acteurs",
+    enonce: "Les documents A à C présentent la position de trois acteurs sur un enjeu de la vie religieuse vers les années 1790. Nommez l’acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les institutions de l'Église d'Angleterre devraient occuper une place plus importante dans la colonie afin de mieux refléter son appartenance à l'Empire britannique. »",
+            auteur: "Adam Lymburner - marchand",
+            source: "Adapté des revendications de marchands britanniques de Québec."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les Canadiens doivent pouvoir conserver leurs institutions religieuses et continuer à pratiquer librement la religion catholique. »",
+            auteur: "Jean-Olivier Briand - évêque",
+            source: "Adapté de Mgr Briand."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Le maintien de la religion catholique contribue à la stabilité de la colonie et favorise la loyauté de la population canadienne. »",
+            auteur: "Gouverneur Haldimand",
+            source: "Adapté de Frederick Haldimand."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Lymburner (marchand britannique) affirme que l’Église anglicane devrait occuper une place plus importante dans la colonie alors que Briand (évêque catholique) et Haldimand (gouverneur) appuient le maintien des institutions catholiques.",
+    updatedAt: "2026-06-08T14:31:21.622Z"
   }
 ]
