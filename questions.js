@@ -5568,6 +5568,34 @@ const REGLETTES = {
         desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
       }
     ]
+  },
+  "Q278": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -5955,6 +5983,9 @@ const IMAGE_DB = {
   },
   "migration_loyalistes.png": {
     src: "images/migration_loyalistes.png"
+  },
+  "mercantilisme_britannique.png": {
+    src: "images/mercantilisme_britannique.png"
   }
 }
 
@@ -18029,5 +18060,56 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-08T03:56:50.847Z"
+  },
+  {
+    id: "Q278",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    enonce: "Expliquez comment la politique économique de la Grande-Bretagne influence les échanges commerciaux dans la Province de Québec vers 1780.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• le nom de cette politique économique\n• un objectif poursuivi par la métropole\n• une conséquence sur les échanges commerciaux de la Province de Québec",
+    aspects: [
+      {
+        aspect: "Économie coloniale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les colonies doivent contribuer à la prospérité de la métropole en lui fournissant les ressources dont elle a besoin et en constituant un marché pour ses produits. »",
+            source: "Adapté de Gilles Laporte, Brève histoire socioéconomique du Québec, Septentrion."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "mercantilisme_britannique.png",
+            source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les autorités britanniques considèrent que les colonies doivent contribuer à la prospérité du royaume en alimentant son commerce et en servant de marché pour ses produits manufacturés. »",
+            source: "Adapté de Gilles Laporte, Histoire du Québec : une société nord-américaine, Chenelière Éducation, 2014."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "La Grande-Bretagne applique le mercantilisme (le nom de cette politique économique). Cette politique vise à enrichir la métropole en tirant profit de ses colonies (un objectif poursuivi par la métropole). Par conséquent, la Province de Québec exporte principalement des matières premières vers la Grande-Bretagne et importe des produits manufacturés britanniques (une conséquence sur les échanges commerciaux de la Province de Québec).",
+    updatedAt: "2026-06-08T04:04:32.729Z"
   }
 ]
