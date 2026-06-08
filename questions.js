@@ -5596,6 +5596,17 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q279": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
   }
 }
 
@@ -18122,5 +18133,47 @@ const QUESTIONS = [
     },
     guide: "La Grande-Bretagne applique le mercantilisme (le nom de cette politique économique). Cette politique vise à enrichir la métropole en tirant profit de ses colonies (un objectif poursuivi par la métropole). Par conséquent, la Province de Québec exporte principalement des matières premières vers la Grande-Bretagne et importe des produits manufacturés britanniques (une conséquence sur les échanges commerciaux de la Province de Québec).",
     updatedAt: "2026-06-08T11:49:42.008Z"
+  },
+  {
+    id: "Q279",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s'il y a changement ou continuité dans le contrôle du commerce de la colonie entre 1750 et 1775. Justifiez votre réponse par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Économie coloniale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Sous le régime français, une grande partie des activités commerciales de la colonie est dirigée par des marchands français établis dans les villes de Québec et de Montréal. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 1."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Quinze ans après la Conquête, les marchands britanniques occupent une place dominante dans les échanges commerciaux de la Province de Québec. »",
+            source: "Adapté de Gilles Laporte, Histoire du Québec : une société nord-américaine, Chenelière Éducation, 2014."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Changement\nIl y a changement, car vers 1750 le commerce est principalement contrôlé par des marchands français, alors qu'en 1775 il est principalement contrôlé par des marchands britanniques.\n\nContinuité\nIl y a continuité, car vers 1750 comme vers 1775, le commerce de la colonie est contrôlé par des marchands européens ou Il y a continuité, car vers 1750 comme vers 1775, des marchands contrôlent les activités commerciales de la colonie.",
+    updatedAt: "2026-06-08T11:54:41.618Z"
   }
 ]
