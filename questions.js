@@ -18854,7 +18854,7 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "composition_population_1790.png",
             soustitre: "Répartition de la population de la Province de Québec vers 1790",
-            source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
@@ -18864,7 +18864,7 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Les Canadiens ou les Canadiens francophones.",
-    updatedAt: "2026-06-08T13:31:50.107Z"
+    updatedAt: "2026-06-08T15:11:52.808Z"
   },
   {
     id: "Q287",
