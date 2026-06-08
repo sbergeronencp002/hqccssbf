@@ -5629,6 +5629,34 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
+  },
+  "Q281": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -18229,5 +18257,56 @@ const QUESTIONS = [
     },
     guide: "Les marchands britanniques prennent progressivement le contrôle du commerce de la colonie.",
     updatedAt: "2026-06-08T12:13:20.468Z"
+  },
+  {
+    id: "Q281",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    enonce: "Expliquez comment l'issue de la guerre de la Conquête entraîne un changement du contrôle du commerce colonial.\n\nRépondez à la question en précisant :\n\n• l'issue de la guerre de la Conquête\n• un changement dans le groupe de marchands dominant le commerce\n• une conséquence sur l'économie coloniale",
+    aspects: [
+      {
+        aspect: "Économie coloniale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le traité de Paris de 1763 confirme le passage de la colonie sous l'autorité britannique. La France conserve certaines possessions, mais renonce à la Nouvelle-France. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 2 : Des origines à 1791, Québec, Septentrion, 1995."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Dans les années qui suivent la Conquête, plusieurs négociants venus des îles Britanniques s'établissent à Québec et à Montréal, où ils développent progressivement leurs activités commerciales. »",
+            source: "John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec, 4e édition, Québec, Septentrion, 2009."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« À la fin du XVIIIe siècle, les exportations de la colonie sont principalement dirigées vers les marchés britanniques, tandis que les produits manufacturés proviennent surtout de Grande-Bretagne. »",
+            source: "Gilles Laporte, Histoire du Québec : une société nord-américaine, Montréal, Chenelière Éducation, 2014."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "La guerre de la Conquête se termine par la victoire britannique ou la cession de la colonie à la Grande-Bretagne (l'issue de la guerre de la Conquête). Après 1760, les marchands britanniques remplacent progressivement les marchands français dans les activités commerciales (un changement dans le groupe de marchands dominant le commerce). Par conséquent, le commerce de la colonie est davantage orienté vers l'Empire britannique (une conséquence sur l'économie coloniale).",
+    updatedAt: "2026-06-08T12:19:13.456Z"
   }
 ]
