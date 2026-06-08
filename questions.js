@@ -5908,6 +5908,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q295": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève dégage correctement la différence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève dégage plus ou moins correctement la différence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."
+      }
+    ]
   }
 }
 
@@ -19028,5 +19050,50 @@ const QUESTIONS = [
     },
     guide: "La construction d'églises anglicanes.",
     updatedAt: "2026-06-08T14:11:54.296Z"
+  },
+  {
+    id: "Q295",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Différence",
+    enonce: "À partir des documents A et B, indiquez une différence entre les écoles catholiques et les écoles anglicanes dans la Province de Québec vers 1790.",
+    aspects: [
+      {
+        aspect: "Église anglicane"
+      },
+      {
+        aspect: "Église catholique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les Ursulines enseignent le catéchisme et la lecture dans plusieurs établissements qu'elles administrent dans la colonie à la fin du XVIIIᵉ siècle. »",
+            source: "Adapté de Micheline Dumont, Les Ursulines de Québec."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Des écoles relevant de l'Église d'Angleterre sont créées après la Conquête afin de répondre aux besoins des nouveaux arrivants établis dans la colonie. »",
+            source: "Adapté de John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les écoles catholiques sont dirigées par l'Église catholique ou des communautés religieuses catholiques, tandis que les écoles anglicanes sont dirigées par l'Église anglicane.",
+    updatedAt: "2026-06-08T14:14:19.061Z"
   }
 ]
