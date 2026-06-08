@@ -19060,7 +19060,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "eglise_anglicane_1780.png",
-            soustitre: "Lieu de culte à Québec vers 1790",
+            soustitre: "Lieu de culte anglican à Montréal vers 1790",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
@@ -19071,7 +19071,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "La construction d'églises anglicanes.",
-    updatedAt: "2026-06-08T14:11:54.296Z"
+    updatedAt: "2026-06-08T14:21:37.586Z"
   },
   {
     id: "Q295",
