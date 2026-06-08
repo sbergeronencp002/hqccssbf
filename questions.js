@@ -17709,7 +17709,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             texte: "« Nous recommandons aux habitants de conserver la paix et l'ordre dans la colonie. Ils ne doivent pas se joindre aux troubles qui agitent les colonies voisines. »",
-            auteur: "Jean-Olivier Briand (évêque de Québec)",
+            auteur: "Jean-Olivier Briand - évêque de Québec",
             source: "Adapté du mandement de Mgr Briand, 1775."
           }
         ]
@@ -17720,7 +17720,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             texte: "« Il est souhaitable que les habitants de la Province de Québec ne prennent pas part aux événements qui opposent les rebelles américains à la Grande-Bretagne. »",
-            auteur: "Guy Carleton (gouverneur)",
+            auteur: "Guy Carleton - gouverneur",
             source: "Adapté de la correspondance de Guy Carleton, 1775."
           }
         ]
@@ -17731,7 +17731,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les deux acteurs souhaitent que les Canadiens demeurent neutres dans le conflit entre la Grande-Bretagne et les Treize colonies ou les deux acteurs encouragent les Canadiens à ne pas se joindre aux rebelles américains.",
-    updatedAt: "2026-06-08T00:12:21.177Z"
+    updatedAt: "2026-06-08T00:18:32.954Z"
   },
   {
     id: "Q273",
