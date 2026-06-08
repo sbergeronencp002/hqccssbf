@@ -5546,6 +5546,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q277": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
+      }
+    ]
   }
 }
 
@@ -17954,5 +17976,58 @@ const QUESTIONS = [
     },
     guide: "Le mercantilisme.",
     updatedAt: "2026-06-08T00:31:41.368Z"
+  },
+  {
+    id: "Q277",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Cause et conséquence",
+    enonce: "Indiquez le document qui présente une cause et le document qui présente une conséquence de l'application du mercantilisme dans la Province de Québec vers 1780.",
+    aspects: [
+      {
+        aspect: "Économie coloniale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les colonies existent pour accroître la richesse et la puissance de la métropole. Elles doivent fournir les matières premières nécessaires à son économie et servir de marché pour les produits fabriqués dans le pays. »",
+            source: "Adapté de Jean Hamelin et Yves Roby, Histoire économique du Québec, 1851-1896, Montréal, Fides, 1971."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« À la fin du XVIIIe siècle, la Province de Québec exporte principalement des fourrures, du poisson, du bois et des produits agricoles vers la Grande-Bretagne. En retour, elle importe des tissus, des outils, de la vaisselle et d'autres produits manufacturés. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 2, Québec, Septentrion, 1995."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "cause-consequence"
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Cause",
+        "Conséquence"
+      ],
+      rangees: [
+        [
+          "A",
+          "B"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-08T03:56:50.847Z"
   }
 ]
