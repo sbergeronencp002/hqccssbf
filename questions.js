@@ -5730,6 +5730,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q286": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -6123,6 +6140,9 @@ const IMAGE_DB = {
   },
   "production_blé_minots.png": {
     src: "images/production_blé_minots.png"
+  },
+  "composition_population_1790.png": {
+    src: "images/composition_population_1790.png"
   }
 }
 
@@ -18512,5 +18532,37 @@ const QUESTIONS = [
     },
     guide: "Les Acadiens.",
     updatedAt: "2026-06-08T13:24:21.093Z"
+  },
+  {
+    id: "Q286",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez le principal groupe composant la population de la Province de Québec vers 1790.",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "composition_population_1790.png",
+            soustitre: "Répartition de la population de la Province de Québec vers 1790",
+            source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les Canadiens ou les Canadiens francophones.",
+    updatedAt: "2026-06-08T13:31:50.107Z"
   }
 ]
