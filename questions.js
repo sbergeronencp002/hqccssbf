@@ -5485,6 +5485,28 @@ const REGLETTES = {
         desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
       }
     ]
+  },
+  "Q274": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (2 sur 2)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (1 sur 2)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (0 sur 2)"
+      }
+    ]
   }
 }
 
@@ -17784,5 +17806,62 @@ const QUESTIONS = [
     reponse: false,
     guide: "Benjamin Franklin présente une position différente. Il encourage les Canadiens à appuyer la Révolution américaine, tandis que Guy Carleton et Jean-Olivier Briand souhaitent qu'ils demeurent fidèles à la Grande-Bretagne.",
     updatedAt: "2026-06-08T00:17:47.600Z"
+  },
+  {
+    id: "Q274",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "2 documents",
+    enonce: "Les documents A et B présentent deux événements liés à l'invasion américaine de 1775. Associez chaque document à l'événement correspondant.",
+    aspects: [
+      {
+        aspect: "Invasion américaine"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après avoir franchi la frontière de la Province de Québec, les troupes américaines prennent le contrôle d'une importante ville située dans la vallée du Saint-Laurent sans rencontrer une forte résistance. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 2."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Durant l'hiver 1775-1776, des soldats américains encerclent la principale ville administrative de la colonie dans l'espoir d'obtenir sa capitulation. »",
+            source: "Adapté de Christian Blais, Histoire parlementaire du Québec."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Ville assiégée (Québec)",
+        "Ville occupée (Montréal)"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Ville assiégée (Québec)",
+        "Ville occupée (Montréal)"
+      ],
+      rangees: [
+        [
+          "B",
+          "A"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-08T00:22:10.772Z"
   }
 ]
