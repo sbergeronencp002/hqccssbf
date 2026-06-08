@@ -18090,8 +18090,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Les colonies doivent contribuer à la prospérité de la métropole en lui fournissant les ressources dont elle a besoin et en constituant un marché pour ses produits. »",
-            source: "Adapté de Gilles Laporte, Brève histoire socioéconomique du Québec, Septentrion."
+            texte: "« Les relations commerciales entre la Grande-Bretagne et ses colonies reposent sur certains principes [...], selon lesquels les colonies doivent servir les intérêts économiques de la métropole. »",
+            source: "John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec, Septentrion, 2003."
           }
         ]
       },
@@ -18121,6 +18121,6 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "La Grande-Bretagne applique le mercantilisme (le nom de cette politique économique). Cette politique vise à enrichir la métropole en tirant profit de ses colonies (un objectif poursuivi par la métropole). Par conséquent, la Province de Québec exporte principalement des matières premières vers la Grande-Bretagne et importe des produits manufacturés britanniques (une conséquence sur les échanges commerciaux de la Province de Québec).",
-    updatedAt: "2026-06-08T04:04:32.729Z"
+    updatedAt: "2026-06-08T11:49:42.008Z"
   }
 ]
