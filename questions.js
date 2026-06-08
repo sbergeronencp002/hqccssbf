@@ -6008,6 +6008,34 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q300": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -6413,6 +6441,9 @@ const IMAGE_DB = {
   },
   "populaton_1760_1790.png": {
     src: "images/populaton_1760_1790.png"
+  },
+  "composition_population_1760-1790.png": {
+    src: "images/composition_population_1760-1790.png"
   }
 }
 
@@ -19374,5 +19405,57 @@ const QUESTIONS = [
     },
     guide: "Les familles canadiennes comptent souvent plusieurs enfants (caractéristique des familles canadiennes), ce qui entraîne une augmentation de la population (transformation démographique). Cette croissance démographique favorise le défrichement de nouvelles terres et l'expansion du territoire occupé (effet sur l'occupation du territoire).",
     updatedAt: "2026-06-08T14:55:35.922Z"
+  },
+  {
+    id: "Q300",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    enonce: "Expliquez comment l'immigration britannique transforme la population de la Province de Québec vers 1790.\n\nRépondez à la question en précisant :\n\n• un groupe d'immigrants britanniques;\n• une transformation démographique;\n• un effet sur la composition de la population.",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après la Conquête, des marchands, des fonctionnaires et d'anciens militaires britanniques s'établissent dans la Province de Québec afin d'y poursuivre leurs activités. »",
+            source: "Adapté de John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec, 2009."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "composition_population_1760-1790.png",
+            soustitre: "Composition de la population de la Province de Québec entre 1760 et 1790 (%)",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« L'arrivée de nouveaux habitants venus des îles Britanniques modifie progressivement la composition de la population et accroît la diversité culturelle de la colonie. »",
+            source: "Adapté de Gilles Laporte, Histoire du Québec : une société nord-américaine, 2014."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Des marchands, fonctionnaires ou anciens militaires britanniques s'établissent dans la colonie (groupe d'immigrants britanniques). Leur arrivée augmente la proportion d'habitants d'origine britannique (transformation démographique). La composition de la population devient plus diversifiée (effet sur la composition de la population).",
+    updatedAt: "2026-06-08T15:10:25.850Z"
   }
 ]
