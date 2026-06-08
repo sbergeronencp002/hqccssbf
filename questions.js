@@ -5607,6 +5607,28 @@ const REGLETTES = {
       "0 point"
     ],
     niveaux: []
+  },
+  "Q280": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -18175,5 +18197,37 @@ const QUESTIONS = [
     },
     guide: "Changement\nIl y a changement, car vers 1750 le commerce est principalement contrôlé par des marchands français, alors qu'en 1775 il est principalement contrôlé par des marchands britanniques.\n\nContinuité\nIl y a continuité, car vers 1750 comme vers 1775, le commerce de la colonie est contrôlé par des marchands européens ou Il y a continuité, car vers 1750 comme vers 1775, des marchands contrôlent les activités commerciales de la colonie.",
     updatedAt: "2026-06-08T11:54:41.618Z"
+  },
+  {
+    id: "Q280",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Changement",
+    enonce: "Indiquez un changement dans les activités commerciales de la colonie après la Conquête.",
+    aspects: [
+      {
+        aspect: "Économie coloniale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après la Conquête, plusieurs marchands français quittent la colonie alors que des négociants britanniques viennent s'y établir et développent leurs activités commerciales. »",
+            source: "Adapté de John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec, Septentrion, 2003."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les marchands britanniques prennent progressivement le contrôle du commerce de la colonie.",
+    updatedAt: "2026-06-08T12:13:20.468Z"
   }
 ]
