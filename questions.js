@@ -5798,6 +5798,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q290": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -18713,5 +18735,37 @@ const QUESTIONS = [
     },
     guide: "Notaire ou avocat ou médecin.",
     updatedAt: "2026-06-08T13:43:04.698Z"
+  },
+  {
+    id: "Q290",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une raison qui explique l'arrivée de Britanniques dans la Province de Québec après 1763.",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après la Conquête, plusieurs marchands, fonctionnaires et militaires britanniques s'installent dans la Province de Québec afin d'administrer la colonie et de profiter des nouvelles possibilités économiques. »",
+            source: "Adapté de Marcel Trudel, Initiation à la Nouvelle-France."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "La Province de Québec devient une colonie britannique.",
+    updatedAt: "2026-06-08T13:55:22.741Z"
   }
 ]
