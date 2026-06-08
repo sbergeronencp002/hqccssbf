@@ -11317,7 +11317,7 @@ const QUESTIONS = [
       nombre: 5
     },
     guide: "Le traité de Paris de 1783 accorde aux États-Unis les territoires situés au sud des Grands Lacs (un territoire perdu à la suite du traité de Paris de 1783). Cette perte territoriale complique les activités des compagnies de fourrures et l’accès à certaines routes commerciales (une conséquence sur les activités des compagnies de fourrures). Afin de poursuivre et développer le commerce des fourrures, les compagnies déplacent leurs activités vers le Nord-Ouest et établissent de nouveaux postes de traite (une action entreprise par les compagnies afin de développer le commerce vers le Nord-Ouest).",
-    updatedAt: "2026-06-08T12:44:30.377Z"
+    updatedAt: "2026-06-08T13:19:53.378Z"
   },
   {
     id: "Q118",
