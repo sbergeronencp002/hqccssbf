@@ -5764,6 +5764,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q288": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -18616,5 +18633,36 @@ const QUESTIONS = [
     },
     guide: "Le français.",
     updatedAt: "2026-06-08T13:37:42.803Z"
+  },
+  {
+    id: "Q288",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez le phénomène démographique responsable de l'augmentation de la population canadienne après la Conquête.",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« À la fin du XVIIIe siècle, les familles canadiennes comptent souvent plusieurs enfants. Cette situation contribue à la croissance de la population de la colonie. »",
+            source: "Adapté de Marcel Trudel, Initiation à la Nouvelle-France."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "L'accroissement naturel",
+    updatedAt: "2026-06-08T13:39:59.026Z"
   }
 ]
