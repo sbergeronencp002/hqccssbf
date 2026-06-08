@@ -5529,6 +5529,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q276": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -17917,5 +17934,25 @@ const QUESTIONS = [
     },
     guide: "Migration de certaines populations autochtones vers les territoires britanniques ou déplacement vers la Province de Québec.",
     updatedAt: "2026-06-08T00:25:41.493Z"
+  },
+  {
+    id: "Q276",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez le nom de la politique économique appliquée par la Grande-Bretagne dans ses colonies au XVIIIe siècle.",
+    aspects: [
+      {
+        aspect: "Économie coloniale"
+      }
+    ],
+    documents: [],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le mercantilisme.",
+    updatedAt: "2026-06-08T00:31:41.368Z"
   }
 ]
