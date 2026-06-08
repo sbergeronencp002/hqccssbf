@@ -5507,6 +5507,28 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (0 sur 2)"
       }
     ]
+  },
+  "Q275": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -17863,5 +17885,37 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-08T00:22:10.772Z"
+  },
+  {
+    id: "Q275",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence du traité de Paris de 1783 sur certaines populations autochtones alliées aux Britanniques.",
+    aspects: [
+      {
+        aspect: "Invasion américaine"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après la reconnaissance de l'indépendance américaine, plusieurs nations autochtones alliées à la Grande-Bretagne voient leurs territoires passer sous l'autorité d'un nouveau gouvernement. »",
+            source: "Adapté de Gilles Havard et Cécile Vidal, Histoire de l'Amérique française."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Migration de certaines populations autochtones vers les territoires britanniques ou déplacement vers la Province de Québec.",
+    updatedAt: "2026-06-08T00:25:41.493Z"
   }
 ]
