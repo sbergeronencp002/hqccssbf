@@ -5457,6 +5457,34 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q273": {
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
   }
 }
 
@@ -17704,5 +17732,57 @@ const QUESTIONS = [
     },
     guide: "Les deux acteurs souhaitent que les Canadiens demeurent neutres dans le conflit entre la Grande-Bretagne et les Treize colonies ou les deux acteurs encouragent les Canadiens à ne pas se joindre aux rebelles américains.",
     updatedAt: "2026-06-08T00:12:21.177Z"
+  },
+  {
+    id: "Q273",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    soustag: "Position – 3 acteurs",
+    enonce: "Les documents A à C présentent la position de trois acteurs concernant l'attitude que les Canadiens devraient adopter face à la Révolution américaine.\n\nNommez l'acteur qui présente une position différente et comparez cette position à celle des deux autres acteurs.",
+    aspects: [
+      {
+        aspect: "Invasion américaine"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La sécurité et la prospérité de la Province de Québec reposent sur le maintien de l'autorité britannique. Les habitants doivent demeurer fidèles au roi et ne pas soutenir les insurgés américains. »",
+            auteur: "Guy Carleton - gouverneur de la Province de Québec",
+            source: "Adapté de la correspondance de Guy Carleton, 1775."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Habitants de la Province de Québec, joignez-vous aux autres colonies d'Amérique dans leur lutte pour la liberté. Vous pourrez ainsi participer à l'établissement d'un gouvernement fondé sur les droits des citoyens. »",
+            auteur: "Benjamin Franklin - représentant du Congrès continental",
+            source: "Adapté des Lettres aux Canadiens, 1774."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les fidèles doivent respecter l'autorité légitime du souverain britannique et éviter de prendre part aux troubles qui opposent les colonies américaines à la Grande-Bretagne. »",
+            auteur: "Jean-Olivier Briand - évêque catholique de Québec",
+            source: "Adapté du mandement de Mgr Jean-Olivier Briand, 1775."
+          }
+        ]
+      }
+    ],
+    reponse: false,
+    guide: "Benjamin Franklin présente une position différente. Il encourage les Canadiens à appuyer la Révolution américaine, tandis que Guy Carleton et Jean-Olivier Briand souhaitent qu'ils demeurent fidèles à la Grande-Bretagne.",
+    updatedAt: "2026-06-08T00:17:47.600Z"
   }
 ]
