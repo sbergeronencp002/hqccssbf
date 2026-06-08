@@ -5941,6 +5941,17 @@ const REGLETTES = {
       "0 point"
     ],
     niveaux: []
+  },
+  "Q297": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
   }
 }
 
@@ -19152,5 +19163,51 @@ const QUESTIONS = [
     },
     guide: "Changement\nIl y a changement, car vers 1790 des institutions de l'Église anglicane sont présentes dans la colonie alors qu'en 1750 les institutions religieuses sont principalement catholiques.\n\nContinuité\nIl y a continuité, car en 1750 comme en 1790, des institutions religieuses jouent un rôle important dans l'enseignement (ou les soins aux malades) dans la colonie.",
     updatedAt: "2026-06-08T14:18:23.483Z"
+  },
+  {
+    id: "Q297",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s'il y a changement ou continuité dans la diversité des groupes religieux présents dans la colonie entre 1750 et 1790. Justifiez votre réponse par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Église anglicane"
+      },
+      {
+        aspect: "Église catholique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Au milieu du XVIIIᵉ siècle, les paroisses catholiques sont présentes dans l'ensemble des régions habitées de la colonie et jouent un rôle important auprès de la population. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 1."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "eglise_anglicane_1780.png",
+            soustitre: "Lieu de culte anglican à Montréal vers 1790",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Changement\nIl y a changement, car en 1750 les institutions religieuses présentes dans la colonie sont principalement catholiques, tandis qu'en 1790 des institutions religieuses britanniques (ou anglicanes) sont également présentes.\n\n\nContinuité\nIl y a continuité, car en 1750 comme en 1790, l'Église catholique est présente dans la colonie.",
+    updatedAt: "2026-06-08T14:20:42.537Z"
   }
 ]
