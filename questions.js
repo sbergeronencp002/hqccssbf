@@ -5435,6 +5435,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q272": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -17638,5 +17660,49 @@ const QUESTIONS = [
     },
     guide: "Les Loyalistes.",
     updatedAt: "2026-06-07T20:14:54.337Z"
+  },
+  {
+    id: "Q272",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs de l'époque. Sur quel point précis sont-ils d'accord ?",
+    aspects: [
+      {
+        aspect: "Invasion américaine"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Nous recommandons aux habitants de conserver la paix et l'ordre dans la colonie. Ils ne doivent pas se joindre aux troubles qui agitent les colonies voisines. »",
+            auteur: "Jean-Olivier Briand (évêque de Québec)",
+            source: "Adapté du mandement de Mgr Briand, 1775."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Il est souhaitable que les habitants de la Province de Québec ne prennent pas part aux événements qui opposent les rebelles américains à la Grande-Bretagne. »",
+            auteur: "Guy Carleton (gouverneur)",
+            source: "Adapté de la correspondance de Guy Carleton, 1775."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les deux acteurs souhaitent que les Canadiens demeurent neutres dans le conflit entre la Grande-Bretagne et les Treize colonies ou les deux acteurs encouragent les Canadiens à ne pas se joindre aux rebelles américains.",
+    updatedAt: "2026-06-08T00:12:21.177Z"
   }
 ]
