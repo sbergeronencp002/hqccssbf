@@ -5842,6 +5842,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q292": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
+      }
+    ]
   }
 }
 
@@ -18831,5 +18853,58 @@ const QUESTIONS = [
     },
     guide: "Les deux historiens sont d'accord pour dire que la population canadienne augmente rapidement grâce à l'accroissement naturel.",
     updatedAt: "2026-06-08T13:59:39.248Z"
+  },
+  {
+    id: "Q292",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Cause et conséquence",
+    enonce: "À partir des documents A et B, indiquez une cause et une conséquence de l'accroissement naturel des Canadiens dans la Province de Québec.",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les familles canadiennes de la fin du XVIIIᵉ siècle comptent souvent plusieurs enfants, ce qui contribue à l'augmentation rapide de la population de la colonie. »",
+            source: "Adapté de Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord, PUL, 1991."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« La croissance de la population entraîne l'ouverture de nouvelles terres agricoles afin de répondre aux besoins d'un nombre grandissant d'habitants dans la colonie. »",
+            source: "Adapté de Gilles Laporte, Histoire du Québec : une société nord-américaine, Chenelière, 2014."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "cause-consequence"
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Cause",
+        "Conséquence"
+      ],
+      rangees: [
+        [
+          "A",
+          "B"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-08T14:02:38.890Z"
   }
 ]
