@@ -5980,6 +5980,34 @@ const REGLETTES = {
         desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
       }
     ]
+  },
+  "Q299": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -6382,6 +6410,9 @@ const IMAGE_DB = {
   },
   "eglise_anglicane_1780.png": {
     src: "images/eglise_anglicane_1780.png"
+  },
+  "populaton_1760_1790.png": {
+    src: "images/populaton_1760_1790.png"
   }
 }
 
@@ -19292,5 +19323,56 @@ const QUESTIONS = [
     },
     guide: "Lymburner (marchand britannique) affirme que l’Église anglicane devrait occuper une place plus importante dans la colonie alors que Briand (évêque catholique) et Haldimand (gouverneur) appuient le maintien des institutions catholiques.",
     updatedAt: "2026-06-08T14:31:21.622Z"
+  },
+  {
+    id: "Q299",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    enonce: "Expliquez comment les familles canadiennes contribue à l'expansion du territoire occupé dans la Province de Québec vers 1790.\n\nRépondez à la question en précisant :\n\n• une caractéristique des familles canadiennes;\n• une transformation démographique;\n• un effet sur l'occupation du territoire.",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les familles canadiennes de la fin du XVIIIᵉ siècle comptent souvent plusieurs enfants, ce qui favorise une croissance rapide de la population. »",
+            source: "Adapté de Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "populaton_1760_1790.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« À la fin du XVIIIᵉ siècle, le peuplement s'étend vers de nouvelles portions de la vallée du Saint-Laurent, où des terres sont défrichées pour répondre aux besoins d'une population croissante. »",
+            source: "Adapté de Serge Courville, Le Québec : genèses et mutations du territoire, Presses de l'Université Laval, 2000."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Les familles canadiennes comptent souvent plusieurs enfants (caractéristique des familles canadiennes), ce qui entraîne une augmentation de la population (transformation démographique). Cette croissance démographique favorise le défrichement de nouvelles terres et l'expansion du territoire occupé (effet sur l'occupation du territoire).",
+    updatedAt: "2026-06-08T14:55:35.922Z"
   }
 ]
