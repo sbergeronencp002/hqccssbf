@@ -18000,13 +18000,24 @@ const QUESTIONS = [
         aspect: "Économie coloniale"
       }
     ],
-    documents: [],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "mercantilisme_britannique.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
     reponse: {
       type: "lignes",
       nombre: 1
     },
     guide: "Le mercantilisme.",
-    updatedAt: "2026-06-08T00:31:41.368Z"
+    updatedAt: "2026-06-08T11:39:02.382Z"
   },
   {
     id: "Q277",
