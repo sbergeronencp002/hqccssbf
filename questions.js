@@ -5930,6 +5930,17 @@ const REGLETTES = {
         desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."
       }
     ]
+  },
+  "Q296": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
   }
 }
 
@@ -19095,5 +19106,51 @@ const QUESTIONS = [
     },
     guide: "Les écoles catholiques sont dirigées par l'Église catholique ou des communautés religieuses catholiques, tandis que les écoles anglicanes sont dirigées par l'Église anglicane.",
     updatedAt: "2026-06-08T14:14:19.061Z"
+  },
+  {
+    id: "Q296",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s'il y a changement ou continuité dans la présence des institutions religieuses dans la colonie entre 1750 et 1790. Justifiez votre réponse par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Église anglicane"
+      },
+      {
+        aspect: "Église catholique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "eglise_catholique_n-f_1700.png",
+            soustitre: "Lieu de culte dans la colonie vers 1750",
+            source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Après la Conquête, les autorités britanniques mettent en place leurs principales institutions dans la colonie afin de répondre aux besoins de la population nouvellement arrivée. »",
+            source: "Adapté de John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec, Septentrion, 2009."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Changement\nIl y a changement, car vers 1790 des institutions de l'Église anglicane sont présentes dans la colonie alors qu'en 1750 les institutions religieuses sont principalement catholiques.\n\nContinuité\nIl y a continuité, car en 1750 comme en 1790, des institutions religieuses jouent un rôle important dans l'enseignement (ou les soins aux malades) dans la colonie.",
+    updatedAt: "2026-06-08T14:18:23.483Z"
   }
 ]
