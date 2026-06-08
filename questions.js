@@ -5713,6 +5713,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q285": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -18464,5 +18481,36 @@ const QUESTIONS = [
     },
     guide: "Les marchands britanniques ou les soldats britanniques démobilisés.",
     updatedAt: "2026-06-08T13:23:05.173Z"
+  },
+  {
+    id: "Q285",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez le nom du groupe de population qui revient s'établir dans la Province de Québec après la Déportation.",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Plusieurs familles qui avaient été dispersées lors des événements de 1755 retournent progressivement dans les colonies britanniques d'Amérique du Nord. Certaines choisissent de s'établir dans la Province de Québec, notamment dans les régions côtières du golfe du Saint-Laurent. »",
+            source: "Adapté de Naomi E. S. Griffiths, The Acadians: Creation of a People, McGraw-Hill Ryerson, 1973."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les Acadiens.",
+    updatedAt: "2026-06-08T13:24:21.093Z"
   }
 ]
