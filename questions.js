@@ -11306,7 +11306,8 @@ const QUESTIONS = [
           {
             titre: "Document C",
             ref: "graphique_poste_de_traite_1780.png",
-            soustitre: "Nombre de postes de traite établis vers l'Ouest"
+            soustitre: "Nombre de postes de traite établis vers l'Ouest",
+            source: "Données pédagogiques adaptées d'après Harold A. Innis, The Fur Trade in Canada (1930), Arthur J. Ray, Indians in the Fur Trade (1974)."
           }
         ]
       }
@@ -11315,7 +11316,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 5
     },
-    guide: "Le traité de Paris de 1783 accorde aux États-Unis les territoires situés au sud des Grands Lacs (un territoire perdu à la suite du traité de Paris de 1783). Cette perte territoriale complique les activités des compagnies de fourrures et l’accès à certaines routes commerciales (une conséquence sur les activités des compagnies de fourrures). Afin de poursuivre et développer le commerce des fourrures, les compagnies déplacent leurs activités vers le Nord-Ouest et établissent de nouveaux postes de traite (une action entreprise par les compagnies afin de développer le commerce vers le Nord-Ouest)."
+    guide: "Le traité de Paris de 1783 accorde aux États-Unis les territoires situés au sud des Grands Lacs (un territoire perdu à la suite du traité de Paris de 1783). Cette perte territoriale complique les activités des compagnies de fourrures et l’accès à certaines routes commerciales (une conséquence sur les activités des compagnies de fourrures). Afin de poursuivre et développer le commerce des fourrures, les compagnies déplacent leurs activités vers le Nord-Ouest et établissent de nouveaux postes de traite (une action entreprise par les compagnies afin de développer le commerce vers le Nord-Ouest).",
+    updatedAt: "2026-06-08T12:44:30.377Z"
   },
   {
     id: "Q118",
