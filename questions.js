@@ -19232,7 +19232,7 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "eglise_catholique_n-f_1700.png",
             soustitre: "Lieu de culte catholique dans la colonie vers 1750",
-            source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       },
@@ -19252,7 +19252,7 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Changement\nIl y a changement, car vers 1790 des institutions de l'Église anglicane sont présentes dans la colonie alors qu'en 1750 les institutions religieuses sont principalement catholiques.\n\nContinuité\nIl y a continuité, car en 1750 comme en 1790, des institutions religieuses jouent un rôle important dans l'enseignement (ou les soins aux malades) dans la colonie.",
-    updatedAt: "2026-06-08T14:21:20.470Z"
+    updatedAt: "2026-06-08T15:11:10.844Z"
   },
   {
     id: "Q297",
