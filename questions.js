@@ -5657,6 +5657,23 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q282": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -18308,5 +18325,36 @@ const QUESTIONS = [
     },
     guide: "La guerre de la Conquête se termine par la victoire britannique ou la cession de la colonie à la Grande-Bretagne (l'issue de la guerre de la Conquête). Après 1760, les marchands britanniques remplacent progressivement les marchands français dans les activités commerciales (un changement dans le groupe de marchands dominant le commerce). Par conséquent, le commerce de la colonie est davantage orienté vers l'Empire britannique (une conséquence sur l'économie coloniale).",
     updatedAt: "2026-06-08T12:19:13.456Z"
+  },
+  {
+    id: "Q282",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez la principale activité économique pratiquée par la majorité des habitants de la Province de Québec vers 1780.",
+    aspects: [
+      {
+        aspect: "Économie coloniale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« À la fin du XVIIIe siècle, la majorité des habitants de la Province de Québec vivent à la campagne et tirent principalement leurs moyens de subsistance du travail de la terre. »",
+            source: "Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord, PUL, 1991."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "L'agriculture.",
+    updatedAt: "2026-06-08T12:23:18.955Z"
   }
 ]
