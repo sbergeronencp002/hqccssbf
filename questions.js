@@ -5781,6 +5781,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q289": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -18664,5 +18681,37 @@ const QUESTIONS = [
     },
     guide: "L'accroissement naturel",
     updatedAt: "2026-06-08T13:39:59.026Z"
+  },
+  {
+    id: "Q289",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez une profession exercée par la bourgeoisie professionnelle canadienne.",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Plusieurs Canadiens instruits occupent des fonctions nécessitant une formation spécialisée. Ils jouent un rôle important dans les tribunaux, les bureaux de notaires et les services médicaux de la colonie. »",
+            soustitre: "Indiquez une profession exercée par la bourgeoisie professionnelle canadienne.",
+            source: "Adapté de Gilles Laporte, Brève histoire politique du Québec."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Notaire ou avocat ou médecin.",
+    updatedAt: "2026-06-08T13:43:04.698Z"
   }
 ]
