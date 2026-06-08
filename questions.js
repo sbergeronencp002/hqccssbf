@@ -5820,6 +5820,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q291": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -18767,5 +18789,47 @@ const QUESTIONS = [
     },
     guide: "La Province de Québec devient une colonie britannique.",
     updatedAt: "2026-06-08T13:55:22.741Z"
+  },
+  {
+    id: "Q291",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux historiens sur l'évolution démographique de la Province de Québec. Sur quel point précis ces historiens sont-ils d'accord ?",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les familles canadiennes de la fin du XVIIIᵉ siècle comptent souvent plusieurs enfants, ce qui contribue à l'augmentation rapide de la population de la colonie. »",
+            source: "Adapté de Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord, PUL, 1991."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« La population canadienne se distingue par un nombre élevé de naissances. Cette situation favorise une croissance démographique soutenue au cours du XVIIIᵉ siècle. »",
+            source: "Adapté de Marcel Trudel, Histoire de la Nouvelle-France."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les deux historiens sont d'accord pour dire que la population canadienne augmente rapidement grâce à l'accroissement naturel.",
+    updatedAt: "2026-06-08T13:59:39.248Z"
   }
 ]
