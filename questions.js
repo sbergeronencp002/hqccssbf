@@ -5886,6 +5886,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q294": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -6285,6 +6307,9 @@ const IMAGE_DB = {
   },
   "langues_parlees_1790.png": {
     src: "images/langues_parlees_1790.png"
+  },
+  "eglise_anglicane_1780.png": {
+    src: "images/eglise_anglicane_1780.png"
   }
 }
 
@@ -18970,5 +18995,38 @@ const QUESTIONS = [
     },
     guide: "Les historiens sont en désaccord sur l'importance du rôle joué par les réfugiés acadiens dans le peuplement de la Province de Québec.",
     updatedAt: "2026-06-08T14:04:56.438Z"
+  },
+  {
+    id: "Q294",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de l'arrivée d'immigrants britanniques sur les lieux de culte de la colonie.",
+    aspects: [
+      {
+        aspect: "Église anglicane"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "eglise_anglicane_1780.png",
+            soustitre: "Lieu de culte à Québec vers 1790",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "La construction d'églises anglicanes.",
+    updatedAt: "2026-06-08T14:11:54.296Z"
   }
 ]
