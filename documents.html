@@ -312,7 +312,7 @@ function tileHtml(q) {
   const imgsHtml = q._imgs.map(img => {
     const shared = imgMap[img] && imgMap[img].length > 1;
     return `<div class="img-wrap${shared?' shared':''}">
-      <img src="images/${escH(img)}" loading="lazy" title="${escH(img)}" onclick="showImg(${JSON.stringify(img)})">
+      <img src="images/${escH(img)}" loading="lazy" title="${escH(img)}" onclick="showImg(${escH(JSON.stringify(img))})">
       <span class="img-name">${escH(img.replace('.png',''))}</span>
       ${shared ? `<span class="share-badge">${imgMap[img].length}</span>` : ''}
     </div>`;
@@ -356,7 +356,7 @@ function tileHtml(q) {
       const isShared = ids.length > 1;
       const ois = [...new Set(ids.filter(id=>qById[id]).map(id=>qById[id].oi))].join(' ');
       return `
-      <div class="img-card" data-img-name="${escH(img.replace('.png','').toLowerCase())}" data-ois="${escH(ois)}" onclick="showImg(${JSON.stringify(img)})">
+      <div class="img-card" data-img-name="${escH(img.replace('.png','').toLowerCase())}" data-ois="${escH(ois)}" onclick="showImg(${escH(JSON.stringify(img))})">
         <span class="ic-count${isShared ? '' : ' single'}">${ids.length}</span>
         <img src="images/${escH(img)}" loading="lazy" alt="${escH(img)}">
         <div class="ic-label" title="${escH(img)}">${escH(img.replace('.png',''))}</div>
@@ -375,10 +375,10 @@ function tileHtml(q) {
   if (orphans.length) {
     document.getElementById('orphans-container').innerHTML = orphans.map(img => `
       <div class="orphan-row" id="orphan-${CSS.escape(img)}">
-        <img src="images/${escH(img)}" loading="lazy" title="${escH(img)}" onclick="showImg(${JSON.stringify(img)})">
+        <img src="images/${escH(img)}" loading="lazy" title="${escH(img)}" onclick="showImg(${escH(JSON.stringify(img))})">
         <span class="img-label">${escH(img.replace('.png',''))}</span>
         ${sizeBadgeHtml(img)}
-        <button class="btn-delete" onclick="deleteOrphan(${JSON.stringify(img)})">🗑 Supprimer</button>
+        <button class="btn-delete" onclick="deleteOrphan(${escH(JSON.stringify(img))})">🗑 Supprimer</button>
       </div>`).join('');
     document.getElementById('nav-orphans').style.display = '';
     fetchSizes(orphans);
