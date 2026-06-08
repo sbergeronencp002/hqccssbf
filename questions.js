@@ -5696,6 +5696,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q284": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -18416,5 +18433,36 @@ const QUESTIONS = [
     },
     guide: "L'augmentation des surplus agricoles ou l'augmentation des exportations de blé.",
     updatedAt: "2026-06-08T12:38:17.314Z"
+  },
+  {
+    id: "Q284",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez un groupe d'immigrants britanniques qui s'établit dans la Province de Québec après 1760.",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après la Conquête, plusieurs marchands, fonctionnaires et soldats démobilisés originaires des îles Britanniques choisissent de demeurer dans la Province de Québec. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 2, Septentrion."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les marchands britanniques ou les soldats britanniques démobilisés.",
+    updatedAt: "2026-06-08T13:23:05.173Z"
   }
 ]
