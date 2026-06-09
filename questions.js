@@ -6655,6 +6655,34 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q336": {
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
   }
 }
 
@@ -21378,5 +21406,60 @@ const QUESTIONS = [
     },
     guide: "Les deux acteurs sont en désaccord sur le droit de vote des femmes ou un acteur est favorable au droit de vote des femmes, tandis que l'autre y est opposé.",
     updatedAt: "2026-06-09T19:03:56.320Z"
+  },
+  {
+    id: "Q336",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    soustag: "Position – 3 acteurs",
+    enonce: "Les documents A à C présentent le point de vue de trois acteurs sur le droit de vote des femmes dans le Bas-Canada. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+    aspects: [
+      {
+        aspect: "Acte constitutionnel"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La loi n'exclut pas les femmes propriétaires du droit de vote. Lorsqu'elles remplissent les conditions exigées, elles peuvent participer aux élections comme les autres propriétaires. »",
+            auteur: "Louis-Joseph Papineau, député du Bas-Canada.",
+            source: "Adapté de : Fernand Ouellet, Louis-Joseph Papineau : un être divisé, Québec, Septentrion, 2010."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Rien dans la Constitution ne justifie que l'on prive une propriétaire de l'exercice d'un droit que la loi lui reconnaît. »",
+            auteur: "John Neilson, député du Bas-Canada.",
+            source: "Adapté de : Hilda Neatby, Quebec: The Revolutionary Age 1760-1791, McClelland and Stewart."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les élections doivent demeurer l'affaire des hommes; la participation des femmes à la vie politique ne correspond pas aux responsabilités qui leur reviennent dans la société. »",
+            auteur: "Denis-Benjamin Viger, homme politique du Bas-Canada.",
+            source: "Adapté de : Collectif, Dictionnaire biographique du Canada, notice sur Denis-Benjamin Viger."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Denis-Benjamin Viger présente une position différente. Il est opposé au droit de vote des femmes, tandis que Louis-Joseph Papineau et John Neilson sont favorables au maintien de ce droit pour les femmes qui remplissent les conditions prévues par la loi.",
+    updatedAt: "2026-06-09T19:06:38.560Z"
   }
 ]
