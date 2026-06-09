@@ -9192,7 +9192,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "1500_reseau_echanges.png"
+            ref: "1500_reseau_echanges.png",
+            source: "Récitus."
           }
         ]
       }
@@ -9201,7 +9202,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Les ressources peuvent être transportées sur de longues distances ou les échanges entre les nations sont facilités ou les réseaux d’échange s’étendent sur de vastes territoires."
+    guide: "Les ressources peuvent être transportées sur de longues distances ou les échanges entre les nations sont facilités ou les réseaux d’échange s’étendent sur de vastes territoires.",
+    updatedAt: "2026-06-09T14:48:14.169Z"
   },
   {
     id: "Q54",
