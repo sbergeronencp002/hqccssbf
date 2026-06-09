@@ -6036,6 +6036,23 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q301": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -6444,6 +6461,9 @@ const IMAGE_DB = {
   },
   "composition_population_1760-1790.png": {
     src: "images/composition_population_1760-1790.png"
+  },
+  "ligne_1790-1850.png": {
+    src: "images/ligne_1790-1850.png"
   }
 }
 
@@ -19457,5 +19477,38 @@ const QUESTIONS = [
     },
     guide: "Des marchands, fonctionnaires ou anciens militaires britanniques s'établissent dans la colonie (groupe d'immigrants britanniques). Leur arrivée augmente la proportion d'habitants d'origine britannique (transformation démographique). La composition de la population devient plus diversifiée (effet sur la composition de la population).",
     updatedAt: "2026-06-08T15:10:25.850Z"
+  },
+  {
+    id: "Q301",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Acte constitutionnel"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« En accordant une assemblée élue tout en maintenant l’autorité du gouverneur et de l’exécutif, l’Acte constitutionnel établit les bases des conflits politiques qui marqueront les décennies suivantes. »",
+            soustitre: "Acte constitutionnel",
+            source: "Allan Greer, Habitants et Patriotes : la Rébellion de 1837 dans les campagnes du Bas-Canada, Montréal, Boréal, 1997."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1790-1850.png"
+    },
+    guide: "A",
+    updatedAt: "2026-06-09T00:35:03.978Z"
   }
 ]
