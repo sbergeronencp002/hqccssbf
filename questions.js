@@ -8274,7 +8274,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "familles_linguistiques_autochtones.png"
+            ref: "familles_linguistiques_autochtones.png",
+            source: "Récitus."
           }
         ]
       }
@@ -8284,7 +8285,7 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Les Algonquiens.",
-    updatedAt: "2026-06-09T13:53:47.181Z"
+    updatedAt: "2026-06-09T13:54:41.475Z"
   },
   {
     id: "Q33",
