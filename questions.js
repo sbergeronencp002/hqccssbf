@@ -6865,6 +6865,9 @@ const IMAGE_DB = {
   },
   "raids_autochtones.png": {
     src: "images/raids_autochtones.png"
+  },
+  "prise_decision_algonquien.png": {
+    src: "images/prise_decision_algonquien.png"
   }
 }
 
@@ -9038,7 +9041,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "Indiquez le groupe de personnes qui désignent les chefs dans les sociétés iroquoiennes.",
+    enonce: "Indiquez le groupe de personnes qui désignent les chefs dans les sociétés algonquiennes.",
     aspects: [
       {
         aspect: "Prise de décision chez les Autochtones"
@@ -9050,9 +9053,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Dans les sociétés iroquoiennes, les femmes aînées de chaque clan choisissent les chefs. Elles peuvent également les remplacer lorsqu’elles estiment qu’ils n’assument plus correctement les responsabilités qui leur ont été confiées. »",
-            auteur: "Bruce G. Trigger",
-            source: "Adapté de Bruce G. Trigger, Les Enfants d'Aataentsic."
+            ref: "prise_decision_algonquien.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
@@ -9061,8 +9063,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 1
     },
-    guide: "Les femmes aînées du clan ou les mères de clan.",
-    updatedAt: "2026-06-09T14:18:49.570Z"
+    guide: "Les hommes de la communauté.",
+    updatedAt: "2026-06-09T14:22:26.140Z"
   },
   {
     id: "Q51",
