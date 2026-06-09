@@ -13591,7 +13591,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P2 — 1608 – 1760",
     points: 1,
-    enonce: "Nommez le nom de la politique économique mise en place par la métropole française en Nouvelle-France.",
+    enonce: "Indiquez le le nom de la politique économique mise en place par la métropole française en Nouvelle-France.",
     aspects: [
       {
         aspect: "Monopole des compagnies"
@@ -13613,7 +13613,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 1
     },
-    guide: "Le mercantilisme."
+    guide: "Le mercantilisme.",
+    updatedAt: "2026-06-09T15:04:59.357Z"
   },
   {
     id: "Q147",
