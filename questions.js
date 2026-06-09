@@ -6633,6 +6633,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q335": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de divergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -21314,5 +21336,47 @@ const QUESTIONS = [
     },
     guide: "Posséder une propriétéou répondre à une exigence de propriété foncière ou être propriétaire d'un bien d'une certaine valeur.",
     updatedAt: "2026-06-09T19:01:10.952Z"
+  },
+  {
+    id: "Q335",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Divergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs sur le droit de vote des femmes dans le Bas-Canada. Sur quel point précis sont-ils en désaccord ?",
+    aspects: [
+      {
+        aspect: "Acte constitutionnel"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les femmes qui possèdent les qualifications exigées par la loi doivent pouvoir exercer les mêmes droits électoraux que les hommes. »",
+            source: "Adapté d'un discours de Pierre-Stanislas Bédard, début du XIXe siècle."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« La participation des femmes aux élections ne correspond pas au rôle qu'elles doivent jouer dans la société et cette pratique devrait être abandonnée. »",
+            source: "Adapté d'un discours d'un député du Bas-Canada, début du XIXe siècle."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les deux acteurs sont en désaccord sur le droit de vote des femmes ou un acteur est favorable au droit de vote des femmes, tandis que l'autre y est opposé.",
+    updatedAt: "2026-06-09T19:03:56.320Z"
   }
 ]
