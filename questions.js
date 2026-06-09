@@ -6240,6 +6240,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q313": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -20065,5 +20082,36 @@ const QUESTIONS = [
     },
     guide: "L'Asie.",
     updatedAt: "2026-06-09T03:11:53.270Z"
+  },
+  {
+    id: "Q313",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "Indiquez la famille linguistique à laquelle appartiennent les Hurons-Wendat.",
+    aspects: [
+      {
+        aspect: "Premiers occupants du territoire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les Hurons-Wendat font partie des peuples [...] établis dans la région des Grands Lacs. »",
+            source: "Bruce G. Trigger, Les Enfants d'Aataentsic : l'histoire du peuple huron, Montréal, Libre Expression, 1991."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Famille linguistique iroquoienne.",
+    updatedAt: "2026-06-09T03:13:20.440Z"
   }
 ]
