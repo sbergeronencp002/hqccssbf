@@ -6308,6 +6308,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q317": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (2 sur 2)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (1 sur 2)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (0 sur 2)"
+      }
+    ]
   }
 }
 
@@ -20262,5 +20284,62 @@ const QUESTIONS = [
     },
     guide: "Les Algonquiens ont un mode de vie nomade.",
     updatedAt: "2026-06-09T03:24:57.996Z"
+  },
+  {
+    id: "Q317",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    soustag: "2 documents",
+    enonce: "Les documents A et B présentent des caractéristiques de l’organisation sociale de sociétés autochtones vers 1500. Associez chaque document au type de structure sociale correspondant.",
+    aspects: [
+      {
+        aspect: "Rapports sociaux chez les Autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Chez les Iroquoiens, l'appartenance au clan se transmet par la mère. Les femmes occupent une place importante dans l'organisation familiale et sociale. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1, Québec Amérique, 1995."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Chez plusieurs peuples algonquiens, les groupes de chasse sont dirigés par des hommes et certains rôles ainsi que certains biens sont transmis de père en fils. »",
+            source: "Denys Delâge, Le pays renversé : Amérindiens et Européens en Amérique du Nord-Est, 1600-1664, Boréal, 1991."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Société matrilinéaire",
+        "Société patrilinéaire"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Société matrilinéaire",
+        "Société patrilinéaire"
+      ],
+      rangees: [
+        [
+          "A",
+          "B"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-09T12:56:39.995Z"
   }
 ]
