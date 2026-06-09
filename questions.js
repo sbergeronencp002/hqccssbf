@@ -6347,6 +6347,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q319": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -6767,6 +6784,9 @@ const IMAGE_DB = {
   },
   "societe_matrilineaire_1500.png": {
     src: "images/societe_matrilineaire_1500.png"
+  },
+  "société_patrilineaire_1500.png": {
+    src: "images/société_patrilineaire_1500.png"
   }
 }
 
@@ -20392,5 +20412,36 @@ const QUESTIONS = [
     },
     guide: "Une structure matrilinéaire.",
     updatedAt: "2026-06-09T13:01:41.823Z"
+  },
+  {
+    id: "Q319",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "Indiquez le type de structure sociale généralement associé aux sociétés algonquiennes vers 1500.",
+    aspects: [
+      {
+        aspect: "Rapports sociaux chez les Autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "société_patrilineaire_1500.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Une structure patrilinéaire.",
+    updatedAt: "2026-06-09T13:02:29.886Z"
   }
 ]
