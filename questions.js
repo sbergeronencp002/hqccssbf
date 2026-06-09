@@ -8243,7 +8243,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "familles_linguistiques_autochtones.png"
+            ref: "familles_linguistiques_autochtones.png",
+            source: "Récitus."
           }
         ]
       }
@@ -8253,7 +8254,7 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Les Iroquoiens.",
-    updatedAt: "2026-06-09T13:54:10.706Z"
+    updatedAt: "2026-06-09T13:54:31.842Z"
   },
   {
     id: "Q32",
