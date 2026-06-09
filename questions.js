@@ -6594,6 +6594,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
+  },
+  "Q333": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève dégage correctement la différence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève dégage plus ou moins correctement la différence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."
+      }
+    ]
   }
 }
 
@@ -21202,5 +21224,47 @@ const QUESTIONS = [
     },
     guide: "La Province de Québec est divisée en Haut-Canada et Bas-Canada ou création du Haut-Canada ou création du Bas-Canada ou le territoire de la colonie est partagé en deux colonies distinctes.",
     updatedAt: "2026-06-09T18:46:14.794Z"
+  },
+  {
+    id: "Q333",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Différence",
+    enonce: "Indiquez une différence entre le Conseil législatif et le Conseil exécutif.",
+    aspects: [
+      {
+        aspect: "Acte constitutionnel"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le Conseil législatif constitue une chambre de révision chargée d'examiner les projets de loi avant leur adoption définitive. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 2"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Le Conseil exécutif réunit les principaux conseillers du gouverneur et participe à l'administration courante de la colonie. »",
+            source: "Gilles Laporte, Brève histoire politique du Québec"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le Conseil législatif examine les projets de loi, tandis que le Conseil exécutif conseille le gouverneur dans l'administration de la colonie.",
+    updatedAt: "2026-06-09T18:58:10.805Z"
   }
 ]
