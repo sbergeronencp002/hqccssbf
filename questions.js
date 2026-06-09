@@ -6822,6 +6822,9 @@ const IMAGE_DB = {
   },
   "partage_1500.png": {
     src: "images/partage_1500.png"
+  },
+  "objets_rivalites.png": {
+    src: "images/objets_rivalites.png"
   }
 }
 
@@ -9427,7 +9430,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "Nommez un objet de rivalité entre les nations autochtones vers 1500.",
+    enonce: "Indiquez un objet de rivalité entre les nations autochtones vers 1500.",
     aspects: [
       {
         aspect: "Alliances et rivalités au sein des Premières Nations"
@@ -9439,8 +9442,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Les conflits entre les nations autochtones portent souvent sur le contrôle des territoires de chasse, des zones de pêche et des routes commerciales. La maîtrise de ces espaces assure l’accès aux ressources nécessaires à la subsistance et permet de maintenir des réseaux d’échanges entre les peuples. »",
-            source: "Olive Patricia Dickason, Les Premières Nations du Canada. Québec, Les Éditions du Septentrion, 1996. Les Éditions du Septentrion."
+            ref: "objets_rivalites.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
@@ -9449,7 +9452,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 1
     },
-    guide: "Le contrôle des territoires de chasse ou le contrôle des routes commerciales ou l’accès aux ressources naturelles."
+    guide: "Le contrôle des territoire de chasse et de pêche.",
+    updatedAt: "2026-06-09T14:04:33.618Z"
   },
   {
     id: "Q64",
