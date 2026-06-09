@@ -6398,6 +6398,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q322": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -6845,6 +6862,9 @@ const IMAGE_DB = {
   },
   "prisonnier_autochtone_1500.png": {
     src: "images/prisonnier_autochtone_1500.png"
+  },
+  "raids_autochtones.png": {
+    src: "images/raids_autochtones.png"
   }
 }
 
@@ -20575,5 +20595,36 @@ const QUESTIONS = [
     },
     guide: "L'adoption.",
     updatedAt: "2026-06-09T14:09:09.338Z"
+  },
+  {
+    id: "Q322",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "Indiquez un moyen utilisé par certaines nations autochtones pour défendre leur territoire vers 1500.",
+    aspects: [
+      {
+        aspect: "Alliances et rivalités au sein des Premières Nations"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "raids_autochtones.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "La guerre ou les expéditions guerrières.",
+    updatedAt: "2026-06-09T14:15:52.334Z"
   }
 ]
