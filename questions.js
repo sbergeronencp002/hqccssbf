@@ -6172,6 +6172,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
+  },
+  "Q309": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -19866,5 +19883,38 @@ const QUESTIONS = [
     },
     guide: "D",
     updatedAt: "2026-06-09T00:44:16.294Z"
+  },
+  {
+    id: "Q309",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Capitaux et infrastructures"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« L'ouverture d'un établissement bancaire permanent à Montréal marque une étape importante dans l'organisation du crédit et des échanges commerciaux dans la colonie. »",
+            soustitre: "Inauguration de la première banque",
+            source: "Jean HAMELIN et Yves ROBY, Histoire économique du Québec, 1851-1896, Montréal, Fides, 1971."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1790-1850.png"
+    },
+    guide: "B",
+    updatedAt: "2026-06-09T00:46:48.310Z"
   }
 ]
