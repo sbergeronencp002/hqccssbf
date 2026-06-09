@@ -6631,7 +6631,7 @@ const IMAGE_DB = {
     src: "images/org_pol_acte_union.png"
   },
   "org_pol_1791_acte_const.png": {
-    src: "images/org_pol_acte_const.png"
+    src: "images/org_pol_1791_acte_const.png"
   },
   "familles_linguistiques_autochtones.png": {
     src: "images/familles_linguistiques_autochtones.png"
@@ -6946,7 +6946,7 @@ const IMAGE_DB = {
     src: "images/org_pol_apres_1763.png"
   },
   "org_pol_1774_acte_quebec.png": {
-    src: "images/org_pol_apres_1784.png"
+    src: "images/org_pol_1774_acte_quebec.png"
   },
   "territoire_province_quebec_1783.png": {
     src: "images/territoire_province_quebec_1783.png"
