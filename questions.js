@@ -20768,6 +20768,9 @@ const QUESTIONS = [
     enonce: "Indiquez le nom du premier gouverneur de la Nouvelle-France.",
     aspects: [
       {
+        aspect: "Gouvernement royal"
+      },
+      {
         aspect: "Monopole des compagnies"
       }
     ],
@@ -20788,6 +20791,6 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Samuel de Champlain.",
-    updatedAt: "2026-06-09T15:08:32.706Z"
+    updatedAt: "2026-06-09T15:09:50.360Z"
   }
 ]
