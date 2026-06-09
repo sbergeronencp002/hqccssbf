@@ -6610,7 +6610,7 @@ const IMAGE_DB = {
   "territoire_exploite_minerai_fer.png": {
     src: "images/territoire_exploite_minerai_fer.png"
   },
-  "org_pol_1791_acte_union.png": {
+  "org_pol_1840_acte_union.png": {
     src: "images/org_pol_acte_union.png"
   },
   "org_pol_acte_const.png": {
@@ -8087,7 +8087,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "org_pol_1791_acte_union.png",
+            ref: "org_pol_1840_acte_union.png",
             source: "Récitus."
           }
         ]
@@ -8216,7 +8216,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "org_pol_1791_acte_union.png"
+            ref: "org_pol_1840_acte_union.png"
           }
         ]
       }
