@@ -6613,7 +6613,7 @@ const IMAGE_DB = {
   "org_pol_1840_acte_union.png": {
     src: "images/org_pol_acte_union.png"
   },
-  "org_pol_acte_const.png": {
+  "org_pol_1791_acte_const.png": {
     src: "images/org_pol_acte_const.png"
   },
   "familles_linguistiques_autochtones.png": {
@@ -7556,7 +7556,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "org_pol_acte_const.png",
+            ref: "org_pol_1791_acte_const.png",
             soustitre: "De 1791 à 1840",
             source: "Récitus."
           }
@@ -8207,7 +8207,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "org_pol_acte_const.png"
+            ref: "org_pol_1791_acte_const.png"
           }
         ]
       },
@@ -21022,7 +21022,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "org_pol_acte_const.png",
+            ref: "org_pol_1791_acte_const.png",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
@@ -21054,7 +21054,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "org_pol_acte_const.png",
+            ref: "org_pol_1791_acte_const.png",
             soustitre: "1774",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
@@ -21065,7 +21065,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "org_pol_acte_const.png",
+            ref: "org_pol_1791_acte_const.png",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
