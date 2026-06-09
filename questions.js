@@ -6483,6 +6483,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q327": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -6948,6 +6965,9 @@ const IMAGE_DB = {
   },
   "jean_talon.png": {
     src: "images/jean_talon.png"
+  },
+  "monseigneur_laval_eveque.png": {
+    src: "images/monseigneur_laval_eveque.png"
   }
 }
 
@@ -20843,5 +20863,39 @@ const QUESTIONS = [
     },
     guide: "Jean Talon.",
     updatedAt: "2026-06-09T15:14:15.470Z"
+  },
+  {
+    id: "Q327",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez le nom du premier évêque de la Nouvelle-France.",
+    aspects: [
+      {
+        aspect: "Église catholique"
+      },
+      {
+        aspect: "Gouvernement royal"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "monseigneur_laval_eveque.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "François de Montmorency-Laval ou Monseigneur de Laval.",
+    updatedAt: "2026-06-09T15:18:51.495Z"
   }
 ]
