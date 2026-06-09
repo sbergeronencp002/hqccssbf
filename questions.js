@@ -21096,7 +21096,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "org_pol_1791_acte_const.png",
+            ref: "org_pol_1774_acte_quebec.png",
             soustitre: "1774",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
@@ -21118,7 +21118,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Entre 1774 et 1791, la population obtient des représentants élus grâce à la création d'une Chambre d'assemblée dans le Bas-Canada et le Haut-Canada.\n\nou\n\nEn 1791, la population peut élire des députés à la Chambre d'assemblée, alors qu'en 1774 elle ne participe pas à l'élection d'une institution politique.",
-    updatedAt: "2026-06-09T16:24:10.793Z"
+    updatedAt: "2026-06-09T18:48:55.434Z"
   },
   {
     id: "Q331",
