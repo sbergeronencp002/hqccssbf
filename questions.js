@@ -6616,6 +6616,23 @@ const REGLETTES = {
         desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."
       }
     ]
+  },
+  "Q334": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -21266,5 +21283,36 @@ const QUESTIONS = [
     },
     guide: "Le Conseil législatif examine les projets de loi, tandis que le Conseil exécutif conseille le gouverneur dans l'administration de la colonie.",
     updatedAt: "2026-06-09T18:59:09.075Z"
+  },
+  {
+    id: "Q334",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez une condition nécessaire pour exercer le droit de vote dans le Bas-Canada après 1791.",
+    aspects: [
+      {
+        aspect: "Acte constitutionnel"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le droit de vote est accordé aux personnes qui possèdent des biens d'une valeur minimale déterminée par la loi. Cette règle s'applique dans les circonscriptions du Bas-Canada lors des élections de la Chambre d'assemblée. »",
+            source: "Adapté de Yvan Lamonde, Histoire sociale des idées au Québec."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Posséder une propriétéou répondre à une exigence de propriété foncière ou être propriétaire d'un bien d'une certaine valeur.",
+    updatedAt: "2026-06-09T19:01:10.952Z"
   }
 ]
