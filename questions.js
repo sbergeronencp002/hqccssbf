@@ -6070,6 +6070,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
+  },
+  "Q303": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -6481,6 +6498,9 @@ const IMAGE_DB = {
   },
   "ligne_1790-1850.png": {
     src: "images/ligne_1790-1850.png"
+  },
+  "bataille_chateauguay.png": {
+    src: "images/bataille_chateauguay.png"
   }
 }
 
@@ -19560,5 +19580,38 @@ const QUESTIONS = [
     },
     guide: "B",
     updatedAt: "2026-06-09T00:36:24.268Z"
+  },
+  {
+    id: "Q303",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Guerre anglo-américaine de 1812"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "bataille_chateauguay.png",
+            soustitre: "Bataille de Chateauguay",
+            source: "Illustration de C. W. Jefferys, Bibliothèque et Archives Canada."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1790-1850.png"
+    },
+    guide: "B",
+    updatedAt: "2026-06-09T00:39:05.263Z"
   }
 ]
