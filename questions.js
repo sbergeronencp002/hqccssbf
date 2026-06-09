@@ -21244,7 +21244,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Le Conseil législatif constitue une chambre de révision chargée d'examiner les projets de loi avant leur adoption définitive. »",
+            texte: "« Les membres du [Conseil] sont appelés à étudier les projets présentés aux institutions de la colonie. Leur intervention vise notamment à examiner les mesures proposées avant qu'elles ne soient mises en application. »",
             source: "Jacques Lacoursière, Histoire populaire du Québec, tome 2"
           }
         ]
@@ -21254,7 +21254,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« Le Conseil exécutif réunit les principaux conseillers du gouverneur et participe à l'administration courante de la colonie. »",
+            texte: "« Autour du gouverneur se trouvent quelques conseillers qui l'assistent dans la gestion des affaires de la colonie. Ces hommes participent aux discussions concernant l'administration et l'application des décisions gouvernementales. »",
             source: "Gilles Laporte, Brève histoire politique du Québec"
           }
         ]
@@ -21265,6 +21265,6 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Le Conseil législatif examine les projets de loi, tandis que le Conseil exécutif conseille le gouverneur dans l'administration de la colonie.",
-    updatedAt: "2026-06-09T18:58:10.805Z"
+    updatedAt: "2026-06-09T18:59:09.075Z"
   }
 ]
