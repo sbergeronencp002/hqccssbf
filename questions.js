@@ -6813,6 +6813,9 @@ const IMAGE_DB = {
   },
   "don_contre-don.png": {
     src: "images/don_contre-don.png"
+  },
+  "education_enfants_1500.png": {
+    src: "images/education_enfants_1500.png"
   }
 }
 
@@ -8786,7 +8789,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "Nommez une façon dont les enfants autochtones acquièrent les connaissances nécessaires à la vie en communauté.",
+    enonce: "Indiquez un moyen par lequel les enfants autochtones apprennent les savoirs nécessaires à la vie quotidienne.",
     aspects: [
       {
         aspect: "Rapports sociaux chez les Autochtones"
@@ -8798,8 +8801,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Très tôt, les jeunes sont intégrés à la vie quotidienne de leur groupe. En accompagnant les adultes dans leurs déplacements et leurs activités, ils développent progressivement les habiletés et les comportements attendus des membres de leur communauté. »",
-            auteur: "John A. Dickinson"
+            ref: "education_enfants_1500.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
@@ -8808,7 +8811,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 1
     },
-    guide: "En accompagnant les adultes ou en participant à la vie quotidienne du groupe ou en prenant part aux déplacements et aux activités de la communauté."
+    guide: "Par l’observation ou l’imitation ou la participation aux activités des adultes.",
+    updatedAt: "2026-06-09T13:18:57.625Z"
   },
   {
     id: "Q45",
