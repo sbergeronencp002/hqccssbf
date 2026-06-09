@@ -20390,7 +20390,7 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 1
     },
-    guide: "Une société matrilinéaire.",
-    updatedAt: "2026-06-09T13:00:32.240Z"
+    guide: "Une structure matrilinéaire.",
+    updatedAt: "2026-06-09T13:01:41.823Z"
   }
 ]
