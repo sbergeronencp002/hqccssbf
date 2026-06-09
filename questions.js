@@ -9162,7 +9162,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "1500_reseau_echanges.png"
+            ref: "1500_reseau_echanges.png",
+            source: "Récitus."
           }
         ]
       }
@@ -9171,7 +9172,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Les nations autochtones ont accès à des ressources qu’elles ne trouvent pas sur leur propre territoire ou elles obtiennent des ressources provenant de régions éloignées ou des biens circulent sur de vastes territoires."
+    guide: "Les nations autochtones ont accès à des ressources qu’elles ne trouvent pas sur leur propre territoire ou elles obtiennent des ressources provenant de régions éloignées ou des biens circulent sur de vastes territoires.",
+    updatedAt: "2026-06-09T14:48:41.398Z"
   },
   {
     id: "Q53",
