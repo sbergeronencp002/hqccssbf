@@ -6291,23 +6291,6 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
-  },
-  "Q316": {
-    oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
-    ]
   }
 }
 
@@ -8347,9 +8330,9 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document D",
-            ref: "village_iroquoien_vers_1500.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            titre: "Document A",
+            texte: "« [Ils] vivaient dans des villages palissadés, reliés entre eux par un réseau de sentiers. Les maisons […] mesuraient de vingt à trente mètres de long sur six ou sept de large. […] Chacune contenait cinq ou six foyers autour desquels plusieurs familles apparentées travaillaient, jouaient, mangeaient et dormaient. »",
+            source: "John A. DICKINSON et Brian YOUNG, Brève histoire socio-économique du Québec, 4e éd., Québec, Les éditions du Septentrion, 2009, p. 23."
           }
         ]
       },
@@ -8406,7 +8389,7 @@ const QUESTIONS = [
         ]
       ]
     },
-    updatedAt: "2026-06-09T03:27:00.693Z"
+    updatedAt: "2026-06-09T03:24:04.285Z"
   },
   {
     id: "Q38",
@@ -20231,36 +20214,5 @@ const QUESTIONS = [
     },
     guide: "Les Iroquoiens ont un mode de vie sédentaire.",
     updatedAt: "2026-06-09T03:21:05.717Z"
-  },
-  {
-    id: "Q316",
-    niveau: 3,
-    oi: "Établir des faits",
-    periode: "P1 — Des origines à 1608",
-    points: 1,
-    enonce: "Indiquez le mode de vie généralement adopté par les Algonquiens vers 1500.",
-    aspects: [
-      {
-        aspect: "Premiers occupants du territoire"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "campement_algonquien.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
-    guide: "Les Algonquiens ont un mode de vie nomade.",
-    updatedAt: "2026-06-09T03:24:57.996Z"
   }
 ]

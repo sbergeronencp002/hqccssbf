@@ -6206,108 +6206,6 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
-  },
-  "Q311": {
-    oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
-    ]
-  },
-  "Q312": {
-    oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
-    ]
-  },
-  "Q313": {
-    oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
-    ]
-  },
-  "Q314": {
-    oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
-    ]
-  },
-  "Q315": {
-    oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
-    ]
-  },
-  "Q316": {
-    oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
-    ]
   }
 }
 
@@ -6722,9 +6620,6 @@ const IMAGE_DB = {
   },
   "bataille_chateauguay.png": {
     src: "images/bataille_chateauguay.png"
-  },
-  "village_iroquoien_vers_1500.png": {
-    src: "images/village_iroquoien_vers_1500.png"
   }
 }
 
@@ -8116,7 +8011,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "carte_premiers_occ_peuplement.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Adaptation pédagogique inspirée de cartes historiques du peuplement de l'Amérique par la Béringie."
           }
         ]
       }
@@ -8125,8 +8020,7 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 1
     },
-    guide: "Le détroit de Béring (ou la Béringie).",
-    updatedAt: "2026-06-09T03:12:05.846Z"
+    guide: "Le détroit de Béring (ou la Béringie)."
   },
   {
     id: "Q31",
@@ -8347,9 +8241,9 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document D",
-            ref: "village_iroquoien_vers_1500.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            titre: "Document A",
+            texte: "« [Ils] vivaient dans des villages palissadés, reliés entre eux par un réseau de sentiers. Les maisons […] mesuraient de vingt à trente mètres de long sur six ou sept de large. […] Chacune contenait cinq ou six foyers autour desquels plusieurs familles apparentées travaillaient, jouaient, mangeaient et dormaient. »",
+            source: "John A. DICKINSON et Brian YOUNG, Brève histoire socio-économique du Québec, 4e éd., Québec, Les éditions du Septentrion, 2009, p. 23."
           }
         ]
       },
@@ -8379,8 +8273,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document D",
-            ref: "campement_algonquien.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            ref: "campement_algonquien.png"
           }
         ]
       }
@@ -8405,8 +8298,7 @@ const QUESTIONS = [
           "A et C"
         ]
       ]
-    },
-    updatedAt: "2026-06-09T03:27:00.693Z"
+    }
   },
   {
     id: "Q38",
@@ -20074,193 +19966,5 @@ const QUESTIONS = [
     },
     guide: "C",
     updatedAt: "2026-06-09T00:47:35.589Z"
-  },
-  {
-    id: "Q311",
-    niveau: 3,
-    oi: "Situer dans le temps",
-    periode: "P4 — 1791 – 1840",
-    points: 1,
-    soustag: "Ligne du temps",
-    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            texte: "« Les chefs patriotes exilés proposent alors la création d'un nouvel État et présentent un programme politique inspiré des principes républicains en vigueur aux États-Unis. »",
-            soustitre: "Déclaration d'indépendance du Bas-Canada",
-            source: "Gilles LAPORTE, Patriotes et Loyaux : leadership régional et mobilisation politique en 1837 et 1838, Québec, Septentrion, 2004."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1790-1850.png"
-    },
-    guide: "D",
-    updatedAt: "2026-06-09T00:48:25.135Z"
-  },
-  {
-    id: "Q312",
-    niveau: 3,
-    oi: "Établir des faits",
-    periode: "P1 — Des origines à 1608",
-    points: 1,
-    enonce: "Indiquez le continent d'origine des premiers occupants du nord-est de l'Amérique.",
-    aspects: [
-      {
-        aspect: "Premiers occupants du territoire"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_premiers_occ_peuplement.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
-    guide: "L'Asie.",
-    updatedAt: "2026-06-09T03:11:53.270Z"
-  },
-  {
-    id: "Q313",
-    niveau: 3,
-    oi: "Établir des faits",
-    periode: "P1 — Des origines à 1608",
-    points: 1,
-    enonce: "Indiquez la famille linguistique à laquelle appartiennent les Hurons-Wendat.",
-    aspects: [
-      {
-        aspect: "Premiers occupants du territoire"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            texte: "« Les Hurons-Wendat font partie des peuples [...] établis dans la région des Grands Lacs. »",
-            source: "Bruce G. Trigger, Les Enfants d'Aataentsic : l'histoire du peuple huron, Montréal, Libre Expression, 1991."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
-    guide: "Famille linguistique iroquoienne.",
-    updatedAt: "2026-06-09T03:13:20.440Z"
-  },
-  {
-    id: "Q314",
-    niveau: 3,
-    oi: "Établir des faits",
-    periode: "P1 — Des origines à 1608",
-    points: 1,
-    enonce: "Indiquez la famille linguistique à laquelle appartiennent les Innus.",
-    aspects: [
-      {
-        aspect: "Premiers occupants du territoire"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            texte: "« Les Innus occupent un immense territoire correspondant en grande partie au Bouclier canadien. Ils y pratiquent la chasse, la pêche et le piégeage en se déplaçant selon les saisons et les ressources disponibles. »",
-            source: "Denys Delâge, Le pays renversé : Amérindiens et Européens en Amérique du Nord-Est, 1600-1664, Montréal, Boréal, 1991."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
-    guide: "Famille linguistique algonquienne.",
-    updatedAt: "2026-06-09T03:16:19.575Z"
-  },
-  {
-    id: "Q315",
-    niveau: 3,
-    oi: "Établir des faits",
-    periode: "P1 — Des origines à 1608",
-    points: 1,
-    enonce: "Indiquez le mode de vie généralement adopté par les Iroquoiens vers 1500.",
-    aspects: [
-      {
-        aspect: "Premiers occupants du territoire"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "village_iroquoien_vers_1500.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
-    guide: "Les Iroquoiens ont un mode de vie sédentaire.",
-    updatedAt: "2026-06-09T03:21:05.717Z"
-  },
-  {
-    id: "Q316",
-    niveau: 3,
-    oi: "Établir des faits",
-    periode: "P1 — Des origines à 1608",
-    points: 1,
-    enonce: "Indiquez le mode de vie généralement adopté par les Algonquiens vers 1500.",
-    aspects: [
-      {
-        aspect: "Premiers occupants du territoire"
-      }
-    ],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "campement_algonquien.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
-          }
-        ]
-      }
-    ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
-    guide: "Les Algonquiens ont un mode de vie nomade.",
-    updatedAt: "2026-06-09T03:24:57.996Z"
   }
 ]

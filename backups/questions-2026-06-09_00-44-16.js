@@ -5657,6 +5657,504 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q282": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q283": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
+  },
+  "Q284": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q285": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q286": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q287": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q288": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q289": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q290": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
+  },
+  "Q291": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q292": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
+      }
+    ]
+  },
+  "Q293": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de divergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
+  },
+  "Q294": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
+  },
+  "Q295": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève dégage correctement la différence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève dégage plus ou moins correctement la différence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."
+      }
+    ]
+  },
+  "Q296": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
+  },
+  "Q297": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
+  },
+  "Q298": {
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
+  },
+  "Q299": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
+  },
+  "Q300": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
+  },
+  "Q301": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
+  },
+  "Q302": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
+  },
+  "Q303": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
+  },
+  "Q304": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
+  },
+  "Q305": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
+  },
+  "Q306": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
+  },
+  "Q307": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -6047,6 +6545,30 @@ const IMAGE_DB = {
   },
   "mercantilisme_britannique.png": {
     src: "images/mercantilisme_britannique.png"
+  },
+  "production_blé_minots.png": {
+    src: "images/production_blé_minots.png"
+  },
+  "composition_population_1790.png": {
+    src: "images/composition_population_1790.png"
+  },
+  "langues_parlees_1790.png": {
+    src: "images/langues_parlees_1790.png"
+  },
+  "eglise_anglicane_1780.png": {
+    src: "images/eglise_anglicane_1780.png"
+  },
+  "populaton_1760_1790.png": {
+    src: "images/populaton_1760_1790.png"
+  },
+  "composition_population_1760-1790.png": {
+    src: "images/composition_population_1760-1790.png"
+  },
+  "ligne_1790-1850.png": {
+    src: "images/ligne_1790-1850.png"
+  },
+  "bataille_chateauguay.png": {
+    src: "images/bataille_chateauguay.png"
   }
 }
 
@@ -11264,7 +11786,8 @@ const QUESTIONS = [
           {
             titre: "Document C",
             ref: "graphique_poste_de_traite_1780.png",
-            soustitre: "Nombre de postes de traite établis vers l'Ouest"
+            soustitre: "Nombre de postes de traite établis vers l'Ouest",
+            source: "Données pédagogiques adaptées d'après Harold A. Innis, The Fur Trade in Canada (1930), Arthur J. Ray, Indians in the Fur Trade (1974)."
           }
         ]
       }
@@ -11273,7 +11796,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 5
     },
-    guide: "Le traité de Paris de 1783 accorde aux États-Unis les territoires situés au sud des Grands Lacs (un territoire perdu à la suite du traité de Paris de 1783). Cette perte territoriale complique les activités des compagnies de fourrures et l’accès à certaines routes commerciales (une conséquence sur les activités des compagnies de fourrures). Afin de poursuivre et développer le commerce des fourrures, les compagnies déplacent leurs activités vers le Nord-Ouest et établissent de nouveaux postes de traite (une action entreprise par les compagnies afin de développer le commerce vers le Nord-Ouest)."
+    guide: "Le traité de Paris de 1783 accorde aux États-Unis les territoires situés au sud des Grands Lacs (un territoire perdu à la suite du traité de Paris de 1783). Cette perte territoriale complique les activités des compagnies de fourrures et l’accès à certaines routes commerciales (une conséquence sur les activités des compagnies de fourrures). Afin de poursuivre et développer le commerce des fourrures, les compagnies déplacent leurs activités vers le Nord-Ouest et établissent de nouveaux postes de traite (une action entreprise par les compagnies afin de développer le commerce vers le Nord-Ouest).",
+    updatedAt: "2026-06-08T13:19:53.378Z"
   },
   {
     id: "Q118",
@@ -18308,5 +18832,989 @@ const QUESTIONS = [
     },
     guide: "La guerre de la Conquête se termine par la victoire britannique ou la cession de la colonie à la Grande-Bretagne (l'issue de la guerre de la Conquête). Après 1760, les marchands britanniques remplacent progressivement les marchands français dans les activités commerciales (un changement dans le groupe de marchands dominant le commerce). Par conséquent, le commerce de la colonie est davantage orienté vers l'Empire britannique (une conséquence sur l'économie coloniale).",
     updatedAt: "2026-06-08T12:19:13.456Z"
+  },
+  {
+    id: "Q282",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez la principale activité économique pratiquée par la majorité des habitants de la Province de Québec vers 1780.",
+    aspects: [
+      {
+        aspect: "Économie coloniale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« À la fin du XVIIIe siècle, la majorité des habitants de la Province de Québec vivent à la campagne et tirent principalement leurs moyens de subsistance du travail de la terre. »",
+            source: "Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord, PUL, 1991."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "L'agriculture.",
+    updatedAt: "2026-06-08T12:23:18.955Z"
+  },
+  {
+    id: "Q283",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de l'augmentation de la production de blé dans la Province de Québec au XVIIIe siècle.",
+    aspects: [
+      {
+        aspect: "Économie coloniale"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "production_blé_minots.png",
+            soustitre: "Production de blé (minots) dans la Province de Québec (1750-1790)",
+            source: "Graphique réalisé à partir de données pédagogiques inspirées de Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord (1991)."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "L'augmentation des surplus agricoles ou l'augmentation des exportations de blé.",
+    updatedAt: "2026-06-08T12:38:17.314Z"
+  },
+  {
+    id: "Q284",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez un groupe d'immigrants britanniques qui s'établit dans la Province de Québec après 1760.",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après la Conquête, plusieurs marchands, fonctionnaires et soldats démobilisés originaires des îles Britanniques choisissent de demeurer dans la Province de Québec. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 2, Septentrion."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les marchands britanniques ou les soldats britanniques démobilisés.",
+    updatedAt: "2026-06-08T13:23:05.173Z"
+  },
+  {
+    id: "Q285",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez le nom du groupe de population qui revient s'établir dans la Province de Québec après la Déportation.",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Plusieurs familles qui avaient été dispersées lors des événements de 1755 retournent progressivement dans les colonies britanniques d'Amérique du Nord. Certaines choisissent de s'établir dans la Province de Québec, notamment dans les régions côtières du golfe du Saint-Laurent. »",
+            source: "Adapté de Naomi E. S. Griffiths, The Acadians: Creation of a People, McGraw-Hill Ryerson, 1973."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les Acadiens.",
+    updatedAt: "2026-06-08T13:24:21.093Z"
+  },
+  {
+    id: "Q286",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez le principal groupe composant la population de la Province de Québec vers 1790.",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "composition_population_1790.png",
+            soustitre: "Répartition de la population de la Province de Québec vers 1790",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les Canadiens ou les Canadiens francophones.",
+    updatedAt: "2026-06-08T15:11:52.808Z"
+  },
+  {
+    id: "Q287",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez la langue parlée par la majorité de la population de la Province de Québec vers 1790.",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "langues_parlees_1790.png",
+            soustitre: "Langues parlées dans la Province de Québec vers 1790",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le français.",
+    updatedAt: "2026-06-08T13:37:42.803Z"
+  },
+  {
+    id: "Q288",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez le phénomène démographique responsable de l'augmentation de la population canadienne après la Conquête.",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« À la fin du XVIIIe siècle, les familles canadiennes comptent souvent plusieurs enfants. Cette situation contribue à la croissance de la population de la colonie. »",
+            source: "Adapté de Marcel Trudel, Initiation à la Nouvelle-France."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "L'accroissement naturel",
+    updatedAt: "2026-06-08T13:39:59.026Z"
+  },
+  {
+    id: "Q289",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez une profession exercée par la bourgeoisie professionnelle canadienne.",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Plusieurs Canadiens instruits occupent des fonctions nécessitant une formation spécialisée. Ils jouent un rôle important dans les tribunaux, les bureaux de notaires et les services médicaux de la colonie. »",
+            soustitre: "Indiquez une profession exercée par la bourgeoisie professionnelle canadienne.",
+            source: "Adapté de Gilles Laporte, Brève histoire politique du Québec."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Notaire ou avocat ou médecin.",
+    updatedAt: "2026-06-08T13:43:04.698Z"
+  },
+  {
+    id: "Q290",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une raison qui explique l'arrivée de Britanniques dans la Province de Québec après 1763.",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après la Conquête, plusieurs marchands, fonctionnaires et militaires britanniques s'installent dans la Province de Québec afin d'administrer la colonie et de profiter des nouvelles possibilités économiques. »",
+            source: "Adapté de Marcel Trudel, Initiation à la Nouvelle-France."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "La Province de Québec devient une colonie britannique.",
+    updatedAt: "2026-06-08T13:55:22.741Z"
+  },
+  {
+    id: "Q291",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux historiens sur l'évolution démographique de la Province de Québec. Sur quel point précis ces historiens sont-ils d'accord ?",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les familles canadiennes de la fin du XVIIIᵉ siècle comptent souvent plusieurs enfants, ce qui contribue à l'augmentation rapide de la population de la colonie. »",
+            source: "Adapté de Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord, PUL, 1991."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« La population canadienne se distingue par un nombre élevé de naissances. Cette situation favorise une croissance démographique soutenue au cours du XVIIIᵉ siècle. »",
+            source: "Adapté de Marcel Trudel, Histoire de la Nouvelle-France."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les deux historiens sont d'accord pour dire que la population canadienne augmente rapidement grâce à l'accroissement naturel.",
+    updatedAt: "2026-06-08T13:59:39.248Z"
+  },
+  {
+    id: "Q292",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Cause et conséquence",
+    enonce: "À partir des documents A et B, indiquez une cause et une conséquence de l'accroissement naturel des Canadiens dans la Province de Québec.",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les familles canadiennes de la fin du XVIIIᵉ siècle comptent souvent plusieurs enfants, ce qui contribue à l'augmentation rapide de la population de la colonie. »",
+            source: "Adapté de Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord, PUL, 1991."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« La croissance de la population entraîne l'ouverture de nouvelles terres agricoles afin de répondre aux besoins d'un nombre grandissant d'habitants dans la colonie. »",
+            source: "Adapté de Gilles Laporte, Histoire du Québec : une société nord-américaine, Chenelière, 2014."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "cause-consequence"
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Cause",
+        "Conséquence"
+      ],
+      rangees: [
+        [
+          "A",
+          "B"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-08T14:02:38.890Z"
+  },
+  {
+    id: "Q293",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Divergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux historiens sur les réfugiés acadiens dans la Province de Québec. Sur quel point précis ces historiens sont-ils en désaccord ?",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« L'arrivée des réfugiés acadiens contribue à accroître la population de la colonie, mais leur nombre demeure relativement faible comparativement à celui des Canadiens. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 2."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Bien que moins nombreux que les Canadiens, les Acadiens jouent un rôle important dans le peuplement de certaines régions où ils forment des communautés durables. »",
+            source: "Adapté de Gilles Laporte, Histoire du Québec : une société nord-américaine."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les historiens sont en désaccord sur l'importance du rôle joué par les réfugiés acadiens dans le peuplement de la Province de Québec.",
+    updatedAt: "2026-06-08T14:04:56.438Z"
+  },
+  {
+    id: "Q294",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de l'arrivée d'immigrants britanniques sur les lieux de culte de la colonie.",
+    aspects: [
+      {
+        aspect: "Église anglicane"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "eglise_anglicane_1780.png",
+            soustitre: "Lieu de culte anglican à Montréal vers 1790",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "La construction d'églises anglicanes.",
+    updatedAt: "2026-06-08T14:21:37.586Z"
+  },
+  {
+    id: "Q295",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P3 — 1760 – 1791",
+    points: 2,
+    soustag: "Différence",
+    enonce: "À partir des documents A et B, indiquez une différence entre les écoles catholiques et les écoles anglicanes dans la Province de Québec vers 1790.",
+    aspects: [
+      {
+        aspect: "Église anglicane"
+      },
+      {
+        aspect: "Église catholique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les Ursulines enseignent le catéchisme et la lecture dans plusieurs établissements qu'elles administrent dans la colonie à la fin du XVIIIᵉ siècle. »",
+            source: "Adapté de Micheline Dumont, Les Ursulines de Québec."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Des écoles relevant de l'Église d'Angleterre sont créées après la Conquête afin de répondre aux besoins des nouveaux arrivants établis dans la colonie. »",
+            source: "Adapté de John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les écoles catholiques sont dirigées par l'Église catholique ou des communautés religieuses catholiques, tandis que les écoles anglicanes sont dirigées par l'Église anglicane.",
+    updatedAt: "2026-06-08T14:14:19.061Z"
+  },
+  {
+    id: "Q296",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s'il y a changement ou continuité dans la présence des institutions religieuses dans la colonie entre 1750 et 1790. Justifiez votre réponse par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Église anglicane"
+      },
+      {
+        aspect: "Église catholique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "eglise_catholique_n-f_1700.png",
+            soustitre: "Lieu de culte catholique dans la colonie vers 1750",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Après la Conquête, les autorités britanniques mettent en place leurs principales institutions dans la colonie afin de répondre aux besoins de la population nouvellement arrivée. »",
+            source: "Adapté de John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec, Septentrion, 2009."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Changement\nIl y a changement, car vers 1790 des institutions de l'Église anglicane sont présentes dans la colonie alors qu'en 1750 les institutions religieuses sont principalement catholiques.\n\nContinuité\nIl y a continuité, car en 1750 comme en 1790, des institutions religieuses jouent un rôle important dans l'enseignement (ou les soins aux malades) dans la colonie.",
+    updatedAt: "2026-06-08T15:11:10.844Z"
+  },
+  {
+    id: "Q297",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s'il y a changement ou continuité dans la diversité des groupes religieux présents dans la colonie entre 1750 et 1790. Justifiez votre réponse par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Église anglicane"
+      },
+      {
+        aspect: "Église catholique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Au milieu du XVIIIᵉ siècle, les paroisses catholiques sont présentes dans l'ensemble des régions habitées de la colonie et jouent un rôle important auprès de la population. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 1."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "eglise_anglicane_1780.png",
+            soustitre: "Lieu de culte anglican à Montréal vers 1790",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Changement\nIl y a changement, car en 1750 les institutions religieuses présentes dans la colonie sont principalement catholiques, tandis qu'en 1790 des institutions religieuses britanniques (ou anglicanes) sont également présentes.\n\n\nContinuité\nIl y a continuité, car en 1750 comme en 1790, l'Église catholique est présente dans la colonie.",
+    updatedAt: "2026-06-08T14:20:42.537Z"
+  },
+  {
+    id: "Q298",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    soustag: "Position – 3 acteurs",
+    enonce: "Les documents A à C présentent la position de trois acteurs sur un enjeu de la vie religieuse vers les années 1790. Nommez l’acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les institutions de l'Église d'Angleterre devraient occuper une place plus importante dans la colonie afin de mieux refléter son appartenance à l'Empire britannique. »",
+            auteur: "Adam Lymburner - marchand",
+            source: "Adapté des revendications de marchands britanniques de Québec."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les Canadiens doivent pouvoir conserver leurs institutions religieuses et continuer à pratiquer librement la religion catholique. »",
+            auteur: "Jean-Olivier Briand - évêque",
+            source: "Adapté de Mgr Briand."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Le maintien de la religion catholique contribue à la stabilité de la colonie et favorise la loyauté de la population canadienne. »",
+            auteur: "Gouverneur Haldimand",
+            source: "Adapté de Frederick Haldimand."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Lymburner (marchand britannique) affirme que l’Église anglicane devrait occuper une place plus importante dans la colonie alors que Briand (évêque catholique) et Haldimand (gouverneur) appuient le maintien des institutions catholiques.",
+    updatedAt: "2026-06-08T14:31:21.622Z"
+  },
+  {
+    id: "Q299",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    enonce: "Expliquez comment les familles canadiennes contribue à l'expansion du territoire occupé dans la Province de Québec vers 1790.\n\nRépondez à la question en précisant :\n\n• une caractéristique des familles canadiennes;\n• une transformation démographique;\n• un effet sur l'occupation du territoire.",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les familles canadiennes de la fin du XVIIIᵉ siècle comptent souvent plusieurs enfants, ce qui favorise une croissance rapide de la population. »",
+            source: "Adapté de Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "populaton_1760_1790.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« À la fin du XVIIIᵉ siècle, le peuplement s'étend vers de nouvelles portions de la vallée du Saint-Laurent, où des terres sont défrichées pour répondre aux besoins d'une population croissante. »",
+            source: "Adapté de Serge Courville, Le Québec : genèses et mutations du territoire, Presses de l'Université Laval, 2000."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Les familles canadiennes comptent souvent plusieurs enfants (caractéristique des familles canadiennes), ce qui entraîne une augmentation de la population (transformation démographique). Cette croissance démographique favorise le défrichement de nouvelles terres et l'expansion du territoire occupé (effet sur l'occupation du territoire).",
+    updatedAt: "2026-06-08T14:55:35.922Z"
+  },
+  {
+    id: "Q300",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P3 — 1760 – 1791",
+    points: 3,
+    enonce: "Expliquez comment l'immigration britannique transforme la population de la Province de Québec vers 1790.\n\nRépondez à la question en précisant :\n\n• un groupe d'immigrants britanniques;\n• une transformation démographique;\n• un effet sur la composition de la population.",
+    aspects: [
+      {
+        aspect: "Situation sociodémographique"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après la Conquête, des marchands, des fonctionnaires et d'anciens militaires britanniques s'établissent dans la Province de Québec afin d'y poursuivre leurs activités. »",
+            source: "Adapté de John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec, 2009."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "composition_population_1760-1790.png",
+            soustitre: "Composition de la population de la Province de Québec entre 1760 et 1790 (%)",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« L'arrivée de nouveaux habitants venus des îles Britanniques modifie progressivement la composition de la population et accroît la diversité culturelle de la colonie. »",
+            source: "Adapté de Gilles Laporte, Histoire du Québec : une société nord-américaine, 2014."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Des marchands, fonctionnaires ou anciens militaires britanniques s'établissent dans la colonie (groupe d'immigrants britanniques). Leur arrivée augmente la proportion d'habitants d'origine britannique (transformation démographique). La composition de la population devient plus diversifiée (effet sur la composition de la population).",
+    updatedAt: "2026-06-08T15:10:25.850Z"
+  },
+  {
+    id: "Q301",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Acte constitutionnel"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« En accordant une assemblée élue tout en maintenant l’autorité du gouverneur et de l’exécutif, l’Acte constitutionnel établit les bases des conflits politiques qui marqueront les décennies suivantes. »",
+            soustitre: "Acte constitutionnel",
+            source: "Allan Greer, Habitants et Patriotes : la Rébellion de 1837 dans les campagnes du Bas-Canada, Montréal, Boréal, 1997."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1790-1850.png"
+    },
+    guide: "A",
+    updatedAt: "2026-06-09T00:35:03.978Z"
+  },
+  {
+    id: "Q302",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Commerce du bois"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La fermeture d’une partie des marchés européens aux produits britanniques contribue à faire des ressources forestières du Bas-Canada un élément stratégique pour l’Empire. »",
+            soustitre: "Blocus continental",
+            source: "Serge Courville, Le Québec : genèses et mutations du territoire, Québec, Presses de l’Université Laval, 2000."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1790-1850.png"
+    },
+    guide: "B",
+    updatedAt: "2026-06-09T00:36:24.268Z"
+  },
+  {
+    id: "Q303",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Guerre anglo-américaine de 1812"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "bataille_chateauguay.png",
+            soustitre: "Bataille de Chateauguay",
+            source: "Illustration de C. W. Jefferys, Bibliothèque et Archives Canada."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1790-1850.png"
+    },
+    guide: "B",
+    updatedAt: "2026-06-09T00:39:05.263Z"
+  },
+  {
+    id: "Q304",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Guerre anglo-américaine de 1812"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le canal de Lachine facilite la circulation des marchandises et contribue à faire de Montréal un centre commercial de première importance. »",
+            soustitre: "Inauguration du canal Lachine",
+            source: "Serge Courville, Le Québec : un territoire en construction, Québec, Presses de l’Université Laval, 2008."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1790-1850.png"
+    },
+    guide: "C",
+    updatedAt: "2026-06-09T00:40:08.089Z"
+  },
+  {
+    id: "Q305",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Débats parlementaires"
+      },
+      {
+        aspect: "Idées libérales et républicaines"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« En adoptant le nom de Parti patriote, le mouvement affirme plus clairement sa volonté de défendre les intérêts de la majorité canadienne. »",
+            soustitre: "Le Parti canadien devient le Parti patriote",
+            source: "Gilles Laporte, Patriotes et Loyaux : leadership régional et mobilisation politique en 1837 et 1838, Québec, Septentrion, 2004."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1790-1850.png"
+    },
+    guide: "C",
+    updatedAt: "2026-06-09T00:41:51.882Z"
+  },
+  {
+    id: "Q306",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Soulèvements de 1837-1838"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les Quatre-vingt-douze Résolutions constituent la synthèse des revendications formulées depuis plusieurs années par les élus du Parti patriote. »",
+            soustitre: "Adoption des 92 résolutions",
+            source: "Gilles Laporte, Brève histoire des Patriotes, Québec, Septentrion, 2015."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1790-1850.png"
+    },
+    guide: "C",
+    updatedAt: "2026-06-09T00:42:47.579Z"
+  },
+  {
+    id: "Q307",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Soulèvements de 1837-1838"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les affrontements résultent d’un long processus de tensions politiques, sociales et nationales qui s’est développé au sein du Bas-Canada. »",
+            soustitre: "Rébellions des Patriotes",
+            source: "Allan Greer, Habitants et Patriotes : la Rébellion de 1837 dans les campagnes du Bas-Canada, Montréal, Boréal, 1997."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1790-1850.png"
+    },
+    guide: "D",
+    updatedAt: "2026-06-09T00:43:35.190Z"
   }
 ]
