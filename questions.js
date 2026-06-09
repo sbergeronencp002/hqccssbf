@@ -6257,6 +6257,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q314": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -20113,5 +20130,36 @@ const QUESTIONS = [
     },
     guide: "Famille linguistique iroquoienne.",
     updatedAt: "2026-06-09T03:13:20.440Z"
+  },
+  {
+    id: "Q314",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "Indiquez la famille linguistique à laquelle appartiennent les Innus.",
+    aspects: [
+      {
+        aspect: "Premiers occupants du territoire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les Innus occupent un immense territoire correspondant en grande partie au Bouclier canadien. Ils y pratiquent la chasse, la pêche et le piégeage en se déplaçant selon les saisons et les ressources disponibles. »",
+            source: "Denys Delâge, Le pays renversé : Amérindiens et Européens en Amérique du Nord-Est, 1600-1664, Montréal, Boréal, 1991."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Famille linguistique algonquienne.",
+    updatedAt: "2026-06-09T03:16:19.575Z"
   }
 ]
