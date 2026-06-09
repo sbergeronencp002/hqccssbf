@@ -6522,6 +6522,17 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q329": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
   }
 }
 
@@ -6990,6 +7001,9 @@ const IMAGE_DB = {
   },
   "monseigneur_laval_eveque.png": {
     src: "images/monseigneur_laval_eveque.png"
+  },
+  "org_pol_apres_1784.png": {
+    src: "images/org_pol_apres_1784.png"
   }
 }
 
@@ -20955,5 +20969,48 @@ const QUESTIONS = [
     },
     guide: "Mieux administrer la colonie ou exercer un contrôle plus direct sur la colonie ou instaurer le gouvernement royal ou la mauvaise administration de la colonie.",
     updatedAt: "2026-06-09T15:26:55.277Z"
+  },
+  {
+    id: "Q329",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans l’organisation politique de la colonie entre 1774 et 1791. Justifiez votre choix par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Acte constitutionnel"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "org_pol_apres_1784.png",
+            soustitre: "1774",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "org_pol_acte_const.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Changement\nIl y a changement, car en 1791, l’Acte constitutionnel crée une Chambre d’assemblée élue par la population et divise la colonie en Haut-Canada et Bas-Canada, alors qu’en 1774, la Province de Québec ne possède pas de Chambre d’assemblée et forme une seule colonie.\n\nou \n\nIl y a changement, car en 1791, chaque colonie possède une Chambre d’assemblée élue, tandis qu’en 1774, le gouverneur dirige avec le Conseil exécutif et le Conseil législatif sans assemblée élue.\n\nContinuité\nIl y a continuité, car en 1774 comme en 1791, le gouverneur demeure nommé par les autorités britanniques et conserve un rôle important dans l'administration de la colonie.",
+    updatedAt: "2026-06-09T16:20:14.190Z"
   }
 ]
