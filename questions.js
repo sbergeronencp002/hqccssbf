@@ -6500,6 +6500,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q328": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -20897,5 +20919,37 @@ const QUESTIONS = [
     },
     guide: "François de Montmorency-Laval ou Monseigneur de Laval.",
     updatedAt: "2026-06-09T15:18:51.495Z"
+  },
+  {
+    id: "Q328",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P2 — 1608 – 1760",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une raison qui pousse le roi de France à instaurer le Conseil souverain en 1663.",
+    aspects: [
+      {
+        aspect: "Gouvernement royal"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« En 1663, le roi Louis XIV retire à la Compagnie des Cent-Associés la responsabilité d'administrer la colonie et instaure le gouvernement royal. Il crée alors le Conseil souverain afin d'assurer une meilleure administration de la Nouvelle-France. »",
+            source: "Adapté de Marcel Trudel, Histoire de la Nouvelle-France."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Mieux administrer la colonie ou exercer un contrôle plus direct sur la colonie ou instaurer le gouvernement royal ou la mauvaise administration de la colonie.",
+    updatedAt: "2026-06-09T15:26:55.277Z"
   }
 ]
