@@ -6466,6 +6466,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q326": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -6928,6 +6945,9 @@ const IMAGE_DB = {
   },
   "samuel_champlain.png": {
     src: "images/samuel_champlain.png"
+  },
+  "jean_talon.png": {
+    src: "images/jean_talon.png"
   }
 }
 
@@ -20792,5 +20812,36 @@ const QUESTIONS = [
     },
     guide: "Samuel de Champlain.",
     updatedAt: "2026-06-09T15:09:50.360Z"
+  },
+  {
+    id: "Q326",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez le nom du premier intendant de la Nouvelle-France.",
+    aspects: [
+      {
+        aspect: "Gouvernement royal"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "jean_talon.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Jean Talon.",
+    updatedAt: "2026-06-09T15:14:15.470Z"
   }
 ]
