@@ -6807,6 +6807,9 @@ const IMAGE_DB = {
   },
   "tradition_chamanique_1500.png": {
     src: "images/tradition_chamanique_1500.png"
+  },
+  "tradition_orale_1500.png": {
+    src: "images/tradition_orale_1500.png"
   }
 }
 
@@ -8871,7 +8874,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "Nommez une façon dont les connaissances sont transmises chez les Autochtones.",
+    enonce: "Indiquez le moyen principalement utilisé par les Autochtones pour transmettre leur histoire, leurs valeurs et leurs connaissances.",
     aspects: [
       {
         aspect: "Rapports sociaux chez les Autochtones"
@@ -8883,8 +8886,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "tradition_orale.jpg",
-            source: "Récitus."
+            ref: "tradition_orale_1500.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
@@ -8893,7 +8896,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 1
     },
-    guide: "Par la tradition orale ou par les récits et les légendes."
+    guide: "La tradition orale.",
+    updatedAt: "2026-06-09T13:11:41.200Z"
   },
   {
     id: "Q48",
