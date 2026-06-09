@@ -8045,7 +8045,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "carte_premiers_occ_peuplement.png",
-            source: "Adaptation pédagogique inspirée de cartes historiques du peuplement de l'Amérique par la Béringie."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
@@ -8054,7 +8054,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 1
     },
-    guide: "Le détroit de Béring (ou la Béringie)."
+    guide: "Le détroit de Béring (ou la Béringie).",
+    updatedAt: "2026-06-09T03:12:05.846Z"
   },
   {
     id: "Q31",
