@@ -825,8 +825,13 @@ async function fetchFreshState(token) {
   const bytes = new Uint8Array(binary.length);
   for(let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
   const content = new TextDecoder('utf-8').decode(bytes);
-  const fn = new Function(content + '\nreturn { REGLETTES, IMAGE_DB, QUESTIONS };');
-  const result = fn();
+  let result;
+  try {
+    const fn = new Function(content + '\nreturn { REGLETTES, IMAGE_DB, QUESTIONS };');
+    result = fn();
+  } catch(e) {
+    throw new Error('questions.js est invalide ou corrompu : ' + e.message);
+  }
   currentQuestions = result.QUESTIONS;
   currentReglettes = result.REGLETTES;
   currentImageDb   = result.IMAGE_DB;
@@ -1056,8 +1061,13 @@ async function loadQuestionsJs() {
     const bytes = new Uint8Array(binary.length);
     for(let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
     const content = new TextDecoder('utf-8').decode(bytes);
-    const fn = new Function(content + '\n return { REGLETTES, IMAGE_DB, QUESTIONS };');
-    const result = fn();
+    let result;
+    try {
+      const fn = new Function(content + '\n return { REGLETTES, IMAGE_DB, QUESTIONS };');
+      result = fn();
+    } catch(e) {
+      throw new Error('questions.js est invalide ou corrompu : ' + e.message);
+    }
     currentQuestions = result.QUESTIONS;
     currentReglettes = result.REGLETTES;
     currentImageDb   = result.IMAGE_DB;
@@ -1705,6 +1715,8 @@ async function publier() {
           if(idx2 !== -1) currentQuestions[idx2] = q; else currentQuestions.push(q);
         } else if(!currentQuestions.find(x => x.id === q.id)) {
           currentQuestions.push(q);
+        } else {
+          throw new Error(`L'identifiant ${q.id} a été ajouté par un autre utilisateur entre-temps. Rechargez la page (F5).`);
         }
         currentReglettes[q.id] = r;
         // Re-apply IMAGE_DB entries (fetchFreshState reset currentImageDb)

@@ -518,7 +518,10 @@ function initSite() {
       const ids = JSON.parse(saved).filter(id => QUESTIONS.some(q => q.id === id));
       if(ids.length) { panier = ids; updatePanierBar(); refreshPanierButtons(); }
     }
-  } catch(e) {}
+  } catch(e) {
+    console.warn('Panier corrompu dans localStorage, réinitialisation.', e);
+    localStorage.removeItem('hqc_panier');
+  }
 }
 initSite();
 
@@ -528,7 +531,9 @@ window.addEventListener('storage', e => {
     panier = JSON.parse(e.newValue || '[]').filter(id => QUESTIONS.some(q => q.id === id));
     updatePanierBar();
     refreshPanierButtons();
-  } catch(_) {}
+  } catch(_) {
+    console.warn('Panier: données cross-tab invalides, ignorées.');
+  }
 });
 
 document.addEventListener('keydown', e => {
@@ -1189,6 +1194,7 @@ async function resolveImages(neededKeys) {
 }
 
 // ===== GÉNÉRATION DOCX (browser) =====
+let _docxLoadPromise = null;
 async function genererDocx(includeGuide=false) {
   if(panier.length === 0) return;
   const btn = includeGuide ? document.getElementById('btn-generer-guide') : document.getElementById('btn-generer');
@@ -1198,13 +1204,16 @@ async function genererDocx(includeGuide=false) {
 
   try {
     if(typeof docx === 'undefined') {
-      await new Promise((res, rej) => {
-        const s = document.createElement('script');
-        s.src = 'docx.js';
-        s.onload = res;
-        s.onerror = () => rej(new Error('Impossible de charger docx.js'));
-        document.head.appendChild(s);
-      });
+      if(!_docxLoadPromise) {
+        _docxLoadPromise = new Promise((res, rej) => {
+          const s = document.createElement('script');
+          s.src = 'docx.js';
+          s.onload = res;
+          s.onerror = () => { _docxLoadPromise = null; rej(new Error('Impossible de charger docx.js')); };
+          document.head.appendChild(s);
+        });
+      }
+      await _docxLoadPromise;
     }
     const panierQuestions = panier.map(id => Q_MAP.get(id)).filter(Boolean);
     const neededKeys = new Set();

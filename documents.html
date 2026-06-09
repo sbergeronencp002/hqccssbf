@@ -266,7 +266,15 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
 
 <script src="questions.js?v=1"></script>
 <script>
-const TOKEN = 'ghp_6Kflu9eozLnS6FpSFzxu7W' + '7uBGG4DD1uMGt4';
+// Token lu depuis le stockage partagé avec admin.html (jamais hardcodé)
+function getToken() {
+  return localStorage.getItem('gh_token') || sessionStorage.getItem('gh_token') || '';
+}
+function requireToken() {
+  const t = getToken();
+  if (!t) throw new Error('Token GitHub manquant — connectez-vous dans admin.html d\'abord.');
+  return t;
+}
 const REPO  = 'sbergeronencp002/hqccssbf';
 const API   = 'https://api.github.com/repos/' + REPO + '/contents/';
 
@@ -510,7 +518,7 @@ async function deleteOrphan(img) {
   try {
     // 1. Get SHA of image file
     const r1 = await fetch(API + 'images/' + encodeURIComponent(img), {
-      headers: {Authorization: 'token ' + TOKEN}
+      headers: {Authorization: 'token ' + requireToken()}
     });
     if (!r1.ok) throw new Error('Impossible de lire ' + img + ' (' + r1.status + ')');
     const d1 = await r1.json();
@@ -518,13 +526,13 @@ async function deleteOrphan(img) {
     // 2. Delete image file
     const r2 = await fetch(API + 'images/' + encodeURIComponent(img), {
       method: 'DELETE',
-      headers: {Authorization: 'token ' + TOKEN, 'Content-Type': 'application/json'},
+      headers: {Authorization: 'token ' + requireToken(), 'Content-Type': 'application/json'},
       body: JSON.stringify({message: 'Supprimer image orpheline ' + img, sha: d1.sha})
     });
     if (!r2.ok) throw new Error('Échec suppression (' + r2.status + ')');
 
     // 3. Remove from IMAGE_DB in questions.js
-    const rq = await fetch(API + 'questions.js', {headers: {Authorization: 'token ' + TOKEN}});
+    const rq = await fetch(API + 'questions.js', {headers: {Authorization: 'token ' + requireToken()}});
     if (!rq.ok) throw new Error('Impossible de lire questions.js (' + rq.status + ')');
     const dq = await rq.json();
     const rawBytes = Uint8Array.from(atob(dq.content.replace(/\n/g,'')), c => c.charCodeAt(0));
@@ -537,7 +545,7 @@ async function deleteOrphan(img) {
       let binary = ''; encBytes.forEach(b => binary += String.fromCharCode(b));
       const rp = await fetch(API + 'questions.js', {
         method: 'PUT',
-        headers: {Authorization: 'token ' + TOKEN, 'Content-Type': 'application/json'},
+        headers: {Authorization: 'token ' + requireToken(), 'Content-Type': 'application/json'},
         body: JSON.stringify({message: 'Retirer ' + img + ' de IMAGE_DB', content: btoa(binary), sha: dq.sha})
       });
       if (!rp.ok) throw new Error('Échec mise à jour questions.js (' + rp.status + ')');
@@ -622,14 +630,14 @@ async function confirmReplace() {
   status.textContent = 'Récupération du SHA…';
   try {
     const r = await fetch(API + 'images/' + encodeURIComponent(replaceTarget), {
-      headers: {Authorization: 'token ' + TOKEN}
+      headers: {Authorization: 'token ' + requireToken()}
     });
     if (!r.ok) throw new Error('Impossible de lire ' + replaceTarget + ' (' + r.status + ')');
     const d = await r.json();
     status.textContent = 'Envoi…';
     const rp = await fetch(API + 'images/' + encodeURIComponent(replaceTarget), {
       method: 'PUT',
-      headers: {Authorization: 'token ' + TOKEN, 'Content-Type': 'application/json'},
+      headers: {Authorization: 'token ' + requireToken(), 'Content-Type': 'application/json'},
       body: JSON.stringify({message: 'Remplacer ' + replaceTarget, content: replaceB64, sha: d.sha})
     });
     if (!rp.ok) throw new Error('Échec de l\'envoi (' + rp.status + ')');
@@ -682,7 +690,7 @@ async function confirmRename() {
   try {
     // 1. Get old file (SHA + content)
     const r1 = await fetch(API + 'images/' + encodeURIComponent(renameTarget), {
-      headers: {Authorization: 'token ' + TOKEN}
+      headers: {Authorization: 'token ' + requireToken()}
     });
     if (!r1.ok) throw new Error('Impossible de lire ' + renameTarget + ' (' + r1.status + ')');
     const d1 = await r1.json();
@@ -691,7 +699,7 @@ async function confirmRename() {
     status.textContent = 'Création de ' + newName + '…';
     const r2 = await fetch(API + 'images/' + encodeURIComponent(newName), {
       method: 'PUT',
-      headers: {Authorization: 'token ' + TOKEN, 'Content-Type': 'application/json'},
+      headers: {Authorization: 'token ' + requireToken(), 'Content-Type': 'application/json'},
       body: JSON.stringify({message: 'Rename ' + renameTarget + ' → ' + newName, content: d1.content})
     });
     if (!r2.ok) throw new Error('Échec création ' + newName + ' (' + r2.status + ')');
@@ -700,7 +708,7 @@ async function confirmRename() {
     status.textContent = 'Suppression de ' + renameTarget + '…';
     const r3 = await fetch(API + 'images/' + encodeURIComponent(renameTarget), {
       method: 'DELETE',
-      headers: {Authorization: 'token ' + TOKEN, 'Content-Type': 'application/json'},
+      headers: {Authorization: 'token ' + requireToken(), 'Content-Type': 'application/json'},
       body: JSON.stringify({message: 'Rename ' + renameTarget + ' → ' + newName, sha: d1.sha})
     });
     if (!r3.ok) throw new Error('Échec suppression ' + renameTarget + ' (' + r3.status + ')');
@@ -708,13 +716,15 @@ async function confirmRename() {
     // 4. Update questions.js
     status.textContent = 'Mise à jour de questions.js…';
     const rq = await fetch(API + 'questions.js', {
-      headers: {Authorization: 'token ' + TOKEN}
+      headers: {Authorization: 'token ' + requireToken()}
     });
     if (!rq.ok) throw new Error('Impossible de lire questions.js (' + rq.status + ')');
     const dq = await rq.json();
     const rawBytes = Uint8Array.from(atob(dq.content.replace(/\n/g,'')), c => c.charCodeAt(0));
     const oldContent = new TextDecoder('utf-8').decode(rawBytes);
-    const newContent = oldContent.split(renameTarget).join(newName);
+    // Remplace uniquement les occurrences entre guillemets (évite de toucher les énoncés)
+    const escapedTarget = renameTarget.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const newContent = oldContent.replace(new RegExp(`(['"])${escapedTarget}(['"])`, 'g'), `$1${newName}$2`);
     if (newContent === oldContent) {
       status.className = 'rename-status warn';
       status.textContent = 'Avertissement : aucune référence à ' + renameTarget + ' trouvée dans questions.js.';
@@ -725,7 +735,7 @@ async function confirmRename() {
       const encoded = btoa(binary);
       const rp = await fetch(API + 'questions.js', {
         method: 'PUT',
-        headers: {Authorization: 'token ' + TOKEN, 'Content-Type': 'application/json'},
+        headers: {Authorization: 'token ' + requireToken(), 'Content-Type': 'application/json'},
         body: JSON.stringify({message: 'Rename ' + renameTarget + ' → ' + newName + ' (refs)', content: encoded, sha: dq.sha})
       });
       if (!rp.ok) throw new Error('Échec mise à jour questions.js (' + rp.status + ')');
