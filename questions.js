@@ -7586,10 +7586,9 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document A",
-            texte: "« […] le gouverneur [est] le personnage politique le plus important dans la colonie britannique. Il a le pouvoir de promulguer des lois et des règlements et le devoir d’assurer la sécurité des sujets dans la \ncolonie. »",
-            soustitre: "De 1763 à 1791",
-            source: "Alain DALONGEVILLE (dir.), Présences : une histoire thématique du Québec, manuel de l’élève, histoire et éducation à la citoyenneté, 2e année du 2e cycle du secondaire, Anjou, Les Éditions CEC, 2008, vol. 2, p. 96."
+            titre: "Document B",
+            ref: "org_pol_1774_acte_quebec.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       },
@@ -7600,7 +7599,7 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "De 1791 à 1840",
-            source: "Récitus."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
@@ -7609,7 +7608,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 4
     },
-    guide: "Il y a changement, car il y a une Assemblée législative à partir de 1791 (ou car il y a mise en place d’une chambre d’assemblée durant cette période). \nou \nIl y a continuité, car le gouverneur détient tous les pouvoirs de 1763 à 1840 (ou car le gouverneur a toujours les pleins pouvoirs durant cette période)."
+    guide: "Il y a changement, car il y a une Assemblée législative à partir de 1791 (ou car il y a mise en place d’une chambre d’assemblée durant cette période). \nou \nIl y a continuité, car le gouverneur détient tous les pouvoirs de 1763 à 1840 (ou car le gouverneur a toujours les pleins pouvoirs durant cette période).",
+    updatedAt: "2026-06-09T18:51:14.361Z"
   },
   {
     id: "Q13",
