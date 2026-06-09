@@ -8231,7 +8231,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "Nommez la famille linguistique autochtone qui occupe la vallée du fleuve Saint-Laurent vers 1500.",
+    enonce: "Indiquez le nom de la famille linguistique autochtone qui occupe la vallée du fleuve Saint-Laurent vers 1500.",
     aspects: [
       {
         aspect: "Premiers occupants du territoire"
@@ -8252,7 +8252,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 1
     },
-    guide: "Les Iroquoiens."
+    guide: "Les Iroquoiens.",
+    updatedAt: "2026-06-09T13:54:10.706Z"
   },
   {
     id: "Q32",
