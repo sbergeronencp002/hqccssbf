@@ -6810,6 +6810,9 @@ const IMAGE_DB = {
   },
   "tradition_orale_1500.png": {
     src: "images/tradition_orale_1500.png"
+  },
+  "don_contre-don.png": {
+    src: "images/don_contre-don.png"
   }
 }
 
@@ -8946,7 +8949,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "Nommez une obligation liée à l’échange de présents entre les groupes autochtones.",
+    enonce: "Indiquez la pratique utilisée par plusieurs peuples autochtones pour entretenir leurs alliances grâce à l'échange réciproque de biens.",
     aspects: [
       {
         aspect: "Rapports sociaux chez les Autochtones"
@@ -8958,8 +8961,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Lorsqu’un groupe reçoit un présent, il contracte une obligation envers celui qui l’a offert. Cette obligation consiste à répondre ultérieurement par un autre présent afin de préserver les relations entre les partenaires d’échange. »",
-            auteur: "Marcel Mauss"
+            ref: "don_contre-don.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
@@ -8968,7 +8971,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 1
     },
-    guide: "Offrir un présent à son tour ou rendre un contre-don."
+    guide: "Le don et contre-don.",
+    updatedAt: "2026-06-09T13:15:11.136Z"
   },
   {
     id: "Q50",
