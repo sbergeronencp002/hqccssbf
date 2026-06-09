@@ -6121,6 +6121,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
+  },
+  "Q306": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -19716,5 +19733,38 @@ const QUESTIONS = [
     },
     guide: "C",
     updatedAt: "2026-06-09T00:41:51.882Z"
+  },
+  {
+    id: "Q306",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Soulèvements de 1837-1838"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les Quatre-vingt-douze Résolutions constituent la synthèse des revendications formulées depuis plusieurs années par les élus du Parti patriote. »",
+            soustitre: "Adoption des 92 résolutions",
+            source: "Gilles Laporte, Brève histoire des Patriotes, Québec, Septentrion, 2015."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1790-1850.png"
+    },
+    guide: "C",
+    updatedAt: "2026-06-09T00:42:47.579Z"
   }
 ]
