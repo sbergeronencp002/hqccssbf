@@ -6908,6 +6908,9 @@ const IMAGE_DB = {
   },
   "tradition_chamanique_aines_1500.png": {
     src: "images/tradition_chamanique_aines_1500.png"
+  },
+  "canot_ecorce_echanges.png": {
+    src: "images/canot_ecorce_echanges.png"
   }
 }
 
@@ -9202,7 +9205,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "À partir du document A, nommez un moyen utilisé par les nations autochtones pour transporter des ressources sur les voies d’eau.",
+    enonce: "Indiquez un moyen utilisé par les nations autochtones pour transporter des ressources sur les voies d’eau.",
     aspects: [
       {
         aspect: "Réseaux d'échange autochtones"
@@ -9214,9 +9217,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Les Algonquiens utilisent de longues embarcations faites d’écorce de bouleau. Très légères, elles peuvent être transportées à la main lors des portages et permettent de circuler rapidement sur les rivières et les lacs avec des marchandises. »",
-            auteur: "Samuel de Champlain.",
-            source: "Champlain, Samuel de. Les Voyages de la Nouvelle-France occidentale, dite Canada. Paris, 1613."
+            ref: "canot_ecorce_echanges.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
@@ -9225,7 +9227,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 1
     },
-    guide: "Le canot d’écorce."
+    guide: "Le canot d’écorce.",
+    updatedAt: "2026-06-09T14:42:45.101Z"
   },
   {
     id: "Q55",
