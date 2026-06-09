@@ -6449,6 +6449,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q325": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -6908,6 +6925,9 @@ const IMAGE_DB = {
   },
   "troc_1500.png": {
     src: "images/troc_1500.png"
+  },
+  "samuel_champlain.png": {
+    src: "images/samuel_champlain.png"
   }
 }
 
@@ -20738,5 +20758,36 @@ const QUESTIONS = [
     },
     guide: "Transmettre les connaissances ou les traditions ou les valeurs.",
     updatedAt: "2026-06-09T14:36:44.054Z"
+  },
+  {
+    id: "Q325",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P2 — 1608 – 1760",
+    points: 1,
+    enonce: "Indiquez le nom du premier gouverneur de la Nouvelle-France.",
+    aspects: [
+      {
+        aspect: "Monopole des compagnies"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "samuel_champlain.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Samuel de Champlain.",
+    updatedAt: "2026-06-09T15:08:32.706Z"
   }
 ]
