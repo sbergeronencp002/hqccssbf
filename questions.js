@@ -8362,7 +8362,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document D",
-            ref: "campement_algonquien.png"
+            ref: "campement_algonquien.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
@@ -8387,7 +8388,8 @@ const QUESTIONS = [
           "A et C"
         ]
       ]
-    }
+    },
+    updatedAt: "2026-06-09T03:24:04.285Z"
   },
   {
     id: "Q38",
