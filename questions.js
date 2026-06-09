@@ -6816,6 +6816,9 @@ const IMAGE_DB = {
   },
   "education_enfants_1500.png": {
     src: "images/education_enfants_1500.png"
+  },
+  "ceremonie_animisme.png": {
+    src: "images/ceremonie_animisme.png"
   }
 }
 
@@ -15575,8 +15578,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Les peuples autochtones considèrent que les animaux, les plantes, les cours d’eau et les phénomènes naturels sont habités par des esprits avec lesquels il est possible d’entrer en relation. »",
-            source: "Denys Delâge, Le pays renversé. Amérindiens et Européens en Amérique du Nord-Est, 1600-1664, Montréal, Boréal, 1991."
+            ref: "ceremonie_animisme.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
@@ -15585,7 +15588,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 1
     },
-    guide: "L'animisme ou les croyances animistes."
+    guide: "L'animisme.",
+    updatedAt: "2026-06-09T13:44:04.877Z"
   },
   {
     id: "Q197",
