@@ -12387,7 +12387,7 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "gravure_destruction_huronie.png",
             soustitre: "Attaques iroquoises",
-            source: "llustration pédagogique inspirée des gravures de Theodor de Bry portant sur les conflits autochtones en Amérique du Nord."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       },
@@ -12438,7 +12438,8 @@ const QUESTIONS = [
           "D"
         ]
       ]
-    }
+    },
+    updatedAt: "2026-06-09T16:14:23.744Z"
   },
   {
     id: "Q121",
