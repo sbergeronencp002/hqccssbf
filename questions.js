@@ -6525,9 +6525,6 @@ const IMAGE_DB = {
   "tradition_orale.jpg": {
     src: "images/tradition_orale.jpg"
   },
-  "1500_chaman.jpg": {
-    src: "images/1500_chaman.jpg"
-  },
   "1500_reseau_echanges.png": {
     src: "images/1500_reseau_echanges.png"
   },
