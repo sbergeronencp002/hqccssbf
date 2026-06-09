@@ -724,7 +724,9 @@ async function confirmRename() {
     const oldContent = new TextDecoder('utf-8').decode(rawBytes);
     // Remplace uniquement les occurrences entre guillemets (évite de toucher les énoncés)
     const escapedTarget = renameTarget.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const newContent = oldContent.replace(new RegExp(`(['"])${escapedTarget}(['"])`, 'g'), `$1${newName}$2`);
+    const newContent = oldContent
+      .replace(new RegExp(`(['"])${escapedTarget}(['"])`, 'g'), `$1${newName}$2`)
+      .replace(new RegExp(`(['"])images/${escapedTarget}(['"])`, 'g'), `$1images/${newName}$2`);
     if (newContent === oldContent) {
       status.className = 'rename-status warn';
       status.textContent = 'Avertissement : aucune référence à ' + renameTarget + ' trouvée dans questions.js.';
