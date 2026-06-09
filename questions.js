@@ -6053,6 +6053,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
+  },
+  "Q302": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -19510,5 +19527,38 @@ const QUESTIONS = [
     },
     guide: "A",
     updatedAt: "2026-06-09T00:35:03.978Z"
+  },
+  {
+    id: "Q302",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Commerce du bois"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La fermeture d’une partie des marchés européens aux produits britanniques contribue à faire des ressources forestières du Bas-Canada un élément stratégique pour l’Empire. »",
+            soustitre: "Blocus continental",
+            source: "Serge Courville, Le Québec : genèses et mutations du territoire, Québec, Presses de l’Université Laval, 2000."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1790-1850.png"
+    },
+    guide: "B",
+    updatedAt: "2026-06-09T00:36:24.268Z"
   }
 ]
