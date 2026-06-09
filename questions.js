@@ -6787,6 +6787,9 @@ const IMAGE_DB = {
   },
   "société_patrilineaire_1500.png": {
     src: "images/société_patrilineaire_1500.png"
+  },
+  "tradition_chamanique_1500.png": {
+    src: "images/tradition_chamanique_1500.png"
   }
 }
 
@@ -8647,7 +8650,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "Nommez un rôle joué par le chaman chez les sociétés autochtones.",
+    enonce: "Indiquez un rôle joué par le chaman dans les sociétés autochtones.",
     aspects: [
       {
         aspect: "Rapports sociaux chez les Autochtones"
@@ -8659,7 +8662,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "1500_chaman.jpg"
+            ref: "tradition_chamanique_1500.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
@@ -8668,7 +8672,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 1
     },
-    guide: "Il soigne les malades ou dirige des cérémonies ou interprète les rêves ou communique avec les esprits."
+    guide: "Il soigne les malades ou dirige des cérémonies ou interprète les rêves ou communique avec les esprits.",
+    updatedAt: "2026-06-09T13:06:02.574Z"
   },
   {
     id: "Q42",
