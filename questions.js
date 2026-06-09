@@ -9038,7 +9038,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "Nommez le groupe de personnes qui désignent les chefs dans les sociétés iroquoiennes.",
+    enonce: "Indiquez le groupe de personnes qui désignent les chefs dans les sociétés iroquoiennes.",
     aspects: [
       {
         aspect: "Prise de décision chez les Autochtones"
@@ -9051,7 +9051,8 @@ const QUESTIONS = [
           {
             titre: "Document A",
             texte: "« Dans les sociétés iroquoiennes, les femmes aînées de chaque clan choisissent les chefs. Elles peuvent également les remplacer lorsqu’elles estiment qu’ils n’assument plus correctement les responsabilités qui leur ont été confiées. »",
-            auteur: "Bruce G. Trigger"
+            auteur: "Bruce G. Trigger",
+            source: "Adapté de Bruce G. Trigger, Les Enfants d'Aataentsic."
           }
         ]
       }
@@ -9060,7 +9061,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 1
     },
-    guide: "Les femmes aînées du clan ou les mères de clan."
+    guide: "Les femmes aînées du clan ou les mères de clan.",
+    updatedAt: "2026-06-09T14:18:49.570Z"
   },
   {
     id: "Q51",
