@@ -6555,6 +6555,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
+  },
+  "Q331": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -21077,5 +21094,36 @@ const QUESTIONS = [
     },
     guide: "Entre 1774 et 1791, la population obtient des représentants élus grâce à la création d'une Chambre d'assemblée dans le Bas-Canada et le Haut-Canada.\n\nou\n\nEn 1791, la population peut élire des députés à la Chambre d'assemblée, alors qu'en 1774 elle ne participe pas à l'élection d'une institution politique.",
     updatedAt: "2026-06-09T16:24:10.793Z"
+  },
+  {
+    id: "Q331",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez le nom de l’institution composée de députés élus créée par l’Acte constitutionnel.",
+    aspects: [
+      {
+        aspect: "Acte constitutionnel"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "org_pol_1791_acte_const.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Chambre d'assemblée ou assemblée législative.",
+    updatedAt: "2026-06-09T18:39:51.133Z"
   }
 ]
