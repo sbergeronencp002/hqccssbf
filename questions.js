@@ -12323,7 +12323,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             ref: "gravure_destruction_huronie.png",
-            source: "llustration pédagogique inspirée des gravures de Theodor de Bry portant sur les conflits autochtones en Amérique du Nord."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       },
@@ -12353,7 +12353,8 @@ const QUESTIONS = [
       type: "image",
       ref: "ligne_bcAd.png"
     },
-    guide: "C - B - A - D"
+    guide: "C - B - A - D",
+    updatedAt: "2026-06-09T16:14:01.898Z"
   },
   {
     id: "Q120",
