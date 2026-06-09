@@ -6104,6 +6104,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
+  },
+  "Q305": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -19663,5 +19680,41 @@ const QUESTIONS = [
     },
     guide: "C",
     updatedAt: "2026-06-09T00:40:08.089Z"
+  },
+  {
+    id: "Q305",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Débats parlementaires"
+      },
+      {
+        aspect: "Idées libérales et républicaines"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« En adoptant le nom de Parti patriote, le mouvement affirme plus clairement sa volonté de défendre les intérêts de la majorité canadienne. »",
+            soustitre: "Le Parti canadien devient le Parti patriote",
+            source: "Gilles Laporte, Patriotes et Loyaux : leadership régional et mobilisation politique en 1837 et 1838, Québec, Septentrion, 2004."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1790-1850.png"
+    },
+    guide: "C",
+    updatedAt: "2026-06-09T00:41:51.882Z"
   }
 ]
