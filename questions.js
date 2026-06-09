@@ -6572,6 +6572,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q332": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -7043,6 +7065,9 @@ const IMAGE_DB = {
   },
   "org_pol_apres_1784.png": {
     src: "images/org_pol_apres_1784.png"
+  },
+  "territoire_bas-canada_1791.png": {
+    src: "images/territoire_bas-canada_1791.png"
   }
 }
 
@@ -21125,5 +21150,46 @@ const QUESTIONS = [
     },
     guide: "Chambre d'assemblée ou assemblée législative.",
     updatedAt: "2026-06-09T18:39:51.133Z"
+  },
+  {
+    id: "Q332",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    enonce: "Indiquez un changement apporté au territoire de la Province de Québec par l’Acte constitutionnel de 1791.",
+    aspects: [
+      {
+        aspect: "Acte constitutionnel"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "territoire_province_quebec_1783.png",
+            source: "Récitus."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "territoire_bas-canada_1791.png",
+            source: "Récitus"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "La Province de Québec est divisée en Haut-Canada et Bas-Canada ou création du Haut-Canada ou création du Bas-Canada ou le territoire de la colonie est partagé en deux colonies distinctes.",
+    updatedAt: "2026-06-09T18:46:14.794Z"
   }
 ]
