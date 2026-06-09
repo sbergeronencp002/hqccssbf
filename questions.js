@@ -6274,6 +6274,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q315": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -6688,6 +6705,9 @@ const IMAGE_DB = {
   },
   "bataille_chateauguay.png": {
     src: "images/bataille_chateauguay.png"
+  },
+  "village_iroquoien_vers_1500.png": {
+    src: "images/village_iroquoien_vers_1500.png"
   }
 }
 
@@ -20161,5 +20181,36 @@ const QUESTIONS = [
     },
     guide: "Famille linguistique algonquienne.",
     updatedAt: "2026-06-09T03:16:19.575Z"
+  },
+  {
+    id: "Q315",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "Indiquez le mode de vie généralement adopté par les Iroquoiens vers 1500.",
+    aspects: [
+      {
+        aspect: "Premiers occupants du territoire"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "village_iroquoien_vers_1500.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les Iroquoiens ont un mode de vie sédentaire.",
+    updatedAt: "2026-06-09T03:21:05.717Z"
   }
 ]
