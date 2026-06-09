@@ -6911,6 +6911,9 @@ const IMAGE_DB = {
   },
   "canot_ecorce_echanges.png": {
     src: "images/canot_ecorce_echanges.png"
+  },
+  "troc_1500.png": {
+    src: "images/troc_1500.png"
   }
 }
 
@@ -9115,7 +9118,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "Nommez la pratique utilisée par les groupes autochtones pour échanger des biens.",
+    enonce: "Indiquez le nom de la pratique utilisée par les groupes autochtones pour échanger des biens.",
     aspects: [
       {
         aspect: "Réseaux d'échange autochtones"
@@ -9127,8 +9130,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Les réseaux d’échange relient les nations autochtones sur de vastes territoires. Les Iroquoiens et les Algonquiens y obtiennent des ressources complémentaires et entretiennent des relations régulières fondées sur la réciprocité et les obligations mutuelles. »",
-            auteur: "Olive Patricia Dickason"
+            ref: "troc_1500.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
@@ -9137,7 +9140,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 1
     },
-    guide: "Le troc."
+    guide: "Le troc.",
+    updatedAt: "2026-06-09T14:47:25.912Z"
   },
   {
     id: "Q52",
