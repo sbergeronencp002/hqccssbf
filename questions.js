@@ -6189,6 +6189,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
+  },
+  "Q310": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -19916,5 +19933,38 @@ const QUESTIONS = [
     },
     guide: "B",
     updatedAt: "2026-06-09T00:46:48.310Z"
+  },
+  {
+    id: "Q310",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Mouvements migratoires"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« L'arrivée de navires transportant des immigrants provoque une crise sanitaire sans précédent. En quelques mois, la maladie se répand rapidement dans les principales villes du Bas-Canada. »",
+            soustitre: "Épidémie de choléra",
+            source: "Jacques LACOURSIÈRE, Histoire populaire du Québec, tome 2, Québec, Septentrion, 1995."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1790-1850.png"
+    },
+    guide: "C",
+    updatedAt: "2026-06-09T00:47:35.589Z"
   }
 ]
