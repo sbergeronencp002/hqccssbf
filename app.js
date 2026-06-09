@@ -352,6 +352,9 @@ function openQModal(id) {
   const closeBtn = document.getElementById('q-modal-close');
   if(closeBtn) closeBtn.style.color = st.color;
 
+  const qNum = document.getElementById('q-modal-num');
+  if(qNum) { qNum.textContent = q.id; qNum.style.color = st.color; }
+
   const aspects = (q.aspects||[]).map(a => a.aspect).join(' · ');
   document.getElementById('q-modal-title').innerHTML =
     `<div class="q-oi-badge" style="color:${st.color};background:rgba(0,0,0,0.08)">${escLine(q.oi)}</div>` +
