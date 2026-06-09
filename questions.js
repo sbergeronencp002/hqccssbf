@@ -6522,9 +6522,6 @@ const IMAGE_DB = {
   "victoire_pq_1976.png": {
     src: "images/victoire_pq_1976.png"
   },
-  "tradition_orale.jpg": {
-    src: "images/tradition_orale.jpg"
-  },
   "1500_reseau_echanges.png": {
     src: "images/1500_reseau_echanges.png"
   },
