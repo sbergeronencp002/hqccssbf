@@ -6206,6 +6206,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
+  },
+  "Q311": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -19966,5 +19983,38 @@ const QUESTIONS = [
     },
     guide: "C",
     updatedAt: "2026-06-09T00:47:35.589Z"
+  },
+  {
+    id: "Q311",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Soulèvements de 1837-1838"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les chefs patriotes exilés proposent alors la création d'un nouvel État et présentent un programme politique inspiré des principes républicains en vigueur aux États-Unis. »",
+            soustitre: "Déclaration d'indépendance du Bas-Canada",
+            source: "Gilles LAPORTE, Patriotes et Loyaux : leadership régional et mobilisation politique en 1837 et 1838, Québec, Septentrion, 2004."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1790-1850.png"
+    },
+    guide: "D",
+    updatedAt: "2026-06-09T00:48:25.135Z"
   }
 ]
