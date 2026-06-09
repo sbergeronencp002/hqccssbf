@@ -6819,6 +6819,9 @@ const IMAGE_DB = {
   },
   "ceremonie_animisme.png": {
     src: "images/ceremonie_animisme.png"
+  },
+  "partage_1500.png": {
+    src: "images/partage_1500.png"
   }
 }
 
@@ -8823,7 +8826,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "Nommez une pratique qui favorise la solidarité au sein des sociétés autochtones.",
+    enonce: "Indiquez une pratique qui favorise l'entraide et la solidarité dans plusieurs sociétés autochtones.",
     aspects: [
       {
         aspect: "Rapports sociaux chez les Autochtones"
@@ -8835,8 +8838,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Dans plusieurs sociétés autochtones, les ressources obtenues par la chasse, la pêche ou la cueillette sont redistribuées entre les membres du groupe. Le partage des biens contribue à assurer la subsistance de chacun et à renforcer les liens de solidarité. »",
-            auteur: "Denys Delâge"
+            ref: "partage_1500.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
@@ -8845,7 +8848,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 1
     },
-    guide: "Le partage des biens."
+    guide: "Le partage des biens.",
+    updatedAt: "2026-06-09T13:53:16.790Z"
   },
   {
     id: "Q46",
