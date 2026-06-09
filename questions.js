@@ -6895,7 +6895,7 @@ const IMAGE_DB = {
   "org_pol_apres_1763.png": {
     src: "images/org_pol_apres_1763.png"
   },
-  "org_pol_apres_1784.png": {
+  "org_pol_1774_acte_quebec.png": {
     src: "images/org_pol_apres_1784.png"
   },
   "territoire_province_quebec_1783.png": {
@@ -17850,7 +17850,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "org_pol_apres_1784.png",
+            ref: "org_pol_1774_acte_quebec.png",
             source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
           }
         ]
@@ -18468,7 +18468,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            ref: "org_pol_apres_1784.png",
+            ref: "org_pol_1774_acte_quebec.png",
             source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
           }
         ]
