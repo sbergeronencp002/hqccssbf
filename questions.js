@@ -12724,7 +12724,7 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "gravure_destruction_huronie.png",
             soustitre: "Raids iroquoiens en Huronie",
-            source: "llustration pédagogique inspirée des gravures de Theodor de Bry portant sur les conflits autochtones en Amérique du Nord."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       },
@@ -12753,7 +12753,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 5
     },
-    guide: "Au milieu du 17e siècle, les Haudenosaunee (Iroquois) attaquent les villages hurons afin de contrôler le commerce des fourrures (un conflit impliquant les Haudenosaunee (Iroquois)). Ces conflits entraînent la destruction de la Huronie en 1648-1649 et forcent plusieurs Hurons-Wendats à abandonner leur territoire (une conséquence territoriale chez les Hurons-Wendats). Une partie des survivants se réfugie près de Québec, notamment dans la région de Lorette (une région d’accueil des populations déplacées)."
+    guide: "Au milieu du 17e siècle, les Haudenosaunee (Iroquois) attaquent les villages hurons afin de contrôler le commerce des fourrures (un conflit impliquant les Haudenosaunee (Iroquois)). Ces conflits entraînent la destruction de la Huronie en 1648-1649 et forcent plusieurs Hurons-Wendats à abandonner leur territoire (une conséquence territoriale chez les Hurons-Wendats). Une partie des survivants se réfugie près de Québec, notamment dans la région de Lorette (une région d’accueil des populations déplacées).",
+    updatedAt: "2026-06-09T16:15:16.563Z"
   },
   {
     id: "Q129",
