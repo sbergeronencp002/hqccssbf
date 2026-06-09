@@ -6155,6 +6155,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
+  },
+  "Q308": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -19816,5 +19833,38 @@ const QUESTIONS = [
     },
     guide: "D",
     updatedAt: "2026-06-09T00:43:35.190Z"
+  },
+  {
+    id: "Q308",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Rapport Durham"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Durham considère que les difficultés politiques de la colonie trouvent leur origine dans l’existence de deux communautés nationales distinctes. »",
+            soustitre: "Rapport Durham",
+            source: "Michel Brunet, Les Canadiens après la Conquête, 1759-1775, Montréal, Fides, 1969."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1790-1850.png"
+    },
+    guide: "D",
+    updatedAt: "2026-06-09T00:44:16.294Z"
   }
 ]
