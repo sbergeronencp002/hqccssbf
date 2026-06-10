@@ -7029,6 +7029,34 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q352": {
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
   }
 }
 
@@ -22540,5 +22568,60 @@ const QUESTIONS = [
     },
     guide: "L'alliance franco-amérindienne de 1603",
     updatedAt: "2026-06-10T18:29:13.367Z"
+  },
+  {
+    id: "Q352",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P1 — Des origines à 1608",
+    points: 3,
+    soustag: "Position – 3 acteurs",
+    enonce: "Les documents A à C présentent le point de vue de trois historiens sur les conséquences des premiers contacts entre les Autochtones et les Européens. Nommez l'historien qui présente une position différente et comparez sa position à celle des deux autres historiens.",
+    aspects: [
+      {
+        aspect: "Premiers contacts"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Pour plusieurs nations autochtones, les premiers contacts avec les Européens permettent d'obtenir de nouveaux biens recherchés, notamment des outils de métal qui améliorent certaines activités quotidiennes et renforcent les réseaux d'échange existants. »",
+            auteur: "Bruce G. Trigger",
+            source: "Bruce G. Trigger, Les Enfants d'Aataentsic : l'histoire du peuple huron, Montréal, Libre Expression, 1991, p. 314. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les échanges avec les Européens procurent à plusieurs groupes autochtones des avantages économiques et stratégiques. Ces contacts favorisent également la création de nouvelles alliances qui renforcent leur influence dans la région. »",
+            auteur: "Alain Beaulieu",
+            source: "Alain Beaulieu, Les Autochtones du Québec : des premières alliances aux revendications contemporaines, Montréal, Fides, 2013, p. 41. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Derrière les avantages immédiats des échanges se profilent d'importants bouleversements. Les contacts avec les Européens contribuent progressivement à transformer les sociétés autochtones et à les rendre plus dépendantes du commerce européen. »",
+            auteur: "Denys Delâge",
+            source: "Denys Delâge, Le Pays renversé : Amérindiens et Européens en Amérique du Nord-Est, 1600-1664, Montréal, Boréal, 1991, p. 74. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Denys Delâge considère que les premiers contacts entraînent surtout des conséquences négatives pour les Autochtones, alors que Bruce G. Trigger et Alain Beaulieu estiment qu'ils procurent principalement des avantages aux peuples autochtones.",
+    updatedAt: "2026-06-10T18:42:16.044Z"
   }
 ]
