@@ -6989,6 +6989,34 @@ const REGLETTES = {
         desc: "L'élève ne situe pas le fait dans l'espace."
       }
     ]
+  },
+  "Q350": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -22410,5 +22438,56 @@ const QUESTIONS = [
     },
     guide: "B",
     updatedAt: "2026-06-10T17:38:30.718Z"
+  },
+  {
+    id: "Q350",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P1 — Des origines à 1608",
+    points: 3,
+    enonce: "Expliquez comment une alliance conclue entre les Français et les peuples autochtones en 1603 favorise l’occupation du territoire par les Français. \n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux : \n\n• le nom de l'alliance conclue en 1603\n• un avantage procuré aux Français par cette alliance\n• une conséquence sur l'occupation du territoire par les Français",
+    aspects: [
+      {
+        aspect: "Exploration et occupation du territoire par les Français"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Grâce à l'appui de leurs alliés autochtones, les Français réussissent à maintenir leur présence dans la vallée du Saint-Laurent et à établir des postes permanents qui assurent progressivement leur occupation du territoire. »",
+            source: "Alain Beaulieu, Stéphanie Béreau et Jean Tanguay, Les Autochtones du Québec : des premières alliances aux revendications contemporaines, Montréal, Fides, 2013, p. 64-65. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les alliés autochtones transmettent aux Français leurs connaissances des voies navigables, des ressources et des peuples occupant le territoire. Cette collaboration facilite les déplacements et les explorations dans l'intérieur du continent. »",
+            source: "Denys Delâge, Le Pays renversé : Amérindiens et Européens en Amérique du Nord-Est, 1600-1664, Montréal, Boréal, 1991, p. 52-53. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« À Tadoussac, en 1603, les Français concluent une alliance avec des nations autochtones de la vallée du Saint-Laurent. Cette entente prévoit une collaboration fondée sur des intérêts communs et une aide mutuelle. »",
+            source: "Marcel Trudel, Histoire de la Nouvelle-France, tome I : Les vaines tentatives, 1524-1603, Montréal, Fides, 1963, p. 278-279. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 5
+    },
+    guide: "L'alliance franco-amérindienne de 1603 (le nom de l'alliance conclue en 1603) permet aux Français de bénéficier des connaissances du territoire et des voies de circulation transmises par leurs alliés autochtones (un avantage procuré aux Français par cette alliance). Cette aide favorise leur établissement permanent et leur présence dans la vallée du Saint-Laurent (une conséquence sur l'occupation du territoire par les Français).",
+    updatedAt: "2026-06-10T17:57:45.559Z"
   }
 ]
