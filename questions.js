@@ -7012,6 +7012,23 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q351": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -22490,5 +22507,36 @@ const QUESTIONS = [
     },
     guide: "L'alliance franco-amérindienne de 1603 (le nom de l'alliance conclue en 1603) permet aux Français de bénéficier des connaissances du territoire et des voies de circulation transmises par leurs alliés autochtones (un avantage procuré aux Français par cette alliance). Cette aide favorise leur établissement permanent et leur présence dans la vallée du Saint-Laurent (une conséquence sur l'occupation du territoire par les Français).",
     updatedAt: "2026-06-10T18:18:28.111Z"
+  },
+  {
+    id: "Q351",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    enonce: "Indiquez le nom de la première alliance conclue entre les Français et certaines nations autochtones e 1603.",
+    aspects: [
+      {
+        aspect: "Exploration et occupation du territoire par les Français"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« En 1603, à Tadoussac, les Français concluent une alliance avec les Innus, les Algonquins et les Wendats. Cette entente marque le début d'une collaboration durable entre les alliés. »",
+            source: "Alain Beaulieu, Stéphanie Béreau et Jean Tanguay, Les Autochtones du Québec : des premières alliances aux revendications contemporaines, Montréal, Fides, 2013, p. 63. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "L'alliance franco-amérindienne de 1603",
+    updatedAt: "2026-06-10T18:29:13.367Z"
   }
 ]
