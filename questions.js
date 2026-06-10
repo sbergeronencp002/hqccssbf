@@ -22610,7 +22610,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "Indiquez le nom de la première alliance conclue entre les Français et certaines nations autochtones e 1603.",
+    enonce: "Indiquez le nom de la première alliance conclue entre les Français et certaines nations autochtones en 1603.",
     aspects: [
       {
         aspect: "Exploration et occupation du territoire par les Français"
@@ -22633,7 +22633,7 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "L'alliance franco-amérindienne de 1603",
-    updatedAt: "2026-06-10T18:29:13.367Z"
+    updatedAt: "2026-06-10T19:11:19.139Z"
   },
   {
     id: "Q352",
