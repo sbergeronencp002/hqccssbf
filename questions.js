@@ -7057,6 +7057,23 @@ const REGLETTES = {
         desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
       }
     ]
+  },
+  "Q353": {
+    oi: "Situer dans l'espace",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe le fait dans l'espace."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas le fait dans l'espace."
+      }
+    ]
   }
 }
 
@@ -7551,6 +7568,11 @@ const IMAGE_DB = {
     src: "images/alliance_franco-ame.png",
     w: 1200,
     h: 900
+  },
+  "carte_monde.png": {
+    src: "images/carte_monde.png",
+    w: 1200,
+    h: 685
   }
 }
 
@@ -22623,5 +22645,36 @@ const QUESTIONS = [
     },
     guide: "Denys Delâge considère que les premiers contacts entraînent surtout des conséquences négatives pour les Autochtones, alors que Bruce G. Trigger et Alain Beaulieu estiment qu'ils procurent principalement des avantages aux peuples autochtones.",
     updatedAt: "2026-06-10T18:42:16.044Z"
+  },
+  {
+    id: "Q353",
+    niveau: 3,
+    oi: "Situer dans l'espace",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    soustag: "Situer 1 élément",
+    enonce: "À partir du document A, indiquez la lettre qui correspond au continent que les Européens tentent de rejoindre en cherchant une nouvelle route maritime à la fin du XVe siècle.",
+    aspects: [
+      {
+        aspect: "Premiers contacts"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "carte_monde.png",
+            source: "Carte du monde. Adaptée d'après d-maps.com."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau_2col"
+    },
+    guide: "D",
+    updatedAt: "2026-06-10T18:48:29.025Z"
   }
 ]
