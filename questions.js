@@ -6950,6 +6950,28 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (0 sur 2)"
       }
     ]
+  },
+  "Q348": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (3 sur 3)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (2 sur 3)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
+      }
+    ]
   }
 }
 
@@ -22267,5 +22289,75 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-10T17:15:13.782Z"
+  },
+  {
+    id: "Q348",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    soustag: "3 documents",
+    enonce: "Les documents A à C présentent des aspects des alliances et des rivalités entre les Premières Nations vers 1500. Associez chaque document à l'élément correspondant.",
+    aspects: [
+      {
+        aspect: "Alliances et rivalités au sein des Premières Nations"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Afin de mieux se défendre contre leurs ennemis et d'accroître leur influence, plusieurs nations concluent des ententes avec d'autres groupes et coordonnent leurs actions lors des conflits. »",
+            source: "Denys Delâge, Le Pays renversé, adaptation."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Certaines nations cherchent à contrôler des territoires de chasse, des voies de circulation ou des lieux d'échange qui leur procurent des ressources et des avantages stratégiques. »",
+            source: "Alain Beaulieu, Les Autochtones du Québec, adaptation."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les prisonniers capturés lors des affrontements peuvent être adoptés afin de remplacer des membres décédés ou être exécutés selon les traditions de la nation victorieuse. »",
+            source: "Bruce G. Trigger, Les Enfants d'Aataentsic, adaptation."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Objets de rivalité",
+        "Système d'alliances",
+        "Sort des prisonniers"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Objets de rivalité",
+        "Système d'alliances",
+        "Sort des prisonniers"
+      ],
+      rangees: [
+        [
+          "B",
+          "A",
+          "C"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-10T17:23:45.679Z"
   }
 ]
