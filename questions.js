@@ -7096,6 +7096,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas le fait dans l'espace."
       }
     ]
+  },
+  "Q355": {
+    oi: "Situer dans l'espace",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe le fait dans l'espace."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas le fait dans l'espace."
+      }
+    ]
   }
 }
 
@@ -7599,6 +7616,11 @@ const IMAGE_DB = {
   "carte_amerique_nord.png": {
     src: "images/carte_amerique_nord.png",
     w: 1056,
+    h: 1200
+  },
+  "carte_golfe_st-laurent.png": {
+    src: "images/carte_golfe_st-laurent.png",
+    w: 1074,
     h: 1200
   }
 }
@@ -22733,5 +22755,36 @@ const QUESTIONS = [
     },
     guide: "C",
     updatedAt: "2026-06-10T19:04:25.412Z"
+  },
+  {
+    id: "Q355",
+    niveau: 3,
+    oi: "Situer dans l'espace",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    soustag: "Situer 1 élément",
+    enonce: "À partir du document A, indiquez la lettre qui correspond à la principale région fréquentée par les pêcheurs européens pratiquant la pêche à la morue au XVIe siècle.",
+    aspects: [
+      {
+        aspect: "Premiers contacts"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "carte_golfe_st-laurent.png",
+            source: "Carte d'Amérique du Nord. Adaptée d'après d-maps.com."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau_2col"
+    },
+    guide: "C",
+    updatedAt: "2026-06-10T19:09:29.534Z"
   }
 ]
