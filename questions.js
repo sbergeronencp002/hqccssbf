@@ -6705,6 +6705,34 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q338": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -7179,6 +7207,12 @@ const IMAGE_DB = {
   },
   "territoire_bas-canada_1791.png": {
     src: "images/territoire_bas-canada_1791.png"
+  },
+  "elections_bas-canada_1792.png": {
+    src: "images/elections_bas-canada_1792.png"
+  },
+  "institutions_politiques_acte_const_1791.png": {
+    src: "images/institutions_politiques_acte_const_1791.png"
   }
 }
 
@@ -21515,5 +21549,58 @@ const QUESTIONS = [
     },
     guide: "Les Loyalistes veulent des institutions politiques semblables à celles des anciennes colonies britanniques ou les nouveaux arrivants réclament une assemblée élue.",
     updatedAt: "2026-06-09T19:09:15.453Z"
+  },
+  {
+    id: "Q338",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    enonce: "Expliquez comment la constitution mise en place par les autorités britanniques en 1791 favorise la participation politique de la population.\n\nRépondez à la question en précisant :\n\n• le nom de cette constitution\n• une institution politique créée par cette constitution\n• une conséquence sur la représentation politique de la population",
+    aspects: [
+      {
+        aspect: "Acte constitutionnel"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "elections_bas-canada_1792.png",
+            soustitre: "Vote lors des premières élections du Bas-Canada",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Adoptée en 1791, cette constitution réorganise le gouvernement colonial en créant de nouvelles institutions politiques et en accordant à une partie de la population un rôle dans leur fonctionnement. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 2."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "institutions_politiques_acte_const_1791.png",
+            soustitre: "Mode de désignation des institutions politiques du Bas-Canada",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "L'Acte constitutionnel de 1791 permet l'élection d'une Chambre d'assemblée (nom de la constitution, institution politique créée par cette constitution). Une partie de la population peut alors choisir des députés, ce qui augmente sa représentation politique (conséquence sur la représentation politique de la population).",
+    updatedAt: "2026-06-10T01:00:17.137Z"
   }
 ]
