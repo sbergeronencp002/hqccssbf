@@ -1275,7 +1275,24 @@ const REGLETTES = {
       "1 point",
       "0 point"
     ],
-    niveaux: []
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   },
   "Q68": {
     oi: "Déterminer des causes et des conséquences",
@@ -10106,16 +10123,6 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Les peuples autochtones se livrent fréquemment à des guerres pour défendre leur territoire ou pour contrôler des routes de commerce. Ces rivalités opposent des nations qui cherchent à protéger leurs ressources et à maintenir leur influence sur les échanges. »",
-            source: "Olive Patricia Dickason, Les Premières Nations du Canada. Québec, Les Éditions du Septentrion, 1996."
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document B",
             texte: "« Les alliances entre nations autochtones reposent sur des intérêts communs. Elles permettent de faire face à des ennemis, de sécuriser les routes d’échange et de maintenir des relations politiques et commerciales avantageuses entre les peuples. »",
             source: "Denys Delâge, Le pays renversé. Montréal, Les Éditions du Boréal, 2005."
           }
@@ -10125,9 +10132,19 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document C",
+            titre: "Document B",
             texte: "« Les prisonniers capturés lors des guerres entre nations autochtones peuvent être adoptés pour remplacer des membres disparus, réduits en esclavage ou exécutés. Leur sort dépend des besoins du groupe vainqueur et des coutumes qu’il applique. »",
             source: "Bruce G. Trigger, Les Enfants d’Aataentsic. Montréal, Libre Expression, 2008."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "prisonnier_autochtone_1500.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
@@ -10136,7 +10153,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 5
     },
-    guide: "Les nations autochtones se disputent le contrôle des territoires de chasse, des ressources et des routes commerciales. (les objets de rivalités entre nations autochtones) Pour renforcer leur position, elles concluent des alliances avec d’autres nations. (systèmes d'alliances) Lors des conflits entraînent la capture de prisonniers qui peuvent être adoptés ou réduits en esclavage ou torturés ou exécutés. (le sort des prisonniers)"
+    guide: "Les rivalités pour le contrôle des territoires de chasse (ou des réseaux d’échange) (un objet de rivalité entre les nations autochtones) poussent certaines nations à conclure des alliances afin de renforcer leur défense ou leur puissance militaire (l’objectif des alliances entre les nations autochtones). Lors des conflits, les prisonniers capturés (le sort des prisonniers) peuvent être adoptés par la nation victorieuse ou mis à mort.",
+    updatedAt: "2026-06-10T11:44:15.315Z"
   },
   {
     id: "Q68",
