@@ -6733,6 +6733,28 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q339": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -21602,5 +21624,37 @@ const QUESTIONS = [
     },
     guide: "L'Acte constitutionnel de 1791 permet l'élection d'une Chambre d'assemblée (nom de la constitution, institution politique créée par cette constitution). Une partie de la population peut alors choisir des députés, ce qui augmente sa représentation politique (conséquence sur la représentation politique de la population).",
     updatedAt: "2026-06-10T01:00:17.137Z"
+  },
+  {
+    id: "Q339",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence du pouvoir du gouverneur sur les décisions prises par la Chambre d’assemblée.",
+    aspects: [
+      {
+        aspect: "Débats parlementaires"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "Les projets de loi adoptés par la Chambre d’assemblée doivent être approuvés par le gouverneur avant d’entrer en vigueur. Celui-ci peut refuser de sanctionner certaines mesures proposées par les députés. »",
+            source: "Adapté de Gilles Laporte, Brève histoire politique du Québec."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le gouverneur dispose d'un droit de veto ou le gouverneur peut empêcher l'application d'une loi adoptée par la Chambre d'assemblée.",
+    updatedAt: "2026-06-10T01:03:15.389Z"
   }
 ]
