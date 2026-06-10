@@ -1,5 +1,13 @@
 # Instructions projet — HQC · CSSBF
 
+## Règle absolue — ne jamais toucher questions.js via git
+
+`questions.js` est géré **exclusivement** par `admin.html` qui publie directement sur `main` via l'API GitHub. Ne jamais modifier ce fichier via un commit git — les changements n'apparaîtraient pas sur le site et créeraient des conflits de données avec les publications admin.
+
+Mes commits git ne doivent contenir que des fichiers de code : `app.js`, `style.css`, `admin.html`, `index.html`, `oi-config.js`, `reglettes.js`, `contexte.js`, `CLAUDE.md`, etc.
+
+---
+
 ## Architecture
 
 Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
