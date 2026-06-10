@@ -1,8 +1,9 @@
 # Instructions projet — HQC · CSSBF
 
-## Merge vers main — autorisation permanente
+## Règles de workflow — autorisation permanente
 
-Merger la branche de travail vers `main` sans demander confirmation. Le faire dès que des changements de code sont prêts à être déployés sur le site.
+- **Merger** vers `main` sans demander confirmation, dès que des changements sont prêts.
+- **Réparer** tout problème fonctionnel sans attendre confirmation.
 
 ---
 
