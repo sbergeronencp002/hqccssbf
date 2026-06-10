@@ -959,7 +959,6 @@ async function uploadImage() {
     addRecentImage(name);
     const opts = buildImageOptions();
     document.querySelectorAll('select[id$="-ref"]').forEach(sel => { const v=sel.value; sel.innerHTML=opts; sel.value=v; });
-    await loadImages();
     toast(`"${name}" ajouté aux images.`, 'ok');
   } catch(e) {
     statusEl.textContent = '✗ ' + e.message;
@@ -1657,16 +1656,14 @@ async function publier() {
   status.textContent = '';
 
   try {
-    // Reload full content from GitHub before modifying (prevents data loss from stale state)
-    const { rawB64 } = await fetchFreshState(token);
-
-    // Backup automatique (fire-and-forget) — horodatage à la seconde pour
-    // éviter les collisions de nom (deux publications dans la même minute).
+    // Backup automatique (fire-and-forget) depuis l'état local — pas besoin de re-télécharger.
+    // fetchFreshState() est appelé automatiquement par la boucle de retry si le SHA est périmé (409).
     const ts = new Date().toISOString().slice(0,19).replace('T','_').replace(/:/g,'-');
+    const backupB64 = utf8b64(generateQuestionsJs(currentQuestions, currentReglettes, currentImageDb));
     fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/backups/questions-${ts}.js`, {
       method:'PUT',
       headers:{ Authorization:`token ${token}`, 'Content-Type':'application/json' },
-      body: JSON.stringify({ message:`Backup auto ${ts}`, content: rawB64, branch: BRANCH })
+      body: JSON.stringify({ message:`Backup auto ${ts}`, content: backupB64, branch: BRANCH })
     }).then(() => pruneBackups(token)).catch(()=>{});
 
     const q = buildQuestion();
