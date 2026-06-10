@@ -284,15 +284,24 @@ const BC4 = {top:BORDER,bottom:BORDER,left:BN,     right:BORDER}; // col4
 
 Le proxy local est en lecture seule. Pousser via HTTPS direct :
 ```bash
-PAT=<votre_token>
-git fetch https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git main:refs/remotes/origin/main_fresh
-git merge refs/remotes/origin/main_fresh --no-edit
+PAT=<TOKEN>
+BRANCH=claude/lucid-galileo-lrw7jv
+
+# Synchroniser main local avec GitHub avant de merger
+git fetch https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git +main:refs/remotes/origin/main_fresh
+git checkout -B main refs/remotes/origin/main_fresh
+git merge $BRANCH --no-edit
+
+# Pousser main + branche de travail
 git push https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git HEAD:main
-git push https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git HEAD:claude/tender-turing-uZTbH
-git fetch https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git claude/tender-turing-uZTbH:refs/remotes/origin/claude/tender-turing-uZTbH
+git push https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git HEAD:${BRANCH}
+
+# IMPORTANT : mettre à jour les refs locales après push (sinon le hook git signale des commits non poussés)
+git fetch https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git +main:refs/remotes/origin/main
+git fetch https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git +${BRANCH}:refs/remotes/origin/${BRANCH}
 ```
 
-**Branche de travail active :** `claude/tender-turing-uZTbH`
+**Branche de travail active :** `claude/lucid-galileo-lrw7jv`
 
 ---
 
