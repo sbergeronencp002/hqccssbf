@@ -526,7 +526,7 @@ function initSite() {
     localStorage.removeItem('hqc_panier');
   }
 }
-initSite();
+if(typeof QUESTIONS !== 'undefined') initSite();
 
 window.addEventListener('storage', e => {
   if(e.key !== 'hqc_panier') return;

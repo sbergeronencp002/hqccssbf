@@ -151,10 +151,15 @@
 
 <div class="warn-toast" id="warn-toast"></div>
 
-<script src="questions.js"></script>
 <script src="contexte.js"></script>
 <script src="oi-config.js?v=1"></script>
-<script src="app.js?v=40"></script>
+<script src="app.js?v=41"></script>
+<script>
+  var _qs = document.createElement('script');
+  _qs.src = 'questions.js?t=' + Math.floor(Date.now() / 60000);
+  _qs.onload = function() { initSite(); };
+  document.head.appendChild(_qs);
+</script>
 </body>
 </html>
 
