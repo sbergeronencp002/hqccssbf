@@ -6928,6 +6928,28 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q347": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (2 sur 2)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (1 sur 2)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (0 sur 2)"
+      }
+    ]
   }
 }
 
@@ -7411,6 +7433,9 @@ const IMAGE_DB = {
   },
   "debats_parlementaires.png": {
     src: "images/debats_parlementaires.png"
+  },
+  "lieux_echanges.png": {
+    src: "images/lieux_echanges.png"
   }
 }
 
@@ -22193,5 +22218,51 @@ const QUESTIONS = [
     },
     guide: "Les Algonquiens occupent un territoire forestier dont les sols sont peu favorables à l’agriculture (une caractéristique du territoire occupé par les Algonquiens). Ils pratiquent donc principalement la chasse et la pêche pour se nourrir (la principale activité de subsistance pratiquée par les Algonquiens). Comme les ressources sont dispersées sur le territoire, ils se déplacent selon les saisons et adoptent un mode de vie nomade (le mode de vie des Algonquiens).",
     updatedAt: "2026-06-10T15:55:11.597Z"
+  },
+  {
+    id: "Q347",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P1 — Des origines à 1608",
+    points: 2,
+    enonce: "À partir du document A, indiquez les deux lettres qui correspondent aux principaux lieux d’échanges entre les nations autochtones vers les années 1500.\n\n• le confluent de l’Outaouais\n• le confluent du Saguenay",
+    aspects: [
+      {
+        aspect: "Réseaux d'échange autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "lieux_echanges.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Confluent de l'Outaouais",
+        "Confluent du Saguenay"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Confluent de l'Outaouais",
+        "Confluent du Saguenay"
+      ],
+      rangees: [
+        [
+          "A",
+          "C"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-10T17:15:13.782Z"
   }
 ]
