@@ -269,7 +269,7 @@ const BC4 = {top:BORDER,bottom:BORDER,left:BN,     right:BORDER}; // col4
 
 Le proxy local est en lecture seule. Pousser via HTTPS direct :
 ```bash
-PAT=ghp_...(votre token)
+PAT=<votre_token>
 git fetch https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git main:refs/remotes/origin/main_fresh
 git merge refs/remotes/origin/main_fresh --no-edit
 git push https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git HEAD:main
@@ -293,7 +293,7 @@ Vérifier que la taille est raisonnable (< 400 Ko idéalement) avant de pousser.
 
 ## Renouvellement du PAT GitHub
 
-Le PAT `ghp_...(votre token)` expire. Quand il expire :
+Le PAT expire. Quand il expire :
 1. Aller sur https://github.com/settings/tokens
 2. Retrouver le token `hqccssbf-admin` → cliquer « Regenerate »
 3. Copier le nouveau token
