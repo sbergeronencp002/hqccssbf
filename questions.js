@@ -6930,19 +6930,24 @@ const REGLETTES = {
     ]
   },
   "Q347": {
-    oi: "Situer dans l'espace",
+    oi: "Mettre en relation des faits",
     colonnes: [
       "2 points",
+      "1 point",
       "0 point"
     ],
     niveaux: [
       {
         pts: 2,
-        desc: "L'élève situe les faits dans l'espace."
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
       },
       {
         pts: 0,
-        desc: "L'élève ne situe pas les faits dans l'espace."
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
       }
     ]
   },
@@ -22364,10 +22369,9 @@ const QUESTIONS = [
   {
     id: "Q347",
     niveau: 3,
-    oi: "Situer dans l'espace",
+    oi: "Mettre en relation des faits",
     periode: "P1 — Des origines à 1608",
     points: 2,
-    soustag: "Situer 2 éléments",
     enonce: "À partir du document A, indiquez les deux lettres qui correspondent aux principaux lieux d’échanges entre les nations autochtones vers les années 1500.\n\n• le confluent de l’Outaouais\n• le confluent du Saguenay",
     aspects: [
       {
@@ -22381,7 +22385,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "lieux_echanges.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Carte du Québec. Adaptée d'après d-maps.com."
           }
         ]
       }
@@ -22406,7 +22410,7 @@ const QUESTIONS = [
         ]
       ]
     },
-    updatedAt: "2026-06-10T18:20:38.517Z"
+    updatedAt: "2026-06-10T18:49:50.071Z"
   },
   {
     id: "Q348",
