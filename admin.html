@@ -419,7 +419,7 @@ function updatePeriodes() {
   const niveau = document.getElementById('q-niveau').value;
   const periodes = PERIODES_PAR_NIVEAU[niveau] || [];
   const sel = document.getElementById('q-periode');
-  sel.innerHTML = periodes.map(p => `<option value="${p}">${p}</option>`).join('');
+  sel.innerHTML = periodes.map(p => `<option value="${escHtml(p)}">${escHtml(p)}</option>`).join('');
   updateAspects();
 }
 
@@ -429,7 +429,7 @@ function updateAspects() {
   const wrap = document.getElementById('aspects-list');
   wrap.innerHTML = aspects.map(a =>
     `<label style="display:flex;align-items:center;gap:.5rem;font-size:.83rem;cursor:pointer">
-      <input type="checkbox" value="${a}" style="width:auto;cursor:pointer"> ${a}
+      <input type="checkbox" value="${escHtml(a)}" style="width:auto;cursor:pointer"> ${escHtml(a)}
     </label>`
   ).join('');
 }
@@ -450,7 +450,7 @@ function updateSoustag() {
   }
   const pills = document.getElementById('soustag-pills');
   pills.innerHTML = options.map(v =>
-    `<label class="soustag-pill"><input type="radio" name="q-soustag" value="${v}"> ${v}</label>`
+    `<label class="soustag-pill"><input type="radio" name="q-soustag" value="${escHtml(v)}"> ${escHtml(v)}</label>`
   ).join('') + `<label class="soustag-pill"><input type="radio" name="q-soustag" value=""> Aucun</label>`;
   row.style.display = '';
 }
@@ -489,7 +489,7 @@ function updatePresets() {
   const presets = REGLETTES_PRESET[oi] || [];
   const sel = document.getElementById('reg-preset');
   sel.innerHTML = '<option value="">— Sélectionner —</option>'
-    + presets.map((p,i) => `<option value="${i}">${p.label}</option>`).join('');
+    + presets.map((p,i) => `<option value="${i}">${escHtml(p.label)}</option>`).join('');
 }
 
 // ── MODE ÉDITION ──────────────────────────────────────────────────────
@@ -501,6 +501,10 @@ function setMode(mode) {
     wrap.style.display = '';
     populateEditSearch();
   } else {
+    if(formDirty && !confirm('Des modifications non publiées seront perdues. Continuer ?')) {
+      document.querySelector('input[name="mode"][value="edit"]').checked = true;
+      return;
+    }
     wrap.style.display = 'none';
     editingId = null;
     const nums = currentQuestions.map(q => parseInt(q.id.replace(/\D/g,''))).filter(n=>!isNaN(n));
@@ -579,7 +583,7 @@ function filterEditList() {
     const isFocused  = i === editFocusIdx;
     const enonce = (q.enonce||'').replace(/\*\*/g,'').slice(0, 90) + ((q.enonce||'').length > 90 ? '…' : '');
     return `<div class="edit-result-card${isSelected ? ' selected' : ''}${isFocused ? ' focused' : ''}"
-      data-idx="${i}" onclick="loadQuestion('${q.id}')" onmouseenter="editFocusIdx=${i}">
+      data-idx="${i}" onclick="loadQuestion('${escHtml(q.id)}')" onmouseenter="editFocusIdx=${i}">
       <div style="min-width:0;flex:1">
         <div class="edit-card-meta">
           ${noG ? '<span class="edit-card-warn">⚠ </span>' : ''}<span class="edit-card-id">${highlight(q.id, search)}</span>
@@ -622,6 +626,8 @@ function dupliquerQuestion() {
   editingId = null;
   document.querySelector('input[name="mode"][value="new"]').checked = true;
   document.getElementById('edit-select-wrap').style.display = 'none';
+  const selBarDup = document.getElementById('edit-selected-bar');
+  if(selBarDup) selBarDup.style.display = 'none';
   document.getElementById('btn-supprimer').disabled = true;
   document.getElementById('btn-dupliquer').disabled = true;
   document.getElementById('q-id').value = newId;
@@ -643,6 +649,7 @@ function loadQuestion(id) {
   const q = currentQuestions.find(x => x.id === id);
   const r = currentReglettes[id];
   if(!q) return;
+  if(formDirty && id !== editingId && !confirm('Des modifications non publiées seront perdues. Continuer ?')) return;
   editingId = id;
   if(btnSuppr) btnSuppr.disabled = false;
   if(btnDupl)  btnDupl.disabled  = false;
@@ -895,7 +902,7 @@ async function supprimerQuestion() {
     toast('Erreur : ' + e.message, 'err');
     console.error(e);
   } finally {
-    btn.textContent = '🗑 Supprimer cette question';
+    btn.textContent = '🗑 Supprimer';
     btn.disabled = true;
   }
 }
@@ -915,6 +922,7 @@ async function uploadImage() {
   if(!file) { toast('Sélectionne un fichier image.', 'err'); return; }
   const name = (document.getElementById('upload-name').value.trim() || file.name)
     .replace(/\s+/g,'_').replace(/[\\'"`]/g,'');   // pas d'espaces ni de quotes/antislash (cassent onclick/attributs)
+  if(!name || name === '.png') { toast('Nom de fichier invalide.', 'err'); return; }
   const statusEl = document.getElementById('upload-status');
   const btn = document.getElementById('btn-upload');
   btn.disabled = true; statusEl.textContent = '⏳ Téléversement…';
@@ -1364,7 +1372,7 @@ function getRepGrilleValues() {
 
 // ── GUIDE ─────────────────────────────────────────────────────────────
 function escHtml(s) {
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 }
 
 function updateGuideUI() {
@@ -1500,7 +1508,7 @@ function buildQuestion() {
   let reponse = false;
   const repType = document.getElementById('rep-type').value;
   if(repType === 'lignes') {
-    reponse = { type: 'lignes', nombre: parseInt(document.getElementById('rep-nombre').value) };
+    reponse = { type: 'lignes', nombre: Math.max(1, parseInt(document.getElementById('rep-nombre').value) || 2) };
   } else if(repType === 'image') {
     reponse = { type: 'image', ref: document.getElementById('rep-ref').value };
   } else if(repType === 'tableau_3col') {
@@ -1566,6 +1574,7 @@ function buildReglette(id) {
 function serializeValue(v, indent=0) {
   const pad = '  '.repeat(indent);
   const pad1 = '  '.repeat(indent+1);
+  if(v === undefined) return 'null';
   if(v === null || v === false || v === true) return String(v);
   if(typeof v === 'number') return String(v);
   if(typeof v === 'string') return JSON.stringify(v);
@@ -1605,7 +1614,9 @@ function generateQuestionsJs(questions, reglettes, imageDb) {
 // ── VALIDATION ────────────────────────────────────────────────────────
 function validateForm() {
   const errors = [];
-  if(!document.getElementById('q-id').value.trim()) errors.push('ID manquant');
+  const idVal = document.getElementById('q-id').value.trim();
+  if(!idVal) errors.push('ID manquant');
+  else if(!/^Q\d+$/.test(idVal)) errors.push('ID invalide (format attendu : Q suivi d\'un nombre, ex. Q42)');
   if(!document.getElementById('q-enonce').value.trim()) errors.push('Énoncé vide');
   if(!document.getElementById('q-periode').value) errors.push('Période non sélectionnée');
   if(!document.querySelectorAll('#aspects-list input[type=checkbox]:checked').length) errors.push('Aucun aspect sélectionné');
@@ -1699,7 +1710,8 @@ async function publier() {
     } else {
       currentQuestions.push(q);
     }
-    currentReglettes[q.id] = r;
+    // Ne pas écraser une réglette existante par une réglette vide (preset non retrouvé à l'édition)
+    if(r.niveaux?.length || r.variante || !currentReglettes[q.id]) currentReglettes[q.id] = r;
 
     const commitMsg = editingId ? `Modifier ${q.id} — ${q.oi}` : `Ajouter ${q.id} — ${q.oi} (${q.periode})`;
 
@@ -1718,13 +1730,15 @@ async function publier() {
         } else {
           throw new Error(`L'identifiant ${q.id} a été ajouté par un autre utilisateur entre-temps. Rechargez la page (F5).`);
         }
-        currentReglettes[q.id] = r;
+        if(r.niveaux?.length || r.variante || !currentReglettes[q.id]) currentReglettes[q.id] = r;
         // Re-apply IMAGE_DB entries (fetchFreshState reset currentImageDb)
         refsUsed.forEach(ref => {
           if(!currentImageDb[ref]) currentImageDb[ref] = { src: 'images/' + ref };
         });
       }
       const newContent2 = generateQuestionsJs(currentQuestions, currentReglettes, currentImageDb);
+      // Filet de sécurité : ne jamais pousser un questions.js syntaxiquement invalide
+      try { new Function(newContent2); } catch(synErr) { throw new Error('questions.js généré invalide (' + synErr.message + ') — publication annulée.'); }
       const encoded2 = utf8b64(newContent2);
       putResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js`, {
         method: 'PUT',

@@ -116,7 +116,7 @@ function fillOi(id, ois, placeholder) {
 function onPeriodeChange() {
   const niveau  = document.getElementById('f-niveau').value;
   const periode = document.getElementById('f-periode').value;
-  const allowedPeriodes = niveau ? PERIODES_PAR_NIVEAU[niveau] : periodeOrder;
+  const allowedPeriodes = (niveau && typeof PERIODES_PAR_NIVEAU !== 'undefined') ? PERIODES_PAR_NIVEAU[niveau] : periodeOrder;
   const filteredAspects = periode
     ? aspects.filter(a => a.periode === periode)
     : aspects.filter(a => allowedPeriodes.includes(a.periode));
@@ -127,7 +127,7 @@ function onPeriodeChange() {
 
 function onNiveauChange() {
   const niveau = document.getElementById('f-niveau').value;
-  const allowedPeriodes = niveau ? PERIODES_PAR_NIVEAU[niveau] : periodeOrder;
+  const allowedPeriodes = (niveau && typeof PERIODES_PAR_NIVEAU !== 'undefined') ? PERIODES_PAR_NIVEAU[niveau] : periodeOrder;
 
   // Rebuild période dropdown
   const periodeEl = document.getElementById('f-periode');
@@ -193,6 +193,7 @@ function applyFilters() {
   const relevantOis = [...oiSet].sort((a,b)=>a.localeCompare(b,'fr'));
   fillOi('f-oi', relevantOis, "Toutes");
   if(relevantOis.includes(currentOi)) document.getElementById('f-oi').value = currentOi;
+  else if(currentOi) { document.getElementById('f-oi').value = ''; applyFilters(); return; }
 
   const totalPtsFilt = filtered.reduce((s,q)=>s+(q.points||0), 0);
   document.getElementById('stat-num').textContent = filtered.length;
@@ -211,7 +212,7 @@ function resetFilters() {
     const el = document.getElementById(id);
     if(el) el.value = '';
   });
-  applyFilters();
+  onNiveauChange();   // reconstruit les listes période + aspect, puis applyFilters()
 }
 
 function buildReglettHTML(q) {
@@ -325,12 +326,12 @@ function buildReglettHTML(q) {
   // Standard layout — header row (points) + description row
   if(!r.colonnes.length) return '<p style="color:#999;font-size:0.8rem">Réglette non configurée.</p>';
   const colW = Math.floor(78 / r.colonnes.length);
-  const headers = r.colonnes.map(c=>`<td style="${S};width:${colW}%">${c}</td>`).join('');
-  const cells   = r.niveaux.map(n=>`<td style="${S}">${n.desc}</td>`).join('');
+  const headers = r.colonnes.map(c=>`<td style="${S};width:${colW}%">${escLine(c)}</td>`).join('');
+  const cells   = r.niveaux.map(n=>`<td style="${S}">${escLine(n.desc)}</td>`).join('');
 
   return `<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%">
     <tr>
-      <td style="${SB};width:22%" rowspan="2">${r.oi}</td>
+      <td style="${SB};width:22%" rowspan="2">${escLine(r.oi)}</td>
       ${headers}
     </tr>
     <tr>
@@ -459,7 +460,7 @@ function buildTileHtml(q) {
   const badge = s => `<span style="font-size:0.7rem;color:${st.color};background:${st.bg};border-radius:10px;padding:1px 8px;font-weight:500">${s}</span>`;
   const badgeNew = `<span style="font-size:0.7rem;color:${st.color};background:${st.bg};border-radius:10px;padding:1px 8px;font-weight:700;letter-spacing:0.03em">Nouveauté</span>`;
   const tagsHtml = (NEW_IDS.has(q.id) || q.soustag)
-    ? `<div style="margin-top:6px;display:flex;gap:5px;flex-wrap:wrap">${NEW_IDS.has(q.id) ? badgeNew : ''}${q.soustag ? badge(q.soustag) : ''}</div>`
+    ? `<div style="margin-top:6px;display:flex;gap:5px;flex-wrap:wrap">${NEW_IDS.has(q.id) ? badgeNew : ''}${q.soustag ? badge(escLine(q.soustag)) : ''}</div>`
     : '';
   return `<div class="q-tile${inPanier ? ' in-panier' : ''}" id="tile-${q.id}"
     role="button" tabindex="0" aria-label="${escAttr(q.oi + (aspect ? ' — ' + aspect : ''))}"
@@ -467,8 +468,8 @@ function buildTileHtml(q) {
     onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openQModal('${q.id}')}">
     <div class="q-tile-bar" style="display:none"></div>
     <div class="q-tile-content">
-      <div class="q-tile-oi" style="display:block;font-size:1.1rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:5px 12px;border-radius:6px;color:${st.color};background:${st.bg};line-height:1.3;word-break:break-word">${q.oi}</div>
-      <div class="q-tile-aspect" style="font-size:0.9rem;font-weight:400;color:#6B6560;margin-top:2px">${aspect}</div>
+      <div class="q-tile-oi" style="display:block;font-size:1.1rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:5px 12px;border-radius:6px;color:${st.color};background:${st.bg};line-height:1.3;word-break:break-word">${escLine(q.oi)}</div>
+      <div class="q-tile-aspect" style="font-size:0.9rem;font-weight:400;color:#6B6560;margin-top:2px">${escLine(aspect)}</div>
       ${tagsHtml}
     </div>
     <span class="q-tile-check" role="button" tabindex="0" aria-label="Ajouter ou retirer du panier"
@@ -537,7 +538,7 @@ window.addEventListener('storage', e => {
 });
 
 document.addEventListener('keydown', e => {
-  if(e.key === 'Escape') { closeQModal(); closePreviewBtn(); }
+  if(e.key === 'Escape') { closeQModal(); closePreviewBtn(); closeLightbox(); closeCahier(); }
 });
 
 // ===== PANIER =====
@@ -624,9 +625,9 @@ function renderReponse(q) {
     const S = 'border:1px solid var(--ink-2);text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem';
     return '<table style="border-collapse:collapse;margin:8px 0;">'
       + '<tr>'
-      + '<td style="' + S + '">' + col1 + '</td>'
-      + '<td style="' + S + ';vertical-align:middle" rowspan="2">' + col2 + '</td>'
-      + '<td style="' + S + '">' + col3 + '</td>'
+      + '<td style="' + S + '">' + escLine(col1) + '</td>'
+      + '<td style="' + S + ';vertical-align:middle" rowspan="2">' + escLine(col2) + '</td>'
+      + '<td style="' + S + '">' + escLine(col3) + '</td>'
       + '</tr><tr>'
       + '<td style="border:1px solid var(--ink-2);background:var(--paper-2);height:50px;min-width:80px"></td>'
       + '<td style="border:1px solid var(--ink-2);background:var(--paper-2);height:50px;min-width:80px"></td>'
@@ -648,7 +649,7 @@ function renderReponse(q) {
       + '<tr><th style="border:0.5px solid var(--border);padding:4px 8px;background:var(--paper-2);text-align:left"></th>'
       + '<th style="border:0.5px solid var(--border);padding:4px 8px;background:var(--paper-2);text-align:center">Document</th></tr>';
     q.reponse.lignes.forEach(l=>{
-      html += '<tr><td style="border:0.5px solid var(--border);padding:4px 8px">' + l.label + '</td>'
+      html += '<tr><td style="border:0.5px solid var(--border);padding:4px 8px">' + escLine(l.label) + '</td>'
             + '<td style="border:0.5px solid var(--border);padding:4px 30px"></td></tr>';
     });
     html += '</table>';
@@ -659,9 +660,9 @@ function renderReponse(q) {
     const TH = 'border:0.5px solid var(--border);padding:4px 8px;background:var(--paper-2);text-align:center;font-weight:600;font-size:0.8rem';
     const TD = 'border:0.5px solid var(--border);padding:4px 8px;font-size:0.8rem';
     let html = '<table style="border-collapse:collapse;margin:8px 0;">';
-    html += '<tr>' + entetes.map(h => `<th style="${TH}">${h}</th>`).join('') + '</tr>';
+    html += '<tr>' + entetes.map(h => `<th style="${TH}">${escLine(h)}</th>`).join('') + '</tr>';
     rangees.forEach(row => {
-      html += '<tr>' + row.map((cell, ci) => `<td style="${TD}${ci===0?';font-weight:500':';min-width:60px;height:24px'}">${cell}</td>`).join('') + '</tr>';
+      html += '<tr>' + row.map((cell, ci) => `<td style="${TD}${ci===0?';font-weight:500':';min-width:60px;height:24px'}">${escLine(cell)}</td>`).join('') + '</tr>';
     });
     html += '</table>';
     return html;
@@ -684,7 +685,7 @@ function renderReponse(q) {
   }
   if(q.reponse.type === 'mettre-en-relation') {
     const els = q.reponse.elements || [];
-    const n = els.length;
+    const n = els.length || 2;
     const B = 'border:1px solid var(--ink-2)';
     const circle = '<span style="display:inline-block;width:1.25cm;height:1.25cm;border-radius:50%;border:1.5px solid #000"></span>';
     const TH = B + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem';
@@ -697,7 +698,7 @@ function renderReponse(q) {
       const TC_NL = B + ';border-left:none;text-align:center;padding:8px 10px';
       return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:8px 0">'
         + els.map(e => '<tr>'
-          + '<td style="' + TH + ';white-space:nowrap">' + e + '</td>'
+          + '<td style="' + TH + ';white-space:nowrap">' + escLine(e) + '</td>'
           + '<td style="' + TC_NR + '">' + circle + '</td>'
           + '<td style="' + SN + '">et</td>'
           + '<td style="' + TC_NL + '">' + circle + '</td>'
@@ -706,11 +707,11 @@ function renderReponse(q) {
     }
     if(n === 2) {
       return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:8px 0">'
-        + els.map(e => '<tr><td style="' + TH + ';white-space:nowrap">' + e + '</td><td style="' + TC + ';text-align:center;padding:8px 16px">' + circle + '</td></tr>').join('')
+        + els.map(e => '<tr><td style="' + TH + ';white-space:nowrap">' + escLine(e) + '</td><td style="' + TC + ';text-align:center;padding:8px 16px">' + circle + '</td></tr>').join('')
         + '</table>';
     }
     return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin:8px 0">'
-      + '<tr>' + els.map(e => '<td style="' + TH + ';width:' + colPct + '">' + e + '</td>').join('') + '</tr>'
+      + '<tr>' + els.map(e => '<td style="' + TH + ';width:' + colPct + '">' + escLine(e) + '</td>').join('') + '</tr>'
       + '<tr>' + els.map(() => '<td style="' + TC + ';text-align:center">' + circle + '</td>').join('') + '</tr>'
       + '</table>';
   }
@@ -721,7 +722,7 @@ function renderReponse(q) {
     const TC = B + ';text-align:center;padding:12px 16px';
     const circle = '<span style="display:inline-block;width:1.25cm;height:1.25cm;border-radius:50%;border:1.5px solid #000"></span>';
     return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:8px 0">'
-      + '<tr>' + els.map(e => '<td style="' + TH + '">' + e + '</td>').join('') + '</tr>'
+      + '<tr>' + els.map(e => '<td style="' + TH + '">' + escLine(e) + '</td>').join('') + '</tr>'
       + '<tr>' + els.map(() => '<td style="' + TC + '">' + circle + '</td>').join('') + '</tr>'
       + '</table>';
   }
@@ -733,7 +734,7 @@ function renderReponse(q) {
     return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin:8px 0">'
       + '<tr>'
       + '<td style="' + B + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem;width:33%">Avant</td>'
-      + '<td style="' + B + ';text-align:center;font-weight:700;padding:8px;font-size:0.85rem;width:34%;vertical-align:middle" rowspan="2">' + lbl + '</td>'
+      + '<td style="' + B + ';text-align:center;font-weight:700;padding:8px;font-size:0.85rem;width:34%;vertical-align:middle" rowspan="2">' + escLine(lbl) + '</td>'
       + '<td style="' + B + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem;width:33%">Après</td>'
       + '</tr><tr>'
       + '<td style="' + B + '">' + sideCell + '</td>'
@@ -832,7 +833,7 @@ function previsualiser(guideMode) {
               const img = IMAGE_DB[col.ref];
               const titre = (col.titreWeb && col.titre) ? col.titre : col.ref;
               docsHtml += '<td style="width:' + Math.floor(100/d.cols.length) + '%;padding:6px;vertical-align:top;border:0.5px solid var(--border)">';
-              docsHtml += '<div style="font-size:0.75rem;font-style:italic;margin-bottom:4px;color:var(--ink-2)">' + titre + '</div>';
+              docsHtml += '<div style="font-size:0.75rem;font-style:italic;margin-bottom:4px;color:var(--ink-2)">' + escLine(titre) + '</div>';
               if(img) docsHtml += '<img src="' + img.src + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:100px;object-fit:contain;cursor:pointer" onclick="openLightbox(\'' + jsStr(img.src) + '\')">';
               docsHtml += '</td>';
             });
@@ -864,9 +865,9 @@ function previsualiser(guideMode) {
         if(r.variante) {
           regHtml = '<div class="preview-reglette">' + buildReglettHTML(q) + '</div>';
         } else {
-          regHtml = '<div class="preview-reglette"><table><tr><td class="r-label" rowspan="2">' + r.oi + '</td>';
-          regHtml += r.colonnes.map(function(c) { return '<td style="text-align:center;background:var(--paper-2)">' + c + '</td>'; }).join('');
-          regHtml += '</tr><tr>' + r.niveaux.map(function(n) { return '<td>' + n.desc + '</td>'; }).join('') + '</tr></table></div>';
+          regHtml = '<div class="preview-reglette"><table><tr><td class="r-label" rowspan="2">' + escLine(r.oi) + '</td>';
+          regHtml += r.colonnes.map(function(c) { return '<td style="text-align:center;background:var(--paper-2)">' + escLine(c) + '</td>'; }).join('');
+          regHtml += '</tr><tr>' + r.niveaux.map(function(n) { return '<td>' + escLine(n.desc) + '</td>'; }).join('') + '</tr></table></div>';
         }
       }
       // Réponse in preview
@@ -879,9 +880,9 @@ function previsualiser(guideMode) {
           const S = 'border:1px solid #999;text-align:center;font-weight:600;padding:6px 8px;font-size:0.75rem';
           previewReponse = '<table style="border-collapse:collapse;margin:8px 0;">'
             + '<tr>'
-            + '<td style="' + S + '">' + col1 + '</td>'
-            + '<td style="' + S + ';vertical-align:middle" rowspan="2">' + col2 + '</td>'
-            + '<td style="' + S + '">' + col3 + '</td>'
+            + '<td style="' + S + '">' + escLine(col1) + '</td>'
+            + '<td style="' + S + ';vertical-align:middle" rowspan="2">' + escLine(col2) + '</td>'
+            + '<td style="' + S + '">' + escLine(col3) + '</td>'
             + '</tr><tr>'
             + '<td style="border:1px solid #999;background:#f0f0f0;height:40px;min-width:80px"></td>'
             + '<td style="border:1px solid #999;background:#f0f0f0;height:40px;min-width:80px"></td>'
@@ -894,16 +895,16 @@ function previsualiser(guideMode) {
         } else if(q.reponse.type === 'tableau') {
           previewReponse = '<table style="border-collapse:collapse;margin:8px 0;font-size:0.8rem;">'
             + '<tr><th style="border:0.5px solid #ccc;padding:4px 8px;background:#f5f5f5"></th><th style="border:0.5px solid #ccc;padding:4px 8px;background:#f5f5f5">Document</th></tr>'
-            + q.reponse.lignes.map(function(l){return '<tr><td style="border:0.5px solid #ccc;padding:4px 8px">' + l.label + '</td><td style="border:0.5px solid #ccc;padding:4px 30px"></td></tr>';}).join('')
+            + q.reponse.lignes.map(function(l){return '<tr><td style="border:0.5px solid #ccc;padding:4px 8px">' + escLine(l.label) + '</td><td style="border:0.5px solid #ccc;padding:4px 30px"></td></tr>';}).join('')
             + '</table>';
         } else if(q.reponse.type === 'grille') {
           const {entetes=[], rangees=[]} = q.reponse;
           const TH2 = 'border:0.5px solid #ccc;padding:4px 8px;background:#f5f5f5;text-align:center;font-weight:600;font-size:0.8rem';
           const TD2 = 'border:0.5px solid #ccc;padding:4px 8px;font-size:0.8rem';
           previewReponse = '<table style="border-collapse:collapse;margin:8px 0;">';
-          previewReponse += '<tr>' + entetes.map(h => `<th style="${TH2}">${h}</th>`).join('') + '</tr>';
+          previewReponse += '<tr>' + entetes.map(h => `<th style="${TH2}">${escLine(h)}</th>`).join('') + '</tr>';
           rangees.forEach(row => {
-            previewReponse += '<tr>' + row.map((cell, ci) => `<td style="${TD2}${ci===0?';font-weight:500':';min-width:60px;height:24px'}">${cell}</td>`).join('') + '</tr>';
+            previewReponse += '<tr>' + row.map((cell, ci) => `<td style="${TD2}${ci===0?';font-weight:500':';min-width:60px;height:24px'}">${escLine(cell)}</td>`).join('') + '</tr>';
           });
           previewReponse += '</table>';
         } else if(q.reponse.type === 'cause-consequence') {
@@ -922,7 +923,7 @@ function previsualiser(guideMode) {
             + '</table>';
         } else if(q.reponse.type === 'mettre-en-relation') {
           const els = q.reponse.elements || [];
-          const n = els.length;
+          const n = els.length || 2;
           const BM = 'border:1px solid #999';
           const circle3 = '<span style="display:inline-block;width:1.25cm;height:1.25cm;border-radius:50%;border:1.5px solid #000"></span>';
           const THM = BM + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.75rem';
@@ -935,7 +936,7 @@ function previsualiser(guideMode) {
             const TCM_NL = BM + ';border-left:none;text-align:center;padding:8px 10px';
             previewReponse = '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:8px 0">'
               + els.map(e => '<tr>'
-                + '<td style="' + THM + ';white-space:nowrap">' + e + '</td>'
+                + '<td style="' + THM + ';white-space:nowrap">' + escLine(e) + '</td>'
                 + '<td style="' + TCM_NR + '">' + circle3 + '</td>'
                 + '<td style="' + SNM + '">et</td>'
                 + '<td style="' + TCM_NL + '">' + circle3 + '</td>'
@@ -943,11 +944,11 @@ function previsualiser(guideMode) {
               + '</table>';
           } else if(n === 2) {
             previewReponse = '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:8px 0">'
-              + els.map(e => '<tr><td style="' + THM + ';white-space:nowrap">' + e + '</td><td style="' + TCM + ';text-align:center;padding:8px 16px">' + circle3 + '</td></tr>').join('')
+              + els.map(e => '<tr><td style="' + THM + ';white-space:nowrap">' + escLine(e) + '</td><td style="' + TCM + ';text-align:center;padding:8px 16px">' + circle3 + '</td></tr>').join('')
               + '</table>';
           } else {
             previewReponse = '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin:8px 0">'
-              + '<tr>' + els.map(e => '<td style="' + THM + ';width:' + colPctM + '">' + e + '</td>').join('') + '</tr>'
+              + '<tr>' + els.map(e => '<td style="' + THM + ';width:' + colPctM + '">' + escLine(e) + '</td>').join('') + '</tr>'
               + '<tr>' + els.map(() => '<td style="' + TCM + ';text-align:center">' + circle3 + '</td>').join('') + '</tr>'
               + '</table>';
           }
@@ -958,7 +959,7 @@ function previsualiser(guideMode) {
           const TCSde = BSde + ';text-align:center;padding:12px 16px';
           const circleSde = '<span style="display:inline-block;width:1.25cm;height:1.25cm;border-radius:50%;border:1.5px solid #000"></span>';
           previewReponse = '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:8px 0">'
-            + '<tr>' + elsS.map(e => '<td style="' + THSde + '">' + e + '</td>').join('') + '</tr>'
+            + '<tr>' + elsS.map(e => '<td style="' + THSde + '">' + escLine(e) + '</td>').join('') + '</tr>'
             + '<tr>' + elsS.map(() => '<td style="' + TCSde + '">' + circleSde + '</td>').join('') + '</tr>'
             + '</table>';
         } else if(q.reponse.type === 'avant-apres') {
@@ -969,7 +970,7 @@ function previsualiser(guideMode) {
           previewReponse = '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin:8px 0">'
             + '<tr>'
             + '<td style="' + B2 + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.75rem;width:33%">Avant</td>'
-            + '<td style="' + B2 + ';text-align:center;font-weight:700;padding:8px;font-size:0.8rem;width:34%;vertical-align:middle" rowspan="2">' + lbl + '</td>'
+            + '<td style="' + B2 + ';text-align:center;font-weight:700;padding:8px;font-size:0.8rem;width:34%;vertical-align:middle" rowspan="2">' + escLine(lbl) + '</td>'
             + '<td style="' + B2 + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.75rem;width:33%">Après</td>'
             + '</tr><tr>'
             + '<td style="' + B2 + '">' + sideCell2 + '</td>'
@@ -1016,7 +1017,12 @@ function togglePanier(id) {
 }
 
 function refreshPanierButtons() {
-  panier.forEach(id => updateTileState(id));
+  document.querySelectorAll('.q-tile').forEach(t => {
+    const id = t.id.replace(/^tile-/, '');
+    t.classList.toggle('in-panier', panier.includes(id));
+  });
+  const btn = document.getElementById('q-modal-panier-btn');
+  if(btn && btn.dataset.id) updateQModalBtn(btn.dataset.id);
 }
 
 function updatePanierBar() {
@@ -1106,12 +1112,12 @@ function renderCahier() {
       <div class="cahier-item-body">
         <div class="cahier-item-row">
           <span class="cahier-num">Q${i+1}</span>
-          <span class="cahier-badge" style="color:${st.color};background:${st.bg}" title="${q.oi}">${oiShort}</span>
+          <span class="cahier-badge" style="color:${st.color};background:${st.bg}" title="${escAttr(q.oi)}">${escLine(oiShort)}</span>
           <span class="cahier-pts">${q.points} pt${q.points !== 1 ? 's' : ''}</span>
         </div>
         <div class="cahier-enonce">${escLine(preview)}</div>
       </div>
-      <button class="cahier-remove" onclick="retirerPanier('${id}')">×</button>
+      <button class="cahier-remove" aria-label="Retirer du panier" onclick="retirerPanier('${id}')">×</button>
     </div>`;
   }).join('');
 }
@@ -1155,6 +1161,9 @@ function cahierDragEnd() {
 }
 
 // ===== RÉSOLUTION DES IMAGES (fetch → base64 + dimensions) =====
+// Cache séparé pour le DOCX : ne touche pas IMAGE_DB, sinon les vignettes du
+// site afficheraient la version recompressée après une première génération.
+const DOCX_IMG_CACHE = {};
 async function resolveImages(neededKeys) {
   const MAX_PX = 1200;
   const JPEG_Q = 0.78;
@@ -1162,9 +1171,15 @@ async function resolveImages(neededKeys) {
 
   const promises = neededKeys.map(async key => {
     const entry = IMAGE_DB[key];
-    if (!entry || entry.src.startsWith('data:')) return;
+    if (!entry || DOCX_IMG_CACHE[key]) return;
+    if (entry.src.startsWith('data:')) {
+      if (entry.w && entry.h) DOCX_IMG_CACHE[key] = entry;
+      else failed.push(key);
+      return;
+    }
     try {
       const resp = await fetch(entry.src);
+      if(!resp.ok) throw new Error('HTTP ' + resp.status);
       const blob = await resp.blob();
       const isJpeg = blob.type === 'image/jpeg' || key.match(/\.(jpg|jpeg)$/i);
       const dataUrl = await new Promise((res, rej) => {
@@ -1183,7 +1198,7 @@ async function resolveImages(neededKeys) {
         img.onerror = () => { URL.revokeObjectURL(blobUrl); rej(); };
         img.src = blobUrl;
       });
-      IMAGE_DB[key] = { src: dataUrl.url, w: dataUrl.w, h: dataUrl.h };
+      DOCX_IMG_CACHE[key] = { src: dataUrl.url, w: dataUrl.w, h: dataUrl.h };
     } catch(e) {
       failed.push(key);
       console.warn('Impossible de charger l\'image :', key, e);
@@ -1516,6 +1531,7 @@ async function genererDocx(includeGuide=false) {
 
     panier.forEach((id, idx) => {
       const q = Q_MAP.get(id);
+      if(!q) return;
 
       // Énoncé avec numéro
       const qNum = idx + 1;
@@ -1534,7 +1550,7 @@ async function genererDocx(includeGuide=false) {
           if(d.type === 'tableau') {
             const colW = Math.floor(PAGE_W / d.cols.length);
             const tableCells = d.cols.map(col => {
-              const imgData = IMAGE_DB[col.ref];
+              const imgData = DOCX_IMG_CACHE[col.ref];
               const cellChildren = [];
               if(col.titreDocx && col.titre) cellChildren.push(new Paragraph({ alignment: AlignmentType.LEFT, children: [new TextRun({ text: col.titre, font: 'Aptos', size: 20 })] }));
               if(imgData && imgData.src) {
@@ -1566,7 +1582,7 @@ async function genererDocx(includeGuide=false) {
                 col.texte.split('\n').forEach(line => { cellChildren.push(mkLine(line, 'Aptos', 20)); });
               }
               if(col.ref) {
-                const imgData = IMAGE_DB[col.ref];
+                const imgData = DOCX_IMG_CACHE[col.ref];
                 if(imgData && imgData.src) {
                   const bytes = b64ToBytes(imgData.src);
                   if(bytes) {
@@ -1613,7 +1629,7 @@ async function genererDocx(includeGuide=false) {
         if(q.reponse === true) {
           children.push(new Paragraph({ children: [new TextRun({ text: '__________', font: 'Aptos', size: 22 })] }));
         } else if(q.reponse.type === 'image') {
-          const imgData2 = IMAGE_DB[q.reponse.ref];
+          const imgData2 = DOCX_IMG_CACHE[q.reponse.ref];
           if(imgData2 && imgData2.src) {
             const bytes_2 = b64ToBytes(imgData2.src);
             if(bytes_2) {

@@ -20,7 +20,7 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 | `backups/questions-YYYY-MM-DD_HH-MM.js` | Backups auto avant chaque publication (admin) |
 
 ### Cache-bust actuel
-`app.js?v=v40`, `style.css?v=v25`, `oi-config.js?v=v1`, `reglettes.js?v=v2` (admin) — incrémenter à chaque changement majeur.
+`app.js?v=v41`, `style.css?v=v25`, `oi-config.js?v=v1`, `reglettes.js?v=v2` (admin) — incrémenter à chaque changement majeur.
 
 ---
 

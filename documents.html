@@ -340,6 +340,7 @@ function tileHtml(q) {
     (q.documents || []).forEach(doc => {
       (doc.cols || []).forEach(col => { if (col.ref) docImgs.push(col.ref); });
     });
+    if (q.reponse && typeof q.reponse === 'object' && q.reponse.type === 'image' && q.reponse.ref) docImgs.push(q.reponse.ref);
     if (!docImgs.length) return;
     const unique = [...new Set(docImgs)];
     q._imgs = unique;
@@ -382,7 +383,7 @@ function tileHtml(q) {
   const orphans = Object.keys(IMAGE_DB).filter(img => !usedImgs.has(img)).sort();
   if (orphans.length) {
     document.getElementById('orphans-container').innerHTML = orphans.map(img => `
-      <div class="orphan-row" id="orphan-${CSS.escape(img)}">
+      <div class="orphan-row" id="orphan-${escH(img)}">
         <img src="images/${escH(img)}" loading="lazy" title="${escH(img)}" onclick="showImg(${escH(JSON.stringify(img))})">
         <span class="img-label">${escH(img.replace('.png',''))}</span>
         ${sizeBadgeHtml(img)}
@@ -403,7 +404,8 @@ function tileHtml(q) {
 async function fetchSizes(imgs) {
   for (const img of imgs) {
     try {
-      const r = await fetch('images/' + img, {method:'HEAD'});
+      const r = await fetch('images/' + encodeURIComponent(img), {method:'HEAD'});
+      if (!r.ok) continue;
       const bytes = parseInt(r.headers.get('content-length') || '0');
       sizeCache[img] = bytes;
       applySizeBadge(img, bytes);
@@ -428,7 +430,8 @@ function sizeLabel(bytes) {
 function applySizeBadge(img, bytes) {
   const cls = sizeClass(bytes);
   const label = sizeLabel(bytes);
-  document.querySelectorAll(`[data-size-badge="${img}"]`).forEach(el => {
+  document.querySelectorAll('[data-size-badge]').forEach(el => {
+    if (el.dataset.sizeBadge !== img) return;
     el.className = 'size-badge ' + cls;
     el.textContent = label;
   });
@@ -513,7 +516,7 @@ document.addEventListener('keydown', e => { if (e.key==='Escape') { closeLb(); c
 
 async function deleteOrphan(img) {
   if (!confirm(`Supprimer définitivement « ${img} » du dépôt GitHub ?\nCette action est irréversible (hors historique git).`)) return;
-  const btn = document.querySelector(`#orphan-${CSS.escape(img)} .btn-delete`);
+  const btn = document.getElementById('orphan-' + img)?.querySelector('.btn-delete');
   if (btn) { btn.disabled = true; btn.textContent = '⏳…'; }
   try {
     // 1. Get SHA of image file
@@ -549,10 +552,12 @@ async function deleteOrphan(img) {
         body: JSON.stringify({message: 'Retirer ' + img + ' de IMAGE_DB', content: btoa(binary), sha: dq.sha})
       });
       if (!rp.ok) throw new Error('Échec mise à jour questions.js (' + rp.status + ')');
+    } else {
+      alert('Image supprimée du dépôt, mais entrée IMAGE_DB introuvable dans questions.js — à corriger manuellement via admin.');
     }
 
     // Remove row from DOM
-    document.getElementById('orphan-' + CSS.escape(img))?.remove();
+    document.getElementById('orphan-' + img)?.remove();
     if (!document.querySelector('#orphans-container .orphan-row')) {
       document.getElementById('sec-orphans').style.display = 'none';
       document.getElementById('nav-orphans').style.display = 'none';
@@ -678,11 +683,16 @@ function closeRenameModal(e) {
 async function confirmRename() {
   const raw = document.getElementById('rename-input').value.trim();
   if (!raw) return;
+  const btn = document.getElementById('rename-confirm-btn');
+  const status = document.getElementById('rename-status');
+  if (/[\\/#?%"'<>]/.test(raw)) {
+    status.className = 'rename-status err';
+    status.textContent = '✗ Nom invalide : éviter les caractères / \\ # ? % " \' < >';
+    return;
+  }
   const newName = raw.endsWith('.png') ? raw : raw + '.png';
   if (newName === renameTarget) { closeRenameModal(); return; }
 
-  const btn = document.getElementById('rename-confirm-btn');
-  const status = document.getElementById('rename-status');
   btn.disabled = true;
   status.className = 'rename-status';
   status.textContent = 'Récupération du fichier…';
@@ -694,8 +704,15 @@ async function confirmRename() {
     });
     if (!r1.ok) throw new Error('Impossible de lire ' + renameTarget + ' (' + r1.status + ')');
     const d1 = await r1.json();
+    if (!d1.content) throw new Error(renameTarget + ' dépasse 1 Mo — renommage impossible via l\'API Contents.');
 
-    // 2. Create new file
+    // 2. Vérifier que le nouveau nom n'existe pas déjà
+    const chk = await fetch(API + 'images/' + encodeURIComponent(newName), {
+      headers: {Authorization: 'token ' + requireToken()}
+    });
+    if (chk.ok) throw new Error(newName + ' existe déjà dans le dépôt.');
+
+    // 3. Create new file
     status.textContent = 'Création de ' + newName + '…';
     const r2 = await fetch(API + 'images/' + encodeURIComponent(newName), {
       method: 'PUT',
@@ -704,16 +721,8 @@ async function confirmRename() {
     });
     if (!r2.ok) throw new Error('Échec création ' + newName + ' (' + r2.status + ')');
 
-    // 3. Delete old file
-    status.textContent = 'Suppression de ' + renameTarget + '…';
-    const r3 = await fetch(API + 'images/' + encodeURIComponent(renameTarget), {
-      method: 'DELETE',
-      headers: {Authorization: 'token ' + requireToken(), 'Content-Type': 'application/json'},
-      body: JSON.stringify({message: 'Rename ' + renameTarget + ' → ' + newName, sha: d1.sha})
-    });
-    if (!r3.ok) throw new Error('Échec suppression ' + renameTarget + ' (' + r3.status + ')');
-
-    // 4. Update questions.js
+    // 4. Update questions.js AVANT la suppression : en cas d'échec, l'ancien
+    // fichier reste en place et le site public n'est jamais cassé
     status.textContent = 'Mise à jour de questions.js…';
     const rq = await fetch(API + 'questions.js', {
       headers: {Authorization: 'token ' + requireToken()}
@@ -741,6 +750,15 @@ async function confirmRename() {
       if (!rp.ok) throw new Error('Échec mise à jour questions.js (' + rp.status + ')');
     }
 
+    // 5. Delete old file (en dernier : un échec ici laisse juste une orpheline)
+    status.textContent = 'Suppression de ' + renameTarget + '…';
+    const r3 = await fetch(API + 'images/' + encodeURIComponent(renameTarget), {
+      method: 'DELETE',
+      headers: {Authorization: 'token ' + requireToken(), 'Content-Type': 'application/json'},
+      body: JSON.stringify({message: 'Rename ' + renameTarget + ' → ' + newName, sha: d1.sha})
+    });
+    if (!r3.ok) throw new Error('Échec suppression de l\'ancien fichier ' + renameTarget + ' (' + r3.status + ') — il reste comme orphelin.');
+
     status.className = 'rename-status ok';
     status.textContent = '✓ Renommé avec succès.';
     updateDomAfterRename(renameTarget, newName);
@@ -761,9 +779,20 @@ function updateDomAfterRename(oldName, newName) {
     el.src = 'images/' + newName;
   });
   // Update data-size-badge attributes
-  document.querySelectorAll(`[data-size-badge="${CSS.escape(oldName)}"]`).forEach(el => {
-    el.dataset.sizeBadge = newName;
+  document.querySelectorAll('[data-size-badge]').forEach(el => {
+    if (el.dataset.sizeBadge === oldName) el.dataset.sizeBadge = newName;
   });
+  // Update orphan row (id, label, bouton Supprimer)
+  const orow = document.getElementById('orphan-' + oldName);
+  if (orow) {
+    orow.id = 'orphan-' + newName;
+    const olabel = orow.querySelector('.img-label');
+    if (olabel) olabel.textContent = newName.replace('.png','');
+    const oimg = orow.querySelector('img');
+    if (oimg) { oimg.title = newName; oimg.setAttribute('onclick', 'showImg(' + JSON.stringify(newName) + ')'); }
+    const obtn = orow.querySelector('.btn-delete');
+    if (obtn) obtn.setAttribute('onclick', 'deleteOrphan(' + JSON.stringify(newName) + ')');
+  }
   // Update img-card dans la grille
   document.querySelectorAll('#shared-container .img-card').forEach(card => {
     const im = card.querySelector('img');
