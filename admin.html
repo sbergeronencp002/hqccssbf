@@ -919,6 +919,10 @@ async function uploadImage() {
   const btn = document.getElementById('btn-upload');
   btn.disabled = true; statusEl.textContent = '⏳ Téléversement…';
   try {
+    // Lance le check SHA et le redimensionnement en parallèle
+    const shaPromise = fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/images/${name}?ref=${BRANCH}&t=${Date.now()}`, { headers:{ Authorization:`token ${token}` } })
+      .then(r => r.ok ? r.json().then(d => d.sha || '') : '').catch(() => '');
+
     const imgInfo = await new Promise((res,rej) => {
       const reader = new FileReader();
       reader.onload = e => {
@@ -941,10 +945,7 @@ async function uploadImage() {
       reader.onerror = rej;
       reader.readAsDataURL(file);
     });
-    // Récupère le SHA si le fichier existe déjà (nécessaire pour le remplacement)
-    let existingSha = '';
-    const checkResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/images/${name}?ref=${BRANCH}&t=${Date.now()}`, { headers:{ Authorization:`token ${token}` } });
-    if(checkResp.ok) { const checkData = await checkResp.json(); existingSha = checkData.sha || ''; }
+    const existingSha = await shaPromise;
     const putResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/images/${name}`, {
       method:'PUT',
       headers:{ Authorization:`token ${token}`, 'Content-Type':'application/json' },
