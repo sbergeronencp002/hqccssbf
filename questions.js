@@ -10245,7 +10245,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 2,
     soustag: "Cause",
-    enonce: "Indiquez une cause de l’adoption de prisonniers par certaines nations autochtones.",
+    enonce: "Indiquez une raison pour laquelle certaines nations autochtones adoptaient des prisonniers.",
     aspects: [
       {
         aspect: "Alliances et rivalités au sein des Premières Nations"
@@ -10267,7 +10267,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Pour remplacer des membres de la communauté morts lors de conflits ou de maladies."
+    guide: "Compenser les pertes de population causées par les guerres.\nRemplacer des membres décédés.\nAugmenter la population de la nation.\nIntégrer de nouveaux membres à la communauté.\nAssurer la survie ou la continuité du groupe.",
+    updatedAt: "2026-06-10T17:18:31.370Z"
   },
   {
     id: "Q69",
