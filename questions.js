@@ -6900,6 +6900,34 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q346": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -22111,5 +22139,59 @@ const QUESTIONS = [
     },
     guide: "Les basses terres du Saint-Laurent possèdent des sols fertiles favorables à l'agriculture (une particularité du sol dans les basses terres du Saint-Laurent). Cette caractéristique permet aux Iroquoiens de cultiver principalement le maïs (la principale activité de subsistance pratiquée par les Iroquoiens). Comme ils produisent leur nourriture au même endroit, ils vivent dans des villages permanents et adoptent un mode de vie sédentaire (le mode de vie des Iroquoiens).",
     updatedAt: "2026-06-10T15:39:45.208Z"
+  },
+  {
+    id: "Q346",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P1 — Des origines à 1608",
+    points: 3,
+    enonce: "Expliquez comment le territoire occupé par les Algonquiens détermine leur mode de vie.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Une caractéristique du territoire occupé par les Algonquiens\n• La principale activité de subsistance pratiquée par les Algonquiens\n• Le mode de vie des Algonquiens",
+    aspects: [
+      {
+        aspect: "Premiers occupants du territoire"
+      },
+      {
+        aspect: "Réseaux d'échange autochtones"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les Algonquiens occupent principalement le Bouclier canadien, une vaste région couverte de forêts et de nombreux cours d’eau. Les sols y sont généralement peu favorables à l’agriculture à grande échelle. »",
+            source: "Alain Beaulieu, Stéphanie Béreau et Jean Tanguay, Les Autochtones du Québec : des premières alliances aux revendications contemporaines, Montréal, Fides, 2013, p. 22-23. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "campement_algonquien.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Comme les ressources sont dispersées sur un vaste territoire et varient selon les saisons, les groupes algonquiens se déplacent régulièrement afin d'exploiter les différentes zones de chasse et de pêche. »",
+            source: "Denys Delâge, Le Pays renversé, Montréal, Boréal, 1991, p. 33-34. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 5
+    },
+    guide: "Les Algonquiens occupent un territoire forestier dont les sols sont peu favorables à l’agriculture (une caractéristique du territoire occupé par les Algonquiens). Ils pratiquent donc principalement la chasse et la pêche pour se nourrir (la principale activité de subsistance pratiquée par les Algonquiens). Comme les ressources sont dispersées sur le territoire, ils se déplacent selon les saisons et adoptent un mode de vie nomade (le mode de vie des Algonquiens).",
+    updatedAt: "2026-06-10T15:55:11.597Z"
   }
 ]
