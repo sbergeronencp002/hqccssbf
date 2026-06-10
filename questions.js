@@ -22502,7 +22502,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "carte_cartier_1534.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Carte du Québec. Adaptée d'après d-maps.com."
           }
         ]
       }
@@ -22511,7 +22511,7 @@ const QUESTIONS = [
       type: "tableau_2col"
     },
     guide: "B",
-    updatedAt: "2026-06-10T17:38:30.718Z"
+    updatedAt: "2026-06-10T18:59:04.977Z"
   },
   {
     id: "Q350",
