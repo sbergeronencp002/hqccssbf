@@ -7580,7 +7580,8 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "fondation_quebec_1608.png",
-            soustitre: "Fondation de Québec et construction de l’Habitation"
+            soustitre: "Fondation de Québec et construction de l’Habitation",
+            source: "Gravure de l'habitation de Québec, Samuel de Champlain, 1613. Bibliothèque et Archives Canada."
           }
         ]
       },
@@ -7619,7 +7620,8 @@ const QUESTIONS = [
       type: "image",
       ref: "ligne_acBd.png"
     },
-    guide: "C - D - B - A"
+    guide: "C - D - B - A",
+    updatedAt: "2026-06-10T18:30:56.483Z"
   },
   {
     id: "Q3",
