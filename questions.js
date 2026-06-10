@@ -10162,7 +10162,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 2,
     soustag: "Cause",
-    enonce: "Indiquez une cause des alliances entre certaines nations autochtones.",
+    enonce: "Indiquez une cause de la formation d’alliances entre certaines nations autochtones vers 1500.",
     aspects: [
       {
         aspect: "Alliances et rivalités au sein des Premières Nations"
@@ -10184,7 +10184,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Certaines nations autochtones concluent des alliances afin de se protéger contre des ennemis communs ou afin de faciliter les échanges commerciaux."
+    guide: "Se défendre contre des nations rivales.\nRenforcer sa puissance militaire.\nContrôler un territoire de chasse.\nContrôler un réseau d'échange.\nMener des guerres contre des nations ennemies.\nObtenir des alliés dans les conflits.",
+    updatedAt: "2026-06-10T17:17:42.360Z"
   },
   {
     id: "Q67",
