@@ -6772,6 +6772,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q341": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève dégage correctement la différence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève dégage plus ou moins correctement la différence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."
+      }
+    ]
   }
 }
 
@@ -21704,5 +21726,47 @@ const QUESTIONS = [
     },
     guide: "Le gouverneur sanctionne ou refuse les lois ou nomme les membres du Conseil exécutif ou nomme les membres du Conseil législatif ou convoque ou dissout la Chambre d'assemblée ou représente la Couronne britannique ou dirige l'administration de la colonie.",
     updatedAt: "2026-06-10T01:05:16.008Z"
+  },
+  {
+    id: "Q341",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Différence",
+    enonce: "À partir des documents A et B, indiquez une différence entre les positions du Parti canadien et du Parti bureaucrate au début du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Débats parlementaires"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Plusieurs députés souhaitent que les élus de la Chambre d’assemblée exercent une plus grande influence sur les affaires de la colonie et défendent les intérêts de la majorité canadienne-française. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 2."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« D’autres députés appuient le maintien de l’autorité du gouverneur et des institutions nommées. Ils considèrent que la stabilité politique repose sur le lien avec les autorités britanniques. »",
+            source: "Adapté de Gilles Laporte, Brève histoire politique du Québec."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le Parti canadien souhaite accroître le pouvoir des élus, tandis que le Parti bureaucrate appuie davantage l'autorité du gouverneur et des institutions nommées.",
+    updatedAt: "2026-06-10T01:07:18.044Z"
   }
 ]
