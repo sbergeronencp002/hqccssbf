@@ -10090,7 +10090,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 2,
     soustag: "Cause",
-    enonce: "Indiquez une cause des rivalités entre certaines nations autochtones pour le contrôle de certains territoires.",
+    enonce: "Indiquez une cause des rivalités entre certaines nations autochtones pour le contrôle des territoires de chasse.",
     aspects: [
       {
         aspect: "Alliances et rivalités au sein des Premières Nations"
@@ -10112,7 +10112,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Certaines nations autochtones se disputent le contrôle de certains territoires afin de protéger leurs ressources ou de contrôler les routes commerciales."
+    guide: "Contrôler des voies de circulation.\nContrôler des réseaux d'échange.\nAccroître son influence sur un territoire.",
+    updatedAt: "2026-06-10T17:19:52.580Z"
   },
   {
     id: "Q65",
