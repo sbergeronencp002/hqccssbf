@@ -1,5 +1,11 @@
 # Instructions projet — HQC · CSSBF
 
+## Merge vers main — autorisation permanente
+
+Merger la branche de travail vers `main` sans demander confirmation. Le faire dès que des changements de code sont prêts à être déployés sur le site.
+
+---
+
 ## Règle absolue — ne jamais toucher questions.js via git
 
 `questions.js` est géré **exclusivement** par `admin.html` qui publie directement sur `main` via l'API GitHub. Ne jamais modifier ce fichier via un commit git — les changements n'apparaîtraient pas sur le site et créeraient des conflits de données avec les publications admin.
