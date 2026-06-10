@@ -6794,6 +6794,28 @@ const REGLETTES = {
         desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."
       }
     ]
+  },
+  "Q342": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
   }
 }
 
@@ -21768,5 +21790,82 @@ const QUESTIONS = [
     },
     guide: "Le Parti canadien souhaite accroître le pouvoir des élus, tandis que le Parti bureaucrate appuie davantage l'autorité du gouverneur et des institutions nommées.",
     updatedAt: "2026-06-10T01:07:18.044Z"
+  },
+  {
+    id: "Q342",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    enonce: "Les documents A à D font référence aux principaux partis politiques du Bas-Canada au début du XIXe siècle. Inscrivez la lettre de chaque document à l'endroit approprié.",
+    aspects: [
+      {
+        aspect: "Débats parlementaires"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les représentants du peuple doivent pouvoir surveiller l'administration et veiller à ce que les fonds publics soient utilisés selon les besoins de la population de cette province. »",
+            source: "Pierre-Stanislas Bédard, discours à la Chambre d'assemblée du Bas-Canada, vers 1809. Texte adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les institutions établies sous l'autorité britannique assurent la stabilité du gouvernement et doivent être protégées contre les tentatives de réduire les pouvoirs de l'administration coloniale. »",
+            source: "Jonathan Sewell, juge en chef du Bas-Canada, vers 1810. Texte adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les élus de la Chambre d'assemblée doivent obtenir un contrôle plus important sur les revenus de la colonie afin de mieux représenter les intérêts des habitants. »",
+            source: "Louis-Joseph Papineau, discours à la Chambre d'assemblée, vers 1820. Texte adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Le gouverneur et les conseils nommés demeurent les meilleurs garants de l'ordre public et du maintien des liens qui unissent cette colonie à l'Empire britannique. »",
+            source: "Herman Ryland, secrétaire du gouverneur Craig, vers 1810. Texte adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Parti canadien",
+        "Parti bureaucrate"
+      ],
+      double: true
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Parti canadien",
+        "Parti bureaucrate"
+      ],
+      rangees: [
+        [
+          "A et C",
+          "B et D"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-10T01:10:14.725Z"
   }
 ]
