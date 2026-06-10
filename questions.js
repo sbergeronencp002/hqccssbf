@@ -6833,6 +6833,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q344": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (3 sur 3)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (2 sur 3)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
+      }
+    ]
   }
 }
 
@@ -21919,5 +21941,75 @@ const QUESTIONS = [
     },
     guide: "Le contrôle des finances publiques ou l'utilisation des revenus de la colonie ou le budget de la colonie.",
     updatedAt: "2026-06-10T01:16:31.294Z"
+  },
+  {
+    id: "Q344",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "3 documents",
+    enonce: "Les documents A à C présentent des sujets débattus à la Chambre d’assemblée du Bas-Canada au début du XIXe siècle. Associez chaque document à l’enjeu politique correspondant.",
+    aspects: [
+      {
+        aspect: "Débats parlementaires"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Aucune administration ne peut demeurer stable si l'autorité confiée au représentant du souverain est constamment remise en question par les députés élus. »",
+            source: "Jonathan Sewell, Conseil législatif du Bas-Canada, vers 1810. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les habitants de cette province doivent pouvoir exercer une influence réelle sur les décisions publiques par l'intermédiaire des personnes qu'ils ont librement choisies. »",
+            source: "Louis-Joseph Papineau, Chambre d'assemblée du Bas-Canada, vers 1828. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les représentants de la population ne devraient pas être exclus lorsqu'il s'agit de décider de l'utilisation des revenus prélevés dans la colonie auprès des habitants. »",
+            source: "Pierre-Stanislas Bédard, Chambre d'assemblée du Bas-Canada, vers 1809. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Contrôle des finances publiques",
+        "Pouvoir du gouverneur",
+        "Représentation politique"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Contrôle des finances publiques",
+        "Pouvoir du gouverneur",
+        "Représentation politique"
+      ],
+      rangees: [
+        [
+          "C",
+          "A",
+          "B"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-10T01:22:12.195Z"
   }
 ]
