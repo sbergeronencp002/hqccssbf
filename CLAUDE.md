@@ -1,5 +1,19 @@
 # Instructions projet — HQC · CSSBF
 
+## Merge vers main — autorisation permanente
+
+Merger la branche de travail vers `main` sans demander confirmation. Le faire dès que des changements de code sont prêts à être déployés sur le site.
+
+---
+
+## Règle absolue — ne jamais toucher questions.js via git
+
+`questions.js` est géré **exclusivement** par `admin.html` qui publie directement sur `main` via l'API GitHub. Ne jamais modifier ce fichier via un commit git — les changements n'apparaîtraient pas sur le site et créeraient des conflits de données avec les publications admin.
+
+Mes commits git ne doivent contenir que des fichiers de code : `app.js`, `style.css`, `admin.html`, `index.html`, `oi-config.js`, `reglettes.js`, `contexte.js`, `CLAUDE.md`, etc.
+
+---
+
 ## Architecture
 
 Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
@@ -269,7 +283,7 @@ const BC4 = {top:BORDER,bottom:BORDER,left:BN,     right:BORDER}; // col4
 
 Le proxy local est en lecture seule. Pousser via HTTPS direct :
 ```bash
-PAT=ghp_...(votre token)
+PAT=<votre_token>
 git fetch https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git main:refs/remotes/origin/main_fresh
 git merge refs/remotes/origin/main_fresh --no-edit
 git push https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git HEAD:main
@@ -293,7 +307,7 @@ Vérifier que la taille est raisonnable (< 400 Ko idéalement) avant de pousser.
 
 ## Renouvellement du PAT GitHub
 
-Le PAT `ghp_...(votre token)` expire. Quand il expire :
+Le PAT expire. Quand il expire :
 1. Aller sur https://github.com/settings/tokens
 2. Retrouver le token `hqccssbf-admin` → cliquer « Regenerate »
 3. Copier le nouveau token
