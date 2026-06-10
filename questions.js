@@ -7506,6 +7506,11 @@ const IMAGE_DB = {
   },
   "carte_cartier_1534.png": {
     src: "images/carte_cartier_1534.png"
+  },
+  "alliance_franco-ame.png": {
+    src: "images/alliance_franco-ame.png",
+    w: 1200,
+    h: 900
   }
 }
 
@@ -22477,8 +22482,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« À Tadoussac, en 1603, les Français concluent une alliance avec des nations autochtones de la vallée du Saint-Laurent. Cette entente prévoit une collaboration fondée sur des intérêts communs et une aide mutuelle. »",
-            source: "Marcel Trudel, Histoire de la Nouvelle-France, tome I : Les vaines tentatives, 1524-1603, Montréal, Fides, 1963, p. 278-279. Adapté."
+            ref: "alliance_franco-ame.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
@@ -22488,6 +22493,6 @@ const QUESTIONS = [
       nombre: 5
     },
     guide: "L'alliance franco-amérindienne de 1603 (le nom de l'alliance conclue en 1603) permet aux Français de bénéficier des connaissances du territoire et des voies de circulation transmises par leurs alliés autochtones (un avantage procuré aux Français par cette alliance). Cette aide favorise leur établissement permanent et leur présence dans la vallée du Saint-Laurent (une conséquence sur l'occupation du territoire par les Français).",
-    updatedAt: "2026-06-10T17:57:45.559Z"
+    updatedAt: "2026-06-10T18:03:50.118Z"
   }
 ]
