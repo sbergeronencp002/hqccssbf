@@ -390,7 +390,12 @@ header a:hover { color: #fff; }
 document.addEventListener('DOMContentLoaded', init);
 
 function utf8b64(str) {
-  return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, (_, p) => String.fromCharCode(parseInt(p, 16))));
+  const bytes = new TextEncoder().encode(str);
+  const CHUNK = 8192;
+  let binary = '';
+  for (let i = 0; i < bytes.length; i += CHUNK)
+    binary += String.fromCharCode.apply(null, bytes.subarray(i, i + CHUNK));
+  return btoa(binary);
 }
 
 // Normalise pour la recherche : minuscules + suppression des accents (é → e)
