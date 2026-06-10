@@ -7079,6 +7079,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas le fait dans l'espace."
       }
     ]
+  },
+  "Q354": {
+    oi: "Situer dans l'espace",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe le fait dans l'espace."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas le fait dans l'espace."
+      }
+    ]
   }
 }
 
@@ -7578,6 +7595,11 @@ const IMAGE_DB = {
     src: "images/carte_monde.png",
     w: 1200,
     h: 685
+  },
+  "carte_amerique_nord.png": {
+    src: "images/carte_amerique_nord.png",
+    w: 1056,
+    h: 1200
   }
 }
 
@@ -22680,5 +22702,36 @@ const QUESTIONS = [
     },
     guide: "D",
     updatedAt: "2026-06-10T18:48:29.025Z"
+  },
+  {
+    id: "Q354",
+    niveau: 3,
+    oi: "Situer dans l'espace",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    soustag: "Situer 1 élément",
+    enonce: "À partir du document A, indiquez la lettre qui correspond à la région d'Amérique du Nord explorée par plusieurs Européens au XVIe siècle.",
+    aspects: [
+      {
+        aspect: "Premiers contacts"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "carte_amerique_nord.png",
+            source: "Carte d'Amérique du Nord. Adaptée d'après d-maps.com."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau_2col"
+    },
+    guide: "C",
+    updatedAt: "2026-06-10T19:04:25.412Z"
   }
 ]
