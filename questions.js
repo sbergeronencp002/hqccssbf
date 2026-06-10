@@ -22450,7 +22450,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P1 — Des origines à 1608",
     points: 3,
-    enonce: "Expliquez comment une alliance conclue entre les Français et les peuples autochtones en 1603 favorise l’occupation du territoire par les Français. \n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux : \n\n• le nom de l'alliance conclue en 1603\n• un avantage procuré aux Français par cette alliance\n• une conséquence sur l'occupation du territoire par les Français",
+    enonce: "Expliquez comment une alliance conclue entre les Français et certaines nations autochtones en 1603 favorise l’occupation du territoire par les Français. \n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux : \n\n• le nom de l'alliance conclue en 1603\n• un avantage procuré aux Français par cette alliance\n• une conséquence sur l'occupation du territoire par les Français",
     aspects: [
       {
         aspect: "Exploration et occupation du territoire par les Français"
@@ -22493,6 +22493,6 @@ const QUESTIONS = [
       nombre: 5
     },
     guide: "L'alliance franco-amérindienne de 1603 (le nom de l'alliance conclue en 1603) permet aux Français de bénéficier des connaissances du territoire et des voies de circulation transmises par leurs alliés autochtones (un avantage procuré aux Français par cette alliance). Cette aide favorise leur établissement permanent et leur présence dans la vallée du Saint-Laurent (une conséquence sur l'occupation du territoire par les Français).",
-    updatedAt: "2026-06-10T18:03:50.118Z"
+    updatedAt: "2026-06-10T18:18:28.111Z"
   }
 ]
