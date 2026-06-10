@@ -21819,8 +21819,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« Les institutions établies sous l'autorité britannique assurent la stabilité du gouvernement et doivent être protégées contre les tentatives de réduire les pouvoirs de l'administration coloniale. »",
-            source: "Jonathan Sewell, juge en chef du Bas-Canada, vers 1810. Texte adapté."
+            texte: "« Les habitants de cette colonie bénéficient déjà d'un gouvernement stable. Les changements réclamés par certains députés risquent davantage de provoquer des divisions que d'améliorer l'administration publique. »",
+            source: "John Richardson, marchand britannique de Québec, vers 1810. Adapté."
           }
         ]
       },
@@ -21839,8 +21839,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document D",
-            texte: "« Le gouverneur et les conseils nommés demeurent les meilleurs garants de l'ordre public et du maintien des liens qui unissent cette colonie à l'Empire britannique. »",
-            source: "Herman Ryland, secrétaire du gouverneur Craig, vers 1810. Texte adapté."
+            texte: "« Les lois et les institutions héritées de la Grande-Bretagne assurent la prospérité de la colonie. Il serait imprudent d'accorder davantage de pouvoir à une assemblée soumise aux pressions populaires. »",
+            source: "Extrait adapté du Quebec Mercury, journal anglophone de Québec, vers 1815."
           }
         ]
       }
@@ -21866,6 +21866,6 @@ const QUESTIONS = [
         ]
       ]
     },
-    updatedAt: "2026-06-10T01:10:14.725Z"
+    updatedAt: "2026-06-10T01:12:03.569Z"
   }
 ]
