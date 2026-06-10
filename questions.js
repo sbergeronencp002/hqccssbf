@@ -6755,6 +6755,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q340": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -21656,5 +21673,36 @@ const QUESTIONS = [
     },
     guide: "Le gouverneur dispose d'un droit de veto ou le gouverneur peut empêcher l'application d'une loi adoptée par la Chambre d'assemblée.",
     updatedAt: "2026-06-10T01:03:15.389Z"
+  },
+  {
+    id: "Q340",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez un pouvoir exercé par le gouverneur dans le Bas-Canada au début du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Débats parlementaires"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "org_pol_1791_acte_const.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le gouverneur sanctionne ou refuse les lois ou nomme les membres du Conseil exécutif ou nomme les membres du Conseil législatif ou convoque ou dissout la Chambre d'assemblée ou représente la Couronne britannique ou dirige l'administration de la colonie.",
+    updatedAt: "2026-06-10T01:05:16.008Z"
   }
 ]
