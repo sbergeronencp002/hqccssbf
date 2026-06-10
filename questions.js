@@ -6972,6 +6972,23 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
       }
     ]
+  },
+  "Q349": {
+    oi: "Situer dans l'espace",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe le fait dans l'espace."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas le fait dans l'espace."
+      }
+    ]
   }
 }
 
@@ -7458,6 +7475,9 @@ const IMAGE_DB = {
   },
   "lieux_echanges.png": {
     src: "images/lieux_echanges.png"
+  },
+  "carte_cartier_1534.png": {
+    src: "images/carte_cartier_1534.png"
   }
 }
 
@@ -22359,5 +22379,36 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-10T17:23:45.679Z"
+  },
+  {
+    id: "Q349",
+    niveau: 3,
+    oi: "Situer dans l'espace",
+    periode: "P1 — Des origines à 1608",
+    points: 1,
+    soustag: "Situer 1 élément",
+    enonce: "À partir du document A, indiquez la lettre qui correspond à l’endroit où Jacques Cartier prend possession du territoire au nom du roi de France en 1534.",
+    aspects: [
+      {
+        aspect: "Exploration et occupation du territoire par les Français"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "carte_cartier_1534.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau_2col"
+    },
+    guide: "B",
+    updatedAt: "2026-06-10T17:38:30.718Z"
   }
 ]
