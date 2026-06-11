@@ -7552,6 +7552,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q377": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -24197,5 +24219,49 @@ const QUESTIONS = [
     },
     guide: "Contestation de l'autorité britannique\nRemise en question de la monarchie britannique\nRevendication de réformes politiques\nRevendication d'un gouvernement plus démocratique\nSoutien accru au mouvement patriote",
     updatedAt: "2026-06-11T15:44:42.871Z"
+  },
+  {
+    id: "Q377",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Changement",
+    enonce: "Indiquez un changement dans les revendications politiques formulées au Bas-Canada entre la fin du XVIIIe siècle et le début du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Idées libérales et républicaines"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les députés de la Chambre d'assemblée demandent que les représentants élus puissent participer davantage à l'administration des finances de la colonie. »",
+            soustitre: "Vers 1790",
+            source: "Pierre-Stanislas Bédard, discours à la Chambre d'assemblée du Bas-Canada, vers 1795. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les Patriotes réclament que les membres du Conseil législatif soient élus et que le gouvernement soit responsable devant les représentants de la population. »",
+            soustitre: "Vers 1825",
+            source: "Quatre-vingt-douze Résolutions. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Il y a changement, car les revendications passent d'une demande d'influence accrue sur les finances de la colonie à une demande de réformes politiques plus importantes, comme l'élection du Conseil législatif ou le gouvernement responsable.",
+    updatedAt: "2026-06-11T15:49:22.762Z"
   }
 ]
