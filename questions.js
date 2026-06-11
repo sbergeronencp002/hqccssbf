@@ -7169,6 +7169,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q359": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -7683,6 +7700,11 @@ const IMAGE_DB = {
     src: "images/population_bas-canada_1800.png",
     w: 1200,
     h: 900
+  },
+  "langues_parlees_bas-canada_1800.png": {
+    src: "images/langues_parlees_bas-canada_1800.png",
+    w: 1200,
+    h: 869
   }
 }
 
@@ -23019,5 +23041,36 @@ const QUESTIONS = [
     },
     guide: "Canadien français \nPopulation canadienne-française",
     updatedAt: "2026-06-11T00:30:06.673Z"
+  },
+  {
+    id: "Q359",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez la langue parlée par la majorité de la population du Bas-Canada au début du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Nationalismes"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "langues_parlees_bas-canada_1800.png",
+            source: "Adapté de Fernand Ouellet, Le Bas-Canada 1791-1840 : changements structuraux et crise, Ottawa, Éditions de l'Université d'Ottawa."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Français.",
+    updatedAt: "2026-06-11T00:31:26.340Z"
   }
 ]
