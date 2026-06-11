@@ -7130,6 +7130,28 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
       }
     ]
+  },
+  "Q357": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (3 sur 3)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (2 sur 3)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
+      }
+    ]
   }
 }
 
@@ -22874,5 +22896,75 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-11T00:18:22.681Z"
+  },
+  {
+    id: "Q357",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "3 documents",
+    enonce: "Les documents A à C présentent des groupes politiques actifs au Bas-Canada au début du XIXe siècle. Associez chaque document au groupe politique correspondant.",
+    aspects: [
+      {
+        aspect: "Débats parlementaires"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Nous réclamons des réformes qui permettront aux représentants élus de la population d’exercer une influence réelle sur le gouvernement de cette province. »",
+            source: "Louis-Joseph Papineau, député du Parti patriote, 1834."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les institutions établies par la Couronne assurent la stabilité du gouvernement et doivent être protégées contre les tentatives visant à réduire leur autorité. »",
+            source: "Herman Witsius Ryland, fonctionnaire colonial et partisan du Parti bureaucrate, vers 1811."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les habitants de cette province ont le droit d’être représentés et de voir leurs intérêts défendus par les députés qu’ils ont librement élus. »",
+            source: "Pierre-Stanislas Bédard, député du Parti canadien, vers 1810."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Parti bureaucrate",
+        "Parti canadien",
+        "Parti patriote"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Parti bureaucrate",
+        "Parti canadien",
+        "Parti patriote"
+      ],
+      rangees: [
+        [
+          "B",
+          "C",
+          "A"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-11T00:19:34.494Z"
   }
 ]
