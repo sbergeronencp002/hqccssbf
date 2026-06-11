@@ -7508,6 +7508,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q375": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -24089,5 +24111,37 @@ const QUESTIONS = [
     },
     guide: "Révolution américaine\nRévolution française\nDiffusion de nouvelles idées politiques en provenance d'Europe ou des États-Unis\n\nLes journaux sont surtout un moyen de diffusion, pas nécessairement la cause profonde de la diffusion des idées libérales.",
     updatedAt: "2026-06-11T15:41:27.627Z"
+  },
+  {
+    id: "Q375",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de la diffusion des idées libérales au Bas-Canada au début du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Idées libérales et républicaines"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les idées libérales encouragent les citoyens à réclamer des réformes politiques et une participation accrue aux décisions qui concernent la colonie. »",
+            source: "Allan Greer, Patriotes et peuple en révolution, Montréal, Boréal, 1997. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Revendications politiques\nDemande d'un gouvernement responsable\nRéformes politiques\nPlus de pouvoir pour les représentants élus\nContestation de l'autorité coloniale\nCréation ou développement du mouvement patriote",
+    updatedAt: "2026-06-11T15:42:47.136Z"
   }
 ]
