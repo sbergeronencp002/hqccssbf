@@ -7596,6 +7596,17 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
       }
     ]
+  },
+  "Q379": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
   }
 }
 
@@ -8123,6 +8134,9 @@ const IMAGE_DB = {
   },
   "journal_le_canadien.png": {
     src: "images/journal_le_canadien.png"
+  },
+  "journaux_bas-canada.png": {
+    src: "images/journaux_bas-canada.png"
   }
 }
 
@@ -24328,5 +24342,47 @@ const QUESTIONS = [
     },
     guide: "Il y a continuité, car la Chambre d'assemblée continue de représenter la population entre 1791 et 1830.",
     updatedAt: "2026-06-11T15:51:46.276Z"
+  },
+  {
+    id: "Q379",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s'il y a changement ou continuité dans la diffusion des idées politiques au Bas-Canada entre 1790 et 1830. Justifiez votre réponse par des faits.",
+    aspects: [
+      {
+        aspect: "Idées libérales et républicaines"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Vers 1790, les journaux sont encore peu nombreux dans la colonie. Les idées politiques circulent surtout parmi une minorité de lecteurs et rejoignent difficilement l'ensemble de la population. »",
+            source: "Yvan Lamonde, Histoire sociale des idées au Québec, Montréal, Fides, 2000. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "journaux_bas-canada.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026. Espace réponse"
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Changement\nIl y a changement, car le nombre de journaux augmente entre 1790 et 1830, ce qui favorise la diffusion des idées politiques dans la colonie.\n\nContinuité\nIl y a continuité, car les journaux continuent de servir à la diffusion des idées politiques entre 1790 et 1830.",
+    updatedAt: "2026-06-11T16:02:17.023Z"
   }
 ]
