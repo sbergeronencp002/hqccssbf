@@ -7447,6 +7447,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q372": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -7971,6 +7988,9 @@ const IMAGE_DB = {
     src: "images/mouvement_liberation.png",
     w: 1200,
     h: 800
+  },
+  "journal_le_canadien.png": {
+    src: "images/journal_le_canadien.png"
   }
 }
 
@@ -23902,5 +23922,36 @@ const QUESTIONS = [
     },
     guide: "Accroître le pouvoir des représentants élus\nDonner plus de pouvoir à la Chambre d'assemblée\nObtenir un gouvernement responsable\nContrôler davantage les finances de la colonie\nRéformer les institutions politiques",
     updatedAt: "2026-06-11T15:22:40.287Z"
+  },
+  {
+    id: "Q372",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez un moyen utilisé pour diffuser les idées politiques au Bas-Canada au début du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Idées libérales et républicaines"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "journal_le_canadien.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Journal\nPrese écrite",
+    updatedAt: "2026-06-11T15:26:15.234Z"
   }
 ]
