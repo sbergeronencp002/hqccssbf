@@ -7274,6 +7274,34 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q364": {
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
   }
 }
 
@@ -23404,5 +23432,60 @@ const QUESTIONS = [
     },
     guide: "Jonathan Sewell et Pierre-Stanislas Bédard sont en désaccord sur les pouvoirs du gouverneur. Sewell veut les maintenir, tandis que Bédard veut accroître le pouvoir de l'Assemblée élue ou diminuer les pouvoirs du gouverneur.",
     updatedAt: "2026-06-11T11:56:50.517Z"
+  },
+  {
+    id: "Q364",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    soustag: "Position – 3 acteurs",
+    enonce: "Les documents A à C présentent le point de vue de trois acteurs concernant l'avenir politique du Bas-Canada. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+    aspects: [
+      {
+        aspect: "Nationalismes"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les Canadiens doivent pouvoir participer davantage aux décisions politiques et protéger les institutions qui représentent la majorité de la population. »",
+            auteur: "Louis-Hippolyte La Fontaine",
+            source: "Louis-Hippolyte La Fontaine, discours politique, vers 1837. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les institutions britanniques assurent la stabilité du gouvernement et doivent demeurer au cœur de l'administration de la colonie. »",
+            auteur: "James Monk",
+            source: "James Monk, correspondance administrative du Bas-Canada, vers 1810. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les habitants de la colonie doivent obtenir une influence plus grande sur les affaires publiques par l'intermédiaire de leurs représentants élus. »",
+            auteur: "Denis-Benjamin Viger",
+            source: "Denis-Benjamin Viger, discours politique, vers 1828. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "James Monk défend le maintien de l'autorité britannique dans la colonie (la différence), alors que Louis-Hippolyte La Fontaine et Denis-Benjamin Viger souhaitent accorder davantage de pouvoir aux représentants élus (la similitude).",
+    updatedAt: "2026-06-11T12:00:27.320Z"
   }
 ]
