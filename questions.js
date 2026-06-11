@@ -7464,6 +7464,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q373": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (2 sur 2)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (1 sur 2)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (0 sur 2)"
+      }
+    ]
   }
 }
 
@@ -23953,5 +23975,66 @@ const QUESTIONS = [
     },
     guide: "Journal\nPrese écrite",
     updatedAt: "2026-06-11T15:26:15.234Z"
+  },
+  {
+    id: "Q373",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "2 documents",
+    enonce: "Les documents A et B présentent deux journaux publiés au début du XIXe siècle. Associez chaque document au nationalisme correspondant.",
+    aspects: [
+      {
+        aspect: "Idées libérales et républicaines"
+      },
+      {
+        aspect: "Nationalismes"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "journal_le_canadien.png",
+            soustitre: "Journal Le Canadien",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026. Espace réponse"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les institutions britanniques ont apporté la stabilité et la prospérité à cette colonie; il serait imprudent de réduire l'autorité des représentants de la Couronne au profit de l'Assemblée. »",
+            source: "Quebec Mercury, Québec, 1810. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Nationalisme britannique",
+        "Nationalisme canadien"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Nationalisme britannique",
+        "Nationalisme canadien"
+      ],
+      rangees: [
+        [
+          "B",
+          "A"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-11T15:37:07.729Z"
   }
 ]
