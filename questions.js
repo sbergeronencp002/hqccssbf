@@ -23677,7 +23677,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             ref: "population_bas-canada_1800.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Adapté de Fernand Ouellet, Le Bas-Canada 1791-1840 : changements structuraux et crise, Ottawa, Éditions de l'Université d'Ottawa, 1976."
           }
         ]
       }
@@ -23698,7 +23698,7 @@ const QUESTIONS = [
         ]
       ]
     },
-    updatedAt: "2026-06-11T12:14:42.135Z"
+    updatedAt: "2026-06-11T12:27:10.402Z"
   },
   {
     id: "Q368",
