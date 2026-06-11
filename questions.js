@@ -7657,6 +7657,28 @@ const REGLETTES = {
         desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
       }
     ]
+  },
+  "Q382": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de divergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -24533,5 +24555,49 @@ const QUESTIONS = [
     },
     guide: "Jonathan Sewell veut maintenir l'autorité britannique (la différence), alors que Louis-Joseph Papineau et Ludger Duvernay souhaitent accroître le pouvoir de la population et des représentants élus (la similitude).",
     updatedAt: "2026-06-11T16:06:44.714Z"
+  },
+  {
+    id: "Q382",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Divergence – 2 acteurs",
+    enonce: "Les documents A et B présentent la position de deux journaux concernant l'avenir politique de la colonie. Nommez le point sur lequel ces journaux sont en désaccord.",
+    aspects: [
+      {
+        aspect: "Idées libérales et républicaines"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les représentants élus doivent obtenir une plus grande influence dans les affaires de la colonie afin de défendre les intérêts de la population. »",
+            auteur: "François Blanchet",
+            source: "Le Canadien, Québec, vers 1810. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les institutions britanniques assurent la stabilité de la colonie et il serait dangereux de réduire les pouvoirs du gouverneur au profit de l'Assemblée. »",
+            auteur: "Thomas CaryAutr",
+            source: "Quebec Mercury, Québec, vers 1810. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "François Blanchet veut donner plus de pouvoir aux représentants élus, alors que Thomas Cary souhaite maintenir les pouvoirs du gouverneur.",
+    updatedAt: "2026-06-11T16:09:07.732Z"
   }
 ]
