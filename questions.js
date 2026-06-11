@@ -7679,6 +7679,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q383": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève dégage correctement la différence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève dégage plus ou moins correctement la différence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."
+      }
+    ]
   }
 }
 
@@ -24599,5 +24621,47 @@ const QUESTIONS = [
     },
     guide: "François Blanchet veut donner plus de pouvoir aux représentants élus, alors que Thomas Cary souhaite maintenir les pouvoirs du gouverneur.",
     updatedAt: "2026-06-11T16:09:07.732Z"
+  },
+  {
+    id: "Q383",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Différence",
+    enonce: "Indiquez une différence entre les facteurs qui expliquent l'augmentation de la population du Bas-Canada et du Haut-Canada dans la première moitié du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Population"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La croissance de la population du Bas-Canada repose avant tout sur une natalité exceptionnellement élevée. Les familles nombreuses contribuent largement à l'augmentation du nombre d'habitants au début du XIXe siècle. »",
+            source: "Fernand Ouellet, Le Bas-Canada 1791-1840 : changements structuraux et crise, Ottawa, Éditions de l'Université d'Ottawa, 1976. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« L'augmentation rapide de la population du Haut-Canada est étroitement liée à l'arrivée continue d'immigrants provenant des îles Britanniques durant la première moitié du XIXe siècle. »",
+            source: "J.M.S. Careless, Canada: A Story of Challenge, Toronto, Macmillan, 1970. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "La population du Bas-Canada augmente principalement grâce à l'accroissement naturel, tandis que celle du Haut-Canada augmente surtout grâce à l'immigration britannique.",
+    updatedAt: "2026-06-11T18:39:04.086Z"
   }
 ]
