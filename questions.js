@@ -23279,6 +23279,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "population_bas-canada_1800.png",
+            soustitre: "Répartition de la population du Bas-Canada vers 1810",
             source: "Adapté de Fernand Ouellet, Le Bas-Canada 1791-1840 : changements structuraux et crise, Ottawa, Éditions de l'Université d'Ottawa, 1976."
           }
         ]
@@ -23289,7 +23290,7 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Canadien français \nPopulation canadienne-française",
-    updatedAt: "2026-06-11T12:26:43.281Z"
+    updatedAt: "2026-06-11T15:20:43.662Z"
   },
   {
     id: "Q359",
