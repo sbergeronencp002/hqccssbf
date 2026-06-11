@@ -23202,7 +23202,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "4 documents",
-    enonce: "Les documents A à D présentent des revendications formulées au début du XIXe siècle. Associez chaque document au courant de pensée correspondant.",
+    enonce: "Les documents A à D présentent des acteurs politiques du Bas-Canada au début du XIXe siècle. Associez chaque document au nationalisme correspondant.",
     aspects: [
       {
         aspect: "Nationalismes"
@@ -23271,6 +23271,6 @@ const QUESTIONS = [
         ]
       ]
     },
-    updatedAt: "2026-06-11T01:37:07.067Z"
+    updatedAt: "2026-06-11T01:38:36.447Z"
   }
 ]
