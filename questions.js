@@ -7230,6 +7230,28 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
       }
     ]
+  },
+  "Q362": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -23272,5 +23294,49 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-11T01:38:36.447Z"
+  },
+  {
+    id: "Q362",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs concernant la place des Canadiens français dans le Bas-Canada au début du XIXe siècle. Indiquez le principal point sur lequel ces acteurs sont en accord.",
+    aspects: [
+      {
+        aspect: "Nationalismes"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les Canadiens doivent pouvoir participer pleinement à l'administration de leur pays et conserver les institutions qui assurent la protection de leurs droits et de leurs intérêts. »",
+            auteur: "Denis-Benjamin Viger",
+            source: "Denis-Benjamin Viger, Considérations sur les effets qu'ont produit en Canada la conservation des établissements du pays, Londres, 1809. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les habitants de cette province ont le droit de défendre leur langue, leurs lois et leurs institutions par l'intermédiaire des représentants qu'ils élisent à l'Assemblée. »",
+            auteur: "Louis-Joseph Papineau",
+            source: "Louis-Joseph Papineau, discours à la Chambre d'assemblée du Bas-Canada, vers 1834. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Denis-Benjamin Viger et Louis-Joseph Papineau considèrent que les Canadiens français doivent défendre leurs droits ou leurs institutions.",
+    updatedAt: "2026-06-11T11:54:42.920Z"
   }
 ]
