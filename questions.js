@@ -7252,6 +7252,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q363": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de divergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -23338,5 +23360,49 @@ const QUESTIONS = [
     },
     guide: "Denis-Benjamin Viger et Louis-Joseph Papineau considèrent que les Canadiens français doivent défendre leurs droits ou leurs institutions.",
     updatedAt: "2026-06-11T11:54:42.920Z"
+  },
+  {
+    id: "Q363",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Divergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs concernant les pouvoirs du gouverneur. Indiquez le principal point sur lequel ces acteurs sont en désaccord.",
+    aspects: [
+      {
+        aspect: "Nationalismes"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le gouverneur doit conserver une autorité suffisante pour assurer la stabilité politique et veiller aux intérêts de la Couronne dans la colonie. »",
+            auteur: "Jonathan Sewell",
+            source: "Jonathan Sewell, correspondance politique adressée aux autorités britanniques, vers 1810. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les représentants élus doivent exercer un contrôle plus important sur les affaires publiques afin de limiter l'influence des autorités qui ne sont pas responsables devant la population. »",
+            auteur: "Pierre-Stanislas Bédard",
+            source: "Pierre-Stanislas Bédard, discours à la Chambre d'assemblée du Bas-Canada, vers 1809. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Jonathan Sewell et Pierre-Stanislas Bédard sont en désaccord sur les pouvoirs du gouverneur. Sewell veut les maintenir, tandis que Bédard veut accroître le pouvoir de l'Assemblée élue ou diminuer les pouvoirs du gouverneur.",
+    updatedAt: "2026-06-11T11:56:50.517Z"
   }
 ]
