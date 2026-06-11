@@ -7346,6 +7346,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q367": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (2 sur 2)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (1 sur 2)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (0 sur 2)"
+      }
+    ]
   }
 }
 
@@ -23595,5 +23617,62 @@ const QUESTIONS = [
     },
     guide: "Tensions politiques\nOpposition entre Canadiens français et Britanniques\nFormation de partis politiques défendant des intérêts différents\nDéveloppement du nationalisme canadien\nDéveloppement du nationalisme britannique\nConflits à la Chambre d'assemblée",
     updatedAt: "2026-06-11T12:05:34.072Z"
+  },
+  {
+    id: "Q367",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    enonce: "Au début du XIXe siècle, les nationalismes s'affrontent au Bas-Canada. Indiquez la lettre du document qui présente : \n• une cause de l'émergence du nationalisme canadien\n• une conséquence de l'émergence du nationalisme canadien",
+    aspects: [
+      {
+        aspect: "Nationalismes"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Afin de défendre les intérêts des Canadiens, plusieurs députés s'unissent au sein d'un mouvement politique qui réclame une plus grande influence des représentants élus. »",
+            soustitre: "Formation du Parti canadien",
+            source: "Pierre-Stanislas Bédard, discours à la Chambre d'assemblée du Bas-Canada, vers 1809. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "population_bas-canada_1800.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Cause",
+        "Conséquence"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Cause",
+        "Conséquence"
+      ],
+      rangees: [
+        [
+          "B",
+          "A"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-11T12:11:35.240Z"
   }
 ]
