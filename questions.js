@@ -23214,8 +23214,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Les députés élus doivent obtenir un plus grand contrôle sur les revenus de la colonie afin que les intérêts de la population soient mieux représentés. »",
-            source: "Pierre-Stanislas Bédard, député du Parti canadien, vers 1809. Adapté."
+            texte: "« Les habitants de cette province doivent pouvoir exercer une influence réelle sur les décisions du gouvernement par l'entremise de leurs représentants élus. »",
+            source: "Denis-Benjamin Viger, député du Bas-Canada, vers 1828. Adapté."
           }
         ]
       },
@@ -23224,8 +23224,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« Le maintien des pouvoirs du gouverneur et des conseils nommés est essentiel à la stabilité politique et à la protection des intérêts de l'Empire britannique. »",
-            source: "Jonathan Sewell, conseiller exécutif du Bas-Canada, vers 1810. Adapté."
+            texte: "« L'autorité du gouvernement doit être maintenue afin d'assurer l'ordre et la prospérité de la colonie sous la protection de la Couronne britannique. »",
+            source: "James Monk, juge en chef du Bas-Canada, vers 1810. Adapté."
           }
         ]
       },
@@ -23234,8 +23234,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« Les Canadiens doivent pouvoir conserver leur langue, leurs lois et leurs institutions au sein de la colonie. »",
-            source: "Louis-Joseph Papineau, député du Parti canadien, vers 1815. Adapté."
+            texte: "« Les Canadiens ont le droit de conserver leurs institutions nationales et de participer pleinement à l'administration de leur pays. »",
+            source: "Louis-Hippolyte La Fontaine, député du Bas-Canada, vers 1837. Adapté."
           }
         ]
       },
@@ -23244,8 +23244,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document D",
-            texte: "« Les institutions britanniques constituent le fondement du bon gouvernement et ne doivent pas être affaiblies par les revendications de l'Assemblée. »",
-            source: "Herman Witsius Ryland, fonctionnaire colonial, vers 1811. Adapté."
+            texte: "« Les liens qui unissent cette colonie à l'Empire britannique constituent la meilleure garantie de stabilité et de développement pour l'avenir. »",
+            source: "John Richardson, marchand britannique de Montréal, vers 1830. Adapté."
           }
         ]
       }
@@ -23271,6 +23271,6 @@ const QUESTIONS = [
         ]
       ]
     },
-    updatedAt: "2026-06-11T01:35:17.777Z"
+    updatedAt: "2026-06-11T01:37:07.067Z"
   }
 ]
