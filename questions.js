@@ -7368,6 +7368,34 @@ const REGLETTES = {
         desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
       }
     ]
+  },
+  "Q368": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -23671,5 +23699,58 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-11T12:14:42.135Z"
+  },
+  {
+    id: "Q368",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    enonce: "Expliquez comment la dualité linguistique contribue à l'émergence de tensions politiques dans le Bas-Canada au début du XIXe siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux : \n\n• la composition linguistique de la population\n• un groupe de population qui cherche à accroître son influence \n• une conséquence politique",
+    aspects: [
+      {
+        aspect: "Nationalismes"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "population_bas-canada_1800.png",
+            soustitre: "Composition de la population du Bas-Canada vers 1810",
+            source: "Adapté de Fernand Ouellet, Le Bas-Canada 1791-1840 : changements structuraux et crise, Ottawa, Éditions de l'Université d'Ottawa, 1976."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les députés canadiens réclament une influence plus grande dans les affaires publiques afin de mieux représenter les intérêts de la majorité de la population. »",
+            source: "Pierre-Stanislas Bédard, discours à la Chambre d'assemblée du Bas-Canada, vers 1809. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "debats_parlementaires.png",
+            soustitre: "Débats parlementaires à la Chambre d'assemblée",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 5
+    },
+    guide: "La présence de francophones et d'anglophones dans le Bas-Canada (composition linguistique) amène les Canadiens français (groupe de population) à chercher à accroître leur influence politique, ce qui provoque la formation de partis opposés et des tensions à la Chambre d'assemblée (conséquence politique).",
+    updatedAt: "2026-06-11T12:25:48.432Z"
   }
 ]
