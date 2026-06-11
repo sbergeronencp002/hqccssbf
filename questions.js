@@ -7152,6 +7152,23 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
       }
     ]
+  },
+  "Q358": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -7661,6 +7678,11 @@ const IMAGE_DB = {
     src: "images/carte_golfe_st-laurent.png",
     w: 1074,
     h: 1200
+  },
+  "population_bas-canada_1800.png": {
+    src: "images/population_bas-canada_1800.png",
+    w: 1200,
+    h: 900
   }
 }
 
@@ -22966,5 +22988,36 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-11T00:19:34.494Z"
+  },
+  {
+    id: "Q358",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez le groupe de population majoritaire dans le Bas-Canada au début du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Nationalismes"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "population_bas-canada_1800.png",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 2, Québec, Septentrion."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Canadien français \nPopulation canadienne-française",
+    updatedAt: "2026-06-11T00:30:06.673Z"
   }
 ]
