@@ -7348,7 +7348,7 @@ const REGLETTES = {
     ]
   },
   "Q367": {
-    oi: "Mettre en relation des faits",
+    oi: "Déterminer des causes et des conséquences",
     colonnes: [
       "2 points",
       "1 point",
@@ -7357,15 +7357,15 @@ const REGLETTES = {
     niveaux: [
       {
         pts: 2,
-        desc: "L'élève met en relation tous les faits. (2 sur 2)"
+        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
       },
       {
         pts: 1,
-        desc: "L'élève met en relation certains faits. (1 sur 2)"
+        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
       },
       {
         pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (0 sur 2)"
+        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
       }
     ]
   }
@@ -23621,9 +23621,10 @@ const QUESTIONS = [
   {
     id: "Q367",
     niveau: 3,
-    oi: "Mettre en relation des faits",
+    oi: "Déterminer des causes et des conséquences",
     periode: "P4 — 1791 – 1840",
     points: 2,
+    soustag: "Cause et conséquence",
     enonce: "Au début du XIXe siècle, les nationalismes s'affrontent au Bas-Canada. Indiquez la lettre du document qui présente : \n• une cause de l'émergence du nationalisme canadien\n• une conséquence de l'émergence du nationalisme canadien",
     aspects: [
       {
@@ -23654,11 +23655,7 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "mettre-en-relation",
-      elements: [
-        "Cause",
-        "Conséquence"
-      ]
+      type: "cause-consequence"
     },
     guide: {
       type: "grille",
@@ -23673,6 +23670,6 @@ const QUESTIONS = [
         ]
       ]
     },
-    updatedAt: "2026-06-11T12:11:35.240Z"
+    updatedAt: "2026-06-11T12:14:42.135Z"
   }
 ]
