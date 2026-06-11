@@ -7430,6 +7430,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q371": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -23854,5 +23871,36 @@ const QUESTIONS = [
     },
     guide: "États-Unis.",
     updatedAt: "2026-06-11T15:19:29.266Z"
+  },
+  {
+    id: "Q371",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez une revendication formulée par les partisans du libéralisme politique au Bas-Canada.",
+    aspects: [
+      {
+        aspect: "Idées libérales et républicaines"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les habitants de la colonie doivent pouvoir influencer les décisions du gouvernement par l'intermédiaire de leurs représentants élus. »",
+            source: "Louis-Joseph Papineau, discours à la Chambre d'assemblée du Bas-Canada, vers 1834. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Accroître le pouvoir des représentants élus\nDonner plus de pouvoir à la Chambre d'assemblée\nObtenir un gouvernement responsable\nContrôler davantage les finances de la colonie\nRéformer les institutions politiques",
+    updatedAt: "2026-06-11T15:22:40.287Z"
   }
 ]
