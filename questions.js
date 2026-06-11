@@ -7186,6 +7186,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q360": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
   }
 }
 
@@ -23072,5 +23094,83 @@ const QUESTIONS = [
     },
     guide: "Français.",
     updatedAt: "2026-06-11T00:31:26.340Z"
+  },
+  {
+    id: "Q360",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "4 documents",
+    enonce: "Les documents A à D présentent des revendications formulées au début du XIXe siècle. Associez chaque document au courant de pensée correspondant.",
+    aspects: [
+      {
+        aspect: "Nationalismes"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les revenus de la colonie devraient être administrés sous la surveillance des représentants élus par la population, puisque ceux-ci sont les mieux placés pour défendre les intérêts du pays. »",
+            source: "Pierre-Stanislas Bédard, député du Parti canadien, vers 1809. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Le gouverneur et les conseils nommés par la Couronne doivent conserver leurs pouvoirs afin d'assurer la stabilité politique et de protéger les intérêts de l'Empire britannique. »",
+            source: "Jonathan Sewell, conseiller exécutif du Bas-Canada, vers 1810. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les habitants du Bas-Canada ont le droit de voir leur langue, leurs lois et leurs institutions respectées au sein du gouvernement colonial. »",
+            source: "Louis-Joseph Papineau, député du Parti canadien, vers 1815. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Les institutions établies par la Grande-Bretagne ont assuré la prospérité de la colonie et doivent être préservées contre les demandes de réforme excessives. »",
+            source: "Herman Witsius Ryland, fonctionnaire colonial, vers 1811. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Nationalisme britannique",
+        "Nationalisme canadien"
+      ],
+      double: true
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Nationalisme britannique",
+        "Nationalisme canadien"
+      ],
+      rangees: [
+        [
+          "B et D",
+          "A et C"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-11T01:34:06.301Z"
   }
 ]
