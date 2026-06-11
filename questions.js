@@ -7302,6 +7302,28 @@ const REGLETTES = {
         desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
       }
     ]
+  },
+  "Q365": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -23487,5 +23509,37 @@ const QUESTIONS = [
     },
     guide: "James Monk défend le maintien de l'autorité britannique dans la colonie (la différence), alors que Louis-Hippolyte La Fontaine et Denis-Benjamin Viger souhaitent accorder davantage de pouvoir aux représentants élus (la similitude).",
     updatedAt: "2026-06-11T12:00:27.320Z"
+  },
+  {
+    id: "Q365",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une cause de la dualité linguistique dans le Bas-Canada au début du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Nationalismes"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après la Conquête, puis avec l'arrivée de nombreux immigrants britanniques, la population du Bas-Canada se compose à la fois de Canadiens français et de Britanniques aux langues et aux traditions différentes. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 2, Québec, Septentrion. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Arrivée d'immigrants britanniques\nImmigration britannique\nPrésence croissante de Britanniques dans la colonie",
+    updatedAt: "2026-06-11T12:02:56.111Z"
   }
 ]
