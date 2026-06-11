@@ -7574,6 +7574,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
+  },
+  "Q378": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la continuité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la continuité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -24263,5 +24285,47 @@ const QUESTIONS = [
     },
     guide: "Il y a changement, car les revendications passent d'une demande d'influence accrue sur les finances de la colonie à une demande de réformes politiques plus importantes, comme l'élection du Conseil législatif ou le gouvernement responsable.",
     updatedAt: "2026-06-11T15:49:22.762Z"
+  },
+  {
+    id: "Q378",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Continuité",
+    enonce: "Indiquez un élément de continuité dans le rôle de la Chambre d'assemblée au Bas-Canada entre 1791 et 1830.",
+    aspects: [
+      {
+        aspect: "Idées libérales et républicaines"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "org_pol_1791_acte_const.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026. Espace réponse"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les députés de la Chambre d'assemblée continuent de défendre les intérêts de leurs électeurs et de participer aux débats portant sur l'administration de la colonie. »",
+            source: "Louis-Joseph Papineau, discours à la Chambre d'assemblée du Bas-Canada, vers 1830. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Il y a continuité, car la Chambre d'assemblée continue de représenter la population entre 1791 et 1830.",
+    updatedAt: "2026-06-11T15:51:46.276Z"
   }
 ]
