@@ -24173,10 +24173,11 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "cause-consequence"
+      type: "lignes",
+      nombre: 2
     },
     guide: "Révolution américaine\nRévolution française\nDiffusion de nouvelles idées politiques en provenance d'Europe ou des États-Unis\n\nLes journaux sont surtout un moyen de diffusion, pas nécessairement la cause profonde de la diffusion des idées libérales.",
-    updatedAt: "2026-06-11T15:41:27.627Z"
+    updatedAt: "2026-06-11T15:52:18.254Z"
   },
   {
     id: "Q375",
