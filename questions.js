@@ -7607,6 +7607,28 @@ const REGLETTES = {
       "0 point"
     ],
     niveaux: []
+  },
+  "Q380": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -24384,5 +24406,49 @@ const QUESTIONS = [
     },
     guide: "Changement\nIl y a changement, car le nombre de journaux augmente entre 1790 et 1830, ce qui favorise la diffusion des idées politiques dans la colonie.\n\nContinuité\nIl y a continuité, car les journaux continuent de servir à la diffusion des idées politiques entre 1790 et 1830.",
     updatedAt: "2026-06-11T16:02:17.023Z"
+  },
+  {
+    id: "Q380",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent la position de deux acteurs concernant l'organisation politique du Bas-Canada. Nommez le point sur lequel ces acteurs sont d'accord.",
+    aspects: [
+      {
+        aspect: "Idées libérales et républicaines"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les représentants du peuple doivent participer davantage aux décisions qui concernent l'administration de la colonie et l'utilisation des fonds publics. »",
+            auteur: "Pierre-Stanislas Bédard",
+            source: "Pierre-Stanislas Bédard, discours à la Chambre d'assemblée du Bas-Canada, vers 1809. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Une colonie est mieux gouvernée lorsque les représentants élus exercent une influence réelle sur les affaires publiques et sur les décisions du gouvernement. »",
+            auteur: "Louis-Joseph Papineau",
+            source: "Louis-Joseph Papineau, discours à la Chambre d'assemblée du Bas-Canada, vers 1834. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Pierre-Stanislas Bédard et Louis-Joseph Papineau souhaitent accroître les pouvoirs des représentants élus.",
+    updatedAt: "2026-06-11T16:04:43.263Z"
   }
 ]
