@@ -7324,6 +7324,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q366": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -23541,5 +23563,37 @@ const QUESTIONS = [
     },
     guide: "Arrivée d'immigrants britanniques\nImmigration britannique\nPrésence croissante de Britanniques dans la colonie",
     updatedAt: "2026-06-11T12:02:56.111Z"
+  },
+  {
+    id: "Q366",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de la dualité linguistique dans le Bas-Canada au début du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Nationalismes"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "debats_parlementaires.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Tensions politiques\nOpposition entre Canadiens français et Britanniques\nFormation de partis politiques défendant des intérêts différents\nDéveloppement du nationalisme canadien\nDéveloppement du nationalisme britannique\nConflits à la Chambre d'assemblée",
+    updatedAt: "2026-06-11T12:05:34.072Z"
   }
 ]
