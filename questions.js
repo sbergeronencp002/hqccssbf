@@ -7486,6 +7486,28 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (0 sur 2)"
       }
     ]
+  },
+  "Q374": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -24036,5 +24058,36 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-11T15:37:07.729Z"
+  },
+  {
+    id: "Q374",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une cause de la diffusion des idées libérales au Bas-Canada au début du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Idées libérales et républicaines"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les révolutions américaine et française contribuent à répandre de nouvelles idées politiques fondées sur la liberté et la participation des citoyens au gouvernement. »",
+            source: "ric Hobsbawm, L'Ère des révolutions : 1789-1848, Bruxelles, Complexe, 1989. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "cause-consequence"
+    },
+    guide: "Révolution américaine\nRévolution française\nDiffusion de nouvelles idées politiques en provenance d'Europe ou des États-Unis\n\nLes journaux sont surtout un moyen de diffusion, pas nécessairement la cause profonde de la diffusion des idées libérales.",
+    updatedAt: "2026-06-11T15:41:27.627Z"
   }
 ]
