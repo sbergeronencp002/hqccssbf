@@ -7396,6 +7396,23 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q369": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -7915,6 +7932,11 @@ const IMAGE_DB = {
     src: "images/langues_parlees_bas-canada_1800.png",
     w: 1200,
     h: 869
+  },
+  "mouvement_liberation.png": {
+    src: "images/mouvement_liberation.png",
+    w: 1200,
+    h: 800
   }
 }
 
@@ -23752,5 +23774,36 @@ const QUESTIONS = [
     },
     guide: "La présence de francophones et d'anglophones dans le Bas-Canada (composition linguistique) amène les Canadiens français (groupe de population) à chercher à accroître leur influence politique, ce qui provoque la formation de partis opposés et des tensions à la Chambre d'assemblée (conséquence politique).",
     updatedAt: "2026-06-11T12:25:48.432Z"
+  },
+  {
+    id: "Q369",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez un objectif poursuivi par les mouvements de libération nationale au début du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Idées libérales et républicaines"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "mouvement_liberation.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Obtenir l'indépendance.\nSe libérer d'une puissance étrangère.\nSe gouverner soi-même.\nChoisir son propre gouvernement.\nContrôler ses institutions politiques.",
+    updatedAt: "2026-06-11T15:17:15.265Z"
   }
 ]
