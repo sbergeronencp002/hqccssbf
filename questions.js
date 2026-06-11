@@ -20368,7 +20368,7 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "composition_population_1790.png",
             soustitre: "Répartition de la population de la Province de Québec vers 1790",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Adapté de Fernand Ouellet, Le Bas-Canada 1791-1840 : changements structuraux et crise, Ottawa, Éditions de l'Université d'Ottawa, 1976."
           }
         ]
       }
@@ -20378,7 +20378,7 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Les Canadiens ou les Canadiens francophones.",
-    updatedAt: "2026-06-08T15:11:52.808Z"
+    updatedAt: "2026-06-11T12:26:10.799Z"
   },
   {
     id: "Q287",
