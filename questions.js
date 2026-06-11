@@ -7108,6 +7108,28 @@ const REGLETTES = {
         desc: "L'élève ne situe pas le fait dans l'espace."
       }
     ]
+  },
+  "Q356": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (3 sur 3)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (2 sur 3)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
+      }
+    ]
   }
 }
 
@@ -22782,5 +22804,75 @@ const QUESTIONS = [
     },
     guide: "C",
     updatedAt: "2026-06-10T19:09:29.534Z"
+  },
+  {
+    id: "Q356",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "3 documents",
+    enonce: "Les documents A à C présentent des groupes politiques actifs au Bas-Canada au début du XIXe siècle. Associez chaque document au groupe politique correspondant.",
+    aspects: [
+      {
+        aspect: "Débats parlementaires"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Tant que les membres du Conseil législatif seront nommés plutôt qu’élus, les droits du peuple ne seront pas pleinement respectés. »",
+            source: "Louis-Joseph Papineau, député du Parti patriote, 1834."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Le gouverneur doit conserver les pouvoirs nécessaires à l’administration de la colonie, car l’intérêt général ne peut dépendre uniquement des décisions de l’Assemblée. »",
+            source: "Jonathan Sewell, conseiller exécutif et chef du Parti bureaucrate, vers 1810."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« La Chambre d’assemblée doit obtenir le contrôle des revenus publics, puisqu’il est juste que les représentants du peuple participent à l’administration des finances de la colonie. »",
+            source: "Pierre-Stanislas Bédard, député du Parti canadien, vers 1809."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Parti bureaucrate",
+        "Parti canadien",
+        "Parti patriote"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Parti bureaucrate",
+        "Parti canadien",
+        "Parti patriote"
+      ],
+      rangees: [
+        [
+          "B",
+          "A",
+          "C"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-11T00:18:22.681Z"
   }
 ]
