@@ -24437,7 +24437,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "org_pol_1791_acte_const.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026. Espace réponse"
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       },
@@ -24457,7 +24457,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Il y a continuité, car la Chambre d'assemblée continue de représenter la population entre 1791 et 1830.",
-    updatedAt: "2026-06-11T15:51:46.276Z"
+    updatedAt: "2026-06-12T00:18:45.696Z"
   },
   {
     id: "Q379",
