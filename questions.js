@@ -25201,7 +25201,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "evolution_demo_haut-canada_1790-1840.png",
-            soustitre: "Naissances et immigration au Haut-Canada (1790-1840)",
+            soustitre: "Naissances et immigration au Haut-Canada entre 1790 et 1840",
             source: "Adapté de J.M.S. Careless, Canada: A Story of Challenge, Toronto, Macmillan, 1970."
           }
         ]
@@ -25212,7 +25212,7 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "L'immigration.",
-    updatedAt: "2026-06-12T01:25:54.477Z"
+    updatedAt: "2026-06-12T12:20:53.298Z"
   },
   {
     id: "Q388",
