@@ -8492,6 +8492,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q421": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de divergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -27066,5 +27088,49 @@ const QUESTIONS = [
     },
     guide: "La fondation de la Banque de Montréal.\nLa création d'une institution financière.\nLe financement des activités commerciales.",
     updatedAt: "2026-06-12T16:37:28.498Z"
+  },
+  {
+    id: "Q421",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Divergence – 2 acteurs",
+    enonce: "Le document présente le point de vue de deux acteurs sur un enjeu lié au développement des infrastructures. Sur quel point précis sont-ils en désaccord?",
+    aspects: [
+      {
+        aspect: "Capitaux et infrastructures"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les représentants élus doivent avoir le droit de décider de l'utilisation des revenus de la colonie, puisque ces fonds concernent l'ensemble de la population. »",
+            auteur: "Louis-Joseph Papineau",
+            source: "Adapté d'un discours de Louis-Joseph Papineau à la Chambre d'assemblée du Bas-Canada, vers 1830."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« L'administration de la colonie doit conserver le contrôle des dépenses nécessaires à son bon fonctionnement, sans dépendre entièrement de l'Assemblée. »",
+            auteur: "Gouverneur Dalhousie",
+            source: "Adapté de la correspondance du gouverneur Dalhousie, vers 1828."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "L'utilisation des fonds publics.\nLe contrôle des dépenses de la colonie.\nL'administration des revenus publics.\nLe pouvoir de décider des dépenses publiques.",
+    updatedAt: "2026-06-12T16:39:31.402Z"
   }
 ]
