@@ -9707,6 +9707,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "org_pol_1840_acte_union.png",
+            soustitre: "Organisation politique de la colonie entre en 1840",
             source: "Récitus."
           }
         ]
@@ -9716,7 +9717,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Obtenir la responsabilité ministérielle (ou le gouvernement responsable) ou obtenir que les membres du Conseil exécutif soient désormais choisis parmi les membres de l’Assemblée législative ou former la majorité à la Chambre d’assemblée."
+    guide: "Obtenir la responsabilité ministérielle (ou le gouvernement responsable) ou obtenir que les membres du Conseil exécutif soient désormais choisis parmi les membres de l’Assemblée législative ou former la majorité à la Chambre d’assemblée.",
+    updatedAt: "2026-06-12T12:26:16.322Z"
   },
   {
     id: "Q24",
