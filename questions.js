@@ -25328,7 +25328,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "evolution_demo_haut-canada_1790-1840.png",
-            soustitre: "Naissances et immigration au Haut-Canada (1790-1840)",
+            soustitre: "Naissances et immigration au Haut-Canada entre 1790 et 1840",
             source: "Adapté de J.M.S. Careless, Canada: A Story of Challenge, Toronto, Macmillan of Canada, 1970."
           }
         ]
@@ -25349,7 +25349,7 @@ const QUESTIONS = [
           {
             titre: "Document C",
             ref: "evolution_pop_haut-canada_1790-1840.png",
-            soustitre: "Évolution de la population du Haut-Canada (1790-1840)",
+            soustitre: "Évolution de la population du Haut-Canada entre 1790 et 1840",
             source: "Adapté. J.M. Bumsted, The Peoples of Canada: A Pre-Confederation History, Toronto, Oxford University Press."
           }
         ]
@@ -25360,7 +25360,7 @@ const QUESTIONS = [
       nombre: 5
     },
     guide: "L'immigration britannique (mouvement migratoire) amène de nombreux Britanniques dans le Haut-Canada (groupe de population concerné) ce qui contribue à l'augmentation de la population de cette colonie (changement démographique).",
-    updatedAt: "2026-06-12T01:24:15.304Z"
+    updatedAt: "2026-06-12T12:21:19.268Z"
   },
   {
     id: "Q392",
