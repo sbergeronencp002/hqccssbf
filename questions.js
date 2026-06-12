@@ -8242,6 +8242,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q410": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -26366,5 +26388,37 @@ const QUESTIONS = [
     },
     guide: "La tenue d'assemblées populaires.\nLa mobilisation des Patriotes.",
     updatedAt: "2026-06-12T15:33:00.180Z"
+  },
+  {
+    id: "Q410",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence des assemblées populaires organisées par les Patriotes en 1837.",
+    aspects: [
+      {
+        aspect: "Soulèvements de 1837-1838"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "aut_col_britannique_rebellions.png",
+            source: "econstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Émission de mandats d'arrestation contre des chefs patriotes.\nRépression du mouvement patriote.\nDéploiement de troupes britanniques.\nArrestation de Patriotes.\nAugmentation des tensions politiques.\nDéclenchement du conflit armé.\nDébut des rébellions de 1837.",
+    updatedAt: "2026-06-12T15:34:44.917Z"
   }
 ]
