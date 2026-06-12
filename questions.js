@@ -24240,7 +24240,7 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "journal_le_canadien.png",
             soustitre: "Journal Le Canadien",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026. Espace réponse"
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       },
@@ -24275,7 +24275,7 @@ const QUESTIONS = [
         ]
       ]
     },
-    updatedAt: "2026-06-11T15:37:07.729Z"
+    updatedAt: "2026-06-12T00:19:17.743Z"
   },
   {
     id: "Q374",
