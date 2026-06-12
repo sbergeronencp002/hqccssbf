@@ -8403,6 +8403,28 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q417": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -26812,5 +26834,37 @@ const QUESTIONS = [
     },
     guide: "La Banque de Montréal (une institution financière) accorde des prêts aux commerçants et aux entrepreneurs (un moyen utilisé pour soutenir les activités économiques). Ces prêts favorisent les investissements et le développement du commerce dans la colonie (un effet sur l'économie de la colonie).",
     updatedAt: "2026-06-12T16:14:19.638Z"
+  },
+  {
+    id: "Q417",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de la construction des canaux sur le commerce de la colonie.",
+    aspects: [
+      {
+        aspect: "Capitaux et infrastructures"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La construction de canaux permet aux navires de contourner certains obstacles naturels du fleuve Saint-Laurent et de circuler plus facilement entre différentes régions de la colonie. »",
+            source: "Adapté de Serge Courville, Histoire du Québec : une société dans le monde."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Augmentation des échanges commerciaux.\nFacilitation du transport des marchandises.\nDéveloppement du commerce.\nAccroissement de la circulation des marchandises.\nExpansion des activités commerciales.",
+    updatedAt: "2026-06-12T16:17:35.673Z"
   }
 ]
