@@ -12740,7 +12740,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "accroissement_naturel_bas-canada_1790-1840.png",
-            soustitre: "Naissances et décès dans la population canadienne entre 1790 et 1840",
+            soustitre: "Naissances et décès au Bas-Canada (1790-1840)",
             source: "Adapté de Hubert Charbonneau, La population du Québec : études rétrospectives, Montréal, Boréal Express, 1973."
           }
         ]
@@ -12751,7 +12751,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les naissances demeurent plus nombreuses que les décès\nL'accroissement naturel demeure important",
-    updatedAt: "2026-06-12T00:55:08.678Z"
+    updatedAt: "2026-06-12T01:24:53.060Z"
   },
   {
     id: "Q99",
