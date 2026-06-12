@@ -25168,7 +25168,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "accroissement_naturel_bas-canada_1790-1840.png",
-            soustitre: "Naissances et décès au Bas-Canada (1790-1840)",
+            soustitre: "Naissances et décès au Bas-Canada  entre 1790 et 1840",
             source: "Adapté de Hubert Charbonneau, La population du Québec : études rétrospectives, Montréal, Boréal Express, 1973."
           }
         ]
@@ -25179,7 +25179,7 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "L'accroissement naturel.",
-    updatedAt: "2026-06-12T01:25:27.043Z"
+    updatedAt: "2026-06-12T12:14:42.909Z"
   },
   {
     id: "Q387",
