@@ -26504,7 +26504,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Similitude",
-    enonce: "Indiquez une similitude dans les revendications politiques des réformistes du Bas-Canada et du Haut-Canada.",
+    enonce: "À partir des documents A et B, indiquez une similitude politique entre les mouvements de contestation du Bas-Canada et du Haut-Canada vers 1837.",
     aspects: [
       {
         aspect: "Soulèvements de 1837-1838"
@@ -26538,7 +26538,7 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Obtenir des réformes politiques.\nAccroître le pouvoir des représentants élus.\nRendre le gouvernement plus responsable devant l'assemblée élue.\nLimiter le pouvoir des élites dirigeantes.",
-    updatedAt: "2026-06-12T15:40:25.779Z"
+    guide: "Les deux groupes réclament des réformes politiques.\nLes deux groupes souhaitent accroître le pouvoir des représentants élus.\nLes deux groupes contestent le pouvoir exercé par une minorité dirigeante.\nLes deux groupes revendiquent un gouvernement responsable.",
+    updatedAt: "2026-06-12T15:42:05.738Z"
   }
 ]
