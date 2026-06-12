@@ -8442,6 +8442,34 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q419": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -9036,6 +9064,9 @@ const IMAGE_DB = {
   },
   "chemin_de_fer_locomotive.png": {
     src: "images/chemin_de_fer_locomotive.png"
+  },
+  "port_mtl_1830.png": {
+    src: "images/port_mtl_1830.png"
   }
 }
 
@@ -26917,5 +26948,57 @@ const QUESTIONS = [
     },
     guide: "Le chemin de fer.\nLe transport ferroviaire.",
     updatedAt: "2026-06-12T16:20:12.913Z"
+  },
+  {
+    id: "Q419",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    enonce: "Expliquez comment la construction d'infrastructures de transport terrestres favorise le développement économique de la colonie.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• une infrastructure de transport aménagée;\n• une amélioration des transports;\n• un effet sur l'économie de la colonie.",
+    aspects: [
+      {
+        aspect: "Capitaux et infrastructures"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "chemin_de_fer_locomotive.png",
+            soustitre: "Chemin de fer Champlain and St. Lawrence",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Dans la première moitié du XIXe siècle, de nouvelles voies ferrées relient progressivement plusieurs localités de la colonie. Les déplacements deviennent plus réguliers et les échanges entre les régions sont facilités. »",
+            source: "Adapté de Paul-André Linteau, René Durocher et Jean-Claude Robert, Histoire du Québec contemporain, tome 1 : De la Confédération à la crise (1867-1929), Boréal."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "port_mtl_1830.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 5
+    },
+    guide: "Le chemin de fer (une infrastructure de transport aménagée) permet de transporter plus rapidement les personnes et les marchandises (une amélioration des transports). Cette amélioration favorise les échanges commerciaux et contribue au développement économique de la colonie (un effet sur l'économie de la colonie).",
+    updatedAt: "2026-06-12T16:29:07.117Z"
   }
 ]
