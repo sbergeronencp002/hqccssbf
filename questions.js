@@ -13432,7 +13432,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 2,
     soustag: "Changement",
-    enonce: "Indiquez un changement dans la composition de la population de la colonie entre 1763 et 1784.",
+    enonce: "Indiquez un changement dans la composition de la population de la colonie entre 1760 et 1790.",
     aspects: [
       {
         aspect: "Situation sociodémographique"
@@ -13445,7 +13445,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "population_1763.png",
-            soustitre: "Composition de la population de la colonie en 1763",
+            soustitre: "Composition de la population de la colonie en 1760",
             source: "adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal."
           }
         ]
@@ -13456,7 +13456,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             ref: "population_1783.png",
-            soustitre: "Composition de la population de la colonie en 1783",
+            soustitre: "Composition de la population de la colonie en 1790",
             source: "adapté de Jean Hamelin et Yves Roby, Histoire économique du Québec, 1851-1896."
           }
         ]
@@ -13466,7 +13466,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "La proportion de la population anglophone augmente entre 1763 et 1784 ou la population anglophone passe de 1 % à 15 % ou la proportion de la population francophone diminue entre 1763 et 1784."
+    guide: "La proportion de la population anglophone augmente entre 1760 et 1790 ou la population anglophone passe de 1 % à 15 % ou la proportion de la population francophone diminue entre 1760 et 1790.",
+    updatedAt: "2026-06-12T12:11:44.316Z"
   },
   {
     id: "Q109",
