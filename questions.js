@@ -8137,6 +8137,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q405": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -8703,6 +8720,11 @@ const IMAGE_DB = {
   },
   "aut_col_britannique_rebellions.png": {
     src: "images/aut_col_britannique_rebellions.png"
+  },
+  "independance_bas-canada.png": {
+    src: "images/independance_bas-canada.png",
+    w: 1200,
+    h: 800
   }
 }
 
@@ -25998,5 +26020,36 @@ const QUESTIONS = [
     },
     guide: "Mandats d’arrestation\nArrestation de chefs patriotes\nIntervention de l’armée britannique\nEmprisonnement de Patriotes",
     updatedAt: "2026-06-12T14:16:51.224Z"
+  },
+  {
+    id: "Q405",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez le nom du document proclamé par Robert Nelson en 1838.",
+    aspects: [
+      {
+        aspect: "Soulèvements de 1837-1838"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "independance_bas-canada.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "La Déclaration d'indépendance du Bas-Canada.",
+    updatedAt: "2026-06-12T14:22:53.180Z"
   }
 ]
