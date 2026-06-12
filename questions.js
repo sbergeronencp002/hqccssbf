@@ -18963,7 +18963,7 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_regime_militaire.png",
             soustitre: "Organisation politique de la colonie entre 1760-1763",
-            source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       },
@@ -18974,7 +18974,7 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "org_pol_apres_1763.png",
             soustitre: "Organisation politique de la colonie après 1763",
-            source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
@@ -18984,7 +18984,7 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Changement\n\nIl y a changement, car après 1763, le régime militaire est remplacé par une administration civile britannique. ou Il y a changement, car entre 1760 et 1770, la colonie passe d'un régime militaire à un régime civil britannique.\n\nContinuité\n\nIl y a continuité, car entre 1760 et 1770, la colonie demeure sous l'autorité de la Couronne britannique. ou Il y a continuité, car entre 1760 et 1770, la colonie est administrée par des autorités britanniques.",
-    updatedAt: "2026-06-06T21:27:14.923Z"
+    updatedAt: "2026-06-12T12:08:28.770Z"
   },
   {
     id: "Q235",
