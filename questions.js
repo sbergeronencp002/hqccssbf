@@ -8176,6 +8176,28 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
       }
     ]
+  },
+  "Q407": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (3 sur 3)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (2 sur 3)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
+      }
+    ]
   }
 }
 
@@ -26162,5 +26184,75 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-12T14:40:08.893Z"
+  },
+  {
+    id: "Q407",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "3 documents",
+    enonce: "Les documents A à C présentent des faits liés à des batailles des rébellions de 1837 au Bas-Canada. Associez chaque document à la bataille correspondante.",
+    aspects: [
+      {
+        aspect: "Soulèvements de 1837-1838"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les Patriotes dirigés par Wolfred Nelson transforment plusieurs bâtiments du village en positions défensives afin de résister à l'avancée des troupes britanniques. Après plusieurs heures de combat, les soldats sont contraints de battre en retraite. Cette victoire constitue l'un des rares succès militaires remportés par les insurgés durant les rébellions de 1837. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 3."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Dans un village situé sur la rive du Richelieu, les Patriotes dirigés par Thomas Storrow Brown aménagent des retranchements pour résister à l'armée britannique. L'attaque des soldats se solde toutefois par la dispersion des insurgés et l'abandon de leurs positions. »",
+            source: "Adapté de Gilles Laporte, Patriotes et Loyaux."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« [...] dans la région des Deux-Montagnes, Jean-Olivier Chénier dirige les Patriotes retranchés dans l'église et les bâtiments voisins. L'affrontement se termine par l'incendie du village et la défaite des insurgés met fin à la principale phase des rébellions de 1837 au Bas-Canada. »",
+            source: "Adapté de Allan Greer, Habitants et Patriotes."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Bataille de Saint-Charles",
+        "Bataille de Saint-Denis",
+        "Bataille de Saint-Eustache"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Bataille de Saint-Charles",
+        "Bataille de Saint-Denis",
+        "Bataille de Saint-Eustache"
+      ],
+      rangees: [
+        [
+          "B",
+          "A",
+          "C"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-12T14:48:27.035Z"
   }
 ]
