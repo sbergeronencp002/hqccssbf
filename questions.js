@@ -8086,6 +8086,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q402": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -25848,5 +25865,36 @@ const QUESTIONS = [
     },
     guide: "Les 92 résolutions.",
     updatedAt: "2026-06-12T14:09:34.679Z"
+  },
+  {
+    id: "Q402",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez le nom des résolutions adoptées par le gouvernement britannique en 1837 pour rejeter les revendications des Patriotes.",
+    aspects: [
+      {
+        aspect: "Soulèvements de 1837-1838"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« En 1837, Londres refuse plusieurs demandes formulées par les élus du Bas-Canada. Le gouvernement britannique autorise notamment l’administration coloniale à utiliser les revenus publics sans l’accord de la Chambre d’assemblée. »",
+            source: "Adapté de Jean-François Cardin et autres, Le Québec : héritages et projets, 1994."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les résolutions Russell.",
+    updatedAt: "2026-06-12T14:10:08.325Z"
   }
 ]
