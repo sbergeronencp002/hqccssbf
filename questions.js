@@ -8047,6 +8047,28 @@ const REGLETTES = {
         desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
       }
     ]
+  },
+  "Q400": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
   }
 }
 
@@ -25672,5 +25694,83 @@ const QUESTIONS = [
     },
     guide: "John Colborne défend le maintien du régime colonial britannique (la différence), alors que Louis-Joseph Papineau et Edmund Bailey O'Callaghan réclament des réformes politiques importantes (la similitude).",
     updatedAt: "2026-06-12T03:57:05.205Z"
+  },
+  {
+    id: "Q400",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "4 documents",
+    enonce: "Les documents A à D présentent des faits liés à la population du Bas-Canada et du Haut-Canada. Associez chaque document à l'élément correspondant.",
+    aspects: [
+      {
+        aspect: "Population"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Durant la première moitié du XIXe siècle, des dizaines de milliers de nouveaux arrivants provenant des îles Britanniques s'établissent dans [à l'est de la rivière des Outaouais] contribuant fortement à la croissance de sa population. »",
+            source: "J.M.S. Careless, Canada: A Story of Challenge, Toronto, Macmillan, 1970. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les familles canadiennes-françaises comptent souvent plusieurs enfants et les naissances sont nombreuses dans les campagnes [...] au début du XIXe siècle. »",
+            source: "Jacques Henripin, La population canadienne au début du XIXe siècle, Montréal, PUM. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les naissances demeurent largement supérieures aux décès, ce qui permet une augmentation rapide de la population sans dépendre principalement de l'immigration. »",
+            source: "Hubert Charbonneau, La population du Québec : études rétrospectives, Montréal, Boréal Express, 1973. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Après la Révolution américaine, plusieurs habitants demeurés fidèles à la Couronne britannique quittent les États-Unis et s'établissent dans les colonies de l'Amérique du Nord britannique. »",
+            source: "J.M. Bumsted, The Peoples of Canada: A Pre-Confederation History, Toronto, Oxford University Press, 1992. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Bas-Canada",
+        "Haut-Canada"
+      ],
+      double: true
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Bas-Canada",
+        "Haut-Canada"
+      ],
+      rangees: [
+        [
+          "B et C",
+          "A et D"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-12T04:02:12.890Z"
   }
 ]
