@@ -12666,8 +12666,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "L'accroissement naturel.",
-    updatedAt: "2026-06-12T00:54:33.911Z"
+    guide: "Les naissances demeurent plus nombreuses que les décès\nL'accroissement naturel demeure important",
+    updatedAt: "2026-06-12T00:55:08.678Z"
   },
   {
     id: "Q99",
