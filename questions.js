@@ -25613,10 +25613,10 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "lignes",
-      nombre: 2
+      nombre: 3
     },
     guide: "John Colborne souhaite réprimer les contestations par la force militaire (la différence), alors que Louis-Joseph Papineau et Wolfred Nelson s'opposent aux mesures prises par le gouvernement colonial (la similitude).",
-    updatedAt: "2026-06-12T03:54:40.076Z"
+    updatedAt: "2026-06-12T03:57:18.112Z"
   },
   {
     id: "Q399",
