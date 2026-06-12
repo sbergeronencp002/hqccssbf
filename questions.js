@@ -8120,6 +8120,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q404": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -8683,6 +8700,9 @@ const IMAGE_DB = {
   },
   "assemblee_six_comtes.png": {
     src: "images/assemblee_six_comtes.png"
+  },
+  "aut_col_britannique_rebellions.png": {
+    src: "images/aut_col_britannique_rebellions.png"
   }
 }
 
@@ -25947,5 +25967,36 @@ const QUESTIONS = [
     },
     guide: "Les assemblées populaires.",
     updatedAt: "2026-06-12T14:13:02.122Z"
+  },
+  {
+    id: "Q404",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez une mesure utilisée par les autorités coloniales pour réprimer le mouvement patriote.",
+    aspects: [
+      {
+        aspect: "Soulèvements de 1837-1838"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "aut_col_britannique_rebellions.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Mandats d’arrestation\nArrestation de chefs patriotes\nIntervention de l’armée britannique\nEmprisonnement de Patriotes",
+    updatedAt: "2026-06-12T14:16:51.224Z"
   }
 ]
