@@ -20136,7 +20136,8 @@ const QUESTIONS = [
           {
             titre: "Document C",
             ref: "org_pol_1774_acte_quebec.png",
-            source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
+            soustitre: "Organisation politique de la colonie après 1774",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
@@ -20146,7 +20147,7 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Les tensions ou le mécontentement dans les Treize colonies (événements dans les Treize colonies) inquiètent les autorités britanniques. Pour maintenir stabilité de la Province de Québec et assurer la loyauté de ses habitants (objectif poursuivi par les autorités britanniques), les autorités adoptent l'Acte de Québec (nom d'une nouvelle constitution mise en place en 1774).",
-    updatedAt: "2026-06-07T17:19:01.919Z"
+    updatedAt: "2026-06-12T12:06:52.896Z"
   },
   {
     id: "Q263",
