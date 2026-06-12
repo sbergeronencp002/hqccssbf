@@ -8227,7 +8227,9 @@ const IMAGE_DB = {
     src: "images/troc_1600.png"
   },
   "papineau_foule.png": {
-    src: "images/papineau_foule.png"
+    src: "images/papineau_foule.png",
+    w: 925,
+    h: 1200
   },
   "camp_oui_1995.png": {
     src: "images/camp_oui_1995.png"
@@ -9435,7 +9437,8 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "papineau_foule.png",
-            soustitre: "Louis-Joseph Papineau  s’adressant à la foule"
+            soustitre: "Louis-Joseph Papineau  s’adressant à la foule",
+            source: "Henri Julien, illustration des assemblées patriotes de 1837. Adaptée."
           }
         ]
       },
@@ -9464,7 +9467,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 4
     },
-    guide: "Les Patriotes revendiquent l’obtention de la responsabilité ministérielle ou le contrôle du budget par l’Assemblée ou l’élection des membres du conseil législatif (ene revendication des Patriotes). \nCes revendications sont refusées par Londres (la réponse de Londres). Devant le refus de Londres, les Patriotes invitent la population à boycotter les produits britanniques ou organisent des assemblées populaires ou se soulèvent (une action de protestation populaire)."
+    guide: "Les Patriotes revendiquent l’obtention de la responsabilité ministérielle ou le contrôle du budget par l’Assemblée ou l’élection des membres du conseil législatif (ene revendication des Patriotes). \nCes revendications sont refusées par Londres (la réponse de Londres). Devant le refus de Londres, les Patriotes invitent la population à boycotter les produits britanniques ou organisent des assemblées populaires ou se soulèvent (une action de protestation populaire).",
+    updatedAt: "2026-06-12T15:29:39.916Z"
   },
   {
     id: "Q15",
