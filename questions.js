@@ -13350,7 +13350,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "exportations_bois_1800_1840.png",
-            soustitre: "Exportations de bois vers la Grande-Bretagne",
+            soustitre: "Exportations de bois vers la Grande-Bretagne entre 1800 et 1840",
             source: "Données approximatives reconstituées à des fins pédagogiques à partir de synthèses historiques sur le commerce du bois au Bas-Canada."
           }
         ]
@@ -13360,7 +13360,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Les exportations de bois des colonies vers la Grande-Bretagne augmentent fortement."
+    guide: "Les exportations de bois des colonies vers la Grande-Bretagne augmentent fortement.",
+    updatedAt: "2026-06-12T12:23:52.598Z"
   },
   {
     id: "Q106",
