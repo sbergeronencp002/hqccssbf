@@ -17746,7 +17746,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 1
     },
-    guide: "L'agriculture."
+    guide: "L'agriculture.",
+    updatedAt: "2026-06-12T12:20:21.867Z"
   },
   {
     id: "Q204",
