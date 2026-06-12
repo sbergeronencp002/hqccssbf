@@ -7791,6 +7791,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q389": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -24929,5 +24951,36 @@ const QUESTIONS = [
     },
     guide: "Immigration britannique\nArrivée de Loyalistes",
     updatedAt: "2026-06-12T00:50:34.533Z"
+  },
+  {
+    id: "Q389",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    enonce: "Indiquez une conséquence de la présence de groupes de population différents dans le Bas-Canada au début du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Population"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La population du Bas-Canada est composée d'une majorité canadienne-française et d'une minorité britannique. Ces groupes parlent principalement des langues différentes et possèdent souvent des intérêts distincts. »",
+            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 2, Québec, Septentrion. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Dualité linguistique\nPrésence de deux groupes linguistiques\nCoexistence de francophones et d'anglophones",
+    updatedAt: "2026-06-12T00:51:38.903Z"
   }
 ]
