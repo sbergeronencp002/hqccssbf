@@ -22663,7 +22663,7 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Changement\nIl y a changement, car en 1791, l’Acte constitutionnel crée une Chambre d’assemblée élue par la population et divise la colonie en Haut-Canada et Bas-Canada, alors qu’en 1774, la Province de Québec ne possède pas de Chambre d’assemblée et forme une seule colonie.\n\nou \n\nIl y a changement, car en 1791, chaque colonie possède une Chambre d’assemblée élue, tandis qu’en 1774, le gouverneur dirige avec le Conseil exécutif et le Conseil législatif sans assemblée élue.\n\nContinuité\nIl y a continuité, car en 1774 comme en 1791, le gouverneur demeure nommé par les autorités britanniques et conserve un rôle important dans l'administration de la colonie.",
-    updatedAt: "2026-06-12T11:48:46.516Z"
+    updatedAt: "2026-06-12T12:02:01.545Z"
   },
   {
     id: "Q330",
