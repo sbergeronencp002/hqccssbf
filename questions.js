@@ -23087,6 +23087,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "org_pol_1791_acte_const.png",
+            soustitre: "Organisation politique du Haut-Canada et du Bas-Canada après 1791",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
@@ -23097,7 +23098,7 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Le gouverneur sanctionne ou refuse les lois ou nomme les membres du Conseil exécutif ou nomme les membres du Conseil législatif ou convoque ou dissout la Chambre d'assemblée ou représente la Couronne britannique ou dirige l'administration de la colonie.",
-    updatedAt: "2026-06-10T01:05:16.008Z"
+    updatedAt: "2026-06-12T12:03:00.453Z"
   },
   {
     id: "Q341",
