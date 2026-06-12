@@ -25386,7 +25386,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     soustag: "Situer 1 élément",
-    enonce: "Indiquez la lettre qui correspond à la principale région où se sont déroulés les conflits armés des Rébellions au Bas-Canada.",
+    enonce: "Indiquez la lettre qui correspond à la principale région où se sont déroulés les conflits armés des Rébellions  de 1837au Bas-Canada.",
     aspects: [
       {
         aspect: "Soulèvements de 1837-1838"
@@ -25408,7 +25408,7 @@ const QUESTIONS = [
       type: "tableau_2col"
     },
     guide: "B",
-    updatedAt: "2026-06-12T03:36:13.724Z"
+    updatedAt: "2026-06-12T03:47:36.552Z"
   },
   {
     id: "Q396",
