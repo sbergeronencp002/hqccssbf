@@ -8375,6 +8375,34 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q416": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -26731,5 +26759,58 @@ const QUESTIONS = [
     },
     guide: "Les entreprises ont davantage accès au financement.\nLes investissements augmentent.\nLe commerce se développe.\nL'économie de la colonie se développe.",
     updatedAt: "2026-06-12T16:07:58.181Z"
+  },
+  {
+    id: "Q416",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    enonce: "Expliquez comment la création d'institutions financières contribue au développement économique de la colonie au début du XIXe siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• une institution financière;\n• un moyen utilisé pour soutenir les activités économiques;\n• un effet sur l'économie de la colonie.",
+    aspects: [
+      {
+        aspect: "Capitaux et infrastructures"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "fondation_banque_mtl.png",
+            soustitre: "Fondation d'une institution financière au XIXe siècle",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« L'accès au crédit permet à plusieurs hommes d'affaires d'investir dans le commerce, les transports et différents projets de développement. »",
+            source: "Adapté de Serge Courville, Histoire du Québec."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "inauguration_canal_lachine.png",
+            soustitre: "Aménagement d'une infrastructure de transport",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 5
+    },
+    guide: "La Banque de Montréal (une institution financière) accorde des prêts aux commerçants et aux entrepreneurs (un moyen utilisé pour soutenir les activités économiques). Ces prêts favorisent les investissements et le développement du commerce dans la colonie (un effet sur l'économie de la colonie).",
+    updatedAt: "2026-06-12T16:14:19.638Z"
   }
 ]
