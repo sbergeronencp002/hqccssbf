@@ -8939,6 +8939,11 @@ const IMAGE_DB = {
   },
   "inauguration_canal_lachine.png": {
     src: "images/inauguration_canal_lachine.png"
+  },
+  "fondation_banque_mtl.png": {
+    src: "images/fondation_banque_mtl.png",
+    w: 1200,
+    h: 800
   }
 }
 
@@ -22308,9 +22313,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« L'ouverture d'un établissement bancaire permanent à Montréal marque une étape importante dans l'organisation du crédit et des échanges commerciaux dans la colonie. »",
-            soustitre: "Inauguration de la première banque",
-            source: "Jean HAMELIN et Yves ROBY, Histoire économique du Québec, 1851-1896, Montréal, Fides, 1971."
+            ref: "fondation_banque_mtl.png",
+            soustitre: "Fondation de la Banque de Montréal",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
@@ -22320,7 +22325,7 @@ const QUESTIONS = [
       ref: "ligne_1790-1850.png"
     },
     guide: "B",
-    updatedAt: "2026-06-09T00:46:48.310Z"
+    updatedAt: "2026-06-12T16:05:56.441Z"
   },
   {
     id: "Q310",
