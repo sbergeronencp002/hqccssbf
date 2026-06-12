@@ -9156,6 +9156,11 @@ const IMAGE_DB = {
   },
   "territoire_agricole_1830.png": {
     src: "images/territoire_agricole_1830.png"
+  },
+  "corn_laws.png": {
+    src: "images/corn_laws.png",
+    w: 1200,
+    h: 800
   }
 }
 
@@ -27240,8 +27245,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Au début du XIXe siècle, la Grande-Bretagne impose des tarifs moins élevés sur le blé provenant de ses colonies que sur celui provenant de pays étrangers. »",
-            source: "Adapté de Paul-André Linteau, Histoire du Québec contemporain."
+            ref: "corn_laws.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
@@ -27251,6 +27256,6 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Les Corn Laws.",
-    updatedAt: "2026-06-12T17:55:04.739Z"
+    updatedAt: "2026-06-12T17:58:30.594Z"
   }
 ]
