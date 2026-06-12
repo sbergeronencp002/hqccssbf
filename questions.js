@@ -7735,6 +7735,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q386": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -8275,6 +8292,9 @@ const IMAGE_DB = {
     src: "images/abolition_esclavage_bas-canada.png",
     w: 1200,
     h: 800
+  },
+  "accroissement_naturel_bas-canada_1790-1840.png": {
+    src: "images/accroissement_naturel_bas-canada_1790-1840.png"
   }
 }
 
@@ -24771,5 +24791,37 @@ const QUESTIONS = [
     },
     guide: "Abolition de l'esclavage \nFin de l'esclavage",
     updatedAt: "2026-06-12T00:28:53.449Z"
+  },
+  {
+    id: "Q386",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez le principal facteur qui explique l'augmentation de la population du Bas-Canada dans la première moitié du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Population"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "accroissement_naturel_bas-canada_1790-1840.png",
+            soustitre: "Évolution de la population au Bas-Canada",
+            source: "dapté de Hubert Charbonneau, La population du Québec : études rétrospectives, Montréal, Boréal Express, 1973."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "L'accroissement naturel.",
+    updatedAt: "2026-06-12T00:35:02.788Z"
   }
 ]
