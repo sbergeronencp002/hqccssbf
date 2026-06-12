@@ -24787,7 +24787,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P4 — 1791 – 1840",
     points: 1,
-    enonce: "À l'aide du document A, indiquez l'événement illustré.",
+    enonce: "À l'aide du document A, indiquez le nom de l'événement survenu dans les colonies britanniques en 1833.",
     aspects: [
       {
         aspect: "Population"
@@ -24810,7 +24810,7 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Abolition de l'esclavage \nFin de l'esclavage",
-    updatedAt: "2026-06-12T00:28:53.449Z"
+    updatedAt: "2026-06-12T00:47:44.586Z"
   },
   {
     id: "Q386",
