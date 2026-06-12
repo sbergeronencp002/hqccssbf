@@ -8103,6 +8103,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q403": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -8663,6 +8680,9 @@ const IMAGE_DB = {
   },
   "conflits_armes_haut-canada.png": {
     src: "images/conflits_armes_haut-canada.png"
+  },
+  "assemblee_six_comtes.png": {
+    src: "images/assemblee_six_comtes.png"
   }
 }
 
@@ -25896,5 +25916,36 @@ const QUESTIONS = [
     },
     guide: "Les résolutions Russell.",
     updatedAt: "2026-06-12T14:10:08.325Z"
+  },
+  {
+    id: "Q403",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez le moyen utilisé par les Patriotes pour mobiliser la population après le rejet des 92 résolutions.",
+    aspects: [
+      {
+        aspect: "Soulèvements de 1837-1838"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "assemblee_six_comtes.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les assemblées populaires.",
+    updatedAt: "2026-06-12T14:12:13.686Z"
   }
 ]
