@@ -8470,6 +8470,28 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q420": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -27000,5 +27022,49 @@ const QUESTIONS = [
     },
     guide: "Le chemin de fer (une infrastructure de transport aménagée) permet de transporter plus rapidement les personnes et les marchandises (une amélioration des transports). Cette amélioration favorise les échanges commerciaux et contribue au développement économique de la colonie (un effet sur l'économie de la colonie).",
     updatedAt: "2026-06-12T16:29:07.117Z"
+  },
+  {
+    id: "Q420",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Le document présente le point de vue de deux acteurs sur un enjeu économique lié au développement de la colonie. Sur quel point précis sont-ils d'accord?",
+    aspects: [
+      {
+        aspect: "Capitaux et infrastructures"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le commerce de la colonie a besoin d'établissements capables de fournir les capitaux nécessaires à la croissance des entreprises et des échanges. »",
+            auteur: "John Molson",
+            source: "Adapté des écrits et de l'action de John Molson lors de la fondation de la Banque de Montréal, vers 1817."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Une institution financière solide favoriserait les investissements et contribuerait à la prospérité commerciale de la colonie. »",
+            auteur: "Horatio Gates",
+            source: "Adapté des positions défendues par Horatio Gates et les fondateurs de la Banque de Montréal, vers 1817."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "La fondation de la Banque de Montréal.\nLa création d'une institution financière.\nLe financement des activités commerciales.",
+    updatedAt: "2026-06-12T16:37:28.498Z"
   }
 ]
