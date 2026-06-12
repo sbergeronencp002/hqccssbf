@@ -18985,7 +18985,7 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Changement\n\nIl y a changement, car après 1763, le régime militaire est remplacé par une administration civile britannique. ou Il y a changement, car entre 1760 et 1770, la colonie passe d'un régime militaire à un régime civil britannique.\n\nContinuité\n\nIl y a continuité, car entre 1760 et 1770, la colonie demeure sous l'autorité de la Couronne britannique. ou Il y a continuité, car entre 1760 et 1770, la colonie est administrée par des autorités britanniques.",
-    updatedAt: "2026-06-12T12:08:28.770Z"
+    updatedAt: "2026-06-12T12:10:15.183Z"
   },
   {
     id: "Q235",
