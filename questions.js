@@ -8425,6 +8425,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q418": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -9016,6 +9033,9 @@ const IMAGE_DB = {
     src: "images/fondation_banque_mtl.png",
     w: 1200,
     h: 800
+  },
+  "chemin_de_fer_locomotive.png": {
+    src: "images/chemin_de_fer_locomotive.png"
   }
 }
 
@@ -26866,5 +26886,36 @@ const QUESTIONS = [
     },
     guide: "Augmentation des échanges commerciaux.\nFacilitation du transport des marchandises.\nDéveloppement du commerce.\nAccroissement de la circulation des marchandises.\nExpansion des activités commerciales.",
     updatedAt: "2026-06-12T16:17:35.673Z"
+  },
+  {
+    id: "Q418",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez un moyen de transport dont le développement s'accélère à partir des années 1830.",
+    aspects: [
+      {
+        aspect: "Capitaux et infrastructures"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "chemin_de_fer_locomotive.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le chemin de fer.\nLe transport ferroviaire.",
+    updatedAt: "2026-06-12T16:20:12.913Z"
   }
 ]
