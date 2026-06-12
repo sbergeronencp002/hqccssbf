@@ -7863,6 +7863,34 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q392": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -8412,6 +8440,9 @@ const IMAGE_DB = {
   },
   "evolution_pop_haut-canada_1790-1840.png": {
     src: "images/evolution_pop_haut-canada_1790-1840.png"
+  },
+  "evolution_pop_bas-canada_1790-1840.png": {
+    src: "images/evolution_pop_bas-canada_1790-1840.png"
   }
 }
 
@@ -25119,5 +25150,57 @@ const QUESTIONS = [
     },
     guide: "L'immigration britannique (mouvement migratoire) amène de nombreux Britanniques dans le Haut-Canada (groupe de population concerné) ce qui contribue à l'augmentation de la population de cette colonie (changement démographique).",
     updatedAt: "2026-06-12T01:10:27.065Z"
+  },
+  {
+    id: "Q392",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    enonce: "Expliquez comment un phénomène démographique entraîne une transformation de la population du Bas-Canada dans la première moitié du XIXe siècle.\n\nRépondez à la question en précisant :\n\n• un phénomène démographique;\n• un groupe de population concerné;\n• une transformation de la population du Bas-Canada.",
+    aspects: [
+      {
+        aspect: "Population"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "accroissement_naturel_bas-canada_1790-1840.png",
+            soustitre: "Naissances et décès au Bas-Canada (1790-1840)",
+            source: "Adapté de Jacques Henripin, La population canadienne au début du XIXe siècle, Montréal."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Au début du XIXe siècle, les familles canadiennes-françaises comptent souvent plusieurs enfants. Les naissances sont beaucoup plus nombreuses que les décès. »"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "evolution_pop_bas-canada_1790-1840.png",
+            soustitre: "Évolution de la population du Bas-Canada (1790-1840)",
+            source: "Adapté de Fernand Ouellet, Le Bas-Canada 1791-1840 : changements structuraux et crise, Ottawa, Éditions de l'Université d'Ottawa, 1976."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 5
+    },
+    guide: "L'accroissement naturel (phénomène démographique) touche principalement les Canadiens français (groupe de population concerné), ce qui entraîne une forte augmentation de la population du Bas-Canada (changement dans la population)",
+    updatedAt: "2026-06-12T01:22:45.075Z"
   }
 ]
