@@ -24814,7 +24814,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Continuité",
-    enonce: "Indiquez un élément de continuité dans le rôle de la Chambre d'assemblée au Bas-Canada entre 1791 et 1830.",
+    enonce: "Indiquez un élément de continuité dans le rôle de la Chambre d'assemblée au Bas-Canada entre 1791 et 1840.",
     aspects: [
       {
         aspect: "Idées libérales et républicaines"
@@ -24827,6 +24827,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "org_pol_1791_acte_const.png",
+            soustitre: "Organisation politique du Haut-Canada et du Bas-Canada après 1791",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
@@ -24846,8 +24847,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Il y a continuité, car la Chambre d'assemblée continue de représenter la population entre 1791 et 1830.",
-    updatedAt: "2026-06-12T00:18:45.696Z"
+    guide: "Il y a continuité, car la Chambre d'assemblée continue de représenter la population entre 1791 et 1840.",
+    updatedAt: "2026-06-12T12:03:42.432Z"
   },
   {
     id: "Q379",
