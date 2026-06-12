@@ -7913,6 +7913,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q394": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -25270,5 +25292,49 @@ const QUESTIONS = [
     },
     guide: "Le maintien ou l'abolition de l'esclavage.",
     updatedAt: "2026-06-12T01:30:23.010Z"
+  },
+  {
+    id: "Q394",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent la position de deux acteurs concernant le développement du Haut-Canada. Nommez le point sur lequel ces acteurs sont d'accord.",
+    aspects: [
+      {
+        aspect: "Population"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Pour assurer la prospérité du Haut-Canada, il faut encourager l'établissement de colons britanniques capables de mettre les terres en valeur et de renforcer les institutions britanniques. »",
+            auteur: "John Graves Simcoe",
+            source: "Correspondance du lieutenant-gouverneur du Haut-Canada, vers 1793. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« L'arrivée de nouveaux immigrants provenant des îles Britanniques contribue à la croissance de la colonie et favorise son développement économique. »",
+            auteur: "Peter Russell",
+            source: "Correspondance de l'administrateur du Haut-Canada, vers 1800. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Encourager l'établissement de colons britanniques dans le Haut-Canada.\nFavoriser l'immigration britannique dans le Haut-Canada.",
+    updatedAt: "2026-06-12T01:32:03.286Z"
   }
 ]
