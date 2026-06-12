@@ -22727,6 +22727,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "org_pol_1791_acte_const.png",
+            soustitre: "Organisation politique du Haut-Canada et du Bas-Canada après 1791",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
@@ -22737,7 +22738,7 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Chambre d'assemblée ou assemblée législative.",
-    updatedAt: "2026-06-09T18:39:51.133Z"
+    updatedAt: "2026-06-12T12:02:29.636Z"
   },
   {
     id: "Q332",
