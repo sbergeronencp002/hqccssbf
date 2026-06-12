@@ -23610,6 +23610,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "langues_parlees_bas-canada_1800.png",
+            soustitre: "Répartition des langues parlées au Bas-Canada vers 1810",
             source: "Adapté de Fernand Ouellet, Le Bas-Canada 1791-1840 : changements structuraux et crise, Ottawa, Éditions de l'Université d'Ottawa."
           }
         ]
@@ -23620,7 +23621,7 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Français.",
-    updatedAt: "2026-06-11T00:31:26.340Z"
+    updatedAt: "2026-06-12T00:23:21.676Z"
   },
   {
     id: "Q360",
