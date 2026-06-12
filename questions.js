@@ -20716,7 +20716,7 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Les Canadiens ou les Canadiens francophones.",
-    updatedAt: "2026-06-11T12:26:10.799Z"
+    updatedAt: "2026-06-12T00:21:14.153Z"
   },
   {
     id: "Q287",
