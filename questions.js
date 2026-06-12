@@ -9164,6 +9164,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             ref: "org_pol_1774_acte_quebec.png",
+            soustitre: "Organisation politique de la Province de Québec après 1774",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
@@ -9174,7 +9175,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             ref: "org_pol_1791_acte_const.png",
-            soustitre: "De 1791 à 1840",
+            soustitre: "Organisation politique du Haut-Canada et du Bas-Canada après 1791",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
@@ -9184,8 +9185,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 4
     },
-    guide: "Il y a changement, car il y a une Assemblée législative à partir de 1791 (ou car il y a mise en place d’une chambre d’assemblée durant cette période). \nou \nIl y a continuité, car le gouverneur détient tous les pouvoirs de 1763 à 1840 (ou car le gouverneur a toujours les pleins pouvoirs durant cette période).",
-    updatedAt: "2026-06-09T18:51:14.361Z"
+    guide: "Il y a changement, car il y a une Assemblée législative à partir de 1791 (ou car il y a mise en place d’une chambre d’assemblée durant cette période). \nou \nIl y a continuité, car le gouverneur détient tous les pouvoirs entre 1774 et 1791 (ou car le gouverneur a toujours les pleins pouvoirs durant cette période).",
+    updatedAt: "2026-06-12T11:44:36.624Z"
   },
   {
     id: "Q13",
