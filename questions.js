@@ -7813,6 +7813,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q390": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -24983,5 +25005,37 @@ const QUESTIONS = [
     },
     guide: "Dualité linguistique\nPrésence de deux groupes linguistiques\nCoexistence de francophones et d'anglophones",
     updatedAt: "2026-06-12T00:51:38.903Z"
+  },
+  {
+    id: "Q390",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de la présence d'une bourgeoisie professionnelle dans le Bas-Canada au début du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Population"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les avocats, notaires et médecins occupent une place grandissante dans la société. Plusieurs d'entre eux siègent à la Chambre d'assemblée et participent activement aux débats politiques de la colonie. »",
+            source: "Fernand Ouellet, Le Bas-Canada 1791-1840 : changements structuraux et crise, Ottawa, Éditions de l'Université d'Ottawa, 1976. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Participation accrue à la vie politique\nParticipation aux débats politiques\nPrésence de professionnels à la Chambre d'assemblée\nDéfense des intérêts de la population à la Chambre d'assemblée",
+    updatedAt: "2026-06-12T00:56:40.459Z"
   }
 ]
