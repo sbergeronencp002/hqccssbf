@@ -9851,7 +9851,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Le droit de veto (ou Le droit de rejeter des projets de loi soumis par la Chambre d’assemblée) ou le pouvoir exécutif (ou Le pouvoir de nommer les membres des conseils exécutif et législatif) ou le pouvoir de dissoudre la Chambre d’assemblée.",
-    updatedAt: "2026-06-12T11:47:19.487Z"
+    updatedAt: "2026-06-12T12:27:32.373Z"
   },
   {
     id: "Q27",
