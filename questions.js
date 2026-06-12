@@ -12643,7 +12643,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Continuité",
-    enonce: "Indiquez un élément de continuité lié à la croissance de la population canadienne entre \n1760 et 1840.",
+    enonce: "Indiquez un élément de continuité lié à l'augmentation de la population du Bas-Canada entre 1790 et 1840.",
     aspects: [
       {
         aspect: "Population"
@@ -12655,9 +12655,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "1760-1840_accroissement_naturel.png",
-            soustitre: "Naissances et décès dans la population canadienne entre 1760 et 1840",
-            source: "Données approximatives inspirées de Jean Hamelin, Marcel Trudel et Fernand Ouellet; graphique réalisé par Sébastien Bergeron, 2026."
+            ref: "accroissement_naturel_bas-canada_1790-1840.png",
+            soustitre: "Naissances et décès dans la population canadienne entre 1790 et 1840",
+            source: "Adapté de Hubert Charbonneau, La population du Québec : études rétrospectives, Montréal, Boréal Express, 1973."
           }
         ]
       }
@@ -12666,7 +12666,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Le nombre de naissances demeure supérieur au nombre de décès ou le taux de natalité demeure élevé ou l’accroissement naturel demeure la principale cause de la croissance de la population."
+    guide: "L'accroissement naturel.",
+    updatedAt: "2026-06-12T00:54:33.911Z"
   },
   {
     id: "Q99",
