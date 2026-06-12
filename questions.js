@@ -8286,6 +8286,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q412": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève dégage correctement la similitude."
+      },
+      {
+        pts: 1,
+        desc: "L'élève dégage plus ou moins correctement la similitude."
+      },
+      {
+        pts: 0,
+        desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."
+      }
+    ]
   }
 }
 
@@ -26474,5 +26496,49 @@ const QUESTIONS = [
     },
     guide: "La tenue d'assemblées populaires.",
     updatedAt: "2026-06-12T15:38:09.865Z"
+  },
+  {
+    id: "Q412",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Similitude",
+    enonce: "Indiquez une similitude dans les revendications politiques des réformistes du Bas-Canada et du Haut-Canada.",
+    aspects: [
+      {
+        aspect: "Soulèvements de 1837-1838"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les représentants du Parti patriote réclament que les membres du Conseil exécutif soient responsables devant les élus de la Chambre d'assemblée plutôt que devant le gouverneur. »",
+            soustitre: "Bas-Canada",
+            source: "Adapté de Jean-François Cardin et autres, Le Québec : héritages et projets, 1994."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les réformistes dénoncent le pouvoir exercé par le Family Compact et souhaitent que le gouvernement tienne davantage compte de la volonté des représentants élus. »",
+            soustitre: "Haut-Canada",
+            source: "Adapté de J.M.S. Careless, Canada: A Story of Challenge."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Obtenir des réformes politiques.\nAccroître le pouvoir des représentants élus.\nRendre le gouvernement plus responsable devant l'assemblée élue.\nLimiter le pouvoir des élites dirigeantes.",
+    updatedAt: "2026-06-12T15:40:25.779Z"
   }
 ]
