@@ -8514,6 +8514,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q422": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -9111,6 +9133,12 @@ const IMAGE_DB = {
   },
   "port_mtl_1830.png": {
     src: "images/port_mtl_1830.png"
+  },
+  "territoire_agricole_1800.png": {
+    src: "images/territoire_agricole_1800.png"
+  },
+  "territoire_agricole_1830.png": {
+    src: "images/territoire_agricole_1830.png"
   }
 }
 
@@ -27132,5 +27160,49 @@ const QUESTIONS = [
     },
     guide: "L'utilisation des fonds publics.\nLe contrôle des dépenses de la colonie.\nL'administration des revenus publics.\nLe pouvoir de décider des dépenses publiques.",
     updatedAt: "2026-06-12T16:39:31.402Z"
+  },
+  {
+    id: "Q422",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Changement",
+    enonce: "Indiquez un changement dans l'organisation du territoire agricole entre le début et le milieu du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Agriculture"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "territoire_agricole_1800.png",
+            soustitre: "Organisation territoriale du Bas-Canada vers 1800",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "territoire_agricole_1830.png",
+            soustitre: "Organisation territoriale du Bas-Canada vers 1830",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "L'apparition des cantons.\nL'établissement de cantons en plus des seigneuries.",
+    updatedAt: "2026-06-12T17:52:58.329Z"
   }
 ]
