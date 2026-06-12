@@ -8069,6 +8069,23 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
       }
     ]
+  },
+  "Q401": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -25800,5 +25817,36 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-12T04:02:12.890Z"
+  },
+  {
+    id: "Q401",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez le nom du document adopté par les Patriotes en 1834 pour présenter leurs revendications au gouvernement britannique.",
+    aspects: [
+      {
+        aspect: "Soulèvements de 1837-1838"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« En 1834, les députés du Parti patriote présentent à l’Assemblée un texte regroupant leurs principales plaintes et revendications. Ce document critique notamment le Conseil législatif et réclame davantage de pouvoir pour les représentants élus. »",
+            source: "Adapté de Jean-François Cardin et autres, Le Québec : héritages et projets, 1994."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les 92 résolutions.",
+    updatedAt: "2026-06-12T14:09:34.679Z"
   }
 ]
