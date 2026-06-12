@@ -8154,6 +8154,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q406": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
   }
 }
 
@@ -8723,6 +8745,16 @@ const IMAGE_DB = {
   },
   "independance_bas-canada.png": {
     src: "images/independance_bas-canada.png",
+    w: 1200,
+    h: 800
+  },
+  "bataille_saint-charles.png": {
+    src: "images/bataille_saint-charles.png",
+    w: 1200,
+    h: 800
+  },
+  "bataille_taverne.png": {
+    src: "images/bataille_taverne.png",
     w: 1200,
     h: 800
   }
@@ -26051,5 +26083,84 @@ const QUESTIONS = [
     },
     guide: "La Déclaration d'indépendance du Bas-Canada.",
     updatedAt: "2026-06-12T14:22:53.180Z"
+  },
+  {
+    id: "Q406",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    enonce: "Les documents A à D présentent des faits liés aux rébellions de 1837-1838. Indiquez si chaque document fait référence aux rébellions du Bas-Canada ou aux rébellions du Haut-Canada.",
+    aspects: [
+      {
+        aspect: "Soulèvements de 1837-1838"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« En novembre 1837, les Patriotes dirigés par Wolfred Nelson remportent une victoire contre les troupes britanniques lors de la bataille de Saint-Denis. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 3."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "bataille_taverne.png",
+            soustitre: "Bataille de la taverne Montgomery",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« En décembre 1837, un groupe de réformistes dirigé par William Lyon Mackenzie entreprend une marche vers Toronto afin de renverser le gouvernement colonial. »",
+            source: "Adapté de J.M.S. Careless, Canada: A Story of Challenge."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            ref: "bataille_saint-charles.png",
+            soustitre: "Bataille de Saint-Charles",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Rébellions au Bas-Canada",
+        "Rébellions au Haut-Canada"
+      ],
+      double: true
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Rébellions au Bas-Canada",
+        "Rébellions au Haut-Canada"
+      ],
+      rangees: [
+        [
+          "A et D",
+          "B et C"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-12T14:40:08.893Z"
   }
 ]
