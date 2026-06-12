@@ -8353,6 +8353,28 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans le temps."
       }
     ]
+  },
+  "Q415": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -26677,5 +26699,37 @@ const QUESTIONS = [
     },
     guide: "C",
     updatedAt: "2026-06-12T16:03:49.321Z"
+  },
+  {
+    id: "Q415",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de la création des banques sur l'économie du Bas-Canada.",
+    aspects: [
+      {
+        aspect: "Capitaux et infrastructures"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Au début du XIXe siècle, des institutions financières recueillent l'argent des déposants et mettent des capitaux à la disposition des marchands et des entrepreneurs afin de soutenir leurs projets commerciaux.",
+            source: "Adapté de Paul-André Linteau, Histoire du Québec contemporain."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les entreprises ont davantage accès au financement.\nLes investissements augmentent.\nLe commerce se développe.\nL'économie de la colonie se développe.",
+    updatedAt: "2026-06-12T16:07:58.181Z"
   }
 ]
