@@ -13466,8 +13466,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "La proportion de la population anglophone augmente entre 1760 et 1790 ou la population anglophone passe de 1 % à 15 % ou la proportion de la population francophone diminue entre 1760 et 1790.",
-    updatedAt: "2026-06-12T12:16:35.250Z"
+    guide: "La proportion de la population anglophone augmente entre 1763 et 1784 ou la population anglophone passe de 1 % à 15 % ou la proportion de la population francophone diminue entre 1763 et 1784.",
+    updatedAt: "2026-06-12T12:17:02.769Z"
   },
   {
     id: "Q109",
