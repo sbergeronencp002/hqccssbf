@@ -8336,6 +8336,23 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q414": {
+    oi: "Situer dans le temps",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe les faits dans le temps."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans le temps."
+      }
+    ]
   }
 }
 
@@ -8919,6 +8936,9 @@ const IMAGE_DB = {
     src: "images/bataille_taverne.png",
     w: 1200,
     h: 800
+  },
+  "inauguration_canal_lachine.png": {
+    src: "images/inauguration_canal_lachine.png"
   }
 }
 
@@ -26619,5 +26639,38 @@ const QUESTIONS = [
     },
     guide: "Les Patriotes organisent des assemblées populaires (un moyen utilisé par les Patriotes) afin de faire valoir leurs revendications. En réaction, les autorités coloniales émettent des mandats d'arrestation contre plusieurs chefs patriotes (une réaction des autorités coloniales). Cette situation contribue au déclenchement du conflit armé en 1837 (une conséquence dans la colonie).",
     updatedAt: "2026-06-12T15:54:11.103Z"
+  },
+  {
+    id: "Q414",
+    niveau: 3,
+    oi: "Situer dans le temps",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [
+      {
+        aspect: "Capitaux et infrastructures"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "inauguration_canal_lachine.png",
+            soustitre: "Inauguration du canal Lachine",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "image",
+      ref: "ligne_1790-1850.png"
+    },
+    guide: "C",
+    updatedAt: "2026-06-12T16:03:49.321Z"
   }
 ]
