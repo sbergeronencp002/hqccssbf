@@ -7952,6 +7952,23 @@ const REGLETTES = {
         desc: "L'élève ne situe pas le fait dans l'espace."
       }
     ]
+  },
+  "Q396": {
+    oi: "Situer dans l'espace",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe le fait dans l'espace."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas le fait dans l'espace."
+      }
+    ]
   }
 }
 
@@ -8509,6 +8526,9 @@ const IMAGE_DB = {
     src: "images/conflits_armes_bas-canada.png",
     w: 1200,
     h: 921
+  },
+  "conflits_armes_haut-canada.png": {
+    src: "images/conflits_armes_haut-canada.png"
   }
 }
 
@@ -25389,5 +25409,36 @@ const QUESTIONS = [
     },
     guide: "B",
     updatedAt: "2026-06-12T03:36:13.724Z"
+  },
+  {
+    id: "Q396",
+    niveau: 3,
+    oi: "Situer dans l'espace",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    soustag: "Situer 1 élément",
+    enonce: "Indiquez la lettre qui correspond à la principale région où se sont déroulés les conflits armés des Rébellions  de 1838 au Haut-Canada.",
+    aspects: [
+      {
+        aspect: "Soulèvements de 1837-1838"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "conflits_armes_haut-canada.png",
+            source: "Carte du Québec. Adaptée d'après d-maps.com."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau_2col"
+    },
+    guide: "D",
+    updatedAt: "2026-06-12T03:47:21.040Z"
   }
 ]
