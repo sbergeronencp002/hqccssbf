@@ -25936,7 +25936,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "assemblee_six_comtes.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Charles Alexander Smith, L'Assemblée des Six-Comtés, 1891. Reproduction adaptée."
           }
         ]
       }
@@ -25946,6 +25946,6 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Les assemblées populaires.",
-    updatedAt: "2026-06-12T14:12:13.686Z"
+    updatedAt: "2026-06-12T14:13:02.122Z"
   }
 ]
