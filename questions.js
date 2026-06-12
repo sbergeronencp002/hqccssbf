@@ -7969,6 +7969,28 @@ const REGLETTES = {
         desc: "L'élève ne situe pas le fait dans l'espace."
       }
     ]
+  },
+  "Q397": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -25440,5 +25462,49 @@ const QUESTIONS = [
     },
     guide: "D",
     updatedAt: "2026-06-12T03:47:21.040Z"
+  },
+  {
+    id: "Q397",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent la position de deux acteurs concernant l'organisation politique des colonies britanniques. Nommez le point sur lequel ces acteurs sont d'accord.",
+    aspects: [
+      {
+        aspect: "Soulèvements de 1837-1838"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les habitants de la colonie doivent être représentés par des élus capables d'influencer les décisions du gouvernement et de défendre les intérêts de la population. »",
+            auteur: "Louis-Joseph Papineau",
+            source: "Discours à la Chambre d'assemblée du Bas-Canada, vers 1834. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les institutions politiques doivent accorder une plus grande place aux représentants choisis par la population afin de mieux répondre à ses besoins. »",
+            auteur: "William Lyon Mackenzie",
+            source: "The Colonial Advocate, Haut-Canada, vers 1836. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Louis-Joseph Papineau et William Lyon Mackenzie souhaitent accorder davantage de pouvoir aux représentants élus (la similitude).",
+    updatedAt: "2026-06-12T03:52:04.887Z"
   }
 ]
