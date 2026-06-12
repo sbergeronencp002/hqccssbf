@@ -25380,7 +25380,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "accroissement_naturel_bas-canada_1790-1840.png",
-            soustitre: "Naissances et décès au Bas-Canada (1790-1840)",
+            soustitre: "Naissances et décès au Bas-Canada  entre 1790 et 1840",
             source: "Adapté de Jacques Henripin, La population canadienne au début du XIXe siècle, Montréal."
           }
         ]
@@ -25400,7 +25400,7 @@ const QUESTIONS = [
           {
             titre: "Document C",
             ref: "evolution_pop_bas-canada_1790-1840.png",
-            soustitre: "Évolution de la population du Bas-Canada (1790-1840)",
+            soustitre: "Évolution de la population du Bas-Canada entre 1790 et 1840",
             source: "Adapté de Fernand Ouellet, Le Bas-Canada 1791-1840 : changements structuraux et crise, Ottawa, Éditions de l'Université d'Ottawa, 1976."
           }
         ]
@@ -25411,7 +25411,7 @@ const QUESTIONS = [
       nombre: 5
     },
     guide: "L'accroissement naturel (phénomène démographique) touche principalement les Canadiens français (groupe de population concerné), ce qui entraîne une forte augmentation de la population du Bas-Canada (changement dans la population)",
-    updatedAt: "2026-06-12T01:22:45.075Z"
+    updatedAt: "2026-06-12T12:15:15.594Z"
   },
   {
     id: "Q393",
