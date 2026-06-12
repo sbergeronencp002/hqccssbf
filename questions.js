@@ -24458,7 +24458,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "population_bas-canada_1800.png",
-            soustitre: "Composition de la population du Bas-Canada vers 1810",
+            soustitre: "Répartition de la population du Bas-Canada vers 1810",
             source: "Adapté de Fernand Ouellet, Le Bas-Canada 1791-1840 : changements structuraux et crise, Ottawa, Éditions de l'Université d'Ottawa, 1976."
           }
         ]
@@ -24490,7 +24490,7 @@ const QUESTIONS = [
       nombre: 5
     },
     guide: "La présence de francophones et d'anglophones dans le Bas-Canada (composition linguistique) amène les Canadiens français (groupe de population) à chercher à accroître leur influence politique, ce qui provoque la formation de partis opposés et des tensions à la Chambre d'assemblée (conséquence politique).",
-    updatedAt: "2026-06-11T12:25:48.432Z"
+    updatedAt: "2026-06-12T12:19:52.343Z"
   },
   {
     id: "Q369",
