@@ -26112,6 +26112,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P4 — 1791 – 1840",
     points: 2,
+    soustag: "4 documents",
     enonce: "Les documents A à D présentent des faits liés aux rébellions de 1837-1838. Indiquez si chaque document fait référence aux rébellions du Bas-Canada ou aux rébellions du Haut-Canada.",
     aspects: [
       {
@@ -26183,7 +26184,7 @@ const QUESTIONS = [
         ]
       ]
     },
-    updatedAt: "2026-06-12T14:40:08.893Z"
+    updatedAt: "2026-06-12T15:23:28.020Z"
   },
   {
     id: "Q407",
