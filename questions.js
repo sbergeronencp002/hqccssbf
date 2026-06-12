@@ -9077,6 +9077,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "org_pol_1774_acte_quebec.png",
+            soustitre: "Organisation politique de la Province de Québec après 1774",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
@@ -9087,6 +9088,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             ref: "org_pol_1791_acte_const.png",
+            soustitre: "Organisation politique du Haut-Canada et du Bas-Canada après 1791",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
@@ -9097,7 +9099,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "La population peut désormais élire des députés à la Chambre d'assemblée ou une partie de la population obtient le droit de participer à l'élection des représentants ou la création d'une Chambre d'assemblée permet à la population d'être représentée par des députés élus.",
-    updatedAt: "2026-06-09T18:55:30.563Z"
+    updatedAt: "2026-06-12T11:43:39.302Z"
   },
   {
     id: "Q11",
