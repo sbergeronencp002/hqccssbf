@@ -19508,7 +19508,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "org_pol_apres_1763.png",
-            soustitre: "Organisation politique de la Province de Québec après 1763",
+            soustitre: "Organisation politique de la colonie après 1763",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
@@ -19519,7 +19519,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             ref: "org_pol_1774_acte_quebec.png",
-            soustitre: "Organisation politique de la Province de Québec après 1774",
+            soustitre: "Organisation politique de la colonie après 1774",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
@@ -19530,7 +19530,7 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Changement :\nIl y a changement, car en 1774, le Conseil de Québec devient le Conseil exécutif et le Conseil législatif.\n\nContinuité :\nIl y a continuité, car entre 1763 et 1774, la Province de Québec demeure dirigée par un gouverneur britannique nommé par le roi.",
-    updatedAt: "2026-06-12T12:05:36.402Z"
+    updatedAt: "2026-06-12T12:09:32.861Z"
   },
   {
     id: "Q248",
