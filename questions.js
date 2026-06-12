@@ -14165,7 +14165,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "exportations_fourrures_huronie.png",
-            soustitre: "Nombre estimé de peaux exportées en Nouvelle-France",
+            soustitre: "Nombre estimé de peaux exportées en Nouvelle-France entre 1620 et 1670",
             source: "adaptation pédagogique à partir des Archives de la Nouvelle-France et de travaux d’historiens sur le commerce des fourrures."
           }
         ]
@@ -14175,7 +14175,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Il y a une diminution des exportations de fourrures ou il y a un affaiblissement des alliances commerciales ou difficulté pour les Français d’obtenir des fourrures ou insécurité sur les routes commerciales."
+    guide: "Il y a une diminution des exportations de fourrures ou il y a un affaiblissement des alliances commerciales ou difficulté pour les Français d’obtenir des fourrures ou insécurité sur les routes commerciales.",
+    updatedAt: "2026-06-12T12:24:49.017Z"
   },
   {
     id: "Q123",
