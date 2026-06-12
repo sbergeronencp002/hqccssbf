@@ -7891,6 +7891,28 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q393": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de divergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -25204,5 +25226,49 @@ const QUESTIONS = [
     },
     guide: "L'accroissement naturel (phénomène démographique) touche principalement les Canadiens français (groupe de population concerné), ce qui entraîne une forte augmentation de la population du Bas-Canada (changement dans la population)",
     updatedAt: "2026-06-12T01:22:45.075Z"
+  },
+  {
+    id: "Q393",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Divergence – 2 acteurs",
+    enonce: "Les documents A et B présentent la position de deux acteurs concernant un enjeu dans les colonies britanniques. Nommez le point sur lequel ces acteurs sont en désaccord.",
+    aspects: [
+      {
+        aspect: "Population"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« L'esclavage est contraire aux principes de liberté et doit être aboli dans toutes les colonies britanniques. »",
+            auteur: "William Wilberforce",
+            source: "Discours au Parlement britannique, vers 1833. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« L'économie de certaines colonies dépend encore du travail des esclaves et une abolition rapide risque de causer de graves difficultés. »",
+            auteur: "Edward Ellice",
+            source: "Débats parlementaires britanniques, vers 1833. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le maintien ou l'abolition de l'esclavage.",
+    updatedAt: "2026-06-12T01:30:23.010Z"
   }
 ]
