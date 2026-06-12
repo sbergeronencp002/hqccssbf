@@ -26758,8 +26758,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Les deux groupes réclament des réformes politiques.\nLes deux groupes souhaitent accroître le pouvoir des représentants élus.\nLes deux groupes contestent le pouvoir exercé par une minorité dirigeante.\nLes deux groupes revendiquent un gouvernement responsable.",
-    updatedAt: "2026-06-12T15:42:05.738Z"
+    guide: "La responsabilité ministérielle.\nUn gouvernement responsable.\nLa responsabilité du Conseil exécutif devant la Chambre d'assemblée.",
+    updatedAt: "2026-06-12T16:42:17.776Z"
   },
   {
     id: "Q413",
