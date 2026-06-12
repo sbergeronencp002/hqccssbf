@@ -8019,6 +8019,34 @@ const REGLETTES = {
         desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
       }
     ]
+  },
+  "Q399": {
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
   }
 }
 
@@ -25589,5 +25617,60 @@ const QUESTIONS = [
     },
     guide: "John Colborne souhaite réprimer les contestations par la force militaire (la différence), alors que Louis-Joseph Papineau et Wolfred Nelson s'opposent aux mesures prises par le gouvernement colonial (la similitude).",
     updatedAt: "2026-06-12T03:54:40.076Z"
+  },
+  {
+    id: "Q399",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    soustag: "Position – 3 acteurs",
+    enonce: "Le document présente la position de trois acteurs concernant l'organisation politique des colonies britanniques. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+    aspects: [
+      {
+        aspect: "Soulèvements de 1837-1838"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les habitants de la colonie doivent pouvoir obtenir des réformes qui accordent davantage d'influence aux représentants élus dans les affaires publiques. »",
+            auteur: "Louis-Joseph Papineau",
+            source: "Discours à la Chambre d'assemblée du Bas-Canada, vers 1834. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les institutions britanniques assurent la stabilité de la colonie et il convient de maintenir l'autorité du gouvernement établi ainsi que les pouvoirs qui lui sont confiés. »",
+            auteur: "John Colborne",
+            source: "Correspondance du gouverneur militaire du Bas-Canada, vers 1837. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Lorsque les demandes de la population sont constamment rejetées, il devient nécessaire de poursuivre les réformes afin de corriger les abus du gouvernement colonial. »",
+            auteur: "Edmund Bailey O'Callaghan",
+            source: "The Vindicator, Montréal, vers 1837. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "John Colborne défend le maintien du régime colonial britannique (la différence), alors que Louis-Joseph Papineau et Edmund Bailey O'Callaghan réclament des réformes politiques importantes (la similitude).",
+    updatedAt: "2026-06-12T03:57:05.205Z"
   }
 ]
