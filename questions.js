@@ -7718,6 +7718,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q385": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -8251,6 +8268,11 @@ const IMAGE_DB = {
   },
   "agents_indiens_bas-canada.png": {
     src: "images/agents_indiens_bas-canada.png",
+    w: 1200,
+    h: 800
+  },
+  "abolition_esclavage_bas-canada.png": {
+    src: "images/abolition_esclavage_bas-canada.png",
     w: 1200,
     h: 800
   }
@@ -24718,5 +24740,36 @@ const QUESTIONS = [
     },
     guide: "Agent des Indiens",
     updatedAt: "2026-06-12T00:17:27.544Z"
+  },
+  {
+    id: "Q385",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "À l'aide du document A, indiquez l'événement illustré.",
+    aspects: [
+      {
+        aspect: "Population"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "abolition_esclavage_bas-canada.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Abolition de l'esclavage \nFin de l'esclavage",
+    updatedAt: "2026-06-12T00:28:53.449Z"
   }
 ]
