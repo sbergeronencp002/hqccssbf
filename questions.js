@@ -24489,7 +24489,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             ref: "journaux_bas-canada.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026. Espace réponse"
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
@@ -24499,7 +24499,7 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Changement\nIl y a changement, car le nombre de journaux augmente entre 1790 et 1830, ce qui favorise la diffusion des idées politiques dans la colonie.\n\nContinuité\nIl y a continuité, car les journaux continuent de servir à la diffusion des idées politiques entre 1790 et 1830.",
-    updatedAt: "2026-06-11T16:02:17.023Z"
+    updatedAt: "2026-06-12T00:18:14.267Z"
   },
   {
     id: "Q380",
