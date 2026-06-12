@@ -7701,6 +7701,23 @@ const REGLETTES = {
         desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."
       }
     ]
+  },
+  "Q384": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -8231,6 +8248,11 @@ const IMAGE_DB = {
   },
   "journaux_bas-canada.png": {
     src: "images/journaux_bas-canada.png"
+  },
+  "agents_indiens_bas-canada.png": {
+    src: "images/agents_indiens_bas-canada.png",
+    w: 1200,
+    h: 800
   }
 }
 
@@ -24663,5 +24685,36 @@ const QUESTIONS = [
     },
     guide: "La population du Bas-Canada augmente principalement grâce à l'accroissement naturel, tandis que celle du Haut-Canada augmente surtout grâce à l'immigration britannique.",
     updatedAt: "2026-06-11T18:39:04.086Z"
+  },
+  {
+    id: "Q384",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez le titre de la personne qui sert d'intermédiaire entre le gouvernement britannique et les Premières Nations au début du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Population"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "agents_indiens_bas-canada.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Agent des Indiens",
+    updatedAt: "2026-06-12T00:17:27.544Z"
   }
 ]
