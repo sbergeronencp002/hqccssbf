@@ -7991,6 +7991,34 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q398": {
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
   }
 }
 
@@ -25506,5 +25534,60 @@ const QUESTIONS = [
     },
     guide: "Louis-Joseph Papineau et William Lyon Mackenzie souhaitent accorder davantage de pouvoir aux représentants élus (la similitude).",
     updatedAt: "2026-06-12T03:52:04.887Z"
+  },
+  {
+    id: "Q398",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    soustag: "Position – 3 acteurs",
+    enonce: "Le document présente la position de trois acteurs concernant les moyens utilisés pour répondre aux tensions politiques dans le Bas-Canada. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+    aspects: [
+      {
+        aspect: "Soulèvements de 1837-1838"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les Canadiens doivent poursuivre leurs revendications par des moyens légaux et constitutionnels afin d'obtenir les réformes souhaitées sans recourir à la violence. »",
+            auteur: "Louis-Joseph Papineau",
+            source: "Discours politique, Bas-Canada, vers 1837. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les autorités doivent rétablir l'ordre dans la colonie et réprimer toute opposition qui menace la stabilité du gouvernement britannique. »",
+            auteur: "John Colborne",
+            source: "Correspondance du commandant des forces britanniques, Bas-Canada, vers 1837. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Lorsque les demandes de la population sont constamment rejetées, il devient parfois nécessaire de résister plus fermement afin de défendre ses droits et ses libertés. »",
+            auteur: "Wolfred Nelson",
+            source: "Discours aux Patriotes, Bas-Canada, vers 1837. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "John Colborne souhaite réprimer les contestations par la force militaire (la différence), alors que Louis-Joseph Papineau et Wolfred Nelson s'opposent aux mesures prises par le gouvernement colonial (la similitude).",
+    updatedAt: "2026-06-12T03:54:40.076Z"
   }
 ]
