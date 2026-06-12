@@ -26481,7 +26481,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "aut_col_britannique_rebellions.png",
-            source: "econstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
@@ -26491,7 +26491,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Émission de mandats d'arrestation contre des chefs patriotes.\nRépression du mouvement patriote.\nDéploiement de troupes britanniques.\nArrestation de Patriotes.\nAugmentation des tensions politiques.\nDéclenchement du conflit armé.\nDébut des rébellions de 1837.",
-    updatedAt: "2026-06-12T15:34:44.917Z"
+    updatedAt: "2026-06-12T15:54:40.050Z"
   },
   {
     id: "Q411",
