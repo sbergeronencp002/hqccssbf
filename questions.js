@@ -8536,6 +8536,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
+  },
+  "Q423": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -27204,5 +27221,36 @@ const QUESTIONS = [
     },
     guide: "L'apparition des cantons.\nL'établissement de cantons en plus des seigneuries.",
     updatedAt: "2026-06-12T17:52:58.329Z"
+  },
+  {
+    id: "Q423",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez le nom des lois britanniques qui accordent un traitement préférentiel au blé des colonies.",
+    aspects: [
+      {
+        aspect: "Agriculture"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Au début du XIXe siècle, la Grande-Bretagne impose des tarifs moins élevés sur le blé provenant de ses colonies que sur celui provenant de pays étrangers. »",
+            source: "Adapté de Paul-André Linteau, Histoire du Québec contemporain."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les Corn Laws.",
+    updatedAt: "2026-06-12T17:55:04.739Z"
   }
 ]
