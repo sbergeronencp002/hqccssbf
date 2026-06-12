@@ -19391,6 +19391,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             ref: "org_pol_apres_1763.png",
+            soustitre: "Organisation politique de la colonie après 1763",
             source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
           }
         ]
@@ -19401,6 +19402,7 @@ const QUESTIONS = [
           {
             titre: "Document C",
             ref: "org_pol_regime_militaire.png",
+            soustitre: "Organisation politique de la colonie entre 1760 et 1763",
             source: "Schéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
           }
         ]
@@ -19436,7 +19438,7 @@ const QUESTIONS = [
         ]
       ]
     },
-    updatedAt: "2026-06-06T21:26:53.038Z"
+    updatedAt: "2026-06-12T12:09:00.666Z"
   },
   {
     id: "Q246",
