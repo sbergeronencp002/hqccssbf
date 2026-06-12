@@ -7935,6 +7935,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q395": {
+    oi: "Situer dans l'espace",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe le fait dans l'espace."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas le fait dans l'espace."
+      }
+    ]
   }
 }
 
@@ -8487,6 +8504,11 @@ const IMAGE_DB = {
   },
   "evolution_pop_bas-canada_1790-1840.png": {
     src: "images/evolution_pop_bas-canada_1790-1840.png"
+  },
+  "conflits_armes_bas-canada.png": {
+    src: "images/conflits_armes_bas-canada.png",
+    w: 1200,
+    h: 921
   }
 }
 
@@ -25336,5 +25358,36 @@ const QUESTIONS = [
     },
     guide: "Encourager l'établissement de colons britanniques dans le Haut-Canada.\nFavoriser l'immigration britannique dans le Haut-Canada.",
     updatedAt: "2026-06-12T01:32:03.286Z"
+  },
+  {
+    id: "Q395",
+    niveau: 3,
+    oi: "Situer dans l'espace",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    soustag: "Situer 1 élément",
+    enonce: "Indiquez la lettre qui correspond à la principale région où se sont déroulés les conflits armés des Rébellions au Bas-Canada.",
+    aspects: [
+      {
+        aspect: "Soulèvements de 1837-1838"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "conflits_armes_bas-canada.png",
+            source: "Carte du Québec. Adaptée d'après d-maps.com."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau_2col"
+    },
+    guide: "B",
+    updatedAt: "2026-06-12T03:36:13.724Z"
   }
 ]
