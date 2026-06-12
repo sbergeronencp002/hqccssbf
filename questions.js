@@ -7835,6 +7835,34 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q391": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -8381,6 +8409,9 @@ const IMAGE_DB = {
   },
   "evolution_demo_haut-canada_1790-1840.png": {
     src: "images/evolution_demo_haut-canada_1790-1840.png"
+  },
+  "evolution_pop_haut-canada_1790-1840.png": {
+    src: "images/evolution_pop_haut-canada_1790-1840.png"
   }
 }
 
@@ -25037,5 +25068,56 @@ const QUESTIONS = [
     },
     guide: "Participation accrue à la vie politique\nParticipation aux débats politiques\nPrésence de professionnels à la Chambre d'assemblée\nDéfense des intérêts de la population à la Chambre d'assemblée",
     updatedAt: "2026-06-12T00:56:40.459Z"
+  },
+  {
+    id: "Q391",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    enonce: "Expliquez comment un mouvement migratoire contribue à un changement démographique du Haut-Canada dans la première moitié du XIXe siècle. \n\nRépondez à la question en précisant et en liant entre eux :\n\n• un mouvement migratoire vers le Haut-Canada\n• un groupe de population concerné\n• un changement démographique au Haut-Canada.",
+    aspects: [
+      {
+        aspect: "Population"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "evolution_demo_haut-canada_1790-1840.png",
+            source: "Adapté de J.M.S. Careless, Canada: A Story of Challenge, Toronto, Macmillan of Canada, 1970."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "evolution_pop_haut-canada_1790-1840.png",
+            source: "Adapté. J.M. Bumsted, The Peoples of Canada: A Pre-Confederation History, Toronto, Oxford University Press."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Durant la première moitié du XIXe siècle, des milliers d'immigrants provenant des îles Britanniques s'établissent dans le Haut-Canada. »",
+            source: "J.M.S. Careless, Canada: A Story of Challenge, Toronto, Macmillan, 1970. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 5
+    },
+    guide: "L'immigration britannique (mouvement migratoire) amène de nombreux Britanniques dans le Haut-Canada (groupe de population concerné) ce qui contribue à l'augmentation de la population de cette colonie (changement démographique).",
+    updatedAt: "2026-06-12T01:10:27.065Z"
   }
 ]
