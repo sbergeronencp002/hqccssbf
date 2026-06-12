@@ -7769,6 +7769,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q388": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -24875,5 +24897,37 @@ const QUESTIONS = [
     },
     guide: "L'immigration.",
     updatedAt: "2026-06-12T00:41:31.468Z"
+  },
+  {
+    id: "Q388",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une cause de la présence d'une importante population britannique dans le Haut-Canada au début du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Population"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Au début du XIXe siècle, des milliers de nouveaux arrivants provenant des îles Britanniques s'établissent dans le Haut-Canada, contribuant fortement à la croissance de sa population. »",
+            source: "J.M.S. Careless, Canada: A Story of Challenge, Toronto, Macmillan, 1970. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Immigration britannique\nArrivée de Loyalistes",
+    updatedAt: "2026-06-12T00:50:34.533Z"
   }
 ]
