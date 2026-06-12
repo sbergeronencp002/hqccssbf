@@ -1034,31 +1034,63 @@ async function init() {
   document.querySelector('.container').addEventListener('input', e => { if(!e.target.closest('.token-bar')) formDirty = true; });
   await Promise.all([loadQuestionsJs(), loadImages(), loadReglettesJs(), loadRecentImages()]);
   // Rafraîchit les selects après que loadRecentImages ait rempli RECENT_IMAGES
-  const opts = buildImageOptions();
-  document.querySelectorAll('select[id$="-ref"]').forEach(sel => { const v = sel.value; sel.innerHTML = opts; sel.value = v; });
+  refreshImageSelects();
+}
+
+function refreshImageSelects() {
+  const options = buildImageOptions();
+  document.querySelectorAll('select[id$="-ref"]').forEach(sel => {
+    const val = sel.value;
+    sel.innerHTML = options;
+    sel.value = val;
+  });
 }
 
 async function loadImages() {
-  try {
-    const headers = getToken() ? { Authorization: `token ${getToken()}` } : {};
-    const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/images?ref=${BRANCH}&t=${Date.now()}`, { headers, cache: 'no-store' });
-    const data = await r.json();
-    if(Array.isArray(data)) {
+  let sansToken = false;
+  for(let tentative = 0; tentative < 3; tentative++) {
+    try {
+      const headers = (getToken() && !sansToken) ? { Authorization: `token ${getToken()}` } : {};
+      const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/images?ref=${BRANCH}&t=${Date.now()}`, { headers, cache: 'no-store' });
+      if((r.status === 401 || r.status === 403) && !sansToken) {
+        // Token expiré ou invalide : le dépôt est public, on réessaie en lecture anonyme
+        sansToken = true;
+        toast('Token GitHub invalide ou expiré — régénérez-le sur github.com/settings/tokens puis recollez-le dans le champ ci-dessus.', 'err');
+        continue;
+      }
+      if(!r.ok) throw new Error('HTTP ' + r.status);
+      const data = await r.json();
+      if(!Array.isArray(data)) throw new Error('Réponse inattendue de l’API GitHub');
       IMAGES = data.filter(f => f.name !== '.gitkeep').map(f => f.name).sort();
-      const options = buildImageOptions();
-      document.querySelectorAll('select[id$="-ref"]').forEach(sel => {
-        const val = sel.value;
-        sel.innerHTML = options;
-        sel.value = val;
-      });
+      refreshImageSelects();
+      return;
+    } catch(e) {
+      if(tentative < 2) await new Promise(res => setTimeout(res, 1200 * (tentative + 1)));
     }
-  } catch(e) { /* utilise la liste vide */ }
+  }
+  // Mode secours : liste reconstruite depuis IMAGE_DB (questions.js)
+  const secours = Object.keys(currentImageDb || {}).sort();
+  if(secours.length) {
+    IMAGES = secours;
+    refreshImageSelects();
+    toast('Liste d’images chargée en mode secours depuis questions.js — vérifiez le token GitHub.', 'err');
+  } else {
+    toast('Impossible de charger la liste des images — vérifiez la connexion et le token GitHub.', 'err');
+  }
 }
 
 async function loadQuestionsJs() {
   try {
     const headers = getToken() ? { Authorization: `token ${getToken()}` } : {};
-    const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js?ref=${BRANCH}&t=${Date.now()}`, { headers, cache: 'no-store' });
+    let tokenKo = false;
+    let r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js?ref=${BRANCH}&t=${Date.now()}`, { headers, cache: 'no-store' });
+    if(r.status === 401 || r.status === 403) {
+      tokenKo = true;
+      // Token expiré ou invalide : le dépôt est public, on relit en anonyme (la publication, elle, exigera un token valide)
+      document.getElementById('token-status').textContent = '✗ Token invalide ou expiré';
+      document.getElementById('token-status').className = 'token-status ko';
+      r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js?ref=${BRANCH}&t=${Date.now()}`, { cache: 'no-store' });
+    }
     if(!r.ok) throw new Error(r.status);
     const data = await r.json();
     questionsFileSha = data.sha;
@@ -1082,8 +1114,10 @@ async function loadQuestionsJs() {
     const nextId = 'Q' + nextNum;
     document.getElementById('q-id').value = nextId;
     document.getElementById('next-id-badge').textContent = nextId;
-    document.getElementById('token-status').textContent = '✓ Connecté';
-    document.getElementById('token-status').className = 'token-status ok';
+    if(!tokenKo) {
+      document.getElementById('token-status').textContent = '✓ Connecté';
+      document.getElementById('token-status').className = 'token-status ok';
+    }
     renderDashboard();
   } catch(e) {
     document.getElementById('token-status').textContent = '✗ Erreur de connexion';
@@ -1109,7 +1143,7 @@ async function loadReglettesJs() {
   } catch(e) { /* utilise la version statique */ }
 }
 
-document.getElementById('gh-token').addEventListener('change', loadQuestionsJs);
+document.getElementById('gh-token').addEventListener('change', () => { loadQuestionsJs(); loadImages(); loadReglettesJs(); });
 
 // ── DOCUMENTS ─────────────────────────────────────────────────────────
 let docCount = 0;

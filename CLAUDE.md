@@ -120,91 +120,92 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `utf8b64(str)` | 401 | Encode UTF-8 → base64 (remplace unescape dépréciée) |
-| `saveToken()` / `getToken()` | 408/415 | Gestion du PAT (sessionStorage ou localStorage) |
-| `init()` | 1001 | Point d'entrée : charge token, recent images, questions, images, réglettes |
-| `loadQuestionsJs()` | 1030 | Fetch questions.js depuis GitHub, peuple currentQuestions/Reglettes/ImageDb |
-| `loadImages()` | 1013 | Fetch liste images GitHub, peuple IMAGES, met à jour les dropdowns |
-| `loadReglettesJs()` | 1061 | Fetch reglettes.js, met à jour REGLETTES_PRESET |
-| `loadRecentImages()` | 983 | Charge RECENT_IMAGES depuis localStorage |
-| `addRecentImage(name)` | 986 | Ajoute au front de RECENT_IMAGES (max 3) |
-| `buildImageOptions()` | 990 | Construit les `<option>` : récentes ⭐ + séparateur + reste |
+| `utf8b64(str)` | 392 | Encode UTF-8 → base64 (remplace unescape dépréciée) |
+| `saveToken()` / `getToken()` | 409/416 | Gestion du PAT (sessionStorage ou localStorage) |
+| `init()` | 1026 | Point d'entrée : charge token, recent images, questions, images, réglettes |
+| `loadQuestionsJs()` | 1082 | Fetch questions.js depuis GitHub ; si token 401/403 → statut « Token invalide » + relecture anonyme |
+| `refreshImageSelects()` | 1040 | Re-remplit tous les `<select>` d'images en préservant la valeur |
+| `loadImages()` | 1049 | Fetch liste images GitHub (3 tentatives, repli anonyme si 401/403, secours via IMAGE_DB, toasts d'erreur) |
+| `loadReglettesJs()` | 1128 | Fetch reglettes.js, met à jour REGLETTES_PRESET |
+| `loadRecentImages()` | 982 | Charge RECENT_IMAGES depuis localStorage |
+| `addRecentImage(name)` | 1004 | Ajoute au front de RECENT_IMAGES (max 3) |
+| `buildImageOptions()` | 1008 | Construit les `<option>` : récentes ⭐ + séparateur + reste |
 
 ### Formulaire contexte
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `updatePeriodes()` | 422 | Met à jour le `<select>` période selon niveau |
-| `updateAspects()` | 430 | Génère les checkboxes d'aspects selon période |
-| `updateSoustag()` | 450 | Affiche/cache les pills sous-tag selon OI |
-| `getSoustag()` / `setSoustag()` | 467/472 | Lit/pose la valeur du sous-tag sélectionné |
-| `updatePresets()` | 497 | Peuple le `<select>` réglette selon OI |
-| `autoReponseFromOI()` | 483 | Auto-sélectionne le type de réponse pour certaines OI |
+| `updatePeriodes()` | 423 | Met à jour le `<select>` période selon niveau |
+| `updateAspects()` | 431 | Génère les checkboxes d'aspects selon période |
+| `updateSoustag()` | 446 | Affiche/cache les pills sous-tag selon OI |
+| `getSoustag()` / `setSoustag()` | 463/468 | Lit/pose la valeur du sous-tag sélectionné |
+| `updatePresets()` | 492 | Peuple le `<select>` réglette selon OI |
+| `autoReponseFromOI()` | 478 | Auto-sélectionne le type de réponse pour certaines OI |
 
 ### Mode édition
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `setMode(mode)` | 508 | Bascule Nouvelle question ↔ Modifier |
-| `populateEditSearch()` | 524 | Peuple la liste de recherche en mode édition |
-| `filterEditList()` | 545 | Filtre + affiche les résultats de recherche |
-| `editKeyNav(e)` | 613 | Navigation clavier (↑↓ Enter) dans la liste |
-| `loadQuestion(id)` | 640 | Charge une question existante dans le formulaire |
-| `dupliquerQuestion()` | 624 | Duplique la question sélectionnée |
-| `supprimerQuestion()` | 834 | Supprime + renuméroter (fetch → filter → push) |
+| `setMode(mode)` | 503 | Bascule Nouvelle question ↔ Modifier |
+| `populateEditSearch()` | 519 | Peuple la liste de recherche en mode édition |
+| `filterEditList()` | 540 | Filtre + affiche les résultats de recherche |
+| `editKeyNav(e)` | 610 | Navigation clavier (↑↓ Enter) dans la liste |
+| `loadQuestion(id)` | 637 | Charge une question existante dans le formulaire |
+| `dupliquerQuestion()` | 621 | Duplique la question sélectionnée |
+| `supprimerQuestion()` | 846 | Supprime + renuméroter (fetch → filter → push) |
 
 ### Documents
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `addDoc(type)` | 1104 | Ajoute un bloc document (textes / image / textes-image) |
-| `addCol(docId, type)` | 1151 | Ajoute une colonne dans un doc textes-image |
-| `imageSelect(id)` | 1178 | Retourne un `<select>` d'images avec récentes en haut |
-| `removeEl(id)` | 1182 | Supprime un bloc DOM |
-| `moveDoc(id, dir)` | 1184 | Déplace un bloc document ↑ ou ↓ |
-| `richToolbar(id)` | 1084 | HTML de la toolbar Gras / Puce |
+| `addDoc(type)` | 1171 | Ajoute un bloc document (textes / image / textes-image) |
+| `addCol(docId, type)` | 1218 | Ajoute une colonne dans un doc textes-image |
+| `imageSelect(id)` | 1245 | Retourne un `<select>` d'images avec récentes en haut |
+| `removeEl(id)` | 1249 | Supprime un bloc DOM |
+| `moveDoc(id, dir)` | 1251 | Déplace un bloc document ↑ ou ↓ |
+| `richToolbar(id)` | 1151 | HTML de la toolbar Gras / Puce |
 
 ### Réponse & guide
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `updateReponseUI()` | 1195 | Affiche les champs selon le type de réponse choisi |
-| `updateRepGrille(data)` | 1276 | Rend le tableau grille pour espace réponse |
-| `getRepGrilleValues()` | 1298 | Lit les valeurs du tableau grille réponse |
-| `updateGuideUI()` | 1313 | Affiche les champs guide (texte ou grille) |
-| `updateGrille(data)` | 1336 | Rend le tableau grille pour le guide |
-| `getGrilleValues()` | 1358 | Lit les valeurs du tableau grille guide |
+| `updateReponseUI()` | 1263 | Affiche les champs selon le type de réponse choisi |
+| `updateRepGrille(data)` | 1372 | Rend le tableau grille pour espace réponse |
+| `getRepGrilleValues()` | 1394 | Lit les valeurs du tableau grille réponse |
+| `updateGuideUI()` | 1409 | Affiche les champs guide (texte ou grille) |
+| `updateGrille(data)` | 1432 | Rend le tableau grille pour le guide |
+| `getGrilleValues()` | 1454 | Lit les valeurs du tableau grille guide |
 
 ### Publication
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `buildQuestion()` | 1369 | Construit l'objet `q` à partir du formulaire |
-| `buildReglette(id)` | 1497 | Construit l'objet réglette depuis le preset sélectionné |
-| `validateForm()` | 1548 | Valide les champs requis, retourne tableau d'erreurs |
-| `publier()` | 1563 | Fetch SHA → backup → build → PUT GitHub (3 tentatives) |
-| `fetchFreshState(token)` | 813 | Recharge questions.js depuis GitHub, met à jour SHA + globals |
-| `generateQuestionsJs(...)` | 1535 | Sérialise REGLETTES + IMAGE_DB + QUESTIONS en JS |
-| `serializeValue(v, indent)` | 1508 | Sérialisation récursive d'un objet JS en code source |
-| `ensureImageDbComplete(...)` | 1526 | Ajoute les refs images manquantes dans IMAGE_DB |
-| `resetForm(keepId)` | 1685 | Remet le formulaire à zéro |
+| `buildQuestion()` | 1465 | Construit l'objet `q` à partir du formulaire |
+| `buildReglette(id)` | 1594 | Construit l'objet réglette depuis le preset sélectionné |
+| `validateForm()` | 1645 | Valide les champs requis, retourne tableau d'erreurs |
+| `publier()` | 1686 | Fetch SHA → backup → build → PUT GitHub (3 tentatives) |
+| `fetchFreshState(token)` | 820 | Recharge questions.js depuis GitHub, met à jour SHA + globals |
+| `generateQuestionsJs(...)` | 1632 | Sérialise REGLETTES + IMAGE_DB + QUESTIONS en JS |
+| `serializeValue(v, indent)` | 1605 | Sérialisation récursive d'un objet JS en code source |
+| `ensureImageDbComplete(...)` | 1623 | Ajoute les refs images manquantes dans IMAGE_DB |
+| `resetForm(keepId)` | 1809 | Remet le formulaire à zéro |
 
 ### Upload image
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `uploadImage()` | 918 | Redimensionne (max 1200px) + pousse sur GitHub + met à jour RECENT_IMAGES |
-| `onUploadFileChange()` | 911 | Auto-remplit le champ nom depuis le fichier sélectionné |
+| `uploadImage()` | 916 | Redimensionne (max 1200px) + pousse sur GitHub + met à jour RECENT_IMAGES |
+| `onUploadFileChange()` | 909 | Auto-remplit le champ nom depuis le fichier sélectionné |
 
-### Dashboard & contexte
+### Dashboard
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `renderDashboard()` | 1717 | Calcule et affiche les stats (barres par période/OI) |
-| `toggleDashboard()` | 1709 | Expand/collapse le tableau de bord |
-| `loadContexteJs()` | 1794 | Charge contexte.js depuis GitHub pour édition |
-| `publierContexteJs()` | 1813 | Valide syntaxe + pousse contexte.js sur GitHub |
-| `toast(msg, type)` | 1845 | Affiche un toast 3,5 s (type: `'ok'` ou `'err'`) |
+| `renderDashboard()` | 1841 | Calcule et affiche les stats (barres par période/OI) |
+| `toggleDashboard()` | 1833 | Expand/collapse le tableau de bord |
+| `toast(msg, type)` | 1916 | Affiche un toast 3,5 s (type: `'ok'` ou `'err'`) |
+
+> Note : l'éditeur de contexte.js (`loadContexteJs` / `publierContexteJs`) n'existe plus dans admin.html — contexte.js est chargé statiquement.
 
 ---
 
@@ -282,10 +283,10 @@ const BC4 = {top:BORDER,bottom:BORDER,left:BN,     right:BORDER}; // col4
 
 ## Push Git
 
-Le proxy local est en lecture seule. Pousser via HTTPS direct :
+Essayer d'abord le push normal (`git push -u origin <branche>`) — selon l'environnement de session, il peut fonctionner directement. Sinon, demander le PAT au prof dans le chat et pousser via HTTPS direct :
 ```bash
-PAT=<TOKEN>
-BRANCH=claude/lucid-galileo-lrw7jv
+PAT=<TOKEN fourni dans le chat — JAMAIS écrit dans un fichier du dépôt>
+BRANCH=<branche de travail de la session>
 
 # Synchroniser main local avec GitHub avant de merger
 git fetch https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git +main:refs/remotes/origin/main_fresh
@@ -301,8 +302,6 @@ git fetch https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.g
 git fetch https://sbergeronencp002:${PAT}@github.com/sbergeronencp002/hqccssbf.git +${BRANCH}:refs/remotes/origin/${BRANCH}
 ```
 
-**Branche de travail active :** `claude/lucid-galileo-lrw7jv`
-
 ---
 
 ## Images
@@ -317,11 +316,15 @@ Vérifier que la taille est raisonnable (< 400 Ko idéalement) avant de pousser.
 
 ## Renouvellement du PAT GitHub
 
-Le PAT expire. Quand il expire :
+⚠️ **RÈGLE ABSOLUE : ne JAMAIS écrire le PAT dans CLAUDE.md ni dans aucun fichier commité.** Le dépôt est **public** : GitHub détecte tout token `ghp_…` poussé et le **révoque automatiquement** (secret scanning). C'est ce qui faisait « expirer » les PAT précédents. Le token ne vit qu'à deux endroits : le champ « Token GitHub » d'admin.html (localStorage du navigateur du prof) et, au besoin, collé dans le chat d'une session Claude.
+
+Quand le PAT expire ou est révoqué :
 1. Aller sur https://github.com/settings/tokens
 2. Retrouver le token `hqccssbf-admin` → cliquer « Regenerate »
 3. Copier le nouveau token
-4. Mettre à jour ce fichier CLAUDE.md avec le nouveau PAT
-5. Le prof met à jour son token dans admin.html (champ Token GitHub)
+4. Le recoller dans admin.html (champ Token GitHub) — la page recharge automatiquement questions/images/réglettes
+5. Si Claude doit pousser du code et que le push normal échoue, coller le token dans le chat de la session
 
 Permissions requises sur le PAT : `repo` (accès complet au dépôt).
+
+Symptôme d'un token invalide dans admin.html : statut « ✗ Token invalide ou expiré » + toast d'erreur. Depuis le durcissement de `loadImages()`/`loadQuestionsJs()`, la lecture bascule en anonyme (dépôt public), donc la consultation et la liste d'images continuent de fonctionner — seule la **publication** exige un token valide.
