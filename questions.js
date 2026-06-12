@@ -18671,6 +18671,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "org_pol_regime_militaire.png",
+            soustitre: "Organisation politique de la colonie entre 1760-1763",
             source: "chéma produit par intelligence artificielle, inspiré des ouvrages d'histoire du Québec et du Canada."
           }
         ]
@@ -18681,7 +18682,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Le gouvernement de la colonie passe sous l'autorité britannique ou la colonie est divisée en trois districts administrés par des gouverneurs britanniques.",
-    updatedAt: "2026-06-03T11:54:22.346Z"
+    updatedAt: "2026-06-12T12:09:54.169Z"
   },
   {
     id: "Q228",
