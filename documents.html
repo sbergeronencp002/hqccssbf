@@ -126,6 +126,10 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
 .lbq-top{display:flex;align-items:center;gap:.35rem;flex-wrap:wrap;margin-bottom:.25rem}
 .lbq-per{font-size:.66rem;color:var(--ink-3)}
 .lbq-en{font-size:.74rem;color:var(--ink-2);line-height:1.4}
+.lbq-sub{font-size:.78rem;color:var(--ink);line-height:1.4;font-weight:500}
+.lbq-sub.empty{color:var(--ink-3);font-style:italic;font-weight:400}
+.lbq-edit{background:none;border:none;cursor:pointer;color:var(--ink-3);font-size:.82rem;padding:.1rem .3rem;border-radius:4px;margin-left:auto;line-height:1;flex-shrink:0;transition:color .15s,background .15s}
+.lbq-edit:hover{color:var(--accent);background:rgba(29,78,159,.08)}
 #lb-footer{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:center}
 #lb-caption{color:rgba(255,255,255,.55);font-size:.78rem}
 #lb-size{font-size:.72rem;font-weight:500;border-radius:10px;padding:.1rem .5rem}
@@ -261,6 +265,21 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
       <button class="btn-confirm" id="rename-confirm-btn" onclick="confirmRename()">Renommer</button>
     </div>
     <div class="rename-status" id="rename-status"></div>
+  </div>
+</div>
+
+<!-- Sous-titre modal -->
+<div id="sub-modal" onclick="closeSubModal(event)">
+  <div class="rename-box" onclick="event.stopPropagation()">
+    <h3>Modifier le sous-titre</h3>
+    <p id="sub-old-label"></p>
+    <textarea id="sub-input" rows="2" placeholder="Sous-titre du document"
+      style="width:100%;padding:.5rem .75rem;border:1px solid var(--border);border-radius:7px;font-family:inherit;font-size:.85rem;color:var(--ink);outline:none;margin-bottom:1rem;resize:vertical"></textarea>
+    <div class="rename-actions">
+      <button class="btn-cancel" onclick="closeSubModal()">Annuler</button>
+      <button class="btn-confirm" id="sub-confirm-btn" onclick="confirmSoustitre()">Enregistrer</button>
+    </div>
+    <div class="rename-status" id="sub-status"></div>
   </div>
 </div>
 
@@ -487,14 +506,18 @@ function showImg(img) {
     const short = OI_SHORT[q.oi] || q.oi;
     const per = (q.periode || '').replace(/P\d+ — /, '');
     const en = (q.enonce || '').replace(/\*\*/g, '');
-    const enCut = en.length > 160 ? en.substring(0,160) + '…' : en;
+    const sub = soustitreFor(q, img);
+    const subHtml = sub
+      ? `<div class="lbq-sub" title="${escH(en)}">${escH(sub)}</div>`
+      : `<div class="lbq-sub empty" title="${escH(en)}">Aucun sous-titre</div>`;
     return `<div class="lbq">
       <div class="lbq-top">
         <span class="tile-id">${escH(q.id)}</span>
         <span class="tile-oi-tag ${cls}">${escH(short)}</span>
         <span class="lbq-per">${escH(per)}</span>
+        <button class="lbq-edit" title="Modifier le sous-titre" onclick="event.stopPropagation();openSoustitre(${escH(JSON.stringify(id))})">✏</button>
       </div>
-      <div class="lbq-en">${escH(enCut)}</div>
+      ${subHtml}
     </div>`;
   }).join('');
   document.getElementById('lb-questions').innerHTML =
@@ -507,7 +530,7 @@ function closeLb(e) {
     document.getElementById('lb').classList.remove('open');
   }
 }
-document.addEventListener('keydown', e => { if (e.key==='Escape') { closeLb(); closeRenameModal(); closeReplaceModal(); } });
+document.addEventListener('keydown', e => { if (e.key==='Escape') { closeLb(); closeRenameModal(); closeReplaceModal(); closeSubModal(); } });
 
 // ── Delete orphan ────────────────────────────────────────────────────────────
 
@@ -795,6 +818,158 @@ function updateDomAfterRename(oldName, newName) {
   if (currentLbImg === oldName) {
     currentLbImg = newName;
     document.getElementById('lb-caption').textContent = newName;
+  }
+}
+
+// ── Sous-titre ────────────────────────────────────────────────────────────────
+// Sérialiseur identique à admin.html : questions.js est réécrit dans le même
+// format que les publications admin (évite les divergences de données).
+function serializeValue(v, indent=0) {
+  const pad = '  '.repeat(indent);
+  const pad1 = '  '.repeat(indent+1);
+  if (v === null || v === false || v === true) return String(v);
+  if (typeof v === 'number') return String(v);
+  if (typeof v === 'string') return JSON.stringify(v);
+  if (Array.isArray(v)) {
+    if (!v.length) return '[]';
+    const items = v.map(i => pad1 + serializeValue(i, indent+1));
+    return '[\n' + items.join(',\n') + '\n' + pad + ']';
+  }
+  const pairs = Object.entries(v).map(([k,val]) => {
+    const key = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(k) ? k : JSON.stringify(k);
+    return pad1 + key + ': ' + serializeValue(val, indent+1);
+  });
+  return '{\n' + pairs.join(',\n') + '\n' + pad + '}';
+}
+function ensureImageDbComplete(questions, imageDb) {
+  questions.forEach(q => {
+    q.documents?.forEach(d => d.cols?.forEach(c => {
+      if (c.ref && !imageDb[c.ref]) imageDb[c.ref] = { src: 'images/' + c.ref };
+    }));
+    if (q.reponse?.ref && !imageDb[q.reponse.ref]) imageDb[q.reponse.ref] = { src: 'images/' + q.reponse.ref };
+  });
+}
+function generateQuestionsJs(questions, reglettes, imageDb) {
+  ensureImageDbComplete(questions, imageDb);
+  let out = 'const REGLETTES = {\n';
+  out += Object.entries(reglettes).map(([k,v]) => `  ${JSON.stringify(k)}: ${serializeValue(v,1)}`).join(',\n');
+  out += '\n}\n\nconst IMAGE_DB = {\n';
+  out += Object.entries(imageDb).map(([k,v]) => `  ${JSON.stringify(k)}: ${serializeValue(v,1)}`).join(',\n');
+  out += '\n}\n\nconst QUESTIONS = [\n';
+  out += questions.map(q => '  ' + serializeValue(q,1)).join(',\n');
+  out += '\n]\n';
+  return out;
+}
+
+// Sous-titre de la (première) colonne d'un document de q qui référence cette image
+function soustitreFor(q, img) {
+  for (const doc of (q.documents || [])) {
+    for (const col of (doc.cols || [])) {
+      if (col.ref === img) return col.soustitre || '';
+    }
+  }
+  return '';
+}
+// Met à jour la copie en mémoire (qById) après écriture distante
+function setSoustitreLocal(id, img, val) {
+  const q = qById[id];
+  if (!q) return;
+  for (const doc of (q.documents || [])) {
+    for (const col of (doc.cols || [])) {
+      if (col.ref === img) { col.soustitre = val; return; }
+    }
+  }
+}
+
+// Lecture fraîche de questions.js → mutation ciblée → réécriture (PUT), avec 1 retry sur conflit SHA
+async function applyQuestionsEdit(mutate, commitMsg) {
+  const token = requireToken();
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const rq = await fetch(API + 'questions.js?t=' + Date.now(), {
+      headers: {Authorization: 'token ' + token}, cache: 'no-store'
+    });
+    if (!rq.ok) throw new Error('Lecture questions.js (' + rq.status + ')');
+    const dq = await rq.json();
+    const rawBytes = Uint8Array.from(atob(dq.content.replace(/\n/g,'')), c => c.charCodeAt(0));
+    const content = new TextDecoder('utf-8').decode(rawBytes);
+    let parsed;
+    try {
+      parsed = new Function(content + '\n return { REGLETTES, IMAGE_DB, QUESTIONS };')();
+    } catch(e) {
+      throw new Error('questions.js illisible : ' + e.message);
+    }
+    const changed = mutate(parsed);
+    if (!changed) return false;
+    const out = generateQuestionsJs(parsed.QUESTIONS, parsed.REGLETTES, parsed.IMAGE_DB);
+    const enc = new TextEncoder().encode(out);
+    let binary = ''; enc.forEach(b => binary += String.fromCharCode(b));
+    const rp = await fetch(API + 'questions.js', {
+      method: 'PUT',
+      headers: {Authorization: 'token ' + token, 'Content-Type': 'application/json'},
+      body: JSON.stringify({message: commitMsg, content: btoa(binary), sha: dq.sha})
+    });
+    if (rp.ok) return true;
+    if (rp.status === 409 && attempt === 0) continue; // conflit SHA → on relit et on réessaie
+    throw new Error('Échec écriture questions.js (' + rp.status + ')');
+  }
+  throw new Error('Conflit persistant — réessayez.');
+}
+
+let subTargetId = '';
+let subTargetImg = '';
+
+function openSoustitre(id) {
+  const q = qById[id];
+  if (!q) return;
+  subTargetId = id;
+  subTargetImg = currentLbImg;
+  document.getElementById('sub-old-label').textContent = id + ' · ' + currentLbImg;
+  document.getElementById('sub-input').value = soustitreFor(q, currentLbImg);
+  const st = document.getElementById('sub-status');
+  st.textContent = ''; st.className = 'rename-status';
+  document.getElementById('sub-confirm-btn').disabled = false;
+  document.getElementById('sub-modal').classList.add('open');
+  setTimeout(() => document.getElementById('sub-input').focus(), 50);
+}
+
+function closeSubModal(e) {
+  if (!e || e.target === document.getElementById('sub-modal')) {
+    document.getElementById('sub-modal').classList.remove('open');
+  }
+}
+
+async function confirmSoustitre() {
+  const newVal = document.getElementById('sub-input').value.trim();
+  const id = subTargetId, img = subTargetImg;
+  const btn = document.getElementById('sub-confirm-btn');
+  const status = document.getElementById('sub-status');
+  btn.disabled = true;
+  status.className = 'rename-status';
+  status.textContent = 'Enregistrement…';
+  try {
+    const changed = await applyQuestionsEdit(parsed => {
+      const q = parsed.QUESTIONS.find(x => x.id === id);
+      if (!q) throw new Error('Question ' + id + ' introuvable');
+      for (const doc of (q.documents || [])) {
+        for (const col of (doc.cols || [])) {
+          if (col.ref === img) {
+            if ((col.soustitre || '') === newVal) return false;
+            col.soustitre = newVal;
+            return true;
+          }
+        }
+      }
+      throw new Error('Colonne référençant ' + img + ' introuvable dans ' + id);
+    }, 'Modifier sous-titre ' + id + ' (' + img + ')');
+    setSoustitreLocal(id, img, newVal);
+    if (currentLbImg === img) showImg(img); // re-render de la liste
+    status.className = 'rename-status ok';
+    status.textContent = changed ? '✓ Sous-titre enregistré.' : 'Aucun changement.';
+    setTimeout(closeSubModal, 1200);
+  } catch(err) {
+    status.className = 'rename-status err';
+    status.textContent = '✗ ' + err.message;
+    btn.disabled = false;
   }
 }
 </script>
