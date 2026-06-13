@@ -8553,6 +8553,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q424": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -27257,5 +27279,49 @@ const QUESTIONS = [
     },
     guide: "Les Corn Laws.",
     updatedAt: "2026-06-12T17:58:30.594Z"
+  },
+  {
+    id: "Q424",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Changement",
+    enonce: "À partir des documents A et B, indiquez un changement dans la façon de diviser les terres agricoles au Bas-Canada au cours de la première moitié du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Agriculture"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "territoire_agricole_1800.png",
+            soustitre: "Organisation territoriale du Bas-Canada vers 1800",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "territoire_agricole_1830.png",
+            soustitre: "Organisation territoriale du Bas-Canada vers 1830",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le passage d'un territoire organisé en seigneuries à l'établissement de cantons.\nL'apparition du système des cantons.",
+    updatedAt: "2026-06-13T12:44:55.736Z"
   }
 ]
