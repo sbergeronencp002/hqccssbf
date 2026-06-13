@@ -27190,7 +27190,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Changement",
-    enonce: "Indiquez un changement dans l'organisation du territoire agricole entre le début et le milieu du XIXe siècle.",
+    enonce: "À partir des documents A et B, indiquez un changement dans l'organisation du territoire au Bas-Canada au cours de la première moitié du XIXe siècle.",
     aspects: [
       {
         aspect: "Agriculture"
@@ -27225,7 +27225,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "L'apparition des cantons.\nL'établissement de cantons en plus des seigneuries.",
-    updatedAt: "2026-06-12T17:52:58.329Z"
+    updatedAt: "2026-06-13T12:44:13.144Z"
   },
   {
     id: "Q423",
