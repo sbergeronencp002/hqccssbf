@@ -8630,6 +8630,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q428": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -27521,5 +27543,47 @@ const QUESTIONS = [
     },
     guide: "Favoriser le commerce à l'intérieur de l'Empire britannique\nAccorder un avantage commercial aux colonies britanniques\nFavoriser les exportations de blé des colonies britanniques\nProtéger le marché britannique contre la concurrence étrangère",
     updatedAt: "2026-06-14T13:01:39.463Z"
+  },
+  {
+    id: "Q428",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Le document présente le point de vue de deux historiens. Sur quel point précis sont-ils d'accord?",
+    aspects: [
+      {
+        aspect: "Agriculture"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La culture répétée du blé sur les mêmes terres entraîne progressivement une diminution de la fertilité des sols. »",
+            source: "Adapté de Fernand Ouellet, Histoire économique et sociale du Québec, 1760-1850."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« L'exploitation intensive des terres agricoles contribue à l'épuisement des sols dans plusieurs régions du Bas-Canada. »",
+            source: "Adapté de Jean Hamelin, Histoire du Québec."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "L'appauvrissement des sols.\nLes effets de la culture intensive du blé sur les terres agricoles.\nLa diminution de la fertilité des sols.",
+    updatedAt: "2026-06-14T13:08:54.787Z"
   }
 ]
