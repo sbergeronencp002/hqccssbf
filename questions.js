@@ -8555,7 +8555,7 @@ const REGLETTES = {
     ]
   },
   "Q424": {
-    oi: "Déterminer des changements et des continuités",
+    oi: "Dégager des différences et des similitudes",
     colonnes: [
       "2 points",
       "1 point",
@@ -8564,15 +8564,15 @@ const REGLETTES = {
     niveaux: [
       {
         pts: 2,
-        desc: "L'élève détermine correctement le changement."
+        desc: "L'élève dégage correctement la différence."
       },
       {
         pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
+        desc: "L'élève dégage plus ou moins correctement la différence."
       },
       {
         pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+        desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."
       }
     ]
   },
@@ -27305,11 +27305,11 @@ const QUESTIONS = [
   {
     id: "Q424",
     niveau: 3,
-    oi: "Déterminer des changements et des continuités",
+    oi: "Dégager des différences et des similitudes",
     periode: "P4 — 1791 – 1840",
     points: 2,
-    soustag: "Changement",
-    enonce: "À partir des documents A et B, indiquez un changement dans la façon de diviser les terres agricoles au Bas-Canada au cours de la première moitié du XIXe siècle.",
+    soustag: "Différence",
+    enonce: "À partir des documents A et B, indiquez une différence entre l'organisation du territoire en seigneurie et en canton.",
     aspects: [
       {
         aspect: "Agriculture"
@@ -27343,8 +27343,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Le passage d'un territoire organisé en seigneuries à l'établissement de cantons.\nL'apparition du système des cantons.",
-    updatedAt: "2026-06-13T12:44:55.736Z"
+    guide: "Les terres des seigneuries sont longues et étroites alors que celles des cantons sont plus carrées ou rectangulaires.",
+    updatedAt: "2026-06-14T12:06:19.130Z"
   },
   {
     id: "Q425",
