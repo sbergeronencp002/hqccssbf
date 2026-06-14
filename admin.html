@@ -124,6 +124,14 @@ header a:hover { color: #fff; }
 .dash-oi-row { display:flex; align-items:center; gap:.5rem; margin-bottom:.3rem; }
 .dash-oi-label { font-size:.72rem; color:var(--ink-2); flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 .dash-oi-count { font-size:.7rem; color:var(--ink-3); white-space:nowrap; min-width:60px; text-align:right; }
+.dash-row-clickable { cursor:pointer; border-radius:4px; padding:2px 4px; margin-left:-4px; transition:background .15s; }
+.dash-row-clickable:hover { background:var(--paper-2); }
+.dash-chevron { font-size:.55rem; color:var(--ink-3); transition:transform .2s; flex-shrink:0; }
+.dash-row-clickable.open .dash-chevron { transform:rotate(180deg); }
+.dash-period-detail { margin:.15rem 0 .55rem 1rem; padding-left:.6rem; border-left:2px solid var(--paper-3); }
+.dash-sub-row { display:flex; align-items:center; gap:.5rem; margin-bottom:.2rem; }
+.dash-sub-label { font-size:.68rem; color:var(--ink-2); flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.dash-sub-count { font-size:.66rem; color:var(--ink-3); white-space:nowrap; min-width:46px; text-align:right; }
 
 .rich-toolbar { display:flex; gap:4px; margin-bottom:10px; }
 .rich-toolbar button { font-size:.75rem; padding:2px 8px; border:1px solid var(--border); border-radius:4px; background:var(--paper-2); cursor:pointer; color:var(--ink); }
@@ -1858,6 +1866,23 @@ function renderDashboard() {
   const n3 = periodes.slice(0,4);
   const n4 = periodes.slice(4,8);
 
+  // Répartition par OI pour une période donnée (dépliée au clic), triée par nombre
+  function periodeDetailHtml(periode) {
+    const inP = currentQuestions.filter(x => x.periode === periode);
+    if(!inP.length) {
+      return '<div class="dash-period-detail" style="display:none"><div class="dash-sub-row"><span class="dash-sub-label" style="font-style:italic;color:var(--ink-3)">Aucune question</span></div></div>';
+    }
+    const m = {};
+    inP.forEach(q => { if(!m[q.oi]) m[q.oi] = { q:0, pts:0 }; m[q.oi].q++; m[q.oi].pts += q.points||0; });
+    const rows = Object.entries(m)
+      .sort((a,b) => b[1].q - a[1].q || a[0].localeCompare(b[0], 'fr'))
+      .map(([oi,v]) => `<div class="dash-sub-row"><span class="dash-sub-label" title="${escHtml(oi)}">${escHtml(oi)}</span><span class="dash-sub-count">${v.q}q · ${v.pts}pts</span></div>`)
+      .join('');
+    const nOi = Object.keys(m).length;
+    const head = `<div class="dash-sub-row" style="margin-bottom:.3rem"><span class="dash-sub-label" style="font-weight:600;color:var(--ink-3)">${nOi} OI</span></div>`;
+    return `<div class="dash-period-detail" style="display:none">${head}${rows}</div>`;
+  }
+
   function barRows(list, color) {
     const counts = list.map(p => ({
       p,
@@ -1868,10 +1893,15 @@ function renderDashboard() {
     return counts.map(c => {
       const pct = Math.round(c.q / maxQ * 100);
       const shortLabel = c.p.replace(/^P\d+ — /, '');
-      return `<div class="dash-row">
-        <div class="dash-label" title="${escHtml(c.p)}">${escHtml(c.p.match(/^P\d+/)?.[0]||'')} — ${escHtml(shortLabel.slice(0,22))}${shortLabel.length>22?'…':''}</div>
-        <div class="dash-bar-wrap"><div class="dash-bar" style="width:${pct}%;background:${color}${c.q===0?';opacity:.25':''}"></div></div>
-        <div class="dash-count">${c.q}q · ${c.pts}pts</div>
+      return `<div class="dash-period-block">
+        <div class="dash-row dash-row-clickable" role="button" tabindex="0" title="Voir la répartition par OI"
+          onclick="togglePeriode(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();togglePeriode(this)}">
+          <div class="dash-label" title="${escHtml(c.p)}">${escHtml(c.p.match(/^P\d+/)?.[0]||'')} — ${escHtml(shortLabel.slice(0,22))}${shortLabel.length>22?'…':''}</div>
+          <div class="dash-bar-wrap"><div class="dash-bar" style="width:${pct}%;background:${color}${c.q===0?';opacity:.25':''}"></div></div>
+          <div class="dash-count">${c.q}q · ${c.pts}pts</div>
+          <span class="dash-chevron">▾</span>
+        </div>
+        ${periodeDetailHtml(c.p)}
       </div>`;
     }).join('');
   }
@@ -1912,6 +1942,15 @@ function renderDashboard() {
     <div class="dash-niv-title">Par opération intellectuelle</div>
     ${oiRows}
   `;
+}
+
+// Déplie/replie la répartition par OI sous une période du tableau de bord
+function togglePeriode(rowEl) {
+  const detail = rowEl.nextElementSibling;
+  if(!detail || !detail.classList.contains('dash-period-detail')) return;
+  const hidden = detail.style.display === 'none';
+  detail.style.display = hidden ? '' : 'none';
+  rowEl.classList.toggle('open', hidden);
 }
 
 // ── TOAST ─────────────────────────────────────────────────────────────
