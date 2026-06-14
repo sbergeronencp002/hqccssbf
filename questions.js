@@ -8575,6 +8575,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
+  },
+  "Q425": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
+      }
+    ]
   }
 }
 
@@ -27323,5 +27345,59 @@ const QUESTIONS = [
     },
     guide: "Le passage d'un territoire organisé en seigneuries à l'établissement de cantons.\nL'apparition du système des cantons.",
     updatedAt: "2026-06-13T12:44:55.736Z"
+  },
+  {
+    id: "Q425",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Cause et conséquence",
+    enonce: "Les documents A et B présentent des faits liés au développement de la culture du blé dans la colonie au début du XIXe siècle. Indiquez quel document présente une cause et quel document présente une conséquence.",
+    aspects: [
+      {
+        aspect: "Agriculture"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "corn_laws.png",
+            soustitre: "Exportations de blé du Bas-Canada vers la Grande-Bretagne entre 1800 et 1840",
+            source: "Données illustratives adaptées de Fernand Ouellet, Histoire économique et sociale du Québec, 1760-1850."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les tarifs imposés sur les céréales étrangères favorisent les exportations provenant des colonies de l'Empire britannique au cours de la première moitié du XIXe siècle. »",
+            source: "Adapté de Serge Courville, Histoire du Québec : une société dans le monde."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "cause-consequence"
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Cause",
+        "Conséquence"
+      ],
+      rangees: [
+        [
+          "B",
+          "A"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-14T12:02:28.862Z"
   }
 ]
