@@ -8724,6 +8724,34 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q432": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -9346,6 +9374,12 @@ const IMAGE_DB = {
   },
   "bas_canada_crise_agricole.png": {
     src: "images/bas_canada_crise_agricole.png"
+  },
+  "provenance_fourrures_marchands.png": {
+    src: "images/provenance_fourrures_marchands.png"
+  },
+  "territoire_compagnies_fourrure.png": {
+    src: "images/territoire_compagnies_fourrure.png"
   }
 }
 
@@ -27778,5 +27812,57 @@ const QUESTIONS = [
     },
     guide: "Colonisation de nouvelles régions\nDéplacement de familles vers des régions de colonisation\nMigration vers de nouveaux territoires\nÉtablissement de familles dans de nouvelles régions",
     updatedAt: "2026-06-14T13:24:19.774Z"
+  },
+  {
+    id: "Q432",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    enonce: "Expliquez comment l'évolution du commerce des fourrures au Bas-Canada dans la première moitié du XIXe siècle contribue à la transformation du territoire exploité.\n\nRépondez à la question en précisant :\n\n• une difficulté liée au commerce des fourrures\n• une mesure prise par les marchands\n• une conséquence sur le territoire exploité",
+    aspects: [
+      {
+        aspect: "Commerce des fourrures"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "provenance_fourrures_marchands.png",
+            soustitre: "Provenances des fourrures",
+            source: "Adapté de Harold A. Innis, The Fur Trade in Canada, University of Toronto Press."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Devant l'épuisement progressif des ressources dans les territoires exploités depuis longtemps, les compagnies de fourrures poursuivent leur expansion vers l'Ouest, atteignant les Prairies puis les Rocheuses au XIXe siècle. »",
+            source: "Adapté de Serge Courville, Le Québec : genèses et mutations du territoire, Presses de l'Université Laval."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "territoire_compagnies_fourrure.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "L'épuisement progressif des fourrures dans les régions exploitées depuis longtemps (la difficulté liée au commerce des fourrures) pousse les marchands à établir de nouveaux postes de traite vers l'Ouest (la mesure prise par les marchands). Cette mesure entraîne l'expansion du territoire exploité jusqu'aux Prairies et aux Rocheuses (la conséquence sur le territoire exploité).",
+    updatedAt: "2026-06-14T17:24:37.705Z"
   }
 ]
