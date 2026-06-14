@@ -8652,6 +8652,34 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q429": {
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
   }
 }
 
@@ -27585,5 +27613,57 @@ const QUESTIONS = [
     },
     guide: "L'appauvrissement des sols.\nLes effets de la culture intensive du blé sur les terres agricoles.\nLa diminution de la fertilité des sols.",
     updatedAt: "2026-06-14T13:08:54.787Z"
+  },
+  {
+    id: "Q429",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    soustag: "Position – 3 acteurs",
+    enonce: "Le document présente la position de trois acteurs à l'égard des Corn Laws adoptées par la Grande-Bretagne au début du XIXe siècle. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+    aspects: [
+      {
+        aspect: "Agriculture"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les cultivateurs et les marchands des colonies retirent d'importants avantages du traitement préférentiel accordé à leurs céréales sur le marché britannique. »",
+            source: "John Richardson, marchand de Montréal, vers 1830. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Le commerce du blé de la colonie dépend largement des conditions favorables offertes aux produits coloniaux dans les ports britanniques. »",
+            source: "George Moffatt, marchand de Montréal, vers 1835. Adapté."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les tarifs imposés aux céréales étrangères limitent injustement l'accès des producteurs américains au marché britannique. »",
+            source: "Producteur de blé américain, pétition adressée au Parlement britannique, vers 1835. Adapté."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Le producteur de blé américain s'oppose aux tarifs préférentiels accordés au blé colonial (la différence), alors que John Richardson et George Moffatt les appuient (la similitude).",
+    updatedAt: "2026-06-14T13:12:17.279Z"
   }
 ]
