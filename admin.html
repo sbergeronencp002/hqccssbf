@@ -919,7 +919,7 @@ async function uploadImage() {
   const file = document.getElementById('upload-file').files[0];
   if(!file) { toast('Sélectionne un fichier image.', 'err'); return; }
   const name = (document.getElementById('upload-name').value.trim() || file.name)
-    .replace(/\s+/g,'_').replace(/[\\'"`]/g,'');   // pas d'espaces ni de quotes/antislash (cassent onclick/attributs)
+    .replace(/\s+/g,'_').replace(/[\\'"`<>&]/g,'');   // pas d'espaces, quotes, antislash ni <>& (cassent onclick/attributs/HTML)
   const statusEl = document.getElementById('upload-status');
   const btn = document.getElementById('btn-upload');
   btn.disabled = true; statusEl.textContent = '⏳ Téléversement…';
@@ -958,7 +958,9 @@ async function uploadImage() {
     });
     if(!putResp.ok) { const err=await putResp.json(); throw new Error(err.message||putResp.status); }
     currentImageDb[name] = { src: 'images/' + name, w: imgInfo.w, h: imgInfo.h };
-    statusEl.textContent = `✓ ${name} téléversé !`;
+    const ko = Math.round(imgInfo.b64.length * 3 / 4 / 1024);
+    statusEl.textContent = `✓ ${name} téléversé (${ko} Ko) !`;
+    if(ko > 500) toast(`⚠ ${name} fait ${ko} Ko. Pour alléger le site, compresse l'image (pngquant) avant de la téléverser.`, 'err');
     document.getElementById('upload-file').value='';
     document.getElementById('upload-name').value='';
     if (!IMAGES.includes(name)) { IMAGES.push(name); IMAGES.sort(); }
@@ -1010,10 +1012,10 @@ function buildImageOptions() {
   const rest = IMAGES.filter(i => !recent.includes(i));
   let opts = '<option value="">— Choisir une image —</option>';
   if(recent.length) {
-    opts += recent.map(f => `<option value="${f}">⭐ ${f}</option>`).join('');
+    opts += recent.map(f => `<option value="${escHtml(f)}">⭐ ${escHtml(f)}</option>`).join('');
     opts += '<option value="" disabled>──────────────────</option>';
   }
-  return opts + rest.map(f => `<option value="${f}">${f}</option>`).join('');
+  return opts + rest.map(f => `<option value="${escHtml(f)}">${escHtml(f)}</option>`).join('');
 }
 
 // Remplit le menu OI depuis la source unique OI_CONFIG (ordre = OI_LIST).
