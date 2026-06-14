@@ -27337,6 +27337,7 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "territoire_agricole_1800.png",
             soustitre: "Organisation territoriale du Bas-Canada vers 1800",
+            auteur: "Vallée du Saint-Laurent",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
@@ -27348,6 +27349,7 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "territoire_agricole_1830.png",
             soustitre: "Organisation territoriale du Bas-Canada vers 1830",
+            auteur: "Nouvelles régions de colonisation",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
@@ -27358,7 +27360,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les terres des seigneuries sont longues et étroites alors que celles des cantons sont plus carrées ou rectangulaires.",
-    updatedAt: "2026-06-14T12:06:19.130Z"
+    updatedAt: "2026-06-14T12:15:11.576Z"
   },
   {
     id: "Q425",
