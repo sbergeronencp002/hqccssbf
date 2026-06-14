@@ -34,6 +34,18 @@ function fold(s) {
   return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
 
+// Si une question a exactement 2 documents \u00ab textes \u00bb \u00e0 une seule colonne (cas
+// Document A + Document B), les fusionne en un seul tableau \u00e0 2 colonnes c\u00f4te \u00e0
+// c\u00f4te. Sinon retourne les documents tels quels. Utilis\u00e9 par le modal, la
+// pr\u00e9visualisation et le DOCX pour un rendu coh\u00e9rent.
+function docsForRender(documents) {
+  const docs = documents || [];
+  if(docs.length === 2 && docs.every(d => d && d.type === 'textes' && (d.cols||[]).length === 1)) {
+    return [{ type: 'textes', cols: [docs[0].cols[0], docs[1].cols[0]] }];
+  }
+  return docs;
+}
+
 // Styles des OI : dérivés de la source unique OI_CONFIG (oi-config.js, chargé avant app.js).
 // Repli défensif si oi-config.js n'a pas pu être chargé.
 const OI_STYLES = (typeof OI_CONFIG !== 'undefined') ? OI_CONFIG : {};
@@ -364,9 +376,10 @@ function openQModal(id) {
   let html = '<div class="q-section-label">Question</div>';
   html += '<div class="q-full-enonce">' + formatTexte(q.enonce) + '</div>';
 
-  if(q.documents && q.documents.length) {
+  const docsR = docsForRender(q.documents);
+  if(docsR.length) {
     html += '<div class="q-section-label">Documents</div>';
-    html += '<div class="q-docs-images">' + q.documents.map(d => renderDoc(d)).join('<div class="doc-spacer"></div>') + '</div>';
+    html += '<div class="q-docs-images">' + docsR.map(d => renderDoc(d)).join('<div class="doc-spacer"></div>') + '</div>';
   }
 
   const rep = renderReponse(q);
@@ -826,9 +839,10 @@ function previsualiser(guideMode) {
       const r = REGLETTES[id];
       if(!q) return '';
       let docsHtml = '';
-      if(q.documents && q.documents.length) {
+      const docsR = docsForRender(q.documents);
+      if(docsR.length) {
         docsHtml = '<div class="preview-docs">';
-        q.documents.forEach(function(d) {
+        docsR.forEach(function(d) {
           if(d.type === 'tableau') {
             docsHtml += '<table style="width:100%;border-collapse:collapse;margin-bottom:8px"><tr>';
             d.cols.forEach(function(col) {
@@ -1531,9 +1545,10 @@ async function genererDocx(includeGuide=false) {
       children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
 
       // Documents
-      if(q.documents && q.documents.length) {
-        for(let di=0; di<q.documents.length; di++) {
-          const d = q.documents[di];
+      const docsR = docsForRender(q.documents);
+      if(docsR.length) {
+        for(let di=0; di<docsR.length; di++) {
+          const d = docsR[di];
           if(d.type === 'tableau') {
             const colW = Math.floor(PAGE_W / d.cols.length);
             const tableCells = d.cols.map(col => {
@@ -1602,7 +1617,7 @@ async function genererDocx(includeGuide=false) {
             children.push(new Paragraph({ children: [new TextRun({ text: '• ' + d.type + ' — ' + (d.ref||''), font: 'Aptos', size: 22 })] }));
           }
           // One empty paragraph between documents
-          if(di < q.documents.length - 1) {
+          if(di < docsR.length - 1) {
             children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
           }
         }
