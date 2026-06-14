@@ -9205,6 +9205,9 @@ const IMAGE_DB = {
     src: "images/corn_laws.png",
     w: 1200,
     h: 800
+  },
+  "corn_laws_exportations.png": {
+    src: "images/corn_laws_exportations.png"
   }
 }
 
@@ -27365,7 +27368,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "corn_laws.png",
+            ref: "corn_laws_exportations.png",
             soustitre: "Exportations de blé du Bas-Canada vers la Grande-Bretagne entre 1800 et 1840",
             source: "Données illustratives adaptées de Fernand Ouellet, Histoire économique et sociale du Québec, 1760-1850."
           }
@@ -27398,6 +27401,6 @@ const QUESTIONS = [
         ]
       ]
     },
-    updatedAt: "2026-06-14T12:03:53.293Z"
+    updatedAt: "2026-06-14T12:07:15.245Z"
   }
 ]
