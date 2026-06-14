@@ -8597,6 +8597,17 @@ const REGLETTES = {
         desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
       }
     ]
+  },
+  "Q426": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
   }
 }
 
@@ -27402,5 +27413,51 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-14T12:07:15.245Z"
+  },
+  {
+    id: "Q426",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez s'il y a changement ou continuité dans l'organisation du territoire au Bas-Canada entre le début et le milieu du XIXe siècle. Justifiez votre réponse à l'aide d'un fait et d'un repère de temps.",
+    aspects: [
+      {
+        aspect: "Agriculture"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "territoire_agricole_1800.png",
+            soustitre: "Organisation territoriale du Bas-Canada vers 1800",
+            auteur: "Vallée du Saint-Laurent",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "territoire_agricole_1830.png",
+            soustitre: "Organisation territoriale du Bas-Canada vers 1830",
+            auteur: "Nouvelles régions de colonisation",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Changement\nIl y a changement, car au milieu du XIXe siècle de nouveaux cantons sont ouverts dans plusieurs régions de la colonie, alors qu'au début du XIXe siècle le territoire est principalement organisé en seigneuries.\n\nContinuité\nIl y a continuité, car au milieu du XIXe siècle le régime seigneurial structure encore l'occupation du territoire dans la vallée du Saint-Laurent, comme au début du XIXe siècle.",
+    updatedAt: "2026-06-14T12:11:35.861Z"
   }
 ]
