@@ -21589,7 +21589,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "production_blé_minots.png",
-            soustitre: "Production de blé (minots) dans la Province de Québec (1750-1790)",
+            soustitre: "Production de blé dans la Province de Québec  entre 1750 et 1790",
             source: "Graphique réalisé à partir de données pédagogiques inspirées de Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord (1991)."
           }
         ]
