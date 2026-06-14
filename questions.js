@@ -8702,6 +8702,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q431": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -9321,6 +9343,9 @@ const IMAGE_DB = {
   },
   "bas_canada_sols_appauvris.png": {
     src: "images/bas_canada_sols_appauvris.png"
+  },
+  "bas_canada_crise_agricole.png": {
+    src: "images/bas_canada_crise_agricole.png"
   }
 }
 
@@ -27723,5 +27748,38 @@ const QUESTIONS = [
     },
     guide: "L'appauvrissement des sols\nLa diminution de la fertilité des sols\nLa culture intensive du blé\nL'exploitation répétée des mêmes terres agricoles",
     updatedAt: "2026-06-14T13:21:09.255Z"
+  },
+  {
+    id: "Q431",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de la crise agricole au Bas-Canada dans les années 1830.",
+    aspects: [
+      {
+        aspect: "Agriculture"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "bas_canada_crise_agricole.png",
+            soustitre: "Départ d'une famille rurale au Bas-Canada",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Colonisation de nouvelles régions\nDéplacement de familles vers des régions de colonisation\nMigration vers de nouveaux territoires\nÉtablissement de familles dans de nouvelles régions",
+    updatedAt: "2026-06-14T13:24:19.774Z"
   }
 ]
