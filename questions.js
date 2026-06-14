@@ -9241,6 +9241,11 @@ const IMAGE_DB = {
   },
   "corn_laws_exportations.png": {
     src: "images/corn_laws_exportations.png"
+  },
+  "corn_laws_tarifs.png": {
+    src: "images/corn_laws_tarifs.png",
+    w: 1200,
+    h: 738
   }
 }
 
@@ -27414,8 +27419,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« Les tarifs imposés sur les céréales étrangères favorisent les exportations provenant des colonies de l'Empire britannique au cours de la première moitié du XIXe siècle. »",
-            source: "Adapté de Serge Courville, Histoire du Québec : une société dans le monde."
+            ref: "corn_laws_tarifs.png",
+            soustitre: "Tarifs appliqués au blé importé par la Grande-Bretagne",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 2."
           }
         ]
       }
@@ -27436,7 +27442,7 @@ const QUESTIONS = [
         ]
       ]
     },
-    updatedAt: "2026-06-14T12:07:15.245Z"
+    updatedAt: "2026-06-14T13:05:28.867Z"
   },
   {
     id: "Q426",
