@@ -8752,6 +8752,28 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q433": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la continuité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la continuité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -9380,6 +9402,11 @@ const IMAGE_DB = {
   },
   "territoire_compagnies_fourrure.png": {
     src: "images/territoire_compagnies_fourrure.png"
+  },
+  "crise_agricole_production_ble.png": {
+    src: "images/crise_agricole_production_ble.png",
+    w: 1200,
+    h: 901
   }
 }
 
@@ -27864,5 +27891,38 @@ const QUESTIONS = [
     },
     guide: "L'épuisement progressif des fourrures dans les régions exploitées depuis longtemps (la difficulté liée au commerce des fourrures) pousse les marchands à établir de nouveaux postes de traite vers l'Ouest (la mesure prise par les marchands). Cette mesure entraîne l'expansion du territoire exploité jusqu'aux Prairies et aux Rocheuses (la conséquence sur le territoire exploité).",
     updatedAt: "2026-06-14T17:24:37.705Z"
+  },
+  {
+    id: "Q433",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Continuité",
+    enonce: "À partir du document A, indiquez un élément de continuité concernant la production de blé au Bas-Canada entre 1834 et 1840.",
+    aspects: [
+      {
+        aspect: "Agriculture"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "crise_agricole_production_ble.png",
+            soustitre: "Production de blé au Bas-Canada entre 1832-1840",
+            source: "Adapté de Fernand Ouellet, Histoire économique et sociale du Québec, 1760-1850, Fides, 1966."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Il y a continuité, car entre 1834 et 1840 le Bas-Canada enregistre un déficit de production agricole (blé) chaque année ou la production de blé demeure insuffisante pour répondre aux besoins de la population.",
+    updatedAt: "2026-06-14T17:37:55.563Z"
   }
 ]
