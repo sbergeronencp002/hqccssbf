@@ -8608,6 +8608,28 @@ const REGLETTES = {
       "0 point"
     ],
     niveaux: []
+  },
+  "Q427": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -27461,5 +27483,37 @@ const QUESTIONS = [
     },
     guide: "Changement\nIl y a changement, car au milieu du XIXe siècle de nouveaux cantons sont ouverts dans plusieurs régions de la colonie, alors qu'au début du XIXe siècle le territoire est principalement organisé en seigneuries.\n\nContinuité\nIl y a continuité, car au milieu du XIXe siècle le régime seigneurial structure encore l'occupation du territoire dans la vallée du Saint-Laurent, comme au début du XIXe siècle.",
     updatedAt: "2026-06-14T12:11:35.861Z"
+  },
+  {
+    id: "Q427",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez un objectif poursuivi par la Grande-Bretagne lors de l'adoption des Corn Laws.",
+    aspects: [
+      {
+        aspect: "Agriculture"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Au début du XIXe siècle, les autorités britanniques cherchent à favoriser les échanges commerciaux à l'intérieur de l'Empire en accordant certains avantages aux produits coloniaux. »",
+            source: "Adapté de Serge Courville, Histoire du Québec : une société dans le monde."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Favoriser le commerce à l'intérieur de l'Empire britannique\nAccorder un avantage commercial aux colonies britanniques\nFavoriser les exportations de blé des colonies britanniques\nProtéger le marché britannique contre la concurrence étrangère",
+    updatedAt: "2026-06-14T13:01:39.463Z"
   }
 ]
