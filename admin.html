@@ -119,7 +119,7 @@ header a:hover { color: #fff; }
 .dash-label { font-size:.72rem; color:var(--ink-2); white-space:nowrap; min-width:120px; overflow:hidden; text-overflow:ellipsis; }
 .dash-bar-wrap { flex:1; background:var(--paper-3); border-radius:4px; height:8px; min-width:40px; overflow:hidden; }
 .dash-bar { height:100%; border-radius:4px; transition:width .4s ease; }
-.dash-count { font-size:.7rem; color:var(--ink-3); white-space:nowrap; min-width:52px; text-align:right; }
+.dash-count { font-size:.7rem; color:var(--ink-3); white-space:nowrap; min-width:108px; text-align:right; }
 .dash-divider { border:none; border-top:1px solid var(--border); margin:.75rem 0; }
 .dash-oi-row { display:flex; align-items:center; gap:.5rem; margin-bottom:.3rem; }
 .dash-oi-label { font-size:.72rem; color:var(--ink-2); flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
@@ -1889,16 +1889,17 @@ function renderDashboard() {
       q: currentQuestions.filter(x => x.periode === p).length,
       pts: currentQuestions.filter(x => x.periode === p).reduce((s,x) => s+(x.points||0), 0)
     }));
-    const maxQ = Math.max(...counts.map(c => c.q), 1);
+    // Barre = part de la période dans le total du niveau (la piste = 100 % du programme)
+    const levelTotalQ = counts.reduce((s,c) => s+c.q, 0) || 1;
     return counts.map(c => {
-      const pct = Math.round(c.q / maxQ * 100);
+      const pct = Math.round(c.q / levelTotalQ * 100);
       const shortLabel = c.p.replace(/^P\d+ — /, '');
       return `<div class="dash-period-block">
         <div class="dash-row dash-row-clickable" role="button" tabindex="0" title="Voir la répartition par OI"
           onclick="togglePeriode(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();togglePeriode(this)}">
           <div class="dash-label" title="${escHtml(c.p)}">${escHtml(c.p.match(/^P\d+/)?.[0]||'')} — ${escHtml(shortLabel.slice(0,22))}${shortLabel.length>22?'…':''}</div>
-          <div class="dash-bar-wrap"><div class="dash-bar" style="width:${pct}%;background:${color}${c.q===0?';opacity:.25':''}"></div></div>
-          <div class="dash-count">${c.q}q · ${c.pts}pts</div>
+          <div class="dash-bar-wrap" title="${pct}% du niveau (${c.q} / ${levelTotalQ} questions)"><div class="dash-bar" style="width:${pct}%;background:${color}${c.q===0?';opacity:.25':''}"></div></div>
+          <div class="dash-count">${pct}% · ${c.q}q · ${c.pts}pts</div>
           <span class="dash-chevron">▾</span>
         </div>
         ${periodeDetailHtml(c.p)}
