@@ -1624,7 +1624,6 @@ async function genererDocx(includeGuide=false) {
       }
 
       children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
-      children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
 
       // Réponse
       if(q.reponse) {
