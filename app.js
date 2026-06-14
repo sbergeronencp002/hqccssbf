@@ -34,14 +34,17 @@ function fold(s) {
   return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
 
-// Si une question a exactement 2 documents \u00ab textes \u00bb \u00e0 une seule colonne (cas
-// Document A + Document B), les fusionne en un seul tableau \u00e0 2 colonnes c\u00f4te \u00e0
-// c\u00f4te. Sinon retourne les documents tels quels. Utilis\u00e9 par le modal, la
-// pr\u00e9visualisation et le DOCX pour un rendu coh\u00e9rent.
+// Fusionne les documents \u00ab textes \u00bb \u00e0 une seule colonne en un tableau \u00e0 2 colonnes :
+//   - 2 documents (A,B)     \u2192 1 rang\u00e9e de 2 colonnes
+//   - 4 documents (A,B,C,D) \u2192 2 rang\u00e9es de 2 colonnes
+// Le document fusionn\u00e9 porte `colsPerRow` (2) ; les rendus d\u00e9coupent `cols` en
+// rang\u00e9es de cette taille. Sinon retourne les documents tels quels. Utilis\u00e9 par
+// le modal, la pr\u00e9visualisation et le DOCX pour un rendu coh\u00e9rent.
 function docsForRender(documents) {
   const docs = documents || [];
-  if(docs.length === 2 && docs.every(d => d && d.type === 'textes' && (d.cols||[]).length === 1)) {
-    return [{ type: 'textes', cols: [docs[0].cols[0], docs[1].cols[0]] }];
+  const allSingleTextes = docs.every(d => d && d.type === 'textes' && (d.cols||[]).length === 1);
+  if((docs.length === 2 || docs.length === 4) && allSingleTextes) {
+    return [{ type: 'textes', cols: docs.map(d => d.cols[0]), colsPerRow: 2 }];
   }
   return docs;
 }
@@ -577,30 +580,36 @@ function toggleTexte(btn) {
 function renderDoc(d) {
   // Textes avec troncature
   if(d.type === 'textes') {
-    let html = '<table style="width:100%;border-collapse:collapse;margin-bottom:8px"><tr>';
-    d.cols.forEach(function(col) {
-      html += '<td style="width:' + Math.floor(100/d.cols.length) + '%;padding:6px;vertical-align:top;border:0.5px solid var(--border)">';
-      html += '<div style="font-size:0.75rem;font-weight:600;color:var(--ink)">' + escLine(col.titre||'') + '</div>';
-      if(col.soustitre) html += '<div style="font-size:0.7rem;font-style:italic;color:var(--ink-2);margin-bottom:4px">' + escLine(col.soustitre) + '</div>';
-      else html += '<div style="margin-bottom:4px"></div>';
+    const cpr = d.colsPerRow || d.cols.length || 1;
+    const colW = Math.floor(100/cpr);
+    function renderCol(col) {
+      let h = '<td style="width:' + colW + '%;padding:6px;vertical-align:top;border:0.5px solid var(--border)">';
+      h += '<div style="font-size:0.75rem;font-weight:600;color:var(--ink)">' + escLine(col.titre||'') + '</div>';
+      if(col.soustitre) h += '<div style="font-size:0.7rem;font-style:italic;color:var(--ink-2);margin-bottom:4px">' + escLine(col.soustitre) + '</div>';
+      else h += '<div style="margin-bottom:4px"></div>';
       if(col.texte) {
         const plain = col.texte.replace(/\*\*(.*?)\*\*/g,'$1');
         const isLong = plain.length > 120;
         const shortHtml = isLong ? escLine(plain.substring(0,120)) + '…' : formatTexte(col.texte);
-        html += '<div class="doc-texte-short" style="font-size:0.75rem;color:var(--ink-2);line-height:1.5">' + shortHtml + '</div>';
+        h += '<div class="doc-texte-short" style="font-size:0.75rem;color:var(--ink-2);line-height:1.5">' + shortHtml + '</div>';
         if(isLong) {
-          html += '<div class="doc-texte-full" style="display:none;font-size:0.75rem;color:var(--ink-2);line-height:1.5">' + formatTexte(col.texte) + '</div>';
-          html += '<button onclick="toggleTexte(this)" style="font-size:0.7rem;color:var(--ink-3);background:none;border:none;cursor:pointer;padding:2px 0;text-decoration:underline">Lire la suite</button>';
+          h += '<div class="doc-texte-full" style="display:none;font-size:0.75rem;color:var(--ink-2);line-height:1.5">' + formatTexte(col.texte) + '</div>';
+          h += '<button onclick="toggleTexte(this)" style="font-size:0.7rem;color:var(--ink-3);background:none;border:none;cursor:pointer;padding:2px 0;text-decoration:underline">Lire la suite</button>';
         }
       } else if(col.ref) {
         const img2 = IMAGE_DB[col.ref];
-        if(img2) html += '<div class="doc-img-tile" style="max-width:100%" onclick="openLightbox(\'' + jsStr(img2.src) + '\')"><img src="' + img2.src + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:180px;object-fit:contain"></div>';
+        if(img2) h += '<div class="doc-img-tile" style="max-width:100%" onclick="openLightbox(\'' + jsStr(img2.src) + '\')"><img src="' + img2.src + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:180px;object-fit:contain"></div>';
       }
-      if(col.auteur) html += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + escLine(col.auteur) + '</div>';
-      if(col.source) html += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + escLine(col.source) + '</div>';
-      html += '</td>';
-    });
-    html += '</tr></table>';
+      if(col.auteur) h += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + escLine(col.auteur) + '</div>';
+      if(col.source) h += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + escLine(col.source) + '</div>';
+      h += '</td>';
+      return h;
+    }
+    let html = '<table style="width:100%;border-collapse:collapse;margin-bottom:8px">';
+    for(let i=0; i<d.cols.length; i+=cpr) {
+      html += '<tr>' + d.cols.slice(i, i+cpr).map(renderCol).join('') + '</tr>';
+    }
+    html += '</table>';
     return html;
   }
   // Tableau 2 colonnes → tuiles
@@ -855,23 +864,29 @@ function previsualiser(guideMode) {
             });
             docsHtml += '</tr></table>';
           } else if(d.type === 'textes') {
-            docsHtml += '<table style="width:100%;border-collapse:collapse;margin-bottom:8px"><tr>';
-            d.cols.forEach(function(col) {
+            const cpr = d.colsPerRow || d.cols.length || 1;
+            const colW = Math.floor(100/cpr);
+            const renderCol = function(col) {
               const img = IMAGE_DB[col.ref];
-              docsHtml += '<td style="width:' + Math.floor(100/d.cols.length) + '%;padding:6px;vertical-align:top;border:0.5px solid var(--border)">';
-              docsHtml += '<div style="font-size:0.75rem;font-weight:600;color:var(--ink)">' + escLine(col.titre||'') + '</div>';
-              if(col.soustitre) docsHtml += '<div style="font-size:0.7rem;font-style:italic;color:var(--ink-2);margin-bottom:4px">' + escLine(col.soustitre) + '</div>';
-              else docsHtml += '<div style="margin-bottom:4px"></div>';
+              let h = '<td style="width:' + colW + '%;padding:6px;vertical-align:top;border:0.5px solid var(--border)">';
+              h += '<div style="font-size:0.75rem;font-weight:600;color:var(--ink)">' + escLine(col.titre||'') + '</div>';
+              if(col.soustitre) h += '<div style="font-size:0.7rem;font-style:italic;color:var(--ink-2);margin-bottom:4px">' + escLine(col.soustitre) + '</div>';
+              else h += '<div style="margin-bottom:4px"></div>';
               if(col.texte) {
-                docsHtml += '<div style="font-size:0.72rem;color:var(--ink-2);line-height:1.5">' + formatTexte(col.texte) + '</div>';
+                h += '<div style="font-size:0.72rem;color:var(--ink-2);line-height:1.5">' + formatTexte(col.texte) + '</div>';
               } else if(img) {
-                docsHtml += '<img src="' + img.src + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:100px;object-fit:contain;cursor:pointer" onclick="openLightbox(\'' + jsStr(img.src) + '\')">';
+                h += '<img src="' + img.src + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:100px;object-fit:contain;cursor:pointer" onclick="openLightbox(\'' + jsStr(img.src) + '\')">';
               }
-              if(col.auteur) docsHtml += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + escLine(col.auteur) + '</div>';
-              if(col.source) docsHtml += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + escLine(col.source) + '</div>';
-              docsHtml += '</td>';
-            });
-            docsHtml += '</tr></table>';
+              if(col.auteur) h += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + escLine(col.auteur) + '</div>';
+              if(col.source) h += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + escLine(col.source) + '</div>';
+              h += '</td>';
+              return h;
+            };
+            docsHtml += '<table style="width:100%;border-collapse:collapse;margin-bottom:8px">';
+            for(let i=0; i<d.cols.length; i+=cpr) {
+              docsHtml += '<tr>' + d.cols.slice(i, i+cpr).map(renderCol).join('') + '</tr>';
+            }
+            docsHtml += '</table>';
           }
         });
         docsHtml += '</div>';
@@ -1575,8 +1590,9 @@ async function genererDocx(includeGuide=false) {
             });
             children.push(new docx.Table({ width:{size:PAGE_W,type:docx.WidthType.DXA}, columnWidths:d.cols.map(()=>colW), rows:[new docx.TableRow({children:tableCells})] }));
           } else if(d.type === 'textes') {
-            const colW2 = Math.floor(PAGE_W / d.cols.length);
-            const textCells = d.cols.map(col => {
+            const cpr = d.colsPerRow || d.cols.length || 1;
+            const colW2 = Math.floor(PAGE_W / cpr);
+            const makeCell = col => {
               const cellChildren = [];
               cellChildren.push(new Paragraph({ children: [new TextRun({ text: col.titre || '', font: 'Aptos', size: 20, bold: true })] }));
               if(col.soustitre) cellChildren.push(new Paragraph({ children: [new TextRun({ text: col.soustitre, font: 'Aptos', size: 18, italics: true })] }));
@@ -1611,8 +1627,12 @@ async function genererDocx(includeGuide=false) {
                 margins: CELL_MARGINS,
                 children: cellChildren
               });
-            });
-            children.push(new docx.Table({ width:{size:PAGE_W,type:docx.WidthType.DXA}, columnWidths:d.cols.map(()=>colW2), rows:[new docx.TableRow({children:textCells})] }));
+            };
+            const docRows = [];
+            for(let i=0; i<d.cols.length; i+=cpr) {
+              docRows.push(new docx.TableRow({ children: d.cols.slice(i, i+cpr).map(makeCell) }));
+            }
+            children.push(new docx.Table({ width:{size:PAGE_W,type:docx.WidthType.DXA}, columnWidths:Array(cpr).fill(colW2), rows:docRows }));
           } else {
             children.push(new Paragraph({ children: [new TextRun({ text: '• ' + d.type + ' — ' + (d.ref||''), font: 'Aptos', size: 22 })] }));
           }
