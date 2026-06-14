@@ -736,34 +736,40 @@ async function confirmRename() {
     });
     if (!r3.ok) throw new Error('Échec suppression ' + renameTarget + ' (' + r3.status + ')');
 
-    // 4. Update questions.js
+    // 4. Update questions.js — relecture + PUT avec retry sur conflit SHA (409).
+    //    Critique : les fichiers image sont déjà déplacés ; si ce PUT échoue,
+    //    les refs pointeraient vers une image 404. D'où le retry.
     status.textContent = 'Mise à jour de questions.js…';
-    const rq = await fetch(API + 'questions.js', {
-      headers: {Authorization: 'token ' + requireToken()}
-    });
-    if (!rq.ok) throw new Error('Impossible de lire questions.js (' + rq.status + ')');
-    const dq = await rq.json();
-    const rawBytes = Uint8Array.from(atob(dq.content.replace(/\n/g,'')), c => c.charCodeAt(0));
-    const oldContent = new TextDecoder('utf-8').decode(rawBytes);
-    // Remplace uniquement les occurrences entre guillemets (évite de toucher les énoncés)
     const escapedTarget = renameTarget.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const newContent = oldContent
-      .replace(new RegExp(`(['"])${escapedTarget}(['"])`, 'g'), `$1${newName}$2`)
-      .replace(new RegExp(`(['"])images/${escapedTarget}(['"])`, 'g'), `$1images/${newName}$2`);
-    if (newContent === oldContent) {
-      status.className = 'rename-status warn';
-      status.textContent = 'Avertissement : aucune référence à ' + renameTarget + ' trouvée dans questions.js.';
-    } else {
+    let refsUpdated = false, noRefFound = false;
+    for (let attempt = 0; attempt < 3; attempt++) {
+      const rq = await fetch(API + 'questions.js?t=' + Date.now(), {
+        headers: {Authorization: 'token ' + requireToken()}, cache: 'no-store'
+      });
+      if (!rq.ok) throw new Error('Impossible de lire questions.js (' + rq.status + ')');
+      const dq = await rq.json();
+      const rawBytes = Uint8Array.from(atob(dq.content.replace(/\n/g,'')), c => c.charCodeAt(0));
+      const oldContent = new TextDecoder('utf-8').decode(rawBytes);
+      // Remplace uniquement les occurrences entre guillemets (évite de toucher les énoncés)
+      const newContent = oldContent
+        .replace(new RegExp(`(['"])${escapedTarget}(['"])`, 'g'), `$1${newName}$2`)
+        .replace(new RegExp(`(['"])images/${escapedTarget}(['"])`, 'g'), `$1images/${newName}$2`);
+      if (newContent === oldContent) { noRefFound = true; break; }
       const encBytes = new TextEncoder().encode(newContent);
       let binary = '';
       encBytes.forEach(b => binary += String.fromCharCode(b));
-      const encoded = btoa(binary);
       const rp = await fetch(API + 'questions.js', {
         method: 'PUT',
         headers: {Authorization: 'token ' + requireToken(), 'Content-Type': 'application/json'},
-        body: JSON.stringify({message: 'Rename ' + renameTarget + ' → ' + newName + ' (refs)', content: encoded, sha: dq.sha})
+        body: JSON.stringify({message: 'Rename ' + renameTarget + ' → ' + newName + ' (refs)', content: btoa(binary), sha: dq.sha})
       });
-      if (!rp.ok) throw new Error('Échec mise à jour questions.js (' + rp.status + ')');
+      if (rp.ok) { refsUpdated = true; break; }
+      if (rp.status === 409 && attempt < 2) continue; // conflit → relecture + retry
+      throw new Error('Échec mise à jour questions.js (' + rp.status + ') — image déplacée mais refs NON mises à jour, rechargez et réessayez.');
+    }
+    if (noRefFound) {
+      status.className = 'rename-status warn';
+      status.textContent = 'Avertissement : aucune référence à ' + renameTarget + ' trouvée dans questions.js.';
     }
 
     status.className = 'rename-status ok';
@@ -814,6 +820,12 @@ function updateDomAfterRename(oldName, newName) {
   if (imgMap[oldName]) { imgMap[newName] = imgMap[oldName]; delete imgMap[oldName]; }
   // Update sizeCache
   if (sizeCache[oldName]) { sizeCache[newName] = sizeCache[oldName]; delete sizeCache[oldName]; }
+  // Update les refs en mémoire des questions (sinon l'édition de sous-titre casse après un rename)
+  Object.values(qById).forEach(q => {
+    (q.documents || []).forEach(doc => (doc.cols || []).forEach(col => {
+      if (col.ref === oldName) col.ref = newName;
+    }));
+  });
   // Update lightbox if open
   if (currentLbImg === oldName) {
     currentLbImg = newName;
@@ -961,8 +973,10 @@ async function confirmSoustitre() {
       }
       throw new Error('Colonne référençant ' + img + ' introuvable dans ' + id);
     }, 'Modifier sous-titre ' + id + ' (' + img + ')');
-    setSoustitreLocal(id, img, newVal);
-    if (currentLbImg === img) showImg(img); // re-render de la liste
+    if (changed) {
+      setSoustitreLocal(id, img, newVal);
+      if (currentLbImg === img) showImg(img); // re-render de la liste
+    }
     status.className = 'rename-status ok';
     status.textContent = changed ? '✓ Sous-titre enregistré.' : 'Aucun changement.';
     setTimeout(closeSubModal, 1200);
