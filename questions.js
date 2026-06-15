@@ -29269,7 +29269,7 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Colonisation de nouvelles régions.\nÉtablissement de nouvelles populations dans les régions forestières.",
-    updatedAt: "2026-06-15T16:51:04.599Z"
+    guide: "Colonisation de nouvelles régions\nÉtablissement de nouvelles populations dans les régions forestières",
+    updatedAt: "2026-06-15T16:51:17.712Z"
   }
 ]
