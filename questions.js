@@ -29501,8 +29501,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Les tarifs préférentiels.",
-    updatedAt: "2026-06-15T17:18:03.017Z"
+    guide: "Les tarifs préférentiels sur le bois colonial.",
+    updatedAt: "2026-06-15T17:19:05.775Z"
   },
   {
     id: "Q458",
