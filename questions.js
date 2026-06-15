@@ -9158,6 +9158,17 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q452": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
   }
 }
 
@@ -9843,6 +9854,16 @@ const IMAGE_DB = {
   },
   "bois_emplois.png": {
     src: "images/bois_emplois.png",
+    w: 1200,
+    h: 900
+  },
+  "bois_emplois_1800.png": {
+    src: "images/bois_emplois_1800.png",
+    w: 1200,
+    h: 900
+  },
+  "bois_emplois_1840.png": {
+    src: "images/bois_emplois_1840.png",
     w: 1200,
     h: 900
   }
@@ -29085,5 +29106,49 @@ const QUESTIONS = [
     },
     guide: "Création d'emplois\nAugmentation du nombre de travailleurs\nHausse de l'emploi dans l'industrie du bois\nPlus de personnes travaillent dans les scieries et les chantiers forestiers",
     updatedAt: "2026-06-15T16:34:44.834Z"
+  },
+  {
+    id: "Q452",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez un élément de changement ou de continuité concernant l'industrie du bois entre 1800 et 1840. Justifiez votre réponse par des faits et un repère de temps.",
+    aspects: [
+      {
+        aspect: "Commerce du bois"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "bois_emplois_1800.png",
+            soustitre: "Répartition des travailleurs de l'industrie du bois au Bas-Canada en 1800",
+            source: "Données adaptées de Fernand Ouellet, Histoire économique et sociale du Québec, 1760-1850."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "bois_emplois_1840.png",
+            soustitre: "Répartition des travailleurs de l'industrie du bois au Bas-Canada en 1840",
+            source: "Données adaptées de Fernand Ouellet, Histoire économique et sociale du Québec, 1760-1850."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Changement\nIl y a changement, car entre 1800 et 1840, le nombre de travailleurs liés à l'industrie du bois augmente, passant d'environ 2 500 à 14 000.\nou\nIl y a changement, car entre 1800 et 1840, les métiers liés à l'industrie du bois occupent un nombre beaucoup plus élevé de travailleurs.\n\nContinuité\nIl y a continuité, car en 1800 comme en 1840, les bûcherons constituent le groupe de travailleurs le plus nombreux dans l'industrie du bois.\nou\nIl y a continuité, car les bûcherons demeurent les principaux travailleurs de l'industrie du bois entre 1800 et 1840.",
+    updatedAt: "2026-06-15T16:41:42.683Z"
   }
 ]
