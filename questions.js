@@ -8924,6 +8924,34 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q441": {
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
   }
 }
 
@@ -28353,5 +28381,60 @@ const QUESTIONS = [
     },
     guide: "La fusion de la Compagnie de la Baie d'Hudson et de la Compagnie du Nord-Ouest.",
     updatedAt: "2026-06-15T13:26:57.839Z"
+  },
+  {
+    id: "Q441",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    soustag: "Position – 3 acteurs",
+    enonce: "Le document présente la position de trois acteurs à l'égard du regroupement des compagnies de fourrures en 1821. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+    aspects: [
+      {
+        aspect: "Commerce des fourrures"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La Compagnie de la Baie d'Hudson doit préserver son autonomie afin de poursuivre efficacement ses activités commerciales et de protéger ses intérêts dans le commerce des fourrures. »",
+            auteur: "George Simpson (Compagnie de la Baie d'Hudson)",
+            source: "Adapté de la correspondance de George Simpson, gouverneur de la Compagnie de la Baie d'Hudson, vers 1820."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« La Compagnie du Nord-Ouest doit conserver son indépendance afin de maintenir sa place dans le commerce des fourrures et de poursuivre ses activités de traite. »",
+            auteur: "William McGillivray (Compagnie du Nord-Ouest)",
+            source: "Adapté de la correspondance de William McGillivray, associé principal de la Compagnie du Nord-Ouest, vers 1820."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Le regroupement des principales compagnies de fourrures permettrait de réduire les conflits commerciaux et de favoriser une meilleure organisation des activités de traite dans les territoires exploités. »",
+            auteur: "Lord Bathurst (Gouvernement britannique)",
+            source: "Adapté de la correspondance de Lord Bathurst, secrétaire d'État aux Colonies, vers 1821."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Lord Bathurst est favorable au regroupement des compagnies de fourrures (la position différente), alors que George Simpson et William McGillivray souhaitent maintenir leurs activités distinctes (la position commune).",
+    updatedAt: "2026-06-15T13:40:59.236Z"
   }
 ]
