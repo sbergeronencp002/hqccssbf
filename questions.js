@@ -14741,7 +14741,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P2 — 1608 – 1760",
     points: 3,
-    enonce: "Expliquez comment le commerce des fourrures favorise les relations économiques entre la métropole française et sa colonie au début du 17e siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• une ressource exploitée dans la colonie;\n• une mesure économique imposée par la métropole;\n• une conséquence économique pour la colonie.",
+    enonce: "Expliquez comment le commerce des fourrures favorise les relations économiques entre la métropole française et sa colonie au début du 17e siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une ressource exploitée dans la colonie\n• une mesure économique imposée par la métropole\n• une conséquence économique pour la colonie",
     aspects: [
       {
         aspect: "Commerce des fourrures"
@@ -14786,7 +14786,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 5
     },
-    guide: "Les habitants de la Nouvelle-France exploitent des ressources comme les fourrures de castor (une ressource exploitée dans la colonie). La métropole française impose une politique économique où la colonie doit fournir des matières premières à la France et acheter les produits transformés provenant de la métropole (une mesure économique imposée par la métropole). Cette situation favorise le développement du commerce des fourrures ou plusieurs compagnies privilégient les profits commerciaux plutôt que le peuplement et le développement de la colonie (une conséquence économique pour la colonie)."
+    guide: "Les habitants de la Nouvelle-France exploitent des ressources comme les fourrures de castor (une ressource exploitée dans la colonie). La métropole française impose une politique économique où la colonie doit fournir des matières premières à la France et acheter les produits transformés provenant de la métropole (une mesure économique imposée par la métropole). Cette situation favorise le développement du commerce des fourrures ou plusieurs compagnies privilégient les profits commerciaux plutôt que le peuplement et le développement de la colonie (une conséquence économique pour la colonie).",
+    updatedAt: "2026-06-15T12:32:52.807Z"
   },
   {
     id: "Q119",
