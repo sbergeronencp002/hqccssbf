@@ -29701,7 +29701,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P4 — 1791 – 1840",
     points: 1,
-    enonce: "Indiquez le nom d’une maladie qui se propage dans la colonie au début du XIXe siècle.",
+    enonce: "indiquez le nom d’une maladie qui touche les immigrants arrivant dans la colonie au XIXe siècle.",
     aspects: [
       {
         aspect: "Mouvements migratoires"
@@ -29724,6 +29724,6 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "Le choléra.",
-    updatedAt: "2026-06-15T23:48:46.570Z"
+    updatedAt: "2026-06-15T23:50:28.522Z"
   }
 ]
