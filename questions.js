@@ -17723,7 +17723,7 @@ const QUESTIONS = [
       nombre: 4
     },
     guide: "La Compagnie des Cent-Associés a pour responsabilité de favoriser le développement et le peuplement de la Nouvelle-France. Cependant, la population de la colonie demeure faible et son développement progresse lentement. Comme la compagnie ne remplit pas adéquatement ses obligations, le roi de France instaure le gouvernement royal en 1663 afin de mieux administrer et développer la colonie.",
-    updatedAt: "2026-06-15T12:31:44.230Z"
+    updatedAt: "2026-06-15T14:16:30.635Z"
   },
   {
     id: "Q177",
