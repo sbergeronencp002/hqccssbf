@@ -27103,7 +27103,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P4 — 1791 – 1840",
     points: 3,
-    enonce: "xpliquez comment les moyens utilisés par les Patriotes pour faire valoir leurs revendications entraînent des conséquences dans la colonie en 1837.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• un moyen utilisé par les Patriotes\n• une réaction des autorités coloniales\n• une conséquence dans la colonie",
+    enonce: "Expliquez comment les moyens utilisés par les Patriotes pour faire valoir leurs revendications entraînent des conséquences dans la colonie en 1837.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un moyen utilisé par les Patriotes\n• une réaction des autorités coloniales\n• une conséquence dans la colonie",
     aspects: [
       {
         aspect: "Soulèvements de 1837-1838"
@@ -27146,7 +27146,7 @@ const QUESTIONS = [
       nombre: 5
     },
     guide: "Les Patriotes organisent des assemblées populaires (un moyen utilisé par les Patriotes) afin de faire valoir leurs revendications. En réaction, les autorités coloniales émettent des mandats d'arrestation contre plusieurs chefs patriotes (une réaction des autorités coloniales). Cette situation contribue au déclenchement du conflit armé en 1837 (une conséquence dans la colonie).",
-    updatedAt: "2026-06-12T15:54:11.103Z"
+    updatedAt: "2026-06-15T12:20:08.753Z"
   },
   {
     id: "Q414",
