@@ -21735,7 +21735,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P3 — 1760 – 1791",
     points: 3,
-    enonce: "Expliquez comment l'issue de la guerre de la Conquête entraîne un changement du contrôle du commerce colonial.\n\nRépondez à la question en précisant :\n\n• l'issue de la guerre de la Conquête\n• un changement dans le groupe de marchands dominant le commerce\n• une conséquence sur l'économie coloniale",
+    enonce: "Expliquez comment l'issue de la guerre de la Conquête entraîne un changement du contrôle du commerce colonial.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• l'issue de la guerre de la Conquête\n• un changement dans le groupe de marchands dominant le commerce\n• une conséquence sur l'économie coloniale",
     aspects: [
       {
         aspect: "Économie coloniale"
@@ -21778,7 +21778,7 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "La guerre de la Conquête se termine par la victoire britannique ou la cession de la colonie à la Grande-Bretagne (l'issue de la guerre de la Conquête). Après 1760, les marchands britanniques remplacent progressivement les marchands français dans les activités commerciales (un changement dans le groupe de marchands dominant le commerce). Par conséquent, le commerce de la colonie est davantage orienté vers l'Empire britannique (une conséquence sur l'économie coloniale).",
-    updatedAt: "2026-06-08T12:19:13.456Z"
+    updatedAt: "2026-06-15T12:28:32.912Z"
   },
   {
     id: "Q282",
