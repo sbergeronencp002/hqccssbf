@@ -20935,7 +20935,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P3 — 1760 – 1791",
     points: 3,
-    enonce: "Expliquez comment les événements dans les Treize colonies contribuent à l'adoption d'une nouvelle constitution en 1774.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• un événement dans les Treize colonies\n• un objectif poursuivi par les autorités britanniques\n• le nom d'une nouvelle constitution mise en place en 1774",
+    enonce: "Expliquez comment les événements dans les Treize colonies contribuent à l'adoption d'une nouvelle constitution en 1774.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un événement dans les Treize colonies\n• un objectif poursuivi par les autorités britanniques\n• le nom d'une nouvelle constitution mise en place en 1774",
     aspects: [
       {
         aspect: "Acte de Québec"
@@ -20979,7 +20979,7 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Les tensions ou le mécontentement dans les Treize colonies (événements dans les Treize colonies) inquiètent les autorités britanniques. Pour maintenir stabilité de la Province de Québec et assurer la loyauté de ses habitants (objectif poursuivi par les autorités britanniques), les autorités adoptent l'Acte de Québec (nom d'une nouvelle constitution mise en place en 1774).",
-    updatedAt: "2026-06-12T12:06:52.896Z"
+    updatedAt: "2026-06-15T12:23:24.743Z"
   },
   {
     id: "Q263",
