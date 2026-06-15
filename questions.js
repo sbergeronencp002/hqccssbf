@@ -14423,7 +14423,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "exportations_bois_1800_1840.png",
-            soustitre: "Exportations de bois vers la Grande-Bretagne entre 1800 et 1840",
+            soustitre: "Évolution de la valeur des exportations de bois du Bas-Canada entre 1790 et 1840",
             source: "Données approximatives reconstituées à des fins pédagogiques à partir de synthèses historiques sur le commerce du bois au Bas-Canada."
           }
         ]
