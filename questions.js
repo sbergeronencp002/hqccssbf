@@ -8802,6 +8802,23 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q435": {
+    oi: "Situer dans l'espace",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe le fait dans l'espace."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas le fait dans l'espace."
+      }
+    ]
   }
 }
 
@@ -9450,6 +9467,9 @@ const IMAGE_DB = {
     src: "images/bataille_seven_oaks.png",
     w: 1200,
     h: 800
+  },
+  "territoire_exploite_fourrure_1820.png": {
+    src: "images/territoire_exploite_fourrure_1820.png"
   }
 }
 
@@ -28024,5 +28044,36 @@ const QUESTIONS = [
     },
     guide: "La Compagnie de la Baie d'Hudson et la Compagnie du Nord-Ouest se livrent une forte concurrence pour contrôler le commerce des fourrures (une caractéristique des relations entre les deux compagnies). Cette situation entraîne des conflits et une augmentation des coûts liés à la traite des fourrures (une conséquence de cette situation). Les autorités britanniques approuvent la fusion des deux compagnies en 1821 (une mesure prise par les autorités britanniques).",
     updatedAt: "2026-06-15T12:17:28.874Z"
+  },
+  {
+    id: "Q435",
+    niveau: 3,
+    oi: "Situer dans l'espace",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    soustag: "Situer 1 élément",
+    enonce: "À partir du document A, indiquez la lettre correspondant à la région vers laquelle les activités de traite des fourrures se sont déplacées au début du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Commerce des fourrures"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "territoire_exploite_fourrure_1820.png",
+            source: "Carte du Canada. Adaptée d'après d-maps.com."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau_2col"
+    },
+    guide: "B",
+    updatedAt: "2026-06-15T12:43:43.060Z"
   }
 ]
