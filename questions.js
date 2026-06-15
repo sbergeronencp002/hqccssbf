@@ -27219,7 +27219,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P4 — 1791 – 1840",
     points: 3,
-    enonce: "Expliquez comment la création d'institutions financières contribue au développement économique de la colonie au début du XIXe siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• une institution financière;\n• un moyen utilisé pour soutenir les activités économiques;\n• un effet sur l'économie de la colonie.",
+    enonce: "Expliquez comment la création d'institutions financières contribue au développement économique de la colonie au début du XIXe siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une institution financière\n• un moyen utilisé pour soutenir les activités économiques\n• un effet sur l'économie de la colonie",
     aspects: [
       {
         aspect: "Capitaux et infrastructures"
@@ -27264,7 +27264,7 @@ const QUESTIONS = [
       nombre: 5
     },
     guide: "La Banque de Montréal (une institution financière) accorde des prêts aux commerçants et aux entrepreneurs (un moyen utilisé pour soutenir les activités économiques). Ces prêts favorisent les investissements et le développement du commerce dans la colonie (un effet sur l'économie de la colonie).",
-    updatedAt: "2026-06-12T16:14:19.638Z"
+    updatedAt: "2026-06-15T12:19:35.007Z"
   },
   {
     id: "Q417",
