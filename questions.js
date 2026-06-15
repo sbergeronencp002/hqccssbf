@@ -27335,7 +27335,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P4 — 1791 – 1840",
     points: 3,
-    enonce: "Expliquez comment la construction d'infrastructures de transport terrestres favorise le développement économique de la colonie.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• une infrastructure de transport aménagée;\n• une amélioration des transports;\n• un effet sur l'économie de la colonie.",
+    enonce: "Expliquez comment la construction d'infrastructures de transport terrestres favorise le développement économique de la colonie.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une infrastructure de transport aménagée\n• une amélioration des transports\n• un effet sur l'économie de la colonie",
     aspects: [
       {
         aspect: "Capitaux et infrastructures"
@@ -27379,7 +27379,7 @@ const QUESTIONS = [
       nombre: 5
     },
     guide: "Le chemin de fer (une infrastructure de transport aménagée) permet de transporter plus rapidement les personnes et les marchandises (une amélioration des transports). Cette amélioration favorise les échanges commerciaux et contribue au développement économique de la colonie (un effet sur l'économie de la colonie).",
-    updatedAt: "2026-06-12T16:29:07.117Z"
+    updatedAt: "2026-06-15T12:19:02.768Z"
   },
   {
     id: "Q420",
