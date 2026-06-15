@@ -9208,6 +9208,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q455": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -9908,6 +9925,11 @@ const IMAGE_DB = {
   },
   "territoire_bois_exploitation.png": {
     src: "images/territoire_bois_exploitation.png"
+  },
+  "bois_chantier_naval.png": {
+    src: "images/bois_chantier_naval.png",
+    w: 1200,
+    h: 800
   }
 }
 
@@ -29271,5 +29293,37 @@ const QUESTIONS = [
     },
     guide: "Colonisation de nouvelles régions\nÉtablissement de nouvelles populations dans les régions forestières",
     updatedAt: "2026-06-15T16:51:17.712Z"
+  },
+  {
+    id: "Q455",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez une industrie qui se développe grâce à l'essor du commerce du bois au Bas-Canada au début du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Commerce du bois"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "bois_chantier_naval.png",
+            soustitre: "Chantier naval au Bas-Canada vers 1830",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Construction navale\nIndustrie de la construction navale\nChantiers navals\nIndustrie navale",
+    updatedAt: "2026-06-15T16:56:49.489Z"
   }
 ]
