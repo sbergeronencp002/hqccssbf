@@ -27889,7 +27889,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P4 — 1791 – 1840",
     points: 3,
-    enonce: "Expliquez comment l'évolution du commerce des fourrures au Bas-Canada dans la première moitié du XIXe siècle contribue à la transformation du territoire exploité.\n\nRépondez à la question en précisant :\n\n• une difficulté liée au commerce des fourrures\n• une mesure prise par les marchands\n• une conséquence sur le territoire exploité",
+    enonce: "Expliquez comment l'évolution du commerce des fourrures au Bas-Canada dans la première moitié du XIXe siècle contribue à la transformation du territoire exploité.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une difficulté liée au commerce des fourrures\n• une mesure prise par les marchands\n• une conséquence sur le territoire exploité",
     aspects: [
       {
         aspect: "Commerce des fourrures"
@@ -27933,7 +27933,7 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "L'épuisement progressif des fourrures dans les régions exploitées depuis longtemps (la difficulté liée au commerce des fourrures) pousse les marchands à établir de nouveaux postes de traite vers l'Ouest (la mesure prise par les marchands). Cette mesure entraîne l'expansion du territoire exploité jusqu'aux Prairies et aux Rocheuses (la conséquence sur le territoire exploité).",
-    updatedAt: "2026-06-14T17:24:37.705Z"
+    updatedAt: "2026-06-15T12:18:07.956Z"
   },
   {
     id: "Q433",
