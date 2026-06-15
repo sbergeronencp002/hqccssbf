@@ -28157,7 +28157,7 @@ const QUESTIONS = [
     enonce: "Indiquez une conséquence de la diminution des fourrures dans les régions des Grands Lacs et de la vallée du Saint-Laurent sur les activités de traite.",
     aspects: [
       {
-        aspect: "Commerce du bois"
+        aspect: "Commerce des fourrures"
       }
     ],
     documents: [
@@ -28178,7 +28178,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Expansion des activités de traite vers l'Ouest\nDéplacement des activités de traite vers l'Ouest\nExpansion des territoires exploités vers les Prairies\nExploitation accrue de l'Ouest\nOuverture de nouveaux territoires de traite dans l'Ouest\nDéveloppement de la traite dans les Prairies et au-delà",
-    updatedAt: "2026-06-15T13:01:49.534Z"
+    updatedAt: "2026-06-15T13:15:47.498Z"
   },
   {
     id: "Q437",
