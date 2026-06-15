@@ -9381,6 +9381,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q463": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
+      }
+    ]
   }
 }
 
@@ -10086,6 +10108,9 @@ const IMAGE_DB = {
     src: "images/bois_chantier_naval.png",
     w: 1200,
     h: 800
+  },
+  "grosse_ile_station_quarantaine.png": {
+    src: "images/grosse_ile_station_quarantaine.png"
   }
 }
 
@@ -29773,5 +29798,59 @@ const QUESTIONS = [
     },
     guide: "Une station de quarantaine à Grosse-Île",
     updatedAt: "2026-06-15T23:53:28.012Z"
+  },
+  {
+    id: "Q463",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Cause et conséquence",
+    enonce: "Les documents A et B présentent des éléments liés à l’immigration britannique dans la première moitié du XIXe siècle. Indiquez la lettre du document qui présente une cause de cette immigration et la lettre du document qui présente une conséquence.",
+    aspects: [
+      {
+        aspect: "Mouvements migratoires"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "grosse_ile_station_quarantaine.png",
+            soustitre: "Station de quarantaine à Grosse-Île",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Au cours de la première moitié du XIXe siècle, de nombreux Britanniques cherchent de meilleures possibilités pour assurer l’avenir de leur famille. Les colonies attirent alors un nombre croissant de nouveaux arrivants. »",
+            source: "Adapté de Serge Courville, Le Québec : genèses et mutations du territoire, Presses de l'Université Laval."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "cause-consequence"
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Cause",
+        "Conséquence"
+      ],
+      rangees: [
+        [
+          "B",
+          "A"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-15T23:59:44.570Z"
   }
 ]
