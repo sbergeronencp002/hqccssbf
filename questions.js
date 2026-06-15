@@ -8885,6 +8885,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
+  },
+  "Q439": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la continuité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la continuité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -9541,6 +9563,11 @@ const IMAGE_DB = {
   },
   "fourrures_1780-1820.png": {
     src: "images/fourrures_1780-1820.png"
+  },
+  "exportations_fourrure_1780-1820.png": {
+    src: "images/exportations_fourrure_1780-1820.png",
+    w: 1200,
+    h: 901
   }
 }
 
@@ -28245,5 +28272,38 @@ const QUESTIONS = [
     },
     guide: "Les activités de traite se déplacent vers l'Ouest entre 1780 et 1820.\nLes territoires exploités pour le commerce des fourrures s'étendent des Grands Lacs vers les Prairies et l'Ouest.\nL'importance des territoires de l'Ouest augmente alors que celle de la vallée du Saint-Laurent et des Grands Lacs diminue entre 1780 et 1820.",
     updatedAt: "2026-06-15T13:15:33.908Z"
+  },
+  {
+    id: "Q439",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Continuité",
+    enonce: "À partir du document A, indiquez un élément de continuité dans l'importance du commerce des fourrures entre 1780 et 1820.",
+    aspects: [
+      {
+        aspect: "Commerce des fourrures"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "exportations_fourrure_1780-1820.png",
+            soustitre: "Nombre approximatif de fourrures exportées entre 1780 et 1820",
+            source: "Adapté de Harold A. Innis, The Fur Trade in Canada: An Introduction to Canadian Economic History, University of Toronto Press, 1930."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le commerce des fourrures demeure important entre 1780 et 1820.\nLes exportations de fourrures demeurent élevées entre 1780 et 1820.\nLe nombre de fourrures exportées reste important tout au long de la période.\nLe commerce des fourrures constitue toujours une activité économique importante vers 1780 et vers 1820.",
+    updatedAt: "2026-06-15T13:23:37.614Z"
   }
 ]
