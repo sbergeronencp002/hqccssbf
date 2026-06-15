@@ -29501,8 +29501,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Le gouvernement britannique et les marchands britanniques sont favorables à l'octroi de tarifs préférentiels sur le bois provenant des colonies.",
-    updatedAt: "2026-06-15T17:15:28.904Z"
+    guide: "Les tarifs préférentiels.",
+    updatedAt: "2026-06-15T17:18:03.017Z"
   },
   {
     id: "Q458",
