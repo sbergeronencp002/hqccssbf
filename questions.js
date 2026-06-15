@@ -22433,7 +22433,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P3 — 1760 – 1791",
     points: 3,
-    enonce: "Expliquez comment les familles canadiennes contribue à l'expansion du territoire occupé dans la Province de Québec vers 1790.\n\nRépondez à la question en précisant :\n\n• une caractéristique des familles canadiennes;\n• une transformation démographique;\n• un effet sur l'occupation du territoire.",
+    enonce: "Expliquez comment les familles canadiennes contribue à l'expansion du territoire occupé dans la Province de Québec vers 1790.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une caractéristique des familles canadiennes\n• une transformation démographique\n• un effet sur l'occupation du territoire",
     aspects: [
       {
         aspect: "Situation sociodémographique"
@@ -22476,7 +22476,7 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Les familles canadiennes comptent souvent plusieurs enfants (caractéristique des familles canadiennes), ce qui entraîne une augmentation de la population (transformation démographique). Cette croissance démographique favorise le défrichement de nouvelles terres et l'expansion du territoire occupé (effet sur l'occupation du territoire).",
-    updatedAt: "2026-06-08T14:55:35.922Z"
+    updatedAt: "2026-06-15T12:27:43.650Z"
   },
   {
     id: "Q300",
