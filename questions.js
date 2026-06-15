@@ -9703,6 +9703,9 @@ const IMAGE_DB = {
     src: "images/exportation_bois_1790-1840.png",
     w: 1200,
     h: 901
+  },
+  "evolution_pop_n-f.png": {
+    src: "images/evolution_pop_n-f.png"
   }
 }
 
@@ -17731,7 +17734,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "graphique_population_nouvelle_france_1627-1663.png",
+            ref: "evolution_pop_n-f.png",
             soustitre: "Évolution de la population de la Nouvelle-France entre 1620 et 1667",
             source: "Adapté de Marcel Trudel, Histoire de la Nouvelle-France, tome III : La seigneurie des Cent-Associés, Fides."
           }
@@ -17753,7 +17756,7 @@ const QUESTIONS = [
       nombre: 4
     },
     guide: "La Compagnie des Cent-Associés est responsable du peuplement de la colonie (une responsabilité de la Compagnie des Cent-Associés). Comme la population demeure faible en Nouvelle-France (une difficulté rencontrée dans le développement de la colonie), le roi de France instaure le gouvernement royal en 1663 (une intervention du roi de France en 1663).",
-    updatedAt: "2026-06-15T15:16:02.281Z"
+    updatedAt: "2026-06-15T15:19:58.283Z"
   },
   {
     id: "Q177",
