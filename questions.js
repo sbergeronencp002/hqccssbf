@@ -9297,6 +9297,34 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q459": {
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
   }
 }
 
@@ -29538,5 +29566,60 @@ const QUESTIONS = [
     },
     guide: "Le blocus continental.",
     updatedAt: "2026-06-15T17:17:36.648Z"
+  },
+  {
+    id: "Q459",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    soustag: "Position – 3 acteurs",
+    enonce: "Les documents A à C  présentent la position de trois acteurs sur une mesure économique liée au commerce du bois. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+    aspects: [
+      {
+        aspect: "Commerce du bois"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les mesures adoptées par la Grande-Bretagne favorisent le commerce du bois colonial et contribuent à la prospérité économique de la colonie. »",
+            auteur: "George Prevost",
+            source: "Adapté de documents administratifs du gouverneur George Prevost, vers 1810."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les droits de douane avantageux accordés au bois provenant des colonies britanniques nuisent aux commerçants étrangers qui souhaitent vendre leurs produits sur le marché britannique. »",
+            auteur: "Marchand américain",
+            source: "Adapté de correspondances commerciales américaines du début du XIXe siècle."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les préférences commerciales accordées aux colonies encouragent les investissements et le développement des activités économiques liées au bois. »",
+            auteur: "John Molson",
+            source: "Adapté de la correspondance d'affaires de John Molson, début du XIXe siècle."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Le marchand américain s'oppose aux tarifs préférentiels accordés au bois colonial, alors que George Prevost et John Molson y sont favorables.",
+    updatedAt: "2026-06-15T17:26:51.315Z"
   }
 ]
