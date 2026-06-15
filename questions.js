@@ -20078,7 +20078,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P3 — 1760 – 1791",
     points: 3,
-    enonce: "Expliquez comment la composition de la population influence les décisions prises par le gouverneur Murray.\n\nRépondez à la question en précisant :\n\n• la composition de la population de la colonie vers 1763\n• une décision prise par Murray\n• une conséquence pour les Canadiens",
+    enonce: "Expliquez comment la composition de la population influence les décisions prises par le gouverneur Murray.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• la composition de la population de la colonie vers 1763\n• une décision prise par Murray\n• une conséquence pour les Canadiens",
     aspects: [
       {
         aspect: "Instructions au gouverneur Murray"
@@ -20122,7 +20122,7 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Les Canadiens catholiques forment la majorité de la population de la colonie (la composition de la population de la colonie). Le gouverneur Murray leur accorde certaines concessions, notamment sur le plan religieux (une décision prise par Murray). Les Canadiens peuvent ainsi continuer à pratiquer leur religion catholique (une conséquence pour les Canadiens).",
-    updatedAt: "2026-06-12T12:13:46.182Z"
+    updatedAt: "2026-06-15T12:23:07.596Z"
   },
   {
     id: "Q243",
