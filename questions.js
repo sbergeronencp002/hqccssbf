@@ -22484,7 +22484,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P3 — 1760 – 1791",
     points: 3,
-    enonce: "Expliquez comment l'immigration britannique transforme la population de la Province de Québec vers 1790.\n\nRépondez à la question en précisant :\n\n• un groupe d'immigrants britanniques;\n• une transformation démographique;\n• un effet sur la composition de la population.",
+    enonce: "Expliquez comment l'immigration britannique transforme la population de la Province de Québec vers 1790.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un groupe d'immigrants britanniques\n• une transformation démographique\n• un effet sur la composition de la population",
     aspects: [
       {
         aspect: "Situation sociodémographique"
@@ -22528,7 +22528,7 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Des marchands, fonctionnaires ou anciens militaires britanniques s'établissent dans la colonie (groupe d'immigrants britanniques). Leur arrivée augmente la proportion d'habitants d'origine britannique (transformation démographique). La composition de la population devient plus diversifiée (effet sur la composition de la population).",
-    updatedAt: "2026-06-08T15:10:25.850Z"
+    updatedAt: "2026-06-15T12:27:18.374Z"
   },
   {
     id: "Q301",
