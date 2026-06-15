@@ -26140,7 +26140,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P4 — 1791 – 1840",
     points: 3,
-    enonce: "Expliquez comment un mouvement migratoire contribue à un changement démographique du Haut-Canada dans la première moitié du XIXe siècle. \n\nRépondez à la question en précisant et en liant entre eux :\n\n• un mouvement migratoire vers le Haut-Canada\n• un groupe de population concerné\n• un changement démographique au Haut-Canada.",
+    enonce: "Expliquez comment un mouvement migratoire contribue à un changement démographique du Haut-Canada dans la première moitié du XIXe siècle. \n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un mouvement migratoire vers le Haut-Canada\n• un groupe de population concerné\n• un changement démographique au Haut-Canada",
     aspects: [
       {
         aspect: "Population"
@@ -26185,7 +26185,7 @@ const QUESTIONS = [
       nombre: 5
     },
     guide: "L'immigration britannique (mouvement migratoire) amène de nombreux Britanniques dans le Haut-Canada (groupe de population concerné) ce qui contribue à l'augmentation de la population de cette colonie (changement démographique).",
-    updatedAt: "2026-06-12T12:21:19.268Z"
+    updatedAt: "2026-06-15T12:21:00.973Z"
   },
   {
     id: "Q392",
