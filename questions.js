@@ -9119,6 +9119,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q450": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -9798,6 +9815,9 @@ const IMAGE_DB = {
   },
   "blocus_continental.png": {
     src: "images/blocus_continental.png"
+  },
+  "bois_nouvelles_activites.png": {
+    src: "images/bois_nouvelles_activites.png"
   }
 }
 
@@ -28974,5 +28994,37 @@ const QUESTIONS = [
     },
     guide: "Recherche de nouvelles sources d'approvisionnement en bois\nDifficulté à importer du bois européen",
     updatedAt: "2026-06-15T15:37:12.291Z"
+  },
+  {
+    id: "Q450",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez le nom d'une activité liée à la transformation du bois au Bas-Canada au début du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Commerce du bois"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "bois_nouvelles_activites.png",
+            soustitre: "Transformation du bois au Bas-Canada vers 1820",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Sciage du bois\nTransformation du bois dans une scierie\nProduction de madriers\nProduction de planches\nÉquarrissage du bois",
+    updatedAt: "2026-06-15T15:40:32.605Z"
   }
 ]
