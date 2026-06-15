@@ -12222,7 +12222,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P1 — Des origines à 1608",
     points: 3,
-    enonce: "Expliquez comment les rivalités entre les nations autochtones favorisent la formation d’alliances.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• une source de rivalité entre les nations autochtones\n• l’objectif des alliances conclues entre certaines nations\n• le sort réservé aux prisonniers capturés lors des conflits",
+    enonce: "Expliquez comment les rivalités entre les nations autochtones favorisent la formation d’alliances.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une source de rivalité entre les nations autochtones\n• l’objectif des alliances conclues entre certaines nations\n• le sort réservé aux prisonniers capturés lors des conflits",
     aspects: [
       {
         aspect: "Alliances et rivalités au sein des Premières Nations"
@@ -12265,7 +12265,7 @@ const QUESTIONS = [
       nombre: 5
     },
     guide: "Les rivalités pour le contrôle des territoires de chasse (ou des réseaux d’échange) (un objet de rivalité entre les nations autochtones) poussent certaines nations à conclure des alliances afin de renforcer leur défense ou leur puissance militaire (l’objectif des alliances entre les nations autochtones). Lors des conflits, les prisonniers capturés (le sort des prisonniers) peuvent être adoptés par la nation victorieuse ou mis à mort.",
-    updatedAt: "2026-06-10T15:31:30.402Z"
+    updatedAt: "2026-06-15T12:23:58.509Z"
   },
   {
     id: "Q68",
