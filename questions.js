@@ -9097,6 +9097,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q449": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -28920,5 +28942,37 @@ const QUESTIONS = [
     },
     guide: "Le blocus continental.",
     updatedAt: "2026-06-15T15:35:27.345Z"
+  },
+  {
+    id: "Q449",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence du blocus continental sur l'approvisionnement de la Grande-Bretagne en bois.",
+    aspects: [
+      {
+        aspect: "Commerce du bois"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La marine britannique dépend largement du bois importé d'Europe du Nord. Les événements qui perturbent ce commerce obligent les autorités à envisager d'autres sources d'approvisionnement. »",
+            source: "Adapté de Gilles Paquet et Jean-Pierre Wallot, Patronage et pouvoir dans le Bas-Canada."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Recherche de nouvelles sources d'approvisionnement en bois\nDifficulté à importer du bois européen",
+    updatedAt: "2026-06-15T15:37:12.291Z"
   }
 ]
