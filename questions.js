@@ -17451,7 +17451,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P2 — 1608 – 1760",
     points: 3,
-    enonce: "Expliquez comment les difficultés rencontrées par la Compagnie des Cent-Associés contribuent à l’instauration du gouvernement royal en 1663.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• une responsabilité de la Compagnie des Cent-Associés;\n• une difficulté rencontrée dans le développement de la colonie;\n• une intervention du roi de France en 1663.",
+    enonce: "Expliquez comment les difficultés rencontrées par la Compagnie des Cent-Associés contribuent à l’instauration du gouvernement royal en 1663.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une responsabilité de la Compagnie des Cent-Associés\n• une difficulté rencontrée dans le développement de la colonie\n• une intervention du roi de France en 1663",
     aspects: [
       {
         aspect: "Gouvernement royal"
@@ -17496,7 +17496,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 4
     },
-    guide: "La Compagnie des Cent-Associés a pour responsabilité de favoriser le développement et le peuplement de la Nouvelle-France. Cependant, la population de la colonie demeure faible et son développement progresse lentement. Comme la compagnie ne remplit pas adéquatement ses obligations, le roi de France instaure le gouvernement royal en 1663 afin de mieux administrer et développer la colonie."
+    guide: "La Compagnie des Cent-Associés a pour responsabilité de favoriser le développement et le peuplement de la Nouvelle-France. Cependant, la population de la colonie demeure faible et son développement progresse lentement. Comme la compagnie ne remplit pas adéquatement ses obligations, le roi de France instaure le gouvernement royal en 1663 afin de mieux administrer et développer la colonie.",
+    updatedAt: "2026-06-15T12:31:44.230Z"
   },
   {
     id: "Q177",
