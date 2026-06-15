@@ -9052,6 +9052,34 @@ const REGLETTES = {
         desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
       }
     ]
+  },
+  "Q447": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -9728,6 +9756,9 @@ const IMAGE_DB = {
   },
   "evolution_pop_n-f.png": {
     src: "images/evolution_pop_n-f.png"
+  },
+  "blocus_continental.png": {
+    src: "images/blocus_continental.png"
   }
 }
 
@@ -28787,5 +28818,58 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-15T15:24:18.775Z"
+  },
+  {
+    id: "Q447",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    enonce: "Expliquez comment la situation en Europe au début des années 1800 contribue au développement du commerce du bois au Bas-Canada.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• la situation en Europe vers 1800\n• une mesure mise en place par la Grande-Bretagne\n• une conséquence sur le commerce du bois au Bas-Canada",
+    aspects: [
+      {
+        aspect: "Commerce du bois"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "blocus_continental.png",
+            soustitre: "Restrictions commerciales entre certais pays européens",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Pour encourager l'importation de bois provenant de ses colonies, la Grande-Bretagne impose des droits de douane plus élevés sur le bois étranger que sur le bois colonial. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 2."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "exportation_bois_1790-1840.png",
+            soustitre: "Évolution de la valeur des exportations de bois du Bas-Canada entre 1790 et 1840",
+            source: "Adapté de Fernand Ouellet, Histoire économique et sociale du Québec, 1760-1850, Montréal, Fides."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 5
+    },
+    guide: "Le blocus continental imposé par Napoléon limite les échanges entre la Grande-Bretagne et plusieurs pays européens fournisseurs de bois (la situation en Europe vers 1800). Pour favoriser l'approvisionnement en bois provenant de ses colonies, la Grande-Bretagne accorde des tarifs préférentiels au bois colonial (une mesure mise en place). Cette mesure entraîne une augmentation des exportations et contribue au développement du commerce du bois au Bas-Canada (une conséquence sur le commerce du bois).",
+    updatedAt: "2026-06-15T15:33:47.971Z"
   }
 ]
