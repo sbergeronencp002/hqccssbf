@@ -14424,7 +14424,7 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "exportations_bois_1800_1840.png",
             soustitre: "Évolution de la valeur des exportations de bois du Bas-Canada entre 1790 et 1840",
-            source: "Données approximatives reconstituées à des fins pédagogiques à partir de synthèses historiques sur le commerce du bois au Bas-Canada."
+            source: "Adapté de Fernand Ouellet, Histoire économique et sociale du Québec, 1760-1850, Montréal, Fides."
           }
         ]
       }
@@ -14434,7 +14434,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les exportations de bois des colonies vers la Grande-Bretagne augmentent fortement.",
-    updatedAt: "2026-06-15T15:13:38.357Z"
+    updatedAt: "2026-06-15T15:14:32.069Z"
   },
   {
     id: "Q106",
