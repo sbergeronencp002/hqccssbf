@@ -29653,7 +29653,7 @@ const QUESTIONS = [
     oi: "Déterminer des causes et des conséquences",
     periode: "P4 — 1791 – 1840",
     points: 2,
-    enonce: "Indiquez une difficulté économique vécue par plusieurs Britanniques qui les pousse à émigrer vers l'Amérique du Nord britannique dans la première moitié du XIXe siècle.",
+    enonce: "Indiquez une difficulté économique qui pousse plusieurs Britanniques à quitter leur pays dans la première moitié du XIXe siècle.",
     aspects: [
       {
         aspect: "Mouvements migratoires"
@@ -29676,6 +29676,6 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Le manque de travail\nLe chômage\nLa pauvreté\nLes difficultés économiques en Grande-Bretagne",
-    updatedAt: "2026-06-15T19:52:22.707Z"
+    updatedAt: "2026-06-15T23:44:57.313Z"
   }
 ]
