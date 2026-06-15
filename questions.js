@@ -9347,6 +9347,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q461": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -29677,5 +29694,36 @@ const QUESTIONS = [
     },
     guide: "Le manque de travail\nLe chômage\nLa pauvreté\nLes difficultés économiques en Grande-Bretagne",
     updatedAt: "2026-06-15T23:44:57.313Z"
+  },
+  {
+    id: "Q461",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez le nom d’une maladie qui se propage dans la colonie au début du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Mouvements migratoires"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Des milliers d’immigrants arrivent chaque année dans la colonie. Les autorités craignent alors la propagation d’une maladie contagieuse transportée à bord des navires et imposent des mesures sanitaires. »",
+            source: "Adapté de Serge Courville, Le Québec : genèses et mutations du territoire, Presses de l’Université Laval."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le choléra.",
+    updatedAt: "2026-06-15T23:48:46.570Z"
   }
 ]
