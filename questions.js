@@ -9013,6 +9013,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q445": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -9287,7 +9304,9 @@ const IMAGE_DB = {
     src: "images/org_pol_apres_1663.png"
   },
   "graphique_population_nouvelle_france_1627-1663.png": {
-    src: "images/graphique_population_nouvelle_france_1627-1663.png"
+    src: "images/graphique_population_nouvelle_france_1627-1663.png",
+    w: 1200,
+    h: 800
   },
   "paroisse_n-f.png": {
     src: "images/paroisse_n-f.png"
@@ -9674,6 +9693,11 @@ const IMAGE_DB = {
     src: "images/exportations_fourrure_1780-1820.png",
     w: 1200,
     h: 901
+  },
+  "bois_tarifs_préférentiels.png": {
+    src: "images/bois_tarifs_préférentiels.png",
+    w: 1200,
+    h: 800
   }
 }
 
@@ -28649,5 +28673,36 @@ const QUESTIONS = [
     },
     guide: "Compagnie de la Baie d'Hudson\nCompagnie du Nord-Ouest",
     updatedAt: "2026-06-15T14:10:38.815Z"
+  },
+  {
+    id: "Q445",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez une mesure adoptée par la Grande-Bretagne pour favoriser l’importation de bois provenant de ses colonies.",
+    aspects: [
+      {
+        aspect: "Commerce du bois"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les marchands britanniques bénéficient d'avantages commerciaux lorsqu'ils importent du bois provenant des colonies de l'Empire. »",
+            source: "Adapté de Gilles Paquet et Jean-Pierre Wallot, Patronage et pouvoir dans le Bas-Canada."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "La Grande-Bretagne accorde des tarifs préférentiels sur le bois provenant de ses colonies.",
+    updatedAt: "2026-06-15T15:06:20.875Z"
   }
 ]
