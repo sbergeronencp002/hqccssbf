@@ -9225,6 +9225,34 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q456": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -29325,5 +29353,67 @@ const QUESTIONS = [
     },
     guide: "Construction navale\nIndustrie de la construction navale\nChantiers navals\nIndustrie navale",
     updatedAt: "2026-06-15T16:56:49.489Z"
+  },
+  {
+    id: "Q456",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    enonce: "Expliquez comment une mesure des autorités britanniques entraîne une conséquence économique pour le Bas-Canada.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une mesure mise en place par les autorités britanniques\n• une ressource en demande\n• une industrie liée au bois en croissance",
+    aspects: [
+      {
+        aspect: "Commerce du bois"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Afin de favoriser les importations provenant de ses colonies, la Grande-Bretagne impose des droits de douane plus élevés sur le bois étranger et accorde des avantages tarifaires au bois colonial. »",
+            source: "Adapté de Gilles Laporte, Brève histoire du Québec."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: ""
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "bois_nouvelles_activites.png",
+            soustitre: "Transformation du bois au Bas-Canada vers 1820",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            ref: "bois_chantier_naval.png",
+            soustitre: "Chantier naval au Bas-Canada vers 1830",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 5
+    },
+    guide: "La Grande-Bretagne accorde des tarifs préférentiels au bois provenant de ses colonies (une mesure). Cette politique augmente la demande pour le bois du Bas-Canada (une ressource en demande). L'essor du commerce du bois favorise alors le développement de la construction navale, une industrie en croissance dans la colonie (une industrie liée au bois en croissance).",
+    updatedAt: "2026-06-15T17:04:33.295Z"
   }
 ]
