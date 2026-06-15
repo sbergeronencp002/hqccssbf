@@ -9080,6 +9080,23 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q448": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -28871,5 +28888,37 @@ const QUESTIONS = [
     },
     guide: "Le blocus continental imposé par Napoléon limite les échanges entre la Grande-Bretagne et plusieurs pays européens fournisseurs de bois (la situation en Europe vers 1800). Pour favoriser l'approvisionnement en bois provenant de ses colonies, la Grande-Bretagne accorde des tarifs préférentiels au bois colonial (une mesure mise en place). Cette mesure entraîne une augmentation des exportations et contribue au développement du commerce du bois au Bas-Canada (une conséquence sur le commerce du bois).",
     updatedAt: "2026-06-15T15:33:47.971Z"
+  },
+  {
+    id: "Q448",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez une mesure adoptée par Napoléon au début des années 1800 pour limiter les échanges avec la Grande-Bretagne.",
+    aspects: [
+      {
+        aspect: "Commerce du bois"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "blocus_continental.png",
+            soustitre: "Restrictions commerciales entre l'Europe napoléonienne et la Grande-Bretagne",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Le blocus continental.",
+    updatedAt: "2026-06-15T15:35:27.345Z"
   }
 ]
