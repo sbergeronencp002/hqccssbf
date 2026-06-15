@@ -8974,6 +8974,28 @@ const REGLETTES = {
         desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."
       }
     ]
+  },
+  "Q443": {
+    oi: "Mettre en relation des faits",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève met en relation tous les faits. (4 sur 4)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
+      }
+    ]
   }
 }
 
@@ -28500,5 +28522,83 @@ const QUESTIONS = [
     },
     guide: "La Compagnie de la Baie d'Hudson et la Compagnie du Nord-Ouest éprouvent des difficultés financières\nLes deux compagnies font face à des dépenses élevées\nLes deux compagnies voient leurs coûts augmenter\nLes deux compagnies ont des problèmes de rentabilité\nLes deux compagnies subissent les conséquences de la concurrence",
     updatedAt: "2026-06-15T13:43:21.088Z"
+  },
+  {
+    id: "Q443",
+    niveau: 3,
+    oi: "Mettre en relation des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "4 documents",
+    enonce: "Les documents A à D présentent des caractéristiques associées à deux compagnies de fourrures au début du XIXe siècle. Associez chaque document à la compagnie correspondante.",
+    aspects: [
+      {
+        aspect: "Commerce des fourrures"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Une charte royale accorde à cette compagnie le monopole du commerce des fourrures dans un vaste territoire couvrant plusieurs bassins hydrographiques des terres de Rupert. »",
+            source: "Adapté de Harold A. Innis, The Fur Trade in Canada, University of Toronto Press, 1930."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les voyageurs quittent Montréal, empruntent les Grands Lacs et parcourent les Prairies afin d'approvisionner les postes de traite établis dans les territoires de l'Ouest. »",
+            source: "Adapté de Jacques Mathieu, La Nouvelle-France : les Français en Amérique du Nord, Presses de l'Université Laval."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Notre compagnie administre un vaste territoire drainé par les cours d'eau se jetant dans la baie d'Hudson, où convergent les fourrures recueillies par les Autochtones. »",
+            source: "Adapté de Serge Courville, Le Québec : genèses et mutations du territoire, Presses de l'Université Laval."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Les activités de traite s'étendent des Grands Lacs jusqu'aux Rocheuses. Les postes de l'Ouest permettent d'obtenir des fourrures dans de nouveaux territoires exploités. »",
+            source: "Adapté de Gilles Havard et Cécile Vidal, Histoire de l'Amérique française, Flammarion."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Compagnie de la Baie d'Hudson",
+        "Compagnie du Nord-Ouest"
+      ],
+      double: true
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Compagnie de la Baie d'Hudson",
+        "Compagnie du Nord-Ouest"
+      ],
+      rangees: [
+        [
+          "A et C",
+          "B et D"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-15T14:04:13.233Z"
   }
 ]
