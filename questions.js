@@ -21256,7 +21256,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P3 — 1760 – 1791",
     points: 3,
-    enonce: "Expliquez comment l'issue de la guerre d'Indépendance des États-Unis entraîne la migration de populations britanniques vers la Province de Québec.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• l'issue de la guerre d'Indépendance des États-Unis\n• un groupe britannique qui demeure fidèle à la Couronne\n• une région qui accueille les migrants",
+    enonce: "Expliquez comment l'issue de la guerre d'Indépendance des États-Unis entraîne la migration de populations britanniques vers la Province de Québec.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• l'issue de la guerre d'Indépendance des États-Unis\n• un groupe britannique qui demeure fidèle à la Couronne\n• une région qui accueille les migrants",
     aspects: [
       {
         aspect: "Invasion américaine"
@@ -21302,7 +21302,7 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Les États-Unis obtiennent leur indépendance (l'issue de la guerre d'Indépendance des États-Unis). Des Loyalistes, demeurés fidèles à la Couronne britannique (un groupe britannique qui demeure fidèle à la Couronne), quittent les États-Unis et s'établissent notamment en Gaspésie ou en Estrie (une région qui accueille les migrants).",
-    updatedAt: "2026-06-07T20:12:32.247Z"
+    updatedAt: "2026-06-15T12:29:20.861Z"
   },
   {
     id: "Q271",
