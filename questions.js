@@ -20987,7 +20987,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P2 — 1608 – 1760",
     points: 3,
-    enonce: "Expliquez comment la fin de la guerre de Succession d'Espagne transforme le territoire de l’Amérique du Nord. \n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n• un résultat de la la guerre de Succession d'Espagne\n• le traité qui met fin à cette guerre\n• une modification du territoire de l’Amérique du Nord",
+    enonce: "Expliquez comment la fin de la guerre de Succession d'Espagne transforme le territoire de l’Amérique du Nord. \n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un résultat de la la guerre de Succession d'Espagne\n• le traité qui met fin à cette guerre\n• une modification du territoire de l’Amérique du Nord",
     aspects: [
       {
         aspect: "Guerres intercoloniales"
@@ -21030,7 +21030,7 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "La victoire britannique (un résultat de la guerre de Succession d'Espagne) mène à la signature du traité d'Utrecht (le traité qui met fin à cette guerre). À la suite de ce traité, la France perd l'Acadie, Terre-Neuve et la baie d'Hudson (une modification du territoire de l'Amérique du Nord).",
-    updatedAt: "2026-06-07T17:28:49.160Z"
+    updatedAt: "2026-06-15T12:30:21.391Z"
   },
   {
     id: "Q264",
