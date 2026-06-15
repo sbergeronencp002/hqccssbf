@@ -29266,10 +29266,11 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "cause-consequence"
+      type: "lignes",
+      nombre: 2
     },
     guide: "Création d'emplois\nAugmentation du nombre de travailleurs\nHausse de l'emploi dans l'industrie du bois\nPlus de personnes travaillent dans les scieries et les chantiers forestiers",
-    updatedAt: "2026-06-15T16:34:44.834Z"
+    updatedAt: "2026-06-15T17:42:43.010Z"
   },
   {
     id: "Q452",
