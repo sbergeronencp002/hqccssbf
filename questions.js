@@ -9030,6 +9030,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q446": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
+      }
+    ]
   }
 }
 
@@ -28712,5 +28734,58 @@ const QUESTIONS = [
     },
     guide: "La Grande-Bretagne accorde des tarifs préférentiels sur le bois provenant de ses colonies.",
     updatedAt: "2026-06-15T15:06:20.875Z"
+  },
+  {
+    id: "Q446",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Cause et conséquence",
+    enonce: "Les documents A et B présentent des éléments liés aux tarifs préférentiels accordés au bois provenant des colonies britanniques. Inscrivez la lettre du document qui présente :\n• une cause de l'adoption des tarifs préférentiels sur le bois colonial\n• une conséquence de cette mesure sur le commerce du bois au Bas-Canada",
+    aspects: [
+      {
+        aspect: "Commerce du bois"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« L'exploitation forestière prend une importance croissante dans la colonie et mobilise un nombre grandissant de travailleurs dans les chantiers, les scieries et les ports. »",
+            source: "Adapté de Serge Courville, Le Québec : genèses et mutations du territoire."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Le blocus continental limite les échanges commerciaux entre la Grande-Bretagne et plusieurs pays européens fournisseurs de bois. Les autorités britanniques se tournent alors vers leurs colonies pour s'approvisionner. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 2."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "cause-consequence"
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Cause",
+        "Conséquence"
+      ],
+      rangees: [
+        [
+          "B",
+          "A"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-15T15:24:18.775Z"
   }
 ]
