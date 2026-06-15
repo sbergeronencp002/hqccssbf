@@ -23825,7 +23825,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P4 — 1791 – 1840",
     points: 3,
-    enonce: "Expliquez comment la constitution mise en place par les autorités britanniques en 1791 favorise la participation politique de la population.\n\nRépondez à la question en précisant :\n\n• le nom de cette constitution\n• une institution politique créée par cette constitution\n• une conséquence sur la représentation politique de la population",
+    enonce: "Expliquez comment la constitution mise en place par les autorités britanniques en 1791 favorise la participation politique de la population.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• le nom de cette constitution\n• une institution politique créée par cette constitution\n• une conséquence sur la représentation politique de la population",
     aspects: [
       {
         aspect: "Acte constitutionnel"
@@ -23870,7 +23870,7 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "L'Acte constitutionnel de 1791 permet l'élection d'une Chambre d'assemblée (nom de la constitution, institution politique créée par cette constitution). Une partie de la population peut alors choisir des députés, ce qui augmente sa représentation politique (conséquence sur la représentation politique de la population).",
-    updatedAt: "2026-06-10T01:00:17.137Z"
+    updatedAt: "2026-06-15T12:24:21.488Z"
   },
   {
     id: "Q339",
