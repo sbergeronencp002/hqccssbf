@@ -21610,7 +21610,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P3 — 1760 – 1791",
     points: 3,
-    enonce: "Expliquez comment la politique économique de la Grande-Bretagne influence les échanges commerciaux dans la Province de Québec vers 1780.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• le nom de cette politique économique\n• un objectif poursuivi par la métropole\n• une conséquence sur les échanges commerciaux de la Province de Québec",
+    enonce: "Expliquez comment la politique économique de la Grande-Bretagne influence les échanges commerciaux dans la Province de Québec vers 1780.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• le nom de cette politique économique\n• un objectif poursuivi par la métropole\n• une conséquence sur les échanges commerciaux de la Province de Québec",
     aspects: [
       {
         aspect: "Économie coloniale"
@@ -21653,7 +21653,7 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "La Grande-Bretagne applique le mercantilisme (le nom de cette politique économique). Cette politique vise à enrichir la métropole en tirant profit de ses colonies (un objectif poursuivi par la métropole). Par conséquent, la Province de Québec exporte principalement des matières premières vers la Grande-Bretagne et importe des produits manufacturés britanniques (une conséquence sur les échanges commerciaux de la Province de Québec).",
-    updatedAt: "2026-06-08T11:49:42.008Z"
+    updatedAt: "2026-06-15T12:28:59.518Z"
   },
   {
     id: "Q279",
