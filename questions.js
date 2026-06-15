@@ -8819,6 +8819,28 @@ const REGLETTES = {
         desc: "L'élève ne situe pas le fait dans l'espace."
       }
     ]
+  },
+  "Q436": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -28077,5 +28099,38 @@ const QUESTIONS = [
     },
     guide: "B",
     updatedAt: "2026-06-15T12:43:43.060Z"
+  },
+  {
+    id: "Q436",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de la diminution des fourrures dans les régions des Grands Lacs et de la vallée du Saint-Laurent sur les activités de traite.",
+    aspects: [
+      {
+        aspect: "Commerce du bois"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "provenance_fourrures_marchands.png",
+            soustitre: "Provenance des fourrures exportées vers 1780 et vers 1820",
+            source: "Adapté de Harold A. Innis, The Fur Trade in Canada, University of Toronto Press."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Expansion des activités de traite vers l'Ouest\nDéplacement des activités de traite vers l'Ouest\nExpansion des territoires exploités vers les Prairies\nExploitation accrue de l'Ouest\nOuverture de nouveaux territoires de traite dans l'Ouest\nDéveloppement de la traite dans les Prairies et au-delà",
+    updatedAt: "2026-06-15T13:01:49.534Z"
   }
 ]
