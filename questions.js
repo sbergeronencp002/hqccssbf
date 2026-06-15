@@ -8996,6 +8996,23 @@ const REGLETTES = {
         desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
       }
     ]
+  },
+  "Q444": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -28600,5 +28617,36 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-15T14:04:13.233Z"
+  },
+  {
+    id: "Q444",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez le nom d'une compagnie de traite des fourrures en activité dans les années 1820.",
+    aspects: [
+      {
+        aspect: "Commerce des fourrures"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Deux grandes entreprises se disputent l'approvisionnement en fourrures dans l'Ouest, multipliant les postes de traite et les dépenses liées à leurs activités. »",
+            source: "Adapté de Serge Courville, Le Québec : genèses et mutations du territoire, Presses de l'Université Laval."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Compagnie de la Baie d'Hudson\nCompagnie du Nord-Ouest",
+    updatedAt: "2026-06-15T14:10:38.815Z"
   }
 ]
