@@ -9325,6 +9325,28 @@ const REGLETTES = {
         desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
       }
     ]
+  },
+  "Q460": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -29624,5 +29646,36 @@ const QUESTIONS = [
     },
     guide: "Le marchand américain s'oppose aux tarifs préférentiels accordés au bois colonial, alors que George Prevost et John Molson y sont favorables.",
     updatedAt: "2026-06-15T17:26:51.315Z"
+  },
+  {
+    id: "Q460",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    enonce: "Indiquez une difficulté économique vécue par plusieurs Britanniques qui les pousse à émigrer vers l'Amérique du Nord britannique dans la première moitié du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Mouvements migratoires"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Au début du XIXe siècle, plusieurs familles britanniques quittent leur région d’origine dans l’espoir d’améliorer leurs conditions de vie. Les colonies d’Amérique du Nord attirent alors un nombre croissant de nouveaux arrivants.",
+            source: "Adapté de John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec, Septentrion."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le manque de travail\nLe chômage\nLa pauvreté\nLes difficultés économiques en Grande-Bretagne",
+    updatedAt: "2026-06-15T19:52:22.707Z"
   }
 ]
