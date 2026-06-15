@@ -9275,6 +9275,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q458": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de divergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -29481,5 +29503,49 @@ const QUESTIONS = [
     },
     guide: "Le gouvernement britannique et les marchands britanniques sont favorables à l'octroi de tarifs préférentiels sur le bois provenant des colonies.",
     updatedAt: "2026-06-15T17:15:28.904Z"
+  },
+  {
+    id: "Q458",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Divergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs sur les échanges commerciaux entre la Grande-Bretagne et l'Europe au début du XIXe siècle. Sur quel point précis sont-ils en désaccord?",
+    aspects: [
+      {
+        aspect: "Commerce du bois"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Aucun navire britannique ne doit être admis dans les ports soumis à l'autorité de la France ou de ses alliés. »",
+            auteur: "Napoléon Bonaparte",
+            source: "Adapté du décret de Berlin, 1806."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Le commerce maritime est essentiel à la prospérité économique de la Grande-Bretagne et doit être maintenu malgré les obstacles imposés par la France. »",
+            auteur: "Robert Jenkinson",
+            source: "Adapté d'un discours de Robert Jenkinson, début du XIXe siècle."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le blocus continental.",
+    updatedAt: "2026-06-15T17:17:36.648Z"
   }
 ]
