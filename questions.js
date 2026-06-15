@@ -8863,6 +8863,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q438": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -28190,5 +28212,38 @@ const QUESTIONS = [
     },
     guide: "Diminution du nombre de fourrures provenant de la vallée du Saint-Laurent et des Grands Lacs\nDiminution des fourrures dans la vallée du Saint-Laurent et les Grands Lacs\nRaréfaction des fourrures dans les régions traditionnellement exploitées\nÉpuisement progressif des ressources en fourrures dans l'Est\nBaisse des approvisionnements en provenance des Grands Lacs et de la vallée du Saint-Laurent",
     updatedAt: "2026-06-15T13:11:47.965Z"
+  },
+  {
+    id: "Q438",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Changement",
+    enonce: "À partir du document A, indiquez un changement dans l'exploitation des territoires liés au commerce des fourrures entre 1780 et 1820.",
+    aspects: [
+      {
+        aspect: "Commerce des fourrures"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "fourrures_1780-1820.png",
+            soustitre: "Nombre approximatif de fourrures provenant des principales régions de traite",
+            source: "Adapté de Harold A. Innis, The Fur Trade in Canada, University of Toronto Press, 1930."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Les activités de traite se déplacent vers l'Ouest entre 1780 et 1820.\nLes territoires exploités pour le commerce des fourrures s'étendent des Grands Lacs vers les Prairies et l'Ouest.\nL'importance des territoires de l'Ouest augmente alors que celle de la vallée du Saint-Laurent et des Grands Lacs diminue entre 1780 et 1820.",
+    updatedAt: "2026-06-15T13:15:33.908Z"
   }
 ]
