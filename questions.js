@@ -9364,6 +9364,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q462": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -29725,5 +29742,36 @@ const QUESTIONS = [
     },
     guide: "Le choléra.",
     updatedAt: "2026-06-15T23:50:28.522Z"
+  },
+  {
+    id: "Q462",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez une mesure mise en place pour limiter la propagation des maladies chez les immigrants arrivant dans la colonie au XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Mouvements migratoires"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les conditions de voyage à bord des navires sont souvent difficiles. Afin de protéger la population de la colonie, les autorités mettent en place certaines mesures à l’arrivée des immigrants. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 3, Septentrion."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Une station de quarantaine à Grosse-Île",
+    updatedAt: "2026-06-15T23:53:28.012Z"
   }
 ]
