@@ -14434,7 +14434,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les exportations de bois des colonies vers la Grande-Bretagne augmentent fortement.",
-    updatedAt: "2026-06-12T12:23:52.598Z"
+    updatedAt: "2026-06-15T15:13:38.357Z"
   },
   {
     id: "Q106",
