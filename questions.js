@@ -19692,7 +19692,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P3 — 1760 – 1791",
     points: 3,
-    enonce: "Expliquez comment la fin de la guerre de la Conquête transforme le territoire de l’Amérique du Nord.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• un résultat de la guerre de la Conquête\n• le traité qui met fin à cette guerre\n• une modification du territoire de l’Amérique du Nord",
+    enonce: "Expliquez comment la fin de la guerre de la Conquête transforme le territoire de l’Amérique du Nord.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un résultat de la guerre de la Conquête\n• le traité qui met fin à cette guerre\n• une modification du territoire de l’Amérique du Nord",
     aspects: [
       {
         aspect: "Proclamation royale"
@@ -19736,7 +19736,7 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "La victoire britannique (le résultat de la guerre de la Conquête) lors de la guerre de la Conquête est confirmée par le Traité de Paris de 1763 (le traité qui met fin à la guerre). Par ce traité, la France cède le Canada à la Grande-Bretagne, ce qui agrandit les possessions britanniques et réduit le territoire français en Amérique du Nord (une modification du territoire).",
-    updatedAt: "2026-06-04T12:22:19.834Z"
+    updatedAt: "2026-06-15T12:30:55.708Z"
   },
   {
     id: "Q233",
