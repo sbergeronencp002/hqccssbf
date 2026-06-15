@@ -26193,7 +26193,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P4 — 1791 – 1840",
     points: 3,
-    enonce: "Expliquez comment un phénomène démographique entraîne une transformation de la population du Bas-Canada dans la première moitié du XIXe siècle.\n\nRépondez à la question en précisant :\n\n• un phénomène démographique;\n• un groupe de population concerné;\n• une transformation de la population du Bas-Canada.",
+    enonce: "Expliquez comment un phénomène démographique entraîne une transformation de la population du Bas-Canada dans la première moitié du XIXe siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un phénomène démographique\n• un groupe de population concerné\n• une transformation de la population du Bas-Canada",
     aspects: [
       {
         aspect: "Population"
@@ -26237,7 +26237,7 @@ const QUESTIONS = [
       nombre: 5
     },
     guide: "L'accroissement naturel (phénomène démographique) touche principalement les Canadiens français (groupe de population concerné), ce qui entraîne une forte augmentation de la population du Bas-Canada (changement dans la population)",
-    updatedAt: "2026-06-12T12:23:05.792Z"
+    updatedAt: "2026-06-15T12:20:35.462Z"
   },
   {
     id: "Q393",
