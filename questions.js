@@ -8841,6 +8841,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q437": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -9494,6 +9516,9 @@ const IMAGE_DB = {
   },
   "territoire_exploite_fourrure_1820.png": {
     src: "images/territoire_exploite_fourrure_1820.png"
+  },
+  "fourrures_1780-1820.png": {
+    src: "images/fourrures_1780-1820.png"
   }
 }
 
@@ -28132,5 +28157,38 @@ const QUESTIONS = [
     },
     guide: "Expansion des activités de traite vers l'Ouest\nDéplacement des activités de traite vers l'Ouest\nExpansion des territoires exploités vers les Prairies\nExploitation accrue de l'Ouest\nOuverture de nouveaux territoires de traite dans l'Ouest\nDéveloppement de la traite dans les Prairies et au-delà",
     updatedAt: "2026-06-15T13:01:49.534Z"
+  },
+  {
+    id: "Q437",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une raison de l'expansion des territoires exploités pour la traite des fourrures vers les Prairies.",
+    aspects: [
+      {
+        aspect: "Commerce des fourrures"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "fourrures_1780-1820.png",
+            soustitre: "Nombre approximatif de fourrures provenant des principales régions de traite",
+            source: "Adapté de Harold A. Innis, The Fur Trade in Canada, University of Toronto Press, 1930."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Diminution du nombre de fourrures provenant de la vallée du Saint-Laurent et des Grands Lacs\nDiminution des fourrures dans la vallée du Saint-Laurent et les Grands Lacs\nRaréfaction des fourrures dans les régions traditionnellement exploitées\nÉpuisement progressif des ressources en fourrures dans l'Est\nBaisse des approvisionnements en provenance des Grands Lacs et de la vallée du Saint-Laurent",
+    updatedAt: "2026-06-15T13:11:47.965Z"
   }
 ]
