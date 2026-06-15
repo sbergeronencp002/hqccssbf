@@ -14551,7 +14551,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P1 — Des origines à 1608",
     points: 3,
-    enonce: "Expliquez comment les activités économiques pratiquées par les Européens dans le golfe du Saint-Laurent favorisent le développement d’échanges avec certaines nations autochtones au 16e siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• Une activité pratiquée par les Européens dans le golfe du Saint-Laurent\n• Un lieu d’échange entre les groupes autochtones et européens\n• Des produits échangés entre les Européens et les nations autochtones",
+    enonce: "Expliquez comment les activités économiques pratiquées par les Européens dans le golfe du Saint-Laurent favorisent le développement d’échanges avec certaines nations autochtones au 16e siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Une activité pratiquée par les Européens dans le golfe du Saint-Laurent\n• Un lieu d’échange entre les groupes autochtones et européens\n• Des produits échangés entre les Européens et les nations autochtones",
     aspects: [
       {
         aspect: "Premiers contacts"
@@ -14593,7 +14593,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 5
     },
-    guide: "Les Européens fréquentent le golfe du Saint-Laurent pour pratiquer la pêche et la chasse à la baleine (une activité pratiquée par les Européens dans le golfe du Saint-Laurent). Leur présence favorise des rencontres avec certaines nations autochtones dans des lieux de séchage de la morue situés sur les rives du golfe (un lieu d’échange entre les groupes autochtones et européens). Des produits européens, comme des couteaux, et des produits autochtones, comme des fourrures, sont alors échangés sous forme de troc (des produits échangés entre les Européens et certaines nations autochtones)."
+    guide: "Les Européens fréquentent le golfe du Saint-Laurent pour pratiquer la pêche et la chasse à la baleine (une activité pratiquée par les Européens dans le golfe du Saint-Laurent). Leur présence favorise des rencontres avec certaines nations autochtones dans des lieux de séchage de la morue situés sur les rives du golfe (un lieu d’échange entre les groupes autochtones et européens). Des produits européens, comme des couteaux, et des produits autochtones, comme des fourrures, sont alors échangés sous forme de troc (des produits échangés entre les Européens et certaines nations autochtones).",
+    updatedAt: "2026-06-15T12:33:10.393Z"
   },
   {
     id: "Q116",
