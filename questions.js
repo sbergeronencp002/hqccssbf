@@ -9380,7 +9380,9 @@ const IMAGE_DB = {
     h: 921
   },
   "conflits_armes_haut-canada.png": {
-    src: "images/conflits_armes_haut-canada.png"
+    src: "images/conflits_armes_haut-canada.png",
+    w: 1138,
+    h: 1200
   },
   "assemblee_six_comtes.png": {
     src: "images/assemblee_six_comtes.png"
@@ -26411,7 +26413,7 @@ const QUESTIONS = [
       type: "tableau_2col"
     },
     guide: "D",
-    updatedAt: "2026-06-12T03:47:21.040Z"
+    updatedAt: "2026-06-15T12:48:28.024Z"
   },
   {
     id: "Q397",
