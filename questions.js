@@ -8774,6 +8774,34 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
       }
     ]
+  },
+  "Q434": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -9407,6 +9435,21 @@ const IMAGE_DB = {
     src: "images/crise_agricole_production_ble.png",
     w: 1200,
     h: 901
+  },
+  "compagnies_fourrures_1820.png": {
+    src: "images/compagnies_fourrures_1820.png",
+    w: 1200,
+    h: 604
+  },
+  "postes_traite_1795-1820.png": {
+    src: "images/postes_traite_1795-1820.png",
+    w: 1200,
+    h: 901
+  },
+  "bataille_seven_oaks.png": {
+    src: "images/bataille_seven_oaks.png",
+    w: 1200,
+    h: 800
   }
 }
 
@@ -27924,5 +27967,58 @@ const QUESTIONS = [
     },
     guide: "Il y a continuité, car entre 1834 et 1840 le Bas-Canada enregistre un déficit de production agricole (blé) chaque année ou la production de blé demeure insuffisante pour répondre aux besoins de la population.",
     updatedAt: "2026-06-14T17:37:55.563Z"
+  },
+  {
+    id: "Q434",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    enonce: "Expliquez comment les relations entre la Compagnie de la Baie d'Hudson et la Compagnie du Nord-Ouest conduisent à une intervention des autorités britanniques en 1821.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une caractéristique des relations entre les deux compagnies\n• une conséquence de cette situation\n• une mesure prise par les autorités britanniques",
+    aspects: [
+      {
+        aspect: "Commerce des fourrures"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "compagnies_fourrures_1820.png",
+            soustitre: "Bataille de Seven Oaks",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les autorités britanniques estiment que la concurrence entre les compagnies nuit à la rentabilité du commerce des fourrures. Elles favorisent donc leur regroupement sous une même administration en 1821. »",
+            source: "Adapté de Serge Courville, Le Québec : genèses et mutations du territoire, Presses de l'Université Laval."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "postes_traite_1795-1820.png",
+            soustitre: "Évolution du nombre de postes de traite vers 1795 et vers 1820",
+            source: "Adapté de Gilles Laporte, Histoire du Québec : une société nord-américaine, Chenelière Éducation, 2014."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 5
+    },
+    guide: "La Compagnie de la Baie d'Hudson et la Compagnie du Nord-Ouest se livrent une forte concurrence pour contrôler le commerce des fourrures (une caractéristique des relations entre les deux compagnies). Cette situation entraîne des conflits et une augmentation des coûts liés à la traite des fourrures (une conséquence de cette situation). Les autorités britanniques approuvent la fusion des deux compagnies en 1821 (une mesure prise par les autorités britanniques).",
+    updatedAt: "2026-06-15T12:17:28.874Z"
   }
 ]
