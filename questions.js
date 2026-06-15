@@ -8907,6 +8907,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
       }
     ]
+  },
+  "Q440": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -28305,5 +28322,36 @@ const QUESTIONS = [
     },
     guide: "Le commerce des fourrures demeure important entre 1780 et 1820.\nLes exportations de fourrures demeurent élevées entre 1780 et 1820.\nLe nombre de fourrures exportées reste important tout au long de la période.\nLe commerce des fourrures constitue toujours une activité économique importante vers 1780 et vers 1820.",
     updatedAt: "2026-06-15T13:23:37.614Z"
+  },
+  {
+    id: "Q440",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez la mesure approuvée par les autorités britanniques concernant la Compagnie de la Baie d'Hudson et la Compagnie du Nord-Ouest en 1821.",
+    aspects: [
+      {
+        aspect: "Commerce des fourrures"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« En 1821, les autorités britanniques approuvent le regroupement des principales compagnies de fourrures afin de réduire les conflits commerciaux et de mieux organiser les activités de traite dans les territoires exploités. »",
+            source: "Adapté de Harold A. Innis, The Fur Trade in Canada: An Introduction to Canadian Economic History, University of Toronto Press, 1930."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "La fusion de la Compagnie de la Baie d'Hudson et de la Compagnie du Nord-Ouest.",
+    updatedAt: "2026-06-15T13:26:57.839Z"
   }
 ]
