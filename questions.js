@@ -25271,7 +25271,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P4 — 1791 – 1840",
     points: 3,
-    enonce: "Expliquez comment la dualité linguistique contribue à l'émergence de tensions politiques dans le Bas-Canada au début du XIXe siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux .\n\n• la composition linguistique de la population\n• un groupe de population qui cherche à accroître son influence \n• une conséquence politique",
+    enonce: "Expliquez comment la dualité linguistique contribue à l'émergence de tensions politiques dans le Bas-Canada au début du XIXe siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• la composition linguistique de la population\n• un groupe de population qui cherche à accroître son influence \n• une conséquence politique",
     aspects: [
       {
         aspect: "Nationalismes"
@@ -25316,7 +25316,7 @@ const QUESTIONS = [
       nombre: 5
     },
     guide: "La présence de francophones et d'anglophones dans le Bas-Canada (composition linguistique) amène les Canadiens français (groupe de population) à chercher à accroître leur influence politique, ce qui provoque la formation de partis opposés et des tensions à la Chambre d'assemblée (conséquence politique).",
-    updatedAt: "2026-06-15T12:22:43.911Z"
+    updatedAt: "2026-06-15T12:25:31.423Z"
   },
   {
     id: "Q369",
