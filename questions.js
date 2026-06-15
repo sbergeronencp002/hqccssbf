@@ -14686,7 +14686,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P3 — 1760 – 1791",
     points: 3,
-    enonce: "Expliquez comment la guerre d’Indépendance américaine entraîne une réorganisation du commerce des fourrures dans la Province de Québec et la région des Grands Lacs.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• un territoire perdu à la suite du traité de Paris de 1783;\n• une conséquence sur les activités des compagnies de fourrures;\n• une action entreprise par les compagnies afin de développer le commerce vers le Nord-Ouest.",
+    enonce: "Expliquez comment la guerre d’Indépendance américaine entraîne une réorganisation du commerce des fourrures dans la Province de Québec et la région des Grands Lacs.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un territoire perdu à la suite du traité de Paris de 1783\n• une conséquence sur les activités des compagnies de fourrures\n• une action entreprise par les compagnies afin de développer le commerce vers le Nord-Ouest",
     aspects: [
       {
         aspect: "Économie coloniale"
@@ -14733,7 +14733,7 @@ const QUESTIONS = [
       nombre: 5
     },
     guide: "Le traité de Paris de 1783 accorde aux États-Unis les territoires situés au sud des Grands Lacs (un territoire perdu à la suite du traité de Paris de 1783). Cette perte territoriale complique les activités des compagnies de fourrures et l’accès à certaines routes commerciales (une conséquence sur les activités des compagnies de fourrures). Afin de poursuivre et développer le commerce des fourrures, les compagnies déplacent leurs activités vers le Nord-Ouest et établissent de nouveaux postes de traite (une action entreprise par les compagnies afin de développer le commerce vers le Nord-Ouest).",
-    updatedAt: "2026-06-08T13:19:53.378Z"
+    updatedAt: "2026-06-15T12:28:07.489Z"
   },
   {
     id: "Q118",
