@@ -9186,6 +9186,28 @@ const REGLETTES = {
         desc: "L'élève ne situe pas les faits dans l'espace."
       }
     ]
+  },
+  "Q454": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -29217,5 +29239,37 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-15T16:49:48.089Z"
+  },
+  {
+    id: "Q454",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de l'exploitation forestière sur l'occupation du territoire.",
+    aspects: [
+      {
+        aspect: "Commerce du bois"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« L'exploitation des ressources forestières favorise l'établissement de nouvelles populations dans plusieurs régions situées à l'écart de la vallée du Saint-Laurent. »",
+            source: "Adapté de Serge Courville, Le Québec : genèses et mutations du territoire."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Colonisation de nouvelles régions.\nÉtablissement de nouvelles populations dans les régions forestières.",
+    updatedAt: "2026-06-15T16:51:04.599Z"
   }
 ]
