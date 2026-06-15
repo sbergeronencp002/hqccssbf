@@ -29426,15 +29426,6 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: ""
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document C",
             ref: "bois_nouvelles_activites.png",
             soustitre: "Transformation du bois au Bas-Canada vers 1820",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
@@ -29445,7 +29436,7 @@ const QUESTIONS = [
         type: "textes",
         cols: [
           {
-            titre: "Document D",
+            titre: "Document C",
             ref: "bois_chantier_naval.png",
             soustitre: "Chantier naval au Bas-Canada vers 1830",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
@@ -29458,7 +29449,7 @@ const QUESTIONS = [
       nombre: 5
     },
     guide: "La Grande-Bretagne accorde des tarifs préférentiels au bois provenant de ses colonies (une mesure). Cette politique augmente la demande pour le bois du Bas-Canada (une ressource en demande). L'essor du commerce du bois favorise alors le développement de la construction navale, une industrie en croissance dans la colonie (une industrie liée au bois en croissance).",
-    updatedAt: "2026-06-15T17:04:33.295Z"
+    updatedAt: "2026-06-15T17:23:37.935Z"
   },
   {
     id: "Q457",
