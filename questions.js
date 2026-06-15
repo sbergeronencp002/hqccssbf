@@ -8952,6 +8952,28 @@ const REGLETTES = {
         desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
       }
     ]
+  },
+  "Q442": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève dégage correctement la similitude."
+      },
+      {
+        pts: 1,
+        desc: "L'élève dégage plus ou moins correctement la similitude."
+      },
+      {
+        pts: 0,
+        desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."
+      }
+    ]
   }
 }
 
@@ -28436,5 +28458,47 @@ const QUESTIONS = [
     },
     guide: "Lord Bathurst est favorable au regroupement des compagnies de fourrures (la position différente), alors que George Simpson et William McGillivray souhaitent maintenir leurs activités distinctes (la position commune).",
     updatedAt: "2026-06-15T13:40:59.236Z"
+  },
+  {
+    id: "Q442",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Similitude",
+    enonce: "Les documents A et B présentent la situation de deux compagnies de fourrures vers 1820. Indiquez une similitude entre ces deux compagnies.",
+    aspects: [
+      {
+        aspect: "Commerce des fourrures"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La multiplication des postes de traite et la concurrence dans les territoires de l'Ouest entraînent des dépenses considérables pour notre compagnie. »",
+            source: "Adapté de la correspondance de George Simpson, vers 1820."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les coûts associés au maintien des postes de traite et au transport des marchandises réduisent les bénéfices de notre entreprise. »",
+            source: "Adapté de la correspondance de William McGillivray, vers 1820."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "La Compagnie de la Baie d'Hudson et la Compagnie du Nord-Ouest éprouvent des difficultés financières\nLes deux compagnies font face à des dépenses élevées\nLes deux compagnies voient leurs coûts augmenter\nLes deux compagnies ont des problèmes de rentabilité\nLes deux compagnies subissent les conséquences de la concurrence",
+    updatedAt: "2026-06-15T13:43:21.088Z"
   }
 ]
