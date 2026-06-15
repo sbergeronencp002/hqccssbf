@@ -9136,6 +9136,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q451": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -9818,6 +9840,11 @@ const IMAGE_DB = {
   },
   "bois_nouvelles_activites.png": {
     src: "images/bois_nouvelles_activites.png"
+  },
+  "bois_emplois.png": {
+    src: "images/bois_emplois.png",
+    w: 1200,
+    h: 900
   }
 }
 
@@ -29026,5 +29053,37 @@ const QUESTIONS = [
     },
     guide: "Sciage du bois\nTransformation du bois dans une scierie\nProduction de madriers\nProduction de planches\nÉquarrissage du bois",
     updatedAt: "2026-06-15T15:40:32.605Z"
+  },
+  {
+    id: "Q451",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de la transformation du bois sur les emplois au Bas-Canada au début des années 1800.",
+    aspects: [
+      {
+        aspect: "Commerce du bois"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "bois_emplois.png",
+            soustitre: "Évolution du nombre de travailleurs dans l'industrie du bois au Bas-Canada entre 1800 et 1840",
+            source: "Données adaptées de Fernand Ouellet, Histoire économique et sociale du Québec, 1760-1850."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "cause-consequence"
+    },
+    guide: "Création d'emplois\nAugmentation du nombre de travailleurs\nHausse de l'emploi dans l'industrie du bois\nPlus de personnes travaillent dans les scieries et les chantiers forestiers",
+    updatedAt: "2026-06-15T16:34:44.834Z"
   }
 ]
