@@ -18649,7 +18649,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P2 — 1608 – 1760",
     points: 3,
-    enonce: "Expliquez comment les mesures mises en place par les autorités coloniales contribuent au développement économique de la Nouvelle-France.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• une mesure mise en place par les autorités coloniales\n• une activité artisanale qui se développe\n• une conséquence sur le développement économique de la colonie",
+    enonce: "Expliquez comment les mesures mises en place par les autorités coloniales contribuent au développement économique de la Nouvelle-France.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une mesure mise en place par les autorités coloniales\n• une activité artisanale qui se développe\n• une conséquence sur le développement économique de la colonie",
     aspects: [
       {
         aspect: "Diversification économique"
@@ -18692,7 +18692,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 3
     },
-    guide: "Les autorités coloniales investissent dans plusieurs projets économiques (une mesure mise en place par les autorités coloniales). Cette intervention favorise le développement du travail du fer aux Forges du Saint-Maurice (une activité artisanale qui se développe). L'apparition de cette nouvelle activité contribue à diversifier les activités économiques de la colonie (une conséquence sur la diversification de l'économie de la colonie)."
+    guide: "Les autorités coloniales investissent dans plusieurs projets économiques (une mesure mise en place par les autorités coloniales). Cette intervention favorise le développement du travail du fer aux Forges du Saint-Maurice (une activité artisanale qui se développe). L'apparition de cette nouvelle activité contribue à diversifier les activités économiques de la colonie (une conséquence sur la diversification de l'économie de la colonie).",
+    updatedAt: "2026-06-15T12:31:13.778Z"
   },
   {
     id: "Q207",
