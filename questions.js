@@ -9253,6 +9253,28 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q457": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -29415,5 +29437,49 @@ const QUESTIONS = [
     },
     guide: "La Grande-Bretagne accorde des tarifs préférentiels au bois provenant de ses colonies (une mesure). Cette politique augmente la demande pour le bois du Bas-Canada (une ressource en demande). L'essor du commerce du bois favorise alors le développement de la construction navale, une industrie en croissance dans la colonie (une industrie liée au bois en croissance).",
     updatedAt: "2026-06-15T17:04:33.295Z"
+  },
+  {
+    id: "Q457",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs sur une mesure économique liée au commerce du bois. Sur quel point précis sont-ils d'accord?",
+    aspects: [
+      {
+        aspect: "Commerce du bois"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les tarifs préférentiels accordés au bois provenant des colonies permettent à la Grande-Bretagne d'assurer son approvisionnement en ressources forestières. »",
+            auteur: "Lord Liverpool",
+            source: "Adapté d'une politique commerciale britannique du début du XIXe siècle."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les droits de douane réduits sur le bois colonial favorisent les échanges commerciaux et augmentent les profits liés au commerce du bois. »",
+            auteur: "William Molson",
+            source: "Adapté des écrits de marchands britanniques établis à Québec ou à Montréal."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le gouvernement britannique et les marchands britanniques sont favorables à l'octroi de tarifs préférentiels sur le bois provenant des colonies.",
+    updatedAt: "2026-06-15T17:15:28.904Z"
   }
 ]
