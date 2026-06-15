@@ -27538,10 +27538,11 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "cause-consequence"
+      type: "lignes",
+      nombre: 2
     },
-    guide: "Le mécontentement envers le gouvernement colonial.\nLe pouvoir du Conseil législatif.\nLe refus de la responsabilité ministérielle.\nLe manque de pouvoir de la Chambre d'assemblée.\nLes revendications des Patriotes pour obtenir des réformes politiques.",
-    updatedAt: "2026-06-15T17:47:15.606Z"
+    guide: "Le mécontentement envers le gouvernement colonial\nLe pouvoir du Conseil législatif\nLe refus de la responsabilité ministérielle\nLe manque de pouvoir de la Chambre d'assemblée\nLes revendications des Patriotes pour obtenir des réformes politiques",
+    updatedAt: "2026-06-15T17:48:28.647Z"
   },
   {
     id: "Q409",
