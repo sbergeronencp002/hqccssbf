@@ -27531,6 +27531,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "org_pol_1791_acte_const.png",
+            soustitre: "Organisation politique du Haut-Canada et du Bas-Canada après 1791",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
@@ -27540,7 +27541,7 @@ const QUESTIONS = [
       type: "cause-consequence"
     },
     guide: "Le mécontentement envers le gouvernement colonial.\nLe pouvoir du Conseil législatif.\nLe refus de la responsabilité ministérielle.\nLe manque de pouvoir de la Chambre d'assemblée.\nLes revendications des Patriotes pour obtenir des réformes politiques.",
-    updatedAt: "2026-06-12T15:31:29.091Z"
+    updatedAt: "2026-06-15T17:45:09.844Z"
   },
   {
     id: "Q409",
