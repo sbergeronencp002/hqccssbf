@@ -17748,7 +17748,7 @@ const QUESTIONS = [
       nombre: 4
     },
     guide: "La Compagnie des Cent-Associés est responsable du peuplement de la colonie (une responsabilité de la Compagnie des Cent-Associés). Comme la population demeure faible en Nouvelle-France (une difficulté rencontrée dans le développement de la colonie), le roi de France instaure le gouvernement royal en 1663 (une intervention du roi de France en 1663).",
-    updatedAt: "2026-06-15T14:55:57.242Z"
+    updatedAt: "2026-06-15T15:16:02.281Z"
   },
   {
     id: "Q177",
