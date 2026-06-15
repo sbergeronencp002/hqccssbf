@@ -19993,7 +19993,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P3 — 1760 – 1791",
     points: 3,
-    enonce: "Expliquez comment une action d'un chef autochtone influence les décisions prises par les autorités britanniques concernant les territoires nord-américains.\n\nRépondez à la question en précisant :\n\n• une action d'un chef autochtone\n• un droit reconnu aux Autochtone par la Proclamation royale\n• un effet sur les territoires britanniques nord-américains",
+    enonce: "Expliquez comment une action d'un chef autochtone influence les décisions prises par les autorités britanniques concernant les territoires nord-américains.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une action d'un chef autochtone\n• un droit reconnu aux Autochtone par la Proclamation royale\n• un effet sur les territoires britanniques nord-américains",
     aspects: [
       {
         aspect: "Proclamation royale"
@@ -20039,7 +20039,7 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "La révolte menée par Pontiac (une action d'un chef autochtone) pousse les autorités britanniques à reconnaître certains droits territoriaux aux Autochtones dans la Proclamation royale (un droit reconnu aux Autochtones). Cette décision entraîne la création d'un territoire réservé aux Autochtones (un effet sur les territoires britanniques nord-américains).",
-    updatedAt: "2026-06-06T20:58:01.074Z"
+    updatedAt: "2026-06-15T12:30:39.086Z"
   },
   {
     id: "Q241",
