@@ -15206,7 +15206,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P2 — 1608 – 1760",
     points: 3,
-    enonce: "Expliquez comment la destruction de la Huronie entraîne un changement dans l’occupation du territoire par les Hurons-Wendats au 17e siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• un conflit impliquant les Haudenosaunee (Iroquois)\n• une conséquence territoriale chez les Hurons-Wendats\n• une région d’accueil des populations déplacées",
+    enonce: "Expliquez comment la destruction de la Huronie entraîne un changement dans l’occupation du territoire par les Hurons-Wendats au 17e siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un conflit impliquant les Haudenosaunee (Iroquois)\n• une conséquence territoriale chez les Hurons-Wendats\n• une région d’accueil des populations déplacées",
     aspects: [
       {
         aspect: "Guerre et diplomatie chez les Premières Nations"
@@ -15250,7 +15250,7 @@ const QUESTIONS = [
       nombre: 5
     },
     guide: "Au milieu du 17e siècle, les Haudenosaunee (Iroquois) attaquent les villages hurons afin de contrôler le commerce des fourrures (un conflit impliquant les Haudenosaunee (Iroquois)). Ces conflits entraînent la destruction de la Huronie en 1648-1649 et forcent plusieurs Hurons-Wendats à abandonner leur territoire (une conséquence territoriale chez les Hurons-Wendats). Une partie des survivants se réfugie près de Québec, notamment dans la région de Lorette (une région d’accueil des populations déplacées).",
-    updatedAt: "2026-06-09T16:15:16.563Z"
+    updatedAt: "2026-06-15T12:24:47.039Z"
   },
   {
     id: "Q129",
