@@ -9169,6 +9169,23 @@ const REGLETTES = {
       "0 point"
     ],
     niveaux: []
+  },
+  "Q453": {
+    oi: "Situer dans l'espace",
+    colonnes: [
+      "2 points",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève situe les faits dans l'espace."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas les faits dans l'espace."
+      }
+    ]
   }
 }
 
@@ -9866,6 +9883,9 @@ const IMAGE_DB = {
     src: "images/bois_emplois_1840.png",
     w: 1200,
     h: 900
+  },
+  "territoire_bois_exploitation.png": {
+    src: "images/territoire_bois_exploitation.png"
   }
 }
 
@@ -29150,5 +29170,52 @@ const QUESTIONS = [
     },
     guide: "Changement\nIl y a changement, car entre 1800 et 1840, le nombre de travailleurs liés à l'industrie du bois augmente, passant d'environ 2 500 à 14 000.\nou\nIl y a changement, car entre 1800 et 1840, les métiers liés à l'industrie du bois occupent un nombre beaucoup plus élevé de travailleurs.\n\nContinuité\nIl y a continuité, car en 1800 comme en 1840, les bûcherons constituent le groupe de travailleurs le plus nombreux dans l'industrie du bois.\nou\nIl y a continuité, car les bûcherons demeurent les principaux travailleurs de l'industrie du bois entre 1800 et 1840.",
     updatedAt: "2026-06-15T16:41:42.683Z"
+  },
+  {
+    id: "Q453",
+    niveau: 3,
+    oi: "Situer dans l'espace",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Situer 2 éléments",
+    enonce: "À partir du dodument A, indiquez la lettre qui correspond aux régions exploitées pour le commerce du bois au Bas-Canada : \n• Saguenay\n• Vallée de l'Outaouais",
+    aspects: [
+      {
+        aspect: "Commerce du bois"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "territoire_bois_exploitation.png",
+            source: "Carte du Québec. Adaptée d'après d-maps.com."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: [
+        "Saguenay",
+        "Vallée de l'Outaouais"
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: [
+        "Saguenay",
+        "Vallée de l'Outaouais"
+      ],
+      rangees: [
+        [
+          "B",
+          "A"
+        ]
+      ]
+    },
+    updatedAt: "2026-06-15T16:49:48.089Z"
   }
 ]
