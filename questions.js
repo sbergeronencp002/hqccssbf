@@ -10125,6 +10125,50 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
       }
     ]
+  },
+  "Q499": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
+  },
+  "Q500": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -10869,6 +10913,11 @@ const IMAGE_DB = {
     src: "images/gouverneur_veto.png",
     w: 1200,
     h: 658
+  },
+  "bois_emplois_1800-1840.png": {
+    src: "images/bois_emplois_1800-1840.png",
+    w: 1200,
+    h: 800
   }
 }
 
@@ -31894,5 +31943,71 @@ const QUESTIONS = [
     },
     guide: "Le gouverneur conserve le pouvoir de refuser des projets de loi pendant toute la période.\nLe gouverneur continue d'exercer son droit de veto entre 1792 et 1838.\nLe gouverneur maintient son autorité sur les lois adoptées par la Chambre d'assemblée.",
     updatedAt: "2026-06-16T18:36:37.578Z"
+  },
+  {
+    id: "Q499",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence du commerce du bois sur les emplois dans la colonie.",
+    aspects: [
+      {
+        aspect: "Commerce du bois"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "bois_emplois_1800-1840.png",
+            soustitre: "Évolutiin des emplois liés à l’industrie du bois au Bas-Canada entre 1800 et 1830",
+            source: "Adapté de Fernand Ouellet, Histoire économique et sociale du Québec, 1760-1850, Montréal, Fides."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le commerce du bois crée de nombreux emplois dans la colonie.",
+    updatedAt: "2026-06-16T18:51:58.925Z"
+  },
+  {
+    id: "Q500",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence du commerce du bois sur les emplois dans la colonie.",
+    aspects: [
+      {
+        aspect: "Commerce du bois"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "bois_emplois_1800-1840.png",
+            soustitre: "Évolutiin des emplois liés à l’industrie du bois au Bas-Canada entre 1800 et 1830",
+            source: "Adapté de Fernand Ouellet, Histoire économique et sociale du Québec, 1760-1850, Montréal, Fides."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le commerce du bois crée de nombreux emplois dans la colonie.",
+    updatedAt: "2026-06-16T18:53:18.924Z"
   }
 ]
