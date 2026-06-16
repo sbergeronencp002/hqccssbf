@@ -30064,7 +30064,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Divergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux acteurs sur les échanges commerciaux entre la Grande-Bretagne et l'Europe au début du XIXe siècle. Sur quel point précis sont-ils en désaccord?",
+    enonce: "Les documents A et B présentent le point de vue de deux personnages historiques. Sur quel point précis sont-ils en désaccord?",
     aspects: [
       {
         aspect: "Commerce du bois"
@@ -30099,7 +30099,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Le blocus continental.",
-    updatedAt: "2026-06-15T17:17:36.648Z"
+    updatedAt: "2026-06-16T02:59:12.839Z"
   },
   {
     id: "Q459",
