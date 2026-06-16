@@ -9897,6 +9897,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q488": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -31212,5 +31234,36 @@ const QUESTIONS = [
     },
     guide: "Les élus disposent de peu de pouvoir réel\nL'exécutif n'est pas responsable devant les élus\nLes conflits entre l'Assemblée et le gouverneur paralysent le gouvernement\nLe fonctionnement politique est inefficace en raison des tensions entre les institutions",
     updatedAt: "2026-06-16T13:25:46.248Z"
+  },
+  {
+    id: "Q488",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez la principale cause des troubles survenus dans le Bas-Canada en 1837-1838 selon le Rapport Durham.",
+    aspects: [
+      {
+        aspect: "Rapport Durham"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Je trouve dans le Bas-Canada deux nations vivant dans un même État. Les rivalités qui divisent la colonie ne découlent pas principalement de questions politiques, mais de l'opposition entre deux groupes de population d'origine différente. »",
+            source: "Adapté de John George Lambton, comte de Durham, Rapport sur les affaires de l'Amérique du Nord britannique, 1839."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "cause-consequence"
+    },
+    guide: "Le conflit entre Canadiens français et Britanniques\nLes tensions entre les deux groupes de population",
+    updatedAt: "2026-06-16T13:29:45.077Z"
   }
 ]
