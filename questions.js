@@ -29395,7 +29395,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Similitude",
-    enonce: "Les documents A et B présentent la situation de deux compagnies de fourrures vers 1820. Indiquez une similitude entre ces deux compagnies.",
+    enonce: "Les documents A et B présentent la situation économique de deux compagnies de fourrures vers 1820. Indiquez une similitude entre ces deux compagnies.",
     aspects: [
       {
         aspect: "Commerce des fourrures"
@@ -29408,6 +29408,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             texte: "« La multiplication des postes de traite et la concurrence dans les territoires de l'Ouest entraînent des dépenses considérables pour notre compagnie. »",
+            soustitre: "Compagnie du Nord-Ouest",
             source: "Adapté de la correspondance de George Simpson, vers 1820."
           }
         ]
@@ -29418,6 +29419,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             texte: "« Les coûts associés au maintien des postes de traite et au transport des marchandises réduisent les bénéfices de notre entreprise. »",
+            soustitre: "Compagnie de la Baie d'Hudson",
             source: "Adapté de la correspondance de William McGillivray, vers 1820."
           }
         ]
@@ -29428,7 +29430,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "La Compagnie de la Baie d'Hudson et la Compagnie du Nord-Ouest éprouvent des difficultés financières\nLes deux compagnies font face à des dépenses élevées\nLes deux compagnies voient leurs coûts augmenter\nLes deux compagnies ont des problèmes de rentabilité\nLes deux compagnies subissent les conséquences de la concurrence",
-    updatedAt: "2026-06-15T13:43:21.088Z"
+    updatedAt: "2026-06-16T03:00:47.730Z"
   },
   {
     id: "Q443",
