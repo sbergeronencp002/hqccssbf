@@ -10014,6 +10014,34 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q493": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -10737,6 +10765,9 @@ const IMAGE_DB = {
   },
   "rapport_durham_recommendations.png": {
     src: "images/rapport_durham_recommendations.png"
+  },
+  "population_bas-canada_1735.png": {
+    src: "images/population_bas-canada_1735.png"
   }
 }
 
@@ -31547,5 +31578,57 @@ const QUESTIONS = [
     },
     guide: "Au Bas-Canada, les élus contrôlent peu le gouvernement (problème observé dans le fonctionnement des institutions). Cette situation provoque des tensions politiques entre l'Assemblée et les autorités coloniales (conséquence politique). Durham recommande donc la responsabilité ministérielle pour donner davantage d'influence aux représentants élus (recommandation formulée par Durham).",
     updatedAt: "2026-06-16T13:59:13.287Z"
+  },
+  {
+    id: "Q493",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    enonce: "Expliquez comment l'analyse de la situation du Bas-Canada amène Durham à proposer une solution aux tensions qui divisent la colonie.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une caractéristique de la population du Bas-Canada\n• un problème identifié par Durham\n• une mesure proposée dans son rapport",
+    aspects: [
+      {
+        aspect: "Rapport Durham"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "population_bas-canada_1735.png",
+            soustitre: "Composition de la population du Bas-Canada vers 1835",
+            source: "Adapté de John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec, Septentrion."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les divisions qui opposent les habitants de la colonie constituent, selon Durham, la principale cause des difficultés observées dans le Bas-Canada. »",
+            source: "Adapté du Rapport Durham, 1839."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Pour assurer l'harmonie dans la colonie, Durham estime que les Canadiens français devraient progressivement adopter la langue et les institutions de la population britannique. »",
+            source: "Adapté du Rapport Durham, 1839."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 5
+    },
+    guide: "Au Bas-Canada, les Canadiens français sont majoritaires, mais une minorité britannique est aussi présente (caractéristique de la population). Selon Durham, les différences entre ces deux groupes causent des tensions dans la colonie (problème identifié par Durham). Il recommande donc l’assimilation des Canadiens français à la population britannique (solution proposée).",
+    updatedAt: "2026-06-16T14:13:03.376Z"
   }
 ]
