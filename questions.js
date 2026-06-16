@@ -9858,6 +9858,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q486": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -31110,5 +31127,36 @@ const QUESTIONS = [
     },
     guide: "La mise en place de la responsabilité ministérielle ou le gouvernement responsable.",
     updatedAt: "2026-06-16T03:14:40.174Z"
+  },
+  {
+    id: "Q486",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez un problème politique observé par Durham concernant le fonctionnement politique du Bas-Canada.",
+    aspects: [
+      {
+        aspect: "Rapport Durham"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Malgré l'appui de la majorité des députés, plusieurs projets proposés par l'Assemblée sont régulièrement rejetés par les autorités coloniales. Cette impasse contribue à la détérioration du climat politique au Bas-Canada. »",
+            source: "François-Xavier Garneau, Histoire du Canada."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les élus n'ont pas le contrôle du gouvernement\nLe gouverneur détient trop de pouvoir\nL'absence de responsabilité ministérielle\nLes conflits entre l'Assemblée et l'exécutif",
+    updatedAt: "2026-06-16T13:18:41.855Z"
   }
 ]
