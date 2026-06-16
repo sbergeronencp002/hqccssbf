@@ -31359,10 +31359,11 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "cause-consequence"
+      type: "lignes",
+      nombre: 2
     },
     guide: "Le conflit entre Canadiens français et Britanniques\nLes tensions entre les deux groupes de population",
-    updatedAt: "2026-06-16T13:29:45.077Z"
+    updatedAt: "2026-06-16T13:59:54.724Z"
   },
   {
     id: "Q489",
