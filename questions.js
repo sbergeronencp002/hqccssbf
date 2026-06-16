@@ -28890,7 +28890,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 3,
     soustag: "Position – 3 acteurs",
-    enonce: "Le document présente la position de trois acteurs à l'égard des Corn Laws adoptées par la Grande-Bretagne au début du XIXe siècle. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+    enonce: "Le document présente la position de trois acteurs à l'égard de certaines politiques économiques adoptées par la Grande-Bretagne au début du XIXe siècle. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
     aspects: [
       {
         aspect: "Agriculture"
@@ -28933,7 +28933,7 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Le producteur de blé américain s'oppose aux tarifs préférentiels accordés au blé colonial (la différence), alors que John Richardson et George Moffatt les appuient (la similitude).",
-    updatedAt: "2026-06-14T13:12:17.279Z"
+    updatedAt: "2026-06-16T03:06:00.592Z"
   },
   {
     id: "Q430",
