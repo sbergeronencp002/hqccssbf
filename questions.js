@@ -9697,6 +9697,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q478": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -30656,5 +30678,36 @@ const QUESTIONS = [
     },
     guide: "Ils servent dans la milice\nIls participent à la défense de la colonie\nIls prennent part aux combats",
     updatedAt: "2026-06-16T00:41:59.924Z"
+  },
+  {
+    id: "Q478",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    enonce: "Indiquez un changement dans le sentiment d'appartenance de plusieurs Canadiens à la suite de la guerre de 1812.",
+    aspects: [
+      {
+        aspect: "Guerre anglo-américaine de 1812"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La victoire contre les États-Unis renforce chez plusieurs habitants du Bas-Canada le sentiment d'avoir contribué à la défense de leur colonie et d'appartenir à une même collectivité. »",
+            source: "Adapté de Allan Greer, Patriotes et loyaux."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le sentiment d'appartenance à la colonie se renforce\nPlusieurs Canadiens sont davantage fiers d'avoir défendu leur colonie\nPlusieurs Canadiens développent un sentiment national plus fort",
+    updatedAt: "2026-06-16T00:42:54.701Z"
   }
 ]
