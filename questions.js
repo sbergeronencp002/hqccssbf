@@ -27556,7 +27556,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 3,
     soustag: "Position – 3 acteurs",
-    enonce: "Le document présente la position de trois acteurs concernant les moyens utilisés pour répondre aux tensions politiques dans le Bas-Canada. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+    enonce: "Lea documents A à C présentent la position de trois acteurs concernant les moyens utilisés pour répondre aux tensions politiques dans le Bas-Canada. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
     aspects: [
       {
         aspect: "Soulèvements de 1837-1838"
@@ -27602,7 +27602,7 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "John Colborne souhaite réprimer les contestations par la force militaire (la différence), alors que Louis-Joseph Papineau et Wolfred Nelson s'opposent aux mesures prises par le gouvernement colonial (la similitude).",
-    updatedAt: "2026-06-12T03:57:18.112Z"
+    updatedAt: "2026-06-16T03:08:34.675Z"
   },
   {
     id: "Q399",
