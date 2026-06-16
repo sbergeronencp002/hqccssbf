@@ -27512,7 +27512,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent la position de deux acteurs concernant l'organisation politique des colonies britanniques. Nommez le point sur lequel ces acteurs sont d'accord.",
+    enonce: "Les documents A et B présentent la position de deux acteurs. Sur quel point précis sont-ils d’accord?",
     aspects: [
       {
         aspect: "Soulèvements de 1837-1838"
@@ -27547,7 +27547,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Louis-Joseph Papineau et William Lyon Mackenzie souhaitent accorder davantage de pouvoir aux représentants élus (la similitude).",
-    updatedAt: "2026-06-12T03:52:04.887Z"
+    updatedAt: "2026-06-16T03:10:07.890Z"
   },
   {
     id: "Q398",
