@@ -10064,6 +10064,28 @@ const REGLETTES = {
       "0 point"
     ],
     niveaux: []
+  },
+  "Q496": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -10798,6 +10820,11 @@ const IMAGE_DB = {
     src: "images/exportations_bas-canada.png",
     w: 1200,
     h: 844
+  },
+  "bois_exportations_bas-canada.png": {
+    src: "images/bois_exportations_bas-canada.png",
+    w: 1200,
+    h: 687
   }
 }
 
@@ -31726,5 +31753,38 @@ const QUESTIONS = [
     },
     guide: "Changement\nIl y a changement puisque le bois passe de 15 % des exportations en 1800 à 65 % en 1840.\nIl y a changement puisque les fourrures passent de 45 % des exportations en 1800 à 10 % en 1840.\n\nContinuité\nIl y a continuité puisque le Bas-Canada exporte encore du blé et de la farine en 1800 et en 1840.\nIl y a continuité puisque les autres produits représentent 10 % des exportations en 1800 et en 1840.",
     updatedAt: "2026-06-16T18:12:54.764Z"
+  },
+  {
+    id: "Q496",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Changement",
+    enonce: "À partir du document A, indiquez un élément de changement concernant la destination des exportations de bois du Bas-Canada entre 1800 et 1840.",
+    aspects: [
+      {
+        aspect: "Commerce du bois"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "bois_exportations_bas-canada.png",
+            soustitre: "Destinations des exportations du Bas-Canada, 1800 à 1840",
+            source: "Adapté de Fernand Ouellet, Histoire économique et sociale du Québec, 1760-1850, Montréal, Fides, 1966."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Il y a changement puisque la part des exportations de bois destinées à la Grande-Bretagne augmente entre 1800 (70 %) et 1840 (90 %).",
+    updatedAt: "2026-06-16T18:18:57.322Z"
   }
 ]
