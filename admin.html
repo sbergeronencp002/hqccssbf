@@ -1874,9 +1874,13 @@ function renderDashboard() {
     }
     const m = {};
     inP.forEach(q => { if(!m[q.oi]) m[q.oi] = { q:0, pts:0 }; m[q.oi].q++; m[q.oi].pts += q.points||0; });
+    const totalInP = inP.length;
     const rows = Object.entries(m)
       .sort((a,b) => b[1].q - a[1].q || a[0].localeCompare(b[0], 'fr'))
-      .map(([oi,v]) => `<div class="dash-sub-row"><span class="dash-sub-label" title="${escHtml(oi)}">${escHtml(oi)}</span><span class="dash-sub-count">${v.q}q · ${v.pts}pts</span></div>`)
+      .map(([oi,v]) => {
+        const pct = Math.round(v.q / totalInP * 100);
+        return `<div class="dash-sub-row"><span class="dash-sub-label" title="${escHtml(oi)}">${escHtml(oi)}</span><span class="dash-sub-count">${pct}% · ${v.q}q · ${v.pts}pts</span></div>`;
+      })
       .join('');
     const nOi = Object.keys(m).length;
     const head = `<div class="dash-sub-row" style="margin-bottom:.3rem"><span class="dash-sub-label" style="font-weight:600;color:var(--ink-3)">${nOi} OI</span></div>`;
