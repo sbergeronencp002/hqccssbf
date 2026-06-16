@@ -9403,6 +9403,23 @@ const REGLETTES = {
         desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
       }
     ]
+  },
+  "Q464": {
+    oi: "Situer dans l'espace",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe le fait dans l'espace."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas le fait dans l'espace."
+      }
+    ]
   }
 }
 
@@ -10111,6 +10128,11 @@ const IMAGE_DB = {
   },
   "grosse_ile_station_quarantaine.png": {
     src: "images/grosse_ile_station_quarantaine.png"
+  },
+  "territoire_immigration_1820.png": {
+    src: "images/territoire_immigration_1820.png",
+    w: 927,
+    h: 1200
   }
 }
 
@@ -29852,5 +29874,36 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-15T23:59:44.570Z"
+  },
+  {
+    id: "Q464",
+    niveau: 3,
+    oi: "Situer dans l'espace",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    soustag: "Situer 1 élément",
+    enonce: "À partir du document A, indiquez la lettre qui correspond à une région où s'établissent de nombreux immigrants britanniques dans la première moitié du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Mouvements migratoires"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "territoire_immigration_1820.png",
+            source: "Carte du Québec. Adaptée d'après d-maps.com."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau_2col"
+    },
+    guide: "A",
+    updatedAt: "2026-06-16T00:06:47.984Z"
   }
 ]
