@@ -30530,7 +30530,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux acteurs sur un enjeu territorial. Sur quel point précis sont-ils d'accord?",
+    enonce: "Les documents A et B présentent le point de vue de deux personnages historiques. Sur quel point précis sont-ils d'accord?",
     aspects: [
       {
         aspect: "Mouvements migratoires"
@@ -30565,7 +30565,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "L'ouverture de nouvelles régions de colonisation au Bas-Canada.",
-    updatedAt: "2026-06-16T00:32:58.178Z"
+    updatedAt: "2026-06-16T02:55:59.065Z"
   },
   {
     id: "Q472",
