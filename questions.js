@@ -30108,7 +30108,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 3,
     soustag: "Position – 3 acteurs",
-    enonce: "Les documents A à C  présentent la position de trois acteurs sur une mesure économique liée au commerce du bois. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+    enonce: "Les documents A à C  présentent la position de trois acteurs sur les tarifs préférentiels. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
     aspects: [
       {
         aspect: "Commerce du bois"
@@ -30153,8 +30153,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 3
     },
-    guide: "Le marchand américain s'oppose aux tarifs préférentiels accordés au bois colonial, alors que George Prevost et John Molson y sont favorables.",
-    updatedAt: "2026-06-15T17:26:51.315Z"
+    guide: "Le marchand américain s'oppose aux tarifs préférentiels accordés au bois pas la Grande-Bretagne, alors que George Prevost et John Molson y sont favorables.",
+    updatedAt: "2026-06-16T02:58:12.653Z"
   },
   {
     id: "Q460",
