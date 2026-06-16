@@ -30618,7 +30618,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 3,
     soustag: "Position – 3 acteurs",
-    enonce: "Lea documents A à C présentent le point de vue de trois acteurs sur la station de quarantaine. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+    enonce: "Lea documents A à C présentent le point de vue de trois acteurs sur les mouvements migratoires. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
     aspects: [
       {
         aspect: "Mouvements migratoires"
@@ -30663,8 +30663,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 3
     },
-    guide: "L'immigrant britannique s'oppose à la quarantaine (la différence), alors que le médecin de la station de quarantaine et l'administrateur colonial y sont favorables (la similitude).",
-    updatedAt: "2026-06-16T00:35:58.023Z"
+    guide: "L'immigrant britannique s'oppose à la station quarantaine (la différence), alors que le médecin de la station de quarantaine et l'administrateur colonial y sont favorables (la similitude).",
+    updatedAt: "2026-06-16T02:55:17.876Z"
   },
   {
     id: "Q474",
