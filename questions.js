@@ -10103,6 +10103,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q498": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la continuité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la continuité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -10842,6 +10864,11 @@ const IMAGE_DB = {
     src: "images/bois_exportations_bas-canada.png",
     w: 1200,
     h: 687
+  },
+  "gouverneur_veto.png": {
+    src: "images/gouverneur_veto.png",
+    w: 1200,
+    h: 658
   }
 }
 
@@ -31834,5 +31861,38 @@ const QUESTIONS = [
     },
     guide: "Les réserves du clergé.",
     updatedAt: "2026-06-16T18:26:38.534Z"
+  },
+  {
+    id: "Q498",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Continuité",
+    enonce: "Indiquez un élément de continuité concernant le pouvoir du gouverneur sur les projets de loi adoptés par la Chambre d'assemblée entre 1792 et 1838.",
+    aspects: [
+      {
+        aspect: "Débats parlementaires"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "gouverneur_veto.png",
+            soustitre: "Activité législative et refus du gouverneur au Bas-Canada  entre 1792 et 1838",
+            source: "Adapté de données sur les relations entre la Chambre d’assemblée du Bas-Canada et le gouverneur britannique sous le régime de l’Acte constitutionnel (1791-1838)."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le gouverneur conserve le pouvoir de refuser des projets de loi pendant toute la période.\nLe gouverneur continue d'exercer son droit de veto entre 1792 et 1838.\nLe gouverneur maintient son autorité sur les lois adoptées par la Chambre d'assemblée.",
+    updatedAt: "2026-06-16T18:36:37.578Z"
   }
 ]
