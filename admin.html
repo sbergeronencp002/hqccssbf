@@ -130,8 +130,12 @@ header a:hover { color: #fff; }
 .dash-row-clickable.open .dash-chevron { transform:rotate(180deg); }
 .dash-period-detail { margin:.15rem 0 .55rem 1rem; padding-left:.6rem; border-left:2px solid var(--paper-3); }
 .dash-sub-row { display:flex; align-items:center; gap:.5rem; margin-bottom:.2rem; }
-.dash-sub-label { font-size:.68rem; color:var(--ink-2); flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-.dash-sub-count { font-size:.66rem; color:var(--ink-3); white-space:nowrap; min-width:46px; text-align:right; }
+.dash-sub-label { font-size:.68rem; color:var(--ink-2); flex:0 0 auto; width:160px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.dash-sub-bar-wrap { flex:1; background:var(--paper-3); border-radius:3px; height:5px; overflow:hidden; min-width:20px; }
+.dash-sub-bar { height:100%; border-radius:3px; transition:width .4s ease; }
+.dash-sub-count { font-size:.66rem; color:var(--ink-3); white-space:nowrap; min-width:80px; text-align:right; }
+.dash-n4-toggle { font-size:.7rem; color:var(--ink-3); cursor:pointer; border:none; background:none; padding:0; margin-bottom:.3rem; text-decoration:underline dotted; }
+.dash-n4-toggle:hover { color:var(--ink-1); }
 
 .rich-toolbar { display:flex; gap:4px; margin-bottom:10px; }
 .rich-toolbar button { font-size:.75rem; padding:2px 8px; border:1px solid var(--border); border-radius:4px; background:var(--paper-2); cursor:pointer; color:var(--ink); }
@@ -1867,7 +1871,7 @@ function renderDashboard() {
   const n4 = periodes.slice(4,8);
 
   // Répartition par OI pour une période donnée (dépliée au clic), triée par nombre
-  function periodeDetailHtml(periode) {
+  function periodeDetailHtml(periode, color) {
     const inP = currentQuestions.filter(x => x.periode === periode);
     if(!inP.length) {
       return '<div class="dash-period-detail" style="display:none"><div class="dash-sub-row"><span class="dash-sub-label" style="font-style:italic;color:var(--ink-3)">Aucune question</span></div></div>';
@@ -1879,7 +1883,7 @@ function renderDashboard() {
       .sort((a,b) => b[1].q - a[1].q || a[0].localeCompare(b[0], 'fr'))
       .map(([oi,v]) => {
         const pct = Math.round(v.q / totalInP * 100);
-        return `<div class="dash-sub-row"><span class="dash-sub-label" title="${escHtml(oi)}">${escHtml(oi)}</span><span class="dash-sub-count">${pct}% · ${v.q}q · ${v.pts}pts</span></div>`;
+        return `<div class="dash-sub-row"><span class="dash-sub-label" title="${escHtml(oi)}">${escHtml(oi)}</span><div class="dash-sub-bar-wrap"><div class="dash-sub-bar" style="width:${pct}%;background:${color}"></div></div><span class="dash-sub-count">${pct}% · ${v.q}q · ${v.pts}pts</span></div>`;
       })
       .join('');
     const nOi = Object.keys(m).length;
@@ -1906,7 +1910,7 @@ function renderDashboard() {
           <div class="dash-count">${pct}% · ${c.q}q · ${c.pts}pts</div>
           <span class="dash-chevron">▾</span>
         </div>
-        ${periodeDetailHtml(c.p)}
+        ${periodeDetailHtml(c.p, color)}
       </div>`;
     }).join('');
   }
@@ -1939,14 +1943,23 @@ function renderDashboard() {
         ${barRows(n3, '#1B3B6F')}
       </div>
       <div>
-        <div class="dash-niv-title">Niveau 4 — ${n4Total.length}q · ${n4Total.reduce((s,q)=>s+(q.points||0),0)}pts</div>
-        ${barRows(n4, '#6B3FA0')}
+        <button class="dash-n4-toggle" onclick="toggleN4(this)">▶ Niveau 4 — ${n4Total.length}q · ${n4Total.reduce((s,q)=>s+(q.points||0),0)}pts</button>
+        <div id="dash-n4-content" style="display:none">
+          ${barRows(n4, '#6B3FA0')}
+        </div>
       </div>
     </div>
     <hr class="dash-divider">
     <div class="dash-niv-title">Par opération intellectuelle</div>
     ${oiRows}
   `;
+}
+
+function toggleN4(btn) {
+  const content = document.getElementById('dash-n4-content');
+  const hidden = content.style.display === 'none';
+  content.style.display = hidden ? '' : 'none';
+  btn.textContent = (hidden ? '▼ ' : '▶ ') + btn.textContent.slice(2);
 }
 
 // Déplie/replie la répartition par OI sous une période du tableau de bord
