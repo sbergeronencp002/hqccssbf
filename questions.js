@@ -23526,7 +23526,7 @@ const QUESTIONS = [
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
     aspects: [
       {
-        aspect: "Guerre anglo-américaine de 1812"
+        aspect: "Capitaux et infrastructures"
       }
     ],
     documents: [
@@ -23547,7 +23547,7 @@ const QUESTIONS = [
       ref: "ligne_1790-1850.png"
     },
     guide: "C",
-    updatedAt: "2026-06-09T00:40:08.089Z"
+    updatedAt: "2026-06-16T00:37:02.022Z"
   },
   {
     id: "Q305",
