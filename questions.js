@@ -10918,6 +10918,11 @@ const IMAGE_DB = {
     src: "images/bois_emplois_1800-1840.png",
     w: 1200,
     h: 800
+  },
+  "bois_navires.png": {
+    src: "images/bois_navires.png",
+    w: 1200,
+    h: 800
   }
 }
 
@@ -31984,7 +31989,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Conséquence",
-    enonce: "Indiquez une conséquence du commerce du bois sur les emplois dans la colonie.",
+    enonce: "Indiquez une conséquence du développement du commerce du bois sur la construction navale au Bas-Canada.",
     aspects: [
       {
         aspect: "Commerce du bois"
@@ -31996,9 +32001,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "bois_emplois_1800-1840.png",
-            soustitre: "Évolutiin des emplois liés à l’industrie du bois au Bas-Canada entre 1800 et 1830",
-            source: "Adapté de Fernand Ouellet, Histoire économique et sociale du Québec, 1760-1850, Montréal, Fides."
+            ref: "bois_navires.png",
+            soustitre: "Nombre de navires construits au Bas-Canada entre 1800 et 1840",
+            source: "Adapté de Serge Courville, Histoire du Québec : un parcours, Québec, Éditions CEC."
           }
         ]
       }
@@ -32007,7 +32012,7 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Le commerce du bois crée de nombreux emplois dans la colonie.",
-    updatedAt: "2026-06-16T18:53:18.924Z"
+    guide: "Le nombre de navires construits augmente.\nLa construction navale se développe.\nLes chantiers navals emploient davantage de travailleurs.",
+    updatedAt: "2026-06-16T18:59:54.039Z"
   }
 ]
