@@ -9658,6 +9658,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q476": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la continuité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la continuité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -30544,5 +30566,47 @@ const QUESTIONS = [
     },
     guide: "Préserver les privilèges accordés à l'Église catholique\nMaintenir la liberté de religion accordée par les Britanniques",
     updatedAt: "2026-06-16T00:39:56.568Z"
+  },
+  {
+    id: "Q476",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Continuité",
+    enonce: "Indiquez un élément de continuité dans les relations entre l'Église catholique et le gouvernement britannique avant et pendant la guerre de 1812.",
+    aspects: [
+      {
+        aspect: "Guerre anglo-américaine de 1812"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Depuis l'Acte de Québec de 1774, les autorités britanniques permettent à l'Église catholique de pratiquer librement sa religion et de percevoir la dîme dans la colonie. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Durant la guerre de 1812, Mgr Plessis invite les fidèles à demeurer loyaux envers les autorités britanniques et à soutenir la défense de la colonie. »",
+            source: "Adapté de Marcel Trudel, Histoire de la Nouvelle-France."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "L'Église catholique et le gouvernement britannique maintiennent de bonnes relations avant et pendant la guerre de 1812\nL'Église catholique continue d'appuyer les autorités britanniques\nLa collaboration entre l'Église catholique et le gouvernement britannique se poursuit",
+    updatedAt: "2026-06-16T00:41:21.809Z"
   }
 ]
