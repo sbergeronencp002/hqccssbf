@@ -9936,6 +9936,34 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q490": {
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
   }
 }
 
@@ -31316,5 +31344,60 @@ const QUESTIONS = [
     },
     guide: "L'union du Haut-Canada et du Bas-Canada\nRéunir les deux Canadas en une seule colonie",
     updatedAt: "2026-06-16T13:39:19.200Z"
+  },
+  {
+    id: "Q490",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    soustag: "Position – 3 acteurs",
+    enonce: "Les documents A à C présentent la position de trois acteurs sur l'avenir des Canadiens français. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+    aspects: [
+      {
+        aspect: "Rapport Durham"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Pour assurer l'unité et la stabilité de la colonie, il est nécessaire que la population canadienne-française adopte progressivement la langue, les institutions et les habitudes de la population britannique. »",
+            auteur: "John George Lambton",
+            source: "Adapté de John George Lambton, comte de Durham, Rapport sur les affaires de l'Amérique du Nord britannique, 1839."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Un peuple ne doit pas renoncer à sa langue ni à ses traditions. Les Canadiens doivent conserver leur identité nationale et défendre les droits qui leur appartiennent. »",
+            auteur: "Louis-Joseph Papineau",
+            source: "Adapté de Louis-Joseph Papineau, correspondance et écrits politiques, années 1840."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Le développement de notre peuple passe par l'instruction et le travail, mais non par l'abandon de notre langue ou de notre culture. Notre avenir repose sur la préservation de notre caractère national. »",
+            auteur: "Étienne Parent",
+            source: "Adapté d'Étienne Parent, conférences et textes politiques, années 1840."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Durham est favorable à l'assimilation des Canadiens français (la différence), alors que Louis-Joseph Papineau et Étienne Parent s'y oppose.",
+    updatedAt: "2026-06-16T13:50:15.131Z"
   }
 ]
