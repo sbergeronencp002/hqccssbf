@@ -9564,6 +9564,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q472": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -30287,5 +30309,49 @@ const QUESTIONS = [
     },
     guide: "L'ouverture de nouvelles régions de colonisation au Bas-Canada.",
     updatedAt: "2026-06-16T00:27:06.174Z"
+  },
+  {
+    id: "Q472",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Divergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs sur un enjeu migratoire qui touche le Bas-Canada dans les années 1830. Sur quel point précis sont-ils en désaccord?",
+    aspects: [
+      {
+        aspect: "Mouvements migratoires"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les terres sont devenues difficiles à obtenir dans notre région. Plusieurs familles envisagent maintenant de quitter la colonie afin de trouver ailleurs de meilleures possibilités pour assurer leur avenir. »",
+            auteur: "Habitant canadien",
+            source: "Adapté d'une lettre d'un habitant du Bas-Canada, vers 1835."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« De vastes territoires demeurent disponibles dans certaines régions récemment ouvertes. Les habitants devraient être encouragés à s'y établir plutôt qu'à quitter la colonie. »",
+            auteur: "Agent de colonisation",
+            source: "Adapté d'un rapport d'un agent de colonisation du Bas-Canada, vers 1838."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "L'émigration vers les États-Unis.",
+    updatedAt: "2026-06-16T00:30:55.401Z"
   }
 ]
