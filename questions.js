@@ -31210,7 +31210,7 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "L'absence de responsabilité ministérielle entraîne des conflits politiques ou limite le pouvoir des représentants élus.",
-    updatedAt: "2026-06-16T13:25:23.544Z"
+    guide: "Les élus disposent de peu de pouvoir réel\nL'exécutif n'est pas responsable devant les élus\nLes conflits entre l'Assemblée et le gouverneur paralysent le gouvernement\nLe fonctionnement politique est inefficace en raison des tensions entre les institutions",
+    updatedAt: "2026-06-16T13:25:46.248Z"
   }
 ]
