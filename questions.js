@@ -9420,6 +9420,28 @@ const REGLETTES = {
         desc: "L'élève ne situe pas le fait dans l'espace."
       }
     ]
+  },
+  "Q465": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -29905,5 +29927,37 @@ const QUESTIONS = [
     },
     guide: "A",
     updatedAt: "2026-06-16T00:06:47.984Z"
+  },
+  {
+    id: "Q465",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une cause de l’augmentation de la population urbaine dans la première moitié du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Mouvements migratoires"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les principaux centres urbains du Bas-Canada connaissent une forte croissance au XIXe siècle. Une partie de cette augmentation provient du déplacement de la population à l’intérieur même de la colonie. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 3, Septentrion."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Exode rural.\nImmigration britannique.",
+    updatedAt: "2026-06-16T00:09:11.081Z"
   }
 ]
