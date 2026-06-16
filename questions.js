@@ -30020,7 +30020,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux acteurs sur une mesure économique liée au commerce du bois. Sur quel point précis sont-ils d'accord?",
+    enonce: "Les documents A et B présentent le point de vue de deux personnages historiques. Sur quel point précis sont-ils d'accord?",
     aspects: [
       {
         aspect: "Commerce du bois"
@@ -30055,7 +30055,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Les tarifs préférentiels sur le bois colonial.",
-    updatedAt: "2026-06-15T17:19:05.775Z"
+    updatedAt: "2026-06-16T02:58:36.379Z"
   },
   {
     id: "Q458",
