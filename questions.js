@@ -9442,6 +9442,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q466": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -29959,5 +29981,37 @@ const QUESTIONS = [
     },
     guide: "Exode rural.\nImmigration britannique.",
     updatedAt: "2026-06-16T00:09:11.081Z"
+  },
+  {
+    id: "Q466",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une cause de l’augmentation de la population urbaine dans la première moitié du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Mouvements migratoires"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Chaque année, des milliers de nouveaux arrivants débarquent dans les principaux ports du Bas-Canada. Plusieurs choisissent de s’établir dans les villes, où se concentrent les activités commerciales et les emplois. »",
+            source: "Adapté de Serge Courville, Le Québec : genèses et mutations du territoire, Presses de l'Université Laval."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Exode rural.\nImmigration britannique.",
+    updatedAt: "2026-06-16T00:09:53.887Z"
   }
 ]
