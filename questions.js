@@ -31760,8 +31760,8 @@ const QUESTIONS = [
     oi: "Déterminer des changements et des continuités",
     periode: "P4 — 1791 – 1840",
     points: 2,
-    soustag: "Changement",
-    enonce: "À partir du document A, indiquez un élément de changement concernant la destination des exportations de bois du Bas-Canada entre 1800 et 1840.",
+    soustag: "Continuité",
+    enonce: "À partir du document A, indiquez un élément de continuité concernant la destination des exportations de bois du Bas-Canada entre 1800 et 1840.",
     aspects: [
       {
         aspect: "Commerce du bois"
@@ -31784,7 +31784,7 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Il y a changement puisque la part des exportations de bois destinées à la Grande-Bretagne augmente entre 1800 (70 %) et 1840 (90 %).",
-    updatedAt: "2026-06-16T18:18:57.322Z"
+    guide: "Il y a continuité puisque la Grande-Bretagne demeure la principale destination des exportations de bois en 1800 et en 1840.",
+    updatedAt: "2026-06-16T18:20:16.946Z"
   }
 ]
