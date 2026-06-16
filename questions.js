@@ -9919,6 +9919,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q489": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -31265,5 +31282,36 @@ const QUESTIONS = [
     },
     guide: "Le conflit entre Canadiens français et Britanniques\nLes tensions entre les deux groupes de population",
     updatedAt: "2026-06-16T13:29:45.077Z"
+  },
+  {
+    id: "Q489",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez une recommandation territoriale formulée dans le Rapport Durham.",
+    aspects: [
+      {
+        aspect: "Rapport Durham"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Afin d'améliorer l'administration des colonies britanniques d'Amérique du Nord, il serait souhaitable de réunir les deux provinces sous une même législature et un même gouvernement. »",
+            source: "Adapté de John George Lambton, comte de Durham, Rapport sur les affaires de l'Amérique du Nord britannique, 1839."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "L'union du Haut-Canada et du Bas-Canada\nRéunir les deux Canadas en une seule colonie",
+    updatedAt: "2026-06-16T13:38:41.645Z"
   }
 ]
