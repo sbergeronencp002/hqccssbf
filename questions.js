@@ -9680,6 +9680,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
       }
     ]
+  },
+  "Q477": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -30608,5 +30625,36 @@ const QUESTIONS = [
     },
     guide: "L'Église catholique et le gouvernement britannique maintiennent de bonnes relations avant et pendant la guerre de 1812\nL'Église catholique continue d'appuyer les autorités britanniques\nLa collaboration entre l'Église catholique et le gouvernement britannique se poursuit",
     updatedAt: "2026-06-16T00:41:21.809Z"
+  },
+  {
+    id: "Q477",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez une façon dont les Canadiens participent à la guerre de 1812.",
+    aspects: [
+      {
+        aspect: "Guerre anglo-américaine de 1812"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Des milliers d'habitants du Bas-Canada sont mobilisés dans les bataillons de milice afin de défendre la colonie contre les attaques américaines. »",
+            source: "Adapté de Béatrice Craig, Backwoods Consumers and Homespun Capitalists."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Ils servent dans la milice\nIls participent à la défense de la colonie\nIls prennent part aux combats",
+    updatedAt: "2026-06-16T00:41:59.924Z"
   }
 ]
