@@ -9875,6 +9875,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q487": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -31158,5 +31180,37 @@ const QUESTIONS = [
     },
     guide: "Les élus n'ont pas le contrôle du gouvernement\nLe gouverneur détient trop de pouvoir\nL'absence de responsabilité ministérielle\nLes conflits entre l'Assemblée et l'exécutif",
     updatedAt: "2026-06-16T13:18:41.855Z"
+  },
+  {
+    id: "Q487",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une raison qui explique la recommandation de Durham concernant la responsabilité ministérielle.",
+    aspects: [
+      {
+        aspect: "Rapport Durham"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Depuis plusieurs années, les conflits entre l'Assemblée législative et les autorités coloniales empêchent le gouvernement de fonctionner efficacement. Les représentants élus disposent de peu d'influence sur les décisions prises par l'exécutif. »",
+            source: "Adapté de John George Lambton, comte de Durham, Rapport sur les affaires de l'Amérique du Nord britannique, 1839."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "L'absence de responsabilité ministérielle entraîne des conflits politiques ou limite le pouvoir des représentants élus.",
+    updatedAt: "2026-06-16T13:25:23.544Z"
   }
 ]
