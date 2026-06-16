@@ -113,7 +113,9 @@ header a:hover { color: #fff; }
 .soustag-pill input { position:absolute; opacity:0; width:0; height:0; pointer-events:none; }
 .soustag-pill:has(input:checked) { background:#1B3B6F; color:#fff; border-color:#1B3B6F; }
 .soustag-pill:hover:not(:has(input:checked)) { border-color:var(--ink-2); color:var(--ink); }
-.dash-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-bottom:1.25rem; }
+.dash-grid { display:flex; gap:1.25rem; margin-bottom:1.25rem; align-items:flex-start; }
+.dash-col { flex:1; min-width:0; }
+.dash-col.collapsed { flex:0 0 auto; }
 .dash-niv-title { font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-3); margin-bottom:.6rem; }
 .dash-row { display:flex; align-items:center; gap:.5rem; margin-bottom:.35rem; }
 .dash-label { font-size:.72rem; color:var(--ink-2); white-space:nowrap; min-width:120px; overflow:hidden; text-overflow:ellipsis; }
@@ -1938,13 +1940,13 @@ function renderDashboard() {
 
   document.getElementById('dashboard-content').innerHTML = `
     <div class="dash-grid">
-      <div>
+      <div class="dash-col" id="dash-col-n3">
         <button class="dash-n4-toggle" onclick="toggleN3(this)">▼ Niveau 3 — ${n3Total.length}q · ${n3Total.reduce((s,q)=>s+(q.points||0),0)}pts</button>
         <div id="dash-n3-content">
           ${barRows(n3, '#1B3B6F')}
         </div>
       </div>
-      <div>
+      <div class="dash-col collapsed" id="dash-col-n4">
         <button class="dash-n4-toggle" onclick="toggleN4(this)">▶ Niveau 4 — ${n4Total.length}q · ${n4Total.reduce((s,q)=>s+(q.points||0),0)}pts</button>
         <div id="dash-n4-content" style="display:none">
           ${barRows(n4, '#6B3FA0')}
@@ -1959,14 +1961,18 @@ function renderDashboard() {
 
 function toggleN3(btn) {
   const content = document.getElementById('dash-n3-content');
+  const col = document.getElementById('dash-col-n3');
   const hidden = content.style.display === 'none';
   content.style.display = hidden ? '' : 'none';
+  col.classList.toggle('collapsed', !hidden);
   btn.textContent = (hidden ? '▼ ' : '▶ ') + btn.textContent.slice(2);
 }
 function toggleN4(btn) {
   const content = document.getElementById('dash-n4-content');
+  const col = document.getElementById('dash-col-n4');
   const hidden = content.style.display === 'none';
   content.style.display = hidden ? '' : 'none';
+  col.classList.toggle('collapsed', !hidden);
   btn.textContent = (hidden ? '▼ ' : '▶ ') + btn.textContent.slice(2);
 }
 
