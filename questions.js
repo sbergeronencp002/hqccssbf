@@ -9986,6 +9986,34 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q492": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -31465,5 +31493,58 @@ const QUESTIONS = [
     },
     guide: "Ils sont en désaccord sur l'assimilation des Canadiens français.",
     updatedAt: "2026-06-16T13:53:26.608Z"
+  },
+  {
+    id: "Q492",
+    niveau: 3,
+    oi: "Établir des liens de causalité",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    enonce: "Expliquez comment les difficultés observées dans le fonctionnement politique du Bas-Canada amènent Durham à recommander une réforme de l'exercice du pouvoir.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un problème observé dans le fonctionnement des institutions\n• une conséquence politique de ce problème\n• une recommandation formulée par Durham",
+    aspects: [
+      {
+        aspect: "Rapport Durham"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "org_pol_1791_acte_const.png",
+            soustitre: "Organisation politique du Haut-Canada et du Bas-Canada après 1791",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les désaccords entre l'Assemblée législative et les autorités coloniales paralysent fréquemment l'administration de la colonie et alimentent les tensions politiques. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 3."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "rapport_durham_recommendations.png",
+            soustitre: "Organisation politique proposée dans le Rapport Durham",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 5
+    },
+    guide: "Au Bas-Canada, les élus contrôlent peu le gouvernement (problème observé dans le fonctionnement des institutions). Cette situation provoque des tensions politiques entre l'Assemblée et les autorités coloniales (conséquence politique). Durham recommande donc la responsabilité ministérielle pour donner davantage d'influence aux représentants élus (recommandation formulée par Durham).",
+    updatedAt: "2026-06-16T13:59:13.287Z"
   }
 ]
