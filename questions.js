@@ -9841,6 +9841,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q485": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -31061,5 +31078,36 @@ const QUESTIONS = [
     },
     guide: "Le rôle de l'Église anglicane dans la colonie.",
     updatedAt: "2026-06-16T02:49:59.396Z"
+  },
+  {
+    id: "Q485",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez une recommandation formulée par Durham concernant l'exercice du pouvoir dans les colonies britanniques d'Amérique du Nord.",
+    aspects: [
+      {
+        aspect: "Rapport Durham"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "org_pol_1840_acte_union.png",
+            source: "Récitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "La mise en place de la responsabilité ministérielle ou le gouvernement responsable.",
+    updatedAt: "2026-06-16T03:13:08.807Z"
   }
 ]
