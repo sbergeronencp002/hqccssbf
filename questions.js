@@ -9797,6 +9797,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q483": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -30940,5 +30962,36 @@ const QUESTIONS = [
     },
     guide: "La création d'écoles publiques gratuites.",
     updatedAt: "2026-06-16T02:42:34.817Z"
+  },
+  {
+    id: "Q483",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    enonce: "Indiquez une conséquence de la création du diocèse anglican de Québec en 1793.",
+    aspects: [
+      {
+        aspect: "Église anglicane"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« En 1793, Londres autorise la création d'un diocèse anglican à Québec. Un évêque est nommé pour superviser le clergé anglican et les institutions religieuses de la colonie. »",
+            source: "Adapté de Jean Hamelin, Histoire du catholicisme québécois."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le renforcement de la présence de l'Église anglicane dans la colonie\nUne meilleure organisation de l'Église anglicane dans la colonie",
+    updatedAt: "2026-06-16T02:44:30.228Z"
   }
 ]
