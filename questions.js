@@ -10656,6 +10656,9 @@ const IMAGE_DB = {
     src: "images/cantons_immigration.png",
     w: 1200,
     h: 921
+  },
+  "rapport_durham_recommendations.png": {
+    src: "images/rapport_durham_recommendations.png"
   }
 }
 
@@ -31163,7 +31166,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P4 — 1791 – 1840",
     points: 1,
-    enonce: "Indiquez une recommandation formulée par Durham concernant l'exercice du pouvoir dans les colonies britanniques d'Amérique du Nord.",
+    enonce: "Indiquez une recommandation politique formulée dans le Rapport Durham.",
     aspects: [
       {
         aspect: "Rapport Durham"
@@ -31175,8 +31178,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "org_pol_1840_acte_union.png",
-            soustitre: "Organisation politique prévue selon Durham",
+            ref: "rapport_durham_recommendations.png",
+            soustitre: "Organisation politique proposée dans le Rapport Durham",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
@@ -31186,8 +31189,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 1
     },
-    guide: "La mise en place de la responsabilité ministérielle ou le gouvernement responsable.",
-    updatedAt: "2026-06-16T03:14:40.174Z"
+    guide: "Instauration de la responsabilité ministérielle\nUnion du Haut-Canada et du Bas-Canada\nCréation d'un gouvernement unique pour les deux Canadas",
+    updatedAt: "2026-06-16T13:42:27.085Z"
   },
   {
     id: "Q486",
