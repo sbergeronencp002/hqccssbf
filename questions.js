@@ -9736,6 +9736,28 @@ const REGLETTES = {
         desc: "L'élève ne situe pas le fait dans l'espace."
       }
     ]
+  },
+  "Q480": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -30759,5 +30781,49 @@ const QUESTIONS = [
     },
     guide: "A",
     updatedAt: "2026-06-16T00:48:02.873Z"
+  },
+  {
+    id: "Q480",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs sur la guerre de 1812. Sur quel point précis sont-ils en accord?",
+    aspects: [
+      {
+        aspect: "Guerre anglo-américaine de 1812"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Dans les circonstances actuelles, chaque habitant doit contribuer à la protection du pays. Il est du devoir des fidèles de soutenir les autorités et de participer à la défense de la colonie contre l'envahisseur. »",
+            soustitre: "Mgr Joseph-Octave Plessis",
+            source: "Adapté d'une lettre pastorale de Mgr Joseph-Octave Plessis, 1812."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les miliciens et les soldats doivent demeurer unis afin de repousser les forces américaines. La sécurité de la colonie dépend des efforts déployés pour empêcher l'invasion du territoire. »",
+            soustitre: "Charles-Michel de Salaberry",
+            source: "Adapté d'un rapport de Charles-Michel de Salaberry concernant la campagne de 1813."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "La défense de la colonie contre l'invasion américaine.",
+    updatedAt: "2026-06-16T00:49:44.981Z"
   }
 ]
