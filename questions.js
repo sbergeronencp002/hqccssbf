@@ -9780,6 +9780,23 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q482": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -30892,5 +30909,36 @@ const QUESTIONS = [
     },
     guide: "La participation des habitants à la guerre ou à la formation de la milice.",
     updatedAt: "2026-06-16T00:52:39.538Z"
+  },
+  {
+    id: "Q482",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez un moyen utilisé par les autorités britanniques pour favoriser la diffusion de la religion anglicane au début du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Église anglicane"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La Royal Institution for the Advancement of Learning reçoit la responsabilité d'administrer les écoles financées par le gouvernement colonial. Plusieurs de ses dirigeants sont membres du clergé anglican. »",
+            source: "Adapté de Cornelius Jaenen, Histoire du Québec."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "La création d'écoles publiques gratuites.",
+    updatedAt: "2026-06-16T02:42:34.817Z"
   }
 ]
