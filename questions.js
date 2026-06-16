@@ -9758,6 +9758,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q481": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de divergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -30825,5 +30847,49 @@ const QUESTIONS = [
     },
     guide: "La défense de la colonie contre l'invasion américaine.",
     updatedAt: "2026-06-16T00:49:44.981Z"
+  },
+  {
+    id: "Q481",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Divergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs sur la guerre angle-américaine de 1812. Sur quel point précis sont-ils en désaccord?",
+    aspects: [
+      {
+        aspect: "Guerre anglo-américaine de 1812"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les habitants doivent répondre à l'appel des autorités et contribuer à la défense de la colonie. Chacun a le devoir de participer à l'effort nécessaire pour repousser l'envahisseur. »",
+            auteur: "Mgr Joseph-Octave Plessis",
+            source: "Adapté d'une lettre pastorale de Mgr Joseph-Octave Plessis, 1812."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Plusieurs cultivateurs se plaignent des périodes de service dans la milice, affirmant que leur présence est nécessaire aux travaux agricoles et au soutien de leur famille. »",
+            auteur: "Habitant du Bas-Canada",
+            source: "Adapté de témoignages d'habitants du Bas-Canada durant la guerre de 1812."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "La participation des habitants à la guerre ou à la formation de la milice.",
+    updatedAt: "2026-06-16T00:52:39.538Z"
   }
 ]
