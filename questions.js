@@ -9542,6 +9542,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q471": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -30221,5 +30243,49 @@ const QUESTIONS = [
     },
     guide: "Cantons-de-l'Est.",
     updatedAt: "2026-06-16T00:22:02.582Z"
+  },
+  {
+    id: "Q471",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs sur l'attribution de terres aux nouveaux arrivants. Sur quel point précis sont-ils d'accord?",
+    aspects: [
+      {
+        aspect: "Mouvements migratoires"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le développement de nouveaux établissements permettrait d'accueillir davantage de familles et de mettre en valeur des territoires encore peu occupés. La colonie bénéficierait ainsi d'une population plus nombreuse et mieux répartie. »",
+            auteur: "George Ramsay (comte de Dalhousie), gouverneur du Bas-Canada",
+            source: "Adapté d'un rapport de George Ramsay, gouverneur du Bas-Canada, vers 1825."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Plusieurs terres demeurent disponibles dans certains territoires récemment ouverts. Il serait souhaitable d'encourager les familles à s'y établir afin de favoriser le développement de ces nouveaux établissements. »",
+            auteur: "Peter Patterson, agent de colonisation et propriétaire foncier des Cantons-de-l'Est",
+            source: "Adapté d'écrits de Peter Patterson, vers 1830."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "L'ouverture de nouvelles régions de colonisation au Bas-Canada.",
+    updatedAt: "2026-06-16T00:27:06.174Z"
   }
 ]
