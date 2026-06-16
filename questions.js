@@ -9586,6 +9586,34 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
       }
     ]
+  },
+  "Q473": {
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
   }
 }
 
@@ -30353,5 +30381,60 @@ const QUESTIONS = [
     },
     guide: "L'émigration vers les États-Unis.",
     updatedAt: "2026-06-16T00:30:55.401Z"
+  },
+  {
+    id: "Q473",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    soustag: "Position – 3 acteurs",
+    enonce: "Lea documents A à C présentent le point de vue de trois acteurs sur la station de quarantaine. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+    aspects: [
+      {
+        aspect: "Mouvements migratoires"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après plusieurs semaines de voyage, nous souhaitons poursuivre notre route le plus rapidement possible afin de rejoindre notre lieu d'établissement. »",
+            auteur: "Immigrant britannique",
+            source: "Adapté du témoignage d'un immigrant britannique, vers 1832."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les voyageurs présentant des symptômes doivent être isolés afin d'éviter la propagation de la maladie parmi les passagers et la population de la colonie. »",
+            auteur: "Médecin de la station de quarantaine",
+            source: "Adapté d'un rapport médical de Grosse-Île, vers 1832."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Des mesures de contrôle sont nécessaires à l'arrivée des navires afin de protéger la population contre l'introduction de maladies contagieuses. »",
+            auteur: "Administrateur colonial",
+            source: "Adapté d'un rapport du gouvernement du Bas-Canada, vers 1832."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "L'immigrant britannique s'oppose à la quarantaine (la différence), alors que le médecin de la station de quarantaine et l'administrateur colonial y sont favorables (la similitude).",
+    updatedAt: "2026-06-16T00:35:58.023Z"
   }
 ]
