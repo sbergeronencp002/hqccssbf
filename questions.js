@@ -9636,6 +9636,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q475": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -30490,5 +30512,37 @@ const QUESTIONS = [
     },
     guide: "Protéger leur territoire contre l'expansion américaine\nEmpêcher les Américains d'occuper leurs terres",
     updatedAt: "2026-06-16T00:39:17.549Z"
+  },
+  {
+    id: "Q475",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une raison qui explique l'appui de l'Église catholique aux autorités britanniques pendant la guerre de 1812.",
+    aspects: [
+      {
+        aspect: "Guerre anglo-américaine de 1812"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« L'évêque Plessis encourage les fidèles à soutenir le gouvernement britannique, qui permet à l'Église catholique de pratiquer librement sa religion dans la colonie. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Préserver les privilèges accordés à l'Église catholique\nMaintenir la liberté de religion accordée par les Britanniques",
+    updatedAt: "2026-06-16T00:39:56.568Z"
   }
 ]
