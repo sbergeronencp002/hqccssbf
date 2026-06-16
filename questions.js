@@ -10042,6 +10042,17 @@ const REGLETTES = {
         desc: "L'élève précise un seul élément ou n'en précise pas."
       }
     ]
+  },
+  "Q494": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
   }
 }
 
@@ -10768,6 +10779,9 @@ const IMAGE_DB = {
   },
   "population_bas-canada_1735.png": {
     src: "images/population_bas-canada_1735.png"
+  },
+  "eglise_paroisses_1790-1830.png": {
+    src: "images/eglise_paroisses_1790-1830.png"
   }
 }
 
@@ -31630,5 +31644,38 @@ const QUESTIONS = [
     },
     guide: "Au Bas-Canada, les Canadiens français sont majoritaires, mais une minorité britannique est aussi présente (caractéristique de la population). Selon Durham, les différences entre ces deux groupes causent des tensions dans la colonie (problème identifié par Durham). Il recommande donc l’assimilation des Canadiens français à la population britannique (solution proposée).",
     updatedAt: "2026-06-16T14:13:03.376Z"
+  },
+  {
+    id: "Q494",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir du document A, indiquez s'il y a changement ou continuité concernant la présence de l'Église catholique et de l'Église anglicane dans la colonie entre 1790 et 1830. Justifiez votre réponse à l'aide de faits et d'un repère de temps.",
+    aspects: [
+      {
+        aspect: "Église anglicane"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "eglise_paroisses_1790-1830.png",
+            soustitre: "Évolution du nombre de paroisses catholiques et anglicanes dans la colonie, 1790-1830",
+            source: "Adapté de Serge Courville, Le Québec : genèses et mutations du territoire, Québec, Presses de l'Université Laval."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Changement\nIl y a changement puisque le nombre de paroisses catholiques passe de 150 à 250 entre 1790 et 1830.\nIl y a changement puisque le nombre de paroisses anglicanes passe de 0 à 40 entre 1790 et 1830.\nIl y a changement puisque le nombre de paroisses catholiques et anglicanes augmente entre 1790 et 1830.\n\nContinuité\nIl y a continuité puisque les paroisses catholiques demeurent plus nombreuses que les paroisses anglicanes en 1790 comme en 1830.\nIl y a continuité puisque l'Église catholique compte davantage de paroisses que l'Église anglicane en 1790 comme en 1830.",
+    updatedAt: "2026-06-16T18:04:41.206Z"
   }
 ]
