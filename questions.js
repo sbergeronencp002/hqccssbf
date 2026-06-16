@@ -9819,6 +9819,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q484": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de divergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -30993,5 +31015,49 @@ const QUESTIONS = [
     },
     guide: "Le renforcement de la présence de l'Église anglicane dans la colonie\nUne meilleure organisation de l'Église anglicane dans la colonie",
     updatedAt: "2026-06-16T02:44:30.228Z"
+  },
+  {
+    id: "Q484",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Divergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux personnages historiques. Sur quel point précis sont-ils en désaccord?",
+    aspects: [
+      {
+        aspect: "Église anglicane"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« L'Église d'Angleterre doit occuper une place importante dans cette province. Elle contribue à la stabilité des institutions britanniques et à la formation morale des sujets de Sa Majesté. »",
+            auteur: "Jacob Mountain",
+            source: "Adapté d'une lettre de Jacob Mountain, premier évêque anglican de Québec, vers 1805."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les habitants de cette colonie demeurent attachés à la religion catholique. Il importe que leurs institutions religieuses continuent de répondre à leurs besoins spirituels et à leurs traditions. »",
+            auteur: "Joseph-Octave Plessis",
+            source: "Adapté d'une correspondance de Joseph-Octave Plessis, évêque catholique de Québec, vers 1810."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le rôle de l'Église anglicane dans la colonie.",
+    updatedAt: "2026-06-16T02:49:59.396Z"
   }
 ]
