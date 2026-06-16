@@ -9964,6 +9964,28 @@ const REGLETTES = {
         desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
       }
     ]
+  },
+  "Q491": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève établit correctement le point de divergence entre les points de vue."
+      },
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -31399,5 +31421,49 @@ const QUESTIONS = [
     },
     guide: "Durham est favorable à l'assimilation des Canadiens français (la différence), alors que Louis-Joseph Papineau et Étienne Parent s'y oppose.",
     updatedAt: "2026-06-16T13:50:15.131Z"
+  },
+  {
+    id: "Q491",
+    niveau: 3,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Divergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en désaccord?",
+    aspects: [
+      {
+        aspect: "Rapport Durham"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Pour mettre fin aux divisions qui affaiblissent la colonie, il faut favoriser l'adoption graduelle des institutions, de la langue et des habitudes de la population britannique par l'ensemble de ses habitants. »",
+            auteur: "John George Lambton",
+            source: "Adapté de John George Lambton, comte de Durham, Rapport sur les affaires de l'Amérique du Nord britannique, 1839."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les Canadiens français peuvent participer pleinement aux institutions politiques tout en conservant leur langue, leur culture et les droits qui leur sont reconnus. »",
+            auteur: "Louis-Hippolyte La Fontaine",
+            source: "Adapté de Louis-Hippolyte La Fontaine, discours politiques, années 1840."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Ils sont en désaccord sur l'assimilation des Canadiens français.",
+    updatedAt: "2026-06-16T13:53:26.608Z"
   }
 ]
