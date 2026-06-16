@@ -9719,6 +9719,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
+  },
+  "Q479": {
+    oi: "Situer dans l'espace",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève situe le fait dans l'espace."
+      },
+      {
+        pts: 0,
+        desc: "L'élève ne situe pas le fait dans l'espace."
+      }
+    ]
   }
 }
 
@@ -10130,7 +10147,9 @@ const IMAGE_DB = {
     src: "images/ligne_1790-1850.png"
   },
   "bataille_chateauguay.png": {
-    src: "images/bataille_chateauguay.png"
+    src: "images/bataille_chateauguay.png",
+    w: 1200,
+    h: 921
   },
   "village_iroquoien_vers_1500.png": {
     src: "images/village_iroquoien_vers_1500.png"
@@ -30709,5 +30728,36 @@ const QUESTIONS = [
     },
     guide: "Le sentiment d'appartenance à la colonie se renforce\nPlusieurs Canadiens sont davantage fiers d'avoir défendu leur colonie\nPlusieurs Canadiens développent un sentiment national plus fort",
     updatedAt: "2026-06-16T00:42:54.701Z"
+  },
+  {
+    id: "Q479",
+    niveau: 3,
+    oi: "Situer dans l'espace",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    soustag: "Situer 1 élément",
+    enonce: "À partir du document A, indiquez la lettre qui correspond à l'endroit où a lieu la bataille de Châteauguay durant la guerre de 1812.",
+    aspects: [
+      {
+        aspect: "Guerre anglo-américaine de 1812"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "bataille_chateauguay.png",
+            source: "Carte du Québec. Adaptée d'après d-maps.com."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "tableau_2col"
+    },
+    guide: "A",
+    updatedAt: "2026-06-16T00:47:42.414Z"
   }
 ]
