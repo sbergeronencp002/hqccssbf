@@ -9464,6 +9464,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q467": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le facteur explicatif."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -30013,5 +30035,37 @@ const QUESTIONS = [
     },
     guide: "Exode rural.\nImmigration britannique.",
     updatedAt: "2026-06-16T00:09:53.887Z"
+  },
+  {
+    id: "Q467",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une raison qui pousse plusieurs habitants à quitter les campagnes du Bas-Canada vers 1830.",
+    aspects: [
+      {
+        aspect: "Mouvements migratoires"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Dans plusieurs seigneuries du Bas-Canada, les terres disponibles deviennent plus rares au début du XIXe siècle. Certaines familles choisissent alors de quitter leur milieu d’origine pour s’établir ailleurs. »",
+            source: "Adapté de Serge Courville, Le Québec : genèses et mutations du territoire, Presses de l'Université Laval."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Le manque de terres disponibles\nLa surpopulation des seigneuries\nLes difficultés agricoles",
+    updatedAt: "2026-06-16T00:11:08.656Z"
   }
 ]
