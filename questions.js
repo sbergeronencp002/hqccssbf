@@ -9525,6 +9525,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q470": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -10238,6 +10255,11 @@ const IMAGE_DB = {
     src: "images/territoire_immigration_1820.png",
     w: 927,
     h: 1200
+  },
+  "cantons_immigration.png": {
+    src: "images/cantons_immigration.png",
+    w: 1200,
+    h: 921
   }
 }
 
@@ -30168,5 +30190,36 @@ const QUESTIONS = [
     },
     guide: "L'émigration vers les États-Unis\nLa migration vers les villes\nL'ouverture de régions de colonisation",
     updatedAt: "2026-06-16T00:15:09.380Z"
+  },
+  {
+    id: "Q470",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "À partir du document A, indiquez le nom d'une région de colonisation qui accueille de nombreux immigrants britanniques dans la première moitié du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Mouvements migratoires"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "cantons_immigration.png",
+            source: "Carte du sud du Quéec. Adaptée d'après d-maps.com."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Cantons-de-l'Est.",
+    updatedAt: "2026-06-16T00:22:02.582Z"
   }
 ]
