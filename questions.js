@@ -9503,6 +9503,28 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q469": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement la conséquence."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement la conséquence."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
+      }
+    ]
   }
 }
 
@@ -30115,5 +30137,36 @@ const QUESTIONS = [
     },
     guide: "Les États-Unis.",
     updatedAt: "2026-06-16T00:12:29.468Z"
+  },
+  {
+    id: "Q469",
+    niveau: 3,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P4 — 1791 – 1840",
+    points: 2,
+    enonce: "Indiquez une conséquence du manque de terres disponibles dans les seigneuries du Bas-Canada vers 1830.",
+    aspects: [
+      {
+        aspect: "Mouvements migratoires"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Entre la fin du XVIIIe siècle et les années 1830, la population des terres seigneuriales augmente beaucoup plus rapidement que les superficies disponibles pour la culture. »",
+            source: "Adapté de François Charbonneau, Jacques Marchand et Jean-Pierre Sansregret, Mon histoire, Guérin, 1985."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "L'émigration vers les États-Unis\nLa migration vers les villes\nL'ouverture de régions de colonisation",
+    updatedAt: "2026-06-16T00:15:09.380Z"
   }
 ]
