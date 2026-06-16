@@ -9486,6 +9486,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
       }
     ]
+  },
+  "Q468": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -30067,5 +30084,36 @@ const QUESTIONS = [
     },
     guide: "Le manque de terres disponibles\nLa surpopulation des seigneuries\nLes difficultés agricoles",
     updatedAt: "2026-06-16T00:11:08.656Z"
+  },
+  {
+    id: "Q468",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez le pays vers lequel émigrent de nombreux Canadiens dans la première moitié du XIXe siècle.",
+    aspects: [
+      {
+        aspect: "Mouvements migratoires"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Au cours de la première moitié du XIXe siècle, plusieurs habitants quittent le Bas-Canada pour s’établir au sud de la frontière. Ils espèrent y trouver davantage de terres et de possibilités économiques. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 3, Septentrion."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les États-Unis.",
+    updatedAt: "2026-06-16T00:12:29.468Z"
   }
 ]
