@@ -30917,7 +30917,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Divergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux acteurs sur la guerre angle-américaine de 1812. Sur quel point précis sont-ils en désaccord?",
+    enonce: "Les documents A et B présentent le point de vue de deux personnages historiques. Sur quel point précis sont-ils en désaccord?",
     aspects: [
       {
         aspect: "Guerre anglo-américaine de 1812"
@@ -30952,7 +30952,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "La participation des habitants à la guerre ou à la formation de la milice.",
-    updatedAt: "2026-06-16T00:52:39.538Z"
+    updatedAt: "2026-06-16T02:51:42.557Z"
   },
   {
     id: "Q482",
