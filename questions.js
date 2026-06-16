@@ -32013,6 +32013,6 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Le nombre de navires construits augmente.\nLa construction navale se développe.\nLes chantiers navals emploient davantage de travailleurs.",
-    updatedAt: "2026-06-16T18:59:54.039Z"
+    updatedAt: "2026-06-16T19:01:10.061Z"
   }
 ]
