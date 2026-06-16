@@ -30748,6 +30748,7 @@ const QUESTIONS = [
     oi: "Déterminer des changements et des continuités",
     periode: "P4 — 1791 – 1840",
     points: 2,
+    soustag: "Changement",
     enonce: "Indiquez un changement dans le sentiment d'appartenance de plusieurs Canadiens à la suite de la guerre de 1812.",
     aspects: [
       {
@@ -30771,7 +30772,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "Le sentiment d'appartenance à la colonie se renforce\nPlusieurs Canadiens sont davantage fiers d'avoir défendu leur colonie\nPlusieurs Canadiens développent un sentiment national plus fort",
-    updatedAt: "2026-06-16T00:42:54.701Z"
+    updatedAt: "2026-06-16T00:53:12.045Z"
   },
   {
     id: "Q479",
