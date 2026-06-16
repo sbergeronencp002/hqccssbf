@@ -29340,7 +29340,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 3,
     soustag: "Position – 3 acteurs",
-    enonce: "Le document présente la position de trois acteurs à l'égard du regroupement des compagnies de fourrures en 1821. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+    enonce: "Le document présente la position de trois acteurs sur l'avenir du commerce des fourrures dans le Nord-Ouest. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
     aspects: [
       {
         aspect: "Commerce des fourrures"
@@ -29383,10 +29383,10 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "lignes",
-      nombre: 2
+      nombre: 3
     },
-    guide: "Lord Bathurst est favorable au regroupement des compagnies de fourrures (la position différente), alors que George Simpson et William McGillivray souhaitent maintenir leurs activités distinctes (la position commune).",
-    updatedAt: "2026-06-15T13:40:59.236Z"
+    guide: "Lord Bathurst est favorable à la fusion des compagnies de fourrures (différence), alors que George Simpson et William McGillivray s'y opposent (similitude).",
+    updatedAt: "2026-06-16T03:04:27.348Z"
   },
   {
     id: "Q442",
