@@ -27657,7 +27657,7 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "John Colborne défend le maintien du régime colonial britannique (la différence), alors que Louis-Joseph Papineau et Edmund Bailey O'Callaghan réclament des réformes politiques importantes (la similitude).",
-    updatedAt: "2026-06-12T03:57:05.205Z"
+    updatedAt: "2026-06-16T03:09:11.617Z"
   },
   {
     id: "Q400",
