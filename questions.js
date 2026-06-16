@@ -31098,7 +31098,8 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "org_pol_1840_acte_union.png",
-            source: "Récitus."
+            soustitre: "Organisation politique prévue selon Durham",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
@@ -31108,6 +31109,6 @@ const QUESTIONS = [
       nombre: 1
     },
     guide: "La mise en place de la responsabilité ministérielle ou le gouvernement responsable.",
-    updatedAt: "2026-06-16T03:13:08.807Z"
+    updatedAt: "2026-06-16T03:14:40.174Z"
   }
 ]
