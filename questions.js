@@ -10053,6 +10053,17 @@ const REGLETTES = {
       "0 point"
     ],
     niveaux: []
+  },
+  "Q495": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
   }
 }
 
@@ -10782,6 +10793,11 @@ const IMAGE_DB = {
   },
   "eglise_paroisses_1790-1830.png": {
     src: "images/eglise_paroisses_1790-1830.png"
+  },
+  "exportations_bas-canada.png": {
+    src: "images/exportations_bas-canada.png",
+    w: 1200,
+    h: 844
   }
 }
 
@@ -31677,5 +31693,38 @@ const QUESTIONS = [
     },
     guide: "Changement\nIl y a changement puisque le nombre de paroisses catholiques passe de 150 à 250 entre 1790 et 1830.\nIl y a changement puisque le nombre de paroisses anglicanes passe de 0 à 40 entre 1790 et 1830.\nIl y a changement puisque le nombre de paroisses catholiques et anglicanes augmente entre 1790 et 1830.\n\nContinuité\nIl y a continuité puisque les paroisses catholiques demeurent plus nombreuses que les paroisses anglicanes en 1790 comme en 1830.\nIl y a continuité puisque l'Église catholique compte davantage de paroisses que l'Église anglicane en 1790 comme en 1830.",
     updatedAt: "2026-06-16T18:04:41.206Z"
+  },
+  {
+    id: "Q495",
+    niveau: 3,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P4 — 1791 – 1840",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir du document A, indiquez s'il y a changement ou continuité concernant les exportations du Bas-Canada entre 1800 et 1840. Justifiez votre réponse à l'aide de faits et d'un repère de temps.",
+    aspects: [
+      {
+        aspect: "Commerce du bois"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "exportations_bas-canada.png",
+            soustitre: "Valeur des exportations du Bas-Canada selon le principal produit exporté, 1800 et 1840",
+            source: "Adapté de Fernand Ouellet, Histoire économique et sociale du Québec, 1760-1850, Montréal, Fides."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Changement\nIl y a changement puisque le bois passe de 15 % des exportations en 1800 à 65 % en 1840.\nIl y a changement puisque les fourrures passent de 45 % des exportations en 1800 à 10 % en 1840.\n\nContinuité\nIl y a continuité puisque le Bas-Canada exporte encore du blé et de la farine en 1800 et en 1840.\nIl y a continuité puisque les autres produits représentent 10 % des exportations en 1800 et en 1840.",
+    updatedAt: "2026-06-16T18:12:54.764Z"
   }
 ]
