@@ -30873,7 +30873,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux acteurs sur la guerre de 1812. Sur quel point précis sont-ils en accord?",
+    enonce: "Les documents A et B présentent le point de vue de deux personnages historiques. Sur quel point précis sont-ils en accord?",
     aspects: [
       {
         aspect: "Guerre anglo-américaine de 1812"
@@ -30908,7 +30908,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "La défense de la colonie contre l'invasion américaine.",
-    updatedAt: "2026-06-16T00:49:44.981Z"
+    updatedAt: "2026-06-16T02:52:12.607Z"
   },
   {
     id: "Q481",
