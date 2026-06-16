@@ -1939,8 +1939,10 @@ function renderDashboard() {
   document.getElementById('dashboard-content').innerHTML = `
     <div class="dash-grid">
       <div>
-        <div class="dash-niv-title">Niveau 3 — ${n3Total.length}q · ${n3Total.reduce((s,q)=>s+(q.points||0),0)}pts</div>
-        ${barRows(n3, '#1B3B6F')}
+        <button class="dash-n4-toggle" onclick="toggleN3(this)">▼ Niveau 3 — ${n3Total.length}q · ${n3Total.reduce((s,q)=>s+(q.points||0),0)}pts</button>
+        <div id="dash-n3-content">
+          ${barRows(n3, '#1B3B6F')}
+        </div>
       </div>
       <div>
         <button class="dash-n4-toggle" onclick="toggleN4(this)">▶ Niveau 4 — ${n4Total.length}q · ${n4Total.reduce((s,q)=>s+(q.points||0),0)}pts</button>
@@ -1955,6 +1957,12 @@ function renderDashboard() {
   `;
 }
 
+function toggleN3(btn) {
+  const content = document.getElementById('dash-n3-content');
+  const hidden = content.style.display === 'none';
+  content.style.display = hidden ? '' : 'none';
+  btn.textContent = (hidden ? '▼ ' : '▶ ') + btn.textContent.slice(2);
+}
 function toggleN4(btn) {
   const content = document.getElementById('dash-n4-content');
   const hidden = content.style.display === 'none';
