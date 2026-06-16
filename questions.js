@@ -28550,7 +28550,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Divergence – 2 acteurs",
-    enonce: "Le document présente le point de vue de deux acteurs sur un enjeu lié au développement des infrastructures. Sur quel point précis sont-ils en désaccord?",
+    enonce: "Le document présente le point de vue de deux acteurs. Sur quel point précis sont-ils en désaccord?",
     aspects: [
       {
         aspect: "Capitaux et infrastructures"
@@ -28585,7 +28585,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "L'utilisation des fonds publics.\nLe contrôle des dépenses de la colonie.\nL'administration des revenus publics.\nLe pouvoir de décider des dépenses publiques.",
-    updatedAt: "2026-06-12T16:39:31.402Z"
+    updatedAt: "2026-06-16T03:07:10.361Z"
   },
   {
     id: "Q422",
