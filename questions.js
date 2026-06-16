@@ -10086,6 +10086,23 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
       }
     ]
+  },
+  "Q497": {
+    oi: "Établir des faits",
+    colonnes: [
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 1,
+        desc: "L'élève établit correctement le fait."
+      },
+      {
+        pts: 0,
+        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
+      }
+    ]
   }
 }
 
@@ -31786,5 +31803,36 @@ const QUESTIONS = [
     },
     guide: "Il y a continuité puisque la Grande-Bretagne demeure la principale destination des exportations de bois en 1800 et en 1840.",
     updatedAt: "2026-06-16T18:20:16.946Z"
+  },
+  {
+    id: "Q497",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P4 — 1791 – 1840",
+    points: 1,
+    enonce: "Indiquez le nom des terres accordées à l’Église anglicane par l’Acte constitutionnel de 1791.",
+    aspects: [
+      {
+        aspect: "Église anglicane"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Une partie des terres non concédées dans chaque canton est mise de côté afin d'assurer le soutien matériel de l'Église d'Angleterre. »",
+            source: "Adapté de l'Acte constitutionnel de 1791."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 1
+    },
+    guide: "Les réserves du clergé.",
+    updatedAt: "2026-06-16T18:26:38.534Z"
   }
 ]
