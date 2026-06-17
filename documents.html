@@ -105,15 +105,6 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
 .all-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.7rem}
 .all-grid .tile{width:auto}
 
-.oi-sit{color:var(--c-sit);background:var(--c-sit-bg)}
-.oi-esp{color:var(--c-esp);background:var(--c-esp-bg)}
-.oi-cau{color:var(--c-cau);background:var(--c-cau-bg)}
-.oi-lnk{color:var(--c-lnk);background:var(--c-lnk-bg)}
-.oi-dif{color:var(--c-dif);background:var(--c-dif-bg)}
-.oi-chg{color:var(--c-chg);background:var(--c-chg-bg)}
-.oi-rel{color:var(--c-rel);background:var(--c-rel-bg)}
-.oi-fai{color:var(--c-fai);background:var(--c-fai-bg)}
-
 #lb{display:none;position:fixed;inset:0;background:rgba(26,23,20,.88);z-index:999;align-items:center;justify-content:center;padding:2rem}
 #lb.open{display:flex}
 #lb-body{display:flex;gap:1.25rem;align-items:stretch;max-width:94vw;max-height:88vh}
@@ -192,6 +183,8 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
     <a id="nav-shared" class="active" onclick="setActive('shared')">Toutes les images</a>
     <a id="nav-all" onclick="setActive('all')">Toutes les questions</a>
     <a id="nav-orphans" onclick="setActive('orphans')">Non utilisées</a>
+    <a href="admin.html" style="margin-left:.5rem;padding-left:.9rem;border-left:1px solid rgba(255,255,255,.15)">⚙ Admin</a>
+    <a href="index.html">← Site</a>
   </nav>
 </header>
 
@@ -283,6 +276,7 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
   </div>
 </div>
 
+<script src="oi-config.js?v=1"></script>
 <script src="questions.js?v=1"></script>
 <script>
 // Token lu depuis le stockage partagé avec admin.html (jamais hardcodé)
@@ -297,16 +291,13 @@ function requireToken() {
 const REPO  = 'sbergeronencp002/hqccssbf';
 const API   = 'https://api.github.com/repos/' + REPO + '/contents/';
 
-const OI_CLASS = {
-  "Situer dans le temps":                          "oi-sit",
-  "Situer dans l'espace":                          "oi-esp",
-  "Déterminer des causes et des conséquences":     "oi-cau",
-  "Établir des liens de causalité":                "oi-lnk",
-  "Dégager des différences et des similitudes":    "oi-dif",
-  "Déterminer des changements et des continuités": "oi-chg",
-  "Mettre en relation des faits":                  "oi-rel",
-  "Établir des faits":                             "oi-fai",
-};
+// Couleurs des pastilles OI : dérivées de oi-config.js (source unique de vérité)
+// pour rester cohérentes avec index.html et admin.html. On applique color/bg en
+// style inline (les variables --c-* sont définies dans le :root de cette page).
+function oiStyleAttr(oi) {
+  const c = (typeof OI_CONFIG !== 'undefined') && OI_CONFIG[oi];
+  return c ? `color:${c.color};background:${c.bg}` : '';
+}
 const OI_SHORT = {
   "Situer dans le temps":                          "Sit. temps",
   "Situer dans l'espace":                          "Sit. espace",
@@ -331,7 +322,6 @@ function sizeBadgeHtml(img) {
 }
 
 function tileHtml(q) {
-  const cls = OI_CLASS[q.oi] || '';
   const short = OI_SHORT[q.oi] || q.oi;
   const periodeShort = (q.periode || '').replace(/P\d+ — /, '');
   const enonce = (q.enonce || '').replace(/\*\*/g, '');
@@ -345,7 +335,7 @@ function tileHtml(q) {
     </div>`;
   }).join('');
   return `<div class="tile" data-oi="${escH(q.oi)}" data-text="${escH(q.id+' '+q.oi+' '+(q.periode||'')+' '+enonce.toLowerCase())}">
-  <div class="tile-top"><span class="tile-id">${escH(q.id)}</span><span class="tile-oi-tag ${cls}">${escH(short)}</span></div>
+  <div class="tile-top"><span class="tile-id">${escH(q.id)}</span><span class="tile-oi-tag" style="${oiStyleAttr(q.oi)}">${escH(short)}</span></div>
   <div class="tile-periode">${escH(periodeShort)}</div>
   <div class="tile-enonce">${escH(enonceCut)}</div>
   <div class="tile-imgs">${imgsHtml}</div>
@@ -502,7 +492,6 @@ function showImg(img) {
   const ids = (imgMap[img] || []).filter(id => qById[id]);
   const qhtml = ids.map(id => {
     const q = qById[id];
-    const cls = OI_CLASS[q.oi] || '';
     const short = OI_SHORT[q.oi] || q.oi;
     const per = (q.periode || '').replace(/P\d+ — /, '');
     const en = (q.enonce || '').replace(/\*\*/g, '');
@@ -513,7 +502,7 @@ function showImg(img) {
     return `<div class="lbq">
       <div class="lbq-top">
         <span class="tile-id">${escH(q.id)}</span>
-        <span class="tile-oi-tag ${cls}">${escH(short)}</span>
+        <span class="tile-oi-tag" style="${oiStyleAttr(q.oi)}">${escH(short)}</span>
         <span class="lbq-per">${escH(per)}</span>
         <button class="lbq-edit" title="Modifier le sous-titre" onclick="event.stopPropagation();openSoustitre(${escH(JSON.stringify(id))})">✏</button>
       </div>

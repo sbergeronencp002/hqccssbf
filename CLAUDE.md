@@ -25,17 +25,19 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 |---------|------|
 | `index.html` | Site public (filtres, cartes, panier, prévisualisation, génération DOCX) |
 | `admin.html` | Interface de saisie/modification des questions — pousse via GitHub Contents API |
+| `documents.html` | **Gestion Documents & Images** — galerie de toutes les images, vue par question, images non utilisées. Renomme / remplace / supprime des images et édite les sous-titres directement via l'API GitHub (token partagé avec admin.html). JS autonome inline (pas de dépendance à `app.js`) |
 | `app.js` | Toute la logique du site public (rendu, filtres, panier, DOCX) |
 | `questions.js` | Données : `REGLETTES`, `IMAGE_DB`, `QUESTIONS` — généré et écrit par admin |
 | `reglettes.js` | Préréglages de réglettes par OI (`REGLETTES_PRESET`) — chargé par admin uniquement |
 | `contexte.js` | Données statiques : `PERIODES_PAR_NIVEAU`, `ASPECTS_PAR_PERIODE` |
-| `oi-config.js` | **Source unique des OI** : `OI_CONFIG` (styles, sous-tags, auto-réponse) + `OI_LIST` (ordre du menu). Chargé par index.html ET admin.html |
+| `oi-config.js` | **Source unique des OI** : `OI_CONFIG` (styles, sous-tags, auto-réponse) + `OI_LIST` (ordre du menu). Chargé par index.html, admin.html ET documents.html |
 | `style.css` | Styles du site public |
 | `docx.js` | Librairie docx.js (857 Ko) — chargée en lazy au 1er clic « Générer » |
 | `backups/questions-YYYY-MM-DD_HH-MM.js` | Backups auto avant chaque publication (admin) |
 
 ### Cache-bust actuel
 `app.js?v=45`, `style.css?v=25`, `oi-config.js?v=1`, `reglettes.js?v=v2` (admin) — incrémenter à chaque changement majeur.
+`documents.html` charge `oi-config.js?v=1` + `questions.js?v=1`.
 
 ---
 
@@ -206,6 +208,44 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 | `toast(msg, type)` | 1916 | Affiche un toast 3,5 s (type: `'ok'` ou `'err'`) |
 
 > Note : l'éditeur de contexte.js (`loadContexteJs` / `publierContexteJs`) n'existe plus dans admin.html — contexte.js est chargé statiquement.
+
+---
+
+## Index des fonctions — documents.html
+
+> Page autonome (JS inline ~ligne 287). Charge `oi-config.js` + `questions.js`. Le token GitHub est **lu** depuis le stockage partagé avec admin.html (`getToken()`) — jamais saisi ici ; sans token, seule la lecture marche, les modifications échouent.
+
+### Init & rendu
+
+| Fonction | Rôle |
+|----------|------|
+| `oiStyleAttr(oi)` | Style inline `color/background` d'une pastille OI, **dérivé de `OI_CONFIG`** (cohérence avec le reste du site) |
+| `tileHtml(q)` | HTML d'une tuile question (vue « Toutes les questions ») |
+| `(function init())` | Construit `imgMap` (image → ids), la grille d'images, la grille questions, le filtre OI et la liste des orphelines |
+| `escH(s)` | Échappe `&<>"'` avant insertion HTML |
+| `setActive(id)` | Bascule entre les 3 vues (images / questions / orphelines) |
+| `filterAll()` | Filtre les grilles par recherche texte + OI |
+
+### Tailles & lightbox
+
+| Fonction | Rôle |
+|----------|------|
+| `fetchSizes(imgs)` / `applySizeBadge` | Récupère la taille des fichiers (HEAD) et colore le badge (vert < 400 Ko, orange < 800, rouge ≥ 800) |
+| `showImg(img)` | Ouvre la lightbox : image + liste des questions qui l'utilisent + sous-titres éditables |
+| `closeLb(e)` | Ferme la lightbox |
+
+### Opérations GitHub (token requis)
+
+| Fonction | Rôle |
+|----------|------|
+| `deleteOrphan(img)` | Supprime une image orpheline du dépôt + retire son entrée d'`IMAGE_DB` |
+| `openReplace` / `handleReplaceFile` / `confirmReplace` | Remplace le contenu d'une image (redimensionne max 1200 px, PUT même nom + SHA) |
+| `openRename` / `confirmRename` / `updateDomAfterRename` | Renomme une image : crée le nouveau fichier, supprime l'ancien, met à jour les refs dans `questions.js` (retry sur conflit 409) |
+| `openSoustitre` / `confirmSoustitre` | Édite le sous-titre du document référençant l'image |
+| `applyQuestionsEdit(mutate, msg)` | Lecture fraîche → mutation ciblée → réécriture de `questions.js` (1 retry sur conflit SHA) |
+| `serializeValue` / `ensureImageDbComplete` / `generateQuestionsJs` | Sérialiseur **identique à admin.html** (même format de sortie pour éviter les divergences) |
+
+> ⚠️ Comme admin.html, cette page **écrit directement `questions.js` sur `main` via l'API GitHub** — ne jamais toucher `questions.js` via git.
 
 ---
 
