@@ -400,15 +400,20 @@ function tileHtml(q) {
 })();
 
 async function fetchSizes(imgs) {
-  for (const img of imgs) {
-    try {
-      const r = await fetch('images/' + img, {method:'HEAD'});
-      const bytes = parseInt(r.headers.get('content-length') || '0');
-      sizeCache[img] = bytes;
-      applySizeBadge(img, bytes);
-    } catch(e) {
-      // silently skip
-    }
+  // Requêtes HEAD par lots parallèles (au lieu de séquentielles) — badges de taille
+  // bien plus rapides à s'afficher sur 200+ images, sans saturer le navigateur.
+  const BATCH = 8;
+  for (let i = 0; i < imgs.length; i += BATCH) {
+    await Promise.all(imgs.slice(i, i + BATCH).map(async img => {
+      try {
+        const r = await fetch('images/' + img, {method:'HEAD'});
+        const bytes = parseInt(r.headers.get('content-length') || '0');
+        sizeCache[img] = bytes;
+        applySizeBadge(img, bytes);
+      } catch(e) {
+        // silently skip
+      }
+    }));
   }
 }
 
@@ -697,7 +702,32 @@ async function confirmRename() {
     });
     if (!r2.ok) throw new Error('Échec création ' + newName + ' (' + r2.status + ')');
 
-    // 3. Delete old file
+    // 3. Mettre à jour les refs de questions.js AVANT de supprimer l'ancien fichier.
+    //    Édition structurée (parse → mutation ciblée → re-sérialisation, retry SHA)
+    //    via applyQuestionsEdit, au lieu d'un remplacement regex sur le texte source.
+    //    Ordre choisi : si cette étape échoue, l'ancien fichier existe toujours et
+    //    les refs restent valides (pas d'image 404) ; le nouveau fichier n'est qu'un
+    //    orphelin récupérable.
+    status.textContent = 'Mise à jour de questions.js…';
+    const refsChanged = await applyQuestionsEdit(parsed => {
+      let did = false;
+      parsed.QUESTIONS.forEach(q => {
+        (q.documents || []).forEach(d => (d.cols || []).forEach(c => {
+          if (c.ref === renameTarget) { c.ref = newName; did = true; }
+        }));
+        if (q.reponse && q.reponse.ref === renameTarget) { q.reponse.ref = newName; did = true; }
+      });
+      if (parsed.IMAGE_DB[renameTarget]) {
+        const entry = parsed.IMAGE_DB[renameTarget];
+        delete parsed.IMAGE_DB[renameTarget];
+        entry.src = 'images/' + newName;
+        parsed.IMAGE_DB[newName] = entry;
+        did = true;
+      }
+      return did;
+    }, 'Rename ' + renameTarget + ' → ' + newName + ' (refs)');
+
+    // 4. Supprimer l'ancien fichier image (en dernier).
     status.textContent = 'Suppression de ' + renameTarget + '…';
     const r3 = await fetch(API + 'images/' + encodeURIComponent(renameTarget), {
       method: 'DELETE',
@@ -706,44 +736,13 @@ async function confirmRename() {
     });
     if (!r3.ok) throw new Error('Échec suppression ' + renameTarget + ' (' + r3.status + ')');
 
-    // 4. Update questions.js — relecture + PUT avec retry sur conflit SHA (409).
-    //    Critique : les fichiers image sont déjà déplacés ; si ce PUT échoue,
-    //    les refs pointeraient vers une image 404. D'où le retry.
-    status.textContent = 'Mise à jour de questions.js…';
-    const escapedTarget = renameTarget.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    let refsUpdated = false, noRefFound = false;
-    for (let attempt = 0; attempt < 3; attempt++) {
-      const rq = await fetch(API + 'questions.js?t=' + Date.now(), {
-        headers: {Authorization: 'token ' + requireToken()}, cache: 'no-store'
-      });
-      if (!rq.ok) throw new Error('Impossible de lire questions.js (' + rq.status + ')');
-      const dq = await rq.json();
-      const rawBytes = Uint8Array.from(atob(dq.content.replace(/\n/g,'')), c => c.charCodeAt(0));
-      const oldContent = new TextDecoder('utf-8').decode(rawBytes);
-      // Remplace uniquement les occurrences entre guillemets (évite de toucher les énoncés)
-      const newContent = oldContent
-        .replace(new RegExp(`(['"])${escapedTarget}(['"])`, 'g'), `$1${newName}$2`)
-        .replace(new RegExp(`(['"])images/${escapedTarget}(['"])`, 'g'), `$1images/${newName}$2`);
-      if (newContent === oldContent) { noRefFound = true; break; }
-      const encBytes = new TextEncoder().encode(newContent);
-      let binary = '';
-      encBytes.forEach(b => binary += String.fromCharCode(b));
-      const rp = await fetch(API + 'questions.js', {
-        method: 'PUT',
-        headers: {Authorization: 'token ' + requireToken(), 'Content-Type': 'application/json'},
-        body: JSON.stringify({message: 'Rename ' + renameTarget + ' → ' + newName + ' (refs)', content: btoa(binary), sha: dq.sha})
-      });
-      if (rp.ok) { refsUpdated = true; break; }
-      if (rp.status === 409 && attempt < 2) continue; // conflit → relecture + retry
-      throw new Error('Échec mise à jour questions.js (' + rp.status + ') — image déplacée mais refs NON mises à jour, rechargez et réessayez.');
-    }
-    if (noRefFound) {
+    if (refsChanged) {
+      status.className = 'rename-status ok';
+      status.textContent = '✓ Renommé avec succès.';
+    } else {
       status.className = 'rename-status warn';
-      status.textContent = 'Avertissement : aucune référence à ' + renameTarget + ' trouvée dans questions.js.';
+      status.textContent = '✓ Fichier renommé (aucune référence trouvée dans questions.js).';
     }
-
-    status.className = 'rename-status ok';
-    status.textContent = '✓ Renommé avec succès.';
     updateDomAfterRename(renameTarget, newName);
     renameTarget = newName;
     document.getElementById('rename-old-label').textContent = 'Image actuelle : ' + newName;

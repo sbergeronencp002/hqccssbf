@@ -591,7 +591,7 @@ function renderDoc(d) {
         }
       } else if(col.ref) {
         const img2 = IMAGE_DB[col.ref];
-        if(img2) h += '<div class="doc-img-tile" style="max-width:100%" onclick="openLightbox(\'' + jsStr(img2.src) + '\')"><img src="' + img2.src + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:180px;object-fit:contain"></div>';
+        if(img2) h += '<div class="doc-img-tile" style="max-width:100%" onclick="openLightbox(\'' + jsStr(img2.src) + '\')"><img src="' + escAttr(img2.src) + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:180px;object-fit:contain"></div>';
       }
       if(col.auteur) h += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + escLine(col.auteur) + '</div>';
       if(col.source) h += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + escLine(col.source) + '</div>';
@@ -612,7 +612,7 @@ function renderDoc(d) {
       const img = IMAGE_DB[col.ref];
       if(!img) return;
       html += '<div class="doc-img-tile" onclick="openLightbox(\'' + jsStr(img.src) + '\')">';
-      html += '<img src="' + img.src + '" alt="' + escAttr(col.titre||col.ref||'Document') + '">';
+      html += '<img src="' + escAttr(img.src) + '" alt="' + escAttr(col.titre||col.ref||'Document') + '">';
       if(col.titre) html += '<div class="doc-img-tile-label">' + escLine(col.titre) + '</div>';
       if(col.soustitre) html += '<div class="doc-img-tile-sub">' + escLine(col.soustitre) + '</div>';
       html += '</div>';
@@ -624,7 +624,7 @@ function renderDoc(d) {
   const img = IMAGE_DB[d.ref];
   if(img) {
     let html = '<div class="doc-img-tiles"><div class="doc-img-tile" onclick="openLightbox(\'' + jsStr(img.src) + '\')">';
-    html += '<img src="' + img.src + '" alt="' + escAttr(d.titre||d.ref||'Document') + '" style="max-width:200px;max-height:200px;object-fit:contain">';
+    html += '<img src="' + escAttr(img.src) + '" alt="' + escAttr(d.titre||d.ref||'Document') + '" style="max-width:200px;max-height:200px;object-fit:contain">';
     if(d.titre) html += '<div class="doc-img-tile-label">' + escLine(d.titre) + '</div>';
     html += '</div></div>';
     return html;
@@ -655,7 +655,7 @@ function renderReponse(q) {
     if(!img) return '';
     const reduire = q.soustag === 'Ordre chronologique' || q.soustag === 'Ligne du temps';
     const imgStyle = reduire ? ' style="max-width:75%"' : '';
-    return '<div class="doc-img-wrap"><img src="' + img.src + '" alt="Image de réponse" class="doc-img"' + imgStyle + ' onclick="openLightbox(\'' + jsStr(img.src) + '\')" title="Cliquer pour agrandir"></div>';
+    return '<div class="doc-img-wrap"><img src="' + escAttr(img.src) + '" alt="Image de réponse" class="doc-img"' + imgStyle + ' onclick="openLightbox(\'' + jsStr(img.src) + '\')" title="Cliquer pour agrandir"></div>';
   }
   if(q.reponse.type === 'lignes') {
     const n = q.reponse.nombre || 1;
@@ -852,7 +852,7 @@ function previsualiser(guideMode) {
               const titre = (col.titreWeb && col.titre) ? col.titre : col.ref;
               docsHtml += '<td style="width:' + Math.floor(100/d.cols.length) + '%;padding:6px;vertical-align:top;border:0.5px solid var(--border)">';
               docsHtml += '<div style="font-size:0.75rem;font-style:italic;margin-bottom:4px;color:var(--ink-2)">' + escLine(titre) + '</div>';
-              if(img) docsHtml += '<img src="' + img.src + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:100px;object-fit:contain;cursor:pointer" onclick="openLightbox(\'' + jsStr(img.src) + '\')">';
+              if(img) docsHtml += '<img src="' + escAttr(img.src) + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:100px;object-fit:contain;cursor:pointer" onclick="openLightbox(\'' + jsStr(img.src) + '\')">';
               docsHtml += '</td>';
             });
             docsHtml += '</tr></table>';
@@ -868,7 +868,7 @@ function previsualiser(guideMode) {
               if(col.texte) {
                 h += '<div style="font-size:0.72rem;color:var(--ink-2);line-height:1.5">' + formatTexte(col.texte) + '</div>';
               } else if(img) {
-                h += '<img src="' + img.src + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:100px;object-fit:contain;cursor:pointer" onclick="openLightbox(\'' + jsStr(img.src) + '\')">';
+                h += '<img src="' + escAttr(img.src) + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:100px;object-fit:contain;cursor:pointer" onclick="openLightbox(\'' + jsStr(img.src) + '\')">';
               }
               if(col.auteur) h += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + escLine(col.auteur) + '</div>';
               if(col.source) h += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + escLine(col.source) + '</div>';
@@ -1123,7 +1123,7 @@ function renderCahier() {
     const oiShort = q.oi.length > 30 ? q.oi.slice(0,30) + '…' : q.oi;
     const rawEnonce = (q.enonce||'').replace(/\*\*(.*?)\*\*/g,'$1').replace(/[•\-] /g,'').trim();
     const preview = rawEnonce.length > 65 ? rawEnonce.slice(0,65) + '…' : rawEnonce;
-    return `<div class="cahier-item" draggable="true" data-id="${id}"
+    return `<div class="cahier-item" draggable="true" data-id="${escAttr(id)}"
       ondragstart="cahierDragStart(event)" ondragover="cahierDragOver(event)"
       ondrop="cahierDrop(event)" ondragend="cahierDragEnd(event)">
       <div class="cahier-accent" style="background:${st.color}"></div>
@@ -1131,7 +1131,7 @@ function renderCahier() {
       <div class="cahier-item-body">
         <div class="cahier-item-row">
           <span class="cahier-num">Q${i+1}</span>
-          <span class="cahier-badge" style="color:${st.color};background:${st.bg}" title="${q.oi}">${oiShort}</span>
+          <span class="cahier-badge" style="color:${st.color};background:${st.bg}" title="${escAttr(q.oi)}">${escLine(oiShort)}</span>
           <span class="cahier-pts">${q.points} pt${q.points !== 1 ? 's' : ''}</span>
         </div>
         <div class="cahier-enonce">${escLine(preview)}</div>
