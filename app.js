@@ -461,13 +461,6 @@ function togglePanierModal() {
   if(!wasInPanier && panier.includes(id)) closeQModal();
 }
 
-function flashBtn(btn, msg) {
-  const orig = btn.textContent;
-  btn.textContent = msg;
-  btn.classList.add('copied');
-  setTimeout(()=>{ btn.textContent=orig; btn.classList.remove('copied'); }, 2000);
-}
-
 const PAGE_SIZE = 50;
 let currentFiltered = [];
 
