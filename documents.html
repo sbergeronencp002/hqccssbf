@@ -543,25 +543,14 @@ async function deleteOrphan(img) {
     });
     if (!r2.ok) throw new Error('Échec suppression (' + r2.status + ')');
 
-    // 3. Remove from IMAGE_DB in questions.js
-    const rq = await fetch(API + 'questions.js', {headers: {Authorization: 'token ' + requireToken()}});
-    if (!rq.ok) throw new Error('Impossible de lire questions.js (' + rq.status + ')');
-    const dq = await rq.json();
-    const rawBytes = Uint8Array.from(atob(dq.content.replace(/\n/g,'')), c => c.charCodeAt(0));
-    const oldContent = new TextDecoder('utf-8').decode(rawBytes);
-    // Remove the IMAGE_DB entry (key + object block)
-    const escaped = img.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const newContent = oldContent.replace(new RegExp(`\\s*"${escaped}":\\s*\\{[^}]*\\},?`, 'g'), '');
-    if (newContent !== oldContent) {
-      const encBytes = new TextEncoder().encode(newContent);
-      let binary = ''; encBytes.forEach(b => binary += String.fromCharCode(b));
-      const rp = await fetch(API + 'questions.js', {
-        method: 'PUT',
-        headers: {Authorization: 'token ' + requireToken(), 'Content-Type': 'application/json'},
-        body: JSON.stringify({message: 'Retirer ' + img + ' de IMAGE_DB', content: btoa(binary), sha: dq.sha})
-      });
-      if (!rp.ok) throw new Error('Échec mise à jour questions.js (' + rp.status + ')');
-    }
+    // 3. Remove from IMAGE_DB in questions.js — édition STRUCTURÉE (parse → mutation →
+    //    re-sérialisation) avec retry SHA, plutôt qu'un remplacement regex fragile qui
+    //    pouvait corrompre le fichier si une entrée IMAGE_DB contenait des accolades.
+    await applyQuestionsEdit(parsed => {
+      if (!parsed.IMAGE_DB || !(img in parsed.IMAGE_DB)) return false; // déjà absente
+      delete parsed.IMAGE_DB[img];
+      return true;
+    }, 'Retirer ' + img + ' de IMAGE_DB');
 
     // Remove row from DOM
     document.getElementById('orphan-' + CSS.escape(img))?.remove();
@@ -688,13 +677,22 @@ function closeRenameModal(e) {
 }
 
 async function confirmRename() {
-  const raw = document.getElementById('rename-input').value.trim();
-  if (!raw) return;
-  const newName = raw.endsWith('.png') ? raw : raw + '.png';
-  if (newName === renameTarget) { closeRenameModal(); return; }
-
   const btn = document.getElementById('rename-confirm-btn');
   const status = document.getElementById('rename-status');
+  // Même assainissement qu'admin.html (uploadImage) : pas d'espaces, ni \ ' " ` < > &
+  // — ces caractères cassent les attributs HTML / onclick et pourraient corrompre questions.js.
+  const raw = document.getElementById('rename-input').value.trim()
+    .replace(/\.png$/i, '').replace(/\s+/g, '_').replace(/[\\'"`<>&]/g, '');
+  if (!raw) { status.className = 'rename-status err'; status.textContent = '✗ Nom vide ou invalide.'; return; }
+  const newName = raw + '.png';
+  if (newName === renameTarget) { closeRenameModal(); return; }
+  // Refuser l'écrasement d'une image existante (le PUT de création réécrirait son contenu).
+  if (imgMap[newName] || (typeof IMAGE_DB !== 'undefined' && IMAGE_DB[newName])) {
+    status.className = 'rename-status err';
+    status.textContent = '✗ « ' + newName + ' » existe déjà — choisissez un autre nom.';
+    return;
+  }
+
   btn.disabled = true;
   status.className = 'rename-status';
   status.textContent = 'Récupération du fichier…';

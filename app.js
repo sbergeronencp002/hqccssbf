@@ -1516,8 +1516,14 @@ async function genererDocx(includeGuide=false) {
       children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
       panier.forEach((id, idx) => {
         const q = Q_MAP.get(id);
-        if(!q || !q.guide) return;
+        if(!q) return;
+        // Toujours numéroter (même sans guide) pour rester aligné avec le cahier et l'aperçu.
         children.push(new Paragraph({ children: [new TextRun({ text: (idx+1) + '.', font: 'Aptos', size: 20, bold: true })] }));
+        if(!q.guide) {
+          children.push(new Paragraph({ children: [new TextRun({ text: '—', font: 'Aptos', size: 20 })] }));
+          children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
+          return;
+        }
         if(typeof q.guide === 'string') {
           children.push(new Paragraph({ children: [new TextRun({ text: q.guide, font: 'Aptos', size: 20 })] }));
         } else if(q.guide.type === 'grille' || q.guide.type === 'tableau') {
