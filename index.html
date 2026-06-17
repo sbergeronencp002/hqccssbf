@@ -155,10 +155,31 @@
 <script src="oi-config.js?v=1"></script>
 <script src="app.js?v=46"></script>
 <script>
-  var _qs = document.createElement('script');
-  _qs.src = 'questions.js?t=' + Math.floor(Date.now() / 60000);
-  _qs.onload = function() { initSite(); };
-  document.head.appendChild(_qs);
+  // Charge questions.js en mode revalidation (ETag → 304 si inchangé) : les données
+  // restent toujours fraîches SANS re-télécharger ~1 Mo à chaque visite (le navigateur
+  // sert depuis son cache après un 304). Repli sur l'injection <script> avec cache-bust
+  // à la minute si fetch échoue (réseau, vieux navigateur, fichier illisible).
+  (function loadQuestions() {
+    function fallback() {
+      var qs = document.createElement('script');
+      qs.src = 'questions.js?t=' + Math.floor(Date.now() / 60000);
+      qs.onload = function() { initSite(); };
+      document.head.appendChild(qs);
+    }
+    fetch('questions.js', { cache: 'no-cache' })
+      .then(function(r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+      .then(function(src) {
+        var ok = false;
+        try {
+          var s = document.createElement('script');
+          s.textContent = src;
+          document.head.appendChild(s);
+          ok = (typeof QUESTIONS !== 'undefined');
+        } catch (e) { ok = false; }
+        if (ok) initSite(); else fallback();
+      })
+      .catch(fallback);
+  })();
 </script>
 </body>
 </html>
