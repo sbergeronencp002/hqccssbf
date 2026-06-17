@@ -936,20 +936,22 @@ async function uploadImage() {
   if(!token) { toast('Saisis ton token GitHub.', 'err'); return; }
   const file = document.getElementById('upload-file').files[0];
   if(!file) { toast('Sélectionne un fichier image.', 'err'); return; }
-  const name = (document.getElementById('upload-name').value.trim() || file.name)
+  // Nom de base SANS extension : l'extension finale dépend du format choisi plus bas.
+  const baseName = (document.getElementById('upload-name').value.trim() || file.name)
+    .replace(/\.(png|jpe?g|webp|gif)$/i, '')
     .replace(/\s+/g,'_').replace(/[\\'"`<>&]/g,'');   // pas d'espaces, quotes, antislash ni <>& (cassent onclick/attributs/HTML)
   const statusEl = document.getElementById('upload-status');
   const btn = document.getElementById('btn-upload');
   btn.disabled = true; statusEl.textContent = '⏳ Téléversement…';
   try {
-    // Lance le check SHA et le redimensionnement en parallèle
-    const shaPromise = fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/images/${name}?ref=${BRANCH}&t=${Date.now()}`, { headers:{ Authorization:`token ${token}` } })
-      .then(r => r.ok ? r.json().then(d => d.sha || '') : '').catch(() => '');
-
+    // Redimensionne (max 1200 px) puis choisit le format le plus léger sans perte visible :
+    //  • transparence détectée → PNG obligatoire ;
+    //  • sinon → on compare PNG vs JPEG 0.85 et on garde le plus petit. Les photos/scans
+    //    pèsent ~5× moins en JPEG (c'était la cause des images à 2,5 Mo) ; les aplats et
+    //    graphiques restent en PNG s'il est plus avantageux.
     const imgInfo = await new Promise((res,rej) => {
       const reader = new FileReader();
       reader.onload = e => {
-        const isJpeg = file.type === 'image/jpeg';
         const img = new Image();
         img.onload = () => {
           const MAX = 1200;
@@ -958,9 +960,20 @@ async function uploadImage() {
           const h = Math.round(img.naturalHeight * scale);
           const canvas = document.createElement('canvas');
           canvas.width = w; canvas.height = h;
-          canvas.getContext('2d').drawImage(img, 0, 0, w, h);
-          const dataUrl = canvas.toDataURL(isJpeg ? 'image/jpeg' : 'image/png', isJpeg ? 0.78 : undefined);
-          res({ b64: dataUrl.split(',')[1], w, h });
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, w, h);
+          let hasAlpha = false;
+          try {
+            const data = ctx.getImageData(0, 0, w, h).data;
+            for(let i = 3; i < data.length; i += 4) { if(data[i] < 255) { hasAlpha = true; break; } }
+          } catch(_) { hasAlpha = true; }   // canvas inaccessible → on reste prudent en PNG
+          const pngB64 = canvas.toDataURL('image/png').split(',')[1];
+          let b64 = pngB64, ext = 'png';
+          if(!hasAlpha) {
+            const jpgB64 = canvas.toDataURL('image/jpeg', 0.85).split(',')[1];
+            if(jpgB64.length < pngB64.length) { b64 = jpgB64; ext = 'jpg'; }
+          }
+          res({ b64, w, h, ext });
         };
         img.onerror = rej;
         img.src = e.target.result;
@@ -968,7 +981,10 @@ async function uploadImage() {
       reader.onerror = rej;
       reader.readAsDataURL(file);
     });
-    const existingSha = await shaPromise;
+    const name = baseName + '.' + imgInfo.ext;
+    // SHA d'un éventuel fichier existant de même nom (pour l'écraser proprement).
+    const existingSha = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/images/${name}?ref=${BRANCH}&t=${Date.now()}`, { headers:{ Authorization:`token ${token}` } })
+      .then(r => r.ok ? r.json().then(d => d.sha || '') : '').catch(() => '');
     const putResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/images/${name}`, {
       method:'PUT',
       headers:{ Authorization:`token ${token}`, 'Content-Type':'application/json' },
@@ -978,7 +994,7 @@ async function uploadImage() {
     currentImageDb[name] = { src: 'images/' + name, w: imgInfo.w, h: imgInfo.h };
     const ko = Math.round(imgInfo.b64.length * 3 / 4 / 1024);
     statusEl.textContent = `✓ ${name} téléversé (${ko} Ko) !`;
-    if(ko > 500) toast(`⚠ ${name} fait ${ko} Ko. Pour alléger le site, compresse l'image (pngquant) avant de la téléverser.`, 'err');
+    if(ko > 500) toast(`⚠ ${name} fait ${ko} Ko même après compression. Réduis la résolution de l'image source si possible.`, 'err');
     document.getElementById('upload-file').value='';
     document.getElementById('upload-name').value='';
     if (!IMAGES.includes(name)) { IMAGES.push(name); IMAGES.sort(); }

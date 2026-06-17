@@ -31,13 +31,18 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 | `reglettes.js` | Préréglages de réglettes par OI (`REGLETTES_PRESET`) — chargé par admin uniquement |
 | `contexte.js` | Données statiques : `PERIODES_PAR_NIVEAU`, `ASPECTS_PAR_PERIODE` |
 | `oi-config.js` | **Source unique des OI** : `OI_CONFIG` (styles, sous-tags, auto-réponse) + `OI_LIST` (ordre du menu). Chargé par index.html, admin.html ET documents.html |
+| `questions-io.js` | **Sérialiseur partagé** : `serializeValue`, `ensureImageDbComplete`, `generateQuestionsJs`. Source unique du format de `questions.js` — chargé par admin.html ET documents.html (évite la duplication/divergence) |
+| `tools/validate-questions.mjs` | **Validateur de données** (node) : vérifie `questions.js` contre `oi-config.js`, `contexte.js` et les fichiers `images/`. Lancé en hook SessionStart (`.claude/settings.json`). `node tools/validate-questions.mjs` |
 | `style.css` | Styles du site public |
 | `docx.js` | Librairie docx.js (857 Ko) — chargée en lazy au 1er clic « Générer » |
-| `backups/questions-YYYY-MM-DD_HH-MM.js` | Backups auto avant chaque publication (admin) |
+| `backups/questions-YYYY-MM-DD_HH-MM.js` | Backups auto avant chaque publication (admin) — élagués automatiquement (`pruneBackups`, 20 conservés) |
+
+### Upload d'images (admin.html / documents.html)
+`uploadImage()` redimensionne à 1200 px max puis **choisit le format le plus léger** : PNG si l'image a de la transparence, sinon le plus petit entre PNG et JPEG 0.85 (l'extension du nom suit le format choisi). Évite les PNG 24 bits non compressés (cause des images à 2,5 Mo). Le remplacement (`documents.html`) encode selon l'extension de la cible.
 
 ### Cache-bust actuel
-`app.js?v=46`, `style.css?v=25`, `oi-config.js?v=1`, `reglettes.js?v=v2` (admin) — incrémenter à chaque changement majeur.
-`documents.html` charge `oi-config.js?v=1` + `questions.js?v=1`.
+`app.js?v=46`, `style.css?v=25`, `oi-config.js?v=1`, `questions-io.js?v=1`, `reglettes.js?v=v2` (admin) — incrémenter à chaque changement majeur.
+`documents.html` charge `oi-config.js?v=1` + `questions-io.js?v=1` + `questions.js?v=1`.
 
 ---
 

@@ -196,11 +196,11 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
   <div id="orphans-container"></div>
 </div>
 
-<div id="lb" onclick="closeLb(event)">
+<div id="lb" role="dialog" aria-modal="true" aria-label="Image agrandie" onclick="closeLb(event)">
   <span id="lb-close">&times;</span>
   <div id="lb-body">
     <div id="lb-imgcol">
-      <img id="lb-img" src="">
+      <img id="lb-img" src="" alt="">
       <div id="lb-footer">
         <span id="lb-caption"></span>
         <span id="lb-size" class="size-badge loading"></span>
@@ -214,7 +214,7 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
 
 <!-- Replace modal -->
 <div id="replace-modal" onclick="closeReplaceModal(event)">
-  <div class="replace-box" onclick="event.stopPropagation()">
+  <div class="replace-box" role="dialog" aria-modal="true" aria-label="Remplacer l'image" onclick="event.stopPropagation()">
     <h3>Remplacer l'image</h3>
     <p id="replace-old-label"></p>
     <div class="replace-drop" id="replace-drop" onclick="document.getElementById('replace-file').click()"
@@ -238,7 +238,7 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
 
 <!-- Rename modal -->
 <div id="rename-modal" onclick="closeRenameModal(event)">
-  <div class="rename-box" onclick="event.stopPropagation()">
+  <div class="rename-box" role="dialog" aria-modal="true" aria-label="Renommer l'image" onclick="event.stopPropagation()">
     <h3>Renommer l'image</h3>
     <p id="rename-old-label"></p>
     <input type="text" id="rename-input" placeholder="Nouveau nom (sans .png)">
@@ -252,7 +252,7 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
 
 <!-- Sous-titre modal -->
 <div id="sub-modal" onclick="closeSubModal(event)">
-  <div class="rename-box" onclick="event.stopPropagation()">
+  <div class="rename-box" role="dialog" aria-modal="true" aria-label="Modifier le sous-titre" onclick="event.stopPropagation()">
     <h3>Modifier le sous-titre</h3>
     <p id="sub-old-label"></p>
     <textarea id="sub-input" rows="2" placeholder="Sous-titre du document"
@@ -467,6 +467,7 @@ function filterAll() {
 function showImg(img) {
   currentLbImg = img;
   document.getElementById('lb-img').src = 'images/'+img;
+  document.getElementById('lb-img').alt = img.replace(/\.(png|jpe?g)$/i, '');
   document.getElementById('lb-caption').textContent = img;
   const lbSize = document.getElementById('lb-size');
   if (sizeCache[img]) {
@@ -594,7 +595,10 @@ function handleReplaceFile(file) {
       const canvas = document.createElement('canvas');
       canvas.width = w; canvas.height = h;
       canvas.getContext('2d').drawImage(img, 0, 0, w, h);
-      const dataUrl = canvas.toDataURL('image/png');
+      // Encode dans le format de la cible (le nom de fichier ne change pas) :
+      // un .jpg doit recevoir du JPEG, pas du PNG sous une fausse extension.
+      const isJpg = /\.jpe?g$/i.test(replaceTarget);
+      const dataUrl = isJpg ? canvas.toDataURL('image/jpeg', 0.85) : canvas.toDataURL('image/png');
       replaceB64 = dataUrl.split(',')[1];
       const bytes = Math.round(replaceB64.length * 3 / 4);
       const ko = Math.round(bytes / 1024);
