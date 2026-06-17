@@ -10188,9 +10188,6 @@ const IMAGE_DB = {
   "loyalistes_province_quebec.png": {
     src: "images/loyalistes_province_quebec.png"
   },
-  "territoire_acte_const.png": {
-    src: "images/territoire_acte_const.png"
-  },
   "troc_1700.png": {
     src: "images/troc_1700.png"
   },
@@ -10310,9 +10307,6 @@ const IMAGE_DB = {
   "exportations_province_quebec_1770.png": {
     src: "images/exportations_province_quebec_1770.png"
   },
-  "1760-1840_accroissement_naturel.png": {
-    src: "images/1760-1840_accroissement_naturel.png"
-  },
   "1791-1840_grosse_ile.png": {
     src: "images/1791-1840_grosse_ile.png"
   },
@@ -10324,9 +10318,6 @@ const IMAGE_DB = {
   },
   "bataille_st-eustache.png": {
     src: "images/bataille_st-eustache.png"
-  },
-  "exportations_bois_1800_1840.png": {
-    src: "images/exportations_bois_1800_1840.png"
   },
   "population_1763.png": {
     src: "images/population_1763.png"
@@ -10441,11 +10432,6 @@ const IMAGE_DB = {
   },
   "org_pol_apres_1663.png": {
     src: "images/org_pol_apres_1663.png"
-  },
-  "graphique_population_nouvelle_france_1627-1663.png": {
-    src: "images/graphique_population_nouvelle_france_1627-1663.png",
-    w: 1200,
-    h: 800
   },
   "paroisse_n-f.png": {
     src: "images/paroisse_n-f.png"
@@ -10644,9 +10630,6 @@ const IMAGE_DB = {
   "monseigneur_laval_eveque.png": {
     src: "images/monseigneur_laval_eveque.png"
   },
-  "org_pol_apres_1784.png": {
-    src: "images/org_pol_apres_1784.png"
-  },
   "territoire_bas-canada_1791.png": {
     src: "images/territoire_bas-canada_1791.png"
   },
@@ -10819,11 +10802,6 @@ const IMAGE_DB = {
     w: 1200,
     h: 901
   },
-  "bataille_seven_oaks.png": {
-    src: "images/bataille_seven_oaks.png",
-    w: 1200,
-    h: 800
-  },
   "territoire_exploite_fourrure_1820.png": {
     src: "images/territoire_exploite_fourrure_1820.png"
   },
@@ -10834,11 +10812,6 @@ const IMAGE_DB = {
     src: "images/exportations_fourrure_1780-1820.png",
     w: 1200,
     h: 901
-  },
-  "bois_tarifs_préférentiels.png": {
-    src: "images/bois_tarifs_préférentiels.png",
-    w: 1200,
-    h: 800
   },
   "exportation_bois_1790-1840.png": {
     src: "images/exportation_bois_1790-1840.png",
