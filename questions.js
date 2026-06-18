@@ -15121,8 +15121,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "Lymburner (marchand britannique) affirme que l’Église anglicane devrait occuper une place plus importante dans la colonie alors que Briand (évêque catholique) et Haldimand (gouverneur) appuient le maintien des institutions catholiques.",
-    updatedAt: "2026-06-08T14:31:21.622Z"
+    guide: "Adam Lymburner s'oppose à la reconnaissance de la religion catholique par les autorités britanniques (la différence), alors que Jean-Olivier Briand et Frederick Haldimand y sont favorables (la similitude).",
+    updatedAt: "2026-06-18T23:11:48.519Z"
   },
   {
     id: "Q299",
