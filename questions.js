@@ -18374,7 +18374,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 3,
     soustag: "Position – 3 acteurs",
-    enonce: "Le document présente la position de trois acteurs concernant l'organisation politique des colonies britanniques. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+    enonce: "Les documents A à C présentent la position de trois acteurs concernant les moyens utilisés pour obtenir des changements politiques dans le Bas-Canada. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
     aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
@@ -18382,7 +18382,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Les habitants de la colonie doivent pouvoir obtenir des réformes qui accordent davantage d'influence aux représentants élus dans les affaires publiques. »",
+            texte: "« Les Canadiens doivent poursuivre leurs revendications par des moyens légaux et constitutionnels afin d'obtenir les réformes souhaitées. »",
             auteur: "Louis-Joseph Papineau",
             source: "Discours à la Chambre d'assemblée du Bas-Canada, vers 1834. Adapté."
           }
@@ -18393,9 +18393,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« Les institutions britanniques assurent la stabilité de la colonie et il convient de maintenir l'autorité du gouvernement établi ainsi que les pouvoirs qui lui sont confiés. »",
-            auteur: "John Colborne",
-            source: "Correspondance du gouverneur militaire du Bas-Canada, vers 1837. Adapté."
+            texte: "« Les abus du gouvernement doivent être dénoncés publiquement, mais les changements doivent être obtenus par des moyens pacifiques. »",
+            auteur: "Étienne Parent",
+            source: "Adapté d'un article du Canadien rédigé par Étienne Parent, vers 1836."
           }
         ]
       },
@@ -18404,16 +18404,16 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« Lorsque les demandes de la population sont constamment rejetées, il devient nécessaire de poursuivre les réformes afin de corriger les abus du gouvernement colonial. »",
-            auteur: "Edmund Bailey O'Callaghan",
-            source: "The Vindicator, Montréal, vers 1837. Adapté."
+            texte: "« Lorsque les autorités refusent d'écouter les revendications du peuple, le recours aux armes peut devenir nécessaire. »",
+            auteur: "Wolfred Nelson",
+            source: "Adapté d'un discours de Wolfred Nelson lors d'une assemblée patriote, 1837."
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "John Colborne défend le maintien du régime colonial britannique (la différence), alors que Louis-Joseph Papineau et Edmund Bailey O'Callaghan réclament des réformes politiques importantes (la similitude).",
-    updatedAt: "2026-06-16T03:09:11.617Z"
+    guide: "Wolfred Nelson est favorable à la prise des armes (la différence), alors que Louis-Joseph Papineau et Étienne Parent privilégient des moyens légaux pour obtenir des changements politiques (la similitude).",
+    updatedAt: "2026-06-18T23:33:32.242Z"
   },
   {
     id: "Q400",
