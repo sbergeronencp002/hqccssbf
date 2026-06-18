@@ -10169,6 +10169,28 @@ const REGLETTES = {
         desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
       }
     ]
+  },
+  "Q501": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: [
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 2,
+        desc: "L'élève détermine correctement le changement."
+      },
+      {
+        pts: 1,
+        desc: "L'élève détermine plus ou moins correctement le changement."
+      },
+      {
+        pts: 0,
+        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
+      }
+    ]
   }
 }
 
@@ -10896,6 +10918,11 @@ const IMAGE_DB = {
   },
   "carte_mercantilisme_fourrures_1600.png": {
     src: "images/carte_mercantilisme_fourrures_1600.png"
+  },
+  "carte_acte_union_1840.jpg": {
+    src: "images/carte_acte_union_1840.jpg",
+    w: 1091,
+    h: 777
   }
 }
 
@@ -31988,5 +32015,47 @@ const QUESTIONS = [
     },
     guide: "Le nombre de navires construits augmente.\nLa construction navale se développe.\nLes chantiers navals emploient davantage de travailleurs.",
     updatedAt: "2026-06-16T19:01:10.061Z"
+  },
+  {
+    id: "Q501",
+    niveau: 4,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Changement",
+    enonce: "À partir des documents A et B, indiquez un changement dans l'organisation territoriale de la colonie entre 1791 et 1840.",
+    aspects: [
+      {
+        aspect: "Acte d'Union"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "carte_acte_constitutionnel_1791.png",
+            source: "Récitus"
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "carte_acte_union_1840.jpg",
+            source: "Reécitus."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 2
+    },
+    guide: "Entre 1791 et 1840, le Haut-Canada et le Bas-Canada sont réunis pour former la Province du Canada.\nEntre 1791 et 1840, la colonie passe d'une organisation en deux territoires distincts (Haut-Canada et Bas-Canada) à une seule colonie appelée Province du Canada.",
+    updatedAt: "2026-06-18T12:35:29.900Z"
   }
 ]
