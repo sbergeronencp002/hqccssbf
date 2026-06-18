@@ -5244,9 +5244,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« L'Acte de Québec de 1774 vise à assurer la loyauté des Canadiens en leur permettant de conserver leur religion et leurs lois civiles. »",
-            auteur: "Jacques Lacoursière",
-            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 1, Septentrion, 1995."
+            texte: "« En permettant aux Canadiens de conserver leur religion et leurs lois civiles, cette mesure favorise leur loyauté envers le gouvernement britannique. »",
+            auteur: "Guy Carleton",
+            source: "Adapté de la correspondance de Guy Carleton adressée au gouvernement britannique, 1774."
           }
         ]
       },
@@ -5255,9 +5255,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« En reconnaissant officiellement le catholicisme, l'Acte de Québec favorise la collaboration entre les autorités britanniques et l'élite canadienne. »",
-            auteur: "Gilles Laporte",
-            source: "Adapté de Gilles Laporte, Brève histoire du Québec, Septentrion, 2021."
+            texte: "« La reconnaissance officielle de la religion catholique garantit la stabilité de la colonie et protège les droits des Canadiens. »",
+            auteur: "Jean-Olivier Briand",
+            source: "Adapté d'une lettre pastorale de Jean-Olivier Briand à l'intention des fidèles de la province de Québec, 1775."
           }
         ]
       },
@@ -5266,16 +5266,16 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« Plusieurs observateurs britanniques et américains considèrent l'Acte de Québec comme une mesure excessive qui accorde trop de privilèges aux Canadiens. »",
-            auteur: "Marcel Trudel",
-            source: "Adapté de Marcel Trudel, Initiation à la Nouvelle-France, Holt, Rinehart et Winston, 1968."
+            texte: "« Cette loi accorde des privilèges excessifs aux Canadiens et menace les libertés que les sujets britanniques devraient défendre. »",
+            auteur: "Richard Henry Lee",
+            source: "Adapté de Richard Henry Lee, Observations on the Quebec Act, 1774."
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "Trudel affirme que l'Acte de Québec accorde trop de privilèges aux Canadiens (la différence), alors que Lacoursière et Laporte soutiennent que ces concessions sont bénéfiques pour la colonie (la similitude).",
-    updatedAt: "2026-06-18T16:04:07.628Z"
+    guide: "Richard Henry Lee s'oppose aux concessions accordées aux Canadiens (la différence), alors que Guy Carleton et Jean-Olivier Briand y sont favorables (la similitude).",
+    updatedAt: "2026-06-18T21:02:32.888Z"
   },
   {
     id: "Q7",
