@@ -12791,7 +12791,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux auteurs sur l’organisation sociale des Iroquoiens. Sur quel point précis ces deux auteurs sont-ils d’accord?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis ces deux auteurs sont-ils d’accord?",
     aspects: [
       {
         aspect: "Rapports sociaux chez les Autochtones"
@@ -12825,7 +12825,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Les deux auteurs s’entendent pour dire que la société iroquoienne est matrilinéaire ou que l’appartenance au clan se transmet par la mère ou que les femmes occupent une place importante dans la communauté."
+    guide: "La société iroquoienne est matrilinéaire.",
+    updatedAt: "2026-06-18T15:55:24.059Z"
   },
   {
     id: "Q39",
