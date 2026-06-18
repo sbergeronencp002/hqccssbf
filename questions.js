@@ -20437,8 +20437,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "Le marchand américain s'oppose aux tarifs préférentiels accordés au bois pas la Grande-Bretagne (différence), alors que George Prevost et John Molson y sont favorables (similitude).",
-    updatedAt: "2026-06-16T03:05:09.865Z"
+    guide: "Le marchand américain s'oppose aux tarifs préférentiels (la différence), alors que George Prevost et John Molson les appuient (la similitude).",
+    updatedAt: "2026-06-18T23:47:12.598Z"
   },
   {
     id: "Q460",
