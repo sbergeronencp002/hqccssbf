@@ -25056,7 +25056,8 @@ const QUESTIONS = [
           {
             titre: "Document B",
             ref: "territoire_bas-canada_1791.png",
-            source: "Récitus"
+            source: "Récitus",
+            soustitre: "carte_acte_constitutionnel_1791"
           }
         ]
       }
