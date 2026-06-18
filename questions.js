@@ -10397,9 +10397,6 @@ const IMAGE_DB = {
   "territoire_revendique_1700.png": {
     src: "images/territoire_revendique_1700.png"
   },
-  "exploration_territoire_1700.png": {
-    src: "images/exploration_territoire_1700.png"
-  },
   "territoires_perdus_1713.png": {
     src: "images/territoires_perdus_1713.png"
   },
@@ -10896,6 +10893,9 @@ const IMAGE_DB = {
     src: "images/carte_conflits_armes_haut-canada_1838.png",
     w: 1138,
     h: 1200
+  },
+  "carte_exploration_territoire_1700.png": {
+    src: "images/carte_exploration_territoire_1700.png"
   }
 }
 
@@ -18751,7 +18751,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "exploration_territoire_1700.png",
+            ref: "carte_exploration_territoire_1700.png",
             source: "Récitus."
           }
         ]
