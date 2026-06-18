@@ -13633,7 +13633,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux acteurs de la Province de Québec après l'adoption de l'Acte de Québec de 1774. Sur quel point précis ces acteurs sont-ils en accord?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis ces acteurs sont-ils en accord?",
     aspects: [{aspect: "Acte de Québec"}],
     documents: [
       {
@@ -13659,7 +13659,7 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Le maintien des lois civiles françaises.",
-    updatedAt: "2026-06-07T12:21:02.631Z"
+    updatedAt: "2026-06-18T23:06:19.201Z"
   },
   {
     id: "Q252",
