@@ -12538,7 +12538,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux historiens sur la milice canadienne durant la Guerre de la Conquête. Sur quel point précis ces historiens sont-ils d’accord ?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis ces historiens sont-ils d’accord ?",
     aspects: [{aspect: "Guerre de la Conquête"}],
     documents: [
       {
@@ -12563,7 +12563,8 @@ const QUESTIONS = [
       }
     ],
     reponse: false,
-    guide: "Jacques Lacoursière et Marcel Trudel considèrent que la connaissance du territoire constitue un avantage important de la milice canadienne durant la Guerre de la Conquête."
+    guide: "La milice joue un rôle important dans la défense de la Nouvelle-France durant la guerre de la Conquête.",
+    updatedAt: "2026-06-18T23:03:11.881Z"
   },
   {
     id: "Q218",
