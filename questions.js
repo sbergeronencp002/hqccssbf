@@ -14287,7 +14287,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 3,
     soustag: "Position – 3 acteurs",
-    enonce: "Les documents A à C présentent la position de trois acteurs concernant l'attitude que les Canadiens devraient adopter face à la Révolution américaine.\n\nNommez l'acteur qui présente une position différente et comparez cette position à celle des deux autres acteurs.",
+    enonce: "Les documents A à C présentent la position de trois acteurs concernant l'attitude que les Canadiens devraient adopter face à la Révolution américaine. Nommez l'acteur qui présente une position différente et comparez cette position à celle des deux autres acteurs.",
     aspects: [{aspect: "Invasion américaine"}],
     documents: [
       {
@@ -14325,8 +14325,8 @@ const QUESTIONS = [
       }
     ],
     reponse: false,
-    guide: "Benjamin Franklin présente une position différente. Il encourage les Canadiens à appuyer la Révolution américaine, tandis que Guy Carleton et Jean-Olivier Briand souhaitent qu'ils demeurent fidèles à la Grande-Bretagne.",
-    updatedAt: "2026-06-08T00:17:47.600Z"
+    guide: "Benjamin Franklin encourage les Canadiens à appuyer la Révolution américaine (la différence), alors que Guy Carleton et Jean-Olivier Briand les incitent à demeurer loyaux envers la Grande-Bretagne (la similitude).",
+    updatedAt: "2026-06-18T23:08:26.863Z"
   },
   {
     id: "Q274",
