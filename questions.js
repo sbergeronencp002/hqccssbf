@@ -16800,7 +16800,7 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "Denys Delâge considère que les premiers contacts entraînent surtout des conséquences négatives pour les Autochtones, alors que Bruce G. Trigger et Alain Beaulieu estiment qu'ils procurent principalement des avantages aux peuples autochtones.",
-    updatedAt: "2026-06-10T18:42:16.044Z"
+    updatedAt: "2026-06-18T23:17:41.070Z"
   },
   {
     id: "Q353",
