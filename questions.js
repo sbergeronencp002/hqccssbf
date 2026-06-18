@@ -21146,7 +21146,7 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Le rôle de l'Église anglicane dans la colonie.",
-    updatedAt: "2026-06-18T23:49:23.108Z"
+    updatedAt: "2026-06-18T23:50:41.417Z"
   },
   {
     id: "Q485",
