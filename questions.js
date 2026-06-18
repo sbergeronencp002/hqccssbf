@@ -11050,6 +11050,9 @@ const IMAGE_DB = {
   },
   "ligne_1830-1890.png": {
     src: "images/ligne_1830-1890.png"
+  },
+  "abolition_regime_seigneurial.jpg": {
+    src: "images/abolition_regime_seigneurial.jpg"
   }
 }
 
@@ -32388,7 +32391,7 @@ const QUESTIONS = [
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
     aspects: [
       {
-        aspect: "Économie coloniale"
+        aspect: "Exploitations agricoles"
       }
     ],
     documents: [
@@ -32397,7 +32400,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "traite_reciprocite.jpg",
+            ref: "abolition_regime_seigneurial.jpg",
             soustitre: "Traité de réciprocité",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
@@ -32406,9 +32409,9 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "image",
-      ref: "ligne_1830-1890.png"
+      ref: "ligne_1845-1890.png"
     },
-    guide: "B",
-    updatedAt: "2026-06-18T13:41:37.840Z"
+    guide: "A",
+    updatedAt: "2026-06-18T14:28:48.654Z"
   }
 ]
