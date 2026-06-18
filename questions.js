@@ -10219,6 +10219,34 @@ const REGLETTES = {
       "0 point"
     ],
     niveaux: []
+  },
+  "Q504": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
+      },
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {
+        pts: 1,
+        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
+      },
+      {
+        pts: 0,
+        desc: "L'élève précise un seul élément ou n'en précise pas."
+      }
+    ]
   }
 }
 
@@ -10951,6 +10979,9 @@ const IMAGE_DB = {
   },
   "carte_lieux_echanges.png": {
     src: "images/carte_lieux_echanges.png"
+  },
+  "tableau_representation_politique_1840.jpg": {
+    src: "images/tableau_representation_politique_1840.jpg"
   }
 }
 
@@ -32160,5 +32191,57 @@ const QUESTIONS = [
     },
     guide: "Changement\nEntre 1791 et 1840, l'organisation politique change. En 1791, le Haut-Canada et le Bas-Canada possèdent chacun leur propre chambre d'assemblée. En 1840, ils partagent une seule Assemblée législative.\n\nContinuité\nEntre 1791 et 1840, il y a continuité dans l'organisation politique de la colonie. En 1791 comme en 1840, la population élit des représentants à une assemblée législative.",
     updatedAt: "2026-06-18T12:52:51.755Z"
+  },
+  {
+    id: "Q504",
+    niveau: 4,
+    oi: "Établir des liens de causalité",
+    periode: "P5 — 1840 – 1896",
+    points: 3,
+    enonce: "Expliquez comment la constitution adoptée par les autorités britanniques en 1840 modifie la représentation politique des habitants de la Province du Canada.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• Le nom de la constitution adoptée en 1840\n• Un changement dans l'organisation politique de la colonie\n• Une conséquence pour la population du Bas-Canada",
+    aspects: [
+      {
+        aspect: "Acte d'Union"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Londres réagit promptement à la publication du Rapport sur les affaires de l’Amérique septentrionale britannique. En 1840, l’union des colonies du Bas-Canada et du Haut-Canada est réalisée. »",
+            source: "John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec, Québec, Septentrion, 2009, p. 153."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "carte_acte_union_1840.jpg",
+            source: "Récitus."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "tableau_representation_politique_1840.jpg",
+            soustitre: "Répartition des députés à l’Assemblée législative de la Province du Canada e 1840",
+            source: "Adapté de Jacques Lacoursière, Jean Provencher et Denis Vaugeois, Canada-Québec : synthèse historique, Montréal, ERPI, 2000."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 5
+    },
+    guide: "L'Acte d'Union (le nom de la constitution adoptée en 1840) est adopté par les autorités britanniques. Cette constitution crée une seule Assemblée législative pour le Haut-Canada et le Bas-Canada (un changement dans l'organisation politique de la colonie). Cette mesure réduit l'influence politique des habitants du Bas-Canada, qui ont le même nombre de députés que ceux du Canada-Ouest malgré une population plus nombreuse (une conséquence pour la population du Bas-Canada).",
+    updatedAt: "2026-06-18T13:12:37.136Z"
   }
 ]
