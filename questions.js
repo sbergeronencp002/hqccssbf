@@ -803,12 +803,9 @@ const REGLETTES = {
     oi: "Dégager des différences et des similitudes",
     colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."},
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
-      },
-      {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q93": {
@@ -8116,8 +8113,8 @@ const QUESTIONS = [
     oi: "Dégager des différences et des similitudes",
     periode: "P3 — 1760 – 1791",
     points: 2,
-    soustag: "Divergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux historiens. Sur quel point précis sont-ils en désaccord ?",
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?",
     aspects: [{aspect: "Régime militaire"}],
     documents: [
       {
@@ -8125,7 +8122,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Si quelques officiers, administrateurs et marchands retournent en France après 1760, la société canadienne conserve l’essentiel de ses structures locales et de ses élites seigneuriales, religieuses et professionnelles. »",
+            texte: "« Après la Conquête, plusieurs administrateurs, officiers militaires et marchands français choisissent de retourner en France plutôt que de vivre sous l'autorité britannique. »",
             auteur: "Jean Hamelin",
             source: "Jean Hamelin, Histoire du Québec, Édisem, 1976."
           }
@@ -8136,7 +8133,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« La Conquête provoque le départ d’une partie importante des élites françaises : officiers, administrateurs, marchands et membres du clergé. Cette émigration prive la colonie de plusieurs de ses cadres les plus influents. »",
+            texte: "« Une partie importante des élites françaises quitte la colonie dans les années qui suivent la capitulation, laissant davantage de place aux nouveaux arrivants britanniques. »",
             auteur: "Gilles Havard",
             source: "Gilles Havard et Cécile Vidal, Histoire de l’Amérique française, Flammarion, 2003."
           }
@@ -8144,7 +8141,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "L’ampleur du départ des élites après la Conquête ou l’importance des conséquences de cette émigration ou le maintien ou non des élites dans la colonie."
+    guide: "Plusieurs administrateurs, officiers militaires et marchands français quittent la colonie après la Conquête.\nL'élite française quitte la colonie après la Conquête.",
+    updatedAt: "2026-06-18T18:40:16.229Z"
   },
   {
     id: "Q93",
