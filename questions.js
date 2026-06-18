@@ -19266,7 +19266,7 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Les terres des seigneuries sont longues et étroites alors que celles des cantons sont plus carrées ou rectangulaires.",
-    updatedAt: "2026-06-14T12:15:11.576Z"
+    updatedAt: "2026-06-18T23:37:42.798Z"
   },
   {
     id: "Q425",
