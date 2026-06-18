@@ -10298,9 +10298,6 @@ const IMAGE_DB = {
   "carte_terr_acte_quebec.png": {
     src: "images/carte_terr_acte_quebec.png"
   },
-  "carte_terr_proclamation_royale.png": {
-    src: "images/carte_terr_proclamation_royale.png"
-  },
   "exportations_nouvelle_france_1755.png": {
     src: "images/exportations_nouvelle_france_1755.png"
   },
@@ -10896,6 +10893,9 @@ const IMAGE_DB = {
     src: "images/bois_navires.png",
     w: 1200,
     h: 800
+  },
+  "carte_proclamation_royale_1763.png": {
+    src: "images/carte_proclamation_royale_1763.png"
   }
 }
 
@@ -15063,7 +15063,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            ref: "carte_terr_proclamation_royale.png",
+            ref: "carte_proclamation_royale_1763.png",
             source: "Récitus."
           }
         ]
@@ -21176,7 +21176,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            ref: "carte_terr_proclamation_royale.png",
+            ref: "carte_proclamation_royale_1763.png",
             source: "Récitus."
           }
         ]
@@ -21479,7 +21479,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            ref: "carte_terr_proclamation_royale.png",
+            ref: "carte_proclamation_royale_1763.png",
             source: "Récitus."
           }
         ]
@@ -21743,7 +21743,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "carte_terr_proclamation_royale.png",
+            ref: "carte_proclamation_royale_1763.png",
             source: "Récitus."
           }
         ]
