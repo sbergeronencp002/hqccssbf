@@ -10595,9 +10595,6 @@ const IMAGE_DB = {
   "monseigneur_laval_eveque.png": {
     src: "images/monseigneur_laval_eveque.png"
   },
-  "territoire_bas-canada_1791.png": {
-    src: "images/territoire_bas-canada_1791.png"
-  },
   "elections_bas-canada_1792.png": {
     src: "images/elections_bas-canada_1792.png"
   },
@@ -10896,6 +10893,9 @@ const IMAGE_DB = {
   },
   "carte_territoire_occupe_1650.png": {
     src: "images/carte_territoire_occupe_1650.png"
+  },
+  "carte_acte_constitutionnel_1791.png": {
+    src: "images/carte_acte_constitutionnel_1791.png"
   }
 }
 
@@ -25055,7 +25055,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "territoire_bas-canada_1791.png",
+            ref: "carte_acte_constitutionnel_1791.png",
             source: "Récitus",
             soustitre: "carte_acte_constitutionnel_1791"
           }
