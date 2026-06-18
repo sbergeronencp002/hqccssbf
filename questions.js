@@ -10673,11 +10673,6 @@ const IMAGE_DB = {
   "evolution_pop_bas-canada_1790-1840.png": {
     src: "images/evolution_pop_bas-canada_1790-1840.png"
   },
-  "conflits_armes_bas-canada.png": {
-    src: "images/conflits_armes_bas-canada.png",
-    w: 1200,
-    h: 921
-  },
   "conflits_armes_haut-canada.png": {
     src: "images/conflits_armes_haut-canada.png",
     w: 1138,
@@ -10896,6 +10891,11 @@ const IMAGE_DB = {
   },
   "carte_acte_constitutionnel_1791.png": {
     src: "images/carte_acte_constitutionnel_1791.png"
+  },
+  "carte_conflits_armes_bas-canada_1837.png": {
+    src: "images/carte_conflits_armes_bas-canada_1837.png",
+    w: 1200,
+    h: 921
   }
 }
 
@@ -27798,7 +27798,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "conflits_armes_bas-canada.png",
+            ref: "carte_conflits_armes_bas-canada_1837.png",
             source: "Carte du Québec. Adaptée d'après d-maps.com."
           }
         ]
