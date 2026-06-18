@@ -17253,7 +17253,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« Les institutions britanniques assurent la stabilité du gouvernement et doivent demeurer au cœur de l'administration de la colonie. »",
+            texte: "« L'autorité du gouverneur demeure essentielle au maintien de l'ordre et de la stabilité dans la colonie. »",
             auteur: "James Monk",
             source: "James Monk, correspondance administrative du Bas-Canada, vers 1810. Adapté."
           }
@@ -17264,7 +17264,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« Les habitants de la colonie doivent obtenir une influence plus grande sur les affaires publiques par l'intermédiaire de leurs représentants élus. »",
+            texte: "« Les institutions politiques doivent être réformées afin de mieux protéger les droits et les intérêts de la population canadienne. »",
             auteur: "Denis-Benjamin Viger",
             source: "Denis-Benjamin Viger, discours politique, vers 1828. Adapté."
           }
@@ -17272,8 +17272,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "James Monk défend le maintien de l'autorité britannique dans la colonie (la différence), alors que Louis-Hippolyte La Fontaine et Denis-Benjamin Viger souhaitent accorder davantage de pouvoir aux représentants élus (la similitude).",
-    updatedAt: "2026-06-11T12:00:27.320Z"
+    guide: "James Monk s'oppose aux réformes politiques (la différence), alors que Louis-Hippolyte La Fontaine et Denis-Benjamin Viger y sont favorables (la similitude).",
+    updatedAt: "2026-06-18T23:21:56.566Z"
   },
   {
     id: "Q365",
