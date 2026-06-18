@@ -10325,9 +10325,6 @@ const IMAGE_DB = {
   "mercantilisme_fourrures_n-f.png": {
     src: "images/mercantilisme_fourrures_n-f.png"
   },
-  "destruction_huronie.png": {
-    src: "images/destruction_huronie.png"
-  },
   "ligne_bcAd.png": {
     src: "images/ligne_bcAd.png"
   },
@@ -10896,6 +10893,9 @@ const IMAGE_DB = {
   },
   "carte_reseaux_echanges_1500.png": {
     src: "images/carte_reseaux_echanges_1500.png"
+  },
+  "carte_destruction_huronie_1640.png": {
+    src: "images/carte_destruction_huronie_1640.png"
   }
 }
 
@@ -16403,7 +16403,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "destruction_huronie.png",
+            ref: "carte_destruction_huronie_1640.png",
             source: "Récitus."
           }
         ]
@@ -16687,7 +16687,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            ref: "destruction_huronie.png",
+            ref: "carte_destruction_huronie_1640.png",
             source: "Récitus."
           }
         ]
