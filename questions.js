@@ -10673,11 +10673,6 @@ const IMAGE_DB = {
   "evolution_pop_bas-canada_1790-1840.png": {
     src: "images/evolution_pop_bas-canada_1790-1840.png"
   },
-  "conflits_armes_haut-canada.png": {
-    src: "images/conflits_armes_haut-canada.png",
-    w: 1138,
-    h: 1200
-  },
   "assemblee_six_comtes.png": {
     src: "images/assemblee_six_comtes.png"
   },
@@ -10896,6 +10891,11 @@ const IMAGE_DB = {
     src: "images/carte_conflits_armes_bas-canada_1837.png",
     w: 1200,
     h: 921
+  },
+  "carte_conflits_armes_haut-canada_1838.png": {
+    src: "images/carte_conflits_armes_haut-canada_1838.png",
+    w: 1138,
+    h: 1200
   }
 }
 
@@ -27829,7 +27829,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "conflits_armes_haut-canada.png",
+            ref: "carte_conflits_armes_haut-canada_1838.png",
             source: "Carte du Québec. Adaptée d'après d-maps.com."
           }
         ]
