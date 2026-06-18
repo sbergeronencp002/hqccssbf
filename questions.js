@@ -10208,6 +10208,17 @@ const REGLETTES = {
         desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
       }
     ]
+  },
+  "Q503": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: [
+      "3 points",
+      "2 points",
+      "1 point",
+      "0 point"
+    ],
+    niveaux: []
   }
 }
 
@@ -32105,5 +32116,49 @@ const QUESTIONS = [
     },
     guide: "La Province du Canada.",
     updatedAt: "2026-06-18T12:46:36.050Z"
+  },
+  {
+    id: "Q503",
+    niveau: 4,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P5 — 1840 – 1896",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez un changement ou une continuité dans l'organisation politique de la colonie entre 1791 et 1840. Justifiez votre réponse à l'aide de faits et d'un repère de temps.",
+    aspects: [
+      {
+        aspect: "Acte d'Union"
+      }
+    ],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "org_pol_1791_acte_const.png",
+            soustitre: "Organisation politique du Haut-Canada et du Bas-Canada entre 1791 et 1840",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "org_pol_1840_acte_union.png",
+            soustitre: "Organisation politique de la Province du Canada à partir de 1840",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "lignes",
+      nombre: 3
+    },
+    guide: "Changement\nEntre 1791 et 1840, l'organisation politique change. En 1791, le Haut-Canada et le Bas-Canada possèdent chacun leur propre chambre d'assemblée. En 1840, ils partagent une seule Assemblée législative.\n\nContinuité\nEntre 1791 et 1840, il y a continuité dans l'organisation politique de la colonie. En 1791 comme en 1840, la population élit des représentants à une assemblée législative.",
+    updatedAt: "2026-06-18T12:52:51.755Z"
   }
 ]
