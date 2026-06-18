@@ -9,22 +9,46 @@
 // Expose en global : serializeValue, ensureImageDbComplete, generateQuestionsJs.
 // ─────────────────────────────────────────────────────────────────────
 
-// Sérialise récursivement une valeur JS en code source lisible (indentation 2 espaces).
+function _isScalar(v) {
+  return v === null || v === false || v === true || typeof v === 'number' || typeof v === 'string';
+}
+
+// Objet plat = toutes les valeurs sont scalaires (pas d'imbrication)
+function _isFlat(v) {
+  if(_isScalar(v)) return true;
+  if(Array.isArray(v) || typeof v !== 'object' || v === null) return false;
+  return Object.values(v).every(_isScalar);
+}
+
+// Sérialise récursivement une valeur JS en code source lisible.
+// Les objets plats (valeurs toutes scalaires) et les tableaux d'objets
+// plats courts sont mis sur une seule ligne pour réduire la taille du fichier.
 function serializeValue(v, indent=0) {
   const pad = '  '.repeat(indent);
   const pad1 = '  '.repeat(indent+1);
-  if(v === null || v === false || v === true) return String(v);
-  if(typeof v === 'number') return String(v);
-  if(typeof v === 'string') return JSON.stringify(v);
+  if(_isScalar(v)) return v === null ? 'null' : typeof v === 'string' ? JSON.stringify(v) : String(v);
   if(Array.isArray(v)) {
     if(!v.length) return '[]';
+    // Tableau d'éléments plats → essayer une ligne
+    if(v.every(_isFlat)) {
+      const items = v.map(i => serializeValue(i, 0));
+      const oneLine = '[' + items.join(', ') + ']';
+      if(oneLine.length <= 120) return oneLine;
+    }
     const items = v.map(i => pad1 + serializeValue(i, indent+1));
     return '[\n' + items.join(',\n') + '\n' + pad + ']';
   }
-  const pairs = Object.entries(v).map(([k,val]) => {
-    const key = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(k) ? k : JSON.stringify(k);
-    return pad1 + key + ': ' + serializeValue(val, indent+1);
-  });
+  // Objet
+  const entries = Object.entries(v);
+  if(!entries.length) return '{}';
+  const fmtKey = k => /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(k) ? k : JSON.stringify(k);
+  // Objet plat → une ligne
+  if(entries.every(([,val]) => _isScalar(val))) {
+    const pairs = entries.map(([k,val]) => fmtKey(k) + ': ' + serializeValue(val, 0));
+    const oneLine = '{' + pairs.join(', ') + '}';
+    if(oneLine.length <= 120) return oneLine;
+  }
+  const pairs = entries.map(([k,val]) => pad1 + fmtKey(k) + ': ' + serializeValue(val, indent+1));
   return '{\n' + pairs.join(',\n') + '\n' + pad + '}';
 }
 

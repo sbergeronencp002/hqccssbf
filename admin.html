@@ -9,7 +9,7 @@
 <script src="reglettes.js?v=2"></script>
 <script src="contexte.js"></script>
 <script src="oi-config.js?v=1"></script>
-<script src="questions-io.js?v=1"></script>
+<script src="questions-io.js?v=2"></script>
 <style>
 :root {
   --ink: #1a1814; --ink-2: #4a4740; --ink-3: #8a8680;
@@ -602,7 +602,7 @@ function filterEditList() {
     const isFocused  = i === editFocusIdx;
     const enonce = (q.enonce||'').replace(/\*\*/g,'').slice(0, 90) + ((q.enonce||'').length > 90 ? '…' : '');
     return `<div class="edit-result-card${isSelected ? ' selected' : ''}${isFocused ? ' focused' : ''}"
-      data-idx="${i}" onclick="loadQuestion('${q.id}')" onmouseenter="editFocusIdx=${i}">
+      data-idx="${i}" data-id="${q.id}" onclick="loadQuestion('${q.id}')" onmouseenter="editFocusIdx=${i}">
       <div style="min-width:0;flex:1">
         <div class="edit-card-meta">
           ${noG ? '<span class="edit-card-warn">⚠ </span>' : ''}<span class="edit-card-id">${highlight(q.id, search)}</span>
@@ -677,7 +677,10 @@ function loadQuestion(id) {
     document.getElementById('edit-selected-label').textContent =
       `${q.id} — ${q.oi} · Niv.${q.niveau} · ${q.periode}`;
   }
-  filterEditList(); // rafraîchir pour highlighter la carte sélectionnée
+  // Mettre à jour la sélection visuellement sans re-rendre toute la liste
+  document.querySelectorAll('#edit-results .edit-result-card').forEach(el => {
+    el.classList.toggle('selected', el.dataset.id === id);
+  });
 
   document.getElementById('q-id').value = q.id;
   document.getElementById('next-id-badge').textContent = q.id;
@@ -835,19 +838,38 @@ function loadQuestion(id) {
 }
 
 // ── SUPPRIMER QUESTION ────────────────────────────────────────────────
-async function fetchFreshState(token) {
+// Lit questions.js via l'API Contents (avec fallback download_url si > 1 Mo).
+// Retourne { sha, content (texte JS brut) }.
+async function _fetchQuestionsRaw(headers) {
   const r = await fetch(
     `https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js?ref=${BRANCH}&t=${Date.now()}`,
-    { headers: { Authorization: `token ${token}` }, cache: 'no-store' }
+    { headers, cache: 'no-store' }
   );
   if(!r.ok) throw new Error('Impossible de lire questions.js : ' + r.status);
   const data = await r.json();
-  questionsFileSha = data.sha;
-  const rawB64 = data.content.replace(/\n/g,'');
-  const binary = atob(rawB64);
-  const bytes = new Uint8Array(binary.length);
-  for(let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
-  const content = new TextDecoder('utf-8').decode(bytes);
+  const sha = data.sha;
+  let content;
+  if(data.content) {
+    // Fichier ≤ 1 Mo : contenu inline base64
+    const rawB64 = data.content.replace(/\n/g,'');
+    const binary = atob(rawB64);
+    const bytes = new Uint8Array(binary.length);
+    for(let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+    content = new TextDecoder('utf-8').decode(bytes);
+  } else if(data.download_url) {
+    // Fichier > 1 Mo : téléchargement direct
+    const raw = await fetch(data.download_url + '&t=' + Date.now(), { cache: 'no-store' });
+    if(!raw.ok) throw new Error('Impossible de télécharger questions.js : ' + raw.status);
+    content = await raw.text();
+  } else {
+    throw new Error('Réponse inattendue de l'API GitHub pour questions.js');
+  }
+  return { sha, content };
+}
+
+async function fetchFreshState(token) {
+  const { sha, content } = await _fetchQuestionsRaw({ Authorization: `token ${token}` });
+  questionsFileSha = sha;
   let result;
   try {
     const fn = new Function(content + '\nreturn { REGLETTES, IMAGE_DB, QUESTIONS };');
@@ -858,7 +880,7 @@ async function fetchFreshState(token) {
   currentQuestions = result.QUESTIONS;
   currentReglettes = result.REGLETTES;
   currentImageDb   = result.IMAGE_DB;
-  return { ...result, rawB64 };
+  return result;
 }
 
 async function supprimerQuestion() {
@@ -1117,23 +1139,23 @@ async function loadImages() {
 
 async function loadQuestionsJs() {
   try {
-    const headers = getToken() ? { Authorization: `token ${getToken()}` } : {};
     let tokenKo = false;
-    let r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js?ref=${BRANCH}&t=${Date.now()}`, { headers, cache: 'no-store' });
-    if(r.status === 401 || r.status === 403) {
-      tokenKo = true;
-      // Token expiré ou invalide : le dépôt est public, on relit en anonyme (la publication, elle, exigera un token valide)
-      document.getElementById('token-status').textContent = '✗ Token invalide ou expiré';
-      document.getElementById('token-status').className = 'token-status ko';
-      r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js?ref=${BRANCH}&t=${Date.now()}`, { cache: 'no-store' });
+    let sha, content;
+    try {
+      const headers = getToken() ? { Authorization: `token ${getToken()}` } : {};
+      ({ sha, content } = await _fetchQuestionsRaw(headers));
+    } catch(e) {
+      // 401/403 → on relit en anonyme (dépôt public)
+      if(/401|403/.test(e.message)) {
+        tokenKo = true;
+        document.getElementById('token-status').textContent = '✗ Token invalide ou expiré';
+        document.getElementById('token-status').className = 'token-status ko';
+        ({ sha, content } = await _fetchQuestionsRaw({}));
+      } else {
+        throw e;
+      }
     }
-    if(!r.ok) throw new Error(r.status);
-    const data = await r.json();
-    questionsFileSha = data.sha;
-    const binary = atob(data.content.replace(/\n/g,''));
-    const bytes = new Uint8Array(binary.length);
-    for(let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
-    const content = new TextDecoder('utf-8').decode(bytes);
+    questionsFileSha = sha;
     let result;
     try {
       const fn = new Function(content + '\n return { REGLETTES, IMAGE_DB, QUESTIONS };');
