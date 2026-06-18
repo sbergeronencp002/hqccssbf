@@ -862,7 +862,7 @@ async function _fetchQuestionsRaw(headers) {
     if(!raw.ok) throw new Error('Impossible de télécharger questions.js : ' + raw.status);
     content = await raw.text();
   } else {
-    throw new Error('Réponse inattendue de l'API GitHub pour questions.js');
+    throw new Error("Réponse inattendue de l'API GitHub pour questions.js");
   }
   return { sha, content };
 }
