@@ -10862,7 +10862,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux historiens sur la milice en Nouvelle-France. Sur quel point précis sont-ils en accord?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord.",
     aspects: [{aspect: "Gouvernement royal"}],
     documents: [
       {
@@ -10871,6 +10871,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             texte: "« La milice constitue une composante essentielle du système défensif colonial. Bien qu'elle ne remplace pas les troupes régulières, elle fournit aux autorités un effectif rapidement mobilisable lors des conflits. »",
+            auteur: "Gilles Proulx",
             source: "Gilles Proulx, Combattre en Nouvelle-France, Athéna Éditions, 2009."
           }
         ]
@@ -10881,13 +10882,15 @@ const QUESTIONS = [
           {
             titre: "Document B",
             texte: "« La milice fait partie intégrante de l'organisation militaire de la Nouvelle-France. Les autorités coloniales peuvent mobiliser rapidement les hommes des paroisses afin de participer à la défense du territoire. »",
+            auteur: "Louise Dechêne",
             source: "Louise Dechêne, Le peuple, l'État et la guerre au Canada sous le Régime français, Boréal, 2008."
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les deux historiens considèrent que la milice contribue à la défense de la Nouvelle-France ou qu'elle peut être mobilisée pour protéger la colonie."
+    guide: "La milice joue un rôle important dans la défense de la colonie.\n\nLa milice permet de mobiliser rapidement des hommes pour défendre",
+    updatedAt: "2026-06-18T20:16:30.931Z"
   },
   {
     id: "Q167",
