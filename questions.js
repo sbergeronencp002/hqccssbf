@@ -20362,7 +20362,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Divergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux personnages historiques. Sur quel point précis sont-ils en désaccord?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils d'désaccord?",
     aspects: [{aspect: "Commerce du bois"}],
     documents: [
       {
@@ -20390,7 +20390,7 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Le blocus continental.",
-    updatedAt: "2026-06-16T02:59:12.839Z"
+    updatedAt: "2026-06-18T23:46:36.429Z"
   },
   {
     id: "Q459",
