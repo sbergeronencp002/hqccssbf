@@ -32309,6 +32309,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "org_pol_1840_acte_union.png",
+            soustitre: "Adoption de l'Acte d'Union",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
@@ -32319,7 +32320,7 @@ const QUESTIONS = [
       ref: "ligne_1830-1875.png"
     },
     guide: "A",
-    updatedAt: "2026-06-18T13:27:07.040Z"
+    updatedAt: "2026-06-18T13:38:10.374Z"
   },
   {
     id: "Q506",
