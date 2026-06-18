@@ -10322,9 +10322,6 @@ const IMAGE_DB = {
   "voyages_exploration.png": {
     src: "images/voyages_exploration.png"
   },
-  "premiers_contacts": {
-    src: "images/premiers_contacts"
-  },
   "graphique_poste_de_traite_1780.png": {
     src: "images/graphique_poste_de_traite_1780.png"
   },
@@ -10896,6 +10893,9 @@ const IMAGE_DB = {
   },
   "carte_familles_linguistiques_autochtones_lettres.png": {
     src: "images/carte_familles_linguistiques_autochtones_lettres.png"
+  },
+  "carte_premiers_contacts.png": {
+    src: "images/carte_premiers_contacts.png"
   }
 }
 
@@ -15949,7 +15949,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "premiers_contacts",
+            ref: "carte_premiers_contacts.png",
             source: "Récitus."
           }
         ]
@@ -15980,7 +15980,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "premiers_contacts"
+            ref: "carte_premiers_contacts.png"
           }
         ]
       }
@@ -16019,7 +16019,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "premiers_contacts",
+            ref: "carte_premiers_contacts.png",
             source: "Récitus."
           }
         ]
