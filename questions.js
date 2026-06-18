@@ -14915,7 +14915,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 2,
     soustag: "Divergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux historiens sur les réfugiés acadiens dans la Province de Québec. Sur quel point précis ces historiens sont-ils en désaccord ?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs Sur quel point précis ces historiens sont-ils en désaccord ?",
     aspects: [{aspect: "Situation sociodémographique"}],
     documents: [
       {
@@ -14940,8 +14940,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les historiens sont en désaccord sur l'importance du rôle joué par les réfugiés acadiens dans le peuplement de la Province de Québec.",
-    updatedAt: "2026-06-08T14:04:56.438Z"
+    guide: "L'importance du rôle joué par les réfugiés acadiens dans le peuplement de la Province de Québec.",
+    updatedAt: "2026-06-18T23:09:36.808Z"
   },
   {
     id: "Q294",
