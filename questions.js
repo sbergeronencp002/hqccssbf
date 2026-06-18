@@ -11595,7 +11595,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 3,
     soustag: "Position – 3 acteurs",
-    enonce: "Les documents A, B et C présentent le point de vue de trois historiens sur les effets du métissage en Nouvelle-France. Nommez l'historien qui présente une position différente et comparez sa position à celle des deux autres historiens.",
+    enonce: "Les documents A à C présentent le point de vue de trois historiens sur les effets du métissage en Nouvelle-France. Nommez l'historien qui présente une position différente et comparez sa position à celle des deux autres historiens.",
     aspects: [{aspect: "Populations autochtones"}],
     documents: [
       {
@@ -11630,7 +11630,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "Marcel Trudel estime que le métissage a eu une importance limitée (la différence), alors que Denys Delâge et Olive Patricia Dickason estiment qu'il a contribué de façon importante à l'évolution de la population de la Nouvelle-France (la similitude)."
+    guide: "Marcel Trudel estime que le métissage a eu une importance limitée (la différence), alors que Denys Delâge et Olive Patricia Dickason penent le contraire (la similitude).",
+    updatedAt: "2026-06-18T20:24:11.565Z"
   },
   {
     id: "Q190",
