@@ -21353,8 +21353,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Ils sont en désaccord sur l'assimilation des Canadiens français.",
-    updatedAt: "2026-06-16T13:53:26.608Z"
+    guide: "L'assimilation des Canadiens français.",
+    updatedAt: "2026-06-18T23:52:23.816Z"
   },
   {
     id: "Q492",
