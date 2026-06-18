@@ -8465,7 +8465,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "La bourgeoisie anglophone est en faveur (ou en faveur de l’union) (la différence), alors que le clergé et la bourgeoisie professionnelle francophone s’y opposent (la similitude). \noo\nLa bourgeoisie anglophone est en faveur (ou en faveur de l’union) (la différence), contrairement aux deux autres groupes (la similitude)."
+    guide: "La bourgeoisie anglophone est en faveur de l'union des deux Canadas (ou en faveur de l’union) (la différence), alors que le clergé et la bourgeoisie professionnelle francophone s’y opposent (la similitude). \noo\nLa bourgeoisie anglophone est en faveur de l’union (la différence), contrairement aux deux autres groupes (la similitude).",
+    updatedAt: "2026-06-18T20:06:34.973Z"
   },
   {
     id: "Q101",
