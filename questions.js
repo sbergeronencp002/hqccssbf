@@ -18165,7 +18165,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Divergence – 2 acteurs",
-    enonce: "Les documents A et B présentent la position de deux acteurs concernant un enjeu dans les colonies britanniques. Nommez le point sur lequel ces acteurs sont en désaccord.",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Indiquez le principal point sur lequel ces acteurs sont en désaccord.",
     aspects: [{aspect: "Population"}],
     documents: [
       {
@@ -18192,8 +18192,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Le maintien ou l'abolition de l'esclavage.",
-    updatedAt: "2026-06-12T01:30:23.010Z"
+    guide: "L'abolition de l'esclavage.",
+    updatedAt: "2026-06-18T23:27:43.112Z"
   },
   {
     id: "Q394",
