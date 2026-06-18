@@ -17782,7 +17782,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 3,
     soustag: "Position – 3 acteurs",
-    enonce: "Le document présente la position de trois acteurs concernant l'organisation politique du Bas-Canada. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+    enonce: "Les documents A à C présentent le point de vue de trois acteurs concernant l'avenir politique du Bas-Canada. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
     aspects: [{aspect: "Idées libérales et républicaines"}],
     documents: [
       {
@@ -17820,8 +17820,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "Jonathan Sewell veut maintenir l'autorité britannique (la différence), alors que Louis-Joseph Papineau et Ludger Duvernay souhaitent accroître le pouvoir de la population et des représentants élus (la similitude).",
-    updatedAt: "2026-06-11T16:06:44.714Z"
+    guide: "Jonathan Sewell est favorable au maintien de l'autorité de la Couronne et du gouverneur (la différence), alors que Louis-Joseph Papineau et Ludger Duvernay s'y opposent ou souhaitent accorder davantage de pouvoir à la population et à ses représentants (la similitude).",
+    updatedAt: "2026-06-18T23:25:04.039Z"
   },
   {
     id: "Q382",
