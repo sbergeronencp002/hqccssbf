@@ -19236,7 +19236,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Différence",
-    enonce: "À partir des documents A et B, indiquez une différence entre l'organisation du territoire en seigneurie et en canton.",
+    enonce: "À partir des documents A et B, indiquez une différence dans l'organisation du territoire entre la seigneurie et le canton.",
     aspects: [{aspect: "Agriculture"}],
     documents: [
       {
@@ -19266,7 +19266,7 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Les terres des seigneuries sont longues et étroites alors que celles des cantons sont plus carrées ou rectangulaires.",
-    updatedAt: "2026-06-18T23:37:42.798Z"
+    updatedAt: "2026-06-18T23:38:21.301Z"
   },
   {
     id: "Q425",
