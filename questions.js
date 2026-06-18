@@ -21024,7 +21024,7 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "La défense de la colonie contre l'invasion américaine.",
-    updatedAt: "2026-06-16T02:52:12.607Z"
+    updatedAt: "2026-06-18T23:49:08.591Z"
   },
   {
     id: "Q481",
