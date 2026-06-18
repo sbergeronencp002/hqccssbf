@@ -19138,7 +19138,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Divergence – 2 acteurs",
-    enonce: "Le document présente le point de vue de deux acteurs. Sur quel point précis sont-ils en désaccord?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Indiquez le principal point sur lequel ces acteurs sont en désaccord.",
     aspects: [{aspect: "Capitaux et infrastructures"}],
     documents: [
       {
@@ -19166,7 +19166,7 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "L'utilisation des fonds publics.\nLe contrôle des dépenses de la colonie.\nL'administration des revenus publics.\nLe pouvoir de décider des dépenses publiques.",
-    updatedAt: "2026-06-16T03:07:10.361Z"
+    updatedAt: "2026-06-18T23:37:20.574Z"
   },
   {
     id: "Q422",
