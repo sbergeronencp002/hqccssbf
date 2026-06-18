@@ -10617,9 +10617,6 @@ const IMAGE_DB = {
   "debats_parlementaires.png": {
     src: "images/debats_parlementaires.png"
   },
-  "lieux_echanges.png": {
-    src: "images/lieux_echanges.png"
-  },
   "carte_cartier_1534.png": {
     src: "images/carte_cartier_1534.png"
   },
@@ -10923,6 +10920,9 @@ const IMAGE_DB = {
     src: "images/carte_acte_union_1840.jpg",
     w: 1091,
     h: 777
+  },
+  "carte_lieux_echanges.png": {
+    src: "images/carte_lieux_echanges.png"
   }
 }
 
@@ -25763,7 +25763,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "lieux_echanges.png",
+            ref: "carte_lieux_echanges.png",
             source: "Carte du Québec. Adaptée d'après d-maps.com."
           }
         ]
