@@ -10538,11 +10538,6 @@ const IMAGE_DB = {
   "ligne_1790-1850.png": {
     src: "images/ligne_1790-1850.png"
   },
-  "bataille_chateauguay.png": {
-    src: "images/bataille_chateauguay.png",
-    w: 1200,
-    h: 921
-  },
   "village_iroquoien_vers_1500.png": {
     src: "images/village_iroquoien_vers_1500.png"
   },
@@ -10896,6 +10891,11 @@ const IMAGE_DB = {
   },
   "carte_familles_linguistiques_autochtones_1500.png": {
     src: "images/carte_familles_linguistiques_autochtones_1500.png"
+  },
+  "carte_bataille_chateauguay.png": {
+    src: "images/carte_bataille_chateauguay.png",
+    w: 1200,
+    h: 921
   }
 }
 
@@ -24066,7 +24066,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "bataille_chateauguay.png",
+            ref: "carte_bataille_chateauguay.png",
             soustitre: "Bataille de Chateauguay",
             source: "Illustration de C. W. Jefferys, Bibliothèque et Archives Canada."
           }
@@ -31192,7 +31192,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "bataille_chateauguay.png",
+            ref: "carte_bataille_chateauguay.png",
             source: "Carte du Québec. Adaptée d'après d-maps.com."
           }
         ]
