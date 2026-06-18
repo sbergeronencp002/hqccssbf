@@ -10718,7 +10718,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 2,
     soustag: "Divergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux acteurs sur le commerce des fourrures en Nouvelle-France. Sur quel point précis sont-ils en accord?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en désaccord?",
     aspects: [{aspect: "Commerce des fourrures"}],
     documents: [
       {
@@ -10726,8 +10726,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Les congés de traite favorisent la dispersion des habitants dans l'intérieur du continent et privent souvent les établissements agricoles d'une partie de la main-d'œuvre dont ils ont besoin. »",
-            source: "Marcel Trudel, Histoire de la Nouvelle-France, tome 3 : La seigneurie de la Compagnie des Cent-Associés, 1627-1663, Montréal, Fides, 1979."
+            texte: "« Les congés de traite permettent de développer le commerce des fourrures et d'étendre l'influence française vers l'intérieur du continent. »",
+            auteur: "Jean Talon",
+            source: "Adapté de la correspondance de Jean Talon au ministre de la Marine, vers 1670."
           }
         ]
       },
@@ -10736,14 +10737,16 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« Les autorités s'inquiètent du nombre croissant d'hommes attirés par la traite des fourrures, activité qui détourne plusieurs colons du travail agricole et du peuplement de la vallée du Saint-Laurent. »",
-            source: "Louise Dechêne, Habitants et marchands de Montréal au XVIIe siècle, Montréal, Boréal, 1988."
+            texte: "« Cette pratique détourne les habitants de l'agriculture et favorise une vie désordonnée dans les régions éloignées. »",
+            auteur: "François de Laval",
+            source: "Adapté des lettres de François de Laval adressées au roi de France, vers 1670."
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les congé de traite nuisent au développement de la colonie."
+    guide: "Les congé de traite.",
+    updatedAt: "2026-06-18T20:14:14.119Z"
   },
   {
     id: "Q164",
