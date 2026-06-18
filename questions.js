@@ -13016,7 +13016,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux historiens sur le rôle du chaman. Sur quel point précis ces deux auteurs sont-ils d’accord?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?",
     aspects: [
       {
         aspect: "Rapports sociaux chez les Autochtones"
@@ -13028,8 +13028,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Le chaman joue un rôle important dans plusieurs sociétés autochtones. Il dirige des cérémonies, interprète les rêves, communique avec les esprits et intervient pour soigner les malades ou favoriser le succès de la chasse. »",
-            auteur: "Olive Patricia Dickason"
+            texte: "« Le chaman agit comme intermédiaire entre le monde des esprits et celui des humains afin de guider sa communauté. »",
+            auteur: "Denys Delâge",
+            source: "Adapté de Denys Delâge, Le pays renversé : Amérindiens et Européens en Amérique du Nord-Est, 1600-1664, Boréal, 1991."
           }
         ]
       },
@@ -13038,8 +13039,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« Les chamans occupent une place particulière dans la communauté. On leur attribue des pouvoirs spirituels qui leur permettent de guérir, de protéger le groupe et de maintenir des relations avec le monde surnaturel. »",
-            auteur: "Bruce G. Trigger"
+            texte: "« Les communautés autochtones accordent au chaman un rôle spirituel important puisqu'il interprète les rêves et communique avec les forces surnaturelles. »",
+            auteur: "Alain Beaulieu",
+            source: "Adapté de Alain Beaulieu, Les Autochtones du Québec : des premières alliances aux revendications contemporaines, Fides, 2013."
           }
         ]
       }
@@ -13048,7 +13050,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Les deux auteurs s’entendent pour dire que le chaman occupe un rôle spirituel important dans la communauté."
+    guide: "Le rôle spirituel du chaman dans leur communauté.",
+    updatedAt: "2026-06-18T18:02:54.438Z"
   },
   {
     id: "Q43",
