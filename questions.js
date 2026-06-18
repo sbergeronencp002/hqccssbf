@@ -11354,8 +11354,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« […] les seigneurs, qui se voient offrir des fonctions civiles et militaires, qui […] assistent à la pleine restauration des lois traditionnelles sur la propriété (c’est-à-dire le régime seigneurial), pèseront […] de tout leur prestige en faveur de l’appui au gouvernement. »",
-            source: "Jean-Pierre CHARLAND, À l’aube du XXIe siècle, avec la collaboration de Jacques Saint-Pierre, manuel de l’élève, histoire du Québec et du Canada, 4e secondaire, Montréal, Lidec, 1997, p. 166."
+            texte: "« L'Acte de Québec de 1774 vise à assurer la loyauté des Canadiens en leur permettant de conserver leur religion et leurs lois civiles. »",
+            auteur: "Jacques Lacoursière",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 1, Septentrion, 1995."
           }
         ]
       },
@@ -11364,8 +11365,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« [Les] marchands britanniques de la vallée du Saint-Laurent […] ne cachent pas leur indignation devant les concessions accordées aux Canadiens. […] ils acceptent difficilement le refus de créer une chambre d’assemblée, qu’ils espéraient contrôler. Ils entreprennent aussitôt, auprès des autorités, une campagne visant le retrait de l’Acte de Québec. »",
-            source: "Jean-François CARDIN et autres, Le Québec : héritages et projets, 2e éd., Laval, Éditions HRW, 1994, p.170."
+            texte: "« En reconnaissant officiellement le catholicisme, l'Acte de Québec favorise la collaboration entre les autorités britanniques et l'élite canadienne. »",
+            auteur: "Gilles Laporte",
+            source: "Adapté de Gilles Laporte, Brève histoire du Québec, Septentrion, 2021."
           }
         ]
       },
@@ -11374,8 +11376,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« […] l’Acte de Québec confirme la tolérance accordée au catholicisme et rend obligatoire pour les catholiques le paiement de la dîme.\n\nEn contrepartie, le clergé catholique collabore avec les gouverneurs britanniques. L’évêque et les curés prêchent aux Canadiens la loyauté et la soumission envers le souverain d’Angleterre. »",
-            source: "Christophe HORGUELIN et autres, Fresques, manuel de l’élève, histoire et éducation à la citoyenneté, 2e année du 2e cycle du secondaire, Montréal, Graficor, 2009, t. 2, p. 120."
+            texte: "« Plusieurs observateurs britanniques et américains considèrent l'Acte de Québec comme une mesure excessive qui accorde trop de privilèges aux Canadiens. »",
+            auteur: "Marcel Trudel",
+            source: "Adapté de Marcel Trudel, Initiation à la Nouvelle-France, Holt, Rinehart et Winston, 1968."
           }
         ]
       }
@@ -11384,8 +11387,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 3
     },
-    guide: "Les marchands sont insatisfaits de l'Acte de Québec ou ils s’y opposent (la différence), alors que le clergé et les seigneurs l’appuient (la similitude).",
-    updatedAt: "2026-06-18T15:53:50.439Z"
+    guide: "Trudel affirme que l'Acte de Québec accorde trop de privilèges aux Canadiens (la différence), alors que Lacoursière et Laporte soutiennent que ces concessions sont bénéfiques pour la colonie (la similitude).",
+    updatedAt: "2026-06-18T16:04:07.628Z"
   },
   {
     id: "Q7",
