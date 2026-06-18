@@ -20325,7 +20325,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux personnages historiques. Sur quel point précis sont-ils d'accord?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils d'accord?",
     aspects: [{aspect: "Commerce du bois"}],
     documents: [
       {
@@ -20353,7 +20353,7 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Les tarifs préférentiels sur le bois colonial.",
-    updatedAt: "2026-06-16T02:58:36.379Z"
+    updatedAt: "2026-06-18T23:45:31.426Z"
   },
   {
     id: "Q458",
