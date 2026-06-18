@@ -18202,7 +18202,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent la position de deux acteurs concernant le développement du Haut-Canada. Nommez le point sur lequel ces acteurs sont d'accord.",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Indiquez le principal point sur lequel ces acteurs sont d'accord.",
     aspects: [{aspect: "Population"}],
     documents: [
       {
@@ -18229,8 +18229,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Encourager l'établissement de colons britanniques dans le Haut-Canada.\nFavoriser l'immigration britannique dans le Haut-Canada.",
-    updatedAt: "2026-06-12T01:32:03.286Z"
+    guide: "L'établissement de colons britanniques dans le Haut-Canada.\nL'immigration britannique dans le Haut-Canada.",
+    updatedAt: "2026-06-18T23:28:35.340Z"
   },
   {
     id: "Q395",
