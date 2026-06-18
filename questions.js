@@ -19101,7 +19101,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Le document présente le point de vue de deux acteurs. Sur quel point précis sont-ils d'accord?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Indiquez le principal point sur lequel ces acteurs sont d'accord.",
     aspects: [{aspect: "Capitaux et infrastructures"}],
     documents: [
       {
@@ -19128,8 +19128,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "La fondation de la Banque de Montréal.\nLa création d'une institution financière.\nLe financement des activités commerciales.",
-    updatedAt: "2026-06-16T03:07:36.346Z"
+    guide: "Le rôle des banques dans le développement économique de la colonie.",
+    updatedAt: "2026-06-18T23:36:48.814Z"
   },
   {
     id: "Q421",
