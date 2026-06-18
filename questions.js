@@ -21060,8 +21060,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "La participation des habitants à la guerre ou à la formation de la milice.",
-    updatedAt: "2026-06-18T23:49:52.430Z"
+    guide: "La participation des habitants à la milice.",
+    updatedAt: "2026-06-18T23:50:30.574Z"
   },
   {
     id: "Q482",
