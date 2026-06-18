@@ -8080,7 +8080,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux historiens. Sur quel point précis sont-ils d’accord?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils d’accord?",
     aspects: [{aspect: "Régime militaire"}],
     documents: [
       {
@@ -8107,7 +8107,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Le départ de Canadiens après la Conquête ou la majorité de la population canadienne demeure dans la colonie après la Conquête ou peu de Canadiens quittent après la Conquête."
+    guide: "Peu de Canadiens quittent la colonie après la Conquête.",
+    updatedAt: "2026-06-18T18:36:21.622Z"
   },
   {
     id: "Q92",
