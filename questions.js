@@ -8159,8 +8159,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« On calcule qu’au moins deux mille Canadiens quittèrent leur pays natal durant les dix années qui suivirent la capitulation de Montréal. […] Pour la masse de la population canadienne, il n’était pas question d’émigrer. »",
-            auteur: "Marcel Trudel",
+            texte: "« Le départ des administrateurs, officiers et marchands français affaiblit considérablement l'influence française dans la colonie. »",
+            auteur: "Michel Brunet",
             source: "Marcel Trudel, Initiation à la Nouvelle-France : histoire et institutions, Montréal, Holt, Rinehart et Winston, 1968."
           }
         ]
@@ -8170,9 +8170,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« La Conquête provoque le départ d’une partie importante des élites françaises : officiers, administrateurs, marchands et membres du clergé. Cette émigration prive la colonie de plusieurs de ses cadres les plus influents. »",
-            auteur: "Gilles Havard",
-            source: "Gilles Havard et Cécile Vidal, Histoire de l’Amérique française, Paris, Flammarion, 2003."
+            texte: "« L'émigration d'une partie de l'élite française contribue à renforcer la présence britannique dans les secteurs économiques et administratifs. »",
+            auteur: "Marcel Trudel",
+            source: "TRUDEL, Marcel. Initiation à la Nouvelle-France : histoire et institutions. Montréal, Holt, Rinehart et Winston, 1968."
           }
         ]
       },
@@ -8181,15 +8181,16 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« Si quelques officiers, administrateurs et marchands retournent en France après 1760, la société canadienne conserve l’essentiel de ses structures locales et de ses élites seigneuriales, religieuses et professionnelles. »",
-            auteur: "Jean Hamelin",
-            source: "Jean Hamelin, Histoire du Québec, Montréal, Édisem, 1976."
+            texte: "« Même si certains administrateurs et officiers quittent la colonie, leur départ a des effets limités sur la majorité de la population canadienne. »",
+            auteur: "Fernand Ouellet",
+            source: "OUELLET, Fernand. Histoire économique et sociale du Québec, 1760-1850 : structures et conjoncture. Montréal, Fides, 1966."
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "Gilles Havard soutient que le départ des élites françaises est important, tandis que Marcel Trudel et Jean Hamelin estiment qu’il est limité."
+    guide: "Ouellet affirme que le départ des élites françaises a des effets limités sur la colonie (la différence), alors que Brunet et Trudel soutiennent que ce départ a des conséquences importantes (la similitude).",
+    updatedAt: "2026-06-18T20:03:43.599Z"
   },
   {
     id: "Q94",
