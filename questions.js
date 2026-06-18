@@ -8427,7 +8427,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 3,
     soustag: "Position – 3 acteurs",
-    enonce: "Les documents A à C présentent la position de trois groupes à l’égard de l’union des deux Canadas recommandée dans le Rapport Durham. Nommez le groupe qui présente une position différente et comparez sa position à celle des deux autres groupes.",
+    enonce: "Les documents A à C présentent la position de trois groupes à l’égard de l’union des deux Canadas. Nommez le groupe qui présente une position différente et comparez sa position à celle des deux autres groupes.",
     aspects: [{aspect: "Rapport Durham"}],
     documents: [
       {
@@ -8465,8 +8465,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "La bourgeoisie anglophone est en faveur de l'union des deux Canadas (ou en faveur de l’union) (la différence), alors que le clergé et la bourgeoisie professionnelle francophone s’y opposent (la similitude). \noo\nLa bourgeoisie anglophone est en faveur de l’union (la différence), contrairement aux deux autres groupes (la similitude).",
-    updatedAt: "2026-06-18T20:06:34.973Z"
+    guide: "La bourgeoisie anglophone est en faveur de l'union des deux Canadas (ou en faveur de l’union) (la différence), alors que le clergé et la bourgeoisie professionnelle francophone s’y opposent (la similitude). \n\nLa bourgeoisie anglophone est en faveur de l’union (la différence), contrairement aux deux autres groupes (la similitude).",
+    updatedAt: "2026-06-18T20:08:44.040Z"
   },
   {
     id: "Q101",
