@@ -11419,7 +11419,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« Ces soulèvements avaient […] des racines assez solides dans la masse1. Ils n’ont pas échoué  faute de motivations suffisantes dans les milieux populaires ou par pénurie de fusils. […] Le problème se situe d’abord au niveau de la qualité du leadership fourni par les élites [professionnelles] qui encadraient le mouvement insurrectionnel. »",
+            texte: "« Ces soulèvements avaient […] des racines assez solides dans la masse. Ils n’ont pas échoué faute de motivations suffisantes dans les milieux populaires ou par pénurie de fusils. […] Le problème se situe d’abord au niveau de la qualité du leadership fourni par les élites [professionnelles] qui encadraient le mouvement insurrectionnel. »",
             source: "Ouellet, Fernand. Le Bas-Canada, 1791-1840 : changements structuraux et crise. Ottawa, Les Presses de l’Université d’Ottawa, 1976."
           }
         ]
@@ -11430,7 +11430,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "L’appui de la population aux Rébellions.",
-    updatedAt: "2026-06-18T15:55:56.149Z"
+    updatedAt: "2026-06-18T16:04:43.079Z"
   },
   {
     id: "Q8",
