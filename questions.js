@@ -19382,7 +19382,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Le document présente le point de vue de deux historiens. Sur quel point précis sont-ils d'accord?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Indiquez le principal point sur lequel ces acteurs sont d'accord.",
     aspects: [{aspect: "Agriculture"}],
     documents: [
       {
@@ -19407,8 +19407,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "L'appauvrissement des sols.\nLes effets de la culture intensive du blé sur les terres agricoles.\nLa diminution de la fertilité des sols.",
-    updatedAt: "2026-06-16T03:06:26.343Z"
+    guide: "L'épuisement des sols agricoles.\nLa diminution de la fertilité des sols.\nLes effets de l'exploitation intensive des terres agricoles.\nLa dégradation des terres agricoles.",
+    updatedAt: "2026-06-18T23:39:10.945Z"
   },
   {
     id: "Q429",
