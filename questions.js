@@ -10601,7 +10601,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les possessions françaises couvrent un territoire plus vaste que les possessions britanniques."
+    guide: "Les possessions françaises couvrent un territoire plus vaste que les possessions britanniques.",
+    updatedAt: "2026-06-18T20:07:54.009Z"
   },
   {
     id: "Q158",
