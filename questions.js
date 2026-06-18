@@ -21316,8 +21316,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "Durham est favorable à l'assimilation des Canadiens français (la différence), alors que Louis-Joseph Papineau et Étienne Parent s'y oppose.",
-    updatedAt: "2026-06-16T13:50:15.131Z"
+    guide: "Durham est favorable à l'assimilation des Canadiens français (la différence), alors que Louis-Joseph Papineau et Étienne Parent s'y opposent ou souhaitent préserver leur culture (la similitude).",
+    updatedAt: "2026-06-18T23:51:48.705Z"
   },
   {
     id: "Q491",
