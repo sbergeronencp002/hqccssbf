@@ -20758,7 +20758,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Divergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux personnages historiques. Sur quel point précis sont-ils en désaccord?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en désaccord?",
     aspects: [{aspect: "Mouvements migratoires"}],
     documents: [
       {
@@ -20786,7 +20786,7 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "L'émigration vers les États-Unis.",
-    updatedAt: "2026-06-16T02:57:15.063Z"
+    updatedAt: "2026-06-18T23:48:38.242Z"
   },
   {
     id: "Q473",
