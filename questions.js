@@ -10232,9 +10232,6 @@ const IMAGE_DB = {
   "familles_linguistiques_autochtones.png": {
     src: "images/familles_linguistiques_autochtones.png"
   },
-  "familles_linguistiques_autochtones_lettres.png": {
-    src: "images/familles_linguistiques_autochtones_lettres.png"
-  },
   "campement_algonquien.png": {
     src: "images/campement_algonquien.png"
   },
@@ -10896,6 +10893,9 @@ const IMAGE_DB = {
   },
   "carte_province_quebec_1783.png": {
     src: "images/carte_province_quebec_1783.png"
+  },
+  "carte_familles_linguistiques_autochtones_lettres.png": {
+    src: "images/carte_familles_linguistiques_autochtones_lettres.png"
   }
 }
 
@@ -12405,7 +12405,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "familles_linguistiques_autochtones_lettres.png"
+            ref: "carte_familles_linguistiques_autochtones_lettres.png"
           }
         ]
       }
@@ -12434,7 +12434,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "familles_linguistiques_autochtones_lettres.png"
+            ref: "carte_familles_linguistiques_autochtones_lettres.png"
           }
         ]
       }
@@ -12463,7 +12463,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "familles_linguistiques_autochtones_lettres.png"
+            ref: "carte_familles_linguistiques_autochtones_lettres.png"
           }
         ]
       }
