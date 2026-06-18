@@ -12331,7 +12331,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 3,
     soustag: "Position – 3 acteurs",
-    enonce: "Les documents A, B et C présentent le point de vue de trois historiens sur les effets de l'éloignement géographique de la métropole. Nommez l'historien qui présente un point de vue différent et comparez sa position à celle des deux autres historiens.",
+    enonce: "Les documents A à C présentent le point de vue de trois historiens sur les effets de l'éloignement géographique de la métropole. Nommez l'historien qui présente un point de vue différent et comparez sa position à celle des deux autres historiens.",
     aspects: [{aspect: "Adaptation des colons"}],
     documents: [
       {
@@ -12366,7 +12366,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "Allan Greer considère que les colons demeurent dépendants de la métropole (la différence), alors que Jacques Lacoursière et Gilles Havard considèrent que l’éloignement géographique favorise l’autonomie des colons (la similitude)."
+    guide: "Allan Greer considère que les colons demeurent dépendants de la métropole (la différence), alors que Jacques Lacoursière et Gilles Havard considèrent le contraire ou que l’éloignement géographique favorise l’autonomie des colons (la similitude).",
+    updatedAt: "2026-06-18T23:00:08.405Z"
   },
   {
     id: "Q214",
