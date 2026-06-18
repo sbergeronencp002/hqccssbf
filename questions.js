@@ -742,7 +742,24 @@ const REGLETTES = {
       "1 point",
       "0 point"
     ],
-    niveaux: []
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
   },
   "Q40": {
     oi: "Mettre en relation des faits",
@@ -12847,8 +12864,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Les alliances entre nations autochtones visent souvent à préserver le contrôle des réseaux d’échange. Elles permettent d’assurer l’accès aux ressources, de sécuriser les routes commerciales et de maintenir des relations économiques avantageuses entre partenaires. »",
-            auteur: "Bruce G. Trigger"
+            texte: "« Les alliances conclues entre les nations de la vallée du Saint-Laurent permettent de renforcer la coopération et la défense contre les ennemis communs. »",
+            source: "Adapté de Denys Delâge, Le pays renversé, 1991."
           }
         ]
       },
@@ -12857,8 +12874,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« Plusieurs alliances entre peuples autochtones servent à protéger les territoires de chasse et les routes commerciales. Elles favorisent l’échange de biens et garantissent l’accès aux ressources nécessaires à la subsistance des communautés. »",
-            auteur: "Olive Patricia Dickason"
+            texte: "« Les peuples alliés entretiennent des relations diplomatiques qui favorisent la paix et la stabilité dans la région. »",
+            source: "Adapté de Alain Beaulieu, Les Autochtones du Québec, 2013."
           }
         ]
       },
@@ -12867,8 +12884,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« Les alliances entre nations autochtones répondent surtout à des besoins politiques et militaires. Elles permettent de se défendre contre des ennemis, de renforcer des relations diplomatiques et d’assurer la sécurité des communautés alliées. »",
-            auteur: "Denys Delâge"
+            texte: "« Certaines nations refusent ces alliances et privilégient plutôt l'affrontement avec leurs rivaux afin d'étendre leur influence. »",
+            source: "Adapté de Gilles Havard, Histoire de l'Amérique française, 2019."
           }
         ]
       }
@@ -12877,7 +12894,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 3
     },
-    guide: "Delâge soutient que les alliances entre les Premières Nations sont principalement motivées par des considérations politiques ou militaires (différence), tandis que Trigger et Dickason estiment qu’elles reposent surtout sur des intérêts économiques ou commerciaux (similitude)."
+    guide: "Havard affirme que certaines nations privilégient l'affrontement avec leurs rivaux (la différence), alors que Delâge et Beaulieu soutiennent le contraire ou que les alliances entre les nations sont bénéfiques (la similitude).",
+    updatedAt: "2026-06-18T16:00:53.018Z"
   },
   {
     id: "Q40",
