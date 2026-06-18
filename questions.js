@@ -13668,7 +13668,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 2,
     soustag: "Divergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux acteurs de la Province de Québec après l'adoption de l'Acte de Québec de 1774. Sur quel point précis ces acteurs sont-ils en désaccord?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis ces acteurs sont-ils en désaccord?",
     aspects: [{aspect: "Acte de Québec"}],
     documents: [
       {
@@ -13693,8 +13693,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les deux acteurs sont en désaccord sur l'établissement d'une assemblée élue dans la Province de Québec.",
-    updatedAt: "2026-06-07T12:22:19.114Z"
+    guide: "La mise en place d'une assemblée élue dans la Province de Québec.",
+    updatedAt: "2026-06-18T23:06:56.667Z"
   },
   {
     id: "Q253",
