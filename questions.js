@@ -19786,9 +19786,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« La Compagnie de la Baie d'Hudson doit préserver son autonomie afin de poursuivre efficacement ses activités commerciales et de protéger ses intérêts dans le commerce des fourrures. »",
-            auteur: "George Simpson (Compagnie de la Baie d'Hudson)",
-            source: "Adapté de la correspondance de George Simpson, gouverneur de la Compagnie de la Baie d'Hudson, vers 1820."
+            texte: "« La concurrence excessive nuit au commerce des fourrures. Une administration efficace du territoire et des postes de traite permet d'assurer la stabilité et la rentabilité des activités dans le Nord-Ouest. »",
+            auteur: "George Simpson",
+            source: "dapté de la correspondance de George Simpson, gouverneur de la Compagnie de la Baie d'Hudson, vers 1825."
           }
         ]
       },
@@ -19797,9 +19797,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« La Compagnie du Nord-Ouest doit conserver son indépendance afin de maintenir sa place dans le commerce des fourrures et de poursuivre ses activités de traite. »",
-            auteur: "William McGillivray (Compagnie du Nord-Ouest)",
-            source: "Adapté de la correspondance de William McGillivray, associé principal de la Compagnie du Nord-Ouest, vers 1820."
+            texte: "« Le commerce serait plus prospère si davantage de commerçants pouvaient circuler librement et participer aux échanges dans le Nord-Ouest. »",
+            auteur: "Peter Skene Ogden",
+            source: "Adapté des mémoires et correspondances de Peter Skene Ogden, vers les années 1820."
           }
         ]
       },
@@ -19808,16 +19808,16 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« Le regroupement des principales compagnies de fourrures permettrait de réduire les conflits commerciaux et de favoriser une meilleure organisation des activités de traite dans les territoires exploités. »",
-            auteur: "Lord Bathurst (Gouvernement britannique)",
+            texte: "« Il est souhaitable que le commerce des fourrures soit exercé sous une autorité capable de maintenir l'ordre et d'éviter les conflits qui ont longtemps opposé les compagnies. »",
+            auteur: "Lord Bathurst",
             source: "Adapté de la correspondance de Lord Bathurst, secrétaire d'État aux Colonies, vers 1821."
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "Lord Bathurst est favorable à la fusion des compagnies de fourrures (différence), alors que George Simpson et William McGillivray s'y opposent (similitude).",
-    updatedAt: "2026-06-16T03:04:27.348Z"
+    guide: "Peter Skene Ogden est favorable à une plus grande liberté dans le commerce des fourrures (la différence), alors que George Simpson et Lord Bathurst appuient le maintien d'un commerce encadré par les grandes compagnies de traite (la similitude).",
+    updatedAt: "2026-06-18T23:44:38.966Z"
   },
   {
     id: "Q442",
