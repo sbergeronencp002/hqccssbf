@@ -12811,7 +12811,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis ces deux auteurs sont-ils d’accord?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?",
     aspects: [
       {
         aspect: "Rapports sociaux chez les Autochtones"
@@ -12823,9 +12823,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Chez les Iroquoiens, les enfants appartiennent au clan de leur mère et les femmes les plus âgées jouent un rôle important dans la désignation des chefs. »",
-            auteur: "Bruce G. Trigger",
-            source: "The Children of Aataentsic (McGill-Queen’s University Press)."
+            texte: "« Dans plusieurs sociétés autochtones, les aînés jouent un rôle essentiel en transmettant aux jeunes générations les connaissances, les valeurs et les traditions de la communauté. »",
+            auteur: "Denys Delâge",
+            source: "Adapté de Denys Delâge, Le pays renversé : Amérindiens et Européens en Amérique du Nord-Est, 1600-1664, Boréal, 1991."
           }
         ]
       },
@@ -12834,9 +12834,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« Dans les sociétés iroquoiennes, l’appartenance au clan se transmet par la mère, ce qui confère aux femmes une influence importante dans la famille et dans la communauté. »",
-            auteur: "Olive Patricia Dickason",
-            source: "Canada’s First Nations."
+            texte: "« Les aînés occupent une place respectée puisqu'ils assurent la conservation et la transmission de la mémoire collective ainsi que des savoirs traditionnels. »",
+            auteur: "Alain Beaulieu",
+            source: "Adapté de Alain Beaulieu, Les Autochtones du Québec : des premières alliances aux revendications contemporaines, Fides, 2013."
           }
         ]
       }
@@ -12845,8 +12845,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "La société iroquoienne est matrilinéaire.",
-    updatedAt: "2026-06-18T15:55:24.059Z"
+    guide: "L'importance des aînés dans la transmission des savoirs et des traditions.",
+    updatedAt: "2026-06-18T17:53:57.211Z"
   },
   {
     id: "Q39",
