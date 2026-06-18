@@ -12376,7 +12376,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 3,
     soustag: "Position – 3 acteurs",
-    enonce: "Les documents A, B et C présentent le point de vue de trois historiens sur les rapports de force durant les guerres intercoloniales. Nommez l’historien qui présente un point de vue différent et comparez sa position à celle des deux autres historiens.",
+    enonce: "Les documents A à C présentent le point de vue de trois historiens sur les rapports de force durant les guerres intercoloniales. Nommez l’historien qui présente un point de vue différent et comparez sa position à celle des deux autres historiens.",
     aspects: [{aspect: "Guerres intercoloniales"}],
     documents: [
       {
@@ -12411,7 +12411,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "Marcel Trudel considère que les alliances autochtones favorisent les Français (la différence), alors que Jacques Lacoursière et Gilles Havard considèrent que les Britanniques sont avantagés par leur plus grande population (la similitude)."
+    guide: "Marcel Trudel considère que les alliances autochtones favorisent les Français (la différence), alors que Jacques Lacoursière et Gilles Havard soutiennent que les Britanniques sont avantagés par leur plus grande population (la similitude).",
+    updatedAt: "2026-06-18T23:01:48.729Z"
   },
   {
     id: "Q215",
