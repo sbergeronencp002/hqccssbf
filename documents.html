@@ -332,7 +332,7 @@ function tileHtml(q) {
 </div>`;
 }
 
-(function init() {
+(async function init() {
   const questions = [];
   QUESTIONS.forEach(q => {
     const docImgs = [];
@@ -376,14 +376,33 @@ function tileHtml(q) {
   const sel = document.getElementById('filterOi');
   ois.forEach(oi => { const o = document.createElement('option'); o.value=oi; o.textContent=oi; sel.appendChild(o); });
 
-  // Images orphelines : dans IMAGE_DB mais non référencées dans aucune question
+  // Orphelines : images présentes sur GitHub mais non référencées dans aucune question.
+  // On lit le répertoire images/ via l'API GitHub (source de vérité) — pas seulement IMAGE_DB,
+  // ce qui permet de voir les images uploadées mais pas encore liées à une question.
   const usedImgs = new Set(Object.keys(imgMap));
-  const orphans = Object.keys(IMAGE_DB).filter(img => !usedImgs.has(img)).sort();
+  let orphans = [];
+  try {
+    const headers = getToken() ? { Authorization: 'token ' + getToken() } : {};
+    const r = await fetch(API + 'images?ref=main&t=' + Date.now(), { headers, cache: 'no-store' });
+    if (r.ok) {
+      const files = await r.json();
+      if (Array.isArray(files)) {
+        orphans = files
+          .map(f => f.name)
+          .filter(name => name !== '.gitkeep' && !usedImgs.has(name))
+          .sort();
+      }
+    }
+  } catch(_) {
+    // Repli sur IMAGE_DB si l'API est inaccessible
+    orphans = Object.keys(IMAGE_DB).filter(img => !usedImgs.has(img)).sort();
+  }
+
   if (orphans.length) {
     document.getElementById('orphans-container').innerHTML = orphans.map(img => `
       <div class="orphan-row" id="orphan-${CSS.escape(img)}">
         <img src="images/${escH(img)}" loading="lazy" title="${escH(img)}" onclick="showImg(${escH(JSON.stringify(img))})">
-        <span class="img-label">${escH(img.replace('.png',''))}</span>
+        <span class="img-label">${escH(img.replace(/\.[^.]+$/, ''))}</span>
         ${sizeBadgeHtml(img)}
         <button class="btn-delete" onclick="deleteOrphan(${escH(JSON.stringify(img))})">🗑 Supprimer</button>
       </div>`).join('');
