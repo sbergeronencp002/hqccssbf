@@ -306,6 +306,7 @@ let qById = {};      // id -> question (global, utilisé par la lightbox)
 let sizeCache = {};  // img -> bytes
 let currentLbImg = '';
 let renameTarget = '';
+let renameExt = '.png'; // extension d'origine, préservée au renommage
 
 function sizeBadgeHtml(img) {
   return `<span class="size-badge loading" data-size-badge="${img}">…</span>`;
@@ -672,8 +673,12 @@ async function confirmReplace() {
 
 function openRename(img) {
   renameTarget = img;
+  // Détecter l'extension d'origine (.png ou .jpg/.jpeg) et la préserver
+  const extMatch = img.match(/(\.[^.]+)$/i);
+  renameExt = extMatch ? extMatch[1].toLowerCase() : '.png';
   document.getElementById('rename-old-label').textContent = 'Image actuelle : ' + img;
-  document.getElementById('rename-input').value = img.replace(/\.png$/i, '');
+  document.getElementById('rename-input').value = img.replace(/\.[^.]+$/i, '');
+  document.getElementById('rename-input').placeholder = 'Nouveau nom (sans ' + renameExt + ')';
   document.getElementById('rename-status').textContent = '';
   document.getElementById('rename-status').className = 'rename-status';
   document.getElementById('rename-confirm-btn').disabled = false;
@@ -692,12 +697,13 @@ async function confirmRename() {
   const status = document.getElementById('rename-status');
   // Même assainissement qu'admin.html (uploadImage) : pas d'espaces, ni \ ' " ` < > &
   // — ces caractères cassent les attributs HTML / onclick et pourraient corrompre questions.js.
+  // Retirer toute extension que l'utilisateur aurait laissée, puis re-ajouter l'extension d'origine
   const raw = document.getElementById('rename-input').value.trim()
-    .replace(/\.png$/i, '').replace(/\s+/g, '_').replace(/[\\'"`<>&]/g, '');
+    .replace(/\.[^.]+$/i, '').replace(/\s+/g, '_').replace(/[\\'"`<>&]/g, '');
   if (!raw) { status.className = 'rename-status err'; status.textContent = '✗ Nom vide ou invalide.'; return; }
-  const newName = raw + '.png';
+  const newName = raw + renameExt;
   if (newName === renameTarget) { closeRenameModal(); return; }
-  // Refuser l'écrasement d'une image existante (le PUT de création réécrirait son contenu).
+  // Refuser l'écrasement d'une image existante (imgMap = dans une question, IMAGE_DB = connu)
   if (imgMap[newName] || (typeof IMAGE_DB !== 'undefined' && IMAGE_DB[newName])) {
     status.className = 'rename-status err';
     status.textContent = '✗ « ' + newName + ' » existe déjà — choisissez un autre nom.';
@@ -726,11 +732,8 @@ async function confirmRename() {
     if (!r2.ok) throw new Error('Échec création ' + newName + ' (' + r2.status + ')');
 
     // 3. Mettre à jour les refs de questions.js AVANT de supprimer l'ancien fichier.
-    //    Édition structurée (parse → mutation ciblée → re-sérialisation, retry SHA)
-    //    via applyQuestionsEdit, au lieu d'un remplacement regex sur le texte source.
-    //    Ordre choisi : si cette étape échoue, l'ancien fichier existe toujours et
-    //    les refs restent valides (pas d'image 404) ; le nouveau fichier n'est qu'un
-    //    orphelin récupérable.
+    //    Si cette étape échoue, l'ancien fichier existe toujours et les refs restent
+    //    valides ; le nouveau fichier n'est qu'un orphelin récupérable via documents.html.
     status.textContent = 'Mise à jour de questions.js…';
     const refsChanged = await applyQuestionsEdit(parsed => {
       let did = false;
@@ -773,7 +776,7 @@ async function confirmRename() {
 
   } catch(err) {
     status.className = 'rename-status err';
-    status.textContent = '✗ ' + err.message;
+    status.textContent = '✗ ' + err.message + ' — actualisez la page pour voir l\'état réel.';
     btn.disabled = false;
   }
 }
