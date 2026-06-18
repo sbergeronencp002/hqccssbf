@@ -5310,7 +5310,7 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "L’appui de la population aux Rébellions.",
-    updatedAt: "2026-06-18T16:04:43.079Z"
+    updatedAt: "2026-06-18T21:02:48.121Z"
   },
   {
     id: "Q8",
