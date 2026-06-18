@@ -18289,7 +18289,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent la position de deux acteurs. Sur quel point précis sont-ils d’accord?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Indiquez le principal point sur lequel ces acteurs sont d'accord.",
     aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
@@ -18316,8 +18316,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Louis-Joseph Papineau et William Lyon Mackenzie souhaitent accorder davantage de pouvoir aux représentants élus (la similitude).",
-    updatedAt: "2026-06-16T03:10:07.890Z"
+    guide: "Le pouvoir des représentants élus.",
+    updatedAt: "2026-06-18T23:29:16.325Z"
   },
   {
     id: "Q398",
