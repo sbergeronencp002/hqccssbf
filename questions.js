@@ -17830,7 +17830,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Divergence – 2 acteurs",
-    enonce: "Les documents A et B présentent la position de deux journaux concernant l'avenir politique de la colonie. Nommez le point sur lequel ces journaux sont en désaccord.",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Indiquez le principal point sur lequel ces acteurs sont en désaccord.",
     aspects: [{aspect: "Idées libérales et républicaines"}],
     documents: [
       {
@@ -17857,8 +17857,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "François Blanchet veut donner plus de pouvoir aux représentants élus, alors que Thomas Cary souhaite maintenir les pouvoirs du gouverneur.",
-    updatedAt: "2026-06-11T16:09:07.732Z"
+    guide: "Le partage du pouvoir entre l'Assemblée et le gouverneur.",
+    updatedAt: "2026-06-18T23:26:14.011Z"
   },
   {
     id: "Q383",
