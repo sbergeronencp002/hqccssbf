@@ -7113,7 +7113,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux historiens sur les relations entre les nations autochtones vers 1500. Sur quel point précis sont-ils d’accord?",
+    enonce: "Les documents A et B présentent le point de vue deux acteurs. Sur quel point précis sont-ils d’accord?",
     aspects: [{aspect: "Alliances et rivalités au sein des Premières Nations"}],
     documents: [
       {
@@ -7122,6 +7122,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             texte: "« Les peuples autochtones se livrent fréquemment à des guerres pour défendre leur territoire ou pour contrôler des routes de commerce. Ces rivalités visent à protéger l’accès aux ressources essentielles et à maintenir une influence sur les échanges entre les nations. »",
+            auteur: "Olive Patricia Dickason",
             source: "Olive Patricia Dickason, Les Premières Nations du Canada. Québec, Les Éditions du Septentrion, 1996."
           }
         ]
@@ -7132,13 +7133,15 @@ const QUESTIONS = [
           {
             titre: "Document B",
             texte: "« Les conflits entre nations autochtones découlent souvent de la volonté de contrôler des territoires de chasse et des voies d’échange. La maîtrise de ces espaces assure l’accès aux ressources et renforce les alliances commerciales et politiques. »",
+            auteur: "Denys Delâge",
             source: "Denys Delâge, Le pays renversé. Montréal, Les Éditions du Boréal, 2004."
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Le contrôle des territoires ou des routes commerciales par les nations autochtones."
+    guide: "Le contrôle des territoires ou des routes commerciales par les nations autochtones.",
+    updatedAt: "2026-06-18T18:33:06.652Z"
   },
   {
     id: "Q66",
