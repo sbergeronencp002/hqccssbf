@@ -14839,7 +14839,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux historiens sur l'évolution démographique de la Province de Québec. Sur quel point précis ces historiens sont-ils d'accord ?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils d'accord ?",
     aspects: [{aspect: "Situation sociodémographique"}],
     documents: [
       {
@@ -14864,8 +14864,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les deux historiens sont d'accord pour dire que la population canadienne augmente rapidement grâce à l'accroissement naturel.",
-    updatedAt: "2026-06-08T13:59:39.248Z"
+    guide: "La population canadienne augmente rapidement grâce à l'accroissement naturel.",
+    updatedAt: "2026-06-18T23:09:00.523Z"
   },
   {
     id: "Q292",
