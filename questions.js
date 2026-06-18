@@ -12573,7 +12573,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 3,
     soustag: "Position – 3 acteurs",
-    enonce: "Les documents A, B et C présentent le point de vue de trois historiens sur la bataille des Plaines d'Abraham. Nommez l’historien qui présente un point de vue différent et comparez sa position à celle des deux autres historiens.",
+    enonce: "Les documents A à C présentent le point de vue de trois historiens sur la bataille des Plaines d'Abraham. Nommez l’historien qui présente un point de vue différent et comparez sa position à celle des deux autres historiens.",
     aspects: [{aspect: "Guerre de la Conquête"}],
     documents: [
       {
@@ -12581,8 +12581,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« La victoire britannique lors de cet affrontement constitue un tournant majeur de la Guerre de la Conquête puisqu’elle ouvre la voie à la prise de la capitale de la colonie. »",
-            source: "Jacques Lacoursière, Histoire populaire du Québec, adaptation pédagogique."
+            texte: "« La bataille des Plaines d'Abraham constitue un tournant décisif qui entraîne rapidement la perte de la capitale et précipite la défaite de la Nouvelle-France. »",
+            auteur: "Marcel Trudel",
+            source: "TRUDEL, Marcel. Histoire de la Nouvelle-France, tome IV : La guerre de la Conquête. Montréal, Fides, 1973."
           }
         ]
       },
@@ -12591,8 +12592,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« Les conséquences militaires de cette bataille favorisent les Britanniques et affaiblissent considérablement la capacité de résistance de la Nouvelle-France. »",
-            source: "Marcel Trudel, Histoire de la Nouvelle-France, adaptation pédagogique."
+            texte: "« La défaite française s'explique aussi par l'infériorité démographique de la colonie et par les ressources limitées dont elle dispose pour soutenir l'effort de guerre. »",
+            auteur: "Jacques Mathieu",
+            source: "MATHIEU, Jacques. La Nouvelle-France : les Français en Amérique du Nord, XVIe-XVIIIe siècle. Québec, Presses de l'Université Laval, 1991."
           }
         ]
       },
@@ -12601,14 +12603,16 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« Bien que cette bataille soit importante, elle ne met pas immédiatement fin à la résistance française puisque les combats se poursuivent l'année suivante. »",
-            source: "Gaston Deschênes, La Guerre de la Conquête, adaptation pédagogique."
+            texte: "« Bien avant la bataille des Plaines d'Abraham, la supériorité navale et économique de la Grande-Bretagne plaçait déjà la Nouvelle-France dans une situation difficile. »",
+            auteur: "Louise Dechêne",
+            source: "DECHÊNE, Louise. Le peuple, l'État et la guerre au Canada sous le Régime français. Montréal, Boréal, 2008."
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "Gaston Deschênes considère que la résistance française se poursuit après la bataille (la différence), alors que Jacques Lacoursière et Marcel Trudel considèrent que la bataille marque un tournant dans la Guerre de la Conquête (la similitude)."
+    guide: "Marcel Trudel considère que la bataille des Plaines d'Abraham est la principale cause de la défaite française (la différence), alors que Jacques Mathieu et Louise Dechêne soutiennent que d'autres facteurs expliquent cette défaite (la similitude).",
+    updatedAt: "2026-06-18T23:05:57.395Z"
   },
   {
     id: "Q219",
