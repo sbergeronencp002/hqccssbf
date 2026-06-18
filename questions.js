@@ -14250,7 +14250,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux acteurs de l'époque. Sur quel point précis sont-ils d'accord ?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils d'accord ?",
     aspects: [{aspect: "Invasion américaine"}],
     documents: [
       {
@@ -14277,8 +14277,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les deux acteurs souhaitent que les Canadiens demeurent neutres dans le conflit entre la Grande-Bretagne et les Treize colonies ou les deux acteurs encouragent les Canadiens à ne pas se joindre aux rebelles américains.",
-    updatedAt: "2026-06-08T00:18:32.954Z"
+    guide: "La neutralité des Canadiens pendant le conflit.",
+    updatedAt: "2026-06-18T23:07:31.049Z"
   },
   {
     id: "Q273",
