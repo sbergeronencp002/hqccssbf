@@ -11465,7 +11465,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 2,
     soustag: "Divergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux historiens sur l'esclavage en Nouvelle-France. Sur quel point précis ces historiens sont-ils en désaccord ?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils désaccord ?",
     aspects: [{aspect: "Villes du Canada"}],
     documents: [
       {
@@ -11490,7 +11490,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les historiens sont en désaccord sur l'importance de l'esclavage dans la société de la Nouvelle-France. L'un considère qu'il occupe une place limitée, tandis que l'autre estime qu'il est bien intégré à la société coloniale."
+    guide: "L'importance de l'esclavage en Nouvelle-France.",
+    updatedAt: "2026-06-18T20:22:38.617Z"
   },
   {
     id: "Q186",
