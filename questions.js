@@ -18364,8 +18364,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "John Colborne souhaite réprimer les contestations par la force militaire (la différence), alors que Louis-Joseph Papineau et Wolfred Nelson s'opposent aux mesures prises par le gouvernement colonial (la similitude).",
-    updatedAt: "2026-06-16T03:08:34.675Z"
+    guide: "John Colborne est favorable à la répression des contestations (la différence), alors que Louis-Joseph Papineau et Wolfred Nelson réclament des changements politiques (la similitude).",
+    updatedAt: "2026-06-18T23:30:07.226Z"
   },
   {
     id: "Q399",
