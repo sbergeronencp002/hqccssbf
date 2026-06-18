@@ -1,103 +1,46 @@
 const REGLETTES = {
   "Q1": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q2": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "2 points",
-      "0 point"
-    ],
+    colonnes: ["2 points", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève situe tous les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas tous les faits dans le temps."
-      }
+      {pts: 2, desc: "L'élève situe tous les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}
     ]
   },
   "Q3": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q4": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève situe tous les faits dans le temps. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève situe certains faits dans le temps. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève situe tous les faits dans le temps. (4 sur 4)"},
+      {pts: 1, desc: "L'élève situe certains faits dans le temps. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"}
     ]
   },
   "Q5": {
     oi: "Situer dans l'espace",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe le fait dans l'espace."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas le fait dans l'espace."
-      }
-    ]
+    colonnes: ["1 point", "0 point"],
+    niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]
   },
   "Q6": {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
       {
         pts: 3,
@@ -119,629 +62,270 @@ const REGLETTES = {
   },
   "Q7": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de divergence entre les points de vue."
-      },
+      {pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."},
       {
         pts: 1,
         desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
       },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q8": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q9": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
-      }
+      {pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"},
+      {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"},
+      {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}
     ]
   },
   "Q10": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q11": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la continuité."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la continuité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la continuité."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."},
+      {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}
     ]
   },
   "Q12": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q13": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
     ]
   },
   "Q14": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q15": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q16": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "2 points",
-      "0 point"
-    ],
+    colonnes: ["2 points", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève situe tous les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas tous les faits dans le temps."
-      }
+      {pts: 2, desc: "L'élève situe tous les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}
     ]
   },
   "Q17": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q18": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève situe tous les faits dans le temps. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève situe certains faits dans le temps. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève situe tous les faits dans le temps. (4 sur 4)"},
+      {pts: 1, desc: "L'élève situe certains faits dans le temps. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"}
     ]
   },
   "Q19": {
     oi: "Situer dans l'espace",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe le fait dans l'espace."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas le fait dans l'espace."
-      }
-    ]
+    colonnes: ["1 point", "0 point"],
+    niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]
   },
   "Q20": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève dégage correctement la différence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève dégage plus ou moins correctement la différence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."
-      }
+      {pts: 2, desc: "L'élève dégage correctement la différence."},
+      {pts: 1, desc: "L'élève dégage plus ou moins correctement la différence."},
+      {pts: 0, desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."}
     ]
   },
   "Q21": {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q22": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q33": {
     oi: "Situer dans l'espace",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe le fait dans l'espace."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas le fait dans l'espace."
-      }
-    ]
+    colonnes: ["1 point", "0 point"],
+    niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]
   },
   "Q37": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
   },
   "Q29": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q28": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
     ]
   },
   "Q27": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q23": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q24": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
-      }
+      {pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"},
+      {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"},
+      {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}
     ]
   },
   "Q25": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q26": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la continuité."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la continuité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la continuité."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."},
+      {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}
     ]
   },
   "Q30": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q31": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q32": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q34": {
     oi: "Situer dans l'espace",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe le fait dans l'espace."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas le fait dans l'espace."
-      }
-    ]
+    colonnes: ["1 point", "0 point"],
+    niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]
   },
   "Q35": {
     oi: "Situer dans l'espace",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe le fait dans l'espace."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas le fait dans l'espace."
-      }
-    ]
+    colonnes: ["1 point", "0 point"],
+    niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]
   },
   "Q36": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (2 sur 2)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (1 sur 2)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (0 sur 2)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (2 sur 2)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (1 sur 2)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (0 sur 2)"}
     ]
   },
   "Q38": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q39": {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
       {
         pts: 3,
@@ -763,1090 +347,474 @@ const REGLETTES = {
   },
   "Q40": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
   },
   "Q41": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q42": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q43": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q44": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q45": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q46": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q47": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q48": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q49": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q50": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q51": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q52": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q53": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q54": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q55": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q56": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q57": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q58": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q59": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q60": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q61": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de divergence entre les points de vue."
-      },
+      {pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."},
       {
         pts: 1,
         desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
       },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q62": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q63": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q64": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q65": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q66": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q67": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q68": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q69": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q70": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q71": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
     ]
   },
   "Q72": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
     ]
   },
   "Q73": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
   },
   "Q74": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
   },
   "Q75": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q76": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q77": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "2 points",
-      "0 point"
-    ],
+    colonnes: ["2 points", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève situe tous les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas tous les faits dans le temps."
-      }
+      {pts: 2, desc: "L'élève situe tous les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}
     ]
   },
   "Q78": {
     oi: "Situer dans l'espace",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe le fait dans l'espace."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas le fait dans l'espace."
-      }
-    ]
+    colonnes: ["1 point", "0 point"],
+    niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]
   },
   "Q79": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q80": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q81": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q82": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q83": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q84": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q85": {
     oi: "Situer dans l'espace",
-    colonnes: [
-      "2 points",
-      "0 point"
-    ],
+    colonnes: ["2 points", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève situe les faits dans l'espace."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans l'espace."
-      }
+      {pts: 2, desc: "L'élève situe les faits dans l'espace."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}
     ]
   },
   "Q86": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
   },
   "Q87": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
     ]
   },
   "Q88": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q89": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
     ]
   },
   "Q90": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "2 points",
-      "0 point"
-    ],
+    colonnes: ["2 points", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève situe tous les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas tous les faits dans le temps."
-      }
+      {pts: 2, desc: "L'élève situe tous les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}
     ]
   },
   "Q91": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q92": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de divergence entre les points de vue."
-      },
+      {pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."},
       {
         pts: 1,
         desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
       },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q93": {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
       {
         pts: 3,
@@ -1869,139 +837,63 @@ const REGLETTES = {
   "Q94": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q95": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
   },
   "Q96": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q97": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la continuité."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la continuité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la continuité."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."},
+      {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}
     ]
   },
   "Q98": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la continuité."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la continuité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la continuité."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."},
+      {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}
     ]
   },
   "Q99": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q100": {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
       {
         pts: 3,
@@ -2023,1329 +915,589 @@ const REGLETTES = {
   },
   "Q101": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
     ]
   },
   "Q102": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
     ]
   },
   "Q103": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève situe tous les faits dans le temps. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève situe certains faits dans le temps. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève situe tous les faits dans le temps. (4 sur 4)"},
+      {pts: 1, desc: "L'élève situe certains faits dans le temps. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"}
     ]
   },
   "Q104": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "2 points",
-      "0 point"
-    ],
+    colonnes: ["2 points", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève situe tous les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas tous les faits dans le temps."
-      }
+      {pts: 2, desc: "L'élève situe tous les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}
     ]
   },
   "Q105": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q106": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q107": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q108": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q109": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q110": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q111": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q112": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q113": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q114": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q115": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q116": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
   },
   "Q117": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q118": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q119": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "2 points",
-      "0 point"
-    ],
+    colonnes: ["2 points", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève situe tous les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas tous les faits dans le temps."
-      }
+      {pts: 2, desc: "L'élève situe tous les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}
     ]
   },
   "Q120": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
   },
   "Q121": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q122": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q123": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q124": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q125": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q126": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (2 sur 2)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (1 sur 2)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (0 sur 2)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (2 sur 2)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (1 sur 2)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (0 sur 2)"}
     ]
   },
   "Q127": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q128": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q129": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q130": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q131": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q132": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q133": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
   },
   "Q134": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q135": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q136": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "2 points",
-      "0 point"
-    ],
+    colonnes: ["2 points", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève situe tous les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas tous les faits dans le temps."
-      }
+      {pts: 2, desc: "L'élève situe tous les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}
     ]
   },
   "Q137": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "2 points",
-      "0 point"
-    ],
+    colonnes: ["2 points", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève situe tous les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas tous les faits dans le temps."
-      }
+      {pts: 2, desc: "L'élève situe tous les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}
     ]
   },
   "Q138": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "2 points",
-      "0 point"
-    ],
+    colonnes: ["2 points", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève situe tous les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas tous les faits dans le temps."
-      }
+      {pts: 2, desc: "L'élève situe tous les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}
     ]
   },
   "Q139": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
   },
   "Q140": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q141": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q142": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q143": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
   },
   "Q144": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
     ]
   },
   "Q145": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
     ]
   },
   "Q146": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q147": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q148": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q149": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
-      }
+      {pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"},
+      {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"},
+      {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}
     ]
   },
   "Q150": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
   },
   "Q151": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
     ]
   },
   "Q152": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q153": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q154": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q155": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q156": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q157": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève dégage correctement la différence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève dégage plus ou moins correctement la différence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."
-      }
+      {pts: 2, desc: "L'élève dégage correctement la différence."},
+      {pts: 1, desc: "L'élève dégage plus ou moins correctement la différence."},
+      {pts: 0, desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."}
     ]
   },
   "Q158": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q159": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q160": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q161": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q162": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q163": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de divergence entre les points de vue."
-      },
+      {pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."},
       {
         pts: 1,
         desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
       },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q164": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
   },
   "Q165": {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
       {
         pts: 3,
@@ -3367,452 +1519,209 @@ const REGLETTES = {
   },
   "Q166": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q167": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
   },
   "Q168": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q169": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q170": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q171": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
-      }
+      {pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"},
+      {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"},
+      {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}
     ]
   },
   "Q172": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q173": {
     oi: "Situer dans l'espace",
-    colonnes: [
-      "2 points",
-      "0 point"
-    ],
+    colonnes: ["2 points", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève situe les faits dans l'espace."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans l'espace."
-      }
+      {pts: 2, desc: "L'élève situe les faits dans l'espace."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}
     ]
   },
   "Q174": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q175": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q176": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q177": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q178": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q179": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q180": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q181": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q182": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la continuité."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la continuité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la continuité."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."},
+      {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}
     ]
   },
   "Q183": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q184": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q185": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de divergence entre les points de vue."
-      },
+      {pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."},
       {
         pts: 1,
         desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
       },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q186": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève dégage correctement la similitude."
-      },
-      {
-        pts: 1,
-        desc: "L'élève dégage plus ou moins correctement la similitude."
-      },
-      {
-        pts: 0,
-        desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."
-      }
+      {pts: 2, desc: "L'élève dégage correctement la similitude."},
+      {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."},
+      {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}
     ]
   },
   "Q187": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève dégage correctement la similitude."
-      },
-      {
-        pts: 1,
-        desc: "L'élève dégage plus ou moins correctement la similitude."
-      },
-      {
-        pts: 0,
-        desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."
-      }
+      {pts: 2, desc: "L'élève dégage correctement la similitude."},
+      {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."},
+      {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}
     ]
   },
   "Q188": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q189": {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
       {
         pts: 3,
@@ -3834,474 +1743,209 @@ const REGLETTES = {
   },
   "Q190": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q191": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q192": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q193": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q194": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q195": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
     ]
   },
   "Q196": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q197": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la continuité."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la continuité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la continuité."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."},
+      {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}
     ]
   },
   "Q198": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q199": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
     ]
   },
   "Q200": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q201": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
-      }
+      {pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"},
+      {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"},
+      {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}
     ]
   },
   "Q202": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q203": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q204": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q205": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q206": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q207": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q208": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q209": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q210": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q211": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q212": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q213": {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
       {
         pts: 3,
@@ -4324,12 +1968,7 @@ const REGLETTES = {
   "Q214": {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
       {
         pts: 3,
@@ -4351,74 +1990,34 @@ const REGLETTES = {
   },
   "Q215": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "2 points",
-      "0 point"
-    ],
+    colonnes: ["2 points", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève situe tous les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas tous les faits dans le temps."
-      }
+      {pts: 2, desc: "L'élève situe tous les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}
     ]
   },
   "Q216": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
   },
   "Q217": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q218": {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
       {
         pts: 3,
@@ -4440,1084 +2039,497 @@ const REGLETTES = {
   },
   "Q219": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q220": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q221": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q222": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q223": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q224": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q225": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q226": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q227": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q228": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q229": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q230": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q231": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
   },
   "Q232": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q233": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q234": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q235": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q236": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q237": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q238": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q239": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q240": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q241": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q242": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q243": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q244": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q245": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
   },
   "Q246": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q247": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q248": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q249": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
     ]
   },
   "Q250": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
     ]
   },
   "Q251": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q252": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de divergence entre les points de vue."
-      },
+      {pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."},
       {
         pts: 1,
         desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
       },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q253": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q254": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q255": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q256": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q257": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la continuité."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la continuité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la continuité."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."},
+      {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}
     ]
   },
   "Q258": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q259": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q260": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q261": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q262": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q263": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q264": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q265": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q266": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q267": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q268": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q269": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q270": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q271": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q272": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q273": {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
       {
         pts: 3,
@@ -5539,480 +2551,220 @@ const REGLETTES = {
   },
   "Q274": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (2 sur 2)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (1 sur 2)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (0 sur 2)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (2 sur 2)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (1 sur 2)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (0 sur 2)"}
     ]
   },
   "Q275": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q276": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q277": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
-      }
+      {pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"},
+      {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"},
+      {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}
     ]
   },
   "Q278": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q279": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q280": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q281": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q282": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q283": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q284": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q285": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q286": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q287": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q288": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q289": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q290": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q291": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q292": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
-      }
+      {pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"},
+      {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"},
+      {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}
     ]
   },
   "Q293": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de divergence entre les points de vue."
-      },
+      {pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."},
       {
         pts: 1,
         desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
       },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q294": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q295": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève dégage correctement la différence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève dégage plus ou moins correctement la différence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."
-      }
+      {pts: 2, desc: "L'élève dégage correctement la différence."},
+      {pts: 1, desc: "L'élève dégage plus ou moins correctement la différence."},
+      {pts: 0, desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."}
     ]
   },
   "Q296": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q297": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q298": {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
       {
         pts: 3,
@@ -6035,687 +2787,322 @@ const REGLETTES = {
   "Q299": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q300": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q301": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q302": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q303": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q304": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q305": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q306": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q307": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q308": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q309": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q310": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q311": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q312": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q313": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q314": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q315": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q316": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q317": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (2 sur 2)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (1 sur 2)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (0 sur 2)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (2 sur 2)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (1 sur 2)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (0 sur 2)"}
     ]
   },
   "Q318": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q319": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q320": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q321": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q322": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q323": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q324": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q325": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q326": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q327": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q328": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q329": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q330": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q331": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q332": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q333": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève dégage correctement la différence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève dégage plus ou moins correctement la différence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."
-      }
+      {pts: 2, desc: "L'élève dégage correctement la différence."},
+      {pts: 1, desc: "L'élève dégage plus ou moins correctement la différence."},
+      {pts: 0, desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."}
     ]
   },
   "Q334": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q335": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de divergence entre les points de vue."
-      },
+      {pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."},
       {
         pts: 1,
         desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
       },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q336": {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
       {
         pts: 3,
@@ -6737,342 +3124,155 @@ const REGLETTES = {
   },
   "Q337": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q338": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q339": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q340": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q341": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève dégage correctement la différence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève dégage plus ou moins correctement la différence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."
-      }
+      {pts: 2, desc: "L'élève dégage correctement la différence."},
+      {pts: 1, desc: "L'élève dégage plus ou moins correctement la différence."},
+      {pts: 0, desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."}
     ]
   },
   "Q342": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
   },
   "Q343": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q344": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
     ]
   },
   "Q345": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q346": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q347": {
     oi: "Situer dans l'espace",
-    colonnes: [
-      "2 points",
-      "0 point"
-    ],
+    colonnes: ["2 points", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève situe les faits dans l'espace."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans l'espace."
-      }
+      {pts: 2, desc: "L'élève situe les faits dans l'espace."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}
     ]
   },
   "Q348": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
     ]
   },
   "Q349": {
     oi: "Situer dans l'espace",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe le fait dans l'espace."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas le fait dans l'espace."
-      }
-    ]
+    colonnes: ["1 point", "0 point"],
+    niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]
   },
   "Q350": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q351": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q352": {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
       {
         pts: 3,
@@ -7094,230 +3294,96 @@ const REGLETTES = {
   },
   "Q353": {
     oi: "Situer dans l'espace",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe le fait dans l'espace."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas le fait dans l'espace."
-      }
-    ]
+    colonnes: ["1 point", "0 point"],
+    niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]
   },
   "Q354": {
     oi: "Situer dans l'espace",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe le fait dans l'espace."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas le fait dans l'espace."
-      }
-    ]
+    colonnes: ["1 point", "0 point"],
+    niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]
   },
   "Q355": {
     oi: "Situer dans l'espace",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe le fait dans l'espace."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas le fait dans l'espace."
-      }
-    ]
+    colonnes: ["1 point", "0 point"],
+    niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]
   },
   "Q356": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
     ]
   },
   "Q357": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
     ]
   },
   "Q358": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q359": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q360": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
   },
   "Q361": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
   },
   "Q362": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q363": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de divergence entre les points de vue."
-      },
+      {pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."},
       {
         pts: 1,
         desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
       },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q364": {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
       {
         pts: 3,
@@ -7339,340 +3405,150 @@ const REGLETTES = {
   },
   "Q365": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q366": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q367": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
-      }
+      {pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"},
+      {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"},
+      {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}
     ]
   },
   "Q368": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q369": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q370": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q371": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q372": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q373": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (2 sur 2)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (1 sur 2)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (0 sur 2)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (2 sur 2)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (1 sur 2)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (0 sur 2)"}
     ]
   },
   "Q374": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q375": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q376": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q377": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q378": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la continuité."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la continuité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la continuité."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."},
+      {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}
     ]
   },
   "Q379": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q380": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q381": {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
       {
         pts: 3,
@@ -7694,347 +3570,156 @@ const REGLETTES = {
   },
   "Q382": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de divergence entre les points de vue."
-      },
+      {pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."},
       {
         pts: 1,
         desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
       },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q383": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève dégage correctement la différence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève dégage plus ou moins correctement la différence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."
-      }
+      {pts: 2, desc: "L'élève dégage correctement la différence."},
+      {pts: 1, desc: "L'élève dégage plus ou moins correctement la différence."},
+      {pts: 0, desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."}
     ]
   },
   "Q384": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q385": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q386": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q387": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q388": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q389": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q390": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q391": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q392": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q393": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de divergence entre les points de vue."
-      },
+      {pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."},
       {
         pts: 1,
         desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
       },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q394": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q395": {
     oi: "Situer dans l'espace",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe le fait dans l'espace."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas le fait dans l'espace."
-      }
-    ]
+    colonnes: ["1 point", "0 point"],
+    niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]
   },
   "Q396": {
     oi: "Situer dans l'espace",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe le fait dans l'espace."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas le fait dans l'espace."
-      }
-    ]
+    colonnes: ["1 point", "0 point"],
+    niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]
   },
   "Q397": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q398": {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
       {
         pts: 3,
@@ -8057,12 +3742,7 @@ const REGLETTES = {
   "Q399": {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
       {
         pts: 3,
@@ -8084,618 +3764,276 @@ const REGLETTES = {
   },
   "Q400": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
   },
   "Q401": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q402": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q403": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q404": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q405": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q406": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
   },
   "Q407": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (3 sur 3)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (2 sur 3)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
     ]
   },
   "Q408": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q409": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q410": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q411": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q412": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève dégage correctement la similitude."
-      },
-      {
-        pts: 1,
-        desc: "L'élève dégage plus ou moins correctement la similitude."
-      },
-      {
-        pts: 0,
-        desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."
-      }
+      {pts: 2, desc: "L'élève dégage correctement la similitude."},
+      {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."},
+      {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}
     ]
   },
   "Q413": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q414": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q415": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q416": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q417": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q418": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q419": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q420": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q421": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de divergence entre les points de vue."
-      },
+      {pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."},
       {
         pts: 1,
         desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
       },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q422": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q423": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q424": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève dégage correctement la différence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève dégage plus ou moins correctement la différence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."
-      }
+      {pts: 2, desc: "L'élève dégage correctement la différence."},
+      {pts: 1, desc: "L'élève dégage plus ou moins correctement la différence."},
+      {pts: 0, desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."}
     ]
   },
   "Q425": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
-      }
+      {pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"},
+      {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"},
+      {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}
     ]
   },
   "Q426": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q427": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q428": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q429": {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
       {
         pts: 3,
@@ -8717,257 +4055,112 @@ const REGLETTES = {
   },
   "Q430": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q431": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q432": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q433": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la continuité."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la continuité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la continuité."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."},
+      {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}
     ]
   },
   "Q434": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q435": {
     oi: "Situer dans l'espace",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe le fait dans l'espace."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas le fait dans l'espace."
-      }
-    ]
+    colonnes: ["1 point", "0 point"],
+    niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]
   },
   "Q436": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q437": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q438": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q439": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la continuité."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la continuité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la continuité."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."},
+      {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}
     ]
   },
   "Q440": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q441": {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
       {
         pts: 3,
@@ -8989,358 +4182,165 @@ const REGLETTES = {
   },
   "Q442": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève dégage correctement la similitude."
-      },
-      {
-        pts: 1,
-        desc: "L'élève dégage plus ou moins correctement la similitude."
-      },
-      {
-        pts: 0,
-        desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."
-      }
+      {pts: 2, desc: "L'élève dégage correctement la similitude."},
+      {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."},
+      {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}
     ]
   },
   "Q443": {
     oi: "Mettre en relation des faits",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève met en relation tous les faits. (4 sur 4)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"
-      }
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
   },
   "Q444": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q445": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q446": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
-      }
+      {pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"},
+      {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"},
+      {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}
     ]
   },
   "Q447": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q448": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q449": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q450": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q451": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q452": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q453": {
     oi: "Situer dans l'espace",
-    colonnes: [
-      "2 points",
-      "0 point"
-    ],
+    colonnes: ["2 points", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève situe les faits dans l'espace."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans l'espace."
-      }
+      {pts: 2, desc: "L'élève situe les faits dans l'espace."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}
     ]
   },
   "Q454": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q455": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q456": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q457": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q458": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de divergence entre les points de vue."
-      },
+      {pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."},
       {
         pts: 1,
         desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
       },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q459": {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
       {
         pts: 3,
@@ -9362,274 +4362,117 @@ const REGLETTES = {
   },
   "Q460": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q461": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q462": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q463": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"
-      }
+      {pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"},
+      {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"},
+      {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}
     ]
   },
   "Q464": {
     oi: "Situer dans l'espace",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe le fait dans l'espace."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas le fait dans l'espace."
-      }
-    ]
+    colonnes: ["1 point", "0 point"],
+    niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]
   },
   "Q465": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q466": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q467": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q468": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q469": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q470": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q471": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q472": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q473": {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
       {
         pts: 3,
@@ -9651,335 +4494,149 @@ const REGLETTES = {
   },
   "Q474": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q475": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q476": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la continuité."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la continuité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la continuité."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."},
+      {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}
     ]
   },
   "Q477": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q478": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q479": {
     oi: "Situer dans l'espace",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
-    niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe le fait dans l'espace."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas le fait dans l'espace."
-      }
-    ]
+    colonnes: ["1 point", "0 point"],
+    niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]
   },
   "Q480": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 1,
-        desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q481": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de divergence entre les points de vue."
-      },
+      {pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."},
       {
         pts: 1,
         desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
       },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q482": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q483": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q484": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de divergence entre les points de vue."
-      },
+      {pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."},
       {
         pts: 1,
         desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
       },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q485": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q486": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q487": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q488": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le facteur explicatif."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le facteur explicatif."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   },
   "Q489": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q490": {
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
       {
         pts: 3,
@@ -10001,1093 +4658,390 @@ const REGLETTES = {
   },
   "Q491": {
     oi: "Dégager des différences et des similitudes",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève établit correctement le point de divergence entre les points de vue."
-      },
+      {pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."},
       {
         pts: 1,
         desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
       },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."
-      }
+      {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}
     ]
   },
   "Q492": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q493": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q494": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q495": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q496": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q497": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q498": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la continuité."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la continuité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la continuité."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."},
+      {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}
     ]
   },
   "Q499": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q500": {
     oi: "Déterminer des causes et des conséquences",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement la conséquence."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement la conséquence."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   },
   "Q501": {
     oi: "Déterminer des changements et des continuités",
-    colonnes: [
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 2,
-        desc: "L'élève détermine correctement le changement."
-      },
-      {
-        pts: 1,
-        desc: "L'élève détermine plus ou moins correctement le changement."
-      },
-      {
-        pts: 0,
-        desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."
-      }
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   },
   "Q502": {
     oi: "Établir des faits",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève établit correctement le fait."
-      },
-      {
-        pts: 0,
-        desc: "L'élève établit incorrectement le fait ou ne l'établit pas."
-      }
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
   },
   "Q503": {
     oi: "Déterminer des changements et des continuités",
     variante: "changement-continuité",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
   },
   "Q504": {
     oi: "Établir des liens de causalité",
     variante: "3 éléments — 2 liens",
-    colonnes: [
-      "3 points",
-      "2 points",
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {
-        pts: 3,
-        desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."
-      },
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
       {
         pts: 2,
         desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
       },
-      {
-        pts: 1,
-        desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."
-      },
-      {
-        pts: 0,
-        desc: "L'élève précise un seul élément ou n'en précise pas."
-      }
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
   },
   "Q505": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q506": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   },
   "Q507": {
     oi: "Situer dans le temps",
-    colonnes: [
-      "1 point",
-      "0 point"
-    ],
+    colonnes: ["1 point", "0 point"],
     niveaux: [
-      {
-        pts: 1,
-        desc: "L'élève situe les faits dans le temps."
-      },
-      {
-        pts: 0,
-        desc: "L'élève ne situe pas les faits dans le temps."
-      }
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
   }
 }
 
 const IMAGE_DB = {
-  "fondation_quebec_1608.png": {
-    src: "images/fondation_quebec_1608.png"
-  },
-  "ligne_acBd.png": {
-    src: "images/ligne_acBd.png"
-  },
-  "bataille_lac_champlain.png": {
-    src: "images/bataille_lac_champlain.png"
-  },
-  "ligne_1550-1750.png": {
-    src: "images/ligne_1550-1750.png"
-  },
-  "loyalistes_province_quebec.png": {
-    src: "images/loyalistes_province_quebec.png"
-  },
-  "troc_1700.png": {
-    src: "images/troc_1700.png"
-  },
-  "troc_1600.png": {
-    src: "images/troc_1600.png"
-  },
-  "papineau_foule.png": {
-    src: "images/papineau_foule.png",
-    w: 925,
-    h: 1200
-  },
-  "camp_oui_1995.png": {
-    src: "images/camp_oui_1995.png"
-  },
-  "rapatriment_constitution.png": {
-    src: "images/rapatriment_constitution.png"
-  },
-  "chrono_dbAc.png": {
-    src: "images/chrono_dbAc.png"
-  },
-  "crise_oka.png": {
-    src: "images/crise_oka.png"
-  },
-  "ligne_1950-2010.png": {
-    src: "images/ligne_1950-2010.png"
-  },
-  "logos_societe_etat.png": {
-    src: "images/logos_societe_etat.png"
-  },
-  "barrages_hydro_baie_james.png": {
-    src: "images/barrages_hydro_baie_james.png"
-  },
-  "territoire_exploite_minerai_fer.png": {
-    src: "images/territoire_exploite_minerai_fer.png"
-  },
-  "org_pol_1840_acte_union.png": {
-    src: "images/org_pol_1840_acte_union.png"
-  },
-  "org_pol_1791_acte_const.png": {
-    src: "images/org_pol_1791_acte_const.png"
-  },
-  "campement_algonquien.png": {
-    src: "images/campement_algonquien.png"
-  },
-  "victoire_pq_1976.png": {
-    src: "images/victoire_pq_1976.png"
-  },
-  "cause_rivalites_coloniales.png": {
-    src: "images/cause_rivalites_coloniales.png"
-  },
-  "recensement_colonie_n-f.png": {
-    src: "images/recensement_colonie_n-f.png"
-  },
-  "echanges_canada_etats-unis_1850-1860.png": {
-    src: "images/echanges_canada_etats-unis_1850-1860.png"
-  },
-  "portrait_guy_carleton.png": {
-    src: "images/portrait_guy_carleton.png"
-  },
-  "james_murray.png": {
-    src: "images/james_murray.png"
-  },
-  "ligne_1475-1575.png": {
-    src: "images/ligne_1475-1575.png"
-  },
-  "carte_seigneurie_n-f.png": {
-    src: "images/carte_seigneurie_n-f.png"
-  },
-  "graphique_pop_autochtone_n-f.png": {
-    src: "images/graphique_pop_autochtone_n-f.png"
-  },
-  "carte_amerique_nord_1700.png": {
-    src: "images/carte_amerique_nord_1700.png"
-  },
-  "carte_amerique_nord_1700_lettres.png": {
-    src: "images/carte_amerique_nord_1700_lettres.png"
-  },
-  "evangelisation_n-f.jpg": {
-    src: "images/evangelisation_n-f.jpg"
-  },
-  "education_n-f.jpg": {
-    src: "images/education_n-f.jpg"
-  },
-  "debarquement_plaines_abraham.png": {
-    src: "images/debarquement_plaines_abraham.png"
-  },
-  "ligne_1600-1800.png": {
-    src: "images/ligne_1600-1800.png"
-  },
-  "jacques_cartier_1534.png": {
-    src: "images/jacques_cartier_1534.png"
-  },
-  "ligne_abDc.png": {
-    src: "images/ligne_abDc.png"
-  },
-  "commence_fourrure_n-f.png": {
-    src: "images/commence_fourrure_n-f.png"
-  },
-  "exportations_nouvelle_france_1755.png": {
-    src: "images/exportations_nouvelle_france_1755.png"
-  },
-  "exportations_province_quebec_1770.png": {
-    src: "images/exportations_province_quebec_1770.png"
-  },
-  "1791-1840_grosse_ile.png": {
-    src: "images/1791-1840_grosse_ile.png"
-  },
-  "1820_immigration_irlandaise.png": {
-    src: "images/1820_immigration_irlandaise.png"
-  },
-  "execution_patriotes.png": {
-    src: "images/execution_patriotes.png"
-  },
-  "bataille_st-eustache.png": {
-    src: "images/bataille_st-eustache.png"
-  },
-  "population_1763.png": {
-    src: "images/population_1763.png"
-  },
-  "population_1783.png": {
-    src: "images/population_1783.png"
-  },
-  "loyalistes.png": {
-    src: "images/loyalistes.png"
-  },
-  "voyages_exploration.png": {
-    src: "images/voyages_exploration.png"
-  },
-  "graphique_poste_de_traite_1780.png": {
-    src: "images/graphique_poste_de_traite_1780.png"
-  },
-  "ligne_bcAd.png": {
-    src: "images/ligne_bcAd.png"
-  },
-  "gravure_destruction_huronie.png": {
-    src: "images/gravure_destruction_huronie.png"
-  },
-  "exportations_fourrures_huronie.png": {
-    src: "images/exportations_fourrures_huronie.png"
-  },
-  "ligne_1575-1775.png": {
-    src: "images/ligne_1575-1775.png"
-  },
-  "grahique_b_exportations_fourrures_huronie.png": {
-    src: "images/grahique_b_exportations_fourrures_huronie.png"
-  },
-  "filles_du_roy.png": {
-    src: "images/filles_du_roy.png"
-  },
-  "ligne_1600-1700.png": {
-    src: "images/ligne_1600-1700.png"
-  },
-  "quebec_frere_kirke.png": {
-    src: "images/quebec_frere_kirke.png"
-  },
-  "siege_quebec_1690.png": {
-    src: "images/siege_quebec_1690.png"
-  },
-  "fondation_tadoussac.png": {
-    src: "images/fondation_tadoussac.png"
-  },
-  "fondation_quebec.png": {
-    src: "images/fondation_quebec.png"
-  },
-  "fondation_mtl.png": {
-    src: "images/fondation_mtl.png"
-  },
-  "fondation_t-r.png": {
-    src: "images/fondation_t-r.png"
-  },
-  "colon_louis_hebert.png": {
-    src: "images/colon_louis_hebert.png"
-  },
-  "regiment_car-salieres.png": {
-    src: "images/regiment_car-salieres.png"
-  },
-  "fondation_qubec_1608.png": {
-    src: "images/fondation_qubec_1608.png"
-  },
-  "grande_paix_mtl.png": {
-    src: "images/grande_paix_mtl.png"
-  },
-  "chantier_naval.png": {
-    src: "images/chantier_naval.png"
-  },
-  "mercantilisme_nf.png": {
-    src: "images/mercantilisme_nf.png"
-  },
-  "conseil_souverain.png": {
-    src: "images/conseil_souverain.png"
-  },
-  "territoire_revendique_france_1700.png": {
-    src: "images/territoire_revendique_france_1700.png"
-  },
-  "territoire_occupe_1700.png": {
-    src: "images/territoire_occupe_1700.png"
-  },
-  "carte_premiers_occ_peuplement.png": {
-    src: "images/carte_premiers_occ_peuplement.png"
-  },
-  "territoire_revendique_1713.png": {
-    src: "images/territoire_revendique_1713.png"
-  },
-  "territoire_revendique_1700.png": {
-    src: "images/territoire_revendique_1700.png"
-  },
-  "territoires_perdus_1713.png": {
-    src: "images/territoires_perdus_1713.png"
-  },
-  "org_pol_apres_1663.png": {
-    src: "images/org_pol_apres_1663.png"
-  },
-  "paroisse_n-f.png": {
-    src: "images/paroisse_n-f.png"
-  },
-  "org_pol_avant_1663.png": {
-    src: "images/org_pol_avant_1663.png"
-  },
-  "regime_seigneurial_n-f.png": {
-    src: "images/regime_seigneurial_n-f.png"
-  },
-  "origines_geo_1670.png": {
-    src: "images/origines_geo_1670.png"
-  },
-  "origines_geo_1740.png": {
-    src: "images/origines_geo_1740.png"
-  },
-  "origines_sociale_1670.png": {
-    src: "images/origines_sociale_1670.png"
-  },
-  "origines_sociale_1740.png": {
-    src: "images/origines_sociale_1740.png"
-  },
-  "place_publique_qc.png": {
-    src: "images/place_publique_qc.png"
-  },
-  "place_publique_mtl.png": {
-    src: "images/place_publique_mtl.png"
-  },
-  "huron_1600.png": {
-    src: "images/huron_1600.png"
-  },
-  "huron_1700.png": {
-    src: "images/huron_1700.png"
-  },
-  "agriculture_1670.png": {
-    src: "images/agriculture_1670.png"
-  },
-  "agriculture_1750.png": {
-    src: "images/agriculture_1750.png"
-  },
-  "commerce_triangulaire.png": {
-    src: "images/commerce_triangulaire.png"
-  },
-  "activites_eco_1670.png": {
-    src: "images/activites_eco_1670.png"
-  },
-  "activites_eco_1750.png": {
-    src: "images/activites_eco_1750.png"
-  },
-  "activites_habitants_n-f_1740.png": {
-    src: "images/activites_habitants_n-f_1740.png"
-  },
-  "activies_econiques_1663_1740.png": {
-    src: "images/activies_econiques_1663_1740.png"
-  },
-  "eglise_catholique_n-f_1700.png": {
-    src: "images/eglise_catholique_n-f_1700.png"
-  },
-  "traversee_atlantique_1700.png": {
-    src: "images/traversee_atlantique_1700.png"
-  },
-  "maison_1650.png": {
-    src: "images/maison_1650.png"
-  },
-  "maison_1700.png": {
-    src: "images/maison_1700.png"
-  },
-  "coureur_bois_n-f.png": {
-    src: "images/coureur_bois_n-f.png"
-  },
-  "canot_ecorce.png": {
-    src: "images/canot_ecorce.png"
-  },
-  "invasion_americaine.png": {
-    src: "images/invasion_americaine.png"
-  },
-  "ligne_1760-1800.png": {
-    src: "images/ligne_1760-1800.png"
-  },
-  "capitulation_mtl_1760.png": {
-    src: "images/capitulation_mtl_1760.png"
-  },
-  "ligne_1755-1795.png": {
-    src: "images/ligne_1755-1795.png"
-  },
-  "revolte_pontiac.png": {
-    src: "images/revolte_pontiac.png"
-  },
-  "arrivee_loyalistes.png": {
-    src: "images/arrivee_loyalistes.png"
-  },
-  "org_pol_regime_militaire.png": {
-    src: "images/org_pol_regime_militaire.png"
-  },
-  "carte_proclamation_royale_territoire.png": {
-    src: "images/carte_proclamation_royale_territoire.png"
-  },
-  "org_pol_apres_1763.png": {
-    src: "images/org_pol_apres_1763.png"
-  },
-  "org_pol_1774_acte_quebec.png": {
-    src: "images/org_pol_1774_acte_quebec.png"
-  },
-  "mercantilisme_britannique.png": {
-    src: "images/mercantilisme_britannique.png"
-  },
-  "production_blé_minots.png": {
-    src: "images/production_blé_minots.png"
-  },
-  "composition_population_1790.png": {
-    src: "images/composition_population_1790.png"
-  },
-  "langues_parlees_1790.png": {
-    src: "images/langues_parlees_1790.png"
-  },
-  "eglise_anglicane_1780.png": {
-    src: "images/eglise_anglicane_1780.png"
-  },
-  "populaton_1760_1790.png": {
-    src: "images/populaton_1760_1790.png"
-  },
-  "composition_population_1760-1790.png": {
-    src: "images/composition_population_1760-1790.png"
-  },
-  "ligne_1790-1850.png": {
-    src: "images/ligne_1790-1850.png"
-  },
-  "village_iroquoien_vers_1500.png": {
-    src: "images/village_iroquoien_vers_1500.png"
-  },
-  "societe_matrilineaire_1500.png": {
-    src: "images/societe_matrilineaire_1500.png"
-  },
-  "société_patrilineaire_1500.png": {
-    src: "images/société_patrilineaire_1500.png"
-  },
-  "tradition_chamanique_1500.png": {
-    src: "images/tradition_chamanique_1500.png"
-  },
-  "tradition_orale_1500.png": {
-    src: "images/tradition_orale_1500.png"
-  },
-  "don_contre-don.png": {
-    src: "images/don_contre-don.png"
-  },
-  "education_enfants_1500.png": {
-    src: "images/education_enfants_1500.png"
-  },
-  "ceremonie_animisme.png": {
-    src: "images/ceremonie_animisme.png"
-  },
-  "partage_1500.png": {
-    src: "images/partage_1500.png"
-  },
-  "objets_rivalites.png": {
-    src: "images/objets_rivalites.png"
-  },
-  "prisonnier_autochtone_1500.png": {
-    src: "images/prisonnier_autochtone_1500.png"
-  },
-  "raids_autochtones.png": {
-    src: "images/raids_autochtones.png"
-  },
-  "prise_decision_algonquien.png": {
-    src: "images/prise_decision_algonquien.png"
-  },
-  "prise_decision_iroquoiens.png": {
-    src: "images/prise_decision_iroquoiens.png"
-  },
-  "tradition_chamanique_aines_1500.png": {
-    src: "images/tradition_chamanique_aines_1500.png"
-  },
-  "canot_ecorce_echanges.png": {
-    src: "images/canot_ecorce_echanges.png"
-  },
-  "troc_1500.png": {
-    src: "images/troc_1500.png"
-  },
-  "samuel_champlain.png": {
-    src: "images/samuel_champlain.png"
-  },
-  "jean_talon.png": {
-    src: "images/jean_talon.png"
-  },
-  "monseigneur_laval_eveque.png": {
-    src: "images/monseigneur_laval_eveque.png"
-  },
-  "elections_bas-canada_1792.png": {
-    src: "images/elections_bas-canada_1792.png"
-  },
-  "institutions_politiques_acte_const_1791.png": {
-    src: "images/institutions_politiques_acte_const_1791.png"
-  },
-  "debats_parlementaires.png": {
-    src: "images/debats_parlementaires.png"
-  },
-  "carte_cartier_1534.png": {
-    src: "images/carte_cartier_1534.png"
-  },
-  "alliance_franco-ame.png": {
-    src: "images/alliance_franco-ame.png",
-    w: 1200,
-    h: 900
-  },
-  "carte_monde.png": {
-    src: "images/carte_monde.png",
-    w: 1200,
-    h: 685
-  },
-  "carte_amerique_nord.png": {
-    src: "images/carte_amerique_nord.png",
-    w: 1056,
-    h: 1200
-  },
-  "carte_golfe_st-laurent.png": {
-    src: "images/carte_golfe_st-laurent.png",
-    w: 1074,
-    h: 1200
-  },
-  "population_bas-canada_1800.png": {
-    src: "images/population_bas-canada_1800.png",
-    w: 1200,
-    h: 900
-  },
-  "langues_parlees_bas-canada_1800.png": {
-    src: "images/langues_parlees_bas-canada_1800.png",
-    w: 1200,
-    h: 869
-  },
-  "mouvement_liberation.png": {
-    src: "images/mouvement_liberation.png",
-    w: 1200,
-    h: 800
-  },
-  "journal_le_canadien.png": {
-    src: "images/journal_le_canadien.png"
-  },
-  "journaux_bas-canada.png": {
-    src: "images/journaux_bas-canada.png"
-  },
-  "agents_indiens_bas-canada.png": {
-    src: "images/agents_indiens_bas-canada.png",
-    w: 1200,
-    h: 800
-  },
-  "abolition_esclavage_bas-canada.png": {
-    src: "images/abolition_esclavage_bas-canada.png",
-    w: 1200,
-    h: 800
-  },
-  "accroissement_naturel_bas-canada_1790-1840.png": {
-    src: "images/accroissement_naturel_bas-canada_1790-1840.png"
-  },
-  "evolution_demo_haut-canada_1790-1840.png": {
-    src: "images/evolution_demo_haut-canada_1790-1840.png"
-  },
-  "evolution_pop_haut-canada_1790-1840.png": {
-    src: "images/evolution_pop_haut-canada_1790-1840.png"
-  },
-  "evolution_pop_bas-canada_1790-1840.png": {
-    src: "images/evolution_pop_bas-canada_1790-1840.png"
-  },
-  "assemblee_six_comtes.png": {
-    src: "images/assemblee_six_comtes.png"
-  },
-  "aut_col_britannique_rebellions.png": {
-    src: "images/aut_col_britannique_rebellions.png"
-  },
-  "independance_bas-canada.png": {
-    src: "images/independance_bas-canada.png",
-    w: 1200,
-    h: 800
-  },
-  "bataille_saint-charles.png": {
-    src: "images/bataille_saint-charles.png",
-    w: 1200,
-    h: 800
-  },
-  "bataille_taverne.png": {
-    src: "images/bataille_taverne.png",
-    w: 1200,
-    h: 800
-  },
-  "inauguration_canal_lachine.png": {
-    src: "images/inauguration_canal_lachine.png"
-  },
-  "fondation_banque_mtl.png": {
-    src: "images/fondation_banque_mtl.png",
-    w: 1200,
-    h: 800
-  },
-  "chemin_de_fer_locomotive.png": {
-    src: "images/chemin_de_fer_locomotive.png"
-  },
-  "port_mtl_1830.png": {
-    src: "images/port_mtl_1830.png"
-  },
-  "territoire_agricole_1800.png": {
-    src: "images/territoire_agricole_1800.png"
-  },
-  "territoire_agricole_1830.png": {
-    src: "images/territoire_agricole_1830.png"
-  },
-  "corn_laws.png": {
-    src: "images/corn_laws.png",
-    w: 1200,
-    h: 800
-  },
-  "corn_laws_exportations.png": {
-    src: "images/corn_laws_exportations.png"
-  },
-  "corn_laws_tarifs.png": {
-    src: "images/corn_laws_tarifs.png",
-    w: 1200,
-    h: 738
-  },
-  "bas_canada_sols_appauvris.png": {
-    src: "images/bas_canada_sols_appauvris.png"
-  },
-  "bas_canada_crise_agricole.png": {
-    src: "images/bas_canada_crise_agricole.png"
-  },
-  "provenance_fourrures_marchands.png": {
-    src: "images/provenance_fourrures_marchands.png"
-  },
-  "territoire_compagnies_fourrure.png": {
-    src: "images/territoire_compagnies_fourrure.png"
-  },
-  "crise_agricole_production_ble.png": {
-    src: "images/crise_agricole_production_ble.png",
-    w: 1200,
-    h: 901
-  },
-  "compagnies_fourrures_1820.png": {
-    src: "images/compagnies_fourrures_1820.png",
-    w: 1200,
-    h: 604
-  },
-  "postes_traite_1795-1820.png": {
-    src: "images/postes_traite_1795-1820.png",
-    w: 1200,
-    h: 901
-  },
-  "territoire_exploite_fourrure_1820.png": {
-    src: "images/territoire_exploite_fourrure_1820.png"
-  },
-  "fourrures_1780-1820.png": {
-    src: "images/fourrures_1780-1820.png"
-  },
-  "exportations_fourrure_1780-1820.png": {
-    src: "images/exportations_fourrure_1780-1820.png",
-    w: 1200,
-    h: 901
-  },
-  "exportation_bois_1790-1840.png": {
-    src: "images/exportation_bois_1790-1840.png",
-    w: 1200,
-    h: 901
-  },
-  "evolution_pop_n-f.png": {
-    src: "images/evolution_pop_n-f.png"
-  },
-  "blocus_continental.png": {
-    src: "images/blocus_continental.png"
-  },
-  "bois_nouvelles_activites.png": {
-    src: "images/bois_nouvelles_activites.png"
-  },
-  "bois_emplois.png": {
-    src: "images/bois_emplois.png",
-    w: 1200,
-    h: 900
-  },
-  "bois_emplois_1800.png": {
-    src: "images/bois_emplois_1800.png",
-    w: 1200,
-    h: 900
-  },
-  "bois_emplois_1840.png": {
-    src: "images/bois_emplois_1840.png",
-    w: 1200,
-    h: 900
-  },
-  "territoire_bois_exploitation.png": {
-    src: "images/territoire_bois_exploitation.png"
-  },
-  "bois_chantier_naval.png": {
-    src: "images/bois_chantier_naval.png",
-    w: 1200,
-    h: 800
-  },
-  "grosse_ile_station_quarantaine.png": {
-    src: "images/grosse_ile_station_quarantaine.png"
-  },
-  "territoire_immigration_1820.png": {
-    src: "images/territoire_immigration_1820.png",
-    w: 927,
-    h: 1200
-  },
-  "cantons_immigration.png": {
-    src: "images/cantons_immigration.png",
-    w: 1200,
-    h: 921
-  },
-  "rapport_durham_recommendations.png": {
-    src: "images/rapport_durham_recommendations.png"
-  },
-  "population_bas-canada_1735.png": {
-    src: "images/population_bas-canada_1735.png"
-  },
-  "eglise_paroisses_1790-1830.png": {
-    src: "images/eglise_paroisses_1790-1830.png"
-  },
-  "exportations_bas-canada.png": {
-    src: "images/exportations_bas-canada.png",
-    w: 1200,
-    h: 844
-  },
-  "bois_exportations_bas-canada.png": {
-    src: "images/bois_exportations_bas-canada.png",
-    w: 1200,
-    h: 687
-  },
-  "gouverneur_veto.png": {
-    src: "images/gouverneur_veto.png",
-    w: 1200,
-    h: 658
-  },
-  "bois_emplois_1800-1840.png": {
-    src: "images/bois_emplois_1800-1840.png",
-    w: 1200,
-    h: 800
-  },
-  "bois_navires.png": {
-    src: "images/bois_navires.png",
-    w: 1200,
-    h: 800
-  },
-  "carte_proclamation_royale_1763.png": {
-    src: "images/carte_proclamation_royale_1763.png"
-  },
-  "carte_acte_quebec_1774.png": {
-    src: "images/carte_acte_quebec_1774.png"
-  },
-  "carte_province_quebec_1783.png": {
-    src: "images/carte_province_quebec_1783.png"
-  },
-  "carte_familles_linguistiques_autochtones_lettres.png": {
-    src: "images/carte_familles_linguistiques_autochtones_lettres.png"
-  },
-  "carte_premiers_contacts.png": {
-    src: "images/carte_premiers_contacts.png"
-  },
-  "carte_villages_domicilies_autochtones.png": {
-    src: "images/carte_villages_domicilies_autochtones.png"
-  },
-  "carte_reseaux_echanges_1500.png": {
-    src: "images/carte_reseaux_echanges_1500.png"
-  },
-  "carte_destruction_huronie_1640.png": {
-    src: "images/carte_destruction_huronie_1640.png"
-  },
-  "carte_familles_linguistiques_autochtones_1500.png": {
-    src: "images/carte_familles_linguistiques_autochtones_1500.png"
-  },
-  "carte_bataille_chateauguay.png": {
-    src: "images/carte_bataille_chateauguay.png",
-    w: 1200,
-    h: 921
-  },
-  "carte_territoire_occupe_1650.png": {
-    src: "images/carte_territoire_occupe_1650.png"
-  },
-  "carte_acte_constitutionnel_1791.png": {
-    src: "images/carte_acte_constitutionnel_1791.png"
-  },
-  "carte_conflits_armes_bas-canada_1837.png": {
-    src: "images/carte_conflits_armes_bas-canada_1837.png",
-    w: 1200,
-    h: 921
-  },
-  "carte_conflits_armes_haut-canada_1838.png": {
-    src: "images/carte_conflits_armes_haut-canada_1838.png",
-    w: 1138,
-    h: 1200
-  },
-  "carte_exploration_territoire_1700.png": {
-    src: "images/carte_exploration_territoire_1700.png"
-  },
-  "carte_migration_loyalistes_1783.png": {
-    src: "images/carte_migration_loyalistes_1783.png"
-  },
-  "carte_mercantilisme_fourrures_1600.png": {
-    src: "images/carte_mercantilisme_fourrures_1600.png"
-  },
-  "carte_acte_union_1840.jpg": {
-    src: "images/carte_acte_union_1840.jpg",
-    w: 1091,
-    h: 777
-  },
-  "carte_lieux_echanges.png": {
-    src: "images/carte_lieux_echanges.png"
-  },
-  "tableau_representation_politique_1840.jpg": {
-    src: "images/tableau_representation_politique_1840.jpg"
-  },
-  "ligne_1830-1875.png": {
-    src: "images/ligne_1830-1875.png",
-    w: 1200,
-    h: 291
-  },
-  "immigration_irlandaise.jpg": {
-    src: "images/immigration_irlandaise.jpg"
-  },
-  "ligne_1845-1890.png": {
-    src: "images/ligne_1845-1890.png"
-  },
-  "traite_reciprocite.jpg": {
-    src: "images/traite_reciprocite.jpg"
-  },
-  "ligne_1830-1890.png": {
-    src: "images/ligne_1830-1890.png"
-  },
-  "abolition_regime_seigneurial.jpg": {
-    src: "images/abolition_regime_seigneurial.jpg"
-  }
+  "fondation_quebec_1608.png": {src: "images/fondation_quebec_1608.png"},
+  "ligne_acBd.png": {src: "images/ligne_acBd.png"},
+  "bataille_lac_champlain.png": {src: "images/bataille_lac_champlain.png"},
+  "ligne_1550-1750.png": {src: "images/ligne_1550-1750.png"},
+  "loyalistes_province_quebec.png": {src: "images/loyalistes_province_quebec.png"},
+  "troc_1700.png": {src: "images/troc_1700.png"},
+  "troc_1600.png": {src: "images/troc_1600.png"},
+  "papineau_foule.png": {src: "images/papineau_foule.png", w: 925, h: 1200},
+  "camp_oui_1995.png": {src: "images/camp_oui_1995.png"},
+  "rapatriment_constitution.png": {src: "images/rapatriment_constitution.png"},
+  "chrono_dbAc.png": {src: "images/chrono_dbAc.png"},
+  "crise_oka.png": {src: "images/crise_oka.png"},
+  "ligne_1950-2010.png": {src: "images/ligne_1950-2010.png"},
+  "logos_societe_etat.png": {src: "images/logos_societe_etat.png"},
+  "barrages_hydro_baie_james.png": {src: "images/barrages_hydro_baie_james.png"},
+  "territoire_exploite_minerai_fer.png": {src: "images/territoire_exploite_minerai_fer.png"},
+  "org_pol_1840_acte_union.png": {src: "images/org_pol_1840_acte_union.png"},
+  "org_pol_1791_acte_const.png": {src: "images/org_pol_1791_acte_const.png"},
+  "campement_algonquien.png": {src: "images/campement_algonquien.png"},
+  "victoire_pq_1976.png": {src: "images/victoire_pq_1976.png"},
+  "cause_rivalites_coloniales.png": {src: "images/cause_rivalites_coloniales.png"},
+  "recensement_colonie_n-f.png": {src: "images/recensement_colonie_n-f.png"},
+  "echanges_canada_etats-unis_1850-1860.png": {src: "images/echanges_canada_etats-unis_1850-1860.png"},
+  "portrait_guy_carleton.png": {src: "images/portrait_guy_carleton.png"},
+  "james_murray.png": {src: "images/james_murray.png"},
+  "ligne_1475-1575.png": {src: "images/ligne_1475-1575.png"},
+  "carte_seigneurie_n-f.png": {src: "images/carte_seigneurie_n-f.png"},
+  "graphique_pop_autochtone_n-f.png": {src: "images/graphique_pop_autochtone_n-f.png"},
+  "carte_amerique_nord_1700.png": {src: "images/carte_amerique_nord_1700.png"},
+  "carte_amerique_nord_1700_lettres.png": {src: "images/carte_amerique_nord_1700_lettres.png"},
+  "evangelisation_n-f.jpg": {src: "images/evangelisation_n-f.jpg"},
+  "education_n-f.jpg": {src: "images/education_n-f.jpg"},
+  "debarquement_plaines_abraham.png": {src: "images/debarquement_plaines_abraham.png"},
+  "ligne_1600-1800.png": {src: "images/ligne_1600-1800.png"},
+  "jacques_cartier_1534.png": {src: "images/jacques_cartier_1534.png"},
+  "ligne_abDc.png": {src: "images/ligne_abDc.png"},
+  "commence_fourrure_n-f.png": {src: "images/commence_fourrure_n-f.png"},
+  "exportations_nouvelle_france_1755.png": {src: "images/exportations_nouvelle_france_1755.png"},
+  "exportations_province_quebec_1770.png": {src: "images/exportations_province_quebec_1770.png"},
+  "1791-1840_grosse_ile.png": {src: "images/1791-1840_grosse_ile.png"},
+  "1820_immigration_irlandaise.png": {src: "images/1820_immigration_irlandaise.png"},
+  "execution_patriotes.png": {src: "images/execution_patriotes.png"},
+  "bataille_st-eustache.png": {src: "images/bataille_st-eustache.png"},
+  "population_1763.png": {src: "images/population_1763.png"},
+  "population_1783.png": {src: "images/population_1783.png"},
+  "loyalistes.png": {src: "images/loyalistes.png"},
+  "voyages_exploration.png": {src: "images/voyages_exploration.png"},
+  "graphique_poste_de_traite_1780.png": {src: "images/graphique_poste_de_traite_1780.png"},
+  "ligne_bcAd.png": {src: "images/ligne_bcAd.png"},
+  "gravure_destruction_huronie.png": {src: "images/gravure_destruction_huronie.png"},
+  "exportations_fourrures_huronie.png": {src: "images/exportations_fourrures_huronie.png"},
+  "ligne_1575-1775.png": {src: "images/ligne_1575-1775.png"},
+  "grahique_b_exportations_fourrures_huronie.png": {src: "images/grahique_b_exportations_fourrures_huronie.png"},
+  "filles_du_roy.png": {src: "images/filles_du_roy.png"},
+  "ligne_1600-1700.png": {src: "images/ligne_1600-1700.png"},
+  "quebec_frere_kirke.png": {src: "images/quebec_frere_kirke.png"},
+  "siege_quebec_1690.png": {src: "images/siege_quebec_1690.png"},
+  "fondation_tadoussac.png": {src: "images/fondation_tadoussac.png"},
+  "fondation_quebec.png": {src: "images/fondation_quebec.png"},
+  "fondation_mtl.png": {src: "images/fondation_mtl.png"},
+  "fondation_t-r.png": {src: "images/fondation_t-r.png"},
+  "colon_louis_hebert.png": {src: "images/colon_louis_hebert.png"},
+  "regiment_car-salieres.png": {src: "images/regiment_car-salieres.png"},
+  "fondation_qubec_1608.png": {src: "images/fondation_qubec_1608.png"},
+  "grande_paix_mtl.png": {src: "images/grande_paix_mtl.png"},
+  "chantier_naval.png": {src: "images/chantier_naval.png"},
+  "mercantilisme_nf.png": {src: "images/mercantilisme_nf.png"},
+  "conseil_souverain.png": {src: "images/conseil_souverain.png"},
+  "territoire_revendique_france_1700.png": {src: "images/territoire_revendique_france_1700.png"},
+  "territoire_occupe_1700.png": {src: "images/territoire_occupe_1700.png"},
+  "carte_premiers_occ_peuplement.png": {src: "images/carte_premiers_occ_peuplement.png"},
+  "territoire_revendique_1713.png": {src: "images/territoire_revendique_1713.png"},
+  "territoire_revendique_1700.png": {src: "images/territoire_revendique_1700.png"},
+  "territoires_perdus_1713.png": {src: "images/territoires_perdus_1713.png"},
+  "org_pol_apres_1663.png": {src: "images/org_pol_apres_1663.png"},
+  "paroisse_n-f.png": {src: "images/paroisse_n-f.png"},
+  "org_pol_avant_1663.png": {src: "images/org_pol_avant_1663.png"},
+  "regime_seigneurial_n-f.png": {src: "images/regime_seigneurial_n-f.png"},
+  "origines_geo_1670.png": {src: "images/origines_geo_1670.png"},
+  "origines_geo_1740.png": {src: "images/origines_geo_1740.png"},
+  "origines_sociale_1670.png": {src: "images/origines_sociale_1670.png"},
+  "origines_sociale_1740.png": {src: "images/origines_sociale_1740.png"},
+  "place_publique_qc.png": {src: "images/place_publique_qc.png"},
+  "place_publique_mtl.png": {src: "images/place_publique_mtl.png"},
+  "huron_1600.png": {src: "images/huron_1600.png"},
+  "huron_1700.png": {src: "images/huron_1700.png"},
+  "agriculture_1670.png": {src: "images/agriculture_1670.png"},
+  "agriculture_1750.png": {src: "images/agriculture_1750.png"},
+  "commerce_triangulaire.png": {src: "images/commerce_triangulaire.png"},
+  "activites_eco_1670.png": {src: "images/activites_eco_1670.png"},
+  "activites_eco_1750.png": {src: "images/activites_eco_1750.png"},
+  "activites_habitants_n-f_1740.png": {src: "images/activites_habitants_n-f_1740.png"},
+  "activies_econiques_1663_1740.png": {src: "images/activies_econiques_1663_1740.png"},
+  "eglise_catholique_n-f_1700.png": {src: "images/eglise_catholique_n-f_1700.png"},
+  "traversee_atlantique_1700.png": {src: "images/traversee_atlantique_1700.png"},
+  "maison_1650.png": {src: "images/maison_1650.png"},
+  "maison_1700.png": {src: "images/maison_1700.png"},
+  "coureur_bois_n-f.png": {src: "images/coureur_bois_n-f.png"},
+  "canot_ecorce.png": {src: "images/canot_ecorce.png"},
+  "invasion_americaine.png": {src: "images/invasion_americaine.png"},
+  "ligne_1760-1800.png": {src: "images/ligne_1760-1800.png"},
+  "capitulation_mtl_1760.png": {src: "images/capitulation_mtl_1760.png"},
+  "ligne_1755-1795.png": {src: "images/ligne_1755-1795.png"},
+  "revolte_pontiac.png": {src: "images/revolte_pontiac.png"},
+  "arrivee_loyalistes.png": {src: "images/arrivee_loyalistes.png"},
+  "org_pol_regime_militaire.png": {src: "images/org_pol_regime_militaire.png"},
+  "carte_proclamation_royale_territoire.png": {src: "images/carte_proclamation_royale_territoire.png"},
+  "org_pol_apres_1763.png": {src: "images/org_pol_apres_1763.png"},
+  "org_pol_1774_acte_quebec.png": {src: "images/org_pol_1774_acte_quebec.png"},
+  "mercantilisme_britannique.png": {src: "images/mercantilisme_britannique.png"},
+  "production_blé_minots.png": {src: "images/production_blé_minots.png"},
+  "composition_population_1790.png": {src: "images/composition_population_1790.png"},
+  "langues_parlees_1790.png": {src: "images/langues_parlees_1790.png"},
+  "eglise_anglicane_1780.png": {src: "images/eglise_anglicane_1780.png"},
+  "populaton_1760_1790.png": {src: "images/populaton_1760_1790.png"},
+  "composition_population_1760-1790.png": {src: "images/composition_population_1760-1790.png"},
+  "ligne_1790-1850.png": {src: "images/ligne_1790-1850.png"},
+  "village_iroquoien_vers_1500.png": {src: "images/village_iroquoien_vers_1500.png"},
+  "societe_matrilineaire_1500.png": {src: "images/societe_matrilineaire_1500.png"},
+  "société_patrilineaire_1500.png": {src: "images/société_patrilineaire_1500.png"},
+  "tradition_chamanique_1500.png": {src: "images/tradition_chamanique_1500.png"},
+  "tradition_orale_1500.png": {src: "images/tradition_orale_1500.png"},
+  "don_contre-don.png": {src: "images/don_contre-don.png"},
+  "education_enfants_1500.png": {src: "images/education_enfants_1500.png"},
+  "ceremonie_animisme.png": {src: "images/ceremonie_animisme.png"},
+  "partage_1500.png": {src: "images/partage_1500.png"},
+  "objets_rivalites.png": {src: "images/objets_rivalites.png"},
+  "prisonnier_autochtone_1500.png": {src: "images/prisonnier_autochtone_1500.png"},
+  "raids_autochtones.png": {src: "images/raids_autochtones.png"},
+  "prise_decision_algonquien.png": {src: "images/prise_decision_algonquien.png"},
+  "prise_decision_iroquoiens.png": {src: "images/prise_decision_iroquoiens.png"},
+  "tradition_chamanique_aines_1500.png": {src: "images/tradition_chamanique_aines_1500.png"},
+  "canot_ecorce_echanges.png": {src: "images/canot_ecorce_echanges.png"},
+  "troc_1500.png": {src: "images/troc_1500.png"},
+  "samuel_champlain.png": {src: "images/samuel_champlain.png"},
+  "jean_talon.png": {src: "images/jean_talon.png"},
+  "monseigneur_laval_eveque.png": {src: "images/monseigneur_laval_eveque.png"},
+  "elections_bas-canada_1792.png": {src: "images/elections_bas-canada_1792.png"},
+  "institutions_politiques_acte_const_1791.png": {src: "images/institutions_politiques_acte_const_1791.png"},
+  "debats_parlementaires.png": {src: "images/debats_parlementaires.png"},
+  "carte_cartier_1534.png": {src: "images/carte_cartier_1534.png"},
+  "alliance_franco-ame.png": {src: "images/alliance_franco-ame.png", w: 1200, h: 900},
+  "carte_monde.png": {src: "images/carte_monde.png", w: 1200, h: 685},
+  "carte_amerique_nord.png": {src: "images/carte_amerique_nord.png", w: 1056, h: 1200},
+  "carte_golfe_st-laurent.png": {src: "images/carte_golfe_st-laurent.png", w: 1074, h: 1200},
+  "population_bas-canada_1800.png": {src: "images/population_bas-canada_1800.png", w: 1200, h: 900},
+  "langues_parlees_bas-canada_1800.png": {src: "images/langues_parlees_bas-canada_1800.png", w: 1200, h: 869},
+  "mouvement_liberation.png": {src: "images/mouvement_liberation.png", w: 1200, h: 800},
+  "journal_le_canadien.png": {src: "images/journal_le_canadien.png"},
+  "journaux_bas-canada.png": {src: "images/journaux_bas-canada.png"},
+  "agents_indiens_bas-canada.png": {src: "images/agents_indiens_bas-canada.png", w: 1200, h: 800},
+  "abolition_esclavage_bas-canada.png": {src: "images/abolition_esclavage_bas-canada.png", w: 1200, h: 800},
+  "accroissement_naturel_bas-canada_1790-1840.png": {src: "images/accroissement_naturel_bas-canada_1790-1840.png"},
+  "evolution_demo_haut-canada_1790-1840.png": {src: "images/evolution_demo_haut-canada_1790-1840.png"},
+  "evolution_pop_haut-canada_1790-1840.png": {src: "images/evolution_pop_haut-canada_1790-1840.png"},
+  "evolution_pop_bas-canada_1790-1840.png": {src: "images/evolution_pop_bas-canada_1790-1840.png"},
+  "assemblee_six_comtes.png": {src: "images/assemblee_six_comtes.png"},
+  "aut_col_britannique_rebellions.png": {src: "images/aut_col_britannique_rebellions.png"},
+  "independance_bas-canada.png": {src: "images/independance_bas-canada.png", w: 1200, h: 800},
+  "bataille_saint-charles.png": {src: "images/bataille_saint-charles.png", w: 1200, h: 800},
+  "bataille_taverne.png": {src: "images/bataille_taverne.png", w: 1200, h: 800},
+  "inauguration_canal_lachine.png": {src: "images/inauguration_canal_lachine.png"},
+  "fondation_banque_mtl.png": {src: "images/fondation_banque_mtl.png", w: 1200, h: 800},
+  "chemin_de_fer_locomotive.png": {src: "images/chemin_de_fer_locomotive.png"},
+  "port_mtl_1830.png": {src: "images/port_mtl_1830.png"},
+  "territoire_agricole_1800.png": {src: "images/territoire_agricole_1800.png"},
+  "territoire_agricole_1830.png": {src: "images/territoire_agricole_1830.png"},
+  "corn_laws.png": {src: "images/corn_laws.png", w: 1200, h: 800},
+  "corn_laws_exportations.png": {src: "images/corn_laws_exportations.png"},
+  "corn_laws_tarifs.png": {src: "images/corn_laws_tarifs.png", w: 1200, h: 738},
+  "bas_canada_sols_appauvris.png": {src: "images/bas_canada_sols_appauvris.png"},
+  "bas_canada_crise_agricole.png": {src: "images/bas_canada_crise_agricole.png"},
+  "provenance_fourrures_marchands.png": {src: "images/provenance_fourrures_marchands.png"},
+  "territoire_compagnies_fourrure.png": {src: "images/territoire_compagnies_fourrure.png"},
+  "crise_agricole_production_ble.png": {src: "images/crise_agricole_production_ble.png", w: 1200, h: 901},
+  "compagnies_fourrures_1820.png": {src: "images/compagnies_fourrures_1820.png", w: 1200, h: 604},
+  "postes_traite_1795-1820.png": {src: "images/postes_traite_1795-1820.png", w: 1200, h: 901},
+  "territoire_exploite_fourrure_1820.png": {src: "images/territoire_exploite_fourrure_1820.png"},
+  "fourrures_1780-1820.png": {src: "images/fourrures_1780-1820.png"},
+  "exportations_fourrure_1780-1820.png": {src: "images/exportations_fourrure_1780-1820.png", w: 1200, h: 901},
+  "exportation_bois_1790-1840.png": {src: "images/exportation_bois_1790-1840.png", w: 1200, h: 901},
+  "evolution_pop_n-f.png": {src: "images/evolution_pop_n-f.png"},
+  "blocus_continental.png": {src: "images/blocus_continental.png"},
+  "bois_nouvelles_activites.png": {src: "images/bois_nouvelles_activites.png"},
+  "bois_emplois.png": {src: "images/bois_emplois.png", w: 1200, h: 900},
+  "bois_emplois_1800.png": {src: "images/bois_emplois_1800.png", w: 1200, h: 900},
+  "bois_emplois_1840.png": {src: "images/bois_emplois_1840.png", w: 1200, h: 900},
+  "territoire_bois_exploitation.png": {src: "images/territoire_bois_exploitation.png"},
+  "bois_chantier_naval.png": {src: "images/bois_chantier_naval.png", w: 1200, h: 800},
+  "grosse_ile_station_quarantaine.png": {src: "images/grosse_ile_station_quarantaine.png"},
+  "territoire_immigration_1820.png": {src: "images/territoire_immigration_1820.png", w: 927, h: 1200},
+  "cantons_immigration.png": {src: "images/cantons_immigration.png", w: 1200, h: 921},
+  "rapport_durham_recommendations.png": {src: "images/rapport_durham_recommendations.png"},
+  "population_bas-canada_1735.png": {src: "images/population_bas-canada_1735.png"},
+  "eglise_paroisses_1790-1830.png": {src: "images/eglise_paroisses_1790-1830.png"},
+  "exportations_bas-canada.png": {src: "images/exportations_bas-canada.png", w: 1200, h: 844},
+  "bois_exportations_bas-canada.png": {src: "images/bois_exportations_bas-canada.png", w: 1200, h: 687},
+  "gouverneur_veto.png": {src: "images/gouverneur_veto.png", w: 1200, h: 658},
+  "bois_emplois_1800-1840.png": {src: "images/bois_emplois_1800-1840.png", w: 1200, h: 800},
+  "bois_navires.png": {src: "images/bois_navires.png", w: 1200, h: 800},
+  "carte_proclamation_royale_1763.png": {src: "images/carte_proclamation_royale_1763.png"},
+  "carte_acte_quebec_1774.png": {src: "images/carte_acte_quebec_1774.png"},
+  "carte_province_quebec_1783.png": {src: "images/carte_province_quebec_1783.png"},
+  "carte_familles_linguistiques_autochtones_lettres.png": {src: "images/carte_familles_linguistiques_autochtones_lettres.png"},
+  "carte_premiers_contacts.png": {src: "images/carte_premiers_contacts.png"},
+  "carte_villages_domicilies_autochtones.png": {src: "images/carte_villages_domicilies_autochtones.png"},
+  "carte_reseaux_echanges_1500.png": {src: "images/carte_reseaux_echanges_1500.png"},
+  "carte_destruction_huronie_1640.png": {src: "images/carte_destruction_huronie_1640.png"},
+  "carte_familles_linguistiques_autochtones_1500.png": {src: "images/carte_familles_linguistiques_autochtones_1500.png"},
+  "carte_bataille_chateauguay.png": {src: "images/carte_bataille_chateauguay.png", w: 1200, h: 921},
+  "carte_territoire_occupe_1650.png": {src: "images/carte_territoire_occupe_1650.png"},
+  "carte_acte_constitutionnel_1791.png": {src: "images/carte_acte_constitutionnel_1791.png"},
+  "carte_conflits_armes_bas-canada_1837.png": {src: "images/carte_conflits_armes_bas-canada_1837.png", w: 1200, h: 921},
+  "carte_conflits_armes_haut-canada_1838.png": {src: "images/carte_conflits_armes_haut-canada_1838.png", w: 1138, h: 1200},
+  "carte_exploration_territoire_1700.png": {src: "images/carte_exploration_territoire_1700.png"},
+  "carte_migration_loyalistes_1783.png": {src: "images/carte_migration_loyalistes_1783.png"},
+  "carte_mercantilisme_fourrures_1600.png": {src: "images/carte_mercantilisme_fourrures_1600.png"},
+  "carte_acte_union_1840.jpg": {src: "images/carte_acte_union_1840.jpg", w: 1091, h: 777},
+  "carte_lieux_echanges.png": {src: "images/carte_lieux_echanges.png"},
+  "tableau_representation_politique_1840.jpg": {src: "images/tableau_representation_politique_1840.jpg"},
+  "ligne_1830-1875.png": {src: "images/ligne_1830-1875.png", w: 1200, h: 291},
+  "immigration_irlandaise.jpg": {src: "images/immigration_irlandaise.jpg"},
+  "ligne_1845-1890.png": {src: "images/ligne_1845-1890.png"},
+  "traite_reciprocite.jpg": {src: "images/traite_reciprocite.jpg"},
+  "ligne_1830-1890.png": {src: "images/ligne_1830-1890.png"},
+  "abolition_regime_seigneurial.jpg": {src: "images/abolition_regime_seigneurial.jpg"}
 }
 
 const QUESTIONS = [
@@ -11098,11 +5052,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Nommez une nation autochtone qui conclut une alliance avec Champlain et François Gravé du Pont en 1603.",
-    aspects: [
-      {
-        aspect: "Exploration et occupation du territoire par les Français"
-      }
-    ],
+    aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
     documents: [
       {
         type: "textes",
@@ -11115,10 +5065,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Les Montagnais ou les Etchemins (ou les Malécites) ou les Algonquins ou les Hurons ou les Micmacs ou les Abénaquis."
   },
   {
@@ -11129,14 +5076,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Ordre chronologique",
     enonce: "Les documents A à D présentent des faits relatifs aux premières tentatives d’établissement d’Européens en Amérique du Nord. Placez-les par ordre chronologique.",
-    aspects: [
-      {
-        aspect: "Exploration et occupation du territoire par les Français"
-      },
-      {
-        aspect: "Premiers contacts"
-      }
-    ],
+    aspects: [{aspect: "Exploration et occupation du territoire par les Français"}, {aspect: "Premiers contacts"}],
     documents: [
       {
         type: "textes",
@@ -11180,10 +5120,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_acBd.png"
-    },
+    reponse: {type: "image", ref: "ligne_acBd.png"},
     guide: "C - D - B - A",
     updatedAt: "2026-06-10T18:30:56.483Z"
   },
@@ -11195,11 +5132,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Guerre et diplomatie chez les Premières Nations"
-      }
-    ],
+    aspects: [{aspect: "Guerre et diplomatie chez les Premières Nations"}],
     documents: [
       {
         type: "textes",
@@ -11213,10 +5146,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1550-1750.png"
-    },
+    reponse: {type: "image", ref: "ligne_1550-1750.png"},
     guide: "B"
   },
   {
@@ -11227,17 +5157,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Avant et après",
     enonce: "Les documents A à D présentent des événements marquants de l'histoire de la Province de Québec. Indiquez si chacun de ces événements se déroule avant ou après l'Acte de Québec (1774).",
-    aspects: [
-      {
-        aspect: "Invasion américaine"
-      },
-      {
-        aspect: "Proclamation royale"
-      },
-      {
-        aspect: "Régime militaire"
-      }
-    ],
+    aspects: [{aspect: "Invasion américaine"}, {aspect: "Proclamation royale"}, {aspect: "Régime militaire"}],
     documents: [
       {
         type: "textes",
@@ -11284,23 +5204,12 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "avant-apres",
-      label: "Acte de Québec (1774)"
-    },
+    reponse: {type: "avant-apres", label: "Acte de Québec (1774)"},
     guide: {
       type: "grille",
-      entetes: [
-        "Avant",
-        "Acte de Québec",
-        "Après"
-      ],
+      entetes: ["Avant", "Acte de Québec", "Après"],
       rangees: [
-        [
-          "C et D",
-          "",
-          "A et B"
-        ]
+        ["C et D", "", "A et B"]
       ]
     },
     updatedAt: "2026-06-03T11:31:34.474Z"
@@ -11313,26 +5222,14 @@ const QUESTIONS = [
     points: 1,
     soustag: "Situer 1 élément",
     enonce: "À partir du document A, indiquez la lettre qui correspond à une région de la Province de Québec où s’établissent des Loyalistes.",
-    aspects: [
-      {
-        aspect: "Loyalistes"
-      }
-    ],
+    aspects: [{aspect: "Loyalistes"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "loyalistes_province_quebec.png",
-            source: "MEES."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "loyalistes_province_quebec.png", source: "MEES."}]
       }
     ],
-    reponse: {
-      type: "tableau_2col"
-    },
+    reponse: {type: "tableau_2col"},
     guide: "A"
   },
   {
@@ -11343,11 +5240,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Position – 3 acteurs",
     enonce: "Les documents A à C présentent la position de trois acteurs à l’égard de l’Acte de Québec. Nommez l’acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
-    aspects: [
-      {
-        aspect: "Acte de Québec"
-      }
-    ],
+    aspects: [{aspect: "Acte de Québec"}],
     documents: [
       {
         type: "textes",
@@ -11383,10 +5276,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Trudel affirme que l'Acte de Québec accorde trop de privilèges aux Canadiens (la différence), alors que Lacoursière et Laporte soutiennent que ces concessions sont bénéfiques pour la colonie (la similitude).",
     updatedAt: "2026-06-18T16:04:07.628Z"
   },
@@ -11398,11 +5288,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Divergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis ces deux auteurs sont-ils en désaccord?",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -11425,10 +5311,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "L’appui de la population aux Rébellions.",
     updatedAt: "2026-06-18T16:04:43.079Z"
   },
@@ -11440,11 +5323,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une cause de la rivalité entre la Nouvelle-France et les colonies britanniques à partir du 17e siècle.",
-    aspects: [
-      {
-        aspect: "Guerres intercoloniales"
-      }
-    ],
+    aspects: [{aspect: "Guerres intercoloniales"}],
     documents: [
       {
         type: "textes",
@@ -11457,10 +5336,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le commerce des fourrures ou le contrôle du territoire ou la rivalité entre les métropoles."
   },
   {
@@ -11471,11 +5347,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause et conséquence",
     enonce: "Des politiques d’immigration et de natalité ont été mises en place en Nouvelle-France dans la deuxième moitié du 17e siècle. Inscrivez la lettre du document qui présente une cause de ces politiques et la lettre de celui qui en présente une conséquence.",
-    aspects: [
-      {
-        aspect: "Croissance de la population"
-      }
-    ],
+    aspects: [{aspect: "Croissance de la population"}],
     documents: [
       {
         type: "textes",
@@ -11499,24 +5371,13 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "cause-consequence"
-    },
+    reponse: {type: "cause-consequence"},
     guide: {
       type: "grille",
-      entetes: [
-        "Élément",
-        "Document"
-      ],
+      entetes: ["Élément", "Document"],
       rangees: [
-        [
-          "Cause",
-          "B"
-        ],
-        [
-          "Conséquence",
-          "A"
-        ]
+        ["Cause", "B"],
+        ["Conséquence", "A"]
       ]
     }
   },
@@ -11528,11 +5389,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Changement",
     enonce: "Indiquez un changement concernant la participation politique de la population apporté par l’Acte constitutionnel de 1791.",
-    aspects: [
-      {
-        aspect: "Acte constitutionnel"
-      }
-    ],
+    aspects: [{aspect: "Acte constitutionnel"}],
     documents: [
       {
         type: "textes",
@@ -11557,10 +5414,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "La population peut désormais élire des députés à la Chambre d'assemblée ou une partie de la population obtient le droit de participer à l'élection des représentants ou la création d'une Chambre d'assemblée permet à la population d'être représentée par des députés élus.",
     updatedAt: "2026-06-12T11:43:39.302Z"
   },
@@ -11572,39 +5426,18 @@ const QUESTIONS = [
     points: 2,
     soustag: "Continuité",
     enonce: "Indiquez un élément de continuité dans la façon de faire du commerce en Amérique du Nord durant les périodes présentées dans les documents A et B.",
-    aspects: [
-      {
-        aspect: "Commerce des fourrures"
-      }
-    ],
+    aspects: [{aspect: "Commerce des fourrures"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "troc_1600.png",
-            soustitre: "Vers 1600",
-            source: "MEES."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "troc_1600.png", soustitre: "Vers 1600", source: "MEES."}]
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            ref: "troc_1700.png",
-            soustitre: "Vers 1700",
-            source: "MEES."
-          }
-        ]
+        cols: [{titre: "Document B", ref: "troc_1700.png", soustitre: "Vers 1700", source: "MEES."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le troc ou l’échange de fourrures contre d’autres produits."
   },
   {
@@ -11615,11 +5448,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir des document A et B, indiquez s’il y a changement ou continuité dans l’exercice du pouvoir politique dans la colonie. Justifiez votre choix par des faits et un repère de temps.",
-    aspects: [
-      {
-        aspect: "Acte constitutionnel"
-      }
-    ],
+    aspects: [{aspect: "Acte constitutionnel"}],
     documents: [
       {
         type: "textes",
@@ -11644,10 +5473,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 4
-    },
+    reponse: {type: "lignes", nombre: 4},
     guide: "Il y a changement, car il y a une Assemblée législative à partir de 1791 (ou car il y a mise en place d’une chambre d’assemblée durant cette période). \nou \nIl y a continuité, car le gouverneur détient tous les pouvoirs entre 1774 et 1791 (ou car le gouverneur a toujours les pleins pouvoirs durant cette période).",
     updatedAt: "2026-06-12T11:44:36.624Z"
   },
@@ -11659,14 +5485,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "3 documents",
     enonce: "Les documents A à C présentent la position de différents groupes sociaux lors de la crise politique qui secoue le Bas-Canada durant les années 1830. Inscrivez à l’endroit approprié la lettre du document correspondant à chacune des positions des groupes sociaux.",
-    aspects: [
-      {
-        aspect: "Idées libérales et républicaines"
-      },
-      {
-        aspect: "Population"
-      }
-    ],
+    aspects: [{aspect: "Idées libérales et républicaines"}, {aspect: "Population"}],
     documents: [
       {
         type: "textes",
@@ -11701,31 +5520,15 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Bourgeoisie professionnelle",
-        "Bourgeoisie d'affaires",
-        "Clergé catholique"
-      ]
+      elements: ["Bourgeoisie professionnelle", "Bourgeoisie d'affaires", "Clergé catholique"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Élément",
-        "Document"
-      ],
+      entetes: ["Élément", "Document"],
       rangees: [
-        [
-          "Bourgeoisie professionnelle",
-          "1"
-        ],
-        [
-          "Bourgeoisie d'affaires",
-          "3"
-        ],
-        [
-          "Clergé catholique",
-          "2"
-        ]
+        ["Bourgeoisie professionnelle", "1"],
+        ["Bourgeoisie d'affaires", "3"],
+        ["Clergé catholique", "2"]
       ]
     }
   },
@@ -11736,11 +5539,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 3,
     enonce: "Expliquez comment la réponse de Londres aux revendications des Patriotes entraîne des actions de protestation populaire au Bas-Canada dans la première moitié du 19e siècle.\n  \nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux. \n\n• Une revendication des Patriotes \n• La réponse de Londres \n• Une action de protestation populaire",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -11774,10 +5573,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 4
-    },
+    reponse: {type: "lignes", nombre: 4},
     guide: "Les Patriotes revendiquent l’obtention de la responsabilité ministérielle ou le contrôle du budget par l’Assemblée ou l’élection des membres du conseil législatif (ene revendication des Patriotes). \nCes revendications sont refusées par Londres (la réponse de Londres). Devant le refus de Londres, les Patriotes invitent la population à boycotter les produits britanniques ou organisent des assemblées populaires ou se soulèvent (une action de protestation populaire).",
     updatedAt: "2026-06-12T15:29:39.916Z"
   },
@@ -11788,11 +5584,7 @@ const QUESTIONS = [
     periode: "P7 — 1945 – 1980",
     points: 1,
     enonce: "Le document A fait référence à un type d’établissements mis en place au Québec par le gouvernement fédéral au cours du 20e siècle. Nommez ce type d’établissements.",
-    aspects: [
-      {
-        aspect: "Pensionnats indiens au Québec"
-      }
-    ],
+    aspects: [{aspect: "Pensionnats indiens au Québec"}],
     documents: [
       {
         type: "textes",
@@ -11805,10 +5597,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Les pensionnats indiens (ou autochtones) ou les écoles résidentielles."
   },
   {
@@ -11819,21 +5608,11 @@ const QUESTIONS = [
     points: 2,
     soustag: "Ordre chronologique",
     enonce: "Les documents A à D présentent des événements liés au statut politique du Québec à partir de 1982. Placez-les par ordre chronologique.",
-    aspects: [
-      {
-        aspect: "Statut politique du Québec"
-      }
-    ],
+    aspects: [{aspect: "Statut politique du Québec"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "camp_oui_1995.png",
-            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "camp_oui_1995.png", source: "Bibliothèque et Archives nationales du Québec (BAnQ)."}]
       },
       {
         type: "textes",
@@ -11858,19 +5637,10 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document D",
-            ref: "rapatriment_constitution.png",
-            source: "Bibliothèque et Archives Canada."
-          }
-        ]
+        cols: [{titre: "Document D", ref: "rapatriment_constitution.png", source: "Bibliothèque et Archives Canada."}]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "chrono_dbAc.png"
-    },
+    reponse: {type: "image", ref: "chrono_dbAc.png"},
     guide: "D - B - A - C"
   },
   {
@@ -11881,27 +5651,14 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Droits des Autochtones"
-      }
-    ],
+    aspects: [{aspect: "Droits des Autochtones"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "crise_oka.png",
-            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "crise_oka.png", source: "Bibliothèque et Archives nationales du Québec (BAnQ)."}]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1950-2010.png"
-    },
+    reponse: {type: "image", ref: "ligne_1950-2010.png"},
     guide: "C"
   },
   {
@@ -11912,24 +5669,11 @@ const QUESTIONS = [
     points: 2,
     soustag: "Avant et après",
     enonce: "Les documents A à D font référence à la modernisation de l’économie du Québec. Indiquez si les faits présentés dans ces documents se déroulent avant ou après 1960.",
-    aspects: [
-      {
-        aspect: "Développement régional"
-      },
-      {
-        aspect: "Révolution tranquille"
-      }
-    ],
+    aspects: [{aspect: "Développement régional"}, {aspect: "Révolution tranquille"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "logos_societe_etat.png",
-            source: "MEES."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "logos_societe_etat.png", source: "MEES."}]
       },
       {
         type: "textes",
@@ -11943,13 +5687,7 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document C",
-            ref: "barrages_hydro_baie_james.png",
-            source: "MEES."
-          }
-        ]
+        cols: [{titre: "Document C", ref: "barrages_hydro_baie_james.png", source: "MEES."}]
       },
       {
         type: "textes",
@@ -11962,23 +5700,12 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "avant-apres",
-      label: "1960"
-    },
+    reponse: {type: "avant-apres", label: "1960"},
     guide: {
       type: "grille",
-      entetes: [
-        "Avant",
-        "1960",
-        "Après"
-      ],
+      entetes: ["Avant", "1960", "Après"],
       rangees: [
-        [
-          "B et D",
-          "",
-          "A et C"
-        ]
+        ["B et D", "", "A et C"]
       ]
     }
   },
@@ -11990,26 +5717,14 @@ const QUESTIONS = [
     points: 1,
     soustag: "Situer 1 élément",
     enonce: "Selon le document A, quelle lettre correspond à un territoire exploité pour son minerai de fer dans la deuxième moitié du 20e siècle?",
-    aspects: [
-      {
-        aspect: "Développement régional"
-      }
-    ],
+    aspects: [{aspect: "Développement régional"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "territoire_exploite_minerai_fer.png",
-            source: "MEES."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "territoire_exploite_minerai_fer.png", source: "MEES."}]
       }
     ],
-    reponse: {
-      type: "tableau_2col"
-    },
+    reponse: {type: "tableau_2col"},
     guide: "C"
   },
   {
@@ -12020,11 +5735,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Différence",
     enonce: "À partir des documents A et B, indiquez la différence entre le moyen utilisé par le Front de libération du Québec et celui utilisé par le Parti québécois pour obtenir l’indépendance du Québec.",
-    aspects: [
-      {
-        aspect: "Néonationalisme"
-      }
-    ],
+    aspects: [{aspect: "Néonationalisme"}],
     documents: [
       {
         type: "textes",
@@ -12038,18 +5749,10 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            ref: "victoire_pq_1976.png"
-          }
-        ]
+        cols: [{titre: "Document B", ref: "victoire_pq_1976.png"}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le Front de libération du Québec recourt à la violence (ex. : enlèvements, attentats à la bombe), alors que le Parti québécois recourt à l’exercice de la démocratie (ex. : élections, référendum)."
   },
   {
@@ -12060,14 +5763,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Position – 3 acteurs",
     enonce: "Les documents A à C présentent la position de trois acteurs sur la conscription en 1917. Nommez l’acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
-    aspects: [
-      {
-        aspect: "Première Guerre mondiale"
-      },
-      {
-        aspect: "Statut du Canada dans l'Empire britannique"
-      }
-    ],
+    aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Statut du Canada dans l'Empire britannique"}],
     documents: [
       {
         type: "textes",
@@ -12103,10 +5799,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Borden (ou Le premier ministre du Canada) appuie la conscription (la différence), alors que Lavergne et Bourassa s’y opposent (la similitude)."
   },
   {
@@ -12117,11 +5810,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?",
-    aspects: [
-      {
-        aspect: "Migrations"
-      }
-    ],
+    aspects: [{aspect: "Migrations"}],
     documents: [
       {
         type: "textes",
@@ -12146,10 +5835,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "L’importance de coloniser les régions (ou la colonisation des régions).",
     updatedAt: "2026-06-18T17:56:50.357Z"
   },
@@ -12161,11 +5847,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Dans quel but les Réformistes de la Province du Canada forment-ils une alliance en 1841?",
-    aspects: [
-      {
-        aspect: "Gouvernement responsable"
-      }
-    ],
+    aspects: [{aspect: "Gouvernement responsable"}],
     documents: [
       {
         type: "textes",
@@ -12179,10 +5861,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Obtenir la responsabilité ministérielle (ou le gouvernement responsable) ou obtenir que les membres du Conseil exécutif soient désormais choisis parmi les membres de l’Assemblée législative ou former la majorité à la Chambre d’assemblée.",
     updatedAt: "2026-06-12T12:26:16.322Z"
   },
@@ -12194,11 +5873,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause et conséquence",
     enonce: "Au milieu du 19e siècle, la Grande-Bretagne adopte une politique de libre-échange. Inscrivez la lettre du document qui présente une cause de l’adoption de cette politique et la lettre de celui qui en présente une conséquence pour la Province du Canada.",
-    aspects: [
-      {
-        aspect: "Économie coloniale"
-      }
-    ],
+    aspects: [{aspect: "Économie coloniale"}],
     documents: [
       {
         type: "textes",
@@ -12212,32 +5887,16 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            ref: "echanges_canada_etats-unis_1850-1860.png"
-          }
-        ]
+        cols: [{titre: "Document B", ref: "echanges_canada_etats-unis_1850-1860.png"}]
       }
     ],
-    reponse: {
-      type: "cause-consequence"
-    },
+    reponse: {type: "cause-consequence"},
     guide: {
       type: "grille",
-      entetes: [
-        "Élément",
-        "Document"
-      ],
+      entetes: ["Élément", "Document"],
       rangees: [
-        [
-          "Cause",
-          "A"
-        ],
-        [
-          "Conséquence",
-          "B"
-        ]
+        ["Cause", "A"],
+        ["Conséquence", "B"]
       ]
     }
   },
@@ -12249,11 +5908,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Changement",
     enonce: "Indiquez un changement survenu dans l’économie du Québec durant les années 1930.",
-    aspects: [
-      {
-        aspect: "Grande dépression"
-      }
-    ],
+    aspects: [{aspect: "Grande dépression"}],
     documents: [
       {
         type: "textes",
@@ -12266,10 +5921,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "L’économie du Québec passe d’une période de prospérité à une période de dépression (ou de crise) ou le Québec est touché par une crise économique."
   },
   {
@@ -12280,14 +5932,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Continuité",
     enonce: "Les documents A et B présentent la structure politique de la colonie à deux périodes différentes. Quel pouvoir le gouverneur conserve-t-il d’une période à l’autre?",
-    aspects: [
-      {
-        aspect: "Acte d'Union"
-      },
-      {
-        aspect: "Gouvernement responsable"
-      }
-    ],
+    aspects: [{aspect: "Acte d'Union"}, {aspect: "Gouvernement responsable"}],
     documents: [
       {
         type: "textes",
@@ -12312,10 +5957,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le droit de veto (ou Le droit de rejeter des projets de loi soumis par la Chambre d’assemblée) ou le pouvoir exécutif (ou Le pouvoir de nommer les membres des conseils exécutif et législatif) ou le pouvoir de dissoudre la Chambre d’assemblée.",
     updatedAt: "2026-06-12T12:27:32.373Z"
   },
@@ -12327,11 +5969,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans l’implication des femmes en politique au Québec. Justifiez votre choix par des faits et un repère de temps.",
-    aspects: [
-      {
-        aspect: "Féminisme"
-      }
-    ],
+    aspects: [{aspect: "Féminisme"}],
     documents: [
       {
         type: "textes",
@@ -12355,10 +5993,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 4
-    },
+    reponse: {type: "lignes", nombre: 4},
     guide: "Il y a changement, car pour la première fois en 1961, une femme siège comme députée ou car une femme se présente pour la première fois comme candidate aux élections en 1947. \nou\nIl y a continuité, car des femmes sont élues députées depuis 1961 ou car les femmes sont toujours minoritaires comme députées à l’Assemblée nationale entre 1961 et 1989."
   },
   {
@@ -12369,14 +6004,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "3 documents",
     enonce: "Les documents A à C font référence à différents nationalismes au Québec au 20e siècle. Indiquez à l’endroit approprié la lettre du document correspondant à chacun des nationalismes.",
-    aspects: [
-      {
-        aspect: "Clérico-nationalisme"
-      },
-      {
-        aspect: "Politique intérieure canadienne"
-      }
-    ],
+    aspects: [{aspect: "Clérico-nationalisme"}, {aspect: "Politique intérieure canadienne"}],
     documents: [
       {
         type: "textes",
@@ -12411,31 +6039,15 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Clérico-nationalisme",
-        "Impérialisme",
-        "Nationalisme canadien-français"
-      ]
+      elements: ["Clérico-nationalisme", "Impérialisme", "Nationalisme canadien-français"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Élément",
-        "Document"
-      ],
+      entetes: ["Élément", "Document"],
       rangees: [
-        [
-          "Clérico-nationalisme",
-          "C"
-        ],
-        [
-          "Impérialisme",
-          "A"
-        ],
-        [
-          "Nationalisme canadien-français",
-          "B"
-        ]
+        ["Clérico-nationalisme", "C"],
+        ["Impérialisme", "A"],
+        ["Nationalisme canadien-français", "B"]
       ]
     }
   },
@@ -12446,11 +6058,7 @@ const QUESTIONS = [
     periode: "P8 — De 1980 à nos jours",
     points: 3,
     enonce: "Expliquez comment la réponse du gouvernement américain aux accusations de l’industrie américaine du bois d’œuvre au début du 21e siècle entraîne une action de la part du gouvernement canadien.\n \nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux. \n \n• Une accusation portée contre le Canada par l’industrie américaine du bois d’œuvre \n• La réponse du gouvernement américain  \n• Une action du gouvernement canadien",
-    aspects: [
-      {
-        aspect: "Mondialisation de l'économie"
-      }
-    ],
+    aspects: [{aspect: "Mondialisation de l'économie"}],
     documents: [
       {
         type: "textes",
@@ -12484,10 +6092,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 4
-    },
+    reponse: {type: "lignes", nombre: 4},
     guide: "L’industrie américaine accuse le Canada de subventionner son industrie ou de vendre son bois d’œuvre à un prix inférieur à celui du bois américain ou de faire du dumping sur le marché américain (Une accusation portée contre le Canada par l’industrie américaine du bois d’œuvre). Ces critiques amènent le gouvernement américain à imposer une taxe (ou une surtaxe) sur le bois d’œuvre canadien ou des droits \nantidumping sur les exportations canadiennes (La réponse du gouvernement américain). Cette décision pousse le gouvernement canadien à protester auprès de l’OMC et du tribunal de l’ALENA (Une action du gouvernement canadien)."
   },
   {
@@ -12497,11 +6102,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez le nom du passage emprunté par les premiers occupants pour migrer de l’Asie vers l’Amérique.",
-    aspects: [
-      {
-        aspect: "Premiers occupants du territoire"
-      }
-    ],
+    aspects: [{aspect: "Premiers occupants du territoire"}],
     documents: [
       {
         type: "textes",
@@ -12514,10 +6115,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le détroit de Béring (ou la Béringie).",
     updatedAt: "2026-06-09T03:12:05.846Z"
   },
@@ -12528,27 +6126,14 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez le nom de la famille linguistique autochtone qui occupe la vallée du fleuve Saint-Laurent vers 1500.",
-    aspects: [
-      {
-        aspect: "Premiers occupants du territoire"
-      }
-    ],
+    aspects: [{aspect: "Premiers occupants du territoire"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_familles_linguistiques_autochtones_1500.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_familles_linguistiques_autochtones_1500.png", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Les Iroquoiens.",
     updatedAt: "2026-06-09T13:54:31.842Z"
   },
@@ -12559,27 +6144,14 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez le nom de la famille linguistique autochtone qui occupe le Bouclier canadien et les Appalaches vers 1500.",
-    aspects: [
-      {
-        aspect: "Premiers occupants du territoire"
-      }
-    ],
+    aspects: [{aspect: "Premiers occupants du territoire"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_familles_linguistiques_autochtones_1500.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_familles_linguistiques_autochtones_1500.png", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Les Algonquiens.",
     updatedAt: "2026-06-09T13:54:41.475Z"
   },
@@ -12591,25 +6163,14 @@ const QUESTIONS = [
     points: 1,
     soustag: "Situer 1 élément",
     enonce: "À partir du document A, indiquez la lettre du territoire occupé par la famille linguistique algonquienne vers 1500.",
-    aspects: [
-      {
-        aspect: "Premiers occupants du territoire"
-      }
-    ],
+    aspects: [{aspect: "Premiers occupants du territoire"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_familles_linguistiques_autochtones_lettres.png"
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_familles_linguistiques_autochtones_lettres.png"}]
       }
     ],
-    reponse: {
-      type: "tableau_2col"
-    },
+    reponse: {type: "tableau_2col"},
     guide: "C"
   },
   {
@@ -12620,25 +6181,14 @@ const QUESTIONS = [
     points: 1,
     soustag: "Situer 1 élément",
     enonce: "À partir du document A, indiquez la lettre du territoire occupé par la famille linguistique iroquoienne vers 1500.",
-    aspects: [
-      {
-        aspect: "Premiers occupants du territoire"
-      }
-    ],
+    aspects: [{aspect: "Premiers occupants du territoire"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_familles_linguistiques_autochtones_lettres.png"
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_familles_linguistiques_autochtones_lettres.png"}]
       }
     ],
-    reponse: {
-      type: "tableau_2col"
-    },
+    reponse: {type: "tableau_2col"},
     guide: "B"
   },
   {
@@ -12649,25 +6199,14 @@ const QUESTIONS = [
     points: 1,
     soustag: "Situer 1 élément",
     enonce: "À partir du document A, indiquez la lettre du territoire occupé par la nation inuite vers 1500.",
-    aspects: [
-      {
-        aspect: "Premiers occupants du territoire"
-      }
-    ],
+    aspects: [{aspect: "Premiers occupants du territoire"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_familles_linguistiques_autochtones_lettres.png"
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_familles_linguistiques_autochtones_lettres.png"}]
       }
     ],
-    reponse: {
-      type: "tableau_2col"
-    },
+    reponse: {type: "tableau_2col"},
     guide: "A"
   },
   {
@@ -12678,11 +6217,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "2 documents",
     enonce: "À partir des documents A et B, indiquez la lettre du document qui fait références aux activités économiques pratiquées les groupes autochtones.",
-    aspects: [
-      {
-        aspect: "Réseaux d'échange autochtones"
-      }
-    ],
+    aspects: [{aspect: "Réseaux d'échange autochtones"}],
     documents: [
       {
         type: "textes",
@@ -12707,22 +6242,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Algonquiens",
-        "Iroquoiens"
-      ]
+      elements: ["Algonquiens", "Iroquoiens"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Algonquiens",
-        "Iroquoiens"
-      ],
+      entetes: ["Algonquiens", "Iroquoiens"],
       rangees: [
-        [
-          "A",
-          "B"
-        ]
+        ["A", "B"]
       ]
     }
   },
@@ -12734,11 +6260,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "4 documents",
     enonce: "À partir des documents A à D, indiquez la lettre du document qui fait références à l'organisation territoriale des groupes autochtones.",
-    aspects: [
-      {
-        aspect: "Premiers occupants du territoire"
-      }
-    ],
+    aspects: [{aspect: "Premiers occupants du territoire"}],
     documents: [
       {
         type: "textes",
@@ -12784,23 +6306,14 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Algonquiens",
-        "Iroquoiens"
-      ],
+      elements: ["Algonquiens", "Iroquoiens"],
       double: true
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Algonquiens",
-        "Iroquoiens"
-      ],
+      entetes: ["Algonquiens", "Iroquoiens"],
       rangees: [
-        [
-          "B et D",
-          "A et C"
-        ]
+        ["B et D", "A et C"]
       ]
     },
     updatedAt: "2026-06-09T03:27:00.693Z"
@@ -12813,11 +6326,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?",
-    aspects: [
-      {
-        aspect: "Rapports sociaux chez les Autochtones"
-      }
-    ],
+    aspects: [{aspect: "Rapports sociaux chez les Autochtones"}],
     documents: [
       {
         type: "textes",
@@ -12842,10 +6351,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "L'importance des aînés dans la transmission des savoirs et des traditions.",
     updatedAt: "2026-06-18T17:53:57.211Z"
   },
@@ -12857,11 +6363,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Position – 3 acteurs",
     enonce: "Les documents A à C présentent la position de trois acteurs sur les alliances entre les Premières Nations. Nommez l’auteur qui présente un point de vue différent et comparez ce point de vue à celui des deux autres acteurs.",
-    aspects: [
-      {
-        aspect: "Réseaux d'échange autochtones"
-      }
-    ],
+    aspects: [{aspect: "Réseaux d'échange autochtones"}],
     documents: [
       {
         type: "textes",
@@ -12897,10 +6399,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Havard affirme que certaines nations privilégient l'affrontement avec leurs rivaux (la différence), alors que Delâge et Beaulieu soutiennent le contraire ou que les alliances entre les nations sont bénéfiques (la similitude).",
     updatedAt: "2026-06-18T18:06:01.249Z"
   },
@@ -12912,11 +6411,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "4 documents",
     enonce: "Les documents A à D présentent des faits sur la prise de décision chez les Algonquiens et les Iroquoiens vers 1500. Indiquez les lettres des documents qui correspondent à chacun des groupes.",
-    aspects: [
-      {
-        aspect: "Prise de décision chez les Autochtones"
-      }
-    ],
+    aspects: [{aspect: "Prise de décision chez les Autochtones"}],
     documents: [
       {
         type: "textes",
@@ -12961,23 +6456,14 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Algonquiens",
-        "Iroquoiens"
-      ],
+      elements: ["Algonquiens", "Iroquoiens"],
       double: true
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Algonquiens",
-        "Iroquoiens"
-      ],
+      entetes: ["Algonquiens", "Iroquoiens"],
       rangees: [
-        [
-          "B et D",
-          "A et C"
-        ]
+        ["B et D", "A et C"]
       ]
     }
   },
@@ -12988,11 +6474,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez un rôle joué par le chaman dans les sociétés autochtones.",
-    aspects: [
-      {
-        aspect: "Rapports sociaux chez les Autochtones"
-      }
-    ],
+    aspects: [{aspect: "Rapports sociaux chez les Autochtones"}],
     documents: [
       {
         type: "textes",
@@ -13005,10 +6487,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Il soigne les malades ou dirige des cérémonies ou interprète les rêves ou communique avec les esprits.",
     updatedAt: "2026-06-09T13:06:02.574Z"
   },
@@ -13020,11 +6499,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?",
-    aspects: [
-      {
-        aspect: "Rapports sociaux chez les Autochtones"
-      }
-    ],
+    aspects: [{aspect: "Rapports sociaux chez les Autochtones"}],
     documents: [
       {
         type: "textes",
@@ -13049,10 +6524,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le rôle spirituel du chaman dans leur communauté.",
     updatedAt: "2026-06-18T18:02:54.438Z"
   },
@@ -13063,20 +6535,17 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue deux auteurs sur l’éducation des enfants chez les Autochtones. Sur quel point précis ces deux auteurs sont-ils d’accord?",
-    aspects: [
-      {
-        aspect: "Rapports sociaux chez les Autochtones"
-      }
-    ],
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?",
+    aspects: [{aspect: "Rapports sociaux chez les Autochtones"}],
     documents: [
       {
         type: "textes",
         cols: [
           {
             titre: "Document A",
-            texte: "« L’éducation des enfants autochtones repose sur l’observation, l’imitation et la participation aux activités quotidiennes. Les adultes transmettent les savoirs nécessaires à la survie et à l’intégration dans la communauté. »",
-            auteur: "Denys Delâge"
+            texte: "« L'éducation des enfants repose largement sur l'observation et la participation aux activités quotidiennes de la communauté. »",
+            auteur: "Denys Delâge",
+            source: "Adapté de Denys Delâge, Le pays renversé : Amérindiens et Européens en Amérique du Nord-Est, 1600-1664, Boréal, 1991."
           }
         ]
       },
@@ -13085,17 +6554,16 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« Chez les peuples autochtones, les enfants apprennent très tôt en accompagnant les adultes. Ils acquièrent progressivement les connaissances, les techniques et les valeurs qui assurent la continuité de la culture. »",
-            auteur: "José Mailhot"
+            texte: "« Les jeunes acquièrent progressivement les savoirs nécessaires à la vie adulte grâce à l'exemple des membres expérimentés de leur groupe. »",
+            auteur: "Alain Beaulieu",
+            source: "Adapté de Alain Beaulieu, Les Autochtones du Québec : des premières alliances aux revendications contemporaines, Fides, 2013."
           }
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
-    guide: "Les deux auteurs s’entendent pour dire que les enfants apprennent par l’observation ou par la participation aux activités quotidiennes de la communauté."
+    reponse: {type: "lignes", nombre: 2},
+    guide: "L'éducation des enfants se fait par la transmission des savoirs au sein de la communauté.",
+    updatedAt: "2026-06-18T18:18:10.415Z"
   },
   {
     id: "Q44",
@@ -13104,11 +6572,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez un moyen par lequel les enfants autochtones apprennent les savoirs nécessaires à la vie quotidienne.",
-    aspects: [
-      {
-        aspect: "Rapports sociaux chez les Autochtones"
-      }
-    ],
+    aspects: [{aspect: "Rapports sociaux chez les Autochtones"}],
     documents: [
       {
         type: "textes",
@@ -13121,10 +6585,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Par l’observation ou l’imitation ou la participation aux activités des adultes.",
     updatedAt: "2026-06-09T13:18:57.625Z"
   },
@@ -13135,11 +6596,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez une pratique qui favorise l'entraide et la solidarité dans plusieurs sociétés autochtones.",
-    aspects: [
-      {
-        aspect: "Rapports sociaux chez les Autochtones"
-      }
-    ],
+    aspects: [{aspect: "Rapports sociaux chez les Autochtones"}],
     documents: [
       {
         type: "textes",
@@ -13152,10 +6609,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le partage des biens.",
     updatedAt: "2026-06-09T13:53:16.790Z"
   },
@@ -13167,11 +6621,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence du partage des biens au sein des sociétés autochtones.",
-    aspects: [
-      {
-        aspect: "Rapports sociaux chez les Autochtones"
-      }
-    ],
+    aspects: [{aspect: "Rapports sociaux chez les Autochtones"}],
     documents: [
       {
         type: "textes",
@@ -13184,10 +6634,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "La subsistance de tous est favorisée ou les membres du groupe peuvent répondre à leurs besoins."
   },
   {
@@ -13197,11 +6644,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez le moyen principalement utilisé par les Autochtones pour transmettre leur histoire, leurs valeurs et leurs connaissances.",
-    aspects: [
-      {
-        aspect: "Rapports sociaux chez les Autochtones"
-      }
-    ],
+    aspects: [{aspect: "Rapports sociaux chez les Autochtones"}],
     documents: [
       {
         type: "textes",
@@ -13214,10 +6657,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "La tradition orale.",
     updatedAt: "2026-06-09T13:11:41.200Z"
   },
@@ -13229,11 +6669,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux auteurs sur le don et le contre-don. Sur quel point précis ces deux auteurs sont-ils d’accord?",
-    aspects: [
-      {
-        aspect: "Rapports sociaux chez les Autochtones"
-      }
-    ],
+    aspects: [{aspect: "Rapports sociaux chez les Autochtones"}],
     documents: [
       {
         type: "textes",
@@ -13256,10 +6692,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les deux auteurs s’entendent pour dire que le don appelle un contre-don."
   },
   {
@@ -13269,11 +6702,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez la pratique utilisée par plusieurs peuples autochtones pour entretenir leurs alliances grâce à l'échange réciproque de biens.",
-    aspects: [
-      {
-        aspect: "Rapports sociaux chez les Autochtones"
-      }
-    ],
+    aspects: [{aspect: "Rapports sociaux chez les Autochtones"}],
     documents: [
       {
         type: "textes",
@@ -13286,10 +6715,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le don et contre-don.",
     updatedAt: "2026-06-09T13:15:11.136Z"
   },
@@ -13300,11 +6726,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez le groupe de personnes qui désignent les chefs dans les sociétés algonquiennes.",
-    aspects: [
-      {
-        aspect: "Prise de décision chez les Autochtones"
-      }
-    ],
+    aspects: [{aspect: "Prise de décision chez les Autochtones"}],
     documents: [
       {
         type: "textes",
@@ -13317,10 +6739,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Les hommes de la communauté.",
     updatedAt: "2026-06-09T14:22:26.140Z"
   },
@@ -13331,11 +6750,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez le nom de la pratique utilisée par les groupes autochtones pour échanger des biens.",
-    aspects: [
-      {
-        aspect: "Réseaux d'échange autochtones"
-      }
-    ],
+    aspects: [{aspect: "Réseaux d'échange autochtones"}],
     documents: [
       {
         type: "textes",
@@ -13348,10 +6763,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le troc.",
     updatedAt: "2026-06-09T14:47:25.912Z"
   },
@@ -13363,27 +6775,14 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence des réseaux d’échange sur l’accès des nations autochtones aux ressources.",
-    aspects: [
-      {
-        aspect: "Réseaux d'échange autochtones"
-      }
-    ],
+    aspects: [{aspect: "Réseaux d'échange autochtones"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_reseaux_echanges_1500.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_reseaux_echanges_1500.png", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les nations autochtones ont accès à des ressources qu’elles ne trouvent pas sur leur propre territoire ou elles obtiennent des ressources provenant de régions éloignées ou des biens circulent sur de vastes territoires.",
     updatedAt: "2026-06-09T14:48:41.398Z"
   },
@@ -13395,27 +6794,14 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence de l’utilisation des voies d’eau sur les échanges entre les nations autochtones.",
-    aspects: [
-      {
-        aspect: "Réseaux d'échange autochtones"
-      }
-    ],
+    aspects: [{aspect: "Réseaux d'échange autochtones"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_reseaux_echanges_1500.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_reseaux_echanges_1500.png", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les ressources peuvent être transportées sur de longues distances ou les échanges entre les nations sont facilités ou les réseaux d’échange s’étendent sur de vastes territoires.",
     updatedAt: "2026-06-09T14:48:14.169Z"
   },
@@ -13426,11 +6812,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez un moyen utilisé par les nations autochtones pour transporter des ressources sur les voies d’eau.",
-    aspects: [
-      {
-        aspect: "Réseaux d'échange autochtones"
-      }
-    ],
+    aspects: [{aspect: "Réseaux d'échange autochtones"}],
     documents: [
       {
         type: "textes",
@@ -13443,10 +6825,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le canot d’écorce.",
     updatedAt: "2026-06-09T14:42:45.101Z"
   },
@@ -13458,11 +6837,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Au début du 17e siècle, Samuel de Champlain conclut une alliance avec les Hurons. Indiquez une conséquence de cette alliance sur les relations entre les Iroquois et les Français.",
-    aspects: [
-      {
-        aspect: "Exploration et occupation du territoire par les Français"
-      }
-    ],
+    aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
     documents: [
       {
         type: "textes",
@@ -13476,10 +6851,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les Iroquois deviennent des ennemis des Français ou les relations entre les Iroquois et les Français se détériorent ou les Iroquois entrent en conflit avec les Français."
   },
   {
@@ -13490,11 +6862,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux auteurs sur l’alliance entre les Français et les Hurons-Wendats. Sur quel point précis ces deux auteurs sont-ils d’accord?",
-    aspects: [
-      {
-        aspect: "Exploration et occupation du territoire par les Français"
-      }
-    ],
+    aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
     documents: [
       {
         type: "textes",
@@ -13519,10 +6887,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les deux auteurs s’entendent pour dire que l’alliance entre les Français et les Hurons-Wendats favorise le commerce des fourrures ou entraîne les Français dans les conflits avec les Iroquois."
   },
   {
@@ -13532,26 +6897,14 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Quel gouverneur est rappelé en Angleterre à la suite de pressions exercées par les marchands \nanglophones?",
-    aspects: [
-      {
-        aspect: "Mouvements de revendication"
-      }
-    ],
+    aspects: [{aspect: "Mouvements de revendication"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "james_murray.png"
-          }
-        ]
+        cols: [{titre: "Document A", ref: "james_murray.png"}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "James Murray.",
     updatedAt: "2026-06-07T00:44:24.446Z"
   },
@@ -13563,11 +6916,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une cause du rappel de James Murray en Angleterre au début du Régime britannique.",
-    aspects: [
-      {
-        aspect: "Mouvements de revendication"
-      }
-    ],
+    aspects: [{aspect: "Mouvements de revendication"}],
     documents: [
       {
         type: "textes",
@@ -13580,10 +6929,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les marchands anglophones s’opposent aux politiques de James Murray ou ils demandent des changements à l’administration de la colonie."
   },
   {
@@ -13594,11 +6940,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence des demandes des marchands anglophones de la Province de Québec sur l’administration de la colonie.",
-    aspects: [
-      {
-        aspect: "Mouvements de revendication"
-      }
-    ],
+    aspects: [{aspect: "Mouvements de revendication"}],
     documents: [
       {
         type: "textes",
@@ -13611,10 +6953,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le rappel de James Murray en Angleterre ou l'administration britannique remplace James Murray par Guy Carleton."
   },
   {
@@ -13625,11 +6964,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux groupes de marchands britanniques sur l’administration de la Province de Québec. Sur quel point précis ces deux groupes sont-ils d’accord?",
-    aspects: [
-      {
-        aspect: "Mouvements de revendication"
-      }
-    ],
+    aspects: [{aspect: "Mouvements de revendication"}],
     documents: [
       {
         type: "textes",
@@ -13652,10 +6987,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les deux groupes de marchands britanniques s’opposent aux politiques de Guy Carleton ou demandent des changements dans l’administration de la colonie."
   },
   {
@@ -13666,11 +6998,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Divergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en désaccord?",
-    aspects: [
-      {
-        aspect: "Période duplessiste"
-      }
-    ],
+    aspects: [{aspect: "Période duplessiste"}],
     documents: [
       {
         type: "textes",
@@ -13695,10 +7023,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le motif de la grève ou la légitimité de la grève ou l’utilisation de la poussière d’amiante comme motif de la grève.",
     updatedAt: "2026-06-18T17:59:26.740Z"
   },
@@ -13709,11 +7034,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Nommez le gouverneur qui succède à James Murray.",
-    aspects: [
-      {
-        aspect: "Mouvements de revendication"
-      }
-    ],
+    aspects: [{aspect: "Mouvements de revendication"}],
     documents: [
       {
         type: "textes",
@@ -13726,10 +7047,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Guy Carleton."
   },
   {
@@ -13739,11 +7057,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez un objet de rivalité entre les nations autochtones vers 1500.",
-    aspects: [
-      {
-        aspect: "Alliances et rivalités au sein des Premières Nations"
-      }
-    ],
+    aspects: [{aspect: "Alliances et rivalités au sein des Premières Nations"}],
     documents: [
       {
         type: "textes",
@@ -13756,10 +7070,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le contrôle des territoire de chasse et de pêche.",
     updatedAt: "2026-06-09T14:04:33.618Z"
   },
@@ -13771,11 +7082,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une cause des rivalités entre certaines nations autochtones pour le contrôle des territoires de chasse.",
-    aspects: [
-      {
-        aspect: "Alliances et rivalités au sein des Premières Nations"
-      }
-    ],
+    aspects: [{aspect: "Alliances et rivalités au sein des Premières Nations"}],
     documents: [
       {
         type: "textes",
@@ -13788,10 +7095,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Contrôler des voies de circulation.\nContrôler des réseaux d'échange.\nAccroître son influence sur un territoire.",
     updatedAt: "2026-06-10T17:19:52.580Z"
   },
@@ -13803,11 +7107,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux historiens sur les relations entre les nations autochtones vers 1500. Sur quel point précis sont-ils d’accord?",
-    aspects: [
-      {
-        aspect: "Alliances et rivalités au sein des Premières Nations"
-      }
-    ],
+    aspects: [{aspect: "Alliances et rivalités au sein des Premières Nations"}],
     documents: [
       {
         type: "textes",
@@ -13830,10 +7130,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le contrôle des territoires ou des routes commerciales par les nations autochtones."
   },
   {
@@ -13844,11 +7141,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une cause de la formation d’alliances entre certaines nations autochtones vers 1500.",
-    aspects: [
-      {
-        aspect: "Alliances et rivalités au sein des Premières Nations"
-      }
-    ],
+    aspects: [{aspect: "Alliances et rivalités au sein des Premières Nations"}],
     documents: [
       {
         type: "textes",
@@ -13861,10 +7154,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Se défendre contre des nations rivales.\nRenforcer sa puissance militaire.\nContrôler un territoire de chasse.\nContrôler un réseau d'échange.\nMener des guerres contre des nations ennemies.\nObtenir des alliés dans les conflits.",
     updatedAt: "2026-06-10T17:17:42.360Z"
   },
@@ -13875,11 +7165,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 3,
     enonce: "Expliquez comment les rivalités entre les nations autochtones favorisent la formation d’alliances.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une source de rivalité entre les nations autochtones\n• l’objectif des alliances conclues entre certaines nations\n• le sort réservé aux prisonniers capturés lors des conflits",
-    aspects: [
-      {
-        aspect: "Alliances et rivalités au sein des Premières Nations"
-      }
-    ],
+    aspects: [{aspect: "Alliances et rivalités au sein des Premières Nations"}],
     documents: [
       {
         type: "textes",
@@ -13912,10 +7198,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 5
-    },
+    reponse: {type: "lignes", nombre: 5},
     guide: "Les rivalités pour le contrôle des territoires de chasse (ou des réseaux d’échange) (un objet de rivalité entre les nations autochtones) poussent certaines nations à conclure des alliances afin de renforcer leur défense ou leur puissance militaire (l’objectif des alliances entre les nations autochtones). Lors des conflits, les prisonniers capturés (le sort des prisonniers) peuvent être adoptés par la nation victorieuse ou mis à mort.",
     updatedAt: "2026-06-15T12:23:58.509Z"
   },
@@ -13927,11 +7210,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une raison pour laquelle certaines nations autochtones adoptaient des prisonniers.",
-    aspects: [
-      {
-        aspect: "Alliances et rivalités au sein des Premières Nations"
-      }
-    ],
+    aspects: [{aspect: "Alliances et rivalités au sein des Premières Nations"}],
     documents: [
       {
         type: "textes",
@@ -13944,10 +7223,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Compenser les pertes de population causées par les guerres.\nRemplacer des membres décédés.\nAugmenter la population de la nation.\nIntégrer de nouveaux membres à la communauté.\nAssurer la survie ou la continuité du groupe.",
     updatedAt: "2026-06-10T17:18:31.370Z"
   },
@@ -13959,11 +7235,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une cause de l’alliance conclue entre certaines nations autochtones et Samuel de Champlain en 1603.",
-    aspects: [
-      {
-        aspect: "Exploration et occupation du territoire par les Français"
-      }
-    ],
+    aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
     documents: [
       {
         type: "textes",
@@ -13976,10 +7248,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les nations autochtones concluent une alliance avec les Français afin d’obtenir un appui militaire contre leurs ennemis ou pour développer les échanges commerciaux."
   },
   {
@@ -13990,11 +7259,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Exploration et occupation du territoire par les Français"
-      }
-    ],
+    aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
     documents: [
       {
         type: "textes",
@@ -14007,10 +7272,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1550-1750.png"
-    },
+    reponse: {type: "image", ref: "ligne_1550-1750.png"},
     guide: "B"
   },
   {
@@ -14021,11 +7283,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "3 documents",
     enonce: "Les documents A à C présentent des faits relatifs aux voyages de Jacques Cartier. Inscrivez à l’endroit approprié la lettre du document correspondant à chacun de ses trois voyages.",
-    aspects: [
-      {
-        aspect: "Exploration et occupation du territoire par les Français"
-      }
-    ],
+    aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
     documents: [
       {
         type: "textes",
@@ -14060,25 +7318,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Premier voyage",
-        "Deuxième voyage",
-        "Troisième voyage"
-      ]
+      elements: ["Premier voyage", "Deuxième voyage", "Troisième voyage"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Premier voyage",
-        "Deuxième voyage",
-        "Troisième voyage"
-      ],
+      entetes: ["Premier voyage", "Deuxième voyage", "Troisième voyage"],
       rangees: [
-        [
-          "C",
-          "A",
-          "B"
-        ]
+        ["C", "A", "B"]
       ]
     }
   },
@@ -14090,11 +7336,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "3 documents",
     enonce: "Les documents A à C présentent des faits relatifs aux voyages de Jacques Cartier. Inscrivez à l’endroit approprié la lettre du document correspondant à chacun de ses trois voyages.",
-    aspects: [
-      {
-        aspect: "Exploration et occupation du territoire par les Français"
-      }
-    ],
+    aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
     documents: [
       {
         type: "textes",
@@ -14129,25 +7371,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Premier voyage",
-        "Deuxième voyage",
-        "Troisième voyage"
-      ]
+      elements: ["Premier voyage", "Deuxième voyage", "Troisième voyage"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Premier voyage",
-        "Deuxième voyage",
-        "Troisième voyage"
-      ],
+      entetes: ["Premier voyage", "Deuxième voyage", "Troisième voyage"],
       rangees: [
-        [
-          "B",
-          "C",
-          "A"
-        ]
+        ["B", "C", "A"]
       ]
     }
   },
@@ -14159,11 +7389,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "4 documents",
     enonce: "Les documents A à D présentent des faits relatifs aux tentatives de colonisation françaises en Amérique du Nord. Inscrivez à l’endroit approprié la lettre du document correspondant à chacune de ces tentatives.",
-    aspects: [
-      {
-        aspect: "Exploration et occupation du territoire par les Français"
-      }
-    ],
+    aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
     documents: [
       {
         type: "textes",
@@ -14208,28 +7434,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Charlesbourg-Royal",
-        "Île de Sable",
-        "Port-Royal",
-        "Tadoussac"
-      ]
+      elements: ["Charlesbourg-Royal", "Île de Sable", "Port-Royal", "Tadoussac"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Charlesbourg-Royal",
-        "Île de Sable",
-        "Port-Royal",
-        "Tadoussac"
-      ],
+      entetes: ["Charlesbourg-Royal", "Île de Sable", "Port-Royal", "Tadoussac"],
       rangees: [
-        [
-          "D",
-          "C",
-          "A",
-          "B"
-        ]
+        ["D", "C", "A", "B"]
       ]
     }
   },
@@ -14241,11 +7452,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "4 documents",
     enonce: "Les documents A à D présentent des faits relatifs aux tentatives de colonisation françaises en Amérique du Nord. Inscrivez à l’endroit approprié la lettre du document correspondant à chacune de ces tentatives.",
-    aspects: [
-      {
-        aspect: "Exploration et occupation du territoire par les Français"
-      }
-    ],
+    aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
     documents: [
       {
         type: "textes",
@@ -14290,28 +7497,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Charlesbourg-Royal",
-        "Île de Sable",
-        "Port-Royal",
-        "Tadoussac"
-      ]
+      elements: ["Charlesbourg-Royal", "Île de Sable", "Port-Royal", "Tadoussac"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Charlesbourg-Royal",
-        "Île de Sable",
-        "Port-Royal",
-        "Tadoussac"
-      ],
+      entetes: ["Charlesbourg-Royal", "Île de Sable", "Port-Royal", "Tadoussac"],
       rangees: [
-        [
-          "B",
-          "D",
-          "C",
-          "A"
-        ]
+        ["B", "D", "C", "A"]
       ]
     }
   },
@@ -14323,11 +7515,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Exploration et occupation du territoire par les Français"
-      }
-    ],
+    aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
     documents: [
       {
         type: "textes",
@@ -14340,10 +7528,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1475-1575.png"
-    },
+    reponse: {type: "image", ref: "ligne_1475-1575.png"},
     guide: "C."
   },
   {
@@ -14354,11 +7539,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Exploration et occupation du territoire par les Français"
-      }
-    ],
+    aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
     documents: [
       {
         type: "textes",
@@ -14371,10 +7552,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1475-1575.png"
-    },
+    reponse: {type: "image", ref: "ligne_1475-1575.png"},
     guide: "C."
   },
   {
@@ -14385,11 +7563,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Ordre chronologique",
     enonce: "Les documents A à D présentent des faits relatifs aux voyages de Jacques Cartier. Placez-les par ordre chronologique.",
-    aspects: [
-      {
-        aspect: "Exploration et occupation du territoire par les Français"
-      }
-    ],
+    aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
     documents: [
       {
         type: "textes",
@@ -14432,10 +7606,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_acBd.png"
-    },
+    reponse: {type: "image", ref: "ligne_acBd.png"},
     guide: "C - A - B - D"
   },
   {
@@ -14446,26 +7617,14 @@ const QUESTIONS = [
     points: 1,
     soustag: "Situer 1 élément",
     enonce: "À partir du document A, indiquez la lettre qui correspond au territoire sur lequel les seigneuries ont été concédées avant 1663.",
-    aspects: [
-      {
-        aspect: "Régime seigneurial"
-      }
-    ],
+    aspects: [{aspect: "Régime seigneurial"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_seigneurie_n-f.png",
-            source: "MEES."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_seigneurie_n-f.png", source: "MEES."}]
       }
     ],
-    reponse: {
-      type: "tableau_2col"
-    },
+    reponse: {type: "tableau_2col"},
     guide: "B."
   },
   {
@@ -14476,11 +7635,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Changement",
     enonce: "Indiquez un changement de la population autochtone à la suite de la présence européenne dans la vallée du Saint-Laurent.",
-    aspects: [
-      {
-        aspect: "Populations autochtones"
-      }
-    ],
+    aspects: [{aspect: "Populations autochtones"}],
     documents: [
       {
         type: "textes",
@@ -14493,10 +7648,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Une diminution importante de la population autochtone."
   },
   {
@@ -14507,11 +7659,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une cause de la diminution de la population autochtone dans la première moitié du 17e siècle.",
-    aspects: [
-      {
-        aspect: "Populations autochtones"
-      }
-    ],
+    aspects: [{aspect: "Populations autochtones"}],
     documents: [
       {
         type: "textes",
@@ -14524,10 +7672,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les maladies infectieuses apportées par les Européens (variole, rougeole, grippe)."
   },
   {
@@ -14538,11 +7683,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence de la présence européenne sur la population autochtone dans la vallée du Saint-Laurent au cours de la première moitié du 17e siècle.",
-    aspects: [
-      {
-        aspect: "Populations autochtones"
-      }
-    ],
+    aspects: [{aspect: "Populations autochtones"}],
     documents: [
       {
         type: "textes",
@@ -14555,10 +7696,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "La population autochtone diminue fortement."
   },
   {
@@ -14569,11 +7707,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez la cause de l’adoption d’une politique d’immigration par les autorités françaises dans les années 1660.",
-    aspects: [
-      {
-        aspect: "Croissance de la population"
-      }
-    ],
+    aspects: [{aspect: "Croissance de la population"}],
     documents: [
       {
         type: "textes",
@@ -14586,10 +7720,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les compagnies de fourrures ont peu contribué au peuplement de la colonie. \nou \nLa colonie a une faible population (ou présente un faible taux de croissance naturelle). \nou \nIl y a moins de femmes que d’hommes (ou un déséquilibre démographique) dans la colonie."
   },
   {
@@ -14600,11 +7731,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence de l’échec des compagnies à peupler la Nouvelle-France.",
-    aspects: [
-      {
-        aspect: "Croissance de la population"
-      }
-    ],
+    aspects: [{aspect: "Croissance de la population"}],
     documents: [
       {
         type: "textes",
@@ -14617,10 +7744,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les autorités françaises adoptent une politique d’immigration afin d’augmenter la population de la Nouvelle-France."
   },
   {
@@ -14631,30 +7755,14 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indique une conséquence de l'occupation française en Amérique du Nord sur le territoire des Treize colonies.",
-    aspects: [
-      {
-        aspect: "Guerres intercoloniales"
-      },
-      {
-        aspect: "Territoire français en Amérique"
-      }
-    ],
+    aspects: [{aspect: "Guerres intercoloniales"}, {aspect: "Territoire français en Amérique"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_amerique_nord_1700.png",
-            soustitre: "Carte de l'Amérique du Nord vers 1700"
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_amerique_nord_1700.png", soustitre: "Carte de l'Amérique du Nord vers 1700"}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les Treize colonies ne peuvent prendre de l’expansion ou l’occupation française limite leur expansion ou leur territoire est limité."
   },
   {
@@ -14665,41 +7773,22 @@ const QUESTIONS = [
     points: 2,
     soustag: "Situer 2 éléments",
     enonce: "À partir du document A, indique les deux lettres correspondant à la Nouvelle-France et aux Treize colonies.",
-    aspects: [
-      {
-        aspect: "Territoire français en Amérique"
-      }
-    ],
+    aspects: [{aspect: "Territoire français en Amérique"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_amerique_nord_1700_lettres.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_amerique_nord_1700_lettres.png", source: "Récitus."}]
       }
     ],
     reponse: {
       type: "situer-dans-lespace",
-      elements: [
-        "Nouvelle-France",
-        "Treize colonies"
-      ]
+      elements: ["Nouvelle-France", "Treize colonies"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Nouvelle-France",
-        "Treize colonies"
-      ],
+      entetes: ["Nouvelle-France", "Treize colonies"],
       rangees: [
-        [
-          "B",
-          "C"
-        ]
+        ["B", "C"]
       ]
     }
   },
@@ -14711,11 +7800,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "4 documents",
     enonce: "Les documents A à D présentent des faits liés aux missions et aux villages domiciliés en Nouvelle-France. Indiquez à l’endroit approprié la lettre de chacun des documents.",
-    aspects: [
-      {
-        aspect: "Populations autochtones"
-      }
-    ],
+    aspects: [{aspect: "Populations autochtones"}],
     documents: [
       {
         type: "textes",
@@ -14760,23 +7845,14 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Missions",
-        "Villages domiciliés"
-      ],
+      elements: ["Missions", "Villages domiciliés"],
       double: true
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Missions",
-        "Villages domiciliés"
-      ],
+      entetes: ["Missions", "Villages domiciliés"],
       rangees: [
-        [
-          "A et C",
-          "B et D"
-        ]
+        ["A et C", "B et D"]
       ]
     }
   },
@@ -14788,11 +7864,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "3 documents",
     enonce: "Les documents A à D présentent des faits liés aux différents rôles de l’Église catholique en Nouvelle-France. Indiquez à l’endroit approprié la lettre correspondant à chacun des faits.",
-    aspects: [
-      {
-        aspect: "Église catholique"
-      }
-    ],
+    aspects: [{aspect: "Église catholique"}],
     documents: [
       {
         type: "textes",
@@ -14827,25 +7899,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Éducation",
-        "Évangélisation",
-        "Soins et santé"
-      ]
+      elements: ["Éducation", "Évangélisation", "Soins et santé"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Éducation",
-        "Évangélisation",
-        "Soins et santé"
-      ],
+      entetes: ["Éducation", "Évangélisation", "Soins et santé"],
       rangees: [
-        [
-          "C",
-          "A",
-          "B"
-        ]
+        ["C", "A", "B"]
       ]
     }
   },
@@ -14857,11 +7917,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Guerre de la Conquête"
-      }
-    ],
+    aspects: [{aspect: "Guerre de la Conquête"}],
     documents: [
       {
         type: "textes",
@@ -14875,10 +7931,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1600-1800.png"
-    },
+    reponse: {type: "image", ref: "ligne_1600-1800.png"},
     guide: "D"
   },
   {
@@ -14890,18 +7943,10 @@ const QUESTIONS = [
     soustag: "4 documents",
     enonce: "Les documents A à D présentent des événements survenus durant le Régime britannique. Indiquez à l’endroit approprié la lettre correspondant à chacun de ces événements.",
     aspects: [
-      {
-        aspect: "Instructions au gouverneur Murray"
-      },
-      {
-        aspect: "Proclamation royale"
-      },
-      {
-        aspect: "Régime militaire"
-      },
-      {
-        aspect: "Statut des Indiens"
-      }
+      {aspect: "Instructions au gouverneur Murray"},
+      {aspect: "Proclamation royale"},
+      {aspect: "Régime militaire"},
+      {aspect: "Statut des Indiens"}
     ],
     documents: [
       {
@@ -14948,28 +7993,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Capitulation de Montréal",
-        "Proclamation royale",
-        "Régime militaire",
-        "Révolte de Pontiac"
-      ]
+      elements: ["Capitulation de Montréal", "Proclamation royale", "Régime militaire", "Révolte de Pontiac"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Capitulation de Montréal",
-        "Proclamation royale",
-        "Régime militaire",
-        "Révolte de Pontiac"
-      ],
+      entetes: ["Capitulation de Montréal", "Proclamation royale", "Régime militaire", "Révolte de Pontiac"],
       rangees: [
-        [
-          "C",
-          "D",
-          "B",
-          "A"
-        ]
+        ["C", "D", "B", "A"]
       ]
     }
   },
@@ -14982,18 +8012,10 @@ const QUESTIONS = [
     soustag: "Ordre chronologique",
     enonce: "Les documents A à D présentent des événements survenus durant le Régime britannique. Placez ces documents par ordre chronologique.",
     aspects: [
-      {
-        aspect: "Instructions au gouverneur Murray"
-      },
-      {
-        aspect: "Proclamation royale"
-      },
-      {
-        aspect: "Régime militaire"
-      },
-      {
-        aspect: "Statut des Indiens"
-      }
+      {aspect: "Instructions au gouverneur Murray"},
+      {aspect: "Proclamation royale"},
+      {aspect: "Régime militaire"},
+      {aspect: "Statut des Indiens"}
     ],
     documents: [
       {
@@ -15038,10 +8060,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_abDc.png"
-    },
+    reponse: {type: "image", ref: "ligne_abDc.png"},
     guide: "C – B – D – A."
   },
   {
@@ -15052,11 +8071,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux historiens. Sur quel point précis sont-ils d’accord?",
-    aspects: [
-      {
-        aspect: "Régime militaire"
-      }
-    ],
+    aspects: [{aspect: "Régime militaire"}],
     documents: [
       {
         type: "textes",
@@ -15081,10 +8096,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le départ de Canadiens après la Conquête ou la majorité de la population canadienne demeure dans la colonie après la Conquête ou peu de Canadiens quittent après la Conquête."
   },
   {
@@ -15095,11 +8107,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Divergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux historiens. Sur quel point précis sont-ils en désaccord ?",
-    aspects: [
-      {
-        aspect: "Régime militaire"
-      }
-    ],
+    aspects: [{aspect: "Régime militaire"}],
     documents: [
       {
         type: "textes",
@@ -15124,10 +8132,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "L’ampleur du départ des élites après la Conquête ou l’importance des conséquences de cette émigration ou le maintien ou non des élites dans la colonie."
   },
   {
@@ -15138,11 +8143,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Position – 3 acteurs",
     enonce: "Les documents A à C présentent la position de trois acteurs concernant l’émigration des Canadiens à la suite de la Conquête. Nommez l’acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
-    aspects: [
-      {
-        aspect: "Régime militaire"
-      }
-    ],
+    aspects: [{aspect: "Régime militaire"}],
     documents: [
       {
         type: "textes",
@@ -15178,10 +8179,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Gilles Havard soutient que le départ des élites françaises est important, tandis que Marcel Trudel et Jean Hamelin estiment qu’il est limité."
   },
   {
@@ -15192,11 +8190,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir des documents A à C, indiquez s’il y a changement ou continuité dans le commerce des fourrures dans la colonie. Justifiez votre choix par des faits et un repère de temps.",
-    aspects: [
-      {
-        aspect: "Économie coloniale"
-      }
-    ],
+    aspects: [{aspect: "Économie coloniale"}],
     documents: [
       {
         type: "textes",
@@ -15221,10 +8215,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Il y a changement, car après la Conquête, des marchands britanniques prennent part au commerce des fourrures. OU Il y a continuité, car entre 1713 et 1783, les Amérindiens (ou les Canadiens) sont des acteurs importants dans le commerce des fourrures. OU Il y a continuité, car après la Conquête, la fourrure est toujours le principal produit d’exportation dans la colonie."
   },
   {
@@ -15235,14 +8226,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "4 documents",
     enonce: "Les documents A à D font référence à la Proclamation royale et à l’Acte de Québec. Indiquez à l’endroit approprié la lettre correspondant à chacun des documents.",
-    aspects: [
-      {
-        aspect: "Acte de Québec"
-      },
-      {
-        aspect: "Proclamation royale"
-      }
-    ],
+    aspects: [{aspect: "Acte de Québec"}, {aspect: "Proclamation royale"}],
     documents: [
       {
         type: "textes",
@@ -15256,23 +8240,11 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            ref: "carte_acte_quebec_1774.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document B", ref: "carte_acte_quebec_1774.png", source: "Récitus."}]
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document C",
-            ref: "carte_proclamation_royale_1763.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document C", ref: "carte_proclamation_royale_1763.png", source: "Récitus."}]
       },
       {
         type: "textes",
@@ -15287,23 +8259,14 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Proclamation royale",
-        "Acte de Québec"
-      ],
+      elements: ["Proclamation royale", "Acte de Québec"],
       double: true
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Proclamation royale",
-        "Acte de Québec"
-      ],
+      entetes: ["Proclamation royale", "Acte de Québec"],
       rangees: [
-        [
-          "A et C",
-          "B et D"
-        ]
+        ["A et C", "B et D"]
       ]
     }
   },
@@ -15315,11 +8278,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Changement",
     enonce: "Indiquez un changement dans le commerce des fourrures dans la colonie à la suite de la guerre de la Conquête.",
-    aspects: [
-      {
-        aspect: "Économie coloniale"
-      }
-    ],
+    aspects: [{aspect: "Économie coloniale"}],
     documents: [
       {
         type: "textes",
@@ -15342,10 +8301,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Après la Conquête, des marchands britanniques remplacent progressivement les marchands français dans le commerce des fourrures."
   },
   {
@@ -15356,11 +8312,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Continuité",
     enonce: "Indiquez une continuité dans le commerce des fourrures dans la colonie à la suite de la guerre de la Conquête.",
-    aspects: [
-      {
-        aspect: "Économie coloniale"
-      }
-    ],
+    aspects: [{aspect: "Économie coloniale"}],
     documents: [
       {
         type: "textes",
@@ -15385,10 +8337,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "La traite des fourrures demeure une activité économique importante dans la colonie ou la fourrure demeure un important produit d’exportation ou le commerce des fourrures se poursuit après la Conquête."
   },
   {
@@ -15399,11 +8348,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Continuité",
     enonce: "Indiquez un élément de continuité lié à l'augmentation de la population du Bas-Canada entre 1790 et 1840.",
-    aspects: [
-      {
-        aspect: "Population"
-      }
-    ],
+    aspects: [{aspect: "Population"}],
     documents: [
       {
         type: "textes",
@@ -15417,10 +8362,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les naissances demeurent plus nombreuses que les décès\nL'accroissement naturel demeure important",
     updatedAt: "2026-06-12T12:14:18.999Z"
   },
@@ -15431,11 +8373,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 3,
     enonce: "Expliquez comment l’état de santé des immigrants des îles Britanniques à leur arrivée dans la colonie amène les autorités à agir au cours de la première moitié du 19e siècle. \n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux. \n\n• L’état de santé des immigrants des îles Britanniques à leur arrivée dans la colonie\n• Un problème de santé publique dans la colonie\n• Une action des autorités coloniales à Grosse-Île",
-    aspects: [
-      {
-        aspect: "Mouvements migratoires"
-      }
-    ],
+    aspects: [{aspect: "Mouvements migratoires"}],
     documents: [
       {
         type: "textes",
@@ -15469,10 +8407,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 5
-    },
+    reponse: {type: "lignes", nombre: 5},
     guide: "Les immigrants sont malades (ou affaiblis) à leur arrivée dans la colonie (L’état de santé des immigrants des îles Britanniques à leur arrivée dans la colonie), ce qui contribue à propager des épidémies (ou le choléra) dans la population (Un problème de santé publique dans la colonie). Cette situation amène les autorités coloniales à mettre en place une station de quarantaine (ou un hôpital) à Grosse-Île ou à isoler les immigrants à Grosse-Île (Une action des autorités coloniales à Grosse-Île)."
   },
   {
@@ -15483,11 +8418,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Position – 3 acteurs",
     enonce: "Les documents A à C présentent la position de trois groupes à l’égard de l’union des deux Canadas recommandée dans le Rapport Durham. Nommez le groupe qui présente une position différente et comparez sa position à celle des deux autres groupes.",
-    aspects: [
-      {
-        aspect: "Rapport Durham"
-      }
-    ],
+    aspects: [{aspect: "Rapport Durham"}],
     documents: [
       {
         type: "textes",
@@ -15523,10 +8454,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "La bourgeoisie anglophone est en faveur (ou en faveur de l’union) (la différence), alors que le clergé et la bourgeoisie professionnelle francophone s’y opposent (la similitude). \noo\nLa bourgeoisie anglophone est en faveur (ou en faveur de l’union) (la différence), contrairement aux deux autres groupes (la similitude)."
   },
   {
@@ -15537,11 +8465,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "3 documents",
     enonce: "Les documents A à C présentent les réactions de différents groupes à la suite du Rapport Durham. Associez chaque position au groupe correspondant.",
-    aspects: [
-      {
-        aspect: "Rapport Durham"
-      }
-    ],
+    aspects: [{aspect: "Rapport Durham"}],
     documents: [
       {
         type: "textes",
@@ -15576,25 +8500,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Bourgeoisie anglophone",
-        "Bourgeoisie professionnelle francophone",
-        "Clergé catholique"
-      ]
+      elements: ["Bourgeoisie anglophone", "Bourgeoisie professionnelle francophone", "Clergé catholique"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Bourgeoisie anglophone ",
-        "Bourgeoisie professionnelle francophone ",
-        "Clergé catholique"
-      ],
+      entetes: ["Bourgeoisie anglophone ", "Bourgeoisie professionnelle francophone ", "Clergé catholique"],
       rangees: [
-        [
-          "B",
-          "A",
-          "C"
-        ]
+        ["B", "A", "C"]
       ]
     }
   },
@@ -15606,11 +8518,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "3 documents",
     enonce: "Les documents A à C présentent les réactions de différents groupes à la suite du Rapport Durham. Associez chaque position au groupe correspondant.",
-    aspects: [
-      {
-        aspect: "Rapport Durham"
-      }
-    ],
+    aspects: [{aspect: "Rapport Durham"}],
     documents: [
       {
         type: "textes",
@@ -15645,25 +8553,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Bourgeoisie anglophone",
-        "Bourgeoisie professionnelle francophone",
-        "Clergé catholique"
-      ]
+      elements: ["Bourgeoisie anglophone", "Bourgeoisie professionnelle francophone", "Clergé catholique"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Bourgeoisie anglophone ",
-        "Bourgeoisie professionnelle francophone ",
-        "Clergé catholique"
-      ],
+      entetes: ["Bourgeoisie anglophone ", "Bourgeoisie professionnelle francophone ", "Clergé catholique"],
       rangees: [
-        [
-          "B",
-          "C",
-          "A"
-        ]
+        ["B", "C", "A"]
       ]
     }
   },
@@ -15675,11 +8571,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Avant et après",
     enonce: "Les documents A à D font référence aux soulèvements de 1837-1838. Indiquez si les faits présentés dans ces documents se déroulent avant ou après l’Assemblée des Six-Comtés.",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -15724,23 +8616,12 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "avant-apres",
-      label: "L’Assemblée des Six-Comtés"
-    },
+    reponse: {type: "avant-apres", label: "L’Assemblée des Six-Comtés"},
     guide: {
       type: "grille",
-      entetes: [
-        "Avant",
-        "Assemblée des Six-Comtés",
-        "Après"
-      ],
+      entetes: ["Avant", "Assemblée des Six-Comtés", "Après"],
       rangees: [
-        [
-          "B et C",
-          "",
-          "A et D"
-        ]
+        ["B et C", "", "A et D"]
       ]
     }
   },
@@ -15752,11 +8633,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Ordre chronologique",
     enonce: "Les documents A à D présentent des événements liés aux soulèvements de 1837-1838. Placez ces documents par ordre chronologique.",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -15801,10 +8678,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_abDc.png"
-    },
+    reponse: {type: "image", ref: "ligne_abDc.png"},
     guide: "C - B - D - A"
   },
   {
@@ -15815,11 +8689,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence de la mise en place de tarifs préférentiels par la métropole britannique sur le commerce du bois dans les colonies.",
-    aspects: [
-      {
-        aspect: "Commerce du bois"
-      }
-    ],
+    aspects: [{aspect: "Commerce du bois"}],
     documents: [
       {
         type: "textes",
@@ -15833,10 +8703,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les exportations de bois des colonies vers la Grande-Bretagne augmentent fortement.",
     updatedAt: "2026-06-15T15:19:13.819Z"
   },
@@ -15848,11 +8715,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Changement",
     enonce: "Indiquez un changement dans les exportations de bois vers la Grande-Bretagne au début du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Commerce du bois"
-      }
-    ],
+    aspects: [{aspect: "Commerce du bois"}],
     documents: [
       {
         type: "textes",
@@ -15866,10 +8729,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les exportations de bois des colonies vers la Grande-Bretagne augmentent fortement après 1806.",
     updatedAt: "2026-06-15T15:18:44.694Z"
   },
@@ -15881,11 +8741,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence du Traité de 1783 sur le commerce des fourrures dans la Province de Québec.",
-    aspects: [
-      {
-        aspect: "Économie coloniale"
-      }
-    ],
+    aspects: [{aspect: "Économie coloniale"}],
     documents: [
       {
         type: "textes",
@@ -15898,10 +8754,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les commerçants de la Province de Québec perdent une partie importante de leur territoire d’approvisionnement en fourrures au profit des États-Unis."
   },
   {
@@ -15912,11 +8765,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Changement",
     enonce: "Indiquez un changement dans la composition de la population de la colonie entre 1763 et 1784.",
-    aspects: [
-      {
-        aspect: "Situation sociodémographique"
-      }
-    ],
+    aspects: [{aspect: "Situation sociodémographique"}],
     documents: [
       {
         type: "textes",
@@ -15941,10 +8790,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "La proportion de la population anglophone augmente entre 1763 et 1784 ou la population anglophone passe de 1 % à 15 % ou la proportion de la population francophone diminue entre 1763 et 1784.",
     updatedAt: "2026-06-12T12:17:02.769Z"
   },
@@ -15956,11 +8802,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Continuité",
     enonce: "Indiquez une continuité dans la composition de la population de la colonie entre 1763 et 1784.",
-    aspects: [
-      {
-        aspect: "Situation sociodémographique"
-      }
-    ],
+    aspects: [{aspect: "Situation sociodémographique"}],
     documents: [
       {
         type: "textes",
@@ -15985,10 +8827,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "La population francophone demeure majoritaire dans la colonie entre 1763 et 1784 ou la population anglophone demeure minoritaire dans la colonie entre 1763 et 1784.",
     updatedAt: "2026-06-12T12:17:54.954Z"
   },
@@ -16000,11 +8839,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans la composition de la population de la colonie entre 1763 et 1784. Justifiez votre choix par des faits et un repère de temps.",
-    aspects: [
-      {
-        aspect: "Situation sociodémographique"
-      }
-    ],
+    aspects: [{aspect: "Situation sociodémographique"}],
     documents: [
       {
         type: "textes",
@@ -16029,10 +8864,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Il y a une continuité dans la composition de la population de la colonie entre 1763 et 1784 puisque les francophones demeurent majoritaires.\n\nIl y a un changement dans la composition de la population de la colonie puisque la proportion de la population anglophone augmente entre 1763 et 1784. Elle passe de 1 % à 15 % de la population.",
     updatedAt: "2026-06-12T12:18:44.141Z"
   },
@@ -16043,11 +8875,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 3,
     enonce: "Expliquez comment le résultat de la guerre d’indépendance américaine en 1783 entraîne un changement démographique dans la Province de Québec.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Le résultat de la guerre d’indépendance américaine en 1783\n• Un groupe qui migre vers la Province de Québec\n• Un changement démographique dans la Province de Québec",
-    aspects: [
-      {
-        aspect: "Loyalistes"
-      }
-    ],
+    aspects: [{aspect: "Loyalistes"}],
     documents: [
       {
         type: "textes",
@@ -16061,13 +8889,7 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            ref: "loyalistes.png",
-            source: "Bibliothèque et Archives Canada/C-020587."
-          }
-        ]
+        cols: [{titre: "Document B", ref: "loyalistes.png", source: "Bibliothèque et Archives Canada/C-020587."}]
       },
       {
         type: "textes",
@@ -16080,10 +8902,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 5
-    },
+    reponse: {type: "lignes", nombre: 5},
     guide: "En 1783, la Grande-Bretagne reconnaît l’indépendance des États-Unis à la suite de la victoire américaine lors de la guerre d’indépendance (le résultat de la guerre d’indépendance américaine en 1783). Plusieurs Loyalistes quittent les États-Unis pour s’établir dans la Province de Québec (un groupe qui migre vers la Province de Québec. Cette migration augmente la population anglophone dans la colonie et modifie la composition démographique de la Province de Québec (un changement démographique dans la Province de Québec)."
   },
   {
@@ -16093,11 +8912,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 3,
     enonce: "Expliquez comment des changements dans le commerce européen favorisent les voyages d’exploration au 16e siècle. \n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Un changement dans le commerce en Europe\n• Un objectif des puissances européennes\n• Un moyen utilisé par les royaumes européens",
-    aspects: [
-      {
-        aspect: "Premiers contacts"
-      }
-    ],
+    aspects: [{aspect: "Premiers contacts"}],
     documents: [
       {
         type: "textes",
@@ -16111,13 +8926,7 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            ref: "voyages_exploration.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document B", ref: "voyages_exploration.png", source: "Récitus."}]
       },
       {
         type: "textes",
@@ -16130,10 +8939,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 5
-    },
+    reponse: {type: "lignes", nombre: 5},
     guide: "La prise de Constantinople par les Ottomans modifie le commerce entre l’Europe et l’Asie (changement dans le commerce européen). Plusieurs royaumes européens cherchent alors une nouvelle route maritime pour accéder à l'Asie (un objectif des royaumes européens). Pour atteindre cet objectif, plusieurs États européens financent des voyages d’exploration au 16e siècle (un moyen utilisé)."
   },
   {
@@ -16144,27 +8950,14 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une raison qui explique la fréquentation du golfe du Saint-Laurent par les pêcheurs européens au 16e siècle.",
-    aspects: [
-      {
-        aspect: "Premiers contacts"
-      }
-    ],
+    aspects: [{aspect: "Premiers contacts"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_premiers_contacts.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_premiers_contacts.png", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les pêcheurs européens fréquentent le golfe du Saint-Laurent afin d’exploiter les importantes ressources halieutiques, notamment la morue ou les Européens fréquentent le golfe du Saint-Laurent pour pratiquer la pêche à la morue."
   },
   {
@@ -16175,26 +8968,14 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence de la fréquentation du golfe du Saint-Laurent par les Européens au 16e siècle pour les nations autochtones.",
-    aspects: [
-      {
-        aspect: "Premiers contacts"
-      }
-    ],
+    aspects: [{aspect: "Premiers contacts"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_premiers_contacts.png"
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_premiers_contacts.png"}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les nations autochtones développent des échanges commerciaux avec les Européens ou certaines nations autochtones entrent en contact avec les Européens par le commerce ou les contacts entre Autochtones et Européens deviennent plus fréquents dans le golfe du Saint-Laurent."
   },
   {
@@ -16204,11 +8985,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 3,
     enonce: "Expliquez comment les activités économiques pratiquées par les Européens dans le golfe du Saint-Laurent favorisent le développement d’échanges avec certaines nations autochtones au 16e siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Une activité pratiquée par les Européens dans le golfe du Saint-Laurent\n• Un lieu d’échange entre les groupes autochtones et européens\n• Des produits échangés entre les Européens et les nations autochtones",
-    aspects: [
-      {
-        aspect: "Premiers contacts"
-      }
-    ],
+    aspects: [{aspect: "Premiers contacts"}],
     documents: [
       {
         type: "textes",
@@ -16222,13 +8999,7 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            ref: "carte_premiers_contacts.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document B", ref: "carte_premiers_contacts.png", source: "Récitus."}]
       },
       {
         type: "textes",
@@ -16241,10 +9012,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 5
-    },
+    reponse: {type: "lignes", nombre: 5},
     guide: "Les Européens fréquentent le golfe du Saint-Laurent pour pratiquer la pêche et la chasse à la baleine (une activité pratiquée par les Européens dans le golfe du Saint-Laurent). Leur présence favorise des rencontres avec certaines nations autochtones dans des lieux de séchage de la morue situés sur les rives du golfe (un lieu d’échange entre les groupes autochtones et européens). Des produits européens, comme des couteaux, et des produits autochtones, comme des fourrures, sont alors échangés sous forme de troc (des produits échangés entre les Européens et certaines nations autochtones).",
     updatedAt: "2026-06-15T12:33:10.393Z"
   },
@@ -16256,14 +9024,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "4 documents",
     enonce: "Les documents A à D présentent des faits liés aux explorations européennes et aux premiers contacts en Amérique du Nord. Indiquez à l’endroit approprié la lettre correspondant à chacun des éléments suivants.",
-    aspects: [
-      {
-        aspect: "Exploration et occupation du territoire par les Français"
-      },
-      {
-        aspect: "Premiers contacts"
-      }
-    ],
+    aspects: [{aspect: "Exploration et occupation du territoire par les Français"}, {aspect: "Premiers contacts"}],
     documents: [
       {
         type: "textes",
@@ -16324,12 +9085,7 @@ const QUESTIONS = [
         "Voyages de Jacques Cartier"
       ],
       rangees: [
-        [
-          "D",
-          "C",
-          "B",
-          "A"
-        ]
+        ["D", "C", "B", "A"]
       ]
     }
   },
@@ -16340,14 +9096,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 3,
     enonce: "Expliquez comment la guerre d’Indépendance américaine entraîne une réorganisation du commerce des fourrures dans la Province de Québec et la région des Grands Lacs.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un territoire perdu à la suite du traité de Paris de 1783\n• une conséquence sur les activités des compagnies de fourrures\n• une action entreprise par les compagnies afin de développer le commerce vers le Nord-Ouest",
-    aspects: [
-      {
-        aspect: "Économie coloniale"
-      },
-      {
-        aspect: "Invasion américaine"
-      }
-    ],
+    aspects: [{aspect: "Économie coloniale"}, {aspect: "Invasion américaine"}],
     documents: [
       {
         type: "textes",
@@ -16381,10 +9130,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 5
-    },
+    reponse: {type: "lignes", nombre: 5},
     guide: "Le traité de Paris de 1783 accorde aux États-Unis les territoires situés au sud des Grands Lacs (un territoire perdu à la suite du traité de Paris de 1783). Cette perte territoriale complique les activités des compagnies de fourrures et l’accès à certaines routes commerciales (une conséquence sur les activités des compagnies de fourrures). Afin de poursuivre et développer le commerce des fourrures, les compagnies déplacent leurs activités vers le Nord-Ouest et établissent de nouveaux postes de traite (une action entreprise par les compagnies afin de développer le commerce vers le Nord-Ouest).",
     updatedAt: "2026-06-15T12:28:07.489Z"
   },
@@ -16395,24 +9141,11 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 3,
     enonce: "Expliquez comment le commerce des fourrures favorise les relations économiques entre la métropole française et sa colonie au début du 17e siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une ressource exploitée dans la colonie\n• une mesure économique imposée par la métropole\n• une conséquence économique pour la colonie",
-    aspects: [
-      {
-        aspect: "Commerce des fourrures"
-      },
-      {
-        aspect: "Monopole des compagnies"
-      }
-    ],
+    aspects: [{aspect: "Commerce des fourrures"}, {aspect: "Monopole des compagnies"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_mercantilisme_fourrures_1600.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_mercantilisme_fourrures_1600.png", source: "Récitus."}]
       },
       {
         type: "textes",
@@ -16435,10 +9168,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 5
-    },
+    reponse: {type: "lignes", nombre: 5},
     guide: "Les habitants de la Nouvelle-France exploitent des ressources comme les fourrures de castor (une ressource exploitée dans la colonie). La métropole française impose une politique économique où la colonie doit fournir des matières premières à la France et acheter les produits transformés provenant de la métropole (une mesure économique imposée par la métropole). Cette situation favorise le développement du commerce des fourrures ou plusieurs compagnies privilégient les profits commerciaux plutôt que le peuplement et le développement de la colonie (une conséquence économique pour la colonie).",
     updatedAt: "2026-06-15T12:32:52.807Z"
   },
@@ -16450,11 +9180,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Ordre chronologique",
     enonce: "Les documents A à D présentent des faits liés aux relations franco-amérindiennes sous le régime français. Placez les documents en ordre chronologique.",
-    aspects: [
-      {
-        aspect: "Guerre et diplomatie chez les Premières Nations"
-      }
-    ],
+    aspects: [{aspect: "Guerre et diplomatie chez les Premières Nations"}],
     documents: [
       {
         type: "textes",
@@ -16498,10 +9224,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_bcAd.png"
-    },
+    reponse: {type: "image", ref: "ligne_bcAd.png"},
     guide: "C - B - A - D",
     updatedAt: "2026-06-09T16:14:01.898Z"
   },
@@ -16513,11 +9236,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "4 documents",
     enonce: "Les documents A à D présentent des faits liés aux relations franco-amérindiennes sous le régime français. Associez chaque document à l’événement correspondant.",
-    aspects: [
-      {
-        aspect: "Guerre et diplomatie chez les Premières Nations"
-      }
-    ],
+    aspects: [{aspect: "Guerre et diplomatie chez les Premières Nations"}],
     documents: [
       {
         type: "textes",
@@ -16580,12 +9299,7 @@ const QUESTIONS = [
         "Grande Paix de Montréal"
       ],
       rangees: [
-        [
-          "C",
-          "A",
-          "B",
-          "D"
-        ]
+        ["C", "A", "B", "D"]
       ]
     },
     updatedAt: "2026-06-09T16:14:23.744Z"
@@ -16598,27 +9312,14 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence des guerres iroquoises sur les populations huronnes au 17e siècle.",
-    aspects: [
-      {
-        aspect: "Guerre et diplomatie chez les Premières Nations"
-      }
-    ],
+    aspects: [{aspect: "Guerre et diplomatie chez les Premières Nations"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_destruction_huronie_1640.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_destruction_huronie_1640.png", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "La destruction des villages hurons ou la destruction de la Huronie ou la dispersion des Hurons après les attaques iroquoises."
   },
   {
@@ -16629,14 +9330,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence des attaques iroquoises sur le commerce des fourrures en Nouvelle-France au 17e siècle.",
-    aspects: [
-      {
-        aspect: "Commerce des fourrures"
-      },
-      {
-        aspect: "Guerre et diplomatie chez les Premières Nations"
-      }
-    ],
+    aspects: [{aspect: "Commerce des fourrures"}, {aspect: "Guerre et diplomatie chez les Premières Nations"}],
     documents: [
       {
         type: "textes",
@@ -16650,10 +9344,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Il y a une diminution des exportations de fourrures ou il y a un affaiblissement des alliances commerciales ou difficulté pour les Français d’obtenir des fourrures ou insécurité sur les routes commerciales.",
     updatedAt: "2026-06-12T12:24:49.017Z"
   },
@@ -16665,14 +9356,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir du document A, indiquez s’il y a un changement ou une continuité dans le commerce des fourrures dans la colonie entre 1620 et 1670. Justifiez votre réponse à l’aide de faits et d’un repère de temps.",
-    aspects: [
-      {
-        aspect: "Commerce des fourrures"
-      },
-      {
-        aspect: "Guerre et diplomatie chez les Premières Nations"
-      }
-    ],
+    aspects: [{aspect: "Commerce des fourrures"}, {aspect: "Guerre et diplomatie chez les Premières Nations"}],
     documents: [
       {
         type: "textes",
@@ -16686,10 +9370,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Il y a un changement dans le commerce des fourrures. Les exportations diminuent fortement autour de 1650.\n\nOU\n\nIl y a une continuité dans le commerce des fourrures puisque les exportations demeurent présentes durant toute la période entre 1620 et 1670."
   },
   {
@@ -16700,14 +9381,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Changement",
     enonce: "Indiquez un changement observé dans les exportations de fourrures autour de 1650.",
-    aspects: [
-      {
-        aspect: "Commerce des fourrures"
-      },
-      {
-        aspect: "Guerre et diplomatie chez les Premières Nations"
-      }
-    ],
+    aspects: [{aspect: "Commerce des fourrures"}, {aspect: "Guerre et diplomatie chez les Premières Nations"}],
     documents: [
       {
         type: "textes",
@@ -16721,10 +9395,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les exportations de fourrures diminuent fortement autour de 1650."
   },
   {
@@ -16735,11 +9406,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Guerre et diplomatie chez les Premières Nations"
-      }
-    ],
+    aspects: [{aspect: "Guerre et diplomatie chez les Premières Nations"}],
     documents: [
       {
         type: "textes",
@@ -16753,10 +9420,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1575-1775.png"
-    },
+    reponse: {type: "image", ref: "ligne_1575-1775.png"},
     guide: "B",
     updatedAt: "2026-06-09T16:14:58.207Z"
   },
@@ -16768,14 +9432,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "2 documents",
     enonce: "Les documents A et B présentent deux compagnies commerciales fondées au XVIIe siècle. Associez chaque document à la compagnie correspondante.",
-    aspects: [
-      {
-        aspect: "Commerce des fourrures"
-      },
-      {
-        aspect: "Monopole des compagnies"
-      }
-    ],
+    aspects: [{aspect: "Commerce des fourrures"}, {aspect: "Monopole des compagnies"}],
     documents: [
       {
         type: "textes",
@@ -16800,22 +9457,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Compagnie de la Baie d'Hudson",
-        "Compagnie des Cent Associés"
-      ]
+      elements: ["Compagnie de la Baie d'Hudson", "Compagnie des Cent Associés"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Compagnie de la Baie d'Hudson",
-        "Compagnie des Cent Associés"
-      ],
+      entetes: ["Compagnie de la Baie d'Hudson", "Compagnie des Cent Associés"],
       rangees: [
-        [
-          "A",
-          "B"
-        ]
+        ["A", "B"]
       ]
     }
   },
@@ -16827,14 +9475,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Commerce des fourrures"
-      },
-      {
-        aspect: "Monopole des compagnies"
-      }
-    ],
+    aspects: [{aspect: "Commerce des fourrures"}, {aspect: "Monopole des compagnies"}],
     documents: [
       {
         type: "textes",
@@ -16848,10 +9489,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1550-1750.png"
-    },
+    reponse: {type: "image", ref: "ligne_1550-1750.png"},
     guide: "B"
   },
   {
@@ -16861,11 +9499,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 3,
     enonce: "Expliquez comment la destruction de la Huronie entraîne un changement dans l’occupation du territoire par les Hurons-Wendats au 17e siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un conflit impliquant les Haudenosaunee (Iroquois)\n• une conséquence territoriale chez les Hurons-Wendats\n• une région d’accueil des populations déplacées",
-    aspects: [
-      {
-        aspect: "Guerre et diplomatie chez les Premières Nations"
-      }
-    ],
+    aspects: [{aspect: "Guerre et diplomatie chez les Premières Nations"}],
     documents: [
       {
         type: "textes",
@@ -16890,19 +9524,10 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document C",
-            ref: "carte_destruction_huronie_1640.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document C", ref: "carte_destruction_huronie_1640.png", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 5
-    },
+    reponse: {type: "lignes", nombre: 5},
     guide: "Au milieu du 17e siècle, les Haudenosaunee (Iroquois) attaquent les villages hurons afin de contrôler le commerce des fourrures (un conflit impliquant les Haudenosaunee (Iroquois)). Ces conflits entraînent la destruction de la Huronie en 1648-1649 et forcent plusieurs Hurons-Wendats à abandonner leur territoire (une conséquence territoriale chez les Hurons-Wendats). Une partie des survivants se réfugie près de Québec, notamment dans la région de Lorette (une région d’accueil des populations déplacées).",
     updatedAt: "2026-06-15T12:24:47.039Z"
   },
@@ -16913,27 +9538,14 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 1,
     enonce: "Indiquez un village domicilié situé à proximité de Montréal.",
-    aspects: [
-      {
-        aspect: "Populations autochtones"
-      }
-    ],
+    aspects: [{aspect: "Populations autochtones"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_villages_domicilies_autochtones.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_villages_domicilies_autochtones.png", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Kahnawake ou Kanesatake."
   },
   {
@@ -16944,11 +9556,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une raison qui explique l’établissement de villages domiciliés à proximité des établissements français vers 1750.",
-    aspects: [
-      {
-        aspect: "Populations autochtones"
-      }
-    ],
+    aspects: [{aspect: "Populations autochtones"}],
     documents: [
       {
         type: "textes",
@@ -16958,18 +9566,11 @@ const QUESTIONS = [
             texte: "« Plusieurs communautés autochtones établies dans la vallée du Saint-Laurent vivent près des établissements français, où missionnaires, commerçants et autorités coloniales entretiennent des relations étroites avec elles. »",
             source: "Adapté de Denys Delâge, Le pays renversé, Boréal, 1991."
           },
-          {
-            titre: "",
-            ref: "carte_villages_domicilies_autochtones.png",
-            source: "Récitus."
-          }
+          {titre: "", ref: "carte_villages_domicilies_autochtones.png", source: "Récitus."}
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les villages domiciliés sont établis près des établissements français afin de favoriser les alliances entre les Français et certaines nations autochtones."
   },
   {
@@ -16980,11 +9581,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans l’occupation du territoire autochtone dans la vallée du Saint-Laurent entre 1700 et 1750. Justifiez votre réponse à l’aide d’un fait.",
-    aspects: [
-      {
-        aspect: "Populations autochtones"
-      }
-    ],
+    aspects: [{aspect: "Populations autochtones"}],
     documents: [
       {
         type: "textes",
@@ -16999,19 +9596,10 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            ref: "carte_villages_domicilies_autochtones.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document B", ref: "carte_villages_domicilies_autochtones.png", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 4
-    },
+    reponse: {type: "lignes", nombre: 4},
     guide: "Il y a changement puisque certaines communautés vivent maintenant près des établissements français dans la vallée du Saint-Laurent vers 1750.\n\nou \n\nIl y a continuité puisque plusieurs groupes autochtones fréquentent encore leurs territoires de chasse et leurs campements saisonniers entre 1700 et 1750."
   },
   {
@@ -17022,14 +9610,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Croissance de la population"
-      },
-      {
-        aspect: "Gouvernement royal"
-      }
-    ],
+    aspects: [{aspect: "Croissance de la population"}, {aspect: "Gouvernement royal"}],
     documents: [
       {
         type: "textes",
@@ -17043,10 +9624,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1600-1700.png"
-    },
+    reponse: {type: "image", ref: "ligne_1600-1700.png"},
     guide: "C"
   },
   {
@@ -17057,14 +9635,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "4 documents",
     enonce: "Les documents A à D présentent des événements militaires liés à la ville de Québec sous le Régime français. Indiquez les deux documents correspondant à chacun des gouverneurs.",
-    aspects: [
-      {
-        aspect: "Guerres intercoloniales"
-      },
-      {
-        aspect: "Territoire français en Amérique"
-      }
-    ],
+    aspects: [{aspect: "Guerres intercoloniales"}, {aspect: "Territoire français en Amérique"}],
     documents: [
       {
         type: "textes",
@@ -17109,23 +9680,14 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Frontenac",
-        "Samuel de Champlain"
-      ],
+      elements: ["Frontenac", "Samuel de Champlain"],
       double: true
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Frontenac",
-        "Samuel de Champlain"
-      ],
+      entetes: ["Frontenac", "Samuel de Champlain"],
       rangees: [
-        [
-          "A et C",
-          "B et D"
-        ]
+        ["A et C", "B et D"]
       ]
     }
   },
@@ -17137,11 +9699,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Guerres intercoloniales"
-      }
-    ],
+    aspects: [{aspect: "Guerres intercoloniales"}],
     documents: [
       {
         type: "textes",
@@ -17155,10 +9713,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1600-1700.png"
-    },
+    reponse: {type: "image", ref: "ligne_1600-1700.png"},
     guide: "D"
   },
   {
@@ -17169,11 +9724,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Territoire français en Amérique"
-      }
-    ],
+    aspects: [{aspect: "Territoire français en Amérique"}],
     documents: [
       {
         type: "textes",
@@ -17187,10 +9738,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1600-1700.png"
-    },
+    reponse: {type: "image", ref: "ligne_1600-1700.png"},
     guide: "B"
   },
   {
@@ -17201,11 +9749,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Ordre chronologique",
     enonce: "Les documents A à D présentent des événements liés à la fondation d’établissements français en Nouvelle-France. Placez-les par ordre chronologique.",
-    aspects: [
-      {
-        aspect: "Territoire français en Amérique"
-      }
-    ],
+    aspects: [{aspect: "Territoire français en Amérique"}],
     documents: [
       {
         type: "textes",
@@ -17252,10 +9796,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_abDc.png"
-    },
+    reponse: {type: "image", ref: "ligne_abDc.png"},
     guide: "B - C - D - A"
   },
   {
@@ -17266,11 +9807,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Ordre chronologique",
     enonce: "Les documents A à D présentent des événements liés à la fondation d’établissements français en Nouvelle-France. Placez-les par ordre chronologique.",
-    aspects: [
-      {
-        aspect: "Territoire français en Amérique"
-      }
-    ],
+    aspects: [{aspect: "Territoire français en Amérique"}],
     documents: [
       {
         type: "textes",
@@ -17317,10 +9854,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_abDc.png"
-    },
+    reponse: {type: "image", ref: "ligne_abDc.png"},
     guide: "B - C - D - A"
   },
   {
@@ -17331,14 +9865,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Avant et après",
     enonce: "Les documents A à D présentent des faits liés à l’évolution de la Nouvelle-France.\nIndiquez si chacun des faits se déroule avant ou après l’instauration du Gouvernement royal.",
-    aspects: [
-      {
-        aspect: "Gouvernement royal"
-      },
-      {
-        aspect: "Territoire français en Amérique"
-      }
-    ],
+    aspects: [{aspect: "Gouvernement royal"}, {aspect: "Territoire français en Amérique"}],
     documents: [
       {
         type: "textes",
@@ -17385,23 +9912,12 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "avant-apres",
-      label: "Gouvernement royal"
-    },
+    reponse: {type: "avant-apres", label: "Gouvernement royal"},
     guide: {
       type: "grille",
-      entetes: [
-        "Avant",
-        "Gouvernement royal",
-        "Après"
-      ],
+      entetes: ["Avant", "Gouvernement royal", "Après"],
       rangees: [
-        [
-          "A - C",
-          "",
-          "B - D"
-        ]
+        ["A - C", "", "B - D"]
       ]
     }
   },
@@ -17413,14 +9929,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "4 documents",
     enonce: "Les documents A à D présentent différentes mesures et événements ayant contribué au développement de la Nouvelle-France sous le régime français. Indiquez l’événement historique correspondant à chacun des documents.",
-    aspects: [
-      {
-        aspect: "Gouvernement royal"
-      },
-      {
-        aspect: "Territoire français en Amérique"
-      }
-    ],
+    aspects: [{aspect: "Gouvernement royal"}, {aspect: "Territoire français en Amérique"}],
     documents: [
       {
         type: "textes",
@@ -17482,12 +9991,7 @@ const QUESTIONS = [
         "Fondation de Québec"
       ],
       rangees: [
-        [
-          "B",
-          "A",
-          "D",
-          "C"
-        ]
+        ["B", "A", "D", "C"]
       ]
     },
     updatedAt: "2026-06-14T16:33:04.311Z"
@@ -17500,11 +10004,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Territoire français en Amérique"
-      }
-    ],
+    aspects: [{aspect: "Territoire français en Amérique"}],
     documents: [
       {
         type: "textes",
@@ -17518,10 +10018,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1600-1700.png"
-    },
+    reponse: {type: "image", ref: "ligne_1600-1700.png"},
     guide: "B"
   },
   {
@@ -17532,11 +10029,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Guerres intercoloniales"
-      }
-    ],
+    aspects: [{aspect: "Guerres intercoloniales"}],
     documents: [
       {
         type: "textes",
@@ -17550,10 +10043,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1600-1800.png"
-    },
+    reponse: {type: "image", ref: "ligne_1600-1800.png"},
     guide: "C"
   },
   {
@@ -17564,11 +10054,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Guerre et diplomatie chez les Premières Nations"
-      }
-    ],
+    aspects: [{aspect: "Guerre et diplomatie chez les Premières Nations"}],
     documents: [
       {
         type: "textes",
@@ -17582,10 +10068,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1600-1800.png"
-    },
+    reponse: {type: "image", ref: "ligne_1600-1800.png"},
     guide: "C"
   },
   {
@@ -17596,14 +10079,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "4 documents",
     enonce: "Les documents A à D présentent des faits liés aux traités conclus entre la France et l’Angleterre concernant leurs possessions en Amérique du Nord. Indiquez à l’endroit approprié la lettre correspondant à chacun des traités.",
-    aspects: [
-      {
-        aspect: "Guerres intercoloniales"
-      },
-      {
-        aspect: "Territoire français en Amérique"
-      }
-    ],
+    aspects: [{aspect: "Guerres intercoloniales"}, {aspect: "Territoire français en Amérique"}],
     documents: [
       {
         type: "textes",
@@ -17648,23 +10124,14 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Traité de Saint-Germain-en-Laye",
-        "Traité d’Utrecht"
-      ],
+      elements: ["Traité de Saint-Germain-en-Laye", "Traité d’Utrecht"],
       double: true
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Traité de Saint-Germain-en-Laye",
-        "Traité d’Utrecht"
-      ],
+      entetes: ["Traité de Saint-Germain-en-Laye", "Traité d’Utrecht"],
       rangees: [
-        [
-          "B et D",
-          "A et C"
-        ]
+        ["B et D", "A et C"]
       ]
     }
   },
@@ -17676,17 +10143,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "3 documents",
     enonce: "Les documents A à C présentent des mesures mises en place en Nouvelle-France sous l’administration de l’intendant. Indiquez à l’endroit approprié la lettre correspondant à chacune des mesures suivantes",
-    aspects: [
-      {
-        aspect: "Croissance de la population"
-      },
-      {
-        aspect: "Diversification économique"
-      },
-      {
-        aspect: "Gouvernement royal"
-      }
-    ],
+    aspects: [{aspect: "Croissance de la population"}, {aspect: "Diversification économique"}, {aspect: "Gouvernement royal"}],
     documents: [
       {
         type: "textes",
@@ -17721,25 +10178,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Mesure pour défendre la colonie",
-        "Mesure pour développer la colonie",
-        "Mesure pour peupler la colonie"
-      ]
+      elements: ["Mesure pour défendre la colonie", "Mesure pour développer la colonie", "Mesure pour peupler la colonie"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Mesure pour défendre la colonie",
-        "Mesure pour développer la colonie",
-        "Mesure pour peupler la colonie"
-      ],
+      entetes: ["Mesure pour défendre la colonie", "Mesure pour développer la colonie", "Mesure pour peupler la colonie"],
       rangees: [
-        [
-          "A",
-          "C",
-          "B"
-        ]
+        ["A", "C", "B"]
       ]
     }
   },
@@ -17751,17 +10196,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "3 documents",
     enonce: "Les documents A à C présentent des mesures mises en place en Nouvelle-France sous l’administration de l’intendant. Indiquez à l’endroit approprié la lettre correspondant à chacune des mesures suivantes",
-    aspects: [
-      {
-        aspect: "Croissance de la population"
-      },
-      {
-        aspect: "Diversification économique"
-      },
-      {
-        aspect: "Gouvernement royal"
-      }
-    ],
+    aspects: [{aspect: "Croissance de la population"}, {aspect: "Diversification économique"}, {aspect: "Gouvernement royal"}],
     documents: [
       {
         type: "textes",
@@ -17796,25 +10231,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Mesure pour défendre la colonie",
-        "Mesure pour développer la colonie",
-        "Mesure pour peupler la colonie"
-      ]
+      elements: ["Mesure pour défendre la colonie", "Mesure pour développer la colonie", "Mesure pour peupler la colonie"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Mesure pour défendre la colonie",
-        "Mesure pour développer la colonie",
-        "Mesure pour peupler la colonie"
-      ],
+      entetes: ["Mesure pour défendre la colonie", "Mesure pour développer la colonie", "Mesure pour peupler la colonie"],
       rangees: [
-        [
-          "B",
-          "A",
-          "C"
-        ]
+        ["B", "A", "C"]
       ]
     }
   },
@@ -17825,11 +10248,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 1,
     enonce: "Indiquez le le nom de la politique économique mise en place par la métropole française en Nouvelle-France.",
-    aspects: [
-      {
-        aspect: "Monopole des compagnies"
-      }
-    ],
+    aspects: [{aspect: "Monopole des compagnies"}],
     documents: [
       {
         type: "textes",
@@ -17842,10 +10261,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le mercantilisme.",
     updatedAt: "2026-06-09T15:04:59.357Z"
   },
@@ -17857,11 +10273,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence de la politique économique imposée par la métropole française sur l’économie de la colonie.",
-    aspects: [
-      {
-        aspect: "Monopole des compagnies"
-      }
-    ],
+    aspects: [{aspect: "Monopole des compagnies"}],
     documents: [
       {
         type: "textes",
@@ -17874,10 +10286,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Dépendance économique envers la France ou faible développement manufacturier dans la colonie ou exportation des ressources naturelles vers la métropole ou importation de produits manufacturés européens."
   },
   {
@@ -17888,11 +10297,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une raison qui explique pourquoi la métropole française impose une politique économique à la Nouvelle-France.",
-    aspects: [
-      {
-        aspect: "Monopole des compagnies"
-      }
-    ],
+    aspects: [{aspect: "Monopole des compagnies"}],
     documents: [
       {
         type: "textes",
@@ -17905,10 +10310,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Enrichir la métropole française ou augmenter la puissance économique de la France ou exploiter les ressources de la colonie ou contrôler le commerce colonial."
   },
   {
@@ -17919,11 +10321,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause et conséquence",
     enonce: "Les documents A et B présentent des faits liés à la politique économique imposée par la métropole française en Nouvelle-France. Indiquez le document qui correspond à une cause et celui qui correspond à une conséquence de cette politique.",
-    aspects: [
-      {
-        aspect: "Monopole des compagnies"
-      }
-    ],
+    aspects: [{aspect: "Monopole des compagnies"}],
     documents: [
       {
         type: "textes",
@@ -17946,20 +10344,12 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "cause-consequence"
-    },
+    reponse: {type: "cause-consequence"},
     guide: {
       type: "grille",
-      entetes: [
-        "Cause",
-        "Conséquence"
-      ],
+      entetes: ["Cause", "Conséquence"],
       rangees: [
-        [
-          "B",
-          "A"
-        ]
+        ["B", "A"]
       ]
     }
   },
@@ -17971,11 +10361,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "2 documents",
     enonce: "Les documents A à D présentent des éléments liés aux compagnies de commerce en Nouvelle-France. Associez chaque document à l’élément correspondant.",
-    aspects: [
-      {
-        aspect: "Monopole des compagnies"
-      }
-    ],
+    aspects: [{aspect: "Monopole des compagnies"}],
     documents: [
       {
         type: "textes",
@@ -18020,23 +10406,14 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Obligations des compagnies",
-        "Privilèges des compagnies"
-      ],
+      elements: ["Obligations des compagnies", "Privilèges des compagnies"],
       double: true
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Obligations des compagnies",
-        "Privilèges des compagnies"
-      ],
+      entetes: ["Obligations des compagnies", "Privilèges des compagnies"],
       rangees: [
-        [
-          "B et C",
-          "A et D"
-        ]
+        ["B et C", "A et D"]
       ]
     }
   },
@@ -18047,14 +10424,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 2,
     enonce: "Les documents A à C présentent des éléments liés à l’administration de la Nouvelle-France sous le Régime français. Indiquez le document qui correspond à chacun des rôles",
-    aspects: [
-      {
-        aspect: "Église catholique"
-      },
-      {
-        aspect: "Gouvernement royal"
-      }
-    ],
+    aspects: [{aspect: "Église catholique"}, {aspect: "Gouvernement royal"}],
     documents: [
       {
         type: "textes",
@@ -18089,25 +10459,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Évêque",
-        "Gouverneur",
-        "Intendant"
-      ]
+      elements: ["Évêque", "Gouverneur", "Intendant"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Évêque",
-        "Gouverneur",
-        "Intendant"
-      ],
+      entetes: ["Évêque", "Gouverneur", "Intendant"],
       rangees: [
-        [
-          "B",
-          "C",
-          "A"
-        ]
+        ["B", "C", "A"]
       ]
     }
   },
@@ -18118,11 +10476,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 1,
     enonce: "Indiquez le nom de l’institution chargée de rendre la justice en Nouvelle-France.",
-    aspects: [
-      {
-        aspect: "Gouvernement royal"
-      }
-    ],
+    aspects: [{aspect: "Gouvernement royal"}],
     documents: [
       {
         type: "textes",
@@ -18135,10 +10489,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le Conseil souverain."
   },
   {
@@ -18148,11 +10499,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 1,
     enonce: "Indiquez le type de pouvoir exercé par le roi de France sous le Régime français.",
-    aspects: [
-      {
-        aspect: "Gouvernement royal"
-      }
-    ],
+    aspects: [{aspect: "Gouvernement royal"}],
     documents: [
       {
         type: "textes",
@@ -18165,10 +10512,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "L'absolutisme de droit divin."
   },
   {
@@ -18179,27 +10523,14 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une raison expliquant pourquoi les Français concentrent leurs établissements le long du fleuve Saint-Laurent vers 1650.",
-    aspects: [
-      {
-        aspect: "Territoire français en Amérique"
-      }
-    ],
+    aspects: [{aspect: "Territoire français en Amérique"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_territoire_occupe_1650.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_territoire_occupe_1650.png", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les Français concentrent leurs établissements le long du fleuve Saint-Laurent parce qu’il constitue la principale voie de transport ou de commerce en Nouvelle-France vers 1650."
   },
   {
@@ -18210,27 +10541,14 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence de la concentration des établissements français dans la vallée du Saint-Laurent vers 1650.",
-    aspects: [
-      {
-        aspect: "Territoire français en Amérique"
-      }
-    ],
+    aspects: [{aspect: "Territoire français en Amérique"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_territoire_occupe_1650.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_territoire_occupe_1650.png", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "La concentration des établissements français dans la vallée du Saint-Laurent favorise le développement du peuplement et des échanges commerciaux vers 1650."
   },
   {
@@ -18240,11 +10558,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 1,
     enonce: "Indiquez le nom de la région où se concentrent principalement les établissements français vers 1650.",
-    aspects: [
-      {
-        aspect: "Territoire français en Amérique"
-      }
-    ],
+    aspects: [{aspect: "Territoire français en Amérique"}],
     documents: [
       {
         type: "textes",
@@ -18257,10 +10571,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "La vallée du Saint-Laurent."
   },
   {
@@ -18271,27 +10582,14 @@ const QUESTIONS = [
     points: 2,
     soustag: "Différence",
     enonce: "Indiquez une différence entre les possessions françaises et les possessions britanniques en Amérique du Nord vers 1700.",
-    aspects: [
-      {
-        aspect: "Territoire français en Amérique"
-      }
-    ],
+    aspects: [{aspect: "Territoire français en Amérique"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "territoire_revendique_france_1700.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "territoire_revendique_france_1700.png", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les possessions françaises couvrent un territoire plus vaste que les possessions britanniques."
   },
   {
@@ -18302,27 +10600,14 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence des rivalités territoriales entre les Français et les Britanniques en Amérique du Nord vers 1700.",
-    aspects: [
-      {
-        aspect: "Territoire français en Amérique"
-      }
-    ],
+    aspects: [{aspect: "Territoire français en Amérique"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "territoire_revendique_france_1700.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "territoire_revendique_france_1700.png", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "La présence de territoires contestés entraîne une augmentation des rivalités et des conflits entre les Français et les Britanniques en Amérique du Nord vers 1700."
   },
   {
@@ -18333,37 +10618,18 @@ const QUESTIONS = [
     points: 2,
     soustag: "Changement",
     enonce: "À partir des documents A et B, indiquez un changement dans l’occupation du territoire par les Français en Amérique du Nord entre 1650 et 1700.",
-    aspects: [
-      {
-        aspect: "Territoire français en Amérique"
-      }
-    ],
+    aspects: [{aspect: "Territoire français en Amérique"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_territoire_occupe_1650.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_territoire_occupe_1650.png", source: "Récitus."}]
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            ref: "territoire_occupe_1700.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document B", ref: "territoire_occupe_1700.png", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le territoire occupé par les Français s’étend davantage vers l’ouest et le sud.\nLes Français établissent davantage de forts et de postes de traite.\nLes Français explorent davantage l’intérieur du continent.\nLe réseau territorial français devient plus vaste entre 1650 et 1700."
   },
   {
@@ -18374,37 +10640,18 @@ const QUESTIONS = [
     points: 2,
     soustag: "Continuité",
     enonce: "À partir des documents A et B, indiquez une continuité dans la répartition du peuplement français en Amérique du Nord entre 1650 et 1700.",
-    aspects: [
-      {
-        aspect: "Territoire français en Amérique"
-      }
-    ],
+    aspects: [{aspect: "Territoire français en Amérique"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_territoire_occupe_1650.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_territoire_occupe_1650.png", source: "Récitus."}]
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            ref: "territoire_occupe_1700.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document B", ref: "territoire_occupe_1700.png", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le peuplement français demeure concentré dans la vallée du Saint-Laurent.\nQuébec, Trois-Rivières et Montréal restent les principaux centres de peuplement.\nLes établissements français demeurent situés près des voies navigables."
   },
   {
@@ -18415,37 +10662,18 @@ const QUESTIONS = [
     points: 2,
     soustag: "Continuité",
     enonce: "À partir des documents A et B, indiquez un changement et une continuité dans l’occupation du territoire par les Français en Amérique du Nord entre 1650 et 1700.",
-    aspects: [
-      {
-        aspect: "Territoire français en Amérique"
-      }
-    ],
+    aspects: [{aspect: "Territoire français en Amérique"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_territoire_occupe_1650.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_territoire_occupe_1650.png", source: "Récitus."}]
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            ref: "territoire_occupe_1700.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document B", ref: "territoire_occupe_1700.png", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Il y a un changement dans l’étendue du territoire occupé par les Français entre 1650 et 1700. Vers 1700, les Français occupent un territoire beaucoup plus vaste qui s’étend jusqu’aux Grands Lacs et au fleuve Mississippi, alors qu’en 1650 le territoire occupé est principalement concentré dans la vallée du Saint-Laurent.\n\nRéponse attendue — Continuité\n\nIl y a une continuité dans l’étendue du territoire occupé par les Français entre 1650 et 1700. En 1650 comme en 1700, les Français occupent toujours la vallée du Saint-Laurent, notamment autour de Québec, Trois-Rivières et Montréal."
   },
   {
@@ -18455,11 +10683,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez le nom d’un groupe européen qui fréquente le golfe du Saint-Laurent pour y pratiquer la pêche au 16e siècle.",
-    aspects: [
-      {
-        aspect: "Premiers contacts"
-      }
-    ],
+    aspects: [{aspect: "Premiers contacts"}],
     documents: [
       {
         type: "textes",
@@ -18472,10 +10696,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Les Basques ou les Bretons ou les Normands."
   },
   {
@@ -18486,11 +10707,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Divergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux acteurs sur le commerce des fourrures en Nouvelle-France. Sur quel point précis sont-ils en accord?",
-    aspects: [
-      {
-        aspect: "Commerce des fourrures"
-      }
-    ],
+    aspects: [{aspect: "Commerce des fourrures"}],
     documents: [
       {
         type: "textes",
@@ -18513,10 +10730,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les congé de traite nuisent au développement de la colonie."
   },
   {
@@ -18527,11 +10741,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "4 documents",
     enonce: "Les documents A à D présentent différents agents du commerce des fourrures. Associez chaque document à l’agent correspondant.",
-    aspects: [
-      {
-        aspect: "Commerce des fourrures"
-      }
-    ],
+    aspects: [{aspect: "Commerce des fourrures"}],
     documents: [
       {
         type: "textes",
@@ -18576,28 +10786,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Autochtones",
-        "Coureurs des bois",
-        "Marchands",
-        "Voyageurs"
-      ]
+      elements: ["Autochtones", "Coureurs des bois", "Marchands", "Voyageurs"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Autochtones",
-        "Coureurs des bois",
-        "Marchands",
-        "Voyageurs"
-      ],
+      entetes: ["Autochtones", "Coureurs des bois", "Marchands", "Voyageurs"],
       rangees: [
-        [
-          "B",
-          "D",
-          "C",
-          "A"
-        ]
+        ["B", "D", "C", "A"]
       ]
     }
   },
@@ -18609,11 +10804,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Position – 3 acteurs",
     enonce: "Les documents A à C présentent la position de trois historiens à l'égard du rôle joué par Colbert en Nouvelle-France. Nommez l'historien qui présente une position différente et comparez sa position à celle des deux autres historiens.",
-    aspects: [
-      {
-        aspect: "Gouvernement royal"
-      }
-    ],
+    aspects: [{aspect: "Gouvernement royal"}],
     documents: [
       {
         type: "textes",
@@ -18646,10 +10837,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Dechêne considère que le travail de Colbert a eu un impact limité (la différence) tandis que Trudel et Lacoursière sont considèrent que Colbert favorise le développement de la Nouvelle-France."
   },
   {
@@ -18660,11 +10848,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux historiens sur la milice en Nouvelle-France. Sur quel point précis sont-ils en accord?",
-    aspects: [
-      {
-        aspect: "Gouvernement royal"
-      }
-    ],
+    aspects: [{aspect: "Gouvernement royal"}],
     documents: [
       {
         type: "textes",
@@ -18687,10 +10871,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les deux historiens considèrent que la milice contribue à la défense de la Nouvelle-France ou qu'elle peut être mobilisée pour protéger la colonie."
   },
   {
@@ -18701,11 +10882,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "4 documents",
     enonce: "Les documents A à D présentent des responsabilités associées au gouverneur et à l'intendant. Indiquez à quel membre de l'administration coloniale correspond chacun des documents.",
-    aspects: [
-      {
-        aspect: "Gouvernement royal"
-      }
-    ],
+    aspects: [{aspect: "Gouvernement royal"}],
     documents: [
       {
         type: "textes",
@@ -18750,23 +10927,14 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Gouverneur",
-        "Intendant"
-      ],
+      elements: ["Gouverneur", "Intendant"],
       double: true
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Gouverneur",
-        "Intendant"
-      ],
+      entetes: ["Gouverneur", "Intendant"],
       rangees: [
-        [
-          "A et C",
-          "B et D"
-        ]
+        ["A et C", "B et D"]
       ]
     }
   },
@@ -18777,11 +10945,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 1,
     enonce: "Indiquez le membre de l'administration coloniale qui représente le roi pour les affaires militaires et diplomatiques.",
-    aspects: [
-      {
-        aspect: "Gouvernement royal"
-      }
-    ],
+    aspects: [{aspect: "Gouvernement royal"}],
     documents: [
       {
         type: "textes",
@@ -18794,10 +10958,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le gouverneur."
   },
   {
@@ -18807,11 +10968,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 1,
     enonce: "Indiquez le membre de l'administration coloniale responsable de l'administration de la justice.",
-    aspects: [
-      {
-        aspect: "Gouvernement royal"
-      }
-    ],
+    aspects: [{aspect: "Gouvernement royal"}],
     documents: [
       {
         type: "textes",
@@ -18824,10 +10981,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "L'intendant."
   },
   {
@@ -18838,37 +10992,18 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité concernant les possessions françaises en Amérique du Nord entre 1700 et 1713. Justifiez votre choix par des faits et un repère de temps.",
-    aspects: [
-      {
-        aspect: "Territoire français en Amérique"
-      }
-    ],
+    aspects: [{aspect: "Territoire français en Amérique"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "territoire_revendique_1700.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "territoire_revendique_1700.png", source: "Récitus."}]
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            ref: "territoire_revendique_1713.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document B", ref: "territoire_revendique_1713.png", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Il y a changement puisque, en 1713, à la suite du traité d’Utrecht, la France perd plusieurs de ses possessions, notamment l’Acadie, Terre-Neuve et la baie d’Hudson, au profit de la Grande-Bretagne.\n\nIl y a continuité puisque la France possède toujours des territoires en Amérique du Nord en 1700 comme en 1713, notamment dans la vallée du Saint-Laurent."
   },
   {
@@ -18879,14 +11014,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause et conséquence",
     enonce: "Les documents A et B présentent des faits liés au traité d’Utrecht de 1713. Indiquez la lettre du document qui représente une cause et celle du document qui représente une conséquence de ce traité.",
-    aspects: [
-      {
-        aspect: "Guerres intercoloniales"
-      },
-      {
-        aspect: "Territoire français en Amérique"
-      }
-    ],
+    aspects: [{aspect: "Guerres intercoloniales"}, {aspect: "Territoire français en Amérique"}],
     documents: [
       {
         type: "textes",
@@ -18909,20 +11037,12 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "cause-consequence"
-    },
+    reponse: {type: "cause-consequence"},
     guide: {
       type: "grille",
-      entetes: [
-        "Cause",
-        "Conséquence"
-      ],
+      entetes: ["Cause", "Conséquence"],
       rangees: [
-        [
-          "B",
-          "A"
-        ]
+        ["B", "A"]
       ]
     }
   },
@@ -18933,14 +11053,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 3,
     enonce: "Expliquez comment l'exploration du territoire contribue à l'expansion du territoire revendiqué par les Français en Amérique du Nord.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un motif des voyages d'exploration sur le continent\n• un moyen utilisé pour assurer une présence française\n• une conséquence sur le territoire revendiqué par la France",
-    aspects: [
-      {
-        aspect: "Commerce des fourrures"
-      },
-      {
-        aspect: "Territoire français en Amérique"
-      }
-    ],
+    aspects: [{aspect: "Commerce des fourrures"}, {aspect: "Territoire français en Amérique"}],
     documents: [
       {
         type: "textes",
@@ -18954,13 +11067,7 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            ref: "carte_exploration_territoire_1700.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document B", ref: "carte_exploration_territoire_1700.png", source: "Récitus."}]
       },
       {
         type: "textes",
@@ -18973,10 +11080,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Les Français explorent de nouveaux territoires afin de développer le commerce des fourrures (un motif des voyages d'exploration sur le continent). Ils y établissent des forts et des postes de traite pour assurer une présence française (un moyen utilisé pour assurer une présence française). Cette présence permet à la France de revendiquer de nouveaux territoires, ce qui contribue à l'expansion de son territoire en Amérique du Nord (une conséquence sur le territoire revendiqué par la France)."
   },
   {
@@ -18987,44 +11091,22 @@ const QUESTIONS = [
     points: 2,
     soustag: "Situer 2 éléments",
     enonce: "À partir du document A, indiquez les lettres correspondant aux territoires cédés à la Grande-Bretagne à la suite du traité d’Utrecht de 1713.",
-    aspects: [
-      {
-        aspect: "Guerres intercoloniales"
-      },
-      {
-        aspect: "Territoire français en Amérique"
-      }
-    ],
+    aspects: [{aspect: "Guerres intercoloniales"}, {aspect: "Territoire français en Amérique"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "territoires_perdus_1713.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "territoires_perdus_1713.png", source: "Récitus."}]
       }
     ],
     reponse: {
       type: "situer-dans-lespace",
-      elements: [
-        "Acadie",
-        "Terre-Neuve"
-      ]
+      elements: ["Acadie", "Terre-Neuve"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Acadie",
-        "Terre-Neuve"
-      ],
+      entetes: ["Acadie", "Terre-Neuve"],
       rangees: [
-        [
-          "C",
-          "B"
-        ]
+        ["C", "B"]
       ]
     }
   },
@@ -19035,11 +11117,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 1,
     enonce: "Indiquez le membre de l'administration coloniale responsable de l'organisation de l'Église catholique en Nouvelle-France.",
-    aspects: [
-      {
-        aspect: "Église catholique"
-      }
-    ],
+    aspects: [{aspect: "Église catholique"}],
     documents: [
       {
         type: "textes",
@@ -19052,10 +11130,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "L'évêque."
   },
   {
@@ -19066,37 +11141,18 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans l’administration de la Nouvelle-France entre 1627 et 1663. Justifiez votre choix par des faits et un repère de temps.",
-    aspects: [
-      {
-        aspect: "Gouvernement royal"
-      }
-    ],
+    aspects: [{aspect: "Gouvernement royal"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "org_pol_avant_1663.png",
-            source: "adapté de Récitus."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "org_pol_avant_1663.png", source: "adapté de Récitus."}]
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            ref: "org_pol_apres_1663.png",
-            source: "adapté de Récitus."
-          }
-        ]
+        cols: [{titre: "Document B", ref: "org_pol_apres_1663.png", source: "adapté de Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Changement\n\nIl y a un changement dans l’administration de la Nouvelle-France entre 1627 et 1663. En 1627, la colonie est administrée par la Compagnie des Cent-Associés. En 1663, le gouvernement royal est instauré et l’administration est confiée au gouverneur, à l’intendant et au Conseil souverain.\n\nContinuité\n\nIl y a une continuité dans l’administration de la Nouvelle-France entre 1627 et 1663. En 1627 comme en 1663, la colonie demeure sous l’autorité du roi de France et de la métropole française."
   },
   {
@@ -19106,14 +11162,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 3,
     enonce: "Expliquez comment les difficultés rencontrées par la Compagnie des Cent-Associés contribuent à l’instauration du gouvernement royal en 1663.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une responsabilité de la Compagnie des Cent-Associés\n• une difficulté rencontrée dans le développement de la colonie\n• une intervention du roi de France en 1663",
-    aspects: [
-      {
-        aspect: "Gouvernement royal"
-      },
-      {
-        aspect: "Monopole des compagnies"
-      }
-    ],
+    aspects: [{aspect: "Gouvernement royal"}, {aspect: "Monopole des compagnies"}],
     documents: [
       {
         type: "textes",
@@ -19138,19 +11187,10 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document C",
-            ref: "org_pol_apres_1663.png",
-            source: "adapté de Récitus."
-          }
-        ]
+        cols: [{titre: "Document C", ref: "org_pol_apres_1663.png", source: "adapté de Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 4
-    },
+    reponse: {type: "lignes", nombre: 4},
     guide: "La Compagnie des Cent-Associés est responsable du peuplement de la colonie (une responsabilité de la Compagnie des Cent-Associés). Comme la population demeure faible en Nouvelle-France (une difficulté rencontrée dans le développement de la colonie), le roi de France instaure le gouvernement royal en 1663 (une intervention du roi de France en 1663).",
     updatedAt: "2026-06-15T15:19:58.283Z"
   },
@@ -19161,27 +11201,14 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 1,
     enonce: "Indiquez le nom du territoire religieux placé sous la responsabilité d'un curé en Nouvelle-France.",
-    aspects: [
-      {
-        aspect: "Église catholique"
-      }
-    ],
+    aspects: [{aspect: "Église catholique"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "paroisse_n-f.png",
-            source: "Adapté de BAnQ et de Bibliothèque et Archives Canada."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "paroisse_n-f.png", source: "Adapté de BAnQ et de Bibliothèque et Archives Canada."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "La paroisse."
   },
   {
@@ -19191,11 +11218,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 1,
     enonce: "Indiquez le nom du mode de répartition des terres utilisé en Nouvelle-France.",
-    aspects: [
-      {
-        aspect: "Régime seigneurial"
-      }
-    ],
+    aspects: [{aspect: "Régime seigneurial"}],
     documents: [
       {
         type: "textes",
@@ -19208,10 +11231,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le régime seigneurial."
   },
   {
@@ -19222,11 +11242,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux historiens sur le rôle de l'Église catholique en Nouvelle-France. Sur quel point précis ces historiens sont-ils d'accord ?",
-    aspects: [
-      {
-        aspect: "Église catholique"
-      }
-    ],
+    aspects: [{aspect: "Église catholique"}],
     documents: [
       {
         type: "textes",
@@ -19249,10 +11265,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Les deux historiens s'entendent pour dire que le clergé catholique joue un rôle important dans l'encadrement des habitants de la Nouvelle-France."
   },
   {
@@ -19263,11 +11276,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans les origines géographiques des immigrants français en Nouvelle-France entre 1670 et 1740. Justifiez votre choix par des faits et un repère de temps.",
-    aspects: [
-      {
-        aspect: "Croissance de la population"
-      }
-    ],
+    aspects: [{aspect: "Croissance de la population"}],
     documents: [
       {
         type: "textes",
@@ -19292,10 +11301,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Continuité. \n\nEn 1670 comme en 1740, les immigrants français proviennent principalement des mêmes régions de France. La Normandie demeure la principale région d'origine, représentant 28 % des immigrants en 1670 et 26 % en 1740. L'Île-de-France et l'Aunis figurent également parmi les régions les plus représentées durant toute la période.\n\nChangement. \n\nEntre 1670 et 1740, la proportion d'immigrants provenant de certaines régions varie. Par exemple, la part des immigrants originaires de la Normandie passe de 28 % à 26 %, tandis que celle des « autres régions » augmente de 14 % à 16 %. La répartition géographique des immigrants se modifie donc légèrement entre 1670 et 1740."
   },
   {
@@ -19306,11 +11312,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence de l’arrivée d’immigrants français sur l’origine de la population de la Nouvelle-France.",
-    aspects: [
-      {
-        aspect: "Croissance de la population"
-      }
-    ],
+    aspects: [{aspect: "Croissance de la population"}],
     documents: [
       {
         type: "textes",
@@ -19323,10 +11325,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "La population de la Nouvelle-France est composée majoritairement de personnes d'origine française."
   },
   {
@@ -19337,11 +11336,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Continuité",
     enonce: "À partir des documents A et B, indiquez un élément de continuité dans la principale région d'origine des immigrants français en Nouvelle-France entre 1670 et 1740.",
-    aspects: [
-      {
-        aspect: "Croissance de la population"
-      }
-    ],
+    aspects: [{aspect: "Croissance de la population"}],
     documents: [
       {
         type: "textes",
@@ -19366,10 +11361,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "La Normandie demeure la principale région d'origine des immigrants français. Elle représente 28 % des immigrants vers 1670 et 26 % vers 1740."
   },
   {
@@ -19380,11 +11372,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans les origines sociales des immigrants français en Nouvelle-France entre 1670 et 1740.",
-    aspects: [
-      {
-        aspect: "Croissance de la population"
-      }
-    ],
+    aspects: [{aspect: "Croissance de la population"}],
     documents: [
       {
         type: "textes",
@@ -19409,10 +11397,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Continuité.\n\nEn 1670 comme en 1740, les artisans constituent le principal groupe social parmi les immigrants français en Nouvelle-France. Ils représentent 35 % des immigrants vers 1670 et 38 % vers 1740.\n\nChangement.\n\nChangement. Entre 1670 et 1740, la répartition des origines sociales des immigrants français se modifie. La proportion de bourgeois et marchands augmente de 5 % à 8 %, tandis que celle des soldats passe de 10 % à 8 %."
   },
   {
@@ -19423,11 +11408,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux historiens sur l'évolution démographique de la Nouvelle-France. Sur quel point précis ces historiens sont-ils d'accord ?",
-    aspects: [
-      {
-        aspect: "Croissance de la population"
-      }
-    ],
+    aspects: [{aspect: "Croissance de la population"}],
     documents: [
       {
         type: "textes",
@@ -19450,10 +11431,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les deux historiens sont d'accord pour dire que la croissance de la population de la Nouvelle-France s'explique principalement par l'accroissement naturel, c'est-à-dire par les naissances."
   },
   {
@@ -19464,11 +11442,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Divergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux historiens sur l'esclavage en Nouvelle-France. Sur quel point précis ces historiens sont-ils en désaccord ?",
-    aspects: [
-      {
-        aspect: "Villes du Canada"
-      }
-    ],
+    aspects: [{aspect: "Villes du Canada"}],
     documents: [
       {
         type: "textes",
@@ -19491,10 +11465,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les historiens sont en désaccord sur l'importance de l'esclavage dans la société de la Nouvelle-France. L'un considère qu'il occupe une place limitée, tandis que l'autre estime qu'il est bien intégré à la société coloniale."
   },
   {
@@ -19505,11 +11476,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Similitude",
     enonce: "À partir des documents A et B, indiquez une fonction commune de la place publique de Québec et de Ville-Marie.",
-    aspects: [
-      {
-        aspect: "Villes du Canada"
-      }
-    ],
+    aspects: [{aspect: "Villes du Canada"}],
     documents: [
       {
         type: "textes",
@@ -19534,10 +11501,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les deux places publiques servent de lieu d'échanges commerciaux (ou de commerce)."
   },
   {
@@ -19548,11 +11512,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Similitude",
     enonce: "À partir des documents A et B, indiquez une activité commune qui se déroule sur la place publique de Québec et de Ville-Marie.",
-    aspects: [
-      {
-        aspect: "Villes du Canada"
-      }
-    ],
+    aspects: [{aspect: "Villes du Canada"}],
     documents: [
       {
         type: "textes",
@@ -19577,10 +11537,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les échanges commerciaux (le troc, le commerce)."
   },
   {
@@ -19590,11 +11547,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 1,
     enonce: "Indiquez une fonction de la place publique en Nouvelle-France.",
-    aspects: [
-      {
-        aspect: "Villes du Canada"
-      }
-    ],
+    aspects: [{aspect: "Villes du Canada"}],
     documents: [
       {
         type: "textes",
@@ -19607,10 +11560,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Lieu d'échanges commerciaux ou de troc."
   },
   {
@@ -19621,11 +11571,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Position – 3 acteurs",
     enonce: "Les documents A, B et C présentent le point de vue de trois historiens sur les effets du métissage en Nouvelle-France. Nommez l'historien qui présente une position différente et comparez sa position à celle des deux autres historiens.",
-    aspects: [
-      {
-        aspect: "Populations autochtones"
-      }
-    ],
+    aspects: [{aspect: "Populations autochtones"}],
     documents: [
       {
         type: "textes",
@@ -19658,10 +11604,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Marcel Trudel estime que le métissage a eu une importance limitée (la différence), alors que Denys Delâge et Olive Patricia Dickason estiment qu'il a contribué de façon importante à l'évolution de la population de la Nouvelle-France (la similitude)."
   },
   {
@@ -19672,11 +11615,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Changement",
     enonce: "À partir des documents A et B, indiquez un changement dans le mode de vie des Hurons-Wendat entre 1600 et 1700.",
-    aspects: [
-      {
-        aspect: "Populations autochtones"
-      }
-    ],
+    aspects: [{aspect: "Populations autochtones"}],
     documents: [
       {
         type: "textes",
@@ -19701,10 +11640,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "L'adoption d'éléments culturels européens, notamment dans l'habillement ou les armes (arquebuse)."
   },
   {
@@ -19714,11 +11650,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 1,
     enonce: "Indiquez le phénomène illustré par l'adoption de certains éléments de la culture européenne par des Autochtones en Nouvelle-France.",
-    aspects: [
-      {
-        aspect: "Populations autochtones"
-      }
-    ],
+    aspects: [{aspect: "Populations autochtones"}],
     documents: [
       {
         type: "textes",
@@ -19731,10 +11663,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Acculturation."
   },
   {
@@ -19744,11 +11673,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 1,
     enonce: "Indiquez le phénomène qui résulte des unions entre Autochtones et Européens en Nouvelle-France.",
-    aspects: [
-      {
-        aspect: "Populations autochtones"
-      }
-    ],
+    aspects: [{aspect: "Populations autochtones"}],
     documents: [
       {
         type: "textes",
@@ -19761,10 +11686,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Métissage."
   },
   {
@@ -19774,11 +11696,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 1,
     enonce: "Indiquez le groupe social qui accorde des terres aux censitaires en échange de redevances.",
-    aspects: [
-      {
-        aspect: "Régime seigneurial"
-      }
-    ],
+    aspects: [{aspect: "Régime seigneurial"}],
     documents: [
       {
         type: "textes",
@@ -19791,10 +11709,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Les seigneurs."
   },
   {
@@ -19805,11 +11720,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une raison qui explique pourquoi les seigneuries sont généralement établies le long du fleuve Saint-Laurent.",
-    aspects: [
-      {
-        aspect: "Régime seigneurial"
-      }
-    ],
+    aspects: [{aspect: "Régime seigneurial"}],
     documents: [
       {
         type: "textes",
@@ -19822,10 +11733,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le transport des personnes et des marchandises ou les communications ou l'accès au commerce ou l'accès à l'eau."
   },
   {
@@ -19836,11 +11744,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "3 documents",
     enonce: "Les documents A à C présentent des descriptions de différents seigneurs en Nouvelle-France. Associez chaque document au type de seigneur correspondant.",
-    aspects: [
-      {
-        aspect: "Régime seigneurial"
-      }
-    ],
+    aspects: [{aspect: "Régime seigneurial"}],
     documents: [
       {
         type: "textes",
@@ -19875,25 +11779,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Bourgeois",
-        "Communauté religieuse",
-        "Noble"
-      ]
+      elements: ["Bourgeois", "Communauté religieuse", "Noble"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Bourgeois",
-        "Communauté religieuse",
-        "Noble"
-      ],
+      entetes: ["Bourgeois", "Communauté religieuse", "Noble"],
       rangees: [
-        [
-          "B",
-          "C",
-          "A"
-        ]
+        ["B", "C", "A"]
       ]
     }
   },
@@ -19904,11 +11796,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez le type de croyance religieuse pratiqué par plusieurs peuples autochtones vers 1500.",
-    aspects: [
-      {
-        aspect: "Rapports sociaux chez les Autochtones"
-      }
-    ],
+    aspects: [{aspect: "Rapports sociaux chez les Autochtones"}],
     documents: [
       {
         type: "textes",
@@ -19921,10 +11809,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "L'animisme.",
     updatedAt: "2026-06-09T13:44:04.877Z"
   },
@@ -19936,11 +11821,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Continuité",
     enonce: "Indiquez un élément de continuité dans les activités de subsistance pratiquées par les colons en Nouvelle-France entre 1670 et 1750.",
-    aspects: [
-      {
-        aspect: "Régime seigneurial"
-      }
-    ],
+    aspects: [{aspect: "Régime seigneurial"}],
     documents: [
       {
         type: "textes",
@@ -19965,10 +11846,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "L'agriculture demeure la principale activité de subsistance pratiquée par les colons français en Nouvelle-France."
   },
   {
@@ -19978,11 +11856,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 1,
     enonce: "Indiquez le nom du système commercial associé aux échanges entre la France, la Nouvelle-France et les Antilles.",
-    aspects: [
-      {
-        aspect: "Diversification économique"
-      }
-    ],
+    aspects: [{aspect: "Diversification économique"}],
     documents: [
       {
         type: "textes",
@@ -19995,10 +11869,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le commerce triangulaire."
   },
   {
@@ -20009,11 +11880,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "3 documents",
     enonce: "Les documents A à C présentent des rôles joués par différents territoires dans les échanges commerciaux de l'Empire français au 18e siècle. Associez chaque document au rôle correspondant.",
-    aspects: [
-      {
-        aspect: "Diversification économique"
-      }
-    ],
+    aspects: [{aspect: "Diversification économique"}],
     documents: [
       {
         type: "textes",
@@ -20048,25 +11915,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Antilles",
-        "France",
-        "Nouvelle-France"
-      ]
+      elements: ["Antilles", "France", "Nouvelle-France"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Antilles",
-        "France",
-        "Nouvelle-France"
-      ],
+      entetes: ["Antilles", "France", "Nouvelle-France"],
       rangees: [
-        [
-          "C",
-          "A",
-          "B"
-        ]
+        ["C", "A", "B"]
       ]
     }
   },
@@ -20077,11 +11932,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 2,
     enonce: "Indiquez une conséquence des mesures mises en place par les intendants sur l'économie de la colonie.",
-    aspects: [
-      {
-        aspect: "Diversification économique"
-      }
-    ],
+    aspects: [{aspect: "Diversification économique"}],
     documents: [
       {
         type: "textes",
@@ -20094,10 +11945,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "La diviersification économique ou l'économie de la colonie se diversifie."
   },
   {
@@ -20108,11 +11956,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause et conséquence",
     enonce: "Les documents A et B présentent des informations sur l'économie de la Nouvelle-France. Indiquez quel document présente une cause et quel document présente une conséquence des mesures mises en place par les intendants.",
-    aspects: [
-      {
-        aspect: "Diversification économique"
-      }
-    ],
+    aspects: [{aspect: "Diversification économique"}],
     documents: [
       {
         type: "textes",
@@ -20135,20 +11979,12 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "cause-consequence"
-    },
+    reponse: {type: "cause-consequence"},
     guide: {
       type: "grille",
-      entetes: [
-        "Cause",
-        "Conséquence"
-      ],
+      entetes: ["Cause", "Conséquence"],
       rangees: [
-        [
-          "B",
-          "A"
-        ]
+        ["B", "A"]
       ]
     }
   },
@@ -20160,11 +11996,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir des documents A et B, indiquez s'il y a changement ou continuité dans les activités économiques pratiquées dans la colonie après l'instauration du gouvernement royal. Justifiez votre réponse à l'aide de faits et d'un repère de temps.",
-    aspects: [
-      {
-        aspect: "Diversification économique"
-      }
-    ],
+    aspects: [{aspect: "Diversification économique"}],
     documents: [
       {
         type: "textes",
@@ -20189,10 +12021,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Changement\nIl y a changement, car après l'instauration du gouvernement royal en 1663, de nouvelles activités économiques apparaissent dans la colonie. Vers 1700, on retrouve notamment la construction navale, les forges et les tanneries.\n\nContinuité\nIl y a continuité, car le commerce des fourrures, l'agriculture et la pêche sont pratiqués avant et après l'instauration du gouvernement royal. Ces activités sont présentes vers 1663 comme vers 1700."
   },
   {
@@ -20202,14 +12031,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 1,
     enonce: "Indiquez l'activité économique pratiquée par la majorité des habitants de la Nouvelle-France au 18e siècle.",
-    aspects: [
-      {
-        aspect: "Diversification économique"
-      },
-      {
-        aspect: "Régime seigneurial"
-      }
-    ],
+    aspects: [{aspect: "Diversification économique"}, {aspect: "Régime seigneurial"}],
     documents: [
       {
         type: "textes",
@@ -20223,10 +12045,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "L'agriculture.",
     updatedAt: "2026-06-12T12:20:21.867Z"
   },
@@ -20238,14 +12057,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence du développement de l'agriculture sur la population de la Nouvelle-France.",
-    aspects: [
-      {
-        aspect: "Croissance de la population"
-      },
-      {
-        aspect: "Diversification économique"
-      }
-    ],
+    aspects: [{aspect: "Croissance de la population"}, {aspect: "Diversification économique"}],
     documents: [
       {
         type: "textes",
@@ -20259,10 +12071,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "L'augmentation de la population ou la croissance de la population."
   },
   {
@@ -20273,14 +12082,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une cause liée à l'économie qui contribue à la croissance de la population en Nouvelle-France au 18e siècle.",
-    aspects: [
-      {
-        aspect: "Croissance de la population"
-      },
-      {
-        aspect: "Diversification économique"
-      }
-    ],
+    aspects: [{aspect: "Croissance de la population"}, {aspect: "Diversification économique"}],
     documents: [
       {
         type: "textes",
@@ -20293,10 +12095,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le développement de l'agriculture."
   },
   {
@@ -20306,11 +12105,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 3,
     enonce: "Expliquez comment les mesures mises en place par les autorités coloniales contribuent au développement économique de la Nouvelle-France.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une mesure mise en place par les autorités coloniales\n• une activité artisanale qui se développe\n• une conséquence sur le développement économique de la colonie",
-    aspects: [
-      {
-        aspect: "Diversification économique"
-      }
-    ],
+    aspects: [{aspect: "Diversification économique"}],
     documents: [
       {
         type: "textes",
@@ -20344,10 +12139,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Les autorités coloniales investissent dans plusieurs projets économiques (une mesure mise en place par les autorités coloniales). Cette intervention favorise le développement du travail du fer aux Forges du Saint-Maurice (une activité artisanale qui se développe). L'apparition de cette nouvelle activité contribue à diversifier les activités économiques de la colonie (une conséquence sur la diversification de l'économie de la colonie).",
     updatedAt: "2026-06-15T12:31:13.778Z"
   },
@@ -20358,11 +12150,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 1,
     enonce: "Indiquez une pratique culturelle européenne maintenue par les colons en Nouvelle-France.",
-    aspects: [
-      {
-        aspect: "Adaptation des colons"
-      }
-    ],
+    aspects: [{aspect: "Adaptation des colons"}],
     documents: [
       {
         type: "textes",
@@ -20375,10 +12163,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "La pratique de la religion catholique."
   },
   {
@@ -20389,11 +12174,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence de l'éloignement de la Nouvelle-France par rapport à la France sur la vie des colons.",
-    aspects: [
-      {
-        aspect: "Adaptation des colons"
-      }
-    ],
+    aspects: [{aspect: "Adaptation des colons"}],
     documents: [
       {
         type: "textes",
@@ -20407,10 +12188,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les colons produisent davantage de biens localement ou les colons s'adaptent aux ressources du territoire ou les colons deviennent plus autonomes ou les marchandises arrivent moins rapidement de France."
   },
   {
@@ -20421,11 +12199,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Changement",
     enonce: "À partir des documents A et B, indiquez un changement apporté aux habitations des colons en Nouvelle-France entre 1650 et 1700.",
-    aspects: [
-      {
-        aspect: "Adaptation des colons"
-      }
-    ],
+    aspects: [{aspect: "Adaptation des colons"}],
     documents: [
       {
         type: "textes",
@@ -20450,10 +12224,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Entre 1650 et 1700, les habitations des colons changent. Les maisons d'abord construites en bois avec une toiture peu inclinée sont de plus en plus construites en pierre avec une toiture plus inclinée."
   },
   {
@@ -20464,11 +12235,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence des hivers rigoureux sur les déplacements des colons.",
-    aspects: [
-      {
-        aspect: "Adaptation des colons"
-      }
-    ],
+    aspects: [{aspect: "Adaptation des colons"}],
     documents: [
       {
         type: "textes",
@@ -20481,10 +12248,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les colons utilisent des raquettes pour se déplacer durant l'hiver. (ou toute réponse équivalente démontrant l'adaptation des déplacements à la neige.)"
   },
   {
@@ -20495,11 +12259,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence des relations avec les Autochtones sur les déplacements des colons.",
-    aspects: [
-      {
-        aspect: "Adaptation des colons"
-      }
-    ],
+    aspects: [{aspect: "Adaptation des colons"}],
     documents: [
       {
         type: "textes",
@@ -20512,10 +12272,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les colons adoptent le canot comme moyen de transport."
   },
   {
@@ -20525,11 +12282,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 1,
     enonce: "Indiquez un moyen de transport adopté par les colons grâce aux contacts avec les Autochtones.",
-    aspects: [
-      {
-        aspect: "Adaptation des colons"
-      }
-    ],
+    aspects: [{aspect: "Adaptation des colons"}],
     documents: [
       {
         type: "textes",
@@ -20542,10 +12295,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le canot."
   },
   {
@@ -20556,11 +12306,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Position – 3 acteurs",
     enonce: "Les documents A, B et C présentent le point de vue de trois historiens sur les effets de l'éloignement géographique de la métropole. Nommez l'historien qui présente un point de vue différent et comparez sa position à celle des deux autres historiens.",
-    aspects: [
-      {
-        aspect: "Adaptation des colons"
-      }
-    ],
+    aspects: [{aspect: "Adaptation des colons"}],
     documents: [
       {
         type: "textes",
@@ -20593,10 +12339,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Allan Greer considère que les colons demeurent dépendants de la métropole (la différence), alors que Jacques Lacoursière et Gilles Havard considèrent que l’éloignement géographique favorise l’autonomie des colons (la similitude)."
   },
   {
@@ -20607,11 +12350,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Position – 3 acteurs",
     enonce: "Les documents A, B et C présentent le point de vue de trois historiens sur les rapports de force durant les guerres intercoloniales. Nommez l’historien qui présente un point de vue différent et comparez sa position à celle des deux autres historiens.",
-    aspects: [
-      {
-        aspect: "Guerres intercoloniales"
-      }
-    ],
+    aspects: [{aspect: "Guerres intercoloniales"}],
     documents: [
       {
         type: "textes",
@@ -20644,10 +12383,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Marcel Trudel considère que les alliances autochtones favorisent les Français (la différence), alors que Jacques Lacoursière et Gilles Havard considèrent que les Britanniques sont avantagés par leur plus grande population (la similitude)."
   },
   {
@@ -20658,11 +12394,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Ordre chronologique",
     enonce: "Les documents A à D présentent des événements liés à la Guerre de la Conquête. Placez-les en ordre chronologique.",
-    aspects: [
-      {
-        aspect: "Guerre de la Conquête"
-      }
-    ],
+    aspects: [{aspect: "Guerre de la Conquête"}],
     documents: [
       {
         type: "textes",
@@ -20705,10 +12437,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_abDc.png"
-    },
+    reponse: {type: "image", ref: "ligne_abDc.png"},
     guide: "C - A - D - B"
   },
   {
@@ -20719,11 +12448,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "4 documents",
     enonce: "Les documents A à D présentent des événements liés à la Guerre de la Conquête. Associez chaque document à l’événement correspondant.",
-    aspects: [
-      {
-        aspect: "Guerre de la Conquête"
-      }
-    ],
+    aspects: [{aspect: "Guerre de la Conquête"}],
     documents: [
       {
         type: "textes",
@@ -20768,28 +12493,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Bataille de Sainte-Foy",
-        "Bataille des Plaines d'Abraham",
-        "Prise de Louisbourg",
-        "Siège de Québec"
-      ]
+      elements: ["Bataille de Sainte-Foy", "Bataille des Plaines d'Abraham", "Prise de Louisbourg", "Siège de Québec"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Bataille de Sainte-Foy",
-        "Bataille des Plaines d'Abraham",
-        "Prise de Louisbourg",
-        "Siège de Québec"
-      ],
+      entetes: ["Bataille de Sainte-Foy", "Bataille des Plaines d'Abraham", "Prise de Louisbourg", "Siège de Québec"],
       rangees: [
-        [
-          "B",
-          "C",
-          "A",
-          "D"
-        ]
+        ["B", "C", "A", "D"]
       ]
     }
   },
@@ -20801,11 +12511,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux historiens sur la milice canadienne durant la Guerre de la Conquête. Sur quel point précis ces historiens sont-ils d’accord ?",
-    aspects: [
-      {
-        aspect: "Guerre de la Conquête"
-      }
-    ],
+    aspects: [{aspect: "Guerre de la Conquête"}],
     documents: [
       {
         type: "textes",
@@ -20839,11 +12545,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Position – 3 acteurs",
     enonce: "Les documents A, B et C présentent le point de vue de trois historiens sur la bataille des Plaines d'Abraham. Nommez l’historien qui présente un point de vue différent et comparez sa position à celle des deux autres historiens.",
-    aspects: [
-      {
-        aspect: "Guerre de la Conquête"
-      }
-    ],
+    aspects: [{aspect: "Guerre de la Conquête"}],
     documents: [
       {
         type: "textes",
@@ -20876,10 +12578,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Gaston Deschênes considère que la résistance française se poursuit après la bataille (la différence), alors que Jacques Lacoursière et Marcel Trudel considèrent que la bataille marque un tournant dans la Guerre de la Conquête (la similitude)."
   },
   {
@@ -20890,11 +12589,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Invasion américaine"
-      }
-    ],
+    aspects: [{aspect: "Invasion américaine"}],
     documents: [
       {
         type: "textes",
@@ -20908,10 +12603,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1760-1800.png"
-    },
+    reponse: {type: "image", ref: "ligne_1760-1800.png"},
     guide: "B"
   },
   {
@@ -20922,11 +12614,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Régime militaire"
-      }
-    ],
+    aspects: [{aspect: "Régime militaire"}],
     documents: [
       {
         type: "textes",
@@ -20940,10 +12628,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1755-1795.png"
-    },
+    reponse: {type: "image", ref: "ligne_1755-1795.png"},
     guide: "A"
   },
   {
@@ -20954,11 +12639,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Proclamation royale"
-      }
-    ],
+    aspects: [{aspect: "Proclamation royale"}],
     documents: [
       {
         type: "textes",
@@ -20972,10 +12653,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1760-1800.png"
-    },
+    reponse: {type: "image", ref: "ligne_1760-1800.png"},
     guide: "A"
   },
   {
@@ -20986,11 +12664,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Statut des Indiens"
-      }
-    ],
+    aspects: [{aspect: "Statut des Indiens"}],
     documents: [
       {
         type: "textes",
@@ -21004,10 +12678,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1760-1800.png"
-    },
+    reponse: {type: "image", ref: "ligne_1760-1800.png"},
     guide: "A"
   },
   {
@@ -21018,11 +12689,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Acte de Québec"
-      }
-    ],
+    aspects: [{aspect: "Acte de Québec"}],
     documents: [
       {
         type: "textes",
@@ -21036,10 +12703,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1760-1800.png"
-    },
+    reponse: {type: "image", ref: "ligne_1760-1800.png"},
     guide: "B"
   },
   {
@@ -21050,11 +12714,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Loyalistes"
-      }
-    ],
+    aspects: [{aspect: "Loyalistes"}],
     documents: [
       {
         type: "textes",
@@ -21068,10 +12728,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1760-1800.png"
-    },
+    reponse: {type: "image", ref: "ligne_1760-1800.png"},
     guide: "B"
   },
   {
@@ -21082,11 +12739,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Invasion américaine"
-      }
-    ],
+    aspects: [{aspect: "Invasion américaine"}],
     documents: [
       {
         type: "textes",
@@ -21100,10 +12753,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1760-1800.png"
-    },
+    reponse: {type: "image", ref: "ligne_1760-1800.png"},
     guide: "C"
   },
   {
@@ -21113,11 +12763,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Indiquez le nom de la période durant laquelle la colonie est administrée par des autorités britanniques entre la capitulation de Montréal et le Traité de Paris.",
-    aspects: [
-      {
-        aspect: "Régime militaire"
-      }
-    ],
+    aspects: [{aspect: "Régime militaire"}],
     documents: [
       {
         type: "textes",
@@ -21130,10 +12776,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le régime militaire.",
     updatedAt: "2026-06-03T11:42:12.905Z"
   },
@@ -21145,11 +12788,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence de la capitulation de Montréal sur l'administration de la colonie.",
-    aspects: [
-      {
-        aspect: "Régime militaire"
-      }
-    ],
+    aspects: [{aspect: "Régime militaire"}],
     documents: [
       {
         type: "textes",
@@ -21163,10 +12802,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le gouvernement de la colonie passe sous l'autorité britannique ou la colonie est divisée en trois districts administrés par des gouverneurs britanniques.",
     updatedAt: "2026-06-12T12:09:54.169Z"
   },
@@ -21178,11 +12814,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Changement",
     enonce: "Indiquez un changement dans la gouvernance de la colonie suite à la capitulation de Montréal.",
-    aspects: [
-      {
-        aspect: "Régime militaire"
-      }
-    ],
+    aspects: [{aspect: "Régime militaire"}],
     documents: [
       {
         type: "textes",
@@ -21195,10 +12827,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les autorités britanniques remplacent les autorités françaises.",
     updatedAt: "2026-06-03T12:09:53.746Z"
   },
@@ -21209,11 +12838,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Indiquez un moyen utilisé par les autorités militaires britanniques pour favoriser la reprise des activités dans la colonie entre 1760 et 1763.",
-    aspects: [
-      {
-        aspect: "Régime militaire"
-      }
-    ],
+    aspects: [{aspect: "Régime militaire"}],
     documents: [
       {
         type: "textes",
@@ -21226,10 +12851,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Distribution de vivres aux habitants et réparation ou reconstruction des bâtiments et réparation des infrastructures.",
     updatedAt: "2026-06-04T01:00:23.723Z"
   },
@@ -21240,11 +12862,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Indiquez le nom du traité signé en 1763 qui met fin à la guerre de Setp Ans entre la France et la Grande-Bretagne.",
-    aspects: [
-      {
-        aspect: "Proclamation royale"
-      }
-    ],
+    aspects: [{aspect: "Proclamation royale"}],
     documents: [
       {
         type: "textes",
@@ -21257,10 +12875,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Traité de Paris.",
     updatedAt: "2026-06-06T17:50:01.019Z"
   },
@@ -21271,14 +12886,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 2,
     enonce: "Les documents A à D font référence aux traités de Paris. Indiquez à l’endroit approprié la lettre des documents correspondants.",
-    aspects: [
-      {
-        aspect: "Invasion américaine"
-      },
-      {
-        aspect: "Proclamation royale"
-      }
-    ],
+    aspects: [{aspect: "Invasion américaine"}, {aspect: "Proclamation royale"}],
     documents: [
       {
         type: "textes",
@@ -21323,22 +12931,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Traité de Paris - 1763",
-        "Traité de Paris - 1783"
-      ]
+      elements: ["Traité de Paris - 1763", "Traité de Paris - 1783"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Traité de Paris - 1763",
-        "Traité de Paris - 1783"
-      ],
+      entetes: ["Traité de Paris - 1763", "Traité de Paris - 1783"],
       rangees: [
-        [
-          "A et D",
-          "B et C"
-        ]
+        ["A et D", "B et C"]
       ]
     },
     updatedAt: "2026-06-04T12:00:01.235Z"
@@ -21350,11 +12949,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 3,
     enonce: "Expliquez comment la fin de la guerre de la Conquête transforme le territoire de l’Amérique du Nord.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un résultat de la guerre de la Conquête\n• le traité qui met fin à cette guerre\n• une modification du territoire de l’Amérique du Nord",
-    aspects: [
-      {
-        aspect: "Proclamation royale"
-      }
-    ],
+    aspects: [{aspect: "Proclamation royale"}],
     documents: [
       {
         type: "textes",
@@ -21379,19 +12974,10 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document C",
-            ref: "carte_proclamation_royale_1763.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document C", ref: "carte_proclamation_royale_1763.png", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "La victoire britannique (le résultat de la guerre de la Conquête) lors de la guerre de la Conquête est confirmée par le Traité de Paris de 1763 (le traité qui met fin à la guerre). Par ce traité, la France cède le Canada à la Grande-Bretagne, ce qui agrandit les possessions britanniques et réduit le territoire français en Amérique du Nord (une modification du territoire).",
     updatedAt: "2026-06-18T11:58:06.288Z"
   },
@@ -21402,11 +12988,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Indiquez le nom de la constitution mise en place par les autorités britanniques suite au Traité de Paris de 1763.",
-    aspects: [
-      {
-        aspect: "Proclamation royale"
-      }
-    ],
+    aspects: [{aspect: "Proclamation royale"}],
     documents: [
       {
         type: "textes",
@@ -21419,10 +13001,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "La Proclamation royale.",
     updatedAt: "2026-06-06T18:20:48.863Z"
   },
@@ -21434,14 +13013,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans l’organisation politique de la colonie entre 1760 et 1770. Justifiez votre choix par des faits et un repère de temps.",
-    aspects: [
-      {
-        aspect: "Proclamation royale"
-      },
-      {
-        aspect: "Régime militaire"
-      }
-    ],
+    aspects: [{aspect: "Proclamation royale"}, {aspect: "Régime militaire"}],
     documents: [
       {
         type: "textes",
@@ -21466,10 +13038,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Changement\n\nIl y a changement, car après 1763, le régime militaire est remplacé par une administration civile britannique. ou Il y a changement, car entre 1760 et 1770, la colonie passe d'un régime militaire à un régime civil britannique.\n\nContinuité\n\nIl y a continuité, car entre 1760 et 1770, la colonie demeure sous l'autorité de la Couronne britannique. ou Il y a continuité, car entre 1760 et 1770, la colonie est administrée par des autorités britanniques.",
     updatedAt: "2026-06-12T12:10:15.183Z"
   },
@@ -21481,11 +13050,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence de la reconnaissance des droits territoriaux des Autochtones par la Proclamation royale de 1763?",
-    aspects: [
-      {
-        aspect: "Proclamation royale"
-      }
-    ],
+    aspects: [{aspect: "Proclamation royale"}],
     documents: [
       {
         type: "textes",
@@ -21498,10 +13063,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "L'expansion du peuplement britannique vers l'ouest est limitée. ou Les colons britanniques ne peuvent pas s'établir librement sur les territoires autochtones. ou L'occupation de certains territoires par les Britanniques est restreinte.",
     updatedAt: "2026-06-06T19:51:00.256Z"
   },
@@ -21513,11 +13075,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une cause de la révolte de Pontiac.",
-    aspects: [
-      {
-        aspect: "Statut des Indiens"
-      }
-    ],
+    aspects: [{aspect: "Statut des Indiens"}],
     documents: [
       {
         type: "textes",
@@ -21530,10 +13088,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "L'expansion du peuplement britannique sur les territoires autochtones ou l'empiètement des Britanniques sur les territoires autochtones.",
     updatedAt: "2026-06-06T20:03:38.063Z"
   },
@@ -21545,11 +13100,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Changement",
     enonce: "Indiquez un changement dans les relations entre les Autochtones et les autorités britanniques après la guerre de la Conquête.",
-    aspects: [
-      {
-        aspect: "Statut des Indiens"
-      }
-    ],
+    aspects: [{aspect: "Statut des Indiens"}],
     documents: [
       {
         type: "textes",
@@ -21574,10 +13125,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les Britanniques réduisent ou cessent la distribution de présents aux Autochtones ou les Britanniques modifient les alliances établies sous le Régime français.",
     updatedAt: "2026-06-06T20:03:15.483Z"
   },
@@ -21588,11 +13136,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Indiquez le nom de l'organisme britannique chargé des relations avec les Autochtones après la Conquête.",
-    aspects: [
-      {
-        aspect: "Statut des Indiens"
-      }
-    ],
+    aspects: [{aspect: "Statut des Indiens"}],
     documents: [
       {
         type: "textes",
@@ -21605,10 +13149,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le Département des Affaires indiennes.",
     updatedAt: "2026-06-06T20:40:00.174Z"
   },
@@ -21620,11 +13161,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une raison qui explique la création du Département des Affaires indiennes par les autorités britanniques.",
-    aspects: [
-      {
-        aspect: "Statut des Indiens"
-      }
-    ],
+    aspects: [{aspect: "Statut des Indiens"}],
     documents: [
       {
         type: "textes",
@@ -21637,10 +13174,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Maintenir de bonnes relations avec les Autochtones.",
     updatedAt: "2026-06-06T20:41:51.403Z"
   },
@@ -21651,14 +13185,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 3,
     enonce: "Expliquez comment une action d'un chef autochtone influence les décisions prises par les autorités britanniques concernant les territoires nord-américains.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une action d'un chef autochtone\n• un droit reconnu aux Autochtone par la Proclamation royale\n• un effet sur les territoires britanniques nord-américains",
-    aspects: [
-      {
-        aspect: "Proclamation royale"
-      },
-      {
-        aspect: "Statut des Indiens"
-      }
-    ],
+    aspects: [{aspect: "Proclamation royale"}, {aspect: "Statut des Indiens"}],
     documents: [
       {
         type: "textes",
@@ -21682,19 +13209,10 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document C",
-            ref: "carte_proclamation_royale_1763.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document C", ref: "carte_proclamation_royale_1763.png", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "La révolte menée par Pontiac (une action d'un chef autochtone) pousse les autorités britanniques à reconnaître certains droits territoriaux aux Autochtones dans la Proclamation royale (un droit reconnu aux Autochtones). Cette décision entraîne la création d'un territoire réservé aux Autochtones (un effet sur les territoires britanniques nord-américains).",
     updatedAt: "2026-06-15T12:30:39.086Z"
   },
@@ -21705,11 +13223,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Indiquez le nom de l'obligation imposée aux catholiques qui souhaitent occuper certaines fonctions publiques après la Conquête.",
-    aspects: [
-      {
-        aspect: "Instructions au gouverneur Murray"
-      }
-    ],
+    aspects: [{aspect: "Instructions au gouverneur Murray"}],
     documents: [
       {
         type: "textes",
@@ -21722,10 +13236,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le Serment du Test.",
     updatedAt: "2026-06-06T21:02:50.524Z"
   },
@@ -21736,11 +13247,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 3,
     enonce: "Expliquez comment la composition de la population influence les décisions prises par le gouverneur Murray.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• la composition de la population de la colonie vers 1763\n• une décision prise par Murray\n• une conséquence pour les Canadiens",
-    aspects: [
-      {
-        aspect: "Instructions au gouverneur Murray"
-      }
-    ],
+    aspects: [{aspect: "Instructions au gouverneur Murray"}],
     documents: [
       {
         type: "textes",
@@ -21774,10 +13281,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Les Canadiens catholiques forment la majorité de la population de la colonie (la composition de la population de la colonie). Le gouverneur Murray leur accorde certaines concessions, notamment sur le plan religieux (une décision prise par Murray). Les Canadiens peuvent ainsi continuer à pratiquer leur religion catholique (une conséquence pour les Canadiens).",
     updatedAt: "2026-06-15T12:23:07.596Z"
   },
@@ -21788,11 +13292,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Indiquez un moyen proposé dans les instructions du roi pour favoriser l'assimilation des Canadiens.",
-    aspects: [
-      {
-        aspect: "Instructions au gouverneur Murray"
-      }
-    ],
+    aspects: [{aspect: "Instructions au gouverneur Murray"}],
     documents: [
       {
         type: "textes",
@@ -21805,10 +13305,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Imposer les institutions britanniques ou onstaurer un gouvernement civil britannique ou appliquer les lois britanniques",
     updatedAt: "2026-06-06T21:12:22.247Z"
   },
@@ -21819,11 +13316,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Indiquez un objectif poursuivi par le roi dans les instructions transmises au gouverneur Murray.",
-    aspects: [
-      {
-        aspect: "Instructions au gouverneur Murray"
-      }
-    ],
+    aspects: [{aspect: "Instructions au gouverneur Murray"}],
     documents: [
       {
         type: "textes",
@@ -21836,10 +13329,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Assimiler les Canadiens.",
     updatedAt: "2026-06-06T21:14:06.575Z"
   },
@@ -21850,17 +13340,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 2,
     enonce: "Les documents A à D présentent des faits liés à l'administration de la colonie entre 1760 et 1774. Associez chaque document au type de gouvernement correspondant.",
-    aspects: [
-      {
-        aspect: "Instructions au gouverneur Murray"
-      },
-      {
-        aspect: "Proclamation royale"
-      },
-      {
-        aspect: "Régime militaire"
-      }
-    ],
+    aspects: [{aspect: "Instructions au gouverneur Murray"}, {aspect: "Proclamation royale"}, {aspect: "Régime militaire"}],
     documents: [
       {
         type: "textes",
@@ -21907,22 +13387,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Gouvernement civil",
-        "Gouvernement militaire"
-      ]
+      elements: ["Gouvernement civil", "Gouvernement militaire"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Gouvernement civil",
-        "Gouvernement militaire"
-      ],
+      entetes: ["Gouvernement civil", "Gouvernement militaire"],
       rangees: [
-        [
-          "B et D",
-          "A et C"
-        ]
+        ["B et D", "A et C"]
       ]
     },
     updatedAt: "2026-06-12T12:10:30.607Z"
@@ -21935,40 +13406,18 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans le territoire de la Province de Québec entre 1763 et 1774. Justifiez votre choix par des faits et un repère de temps.",
-    aspects: [
-      {
-        aspect: "Acte de Québec"
-      },
-      {
-        aspect: "Proclamation royale"
-      }
-    ],
+    aspects: [{aspect: "Acte de Québec"}, {aspect: "Proclamation royale"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_proclamation_royale_1763.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_proclamation_royale_1763.png", source: "Récitus."}]
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            ref: "carte_acte_quebec_1774.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document B", ref: "carte_acte_quebec_1774.png", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Changement :\nIl y a changement, car en 1774, la Province de Québec est beaucoup plus grande qu’en 1763. Elle s’étend maintenant vers les Grands Lacs et la vallée de l’Ohio.\n\nContinuité :\nIl y a continuité, car entre 1763 et 1774, la Province de Québec demeure une possession britannique située dans la région de la vallée du Saint-Laurent.",
     updatedAt: "2026-06-07T00:48:22.548Z"
   },
@@ -21980,14 +13429,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans l’organisation politique de la Province de Québec entre 1763 et 1774. Justifiez votre choix par des faits et un repère de temps.",
-    aspects: [
-      {
-        aspect: "Acte de Québec"
-      },
-      {
-        aspect: "Proclamation royale"
-      }
-    ],
+    aspects: [{aspect: "Acte de Québec"}, {aspect: "Proclamation royale"}],
     documents: [
       {
         type: "textes",
@@ -22012,10 +13454,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Changement :\nIl y a changement, car en 1774, le Conseil de Québec devient le Conseil exécutif et le Conseil législatif.\n\nContinuité :\nIl y a continuité, car entre 1763 et 1774, la Province de Québec demeure dirigée par un gouverneur britannique nommé par le roi.",
     updatedAt: "2026-06-12T12:09:32.861Z"
   },
@@ -22026,11 +13465,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Indiquez le nom de la constitution mise en place par les autorités britanniques dans la Province de Québec en 1774.",
-    aspects: [
-      {
-        aspect: "Acte de Québec"
-      }
-    ],
+    aspects: [{aspect: "Acte de Québec"}],
     documents: [
       {
         type: "textes",
@@ -22043,10 +13478,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "L’Acte de Québec.",
     updatedAt: "2026-06-07T01:01:10.193Z"
   },
@@ -22058,11 +13490,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "3 documents",
     enonce: "Les documents A à C présentent des éléments de l’organisation politique de la Province de Québec après l’Acte de Québec de 1774. Associez chaque document au pouvoir correspondant.",
-    aspects: [
-      {
-        aspect: "Acte de Québec"
-      }
-    ],
+    aspects: [{aspect: "Acte de Québec"}],
     documents: [
       {
         type: "textes",
@@ -22097,25 +13525,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Exécutif",
-        "Judiciaire",
-        "Législatif"
-      ]
+      elements: ["Exécutif", "Judiciaire", "Législatif"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Exécutif",
-        "Judiciaire",
-        "Législatif"
-      ],
+      entetes: ["Exécutif", "Judiciaire", "Législatif"],
       rangees: [
-        [
-          "C",
-          "A",
-          "C"
-        ]
+        ["C", "A", "C"]
       ]
     },
     updatedAt: "2026-06-07T12:02:18.346Z"
@@ -22128,11 +13544,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "3 documents",
     enonce: "Les documents A à C présentent les réactions de différents groupes à l'adoption de l'Acte de Québec de 1774. Associez chaque document au groupe correspondant.",
-    aspects: [
-      {
-        aspect: "Acte de Québec"
-      }
-    ],
+    aspects: [{aspect: "Acte de Québec"}],
     documents: [
       {
         type: "textes",
@@ -22170,25 +13582,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "British Party",
-        "Clergé catholique",
-        "French Party"
-      ]
+      elements: ["British Party", "Clergé catholique", "French Party"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "British Party",
-        "Clergé catholique",
-        "French Party"
-      ],
+      entetes: ["British Party", "Clergé catholique", "French Party"],
       rangees: [
-        [
-          "",
-          "A",
-          "B"
-        ]
+        ["", "A", "B"]
       ]
     },
     updatedAt: "2026-06-07T12:09:55.180Z"
@@ -22201,11 +13601,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux acteurs de la Province de Québec après l'adoption de l'Acte de Québec de 1774. Sur quel point précis ces acteurs sont-ils en accord?",
-    aspects: [
-      {
-        aspect: "Acte de Québec"
-      }
-    ],
+    aspects: [{aspect: "Acte de Québec"}],
     documents: [
       {
         type: "textes",
@@ -22228,10 +13624,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le maintien des lois civiles françaises.",
     updatedAt: "2026-06-07T12:21:02.631Z"
   },
@@ -22243,11 +13636,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Divergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux acteurs de la Province de Québec après l'adoption de l'Acte de Québec de 1774. Sur quel point précis ces acteurs sont-ils en désaccord?",
-    aspects: [
-      {
-        aspect: "Acte de Québec"
-      }
-    ],
+    aspects: [{aspect: "Acte de Québec"}],
     documents: [
       {
         type: "textes",
@@ -22270,10 +13659,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les deux acteurs sont en désaccord sur l'établissement d'une assemblée élue dans la Province de Québec.",
     updatedAt: "2026-06-07T12:22:19.114Z"
   },
@@ -22285,14 +13671,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir des documents A et B, indiquez s'il y a changement ou continuité dans les lois en vigueur dans la Province de Québec entre 1763 et 1774. Justifiez votre choix par des faits et un repère de temps.",
-    aspects: [
-      {
-        aspect: "Acte de Québec"
-      },
-      {
-        aspect: "Proclamation royale"
-      }
-    ],
+    aspects: [{aspect: "Acte de Québec"}, {aspect: "Proclamation royale"}],
     documents: [
       {
         type: "textes",
@@ -22315,10 +13694,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Changement\nIl y a changement, car en 1774, les lois civiles françaises sont appliquées dans la Province de Québec, alors qu'en 1763, les autorités britanniques cherchent à appliquer les lois anglaises.\n\nContinuité :\nIl y a continuité, car en 1763 comme en 1774, les lois criminelles anglaises demeurent en vigueur dans la Province de Québec.",
     updatedAt: "2026-06-07T13:00:03.984Z"
   },
@@ -22330,11 +13706,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Changement",
     enonce: "Indiquez un changement concernant les conditions pour occuper un poste dans l'administration coloniale entre 1763 et 1774.",
-    aspects: [
-      {
-        aspect: "Acte de Québec"
-      }
-    ],
+    aspects: [{aspect: "Acte de Québec"}],
     documents: [
       {
         type: "textes",
@@ -22347,10 +13719,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le serment du Test n'est plus exigé pour occuper un poste dans l'administration coloniale.",
     updatedAt: "2026-06-07T13:08:53.602Z"
   },
@@ -22362,11 +13731,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une raison qui explique pourquoi les Canadiens catholiques peuvent occuper un poste dans l'administration coloniale après 1774.",
-    aspects: [
-      {
-        aspect: "Acte de Québec"
-      }
-    ],
+    aspects: [{aspect: "Acte de Québec"}],
     documents: [
       {
         type: "textes",
@@ -22379,10 +13744,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le serment du Test est aboli ou le serment du Test est remplacé par un nouveau serment d'allégeance.",
     updatedAt: "2026-06-07T13:18:57.177Z"
   },
@@ -22394,11 +13756,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence de l'abolition du serment du Test dans la Province de Québec après 1774.",
-    aspects: [
-      {
-        aspect: "Acte de Québec"
-      }
-    ],
+    aspects: [{aspect: "Acte de Québec"}],
     documents: [
       {
         type: "textes",
@@ -22411,10 +13769,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les Canadiens catholiques peuvent occuper des postes dans l'administration coloniale.",
     updatedAt: "2026-06-07T13:13:18.433Z"
   },
@@ -22426,11 +13781,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Continuité",
     enonce: "À partir des documents A et B, indiquez un élément de continuité dans les fonctions exercées par le gouverneur de la Province de Québec entre 1763 et 1774.",
-    aspects: [
-      {
-        aspect: "Acte de Québec"
-      }
-    ],
+    aspects: [{aspect: "Acte de Québec"}],
     documents: [
       {
         type: "textes",
@@ -22455,10 +13806,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le gouverneur demeure le représentant du roi dans la colonie ou le gouverneur continue de diriger l'administration de la colonie.",
     updatedAt: "2026-06-07T13:18:20.625Z"
   },
@@ -22469,11 +13817,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Indiquez le nom de l'obligation imposée aux catholiques qui souhaitent exercer une fonction dans l'administration coloniale avant 1774.",
-    aspects: [
-      {
-        aspect: "Proclamation royale"
-      }
-    ],
+    aspects: [{aspect: "Proclamation royale"}],
     documents: [
       {
         type: "textes",
@@ -22486,10 +13830,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le serment du Test.",
     updatedAt: "2026-06-07T13:26:15.151Z"
   },
@@ -22500,11 +13841,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Indiquez un droit accordé aux catholiques par l'Acte de Québec.",
-    aspects: [
-      {
-        aspect: "Acte de Québec"
-      }
-    ],
+    aspects: [{aspect: "Acte de Québec"}],
     documents: [
       {
         type: "textes",
@@ -22517,10 +13854,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Les catholiques peuvent pratiquer leur religion.",
     updatedAt: "2026-06-07T13:24:51.349Z"
   },
@@ -22531,11 +13865,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Indiquez un droit accordé à l'Église catholique par l'Acte de Québec.",
-    aspects: [
-      {
-        aspect: "Acte de Québec"
-      }
-    ],
+    aspects: [{aspect: "Acte de Québec"}],
     documents: [
       {
         type: "textes",
@@ -22548,10 +13878,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le droit de percevoir la dîme.",
     updatedAt: "2026-06-07T13:25:36.767Z"
   },
@@ -22563,11 +13890,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une raison qui explique l'adoption de l'Acte de Québec par les autorités britanniques en 1774.",
-    aspects: [
-      {
-        aspect: "Acte de Québec"
-      }
-    ],
+    aspects: [{aspect: "Acte de Québec"}],
     documents: [
       {
         type: "textes",
@@ -22580,9 +13903,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "cause-consequence"
-    },
+    reponse: {type: "cause-consequence"},
     guide: "Les autorités britanniques veulent s'assurer de la loyauté des habitants de la Province de Québec face aux tensions dans les Treize colonies.",
     updatedAt: "2026-06-07T13:30:33.036Z"
   },
@@ -22593,11 +13914,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 3,
     enonce: "Expliquez comment les événements dans les Treize colonies contribuent à l'adoption d'une nouvelle constitution en 1774.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un événement dans les Treize colonies\n• un objectif poursuivi par les autorités britanniques\n• le nom d'une nouvelle constitution mise en place en 1774",
-    aspects: [
-      {
-        aspect: "Acte de Québec"
-      }
-    ],
+    aspects: [{aspect: "Acte de Québec"}],
     documents: [
       {
         type: "textes",
@@ -22631,10 +13948,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Les tensions ou le mécontentement dans les Treize colonies (événements dans les Treize colonies) inquiètent les autorités britanniques. Pour maintenir stabilité de la Province de Québec et assurer la loyauté de ses habitants (objectif poursuivi par les autorités britanniques), les autorités adoptent l'Acte de Québec (nom d'une nouvelle constitution mise en place en 1774).",
     updatedAt: "2026-06-15T12:23:24.743Z"
   },
@@ -22645,11 +13959,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 3,
     enonce: "Expliquez comment la fin de la guerre de Succession d'Espagne transforme le territoire de l’Amérique du Nord. \n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un résultat de la la guerre de Succession d'Espagne\n• le traité qui met fin à cette guerre\n• une modification du territoire de l’Amérique du Nord",
-    aspects: [
-      {
-        aspect: "Guerres intercoloniales"
-      }
-    ],
+    aspects: [{aspect: "Guerres intercoloniales"}],
     documents: [
       {
         type: "textes",
@@ -22663,13 +13973,7 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            ref: "territoire_revendique_1713.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document B", ref: "territoire_revendique_1713.png", source: "Récitus."}]
       },
       {
         type: "textes",
@@ -22682,10 +13986,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "La victoire britannique (un résultat de la guerre de Succession d'Espagne) mène à la signature du traité d'Utrecht (le traité qui met fin à cette guerre). À la suite de ce traité, la France perd l'Acadie, Terre-Neuve et la baie d'Hudson (une modification du territoire de l'Amérique du Nord).",
     updatedAt: "2026-06-15T12:30:21.391Z"
   },
@@ -22696,11 +13997,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 3,
     enonce: "Expliquez comment la fin de la guerre d'Indépendance des États-Unis transforme le territoire de l'Amérique du Nord.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\nl'issue de la guerre de l'indépendance des États-Unis\nle traité qui met fin à cette guerre\nune modification du territoire de l'Amérique du Nord",
-    aspects: [
-      {
-        aspect: "Invasion américaine"
-      }
-    ],
+    aspects: [{aspect: "Invasion américaine"}],
     documents: [
       {
         type: "textes",
@@ -22724,19 +14021,10 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document C",
-            ref: "carte_province_quebec_1783.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document C", ref: "carte_province_quebec_1783.png", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Les Treize colonies obtiennent leur indépendance (l'issue de la guerre de l'indépendance des États-Unis). Le traité de Paris de 1783 met fin au conflit (le traité qui met fin à cette guerre). Les États-Unis sont reconnus et leur territoire s'étend jusqu'au Mississippi (une modification du territoire de l'Amérique du Nord) ou la Province de Québec perd la région au sud des Grands Lacs ou la vallée de l'Ohio.",
     updatedAt: "2026-06-15T12:29:42.033Z"
   },
@@ -22748,37 +14036,18 @@ const QUESTIONS = [
     points: 2,
     soustag: "Changement",
     enonce: "À partir des documents A et B, indiquez un changement dans le territoire de la Province de Québec entre 1774 et 1783.",
-    aspects: [
-      {
-        aspect: "Invasion américaine"
-      }
-    ],
+    aspects: [{aspect: "Invasion américaine"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_acte_quebec_1774.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_acte_quebec_1774.png", source: "Récitus."}]
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            ref: "carte_province_quebec_1783.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document B", ref: "carte_province_quebec_1783.png", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Il y a changement, car en 1783, la Province de Québec perd la vallée de l'Ohio ou le territoire situé au sud des Grands Lacs.",
     updatedAt: "2026-06-07T17:39:22.175Z"
   },
@@ -22790,11 +14059,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence du Traité de Paris de 1783 sur le territoire de la Province de Québec.",
-    aspects: [
-      {
-        aspect: "Invasion américaine"
-      }
-    ],
+    aspects: [{aspect: "Invasion américaine"}],
     documents: [
       {
         type: "textes",
@@ -22807,10 +14072,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "La Province de Québec perd la vallée de l'Ohio ou la Province de Québec perd le territoire situé au sud des Grands Lacs ou une partie du territoire de la Province de Québec est intégrée aux États-Unis.",
     updatedAt: "2026-06-07T17:41:04.701Z"
   },
@@ -22821,11 +14083,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Indiquez le nom des mesures adoptées par le Parlement britannique en 1774 à la suite des événements survenus lors du Boston Tea Party.",
-    aspects: [
-      {
-        aspect: "Invasion américaine"
-      }
-    ],
+    aspects: [{aspect: "Invasion américaine"}],
     documents: [
       {
         type: "textes",
@@ -22838,10 +14096,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Les Lois intolérables.",
     updatedAt: "2026-06-07T17:50:44.295Z"
   },
@@ -22852,11 +14107,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Indiquez le nom du nouveau pays reconnu par la Grande-Bretagne à la suite du traité de Paris de 1783.",
-    aspects: [
-      {
-        aspect: "Invasion américaine"
-      }
-    ],
+    aspects: [{aspect: "Invasion américaine"}],
     documents: [
       {
         type: "textes",
@@ -22869,10 +14120,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Les États-Unis.",
     updatedAt: "2026-06-07T19:56:02.272Z"
   },
@@ -22883,11 +14131,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Indiquez le nom du document adopté par les représentants des Treize colonies le 4 juillet 1776 pour proclamer leur indépendance.",
-    aspects: [
-      {
-        aspect: "Invasion américaine"
-      }
-    ],
+    aspects: [{aspect: "Invasion américaine"}],
     documents: [
       {
         type: "textes",
@@ -22900,10 +14144,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "La Déclaration d'indépendance des États-Unis",
     updatedAt: "2026-06-07T20:03:49.852Z"
   },
@@ -22914,14 +14155,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 3,
     enonce: "Expliquez comment l'issue de la guerre d'Indépendance des États-Unis entraîne la migration de populations britanniques vers la Province de Québec.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• l'issue de la guerre d'Indépendance des États-Unis\n• un groupe britannique qui demeure fidèle à la Couronne\n• une région qui accueille les migrants",
-    aspects: [
-      {
-        aspect: "Invasion américaine"
-      },
-      {
-        aspect: "Loyalistes"
-      }
-    ],
+    aspects: [{aspect: "Invasion américaine"}, {aspect: "Loyalistes"}],
     documents: [
       {
         type: "textes",
@@ -22945,19 +14179,10 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document C",
-            ref: "carte_migration_loyalistes_1783.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document C", ref: "carte_migration_loyalistes_1783.png", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Les États-Unis obtiennent leur indépendance (l'issue de la guerre d'Indépendance des États-Unis). Des Loyalistes, demeurés fidèles à la Couronne britannique (un groupe britannique qui demeure fidèle à la Couronne), quittent les États-Unis et s'établissent notamment en Gaspésie ou en Estrie (une région qui accueille les migrants).",
     updatedAt: "2026-06-15T12:29:20.861Z"
   },
@@ -22968,11 +14193,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Indiquez le nom du groupe demeuré fidèle à la Couronne britannique à la suite de la guerre d'Indépendance des États-Unis.",
-    aspects: [
-      {
-        aspect: "Loyalistes"
-      }
-    ],
+    aspects: [{aspect: "Loyalistes"}],
     documents: [
       {
         type: "textes",
@@ -22985,10 +14206,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Les Loyalistes.",
     updatedAt: "2026-06-07T20:14:54.337Z"
   },
@@ -23000,11 +14218,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux acteurs de l'époque. Sur quel point précis sont-ils d'accord ?",
-    aspects: [
-      {
-        aspect: "Invasion américaine"
-      }
-    ],
+    aspects: [{aspect: "Invasion américaine"}],
     documents: [
       {
         type: "textes",
@@ -23029,10 +14243,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les deux acteurs souhaitent que les Canadiens demeurent neutres dans le conflit entre la Grande-Bretagne et les Treize colonies ou les deux acteurs encouragent les Canadiens à ne pas se joindre aux rebelles américains.",
     updatedAt: "2026-06-08T00:18:32.954Z"
   },
@@ -23044,11 +14255,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Position – 3 acteurs",
     enonce: "Les documents A à C présentent la position de trois acteurs concernant l'attitude que les Canadiens devraient adopter face à la Révolution américaine.\n\nNommez l'acteur qui présente une position différente et comparez cette position à celle des deux autres acteurs.",
-    aspects: [
-      {
-        aspect: "Invasion américaine"
-      }
-    ],
+    aspects: [{aspect: "Invasion américaine"}],
     documents: [
       {
         type: "textes",
@@ -23096,11 +14303,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "2 documents",
     enonce: "Les documents A et B présentent deux événements liés à l'invasion américaine de 1775. Associez chaque document à l'événement correspondant.",
-    aspects: [
-      {
-        aspect: "Invasion américaine"
-      }
-    ],
+    aspects: [{aspect: "Invasion américaine"}],
     documents: [
       {
         type: "textes",
@@ -23125,22 +14328,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Ville assiégée (Québec)",
-        "Ville occupée (Montréal)"
-      ]
+      elements: ["Ville assiégée (Québec)", "Ville occupée (Montréal)"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Ville assiégée (Québec)",
-        "Ville occupée (Montréal)"
-      ],
+      entetes: ["Ville assiégée (Québec)", "Ville occupée (Montréal)"],
       rangees: [
-        [
-          "B",
-          "A"
-        ]
+        ["B", "A"]
       ]
     },
     updatedAt: "2026-06-08T00:22:10.772Z"
@@ -23153,11 +14347,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence du traité de Paris de 1783 sur certaines populations autochtones alliées aux Britanniques.",
-    aspects: [
-      {
-        aspect: "Invasion américaine"
-      }
-    ],
+    aspects: [{aspect: "Invasion américaine"}],
     documents: [
       {
         type: "textes",
@@ -23170,10 +14360,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Migration de certaines populations autochtones vers les territoires britanniques ou déplacement vers la Province de Québec.",
     updatedAt: "2026-06-08T00:25:41.493Z"
   },
@@ -23184,11 +14371,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Indiquez le nom de la politique économique appliquée par la Grande-Bretagne dans ses colonies au XVIIIe siècle.",
-    aspects: [
-      {
-        aspect: "Économie coloniale"
-      }
-    ],
+    aspects: [{aspect: "Économie coloniale"}],
     documents: [
       {
         type: "textes",
@@ -23201,10 +14384,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le mercantilisme.",
     updatedAt: "2026-06-08T11:39:02.382Z"
   },
@@ -23216,11 +14396,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause et conséquence",
     enonce: "Indiquez le document qui présente une cause et le document qui présente une conséquence de l'application du mercantilisme dans la Province de Québec vers 1780.",
-    aspects: [
-      {
-        aspect: "Économie coloniale"
-      }
-    ],
+    aspects: [{aspect: "Économie coloniale"}],
     documents: [
       {
         type: "textes",
@@ -23243,20 +14419,12 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "cause-consequence"
-    },
+    reponse: {type: "cause-consequence"},
     guide: {
       type: "grille",
-      entetes: [
-        "Cause",
-        "Conséquence"
-      ],
+      entetes: ["Cause", "Conséquence"],
       rangees: [
-        [
-          "A",
-          "B"
-        ]
+        ["A", "B"]
       ]
     },
     updatedAt: "2026-06-08T03:56:50.847Z"
@@ -23268,11 +14436,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 3,
     enonce: "Expliquez comment la politique économique de la Grande-Bretagne influence les échanges commerciaux dans la Province de Québec vers 1780.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• le nom de cette politique économique\n• un objectif poursuivi par la métropole\n• une conséquence sur les échanges commerciaux de la Province de Québec",
-    aspects: [
-      {
-        aspect: "Économie coloniale"
-      }
-    ],
+    aspects: [{aspect: "Économie coloniale"}],
     documents: [
       {
         type: "textes",
@@ -23305,10 +14469,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "La Grande-Bretagne applique le mercantilisme (le nom de cette politique économique). Cette politique vise à enrichir la métropole en tirant profit de ses colonies (un objectif poursuivi par la métropole). Par conséquent, la Province de Québec exporte principalement des matières premières vers la Grande-Bretagne et importe des produits manufacturés britanniques (une conséquence sur les échanges commerciaux de la Province de Québec).",
     updatedAt: "2026-06-15T12:28:59.518Z"
   },
@@ -23320,11 +14481,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir des documents A et B, indiquez s'il y a changement ou continuité dans le contrôle du commerce de la colonie entre 1750 et 1775. Justifiez votre réponse par des faits et un repère de temps.",
-    aspects: [
-      {
-        aspect: "Économie coloniale"
-      }
-    ],
+    aspects: [{aspect: "Économie coloniale"}],
     documents: [
       {
         type: "textes",
@@ -23347,10 +14504,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Changement\nIl y a changement, car vers 1750 le commerce est principalement contrôlé par des marchands français, alors qu'en 1775 il est principalement contrôlé par des marchands britanniques.\n\nContinuité\nIl y a continuité, car vers 1750 comme vers 1775, le commerce de la colonie est contrôlé par des marchands européens ou Il y a continuité, car vers 1750 comme vers 1775, des marchands contrôlent les activités commerciales de la colonie.",
     updatedAt: "2026-06-08T11:54:41.618Z"
   },
@@ -23362,11 +14516,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Changement",
     enonce: "Indiquez un changement dans les activités commerciales de la colonie après la Conquête.",
-    aspects: [
-      {
-        aspect: "Économie coloniale"
-      }
-    ],
+    aspects: [{aspect: "Économie coloniale"}],
     documents: [
       {
         type: "textes",
@@ -23379,10 +14529,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les marchands britanniques prennent progressivement le contrôle du commerce de la colonie.",
     updatedAt: "2026-06-08T12:13:20.468Z"
   },
@@ -23393,11 +14540,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 3,
     enonce: "Expliquez comment l'issue de la guerre de la Conquête entraîne un changement du contrôle du commerce colonial.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• l'issue de la guerre de la Conquête\n• un changement dans le groupe de marchands dominant le commerce\n• une conséquence sur l'économie coloniale",
-    aspects: [
-      {
-        aspect: "Économie coloniale"
-      }
-    ],
+    aspects: [{aspect: "Économie coloniale"}],
     documents: [
       {
         type: "textes",
@@ -23430,10 +14573,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "La guerre de la Conquête se termine par la victoire britannique ou la cession de la colonie à la Grande-Bretagne (l'issue de la guerre de la Conquête). Après 1760, les marchands britanniques remplacent progressivement les marchands français dans les activités commerciales (un changement dans le groupe de marchands dominant le commerce). Par conséquent, le commerce de la colonie est davantage orienté vers l'Empire britannique (une conséquence sur l'économie coloniale).",
     updatedAt: "2026-06-15T12:28:32.912Z"
   },
@@ -23444,11 +14584,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Indiquez la principale activité économique pratiquée par la majorité des habitants de la Province de Québec vers 1780.",
-    aspects: [
-      {
-        aspect: "Économie coloniale"
-      }
-    ],
+    aspects: [{aspect: "Économie coloniale"}],
     documents: [
       {
         type: "textes",
@@ -23461,10 +14597,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "L'agriculture.",
     updatedAt: "2026-06-08T12:23:18.955Z"
   },
@@ -23476,11 +14609,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence de l'augmentation de la production de blé dans la Province de Québec au XVIIIe siècle.",
-    aspects: [
-      {
-        aspect: "Économie coloniale"
-      }
-    ],
+    aspects: [{aspect: "Économie coloniale"}],
     documents: [
       {
         type: "textes",
@@ -23494,10 +14623,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "L'augmentation des surplus agricoles ou l'augmentation des exportations de blé.",
     updatedAt: "2026-06-08T12:38:17.314Z"
   },
@@ -23508,11 +14634,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Indiquez un groupe d'immigrants britanniques qui s'établit dans la Province de Québec après 1760.",
-    aspects: [
-      {
-        aspect: "Situation sociodémographique"
-      }
-    ],
+    aspects: [{aspect: "Situation sociodémographique"}],
     documents: [
       {
         type: "textes",
@@ -23525,10 +14647,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Les marchands britanniques ou les soldats britanniques démobilisés.",
     updatedAt: "2026-06-08T13:23:05.173Z"
   },
@@ -23539,11 +14658,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Indiquez le nom du groupe de population qui revient s'établir dans la Province de Québec après la Déportation.",
-    aspects: [
-      {
-        aspect: "Situation sociodémographique"
-      }
-    ],
+    aspects: [{aspect: "Situation sociodémographique"}],
     documents: [
       {
         type: "textes",
@@ -23556,10 +14671,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Les Acadiens.",
     updatedAt: "2026-06-08T13:24:21.093Z"
   },
@@ -23570,11 +14682,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Indiquez le principal groupe composant la population de la Province de Québec vers 1790.",
-    aspects: [
-      {
-        aspect: "Situation sociodémographique"
-      }
-    ],
+    aspects: [{aspect: "Situation sociodémographique"}],
     documents: [
       {
         type: "textes",
@@ -23588,10 +14696,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Les Canadiens ou les Canadiens francophones.",
     updatedAt: "2026-06-12T01:26:59.447Z"
   },
@@ -23602,11 +14707,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Indiquez la langue parlée par la majorité de la population de la Province de Québec vers 1790.",
-    aspects: [
-      {
-        aspect: "Situation sociodémographique"
-      }
-    ],
+    aspects: [{aspect: "Situation sociodémographique"}],
     documents: [
       {
         type: "textes",
@@ -23620,10 +14721,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le français.",
     updatedAt: "2026-06-08T13:37:42.803Z"
   },
@@ -23634,11 +14732,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Indiquez le phénomène démographique responsable de l'augmentation de la population canadienne après la Conquête.",
-    aspects: [
-      {
-        aspect: "Situation sociodémographique"
-      }
-    ],
+    aspects: [{aspect: "Situation sociodémographique"}],
     documents: [
       {
         type: "textes",
@@ -23651,10 +14745,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "L'accroissement naturel",
     updatedAt: "2026-06-08T13:39:59.026Z"
   },
@@ -23665,11 +14756,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     enonce: "Indiquez une profession exercée par la bourgeoisie professionnelle canadienne.",
-    aspects: [
-      {
-        aspect: "Situation sociodémographique"
-      }
-    ],
+    aspects: [{aspect: "Situation sociodémographique"}],
     documents: [
       {
         type: "textes",
@@ -23683,10 +14770,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Notaire ou avocat ou médecin.",
     updatedAt: "2026-06-08T13:43:04.698Z"
   },
@@ -23698,11 +14782,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une raison qui explique l'arrivée de Britanniques dans la Province de Québec après 1763.",
-    aspects: [
-      {
-        aspect: "Situation sociodémographique"
-      }
-    ],
+    aspects: [{aspect: "Situation sociodémographique"}],
     documents: [
       {
         type: "textes",
@@ -23715,10 +14795,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "La Province de Québec devient une colonie britannique.",
     updatedAt: "2026-06-08T13:55:22.741Z"
   },
@@ -23730,11 +14807,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux historiens sur l'évolution démographique de la Province de Québec. Sur quel point précis ces historiens sont-ils d'accord ?",
-    aspects: [
-      {
-        aspect: "Situation sociodémographique"
-      }
-    ],
+    aspects: [{aspect: "Situation sociodémographique"}],
     documents: [
       {
         type: "textes",
@@ -23757,10 +14830,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les deux historiens sont d'accord pour dire que la population canadienne augmente rapidement grâce à l'accroissement naturel.",
     updatedAt: "2026-06-08T13:59:39.248Z"
   },
@@ -23772,11 +14842,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause et conséquence",
     enonce: "À partir des documents A et B, indiquez une cause et une conséquence de l'accroissement naturel des Canadiens dans la Province de Québec.",
-    aspects: [
-      {
-        aspect: "Situation sociodémographique"
-      }
-    ],
+    aspects: [{aspect: "Situation sociodémographique"}],
     documents: [
       {
         type: "textes",
@@ -23799,20 +14865,12 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "cause-consequence"
-    },
+    reponse: {type: "cause-consequence"},
     guide: {
       type: "grille",
-      entetes: [
-        "Cause",
-        "Conséquence"
-      ],
+      entetes: ["Cause", "Conséquence"],
       rangees: [
-        [
-          "A",
-          "B"
-        ]
+        ["A", "B"]
       ]
     },
     updatedAt: "2026-06-08T14:02:38.890Z"
@@ -23825,11 +14883,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Divergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux historiens sur les réfugiés acadiens dans la Province de Québec. Sur quel point précis ces historiens sont-ils en désaccord ?",
-    aspects: [
-      {
-        aspect: "Situation sociodémographique"
-      }
-    ],
+    aspects: [{aspect: "Situation sociodémographique"}],
     documents: [
       {
         type: "textes",
@@ -23852,10 +14906,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les historiens sont en désaccord sur l'importance du rôle joué par les réfugiés acadiens dans le peuplement de la Province de Québec.",
     updatedAt: "2026-06-08T14:04:56.438Z"
   },
@@ -23867,11 +14918,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence de l'arrivée d'immigrants britanniques sur les lieux de culte de la colonie.",
-    aspects: [
-      {
-        aspect: "Église anglicane"
-      }
-    ],
+    aspects: [{aspect: "Église anglicane"}],
     documents: [
       {
         type: "textes",
@@ -23885,10 +14932,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "La construction d'églises anglicanes.",
     updatedAt: "2026-06-08T14:21:37.586Z"
   },
@@ -23900,14 +14944,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Différence",
     enonce: "À partir des documents A et B, indiquez une différence entre les écoles catholiques et les écoles anglicanes dans la Province de Québec vers 1790.",
-    aspects: [
-      {
-        aspect: "Église anglicane"
-      },
-      {
-        aspect: "Église catholique"
-      }
-    ],
+    aspects: [{aspect: "Église anglicane"}, {aspect: "Église catholique"}],
     documents: [
       {
         type: "textes",
@@ -23930,10 +14967,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les écoles catholiques sont dirigées par l'Église catholique ou des communautés religieuses catholiques, tandis que les écoles anglicanes sont dirigées par l'Église anglicane.",
     updatedAt: "2026-06-08T14:14:19.061Z"
   },
@@ -23945,14 +14979,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir des documents A et B, indiquez s'il y a changement ou continuité dans la présence des institutions religieuses dans la colonie entre 1750 et 1790. Justifiez votre réponse par des faits et un repère de temps.",
-    aspects: [
-      {
-        aspect: "Église anglicane"
-      },
-      {
-        aspect: "Église catholique"
-      }
-    ],
+    aspects: [{aspect: "Église anglicane"}, {aspect: "Église catholique"}],
     documents: [
       {
         type: "textes",
@@ -23976,10 +15003,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Changement\nIl y a changement, car vers 1790 des institutions de l'Église anglicane sont présentes dans la colonie alors qu'en 1750 les institutions religieuses sont principalement catholiques.\n\nContinuité\nIl y a continuité, car en 1750 comme en 1790, des institutions religieuses jouent un rôle important dans l'enseignement (ou les soins aux malades) dans la colonie.",
     updatedAt: "2026-06-08T15:11:10.844Z"
   },
@@ -23991,14 +15015,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir des documents A et B, indiquez s'il y a changement ou continuité dans la diversité des groupes religieux présents dans la colonie entre 1750 et 1790. Justifiez votre réponse par des faits et un repère de temps.",
-    aspects: [
-      {
-        aspect: "Église anglicane"
-      },
-      {
-        aspect: "Église catholique"
-      }
-    ],
+    aspects: [{aspect: "Église anglicane"}, {aspect: "Église catholique"}],
     documents: [
       {
         type: "textes",
@@ -24022,10 +15039,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Changement\nIl y a changement, car en 1750 les institutions religieuses présentes dans la colonie sont principalement catholiques, tandis qu'en 1790 des institutions religieuses britanniques (ou anglicanes) sont également présentes.\n\n\nContinuité\nIl y a continuité, car en 1750 comme en 1790, l'Église catholique est présente dans la colonie.",
     updatedAt: "2026-06-08T14:20:42.537Z"
   },
@@ -24037,11 +15051,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Position – 3 acteurs",
     enonce: "Les documents A à C présentent la position de trois acteurs sur un enjeu de la vie religieuse vers les années 1790. Nommez l’acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
-    aspects: [
-      {
-        aspect: "Situation sociodémographique"
-      }
-    ],
+    aspects: [{aspect: "Situation sociodémographique"}],
     documents: [
       {
         type: "textes",
@@ -24077,10 +15087,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Lymburner (marchand britannique) affirme que l’Église anglicane devrait occuper une place plus importante dans la colonie alors que Briand (évêque catholique) et Haldimand (gouverneur) appuient le maintien des institutions catholiques.",
     updatedAt: "2026-06-08T14:31:21.622Z"
   },
@@ -24091,11 +15098,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 3,
     enonce: "Expliquez comment les familles canadiennes contribue à l'expansion du territoire occupé dans la Province de Québec vers 1790.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une caractéristique des familles canadiennes\n• une transformation démographique\n• un effet sur l'occupation du territoire",
-    aspects: [
-      {
-        aspect: "Situation sociodémographique"
-      }
-    ],
+    aspects: [{aspect: "Situation sociodémographique"}],
     documents: [
       {
         type: "textes",
@@ -24128,10 +15131,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Les familles canadiennes comptent souvent plusieurs enfants (caractéristique des familles canadiennes), ce qui entraîne une augmentation de la population (transformation démographique). Cette croissance démographique favorise le défrichement de nouvelles terres et l'expansion du territoire occupé (effet sur l'occupation du territoire).",
     updatedAt: "2026-06-15T12:27:43.650Z"
   },
@@ -24142,11 +15142,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 3,
     enonce: "Expliquez comment l'immigration britannique transforme la population de la Province de Québec vers 1790.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un groupe d'immigrants britanniques\n• une transformation démographique\n• un effet sur la composition de la population",
-    aspects: [
-      {
-        aspect: "Situation sociodémographique"
-      }
-    ],
+    aspects: [{aspect: "Situation sociodémographique"}],
     documents: [
       {
         type: "textes",
@@ -24180,10 +15176,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Des marchands, fonctionnaires ou anciens militaires britanniques s'établissent dans la colonie (groupe d'immigrants britanniques). Leur arrivée augmente la proportion d'habitants d'origine britannique (transformation démographique). La composition de la population devient plus diversifiée (effet sur la composition de la population).",
     updatedAt: "2026-06-15T12:27:18.374Z"
   },
@@ -24195,11 +15188,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Acte constitutionnel"
-      }
-    ],
+    aspects: [{aspect: "Acte constitutionnel"}],
     documents: [
       {
         type: "textes",
@@ -24213,10 +15202,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1790-1850.png"
-    },
+    reponse: {type: "image", ref: "ligne_1790-1850.png"},
     guide: "A",
     updatedAt: "2026-06-09T00:35:03.978Z"
   },
@@ -24228,11 +15214,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Commerce du bois"
-      }
-    ],
+    aspects: [{aspect: "Commerce du bois"}],
     documents: [
       {
         type: "textes",
@@ -24246,10 +15228,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1790-1850.png"
-    },
+    reponse: {type: "image", ref: "ligne_1790-1850.png"},
     guide: "B",
     updatedAt: "2026-06-09T00:36:24.268Z"
   },
@@ -24261,11 +15240,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Guerre anglo-américaine de 1812"
-      }
-    ],
+    aspects: [{aspect: "Guerre anglo-américaine de 1812"}],
     documents: [
       {
         type: "textes",
@@ -24279,10 +15254,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1790-1850.png"
-    },
+    reponse: {type: "image", ref: "ligne_1790-1850.png"},
     guide: "B",
     updatedAt: "2026-06-09T00:39:05.263Z"
   },
@@ -24294,11 +15266,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Capitaux et infrastructures"
-      }
-    ],
+    aspects: [{aspect: "Capitaux et infrastructures"}],
     documents: [
       {
         type: "textes",
@@ -24312,10 +15280,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1790-1850.png"
-    },
+    reponse: {type: "image", ref: "ligne_1790-1850.png"},
     guide: "C",
     updatedAt: "2026-06-16T00:37:02.022Z"
   },
@@ -24327,14 +15292,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Débats parlementaires"
-      },
-      {
-        aspect: "Idées libérales et républicaines"
-      }
-    ],
+    aspects: [{aspect: "Débats parlementaires"}, {aspect: "Idées libérales et républicaines"}],
     documents: [
       {
         type: "textes",
@@ -24348,10 +15306,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1790-1850.png"
-    },
+    reponse: {type: "image", ref: "ligne_1790-1850.png"},
     guide: "C",
     updatedAt: "2026-06-09T00:41:51.882Z"
   },
@@ -24363,11 +15318,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -24381,10 +15332,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1790-1850.png"
-    },
+    reponse: {type: "image", ref: "ligne_1790-1850.png"},
     guide: "C",
     updatedAt: "2026-06-09T00:42:47.579Z"
   },
@@ -24396,11 +15344,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -24414,10 +15358,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1790-1850.png"
-    },
+    reponse: {type: "image", ref: "ligne_1790-1850.png"},
     guide: "D",
     updatedAt: "2026-06-09T00:43:35.190Z"
   },
@@ -24429,11 +15370,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Rapport Durham"
-      }
-    ],
+    aspects: [{aspect: "Rapport Durham"}],
     documents: [
       {
         type: "textes",
@@ -24447,10 +15384,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1790-1850.png"
-    },
+    reponse: {type: "image", ref: "ligne_1790-1850.png"},
     guide: "D",
     updatedAt: "2026-06-09T00:44:16.294Z"
   },
@@ -24462,11 +15396,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Capitaux et infrastructures"
-      }
-    ],
+    aspects: [{aspect: "Capitaux et infrastructures"}],
     documents: [
       {
         type: "textes",
@@ -24480,10 +15410,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1790-1850.png"
-    },
+    reponse: {type: "image", ref: "ligne_1790-1850.png"},
     guide: "B",
     updatedAt: "2026-06-12T16:05:56.441Z"
   },
@@ -24495,11 +15422,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Mouvements migratoires"
-      }
-    ],
+    aspects: [{aspect: "Mouvements migratoires"}],
     documents: [
       {
         type: "textes",
@@ -24513,10 +15436,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1790-1850.png"
-    },
+    reponse: {type: "image", ref: "ligne_1790-1850.png"},
     guide: "C",
     updatedAt: "2026-06-09T00:47:35.589Z"
   },
@@ -24528,11 +15448,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -24546,10 +15462,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1790-1850.png"
-    },
+    reponse: {type: "image", ref: "ligne_1790-1850.png"},
     guide: "D",
     updatedAt: "2026-06-09T00:48:25.135Z"
   },
@@ -24560,11 +15473,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez le continent d'origine des premiers occupants du nord-est de l'Amérique.",
-    aspects: [
-      {
-        aspect: "Premiers occupants du territoire"
-      }
-    ],
+    aspects: [{aspect: "Premiers occupants du territoire"}],
     documents: [
       {
         type: "textes",
@@ -24577,10 +15486,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "L'Asie.",
     updatedAt: "2026-06-09T03:11:53.270Z"
   },
@@ -24591,11 +15497,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez la famille linguistique à laquelle appartiennent les Hurons-Wendat.",
-    aspects: [
-      {
-        aspect: "Premiers occupants du territoire"
-      }
-    ],
+    aspects: [{aspect: "Premiers occupants du territoire"}],
     documents: [
       {
         type: "textes",
@@ -24608,10 +15510,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Famille linguistique iroquoienne.",
     updatedAt: "2026-06-09T03:13:20.440Z"
   },
@@ -24622,11 +15521,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez la famille linguistique à laquelle appartiennent les Innus.",
-    aspects: [
-      {
-        aspect: "Premiers occupants du territoire"
-      }
-    ],
+    aspects: [{aspect: "Premiers occupants du territoire"}],
     documents: [
       {
         type: "textes",
@@ -24639,10 +15534,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Famille linguistique algonquienne.",
     updatedAt: "2026-06-09T03:16:19.575Z"
   },
@@ -24653,11 +15545,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez le mode de vie généralement adopté par les Iroquoiens vers 1500.",
-    aspects: [
-      {
-        aspect: "Premiers occupants du territoire"
-      }
-    ],
+    aspects: [{aspect: "Premiers occupants du territoire"}],
     documents: [
       {
         type: "textes",
@@ -24670,10 +15558,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Les Iroquoiens ont un mode de vie sédentaire.",
     updatedAt: "2026-06-09T03:21:05.717Z"
   },
@@ -24684,11 +15569,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez le mode de vie généralement adopté par les Algonquiens vers 1500.",
-    aspects: [
-      {
-        aspect: "Premiers occupants du territoire"
-      }
-    ],
+    aspects: [{aspect: "Premiers occupants du territoire"}],
     documents: [
       {
         type: "textes",
@@ -24701,10 +15582,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Les Algonquiens ont un mode de vie nomade.",
     updatedAt: "2026-06-09T03:24:57.996Z"
   },
@@ -24716,11 +15594,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "2 documents",
     enonce: "Les documents A et B présentent des caractéristiques de l’organisation sociale de sociétés autochtones vers 1500. Associez chaque document au type de structure sociale correspondant.",
-    aspects: [
-      {
-        aspect: "Rapports sociaux chez les Autochtones"
-      }
-    ],
+    aspects: [{aspect: "Rapports sociaux chez les Autochtones"}],
     documents: [
       {
         type: "textes",
@@ -24745,22 +15619,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Société matrilinéaire",
-        "Société patrilinéaire"
-      ]
+      elements: ["Société matrilinéaire", "Société patrilinéaire"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Société matrilinéaire",
-        "Société patrilinéaire"
-      ],
+      entetes: ["Société matrilinéaire", "Société patrilinéaire"],
       rangees: [
-        [
-          "A",
-          "B"
-        ]
+        ["A", "B"]
       ]
     },
     updatedAt: "2026-06-09T12:56:39.995Z"
@@ -24772,11 +15637,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez le type de structure sociale généralement associé aux sociétés iroquoiennes vers 1500.",
-    aspects: [
-      {
-        aspect: "Rapports sociaux chez les Autochtones"
-      }
-    ],
+    aspects: [{aspect: "Rapports sociaux chez les Autochtones"}],
     documents: [
       {
         type: "textes",
@@ -24789,10 +15650,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Une structure matrilinéaire.",
     updatedAt: "2026-06-09T13:01:41.823Z"
   },
@@ -24803,11 +15661,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez le type de structure sociale généralement associé aux sociétés algonquiennes vers 1500.",
-    aspects: [
-      {
-        aspect: "Rapports sociaux chez les Autochtones"
-      }
-    ],
+    aspects: [{aspect: "Rapports sociaux chez les Autochtones"}],
     documents: [
       {
         type: "textes",
@@ -24820,10 +15674,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Une structure patrilinéaire.",
     updatedAt: "2026-06-09T13:02:29.886Z"
   },
@@ -24834,11 +15685,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez le nom du personnage qui joue un rôle spirituel important lors des cérémonies ou des rituels chez plusieurs peuples autochtones.",
-    aspects: [
-      {
-        aspect: "Rapports sociaux chez les Autochtones"
-      }
-    ],
+    aspects: [{aspect: "Rapports sociaux chez les Autochtones"}],
     documents: [
       {
         type: "textes",
@@ -24851,10 +15698,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le chaman.",
     updatedAt: "2026-06-09T13:07:09.304Z"
   },
@@ -24865,11 +15709,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez un sort réservé aux prisonniers capturés lors de conflits entre nations autochtones vers 1500.",
-    aspects: [
-      {
-        aspect: "Alliances et rivalités au sein des Premières Nations"
-      }
-    ],
+    aspects: [{aspect: "Alliances et rivalités au sein des Premières Nations"}],
     documents: [
       {
         type: "textes",
@@ -24882,10 +15722,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "L'adoption.",
     updatedAt: "2026-06-09T14:09:09.338Z"
   },
@@ -24896,11 +15733,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez un moyen utilisé par certaines nations autochtones pour défendre leur territoire vers 1500.",
-    aspects: [
-      {
-        aspect: "Alliances et rivalités au sein des Premières Nations"
-      }
-    ],
+    aspects: [{aspect: "Alliances et rivalités au sein des Premières Nations"}],
     documents: [
       {
         type: "textes",
@@ -24913,10 +15746,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "La guerre ou les expéditions guerrières.",
     updatedAt: "2026-06-09T14:15:52.334Z"
   },
@@ -24927,11 +15757,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez le groupe de personnes qui désignent les chefs dans les sociétés iroquoiennes.",
-    aspects: [
-      {
-        aspect: "Prise de décision chez les Autochtones"
-      }
-    ],
+    aspects: [{aspect: "Prise de décision chez les Autochtones"}],
     documents: [
       {
         type: "textes",
@@ -24944,10 +15770,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Les femmes de la commaunauté ou les mères de clan.",
     updatedAt: "2026-06-09T14:28:10.753Z"
   },
@@ -24958,11 +15781,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez un rôle exercé par les aînés dans plusieurs sociétés autochtones vers 1500.",
-    aspects: [
-      {
-        aspect: "Prise de décision chez les Autochtones"
-      }
-    ],
+    aspects: [{aspect: "Prise de décision chez les Autochtones"}],
     documents: [
       {
         type: "textes",
@@ -24975,10 +15794,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Transmettre les connaissances ou les traditions ou les valeurs.",
     updatedAt: "2026-06-09T14:36:44.054Z"
   },
@@ -24989,14 +15805,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 1,
     enonce: "Indiquez le nom du premier gouverneur de la Nouvelle-France.",
-    aspects: [
-      {
-        aspect: "Gouvernement royal"
-      },
-      {
-        aspect: "Monopole des compagnies"
-      }
-    ],
+    aspects: [{aspect: "Gouvernement royal"}, {aspect: "Monopole des compagnies"}],
     documents: [
       {
         type: "textes",
@@ -25009,10 +15818,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Samuel de Champlain.",
     updatedAt: "2026-06-09T15:09:50.360Z"
   },
@@ -25023,11 +15829,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 1,
     enonce: "Indiquez le nom du premier intendant de la Nouvelle-France.",
-    aspects: [
-      {
-        aspect: "Gouvernement royal"
-      }
-    ],
+    aspects: [{aspect: "Gouvernement royal"}],
     documents: [
       {
         type: "textes",
@@ -25040,10 +15842,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Jean Talon.",
     updatedAt: "2026-06-09T15:14:15.470Z"
   },
@@ -25054,14 +15853,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 1,
     enonce: "Indiquez le nom du premier évêque de la Nouvelle-France.",
-    aspects: [
-      {
-        aspect: "Église catholique"
-      },
-      {
-        aspect: "Gouvernement royal"
-      }
-    ],
+    aspects: [{aspect: "Église catholique"}, {aspect: "Gouvernement royal"}],
     documents: [
       {
         type: "textes",
@@ -25074,10 +15866,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "François de Montmorency-Laval ou Monseigneur de Laval.",
     updatedAt: "2026-06-09T15:18:51.495Z"
   },
@@ -25089,11 +15878,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une raison qui pousse le roi de France à instaurer le Conseil souverain en 1663.",
-    aspects: [
-      {
-        aspect: "Gouvernement royal"
-      }
-    ],
+    aspects: [{aspect: "Gouvernement royal"}],
     documents: [
       {
         type: "textes",
@@ -25106,10 +15891,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Mieux administrer la colonie ou exercer un contrôle plus direct sur la colonie ou instaurer le gouvernement royal ou la mauvaise administration de la colonie.",
     updatedAt: "2026-06-09T15:26:55.277Z"
   },
@@ -25121,11 +15903,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité dans l’organisation politique de la colonie entre 1774 et 1791. Justifiez votre choix par des faits et un repère de temps.",
-    aspects: [
-      {
-        aspect: "Acte constitutionnel"
-      }
-    ],
+    aspects: [{aspect: "Acte constitutionnel"}],
     documents: [
       {
         type: "textes",
@@ -25150,10 +15928,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Changement\nIl y a changement, car en 1791, l’Acte constitutionnel crée une Chambre d’assemblée élue par la population et divise la colonie en Haut-Canada et Bas-Canada, alors qu’en 1774, la Province de Québec ne possède pas de Chambre d’assemblée et forme une seule colonie.\n\nou \n\nIl y a changement, car en 1791, chaque colonie possède une Chambre d’assemblée élue, tandis qu’en 1774, le gouverneur dirige avec le Conseil exécutif et le Conseil législatif sans assemblée élue.\n\nContinuité\nIl y a continuité, car en 1774 comme en 1791, le gouverneur demeure nommé par les autorités britanniques et conserve un rôle important dans l'administration de la colonie.",
     updatedAt: "2026-06-12T12:02:01.545Z"
   },
@@ -25165,11 +15940,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Changement",
     enonce: "À partir des documents A et B, indiquez un changement concernant la représentation politique de la population entre 1774 et 1791.",
-    aspects: [
-      {
-        aspect: "Acte constitutionnel"
-      }
-    ],
+    aspects: [{aspect: "Acte constitutionnel"}],
     documents: [
       {
         type: "textes",
@@ -25194,10 +15965,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Entre 1774 et 1791, la population obtient des représentants élus grâce à la création d'une Chambre d'assemblée dans le Bas-Canada et le Haut-Canada.\n\nou\n\nEn 1791, la population peut élire des députés à la Chambre d'assemblée, alors qu'en 1774 elle ne participe pas à l'élection d'une institution politique.",
     updatedAt: "2026-06-12T12:07:24.684Z"
   },
@@ -25208,11 +15976,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez le nom de l’institution composée de députés élus créée par l’Acte constitutionnel.",
-    aspects: [
-      {
-        aspect: "Acte constitutionnel"
-      }
-    ],
+    aspects: [{aspect: "Acte constitutionnel"}],
     documents: [
       {
         type: "textes",
@@ -25226,10 +15990,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Chambre d'assemblée ou assemblée législative.",
     updatedAt: "2026-06-12T12:02:29.636Z"
   },
@@ -25240,21 +16001,11 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     enonce: "Indiquez un changement apporté au territoire de la Province de Québec par l’Acte constitutionnel de 1791.",
-    aspects: [
-      {
-        aspect: "Acte constitutionnel"
-      }
-    ],
+    aspects: [{aspect: "Acte constitutionnel"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_province_quebec_1783.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_province_quebec_1783.png", source: "Récitus."}]
       },
       {
         type: "textes",
@@ -25268,10 +16019,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "La Province de Québec est divisée en Haut-Canada et Bas-Canada ou création du Haut-Canada ou création du Bas-Canada ou le territoire de la colonie est partagé en deux colonies distinctes.",
     updatedAt: "2026-06-09T18:46:14.794Z"
   },
@@ -25283,11 +16031,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Différence",
     enonce: "Indiquez une différence entre le Conseil législatif et le Conseil exécutif.",
-    aspects: [
-      {
-        aspect: "Acte constitutionnel"
-      }
-    ],
+    aspects: [{aspect: "Acte constitutionnel"}],
     documents: [
       {
         type: "textes",
@@ -25310,10 +16054,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le Conseil législatif examine les projets de loi, tandis que le Conseil exécutif conseille le gouverneur dans l'administration de la colonie.",
     updatedAt: "2026-06-09T18:59:09.075Z"
   },
@@ -25324,11 +16065,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez une condition nécessaire pour exercer le droit de vote dans le Bas-Canada après 1791.",
-    aspects: [
-      {
-        aspect: "Acte constitutionnel"
-      }
-    ],
+    aspects: [{aspect: "Acte constitutionnel"}],
     documents: [
       {
         type: "textes",
@@ -25341,10 +16078,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Posséder une propriétéou répondre à une exigence de propriété foncière ou être propriétaire d'un bien d'une certaine valeur.",
     updatedAt: "2026-06-09T19:01:10.952Z"
   },
@@ -25356,11 +16090,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Divergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux acteurs sur le droit de vote des femmes dans le Bas-Canada. Sur quel point précis sont-ils en désaccord ?",
-    aspects: [
-      {
-        aspect: "Acte constitutionnel"
-      }
-    ],
+    aspects: [{aspect: "Acte constitutionnel"}],
     documents: [
       {
         type: "textes",
@@ -25383,10 +16113,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les deux acteurs sont en désaccord sur le droit de vote des femmes ou un acteur est favorable au droit de vote des femmes, tandis que l'autre y est opposé.",
     updatedAt: "2026-06-09T19:03:56.320Z"
   },
@@ -25398,11 +16125,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Position – 3 acteurs",
     enonce: "Les documents A à C présentent le point de vue de trois acteurs sur le droit de vote des femmes dans le Bas-Canada. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
-    aspects: [
-      {
-        aspect: "Acte constitutionnel"
-      }
-    ],
+    aspects: [{aspect: "Acte constitutionnel"}],
     documents: [
       {
         type: "textes",
@@ -25438,10 +16161,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Denis-Benjamin Viger présente une position différente. Il est opposé au droit de vote des femmes, tandis que Louis-Joseph Papineau et John Neilson sont favorables au maintien de ce droit pour les femmes qui remplissent les conditions prévues par la loi.",
     updatedAt: "2026-06-09T19:06:38.560Z"
   },
@@ -25453,11 +16173,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une cause de la création de la Chambre d’assemblée par l’Acte constitutionnel de 1791.",
-    aspects: [
-      {
-        aspect: "Acte constitutionnel"
-      }
-    ],
+    aspects: [{aspect: "Acte constitutionnel"}],
     documents: [
       {
         type: "textes",
@@ -25470,10 +16186,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les Loyalistes veulent des institutions politiques semblables à celles des anciennes colonies britanniques ou les nouveaux arrivants réclament une assemblée élue.",
     updatedAt: "2026-06-09T19:09:15.453Z"
   },
@@ -25484,11 +16197,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 3,
     enonce: "Expliquez comment la constitution mise en place par les autorités britanniques en 1791 favorise la participation politique de la population.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• le nom de cette constitution\n• une institution politique créée par cette constitution\n• une conséquence sur la représentation politique de la population",
-    aspects: [
-      {
-        aspect: "Acte constitutionnel"
-      }
-    ],
+    aspects: [{aspect: "Acte constitutionnel"}],
     documents: [
       {
         type: "textes",
@@ -25523,10 +16232,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "L'Acte constitutionnel de 1791 permet l'élection d'une Chambre d'assemblée (nom de la constitution, institution politique créée par cette constitution). Une partie de la population peut alors choisir des députés, ce qui augmente sa représentation politique (conséquence sur la représentation politique de la population).",
     updatedAt: "2026-06-15T12:24:21.488Z"
   },
@@ -25538,11 +16244,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence du pouvoir du gouverneur sur les décisions prises par la Chambre d’assemblée.",
-    aspects: [
-      {
-        aspect: "Débats parlementaires"
-      }
-    ],
+    aspects: [{aspect: "Débats parlementaires"}],
     documents: [
       {
         type: "textes",
@@ -25555,10 +16257,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le gouverneur dispose d'un droit de veto ou le gouverneur peut empêcher l'application d'une loi adoptée par la Chambre d'assemblée.",
     updatedAt: "2026-06-10T01:03:15.389Z"
   },
@@ -25569,11 +16268,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez un pouvoir exercé par le gouverneur dans le Bas-Canada au début du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Débats parlementaires"
-      }
-    ],
+    aspects: [{aspect: "Débats parlementaires"}],
     documents: [
       {
         type: "textes",
@@ -25587,10 +16282,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le gouverneur sanctionne ou refuse les lois ou nomme les membres du Conseil exécutif ou nomme les membres du Conseil législatif ou convoque ou dissout la Chambre d'assemblée ou représente la Couronne britannique ou dirige l'administration de la colonie.",
     updatedAt: "2026-06-12T12:03:00.453Z"
   },
@@ -25602,11 +16294,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Différence",
     enonce: "À partir des documents A et B, indiquez une différence entre les positions du Parti canadien et du Parti bureaucrate au début du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Débats parlementaires"
-      }
-    ],
+    aspects: [{aspect: "Débats parlementaires"}],
     documents: [
       {
         type: "textes",
@@ -25629,10 +16317,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le Parti canadien souhaite accroître le pouvoir des élus, tandis que le Parti bureaucrate appuie davantage l'autorité du gouverneur et des institutions nommées.",
     updatedAt: "2026-06-10T01:07:18.044Z"
   },
@@ -25643,11 +16328,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     enonce: "Les documents A à D font référence aux principaux partis politiques du Bas-Canada au début du XIXe siècle. Inscrivez la lettre de chaque document à l'endroit approprié.",
-    aspects: [
-      {
-        aspect: "Débats parlementaires"
-      }
-    ],
+    aspects: [{aspect: "Débats parlementaires"}],
     documents: [
       {
         type: "textes",
@@ -25692,23 +16373,14 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Parti canadien",
-        "Parti bureaucrate"
-      ],
+      elements: ["Parti canadien", "Parti bureaucrate"],
       double: true
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Parti canadien",
-        "Parti bureaucrate"
-      ],
+      entetes: ["Parti canadien", "Parti bureaucrate"],
       rangees: [
-        [
-          "A et C",
-          "B et D"
-        ]
+        ["A et C", "B et D"]
       ]
     },
     updatedAt: "2026-06-10T01:12:03.569Z"
@@ -25720,11 +16392,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez un sujet débattu à la Chambre d’assemblée du Bas-Canada au début du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Débats parlementaires"
-      }
-    ],
+    aspects: [{aspect: "Débats parlementaires"}],
     documents: [
       {
         type: "textes",
@@ -25738,10 +16406,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le contrôle des finances publiques ou l'utilisation des revenus de la colonie ou le budget de la colonie.",
     updatedAt: "2026-06-10T01:16:31.294Z"
   },
@@ -25753,11 +16418,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "3 documents",
     enonce: "Les documents A à C présentent des sujets débattus à la Chambre d’assemblée du Bas-Canada au début du XIXe siècle. Associez chaque document à l’enjeu politique correspondant.",
-    aspects: [
-      {
-        aspect: "Débats parlementaires"
-      }
-    ],
+    aspects: [{aspect: "Débats parlementaires"}],
     documents: [
       {
         type: "textes",
@@ -25792,25 +16453,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Contrôle des finances publiques",
-        "Pouvoir du gouverneur",
-        "Représentation politique"
-      ]
+      elements: ["Contrôle des finances publiques", "Pouvoir du gouverneur", "Représentation politique"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Contrôle des finances publiques",
-        "Pouvoir du gouverneur",
-        "Représentation politique"
-      ],
+      entetes: ["Contrôle des finances publiques", "Pouvoir du gouverneur", "Représentation politique"],
       rangees: [
-        [
-          "C",
-          "A",
-          "B"
-        ]
+        ["C", "A", "B"]
       ]
     },
     updatedAt: "2026-06-10T01:22:12.195Z"
@@ -25822,14 +16471,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 3,
     enonce: "Expliquez comment le territoire occupé par les Iroquoiens détermine leur mode de vie.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Une particularité du sol dans les basses terres du Saint-Laurent \n• La principale activité de subsistance pratiquée par les Iroquoiens \n• Le mode de vie des Iroquoiens",
-    aspects: [
-      {
-        aspect: "Premiers occupants du territoire"
-      },
-      {
-        aspect: "Réseaux d'échange autochtones"
-      }
-    ],
+    aspects: [{aspect: "Premiers occupants du territoire"}, {aspect: "Réseaux d'échange autochtones"}],
     documents: [
       {
         type: "textes",
@@ -25862,10 +16504,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 5
-    },
+    reponse: {type: "lignes", nombre: 5},
     guide: "Les basses terres du Saint-Laurent possèdent des sols fertiles favorables à l'agriculture (une particularité du sol dans les basses terres du Saint-Laurent). Cette caractéristique permet aux Iroquoiens de cultiver principalement le maïs (la principale activité de subsistance pratiquée par les Iroquoiens). Comme ils produisent leur nourriture au même endroit, ils vivent dans des villages permanents et adoptent un mode de vie sédentaire (le mode de vie des Iroquoiens).",
     updatedAt: "2026-06-10T15:39:45.208Z"
   },
@@ -25876,14 +16515,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 3,
     enonce: "Expliquez comment le territoire occupé par les Algonquiens détermine leur mode de vie.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Une caractéristique du territoire occupé par les Algonquiens\n• La principale activité de subsistance pratiquée par les Algonquiens\n• Le mode de vie des Algonquiens",
-    aspects: [
-      {
-        aspect: "Premiers occupants du territoire"
-      },
-      {
-        aspect: "Réseaux d'échange autochtones"
-      }
-    ],
+    aspects: [{aspect: "Premiers occupants du territoire"}, {aspect: "Réseaux d'échange autochtones"}],
     documents: [
       {
         type: "textes",
@@ -25916,10 +16548,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 5
-    },
+    reponse: {type: "lignes", nombre: 5},
     guide: "Les Algonquiens occupent un territoire forestier dont les sols sont peu favorables à l’agriculture (une caractéristique du territoire occupé par les Algonquiens). Ils pratiquent donc principalement la chasse et la pêche pour se nourrir (la principale activité de subsistance pratiquée par les Algonquiens). Comme les ressources sont dispersées sur le territoire, ils se déplacent selon les saisons et adoptent un mode de vie nomade (le mode de vie des Algonquiens).",
     updatedAt: "2026-06-10T15:55:11.597Z"
   },
@@ -25931,41 +16560,22 @@ const QUESTIONS = [
     points: 2,
     soustag: "Situer 2 éléments",
     enonce: "À partir du document A, indiquez les deux lettres qui correspondent aux principaux lieux d’échanges entre les nations autochtones vers les années 1500.\n\n• le confluent de l’Outaouais\n• le confluent du Saguenay",
-    aspects: [
-      {
-        aspect: "Réseaux d'échange autochtones"
-      }
-    ],
+    aspects: [{aspect: "Réseaux d'échange autochtones"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_lieux_echanges.png",
-            source: "Carte du Québec. Adaptée d'après d-maps.com."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_lieux_echanges.png", source: "Carte du Québec. Adaptée d'après d-maps.com."}]
       }
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Confluent de l'Outaouais",
-        "Confluent du Saguenay"
-      ]
+      elements: ["Confluent de l'Outaouais", "Confluent du Saguenay"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Confluent de l'Outaouais",
-        "Confluent du Saguenay"
-      ],
+      entetes: ["Confluent de l'Outaouais", "Confluent du Saguenay"],
       rangees: [
-        [
-          "A",
-          "C"
-        ]
+        ["A", "C"]
       ]
     },
     updatedAt: "2026-06-10T19:10:40.934Z"
@@ -25978,11 +16588,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "3 documents",
     enonce: "Les documents A à C présentent des aspects des alliances et des rivalités entre les Premières Nations vers 1500. Associez chaque document à l'élément correspondant.",
-    aspects: [
-      {
-        aspect: "Alliances et rivalités au sein des Premières Nations"
-      }
-    ],
+    aspects: [{aspect: "Alliances et rivalités au sein des Premières Nations"}],
     documents: [
       {
         type: "textes",
@@ -26017,25 +16623,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Objets de rivalité",
-        "Système d'alliances",
-        "Sort des prisonniers"
-      ]
+      elements: ["Objets de rivalité", "Système d'alliances", "Sort des prisonniers"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Objets de rivalité",
-        "Système d'alliances",
-        "Sort des prisonniers"
-      ],
+      entetes: ["Objets de rivalité", "Système d'alliances", "Sort des prisonniers"],
       rangees: [
-        [
-          "B",
-          "A",
-          "C"
-        ]
+        ["B", "A", "C"]
       ]
     },
     updatedAt: "2026-06-10T17:23:45.679Z"
@@ -26048,26 +16642,14 @@ const QUESTIONS = [
     points: 1,
     soustag: "Situer 1 élément",
     enonce: "À partir du document A, indiquez la lettre qui correspond à l’endroit où Jacques Cartier prend possession du territoire au nom du roi de France en 1534.",
-    aspects: [
-      {
-        aspect: "Exploration et occupation du territoire par les Français"
-      }
-    ],
+    aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_cartier_1534.png",
-            source: "Carte du Québec. Adaptée d'après d-maps.com."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_cartier_1534.png", source: "Carte du Québec. Adaptée d'après d-maps.com."}]
       }
     ],
-    reponse: {
-      type: "tableau_2col"
-    },
+    reponse: {type: "tableau_2col"},
     guide: "B",
     updatedAt: "2026-06-10T18:59:04.977Z"
   },
@@ -26078,11 +16660,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 3,
     enonce: "Expliquez comment une alliance conclue entre les Français et certaines nations autochtones en 1603 favorise l’occupation du territoire par les Français. \n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux .\n\n• le nom de l'alliance conclue en 1603\n• un avantage procuré aux Français par cette alliance\n• une conséquence sur l'occupation du territoire par les Français",
-    aspects: [
-      {
-        aspect: "Exploration et occupation du territoire par les Français"
-      }
-    ],
+    aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
     documents: [
       {
         type: "textes",
@@ -26115,10 +16693,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 5
-    },
+    reponse: {type: "lignes", nombre: 5},
     guide: "L'alliance franco-amérindienne de 1603 (le nom de l'alliance conclue en 1603) permet aux Français de bénéficier des connaissances du territoire et des voies de circulation transmises par leurs alliés autochtones (un avantage procuré aux Français par cette alliance). Cette aide favorise leur établissement permanent et leur présence dans la vallée du Saint-Laurent (une conséquence sur l'occupation du territoire par les Français).",
     updatedAt: "2026-06-15T12:25:12.611Z"
   },
@@ -26129,11 +16704,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 1,
     enonce: "Indiquez le nom de la première alliance conclue entre les Français et certaines nations autochtones en 1603.",
-    aspects: [
-      {
-        aspect: "Exploration et occupation du territoire par les Français"
-      }
-    ],
+    aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
     documents: [
       {
         type: "textes",
@@ -26146,10 +16717,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "L'alliance franco-amérindienne de 1603",
     updatedAt: "2026-06-10T19:11:19.139Z"
   },
@@ -26161,11 +16729,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Position – 3 acteurs",
     enonce: "Les documents A à C présentent le point de vue de trois historiens sur les conséquences des premiers contacts entre les Autochtones et les Européens. Nommez l'historien qui présente une position différente et comparez sa position à celle des deux autres historiens.",
-    aspects: [
-      {
-        aspect: "Premiers contacts"
-      }
-    ],
+    aspects: [{aspect: "Premiers contacts"}],
     documents: [
       {
         type: "textes",
@@ -26201,10 +16765,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Denys Delâge considère que les premiers contacts entraînent surtout des conséquences négatives pour les Autochtones, alors que Bruce G. Trigger et Alain Beaulieu estiment qu'ils procurent principalement des avantages aux peuples autochtones.",
     updatedAt: "2026-06-10T18:42:16.044Z"
   },
@@ -26216,26 +16777,14 @@ const QUESTIONS = [
     points: 1,
     soustag: "Situer 1 élément",
     enonce: "À partir du document A, indiquez la lettre qui correspond au continent que les Européens tentent de rejoindre en cherchant une nouvelle route maritime à la fin du XVe siècle.",
-    aspects: [
-      {
-        aspect: "Premiers contacts"
-      }
-    ],
+    aspects: [{aspect: "Premiers contacts"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_monde.png",
-            source: "Carte du monde. Adaptée d'après d-maps.com."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_monde.png", source: "Carte du monde. Adaptée d'après d-maps.com."}]
       }
     ],
-    reponse: {
-      type: "tableau_2col"
-    },
+    reponse: {type: "tableau_2col"},
     guide: "D",
     updatedAt: "2026-06-10T18:48:29.025Z"
   },
@@ -26247,26 +16796,14 @@ const QUESTIONS = [
     points: 1,
     soustag: "Situer 1 élément",
     enonce: "À partir du document A, indiquez la lettre qui correspond à la région d'Amérique du Nord explorée par plusieurs Européens au XVIe siècle.",
-    aspects: [
-      {
-        aspect: "Premiers contacts"
-      }
-    ],
+    aspects: [{aspect: "Premiers contacts"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_amerique_nord.png",
-            source: "Carte d'Amérique du Nord. Adaptée d'après d-maps.com."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_amerique_nord.png", source: "Carte d'Amérique du Nord. Adaptée d'après d-maps.com."}]
       }
     ],
-    reponse: {
-      type: "tableau_2col"
-    },
+    reponse: {type: "tableau_2col"},
     guide: "C",
     updatedAt: "2026-06-10T19:04:25.412Z"
   },
@@ -26278,11 +16815,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Situer 1 élément",
     enonce: "À partir du document A, indiquez la lettre qui correspond à la principale région fréquentée par les pêcheurs européens pratiquant la pêche à la morue au XVIe siècle.",
-    aspects: [
-      {
-        aspect: "Premiers contacts"
-      }
-    ],
+    aspects: [{aspect: "Premiers contacts"}],
     documents: [
       {
         type: "textes",
@@ -26295,9 +16828,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "tableau_2col"
-    },
+    reponse: {type: "tableau_2col"},
     guide: "C",
     updatedAt: "2026-06-10T19:09:29.534Z"
   },
@@ -26309,11 +16840,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "3 documents",
     enonce: "Les documents A à C présentent des groupes politiques actifs au Bas-Canada au début du XIXe siècle. Associez chaque document au groupe politique correspondant.",
-    aspects: [
-      {
-        aspect: "Débats parlementaires"
-      }
-    ],
+    aspects: [{aspect: "Débats parlementaires"}],
     documents: [
       {
         type: "textes",
@@ -26348,25 +16875,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Parti bureaucrate",
-        "Parti canadien",
-        "Parti patriote"
-      ]
+      elements: ["Parti bureaucrate", "Parti canadien", "Parti patriote"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Parti bureaucrate",
-        "Parti canadien",
-        "Parti patriote"
-      ],
+      entetes: ["Parti bureaucrate", "Parti canadien", "Parti patriote"],
       rangees: [
-        [
-          "B",
-          "A",
-          "C"
-        ]
+        ["B", "A", "C"]
       ]
     },
     updatedAt: "2026-06-11T00:18:22.681Z"
@@ -26379,11 +16894,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "3 documents",
     enonce: "Les documents A à C présentent des groupes politiques actifs au Bas-Canada au début du XIXe siècle. Associez chaque document au groupe politique correspondant.",
-    aspects: [
-      {
-        aspect: "Débats parlementaires"
-      }
-    ],
+    aspects: [{aspect: "Débats parlementaires"}],
     documents: [
       {
         type: "textes",
@@ -26418,25 +16929,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Parti bureaucrate",
-        "Parti canadien",
-        "Parti patriote"
-      ]
+      elements: ["Parti bureaucrate", "Parti canadien", "Parti patriote"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Parti bureaucrate",
-        "Parti canadien",
-        "Parti patriote"
-      ],
+      entetes: ["Parti bureaucrate", "Parti canadien", "Parti patriote"],
       rangees: [
-        [
-          "B",
-          "C",
-          "A"
-        ]
+        ["B", "C", "A"]
       ]
     },
     updatedAt: "2026-06-11T00:19:34.494Z"
@@ -26448,11 +16947,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez le groupe de population majoritaire dans le Bas-Canada au début du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Nationalismes"
-      }
-    ],
+    aspects: [{aspect: "Nationalismes"}],
     documents: [
       {
         type: "textes",
@@ -26466,10 +16961,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Canadien français \nPopulation canadienne-française",
     updatedAt: "2026-06-11T15:20:43.662Z"
   },
@@ -26480,11 +16972,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez la langue parlée par la majorité de la population du Bas-Canada au début du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Nationalismes"
-      }
-    ],
+    aspects: [{aspect: "Nationalismes"}],
     documents: [
       {
         type: "textes",
@@ -26498,10 +16986,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Français.",
     updatedAt: "2026-06-12T00:23:21.676Z"
   },
@@ -26513,11 +16998,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "4 documents",
     enonce: "Les documents A à D présentent des revendications formulées au début du XIXe siècle. Associez chaque document au courant de pensée correspondant.",
-    aspects: [
-      {
-        aspect: "Nationalismes"
-      }
-    ],
+    aspects: [{aspect: "Nationalismes"}],
     documents: [
       {
         type: "textes",
@@ -26562,23 +17043,14 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Nationalisme britannique",
-        "Nationalisme canadien"
-      ],
+      elements: ["Nationalisme britannique", "Nationalisme canadien"],
       double: true
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Nationalisme britannique",
-        "Nationalisme canadien"
-      ],
+      entetes: ["Nationalisme britannique", "Nationalisme canadien"],
       rangees: [
-        [
-          "B et D",
-          "A et C"
-        ]
+        ["B et D", "A et C"]
       ]
     },
     updatedAt: "2026-06-11T01:34:06.301Z"
@@ -26591,11 +17063,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "4 documents",
     enonce: "Les documents A à D présentent des acteurs politiques du Bas-Canada au début du XIXe siècle. Associez chaque document au nationalisme correspondant.",
-    aspects: [
-      {
-        aspect: "Nationalismes"
-      }
-    ],
+    aspects: [{aspect: "Nationalismes"}],
     documents: [
       {
         type: "textes",
@@ -26640,23 +17108,14 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Nationalisme britannique",
-        "Nationalisme canadien"
-      ],
+      elements: ["Nationalisme britannique", "Nationalisme canadien"],
       double: true
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Nationalisme britannique",
-        "Nationalisme canadien"
-      ],
+      entetes: ["Nationalisme britannique", "Nationalisme canadien"],
       rangees: [
-        [
-          "B et D",
-          "A et C"
-        ]
+        ["B et D", "A et C"]
       ]
     },
     updatedAt: "2026-06-11T01:38:36.447Z"
@@ -26669,11 +17128,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux acteurs concernant la place des Canadiens français dans le Bas-Canada au début du XIXe siècle. Indiquez le principal point sur lequel ces acteurs sont en accord.",
-    aspects: [
-      {
-        aspect: "Nationalismes"
-      }
-    ],
+    aspects: [{aspect: "Nationalismes"}],
     documents: [
       {
         type: "textes",
@@ -26698,10 +17153,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Denis-Benjamin Viger et Louis-Joseph Papineau considèrent que les Canadiens français doivent défendre leurs droits ou leurs institutions.",
     updatedAt: "2026-06-11T11:54:42.920Z"
   },
@@ -26713,11 +17165,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Divergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux acteurs concernant les pouvoirs du gouverneur. Indiquez le principal point sur lequel ces acteurs sont en désaccord.",
-    aspects: [
-      {
-        aspect: "Nationalismes"
-      }
-    ],
+    aspects: [{aspect: "Nationalismes"}],
     documents: [
       {
         type: "textes",
@@ -26742,10 +17190,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Jonathan Sewell et Pierre-Stanislas Bédard sont en désaccord sur les pouvoirs du gouverneur. Sewell veut les maintenir, tandis que Bédard veut accroître le pouvoir de l'Assemblée élue ou diminuer les pouvoirs du gouverneur.",
     updatedAt: "2026-06-11T11:56:50.517Z"
   },
@@ -26757,11 +17202,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Position – 3 acteurs",
     enonce: "Les documents A à C présentent le point de vue de trois acteurs concernant l'avenir politique du Bas-Canada. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
-    aspects: [
-      {
-        aspect: "Nationalismes"
-      }
-    ],
+    aspects: [{aspect: "Nationalismes"}],
     documents: [
       {
         type: "textes",
@@ -26797,10 +17238,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "James Monk défend le maintien de l'autorité britannique dans la colonie (la différence), alors que Louis-Hippolyte La Fontaine et Denis-Benjamin Viger souhaitent accorder davantage de pouvoir aux représentants élus (la similitude).",
     updatedAt: "2026-06-11T12:00:27.320Z"
   },
@@ -26812,11 +17250,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une cause de la dualité linguistique dans le Bas-Canada au début du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Nationalismes"
-      }
-    ],
+    aspects: [{aspect: "Nationalismes"}],
     documents: [
       {
         type: "textes",
@@ -26829,10 +17263,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Arrivée d'immigrants britanniques\nImmigration britannique\nPrésence croissante de Britanniques dans la colonie",
     updatedAt: "2026-06-11T12:02:56.111Z"
   },
@@ -26844,11 +17275,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence de la dualité linguistique dans le Bas-Canada au début du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Nationalismes"
-      }
-    ],
+    aspects: [{aspect: "Nationalismes"}],
     documents: [
       {
         type: "textes",
@@ -26861,10 +17288,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Tensions politiques\nOpposition entre Canadiens français et Britanniques\nFormation de partis politiques défendant des intérêts différents\nDéveloppement du nationalisme canadien\nDéveloppement du nationalisme britannique\nConflits à la Chambre d'assemblée",
     updatedAt: "2026-06-11T12:05:34.072Z"
   },
@@ -26876,11 +17300,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause et conséquence",
     enonce: "Au début du XIXe siècle, les nationalismes s'affrontent au Bas-Canada. Indiquez la lettre du document qui présente : \n• une cause de l'émergence du nationalisme canadien\n• une conséquence de l'émergence du nationalisme canadien",
-    aspects: [
-      {
-        aspect: "Nationalismes"
-      }
-    ],
+    aspects: [{aspect: "Nationalismes"}],
     documents: [
       {
         type: "textes",
@@ -26905,20 +17325,12 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "cause-consequence"
-    },
+    reponse: {type: "cause-consequence"},
     guide: {
       type: "grille",
-      entetes: [
-        "Cause",
-        "Conséquence"
-      ],
+      entetes: ["Cause", "Conséquence"],
       rangees: [
-        [
-          "B",
-          "A"
-        ]
+        ["B", "A"]
       ]
     },
     updatedAt: "2026-06-12T12:19:34.660Z"
@@ -26930,11 +17342,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 3,
     enonce: "Expliquez comment la dualité linguistique contribue à l'émergence de tensions politiques dans le Bas-Canada au début du XIXe siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• la composition linguistique de la population\n• un groupe de population qui cherche à accroître son influence \n• une conséquence politique",
-    aspects: [
-      {
-        aspect: "Nationalismes"
-      }
-    ],
+    aspects: [{aspect: "Nationalismes"}],
     documents: [
       {
         type: "textes",
@@ -26969,10 +17377,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 5
-    },
+    reponse: {type: "lignes", nombre: 5},
     guide: "La présence de francophones et d'anglophones dans le Bas-Canada (composition linguistique) amène les Canadiens français (groupe de population) à chercher à accroître leur influence politique, ce qui provoque la formation de partis opposés et des tensions à la Chambre d'assemblée (conséquence politique).",
     updatedAt: "2026-06-15T12:25:31.423Z"
   },
@@ -26983,11 +17388,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez un objectif poursuivi par les mouvements de libération nationale au début du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Idées libérales et républicaines"
-      }
-    ],
+    aspects: [{aspect: "Idées libérales et républicaines"}],
     documents: [
       {
         type: "textes",
@@ -27000,10 +17401,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Obtenir l'indépendance.\nSe libérer d'une puissance étrangère.\nSe gouverner soi-même.\nChoisir son propre gouvernement.\nContrôler ses institutions politiques.",
     updatedAt: "2026-06-11T15:17:15.265Z"
   },
@@ -27014,11 +17412,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez une nation qui obtient son indépendance à la suite d'un mouvement de libération nationale à la fin du XVIIIe siècle.",
-    aspects: [
-      {
-        aspect: "Idées libérales et républicaines"
-      }
-    ],
+    aspects: [{aspect: "Idées libérales et républicaines"}],
     documents: [
       {
         type: "textes",
@@ -27031,10 +17425,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "États-Unis.",
     updatedAt: "2026-06-11T15:19:29.266Z"
   },
@@ -27045,11 +17436,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez une revendication formulée par les partisans du libéralisme politique au Bas-Canada.",
-    aspects: [
-      {
-        aspect: "Idées libérales et républicaines"
-      }
-    ],
+    aspects: [{aspect: "Idées libérales et républicaines"}],
     documents: [
       {
         type: "textes",
@@ -27062,10 +17449,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Accroître le pouvoir des représentants élus\nDonner plus de pouvoir à la Chambre d'assemblée\nObtenir un gouvernement responsable\nContrôler davantage les finances de la colonie\nRéformer les institutions politiques",
     updatedAt: "2026-06-11T15:22:40.287Z"
   },
@@ -27076,11 +17460,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez un moyen utilisé pour diffuser les idées politiques au Bas-Canada au début du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Idées libérales et républicaines"
-      }
-    ],
+    aspects: [{aspect: "Idées libérales et républicaines"}],
     documents: [
       {
         type: "textes",
@@ -27093,10 +17473,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Journal\nPrese écrite",
     updatedAt: "2026-06-11T15:26:15.234Z"
   },
@@ -27108,14 +17485,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "2 documents",
     enonce: "Les documents A et B présentent deux journaux publiés au début du XIXe siècle. Associez chaque document au nationalisme correspondant.",
-    aspects: [
-      {
-        aspect: "Idées libérales et républicaines"
-      },
-      {
-        aspect: "Nationalismes"
-      }
-    ],
+    aspects: [{aspect: "Idées libérales et républicaines"}, {aspect: "Nationalismes"}],
     documents: [
       {
         type: "textes",
@@ -27141,22 +17511,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Nationalisme britannique",
-        "Nationalisme canadien"
-      ]
+      elements: ["Nationalisme britannique", "Nationalisme canadien"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Nationalisme britannique",
-        "Nationalisme canadien"
-      ],
+      entetes: ["Nationalisme britannique", "Nationalisme canadien"],
       rangees: [
-        [
-          "B",
-          "A"
-        ]
+        ["B", "A"]
       ]
     },
     updatedAt: "2026-06-12T00:19:17.743Z"
@@ -27169,11 +17530,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une cause de la diffusion des idées libérales au Bas-Canada au début du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Idées libérales et républicaines"
-      }
-    ],
+    aspects: [{aspect: "Idées libérales et républicaines"}],
     documents: [
       {
         type: "textes",
@@ -27186,10 +17543,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Révolution américaine\nRévolution française\nDiffusion de nouvelles idées politiques en provenance d'Europe ou des États-Unis\n\nLes journaux sont surtout un moyen de diffusion, pas nécessairement la cause profonde de la diffusion des idées libérales.",
     updatedAt: "2026-06-11T15:52:18.254Z"
   },
@@ -27201,11 +17555,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence de la diffusion des idées libérales au Bas-Canada au début du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Idées libérales et républicaines"
-      }
-    ],
+    aspects: [{aspect: "Idées libérales et républicaines"}],
     documents: [
       {
         type: "textes",
@@ -27218,10 +17568,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Revendications politiques\nDemande d'un gouvernement responsable\nRéformes politiques\nPlus de pouvoir pour les représentants élus\nContestation de l'autorité coloniale\nCréation ou développement du mouvement patriote",
     updatedAt: "2026-06-11T15:42:47.136Z"
   },
@@ -27233,11 +17580,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence de la diffusion des idées républicaines au Bas-Canada au début du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Idées libérales et républicaines"
-      }
-    ],
+    aspects: [{aspect: "Idées libérales et républicaines"}],
     documents: [
       {
         type: "textes",
@@ -27250,10 +17593,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Contestation de l'autorité britannique\nRemise en question de la monarchie britannique\nRevendication de réformes politiques\nRevendication d'un gouvernement plus démocratique\nSoutien accru au mouvement patriote",
     updatedAt: "2026-06-11T15:44:42.871Z"
   },
@@ -27265,11 +17605,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Changement",
     enonce: "Indiquez un changement dans les revendications politiques formulées au Bas-Canada entre la fin du XVIIIe siècle et le début du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Idées libérales et républicaines"
-      }
-    ],
+    aspects: [{aspect: "Idées libérales et républicaines"}],
     documents: [
       {
         type: "textes",
@@ -27294,10 +17630,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Il y a changement, car les revendications passent d'une demande d'influence accrue sur les finances de la colonie à une demande de réformes politiques plus importantes, comme l'élection du Conseil législatif ou le gouvernement responsable.",
     updatedAt: "2026-06-11T15:49:22.762Z"
   },
@@ -27309,11 +17642,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Continuité",
     enonce: "Indiquez un élément de continuité dans le rôle de la Chambre d'assemblée au Bas-Canada entre 1791 et 1840.",
-    aspects: [
-      {
-        aspect: "Idées libérales et républicaines"
-      }
-    ],
+    aspects: [{aspect: "Idées libérales et républicaines"}],
     documents: [
       {
         type: "textes",
@@ -27337,10 +17666,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Il y a continuité, car la Chambre d'assemblée continue de représenter la population entre 1791 et 1840.",
     updatedAt: "2026-06-12T12:03:42.432Z"
   },
@@ -27352,11 +17678,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir des documents A et B, indiquez s'il y a changement ou continuité dans la diffusion des idées politiques au Bas-Canada entre 1790 et 1830. Justifiez votre réponse par des faits.",
-    aspects: [
-      {
-        aspect: "Idées libérales et républicaines"
-      }
-    ],
+    aspects: [{aspect: "Idées libérales et républicaines"}],
     documents: [
       {
         type: "textes",
@@ -27379,10 +17701,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Changement\nIl y a changement, car le nombre de journaux augmente entre 1790 et 1830, ce qui favorise la diffusion des idées politiques dans la colonie.\n\nContinuité\nIl y a continuité, car les journaux continuent de servir à la diffusion des idées politiques entre 1790 et 1830.",
     updatedAt: "2026-06-12T00:18:14.267Z"
   },
@@ -27394,11 +17713,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent la position de deux acteurs concernant l'organisation politique du Bas-Canada. Nommez le point sur lequel ces acteurs sont d'accord.",
-    aspects: [
-      {
-        aspect: "Idées libérales et républicaines"
-      }
-    ],
+    aspects: [{aspect: "Idées libérales et républicaines"}],
     documents: [
       {
         type: "textes",
@@ -27423,10 +17738,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Pierre-Stanislas Bédard et Louis-Joseph Papineau souhaitent accroître les pouvoirs des représentants élus.",
     updatedAt: "2026-06-11T16:04:43.263Z"
   },
@@ -27438,11 +17750,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Position – 3 acteurs",
     enonce: "Le document présente la position de trois acteurs concernant l'organisation politique du Bas-Canada. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
-    aspects: [
-      {
-        aspect: "Idées libérales et républicaines"
-      }
-    ],
+    aspects: [{aspect: "Idées libérales et républicaines"}],
     documents: [
       {
         type: "textes",
@@ -27478,10 +17786,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Jonathan Sewell veut maintenir l'autorité britannique (la différence), alors que Louis-Joseph Papineau et Ludger Duvernay souhaitent accroître le pouvoir de la population et des représentants élus (la similitude).",
     updatedAt: "2026-06-11T16:06:44.714Z"
   },
@@ -27493,11 +17798,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Divergence – 2 acteurs",
     enonce: "Les documents A et B présentent la position de deux journaux concernant l'avenir politique de la colonie. Nommez le point sur lequel ces journaux sont en désaccord.",
-    aspects: [
-      {
-        aspect: "Idées libérales et républicaines"
-      }
-    ],
+    aspects: [{aspect: "Idées libérales et républicaines"}],
     documents: [
       {
         type: "textes",
@@ -27522,10 +17823,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "François Blanchet veut donner plus de pouvoir aux représentants élus, alors que Thomas Cary souhaite maintenir les pouvoirs du gouverneur.",
     updatedAt: "2026-06-11T16:09:07.732Z"
   },
@@ -27537,11 +17835,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Différence",
     enonce: "Indiquez une différence entre les facteurs qui expliquent l'augmentation de la population du Bas-Canada et du Haut-Canada dans la première moitié du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Population"
-      }
-    ],
+    aspects: [{aspect: "Population"}],
     documents: [
       {
         type: "textes",
@@ -27564,10 +17858,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "La population du Bas-Canada augmente principalement grâce à l'accroissement naturel, tandis que celle du Haut-Canada augmente surtout grâce à l'immigration britannique.",
     updatedAt: "2026-06-11T18:39:04.086Z"
   },
@@ -27578,11 +17869,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez le titre de la personne qui sert d'intermédiaire entre le gouvernement britannique et les Premières Nations au début du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Population"
-      }
-    ],
+    aspects: [{aspect: "Population"}],
     documents: [
       {
         type: "textes",
@@ -27595,10 +17882,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Agent des Indiens",
     updatedAt: "2026-06-12T00:17:27.544Z"
   },
@@ -27609,11 +17893,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "À l'aide du document A, indiquez le nom de l'événement survenu dans les colonies britanniques en 1833.",
-    aspects: [
-      {
-        aspect: "Population"
-      }
-    ],
+    aspects: [{aspect: "Population"}],
     documents: [
       {
         type: "textes",
@@ -27626,10 +17906,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Abolition de l'esclavage \nFin de l'esclavage",
     updatedAt: "2026-06-12T00:47:44.586Z"
   },
@@ -27640,11 +17917,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez le principal facteur qui explique l'augmentation de la population du Bas-Canada dans la première moitié du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Population"
-      }
-    ],
+    aspects: [{aspect: "Population"}],
     documents: [
       {
         type: "textes",
@@ -27658,10 +17931,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "L'accroissement naturel.",
     updatedAt: "2026-06-12T12:14:42.909Z"
   },
@@ -27672,11 +17942,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez le principal facteur qui explique l'augmentation de la population du Haut-Canada dans la première moitié du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Population"
-      }
-    ],
+    aspects: [{aspect: "Population"}],
     documents: [
       {
         type: "textes",
@@ -27690,10 +17956,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "L'immigration.",
     updatedAt: "2026-06-12T12:20:53.298Z"
   },
@@ -27705,11 +17968,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une cause de la présence d'une importante population britannique dans le Haut-Canada au début du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Population"
-      }
-    ],
+    aspects: [{aspect: "Population"}],
     documents: [
       {
         type: "textes",
@@ -27722,10 +17981,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Immigration britannique\nArrivée de Loyalistes",
     updatedAt: "2026-06-12T00:50:34.533Z"
   },
@@ -27736,11 +17992,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     enonce: "Indiquez une conséquence de la présence de groupes de population différents dans le Bas-Canada au début du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Population"
-      }
-    ],
+    aspects: [{aspect: "Population"}],
     documents: [
       {
         type: "textes",
@@ -27753,10 +18005,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Dualité linguistique\nPrésence de deux groupes linguistiques\nCoexistence de francophones et d'anglophones",
     updatedAt: "2026-06-12T00:51:38.903Z"
   },
@@ -27768,11 +18017,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence de la présence d'une bourgeoisie professionnelle dans le Bas-Canada au début du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Population"
-      }
-    ],
+    aspects: [{aspect: "Population"}],
     documents: [
       {
         type: "textes",
@@ -27785,10 +18030,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Participation accrue à la vie politique\nParticipation aux débats politiques\nPrésence de professionnels à la Chambre d'assemblée\nDéfense des intérêts de la population à la Chambre d'assemblée",
     updatedAt: "2026-06-12T00:56:40.459Z"
   },
@@ -27799,11 +18041,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 3,
     enonce: "Expliquez comment un mouvement migratoire contribue à un changement démographique du Haut-Canada dans la première moitié du XIXe siècle. \n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un mouvement migratoire vers le Haut-Canada\n• un groupe de population concerné\n• un changement démographique au Haut-Canada",
-    aspects: [
-      {
-        aspect: "Population"
-      }
-    ],
+    aspects: [{aspect: "Population"}],
     documents: [
       {
         type: "textes",
@@ -27838,10 +18076,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 5
-    },
+    reponse: {type: "lignes", nombre: 5},
     guide: "L'immigration britannique (mouvement migratoire) amène de nombreux Britanniques dans le Haut-Canada (groupe de population concerné) ce qui contribue à l'augmentation de la population de cette colonie (changement démographique).",
     updatedAt: "2026-06-15T12:21:00.973Z"
   },
@@ -27852,11 +18087,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 3,
     enonce: "Expliquez comment un phénomène démographique entraîne une transformation de la population du Bas-Canada dans la première moitié du XIXe siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un phénomène démographique\n• un groupe de population concerné\n• une transformation de la population du Bas-Canada",
-    aspects: [
-      {
-        aspect: "Population"
-      }
-    ],
+    aspects: [{aspect: "Population"}],
     documents: [
       {
         type: "textes",
@@ -27890,10 +18121,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 5
-    },
+    reponse: {type: "lignes", nombre: 5},
     guide: "L'accroissement naturel (phénomène démographique) touche principalement les Canadiens français (groupe de population concerné), ce qui entraîne une forte augmentation de la population du Bas-Canada (changement dans la population)",
     updatedAt: "2026-06-15T12:20:35.462Z"
   },
@@ -27905,11 +18133,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Divergence – 2 acteurs",
     enonce: "Les documents A et B présentent la position de deux acteurs concernant un enjeu dans les colonies britanniques. Nommez le point sur lequel ces acteurs sont en désaccord.",
-    aspects: [
-      {
-        aspect: "Population"
-      }
-    ],
+    aspects: [{aspect: "Population"}],
     documents: [
       {
         type: "textes",
@@ -27934,10 +18158,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le maintien ou l'abolition de l'esclavage.",
     updatedAt: "2026-06-12T01:30:23.010Z"
   },
@@ -27949,11 +18170,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent la position de deux acteurs concernant le développement du Haut-Canada. Nommez le point sur lequel ces acteurs sont d'accord.",
-    aspects: [
-      {
-        aspect: "Population"
-      }
-    ],
+    aspects: [{aspect: "Population"}],
     documents: [
       {
         type: "textes",
@@ -27978,10 +18195,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Encourager l'établissement de colons britanniques dans le Haut-Canada.\nFavoriser l'immigration britannique dans le Haut-Canada.",
     updatedAt: "2026-06-12T01:32:03.286Z"
   },
@@ -27993,11 +18207,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Situer 1 élément",
     enonce: "Indiquez la lettre qui correspond à la principale région où se sont déroulés les conflits armés des Rébellions  de 1837 au Bas-Canada.",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -28010,9 +18220,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "tableau_2col"
-    },
+    reponse: {type: "tableau_2col"},
     guide: "B",
     updatedAt: "2026-06-12T03:57:43.165Z"
   },
@@ -28024,11 +18232,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Situer 1 élément",
     enonce: "Indiquez la lettre qui correspond à la principale région où se sont déroulés les conflits armés des Rébellions  de 1838 au Haut-Canada.",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -28041,9 +18245,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "tableau_2col"
-    },
+    reponse: {type: "tableau_2col"},
     guide: "D",
     updatedAt: "2026-06-15T12:48:28.024Z"
   },
@@ -28055,11 +18257,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent la position de deux acteurs. Sur quel point précis sont-ils d’accord?",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -28084,10 +18282,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Louis-Joseph Papineau et William Lyon Mackenzie souhaitent accorder davantage de pouvoir aux représentants élus (la similitude).",
     updatedAt: "2026-06-16T03:10:07.890Z"
   },
@@ -28099,11 +18294,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Position – 3 acteurs",
     enonce: "Lea documents A à C présentent la position de trois acteurs concernant les moyens utilisés pour répondre aux tensions politiques dans le Bas-Canada. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -28139,10 +18330,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "John Colborne souhaite réprimer les contestations par la force militaire (la différence), alors que Louis-Joseph Papineau et Wolfred Nelson s'opposent aux mesures prises par le gouvernement colonial (la similitude).",
     updatedAt: "2026-06-16T03:08:34.675Z"
   },
@@ -28154,11 +18342,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Position – 3 acteurs",
     enonce: "Le document présente la position de trois acteurs concernant l'organisation politique des colonies britanniques. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -28194,10 +18378,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "John Colborne défend le maintien du régime colonial britannique (la différence), alors que Louis-Joseph Papineau et Edmund Bailey O'Callaghan réclament des réformes politiques importantes (la similitude).",
     updatedAt: "2026-06-16T03:09:11.617Z"
   },
@@ -28209,11 +18390,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "4 documents",
     enonce: "Les documents A à D présentent des faits liés à la population du Bas-Canada et du Haut-Canada. Associez chaque document à l'élément correspondant.",
-    aspects: [
-      {
-        aspect: "Population"
-      }
-    ],
+    aspects: [{aspect: "Population"}],
     documents: [
       {
         type: "textes",
@@ -28258,23 +18435,14 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Bas-Canada",
-        "Haut-Canada"
-      ],
+      elements: ["Bas-Canada", "Haut-Canada"],
       double: true
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Bas-Canada",
-        "Haut-Canada"
-      ],
+      entetes: ["Bas-Canada", "Haut-Canada"],
       rangees: [
-        [
-          "B et C",
-          "A et D"
-        ]
+        ["B et C", "A et D"]
       ]
     },
     updatedAt: "2026-06-12T04:02:12.890Z"
@@ -28286,11 +18454,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez le nom du document adopté par les Patriotes en 1834 pour présenter leurs revendications au gouvernement britannique.",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -28303,10 +18467,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Les 92 résolutions.",
     updatedAt: "2026-06-12T14:09:34.679Z"
   },
@@ -28317,11 +18478,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez le nom des résolutions adoptées par le gouvernement britannique en 1837 pour rejeter les revendications des Patriotes.",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -28334,10 +18491,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Les résolutions Russell.",
     updatedAt: "2026-06-12T14:10:08.325Z"
   },
@@ -28348,11 +18502,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez le moyen utilisé par les Patriotes pour mobiliser la population après le rejet des 92 résolutions.",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -28365,10 +18515,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Les assemblées populaires.",
     updatedAt: "2026-06-12T14:13:02.122Z"
   },
@@ -28379,11 +18526,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez une mesure utilisée par les autorités coloniales pour réprimer le mouvement patriote.",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -28396,10 +18539,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Mandats d’arrestation\nArrestation de chefs patriotes\nIntervention de l’armée britannique\nEmprisonnement de Patriotes",
     updatedAt: "2026-06-12T14:16:51.224Z"
   },
@@ -28410,11 +18550,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez le nom du document proclamé par Robert Nelson en 1838.",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -28427,10 +18563,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "La Déclaration d'indépendance du Bas-Canada.",
     updatedAt: "2026-06-12T14:22:53.180Z"
   },
@@ -28442,11 +18575,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "4 documents",
     enonce: "Les documents A à D présentent des faits liés aux rébellions de 1837-1838. Indiquez si chaque document fait référence aux rébellions du Bas-Canada ou aux rébellions du Haut-Canada.",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -28493,23 +18622,14 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Rébellions au Bas-Canada",
-        "Rébellions au Haut-Canada"
-      ],
+      elements: ["Rébellions au Bas-Canada", "Rébellions au Haut-Canada"],
       double: true
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Rébellions au Bas-Canada",
-        "Rébellions au Haut-Canada"
-      ],
+      entetes: ["Rébellions au Bas-Canada", "Rébellions au Haut-Canada"],
       rangees: [
-        [
-          "A et D",
-          "B et C"
-        ]
+        ["A et D", "B et C"]
       ]
     },
     updatedAt: "2026-06-12T15:23:28.020Z"
@@ -28522,11 +18642,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "3 documents",
     enonce: "Les documents A à C présentent des faits liés à des batailles des rébellions de 1837 au Bas-Canada. Associez chaque document à la bataille correspondante.",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -28561,25 +18677,13 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Bataille de Saint-Charles",
-        "Bataille de Saint-Denis",
-        "Bataille de Saint-Eustache"
-      ]
+      elements: ["Bataille de Saint-Charles", "Bataille de Saint-Denis", "Bataille de Saint-Eustache"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Bataille de Saint-Charles",
-        "Bataille de Saint-Denis",
-        "Bataille de Saint-Eustache"
-      ],
+      entetes: ["Bataille de Saint-Charles", "Bataille de Saint-Denis", "Bataille de Saint-Eustache"],
       rangees: [
-        [
-          "B",
-          "A",
-          "C"
-        ]
+        ["B", "A", "C"]
       ]
     },
     updatedAt: "2026-06-12T14:48:27.035Z"
@@ -28592,11 +18696,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une cause de l'adoption des 92 résolutions en 1834.",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -28610,10 +18710,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le mécontentement envers le gouvernement colonial\nLe pouvoir du Conseil législatif\nLe refus de la responsabilité ministérielle\nLe manque de pouvoir de la Chambre d'assemblée\nLes revendications des Patriotes pour obtenir des réformes politiques",
     updatedAt: "2026-06-15T17:48:28.647Z"
   },
@@ -28625,11 +18722,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence immédiate du rejet des revendications patriotes par le gouvernement britannique en 1837.",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -28642,10 +18735,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "La tenue d'assemblées populaires.\nLa mobilisation des Patriotes.",
     updatedAt: "2026-06-12T15:33:00.180Z"
   },
@@ -28657,11 +18747,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence des assemblées populaires organisées par les Patriotes en 1837.",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -28674,10 +18760,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Émission de mandats d'arrestation contre des chefs patriotes.\nRépression du mouvement patriote.\nDéploiement de troupes britanniques.\nArrestation de Patriotes.\nAugmentation des tensions politiques.\nDéclenchement du conflit armé.\nDébut des rébellions de 1837.",
     updatedAt: "2026-06-12T15:54:40.050Z"
   },
@@ -28689,11 +18772,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence des résolutions Russell adoptées en 1837.",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -28706,10 +18785,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "La tenue d'assemblées populaires.",
     updatedAt: "2026-06-12T15:38:09.865Z"
   },
@@ -28721,11 +18797,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Similitude",
     enonce: "À partir des documents A et B, indiquez une similitude politique entre les mouvements de contestation du Bas-Canada et du Haut-Canada vers 1837.",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -28750,10 +18822,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "La responsabilité ministérielle.\nUn gouvernement responsable.\nLa responsabilité du Conseil exécutif devant la Chambre d'assemblée.",
     updatedAt: "2026-06-12T16:42:17.776Z"
   },
@@ -28764,11 +18833,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 3,
     enonce: "Expliquez comment les moyens utilisés par les Patriotes pour faire valoir leurs revendications entraînent des conséquences dans la colonie en 1837.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un moyen utilisé par les Patriotes\n• une réaction des autorités coloniales\n• une conséquence dans la colonie",
-    aspects: [
-      {
-        aspect: "Soulèvements de 1837-1838"
-      }
-    ],
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
         type: "textes",
@@ -28801,10 +18866,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 5
-    },
+    reponse: {type: "lignes", nombre: 5},
     guide: "Les Patriotes organisent des assemblées populaires (un moyen utilisé par les Patriotes) afin de faire valoir leurs revendications. En réaction, les autorités coloniales émettent des mandats d'arrestation contre plusieurs chefs patriotes (une réaction des autorités coloniales). Cette situation contribue au déclenchement du conflit armé en 1837 (une conséquence dans la colonie).",
     updatedAt: "2026-06-15T12:20:08.753Z"
   },
@@ -28816,11 +18878,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Capitaux et infrastructures"
-      }
-    ],
+    aspects: [{aspect: "Capitaux et infrastructures"}],
     documents: [
       {
         type: "textes",
@@ -28834,10 +18892,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1790-1850.png"
-    },
+    reponse: {type: "image", ref: "ligne_1790-1850.png"},
     guide: "C",
     updatedAt: "2026-06-12T16:03:49.321Z"
   },
@@ -28849,11 +18904,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence de la création des banques sur l'économie du Bas-Canada.",
-    aspects: [
-      {
-        aspect: "Capitaux et infrastructures"
-      }
-    ],
+    aspects: [{aspect: "Capitaux et infrastructures"}],
     documents: [
       {
         type: "textes",
@@ -28866,10 +18917,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les entreprises ont davantage accès au financement.\nLes investissements augmentent.\nLe commerce se développe.\nL'économie de la colonie se développe.",
     updatedAt: "2026-06-12T16:07:58.181Z"
   },
@@ -28880,11 +18928,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 3,
     enonce: "Expliquez comment la création d'institutions financières contribue au développement économique de la colonie au début du XIXe siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une institution financière\n• un moyen utilisé pour soutenir les activités économiques\n• un effet sur l'économie de la colonie",
-    aspects: [
-      {
-        aspect: "Capitaux et infrastructures"
-      }
-    ],
+    aspects: [{aspect: "Capitaux et infrastructures"}],
     documents: [
       {
         type: "textes",
@@ -28919,10 +18963,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 5
-    },
+    reponse: {type: "lignes", nombre: 5},
     guide: "La Banque de Montréal (une institution financière) accorde des prêts aux commerçants et aux entrepreneurs (un moyen utilisé pour soutenir les activités économiques). Ces prêts favorisent les investissements et le développement du commerce dans la colonie (un effet sur l'économie de la colonie).",
     updatedAt: "2026-06-15T12:19:35.007Z"
   },
@@ -28934,11 +18975,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence de la construction des canaux sur le commerce de la colonie.",
-    aspects: [
-      {
-        aspect: "Capitaux et infrastructures"
-      }
-    ],
+    aspects: [{aspect: "Capitaux et infrastructures"}],
     documents: [
       {
         type: "textes",
@@ -28951,10 +18988,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Augmentation des échanges commerciaux.\nFacilitation du transport des marchandises.\nDéveloppement du commerce.\nAccroissement de la circulation des marchandises.\nExpansion des activités commerciales.",
     updatedAt: "2026-06-12T16:17:35.673Z"
   },
@@ -28965,11 +18999,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez un moyen de transport dont le développement s'accélère à partir des années 1830.",
-    aspects: [
-      {
-        aspect: "Capitaux et infrastructures"
-      }
-    ],
+    aspects: [{aspect: "Capitaux et infrastructures"}],
     documents: [
       {
         type: "textes",
@@ -28982,10 +19012,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le chemin de fer.\nLe transport ferroviaire.",
     updatedAt: "2026-06-12T16:20:12.913Z"
   },
@@ -28996,11 +19023,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 3,
     enonce: "Expliquez comment la construction d'infrastructures de transport terrestres favorise le développement économique de la colonie.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une infrastructure de transport aménagée\n• une amélioration des transports\n• un effet sur l'économie de la colonie",
-    aspects: [
-      {
-        aspect: "Capitaux et infrastructures"
-      }
-    ],
+    aspects: [{aspect: "Capitaux et infrastructures"}],
     documents: [
       {
         type: "textes",
@@ -29034,10 +19057,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 5
-    },
+    reponse: {type: "lignes", nombre: 5},
     guide: "Le chemin de fer (une infrastructure de transport aménagée) permet de transporter plus rapidement les personnes et les marchandises (une amélioration des transports). Cette amélioration favorise les échanges commerciaux et contribue au développement économique de la colonie (un effet sur l'économie de la colonie).",
     updatedAt: "2026-06-15T12:19:02.768Z"
   },
@@ -29049,11 +19069,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Convergence – 2 acteurs",
     enonce: "Le document présente le point de vue de deux acteurs. Sur quel point précis sont-ils d'accord?",
-    aspects: [
-      {
-        aspect: "Capitaux et infrastructures"
-      }
-    ],
+    aspects: [{aspect: "Capitaux et infrastructures"}],
     documents: [
       {
         type: "textes",
@@ -29078,10 +19094,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "La fondation de la Banque de Montréal.\nLa création d'une institution financière.\nLe financement des activités commerciales.",
     updatedAt: "2026-06-16T03:07:36.346Z"
   },
@@ -29093,11 +19106,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Divergence – 2 acteurs",
     enonce: "Le document présente le point de vue de deux acteurs. Sur quel point précis sont-ils en désaccord?",
-    aspects: [
-      {
-        aspect: "Capitaux et infrastructures"
-      }
-    ],
+    aspects: [{aspect: "Capitaux et infrastructures"}],
     documents: [
       {
         type: "textes",
@@ -29122,10 +19131,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "L'utilisation des fonds publics.\nLe contrôle des dépenses de la colonie.\nL'administration des revenus publics.\nLe pouvoir de décider des dépenses publiques.",
     updatedAt: "2026-06-16T03:07:10.361Z"
   },
@@ -29137,11 +19143,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Changement",
     enonce: "À partir des documents A et B, indiquez un changement dans l'organisation du territoire au Bas-Canada au cours de la première moitié du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Agriculture"
-      }
-    ],
+    aspects: [{aspect: "Agriculture"}],
     documents: [
       {
         type: "textes",
@@ -29166,10 +19168,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "L'apparition des cantons.\nL'établissement de cantons en plus des seigneuries.",
     updatedAt: "2026-06-13T12:44:13.144Z"
   },
@@ -29180,11 +19179,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez le nom des lois britanniques qui accordent un traitement préférentiel au blé des colonies.",
-    aspects: [
-      {
-        aspect: "Agriculture"
-      }
-    ],
+    aspects: [{aspect: "Agriculture"}],
     documents: [
       {
         type: "textes",
@@ -29197,10 +19192,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Les Corn Laws.",
     updatedAt: "2026-06-12T17:58:30.594Z"
   },
@@ -29212,11 +19204,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Différence",
     enonce: "À partir des documents A et B, indiquez une différence entre l'organisation du territoire en seigneurie et en canton.",
-    aspects: [
-      {
-        aspect: "Agriculture"
-      }
-    ],
+    aspects: [{aspect: "Agriculture"}],
     documents: [
       {
         type: "textes",
@@ -29243,10 +19231,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les terres des seigneuries sont longues et étroites alors que celles des cantons sont plus carrées ou rectangulaires.",
     updatedAt: "2026-06-14T12:15:11.576Z"
   },
@@ -29258,11 +19243,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause et conséquence",
     enonce: "Les documents A et B présentent des faits liés au développement de la culture du blé dans la colonie au début du XIXe siècle. Indiquez quel document présente une cause et quel document présente une conséquence.",
-    aspects: [
-      {
-        aspect: "Agriculture"
-      }
-    ],
+    aspects: [{aspect: "Agriculture"}],
     documents: [
       {
         type: "textes",
@@ -29287,20 +19268,12 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "cause-consequence"
-    },
+    reponse: {type: "cause-consequence"},
     guide: {
       type: "grille",
-      entetes: [
-        "Cause",
-        "Conséquence"
-      ],
+      entetes: ["Cause", "Conséquence"],
       rangees: [
-        [
-          "B",
-          "A"
-        ]
+        ["B", "A"]
       ]
     },
     updatedAt: "2026-06-14T13:05:28.867Z"
@@ -29313,11 +19286,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir des documents A et B, indiquez s'il y a changement ou continuité dans l'organisation du territoire au Bas-Canada entre le début et le milieu du XIXe siècle. Justifiez votre réponse à l'aide d'un fait et d'un repère de temps.",
-    aspects: [
-      {
-        aspect: "Agriculture"
-      }
-    ],
+    aspects: [{aspect: "Agriculture"}],
     documents: [
       {
         type: "textes",
@@ -29344,10 +19313,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Changement\nIl y a changement, car au milieu du XIXe siècle de nouveaux cantons sont ouverts dans plusieurs régions de la colonie, alors qu'au début du XIXe siècle le territoire est principalement organisé en seigneuries.\n\nContinuité\nIl y a continuité, car au milieu du XIXe siècle le régime seigneurial structure encore l'occupation du territoire dans la vallée du Saint-Laurent, comme au début du XIXe siècle.",
     updatedAt: "2026-06-14T12:11:35.861Z"
   },
@@ -29359,11 +19325,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez un objectif poursuivi par la Grande-Bretagne lors de l'adoption des Corn Laws.",
-    aspects: [
-      {
-        aspect: "Agriculture"
-      }
-    ],
+    aspects: [{aspect: "Agriculture"}],
     documents: [
       {
         type: "textes",
@@ -29376,10 +19338,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Favoriser le commerce à l'intérieur de l'Empire britannique\nAccorder un avantage commercial aux colonies britanniques\nFavoriser les exportations de blé des colonies britanniques\nProtéger le marché britannique contre la concurrence étrangère",
     updatedAt: "2026-06-14T13:01:39.463Z"
   },
@@ -29391,11 +19350,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Convergence – 2 acteurs",
     enonce: "Le document présente le point de vue de deux historiens. Sur quel point précis sont-ils d'accord?",
-    aspects: [
-      {
-        aspect: "Agriculture"
-      }
-    ],
+    aspects: [{aspect: "Agriculture"}],
     documents: [
       {
         type: "textes",
@@ -29418,10 +19373,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "L'appauvrissement des sols.\nLes effets de la culture intensive du blé sur les terres agricoles.\nLa diminution de la fertilité des sols.",
     updatedAt: "2026-06-16T03:06:26.343Z"
   },
@@ -29433,11 +19385,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Position – 3 acteurs",
     enonce: "Le document présente la position de trois acteurs à l'égard de certaines politiques économiques adoptées par la Grande-Bretagne au début du XIXe siècle. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
-    aspects: [
-      {
-        aspect: "Agriculture"
-      }
-    ],
+    aspects: [{aspect: "Agriculture"}],
     documents: [
       {
         type: "textes",
@@ -29470,10 +19418,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Le producteur de blé américain s'oppose aux tarifs préférentiels accordés au blé colonial (la différence), alors que John Richardson et George Moffatt les appuient (la similitude).",
     updatedAt: "2026-06-16T03:06:00.592Z"
   },
@@ -29485,11 +19430,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une cause de la crise agricole des années 1830 au Bas-Canada.",
-    aspects: [
-      {
-        aspect: "Agriculture"
-      }
-    ],
+    aspects: [{aspect: "Agriculture"}],
     documents: [
       {
         type: "textes",
@@ -29503,10 +19444,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "L'appauvrissement des sols\nLa diminution de la fertilité des sols\nLa culture intensive du blé\nL'exploitation répétée des mêmes terres agricoles",
     updatedAt: "2026-06-14T13:21:09.255Z"
   },
@@ -29518,11 +19456,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence de la crise agricole au Bas-Canada dans les années 1830.",
-    aspects: [
-      {
-        aspect: "Agriculture"
-      }
-    ],
+    aspects: [{aspect: "Agriculture"}],
     documents: [
       {
         type: "textes",
@@ -29536,10 +19470,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Colonisation de nouvelles régions\nDéplacement de familles vers des régions de colonisation\nMigration vers de nouveaux territoires\nÉtablissement de familles dans de nouvelles régions",
     updatedAt: "2026-06-14T13:24:19.774Z"
   },
@@ -29550,11 +19481,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 3,
     enonce: "Expliquez comment l'évolution du commerce des fourrures dans la première moitié du XIXe siècle contribue à la transformation du territoire exploité.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une difficulté liée au commerce des fourrures\n• une mesure prise par les marchands\n• une conséquence sur le territoire exploité",
-    aspects: [
-      {
-        aspect: "Commerce des fourrures"
-      }
-    ],
+    aspects: [{aspect: "Commerce des fourrures"}],
     documents: [
       {
         type: "textes",
@@ -29579,19 +19506,10 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document C",
-            ref: "territoire_compagnies_fourrure.png",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document C", ref: "territoire_compagnies_fourrure.png", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "L'épuisement progressif des fourrures dans les régions exploitées (la difficulté liée au commerce des fourrures) pousse les marchands à établir de nouveaux postes de traite vers l'Ouest (la mesure prise par les marchands). Cette mesure entraîne l'expansion du territoire exploité jusqu'aux Prairies et aux Rocheuses (la conséquence sur le territoire exploité).",
     updatedAt: "2026-06-15T12:35:02.759Z"
   },
@@ -29603,11 +19521,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Continuité",
     enonce: "À partir du document A, indiquez un élément de continuité concernant la production de blé au Bas-Canada entre 1834 et 1840.",
-    aspects: [
-      {
-        aspect: "Agriculture"
-      }
-    ],
+    aspects: [{aspect: "Agriculture"}],
     documents: [
       {
         type: "textes",
@@ -29621,10 +19535,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Il y a continuité, car entre 1834 et 1840 le Bas-Canada enregistre un déficit de production agricole (blé) chaque année ou la production de blé demeure insuffisante pour répondre aux besoins de la population.",
     updatedAt: "2026-06-14T17:37:55.563Z"
   },
@@ -29635,11 +19546,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 3,
     enonce: "Expliquez comment les relations entre la Compagnie de la Baie d'Hudson et la Compagnie du Nord-Ouest conduisent à une intervention des autorités britanniques en 1821.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une caractéristique des relations entre les deux compagnies\n• une conséquence de cette situation\n• une mesure prise par les autorités britanniques",
-    aspects: [
-      {
-        aspect: "Commerce des fourrures"
-      }
-    ],
+    aspects: [{aspect: "Commerce des fourrures"}],
     documents: [
       {
         type: "textes",
@@ -29674,10 +19581,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 5
-    },
+    reponse: {type: "lignes", nombre: 5},
     guide: "La Compagnie de la Baie d'Hudson et la Compagnie du Nord-Ouest se livrent une forte concurrence pour contrôler le commerce des fourrures (une caractéristique des relations entre les deux compagnies). Cette situation entraîne des conflits et une augmentation des coûts liés à la traite des fourrures (une conséquence de cette situation). Les autorités britanniques approuvent la fusion des deux compagnies en 1821 (une mesure prise par les autorités britanniques).",
     updatedAt: "2026-06-15T12:17:28.874Z"
   },
@@ -29689,11 +19593,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Situer 1 élément",
     enonce: "À partir du document A, indiquez la lettre correspondant à la région vers laquelle les activités de traite des fourrures se sont déplacées au début du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Commerce des fourrures"
-      }
-    ],
+    aspects: [{aspect: "Commerce des fourrures"}],
     documents: [
       {
         type: "textes",
@@ -29706,9 +19606,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "tableau_2col"
-    },
+    reponse: {type: "tableau_2col"},
     guide: "B",
     updatedAt: "2026-06-15T12:43:43.060Z"
   },
@@ -29720,11 +19618,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence de la diminution des fourrures dans les régions des Grands Lacs et de la vallée du Saint-Laurent sur les activités de traite.",
-    aspects: [
-      {
-        aspect: "Commerce des fourrures"
-      }
-    ],
+    aspects: [{aspect: "Commerce des fourrures"}],
     documents: [
       {
         type: "textes",
@@ -29738,10 +19632,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Expansion des activités de traite vers l'Ouest\nDéplacement des activités de traite vers l'Ouest\nExpansion des territoires exploités vers les Prairies\nExploitation accrue de l'Ouest\nOuverture de nouveaux territoires de traite dans l'Ouest\nDéveloppement de la traite dans les Prairies et au-delà",
     updatedAt: "2026-06-15T13:15:47.498Z"
   },
@@ -29753,11 +19644,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une raison de l'expansion des territoires exploités pour la traite des fourrures vers les Prairies.",
-    aspects: [
-      {
-        aspect: "Commerce des fourrures"
-      }
-    ],
+    aspects: [{aspect: "Commerce des fourrures"}],
     documents: [
       {
         type: "textes",
@@ -29771,10 +19658,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Diminution du nombre de fourrures provenant de la vallée du Saint-Laurent et des Grands Lacs\nDiminution des fourrures dans la vallée du Saint-Laurent et les Grands Lacs\nRaréfaction des fourrures dans les régions traditionnellement exploitées\nÉpuisement progressif des ressources en fourrures dans l'Est\nBaisse des approvisionnements en provenance des Grands Lacs et de la vallée du Saint-Laurent",
     updatedAt: "2026-06-15T13:11:47.965Z"
   },
@@ -29786,11 +19670,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Changement",
     enonce: "À partir du document A, indiquez un changement dans l'exploitation des territoires liés au commerce des fourrures entre 1780 et 1820.",
-    aspects: [
-      {
-        aspect: "Commerce des fourrures"
-      }
-    ],
+    aspects: [{aspect: "Commerce des fourrures"}],
     documents: [
       {
         type: "textes",
@@ -29804,10 +19684,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les activités de traite se déplacent vers l'Ouest entre 1780 et 1820.\nLes territoires exploités pour le commerce des fourrures s'étendent des Grands Lacs vers les Prairies et l'Ouest.\nL'importance des territoires de l'Ouest augmente alors que celle de la vallée du Saint-Laurent et des Grands Lacs diminue entre 1780 et 1820.",
     updatedAt: "2026-06-15T13:15:33.908Z"
   },
@@ -29819,11 +19696,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Continuité",
     enonce: "À partir du document A, indiquez un élément de continuité dans l'importance du commerce des fourrures entre 1780 et 1820.",
-    aspects: [
-      {
-        aspect: "Commerce des fourrures"
-      }
-    ],
+    aspects: [{aspect: "Commerce des fourrures"}],
     documents: [
       {
         type: "textes",
@@ -29837,10 +19710,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le commerce des fourrures demeure important entre 1780 et 1820.\nLes exportations de fourrures demeurent élevées entre 1780 et 1820.\nLe nombre de fourrures exportées reste important tout au long de la période.\nLe commerce des fourrures constitue toujours une activité économique importante vers 1780 et vers 1820.",
     updatedAt: "2026-06-15T13:23:37.614Z"
   },
@@ -29851,11 +19721,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez la mesure approuvée par les autorités britanniques concernant la Compagnie de la Baie d'Hudson et la Compagnie du Nord-Ouest en 1821.",
-    aspects: [
-      {
-        aspect: "Commerce des fourrures"
-      }
-    ],
+    aspects: [{aspect: "Commerce des fourrures"}],
     documents: [
       {
         type: "textes",
@@ -29868,10 +19734,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "La fusion de la Compagnie de la Baie d'Hudson et de la Compagnie du Nord-Ouest.",
     updatedAt: "2026-06-15T13:26:57.839Z"
   },
@@ -29883,11 +19746,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Position – 3 acteurs",
     enonce: "Le document présente la position de trois acteurs sur l'avenir du commerce des fourrures dans le Nord-Ouest. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
-    aspects: [
-      {
-        aspect: "Commerce des fourrures"
-      }
-    ],
+    aspects: [{aspect: "Commerce des fourrures"}],
     documents: [
       {
         type: "textes",
@@ -29923,10 +19782,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Lord Bathurst est favorable à la fusion des compagnies de fourrures (différence), alors que George Simpson et William McGillivray s'y opposent (similitude).",
     updatedAt: "2026-06-16T03:04:27.348Z"
   },
@@ -29938,11 +19794,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Similitude",
     enonce: "Les documents A et B présentent la situation économique de deux compagnies de fourrures vers 1820. Indiquez une similitude entre ces deux compagnies.",
-    aspects: [
-      {
-        aspect: "Commerce des fourrures"
-      }
-    ],
+    aspects: [{aspect: "Commerce des fourrures"}],
     documents: [
       {
         type: "textes",
@@ -29967,10 +19819,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "La Compagnie de la Baie d'Hudson et la Compagnie du Nord-Ouest éprouvent des difficultés financières\nLes deux compagnies font face à des dépenses élevées\nLes deux compagnies voient leurs coûts augmenter\nLes deux compagnies ont des problèmes de rentabilité\nLes deux compagnies subissent les conséquences de la concurrence",
     updatedAt: "2026-06-16T03:00:47.730Z"
   },
@@ -29982,11 +19831,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "4 documents",
     enonce: "Les documents A à D présentent des caractéristiques associées à deux compagnies de fourrures au début du XIXe siècle. Associez chaque document à la compagnie correspondante.",
-    aspects: [
-      {
-        aspect: "Commerce des fourrures"
-      }
-    ],
+    aspects: [{aspect: "Commerce des fourrures"}],
     documents: [
       {
         type: "textes",
@@ -30031,23 +19876,14 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Compagnie de la Baie d'Hudson",
-        "Compagnie du Nord-Ouest"
-      ],
+      elements: ["Compagnie de la Baie d'Hudson", "Compagnie du Nord-Ouest"],
       double: true
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Compagnie de la Baie d'Hudson",
-        "Compagnie du Nord-Ouest"
-      ],
+      entetes: ["Compagnie de la Baie d'Hudson", "Compagnie du Nord-Ouest"],
       rangees: [
-        [
-          "A et C",
-          "B et D"
-        ]
+        ["A et C", "B et D"]
       ]
     },
     updatedAt: "2026-06-15T14:04:13.233Z"
@@ -30059,11 +19895,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez le nom d'une compagnie de traite des fourrures en activité dans les années 1820.",
-    aspects: [
-      {
-        aspect: "Commerce des fourrures"
-      }
-    ],
+    aspects: [{aspect: "Commerce des fourrures"}],
     documents: [
       {
         type: "textes",
@@ -30076,10 +19908,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Compagnie de la Baie d'Hudson\nCompagnie du Nord-Ouest",
     updatedAt: "2026-06-15T14:10:38.815Z"
   },
@@ -30090,11 +19919,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez une mesure adoptée par la Grande-Bretagne pour favoriser l’importation de bois provenant de ses colonies.",
-    aspects: [
-      {
-        aspect: "Commerce du bois"
-      }
-    ],
+    aspects: [{aspect: "Commerce du bois"}],
     documents: [
       {
         type: "textes",
@@ -30107,10 +19932,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "La Grande-Bretagne accorde des tarifs préférentiels sur le bois provenant de ses colonies.",
     updatedAt: "2026-06-15T15:06:20.875Z"
   },
@@ -30122,11 +19944,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause et conséquence",
     enonce: "Les documents A et B présentent des éléments liés aux tarifs préférentiels accordés au bois provenant des colonies britanniques. Inscrivez la lettre du document qui présente :\n• une cause de l'adoption des tarifs préférentiels sur le bois colonial\n• une conséquence de cette mesure sur le commerce du bois au Bas-Canada",
-    aspects: [
-      {
-        aspect: "Commerce du bois"
-      }
-    ],
+    aspects: [{aspect: "Commerce du bois"}],
     documents: [
       {
         type: "textes",
@@ -30149,20 +19967,12 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "cause-consequence"
-    },
+    reponse: {type: "cause-consequence"},
     guide: {
       type: "grille",
-      entetes: [
-        "Cause",
-        "Conséquence"
-      ],
+      entetes: ["Cause", "Conséquence"],
       rangees: [
-        [
-          "B",
-          "A"
-        ]
+        ["B", "A"]
       ]
     },
     updatedAt: "2026-06-15T15:24:18.775Z"
@@ -30174,11 +19984,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 3,
     enonce: "Expliquez comment la situation en Europe au début des années 1800 contribue au développement du commerce du bois au Bas-Canada.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• la situation en Europe vers 1800\n• une mesure mise en place par la Grande-Bretagne\n• une conséquence sur le commerce du bois au Bas-Canada",
-    aspects: [
-      {
-        aspect: "Commerce du bois"
-      }
-    ],
+    aspects: [{aspect: "Commerce du bois"}],
     documents: [
       {
         type: "textes",
@@ -30213,10 +20019,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 5
-    },
+    reponse: {type: "lignes", nombre: 5},
     guide: "Le blocus continental imposé par Napoléon limite les échanges entre la Grande-Bretagne et plusieurs pays européens fournisseurs de bois (la situation en Europe vers 1800). Pour favoriser l'approvisionnement en bois provenant de ses colonies, la Grande-Bretagne accorde des tarifs préférentiels au bois colonial (une mesure mise en place). Cette mesure entraîne une augmentation des exportations et contribue au développement du commerce du bois au Bas-Canada (une conséquence sur le commerce du bois).",
     updatedAt: "2026-06-15T15:33:47.971Z"
   },
@@ -30227,11 +20030,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez une mesure adoptée par Napoléon au début des années 1800 pour limiter les échanges avec la Grande-Bretagne.",
-    aspects: [
-      {
-        aspect: "Commerce du bois"
-      }
-    ],
+    aspects: [{aspect: "Commerce du bois"}],
     documents: [
       {
         type: "textes",
@@ -30245,10 +20044,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le blocus continental.",
     updatedAt: "2026-06-15T15:35:27.345Z"
   },
@@ -30260,11 +20056,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence du blocus continental sur l'approvisionnement de la Grande-Bretagne en bois.",
-    aspects: [
-      {
-        aspect: "Commerce du bois"
-      }
-    ],
+    aspects: [{aspect: "Commerce du bois"}],
     documents: [
       {
         type: "textes",
@@ -30277,10 +20069,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Recherche de nouvelles sources d'approvisionnement en bois\nDifficulté à importer du bois européen",
     updatedAt: "2026-06-15T15:37:12.291Z"
   },
@@ -30291,11 +20080,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez le nom d'une activité liée à la transformation du bois au Bas-Canada au début du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Commerce du bois"
-      }
-    ],
+    aspects: [{aspect: "Commerce du bois"}],
     documents: [
       {
         type: "textes",
@@ -30309,10 +20094,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Sciage du bois\nTransformation du bois dans une scierie\nProduction de madriers\nProduction de planches\nÉquarrissage du bois",
     updatedAt: "2026-06-15T15:40:32.605Z"
   },
@@ -30324,11 +20106,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence de la transformation du bois sur les emplois au Bas-Canada au début des années 1800.",
-    aspects: [
-      {
-        aspect: "Commerce du bois"
-      }
-    ],
+    aspects: [{aspect: "Commerce du bois"}],
     documents: [
       {
         type: "textes",
@@ -30342,10 +20120,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Création d'emplois\nAugmentation du nombre de travailleurs\nHausse de l'emploi dans l'industrie du bois\nPlus de personnes travaillent dans les scieries et les chantiers forestiers",
     updatedAt: "2026-06-15T17:42:43.010Z"
   },
@@ -30357,11 +20132,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir des documents A et B, indiquez un élément de changement ou de continuité concernant l'industrie du bois entre 1800 et 1840. Justifiez votre réponse par des faits et un repère de temps.",
-    aspects: [
-      {
-        aspect: "Commerce du bois"
-      }
-    ],
+    aspects: [{aspect: "Commerce du bois"}],
     documents: [
       {
         type: "textes",
@@ -30386,10 +20157,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Changement\nIl y a changement, car entre 1800 et 1840, le nombre de travailleurs liés à l'industrie du bois augmente, passant d'environ 2 500 à 14 000.\nou\nIl y a changement, car entre 1800 et 1840, les métiers liés à l'industrie du bois occupent un nombre beaucoup plus élevé de travailleurs.\n\nContinuité\nIl y a continuité, car en 1800 comme en 1840, les bûcherons constituent le groupe de travailleurs le plus nombreux dans l'industrie du bois.\nou\nIl y a continuité, car les bûcherons demeurent les principaux travailleurs de l'industrie du bois entre 1800 et 1840.",
     updatedAt: "2026-06-15T16:41:42.683Z"
   },
@@ -30401,41 +20169,22 @@ const QUESTIONS = [
     points: 2,
     soustag: "Situer 2 éléments",
     enonce: "À partir du dodument A, indiquez la lettre qui correspond aux régions exploitées pour le commerce du bois au Bas-Canada : \n• Saguenay\n• Vallée de l'Outaouais",
-    aspects: [
-      {
-        aspect: "Commerce du bois"
-      }
-    ],
+    aspects: [{aspect: "Commerce du bois"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "territoire_bois_exploitation.png",
-            source: "Carte du Québec. Adaptée d'après d-maps.com."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "territoire_bois_exploitation.png", source: "Carte du Québec. Adaptée d'après d-maps.com."}]
       }
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: [
-        "Saguenay",
-        "Vallée de l'Outaouais"
-      ]
+      elements: ["Saguenay", "Vallée de l'Outaouais"]
     },
     guide: {
       type: "grille",
-      entetes: [
-        "Saguenay",
-        "Vallée de l'Outaouais"
-      ],
+      entetes: ["Saguenay", "Vallée de l'Outaouais"],
       rangees: [
-        [
-          "B",
-          "A"
-        ]
+        ["B", "A"]
       ]
     },
     updatedAt: "2026-06-15T16:49:48.089Z"
@@ -30448,11 +20197,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence de l'exploitation forestière sur l'occupation du territoire.",
-    aspects: [
-      {
-        aspect: "Commerce du bois"
-      }
-    ],
+    aspects: [{aspect: "Commerce du bois"}],
     documents: [
       {
         type: "textes",
@@ -30465,10 +20210,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Colonisation de nouvelles régions\nÉtablissement de nouvelles populations dans les régions forestières",
     updatedAt: "2026-06-15T16:51:17.712Z"
   },
@@ -30479,11 +20221,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez une industrie qui se développe grâce à l'essor du commerce du bois au Bas-Canada au début du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Commerce du bois"
-      }
-    ],
+    aspects: [{aspect: "Commerce du bois"}],
     documents: [
       {
         type: "textes",
@@ -30497,10 +20235,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Construction navale\nIndustrie de la construction navale\nChantiers navals\nIndustrie navale",
     updatedAt: "2026-06-15T16:56:49.489Z"
   },
@@ -30511,11 +20246,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 3,
     enonce: "Expliquez comment une mesure des autorités britanniques entraîne une conséquence économique pour le Bas-Canada.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une mesure mise en place par les autorités britanniques\n• une ressource en demande\n• une industrie liée au bois en croissance",
-    aspects: [
-      {
-        aspect: "Commerce du bois"
-      }
-    ],
+    aspects: [{aspect: "Commerce du bois"}],
     documents: [
       {
         type: "textes",
@@ -30550,10 +20281,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 5
-    },
+    reponse: {type: "lignes", nombre: 5},
     guide: "La Grande-Bretagne accorde des tarifs préférentiels au bois provenant de ses colonies (une mesure). Cette politique augmente la demande pour le bois du Bas-Canada (une ressource en demande). L'essor du commerce du bois favorise alors le développement de la construction navale, une industrie en croissance dans la colonie (une industrie liée au bois en croissance).",
     updatedAt: "2026-06-15T17:23:37.935Z"
   },
@@ -30565,11 +20293,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux personnages historiques. Sur quel point précis sont-ils d'accord?",
-    aspects: [
-      {
-        aspect: "Commerce du bois"
-      }
-    ],
+    aspects: [{aspect: "Commerce du bois"}],
     documents: [
       {
         type: "textes",
@@ -30594,10 +20318,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les tarifs préférentiels sur le bois colonial.",
     updatedAt: "2026-06-16T02:58:36.379Z"
   },
@@ -30609,11 +20330,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Divergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux personnages historiques. Sur quel point précis sont-ils en désaccord?",
-    aspects: [
-      {
-        aspect: "Commerce du bois"
-      }
-    ],
+    aspects: [{aspect: "Commerce du bois"}],
     documents: [
       {
         type: "textes",
@@ -30638,10 +20355,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le blocus continental.",
     updatedAt: "2026-06-16T02:59:12.839Z"
   },
@@ -30653,11 +20367,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Position – 3 acteurs",
     enonce: "Les documents A à C  présentent la position de trois acteurs sur les tarifs préférentiels. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
-    aspects: [
-      {
-        aspect: "Commerce du bois"
-      }
-    ],
+    aspects: [{aspect: "Commerce du bois"}],
     documents: [
       {
         type: "textes",
@@ -30693,10 +20403,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Le marchand américain s'oppose aux tarifs préférentiels accordés au bois pas la Grande-Bretagne (différence), alors que George Prevost et John Molson y sont favorables (similitude).",
     updatedAt: "2026-06-16T03:05:09.865Z"
   },
@@ -30707,11 +20414,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     enonce: "Indiquez une difficulté économique qui pousse plusieurs Britanniques à quitter leur pays dans la première moitié du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Mouvements migratoires"
-      }
-    ],
+    aspects: [{aspect: "Mouvements migratoires"}],
     documents: [
       {
         type: "textes",
@@ -30724,10 +20427,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le manque de travail\nLe chômage\nLa pauvreté\nLes difficultés économiques en Grande-Bretagne",
     updatedAt: "2026-06-15T23:44:57.313Z"
   },
@@ -30738,11 +20438,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez le nom d’une maladie qui touche les immigrants arrivant dans la colonie au XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Mouvements migratoires"
-      }
-    ],
+    aspects: [{aspect: "Mouvements migratoires"}],
     documents: [
       {
         type: "textes",
@@ -30755,10 +20451,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Le choléra.",
     updatedAt: "2026-06-16T00:00:12.822Z"
   },
@@ -30769,11 +20462,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez une mesure mise en place pour limiter la propagation des maladies chez les immigrants arrivant dans la colonie au XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Mouvements migratoires"
-      }
-    ],
+    aspects: [{aspect: "Mouvements migratoires"}],
     documents: [
       {
         type: "textes",
@@ -30786,10 +20475,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Une station de quarantaine à Grosse-Île",
     updatedAt: "2026-06-15T23:53:28.012Z"
   },
@@ -30801,11 +20487,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause et conséquence",
     enonce: "Les documents A et B présentent des éléments liés à l’immigration britannique dans la première moitié du XIXe siècle. Indiquez la lettre du document qui présente une cause de cette immigration et la lettre du document qui présente une conséquence.",
-    aspects: [
-      {
-        aspect: "Mouvements migratoires"
-      }
-    ],
+    aspects: [{aspect: "Mouvements migratoires"}],
     documents: [
       {
         type: "textes",
@@ -30829,20 +20511,12 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "cause-consequence"
-    },
+    reponse: {type: "cause-consequence"},
     guide: {
       type: "grille",
-      entetes: [
-        "Cause",
-        "Conséquence"
-      ],
+      entetes: ["Cause", "Conséquence"],
       rangees: [
-        [
-          "B",
-          "A"
-        ]
+        ["B", "A"]
       ]
     },
     updatedAt: "2026-06-15T23:59:44.570Z"
@@ -30855,26 +20529,14 @@ const QUESTIONS = [
     points: 1,
     soustag: "Situer 1 élément",
     enonce: "À partir du document A, indiquez la lettre qui correspond à une région où s'établissent de nombreux immigrants britanniques dans la première moitié du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Mouvements migratoires"
-      }
-    ],
+    aspects: [{aspect: "Mouvements migratoires"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "territoire_immigration_1820.png",
-            source: "Carte du Québec. Adaptée d'après d-maps.com."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "territoire_immigration_1820.png", source: "Carte du Québec. Adaptée d'après d-maps.com."}]
       }
     ],
-    reponse: {
-      type: "tableau_2col"
-    },
+    reponse: {type: "tableau_2col"},
     guide: "A",
     updatedAt: "2026-06-16T00:06:47.984Z"
   },
@@ -30886,11 +20548,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une cause de l’augmentation de la population urbaine dans la première moitié du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Mouvements migratoires"
-      }
-    ],
+    aspects: [{aspect: "Mouvements migratoires"}],
     documents: [
       {
         type: "textes",
@@ -30903,10 +20561,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Exode rural.\nImmigration britannique.",
     updatedAt: "2026-06-16T00:09:11.081Z"
   },
@@ -30918,11 +20573,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une cause de l’augmentation de la population urbaine dans la première moitié du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Mouvements migratoires"
-      }
-    ],
+    aspects: [{aspect: "Mouvements migratoires"}],
     documents: [
       {
         type: "textes",
@@ -30935,10 +20586,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Exode rural.\nImmigration britannique.",
     updatedAt: "2026-06-16T00:09:53.887Z"
   },
@@ -30950,11 +20598,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une raison qui pousse plusieurs habitants à quitter les campagnes du Bas-Canada vers 1830.",
-    aspects: [
-      {
-        aspect: "Mouvements migratoires"
-      }
-    ],
+    aspects: [{aspect: "Mouvements migratoires"}],
     documents: [
       {
         type: "textes",
@@ -30967,10 +20611,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le manque de terres disponibles\nLa surpopulation des seigneuries\nLes difficultés agricoles",
     updatedAt: "2026-06-16T00:11:08.656Z"
   },
@@ -30981,11 +20622,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez le pays vers lequel émigrent de nombreux Canadiens dans la première moitié du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Mouvements migratoires"
-      }
-    ],
+    aspects: [{aspect: "Mouvements migratoires"}],
     documents: [
       {
         type: "textes",
@@ -30998,10 +20635,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Les États-Unis.",
     updatedAt: "2026-06-16T00:12:29.468Z"
   },
@@ -31012,11 +20646,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     enonce: "Indiquez une conséquence du manque de terres disponibles dans les seigneuries du Bas-Canada vers 1830.",
-    aspects: [
-      {
-        aspect: "Mouvements migratoires"
-      }
-    ],
+    aspects: [{aspect: "Mouvements migratoires"}],
     documents: [
       {
         type: "textes",
@@ -31029,10 +20659,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "L'émigration vers les États-Unis\nLa migration vers les villes\nL'ouverture de régions de colonisation",
     updatedAt: "2026-06-16T00:15:09.380Z"
   },
@@ -31043,27 +20670,14 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "À partir du document A, indiquez le nom d'une région de colonisation qui accueille de nombreux immigrants britanniques dans la première moitié du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Mouvements migratoires"
-      }
-    ],
+    aspects: [{aspect: "Mouvements migratoires"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "cantons_immigration.png",
-            source: "Carte du sud du Quéec. Adaptée d'après d-maps.com."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "cantons_immigration.png", source: "Carte du sud du Quéec. Adaptée d'après d-maps.com."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Cantons-de-l'Est.",
     updatedAt: "2026-06-16T00:22:02.582Z"
   },
@@ -31075,11 +20689,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux personnages historiques. Sur quel point précis sont-ils d'accord?",
-    aspects: [
-      {
-        aspect: "Mouvements migratoires"
-      }
-    ],
+    aspects: [{aspect: "Mouvements migratoires"}],
     documents: [
       {
         type: "textes",
@@ -31104,10 +20714,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "L'ouverture de nouvelles régions de colonisation au Bas-Canada.",
     updatedAt: "2026-06-16T02:55:59.065Z"
   },
@@ -31119,11 +20726,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Divergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux personnages historiques. Sur quel point précis sont-ils en désaccord?",
-    aspects: [
-      {
-        aspect: "Mouvements migratoires"
-      }
-    ],
+    aspects: [{aspect: "Mouvements migratoires"}],
     documents: [
       {
         type: "textes",
@@ -31148,10 +20751,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "L'émigration vers les États-Unis.",
     updatedAt: "2026-06-16T02:57:15.063Z"
   },
@@ -31163,11 +20763,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Position – 3 acteurs",
     enonce: "Lea documents A à C présentent le point de vue de trois acteurs sur les mouvements migratoires. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
-    aspects: [
-      {
-        aspect: "Mouvements migratoires"
-      }
-    ],
+    aspects: [{aspect: "Mouvements migratoires"}],
     documents: [
       {
         type: "textes",
@@ -31203,10 +20799,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "L'immigrant britannique s'oppose à la station quarantaine (la différence), alors que le médecin de la station de quarantaine et l'administrateur colonial y sont favorables (la similitude).",
     updatedAt: "2026-06-16T02:55:17.876Z"
   },
@@ -31218,11 +20811,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une raison qui explique l'alliance entre certaines Premières Nations et les Britanniques durant la guerre de 1812.",
-    aspects: [
-      {
-        aspect: "Guerre anglo-américaine de 1812"
-      }
-    ],
+    aspects: [{aspect: "Guerre anglo-américaine de 1812"}],
     documents: [
       {
         type: "textes",
@@ -31235,10 +20824,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Protéger leur territoire contre l'expansion américaine\nEmpêcher les Américains d'occuper leurs terres",
     updatedAt: "2026-06-16T00:39:17.549Z"
   },
@@ -31250,11 +20836,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une raison qui explique l'appui de l'Église catholique aux autorités britanniques pendant la guerre de 1812.",
-    aspects: [
-      {
-        aspect: "Guerre anglo-américaine de 1812"
-      }
-    ],
+    aspects: [{aspect: "Guerre anglo-américaine de 1812"}],
     documents: [
       {
         type: "textes",
@@ -31267,10 +20849,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Préserver les privilèges accordés à l'Église catholique\nMaintenir la liberté de religion accordée par les Britanniques",
     updatedAt: "2026-06-16T00:39:56.568Z"
   },
@@ -31282,11 +20861,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Continuité",
     enonce: "Indiquez un élément de continuité dans les relations entre l'Église catholique et le gouvernement britannique avant et pendant la guerre de 1812.",
-    aspects: [
-      {
-        aspect: "Guerre anglo-américaine de 1812"
-      }
-    ],
+    aspects: [{aspect: "Guerre anglo-américaine de 1812"}],
     documents: [
       {
         type: "textes",
@@ -31309,10 +20884,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "L'Église catholique et le gouvernement britannique maintiennent de bonnes relations avant et pendant la guerre de 1812\nL'Église catholique continue d'appuyer les autorités britanniques\nLa collaboration entre l'Église catholique et le gouvernement britannique se poursuit",
     updatedAt: "2026-06-16T00:41:21.809Z"
   },
@@ -31323,11 +20895,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez une façon dont les Canadiens participent à la guerre de 1812.",
-    aspects: [
-      {
-        aspect: "Guerre anglo-américaine de 1812"
-      }
-    ],
+    aspects: [{aspect: "Guerre anglo-américaine de 1812"}],
     documents: [
       {
         type: "textes",
@@ -31340,10 +20908,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Ils servent dans la milice\nIls participent à la défense de la colonie\nIls prennent part aux combats",
     updatedAt: "2026-06-16T00:41:59.924Z"
   },
@@ -31355,11 +20920,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Changement",
     enonce: "Indiquez un changement dans le sentiment d'appartenance de plusieurs Canadiens à la suite de la guerre de 1812.",
-    aspects: [
-      {
-        aspect: "Guerre anglo-américaine de 1812"
-      }
-    ],
+    aspects: [{aspect: "Guerre anglo-américaine de 1812"}],
     documents: [
       {
         type: "textes",
@@ -31372,10 +20933,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le sentiment d'appartenance à la colonie se renforce\nPlusieurs Canadiens sont davantage fiers d'avoir défendu leur colonie\nPlusieurs Canadiens développent un sentiment national plus fort",
     updatedAt: "2026-06-16T00:53:12.045Z"
   },
@@ -31387,26 +20945,14 @@ const QUESTIONS = [
     points: 1,
     soustag: "Situer 1 élément",
     enonce: "À partir du document A, indiquez la lettre qui correspond à l'endroit où a lieu la bataille de Châteauguay durant la guerre de 1812.",
-    aspects: [
-      {
-        aspect: "Guerre anglo-américaine de 1812"
-      }
-    ],
+    aspects: [{aspect: "Guerre anglo-américaine de 1812"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_bataille_chateauguay.png",
-            source: "Carte du Québec. Adaptée d'après d-maps.com."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_bataille_chateauguay.png", source: "Carte du Québec. Adaptée d'après d-maps.com."}]
       }
     ],
-    reponse: {
-      type: "tableau_2col"
-    },
+    reponse: {type: "tableau_2col"},
     guide: "A",
     updatedAt: "2026-06-16T00:48:02.873Z"
   },
@@ -31418,11 +20964,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Convergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux personnages historiques. Sur quel point précis sont-ils en accord?",
-    aspects: [
-      {
-        aspect: "Guerre anglo-américaine de 1812"
-      }
-    ],
+    aspects: [{aspect: "Guerre anglo-américaine de 1812"}],
     documents: [
       {
         type: "textes",
@@ -31447,10 +20989,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "La défense de la colonie contre l'invasion américaine.",
     updatedAt: "2026-06-16T02:52:12.607Z"
   },
@@ -31462,11 +21001,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Divergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux personnages historiques. Sur quel point précis sont-ils en désaccord?",
-    aspects: [
-      {
-        aspect: "Guerre anglo-américaine de 1812"
-      }
-    ],
+    aspects: [{aspect: "Guerre anglo-américaine de 1812"}],
     documents: [
       {
         type: "textes",
@@ -31491,10 +21026,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "La participation des habitants à la guerre ou à la formation de la milice.",
     updatedAt: "2026-06-16T02:51:42.557Z"
   },
@@ -31505,11 +21037,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez un moyen utilisé par les autorités britanniques pour favoriser la diffusion de la religion anglicane au début du XIXe siècle.",
-    aspects: [
-      {
-        aspect: "Église anglicane"
-      }
-    ],
+    aspects: [{aspect: "Église anglicane"}],
     documents: [
       {
         type: "textes",
@@ -31522,10 +21050,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "La création d'écoles publiques gratuites.",
     updatedAt: "2026-06-16T02:42:34.817Z"
   },
@@ -31536,11 +21061,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     enonce: "Indiquez une conséquence de la création du diocèse anglican de Québec en 1793.",
-    aspects: [
-      {
-        aspect: "Église anglicane"
-      }
-    ],
+    aspects: [{aspect: "Église anglicane"}],
     documents: [
       {
         type: "textes",
@@ -31553,10 +21074,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le renforcement de la présence de l'Église anglicane dans la colonie\nUne meilleure organisation de l'Église anglicane dans la colonie",
     updatedAt: "2026-06-16T02:44:30.228Z"
   },
@@ -31568,11 +21086,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Divergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux personnages historiques. Sur quel point précis sont-ils en désaccord?",
-    aspects: [
-      {
-        aspect: "Église anglicane"
-      }
-    ],
+    aspects: [{aspect: "Église anglicane"}],
     documents: [
       {
         type: "textes",
@@ -31597,10 +21111,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le rôle de l'Église anglicane dans la colonie.",
     updatedAt: "2026-06-16T02:49:59.396Z"
   },
@@ -31611,11 +21122,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez une recommandation politique formulée dans le Rapport Durham.",
-    aspects: [
-      {
-        aspect: "Rapport Durham"
-      }
-    ],
+    aspects: [{aspect: "Rapport Durham"}],
     documents: [
       {
         type: "textes",
@@ -31629,10 +21136,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Instauration de la responsabilité ministérielle\nUnion du Haut-Canada et du Bas-Canada\nCréation d'un gouvernement unique pour les deux Canadas",
     updatedAt: "2026-06-16T13:42:27.085Z"
   },
@@ -31643,11 +21147,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez un problème politique observé par Durham concernant le fonctionnement politique du Bas-Canada.",
-    aspects: [
-      {
-        aspect: "Rapport Durham"
-      }
-    ],
+    aspects: [{aspect: "Rapport Durham"}],
     documents: [
       {
         type: "textes",
@@ -31660,10 +21160,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Les élus n'ont pas le contrôle du gouvernement\nLe gouverneur détient trop de pouvoir\nL'absence de responsabilité ministérielle\nLes conflits entre l'Assemblée et l'exécutif",
     updatedAt: "2026-06-16T13:18:41.855Z"
   },
@@ -31675,11 +21172,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez une raison qui explique la recommandation de Durham concernant la responsabilité ministérielle.",
-    aspects: [
-      {
-        aspect: "Rapport Durham"
-      }
-    ],
+    aspects: [{aspect: "Rapport Durham"}],
     documents: [
       {
         type: "textes",
@@ -31692,10 +21185,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Les élus disposent de peu de pouvoir réel\nL'exécutif n'est pas responsable devant les élus\nLes conflits entre l'Assemblée et le gouverneur paralysent le gouvernement\nLe fonctionnement politique est inefficace en raison des tensions entre les institutions",
     updatedAt: "2026-06-16T13:25:46.248Z"
   },
@@ -31707,11 +21197,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Cause",
     enonce: "Indiquez la principale cause des troubles survenus dans le Bas-Canada en 1837-1838 selon le Rapport Durham.",
-    aspects: [
-      {
-        aspect: "Rapport Durham"
-      }
-    ],
+    aspects: [{aspect: "Rapport Durham"}],
     documents: [
       {
         type: "textes",
@@ -31724,10 +21210,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le conflit entre Canadiens français et Britanniques\nLes tensions entre les deux groupes de population",
     updatedAt: "2026-06-16T13:59:54.724Z"
   },
@@ -31738,11 +21221,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez une recommandation territoriale formulée dans le Rapport Durham.",
-    aspects: [
-      {
-        aspect: "Rapport Durham"
-      }
-    ],
+    aspects: [{aspect: "Rapport Durham"}],
     documents: [
       {
         type: "textes",
@@ -31755,10 +21234,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "L'union du Haut-Canada et du Bas-Canada\nRéunir les deux Canadas en une seule colonie",
     updatedAt: "2026-06-16T13:39:19.200Z"
   },
@@ -31770,11 +21246,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Position – 3 acteurs",
     enonce: "Les documents A à C présentent la position de trois acteurs sur l'avenir des Canadiens français. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
-    aspects: [
-      {
-        aspect: "Rapport Durham"
-      }
-    ],
+    aspects: [{aspect: "Rapport Durham"}],
     documents: [
       {
         type: "textes",
@@ -31810,10 +21282,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Durham est favorable à l'assimilation des Canadiens français (la différence), alors que Louis-Joseph Papineau et Étienne Parent s'y oppose.",
     updatedAt: "2026-06-16T13:50:15.131Z"
   },
@@ -31825,11 +21294,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Divergence – 2 acteurs",
     enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en désaccord?",
-    aspects: [
-      {
-        aspect: "Rapport Durham"
-      }
-    ],
+    aspects: [{aspect: "Rapport Durham"}],
     documents: [
       {
         type: "textes",
@@ -31854,10 +21319,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Ils sont en désaccord sur l'assimilation des Canadiens français.",
     updatedAt: "2026-06-16T13:53:26.608Z"
   },
@@ -31868,11 +21330,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 3,
     enonce: "Expliquez comment les difficultés observées dans le fonctionnement politique du Bas-Canada amènent Durham à recommander une réforme de l'exercice du pouvoir.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un problème observé dans le fonctionnement des institutions\n• une conséquence politique de ce problème\n• une recommandation formulée par Durham",
-    aspects: [
-      {
-        aspect: "Rapport Durham"
-      }
-    ],
+    aspects: [{aspect: "Rapport Durham"}],
     documents: [
       {
         type: "textes",
@@ -31907,10 +21365,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 5
-    },
+    reponse: {type: "lignes", nombre: 5},
     guide: "Au Bas-Canada, les élus contrôlent peu le gouvernement (problème observé dans le fonctionnement des institutions). Cette situation provoque des tensions politiques entre l'Assemblée et les autorités coloniales (conséquence politique). Durham recommande donc la responsabilité ministérielle pour donner davantage d'influence aux représentants élus (recommandation formulée par Durham).",
     updatedAt: "2026-06-16T13:59:13.287Z"
   },
@@ -31921,11 +21376,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 3,
     enonce: "Expliquez comment l'analyse de la situation du Bas-Canada amène Durham à proposer une solution aux tensions qui divisent la colonie.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une caractéristique de la population du Bas-Canada\n• un problème identifié par Durham\n• une mesure proposée dans son rapport",
-    aspects: [
-      {
-        aspect: "Rapport Durham"
-      }
-    ],
+    aspects: [{aspect: "Rapport Durham"}],
     documents: [
       {
         type: "textes",
@@ -31959,10 +21410,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 5
-    },
+    reponse: {type: "lignes", nombre: 5},
     guide: "Au Bas-Canada, les Canadiens français sont majoritaires, mais une minorité britannique est aussi présente (caractéristique de la population). Selon Durham, les différences entre ces deux groupes causent des tensions dans la colonie (problème identifié par Durham). Il recommande donc l’assimilation des Canadiens français à la population britannique (solution proposée).",
     updatedAt: "2026-06-16T14:13:03.376Z"
   },
@@ -31974,11 +21422,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir du document A, indiquez s'il y a changement ou continuité concernant la présence de l'Église catholique et de l'Église anglicane dans la colonie entre 1790 et 1830. Justifiez votre réponse à l'aide de faits et d'un repère de temps.",
-    aspects: [
-      {
-        aspect: "Église anglicane"
-      }
-    ],
+    aspects: [{aspect: "Église anglicane"}],
     documents: [
       {
         type: "textes",
@@ -31992,10 +21436,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Changement\nIl y a changement puisque le nombre de paroisses catholiques passe de 150 à 250 entre 1790 et 1830.\nIl y a changement puisque le nombre de paroisses anglicanes passe de 0 à 40 entre 1790 et 1830.\nIl y a changement puisque le nombre de paroisses catholiques et anglicanes augmente entre 1790 et 1830.\n\nContinuité\nIl y a continuité puisque les paroisses catholiques demeurent plus nombreuses que les paroisses anglicanes en 1790 comme en 1830.\nIl y a continuité puisque l'Église catholique compte davantage de paroisses que l'Église anglicane en 1790 comme en 1830.",
     updatedAt: "2026-06-16T18:04:41.206Z"
   },
@@ -32007,11 +21448,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir du document A, indiquez s'il y a changement ou continuité concernant les exportations du Bas-Canada entre 1800 et 1840. Justifiez votre réponse à l'aide de faits et d'un repère de temps.",
-    aspects: [
-      {
-        aspect: "Commerce du bois"
-      }
-    ],
+    aspects: [{aspect: "Commerce du bois"}],
     documents: [
       {
         type: "textes",
@@ -32025,10 +21462,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Changement\nIl y a changement puisque le bois passe de 15 % des exportations en 1800 à 65 % en 1840.\nIl y a changement puisque les fourrures passent de 45 % des exportations en 1800 à 10 % en 1840.\n\nContinuité\nIl y a continuité puisque le Bas-Canada exporte encore du blé et de la farine en 1800 et en 1840.\nIl y a continuité puisque les autres produits représentent 10 % des exportations en 1800 et en 1840.",
     updatedAt: "2026-06-16T18:12:54.764Z"
   },
@@ -32040,11 +21474,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Continuité",
     enonce: "À partir du document A, indiquez un élément de continuité concernant la destination des exportations de bois du Bas-Canada entre 1800 et 1840.",
-    aspects: [
-      {
-        aspect: "Commerce du bois"
-      }
-    ],
+    aspects: [{aspect: "Commerce du bois"}],
     documents: [
       {
         type: "textes",
@@ -32058,10 +21488,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Il y a continuité puisque la Grande-Bretagne demeure la principale destination des exportations de bois en 1800 et en 1840.",
     updatedAt: "2026-06-16T18:20:16.946Z"
   },
@@ -32072,11 +21499,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 1,
     enonce: "Indiquez le nom des terres accordées à l’Église anglicane par l’Acte constitutionnel de 1791.",
-    aspects: [
-      {
-        aspect: "Église anglicane"
-      }
-    ],
+    aspects: [{aspect: "Église anglicane"}],
     documents: [
       {
         type: "textes",
@@ -32089,10 +21512,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "Les réserves du clergé.",
     updatedAt: "2026-06-16T18:26:38.534Z"
   },
@@ -32104,11 +21524,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Continuité",
     enonce: "Indiquez un élément de continuité concernant le pouvoir du gouverneur sur les projets de loi adoptés par la Chambre d'assemblée entre 1792 et 1838.",
-    aspects: [
-      {
-        aspect: "Débats parlementaires"
-      }
-    ],
+    aspects: [{aspect: "Débats parlementaires"}],
     documents: [
       {
         type: "textes",
@@ -32122,10 +21538,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le gouverneur conserve le pouvoir de refuser des projets de loi pendant toute la période.\nLe gouverneur continue d'exercer son droit de veto entre 1792 et 1838.\nLe gouverneur maintient son autorité sur les lois adoptées par la Chambre d'assemblée.",
     updatedAt: "2026-06-16T18:36:37.578Z"
   },
@@ -32137,11 +21550,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence du commerce du bois sur les emplois dans la colonie.",
-    aspects: [
-      {
-        aspect: "Commerce du bois"
-      }
-    ],
+    aspects: [{aspect: "Commerce du bois"}],
     documents: [
       {
         type: "textes",
@@ -32155,10 +21564,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le commerce du bois crée de nombreux emplois dans la colonie.",
     updatedAt: "2026-06-16T18:51:58.925Z"
   },
@@ -32170,11 +21576,7 @@ const QUESTIONS = [
     points: 2,
     soustag: "Conséquence",
     enonce: "Indiquez une conséquence du développement du commerce du bois sur la construction navale au Bas-Canada.",
-    aspects: [
-      {
-        aspect: "Commerce du bois"
-      }
-    ],
+    aspects: [{aspect: "Commerce du bois"}],
     documents: [
       {
         type: "textes",
@@ -32188,10 +21590,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Le nombre de navires construits augmente.\nLa construction navale se développe.\nLes chantiers navals emploient davantage de travailleurs.",
     updatedAt: "2026-06-16T19:01:10.061Z"
   },
@@ -32203,37 +21602,18 @@ const QUESTIONS = [
     points: 2,
     soustag: "Changement",
     enonce: "À partir des documents A et B, indiquez un changement dans l'organisation territoriale de la colonie entre 1791 et 1840.",
-    aspects: [
-      {
-        aspect: "Acte d'Union"
-      }
-    ],
+    aspects: [{aspect: "Acte d'Union"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_acte_constitutionnel_1791.png",
-            source: "Récitus"
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_acte_constitutionnel_1791.png", source: "Récitus"}]
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            ref: "carte_acte_union_1840.jpg",
-            source: "Reécitus."
-          }
-        ]
+        cols: [{titre: "Document B", ref: "carte_acte_union_1840.jpg", source: "Reécitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 2
-    },
+    reponse: {type: "lignes", nombre: 2},
     guide: "Entre 1791 et 1840, le Haut-Canada et le Bas-Canada sont réunis pour former la Province du Canada.\nEntre 1791 et 1840, la colonie passe d'une organisation en deux territoires distincts (Haut-Canada et Bas-Canada) à une seule colonie appelée Province du Canada.",
     updatedAt: "2026-06-18T12:35:29.900Z"
   },
@@ -32244,27 +21624,14 @@ const QUESTIONS = [
     periode: "P5 — 1840 – 1896",
     points: 1,
     enonce: "Indiquez le nom de la colonie créée à la suite de l’Acte d’Union de 1840.",
-    aspects: [
-      {
-        aspect: "Acte d'Union"
-      }
-    ],
+    aspects: [{aspect: "Acte d'Union"}],
     documents: [
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "carte_acte_union_1840.jpg",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document A", ref: "carte_acte_union_1840.jpg", source: "Récitus."}]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 1
-    },
+    reponse: {type: "lignes", nombre: 1},
     guide: "La Province du Canada.",
     updatedAt: "2026-06-18T12:46:36.050Z"
   },
@@ -32276,11 +21643,7 @@ const QUESTIONS = [
     points: 3,
     soustag: "Changement ou continuité",
     enonce: "À partir des documents A et B, indiquez un changement ou une continuité dans l'organisation politique de la colonie entre 1791 et 1840. Justifiez votre réponse à l'aide de faits et d'un repère de temps.",
-    aspects: [
-      {
-        aspect: "Acte d'Union"
-      }
-    ],
+    aspects: [{aspect: "Acte d'Union"}],
     documents: [
       {
         type: "textes",
@@ -32305,10 +21668,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 3
-    },
+    reponse: {type: "lignes", nombre: 3},
     guide: "Changement\nEntre 1791 et 1840, l'organisation politique change. En 1791, le Haut-Canada et le Bas-Canada possèdent chacun leur propre chambre d'assemblée. En 1840, ils partagent une seule Assemblée législative.\n\nContinuité\nEntre 1791 et 1840, il y a continuité dans l'organisation politique de la colonie. En 1791 comme en 1840, la population élit des représentants à une assemblée législative.",
     updatedAt: "2026-06-18T12:52:51.755Z"
   },
@@ -32319,11 +21679,7 @@ const QUESTIONS = [
     periode: "P5 — 1840 – 1896",
     points: 3,
     enonce: "Expliquez comment la constitution adoptée par les autorités britanniques en 1840 modifie la représentation politique des habitants de la Province du Canada.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• Le nom de la constitution adoptée en 1840\n• Un changement dans l'organisation politique de la colonie\n• Une conséquence pour la population du Bas-Canada",
-    aspects: [
-      {
-        aspect: "Acte d'Union"
-      }
-    ],
+    aspects: [{aspect: "Acte d'Union"}],
     documents: [
       {
         type: "textes",
@@ -32337,13 +21693,7 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            ref: "carte_acte_union_1840.jpg",
-            source: "Récitus."
-          }
-        ]
+        cols: [{titre: "Document B", ref: "carte_acte_union_1840.jpg", source: "Récitus."}]
       },
       {
         type: "textes",
@@ -32357,10 +21707,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "lignes",
-      nombre: 5
-    },
+    reponse: {type: "lignes", nombre: 5},
     guide: "L'Acte d'Union (le nom de la constitution adoptée en 1840) est adopté par les autorités britanniques. Cette constitution crée une seule Assemblée législative pour le Haut-Canada et le Bas-Canada (un changement dans l'organisation politique de la colonie). Cette mesure réduit l'influence politique des habitants du Bas-Canada, qui ont le même nombre de députés que ceux du Canada-Ouest malgré une population plus nombreuse (une conséquence pour la population du Bas-Canada).",
     updatedAt: "2026-06-18T13:12:37.136Z"
   },
@@ -32372,11 +21719,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Acte d'Union"
-      }
-    ],
+    aspects: [{aspect: "Acte d'Union"}],
     documents: [
       {
         type: "textes",
@@ -32390,10 +21733,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1830-1875.png"
-    },
+    reponse: {type: "image", ref: "ligne_1830-1875.png"},
     guide: "A",
     updatedAt: "2026-06-18T13:38:10.374Z"
   },
@@ -32405,11 +21745,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Migrations"
-      }
-    ],
+    aspects: [{aspect: "Migrations"}],
     documents: [
       {
         type: "textes",
@@ -32423,10 +21759,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1845-1890.png"
-    },
+    reponse: {type: "image", ref: "ligne_1845-1890.png"},
     guide: "A",
     updatedAt: "2026-06-18T13:33:45.882Z"
   },
@@ -32438,11 +21771,7 @@ const QUESTIONS = [
     points: 1,
     soustag: "Ligne du temps",
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
-    aspects: [
-      {
-        aspect: "Exploitations agricoles"
-      }
-    ],
+    aspects: [{aspect: "Exploitations agricoles"}],
     documents: [
       {
         type: "textes",
@@ -32456,10 +21785,7 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {
-      type: "image",
-      ref: "ligne_1845-1890.png"
-    },
+    reponse: {type: "image", ref: "ligne_1845-1890.png"},
     guide: "A",
     updatedAt: "2026-06-18T14:28:48.654Z"
   }
