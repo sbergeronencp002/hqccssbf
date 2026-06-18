@@ -18829,7 +18829,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Similitude",
-    enonce: "À partir des documents A et B, indiquez une similitude politique entre les mouvements de contestation du Bas-Canada et du Haut-Canada vers 1837.",
+    enonce: "À partir des documents A et B, indiquez une similitude dans les revendications polituques entre les mouvements de contestation du Bas-Canada et du Haut-Canada vers 1837.",
     aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
@@ -18856,8 +18856,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "La responsabilité ministérielle.\nUn gouvernement responsable.\nLa responsabilité du Conseil exécutif devant la Chambre d'assemblée.",
-    updatedAt: "2026-06-12T16:42:17.776Z"
+    guide: "Les deux mouvements réclament des réformes politiques.\nLes deux mouvements souhaitent accroître le pouvoir de l'Assemblée élue.\nLes deux mouvements contestent le pouvoir des autorités nommées.\nLes deux mouvements demandent un gouvernement plus représentatif.",
+    updatedAt: "2026-06-18T23:34:43.809Z"
   },
   {
     id: "Q413",
