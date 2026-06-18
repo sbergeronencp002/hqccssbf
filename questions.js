@@ -10529,9 +10529,6 @@ const IMAGE_DB = {
   "org_pol_1774_acte_quebec.png": {
     src: "images/org_pol_1774_acte_quebec.png"
   },
-  "territoire_province_quebec_1783.png": {
-    src: "images/territoire_province_quebec_1783.png"
-  },
   "migration_loyalistes.png": {
     src: "images/migration_loyalistes.png"
   },
@@ -10896,6 +10893,9 @@ const IMAGE_DB = {
   },
   "carte_acte_quebec_1774.png": {
     src: "images/carte_acte_quebec_1774.png"
+  },
+  "carte_province_quebec_1783.png": {
+    src: "images/carte_province_quebec_1783.png"
   }
 }
 
@@ -22521,7 +22521,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            ref: "territoire_province_quebec_1783.png",
+            ref: "carte_province_quebec_1783.png",
             source: "Récitus."
           }
         ]
@@ -22563,7 +22563,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "territoire_province_quebec_1783.png",
+            ref: "carte_province_quebec_1783.png",
             source: "Récitus."
           }
         ]
@@ -25045,7 +25045,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "territoire_province_quebec_1783.png",
+            ref: "carte_province_quebec_1783.png",
             source: "Récitus."
           }
         ]
