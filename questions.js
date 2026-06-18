@@ -10346,9 +10346,6 @@ const IMAGE_DB = {
   "grahique_b_exportations_fourrures_huronie.png": {
     src: "images/grahique_b_exportations_fourrures_huronie.png"
   },
-  "village_domicilie_autochtone.png": {
-    src: "images/village_domicilie_autochtone.png"
-  },
   "filles_du_roy.png": {
     src: "images/filles_du_roy.png"
   },
@@ -10896,6 +10893,9 @@ const IMAGE_DB = {
   },
   "carte_premiers_contacts.png": {
     src: "images/carte_premiers_contacts.png"
+  },
+  "carte_villages_domicilies_autochtones.png": {
+    src: "images/carte_villages_domicilies_autochtones.png"
   }
 }
 
@@ -16718,7 +16718,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "village_domicilie_autochtone.png",
+            ref: "carte_villages_domicilies_autochtones.png",
             source: "Récitus."
           }
         ]
@@ -16754,7 +16754,7 @@ const QUESTIONS = [
           },
           {
             titre: "",
-            ref: "village_domicilie_autochtone.png",
+            ref: "carte_villages_domicilies_autochtones.png",
             source: "Récitus."
           }
         ]
@@ -16796,7 +16796,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "village_domicilie_autochtone.png",
+            ref: "carte_villages_domicilies_autochtones.png",
             source: "Récitus."
           }
         ]
