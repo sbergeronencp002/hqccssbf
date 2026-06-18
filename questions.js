@@ -10229,9 +10229,6 @@ const IMAGE_DB = {
   "org_pol_1791_acte_const.png": {
     src: "images/org_pol_1791_acte_const.png"
   },
-  "familles_linguistiques_autochtones.png": {
-    src: "images/familles_linguistiques_autochtones.png"
-  },
   "campement_algonquien.png": {
     src: "images/campement_algonquien.png"
   },
@@ -10896,6 +10893,9 @@ const IMAGE_DB = {
   },
   "carte_destruction_huronie_1640.png": {
     src: "images/carte_destruction_huronie_1640.png"
+  },
+  "carte_familles_linguistiques_autochtones_1500.png": {
+    src: "images/carte_familles_linguistiques_autochtones_1500.png"
   }
 }
 
@@ -12342,7 +12342,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "familles_linguistiques_autochtones.png",
+            ref: "carte_familles_linguistiques_autochtones_1500.png",
             source: "Récitus."
           }
         ]
@@ -12373,7 +12373,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "familles_linguistiques_autochtones.png",
+            ref: "carte_familles_linguistiques_autochtones_1500.png",
             source: "Récitus."
           }
         ]
