@@ -10238,9 +10238,6 @@ const IMAGE_DB = {
   "victoire_pq_1976.png": {
     src: "images/victoire_pq_1976.png"
   },
-  "1500_reseau_echanges.png": {
-    src: "images/1500_reseau_echanges.png"
-  },
   "cause_rivalites_coloniales.png": {
     src: "images/cause_rivalites_coloniales.png"
   },
@@ -10896,6 +10893,9 @@ const IMAGE_DB = {
   },
   "carte_villages_domicilies_autochtones.png": {
     src: "images/carte_villages_domicilies_autochtones.png"
+  },
+  "carte_reseaux_echanges_1500.png": {
+    src: "images/carte_reseaux_echanges_1500.png"
   }
 }
 
@@ -13169,7 +13169,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "1500_reseau_echanges.png",
+            ref: "carte_reseaux_echanges_1500.png",
             source: "Récitus."
           }
         ]
@@ -13201,7 +13201,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "1500_reseau_echanges.png",
+            ref: "carte_reseaux_echanges_1500.png",
             source: "Récitus."
           }
         ]
