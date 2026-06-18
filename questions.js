@@ -6668,7 +6668,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux auteurs sur le don et le contre-don. Sur quel point précis ces deux auteurs sont-ils d’accord?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?",
     aspects: [{aspect: "Rapports sociaux chez les Autochtones"}],
     documents: [
       {
@@ -6676,8 +6676,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« L’échange de présents ne constitue pas un geste gratuit. Celui qui reçoit un don a l’obligation de rendre à son tour, ce qui entretient les relations et crée des engagements durables entre les groupes. »",
-            auteur: "Marcel Mauss"
+            texte: "« Les échanges de dons créent des obligations réciproques qui contribuent à maintenir les liens entre les membres d'une communauté et entre les nations alliées. »",
+            auteur: "Denys Delâge",
+            source: "Adapté de Denys Delâge, Le pays renversé : Amérindiens et Européens en Amérique du Nord-Est, 1600-1664, Boréal, 1991."
           }
         ]
       },
@@ -6686,14 +6687,16 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« Chez plusieurs peuples autochtones, les présents échangés entre alliés appellent une réciprocité. Le groupe qui reçoit doit offrir un contre-don, ce qui permet de maintenir les alliances et de renforcer les liens entre les communautés. »",
-            auteur: "Denys Delâge"
+            texte: "« Le principe du don et du contre-don favorise la solidarité puisqu'un cadeau reçu appelle généralement un geste équivalent en retour. »",
+            auteur: "Alain Beaulieu",
+            source: "Adapté de Alain Beaulieu, Les Autochtones du Québec : des premières alliances aux revendications contemporaines, Fides, 2013."
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les deux auteurs s’entendent pour dire que le don appelle un contre-don."
+    guide: "La réciprocité du don et du contre-don.",
+    updatedAt: "2026-06-18T18:22:48.952Z"
   },
   {
     id: "Q49",
