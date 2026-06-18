@@ -16122,7 +16122,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Divergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux acteurs sur le droit de vote des femmes dans le Bas-Canada. Sur quel point précis sont-ils en désaccord ?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en désaccord ?",
     aspects: [{aspect: "Acte constitutionnel"}],
     documents: [
       {
@@ -16147,8 +16147,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les deux acteurs sont en désaccord sur le droit de vote des femmes ou un acteur est favorable au droit de vote des femmes, tandis que l'autre y est opposé.",
-    updatedAt: "2026-06-09T19:03:56.320Z"
+    guide: "Le droit de vote des femmes.",
+    updatedAt: "2026-06-18T23:14:10.947Z"
   },
   {
     id: "Q336",
