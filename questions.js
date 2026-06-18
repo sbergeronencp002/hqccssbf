@@ -6864,7 +6864,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux auteurs sur l’alliance entre les Français et les Hurons-Wendats. Sur quel point précis ces deux auteurs sont-ils d’accord?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?",
     aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
     documents: [
       {
@@ -6872,9 +6872,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« L’alliance entre les Français et les Hurons-Wendats répond à des intérêts commerciaux et militaires. Elle donne aux Français accès au commerce des fourrures et les engage dans les rivalités opposant les Hurons-Wendats aux Iroquois. »",
-            auteur: "Bruce G. Trigger.",
-            source: "The Children of Aataentsic: A History of the Huron People to 1660 Montréal et Kingston, McGill-Queen’s University Press, 1976."
+            texte: "« Les alliances avec les nations autochtones constituent une condition essentielle à l'établissement durable des Français en Amérique du Nord. »",
+            auteur: "Gilles Havard",
+            source: "Adapté de Gilles Havard, Histoire de l'Amérique française, Presses Universitaires de France, 2019."
           }
         ]
       },
@@ -6883,15 +6883,16 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« En s’alliant aux Hurons-Wendats, les Français obtiennent des partenaires essentiels pour le commerce des fourrures. Cette alliance les entraîne aussi dans les conflits avec les Iroquois et modifie durablement les relations entre les peuples. »",
-            auteur: "Denys Delâge.",
-            source: "Le pays renversé : Amérindiens et Européens en Amérique du Nord-Est, 1600-1664 Montréal, Boréal Express, 1985."
+            texte: "« Les ententes conclues entre les Français et plusieurs nations autochtones reposent sur des intérêts communs liés au commerce et à la défense. »",
+            auteur: "Georges E. Sioui",
+            source: "Adapté de Georges E. Sioui, Pour une histoire amérindienne de l'Amérique, Presses de l'Université Laval, 1999."
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les deux auteurs s’entendent pour dire que l’alliance entre les Français et les Hurons-Wendats favorise le commerce des fourrures ou entraîne les Français dans les conflits avec les Iroquois."
+    guide: "Les alliances reposent sur des intérêts communs.",
+    updatedAt: "2026-06-18T18:26:25.299Z"
   },
   {
     id: "Q57",
