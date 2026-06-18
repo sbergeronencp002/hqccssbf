@@ -16195,8 +16195,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "Denis-Benjamin Viger présente une position différente. Il est opposé au droit de vote des femmes, tandis que Louis-Joseph Papineau et John Neilson sont favorables au maintien de ce droit pour les femmes qui remplissent les conditions prévues par la loi.",
-    updatedAt: "2026-06-09T19:06:38.560Z"
+    guide: "Viger souhaite abolir le droit de vote des femmes propriétaires (la différence), alors que Papineau et Neilson souhaitent le maintenir (la similitude).",
+    updatedAt: "2026-06-18T23:16:12.545Z"
   },
   {
     id: "Q337",
