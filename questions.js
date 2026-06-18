@@ -10295,9 +10295,6 @@ const IMAGE_DB = {
   "commence_fourrure_n-f.png": {
     src: "images/commence_fourrure_n-f.png"
   },
-  "carte_terr_acte_quebec.png": {
-    src: "images/carte_terr_acte_quebec.png"
-  },
   "exportations_nouvelle_france_1755.png": {
     src: "images/exportations_nouvelle_france_1755.png"
   },
@@ -10896,6 +10893,9 @@ const IMAGE_DB = {
   },
   "carte_proclamation_royale_1763.png": {
     src: "images/carte_proclamation_royale_1763.png"
+  },
+  "carte_acte_quebec_1774.png": {
+    src: "images/carte_acte_quebec_1774.png"
   }
 }
 
@@ -15053,7 +15053,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "carte_terr_acte_quebec.png",
+            ref: "carte_acte_quebec_1774.png",
             source: "Récitus."
           }
         ]
@@ -21753,7 +21753,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            ref: "carte_terr_acte_quebec.png",
+            ref: "carte_acte_quebec_1774.png",
             source: "Récitus."
           }
         ]
@@ -22553,7 +22553,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "carte_terr_acte_quebec.png",
+            ref: "carte_acte_quebec_1774.png",
             source: "Récitus."
           }
         ]
