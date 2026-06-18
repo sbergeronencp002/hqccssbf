@@ -180,6 +180,10 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
 <div class="toolbar">
   <input type="search" id="search" placeholder="Rechercher…" oninput="filterAll()">
   <select id="filterOi" onchange="filterAll()"><option value="">Toutes les OI</option></select>
+  <select id="sortImg" onchange="renderImgGrid();filterAll()" title="Ordre d'affichage des images">
+    <option value="usage">Partagées d'abord</option>
+    <option value="alpha">A → Z</option>
+  </select>
   <span class="stat-chip" id="stat-chip"></span>
 </div>
 
@@ -302,11 +306,29 @@ const OI_SHORT = {
 function escH(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
 
 let imgMap = {};
-let qById = {};      // id -> question (global, utilisé par la lightbox)
-let sizeCache = {};  // img -> bytes
+let allImgGroups = []; // [img, ids][] — global pour permettre le re-tri
+let qById = {};        // id -> question (global, utilisé par la lightbox)
+let sizeCache = {};    // img -> bytes
 let currentLbImg = '';
 let renameTarget = '';
 let renameExt = '.png'; // extension d'origine, préservée au renommage
+
+function renderImgGrid() {
+  const sort = (document.getElementById('sortImg') || {}).value || 'usage';
+  const groups = sort === 'alpha'
+    ? [...allImgGroups].sort((a, b) => a[0].localeCompare(b[0], 'fr'))
+    : [...allImgGroups].sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0], 'fr'));
+  document.getElementById('shared-container').innerHTML =
+    '<div class="img-grid">' + groups.map(([img, ids]) => {
+      const isShared = ids.length > 1;
+      const ois = [...new Set(ids.filter(id => qById[id]).map(id => qById[id].oi))].join(' ');
+      return `<div class="img-card" data-img-name="${escH(img.replace(/\.[^.]+$/i,'').toLowerCase())}" data-ois="${escH(ois)}" onclick="showImg(${escH(JSON.stringify(img))})">
+        <span class="ic-count${isShared ? '' : ' single'}">${ids.length}</span>
+        <img src="images/${escH(img)}" loading="lazy" alt="${escH(img)}">
+        <div class="ic-label" title="${escH(img)}">${escH(img.replace(/\.[^.]+$/i,''))}</div>
+      </div>`;
+    }).join('') + '</div>';
+}
 
 function sizeBadgeHtml(img) {
   return `<span class="size-badge loading" data-size-badge="${img}">…</span>`;
@@ -353,23 +375,12 @@ function tileHtml(q) {
 
   questions.forEach(q => qById[q.id] = q);
 
-  const allImgGroups = Object.entries(imgMap)
-    .sort((a,b) => b[1].length - a[1].length || a[0].localeCompare(b[0]));
+  allImgGroups = Object.entries(imgMap)
+    .sort((a,b) => b[1].length - a[1].length || a[0].localeCompare(b[0], 'fr'));
 
   const sharedCount = allImgGroups.filter(([,ids]) => ids.length > 1).length;
 
-  // Grille d'images uniformes : chaque tuile = une image. Clic → image + questions.
-  document.getElementById('shared-container').innerHTML =
-    '<div class="img-grid">' + allImgGroups.map(([img, ids]) => {
-      const isShared = ids.length > 1;
-      const ois = [...new Set(ids.filter(id=>qById[id]).map(id=>qById[id].oi))].join(' ');
-      return `
-      <div class="img-card" data-img-name="${escH(img.replace('.png','').toLowerCase())}" data-ois="${escH(ois)}" onclick="showImg(${escH(JSON.stringify(img))})">
-        <span class="ic-count${isShared ? '' : ' single'}">${ids.length}</span>
-        <img src="images/${escH(img)}" loading="lazy" alt="${escH(img)}">
-        <div class="ic-label" title="${escH(img)}">${escH(img.replace('.png',''))}</div>
-      </div>`;
-    }).join('') + '</div>';
+  renderImgGrid();
 
   document.getElementById('allGrid').innerHTML = questions.map(q => tileHtml(q)).join('');
 
