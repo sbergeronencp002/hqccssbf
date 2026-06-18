@@ -430,22 +430,15 @@ function tileHtml(q) {
   fetchSizes(Object.keys(imgMap));
 })();
 
-async function fetchSizes(imgs) {
-  // Requêtes HEAD par lots parallèles (au lieu de séquentielles) — badges de taille
-  // bien plus rapides à s'afficher sur 200+ images, sans saturer le navigateur.
-  const BATCH = 8;
-  for (let i = 0; i < imgs.length; i += BATCH) {
-    await Promise.all(imgs.slice(i, i + BATCH).map(async img => {
-      try {
-        const r = await fetch('images/' + img, {method:'HEAD'});
-        const bytes = parseInt(r.headers.get('content-length') || '0');
-        sizeCache[img] = bytes;
-        applySizeBadge(img, bytes);
-      } catch(e) {
-        // silently skip
-      }
-    }));
-  }
+function fetchSizes(imgs) {
+  imgs.forEach(async img => {
+    try {
+      const r = await fetch('images/' + img, {method:'HEAD'});
+      const bytes = parseInt(r.headers.get('content-length') || '0');
+      sizeCache[img] = bytes;
+      applySizeBadge(img, bytes);
+    } catch(e) { /* silently skip */ }
+  });
 }
 
 function sizeClass(bytes) {
