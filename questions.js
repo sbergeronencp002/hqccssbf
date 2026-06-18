@@ -8141,8 +8141,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Plusieurs administrateurs, officiers militaires et marchands français quittent la colonie après la Conquête.\nL'élite française quitte la colonie après la Conquête.",
-    updatedAt: "2026-06-18T18:40:16.229Z"
+    guide: "Plusieurs administrateurs ou officiers militaires ou marchands français quittent la colonie après la Conquête.\nL'élite française quitte la colonie après la Conquête.",
+    updatedAt: "2026-06-18T19:58:06.469Z"
   },
   {
     id: "Q93",
