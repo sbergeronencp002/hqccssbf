@@ -13659,7 +13659,7 @@ const QUESTIONS = [
     periode: "P7 — 1945 – 1980",
     points: 2,
     soustag: "Divergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue d’Antonio Barrette et de Lionel Groulx sur la Grève de l'amiante de 1949. Sur quel point précis ces deux auteurs sont-ils en désaccord?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en désaccord?",
     aspects: [
       {
         aspect: "Période duplessiste"
@@ -13693,7 +13693,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 2
     },
-    guide: "Le motif de la grève ou la légitimité de la grève ou l’utilisation de la poussière d’amiante comme motif de la grève."
+    guide: "Le motif de la grève ou la légitimité de la grève ou l’utilisation de la poussière d’amiante comme motif de la grève.",
+    updatedAt: "2026-06-18T17:59:26.740Z"
   },
   {
     id: "Q62",
