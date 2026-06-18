@@ -15001,8 +15001,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les écoles catholiques sont dirigées par l'Église catholique ou des communautés religieuses catholiques, tandis que les écoles anglicanes sont dirigées par l'Église anglicane.",
-    updatedAt: "2026-06-08T14:14:19.061Z"
+    guide: "Les écoles catholiques sont dirigées par l'Église catholique (ou des communautés religieuses catholiques) tandis que les écoles anglicanes sont dirigées par l'Église anglicane.",
+    updatedAt: "2026-06-18T23:10:16.008Z"
   },
   {
     id: "Q296",
