@@ -98,7 +98,24 @@ const REGLETTES = {
       "1 point",
       "0 point"
     ],
-    niveaux: []
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
   },
   "Q7": {
     oi: "Dégager des différences et des similitudes",
@@ -11350,7 +11367,8 @@ const QUESTIONS = [
       type: "lignes",
       nombre: 3
     },
-    guide: "Les marchands, car ils sont insatisfaits (ou ils s’y opposent) (la différence), alors que le clergé et les seigneurs l’appuient (la similitude)."
+    guide: "Les marchands sont insatisfaits de l'Acte de Québec ou ils s’y opposent (la différence), alors que le clergé et les seigneurs l’appuient (la similitude).",
+    updatedAt: "2026-06-18T15:53:50.439Z"
   },
   {
     id: "Q7",
