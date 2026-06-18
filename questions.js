@@ -17160,7 +17160,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux acteurs concernant la place des Canadiens français dans le Bas-Canada au début du XIXe siècle. Indiquez le principal point sur lequel ces acteurs sont en accord.",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Indiquez le principal point sur lequel ces acteurs sont en accord.",
     aspects: [{aspect: "Nationalismes"}],
     documents: [
       {
@@ -17187,8 +17187,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Denis-Benjamin Viger et Louis-Joseph Papineau considèrent que les Canadiens français doivent défendre leurs droits ou leurs institutions.",
-    updatedAt: "2026-06-11T11:54:42.920Z"
+    guide: "Les Canadiens français doivent défendre leurs droits ou leurs institutions.",
+    updatedAt: "2026-06-18T23:18:56.012Z"
   },
   {
     id: "Q363",
