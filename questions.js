@@ -6967,7 +6967,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux groupes de marchands britanniques sur l’administration de la Province de Québec. Sur quel point précis ces deux groupes sont-ils d’accord?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?",
     aspects: [{aspect: "Mouvements de revendication"}],
     documents: [
       {
@@ -6976,6 +6976,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             texte: "« Les habitants britanniques de cette province demandent qu’une assemblée représentative soit établie et que les lois anglaises soient appliquées, afin de garantir dans cette colonie les mêmes droits et privilèges que ceux dont jouissent les autres sujets de Sa Majesté. »",
+            auteur: "Marchands britanniques de Québec",
             source: "Pétition des marchands britanniques de Québec au gouvernement britannique, 1764."
           }
         ]
@@ -6986,13 +6987,15 @@ const QUESTIONS = [
           {
             titre: "Document B",
             texte: "« Plusieurs commerçants britanniques dénoncent une administration trop favorable aux Canadiens et réclament des changements au gouvernement de la colonie, notamment l’établissement d’institutions politiques qui permettraient aux sujets britanniques de mieux défendre leurs intérêts. »",
+            auteur: "Marchands britanniques de Montréal",
             source: "Pétition des marchands britanniques de Montréal au gouvernement britannique, 1770."
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les deux groupes de marchands britanniques s’opposent aux politiques de Guy Carleton ou demandent des changements dans l’administration de la colonie."
+    guide: "Aux concessions accordées aux Canadiens par les autorités britanniques.",
+    updatedAt: "2026-06-18T18:30:46.121Z"
   },
   {
     id: "Q61",
