@@ -11377,7 +11377,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Divergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de acteurs. Sur quel point précis sont-ils en désaccord?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis ces deux auteurs sont-ils en désaccord?",
     aspects: [
       {
         aspect: "Soulèvements de 1837-1838"
@@ -11410,7 +11410,7 @@ const QUESTIONS = [
       nombre: 2
     },
     guide: "L’appui de la population aux Rébellions.",
-    updatedAt: "2026-06-18T15:54:21.612Z"
+    updatedAt: "2026-06-18T15:55:56.149Z"
   },
   {
     id: "Q8",
