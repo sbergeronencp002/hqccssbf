@@ -17745,7 +17745,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent la position de deux acteurs concernant l'organisation politique du Bas-Canada. Nommez le point sur lequel ces acteurs sont d'accord.",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Indiquez le principal point sur lequel ces acteurs sont en accord.",
     aspects: [{aspect: "Idées libérales et républicaines"}],
     documents: [
       {
@@ -17772,8 +17772,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Pierre-Stanislas Bédard et Louis-Joseph Papineau souhaitent accroître les pouvoirs des représentants élus.",
-    updatedAt: "2026-06-11T16:04:43.263Z"
+    guide: "Donner plus de pouvoirs aux représentants élus.",
+    updatedAt: "2026-06-18T23:22:52.505Z"
   },
   {
     id: "Q381",
