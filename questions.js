@@ -20721,7 +20721,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux personnages historiques. Sur quel point précis sont-ils d'accord?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?",
     aspects: [{aspect: "Mouvements migratoires"}],
     documents: [
       {
@@ -20748,8 +20748,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "L'ouverture de nouvelles régions de colonisation au Bas-Canada.",
-    updatedAt: "2026-06-16T02:55:59.065Z"
+    guide: "La colonisation de nouveaux territoires.\nL'établissement de familles dans de nouvelles régions.\nLe développement de nouvelles régions de colonisation.\nL'ouverture de nouveaux territoires au peuplement.",
+    updatedAt: "2026-06-18T23:47:56.732Z"
   },
   {
     id: "Q472",
