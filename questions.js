@@ -11428,7 +11428,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux historiens sur l'évolution démographique de la Nouvelle-France. Sur quel point précis ces historiens sont-ils d'accord ?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?",
     aspects: [{aspect: "Croissance de la population"}],
     documents: [
       {
@@ -11437,6 +11437,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             texte: "« Au début du XVIIIe siècle, la population canadienne augmente rapidement grâce à la fécondité élevée des familles établies dans la colonie. »",
+            auteur: "Yves Landry",
             source: "Yves Landry, Les Filles du roi au XVIIe siècle, Montréal, Leméac, 2013."
           }
         ]
@@ -11447,13 +11448,15 @@ const QUESTIONS = [
           {
             titre: "Document B",
             texte: "« La croissance de la population découle principalement du grand nombre de naissances, bien davantage que de l'arrivée de nouveaux immigrants en provenance de France. »",
+            auteur: "Hubert Charbonneau",
             source: "Hubert Charbonneau, Naissance d'une population : les Français établis au Canada au XVIIe siècle, Montréal, Presses de l'Université de Montréal, 1987."
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les deux historiens sont d'accord pour dire que la croissance de la population de la Nouvelle-France s'explique principalement par l'accroissement naturel, c'est-à-dire par les naissances."
+    guide: "L'augmentation de la population est due au grand nombre de naissances.",
+    updatedAt: "2026-06-18T20:21:34.100Z"
   },
   {
     id: "Q185",
