@@ -10319,9 +10319,6 @@ const IMAGE_DB = {
   "graphique_poste_de_traite_1780.png": {
     src: "images/graphique_poste_de_traite_1780.png"
   },
-  "mercantilisme_fourrures_n-f.png": {
-    src: "images/mercantilisme_fourrures_n-f.png"
-  },
   "ligne_bcAd.png": {
     src: "images/ligne_bcAd.png"
   },
@@ -10896,6 +10893,9 @@ const IMAGE_DB = {
   },
   "carte_migration_loyalistes_1783.png": {
     src: "images/carte_migration_loyalistes_1783.png"
+  },
+  "carte_mercantilisme_fourrures_1600.png": {
+    src: "images/carte_mercantilisme_fourrures_1600.png"
   }
 }
 
@@ -16203,7 +16203,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "mercantilisme_fourrures_n-f.png",
+            ref: "carte_mercantilisme_fourrures_1600.png",
             source: "Récitus."
           }
         ]
