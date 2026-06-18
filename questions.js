@@ -12869,6 +12869,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             texte: "« Les alliances conclues entre les nations de la vallée du Saint-Laurent permettent de renforcer la coopération et la défense contre les ennemis communs. »",
+            auteur: "Denys Delâge",
             source: "Adapté de Denys Delâge, Le pays renversé, 1991."
           }
         ]
@@ -12879,6 +12880,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             texte: "« Les peuples alliés entretiennent des relations diplomatiques qui favorisent la paix et la stabilité dans la région. »",
+            auteur: "Alain Beaulieu",
             source: "Adapté de Alain Beaulieu, Les Autochtones du Québec, 2013."
           }
         ]
@@ -12889,6 +12891,7 @@ const QUESTIONS = [
           {
             titre: "Document C",
             texte: "« Certaines nations refusent ces alliances et privilégient plutôt l'affrontement avec leurs rivaux afin d'étendre leur influence. »",
+            auteur: "Gilles Havard",
             source: "Adapté de Gilles Havard, Histoire de l'Amérique française, 2019."
           }
         ]
@@ -12899,7 +12902,7 @@ const QUESTIONS = [
       nombre: 3
     },
     guide: "Havard affirme que certaines nations privilégient l'affrontement avec leurs rivaux (la différence), alors que Delâge et Beaulieu soutiennent le contraire ou que les alliances entre les nations sont bénéfiques (la similitude).",
-    updatedAt: "2026-06-18T16:00:53.018Z"
+    updatedAt: "2026-06-18T18:06:01.249Z"
   },
   {
     id: "Q40",
