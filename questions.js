@@ -16326,7 +16326,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Différence",
-    enonce: "À partir des documents A et B, indiquez une différence entre les positions du Parti canadien et du Parti bureaucrate au début du XIXe siècle.",
+    enonce: "À partir des documents A et B, indiquez une différence entre les positions politiques du Parti canadien et du Parti bureaucrate au début du XIXe siècle.",
     aspects: [{aspect: "Débats parlementaires"}],
     documents: [
       {
@@ -16351,8 +16351,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Le Parti canadien souhaite accroître le pouvoir des élus, tandis que le Parti bureaucrate appuie davantage l'autorité du gouverneur et des institutions nommées.",
-    updatedAt: "2026-06-10T01:07:18.044Z"
+    guide: "Le Parti canadien réclame davantage de pouvoir pour la Chambre d’assemblée, tandis que le Parti bureaucrate défend le maintien de l’autorité du gouverneur et des conseils nommés.\n\nLe Parti canadien souhaite des réformes politiques, alors que le Parti bureaucrate appuie le régime colonial en place.\n\nLe Parti canadien veut accroître le pouvoir des représentants élus, tandis que le Parti bureaucrate favorise le maintien du pouvoir entre les mains des autorités nommées.\n\nLe Parti canadien défend les intérêts de la majorité canadienne-française, tandis que le Parti bureaucrate soutient principalement les intérêts de l'administration coloniale britannique.",
+    updatedAt: "2026-06-18T23:16:58.955Z"
   },
   {
     id: "Q342",
