@@ -17197,7 +17197,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Divergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux acteurs concernant les pouvoirs du gouverneur. Indiquez le principal point sur lequel ces acteurs sont en désaccord.",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Indiquez le principal point sur lequel ces acteurs sont en désaccord.",
     aspects: [{aspect: "Nationalismes"}],
     documents: [
       {
@@ -17224,8 +17224,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Jonathan Sewell et Pierre-Stanislas Bédard sont en désaccord sur les pouvoirs du gouverneur. Sewell veut les maintenir, tandis que Bédard veut accroître le pouvoir de l'Assemblée élue ou diminuer les pouvoirs du gouverneur.",
-    updatedAt: "2026-06-11T11:56:50.517Z"
+    guide: "Les pouvoirs du gouveneur.",
+    updatedAt: "2026-06-18T23:20:04.882Z"
   },
   {
     id: "Q364",
