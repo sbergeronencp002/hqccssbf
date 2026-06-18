@@ -10382,9 +10382,6 @@ const IMAGE_DB = {
   "conseil_souverain.png": {
     src: "images/conseil_souverain.png"
   },
-  "territoire_occupe_1650.png": {
-    src: "images/territoire_occupe_1650.png"
-  },
   "territoire_revendique_france_1700.png": {
     src: "images/territoire_revendique_france_1700.png"
   },
@@ -10896,6 +10893,9 @@ const IMAGE_DB = {
     src: "images/carte_bataille_chateauguay.png",
     w: 1200,
     h: 921
+  },
+  "carte_territoire_occupe_1650.png": {
+    src: "images/carte_territoire_occupe_1650.png"
   }
 }
 
@@ -17984,7 +17984,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "territoire_occupe_1650.png",
+            ref: "carte_territoire_occupe_1650.png",
             source: "Récitus."
           }
         ]
@@ -18015,7 +18015,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "territoire_occupe_1650.png",
+            ref: "carte_territoire_occupe_1650.png",
             source: "Récitus."
           }
         ]
@@ -18138,7 +18138,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "territoire_occupe_1650.png",
+            ref: "carte_territoire_occupe_1650.png",
             source: "Récitus."
           }
         ]
@@ -18179,7 +18179,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "territoire_occupe_1650.png",
+            ref: "carte_territoire_occupe_1650.png",
             source: "Récitus."
           }
         ]
@@ -18220,7 +18220,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "territoire_occupe_1650.png",
+            ref: "carte_territoire_occupe_1650.png",
             source: "Récitus."
           }
         ]
