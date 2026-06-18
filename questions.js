@@ -16063,7 +16063,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Différence",
-    enonce: "Indiquez une différence entre le Conseil législatif et le Conseil exécutif.",
+    enonce: "Indiquez une différence entre le Conseil législatif et le Conseil exécutif sous l'Acte constitutionnel.",
     aspects: [{aspect: "Acte constitutionnel"}],
     documents: [
       {
@@ -16089,7 +16089,7 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Le Conseil législatif examine les projets de loi, tandis que le Conseil exécutif conseille le gouverneur dans l'administration de la colonie.",
-    updatedAt: "2026-06-09T18:59:09.075Z"
+    updatedAt: "2026-06-18T23:12:22.535Z"
   },
   {
     id: "Q334",
