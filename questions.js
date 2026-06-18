@@ -10505,9 +10505,6 @@ const IMAGE_DB = {
   "org_pol_1774_acte_quebec.png": {
     src: "images/org_pol_1774_acte_quebec.png"
   },
-  "migration_loyalistes.png": {
-    src: "images/migration_loyalistes.png"
-  },
   "mercantilisme_britannique.png": {
     src: "images/mercantilisme_britannique.png"
   },
@@ -10896,6 +10893,9 @@ const IMAGE_DB = {
   },
   "carte_exploration_territoire_1700.png": {
     src: "images/carte_exploration_territoire_1700.png"
+  },
+  "carte_migration_loyalistes_1783.png": {
+    src: "images/carte_migration_loyalistes_1783.png"
   }
 }
 
@@ -22742,7 +22742,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            ref: "migration_loyalistes.png",
+            ref: "carte_migration_loyalistes_1783.png",
             source: "Récitus."
           }
         ]
