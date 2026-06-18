@@ -16088,8 +16088,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Le Conseil législatif examine les projets de loi, tandis que le Conseil exécutif conseille le gouverneur dans l'administration de la colonie.",
-    updatedAt: "2026-06-18T23:12:22.535Z"
+    guide: "Le Conseil législatif participe à l'adoption des lois, tandis que le Conseil exécutif conseille le gouverneur dans l'administration de la colonie.\nLe Conseil législatif exerce un rôle législatif, alors que le Conseil exécutif exerce un rôle administratif.\nLe Conseil législatif étudie et approuve les projets de loi, tandis que le Conseil exécutif aide le gouverneur à gouverner la colonie.",
+    updatedAt: "2026-06-18T23:13:02.456Z"
   },
   {
     id: "Q334",
