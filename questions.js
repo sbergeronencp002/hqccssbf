@@ -19854,7 +19854,7 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "La Compagnie de la Baie d'Hudson et la Compagnie du Nord-Ouest éprouvent des difficultés financières\nLes deux compagnies font face à des dépenses élevées\nLes deux compagnies voient leurs coûts augmenter\nLes deux compagnies ont des problèmes de rentabilité\nLes deux compagnies subissent les conséquences de la concurrence",
-    updatedAt: "2026-06-16T03:00:47.730Z"
+    updatedAt: "2026-06-18T23:44:54.363Z"
   },
   {
     id: "Q443",
