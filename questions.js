@@ -11259,7 +11259,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux historiens sur le rôle de l'Église catholique en Nouvelle-France. Sur quel point précis ces historiens sont-ils d'accord ?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?",
     aspects: [{aspect: "Église catholique"}],
     documents: [
       {
@@ -11268,6 +11268,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             texte: "« La paroisse constitue le principal cadre de la vie collective en Nouvelle-France. Autour de l'église et du curé s'organisent plusieurs aspects de l'existence quotidienne des habitants. »",
+            auteur: "Jacques Lacoursière",
             source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1, Québec, Septentrion, 1995."
           }
         ]
@@ -11278,13 +11279,15 @@ const QUESTIONS = [
           {
             titre: "Document B",
             texte: "« Dans les campagnes de la colonie, le clergé exerce une influence importante sur les communautés en accompagnant les fidèles lors des principaux événements de leur vie. »",
+            auteur: "Louise Dechêne",
             source: "Louise Dechêne, Habitants et marchands de Montréal au XVIIe siècle, Montréal, Boréal, 1988."
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "Les deux historiens s'entendent pour dire que le clergé catholique joue un rôle important dans l'encadrement des habitants de la Nouvelle-France."
+    guide: "Le clergé catholique joue un rôle important dans l'encadrement des habitants de la Nouvelle-France.",
+    updatedAt: "2026-06-18T20:20:07.516Z"
   },
   {
     id: "Q180",
