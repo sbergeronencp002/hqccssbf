@@ -19283,7 +19283,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Cause et conséquence",
-    enonce: "Les documents A et B présentent des faits liés au développement de la culture du blé dans la colonie au début du XIXe siècle. Indiquez quel document présente une cause et quel document présente une conséquence.",
+    enonce: "Les documents A et B présentent des faits liés au développement de la culture du blé dans la colonie au début du XIXe siècle. Indiquez la lettre du document qui présente une cause et la lettre du document qui présente une conséquence.",
     aspects: [{aspect: "Agriculture"}],
     documents: [
       {
@@ -19317,7 +19317,7 @@ const QUESTIONS = [
         ["B", "A"]
       ]
     },
-    updatedAt: "2026-06-14T13:05:28.867Z"
+    updatedAt: "2026-06-19T20:38:18.604Z"
   },
   {
     id: "Q426",
