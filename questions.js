@@ -5048,7 +5048,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P1 — Des origines à 1608",
     points: 1,
-    enonce: "Nommez une nation autochtone qui conclut une alliance avec Champlain et François Gravé du Pont en 1603.",
+    enonce: "Nommez une nation autochtone qui conclut une alliance avec les Français en 1603.",
     aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
     documents: [
       {
@@ -5063,7 +5063,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 1},
-    guide: "Les Montagnais ou les Etchemins (ou les Malécites) ou les Algonquins ou les Hurons ou les Micmacs ou les Abénaquis."
+    guide: "Les Montagnais ou les Etchemins (ou les Malécites) ou les Algonquins ou les Hurons ou les Micmacs ou les Abénaquis.",
+    updatedAt: "2026-06-19T16:31:21.145Z"
   },
   {
     id: "Q2",
