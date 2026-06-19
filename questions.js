@@ -6914,7 +6914,7 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     reponse: {nombre: 1, type: "lignes"},
-    updatedAt: "2026-06-19T18:51:15.798Z"
+    updatedAt: "2026-06-19T18:53:50.742Z"
   },
   {
     id: "Q58",
