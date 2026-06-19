@@ -24,6 +24,6 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
-          echo "${{ secrets.GITHUB_PAT_WORKER }}" | npx wrangler secret put GITHUB_PAT --name hqccssbf-admin
+          echo "${{ secrets.GH_PAT_WORKER }}" | npx wrangler secret put GITHUB_PAT --name hqccssbf-admin
           echo "${{ secrets.WORKER_SECRET }}" | npx wrangler secret put WORKER_SECRET --name hqccssbf-admin
         working-directory: worker
