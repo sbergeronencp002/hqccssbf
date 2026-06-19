@@ -5005,7 +5005,6 @@ const IMAGE_DB = {
   "grosse_ile_station_quarantaine.png": {src: "images/grosse_ile_station_quarantaine.png"},
   "territoire_immigration_1820.png": {src: "images/territoire_immigration_1820.png", w: 927, h: 1200},
   "cantons_immigration.png": {src: "images/cantons_immigration.png", w: 1200, h: 921},
-  "rapport_durham_recommendations.png": {src: "images/rapport_durham_recommendations.png"},
   "population_bas-canada_1735.png": {src: "images/population_bas-canada_1735.png"},
   "eglise_paroisses_1790-1830.png": {src: "images/eglise_paroisses_1790-1830.png"},
   "exportations_bas-canada.png": {src: "images/exportations_bas-canada.png", w: 1200, h: 844},
@@ -5038,7 +5037,8 @@ const IMAGE_DB = {
   "ligne_1845-1890.png": {src: "images/ligne_1845-1890.png"},
   "traite_reciprocite.jpg": {src: "images/traite_reciprocite.jpg"},
   "ligne_1830-1890.png": {src: "images/ligne_1830-1890.png"},
-  "abolition_regime_seigneurial.jpg": {src: "images/abolition_regime_seigneurial.jpg"}
+  "abolition_regime_seigneurial.jpg": {src: "images/abolition_regime_seigneurial.jpg"},
+  "org_pol_gouvernement_responsable_1848.png": {src: "images/org_pol_gouvernement_responsable_1848.png"}
 }
 
 const QUESTIONS = [
@@ -21162,7 +21162,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "rapport_durham_recommendations.png",
+            ref: "org_pol_gouvernement_responsable_1848.png",
             soustitre: "Organisation politique proposée dans le Rapport Durham",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
@@ -21391,7 +21391,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            ref: "rapport_durham_recommendations.png",
+            ref: "org_pol_gouvernement_responsable_1848.png",
             soustitre: "Organisation politique proposée dans le Rapport Durham",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
