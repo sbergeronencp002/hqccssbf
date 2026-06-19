@@ -4837,7 +4837,6 @@ const IMAGE_DB = {
   "recensement_colonie_n-f.png": {src: "images/recensement_colonie_n-f.png"},
   "echanges_canada_etats-unis_1850-1860.png": {src: "images/echanges_canada_etats-unis_1850-1860.png"},
   "portrait_guy_carleton.png": {src: "images/portrait_guy_carleton.png"},
-  "james_murray.png": {src: "images/james_murray.png"},
   "ligne_1475-1575.png": {src: "images/ligne_1475-1575.png"},
   "carte_seigneurie_n-f.png": {src: "images/carte_seigneurie_n-f.png"},
   "graphique_pop_autochtone_n-f.png": {src: "images/graphique_pop_autochtone_n-f.png"},
@@ -5038,7 +5037,8 @@ const IMAGE_DB = {
   "traite_reciprocite.jpg": {src: "images/traite_reciprocite.jpg"},
   "ligne_1830-1890.png": {src: "images/ligne_1830-1890.png"},
   "abolition_regime_seigneurial.jpg": {src: "images/abolition_regime_seigneurial.jpg"},
-  "org_pol_gouvernement_responsable_1848.png": {src: "images/org_pol_gouvernement_responsable_1848.png"}
+  "org_pol_gouvernement_responsable_1848.png": {src: "images/org_pol_gouvernement_responsable_1848.png"},
+  "portrait_james_murray.png": {src: "images/portrait_james_murray.png"}
 }
 
 const QUESTIONS = [
@@ -6898,7 +6898,7 @@ const QUESTIONS = [
       {
         cols: [
           {
-            ref: "james_murray.png",
+            ref: "portrait_james_murray.png",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
             titre: "Document A"
           }
