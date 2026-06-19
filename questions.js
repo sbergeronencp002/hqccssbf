@@ -491,12 +491,12 @@ const REGLETTES = {
     ]
   },
   "Q57": {
-    oi: "Établir des faits",
     colonnes: ["1 point", "0 point"],
     niveaux: [
-      {pts: 1, desc: "L'élève établit correctement le fait."},
-      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
-    ]
+      {desc: "L'élève établit correctement le fait.", pts: 1},
+      {desc: "L'élève établit incorrectement le fait ou ne l'établit pas.", pts: 0}
+    ],
+    oi: "Établir des faits"
   },
   "Q58": {
     oi: "Déterminer des causes et des conséquences",
@@ -6893,22 +6893,28 @@ const QUESTIONS = [
     updatedAt: "2026-06-18T18:26:25.299Z"
   },
   {
+    aspects: [{aspect: "Mouvements de revendication"}],
+    documents: [
+      {
+        cols: [
+          {
+            ref: "james_murray.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Indiquez le nom du gouverneur rappelé en Angleterre à la suite de pressions exercées par les marchands \nanglophones.",
+    guide: "James Murray.",
     id: "Q57",
     niveau: 3,
     oi: "Établir des faits",
     periode: "P3 — 1760 – 1791",
     points: 1,
-    enonce: "Indiquez le nom du gouverneur rappelé en Angleterre à la suite de pressions exercées par les marchands \nanglophones.",
-    aspects: [{aspect: "Mouvements de revendication"}],
-    documents: [
-      {
-        type: "textes",
-        cols: [{titre: "Document A", ref: "james_murray.png"}]
-      }
-    ],
-    reponse: {type: "lignes", nombre: 1},
-    guide: "James Murray.",
-    updatedAt: "2026-06-19T16:34:34.775Z"
+    reponse: {nombre: 1, type: "lignes"},
+    updatedAt: "2026-06-19T18:51:15.798Z"
   },
   {
     id: "Q58",
