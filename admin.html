@@ -31,9 +31,11 @@ header a:hover { color: #fff; }
 .container { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; }
 
 /* ── TOKEN BAR ── */
-.token-bar { background: var(--paper-2); border: 1px solid var(--border); border-radius: 7px; padding: .75rem 1rem; display: flex; gap: .75rem; align-items: center; margin-bottom: 2rem; }
+.token-bar { background: var(--paper-2); border: 1px solid var(--border); border-radius: 7px; padding: .75rem 1rem; display: flex; flex-direction: column; gap: .5rem; margin-bottom: 2rem; }
+.token-bar-row { display: flex; gap: .75rem; align-items: center; }
 .token-bar label { font-size: .75rem; font-weight: 600; color: var(--ink-3); letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
-.token-bar input { flex: 1; padding: .4rem .6rem; border: 1px solid var(--border); border-radius: 4px; font-size: .8rem; font-family: monospace; }
+.token-bar input { flex: 1; padding: .4rem .6rem; border: 1px solid var(--border); border-radius: 4px; font-size: .8rem; font-family: monospace; min-width: 0; }
+.token-bar-sep { border: none; border-top: 1px solid var(--border); margin: 0; }
 .token-status { font-size: .75rem; white-space: nowrap; }
 .token-status.ok { color: var(--green); }
 .token-status.ko { color: var(--red); }
@@ -194,19 +196,24 @@ header a:hover { color: #fff; }
 
     <!-- TOKEN -->
     <div class="token-bar">
-      <label>Token GitHub</label>
-      <input type="password" id="gh-token" placeholder="ghp_..." autocomplete="off" oninput="saveToken()">
-      <label style="display:flex;align-items:center;gap:.3rem;font-size:.75rem;white-space:nowrap;cursor:pointer">
-        <input type="checkbox" id="gh-remember" onchange="saveToken()"> Mémoriser
-      </label>
-      <span class="token-status" id="token-status"></span>
-      <label style="margin-left:.8rem">Worker URL</label>
-      <input type="text" id="worker-url" placeholder="https://hqccssbf-admin.xxx.workers.dev" autocomplete="off"
-             style="flex:2;font-size:.75rem;" oninput="localStorage.setItem('workerUrl',this.value.trim())">
-      <label>Clé Worker</label>
-      <input type="password" id="worker-secret" placeholder="clé partagée" autocomplete="off"
-             style="flex:1;font-size:.75rem;" oninput="saveWorkerSecret(this.value.trim())">
-      <span id="worker-status" style="font-size:.75rem;white-space:nowrap;"></span>
+      <div class="token-bar-row">
+        <label>Token GitHub</label>
+        <input type="password" id="gh-token" placeholder="ghp_..." autocomplete="off" oninput="saveToken()">
+        <label style="display:flex;align-items:center;gap:.3rem;font-size:.75rem;white-space:nowrap;cursor:pointer">
+          <input type="checkbox" id="gh-remember" onchange="saveToken()"> Mémoriser
+        </label>
+        <span class="token-status" id="token-status"></span>
+      </div>
+      <hr class="token-bar-sep">
+      <div class="token-bar-row">
+        <label>Worker URL</label>
+        <input type="text" id="worker-url" placeholder="https://hqccssbf-admin.sbergeron-ens.workers.dev" autocomplete="off"
+               style="flex:3;" oninput="localStorage.setItem('workerUrl',this.value.trim())">
+        <label>Clé</label>
+        <input type="password" id="worker-secret" placeholder="clé partagée" autocomplete="off"
+               style="flex:1;" oninput="saveWorkerSecret(this.value.trim())">
+        <span id="worker-status" style="font-size:.75rem;white-space:nowrap;"></span>
+      </div>
     </div>
 
     <!-- ANCHOR NAV -->
