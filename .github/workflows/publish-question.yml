@@ -1,0 +1,31 @@
+name: Publier une question
+
+on:
+  repository_dispatch:
+    types: [publish-question]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT_WORKER }}
+          sparse-checkout: |
+            questions.js
+            tools/apply-mutation.mjs
+          sparse-checkout-cone-mode: false
+
+      - name: Appliquer la mutation
+        env:
+          PAYLOAD: ${{ toJson(github.event.client_payload) }}
+        run: node tools/apply-mutation.mjs
+
+      - name: Commit et push
+        run: |
+          git config user.name "Admin HQC"
+          git config user.email "noreply@hqc-cssbf.ca"
+          git add questions.js
+          git diff --staged --quiet && echo "Aucun changement à committer" || \
+            git commit -m "${{ github.event.client_payload.commitMsg }}"
+          git push

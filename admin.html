@@ -922,17 +922,30 @@ async function supprimerQuestion() {
 
     // ── Voie Worker ───────────────────────────────────────────────────
     if(workerUrl && workerSecret) {
-      const resp = await fetch(workerUrl + '/publish', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ secret: workerSecret, action: 'delete', question: { id: idSupp } })
-      });
-      const data = await resp.json().catch(() => ({ ok: false, error: resp.status }));
-      if(!data.ok) throw new Error(data.error || resp.status);
-
-      currentQuestions = currentQuestions.filter(q => q.id !== idSupp);
-      delete currentReglettes[idSupp];
-      questionsFileSha = data.sha;
+      let workerOk = false;
+      try {
+        const resp = await fetch(workerUrl + '/publish', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ secret: workerSecret, action: 'delete', question: { id: idSupp } })
+        });
+        const data = await resp.json().catch(() => ({ ok: false, error: resp.status }));
+        if(!data.ok) throw new Error(data.error || resp.status);
+        currentQuestions = currentQuestions.filter(q => q.id !== idSupp);
+        delete currentReglettes[idSupp];
+        questionsFileSha = data.sha;
+        workerOk = true;
+      } catch(we) {
+        if(we.message !== 'Failed to fetch') throw we;
+        // Worker inaccessible → GitHub Actions
+        const token = getToken();
+        if(!token) throw new Error('Worker inaccessible et pas de token GitHub.');
+        const statusEl = { textContent: '' };
+        await publierViaDispatch(token, 'delete', { id: idSupp }, null, null, `Supprimer ${idSupp}`, btn, statusEl);
+        await fetchFreshState(token);
+        workerOk = true;
+      }
+      if(!workerOk) return;
 
     } else {
       // ── Voie directe GitHub (fallback) ───────────────────────────
@@ -1812,8 +1825,34 @@ async function publier() {
       resetForm(true);
 
     } catch(e) {
-      toast('Erreur Worker : ' + e.message, 'err');
-      console.error(e);
+      // Si le Worker est inaccessible (réseau scolaire), basculer sur GitHub Actions
+      if(e.message === 'Failed to fetch') {
+        const token = getToken();
+        if(!token) { toast('Worker inaccessible et pas de token GitHub.', 'err'); btn.disabled=false; btn.textContent='Publier sur GitHub'; return; }
+        try {
+          const q2 = buildQuestion();
+          const r2 = buildReglette(q2.id);
+          const cm = editingId ? `Modifier ${q2.id} — ${q2.oi}` : `Ajouter ${q2.id} — ${q2.oi} (${q2.periode})`;
+          await publierViaDispatch(token, 'upsert', q2, r2, editingId, cm, btn, status);
+          // Recharger l'état depuis GitHub après l'Action
+          await fetchFreshState(token);
+          const nums2 = currentQuestions.map(x=>parseInt(x.id.replace(/\D/g,''))).filter(n=>!isNaN(n));
+          const nid2 = 'Q'+(nums2.length?Math.max(...nums2)+1:1);
+          document.getElementById('q-id').value = nid2;
+          document.getElementById('next-id-badge').textContent = nid2;
+          toast(`${q2.id} publié via GitHub Actions !`, 'ok');
+          renderDashboard();
+          status.textContent = `✓ ${q2.id} publié — visible maintenant`;
+          editingId = null;
+          resetForm(true);
+        } catch(e2) {
+          toast('Erreur : ' + e2.message, 'err');
+          console.error(e2);
+        }
+      } else {
+        toast('Erreur Worker : ' + e.message, 'err');
+        console.error(e);
+      }
     } finally {
       btn.disabled = false;
       btn.textContent = 'Publier sur GitHub';
@@ -1924,6 +1963,56 @@ async function publier() {
     btn.disabled = false;
     btn.textContent = 'Publier sur GitHub';
   }
+}
+
+// ── PUBLICATION VIA GITHUB ACTIONS (fallback quand Worker inaccessible) ───────
+// Envoie ~2 Ko à api.github.com, la GitHub Action applique la mutation côté
+// serveur (~30-40 s). Utilisé quand le Worker est bloqué par le réseau.
+async function publierViaDispatch(token, action, question, reglette, editingId, commitMsg, btn, status) {
+  const dispatchTime = Date.now();
+
+  // 1. Déclencher la GitHub Action
+  const dispResp = await fetch(
+    `https://api.github.com/repos/${OWNER}/${REPO}/dispatches`,
+    {
+      method: 'POST',
+      headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        event_type: 'publish-question',
+        client_payload: { action, question, reglette, editingId, commitMsg }
+      })
+    }
+  );
+  if (!dispResp.ok) {
+    const err = await dispResp.json().catch(() => ({}));
+    throw new Error(err.message || `Dispatch échoué (${dispResp.status})`);
+  }
+
+  // 2. Attendre et sonder le statut de l'Action (max 90 s)
+  status.textContent = '⏳ Action GitHub déclenchée…';
+  await new Promise(r => setTimeout(r, 4000));
+
+  for (let i = 0; i < 25; i++) {
+    const elapsed = Math.round((Date.now() - dispatchTime) / 1000);
+    status.textContent = `⏳ Action GitHub en cours… (${elapsed}s)`;
+
+    const runsResp = await fetch(
+      `https://api.github.com/repos/${OWNER}/${REPO}/actions/workflows/publish-question.yml/runs?per_page=5`,
+      { headers: { Authorization: `token ${token}` }, cache: 'no-store' }
+    );
+    if (runsResp.ok) {
+      const data = await runsResp.json();
+      const run = data.workflow_runs?.find(r =>
+        new Date(r.created_at).getTime() >= dispatchTime - 6000
+      );
+      if (run?.status === 'completed') {
+        if (run.conclusion === 'success') return; // ✓
+        throw new Error(`Action échouée (${run.conclusion}). Consultez l'onglet Actions sur GitHub.`);
+      }
+    }
+    await new Promise(r => setTimeout(r, 3500));
+  }
+  throw new Error('Timeout (90 s) — vérifiez l\'onglet Actions sur GitHub.');
 }
 
 // ── RESET ─────────────────────────────────────────────────────────────
