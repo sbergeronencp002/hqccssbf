@@ -308,7 +308,7 @@ header a:hover { color: #fff; }
       <div class="field">
         <label>Opération intellectuelle</label>
         <!-- Options générées depuis OI_CONFIG (oi-config.js) par populateOiSelect() -->
-        <select id="q-oi" onchange="updatePresets();updateSoustag();autoReponseFromOI()"></select>
+        <select id="q-oi" onchange="updatePresets();updateSoustag();autoReponseFromOI();autoFromOI()"></select>
       </div>
       <div class="field" id="soustag-row" style="display:none">
         <label>Sous-tag</label>
@@ -564,10 +564,16 @@ const SOUSTAG_AUTO = {
   }
 };
 
-function autoFromSoustag() {
-  const oi = document.getElementById('q-oi')?.value || '';
-  const soustag = getSoustag();
-  const cfg = (SOUSTAG_AUTO[oi] || {})[soustag];
+// Auto-sélection au niveau de l'OI (pour les OI SANS sous-tags) : déclenchée
+// dès qu'on choisit l'OI. `preset` doit matcher un label de reglettes.js.
+const OI_AUTO = {
+  "Établir des faits":              { preset: "1 pt — le fait",                       reponse: { type:'lignes', nombre:1 } },
+  "Établir des liens de causalité": { preset: "3 pts — 3 éléments, 2 liens (complexe)", reponse: { type:'lignes', nombre:5 } }
+};
+
+// Applique une config { preset, reponse } : sélectionne la réglette et règle le
+// type de réponse. Partagé entre l'auto par sous-tag et l'auto par OI.
+function applyAutoCfg(oi, cfg) {
   if(!cfg) return;
   // Réglette : retrouver l'index du preset par son label
   const idx = (REGLETTES_PRESET[oi] || []).findIndex(p => p.label === cfg.preset);
@@ -585,6 +591,16 @@ function autoFromSoustag() {
       if(nb) nb.value = String(cfg.reponse.nombre);
     }
   }
+}
+
+function autoFromSoustag() {
+  const oi = document.getElementById('q-oi')?.value || '';
+  applyAutoCfg(oi, (SOUSTAG_AUTO[oi] || {})[getSoustag()]);
+}
+
+function autoFromOI() {
+  const oi = document.getElementById('q-oi')?.value || '';
+  applyAutoCfg(oi, OI_AUTO[oi]);
 }
 
 // ── MODE ÉDITION ──────────────────────────────────────────────────────
