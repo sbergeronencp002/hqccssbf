@@ -566,6 +566,11 @@ const SOUSTAG_AUTO = {
     '2 documents': { preset: "2 pts — 2 sur 2", reponse: { type:'mettre-en-relation', n:2 } },
     '3 documents': { preset: "2 pts — 3 sur 3", reponse: { type:'mettre-en-relation', n:3 } },
     '4 documents': { preset: "2 pts — 4 sur 4", reponse: { type:'mettre-en-relation', n:4 } }
+  },
+  "Situer dans le temps": {
+    'Avant et après':      { preset: "2 pts — 4 sur 4",       reponse: { type:'avant-apres' }, guide: { type:'grille', cols:3, rows:1 } },
+    'Ligne du temps':      { preset: "1 pt — les faits",      reponse: { type:'image' },       guide: 'texte' },
+    'Ordre chronologique': { preset: "2 pts — tous les faits", reponse: { type:'image' },       guide: 'texte' }
   }
 };
 
@@ -599,6 +604,19 @@ function applyAutoCfg(oi, cfg) {
       // le guide se resynchronise tout seul via syncGuideFromMer).
       const nSel = document.getElementById('rep-mer-n');
       if(nSel) { nSel.value = String(cfg.reponse.n); updateReponseUI(); }
+    }
+  }
+  // Guide par sous-tag (optionnel) : 'texte' ou { type:'grille', cols, rows }.
+  if(cfg.guide) {
+    const guideSel = document.getElementById('guide-type');
+    if(guideSel && cfg.guide === 'texte') {
+      guideSel.value = 'texte'; updateGuideUI();
+    } else if(guideSel && cfg.guide.type === 'grille') {
+      guideSel.value = 'grille'; updateGuideUI();
+      const gc = document.getElementById('guide-cols'), gr = document.getElementById('guide-rows');
+      if(gc && cfg.guide.cols != null) gc.value = String(cfg.guide.cols);
+      if(gr && cfg.guide.rows != null) gr.value = String(cfg.guide.rows);
+      updateGrille();
     }
   }
 }
