@@ -561,6 +561,11 @@ const SOUSTAG_AUTO = {
     'Changement':               { preset: "2 pts — changement", reponse: { type:'lignes', nombre:2 } },
     'Continuité':               { preset: "2 pts — continuité", reponse: { type:'lignes', nombre:2 } },
     'Changement ou continuité': { preset: "3 pts — changement ou continuité avec faits (complexe)", reponse: { type:'lignes', nombre:3 } }
+  },
+  "Mettre en relation des faits": {
+    '2 documents': { preset: "2 pts — 2 sur 2", reponse: { type:'mettre-en-relation', n:2 } },
+    '3 documents': { preset: "2 pts — 3 sur 3", reponse: { type:'mettre-en-relation', n:3 } },
+    '4 documents': { preset: "2 pts — 4 sur 4", reponse: { type:'mettre-en-relation', n:4 } }
   }
 };
 
@@ -589,6 +594,11 @@ function applyAutoCfg(oi, cfg) {
     if(cfg.reponse.type === 'lignes' && cfg.reponse.nombre != null) {
       const nb = document.getElementById('rep-nombre');
       if(nb) nb.value = String(cfg.reponse.nombre);
+    } else if(cfg.reponse.type === 'mettre-en-relation' && cfg.reponse.n != null) {
+      // Régler le nombre d'éléments puis re-rendre (champs Élément laissés vides ;
+      // le guide se resynchronise tout seul via syncGuideFromMer).
+      const nSel = document.getElementById('rep-mer-n');
+      if(nSel) { nSel.value = String(cfg.reponse.n); updateReponseUI(); }
     }
   }
 }
