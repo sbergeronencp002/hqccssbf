@@ -308,7 +308,7 @@ header a:hover { color: #fff; }
       <div class="field">
         <label>Opération intellectuelle</label>
         <!-- Options générées depuis OI_CONFIG (oi-config.js) par populateOiSelect() -->
-        <select id="q-oi" onchange="updatePresets();updateSoustag();autoReponseFromOI();autoFromOI()"></select>
+        <select id="q-oi" onchange="onOiChange()"></select>
       </div>
       <div class="field" id="soustag-row" style="display:none">
         <label>Sous-tag</label>
@@ -601,6 +601,20 @@ function autoFromSoustag() {
 function autoFromOI() {
   const oi = document.getElementById('q-oi')?.value || '';
   applyAutoCfg(oi, OI_AUTO[oi]);
+}
+
+// Handler du changement d'OI. On repart d'une réponse vierge (« Aucune ») à
+// chaque changement, PUIS on laisse les auto-configs OI-level (autoReponse
+// d'oi-config + OI_AUTO) la régler si l'OI en a une. Ainsi un type de réponse
+// d'une OI précédente ne « traîne » plus. Pour les OI à sous-tags, la réponse
+// reste « Aucune » jusqu'au clic d'un sous-tag (autoFromSoustag).
+function onOiChange() {
+  updatePresets();
+  updateSoustag();
+  const repSel = document.getElementById('rep-type');
+  if(repSel) { repSel.value = 'none'; updateReponseUI(); }
+  autoReponseFromOI();
+  autoFromOI();
 }
 
 // ── MODE ÉDITION ──────────────────────────────────────────────────────
