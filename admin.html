@@ -613,6 +613,15 @@ function autoFromOI() {
   applyAutoCfg(oi, OI_AUTO[oi]);
 }
 
+// OI pour lesquelles le guide de correction par défaut est « Texte »
+// (les autres gardent « grille » ; Mettre en relation force sa propre grille).
+const GUIDE_TEXTE_OIS = new Set([
+  "Établir des faits",
+  "Établir des liens de causalité",
+  "Déterminer des changements et des continuités",
+  "Dégager des différences et des similitudes"
+]);
+
 // Handler du changement d'OI. On repart d'une réponse vierge (« Aucune ») à
 // chaque changement, PUIS on laisse les auto-configs OI-level (autoReponse
 // d'oi-config + OI_AUTO) la régler si l'OI en a une. Ainsi un type de réponse
@@ -625,6 +634,10 @@ function onOiChange() {
   if(repSel) { repSel.value = 'none'; updateReponseUI(); }
   autoReponseFromOI();
   autoFromOI();
+  // Guide par défaut « Texte » pour certaines OI
+  const oi = document.getElementById('q-oi')?.value || '';
+  const guideSel = document.getElementById('guide-type');
+  if(guideSel && GUIDE_TEXTE_OIS.has(oi)) { guideSel.value = 'texte'; updateGuideUI(); }
 }
 
 // ── MODE ÉDITION ──────────────────────────────────────────────────────
