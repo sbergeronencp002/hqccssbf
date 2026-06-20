@@ -497,8 +497,8 @@ function updateSoustag() {
   }
   const pills = document.getElementById('soustag-pills');
   pills.innerHTML = options.map(v =>
-    `<label class="soustag-pill"><input type="radio" name="q-soustag" value="${v}"> ${v}</label>`
-  ).join('') + `<label class="soustag-pill"><input type="radio" name="q-soustag" value=""> Aucun</label>`;
+    `<label class="soustag-pill"><input type="radio" name="q-soustag" value="${v}" onchange="autoFromSoustag()"> ${v}</label>`
+  ).join('') + `<label class="soustag-pill"><input type="radio" name="q-soustag" value="" onchange="autoFromSoustag()"> Aucun</label>`;
   row.style.display = '';
 }
 
@@ -537,6 +537,49 @@ function updatePresets() {
   const sel = document.getElementById('reg-preset');
   sel.innerHTML = '<option value="">— Sélectionner —</option>'
     + presets.map((p,i) => `<option value="${i}">${p.label}</option>`).join('');
+}
+
+// ── AUTO-SÉLECTION PAR SOUS-TAG (réglette + réponse) ──────────────────
+// Quand l'utilisateur clique un sous-tag, pré-remplir la réglette et le type
+// de réponse selon la convention pédagogique. Ne se déclenche que sur clic
+// manuel : charger une question existante (setSoustag) ne fire pas onchange.
+// Les `preset` doivent correspondre exactement aux labels de reglettes.js.
+const SOUSTAG_AUTO = {
+  "Dégager des différences et des similitudes": {
+    'Convergence – 2 acteurs': { preset: "2 pts — point de convergence",          reponse: { type:'lignes', nombre:2 } },
+    'Différence':              { preset: "2 pts — différence",                    reponse: { type:'lignes', nombre:2 } },
+    'Divergence – 2 acteurs':  { preset: "2 pts — point de divergence",           reponse: { type:'lignes', nombre:2 } },
+    'Similitude':              { preset: "2 pts — similitude",                    reponse: { type:'lignes', nombre:2 } },
+    'Position – 3 acteurs':    { preset: "3 pts — acteur et positions (complexe)", reponse: { type:'lignes', nombre:3 } }
+  },
+  "Déterminer des causes et des conséquences": {
+    'Cause':                { preset: "2 pts — facteur explicatif",             reponse: { type:'lignes', nombre:2 } },
+    'Conséquence':          { preset: "2 pts — conséquence",                     reponse: { type:'lignes', nombre:2 } },
+    'Cause et conséquence': { preset: "2 pts — facteur + conséquence (2 sur 2)", reponse: { type:'cause-consequence' } }
+  }
+};
+
+function autoFromSoustag() {
+  const oi = document.getElementById('q-oi')?.value || '';
+  const soustag = getSoustag();
+  const cfg = (SOUSTAG_AUTO[oi] || {})[soustag];
+  if(!cfg) return;
+  // Réglette : retrouver l'index du preset par son label
+  const idx = (REGLETTES_PRESET[oi] || []).findIndex(p => p.label === cfg.preset);
+  if(idx >= 0) {
+    const regSel = document.getElementById('reg-preset');
+    if(regSel) regSel.value = String(idx);
+  }
+  // Type de réponse
+  const repSel = document.getElementById('rep-type');
+  if(repSel && cfg.reponse) {
+    repSel.value = cfg.reponse.type;
+    updateReponseUI();
+    if(cfg.reponse.type === 'lignes' && cfg.reponse.nombre != null) {
+      const nb = document.getElementById('rep-nombre');
+      if(nb) nb.value = String(cfg.reponse.nombre);
+    }
+  }
 }
 
 // ── MODE ÉDITION ──────────────────────────────────────────────────────
