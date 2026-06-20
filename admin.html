@@ -293,7 +293,7 @@ header a:hover { color: #fff; }
           <label>Niveau</label>
           <select id="q-niveau" onchange="updatePeriodes()">
             <option value="3">3</option>
-            <option value="4">4</option>
+            <option value="4" selected>4</option>
           </select>
         </div>
         <div class="field">
@@ -2022,7 +2022,7 @@ function resetForm(keepId=false) {
   const newRadio = document.querySelector('input[name="mode"][value="new"]');
   if(newRadio) { newRadio.checked = true; document.getElementById('edit-select-wrap').style.display='none'; }
   if(!keepId) document.getElementById('q-id').value = '';
-  document.getElementById('q-niveau').value = '3';
+  document.getElementById('q-niveau').value = '4';
   document.getElementById('q-oi').value = document.getElementById('q-oi').options[0].value;
   updatePresets();
   updateSoustag();
