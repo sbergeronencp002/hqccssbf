@@ -21836,16 +21836,16 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "traite_reciprocite.jpg",
-            soustitre: "Traité de réciprocité",
+            ref: "abolition_regime_seigneurial.jpg",
+            soustitre: "Abolition du régime seigneurial",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
     ],
-    reponse: {type: "image", ref: "ligne_1830-1890.png"},
-    guide: "A",
-    updatedAt: "2026-06-21T00:51:40.288Z"
+    reponse: {type: "image", ref: "ligne_1830-1875.png"},
+    guide: "B - 1854",
+    updatedAt: "2026-06-21T00:55:08.031Z"
   },
   {
     id: "Q509",
