@@ -4809,6 +4809,14 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève situe les faits dans le temps."},
       {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
+  },
+  "Q508": {
+    oi: "Situer dans le temps",
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
+    ]
   }
 }
 
@@ -21805,7 +21813,7 @@ const QUESTIONS = [
     updatedAt: "2026-06-18T13:33:45.882Z"
   },
   {
-    id: "Q507",
+    id: "Q508",
     niveau: 4,
     oi: "Situer dans le temps",
     periode: "P5 — 1840 – 1896",
@@ -21819,7 +21827,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "abolition_regime_seigneurial.jpg",
+            ref: "traite_reciprocite.jpg",
             soustitre: "Traité de réciprocité",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
@@ -21828,6 +21836,6 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1845-1890.png"},
     guide: "A",
-    updatedAt: "2026-06-18T14:28:48.654Z"
+    updatedAt: "2026-06-21T00:47:18.080Z"
   }
 ]
