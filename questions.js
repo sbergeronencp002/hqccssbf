@@ -21792,8 +21792,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "image", ref: "ligne_1830-1875.png"},
-    guide: "A",
-    updatedAt: "2026-06-18T13:38:10.374Z"
+    guide: "A - 1840",
+    updatedAt: "2026-06-21T01:06:46.998Z"
   },
   {
     id: "Q506",
