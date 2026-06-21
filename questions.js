@@ -4817,6 +4817,14 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève situe les faits dans le temps."},
       {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
+  },
+  "Q509": {
+    oi: "Situer dans le temps",
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
+    ]
   }
 }
 
@@ -21837,5 +21845,31 @@ const QUESTIONS = [
     reponse: {type: "image", ref: "ligne_1845-1890.png"},
     guide: "A",
     updatedAt: "2026-06-21T00:47:18.080Z"
+  },
+  {
+    id: "Q509",
+    niveau: 4,
+    oi: "Situer dans le temps",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
+    aspects: [{aspect: "Gouvernement responsable"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "org_pol_gouvernement_responsable_1848.png",
+            soustitre: "Adoption du gouvernement responsable",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "image", ref: "ligne_1830-1875.png"},
+    guide: "B",
+    updatedAt: "2026-06-21T00:49:44.370Z"
   }
 ]
