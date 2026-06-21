@@ -21872,5 +21872,31 @@ const QUESTIONS = [
     reponse: {type: "image", ref: "ligne_1830-1875.png"},
     guide: "B - 1849",
     updatedAt: "2026-06-21T01:05:12.846Z"
+  },
+  {
+    id: "Q507",
+    niveau: 4,
+    oi: "Situer dans le temps",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
+    aspects: [{aspect: "Économie coloniale"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "traite_reciprocite.jpg",
+            soustitre: "Traité de réciprocité canado-américain",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "image", ref: "ligne_1830-1890.png"},
+    guide: "B - 1854 à 1866",
+    updatedAt: "2026-06-21T01:10:04.679Z"
   }
 ]
