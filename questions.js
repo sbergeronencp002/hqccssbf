@@ -5054,7 +5054,8 @@ const IMAGE_DB = {
   "ligne_1830-1890.png": {src: "images/ligne_1830-1890.png"},
   "abolition_regime_seigneurial.jpg": {src: "images/abolition_regime_seigneurial.jpg"},
   "org_pol_gouvernement_responsable_1848.png": {src: "images/org_pol_gouvernement_responsable_1848.png"},
-  "portrait_james_murray.png": {src: "images/portrait_james_murray.png"}
+  "portrait_james_murray.png": {src: "images/portrait_james_murray.png"},
+  "incendie_parlement.jpg": {src: "images/incendie_parlement.jpg", w: 1200, h: 960}
 }
 
 const QUESTIONS = [
@@ -21861,8 +21862,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "org_pol_gouvernement_responsable_1848.png",
-            soustitre: "Adoption du gouvernement responsable",
+            ref: "incendie_parlement.jpg",
+            soustitre: "Incendie du parlement de Montréal",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
@@ -21870,6 +21871,6 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1830-1875.png"},
     guide: "B",
-    updatedAt: "2026-06-21T00:49:44.370Z"
+    updatedAt: "2026-06-21T00:53:25.843Z"
   }
 ]
