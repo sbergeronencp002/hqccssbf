@@ -21870,7 +21870,7 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "image", ref: "ligne_1830-1875.png"},
-    guide: "B",
-    updatedAt: "2026-06-21T00:53:25.843Z"
+    guide: "B - 1849",
+    updatedAt: "2026-06-21T01:05:12.846Z"
   }
 ]
