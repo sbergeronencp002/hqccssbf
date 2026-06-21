@@ -21842,9 +21842,9 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {type: "image", ref: "ligne_1845-1890.png"},
+    reponse: {type: "image", ref: "ligne_1830-1890.png"},
     guide: "A",
-    updatedAt: "2026-06-21T00:47:18.080Z"
+    updatedAt: "2026-06-21T00:51:40.288Z"
   },
   {
     id: "Q509",
