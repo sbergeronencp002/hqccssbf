@@ -4881,6 +4881,14 @@ const REGLETTES = {
       {desc: "L'élève ne situe pas les faits dans le temps.", pts: 0}
     ],
     oi: "Situer dans le temps"
+  },
+  "Q517": {
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {desc: "L'élève situe les faits dans le temps.", pts: 1},
+      {desc: "L'élève ne situe pas les faits dans le temps.", pts: 0}
+    ],
+    oi: "Situer dans le temps"
   }
 }
 
@@ -5115,7 +5123,8 @@ const IMAGE_DB = {
   "aanb_conference_londres.jpg": {src: "images/aanb_conference_londres.jpg"},
   "pendaison_louis_riel.jpg": {src: "images/pendaison_louis_riel.jpg"},
   "metis_premier_soulevement_fort_garry.jpg": {src: "images/metis_premier_soulevement_fort_garry.jpg"},
-  "metis_deuxieme_soulevement_batoche.jpg": {src: "images/metis_deuxieme_soulevement_batoche.jpg"}
+  "metis_deuxieme_soulevement_batoche.jpg": {src: "images/metis_deuxieme_soulevement_batoche.jpg"},
+  "legalisation_syndicat_canada.jpg": {src: "images/legalisation_syndicat_canada.jpg"}
 }
 
 const QUESTIONS = [
@@ -22140,5 +22149,31 @@ const QUESTIONS = [
     reponse: {ref: "ligne_1845-1890.png", type: "image"},
     soustag: "Ligne du temps",
     updatedAt: "2026-06-22T12:13:36.869Z"
+  },
+  {
+    aspects: [{aspect: "Première phase d'industrialisation"}],
+    documents: [
+      {
+        cols: [
+          {
+            ref: "legalisation_syndicat_canada.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            soustitre: "Légalisation des syndicats au Canada",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
+    guide: "B - 1872",
+    id: "Q517",
+    niveau: 4,
+    oi: "Situer dans le temps",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    reponse: {ref: "ligne_1845-1890.png", type: "image"},
+    soustag: "Ligne du temps",
+    updatedAt: "2026-06-22T12:24:22.574Z"
   }
 ]
