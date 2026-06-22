@@ -4841,6 +4841,14 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève établit correctement le fait."},
       {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
+  },
+  "Q512": {
+    oi: "Établir des faits",
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
+    ]
   }
 }
 
@@ -21964,5 +21972,29 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 1},
     guide: "Rapport de la Commission Bagot.",
     updatedAt: "2026-06-22T00:17:44.475Z"
+  },
+  {
+    id: "Q512",
+    niveau: 4,
+    oi: "Établir des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    enonce: "Indiquez le nom donné aux territoires réservés aux Autochtones au Bas-Canada.",
+    aspects: [{aspect: "Affaires indiennes"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le gouvernement prévoit regrouper les Autochtones sur des terres qui leur sont spécialement destinées afin de faciliter leur administration et leur intégration à la société coloniale. »",
+            source: "Adapté du rapport de la Commission Bagot, 1844."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 1},
+    guide: "Réserves indiennes.",
+    updatedAt: "2026-06-22T00:19:25.871Z"
   }
 ]
