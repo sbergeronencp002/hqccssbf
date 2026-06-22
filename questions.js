@@ -5022,6 +5022,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
       {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
+  },
+  "Q531": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
+    ]
   }
 }
 
@@ -22720,5 +22729,30 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 5},
     guide: "Le Royaume-Uni adopte le libre-échange (le nom de la nouvelle politique économique). La Province du Canada perd alors ses avantages commerciaux et doit trouver de nouveaux débouchés (une conséquence pour l'économie de la Province du Canada). Elle signe ensuite le traité de réciprocité avec les États-Unis (une entente signée avec les États-Unis).",
     updatedAt: "2026-06-22T19:10:38.346Z"
+  },
+  {
+    id: "Q531",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une cause de la signature du traité de réciprocité entre la Province du Canada et les États-Unis.",
+    aspects: [{aspect: "Économie coloniale"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La disparition des préférences commerciales oblige les marchands de la Province du Canada à rechercher de nouveaux débouchés pour leurs produits. »",
+            source: "Adapté de Paul-André Linteau, René Durocher et Jean-Claude Robert, Histoire du Québec contemporain, tome 1, Boréal, 1989."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Trouver de nouveaux marchés pour les produits de la Province du Canada.\nTrouver de nouveaux débouchés.\nDévelopper les échanges commerciaux avec les États-Unis.\nCompenser la perte des avantages commerciaux britanniques.",
+    updatedAt: "2026-06-22T20:35:51.557Z"
   }
 ]
