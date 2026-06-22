@@ -4960,6 +4960,12 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
       {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
+  },
+  "Q524": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
+    niveaux: []
   }
 }
 
@@ -22451,5 +22457,42 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "La réduction de l'influence politique des Canadiens français.\nLa diminution du poids politique des Canadiens français.",
     updatedAt: "2026-06-22T18:22:26.740Z"
+  },
+  {
+    id: "Q524",
+    niveau: 4,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P5 — 1840 – 1896",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir des documents A et B, indiquez un changement concernant la représentation politique des habitants du Bas-Canada entre 1791 et 1840.",
+    aspects: [{aspect: "Acte d'Union"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "org_pol_1791_acte_const.png",
+            soustitre: "Organisation politique du Haut-Canada et du Bas-Canada entre 1791 et 1840",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "org_pol_1840_acte_union.png",
+            soustitre: "Organisation politique de la Province du Canada à partir de 1840",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 3},
+    guide: "La représentation politique des Canadiens français diminue entre 1791 et 1840.\nLes Canadiens français sont majoritaires dans l'Assemblée du Bas-Canada en 1791, mais ne le sont plus après l'Union de 1840.\nEn 1840, les Canadiens français obtiennent le même nombre de députés que le Canada-Ouest malgré leur population plus nombreuse.",
+    updatedAt: "2026-06-22T18:39:13.657Z"
   }
 ]
