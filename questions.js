@@ -4999,6 +4999,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
       {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
+  },
+  "Q529": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
+    ]
   }
 }
 
@@ -22626,5 +22635,30 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "Développer les échanges commerciaux.\nTrouver de nouveaux marchés.\nAcheter des matières premières à moindre coût.\nFavoriser le commerce international.\nRéduire les barrières commerciales.",
     updatedAt: "2026-06-22T19:00:32.921Z"
+  },
+  {
+    id: "Q529",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de l'adoption du libre-échange par le Royaume-Uni pour la Province du Canada.",
+    aspects: [{aspect: "Économie coloniale"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La disparition des préférences commerciales oblige les marchands de la Province du Canada à rechercher de nouveaux débouchés pour leurs produits. »",
+            source: "Adapté de Paul-André Linteau, René Durocher et Jean-Claude Robert, Histoire du Québec contemporain, tome 1, Boréal, 1989."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "La Province du Canada doit trouver de nouveaux marchés.\nLa Province du Canada perd les avantages commerciaux accordés par le Royaume-Uni.\nLes exportations vers le Royaume-Uni deviennent plus difficiles.\nLa Province du Canada cherche à développer ses échanges avec les États-Unis.\nLa signature du traité de réciprocité devient nécessaire.",
+    updatedAt: "2026-06-22T19:01:54.067Z"
   }
 ]
