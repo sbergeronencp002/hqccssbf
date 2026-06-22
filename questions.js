@@ -4990,6 +4990,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève établit correctement le fait."},
       {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
+  },
+  "Q528": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
+    ]
   }
 }
 
@@ -22592,5 +22601,30 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 1},
     guide: "Le traité de réciprocité.",
     updatedAt: "2026-06-22T18:58:09.590Z"
+  },
+  {
+    id: "Q528",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une raison pour laquelle le Royaume-Uni adopte le libre-échange au milieu du XIXe siècle.",
+    aspects: [{aspect: "Économie coloniale"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Plusieurs industriels britanniques souhaitent commercer librement avec différents pays afin d'obtenir des matières premières à moindre coût et d'élargir leurs marchés. »",
+            source: "Adapté de Fernand Ouellet, Histoire économique et sociale du Québec, 1760-1850, Fides, 1966."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Développer les échanges commerciaux.\nTrouver de nouveaux marchés.\nAcheter des matières premières à moindre coût.\nFavoriser le commerce international.\nRéduire les barrières commerciales.",
+    updatedAt: "2026-06-22T19:00:32.921Z"
   }
 ]
