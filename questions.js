@@ -22245,7 +22245,7 @@ const QUESTIONS = [
     periode: "P5 — 1840 – 1896",
     points: 2,
     soustag: "Convergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux acteurs sur l'Acte d'Union. Sur quel point précis sont-ils en accord?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?",
     aspects: [{aspect: "Acte d'Union"}],
     documents: [
       {
@@ -22253,8 +22253,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« La nouvelle constitution risque d'affaiblir le poids politique des Canadiens français dans les institutions de la colonie. »",
-            source: "Adapté de Étienne Parent, Le Canadien, années 1840."
+            texte: "« Les représentants élus ne peuvent exercer une véritable influence sur le gouvernement tant que les ministres ne sont pas responsables devant l'Assemblée. »",
+            source: "Adapté de Louis-Hippolyte La Fontaine, discours politiques, années 1840."
           }
         ]
       },
@@ -22263,14 +22263,14 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« Une représentation égale des deux sections de la colonie ne tient pas compte de l'importance numérique de la population canadienne-française. »",
-            source: "Adapté de Denis-Benjamin Viger, discours politiques, années 1840."
+            texte: "« Le bon fonctionnement des institutions exige que les membres du gouvernement rendent compte de leurs actions aux représentants élus de la population. »",
+            source: "Adapté de Robert Baldwin, discours politiques, années 1840."
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "L'Acte d'Union réduit l'influence des Canadiens français.",
-    updatedAt: "2026-06-22T17:49:05.684Z"
+    guide: "L'absence de gouvernement responsable dans la colonie.",
+    updatedAt: "2026-06-22T17:51:13.401Z"
   }
 ]
