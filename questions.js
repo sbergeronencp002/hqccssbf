@@ -21755,12 +21755,18 @@ const QUESTIONS = [
     documents: [
       {
         type: "textes",
-        cols: [{titre: "Document A", ref: "carte_acte_union_1840.jpg", source: "Récitus."}]
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les deux colonies sont désormais réunies sous une même administration et une même assemblée législative afin de former une seule entité politique. »",
+            source: "Adapté de John George Lambton, Rapport sur les affaires de l'Amérique du Nord britannique, 1839."
+          }
+        ]
       }
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "La Province du Canada.",
-    updatedAt: "2026-06-18T12:46:36.050Z"
+    updatedAt: "2026-06-22T17:43:45.184Z"
   },
   {
     id: "Q503",
