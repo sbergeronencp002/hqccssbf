@@ -5040,6 +5040,12 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
       {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
+  },
+  "Q533": {
+    oi: "Déterminer des changements et des continuités",
+    variante: "changement-continuité",
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
+    niveaux: []
   }
 }
 
@@ -5277,7 +5283,8 @@ const IMAGE_DB = {
   "metis_deuxieme_soulevement_batoche.jpg": {src: "images/metis_deuxieme_soulevement_batoche.jpg"},
   "legalisation_syndicat_canada.jpg": {src: "images/legalisation_syndicat_canada.jpg"},
   "tableau_exportations_1846_1854.jpg": {src: "images/tableau_exportations_1846_1854.jpg"},
-  "tableau_exportations_usa_millions.jpg": {src: "images/tableau_exportations_usa_millions.jpg"}
+  "tableau_exportations_usa_millions.jpg": {src: "images/tableau_exportations_usa_millions.jpg"},
+  "tableau_exportations_province_canada.jpg": {src: "images/tableau_exportations_province_canada.jpg"}
 }
 
 const QUESTIONS = [
@@ -22790,5 +22797,31 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "Les exportations vers les États-Unis augmentent.\nLe commerce avec les États-Unis se développe.",
     updatedAt: "2026-06-22T20:42:14.122Z"
+  },
+  {
+    id: "Q533",
+    niveau: 4,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P5 — 1840 – 1896",
+    points: 3,
+    soustag: "Changement ou continuité",
+    enonce: "À partir du document A, indiquez s'il y a un changement ou une continuité dans les marchés d'exportation de la Province du Canada entre 1840 et 1865. Justifiez votre réponse à l'aide de faits et d'un repère de temps.",
+    aspects: [{aspect: "Économie coloniale"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "tableau_exportations_province_canada.jpg",
+            soustitre: "Évolution des marchés d'exportation de la Province du Canada",
+            source: "Adapté de Paul-André Linteau, René Durocher et Jean-Claude Robert, Histoire du Québec contemporain, tome 1, Boréal, 1989."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 3},
+    guide: "Changement\nLes exportations vers les États-Unis augmentent alors que celles vers le Royaume-Uni diminuent entre 1840 et 1865.\n\nContinuité\nLa Province du Canada exporte toujours vers le Royaume-Uni et les États-Unis entre 1840 et 1865.",
+    updatedAt: "2026-06-22T20:48:23.474Z"
   }
 ]
