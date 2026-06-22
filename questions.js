@@ -5031,6 +5031,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
       {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
+  },
+  "Q532": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
+    ]
   }
 }
 
@@ -5267,7 +5276,8 @@ const IMAGE_DB = {
   "metis_premier_soulevement_fort_garry.jpg": {src: "images/metis_premier_soulevement_fort_garry.jpg"},
   "metis_deuxieme_soulevement_batoche.jpg": {src: "images/metis_deuxieme_soulevement_batoche.jpg"},
   "legalisation_syndicat_canada.jpg": {src: "images/legalisation_syndicat_canada.jpg"},
-  "tableau_exportations_1846_1854.jpg": {src: "images/tableau_exportations_1846_1854.jpg"}
+  "tableau_exportations_1846_1854.jpg": {src: "images/tableau_exportations_1846_1854.jpg"},
+  "tableau_exportations_usa_millions.jpg": {src: "images/tableau_exportations_usa_millions.jpg"}
 }
 
 const QUESTIONS = [
@@ -22754,5 +22764,31 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "Trouver de nouveaux marchés pour les produits de la Province du Canada.\nTrouver de nouveaux débouchés.\nDévelopper les échanges commerciaux avec les États-Unis.\nCompenser la perte des avantages commerciaux britanniques.",
     updatedAt: "2026-06-22T20:35:51.557Z"
+  },
+  {
+    id: "Q532",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence du traité de réciprocité pour l'économie de la Province du Canada.",
+    aspects: [{aspect: "Économie coloniale"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "tableau_exportations_usa_millions.jpg",
+            soustitre: "Évolution des exportations de la Province du Canada vers les États-Unis",
+            source: "Adapté de Fernand Ouellet, Histoire économique et sociale du Québec, 1760-1850, Fides, 1966."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Les exportations vers les États-Unis augmentent.\nLe commerce avec les États-Unis se développe.",
+    updatedAt: "2026-06-22T20:42:14.122Z"
   }
 ]
