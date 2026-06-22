@@ -22551,6 +22551,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             texte: "« Les colonies doivent désormais trouver de nouveaux débouchés puisque les privilèges commerciaux dont elles profitaient auparavant disparaissent. »",
+            soustitre: "Adoption du libre-échange par le Royaume-Uni",
             source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 3, Septentrion, 1996."
           }
         ]
@@ -22558,6 +22559,6 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1830-1875.png"},
     guide: "B - 1846",
-    updatedAt: "2026-06-22T18:43:56.700Z"
+    updatedAt: "2026-06-22T18:56:18.286Z"
   }
 ]
