@@ -4982,6 +4982,14 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève situe les faits dans le temps."},
       {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
+  },
+  "Q527": {
+    oi: "Établir des faits",
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
+    ]
   }
 }
 
@@ -22560,5 +22568,29 @@ const QUESTIONS = [
     reponse: {type: "image", ref: "ligne_1830-1875.png"},
     guide: "B - 1846",
     updatedAt: "2026-06-22T18:56:18.286Z"
+  },
+  {
+    id: "Q527",
+    niveau: 4,
+    oi: "Établir des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    enonce: "Indiquez le nom du traité commercial signé entre la Province du Canada et les États-Unis en 1854.",
+    aspects: [{aspect: "Économie coloniale"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« L'entente commerciale conclue avec les États-Unis ouvre un marché important aux producteurs de la Province du Canada et favorise les échanges entre les deux territoires. »",
+            source: "Adapté de Jean Hamelin, Histoire du Québec, Toulouse, Privat, 1976."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 1},
+    guide: "Le traité de réciprocité.",
+    updatedAt: "2026-06-22T18:58:09.590Z"
   }
 ]
