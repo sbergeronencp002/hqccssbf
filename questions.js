@@ -4833,6 +4833,14 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève situe les faits dans le temps."},
       {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
+  },
+  "Q511": {
+    oi: "Établir des faits",
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
+    ]
   }
 }
 
@@ -21932,5 +21940,29 @@ const QUESTIONS = [
     reponse: {type: "image", ref: "ligne_1845-1890.png"},
     guide: "A - 1848",
     updatedAt: "2026-06-22T00:15:44.591Z"
+  },
+  {
+    id: "Q511",
+    niveau: 4,
+    oi: "Établir des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    enonce: "Indiquez le nom du rapport qui recommande de regrouper les Autochtones dans des réserves et de favoriser leur assimilation.",
+    aspects: [{aspect: "Affaires indiennes"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les enfants indiens devraient être séparés autant que possible de l'influence de leurs parents et recevoir une éducation conforme aux habitudes de la population blanche. »",
+            source: "Report on the Affairs of the Indians in Canada, Commission Bagot, Province du Canada, 1844."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 1},
+    guide: "Rapport de la Commission Bagot.",
+    updatedAt: "2026-06-22T00:17:44.475Z"
   }
 ]
