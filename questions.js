@@ -21897,7 +21897,13 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [{titre: "Document B", ref: "carte_acte_union_1840.jpg", source: "Récitus."}]
+        cols: [
+          {
+            titre: "Document B",
+            ref: "org_pol_1840_acte_union.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
       },
       {
         type: "textes",
@@ -21913,7 +21919,7 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 5},
     guide: "L'Acte d'Union (le nom de la constitution adoptée en 1840) est adopté par les autorités britanniques. Cette constitution crée une seule Assemblée législative pour le Haut-Canada et le Bas-Canada (un changement dans l'organisation politique de la colonie). Cette mesure réduit l'influence politique des habitants du Bas-Canada, qui ont le même nombre de députés que ceux du Canada-Ouest malgré une population plus nombreuse (une conséquence pour la population du Bas-Canada).",
-    updatedAt: "2026-06-18T13:12:37.136Z"
+    updatedAt: "2026-06-22T18:30:55.177Z"
   },
   {
     aspects: [{aspect: "Acte d'Union"}],
