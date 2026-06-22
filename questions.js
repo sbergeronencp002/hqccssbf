@@ -4974,6 +4974,14 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève établit correctement le fait."},
       {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
+  },
+  "Q526": {
+    oi: "Situer dans le temps",
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
+    ]
   }
 }
 
@@ -22526,5 +22534,30 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 1},
     guide: "Le libre-échange.",
     updatedAt: "2026-06-22T18:42:40.704Z"
+  },
+  {
+    id: "Q526",
+    niveau: 4,
+    oi: "Situer dans le temps",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
+    aspects: [{aspect: "Économie coloniale"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les colonies doivent désormais trouver de nouveaux débouchés puisque les privilèges commerciaux dont elles profitaient auparavant disparaissent. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 3, Septentrion, 1996."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "image", ref: "ligne_1830-1875.png"},
+    guide: "B - 1846",
+    updatedAt: "2026-06-22T18:43:56.700Z"
   }
 ]
