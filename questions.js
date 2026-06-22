@@ -4849,6 +4849,14 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève établit correctement le fait."},
       {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
+  },
+  "Q513": {
+    oi: "Situer dans le temps",
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
+    ]
   }
 }
 
@@ -5079,7 +5087,8 @@ const IMAGE_DB = {
   "abolition_regime_seigneurial.jpg": {src: "images/abolition_regime_seigneurial.jpg"},
   "org_pol_gouvernement_responsable_1848.png": {src: "images/org_pol_gouvernement_responsable_1848.png"},
   "portrait_james_murray.png": {src: "images/portrait_james_murray.png"},
-  "incendie_parlement.jpg": {src: "images/incendie_parlement.jpg", w: 1200, h: 960}
+  "incendie_parlement.jpg": {src: "images/incendie_parlement.jpg", w: 1200, h: 960},
+  "aanb_conference_londres.jpg": {src: "images/aanb_conference_londres.jpg"}
 }
 
 const QUESTIONS = [
@@ -21996,5 +22005,32 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 1},
     guide: "Réserves indiennes.",
     updatedAt: "2026-06-22T00:19:25.871Z"
+  },
+  {
+    id: "Q513",
+    niveau: 4,
+    oi: "Situer dans le temps",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "aanb_conference_londres.jpg",
+            soustitre: "Conférence de Londres",
+            auteur: "Ébauche de l'Acte d'Amérique du Nord britannique",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle, Conférence de Londres (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "image", ref: "ligne_1830-1875.png"},
+    guide: "C- 1866",
+    updatedAt: "2026-06-22T02:26:47.110Z"
   }
 ]
