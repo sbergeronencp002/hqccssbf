@@ -4889,6 +4889,18 @@ const REGLETTES = {
       {desc: "L'élève ne situe pas les faits dans le temps.", pts: 0}
     ],
     oi: "Situer dans le temps"
+  },
+  "Q518": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."},
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
+      },
+      {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}
+    ]
   }
 }
 
@@ -22181,5 +22193,40 @@ const QUESTIONS = [
     reponse: {ref: "ligne_1845-1890.png", type: "image"},
     soustag: "Ligne du temps",
     updatedAt: "2026-06-22T12:24:22.574Z"
+  },
+  {
+    id: "Q518",
+    niveau: 4,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Divergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs sur l'avenir des Canadiens français. Sur quel point précis sont-ils en désaccord?",
+    aspects: [{aspect: "Acte d'Union"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Pour mettre fin aux divisions qui affaiblissent la colonie, il faut favoriser l'adoption graduelle de la langue, des institutions et des habitudes britanniques par les Canadiens français. »",
+            source: "Adapté de John George Lambton, Rapport sur les affaires de l'Amérique du Nord britannique, 1839."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les Canadiens français doivent conserver leur langue, leur culture et les droits qui leur appartiennent. Leur avenir ne repose pas sur l'abandon de leur identité nationale. »",
+            source: "Adapté de Louis-Hippolyte La Fontaine, discours politique, vers 1840."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "L'assimilation des Canadiens français.",
+    updatedAt: "2026-06-22T17:44:48.474Z"
   }
 ]
