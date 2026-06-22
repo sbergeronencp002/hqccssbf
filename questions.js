@@ -4942,6 +4942,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
       {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
+  },
+  "Q522": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
+    ]
   }
 }
 
@@ -22377,5 +22386,30 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "Les rébellions de 1837-1838.\nLes tensions politiques dans le Bas-Canada.\nLes recommandations du rapport Durham.\nLes conflits entre l'Assemblée législative et le gouverneur.",
     updatedAt: "2026-06-22T18:17:38.114Z"
+  },
+  {
+    id: "Q522",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence territoriale de l'adoption de l'Acte d'Union par les autorités britanniques en 1840.",
+    aspects: [{aspect: "Acte d'Union"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La séparation politique qui existait entre les deux Canadas disparaît au profit d'une seule entité territoriale. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 3, Septentrion, 1996."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Le Haut-Canada et le Bas-Canada sont réunis pour former la Province du Canada.\nLa Province du Canada est créée.",
+    updatedAt: "2026-06-22T18:19:39.141Z"
   }
 ]
