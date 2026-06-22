@@ -5046,6 +5046,15 @@ const REGLETTES = {
     variante: "changement-continuité",
     colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
+  },
+  "Q534": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
+    ]
   }
 }
 
@@ -22823,5 +22832,40 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 3},
     guide: "Changement\nLes exportations vers les États-Unis augmentent alors que celles vers le Royaume-Uni diminuent entre 1840 et 1865.\n\nContinuité\nLa Province du Canada exporte toujours vers le Royaume-Uni et les États-Unis entre 1840 et 1865.",
     updatedAt: "2026-06-22T20:48:23.474Z"
+  },
+  {
+    id: "Q534",
+    niveau: 4,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?",
+    aspects: [{aspect: "Économie coloniale"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le traité de réciprocité ouvre aux producteurs de la Province du Canada un marché beaucoup plus vaste que celui dont ils disposaient auparavant. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 3, Septentrion, 1996."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Grâce à cette entente commerciale, les exportations de la Province du Canada vers les États-Unis connaissent une importante croissance. »",
+            source: "Adapté de Fernand Ouellet, Histoire économique et sociale du Québec, 1760-1850, Fides, 1966."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Le traité de réciprocité favorise le commerce avec les États-Unis.",
+    updatedAt: "2026-06-22T20:50:57.149Z"
   }
 ]
