@@ -4951,6 +4951,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
       {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
+  },
+  "Q523": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
+    ]
   }
 }
 
@@ -22411,5 +22420,30 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "Le Haut-Canada et le Bas-Canada sont réunis pour former la Province du Canada.\nLa Province du Canada est créée.",
     updatedAt: "2026-06-22T18:19:39.141Z"
+  },
+  {
+    id: "Q523",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence politique pour les Canadiens français à la suite de l'adoption de l'Acte d'Union.",
+    aspects: [{aspect: "Acte d'Union"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Cette organisation politique place la population canadienne-française dans une situation moins avantageuse qu'auparavant au sein de l'Assemblée législative. »",
+            source: "Adapté de Étienne Parent, Le Canadien, années 1840."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "La réduction de l'influence politique des Canadiens français.\nLa diminution du poids politique des Canadiens français.",
+    updatedAt: "2026-06-22T18:22:26.740Z"
   }
 ]
