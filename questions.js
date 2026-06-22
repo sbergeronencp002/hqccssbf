@@ -4865,6 +4865,14 @@ const REGLETTES = {
       {desc: "L'élève ne situe pas les faits dans le temps.", pts: 0}
     ],
     oi: "Situer dans le temps"
+  },
+  "Q515": {
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {desc: "L'élève situe les faits dans le temps.", pts: 1},
+      {desc: "L'élève ne situe pas les faits dans le temps.", pts: 0}
+    ],
+    oi: "Situer dans le temps"
   }
 }
 
@@ -5097,7 +5105,8 @@ const IMAGE_DB = {
   "portrait_james_murray.png": {src: "images/portrait_james_murray.png"},
   "incendie_parlement.jpg": {src: "images/incendie_parlement.jpg", w: 1200, h: 960},
   "aanb_conference_londres.jpg": {src: "images/aanb_conference_londres.jpg"},
-  "pendaison_louis_riel.jpg": {src: "images/pendaison_louis_riel.jpg"}
+  "pendaison_louis_riel.jpg": {src: "images/pendaison_louis_riel.jpg"},
+  "metis_premier_soulevement_fort_garry.jpg": {src: "images/metis_premier_soulevement_fort_garry.jpg"}
 }
 
 const QUESTIONS = [
@@ -22068,5 +22077,32 @@ const QUESTIONS = [
     reponse: {ref: "ligne_1845-1890.png", type: "image"},
     soustag: "Ligne du temps",
     updatedAt: "2026-06-22T11:52:29.000Z"
+  },
+  {
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        cols: [
+          {
+            auteur: "Résistance métisse à la Rivière-Rouge",
+            ref: "metis_premier_soulevement_fort_garry.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            soustitre: "Premier soulèvement Métis",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
+    guide: "B - 1869-1870",
+    id: "Q515",
+    niveau: 4,
+    oi: "Situer dans le temps",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    reponse: {ref: "ligne_1845-1890.png", type: "image"},
+    soustag: "Ligne du temps",
+    updatedAt: "2026-06-22T12:04:11.416Z"
   }
 ]
