@@ -4966,6 +4966,14 @@ const REGLETTES = {
     variante: "changement-continuité",
     colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: []
+  },
+  "Q525": {
+    oi: "Établir des faits",
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
+    ]
   }
 }
 
@@ -22494,5 +22502,29 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 3},
     guide: "La représentation politique des Canadiens français diminue entre 1791 et 1840.\nLes Canadiens français sont majoritaires dans l'Assemblée du Bas-Canada en 1791, mais ne le sont plus après l'Union de 1840.\nEn 1840, les Canadiens français obtiennent le même nombre de députés que le Canada-Ouest malgré leur population plus nombreuse.",
     updatedAt: "2026-06-22T18:39:13.657Z"
+  },
+  {
+    id: "Q525",
+    niveau: 4,
+    oi: "Établir des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    enonce: "Indiquez la mesure économique adoptée par le Royaume-Uni qui remplace les tarifs préférentiels accordés à ses colonies.",
+    aspects: [{aspect: "Économie coloniale"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les produits des colonies ne bénéficient plus d'avantages particuliers sur le marché britannique et doivent désormais concurrencer ceux des autres pays. »",
+            source: "Adapté de Fernand Ouellet, Histoire économique et sociale du Québec, 1760-1850, Fides, 1966."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 1},
+    guide: "Le libre-échange.",
+    updatedAt: "2026-06-22T18:42:40.704Z"
   }
 ]
