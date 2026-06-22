@@ -4910,6 +4910,29 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
       {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
+  },
+  "Q520": {
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
   }
 }
 
@@ -22272,5 +22295,53 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "L'absence de gouvernement responsable dans la colonie.",
     updatedAt: "2026-06-22T17:51:13.401Z"
+  },
+  {
+    id: "Q520",
+    niveau: 4,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P5 — 1840 – 1896",
+    points: 3,
+    soustag: "Position – 3 acteurs",
+    enonce: "Les documents A à C présentent le point de vue de trois acteurs sur l'adption de l'Acte d'Union. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+    aspects: [{aspect: "Acte d'Union"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« L'union des deux colonies constitue le meilleur moyen d'assurer la stabilité politique et de mettre fin aux divisions qui affaiblissent le gouvernement. »",
+            auteur: "Lord Durham",
+            source: "Adapté de John George Lambton, Rapport sur les affaires de l'Amérique du Nord britannique, 1839."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« La réunion des deux colonies permettra une administration plus efficace et favorisera le bon fonctionnement des institutions politiques. »",
+            auteur: "Lord Sydenham",
+            source: "Adapté de Charles Poulett Thomson, correspondance politique, 1840-1841."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« La nouvelle constitution accorde aux Canadiens français une influence politique inférieure à celle à laquelle leur population leur donne droit. »",
+            auteur: "Louis-Hippolyte La Fontaine",
+            source: "Adapté de Louis-Hippolyte La Fontaine, discours politiques, années 1840."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 3},
+    guide: "Louis-Hippolyte La Fontaine s'oppose à l'Acte d'Union puisqu'il réduit l'influence politique des Canadiens français (la différence), alors que Lord Durham et Lord Sydenham y sont favorable",
+    updatedAt: "2026-06-22T18:14:58.721Z"
   }
 ]
