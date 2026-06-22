@@ -5008,6 +5008,20 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
       {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
+  },
+  "Q530": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
+    ]
   }
 }
 
@@ -5243,7 +5257,8 @@ const IMAGE_DB = {
   "pendaison_louis_riel.jpg": {src: "images/pendaison_louis_riel.jpg"},
   "metis_premier_soulevement_fort_garry.jpg": {src: "images/metis_premier_soulevement_fort_garry.jpg"},
   "metis_deuxieme_soulevement_batoche.jpg": {src: "images/metis_deuxieme_soulevement_batoche.jpg"},
-  "legalisation_syndicat_canada.jpg": {src: "images/legalisation_syndicat_canada.jpg"}
+  "legalisation_syndicat_canada.jpg": {src: "images/legalisation_syndicat_canada.jpg"},
+  "tableau_exportations_1846_1854.jpg": {src: "images/tableau_exportations_1846_1854.jpg"}
 }
 
 const QUESTIONS = [
@@ -22660,5 +22675,50 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "La Province du Canada doit trouver de nouveaux marchés.\nLa Province du Canada perd les avantages commerciaux accordés par le Royaume-Uni.\nLes exportations vers le Royaume-Uni deviennent plus difficiles.\nLa Province du Canada cherche à développer ses échanges avec les États-Unis.\nLa signature du traité de réciprocité devient nécessaire.",
     updatedAt: "2026-06-22T19:01:54.067Z"
+  },
+  {
+    id: "Q530",
+    niveau: 4,
+    oi: "Établir des liens de causalité",
+    periode: "P5 — 1840 – 1896",
+    points: 3,
+    enonce: "Expliquez comment l'adoption d'une nouvelle politique économique par le Royaume-Uni amène la Province du Canada à développer de nouvelles relations commerciales.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• le nom de la nouvelle politique économique\n• une conséquence sur l'économie de la Province du Canada\n• une entente signée avec les États-Unis",
+    aspects: [{aspect: "Économie coloniale"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les produits des colonies ne bénéficient plus d'avantages particuliers sur le marché britannique et doivent désormais concurrencer ceux des autres pays. »",
+            source: "Adapté de Fernand Ouellet, Histoire économique et sociale du Québec, 1760-1850, Fides, 1966."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "tableau_exportations_1846_1854.jpg",
+            soustitre: "Évolution des exportation de la Province du Canada entre 1846 et 1854",
+            source: "Adapté de Paul-André Linteau, René Durocher et Jean-Claude Robert, Histoire du Québec contemporain, tome 1, Boréal, 1989."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Une entente commerciale conclue avec les États-Unis permet aux producteurs de la Province du Canada d'accéder plus facilement au marché américain. »",
+            source: "Adapté de Jean Hamelin, Histoire du Québec, Privat, 1976."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 5},
+    guide: "Le Royaume-Uni adopte le libre-échange (le nom de la nouvelle politique économique). La Province du Canada perd alors ses avantages commerciaux et doit trouver de nouveaux débouchés (une conséquence pour l'économie de la Province du Canada). Elle signe ensuite le traité de réciprocité avec les États-Unis (une entente signée avec les États-Unis).",
+    updatedAt: "2026-06-22T19:10:38.346Z"
   }
 ]
