@@ -22201,7 +22201,7 @@ const QUESTIONS = [
     periode: "P5 — 1840 – 1896",
     points: 2,
     soustag: "Divergence – 2 acteurs",
-    enonce: "Les documents A et B présentent le point de vue de deux acteurs sur l'avenir des Canadiens français. Sur quel point précis sont-ils en désaccord?",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en désaccord?",
     aspects: [{aspect: "Acte d'Union"}],
     documents: [
       {
@@ -22227,6 +22227,6 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "L'assimilation des Canadiens français.",
-    updatedAt: "2026-06-22T17:44:48.474Z"
+    updatedAt: "2026-06-22T17:45:26.517Z"
   }
 ]
