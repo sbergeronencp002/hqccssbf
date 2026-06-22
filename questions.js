@@ -4857,6 +4857,14 @@ const REGLETTES = {
       {desc: "L'élève ne situe pas les faits dans le temps.", pts: 0}
     ],
     oi: "Situer dans le temps"
+  },
+  "Q514": {
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {desc: "L'élève situe les faits dans le temps.", pts: 1},
+      {desc: "L'élève ne situe pas les faits dans le temps.", pts: 0}
+    ],
+    oi: "Situer dans le temps"
   }
 }
 
@@ -5088,7 +5096,8 @@ const IMAGE_DB = {
   "org_pol_gouvernement_responsable_1848.png": {src: "images/org_pol_gouvernement_responsable_1848.png"},
   "portrait_james_murray.png": {src: "images/portrait_james_murray.png"},
   "incendie_parlement.jpg": {src: "images/incendie_parlement.jpg", w: 1200, h: 960},
-  "aanb_conference_londres.jpg": {src: "images/aanb_conference_londres.jpg"}
+  "aanb_conference_londres.jpg": {src: "images/aanb_conference_londres.jpg"},
+  "pendaison_louis_riel.jpg": {src: "images/pendaison_louis_riel.jpg"}
 }
 
 const QUESTIONS = [
@@ -22032,5 +22041,32 @@ const QUESTIONS = [
     reponse: {ref: "ligne_1830-1875.png", type: "image"},
     soustag: "Ligne du temps",
     updatedAt: "2026-06-22T11:43:45.256Z"
+  },
+  {
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        cols: [
+          {
+            auteur: "Ébauche de l'Acte d'Amérique du Nord britannique",
+            ref: "pendaison_louis_riel.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            soustitre: "Pendaison de Louis Riel",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
+    guide: "B - 1869-1870",
+    id: "Q514",
+    niveau: 4,
+    oi: "Situer dans le temps",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    reponse: {ref: "ligne_1845-1890.png", type: "image"},
+    soustag: "Ligne du temps",
+    updatedAt: "2026-06-22T11:52:29.000Z"
   }
 ]
