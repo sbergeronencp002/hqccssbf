@@ -4901,6 +4901,15 @@ const REGLETTES = {
       },
       {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}
     ]
+  },
+  "Q519": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
+    ]
   }
 }
 
@@ -22228,5 +22237,40 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "L'assimilation des Canadiens français.",
     updatedAt: "2026-06-22T17:45:26.517Z"
+  },
+  {
+    id: "Q519",
+    niveau: 4,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs sur l'Acte d'Union. Sur quel point précis sont-ils en accord?",
+    aspects: [{aspect: "Acte d'Union"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La nouvelle constitution risque d'affaiblir le poids politique des Canadiens français dans les institutions de la colonie. »",
+            source: "Adapté de Étienne Parent, Le Canadien, années 1840."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Une représentation égale des deux sections de la colonie ne tient pas compte de l'importance numérique de la population canadienne-française. »",
+            source: "Adapté de Denis-Benjamin Viger, discours politiques, années 1840."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "L'Acte d'Union réduit l'influence des Canadiens français.",
+    updatedAt: "2026-06-22T17:49:05.684Z"
   }
 ]
