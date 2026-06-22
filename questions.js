@@ -5055,6 +5055,18 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
       {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
+  },
+  "Q535": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."},
+      {
+        pts: 1,
+        desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."
+      },
+      {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}
+    ]
   }
 }
 
@@ -22867,5 +22879,40 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "Le traité de réciprocité favorise le commerce avec les États-Unis.",
     updatedAt: "2026-06-22T20:50:57.149Z"
+  },
+  {
+    id: "Q535",
+    niveau: 4,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Divergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en désaccord?",
+    aspects: [{aspect: "Économie coloniale"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« La suppression des préférences commerciales permettra d'établir des échanges plus libres et plus efficaces au sein de l'économie britannique. »",
+            source: "Adapté d'un discours de Robert Peel."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les marchands de la colonie risquent de perdre un avantage important si les produits coloniaux ne sont plus favorisés sur le marché britannique. »",
+            source: "Adapté d'une prise de position attribuée à John Molson."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Ils sont en désaccord sur la fin des tarifs préférentiels accordés aux colonies.\nIls sont en désaccord sur l'adoption du libre-échange par le Royaume-Uni.",
+    updatedAt: "2026-06-22T20:52:56.880Z"
   }
 ]
