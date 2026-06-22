@@ -4851,12 +4851,12 @@ const REGLETTES = {
     ]
   },
   "Q513": {
-    oi: "Situer dans le temps",
     colonnes: ["1 point", "0 point"],
     niveaux: [
-      {pts: 1, desc: "L'élève situe les faits dans le temps."},
-      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
-    ]
+      {desc: "L'élève situe les faits dans le temps.", pts: 1},
+      {desc: "L'élève ne situe pas les faits dans le temps.", pts: 0}
+    ],
+    oi: "Situer dans le temps"
   }
 }
 
@@ -22007,30 +22007,30 @@ const QUESTIONS = [
     updatedAt: "2026-06-22T00:19:25.871Z"
   },
   {
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        cols: [
+          {
+            auteur: "Ébauche de l'Acte d'Amérique du Nord britannique",
+            ref: "aanb_conference_londres.jpg",
+            source: "adaptation libre inspirée de Robert Harris, The Fathers of Confederation, 1883.",
+            soustitre: "Conférence de Londres",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
+    guide: "C- 1866",
     id: "Q513",
     niveau: 4,
     oi: "Situer dans le temps",
     periode: "P5 — 1840 – 1896",
     points: 1,
+    reponse: {ref: "ligne_1830-1875.png", type: "image"},
     soustag: "Ligne du temps",
-    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
-    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "aanb_conference_londres.jpg",
-            soustitre: "Conférence de Londres",
-            auteur: "Ébauche de l'Acte d'Amérique du Nord britannique",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle, Conférence de Londres (ChatGPT/OpenAI), 2026."
-          }
-        ]
-      }
-    ],
-    reponse: {type: "image", ref: "ligne_1830-1875.png"},
-    guide: "C- 1866",
-    updatedAt: "2026-06-22T02:26:47.110Z"
+    updatedAt: "2026-06-22T11:43:45.256Z"
   }
 ]
