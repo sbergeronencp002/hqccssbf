@@ -22052,7 +22052,7 @@ const QUESTIONS = [
     updatedAt: "2026-06-22T11:43:45.256Z"
   },
   {
-    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
     documents: [
       {
         cols: [
@@ -22068,7 +22068,7 @@ const QUESTIONS = [
       }
     ],
     enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
-    guide: "B - 1869-1870",
+    guide: "C - 1885",
     id: "Q514",
     niveau: 4,
     oi: "Situer dans le temps",
@@ -22076,7 +22076,7 @@ const QUESTIONS = [
     points: 1,
     reponse: {ref: "ligne_1845-1890.png", type: "image"},
     soustag: "Ligne du temps",
-    updatedAt: "2026-06-22T11:52:29.000Z"
+    updatedAt: "2026-06-22T12:05:16.137Z"
   },
   {
     aspects: [{aspect: "Relations fédérales-provinciales"}],
