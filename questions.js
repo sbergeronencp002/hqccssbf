@@ -5043,9 +5043,12 @@ const REGLETTES = {
   },
   "Q533": {
     oi: "Déterminer des changements et des continuités",
-    variante: "changement-continuité",
-    colonnes: ["3 points", "2 points", "1 point", "0 point"],
-    niveaux: []
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
+    ]
   },
   "Q534": {
     oi: "Dégager des différences et des similitudes",
@@ -22824,9 +22827,9 @@ const QUESTIONS = [
     niveau: 4,
     oi: "Déterminer des changements et des continuités",
     periode: "P5 — 1840 – 1896",
-    points: 3,
-    soustag: "Changement ou continuité",
-    enonce: "À partir du document A, indiquez s'il y a un changement ou une continuité dans les marchés d'exportation de la Province du Canada entre 1840 et 1865. Justifiez votre réponse à l'aide de faits et d'un repère de temps.",
+    points: 2,
+    soustag: "Changement",
+    enonce: "Indiquez un changement dans les partenaires commerciaux de la Province du Canada entre 1840 et 1865.",
     aspects: [{aspect: "Économie coloniale"}],
     documents: [
       {
@@ -22841,9 +22844,9 @@ const QUESTIONS = [
         ]
       }
     ],
-    reponse: {type: "lignes", nombre: 3},
-    guide: "Changement\nLes exportations vers les États-Unis augmentent alors que celles vers le Royaume-Uni diminuent entre 1840 et 1865.\n\nContinuité\nLa Province du Canada exporte toujours vers le Royaume-Uni et les États-Unis entre 1840 et 1865.",
-    updatedAt: "2026-06-22T20:48:23.474Z"
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Les marchés d'exportation de la Province du Canada se déplacent progressivement du Royaume-Uni vers les États-Unis.\nLes États-Unis prennent plus d'importance comme partenaire commercial.",
+    updatedAt: "2026-06-23T00:53:06.479Z"
   },
   {
     id: "Q534",
