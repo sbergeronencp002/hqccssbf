@@ -5070,6 +5070,15 @@ const REGLETTES = {
       },
       {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}
     ]
+  },
+  "Q536": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
+    ]
   }
 }
 
@@ -22917,5 +22926,30 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "Ils sont en désaccord sur la fin des tarifs préférentiels accordés aux colonies.\nIls sont en désaccord sur l'adoption du libre-échange par le Royaume-Uni.",
     updatedAt: "2026-06-22T20:52:56.880Z"
+  },
+  {
+    id: "Q536",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une cause de la formation de l'Alliance des Réformistes.",
+    aspects: [{aspect: "Gouvernement responsable"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Des réformistes du Canada-Est et du Canada-Ouest décident de collaborer afin d'obtenir l'adoption d'un nouveau mode de fonctionnement politique dans la Province du Canada. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 3, Septentrion, 1996."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Faire adopter le gouvernement responsable.",
+    updatedAt: "2026-06-23T00:57:44.557Z"
   }
 ]
