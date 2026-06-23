@@ -5079,6 +5079,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
       {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
+  },
+  "Q537": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
+    ]
   }
 }
 
@@ -5317,7 +5326,8 @@ const IMAGE_DB = {
   "legalisation_syndicat_canada.jpg": {src: "images/legalisation_syndicat_canada.jpg"},
   "tableau_exportations_1846_1854.jpg": {src: "images/tableau_exportations_1846_1854.jpg"},
   "tableau_exportations_usa_millions.jpg": {src: "images/tableau_exportations_usa_millions.jpg"},
-  "tableau_exportations_province_canada.jpg": {src: "images/tableau_exportations_province_canada.jpg"}
+  "tableau_exportations_province_canada.jpg": {src: "images/tableau_exportations_province_canada.jpg"},
+  "alliance_baldwin_lafontaine.jpg": {src: "images/alliance_baldwin_lafontaine.jpg", w: 1200, h: 693}
 }
 
 const QUESTIONS = [
@@ -22951,5 +22961,31 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "Faire adopter le gouvernement responsable.",
     updatedAt: "2026-06-23T00:57:44.557Z"
+  },
+  {
+    id: "Q537",
+    niveau: 4,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Changement",
+    enonce: "Indiquez un changement dans les relations politiques entre les réformistes du Canada-Est et du Canada-Ouest au milieu du XIXe siècle.",
+    aspects: [{aspect: "Gouvernement responsable"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "alliance_baldwin_lafontaine.jpg",
+            soustitre: "Robert Baldwin et Louis-Hippolyte La Fontaine",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Les réformistes du Canada-Est et du Canada-Ouest forment une alliance politique.",
+    updatedAt: "2026-06-23T01:02:51.514Z"
   }
 ]
