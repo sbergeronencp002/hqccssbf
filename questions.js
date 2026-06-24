@@ -5172,6 +5172,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
       {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
+  },
+  "Q547": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
+    ]
   }
 }
 
@@ -5414,7 +5423,8 @@ const IMAGE_DB = {
   "alliance_baldwin_lafontaine.jpg": {src: "images/alliance_baldwin_lafontaine.jpg", w: 1200, h: 693},
   "ligne_abCd.png": {src: "images/ligne_abCd.png", w: 1200, h: 248},
   "instabilite_politique.jpg": {src: "images/instabilite_politique.jpg"},
-  "gouvernement_minoritaire.jpg": {src: "images/gouvernement_minoritaire.jpg", w: 1200, h: 800}
+  "gouvernement_minoritaire.jpg": {src: "images/gouvernement_minoritaire.jpg", w: 1200, h: 800},
+  "reserves_autochtones.jpg": {src: "images/reserves_autochtones.jpg"}
 }
 
 const QUESTIONS = [
@@ -23453,5 +23463,31 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "Difficulté de former une majorité stable à l'Assemblée législative.\nAucun parti ne réussit à obtenir une majorité stable.\nLes partis politiques sont trop divisés.\nLes gouvernements sont souvent minoritaires.\nLes députés du Canada-Est et du Canada-Ouest ont des intérêts divergents.",
     updatedAt: "2026-06-24T14:10:53.638Z"
+  },
+  {
+    id: "Q547",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de la création des réserves indiennes pour les communautés autochtones.",
+    aspects: [{aspect: "Affaires indiennes"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "reserves_autochtones.jpg",
+            soustitre: "Évolution du territoire occupé par une communauté autochtone",
+            source: "Adapté d'études historiques sur l'occupation du territoire par les Premières Nations."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Le territoire des Premières Nations diminue.\nLes communautés autochtones occupent un territoire plus petit.",
+    updatedAt: "2026-06-24T15:32:38.822Z"
   }
 ]
