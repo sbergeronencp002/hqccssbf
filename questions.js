@@ -5145,6 +5145,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
       {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
+  },
+  "Q544": {
+    oi: "Déterminer des changements et des continuités",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
+    ]
   }
 }
 
@@ -23335,5 +23344,42 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 5},
     guide: "Les réformistes du Canada-Est et du Canada-Ouest s'allient (une alliance entre les réformistes). Cette alliance leur permet d'obtenir l'appui de la majorité des représentants à l'Assemblée législative (une conséquence politique à l'assemblée législative). Cette majorité favorise l'établissement du gouvernement responsable (le gouvernement responsable).",
     updatedAt: "2026-06-24T13:07:51.712Z"
+  },
+  {
+    id: "Q544",
+    niveau: 4,
+    oi: "Déterminer des changements et des continuités",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Changement",
+    enonce: "Indiquez un changement dans la formation du Conseil exécutif après l'établissement du gouvernement responsable.",
+    aspects: [{aspect: "Gouvernement responsable"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le gouverneur nomme les membres du Conseil exécutif selon son jugement. »",
+            soustitre: "Formation du Conseil exécutif avant l'obtention du gouvernement responsable",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 3, Septentrion, 1996."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les membres du Conseil exécutif sont désormais choisis parmi les élus qui bénéficient de l'appui de la majorité des représentants à l'Assemblée législative. »",
+            soustitre: "Formation du Conseil exécutif après l'obtention du gouvernement responsable",
+            source: "Adapté de John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec, Septentrion, 2003."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Le parti majoritaire forme le Conseil exécutif.\nLa majorité à l'Assemblée législative forme le Conseil exécutif.\nLe Conseil exécutif est formé par le parti majoritaire.",
+    updatedAt: "2026-06-24T13:39:49.146Z"
   }
 ]
