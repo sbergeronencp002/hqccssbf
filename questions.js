@@ -5105,6 +5105,14 @@ const REGLETTES = {
       {pts: 2, desc: "L'élève situe tous les faits dans le temps."},
       {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}
     ]
+  },
+  "Q540": {
+    oi: "Situer dans le temps",
+    colonnes: ["2 points", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève situe tous les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}
+    ]
   }
 }
 
@@ -23129,5 +23137,64 @@ const QUESTIONS = [
     reponse: {type: "image", ref: "ligne_abCd.png"},
     guide: "B - D - C - A",
     updatedAt: "2026-06-24T12:47:16.460Z"
+  },
+  {
+    id: "Q540",
+    niveau: 4,
+    oi: "Situer dans le temps",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Ordre chronologique",
+    enonce: "Les documents A à D présentent des événements liés à l'évolution politique de la Province du Canada.",
+    aspects: [{aspect: "Acte d'Union"}, {aspect: "Gouvernement responsable"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« L'adoption d'une loi controversée provoque la colère de certains citoyens. Une foule s'en prend alors à l'édifice où siègent les représentants politiques de la colonie. »",
+            soustitre: "Incendie du Parlement de Montréal",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 4, Septentrion, 1997."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les colonies du Haut-Canada et du Bas-Canada sont réunies au sein d'une même entité politique. Les deux territoires partagent désormais une seule assemblée législative. »",
+            soustitre: "Adoption de l'Acte d'Union",
+            source: "Adapté de Paul-André Linteau et autres, Histoire du Québec contemporain, Boréal, 1989."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Le gouverneur accepte désormais de choisir ses ministres parmi les élus qui bénéficient de l'appui de la majorité des représentants de l'Assemblée législative. »",
+            soustitre: "La mise en place du gouvernement responsable",
+            source: "Adapté de John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec, Septentrion, 2003."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Des députés réformistes du Canada-Est et du Canada-Ouest collaborent afin de défendre des objectifs communs et d'accroître leur influence au sein du gouvernement de la Province du Canada. »",
+            soustitre: "Alliance des réformistes",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 3, Septentrion, 1996."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "image", ref: "ligne_abCd.png"},
+    guide: "B - D - C - A",
+    updatedAt: "2026-06-24T12:53:52.138Z"
   }
 ]
