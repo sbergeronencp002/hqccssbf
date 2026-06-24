@@ -172,6 +172,22 @@ header a:hover { color: #fff; }
 .anchor-nav { position:sticky; top:0; z-index:20; background:var(--paper-2); border-bottom:1px solid var(--border); margin:0 -1.5rem 1.5rem; padding:.4rem 1.5rem; display:flex; gap:.25rem; flex-wrap:wrap; }
 .anchor-nav a { font-size:.72rem; font-weight:600; color:var(--ink-2); text-decoration:none; padding:.22rem .65rem; border-radius:4px; transition:background .12s,color .12s; white-space:nowrap; }
 .anchor-nav a:hover { background:var(--paper-3); color:var(--ink); }
+.anchor-preview-btn { margin-left:auto; font-size:.72rem; font-weight:600; padding:.22rem .8rem; border-radius:4px; border:1.5px solid var(--accent); background:none; color:var(--accent); cursor:pointer; transition:background .12s,color .12s; white-space:nowrap; }
+.anchor-preview-btn:hover,.anchor-preview-btn.active { background:var(--accent); color:#fff; }
+#live-preview-panel { position:fixed; top:0; right:0; width:min(440px,44vw); height:100vh; background:#fff; border-left:1px solid var(--border); box-shadow:-4px 0 24px rgba(0,0,0,.10); z-index:200; display:flex; flex-direction:column; overflow:hidden; }
+.lp-header { display:flex; align-items:center; justify-content:space-between; padding:.7rem 1rem; border-bottom:1px solid var(--border); background:var(--paper-2); flex-shrink:0; }
+.lp-title { font-size:.85rem; font-weight:700; color:var(--ink); }
+.lp-close { background:none; border:none; font-size:1.3rem; cursor:pointer; color:var(--ink-3); line-height:1; padding:0 .2rem; }
+.lp-close:hover { color:var(--ink); }
+.lp-body { flex:1; overflow-y:auto; padding:1rem; font-size:.82rem; }
+.lp-card { border:1.5px solid var(--border); border-radius:8px; padding:1rem; }
+.lp-oi-badge { display:inline-block; border-radius:4px; padding:1px 8px; font-size:.7rem; font-weight:700; letter-spacing:.04em; margin-bottom:.5rem; }
+.lp-meta { font-size:.7rem; color:var(--ink-3); margin-bottom:.6rem; }
+.lp-enonce { font-size:.85rem; line-height:1.55; margin-bottom:.8rem; }
+.lp-doc-titre { font-size:.72rem; font-weight:700; color:var(--ink-2); margin-bottom:.2rem; }
+.lp-doc-texte { font-size:.78rem; color:var(--ink); background:var(--paper-2); border-radius:4px; padding:.4rem .6rem; margin-bottom:.5rem; white-space:pre-wrap; max-height:120px; overflow:hidden; }
+.lp-doc-img { max-width:100%; border-radius:4px; margin-bottom:.5rem; display:block; }
+.lp-reponse { border-top:1.5px dashed var(--border); padding-top:.6rem; margin-top:.6rem; font-size:.72rem; color:var(--ink-3); }
 
 /* ── MOVE BUTTONS ── */
 .btn-move { position:absolute; top:.55rem; background:none; border:none; color:var(--ink-3); font-size:.85rem; cursor:pointer; padding:0 .15rem; line-height:1.2; }
@@ -226,7 +242,17 @@ header a:hover { color: #fff; }
       <a href="#section-reglette">Réglette</a>
       <a href="#section-guide">Guide</a>
       <a href="#section-actions">Publier ↓</a>
+      <button class="anchor-preview-btn" id="btn-preview-toggle" onclick="toggleLivePreview()" title="Aperçu en temps réel">👁 Aperçu</button>
     </nav>
+
+    <!-- APERÇU EN TEMPS RÉEL -->
+    <div id="live-preview-panel" style="display:none">
+      <div class="lp-header">
+        <span class="lp-title">Aperçu</span>
+        <button class="lp-close" onclick="toggleLivePreview()">×</button>
+      </div>
+      <div class="lp-body" id="lp-body"><em style="color:var(--ink-3);font-size:.85rem">Remplissez le formulaire…</em></div>
+    </div>
 
     <!-- TABLEAU DE BORD -->
     <div class="section" id="dashboard-section" style="display:none">
@@ -2344,6 +2370,137 @@ function togglePeriode(rowEl) {
 }
 
 // ── TOAST ─────────────────────────────────────────────────────────────
+// ── APERÇU EN TEMPS RÉEL ─────────────────────────────────────────────────────
+let _lpVisible = false;
+let _lpTimer = null;
+
+function toggleLivePreview() {
+  _lpVisible = !_lpVisible;
+  const panel = document.getElementById('live-preview-panel');
+  const btn   = document.getElementById('btn-preview-toggle');
+  panel.style.display = _lpVisible ? 'flex' : 'none';
+  btn.classList.toggle('active', _lpVisible);
+  if (_lpVisible) refreshLivePreview();
+}
+
+function scheduleLivePreview() {
+  if (!_lpVisible) return;
+  clearTimeout(_lpTimer);
+  _lpTimer = setTimeout(refreshLivePreview, 350);
+}
+
+function refreshLivePreview() {
+  const panel = document.getElementById('lp-body');
+  if (!panel) return;
+  try {
+    const oi  = document.getElementById('q-oi')?.value || '';
+    const niveau = document.getElementById('q-niveau')?.value || '';
+    const periode = document.getElementById('q-periode')?.value || '';
+    const enonce  = (document.getElementById('q-enonce')?.value || '').trim();
+    const soustag = getSoustag ? getSoustag() : '';
+    const points  = document.getElementById('q-points')?.value || '1';
+
+    const s = (typeof OI_CONFIG !== 'undefined' && OI_CONFIG[oi])
+      ? { bg: OI_CONFIG[oi].bg || '#e8edf5', color: OI_CONFIG[oi].color || '#1B3B6F' }
+      : { bg: '#e8edf5', color: '#1B3B6F' };
+
+    function esc(t) { return String(t||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+    function fmt(t) {
+      return esc(t)
+        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+        .replace(/^• (.+)/gm, '<li>$1</li>')
+        .replace(/(<li>.*<\/li>)+/g, s => '<ul style="margin:.3rem 0 .3rem 1rem;padding:0">'+s+'</ul>');
+    }
+
+    // Documents
+    const docEls = document.querySelectorAll('#docs-list > [id^="doc-"]');
+    let docsHtml = '';
+    docEls.forEach(docDiv => {
+      const dtype = docDiv.dataset.type;
+      if (dtype === 'textes' || dtype === 'textes-image') {
+        const cols = docDiv.querySelectorAll('[id$="-texte"],[id$="-ref"]');
+        docDiv.querySelectorAll('[data-col]').length;
+        // Collect col data
+        const colDivs = docDiv.querySelectorAll('.col-block,[data-col]');
+        if (colDivs.length) {
+          colDivs.forEach(cd => {
+            const titre    = cd.querySelector('[id$="-titre"]')?.value || '';
+            const texteEl  = cd.querySelector('[id$="-texte"]');
+            const refSel   = cd.querySelector('select[id$="-ref"]');
+            if (texteEl) {
+              const txt = texteEl.value || '';
+              if (titre || txt) docsHtml += `<div class="lp-doc-titre">${esc(titre)}</div><div class="lp-doc-texte">${fmt(txt)}</div>`;
+            } else if (refSel && refSel.value) {
+              const ikey = refSel.value;
+              const entry = (typeof IMAGE_DB !== 'undefined') ? IMAGE_DB[ikey] : null;
+              if (entry && entry.src) {
+                docsHtml += `<div class="lp-doc-titre">${esc(titre || ikey)}</div><img class="lp-doc-img" src="${entry.src}" alt="${esc(ikey)}">`;
+              } else {
+                docsHtml += `<div class="lp-doc-titre">${esc(titre || ikey)}</div><div class="lp-doc-texte" style="color:var(--ink-3)">[image : ${esc(ikey)}]</div>`;
+              }
+            }
+          });
+        } else {
+          // Single-col textes
+          const titre   = docDiv.querySelector('[id$="-titre"]')?.value || '';
+          const texteEl = docDiv.querySelector('[id$="-texte"]');
+          const txt     = texteEl?.value || '';
+          if (titre || txt) docsHtml += `<div class="lp-doc-titre">${esc(titre)}</div><div class="lp-doc-texte">${fmt(txt)}</div>`;
+        }
+      } else if (dtype === 'image') {
+        const titre  = docDiv.querySelector('[id$="-titre"]')?.value || '';
+        const refSel = docDiv.querySelector('select[id$="-ref"]');
+        const ikey   = refSel?.value || '';
+        const entry  = ikey && (typeof IMAGE_DB !== 'undefined') ? IMAGE_DB[ikey] : null;
+        if (entry && entry.src) {
+          docsHtml += `<div class="lp-doc-titre">${esc(titre || ikey)}</div><img class="lp-doc-img" src="${entry.src}" alt="${esc(ikey)}">`;
+        } else if (ikey) {
+          docsHtml += `<div class="lp-doc-titre">${esc(titre || ikey)}</div><div class="lp-doc-texte" style="color:var(--ink-3)">[image : ${esc(ikey)}]</div>`;
+        }
+      }
+    });
+
+    // Réponse type
+    const repType = document.getElementById('rep-type')?.value || 'none';
+    let repHtml = '';
+    const repLabels = { none:'Aucun espace réponse', '_court':'Réponse courte', lignes:'Lignes', image:'Image', 'avant-apres':'Avant/Après', 'cause-consequence':'Cause/Conséquence', 'mettre-en-relation':'Mettre en relation', 'situer-dans-lespace':'Situer dans l\'espace', tableau_2col:'Tableau 2 col.', grille:'Grille' };
+    if (repType && repType !== 'none') repHtml = `<div class="lp-reponse">Réponse : ${esc(repLabels[repType] || repType)}</div>`;
+
+    const metaParts = [niveau ? `Niv. ${esc(niveau)}` : '', esc(periode), soustag ? esc(soustag) : ''].filter(Boolean);
+
+    panel.innerHTML = `<div class="lp-card">
+      ${oi ? `<div class="lp-oi-badge" style="background:${s.bg};color:${s.color}">${esc(oi)}</div>` : ''}
+      ${metaParts.length ? `<div class="lp-meta">${metaParts.join(' · ')} · ${esc(points)} pt${points>1?'s':''}</div>` : ''}
+      <div class="lp-enonce">${enonce ? fmt(enonce) : '<em style="color:var(--ink-3)">Énoncé vide</em>'}</div>
+      ${docsHtml}
+      ${repHtml}
+    </div>`;
+  } catch(e) {
+    document.getElementById('lp-body').innerHTML = `<em style="color:red;font-size:.75rem">Erreur aperçu : ${e.message}</em>`;
+  }
+}
+
+// Hook: observe form changes
+(function setupLivePreviewListeners() {
+  const targets = ['q-oi','q-niveau','q-periode','q-enonce','q-points','rep-type'];
+  function onChange() { scheduleLivePreview(); }
+  document.addEventListener('DOMContentLoaded', () => {
+    targets.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('input', onChange);
+    });
+    // Also observe docs-list for dynamic content changes
+    const docsList = document.getElementById('docs-list');
+    if (docsList) {
+      docsList.addEventListener('input', onChange);
+      new MutationObserver(onChange).observe(docsList, { childList:true, subtree:true });
+    }
+    // Sous-tag pills
+    const stpills = document.getElementById('soustag-pills');
+    if (stpills) stpills.addEventListener('click', () => setTimeout(onChange, 50));
+  });
+})();
+
 function toast(msg, type='ok') {
   const el = document.getElementById('toast');
   el.textContent = msg;

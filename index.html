@@ -127,6 +127,7 @@
       <button class="cfb-ghost" onclick="viderPanier()" title="Vider le panier">Vider</button>
       <button class="cfb-icon"  onclick="melangerPanier()" title="Mélanger l'ordre aléatoirement">🔀</button>
       <button class="cfb-outline" onclick="previsualiser(false)">👁 Aperçu</button>
+      <button class="cfb-exam"   onclick="openExam()">🎯 Examen</button>
       <button class="cfb-primary" id="btn-generer" onclick="genererDocx(false)">⬇ Cahier</button>
       <button class="cfb-alt"  id="btn-generer-guide" onclick="genererDocx(true)">⬇ Guide</button>
     </div>
@@ -150,6 +151,23 @@
 </div>
 
 <div class="warn-toast" id="warn-toast"></div>
+
+<!-- Mode examen -->
+<div id="exam-overlay" role="dialog" aria-modal="true" aria-label="Mode examen" style="display:none">
+  <div class="exam-header">
+    <div class="exam-progress" id="exam-progress"></div>
+    <button class="exam-close" onclick="closeExam()" title="Quitter">×</button>
+  </div>
+  <div class="exam-body" id="exam-body"></div>
+  <div class="exam-footer">
+    <div class="exam-dot-row" id="exam-dots"></div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <button class="exam-nav" id="exam-prev" onclick="examNav(-1)">←</button>
+      <span class="exam-pts-badge" id="exam-pts"></span>
+      <button class="exam-nav" id="exam-next" onclick="examNav(1)">→</button>
+    </div>
+  </div>
+</div>
 
 <script src="contexte.js"></script>
 <script src="oi-config.js?v=1"></script>
@@ -180,6 +198,11 @@
       })
       .catch(fallback);
   })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js').catch(() => {});
+  }
 </script>
 </body>
 </html>

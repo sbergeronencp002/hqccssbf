@@ -550,6 +550,13 @@ window.addEventListener('storage', e => {
 });
 
 document.addEventListener('keydown', e => {
+  const examOpen = document.getElementById('exam-overlay')?.style.display !== 'none';
+  if(examOpen) {
+    if(e.key === 'ArrowLeft')  { e.preventDefault(); examNav(-1); }
+    if(e.key === 'ArrowRight') { e.preventDefault(); examNav(1); }
+    if(e.key === 'Escape')     { closeExam(); }
+    return;
+  }
   if(e.key === 'Escape') { closeQModal(); closePreviewBtn(); }
 });
 
@@ -1901,4 +1908,62 @@ async function genererDocx(includeGuide=false) {
     if(btn) { btn.textContent = includeGuide ? '⬇ Guide' : '⬇ Cahier'; btn.disabled = false; }
     if(btnOther) btnOther.disabled = false;
   }
+}
+
+// ===== MODE EXAMEN =====
+let examIdx = 0;
+
+function openExam() {
+  if(!panier.length) { showWarn('Le cahier est vide.'); return; }
+  examIdx = 0;
+  closeCahier();
+  renderExam();
+  const ov = document.getElementById('exam-overlay');
+  ov.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  ov.focus();
+}
+
+function closeExam() {
+  document.getElementById('exam-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function examNav(dir) {
+  examIdx = Math.max(0, Math.min(panier.length - 1, examIdx + dir));
+  renderExam();
+}
+
+function renderExam() {
+  const total = panier.length;
+  const q = Q_MAP[panier[examIdx]];
+  if(!q) return;
+  const { oi } = q;
+  const s = oiStyle(oi);
+
+  document.getElementById('exam-progress').textContent = `${examIdx + 1} / ${total}`;
+  document.getElementById('exam-pts').textContent = `${q.points} pt${q.points > 1 ? 's' : ''}`;
+  document.getElementById('exam-prev').disabled = examIdx === 0;
+  document.getElementById('exam-next').disabled = examIdx === total - 1;
+
+  // Dots
+  const dotsEl = document.getElementById('exam-dots');
+  dotsEl.innerHTML = panier.map((id, i) => {
+    const cls = i === examIdx ? 'exam-dot active' : 'exam-dot';
+    return `<span class="${cls}" onclick="examIdx=${i};renderExam()" title="${i+1}"></span>`;
+  }).join('');
+
+  // Corps
+  const soustag = q.soustag ? `<span class="exam-meta">${escLine(q.soustag)}</span>` : '';
+  const periode = q.periode ? `<span class="exam-meta">${escLine(q.periode)}</span>` : '';
+  const docs = (q.documents || []).map(d => renderDoc(d)).join('');
+  const rep  = renderReponse(q);
+
+  document.getElementById('exam-body').innerHTML = `
+    <div class="exam-oi-badge" style="background:${s.bg};color:${s.color}">${escLine(oi)}</div>
+    <div class="exam-meta-row">${periode}${soustag}</div>
+    <div class="exam-enonce">${formatTexte(q.enonce)}</div>
+    <div class="exam-docs">${docs}</div>
+    <div class="exam-reponse">${rep}</div>
+  `;
 }
