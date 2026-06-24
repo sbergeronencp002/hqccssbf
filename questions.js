@@ -5122,6 +5122,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
       {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
+  },
+  "Q542": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."},
+      {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
+      {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
+    ]
   }
 }
 
@@ -23230,5 +23239,42 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "L'obtention du gouvernement responsable.",
     updatedAt: "2026-06-24T12:57:13.285Z"
+  },
+  {
+    id: "Q542",
+    niveau: 4,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Convergence – 2 acteurs",
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils d'accord ?",
+    aspects: [{aspect: "Gouvernement responsable"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les réformistes des deux sections de la province doivent unir leurs efforts afin d'obtenir les changements politiques réclamés par la population. »",
+            auteur: "Louis-Hippolyte La Fontaine (Canada-Est)",
+            source: "Adapté d'un discours d'un réformiste du Canada-Est."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Une collaboration sincère entre les réformistes du Canada-Ouest et du Canada-Est est essentielle à l'avancement des réformes et au bon gouvernement de la province. »",
+            auteur: "Robert Baldwin (Canada-Ouest)",
+            source: "Adapté d'un discours d'un réformiste du Canada-Ouest."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Ils sont favorables à une alliance entre les réformistes.\nIls appuient l'alliance des réformistes.",
+    updatedAt: "2026-06-24T13:00:34.717Z"
   }
 ]
