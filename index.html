@@ -162,11 +162,11 @@
   (function loadQuestions() {
     function fallback() {
       var qs = document.createElement('script');
-      qs.src = 'questions.js?t=' + Math.floor(Date.now() / 60000);
+      qs.src = 'questions.js?t=' + Date.now();
       qs.onload = function() { initSite(); };
       document.head.appendChild(qs);
     }
-    fetch('questions.js?t=' + Math.floor(Date.now() / 60000), { cache: 'no-cache' })
+    fetch('questions.js?t=' + Date.now(), { cache: 'no-cache' })
       .then(function(r) { if (!r.ok) throw new Error(r.status); return r.text(); })
       .then(function(src) {
         var ok = false;
