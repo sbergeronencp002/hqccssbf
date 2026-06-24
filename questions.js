@@ -5237,6 +5237,29 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
       {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
+  },
+  "Q554": {
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
   }
 }
 
@@ -23726,5 +23749,53 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "Le christianisme se diffuse chez certaines Premières Nations.\nCertaines Premières Nations adoptent la religion chrétienne.\nLe nombre de chrétiens augmente chez certaines Premières Nations.\nLes croyances chrétiennes prennent plus d'importance.",
     updatedAt: "2026-06-24T17:01:19.317Z"
+  },
+  {
+    id: "Q554",
+    niveau: 4,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P5 — 1840 – 1896",
+    points: 3,
+    soustag: "Position – 3 acteurs",
+    enonce: "Les documents A à C présentent la position de trois acteurs sur les réserves indiennes. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres.",
+    aspects: [{aspect: "Affaires indiennes"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les réserves faciliteront l'enseignement de la religion chrétienne et permettront aux missionnaires d'accompagner plus régulièrement les communautés autochtones. »",
+            auteur: "Joseph-Bruno Guigues",
+            source: "Adapté de la correspondance des missionnaires catholiques de la Province du Canada."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les réserves permettront de mieux administrer les communautés autochtones et de favoriser leur adaptation graduelle au mode de vie de la population coloniale. »",
+            auteur: "Charles Bagot",
+            source: "Adapté du Rapport Bagot."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Notre peuple souhaite conserver ses terres, ses déplacements et ses traditions plutôt que de vivre sur des territoires qui lui sont imposés. »",
+            auteur: "Peter Jones (Kahkewaquonaby)",
+            source: "Adapté de témoignages de chefs autochtones rapportés par Alain Beaulieu, Les Autochtones du Québec, Éditions Fides."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 3},
+    guide: "Peter Jones (Kahkewaquonaby) s'oppose à la création des réserver (différence), tandis que Charles Bagot et Joseph-Bruno Guigues sont favorables ou appuient la création des réserves (similitude).",
+    updatedAt: "2026-06-24T23:35:00.264Z"
   }
 ]
