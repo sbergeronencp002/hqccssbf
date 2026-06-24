@@ -1416,6 +1416,7 @@ function addDoc(type) {
       <div class="block-title">Document texte</div>
       <button class="btn-move btn-move-up" onclick="moveDoc('doc-${id}',-1)" title="Monter">↑</button>
       <button class="btn-move btn-move-dn" onclick="moveDoc('doc-${id}',1)" title="Descendre">↓</button>
+      <button class="btn-secondary" style="position:absolute;top:.45rem;right:5.5rem;padding:2px 7px;font-size:.75rem" onclick="convertDoc(${id})" title="Convertir en document image">⇄ Image</button>
       <button class="btn-remove" onclick="removeEl('doc-${id}')">✕</button>
       <div class="field"><label>Titre</label><input type="text" id="doc-${id}-titre" placeholder="Document ${letter}" value="Document ${letter}"></div>
       <div class="field"><label>Sous-titre <span style="font-weight:400;color:var(--ink-3)">(optionnel)</span></label><input type="text" id="doc-${id}-soustitre" placeholder="ex. : Champlain et ses alliés…"></div>
@@ -1427,6 +1428,7 @@ function addDoc(type) {
       <div class="block-title">Document image</div>
       <button class="btn-move btn-move-up" onclick="moveDoc('doc-${id}',-1)" title="Monter">↑</button>
       <button class="btn-move btn-move-dn" onclick="moveDoc('doc-${id}',1)" title="Descendre">↓</button>
+      <button class="btn-secondary" style="position:absolute;top:.45rem;right:5.5rem;padding:2px 7px;font-size:.75rem" onclick="convertDoc(${id})" title="Convertir en document texte">⇄ Texte</button>
       <button class="btn-remove" onclick="removeEl('doc-${id}')">✕</button>
       <div class="field"><label>Titre</label><input type="text" id="doc-${id}-titre" placeholder="Document ${letter}" value="Document ${letter}"></div>
       <div class="field"><label>Sous-titre <span style="font-weight:400;color:var(--ink-3)">(optionnel)</span></label><input type="text" id="doc-${id}-soustitre" placeholder="ex. : Carte du territoire en 1763…"></div>
@@ -1481,6 +1483,46 @@ function imageSelect(id) {
 }
 
 function removeEl(id) { document.getElementById(id)?.remove(); }
+
+function convertDoc(id) {
+  const div = document.getElementById('doc-' + id);
+  if(!div) return;
+  const currentType = div.dataset.type;
+  if(currentType !== 'textes' && currentType !== 'image') return;
+  const titre    = document.getElementById('doc-'+id+'-titre')?.value || '';
+  const soustitre = document.getElementById('doc-'+id+'-soustitre')?.value || '';
+  const auteur   = document.getElementById('doc-'+id+'-auteur')?.value || '';
+  const source   = document.getElementById('doc-'+id+'-source')?.value || '';
+  const newType  = currentType === 'textes' ? 'image' : 'textes';
+  const placeholder = titre || 'Document';
+  div.dataset.type = newType;
+  if(newType === 'image') {
+    div.innerHTML = `
+      <div class="block-title">Document image</div>
+      <button class="btn-move btn-move-up" onclick="moveDoc('doc-${id}',-1)" title="Monter">↑</button>
+      <button class="btn-move btn-move-dn" onclick="moveDoc('doc-${id}',1)" title="Descendre">↓</button>
+      <button class="btn-secondary" style="position:absolute;top:.45rem;right:5.5rem;padding:2px 7px;font-size:.75rem" onclick="convertDoc(${id})" title="Convertir en document texte">⇄ Texte</button>
+      <button class="btn-remove" onclick="removeEl('doc-${id}')">✕</button>
+      <div class="field"><label>Titre</label><input type="text" id="doc-${id}-titre" placeholder="${escHtml(placeholder)}" value="${escHtml(titre)}"></div>
+      <div class="field"><label>Sous-titre <span style="font-weight:400;color:var(--ink-3)">(optionnel)</span></label><input type="text" id="doc-${id}-soustitre" placeholder="ex. : Carte du territoire en 1763…" value="${escHtml(soustitre)}"></div>
+      <div class="field"><label>Image</label>${imageSelect('doc-'+id+'-ref')}</div>
+      <div class="field"><label>Auteur</label><input type="text" id="doc-${id}-auteur" placeholder="Prénom Nom, titre…" value="${escHtml(auteur)}"></div>
+      <div class="field"><label>Source</label><input type="text" id="doc-${id}-source" placeholder="Titre, éditeur, année…" value="${escHtml(source)}"></div>`;
+  } else {
+    div.innerHTML = `
+      <div class="block-title">Document texte</div>
+      <button class="btn-move btn-move-up" onclick="moveDoc('doc-${id}',-1)" title="Monter">↑</button>
+      <button class="btn-move btn-move-dn" onclick="moveDoc('doc-${id}',1)" title="Descendre">↓</button>
+      <button class="btn-secondary" style="position:absolute;top:.45rem;right:5.5rem;padding:2px 7px;font-size:.75rem" onclick="convertDoc(${id})" title="Convertir en document image">⇄ Image</button>
+      <button class="btn-remove" onclick="removeEl('doc-${id}')">✕</button>
+      <div class="field"><label>Titre</label><input type="text" id="doc-${id}-titre" placeholder="${escHtml(placeholder)}" value="${escHtml(titre)}"></div>
+      <div class="field"><label>Sous-titre <span style="font-weight:400;color:var(--ink-3)">(optionnel)</span></label><input type="text" id="doc-${id}-soustitre" placeholder="ex. : Champlain et ses alliés…" value="${escHtml(soustitre)}"></div>
+      <div class="field"><label>Texte</label>${richToolbar('doc-'+id+'-texte')}<textarea id="doc-${id}-texte" rows="4" placeholder="Contenu du document…"></textarea></div>
+      <div class="field"><label>Auteur</label><input type="text" id="doc-${id}-auteur" placeholder="Prénom Nom, titre…" value="${escHtml(auteur)}"></div>
+      <div class="field"><label>Source</label><input type="text" id="doc-${id}-source" placeholder="Titre, éditeur, année…" value="${escHtml(source)}"></div>`;
+  }
+  refreshImageSelects();
+}
 
 function moveDoc(id, dir) {
   const el = document.getElementById(id);
