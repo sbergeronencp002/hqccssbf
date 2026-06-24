@@ -23452,6 +23452,6 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Difficulté de former une majorité stable à l'Assemblée législative.\nAucun parti ne réussit à obtenir une majorité stable.\nLes partis politiques sont trop divisés.\nLes gouvernements sont souvent minoritaires.\nLes députés du Canada-Est et du Canada-Ouest ont des intérêts divergents.",
-    updatedAt: "2026-06-24T14:10:30.039Z"
+    updatedAt: "2026-06-24T14:10:53.638Z"
   }
 ]
