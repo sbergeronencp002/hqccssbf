@@ -5211,6 +5211,14 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève établit correctement le fait."},
       {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
+  },
+  "Q551": {
+    oi: "Établir des faits",
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
+    ]
   }
 }
 
@@ -23614,5 +23622,29 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 1},
     guide: "Loi sur les Indiens.",
     updatedAt: "2026-06-24T16:54:38.696Z"
+  },
+  {
+    id: "Q551",
+    niveau: 4,
+    oi: "Établir des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    enonce: "Indiquez un objectif poursuivi par les missionnaires auprès des Premières Nations vers 1850.",
+    aspects: [{aspect: "Affaires indiennes"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les missionnaires consacrent leurs efforts à l'enseignement de la foi chrétienne auprès des communautés autochtones. »",
+            source: "Adapté de Alain Beaulieu, Les Autochtones du Québec, Éditions Fides."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 1},
+    guide: "Convertir les Premières Nations au christianisme.\nDiffuser la religion chrétienne.\nÉvangéliser les Premières Nations.\nEnseigner la religion chrétienne.",
+    updatedAt: "2026-06-24T16:56:47.116Z"
   }
 ]
