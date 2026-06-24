@@ -5113,6 +5113,15 @@ const REGLETTES = {
       {pts: 2, desc: "L'élève situe tous les faits dans le temps."},
       {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}
     ]
+  },
+  "Q541": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
+    ]
   }
 }
 
@@ -23196,5 +23205,30 @@ const QUESTIONS = [
     reponse: {type: "image", ref: "ligne_abCd.png"},
     guide: "B - D - C - A",
     updatedAt: "2026-06-24T12:53:52.138Z"
+  },
+  {
+    id: "Q541",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de l'alliance entre les réformistes du Canada-Est et du Canada-Ouest.",
+    aspects: [{aspect: "Gouvernement responsable"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« En travaillant ensemble, les députés réformistes du Canada-Est et du Canada-Ouest réussissent à obtenir l'appui d'une majorité de représentants au sein de l'Assemblée législative. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 4, Septentrion, 1997."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "L'obtention du gouvernement responsable.",
+    updatedAt: "2026-06-24T12:57:13.285Z"
   }
 ]
