@@ -5097,6 +5097,14 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
       {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
+  },
+  "Q539": {
+    oi: "Situer dans le temps",
+    colonnes: ["2 points", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève situe tous les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}
+    ]
   }
 }
 
@@ -5336,7 +5344,8 @@ const IMAGE_DB = {
   "tableau_exportations_1846_1854.jpg": {src: "images/tableau_exportations_1846_1854.jpg"},
   "tableau_exportations_usa_millions.jpg": {src: "images/tableau_exportations_usa_millions.jpg"},
   "tableau_exportations_province_canada.jpg": {src: "images/tableau_exportations_province_canada.jpg"},
-  "alliance_baldwin_lafontaine.jpg": {src: "images/alliance_baldwin_lafontaine.jpg", w: 1200, h: 693}
+  "alliance_baldwin_lafontaine.jpg": {src: "images/alliance_baldwin_lafontaine.jpg", w: 1200, h: 693},
+  "ligne_abCd.png": {src: "images/ligne_abCd.png", w: 1200, h: 248}
 }
 
 const QUESTIONS = [
@@ -23061,5 +23070,64 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-24T12:38:11.164Z"
+  },
+  {
+    id: "Q539",
+    niveau: 4,
+    oi: "Situer dans le temps",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Ordre chronologique",
+    enonce: "Les documents A à D présentent des événements liés à l'évolution politique de la Province du Canada.",
+    aspects: [{aspect: "Acte d'Union"}, {aspect: "Gouvernement responsable"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Des réformistes du Canada-Est et du Canada-Ouest décident de travailler ensemble afin d'obtenir davantage d'influence au sein des institutions politiques de la Province du Canada. »",
+            soustitre: "Alliance La Fontaine-Baldwin",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 3, Septentrion, 1996."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Des assemblées populaires se multiplient dans plusieurs paroisses. Des groupes armés affrontent les troupes britanniques dans différentes localités du Bas-Canada afin de revendiquer des changements politiques. »",
+            soustitre: "Rébellions des Patriotes",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 3, Septentrion, 1996."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les colonies du Haut-Canada et du Bas-Canada sont désormais réunies sous une même administration politique. Une seule assemblée législative est créée pour gouverner l'ensemble du territoire. »",
+            soustitre: "Adoption de l'Acte d'Union",
+            source: "Adapté de Paul-André Linteau et autres, Histoire du Québec contemporain, Boréal, 1989."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Afin de trouver une solution aux troubles survenus dans les colonies, un représentant britannique est chargé d'enquêter sur la situation. Il recommande notamment des changements importants dans l'administration de la colonie. »",
+            soustitre: "Rapport Durham",
+            source: "Adapté de Michel Brunet, Les Canadiens après la Conquête, Fides, 1969."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "image", ref: "ligne_abCd.png"},
+    guide: "B - D - C - A",
+    updatedAt: "2026-06-24T12:47:16.460Z"
   }
 ]
