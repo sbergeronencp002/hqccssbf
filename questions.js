@@ -5131,6 +5131,20 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."},
       {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}
     ]
+  },
+  "Q543": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
+    ]
   }
 }
 
@@ -23276,5 +23290,50 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "Ils sont favorables à une alliance entre les réformistes.\nIls appuient l'alliance des réformistes.",
     updatedAt: "2026-06-24T13:00:34.717Z"
+  },
+  {
+    id: "Q543",
+    niveau: 4,
+    oi: "Établir des liens de causalité",
+    periode: "P5 — 1840 – 1896",
+    points: 3,
+    enonce: "Expliquez comment une action des réformistes du Canada-Est et du Canada-Ouest entraine des changements dans l'organisation politique de la colonie.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n• une action des réformistes\n• une conséquence politique à l'assemblée législative\n• un changement sur l'organisation politique de la colonie",
+    aspects: [{aspect: "Gouvernement responsable"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "alliance_baldwin_lafontaine.jpg",
+            soustitre: "Robert Baldwin et Louis-Hippolyte La Fontaine",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Grâce à leur collaboration, les réformistes disposent désormais d'un appui suffisant parmi les représentants élus pour influencer les décisions de l'Assemblée législative. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 4, Septentrion, 1997."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            ref: "org_pol_gouvernement_responsable_1848.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 5},
+    guide: "Les réformistes du Canada-Est et du Canada-Ouest s'allient (une alliance entre les réformistes). Cette alliance leur permet d'obtenir l'appui de la majorité des représentants à l'Assemblée législative (une conséquence politique à l'assemblée législative). Cette majorité favorise l'établissement du gouvernement responsable (le gouvernement responsable).",
+    updatedAt: "2026-06-24T13:07:51.712Z"
   }
 ]
