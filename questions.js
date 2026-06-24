@@ -5088,6 +5088,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
       {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
+  },
+  "Q538": {
+    oi: "Mettre en relation des faits",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
+    ]
   }
 }
 
@@ -22987,5 +22996,70 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "Les réformistes du Canada-Est et du Canada-Ouest forment une alliance politique.",
     updatedAt: "2026-06-23T01:02:51.514Z"
+  },
+  {
+    id: "Q538",
+    niveau: 4,
+    oi: "Mettre en relation des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "4 documents",
+    enonce: "Les documents A à D présentent des faits liées à deux événements qui transforment les échanges commerciaux de la Province du Canada au milieu du XIXe siècle.",
+    aspects: [{aspect: "Économie coloniale"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Des hommes d'affaires réclament l'ouverture de nouveaux débouchés afin de compenser les difficultés rencontrées dans leurs échanges commerciaux. »",
+            source: "Adapté de Paul-André Linteau, Histoire du Québec contemporain, 1989."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Durant les années 1850, les producteurs voient leurs ventes augmenter grâce à l'élargissement des possibilités d'échanges pour plusieurs ressources naturelles. »",
+            source: "Adapté de Serge Courville, Québec : genèses et mutations du territoire, 2000."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les activités portuaires et commerciales connaissent une croissance marquée à la suite d'une entente favorisant la circulation de certains produits. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 3, 1996."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Les exportateurs de la colonie perdent certains avantages dont ils bénéficiaient depuis plusieurs décennies sur les marchés extérieurs. »",
+            source: "Adapté de Fernand Ouellet, Histoire économique et sociale du Québec, 1971."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: ["Adoption du libre-échange par le Royaume-Uni", "Traité de réciprocité avec les États-Unis"],
+      double: true
+    },
+    guide: {
+      type: "grille",
+      entetes: ["Adoption du libre-échange par le Royaume-Uni", "Traité de réciprocité avec les États-Unis"],
+      rangees: [
+        ["A et D", "B et C"]
+      ]
+    },
+    updatedAt: "2026-06-24T12:38:11.164Z"
   }
 ]
