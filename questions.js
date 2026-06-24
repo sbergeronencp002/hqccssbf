@@ -5163,6 +5163,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
       {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
+  },
+  "Q546": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
+    ]
   }
 }
 
@@ -5404,7 +5413,8 @@ const IMAGE_DB = {
   "tableau_exportations_province_canada.jpg": {src: "images/tableau_exportations_province_canada.jpg"},
   "alliance_baldwin_lafontaine.jpg": {src: "images/alliance_baldwin_lafontaine.jpg", w: 1200, h: 693},
   "ligne_abCd.png": {src: "images/ligne_abCd.png", w: 1200, h: 248},
-  "instabilite_politique.jpg": {src: "images/instabilite_politique.jpg"}
+  "instabilite_politique.jpg": {src: "images/instabilite_politique.jpg"},
+  "gouvernement_minoritaire.jpg": {src: "images/gouvernement_minoritaire.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -23417,5 +23427,31 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "Succession rapide des gouvernements.\nDifficulté à former un gouvernement stable.\nRetard dans l'adoption de lois et de projets.\nBlocage du fonctionnement politique de la colonie.\nDifficulté à obtenir l'appui d'une majorité à l'Assemblée.",
     updatedAt: "2026-06-24T14:05:19.140Z"
+  },
+  {
+    id: "Q546",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une cause de l'instabilité ministérielle dans la Province du Canada.",
+    aspects: [{aspect: "Gouvernement responsable"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "gouvernement_minoritaire.jpg",
+            soustitre: "Composition de l'Assemblée législative en 1848",
+            source: "Données compilées à partir des résultats des élections et de la composition des gouvernements de la Province du Canada, milieu du XIXe siècle."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Difficulté de former une majorité stable à l'Assemblée législative.\nAucun parti ne réussit à obtenir une majorité stable.\nLes partis politiques sont trop divisés.\nLes gouvernements sont souvent minoritaires.\nLes députés du Canada-Est et du Canada-Ouest ont des intérêts divergents.",
+    updatedAt: "2026-06-24T14:10:30.039Z"
   }
 ]
