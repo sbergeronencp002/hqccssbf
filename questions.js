@@ -5174,12 +5174,12 @@ const REGLETTES = {
     ]
   },
   "Q547": {
-    oi: "Déterminer des causes et des conséquences",
+    oi: "Déterminer des changements et des continuités",
     colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
-      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
-      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
+      {pts: 2, desc: "L'élève détermine correctement le changement."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
+      {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
   }
 }
@@ -23467,11 +23467,11 @@ const QUESTIONS = [
   {
     id: "Q547",
     niveau: 4,
-    oi: "Déterminer des causes et des conséquences",
+    oi: "Déterminer des changements et des continuités",
     periode: "P5 — 1840 – 1896",
     points: 2,
-    soustag: "Conséquence",
-    enonce: "Indiquez une conséquence de la création des réserves indiennes pour les communautés autochtones.",
+    soustag: "Changement",
+    enonce: "À partir du document A, indiquez un changement dans l'occupation du territoire par certaines Premières Nations entre 1840 et 1880.",
     aspects: [{aspect: "Affaires indiennes"}],
     documents: [
       {
@@ -23481,13 +23481,13 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "reserves_autochtones.jpg",
             soustitre: "Évolution du territoire occupé par une communauté autochtone",
-            source: "Adapté d'études historiques sur l'occupation du territoire par les Premières Nations."
+            source: "Adapté de données historiques sur les Premières Nations au Québec au XIXe siècle."
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Le territoire des Premières Nations diminue.\nLes communautés autochtones occupent un territoire plus petit.",
-    updatedAt: "2026-06-24T15:32:38.822Z"
+    guide: "Les Premières Nations occupent un territoire plus petit.\nLe territoire occupé par les Premières Nations diminue.\nLa superficie occupée par les Premières Nations diminue.",
+    updatedAt: "2026-06-24T15:51:48.785Z"
   }
 ]
