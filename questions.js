@@ -5219,6 +5219,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève établit correctement le fait."},
       {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
+  },
+  "Q552": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève dégage correctement la similitude."},
+      {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."},
+      {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}
+    ]
   }
 }
 
@@ -23646,5 +23655,40 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 1},
     guide: "Convertir les Premières Nations au christianisme.\nDiffuser la religion chrétienne.\nÉvangéliser les Premières Nations.\nEnseigner la religion chrétienne.",
     updatedAt: "2026-06-24T16:56:47.116Z"
+  },
+  {
+    id: "Q552",
+    niveau: 4,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Similitude",
+    enonce: "Indiquez une similitude entre les missions catholiques et les missions protestantes.",
+    aspects: [{aspect: "Affaires indiennes"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Des missionnaires catholiques s'établissent auprès de communautés autochtones afin d'enseigner la religion chrétienne et d'encourager la pratique des sacrements. »",
+            source: "Adapté de Alain Beaulieu, Les Autochtones du Québec, Éditions Fides."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Des missionnaires protestants s'installent dans des communautés autochtones afin de diffuser les enseignements chrétiens et de favoriser la lecture de la Bible. »",
+            source: "Adapté de Olive Patricia Dickason, Les Premières Nations du Canada, Septentrion."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Elles cherchent à convertir les Premières Nations au christianisme.\nElles diffusent la religion chrétienne.\nElles enseignent le christianisme.\nElles établissent des missions auprès des Premières Nations.\nElles cherchent à évangéliser les Premières Nations.",
+    updatedAt: "2026-06-24T16:58:05.778Z"
   }
 ]
