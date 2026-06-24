@@ -729,7 +729,7 @@ function filterEditList() {
 
   function highlight(text, term) {
     if(!term) return escHtml(text);
-    const idx = text.toLowerCase().indexOf(term);
+    const idx = fold(text).indexOf(term); // fold() pour détecter "periode" dans "Période"
     if(idx < 0) return escHtml(text);
     return escHtml(text.slice(0, idx))
       + '<mark style="background:#fff3b0;border-radius:2px">' + escHtml(text.slice(idx, idx + term.length)) + '</mark>'
@@ -898,7 +898,7 @@ function loadQuestion(id) {
     }
   });
 
-  const repType = q.reponse ? (q.reponse===true?'none':q.reponse.type) : 'none';
+  const repType = q.reponse ? (q.reponse===true?'_court':q.reponse.type) : 'none';
   const repSel = document.getElementById('rep-type');
   // Garde-fou : si la question utilise un type de réponse de format hérité
   // (retiré du menu, ex. tableau_3col / tableau), on injecte une option à la
@@ -1106,9 +1106,9 @@ async function supprimerQuestion() {
   } catch(e) {
     toast('Erreur : ' + e.message, 'err');
     console.error(e);
+    btn.disabled = false;
   } finally {
     btn.textContent = '🗑 Supprimer cette question';
-    btn.disabled = true;
   }
 }
 
@@ -1365,6 +1365,7 @@ async function loadReglettesJs() {
     const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/reglettes.js?ref=${BRANCH}&t=${Date.now()}`, { headers, cache: 'no-store' });
     if(!r.ok) return;
     const data = await r.json();
+    if(!data.content) return; // fichier trop grand (> 1 Mo) : l'API retourne download_url sans content
     const binary = atob(data.content.replace(/\n/g,''));
     const bytes = new Uint8Array(binary.length);
     for(let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
@@ -1841,6 +1842,8 @@ function buildQuestion() {
   } else if(repType === 'situer-dans-lespace') {
     const elements = [0,1].map(i => (document.getElementById('rep-sde-el-' + i)?.value || '').trim());
     reponse = { type: 'situer-dans-lespace', elements };
+  } else if(repType === '_court') {
+    reponse = true;
   } else if(repType === 'mettre-en-relation') {
     const n = parseInt(document.getElementById('rep-mer-n')?.value || '2') || 2;
     const elements = [];
@@ -1870,9 +1873,9 @@ function buildQuestion() {
 function buildReglette(id) {
   const oi = document.getElementById('q-oi').value;
   const idx = parseInt(document.getElementById('reg-preset').value);
-  if(isNaN(idx)) return { oi, colonnes:[], niveaux:[] };
+  if(isNaN(idx)) return null; // aucun preset sélectionné → conserver la réglette existante
   const preset = (REGLETTES_PRESET[oi] || [])[idx];
-  if(!preset) return { oi, colonnes:[], niveaux:[] };
+  if(!preset) return null;
   const { label, ...rest } = preset;
   return { oi, ...rest };
 }
@@ -1953,7 +1956,7 @@ async function publier() {
       const resp = await fetch(workerUrl + '/publish', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ secret: workerSecret, action: 'upsert', question: q, reglette: r, editingId })
+        body: JSON.stringify({ secret: workerSecret, action: 'upsert', question: q, reglette: r ?? currentReglettes[q.id] ?? { oi: q.oi, colonnes:[], niveaux:[] }, editingId })
       });
       const data = await resp.json().catch(() => ({ ok: false, error: resp.status }));
       if(!data.ok) throw new Error(data.error || resp.status);
@@ -1992,7 +1995,7 @@ async function publier() {
         if(!token) { toast('Worker inaccessible et pas de token GitHub.', 'err'); btn.disabled=false; btn.textContent='Publier sur GitHub'; return; }
         try {
           const q2 = buildQuestion();
-          const r2 = buildReglette(q2.id);
+          const r2 = buildReglette(q2.id) ?? currentReglettes[q2.id] ?? { oi: q2.oi, colonnes:[], niveaux:[] };
           const cm = editingId ? `Modifier ${q2.id} — ${q2.oi}` : `Ajouter ${q2.id} — ${q2.oi} (${q2.periode})`;
           await publierViaDispatch(token, 'upsert', q2, r2, editingId, cm, btn, status);
           // Recharger l'état depuis GitHub après l'Action
@@ -2067,7 +2070,7 @@ async function publier() {
     } else {
       currentQuestions.push(q);
     }
-    currentReglettes[q.id] = r;
+    if(r !== null) currentReglettes[q.id] = r; // null = pas de preset sélectionné → conserver l'existante
 
     const commitMsg = editingId ? `Modifier ${q.id} — ${q.oi}` : `Ajouter ${q.id} — ${q.oi} (${q.periode})`;
 

@@ -321,8 +321,8 @@ function renderImgGrid() {
   document.getElementById('shared-container').innerHTML =
     '<div class="img-grid">' + groups.map(([img, ids]) => {
       const isShared = ids.length > 1;
-      const ois = [...new Set(ids.filter(id => qById[id]).map(id => qById[id].oi))].join(' ');
-      return `<div class="img-card" data-img-name="${escH(img.replace(/\.[^.]+$/i,'').toLowerCase())}" data-ois="${escH(ois)}" onclick="showImg(${escH(JSON.stringify(img))})">
+      const oisArr = [...new Set(ids.filter(id => qById[id]).map(id => qById[id].oi))];
+      return `<div class="img-card" data-img-name="${escH(img.replace(/\.[^.]+$/i,'').toLowerCase())}" data-ois="${escH(JSON.stringify(oisArr))}" onclick="showImg(${escH(JSON.stringify(img))})">
         <span class="ic-count${isShared ? '' : ' single'}">${ids.length}</span>
         <img src="images/${escH(img)}" loading="lazy" alt="${escH(img)}">
         <div class="ic-label" title="${escH(img)}">${escH(img.replace(/\.[^.]+$/i,''))}</div>
@@ -362,6 +362,7 @@ function tileHtml(q) {
     (q.documents || []).forEach(doc => {
       (doc.cols || []).forEach(col => { if (col.ref) docImgs.push(col.ref); });
     });
+    if (q.reponse && q.reponse.ref) docImgs.push(q.reponse.ref); // image dans l'espace réponse
     if (!docImgs.length) return;
     const unique = [...new Set(docImgs)];
     q._imgs = unique;
@@ -483,7 +484,7 @@ function filterAll() {
   // Filtrer la grille d'images par nom + OI
   document.querySelectorAll('#shared-container .img-card').forEach(c => {
     const nameMatch = !s || c.dataset.imgName.includes(s);
-    const oiMatch = !oi || (c.dataset.ois || '').includes(oi);
+    const oiMatch = !oi || (() => { try { return JSON.parse(c.dataset.ois || '[]').includes(oi); } catch(_) { return false; } })();
     c.style.display = (nameMatch && oiMatch) ? '' : 'none';
   });
 }

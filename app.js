@@ -65,6 +65,7 @@ let Q_MAP = new Map();          // id → question (O(1) lookup)
 let Q_SEARCH_IDX = new Map();   // id → lowercase search string (pre-built)
 let NEW_IDS = new Set();        // 10 questions les plus récentes
 let panier = [];                // ids du panier (déclaré ici : utilisé dès initSite via render → buildTileHtml)
+let _imgDocxCache = {};         // cache data-URL des images résolues pour DOCX (ne pas muter IMAGE_DB)
 
 function populateFilters() {
   Q_MAP = new Map(QUESTIONS.map(q => [q.id, q]));
@@ -1187,7 +1188,7 @@ async function resolveImages(neededKeys) {
 
   const promises = neededKeys.map(async key => {
     const entry = IMAGE_DB[key];
-    if (!entry || entry.src.startsWith('data:')) return;
+    if (!entry || _imgDocxCache[key]) return;
     try {
       const resp = await fetch(entry.src);
       const blob = await resp.blob();
@@ -1208,7 +1209,7 @@ async function resolveImages(neededKeys) {
         img.onerror = () => { URL.revokeObjectURL(blobUrl); rej(); };
         img.src = blobUrl;
       });
-      IMAGE_DB[key] = { src: dataUrl.url, w: dataUrl.w, h: dataUrl.h };
+      _imgDocxCache[key] = { src: dataUrl.url, w: dataUrl.w, h: dataUrl.h };
     } catch(e) {
       failed.push(key);
       console.warn('Impossible de charger l\'image :', key, e);
@@ -1241,6 +1242,7 @@ async function genererDocx(includeGuide=false) {
       await _docxLoadPromise;
     }
     const panierQuestions = panier.map(id => Q_MAP.get(id)).filter(Boolean);
+    const imgR = k => _imgDocxCache[k] || IMAGE_DB[k]; // lit depuis le cache DOCX, pas IMAGE_DB (évite de muter IMAGE_DB avec des data URLs)
     const neededKeys = new Set();
     panierQuestions.forEach(q => {
       (q.documents || []).forEach(d => {
@@ -1404,7 +1406,7 @@ async function genererDocx(includeGuide=false) {
       }
 
       // Standard layout
-      if(!r.niveaux.length) return [];
+      if(!r.niveaux.length || !r.colonnes?.length) return [];
       const colOI = Math.floor(PAGE_W * 0.22);
       const colW  = Math.floor((PAGE_W - colOI) / r.niveaux.length);
       const colLast = PAGE_W - colOI - colW * (r.niveaux.length - 1);
@@ -1547,6 +1549,7 @@ async function genererDocx(includeGuide=false) {
 
     panier.forEach((id, idx) => {
       const q = Q_MAP.get(id);
+      if(!q) return;
 
       // Énoncé avec numéro
       const qNum = idx + 1;
@@ -1566,7 +1569,7 @@ async function genererDocx(includeGuide=false) {
           if(d.type === 'tableau') {
             const colW = Math.floor(PAGE_W / d.cols.length);
             const tableCells = d.cols.map(col => {
-              const imgData = IMAGE_DB[col.ref];
+              const imgData = imgR(col.ref);
               const cellChildren = [];
               if(col.titreDocx && col.titre) cellChildren.push(new Paragraph({ alignment: AlignmentType.LEFT, children: [new TextRun({ text: col.titre, font: 'Aptos', size: 20 })] }));
               if(imgData && imgData.src) {
@@ -1599,7 +1602,7 @@ async function genererDocx(includeGuide=false) {
                 col.texte.split('\n').forEach(line => { cellChildren.push(mkLine(line, 'Aptos', 20)); });
               }
               if(col.ref) {
-                const imgData = IMAGE_DB[col.ref];
+                const imgData = imgR(col.ref);
                 if(imgData && imgData.src) {
                   const bytes = b64ToBytes(imgData.src);
                   if(bytes) {
@@ -1649,7 +1652,7 @@ async function genererDocx(includeGuide=false) {
         if(q.reponse === true) {
           children.push(new Paragraph({ children: [new TextRun({ text: '__________', font: 'Aptos', size: 22 })] }));
         } else if(q.reponse.type === 'image') {
-          const imgData2 = IMAGE_DB[q.reponse.ref];
+          const imgData2 = imgR(q.reponse.ref);
           if(imgData2 && imgData2.src) {
             const bytes_2 = b64ToBytes(imgData2.src);
             if(bytes_2) {
