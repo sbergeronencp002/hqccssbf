@@ -5203,6 +5203,14 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
       {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
+  },
+  "Q550": {
+    oi: "Établir des faits",
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
+    ]
   }
 }
 
@@ -23582,5 +23590,29 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 5},
     guide: "Le Rapport Bagot (nom du rapport) recommande le regroupement des Premières Nations sur des réserves. Cette mesure entraîne une occupation plus limitée du territoire par les communautés autochtones (conséquence pour les communautés autochtones). Cette volonté d'encadrement contribue plus tard à l'adoption de la Loi sur les Indiens (nom de la loi adoptée).",
     updatedAt: "2026-06-24T16:52:51.486Z"
+  },
+  {
+    id: "Q550",
+    niveau: 4,
+    oi: "Établir des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    enonce: "Indiquez le nom de la loi adoptée en 1876 qui encadre davantage les affaires autochtones.",
+    aspects: [{aspect: "Affaires indiennes"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Après la Confédération, le gouvernement canadien met en place une loi qui précise les règles concernant l'administration des communautés autochtones et les relations qu'elles entretiennent avec l'État. »",
+            source: "Adapté de Alain Beaulieu, Les Autochtones du Québec, Éditions Fides."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 1},
+    guide: "Loi sur les Indiens.",
+    updatedAt: "2026-06-24T16:54:38.696Z"
   }
 ]
