@@ -5228,6 +5228,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."},
       {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}
     ]
+  },
+  "Q553": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
+    ]
   }
 }
 
@@ -5471,7 +5480,8 @@ const IMAGE_DB = {
   "ligne_abCd.png": {src: "images/ligne_abCd.png", w: 1200, h: 248},
   "instabilite_politique.jpg": {src: "images/instabilite_politique.jpg"},
   "gouvernement_minoritaire.jpg": {src: "images/gouvernement_minoritaire.jpg", w: 1200, h: 800},
-  "reserves_autochtones.jpg": {src: "images/reserves_autochtones.jpg"}
+  "reserves_autochtones.jpg": {src: "images/reserves_autochtones.jpg"},
+  "famille_autochtones_1850.jpg": {src: "images/famille_autochtones_1850.jpg"}
 }
 
 const QUESTIONS = [
@@ -23690,5 +23700,31 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "Elles cherchent à convertir les Premières Nations au christianisme.\nElles diffusent la religion chrétienne.\nElles enseignent le christianisme.\nElles établissent des missions auprès des Premières Nations.\nElles cherchent à évangéliser les Premières Nations.",
     updatedAt: "2026-06-24T16:58:05.778Z"
+  },
+  {
+    id: "Q553",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de l'action des missionnaires auprès des Premières Nations.",
+    aspects: [{aspect: "Affaires indiennes"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "famille_autochtones_1850.jpg",
+            soustitre: "Évolution de la pratique du christianisme dans les communautés autochtones",
+            source: "Adapté de travaux sur les missions religieuses auprès des Premières Nations au XIXe siècle."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Le christianisme se diffuse chez certaines Premières Nations.\nCertaines Premières Nations adoptent la religion chrétienne.\nLe nombre de chrétiens augmente chez certaines Premières Nations.\nLes croyances chrétiennes prennent plus d'importance.",
+    updatedAt: "2026-06-24T17:01:19.317Z"
   }
 ]
