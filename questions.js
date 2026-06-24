@@ -5260,6 +5260,14 @@ const REGLETTES = {
         desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
       }
     ]
+  },
+  "Q555": {
+    oi: "Situer dans le temps",
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
+    ]
   }
 }
 
@@ -23797,5 +23805,31 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 3},
     guide: "Peter Jones (Kahkewaquonaby) s'oppose à la création des réserver (différence), tandis que Charles Bagot et Joseph-Bruno Guigues sont favorables ou appuient la création des réserves (similitude).",
     updatedAt: "2026-06-24T23:35:00.264Z"
+  },
+  {
+    id: "Q555",
+    niveau: 4,
+    oi: "Situer dans le temps",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [{aspect: "Affaires indiennes"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le gouvernement du Dominion adopte une loi qui définit le statut des Premières Nations et encadre l'administration des réserves ainsi que plusieurs aspects de leur vie politique, sociale et économique. »",
+            soustitre: "Adoption de la Loi sur les Indiens",
+            source: "Adapté de John A. Dickinson et Brian Young, Diversité passée : Histoire du Québec et du Canada, Montréal, ERPI."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "image", ref: "ligne_1830-1890.png"},
+    guide: "C - 1876.",
+    updatedAt: "2026-06-24T23:37:46.377Z"
   }
 ]
