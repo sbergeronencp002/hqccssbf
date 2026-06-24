@@ -5181,6 +5181,14 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."},
       {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}
     ]
+  },
+  "Q548": {
+    oi: "Situer dans le temps",
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
+    ]
   }
 }
 
@@ -23489,5 +23497,31 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "Les Premières Nations occupent un territoire plus petit.\nLe territoire occupé par les Premières Nations diminue.\nLa superficie occupée par les Premières Nations diminue.",
     updatedAt: "2026-06-24T15:51:48.785Z"
+  },
+  {
+    id: "Q548",
+    niveau: 4,
+    oi: "Situer dans le temps",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [{aspect: "Affaires indiennes"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le Rapport Bagot recommande de regrouper les Autochtones sur des terres réservées afin de mieux encadrer leurs relations avec les autorités coloniales. »",
+            soustitre: "Dépôt du rapport de la commission Bagot",
+            source: "Adapté de Alain Beaulieu, Les Autochtones du Québec : des premières alliances aux revendications contemporaines, Montréal, Éditions Fides, 1997."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "image", ref: "ligne_1830-1890.png"},
+    guide: "A",
+    updatedAt: "2026-06-24T15:55:56.342Z"
   }
 ]
