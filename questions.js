@@ -5189,6 +5189,20 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève situe les faits dans le temps."},
       {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
+  },
+  "Q549": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
+    ]
   }
 }
 
@@ -23523,5 +23537,50 @@ const QUESTIONS = [
     reponse: {type: "image", ref: "ligne_1830-1890.png"},
     guide: "A",
     updatedAt: "2026-06-24T15:55:56.342Z"
+  },
+  {
+    id: "Q549",
+    niveau: 4,
+    oi: "Établir des liens de causalité",
+    periode: "P5 — 1840 – 1896",
+    points: 3,
+    enonce: "Expliquez comment les conclusions d'une commission d'enquête sur les Premières Nations vers 1840 contribuent à l'adoption d'une loi les concernant.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• le nom du rapport\n• une conséquence pour les communautés autochtones\n• le nom de la loi adoptée",
+    aspects: [{aspect: "Affaires indiennes"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Une commission recommande que les Autochtones soient regroupés sur des terres réservées administrées par les autorités coloniales. »",
+            source: "Adapté de Alain Beaulieu, Les Autochtones du Québec, Éditions Fides."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "reserves_autochtones.jpg",
+            soustitre: "Évolution du territoire occupé par une communauté autochtone",
+            source: "Adapté d'études historiques sur l'occupation du territoire par les Premières Nations."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Une nouvelle loi confie au gouvernement un rôle plus important dans l'administration des communautés autochtones. »",
+            source: "Adapté de John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec, Septentrion."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 5},
+    guide: "Le Rapport Bagot (nom du rapport) recommande le regroupement des Premières Nations sur des réserves. Cette mesure entraîne une occupation plus limitée du territoire par les communautés autochtones (conséquence pour les communautés autochtones). Cette volonté d'encadrement contribue plus tard à l'adoption de la Loi sur les Indiens (nom de la loi adoptée).",
+    updatedAt: "2026-06-24T16:52:51.486Z"
   }
 ]
