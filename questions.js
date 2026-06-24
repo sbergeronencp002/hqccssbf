@@ -5159,9 +5159,9 @@ const REGLETTES = {
     oi: "Déterminer des causes et des conséquences",
     colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
-      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
-      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
   }
 }
@@ -23398,7 +23398,7 @@ const QUESTIONS = [
     oi: "Déterminer des causes et des conséquences",
     periode: "P5 — 1840 – 1896",
     points: 2,
-    soustag: "Cause",
+    soustag: "Conséquence",
     enonce: "Indiquez une conséquence de l'instabilité ministérielle dans la Province du Canada.",
     aspects: [{aspect: "Gouvernement responsable"}],
     documents: [
@@ -23415,7 +23415,7 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Difficulté à former un gouvernement stable.\nSuccession rapide des gouvernements.\nRetard dans l'adoption de lois et de projets.\nBlocage du fonctionnement politique de la colonie.\nDifficulté à obtenir l'appui d'une majorité à l'Assemblée.",
-    updatedAt: "2026-06-24T14:02:50.534Z"
+    guide: "Succession rapide des gouvernements.\nDifficulté à former un gouvernement stable.\nRetard dans l'adoption de lois et de projets.\nBlocage du fonctionnement politique de la colonie.\nDifficulté à obtenir l'appui d'une majorité à l'Assemblée.",
+    updatedAt: "2026-06-24T14:05:19.140Z"
   }
 ]
