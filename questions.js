@@ -5400,12 +5400,11 @@ const REGLETTES = {
     ]
   },
   "Q567": {
-    oi: "Mettre en relation des faits",
-    colonnes: ["2 points", "1 point", "0 point"],
+    oi: "Situer dans l'espace",
+    colonnes: ["2 points", "0 point"],
     niveaux: [
-      {pts: 2, desc: "L'élève met en relation tous les faits. (2 sur 2)"},
-      {pts: 1, desc: "L'élève met en relation certains faits. (1 sur 2)"},
-      {pts: 0, desc: "L'élève ne met pas en relation les faits. (0 sur 2)"}
+      {pts: 2, desc: "L'élève situe les faits dans l'espace."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}
     ]
   }
 }
@@ -24460,9 +24459,10 @@ const QUESTIONS = [
   {
     id: "Q567",
     niveau: 4,
-    oi: "Mettre en relation des faits",
+    oi: "Situer dans l'espace",
     periode: "P5 — 1840 – 1896",
     points: 2,
+    soustag: "Situer 2 éléments",
     enonce: "À partir du document A, indiquez la lettre qui correspond au territoire : \n• de la province du Nouveau-Brunswick\n• de la province de l'Ontario",
     aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
     documents: [
@@ -24472,8 +24472,11 @@ const QUESTIONS = [
       }
     ],
     reponse: {
-      type: "mettre-en-relation",
-      elements: ["Nouveau-Brunswick", "Ontario"]
+      type: "grille",
+      entetes: ["Nouveau-Brunswick", "Ontario"],
+      rangees: [
+        ["", ""]
+      ]
     },
     guide: {
       type: "grille",
@@ -24482,6 +24485,6 @@ const QUESTIONS = [
         ["C", "A"]
       ]
     },
-    updatedAt: "2026-06-25T20:44:56.686Z"
+    updatedAt: "2026-06-25T20:48:05.514Z"
   }
 ]
