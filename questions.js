@@ -13961,7 +13961,8 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: ["Gouvernement civil", "Gouvernement militaire"]
+      elements: ["Gouvernement civil", "Gouvernement militaire"],
+      double: true
     },
     guide: {
       type: "grille",
@@ -13970,7 +13971,7 @@ const QUESTIONS = [
         ["B et D", "A et C"]
       ]
     },
-    updatedAt: "2026-06-12T12:10:30.607Z"
+    updatedAt: "2026-06-25T12:35:45.269Z"
   },
   {
     id: "Q246",
