@@ -23879,7 +23879,7 @@ const QUESTIONS = [
     oi: "Établir des liens de causalité",
     periode: "P5 — 1840 – 1896",
     points: 3,
-    enonce: "Expliquez comment la situation politique de la Province du Canada entraîne l'adoption d'une nouvelle constitution par Londres.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• une situation politique dans la Province du Canada\n• une action des chefs des partis politiques\n• une nouvelle constitution adoptée par Londres",
+    enonce: "Expliquez comment la situation politique de la Province du Canada conduit à l'adoption d'une nouvelle constitution en 1867.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• une situation politique dans la Province du Canada\n• une action des chefs des partis politiques\n• le nom de la nouvelle constitution adoptée en 1867",
     aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
     documents: [
       {
@@ -23916,8 +23916,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 5},
-    guide: "L'instabilité ministérielle (une situation politique dans la Province du Canada) amène les principaux chefs politiques à former la Grande Coalition (une action des chefs des partis politiques). Cette coalition convainc le Parlement britannique d'adopter l'Acte de l'Amérique du Nord britannique (une nouvelle constitution adoptée par Londres).",
-    updatedAt: "2026-06-25T01:06:31.213Z"
+    guide: "L'instabilité ministérielle (une situation politique dans la Province du Canada) amène les principaux chefs politiques à former la Grande Coalition (une action des chefs des partis politiques). Cette coalition convainc le Parlement britannique d'adopter l'Acte de l'Amérique du Nord britannique (le nom de la nouvelle constitution adoptée en 1867).",
+    updatedAt: "2026-06-25T12:23:35.342Z"
   },
   {
     id: "Q557",
