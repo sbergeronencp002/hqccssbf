@@ -5326,6 +5326,29 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
       {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
     ]
+  },
+  "Q562": {
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions",
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
+    niveaux: [
+      {
+        pts: 3,
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."
+      },
+      {
+        pts: 2,
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."
+      },
+      {
+        pts: 1,
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."
+      },
+      {
+        pts: 0,
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
+      }
+    ]
   }
 }
 
@@ -24123,5 +24146,53 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-25T12:33:09.466Z"
+  },
+  {
+    id: "Q562",
+    niveau: 4,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P5 — 1840 – 1896",
+    points: 3,
+    soustag: "Position – 3 acteurs",
+    enonce: "Les documents A à C présentent la position de trois acteurs sur le projet de fédération canadienne. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« L’union des colonies donnera naissance à un gouvernement général assez fort pour assurer l’ordre, la stabilité politique et le développement du pays. »",
+            auteur: "John A. Macdonald",
+            source: "Adapté de John A. Macdonald, Débats parlementaires sur la Confédération, 1865."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Il faut unir les colonies britanniques afin de préserver nos institutions, nos lois et notre langue, tout en formant un gouvernement capable d’assurer la stabilité politique. »",
+            auteur: "George-Étienne Cartier",
+            source: "Adapté de George-Étienne Cartier, Débats parlementaires sur la Confédération, 1865."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Un gouvernement central trop puissant risque de réduire l’autonomie des provinces et de placer le Bas-Canada dans une position politique défavorable. »",
+            auteur: "Antoine-Aimé Dorion",
+            source: "Adapté d’Antoine-Aimé Dorion, Débats parlementaires sur la Confédération, 1865."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 3},
+    guide: "Dorion s’oppose au projet de fédération canadienne (la différence), tandis que Cartier et Macdonald appuient le projet.",
+    updatedAt: "2026-06-25T12:42:03.612Z"
   }
 ]
