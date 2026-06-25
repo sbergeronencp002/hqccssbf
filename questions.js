@@ -5660,7 +5660,8 @@ const IMAGE_DB = {
   "reserves_autochtones.jpg": {src: "images/reserves_autochtones.jpg"},
   "famille_autochtones_1850.jpg": {src: "images/famille_autochtones_1850.jpg"},
   "coaliation_acteurs.png": {src: "images/coaliation_acteurs.png", w: 1200, h: 460},
-  "provinces_canada_1867.jpg": {src: "images/provinces_canada_1867.jpg"}
+  "provinces_canada_1867.jpg": {src: "images/provinces_canada_1867.jpg"},
+  "provinces_canada_1867_non.jpg": {src: "images/provinces_canada_1867_non.jpg", w: 1200, h: 725}
 }
 
 const QUESTIONS = [
@@ -24507,7 +24508,7 @@ const QUESTIONS = [
     documents: [
       {
         type: "textes",
-        cols: [{titre: "Document A", ref: "provinces_canada_1867.jpg", source: "Carte du Québec. Adaptée d'après d-maps.com."}]
+        cols: [{titre: "Document A", ref: "provinces_canada_1867_non.jpg", source: "Carte du Québec. Adaptée d'après d-maps.com."}]
       }
     ],
     reponse: {
@@ -24524,6 +24525,6 @@ const QUESTIONS = [
         ["C", "D"]
       ]
     },
-    updatedAt: "2026-06-25T20:52:16.881Z"
+    updatedAt: "2026-06-25T20:54:41.305Z"
   }
 ]
