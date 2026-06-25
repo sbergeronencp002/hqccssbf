@@ -10975,6 +10975,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P2 — 1608 – 1760",
     points: 2,
+    soustag: "3 documents",
     enonce: "Les documents A à C présentent des éléments liés à l’administration de la Nouvelle-France sous le Régime français. Indiquez le document qui correspond à chacun des rôles",
     aspects: [{aspect: "Église catholique"}, {aspect: "Gouvernement royal"}],
     documents: [
@@ -11011,15 +11012,16 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: ["Évêque", "Gouverneur", "Intendant"]
+      elements: ["", "", ""]
     },
     guide: {
       type: "grille",
-      entetes: ["Évêque", "Gouverneur", "Intendant"],
+      entetes: ["Élément 1", "Élément 2", "Élément 3"],
       rangees: [
         ["B", "C", "A"]
       ]
-    }
+    },
+    updatedAt: "2026-06-25T12:37:29.139Z"
   },
   {
     id: "Q152",
