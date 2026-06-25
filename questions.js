@@ -6193,7 +6193,7 @@ const QUESTIONS = [
     periode: "P8 — De 1980 à nos jours",
     points: 2,
     soustag: "Ordre chronologique",
-    enonce: "Les documents A à D présentent des événements liés au statut politique du Québec à partir de 1982. Placez-les par ordre chronologique.",
+    enonce: "Les documents A à D présentent des événements liés au statut politique du Québec à partir de 1982. Placez ces documents par ordre chronologique.",
     aspects: [{aspect: "Statut politique du Québec"}],
     documents: [
       {
@@ -6227,7 +6227,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "image", ref: "chrono_dbAc.png"},
-    guide: "D - B - A - C"
+    guide: "D - B - A - C",
+    updatedAt: "2026-06-25T13:49:47.607Z"
   },
   {
     id: "Q17",
