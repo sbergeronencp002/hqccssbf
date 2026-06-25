@@ -24162,9 +24162,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« L’union des colonies donnera naissance à un gouvernement général assez fort pour assurer l’ordre, la stabilité politique et le développement du pays. »",
-            auteur: "John A. Macdonald",
-            source: "Adapté de John A. Macdonald, Débats parlementaires sur la Confédération, 1865."
+            texte: "« L'union des colonies britanniques mettra fin aux difficultés politiques qui nous paralysent depuis trop longtemps. Elle donnera naissance à un gouvernement plus fort et plus stable. »",
+            auteur: "George Brown",
+            source: "George Brown, Débats parlementaires sur la Confédération, 1865. (Adapté)"
           }
         ]
       },
@@ -24173,9 +24173,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« Il faut unir les colonies britanniques afin de préserver nos institutions, nos lois et notre langue, tout en formant un gouvernement capable d’assurer la stabilité politique. »",
+            texte: "« Cette union assurera la stabilité de nos institutions tout en permettant à chaque province de conserver ce qui lui est propre. C'est la meilleure solution pour notre avenir. »",
             auteur: "George-Étienne Cartier",
-            source: "Adapté de George-Étienne Cartier, Débats parlementaires sur la Confédération, 1865."
+            source: "George-Étienne Cartier, Débats parlementaires sur la Confédération, 1865. (Adapté)"
           }
         ]
       },
@@ -24184,15 +24184,15 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« Un gouvernement central trop puissant risque de réduire l’autonomie des provinces et de placer le Bas-Canada dans une position politique défavorable. »",
+            texte: "« Je ne puis appuyer un projet qui confie autant de pouvoirs au gouvernement central et qui risque d'affaiblir la position politique du Canada-Est. »",
             auteur: "Antoine-Aimé Dorion",
-            source: "Adapté d’Antoine-Aimé Dorion, Débats parlementaires sur la Confédération, 1865."
+            source: "Antoine-Aimé Dorion, Débats parlementaires sur la Confédération, 1865. (Adapté)"
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "Dorion s’oppose au projet de fédération canadienne (la différence), tandis que Cartier et Macdonald appuient le projet.",
-    updatedAt: "2026-06-25T12:42:03.612Z"
+    guide: "Dorion s'oppose au projet de fédération canadienne (la différence), tandis que George Brown et George-Étienne Cartier appuient ce projet (la similitude).",
+    updatedAt: "2026-06-25T12:45:52.549Z"
   }
 ]
