@@ -13913,6 +13913,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P3 — 1760 – 1791",
     points: 2,
+    soustag: "4 documents",
     enonce: "Les documents A à D présentent des faits liés à l'administration de la colonie entre 1760 et 1774. Associez chaque document au type de gouvernement correspondant.",
     aspects: [{aspect: "Instructions au gouverneur Murray"}, {aspect: "Proclamation royale"}, {aspect: "Régime militaire"}],
     documents: [
@@ -13961,17 +13962,16 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: ["Gouvernement civil", "Gouvernement militaire"],
-      double: true
+      elements: ["", "", "", ""]
     },
     guide: {
       type: "grille",
-      entetes: ["Gouvernement civil", "Gouvernement militaire"],
+      entetes: ["Élément 1", "Élément 2", "Élément 3", "Élément 4"],
       rangees: [
-        ["B et D", "A et C"]
+        ["B et D", "A et C", "", ""]
       ]
     },
-    updatedAt: "2026-06-25T12:35:45.269Z"
+    updatedAt: "2026-06-25T12:36:15.852Z"
   },
   {
     id: "Q246",
