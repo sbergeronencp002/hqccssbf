@@ -10413,7 +10413,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 2,
     soustag: "Ordre chronologique",
-    enonce: "Les documents A à D présentent des événements liés à la fondation d’établissements français en Nouvelle-France. Placez-les par ordre chronologique.",
+    enonce: "Les documents A à D présentent des événements liés à la fondation d’établissements français en Nouvelle-France. Placez ces documents par ordre chronologique.",
     aspects: [{aspect: "Territoire français en Amérique"}],
     documents: [
       {
@@ -10462,7 +10462,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "image", ref: "ligne_abDc.png"},
-    guide: "B - C - D - A"
+    guide: "B - C - D - A",
+    updatedAt: "2026-06-25T13:48:23.898Z"
   },
   {
     id: "Q138",
