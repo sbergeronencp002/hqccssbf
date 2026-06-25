@@ -5282,6 +5282,14 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
       {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
     ]
+  },
+  "Q557": {
+    oi: "Établir des faits",
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
+    ]
   }
 }
 
@@ -23892,5 +23900,29 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 5},
     guide: "L'instabilité ministérielle (une situation politique dans la Province du Canada) amène les principaux chefs politiques à former la Grande Coalition (une action des chefs des partis politiques). Cette coalition convainc le Parlement britannique d'adopter l'Acte de l'Amérique du Nord britannique (une nouvelle constitution adoptée par Londres).",
     updatedAt: "2026-06-25T01:06:31.213Z"
+  },
+  {
+    id: "Q557",
+    niveau: 4,
+    oi: "Établir des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    enonce: "ndiquez le nom donné à l'alliance formée par les principaux chefs politiques de la Province du Canada.",
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les principaux chefs des partis politiques acceptent de former un même gouvernement afin de collaborer à la recherche d'une solution aux difficultés politiques de la Province du Canada. »",
+            source: "Adapté de John A. Dickinson et Brian Young, Diversité passée : Histoire du Québec et du Canada, ERPI."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 1},
+    guide: "La Grande Coalition.",
+    updatedAt: "2026-06-25T01:08:48.445Z"
   }
 ]
