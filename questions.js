@@ -24472,7 +24472,7 @@ const QUESTIONS = [
     periode: "P5 — 1840 – 1896",
     points: 2,
     soustag: "Situer 2 éléments",
-    enonce: "À partir du document A, indiquez la lettre qui correspond au territoire : \n• de la colonie du Nouveau-Brunswick\n• de la colonie du Canada-Ouest",
+    enonce: "À partir du document A, indiquez la lettre qui correspond au territoire : \n• de la colonie du Nouveau-Brunswick\n• du Canada-Ouest",
     aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
     documents: [
       {
@@ -24494,7 +24494,7 @@ const QUESTIONS = [
         ["C", "A"]
       ]
     },
-    updatedAt: "2026-06-25T20:54:07.353Z"
+    updatedAt: "2026-06-25T20:56:19.526Z"
   },
   {
     id: "Q568",
