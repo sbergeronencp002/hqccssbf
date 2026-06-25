@@ -24424,7 +24424,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P5 — 1840 – 1896",
     points: 2,
-    enonce: "À partir du document A, indiquez la lettre qui correspond au territoire : \n• de la province du Nouveau-Brunswick\n• de la province de l'Ontario",
+    enonce: "À partir du document A, indiquez la lettre qui correspond au territoire : \n• de la province du Nouvelle-Écosse\n• de la province du Québec",
     aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
     documents: [
       {
@@ -24434,15 +24434,15 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: ["Nouveau-Brunswick", "Ontario"]
+      elements: ["Nouvelle-Écosse", "Québec"]
     },
     guide: {
       type: "grille",
-      entetes: ["Nouveau-Brunswick", "Ontario"],
+      entetes: ["Nouvelle-Écosse", "Québec"],
       rangees: [
-        ["C", "A"]
+        ["D", "B"]
       ]
     },
-    updatedAt: "2026-06-25T20:42:34.927Z"
+    updatedAt: "2026-06-25T20:43:43.207Z"
   }
 ]
