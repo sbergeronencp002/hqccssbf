@@ -9786,7 +9786,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 2,
     soustag: "Ordre chronologique",
-    enonce: "Les documents A à D présentent des faits liés aux relations franco-amérindiennes sous le régime français. Placez les documents en ordre chronologique.",
+    enonce: "Les documents A à D présentent des faits liés aux relations franco-amérindiennes sous le régime français. Placez ces documents par ordre chronologique.",
     aspects: [{aspect: "Guerre et diplomatie chez les Premières Nations"}],
     documents: [
       {
@@ -9833,7 +9833,7 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_bcAd.png"},
     guide: "C - B - A - D",
-    updatedAt: "2026-06-09T16:14:01.898Z"
+    updatedAt: "2026-06-25T13:45:53.915Z"
   },
   {
     id: "Q120",
