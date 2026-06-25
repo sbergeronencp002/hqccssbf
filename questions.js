@@ -5390,6 +5390,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
       {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
     ]
+  },
+  "Q566": {
+    oi: "Mettre en relation des faits",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève met en relation tous les faits. (2 sur 2)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (1 sur 2)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (0 sur 2)"}
+    ]
   }
 }
 
@@ -5635,7 +5644,8 @@ const IMAGE_DB = {
   "gouvernement_minoritaire.jpg": {src: "images/gouvernement_minoritaire.jpg", w: 1200, h: 800},
   "reserves_autochtones.jpg": {src: "images/reserves_autochtones.jpg"},
   "famille_autochtones_1850.jpg": {src: "images/famille_autochtones_1850.jpg"},
-  "coaliation_acteurs.png": {src: "images/coaliation_acteurs.png", w: 1200, h: 460}
+  "coaliation_acteurs.png": {src: "images/coaliation_acteurs.png", w: 1200, h: 460},
+  "provinces_canada_1867.jpg": {src: "images/provinces_canada_1867.jpg"}
 }
 
 const QUESTIONS = [
@@ -24407,5 +24417,32 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-25T20:35:08.202Z"
+  },
+  {
+    id: "Q566",
+    niveau: 4,
+    oi: "Mettre en relation des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    enonce: "À partir du document A, indiquez la lettre qui correspond au territoire : \n• de la province du Nouveau-Brunswick\n• de la province de l'Ontario",
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [{titre: "Document A", ref: "provinces_canada_1867.jpg", source: "Carte du Québec. Adaptée d'après d-maps.com."}]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: ["Nouveau-Brunswick", "Ontario"]
+    },
+    guide: {
+      type: "grille",
+      entetes: ["Nouveau-Brunswick", "Ontario"],
+      rangees: [
+        ["C", "A"]
+      ]
+    },
+    updatedAt: "2026-06-25T20:42:34.927Z"
   }
 ]
