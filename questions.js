@@ -13019,7 +13019,7 @@ const QUESTIONS = [
     periode: "P2 — 1608 – 1760",
     points: 2,
     soustag: "Ordre chronologique",
-    enonce: "Les documents A à D présentent des événements liés à la Guerre de la Conquête. Placez-les en ordre chronologique.",
+    enonce: "Les documents A à D présentent des événements liés à la Guerre de la Conquête. Placez ces documents par ordre chronologique.",
     aspects: [{aspect: "Guerre de la Conquête"}],
     documents: [
       {
@@ -13064,7 +13064,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "image", ref: "ligne_abDc.png"},
-    guide: "C - A - D - B"
+    guide: "C - A - D - B",
+    updatedAt: "2026-06-25T13:48:03.923Z"
   },
   {
     id: "Q216",
