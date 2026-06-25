@@ -5406,6 +5406,14 @@ const REGLETTES = {
       {pts: 2, desc: "L'élève situe les faits dans l'espace."},
       {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}
     ]
+  },
+  "Q568": {
+    oi: "Situer dans l'espace",
+    colonnes: ["2 points", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève situe les faits dans l'espace."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}
+    ]
   }
 }
 
@@ -24486,5 +24494,36 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-25T20:48:05.514Z"
+  },
+  {
+    id: "Q568",
+    niveau: 4,
+    oi: "Situer dans l'espace",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Situer 2 éléments",
+    enonce: "À partir du document A, indiquez la lettre qui correspond au territoire : \n• de la colonie du Nouveau-Brunswick\n• de la colonie de l'Ontario",
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [{titre: "Document A", ref: "provinces_canada_1867.jpg", source: "Carte du Québec. Adaptée d'après d-maps.com."}]
+      }
+    ],
+    reponse: {
+      type: "grille",
+      entetes: ["Nouveau-Brunswick", "Ontario"],
+      rangees: [
+        ["", ""]
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: ["Nouveau-Brunswick", "Ontario"],
+      rangees: [
+        ["C", "A"]
+      ]
+    },
+    updatedAt: "2026-06-25T20:51:10.822Z"
   }
 ]
