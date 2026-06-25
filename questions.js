@@ -5381,6 +5381,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
       {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
     ]
+  },
+  "Q565": {
+    oi: "Mettre en relation des faits",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
+    ]
   }
 }
 
@@ -24333,5 +24342,70 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-25T13:40:19.832Z"
+  },
+  {
+    id: "Q565",
+    niveau: 4,
+    oi: "Mettre en relation des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "4 documents",
+    enonce: "Les documents A à D présentent des responsabilités attribuées par l'Acte de l'Amérique du Nord britannique. Associez chaque document au palier de gouvernement correspondant.",
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Le gouvernement général doit assurer la défense du territoire, organiser les forces militaires et protéger les colonies contre les menaces extérieures. »",
+            source: "Adapté de l’Acte de l’Amérique du Nord britannique, 1867."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les assemblées locales conservent le pouvoir d’adopter des lois concernant l’éducation, selon les droits reconnus aux minorités religieuses. »",
+            source: "Adapté de l’Acte de l’Amérique du Nord britannique, 1867."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Les établissements de santé, les hôpitaux et les institutions de bienfaisance sont placés sous la responsabilité des gouvernements des provinces. »",
+            source: "Adapté de l’Acte de l’Amérique du Nord britannique, 1867."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document D",
+            texte: "« Les lois concernant la monnaie, les banques et les échanges commerciaux relèvent d’une autorité commune à l’ensemble du nouveau pays. »",
+            source: "Adapté de l’Acte de l’Amérique du Nord britannique, 1867."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: ["Gouvernement fédéral", "Gouvernement provincial"],
+      double: true
+    },
+    guide: {
+      type: "grille",
+      entetes: ["Gouvernement fédéral", "Gouvernement provincial"],
+      rangees: [
+        ["A et D", "B et C"]
+      ]
+    },
+    updatedAt: "2026-06-25T20:35:08.202Z"
   }
 ]
