@@ -5317,6 +5317,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
       {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
     ]
+  },
+  "Q561": {
+    oi: "Mettre en relation des faits",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
+    ]
   }
 }
 
@@ -24056,5 +24065,59 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-25T12:31:23.128Z"
+  },
+  {
+    id: "Q561",
+    niveau: 4,
+    oi: "Mettre en relation des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "3 documents",
+    enonce: "Les documents A à C présentent des faits liés au projet de fédération canadienne. Associez chaque document à la conférence correspondante.",
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Au cours de cette rencontre, les représentants s'entendent sur l'organisation politique du futur pays et sur la répartition des responsabilités entre les différents ordres de gouvernement. »",
+            source: "Adapté de John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec, Septentrion, 2009."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les délégués se rendent en Grande-Bretagne afin de faire approuver le projet d'union. Cette étape mène directement à la naissance du Dominion du Canada en 1867. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 3, Septentrion, 1996."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Cette rencontre devait d'abord porter sur l'union des colonies maritimes, mais les discussions s'élargissent rapidement à la création d'une fédération regroupant plusieurs colonies britanniques. »",
+            source: "Adapté de Marcel Bellavance, Le Québec et la Confédération, Septentrion, 1992."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: ["Charlottetown", "Québec", "Londres"]
+    },
+    guide: {
+      type: "grille",
+      entetes: ["Charlottetown", "Québec", "Londres"],
+      rangees: [
+        ["C", "A", "B"]
+      ]
+    },
+    updatedAt: "2026-06-25T12:33:09.466Z"
   }
 ]
