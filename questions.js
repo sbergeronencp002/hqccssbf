@@ -5372,6 +5372,15 @@ const REGLETTES = {
         desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."
       }
     ]
+  },
+  "Q564": {
+    oi: "Mettre en relation des faits",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
+    ]
   }
 }
 
@@ -24265,5 +24274,59 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 3},
     guide: "Dorion s’oppose au projet de fédération canadienne (la différence), tandis que Cartier et Macdonald appuient le projet (la similitude).",
     updatedAt: "2026-06-25T12:48:01.743Z"
+  },
+  {
+    id: "Q564",
+    niveau: 4,
+    oi: "Mettre en relation des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "3 documents",
+    enonce: "Les documents A à C présentent des faits ayant mené au projet de fédération canadienne. Associez chaque document au fait correspondant.",
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Depuis plusieurs années, les gouvernements se succèdent sans parvenir à obtenir une majorité stable. Les désaccords entre le Canada-Est et le Canada-Ouest rendent les décisions politiques de plus en plus difficiles. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 3, Septentrion, 1996."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les colonies britanniques cherchent à mieux assurer leur protection. Les tensions avec les États-Unis et les attaques menées à la frontière font craindre pour leur sécurité. »",
+            source: "Adapté de John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec, Septentrion, 2009."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« La diminution des échanges commerciaux avec les États-Unis et le besoin de développer de nouveaux marchés incitent les colonies à renforcer leurs liens économiques. »",
+            source: "Adapté de Serge Courville, Histoire du Québec : des origines à nos jours, ERPI, 2008."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: ["Difficultés économiques.", "Instabilité politique.", "Préoccupations militaires"]
+    },
+    guide: {
+      type: "grille",
+      entetes: ["Difficultés économiques", "Instabilité politique", "Préoccupations militaires"],
+      rangees: [
+        ["C", "A", "B"]
+      ]
+    },
+    updatedAt: "2026-06-25T13:40:19.832Z"
   }
 ]
