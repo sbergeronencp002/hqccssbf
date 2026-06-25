@@ -16902,6 +16902,7 @@ const QUESTIONS = [
     oi: "Mettre en relation des faits",
     periode: "P4 — 1791 – 1840",
     points: 2,
+    soustag: "4 documents",
     enonce: "Les documents A à D font référence aux principaux partis politiques du Bas-Canada au début du XIXe siècle. Inscrivez la lettre de chaque document à l'endroit approprié.",
     aspects: [{aspect: "Débats parlementaires"}],
     documents: [
@@ -16948,17 +16949,16 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: ["Parti canadien", "Parti bureaucrate"],
-      double: true
+      elements: ["", "", "", ""]
     },
     guide: {
       type: "grille",
-      entetes: ["Parti canadien", "Parti bureaucrate"],
+      entetes: ["Élément 1", "Élément 2", "Élément 3", "Élément 4"],
       rangees: [
-        ["A et C", "B et D"]
+        ["A et C", "B et D", "", ""]
       ]
     },
-    updatedAt: "2026-06-10T01:12:03.569Z"
+    updatedAt: "2026-06-25T12:36:32.272Z"
   },
   {
     id: "Q343",
