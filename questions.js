@@ -5661,7 +5661,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 2,
     soustag: "Ordre chronologique",
-    enonce: "Les documents A à D présentent des faits relatifs aux premières tentatives d’établissement d’Européens en Amérique du Nord. Placez-les par ordre chronologique.",
+    enonce: "Les documents A à D présentent des faits relatifs aux premières tentatives d’établissement d’Européens en Amérique du Nord. Placez ces documents par ordre chronologique.",
     aspects: [{aspect: "Exploration et occupation du territoire par les Français"}, {aspect: "Premiers contacts"}],
     documents: [
       {
@@ -5708,7 +5708,7 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_acBd.png"},
     guide: "C - D - B - A",
-    updatedAt: "2026-06-10T18:30:56.483Z"
+    updatedAt: "2026-06-25T13:45:06.253Z"
   },
   {
     id: "Q3",
