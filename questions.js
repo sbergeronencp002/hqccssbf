@@ -24042,7 +24042,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P5 — 1840 – 1896",
     points: 1,
-    enonce: "ndiquez le nom donné à l'alliance formée par les principaux chefs politiques de la Province du Canada.",
+    enonce: "Indiquez le nom donné à l'alliance formée par les principaux chefs politiques de la Province du Canada.",
     aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
     documents: [
       {
@@ -24058,7 +24058,7 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "La Grande Coalition.",
-    updatedAt: "2026-06-25T01:08:48.445Z"
+    updatedAt: "2026-06-25T20:57:34.232Z"
   },
   {
     id: "Q558",
