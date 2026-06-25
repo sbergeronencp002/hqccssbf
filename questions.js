@@ -5268,6 +5268,20 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève situe les faits dans le temps."},
       {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
+  },
+  "Q556": {
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens",
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
+      {
+        pts: 2,
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+      },
+      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
+      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
+    ]
   }
 }
 
@@ -5512,7 +5526,8 @@ const IMAGE_DB = {
   "instabilite_politique.jpg": {src: "images/instabilite_politique.jpg"},
   "gouvernement_minoritaire.jpg": {src: "images/gouvernement_minoritaire.jpg", w: 1200, h: 800},
   "reserves_autochtones.jpg": {src: "images/reserves_autochtones.jpg"},
-  "famille_autochtones_1850.jpg": {src: "images/famille_autochtones_1850.jpg"}
+  "famille_autochtones_1850.jpg": {src: "images/famille_autochtones_1850.jpg"},
+  "coaliation_acteurs.png": {src: "images/coaliation_acteurs.png", w: 1200, h: 460}
 }
 
 const QUESTIONS = [
@@ -23831,5 +23846,51 @@ const QUESTIONS = [
     reponse: {type: "image", ref: "ligne_1830-1890.png"},
     guide: "C - 1876.",
     updatedAt: "2026-06-24T23:37:46.377Z"
+  },
+  {
+    id: "Q556",
+    niveau: 4,
+    oi: "Établir des liens de causalité",
+    periode: "P5 — 1840 – 1896",
+    points: 3,
+    enonce: "Expliquez comment la situation politique de la Province du Canada entraîne l'adoption d'une nouvelle constitution par Londres.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• une situation politique dans la Province du Canada\n• une action des chefs des partis politiques\n• une nouvelle constitution adoptée par Londres",
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "instabilite_politique.jpg",
+            soustitre: "Durée des mandats des partis politiques au pouvoir",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            ref: "coaliation_acteurs.png",
+            soustitre: "Les positions des chefs politiques face au projet de Confédération",
+            source: "Adapté de John A. Dickinson et Brian Young, Diversité passée : Histoire du Québec et du Canada, ERPI."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Le Parlement britannique adopte une nouvelle constitution qui unit les colonies participantes au sein d'un Dominion et établit un gouvernement fédéral. »",
+            source: "Adapté de John A. Dickinson et Brian Young, Diversité passée : Histoire du Québec et du Canada, ERPI."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 5},
+    guide: "L'instabilité ministérielle (une situation politique dans la Province du Canada) amène les principaux chefs politiques à former la Grande Coalition (une action des chefs des partis politiques). Cette coalition convainc le Parlement britannique d'adopter l'Acte de l'Amérique du Nord britannique (une nouvelle constitution adoptée par Londres).",
+    updatedAt: "2026-06-25T01:06:31.213Z"
   }
 ]
