@@ -23422,7 +23422,7 @@ const QUESTIONS = [
     periode: "P5 — 1840 – 1896",
     points: 2,
     soustag: "Ordre chronologique",
-    enonce: "Les documents A à D présentent des événements liés à l'évolution politique de la Province du Canada.",
+    enonce: "Les documents A à D présentent des événements liés à l'évolution politique de la Province du Canada. Placez ces documents par ordre chronologique.",
     aspects: [{aspect: "Acte d'Union"}, {aspect: "Gouvernement responsable"}],
     documents: [
       {
@@ -23472,7 +23472,7 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_abCd.png"},
     guide: "B - D - C - A",
-    updatedAt: "2026-06-24T12:53:52.138Z"
+    updatedAt: "2026-06-25T13:44:36.051Z"
   },
   {
     id: "Q541",
