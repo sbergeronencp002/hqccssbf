@@ -5290,6 +5290,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève établit correctement le fait."},
       {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
+  },
+  "Q558": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
+    ]
   }
 }
 
@@ -23924,5 +23933,31 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 1},
     guide: "La Grande Coalition.",
     updatedAt: "2026-06-25T01:08:48.445Z"
+  },
+  {
+    id: "Q558",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une cause de la formation de la Grande Coalition dans la Province du Canada.",
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "instabilite_politique.jpg",
+            soustitre: "Durée des mandats des partis politiques au pouvoir",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "L'instabilité ministérielle.\nLa difficulté de former une majorité stable à l'Assemblée législative.\nLes fréquents changements de gouvernement.",
+    updatedAt: "2026-06-25T01:25:14.784Z"
   }
 ]
