@@ -24471,7 +24471,7 @@ const QUESTIONS = [
     periode: "P5 — 1840 – 1896",
     points: 2,
     soustag: "Situer 2 éléments",
-    enonce: "À partir du document A, indiquez la lettre qui correspond au territoire : \n• de la province du Nouveau-Brunswick\n• de la province de l'Ontario",
+    enonce: "À partir du document A, indiquez la lettre qui correspond au territoire : \n• de la colonie du Nouveau-Brunswick\n• de la colonie du Canada-Ouest",
     aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
     documents: [
       {
@@ -24481,19 +24481,19 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "grille",
-      entetes: ["Nouveau-Brunswick", "Ontario"],
+      entetes: ["Nouveau-Brunswick", "Canada-Ouest"],
       rangees: [
         ["", ""]
       ]
     },
     guide: {
       type: "grille",
-      entetes: ["Nouveau-Brunswick", "Ontario"],
+      entetes: ["Nouveau-Brunswick", "Canada-Ouest"],
       rangees: [
         ["C", "A"]
       ]
     },
-    updatedAt: "2026-06-25T20:48:05.514Z"
+    updatedAt: "2026-06-25T20:54:07.353Z"
   },
   {
     id: "Q568",
