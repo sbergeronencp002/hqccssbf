@@ -24187,7 +24187,7 @@ const QUESTIONS = [
             titre: "Document A",
             texte: "« L'union des colonies britanniques mettra fin aux difficultés politiques qui nous paralysent depuis trop longtemps. Elle donnera naissance à un gouvernement plus fort et plus stable. »",
             auteur: "George Brown",
-            source: "George Brown, Débats parlementaires sur la Confédération, 1865. (Adapté)"
+            source: "Adapté de George Brown, Débats parlementaires sur la Confédération, 1865."
           }
         ]
       },
@@ -24198,7 +24198,7 @@ const QUESTIONS = [
             titre: "Document B",
             texte: "« Cette union assurera la stabilité de nos institutions tout en permettant à chaque province de conserver ce qui lui est propre. C'est la meilleure solution pour notre avenir. »",
             auteur: "George-Étienne Cartier",
-            source: "George-Étienne Cartier, Débats parlementaires sur la Confédération, 1865. (Adapté)"
+            source: "Adapté de George-Étienne Cartier, Débats parlementaires sur la Confédération, 1865."
           }
         ]
       },
@@ -24209,14 +24209,14 @@ const QUESTIONS = [
             titre: "Document C",
             texte: "« Je ne puis appuyer un projet qui confie autant de pouvoirs au gouvernement central et qui risque d'affaiblir la position politique du Canada-Est. »",
             auteur: "Antoine-Aimé Dorion",
-            source: "Antoine-Aimé Dorion, Débats parlementaires sur la Confédération, 1865. (Adapté)"
+            source: "Adapté de Antoine-Aimé Dorion, Débats parlementaires sur la Confédération, 1865."
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "Dorion s'oppose au projet de fédération canadienne (la différence), tandis que George Brown et George-Étienne Cartier appuient ce projet (la similitude).",
-    updatedAt: "2026-06-25T12:45:52.549Z"
+    updatedAt: "2026-06-25T12:48:35.965Z"
   },
   {
     id: "Q563",
