@@ -24440,7 +24440,7 @@ const QUESTIONS = [
     periode: "P5 — 1840 – 1896",
     points: 2,
     soustag: "Situer 2 éléments",
-    enonce: "À partir du document A, indiquez la lettre qui correspond au territoire : \n• de la province du Nouvelle-Écosse\n• de la province du Québec",
+    enonce: "À partir du document A, indiquez la lettre qui correspond au territoire : \n• de la colonie de la Nouvelle-Écosse\n• de la colonie du Canada-Est",
     aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
     documents: [
       {
@@ -24450,19 +24450,19 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "grille",
-      entetes: ["Nouvelle-Écosse", "Québec"],
+      entetes: ["Nouvelle-Écosse", "Canada-Est"],
       rangees: [
         ["D", "B"]
       ]
     },
     guide: {
       type: "grille",
-      entetes: ["Nouvelle-Écosse", "Québec"],
+      entetes: ["Nouvelle-Écosse", "Canada-Est"],
       rangees: [
         ["D", "B"]
       ]
     },
-    updatedAt: "2026-06-25T20:47:22.485Z"
+    updatedAt: "2026-06-25T20:53:32.146Z"
   },
   {
     id: "Q567",
