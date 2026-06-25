@@ -13505,7 +13505,8 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "mettre-en-relation",
-      elements: ["Traité de Paris - 1763", "Traité de Paris - 1783"]
+      elements: ["Traité de Paris - 1763", "Traité de Paris - 1783"],
+      double: true
     },
     guide: {
       type: "grille",
@@ -13514,7 +13515,7 @@ const QUESTIONS = [
         ["A et D", "B et C"]
       ]
     },
-    updatedAt: "2026-06-04T12:00:01.235Z"
+    updatedAt: "2026-06-25T12:37:07.351Z"
   },
   {
     id: "Q232",
