@@ -5299,6 +5299,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
       {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
+  },
+  "Q559": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
+    ]
   }
 }
 
@@ -23959,5 +23968,30 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "L'instabilité ministérielle.\nLa difficulté de former une majorité stable à l'Assemblée législative.\nLes fréquents changements de gouvernement.",
     updatedAt: "2026-06-25T01:25:14.784Z"
+  },
+  {
+    id: "Q559",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de la formation de la Grande Coalition sur l'avenir politique des colonies britanniques d'Amérique du Nord.",
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les principaux chefs politiques collaborent désormais afin de mettre au point un projet d'union des colonies britanniques de l'Amérique du Nord. »",
+            source: "Adapté de Marcel Bellavance, Le Québec et la Confédération, Septentrion."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Le projet de Confédération est élaboré.\nLes conférences sur la Confédération sont organisées.\nLondres adopte l'Acte de l'Amérique du Nord britannique.",
+    updatedAt: "2026-06-25T01:26:01.879Z"
   }
 ]
