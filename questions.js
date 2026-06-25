@@ -24502,7 +24502,7 @@ const QUESTIONS = [
     periode: "P5 — 1840 – 1896",
     points: 2,
     soustag: "Situer 2 éléments",
-    enonce: "À partir du document A, indiquez la lettre qui correspond au territoire : \n• de la colonie du Nouveau-Brunswick\n• de la colonie de l'Ontario",
+    enonce: "À partir du document A, indiquez la lettre qui correspond au territoire des colonies qui n'adhèrent pas au Dominion du Canada en 1867 :\n• de l'Île-du-Prince-Édouard\n• de Terre-Neuve",
     aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
     documents: [
       {
@@ -24512,18 +24512,18 @@ const QUESTIONS = [
     ],
     reponse: {
       type: "grille",
-      entetes: ["Nouveau-Brunswick", "Ontario"],
+      entetes: ["Île-du-Prince-Édouard", "Terre-Neuve"],
       rangees: [
         ["", ""]
       ]
     },
     guide: {
       type: "grille",
-      entetes: ["Nouveau-Brunswick", "Ontario"],
+      entetes: ["Île-du-Prince-Édouard", "Terre-Neuve"],
       rangees: [
-        ["C", "A"]
+        ["C", "D"]
       ]
     },
-    updatedAt: "2026-06-25T20:51:10.822Z"
+    updatedAt: "2026-06-25T20:52:16.881Z"
   }
 ]
