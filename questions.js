@@ -8165,7 +8165,7 @@ const QUESTIONS = [
     periode: "P1 — Des origines à 1608",
     points: 2,
     soustag: "Ordre chronologique",
-    enonce: "Les documents A à D présentent des faits relatifs aux voyages de Jacques Cartier. Placez-les par ordre chronologique.",
+    enonce: "Les documents A à D présentent des faits relatifs aux voyages de Jacques Cartier. Placez ces documents par ordre chronologique.",
     aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
     documents: [
       {
@@ -8210,7 +8210,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "image", ref: "ligne_acBd.png"},
-    guide: "C - A - B - D"
+    guide: "C - A - B - D",
+    updatedAt: "2026-06-25T13:49:14.267Z"
   },
   {
     id: "Q78",
