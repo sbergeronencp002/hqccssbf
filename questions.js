@@ -23239,7 +23239,7 @@ const QUESTIONS = [
     periode: "P5 — 1840 – 1896",
     points: 2,
     soustag: "4 documents",
-    enonce: "Les documents A à D présentent des faits liées à deux événements qui transforment les échanges commerciaux de la Province du Canada au milieu du XIXe siècle.",
+    enonce: "Les documents A à D présentent des faits liés à deux événements qui transforment les échanges commerciaux de la Province du Canada au milieu du XIXe siècle. Associez chaque document à l'événement correspondant.",
     aspects: [{aspect: "Économie coloniale"}],
     documents: [
       {
@@ -23295,7 +23295,7 @@ const QUESTIONS = [
         ["A et D", "B et C"]
       ]
     },
-    updatedAt: "2026-06-24T12:38:11.164Z"
+    updatedAt: "2026-06-25T12:34:42.397Z"
   },
   {
     id: "Q539",
