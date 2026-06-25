@@ -5308,6 +5308,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
       {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
+  },
+  "Q560": {
+    oi: "Mettre en relation des faits",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"},
+      {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"},
+      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}
+    ]
   }
 }
 
@@ -23993,5 +24002,59 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "Le projet de Confédération est élaboré.\nLes conférences sur la Confédération sont organisées.\nLondres adopte l'Acte de l'Amérique du Nord britannique.",
     updatedAt: "2026-06-25T01:26:01.879Z"
+  },
+  {
+    id: "Q560",
+    niveau: 4,
+    oi: "Mettre en relation des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "3 documents",
+    enonce: "Les documents A à C présentent des faits liés au projet de fédération canadienne. Associez chaque document à la conférence correspondante.",
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les représentants des colonies apportent les dernières modifications au projet de constitution avant qu'il soit présenté au Parlement britannique pour adoption. »",
+            source: "Adapté de Marcel Bellavance, Le Québec et la Confédération, Septentrion, 1992."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "« Les délégués adoptent 72 résolutions qui établissent les principales règles de la future fédération, notamment le partage des pouvoirs entre les gouvernements fédéral et provinciaux. »",
+            source: "Adapté de Serge Courville, Histoire du Québec : des origines à nos jours, ERPI, 2008."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document C",
+            texte: "« Des représentants des colonies maritimes invitent les dirigeants de la Province du Canada à participer à une rencontre. Cette première réunion lance les discussions sur un projet d'union entre les colonies britanniques. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 3, Septentrion, 1996."
+          }
+        ]
+      }
+    ],
+    reponse: {
+      type: "mettre-en-relation",
+      elements: ["Charlottetown", "Québec", "Londres"]
+    },
+    guide: {
+      type: "grille",
+      entetes: ["Charlottetown", "Québec", "Londres"],
+      rangees: [
+        ["C", "B", "A"]
+      ]
+    },
+    updatedAt: "2026-06-25T12:31:23.128Z"
   }
 ]
