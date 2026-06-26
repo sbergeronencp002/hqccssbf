@@ -9051,7 +9051,8 @@ const QUESTIONS = [
           {
             titre: "Document C",
             ref: "1820_immigration_irlandaise.png",
-            source: "The Illustrated London News/Bibliothèque et Archives Canada/C-006556; image modifiée par Sébastien Bergeron, 2026."
+            source: "adaptation libre inspirée The Illustrated London News/Bibliothèque et Archives Canada/C-006556.",
+            auteur: ""
           }
         ]
       }
