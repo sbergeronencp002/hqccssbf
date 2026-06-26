@@ -578,7 +578,7 @@ function toggleTexte(btn) {
   }
 }
 
-function renderDoc(d) {
+function renderDoc(d, expanded = false) {
   // Textes avec troncature
   if(d.type === 'textes') {
     const cpr = d.colsPerRow || d.cols.length || 1;
@@ -590,7 +590,7 @@ function renderDoc(d) {
       else h += '<div style="margin-bottom:4px"></div>';
       if(col.texte) {
         const plain = col.texte.replace(/\*\*(.*?)\*\*/g,'$1');
-        const isLong = plain.length > 120;
+        const isLong = !expanded && plain.length > 120;
         const shortHtml = isLong ? escLine(plain.substring(0,120)) + '…' : formatTexte(col.texte);
         h += '<div class="doc-texte-short" style="font-size:0.75rem;color:var(--ink-2);line-height:1.5">' + shortHtml + '</div>';
         if(isLong) {
@@ -1956,7 +1956,7 @@ function renderExam() {
   // Corps
   const soustag = q.soustag ? `<span class="exam-meta">${escLine(q.soustag)}</span>` : '';
   const periode = q.periode ? `<span class="exam-meta">${escLine(q.periode)}</span>` : '';
-  const docs = (q.documents || []).map(d => renderDoc(d)).join('');
+  const docs = (q.documents || []).map(d => renderDoc(d, true)).join('');
   const rep  = renderReponse(q);
 
   document.getElementById('exam-body').innerHTML = `
