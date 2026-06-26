@@ -6019,7 +6019,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_1774_acte_quebec.png",
             soustitre: "Organisation politique de la Province de Québec après 1774",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
@@ -6079,7 +6080,8 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "org_pol_1774_acte_quebec.png",
             soustitre: "Organisation politique de la Province de Québec après 1774",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
@@ -14125,7 +14127,8 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "org_pol_1774_acte_quebec.png",
             soustitre: "Organisation politique de la colonie après 1774",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
@@ -14619,7 +14622,8 @@ const QUESTIONS = [
             titre: "Document C",
             ref: "org_pol_1774_acte_quebec.png",
             soustitre: "Organisation politique de la colonie après 1774",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
@@ -16588,7 +16592,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_1774_acte_quebec.png",
             soustitre: "Organisation politique de la colonie entre 1774 et 1791",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
@@ -16626,7 +16631,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_1774_acte_quebec.png",
             soustitre: "Organisation politique de la colonie après 1774",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
