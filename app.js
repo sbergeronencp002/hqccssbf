@@ -587,7 +587,8 @@ function renderDoc(d, expanded = false) {
       let h = '<td style="width:' + colW + '%;padding:6px;vertical-align:top;border:0.5px solid var(--border)">';
       if(col.texte) {
         const zoomHtml = formatTexte(col.texte);
-        const zoomBtn = '<button class="doc-zoom-btn" onclick="openTextZoom(' + JSON.stringify(col.titre||'') + ',' + JSON.stringify(zoomHtml) + ')">🔍</button>';
+        const zoomIdx = _tzStore.push({titre: col.titre||'', html: zoomHtml}) - 1;
+        const zoomBtn = '<button class="doc-zoom-btn" onclick="openTextZoom(' + zoomIdx + ')">🔍</button>';
         h += '<div style="font-size:0.75rem;font-weight:600;color:var(--ink)">' + escLine(col.titre||'') + zoomBtn + '</div>';
       } else {
         h += '<div style="font-size:0.75rem;font-weight:600;color:var(--ink)">' + escLine(col.titre||'') + '</div>';
@@ -783,9 +784,12 @@ function closeLightbox() {
   document.getElementById('lightbox').classList.remove('open');
 }
 
-function openTextZoom(titre, html) {
-  document.getElementById('text-zoom-title').textContent = titre || '';
-  document.getElementById('text-zoom-body').innerHTML = html;
+const _tzStore = [];
+function openTextZoom(idx) {
+  const entry = _tzStore[idx];
+  if(!entry) return;
+  document.getElementById('text-zoom-title').textContent = entry.titre || '';
+  document.getElementById('text-zoom-body').innerHTML = entry.html;
   document.getElementById('text-zoom-overlay').classList.add('open');
 }
 function closeTextZoom(e) {
