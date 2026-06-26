@@ -12711,7 +12711,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "activites_habitants_n-f_1740.png",
             soustitre: "Activités économiques pratiques par les habitants vers 1740",
-            source: "Adapté de synthèses historiques sur la structure économique de la Nouvelle-France au XVIIIe siècle."
+            source: "Adapté des données démographiques présentées par Marcel Trudel, Initiation à la Nouvelle-France : histoire et institutions, 1968.",
+            auteur: ""
           }
         ]
       }
@@ -12737,7 +12738,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "activites_habitants_n-f_1740.png",
             soustitre: "Population de la Nouvelle-France (1663-1760)",
-            source: "Adapté des données démographiques présentées par Marcel Trudel, Initiation à la Nouvelle-France : histoire et institutions, 1968."
+            source: "Adapté des données démographiques présentées par Marcel Trudel, Initiation à la Nouvelle-France : histoire et institutions, 1968.",
+            auteur: ""
           }
         ]
       }
