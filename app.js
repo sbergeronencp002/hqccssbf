@@ -554,10 +554,10 @@ document.addEventListener('keydown', e => {
   if(examOpen) {
     if(e.key === 'ArrowLeft')  { e.preventDefault(); examNav(-1); }
     if(e.key === 'ArrowRight') { e.preventDefault(); examNav(1); }
-    if(e.key === 'Escape')     { closeExam(); }
+    if(e.key === 'Escape')     { closeTextZoomBtn(); closeExam(); }
     return;
   }
-  if(e.key === 'Escape') { closeQModal(); closePreviewBtn(); }
+  if(e.key === 'Escape') { closeQModal(); closePreviewBtn(); closeTextZoomBtn(); }
 });
 
 // ===== PANIER =====
@@ -585,7 +585,13 @@ function renderDoc(d, expanded = false) {
     const colW = Math.floor(100/cpr);
     function renderCol(col) {
       let h = '<td style="width:' + colW + '%;padding:6px;vertical-align:top;border:0.5px solid var(--border)">';
-      h += '<div style="font-size:0.75rem;font-weight:600;color:var(--ink)">' + escLine(col.titre||'') + '</div>';
+      if(col.texte) {
+        const zoomHtml = formatTexte(col.texte);
+        const zoomBtn = '<button class="doc-zoom-btn" onclick="openTextZoom(' + JSON.stringify(col.titre||'') + ',' + JSON.stringify(zoomHtml) + ')">🔍</button>';
+        h += '<div style="font-size:0.75rem;font-weight:600;color:var(--ink)">' + escLine(col.titre||'') + zoomBtn + '</div>';
+      } else {
+        h += '<div style="font-size:0.75rem;font-weight:600;color:var(--ink)">' + escLine(col.titre||'') + '</div>';
+      }
       if(col.soustitre) h += '<div style="font-size:0.7rem;font-style:italic;color:var(--ink-2);margin-bottom:4px">' + escLine(col.soustitre) + '</div>';
       else h += '<div style="margin-bottom:4px"></div>';
       if(col.texte) {
@@ -775,6 +781,19 @@ function openLightbox(src) {
 }
 function closeLightbox() {
   document.getElementById('lightbox').classList.remove('open');
+}
+
+function openTextZoom(titre, html) {
+  document.getElementById('text-zoom-title').textContent = titre || '';
+  document.getElementById('text-zoom-body').innerHTML = html;
+  document.getElementById('text-zoom-overlay').classList.add('open');
+}
+function closeTextZoom(e) {
+  if(e && e.target !== document.getElementById('text-zoom-overlay')) return;
+  document.getElementById('text-zoom-overlay').classList.remove('open');
+}
+function closeTextZoomBtn() {
+  document.getElementById('text-zoom-overlay').classList.remove('open');
 }
 
 
