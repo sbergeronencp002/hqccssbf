@@ -20784,7 +20784,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "bois_nouvelles_activites.png",
             soustitre: "Transformation du bois au Bas-Canada vers 1820",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
@@ -20960,7 +20961,8 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "bois_nouvelles_activites.png",
             soustitre: "Transformation du bois au Bas-Canada vers 1820",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
