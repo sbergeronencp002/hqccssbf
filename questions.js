@@ -9030,7 +9030,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "1791-1840_grosse_ile.png",
             soustitre: "Grosse-Île et l’accueil des immigrants",
-            source: "Bibliothèque et Archives Canada, C-013656; image modifiée par Sébastien Bergeron, 2026."
+            source: "adaptation libre inspirée Bibliothèque et Archives Canada, C-013656.",
+            auteur: ""
           }
         ]
       },
