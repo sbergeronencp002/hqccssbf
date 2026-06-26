@@ -318,6 +318,18 @@ select:focus { outline: none; border-color: var(--ink-2); }
   cursor: pointer; transition: background 0.15s;
 }
 .btn-organiser:hover { background: rgba(255,255,255,0.26); }
+.btn-projeter {
+  display: flex; align-items: center; gap: 6px;
+  padding: 7px 16px;
+  background: #7c3aed;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 4px;
+  font-family: 'DM Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 0.8rem; font-weight: 500;
+  cursor: pointer; transition: background 0.15s;
+}
+.btn-projeter:hover { background: #6d28d9; }
 
 /* === CAHIER EN CONSTRUCTION === */
 .cahier-backdrop {
