@@ -10194,7 +10194,7 @@ const QUESTIONS = [
     documents: [
       {
         type: "textes",
-        cols: [{titre: "Document A", ref: "carte_villages_domicilies_autochtones.png", source: "Récitus."}]
+        cols: [{titre: "Document A", ref: "carte_villages_domicilies_autochtones.png", source: "Récitus.", auteur: ""}]
       }
     ],
     reponse: {type: "lignes", nombre: 1},
@@ -10218,7 +10218,7 @@ const QUESTIONS = [
             texte: "« Plusieurs communautés autochtones établies dans la vallée du Saint-Laurent vivent près des établissements français, où missionnaires, commerçants et autorités coloniales entretiennent des relations étroites avec elles. »",
             source: "Adapté de Denys Delâge, Le pays renversé, Boréal, 1991."
           },
-          {titre: "", ref: "carte_villages_domicilies_autochtones.png", source: "Récitus."}
+          {titre: "", ref: "carte_villages_domicilies_autochtones.png", source: "Récitus.", auteur: ""}
         ]
       }
     ],
@@ -10248,7 +10248,7 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [{titre: "Document B", ref: "carte_villages_domicilies_autochtones.png", source: "Récitus."}]
+        cols: [{titre: "Document B", ref: "carte_villages_domicilies_autochtones.png", source: "Récitus.", auteur: ""}]
       }
     ],
     reponse: {type: "lignes", nombre: 4},
