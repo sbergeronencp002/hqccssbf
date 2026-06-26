@@ -23347,7 +23347,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "alliance_baldwin_lafontaine.jpg",
             soustitre: "Robert Baldwin et Louis-Hippolyte La Fontaine",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
@@ -23617,7 +23618,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "alliance_baldwin_lafontaine.jpg",
             soustitre: "Robert Baldwin et Louis-Hippolyte La Fontaine",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
