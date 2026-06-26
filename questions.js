@@ -9005,7 +9005,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "accroissement_naturel_bas-canada_1790-1840.png",
             soustitre: "Naissances et décès au Bas-Canada  entre 1790 et 1840",
-            source: "Adapté de Hubert Charbonneau, La population du Québec : études rétrospectives, Montréal, Boréal Express, 1973."
+            source: "Adapté de Hubert Charbonneau, La population du Québec : études rétrospectives, Montréal, Boréal Express, 1973.",
+            auteur: ""
           }
         ]
       }
@@ -18615,7 +18616,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "accroissement_naturel_bas-canada_1790-1840.png",
             soustitre: "Naissances et décès au Bas-Canada  entre 1790 et 1840",
-            source: "Adapté de Hubert Charbonneau, La population du Québec : études rétrospectives, Montréal, Boréal Express, 1973."
+            source: "Adapté de Hubert Charbonneau, La population du Québec : études rétrospectives, Montréal, Boréal Express, 1973.",
+            auteur: ""
           }
         ]
       }
@@ -18785,7 +18787,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "accroissement_naturel_bas-canada_1790-1840.png",
             soustitre: "Naissances et décès au Bas-Canada entre 1790 et 1840",
-            source: "Adapté de Jacques Henripin, La population canadienne au début du XIXe siècle, Montréal."
+            source: "Adapté de Hubert Charbonneau, La population du Québec : études rétrospectives, Montréal, Boréal Express, 1973.",
+            auteur: ""
           }
         ]
       },
