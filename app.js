@@ -1936,7 +1936,7 @@ function examNav(dir) {
 
 function renderExam() {
   const total = panier.length;
-  const q = Q_MAP[panier[examIdx]];
+  const q = Q_MAP.get(panier[examIdx]);
   if(!q) return;
   const { oi } = q;
   const s = oiStyle(oi);
