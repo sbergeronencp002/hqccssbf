@@ -13356,7 +13356,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "revolte_pontiac.png",
             soustitre: "Révolte de Pontiac",
-            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de la révolte de Pontiac, 2026."
+            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, 2026.",
+            auteur: ""
           }
         ]
       }
@@ -13877,7 +13878,8 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "revolte_pontiac.png",
-            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de la révolte de Pontiac, 2026."
+            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, 2026.",
+            auteur: ""
           }
         ]
       },
