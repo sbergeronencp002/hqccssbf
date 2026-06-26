@@ -6030,7 +6030,8 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "Organisation politique du Haut-Canada et du Bas-Canada après 1791",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
@@ -6089,7 +6090,8 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "Organisation politique du Haut-Canada et du Bas-Canada après 1791",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
@@ -6563,7 +6565,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "Organisation politique du Haut-Canada et du Bas-Canada après 1791",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
@@ -16596,7 +16599,8 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "Organisation politique de la colonie à partir de 1791",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
@@ -16633,7 +16637,8 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "Organisation politique de la colonie après 1791",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
@@ -16658,7 +16663,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "Organisation politique du Haut-Canada et du Bas-Canada après 1791",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
@@ -16950,7 +16956,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "Organisation politique du Haut-Canada et du Bas-Canada après 1791",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
@@ -18324,7 +18331,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "Organisation politique du Haut-Canada et du Bas-Canada après 1791",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
@@ -19378,7 +19386,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "Organisation politique du Haut-Canada et du Bas-Canada après 1791",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
@@ -22012,7 +22021,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "Organisation politique du Haut-Canada et du Bas-Canada après 1791",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
@@ -22331,7 +22341,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "Organisation politique du Haut-Canada et du Bas-Canada entre 1791 et 1840",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
@@ -22944,7 +22955,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "Organisation politique du Haut-Canada et du Bas-Canada entre 1791 et 1840",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
