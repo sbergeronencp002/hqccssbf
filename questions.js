@@ -5414,6 +5414,14 @@ const REGLETTES = {
       {pts: 2, desc: "L'élève situe les faits dans l'espace."},
       {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}
     ]
+  },
+  "Q569": {
+    oi: "Établir des faits",
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
+    ]
   }
 }
 
@@ -24562,5 +24570,29 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-25T20:54:41.305Z"
+  },
+  {
+    id: "Q569",
+    niveau: 4,
+    oi: "Établir des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    enonce: "Indiquez le nom de la constitution adoptée en 1840 par les autoritées britanniques.",
+    aspects: [{aspect: "Acte d'Union"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« En 1840, les autorités britanniques adoptent une nouvelle constitution afin de réunir le Haut-Canada et le Bas-Canada au sein d'une même colonie. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 3, Septentrion, 1996."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 1},
+    guide: "Acte d’Union",
+    updatedAt: "2026-06-27T14:12:29.841Z"
   }
 ]
