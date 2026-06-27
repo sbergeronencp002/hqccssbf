@@ -5422,6 +5422,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève établit correctement le fait."},
       {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
+  },
+  "Q570": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
+    ]
   }
 }
 
@@ -5669,7 +5678,8 @@ const IMAGE_DB = {
   "famille_autochtones_1850.jpg": {src: "images/famille_autochtones_1850.jpg"},
   "coaliation_acteurs.png": {src: "images/coaliation_acteurs.png", w: 1200, h: 460},
   "provinces_canada_1867.jpg": {src: "images/provinces_canada_1867.jpg"},
-  "provinces_canada_1867_non.jpg": {src: "images/provinces_canada_1867_non.jpg", w: 1200, h: 725}
+  "provinces_canada_1867_non.jpg": {src: "images/provinces_canada_1867_non.jpg", w: 1200, h: 725},
+  "missions_autochtones_1850.jpg": {src: "images/missions_autochtones_1850.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -24594,5 +24604,31 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 1},
     guide: "Acte d’Union",
     updatedAt: "2026-06-27T14:12:29.841Z"
+  },
+  {
+    id: "Q570",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez un objectif poursuivi par les autorités coloniales et l'Église catholique auprès des Premières Nations au milieu du XIXᵉ siècle.",
+    aspects: [{aspect: "Affaires indiennes"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "missions_autochtones_1850.jpg",
+            soustitre: "Mission catholique auprès des Premières Nations",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Évangéliser les Premières Nations.\nFavoriser la sédentarisation des Premières Nations.\nEncourager un mode de vie sédentaire.",
+    updatedAt: "2026-06-27T14:24:24.620Z"
   }
 ]
