@@ -1379,11 +1379,46 @@ async function loadQuestionsJs() {
       document.getElementById('token-status').className = 'token-status ok';
     }
     renderDashboard();
+    buildImageMetaMap();
   } catch(e) {
     document.getElementById('token-status').textContent = '✗ Erreur de connexion';
     document.getElementById('token-status').className = 'token-status ko';
   }
 }
+
+// Construit un dict {nomImage → {soustitre, auteur, source}} depuis toutes les questions existantes.
+let imageMetaMap = {};
+function buildImageMetaMap() {
+  imageMetaMap = {};
+  for(const q of (currentQuestions || [])) {
+    for(const doc of (q.documents || [])) {
+      for(const col of (doc.cols || [])) {
+        if(!col.ref) continue;
+        const entry = imageMetaMap[col.ref] || {};
+        if(col.soustitre) entry.soustitre = col.soustitre;
+        if(col.auteur)    entry.auteur    = col.auteur;
+        if(col.source)    entry.source    = col.source;
+        imageMetaMap[col.ref] = entry;
+      }
+    }
+  }
+}
+
+// Appelé lors du changement de sélection image ; remplit soustitre/auteur/source si vides.
+function autofillImageMeta(sel) {
+  const meta = imageMetaMap[sel.value];
+  if(!meta) return;
+  const prefix = sel.id.replace(/-ref$/, '');
+  const fill = (suffix, val) => {
+    if(!val) return;
+    const el = document.getElementById(prefix + suffix);
+    if(el && !el.value) el.value = val;
+  };
+  fill('-soustitre', meta.soustitre);
+  fill('-auteur',    meta.auteur);
+  fill('-source',    meta.source);
+}
+
 
 async function loadReglettesJs() {
   try {
@@ -1506,7 +1541,7 @@ function addCol(docId, type) {
 }
 
 function imageSelect(id) {
-  return `<select id="${id}">${buildImageOptions()}</select>`;
+  return `<select id="${id}" onchange="autofillImageMeta(this)">${buildImageOptions()}</select>`;
 }
 
 function removeEl(id) { document.getElementById(id)?.remove(); }
