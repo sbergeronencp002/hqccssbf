@@ -54,6 +54,12 @@ header a:hover { color: #fff; }
 }
 .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--accent); }
 .field textarea { resize: vertical; min-height: 80px; }
+.img-select-wrap { display: flex; align-items: center; gap: .6rem; }
+.img-select-wrap select { flex: 1; min-width: 0; width: auto !important; }
+.img-thumb { width: 64px; height: 48px; object-fit: cover; border-radius: 4px; border: 1px solid var(--border); cursor: zoom-in; flex-shrink: 0; display: none; background: var(--paper); }
+.img-thumb.visible { display: block; }
+#img-float-preview { position: fixed; z-index: 9999; pointer-events: none; display: none; background: #fff; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,.18); padding: 4px; }
+#img-float-preview img { display: block; max-width: 320px; max-height: 260px; object-fit: contain; border-radius: 5px; }
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
 
@@ -877,7 +883,7 @@ function loadQuestion(id) {
           const stEl2 = document.getElementById('doc-'+docCount+'-soustitre');
           if(stEl2) stEl2.value = col.soustitre||'';
           const s = document.getElementById('doc-'+docCount+'-ref');
-          if(s) s.value = col.ref;
+          if(s) { s.value = col.ref; updateImgPreview(s); }
           const autEl2 = document.getElementById('doc-'+docCount+'-auteur');
           if(autEl2) autEl2.value = col.auteur||'';
           const srcEl2 = document.getElementById('doc-'+docCount+'-source');
@@ -903,7 +909,7 @@ function loadQuestion(id) {
             const stElC2 = document.getElementById('col-'+colCount+'-soustitre');
             if(stElC2) stElC2.value = col.soustitre||'';
             const s = document.getElementById('col-'+colCount+'-ref');
-            if(s) s.value = col.ref;
+            if(s) { s.value = col.ref; updateImgPreview(s); }
             const autElC = document.getElementById('col-'+colCount+'-auteur');
             if(autElC) autElC.value = col.auteur||'';
             const srcElC = document.getElementById('col-'+colCount+'-source');
@@ -1049,6 +1055,7 @@ async function fetchFreshState(token) {
   currentQuestions = result.QUESTIONS;
   currentReglettes = result.REGLETTES;
   currentImageDb   = result.IMAGE_DB;
+  buildImageMetaMap();
   return result;
 }
 
@@ -1541,8 +1548,30 @@ function addCol(docId, type) {
 }
 
 function imageSelect(id) {
-  return `<select id="${id}" onchange="autofillImageMeta(this)">${buildImageOptions()}</select>`;
+  return `<div class="img-select-wrap"><select id="${id}" onchange="autofillImageMeta(this);updateImgPreview(this)">${buildImageOptions()}</select><img class="img-thumb" id="${id}-thumb" src="" alt="" onmouseenter="showFloatPreview(this,event)" onmouseleave="hideFloatPreview()" onmousemove="moveFloatPreview(event)"></div>`;
 }
+
+function updateImgPreview(sel) {
+  const thumb = document.getElementById(sel.id + '-thumb');
+  if(!thumb) return;
+  if(sel.value) { thumb.src = 'images/' + sel.value; thumb.classList.add('visible'); }
+  else { thumb.src = ''; thumb.classList.remove('visible'); }
+}
+
+function showFloatPreview(thumb, e) {
+  const fp = document.getElementById('img-float-preview');
+  fp.querySelector('img').src = thumb.src;
+  fp.style.display = 'block';
+  moveFloatPreview(e);
+}
+function moveFloatPreview(e) {
+  const fp = document.getElementById('img-float-preview');
+  if(fp.style.display === 'none') return;
+  const x = e.clientX + 16, y = e.clientY + 16;
+  fp.style.left = (x + 340 > window.innerWidth  ? e.clientX - 344 : x) + 'px';
+  fp.style.top  = (y + 280 > window.innerHeight ? e.clientY - 284 : y) + 'px';
+}
+function hideFloatPreview() { document.getElementById('img-float-preview').style.display = 'none'; }
 
 function removeEl(id) { document.getElementById(id)?.remove(); }
 
@@ -2544,5 +2573,6 @@ function toast(msg, type='ok') {
   setTimeout(()=>{ el.style.display='none'; }, 3500);
 }
 </script>
+<div id="img-float-preview"><img src="" alt=""></div>
 </body>
 </html>
