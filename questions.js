@@ -5431,6 +5431,14 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
       {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
+  },
+  "Q571": {
+    oi: "Établir des faits",
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
+    ]
   }
 }
 
@@ -24630,5 +24638,29 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "Évangéliser les Premières Nations.\nFavoriser la sédentarisation des Premières Nations.\nEncourager un mode de vie sédentaire.",
     updatedAt: "2026-06-27T14:24:24.620Z"
+  },
+  {
+    id: "Q571",
+    niveau: 4,
+    oi: "Établir des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    enonce: "Indiquez le nom de l'établissement religieux fondé auprès des Premières Nations au milieu du XIXe siècle.",
+    aspects: [{aspect: "Affaires indiennes"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "missions_autochtones_1850.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 1},
+    guide: "Une mission catholique.",
+    updatedAt: "2026-06-27T14:26:22.831Z"
   }
 ]
