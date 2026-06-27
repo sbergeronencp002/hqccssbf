@@ -19524,7 +19524,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Similitude",
-    enonce: "À partir des documents A et B, indiquez une similitude dans les revendications polituques entre les mouvements de contestation du Bas-Canada et du Haut-Canada.",
+    enonce: "À partir des documents A et B, indiquez une similitude dans les revendications politiques entre les mouvements de contestation du Bas-Canada et du Haut-Canada.",
     aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
@@ -19552,7 +19552,7 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Les deux mouvements réclament des réformes politiques.\nLes deux mouvements souhaitent accroître le pouvoir de l'Assemblée élue.\nLes deux mouvements contestent le pouvoir des autorités nommées.\nLes deux mouvements demandent un gouvernement plus représentatif.",
-    updatedAt: "2026-06-18T23:35:16.890Z"
+    updatedAt: "2026-06-27T19:14:06.199Z"
   },
   {
     id: "Q413",
