@@ -10892,7 +10892,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "grande_paix_mtl.png",
             soustitre: "Grande Paix de Montréal",
-            source: "Illustration générée à partir de représentations historiques de la Nouvelle-France."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       }
@@ -13631,7 +13632,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1760-1800.png"},
     guide: "B",
-    updatedAt: "2026-06-28T18:43:42.615Z"
+    updatedAt: "2026-06-28T18:43:42.615Z",
+    _imgs: ["loyalistes.png", "ligne_1760-1800.png"]
   },
   {
     id: "Q225",
