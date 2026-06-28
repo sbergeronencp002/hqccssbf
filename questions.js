@@ -11003,7 +11003,8 @@ const QUESTIONS = [
           {
             titre: "Document C",
             ref: "chantier_naval.png",
-            source: "Illustration générée à partir de représentations historiques de la Nouvelle-France."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       }
