@@ -9666,7 +9666,14 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [{titre: "Document B", ref: "loyalistes.png", source: "Bibliothèque et Archives Canada/C-020587."}]
+        cols: [
+          {
+            titre: "Document B",
+            ref: "loyalistes.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
+          }
+        ]
       },
       {
         type: "textes",
@@ -10452,8 +10459,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             ref: "quebec_frere_kirke.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
-            auteur: ""
+            source: "Bibliothèque et Archives Canada, Occupation de Québec par les Britanniques, domaine public."
           }
         ]
       },
@@ -10537,8 +10543,7 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "quebec_frere_kirke.png",
             soustitre: "Occupation de Québec par les frères Kirke",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
-            auteur: ""
+            source: "Bibliothèque et Archives Canada, Occupation de Québec par les frères Kirke, domaine public."
           }
         ]
       }
@@ -19583,8 +19588,7 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "bataille_taverne.png",
             soustitre: "Bataille de la taverne Montgomery",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
-            auteur: ""
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       },
@@ -19605,8 +19609,7 @@ const QUESTIONS = [
             titre: "Document D",
             ref: "bataille_saint-charles.png",
             soustitre: "Bataille de Saint-Charles",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
-            auteur: ""
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
           }
         ]
       }
