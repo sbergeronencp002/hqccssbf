@@ -8643,7 +8643,8 @@ const QUESTIONS = [
           {
             titre: "Document C",
             ref: "education_n-f.jpg",
-            source: "C. W. Jefferys, The Ursulines Teaching Indian Girls, domaine public."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       }
