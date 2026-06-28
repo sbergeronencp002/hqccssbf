@@ -19583,7 +19583,8 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "bataille_taverne.png",
             soustitre: "Bataille de la taverne Montgomery",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       },
