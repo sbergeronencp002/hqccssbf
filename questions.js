@@ -10355,7 +10355,8 @@ const QUESTIONS = [
           {
             titre: "Document C",
             ref: "siege_quebec_1690.png",
-            source: "Bibliothèque et Archives Canada, Siège de Québec par les Britanniques, domaine public."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       },
@@ -10400,7 +10401,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "siege_quebec_1690.png",
             soustitre: "Siège de Québec par Phips",
-            source: "Bibliothèque et Archives Canada, Siège de Québec par Phips, domaine public."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       }
