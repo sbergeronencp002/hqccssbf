@@ -5865,7 +5865,8 @@ const QUESTIONS = [
             titre: "Document C",
             ref: "capitulation_mtl_1760.png",
             soustitre: "Capitulation de Montréal",
-            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de la capitulation de Montréal, 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       },
@@ -13520,7 +13521,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "capitulation_mtl_1760.png",
             soustitre: "Capitulation de Montréal",
-            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de la capitulation de Montréal, 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       }
@@ -13865,7 +13867,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "capitulation_mtl_1760.png",
             soustitre: "Capitulation de Montréal",
-            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de la capitulation de Montréal, 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       },
