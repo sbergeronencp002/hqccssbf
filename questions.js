@@ -22641,7 +22641,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P5 — 1840 – 1896",
     points: 1,
-    enonce: "Indiquez le nom donné aux territoires réservés aux Autochtones au Bas-Canada.",
+    enonce: "Indiquez le nom donné aux territoires créés pour regrouper les Autochtones dans la Province du Canada à la suite du rapport Bagot.",
     aspects: [{aspect: "Affaires indiennes"}],
     documents: [
       {
@@ -22656,8 +22656,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 1},
-    guide: "Réserves indiennes.",
-    updatedAt: "2026-06-22T00:19:25.871Z"
+    guide: "Les réserves.\nLes réserves indiennes.",
+    updatedAt: "2026-06-28T11:36:09.136Z"
   },
   {
     aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
