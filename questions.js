@@ -9300,7 +9300,8 @@ const QUESTIONS = [
             titre: "Document D",
             ref: "bataille_st-eustache.png",
             soustitre: "Bataille de Saint-Eustache",
-            source: "Bibliothèque et Archives Canada/C-000396."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       }
@@ -9362,7 +9363,8 @@ const QUESTIONS = [
             titre: "Document D",
             ref: "bataille_st-eustache.png",
             soustitre: "Bataille de Saint-Eustache",
-            source: "Bibliothèque et Archives Canada/C-000396."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       }
