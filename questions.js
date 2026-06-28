@@ -5447,6 +5447,14 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève situe les faits dans le temps."},
       {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
     ]
+  },
+  "Q573": {
+    oi: "Établir des faits",
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
+    ]
   }
 }
 
@@ -5696,7 +5704,8 @@ const IMAGE_DB = {
   "provinces_canada_1867.jpg": {src: "images/provinces_canada_1867.jpg"},
   "provinces_canada_1867_non.jpg": {src: "images/provinces_canada_1867_non.jpg", w: 1200, h: 725},
   "missions_autochtones_1850.jpg": {src: "images/missions_autochtones_1850.jpg", w: 1200, h: 800},
-  "conference_interprovinciale_1887.jpg": {src: "images/conference_interprovinciale_1887.jpg"}
+  "conference_interprovinciale_1887.jpg": {src: "images/conference_interprovinciale_1887.jpg"},
+  "portrait_louis_riel.jpg": {src: "images/portrait_louis_riel.jpg"}
 }
 
 const QUESTIONS = [
@@ -24705,5 +24714,29 @@ const QUESTIONS = [
     reponse: {type: "image", ref: "ligne_1830-1890.png"},
     guide: "C - 1887.",
     updatedAt: "2026-06-28T17:06:29.812Z"
+  },
+  {
+    id: "Q573",
+    niveau: 4,
+    oi: "Établir des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    enonce: "Indiquez le nom du chef métis associé aux soulèvements des Métis dans l’Ouest canadien.",
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "portrait_louis_riel.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 1},
+    guide: "Louis Riel.",
+    updatedAt: "2026-06-28T17:22:12.093Z"
   }
 ]
