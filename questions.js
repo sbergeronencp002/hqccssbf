@@ -22981,7 +22981,7 @@ const QUESTIONS = [
           {
             auteur: "Ébauche de l'Acte d'Amérique du Nord britannique",
             ref: "aanb_conference_londres.jpg",
-            source: "adaptation libre inspirée de Robert Harris, The Fathers of Confederation, 1883.",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
             soustitre: "Conférence de Londres",
             titre: "Document A"
           }
