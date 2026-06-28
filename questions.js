@@ -8622,7 +8622,8 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "evangelisation_n-f.jpg",
-            source: "C. W. Jefferys, Jesuit missionary preaching to Indigenous people, domaine public."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       },
