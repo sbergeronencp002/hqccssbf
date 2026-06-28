@@ -10452,7 +10452,8 @@ const QUESTIONS = [
           {
             titre: "Document B",
             ref: "quebec_frere_kirke.png",
-            source: "Bibliothèque et Archives Canada, Occupation de Québec par les Britanniques, domaine public."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       },
@@ -10536,7 +10537,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "quebec_frere_kirke.png",
             soustitre: "Occupation de Québec par les frères Kirke",
-            source: "Bibliothèque et Archives Canada, Occupation de Québec par les frères Kirke, domaine public."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       }
