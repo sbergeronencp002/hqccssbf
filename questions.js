@@ -6119,7 +6119,15 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [{titre: "Document B", ref: "troc_1700.png", soustitre: "Vers 1700", source: "MEES."}]
+        cols: [
+          {
+            titre: "Document B",
+            ref: "troc_1700.png",
+            soustitre: "Vers 1700",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
+          }
+        ]
       }
     ],
     reponse: {type: "lignes", nombre: 2},
