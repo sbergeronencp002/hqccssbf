@@ -4875,12 +4875,12 @@ const REGLETTES = {
     oi: "Situer dans le temps"
   },
   "Q516": {
+    oi: "Situer dans le temps",
     colonnes: ["1 point", "0 point"],
     niveaux: [
-      {desc: "L'élève situe les faits dans le temps.", pts: 1},
-      {desc: "L'élève ne situe pas les faits dans le temps.", pts: 0}
-    ],
-    oi: "Situer dans le temps"
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
+    ]
   },
   "Q517": {
     colonnes: ["1 point", "0 point"],
@@ -5816,7 +5816,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "bataille_lac_champlain.png",
             soustitre: "Bataille du lac Champlain",
-            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       }
@@ -9990,7 +9991,8 @@ const QUESTIONS = [
             titre: "Document C",
             ref: "bataille_lac_champlain.png",
             soustitre: "Alliance franco-amérindienne",
-            source: "Theodor de Bry, gravure du 17e siècle, Bibliothèque et Archives Canada."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       },
@@ -10048,7 +10050,8 @@ const QUESTIONS = [
             titre: "Document C",
             ref: "bataille_lac_champlain.png",
             soustitre: "Bataille du lac Champlain",
-            source: "Theodor de Bry, gravure du 17e siècle, Bibliothèque et Archives Canada."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       },
@@ -23032,7 +23035,7 @@ const QUESTIONS = [
       {
         cols: [
           {
-            auteur: "Gouvernement provisoire métis à Rivière-Rouge",
+            auteur: "Résistance métisse à la Rivière-Rouge",
             ref: "metis_premier_soulevement_fort_garry.jpg",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
             soustitre: "Premier soulèvement Métis",
@@ -23055,31 +23058,30 @@ const QUESTIONS = [
     _imgs: ["metis_premier_soulevement_fort_garry.jpg", "ligne_1845-1890.png"]
   },
   {
-    aspects: [{aspect: "Relations fédérales-provinciales"}],
-    documents: [
-      {
-        cols: [
-          {
-            auteur: "Bataille de Batoche",
-            ref: "metis_deuxieme_soulevement_batoche.jpg",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
-            soustitre: "Deuxième soulèvement des Métis",
-            titre: "Document A"
-          }
-        ],
-        type: "textes"
-      }
-    ],
-    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
-    guide: "C - 1885",
     id: "Q516",
     niveau: 4,
     oi: "Situer dans le temps",
     periode: "P5 — 1840 – 1896",
     points: 1,
-    reponse: {ref: "ligne_1845-1890.png", type: "image"},
     soustag: "Ligne du temps",
-    updatedAt: "2026-06-22T12:13:36.869Z",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "metis_deuxieme_soulevement_batoche.jpg",
+            soustitre: "Bataille de Batoche",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "image", ref: "ligne_1845-1890.png"},
+    guide: "C - 1885",
+    updatedAt: "2026-06-28T17:44:04.248Z",
     _imgs: ["metis_deuxieme_soulevement_batoche.jpg", "ligne_1845-1890.png"]
   },
   {
