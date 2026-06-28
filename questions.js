@@ -13622,16 +13622,16 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "arrivee_loyalistes.png",
+            ref: "loyalistes.png",
             soustitre: "Arrivée des premiers Loyalistes",
-            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de l'arrivée des Loyalistes, 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."
           }
         ]
       }
     ],
     reponse: {type: "image", ref: "ligne_1760-1800.png"},
     guide: "B",
-    _imgs: ["arrivee_loyalistes.png", "ligne_1760-1800.png"]
+    updatedAt: "2026-06-28T18:43:42.615Z"
   },
   {
     id: "Q225",
