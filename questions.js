@@ -19246,7 +19246,8 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "assemblee_six_comtes.png",
-            source: "Charles Alexander Smith, L'Assemblée des Six-Comtés, 1891. Reproduction adaptée."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       }
@@ -19578,7 +19579,8 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "assemblee_six_comtes.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       },
