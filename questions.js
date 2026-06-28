@@ -5463,6 +5463,14 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève établit correctement le fait."},
       {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
     ]
+  },
+  "Q575": {
+    oi: "Établir des faits",
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
+    ]
   }
 }
 
@@ -5714,7 +5722,8 @@ const IMAGE_DB = {
   "missions_autochtones_1850.jpg": {src: "images/missions_autochtones_1850.jpg", w: 1200, h: 800},
   "conference_interprovinciale_1887.jpg": {src: "images/conference_interprovinciale_1887.jpg"},
   "portrait_louis_riel.jpg": {src: "images/portrait_louis_riel.jpg"},
-  "portrait_honore_mercier.jpg": {src: "images/portrait_honore_mercier.jpg"}
+  "portrait_honore_mercier.jpg": {src: "images/portrait_honore_mercier.jpg"},
+  "portrait_pontiac.jpg": {src: "images/portrait_pontiac.jpg"}
 }
 
 const QUESTIONS = [
@@ -25106,5 +25115,29 @@ const QUESTIONS = [
     guide: "Honoré Mercier.",
     updatedAt: "2026-06-28T17:31:40.004Z",
     _imgs: ["portrait_honore_mercier.jpg"]
+  },
+  {
+    id: "Q575",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    enonce: "Indiquez le nom du chef autochtone qui dirige un soulèvement contre les Britanniques.",
+    aspects: [{aspect: "Statut des Indiens"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "portrait_pontiac.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 1},
+    guide: "Pontiac.",
+    updatedAt: "2026-06-28T19:03:55.732Z"
   }
 ]
