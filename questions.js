@@ -6208,7 +6208,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "papineau_foule.png",
             soustitre: "Louis-Joseph Papineau  s’adressant à la foule",
-            source: "Henri Julien, illustration des assemblées patriotes de 1837. Adaptée."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       },
@@ -19470,7 +19471,8 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "papineau_foule.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       }
