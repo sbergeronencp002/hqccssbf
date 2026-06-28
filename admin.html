@@ -1033,7 +1033,8 @@ async function _fetchQuestionsRaw(headers) {
     content = new TextDecoder('utf-8').decode(bytes);
   } else if(data.download_url) {
     // Fichier > 1 Mo : téléchargement direct
-    const raw = await fetch(data.download_url + '&t=' + Date.now(), { cache: 'no-store' });
+    const dlUrl = data.download_url.includes('?') ? data.download_url + '&t=' + Date.now() : data.download_url + '?t=' + Date.now();
+    const raw = await fetch(dlUrl, { cache: 'no-store' });
     if(!raw.ok) throw new Error('Impossible de télécharger questions.js : ' + raw.status);
     content = await raw.text();
   } else {
