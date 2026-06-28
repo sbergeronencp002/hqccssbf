@@ -9346,7 +9346,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "execution_patriotes.png",
             soustitre: "Exécution des Patriotes",
-            source: "Bibliothèque et Archives Canada/C-013493."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       },
@@ -9410,7 +9411,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "execution_patriotes.png",
             soustitre: "Exécution des Patriotes",
-            source: "Bibliothèque et Archives Canada/C-013493."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       },
