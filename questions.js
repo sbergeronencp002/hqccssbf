@@ -938,12 +938,12 @@ const REGLETTES = {
     ]
   },
   "Q104": {
-    oi: "Situer dans le temps",
     colonnes: ["2 points", "0 point"],
     niveaux: [
-      {pts: 2, desc: "L'élève situe tous les faits dans le temps."},
-      {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}
-    ]
+      {desc: "L'élève situe tous les faits dans le temps.", pts: 2},
+      {desc: "L'élève ne situe pas tous les faits dans le temps.", pts: 0}
+    ],
+    oi: "Situer dans le temps"
   },
   "Q105": {
     oi: "Déterminer des causes et des conséquences",
@@ -5723,7 +5723,8 @@ const IMAGE_DB = {
   "conference_interprovinciale_1887.jpg": {src: "images/conference_interprovinciale_1887.jpg"},
   "portrait_louis_riel.jpg": {src: "images/portrait_louis_riel.jpg"},
   "portrait_honore_mercier.jpg": {src: "images/portrait_honore_mercier.jpg"},
-  "portrait_pontiac.jpg": {src: "images/portrait_pontiac.jpg"}
+  "portrait_pontiac.jpg": {src: "images/portrait_pontiac.jpg"},
+  "rebellions_bataille_st-denis.jpg": {src: "images/rebellions_bataille_st-denis.jpg"}
 }
 
 const QUESTIONS = [
@@ -9415,63 +9416,63 @@ const QUESTIONS = [
     _imgs: ["execution_patriotes.png", "bataille_st-eustache.png"]
   },
   {
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
+    documents: [
+      {
+        cols: [
+          {
+            ref: "independance_bas-canada.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            soustitre: "La déclaration d'indépendance du Bas-Canada",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            source: "Adapté de Yvan Lamonde, Histoire sociale des idées au Québec, tome 1, Fides, 2000.",
+            soustitre: "La publication du Rapport Durham",
+            texte: "« À la suite des affrontements, une enquête est confiée à un représentant britannique afin d'expliquer les causes des troubles et de recommander des changements pour l'avenir de la colonie. »",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            source: "Adapté de Gilles Laporte, Patriotes et Loyaux, Septentrion, 2004.",
+            soustitre: "L'adoption des 92 Résolutions par le Parti Patriote",
+            texte: "« Des représentants de la population présentent un long ensemble de demandes afin d'obtenir davantage de pouvoir politique et un meilleur contrôle des décisions prises dans la colonie. »",
+            titre: "Document C"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "rebellions_bataille_st-denis.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            soustitre: "La bataille de Saint-Denis",
+            titre: "Document D"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Les documents A à D présentent des événements liés aux soulèvements de 1837-1838. Placez ces documents par ordre chronologique.",
+    guide: "C - D - A - B",
     id: "Q104",
     niveau: 3,
     oi: "Situer dans le temps",
     periode: "P4 — 1791 – 1840",
     points: 2,
+    reponse: {ref: "ligne_bcAd.png", type: "image"},
     soustag: "Ordre chronologique",
-    enonce: "Les documents A à D présentent des événements liés aux soulèvements de 1837-1838. Placez ces documents par ordre chronologique.",
-    aspects: [{aspect: "Soulèvements de 1837-1838"}],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "execution_patriotes.png",
-            soustitre: "Exécution des Patriotes",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
-            auteur: ""
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            texte: "« Les résolutions Russell ferment la porte à toute réforme constitutionnelle sérieuse. En refusant les principales revendications des Patriotes, Londres confirme que les Canadiens français n’obtiendront aucun véritable contrôle sur leur gouvernement. »",
-            source: "Gilles Laporte, Patriotes et Loyaux : mobilisation politique et leadership régional en 1837 et 1838, Québec, Septentrion, 2004."
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document C",
-            texte: "« Les 92 Résolutions constituent le programme politique le plus complet jamais formulé par le Parti patriote pour réclamer une véritable démocratie parlementaire. »",
-            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 3, Québec, Septentrion, 1996."
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document D",
-            ref: "bataille_st-eustache.png",
-            soustitre: "Bataille de Saint-Eustache",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
-            auteur: ""
-          }
-        ]
-      }
-    ],
-    reponse: {type: "image", ref: "ligne_abDc.png"},
-    guide: "C - B - D - A",
-    _imgs: ["execution_patriotes.png", "bataille_st-eustache.png", "ligne_abDc.png"]
+    updatedAt: "2026-06-29T16:06:13.047Z"
   },
   {
     id: "Q105",
