@@ -23028,7 +23028,6 @@ const QUESTIONS = [
       {
         cols: [
           {
-            auteur: "Ébauche de l'Acte d'Amérique du Nord britannique",
             ref: "aanb_conference_londres.jpg",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
             soustitre: "Conférence de Londres",
@@ -23047,8 +23046,7 @@ const QUESTIONS = [
     points: 1,
     reponse: {ref: "ligne_1830-1875.png", type: "image"},
     soustag: "Ligne du temps",
-    updatedAt: "2026-06-22T11:43:45.256Z",
-    _imgs: ["aanb_conference_londres.jpg", "ligne_1830-1875.png"]
+    updatedAt: "2026-06-29T16:16:15.535Z"
   },
   {
     aspects: [{aspect: "Relations fédérales-provinciales"}],
