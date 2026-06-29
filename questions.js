@@ -6619,7 +6619,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_1840_acte_union.png",
             soustitre: "Organisation politique de la colonie entre en 1840",
-            source: "Récitus."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
@@ -6718,7 +6719,8 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "org_pol_1840_acte_union.png",
             soustitre: "Organisation politique du Canada-Uni aprés 1840",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
@@ -22790,7 +22792,8 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "org_pol_1840_acte_union.png",
             soustitre: "Organisation politique de la Province du Canada à partir de 1840",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
@@ -22825,7 +22828,8 @@ const QUESTIONS = [
           {
             titre: "Document B",
             ref: "org_pol_1840_acte_union.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
@@ -22855,7 +22859,8 @@ const QUESTIONS = [
             ref: "org_pol_1840_acte_union.png",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
             soustitre: "Adoption de l'Acte d'Union",
-            titre: "Document A"
+            titre: "Document A",
+            auteur: ""
           }
         ],
         type: "textes"
@@ -23415,7 +23420,8 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "org_pol_1840_acte_union.png",
             soustitre: "Organisation politique de la Province du Canada à partir de 1840",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
@@ -25291,7 +25297,8 @@ const QUESTIONS = [
     points: 2,
     reponse: {ref: "ligne_abDc.png", type: "image"},
     soustag: "Ordre chronologique",
-    updatedAt: "2026-06-29T17:09:41.487Z"
+    updatedAt: "2026-06-29T17:09:41.487Z",
+    _imgs: ["aanb_conference_londres.jpg", "aanb_conference_charlottetown.jpg", "aanb_conference_quebec.jpg", "ligne_abDc.png"]
   },
   {
     aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
@@ -25360,7 +25367,8 @@ const QUESTIONS = [
       type: "mettre-en-relation"
     },
     soustag: "4 documents",
-    updatedAt: "2026-06-29T18:45:39.355Z"
+    updatedAt: "2026-06-29T18:45:39.355Z",
+    _imgs: ["soldats_gendarmerie.jpg", "ecole_quebec_1870.jpg", "comptoir_postal_1870.jpg", "hopital_quebec_1870.jpg"]
   },
   {
     aspects: [{aspect: "Relations fédérales-provinciales"}],
