@@ -5513,6 +5513,14 @@ const REGLETTES = {
       {desc: "L'élève dégage incorrectement la différence ou ne la dégage pas.", pts: 0}
     ],
     oi: "Dégager des différences et des similitudes"
+  },
+  "Q581": {
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {desc: "L'élève établit correctement le fait.", pts: 1},
+      {desc: "L'élève établit incorrectement le fait ou ne l'établit pas.", pts: 0}
+    ],
+    oi: "Établir des faits"
   }
 }
 
@@ -5771,7 +5779,8 @@ const IMAGE_DB = {
   "soldats_gendarmerie.jpg": {src: "images/soldats_gendarmerie.jpg"},
   "ecole_quebec_1870.jpg": {src: "images/ecole_quebec_1870.jpg"},
   "comptoir_postal_1870.jpg": {src: "images/comptoir_postal_1870.jpg"},
-  "hopital_quebec_1870.jpg": {src: "images/hopital_quebec_1870.jpg"}
+  "hopital_quebec_1870.jpg": {src: "images/hopital_quebec_1870.jpg"},
+  "tableau_sources_revenus_federal.jpg": {src: "images/tableau_sources_revenus_federal.jpg"}
 }
 
 const QUESTIONS = [
@@ -25408,5 +25417,29 @@ const QUESTIONS = [
     reponse: {nombre: 2, type: "lignes"},
     soustag: "Différence",
     updatedAt: "2026-06-29T18:55:08.859Z"
+  },
+  {
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        cols: [
+          {
+            ref: "tableau_sources_revenus_federal.jpg",
+            source: "Adapté de M.C. Urquhart et K.A.H. Buckley (dir.), Historical Statistics of Canada, Cambridge University Press, 1965.",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Indiquez la principale source de revenus du gouvernement fédéral après 1867.",
+    guide: "Les droits de douanes.",
+    id: "Q581",
+    niveau: 4,
+    oi: "Établir des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    reponse: {nombre: 1, type: "lignes"},
+    updatedAt: "2026-06-29T19:12:30.119Z"
   }
 ]
