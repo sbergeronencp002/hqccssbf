@@ -5530,6 +5530,18 @@ const REGLETTES = {
       {desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas.", pts: 0}
     ],
     oi: "Déterminer des causes et des conséquences"
+  },
+  "Q583": {
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {desc: "L'élève établit correctement le point de divergence entre les points de vue.", pts: 2},
+      {
+        desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue.",
+        pts: 1
+      },
+      {desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas.", pts: 0}
+    ],
+    oi: "Dégager des différences et des similitudes"
   }
 }
 
@@ -25477,5 +25489,42 @@ const QUESTIONS = [
     reponse: {nombre: 2, type: "lignes"},
     soustag: "Cause",
     updatedAt: "2026-06-29T19:21:32.787Z"
+  },
+  {
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        cols: [
+          {
+            auteur: "John A. Macdonald",
+            source: "Adapté de John A. Macdonald, Parliamentary Debates on the Subject of the Confederation of the British North American Provinces, Hunter, Rose & Co., 1865.",
+            texte: "« Toutes les grandes questions qui touchent les intérêts généraux seront confiées au gouvernement général, tandis que les intérêts locaux demeureront entre les mains des autorités locales. »",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            auteur: "Honoré Mercier",
+            source: "Adapté d'Honoré Mercier, discours à la Conférence interprovinciale de Québec, 1887.",
+            texte: "« Les provinces doivent conserver les pouvoirs que leur garantit la Constitution et résister à toute atteinte portée à leur autonomie. »",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en désaccord?",
+    guide: "L'autonomie provinciale.\nLa centralisation des pouvoirs.",
+    id: "Q583",
+    niveau: 4,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    reponse: {nombre: 2, type: "lignes"},
+    soustag: "Divergence – 2 acteurs",
+    updatedAt: "2026-06-29T19:29:36.131Z"
   }
 ]
