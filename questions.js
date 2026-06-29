@@ -5504,6 +5504,15 @@ const REGLETTES = {
       {desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)", pts: 0}
     ],
     oi: "Mettre en relation des faits"
+  },
+  "Q580": {
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {desc: "L'élève dégage correctement la différence.", pts: 2},
+      {desc: "L'élève dégage plus ou moins correctement la différence.", pts: 1},
+      {desc: "L'élève dégage incorrectement la différence ou ne la dégage pas.", pts: 0}
+    ],
+    oi: "Dégager des différences et des similitudes"
   }
 }
 
@@ -25352,5 +25361,40 @@ const QUESTIONS = [
     },
     soustag: "4 documents",
     updatedAt: "2026-06-29T18:45:39.355Z"
+  },
+  {
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        cols: [
+          {
+            source: "Adapté de Donald Creighton, The Road to Confederation, Macmillan of Canada, 1964.",
+            texte: "« La Confédération attribue certaines responsabilités à une autorité commune afin d'assurer ce qui touche l'ensemble du pays, tout en laissant d'autres questions être administrées autrement selon les besoins. »",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, Tome 4, Septentrion, 1997.",
+            texte: "« La nouvelle organisation politique permet de conserver l'administration de plusieurs services qui répondent aux réalités propres de chaque province et aux besoins de leur population. »",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Les documents A et B présentent des champs de compétence relevant de deux ordres de gouvernement. Indiquez une différence entre les champs de compétence de ces deux ordres de gouvernement.",
+    guide: "Le gouvernement fédéral exerce des champs de compétence qui concernent l'ensemble du pays, tandis que les gouvernements provinciaux exercent des champs de compétence qui répondent aux besoins propres de chaque province.",
+    id: "Q580",
+    niveau: 4,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    reponse: {nombre: 2, type: "lignes"},
+    soustag: "Différence",
+    updatedAt: "2026-06-29T18:55:08.859Z"
   }
 ]
