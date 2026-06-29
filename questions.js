@@ -9619,7 +9619,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "population_1763.png",
             soustitre: "Composition de la population de la colonie en 1763",
-            source: "adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal."
+            source: "Adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal.",
+            auteur: ""
           }
         ]
       },
@@ -9657,7 +9658,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "population_1763.png",
             soustitre: "Composition de la population de la colonie en 1763",
-            source: "adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal."
+            source: "Adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal.",
+            auteur: ""
           }
         ]
       },
@@ -9695,7 +9697,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "population_1763.png",
             soustitre: "Composition de la population de la colonie en 1763",
-            source: "adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal."
+            source: "Adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal.",
+            auteur: ""
           }
         ]
       },
@@ -14231,7 +14234,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "population_1763.png",
             soustitre: "Composition de la population de la Province de Québec en 1763",
-            source: "adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal."
+            source: "Adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal.",
+            auteur: ""
           }
         ]
       },
