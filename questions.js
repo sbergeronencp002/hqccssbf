@@ -5479,6 +5479,14 @@ const REGLETTES = {
       {desc: "L'élève établit incorrectement le fait ou ne l'établit pas.", pts: 0}
     ],
     oi: "Établir des faits"
+  },
+  "Q577": {
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {desc: "L'élève établit correctement le fait.", pts: 1},
+      {desc: "L'élève établit incorrectement le fait ou ne l'établit pas.", pts: 0}
+    ],
+    oi: "Établir des faits"
   }
 }
 
@@ -25169,5 +25177,29 @@ const QUESTIONS = [
     points: 1,
     reponse: {nombre: 1, type: "lignes"},
     updatedAt: "2026-06-29T16:13:45.831Z"
+  },
+  {
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        cols: [
+          {
+            source: "Adapté de l’Acte de l’Amérique du Nord britannique, 1867.",
+            texte: "« En 1867, l’Acte de l’Amérique du Nord britannique unit l’Ontario, le Québec, le Nouveau-Brunswick et la Nouvelle-Écosse dans une nouvelle entité politique. »",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Indiquez le nom de la nouvelle entité politique créée en 1867.",
+    guide: "Dominion du Canada.",
+    id: "Q577",
+    niveau: 4,
+    oi: "Établir des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    reponse: {nombre: 1, type: "lignes"},
+    updatedAt: "2026-06-29T16:14:45.264Z"
   }
 ]
