@@ -3872,18 +3872,18 @@ const REGLETTES = {
     ]
   },
   "Q413": {
-    oi: "Établir des liens de causalité",
-    variante: "3 éléments — 2 liens",
     colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
+      {desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité.", pts: 3},
       {
-        pts: 2,
-        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité.",
+        pts: 2
       },
-      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
-      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
-    ]
+      {desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité.", pts: 1},
+      {desc: "L'élève précise un seul élément ou n'en précise pas.", pts: 0}
+    ],
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens"
   },
   "Q414": {
     oi: "Situer dans le temps",
@@ -19853,50 +19853,48 @@ const QUESTIONS = [
     updatedAt: "2026-06-27T19:14:06.199Z"
   },
   {
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
+    documents: [
+      {
+        cols: [
+          {
+            ref: "assemblee_six_comtes.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "aut_col_britannique_rebellions.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            source: "Adapté de Allan Greer, Habitants et Patriotes, Boréal, 1997.",
+            texte: "« La confrontation entre les contestataires et les soldats mène à plusieurs affrontements armés en 1837. Ces événements marquent un tournant important dans l'histoire politique de la colonie. »",
+            titre: "Document C"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Expliquez comment les moyens utilisés par les Patriotes pour faire valoir leurs revendications entraînent des conséquences dans la colonie en 1837.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un moyen utilisé par les Patriotes\n• une réaction des autorités coloniales\n• une conséquence dans la colonie",
+    guide: "Les Patriotes organisent des assemblées populaires (un moyen utilisé par les Patriotes) afin de faire valoir leurs revendications. En réaction, les autorités coloniales émettent des mandats d'arrestation contre plusieurs chefs patriotes (une réaction des autorités coloniales). Cette situation contribue au déclenchement du conflit armé en 1837 (une conséquence dans la colonie).",
     id: "Q413",
     niveau: 3,
     oi: "Établir des liens de causalité",
     periode: "P4 — 1791 – 1840",
     points: 3,
-    enonce: "Expliquez comment les moyens utilisés par les Patriotes pour faire valoir leurs revendications entraînent des conséquences dans la colonie en 1837.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un moyen utilisé par les Patriotes\n• une réaction des autorités coloniales\n• une conséquence dans la colonie",
-    aspects: [{aspect: "Soulèvements de 1837-1838"}],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "assemblee_six_comtes.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
-            auteur: ""
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            texte: "« Après l'échec des démarches politiques et l'arrestation de plusieurs chefs du mouvement, des combats éclatent entre les Patriotes et les troupes britanniques dans différentes régions de la colonie. »",
-            source: "Adapté de Michel Brunet, Les Canadiens après la Conquête."
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document C",
-            ref: "aut_col_britannique_rebellions.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
-          }
-        ]
-      }
-    ],
-    reponse: {type: "lignes", nombre: 5},
-    guide: "Les Patriotes organisent des assemblées populaires (un moyen utilisé par les Patriotes) afin de faire valoir leurs revendications. En réaction, les autorités coloniales émettent des mandats d'arrestation contre plusieurs chefs patriotes (une réaction des autorités coloniales). Cette situation contribue au déclenchement du conflit armé en 1837 (une conséquence dans la colonie).",
-    updatedAt: "2026-06-15T12:20:08.753Z",
-    _imgs: ["assemblee_six_comtes.png", "aut_col_britannique_rebellions.png"]
+    reponse: {nombre: 5, type: "lignes"},
+    updatedAt: "2026-06-29T15:52:56.956Z"
   },
   {
     id: "Q414",
