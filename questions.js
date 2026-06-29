@@ -5471,6 +5471,14 @@ const REGLETTES = {
       {desc: "L'élève établit incorrectement le fait ou ne l'établit pas.", pts: 0}
     ],
     oi: "Établir des faits"
+  },
+  "Q576": {
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {desc: "L'élève établit correctement le fait.", pts: 1},
+      {desc: "L'élève établit incorrectement le fait ou ne l'établit pas.", pts: 0}
+    ],
+    oi: "Établir des faits"
   }
 }
 
@@ -25137,5 +25145,29 @@ const QUESTIONS = [
     points: 1,
     reponse: {nombre: 1, type: "lignes"},
     updatedAt: "2026-06-29T15:40:36.855Z"
+  },
+  {
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        cols: [
+          {
+            source: "Adapté de John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec, Septentrion, 2009.",
+            texte: "« Les dirigeants des principaux partis politiques s'unissent pour trouver une solution durable aux difficultés politiques qui paralysent la Province du Canada. »",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Indiquez l’objectif principal de la Grande Coalition.",
+    guide: "Réaliser le projet de fédération canadienne.\nRéaliser le projet d'union.",
+    id: "Q576",
+    niveau: 4,
+    oi: "Établir des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    reponse: {nombre: 1, type: "lignes"},
+    updatedAt: "2026-06-29T16:13:45.831Z"
   }
 ]
