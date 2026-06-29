@@ -5495,6 +5495,15 @@ const REGLETTES = {
       {desc: "L'élève ne situe pas tous les faits dans le temps.", pts: 0}
     ],
     oi: "Situer dans le temps"
+  },
+  "Q579": {
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {desc: "L'élève met en relation tous les faits. (4 sur 4)", pts: 2},
+      {desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)", pts: 1},
+      {desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)", pts: 0}
+    ],
+    oi: "Mettre en relation des faits"
   }
 }
 
@@ -5749,7 +5758,11 @@ const IMAGE_DB = {
   "portrait_pontiac.jpg": {src: "images/portrait_pontiac.jpg"},
   "rebellions_bataille_st-denis.jpg": {src: "images/rebellions_bataille_st-denis.jpg"},
   "aanb_conference_charlottetown.jpg": {src: "images/aanb_conference_charlottetown.jpg"},
-  "aanb_conference_quebec.jpg": {src: "images/aanb_conference_quebec.jpg"}
+  "aanb_conference_quebec.jpg": {src: "images/aanb_conference_quebec.jpg"},
+  "soldats_gendarmerie.jpg": {src: "images/soldats_gendarmerie.jpg"},
+  "ecole_quebec_1870.jpg": {src: "images/ecole_quebec_1870.jpg"},
+  "comptoir_postal_1870.jpg": {src: "images/comptoir_postal_1870.jpg"},
+  "hopital_quebec_1870.jpg": {src: "images/hopital_quebec_1870.jpg"}
 }
 
 const QUESTIONS = [
@@ -25270,5 +25283,74 @@ const QUESTIONS = [
     reponse: {ref: "ligne_abDc.png", type: "image"},
     soustag: "Ordre chronologique",
     updatedAt: "2026-06-29T17:09:41.487Z"
+  },
+  {
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        cols: [
+          {
+            ref: "soldats_gendarmerie.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI).",
+            soustitre: "Soldat au Nord-Ouest vers 1885",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "ecole_quebec_1870.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI).",
+            soustitre: "École catholique au Québec vers 1890",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "comptoir_postal_1870.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI).",
+            soustitre: "Bureau de poste au Québec vers 1880",
+            titre: "Document C"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "hopital_quebec_1870.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI).",
+            soustitre: "Salle d'hôpital au Québec vers 1890",
+            titre: "Document D"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Les documents A à D présentent des champs de compétence relevant des gouvernements fédéral et provinciaux. Associez chaque document au palier de gouvernement correspondant.",
+    guide: {
+      entetes: ["Gouvernement fédéral", "Gouvernement provincial"],
+      rangees: [
+        ["A et C", "B et D"]
+      ],
+      type: "grille"
+    },
+    id: "Q579",
+    niveau: 4,
+    oi: "Mettre en relation des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    reponse: {
+      double: true,
+      elements: ["Gouvernement fédéral", "Gouvernement provincial"],
+      type: "mettre-en-relation"
+    },
+    soustag: "4 documents",
+    updatedAt: "2026-06-29T18:45:39.355Z"
   }
 ]
