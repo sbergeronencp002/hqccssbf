@@ -5465,12 +5465,12 @@ const REGLETTES = {
     ]
   },
   "Q575": {
-    oi: "Établir des faits",
     colonnes: ["1 point", "0 point"],
     niveaux: [
-      {pts: 1, desc: "L'élève établit correctement le fait."},
-      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
-    ]
+      {desc: "L'élève établit correctement le fait.", pts: 1},
+      {desc: "L'élève établit incorrectement le fait ou ne l'établit pas.", pts: 0}
+    ],
+    oi: "Établir des faits"
   }
 }
 
@@ -25117,27 +25117,27 @@ const QUESTIONS = [
     _imgs: ["portrait_honore_mercier.jpg"]
   },
   {
+    aspects: [{aspect: "Statut des Indiens"}],
+    documents: [
+      {
+        cols: [
+          {
+            ref: "portrait_pontiac.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Indiquez le nom du chef autochtone qui dirige un soulèvement contre les Britanniques.",
+    guide: "Pontiac.",
     id: "Q575",
     niveau: 3,
     oi: "Établir des faits",
     periode: "P3 — 1760 – 1791",
     points: 1,
-    enonce: "Indiquez le nom du chef autochtone qui dirige un soulèvement contre les Britanniques.",
-    aspects: [{aspect: "Statut des Indiens"}],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "portrait_pontiac.jpg",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."
-          }
-        ]
-      }
-    ],
-    reponse: {type: "lignes", nombre: 1},
-    guide: "Pontiac.",
-    updatedAt: "2026-06-28T19:03:55.732Z"
+    reponse: {nombre: 1, type: "lignes"},
+    updatedAt: "2026-06-29T15:40:36.855Z"
   }
 ]
