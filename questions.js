@@ -5521,6 +5521,15 @@ const REGLETTES = {
       {desc: "L'élève établit incorrectement le fait ou ne l'établit pas.", pts: 0}
     ],
     oi: "Établir des faits"
+  },
+  "Q582": {
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {desc: "L'élève détermine correctement le facteur explicatif.", pts: 2},
+      {desc: "L'élève détermine plus ou moins correctement le facteur explicatif.", pts: 1},
+      {desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas.", pts: 0}
+    ],
+    oi: "Déterminer des causes et des conséquences"
   }
 }
 
@@ -5780,7 +5789,8 @@ const IMAGE_DB = {
   "ecole_quebec_1870.jpg": {src: "images/ecole_quebec_1870.jpg"},
   "comptoir_postal_1870.jpg": {src: "images/comptoir_postal_1870.jpg"},
   "hopital_quebec_1870.jpg": {src: "images/hopital_quebec_1870.jpg"},
-  "tableau_sources_revenus_federal.jpg": {src: "images/tableau_sources_revenus_federal.jpg"}
+  "tableau_sources_revenus_federal.jpg": {src: "images/tableau_sources_revenus_federal.jpg"},
+  "tableau_depenses_provincial.jpg": {src: "images/tableau_depenses_provincial.jpg"}
 }
 
 const QUESTIONS = [
@@ -25441,5 +25451,31 @@ const QUESTIONS = [
     points: 1,
     reponse: {nombre: 1, type: "lignes"},
     updatedAt: "2026-06-29T19:12:30.119Z"
+  },
+  {
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        cols: [
+          {
+            ref: "tableau_depenses_provincial.jpg",
+            source: "Adapté de Donald Creighton, The Road to Confederation, Macmillan of Canada, 1964.",
+            soustitre: "Dépenses du gouvernement du Québec (en milliers de dollars)",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Indiquez une raison pour laquelle les provinces réclament davantage de revenus dans les premières décennies de la Confédération.",
+    guide: "Les provinces réclament davantage de revenus parce que leurs dépenses augmentent pour exercer les responsabilités qui leur sont attribuées.\nLes provinces ont besoin de plus de revenus pour financer leurs champs de compétence.\nLes dépenses provinciales augmentent, ce qui pousse les provinces à réclamer davantage de revenus.\nLes responsabilités des provinces coûtent de plus en plus cher à exercer.",
+    id: "Q582",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    reponse: {nombre: 2, type: "lignes"},
+    soustag: "Cause",
+    updatedAt: "2026-06-29T19:21:32.787Z"
   }
 ]
