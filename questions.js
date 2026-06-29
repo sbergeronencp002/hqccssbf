@@ -5594,7 +5594,6 @@ const IMAGE_DB = {
   "capitulation_mtl_1760.png": {src: "images/capitulation_mtl_1760.png"},
   "ligne_1755-1795.png": {src: "images/ligne_1755-1795.png"},
   "revolte_pontiac.png": {src: "images/revolte_pontiac.png"},
-  "arrivee_loyalistes.png": {src: "images/arrivee_loyalistes.png"},
   "org_pol_regime_militaire.png": {src: "images/org_pol_regime_militaire.png"},
   "carte_proclamation_royale_territoire.png": {src: "images/carte_proclamation_royale_territoire.png"},
   "org_pol_apres_1763.png": {src: "images/org_pol_apres_1763.png"},
@@ -9488,7 +9487,8 @@ const QUESTIONS = [
     points: 2,
     reponse: {ref: "ligne_bcAd.png", type: "image"},
     soustag: "Ordre chronologique",
-    updatedAt: "2026-06-29T16:06:13.047Z"
+    updatedAt: "2026-06-29T16:06:13.047Z",
+    _imgs: ["independance_bas-canada.png", "rebellions_bataille_st-denis.jpg", "ligne_bcAd.png"]
   },
   {
     id: "Q105",
@@ -19669,7 +19669,8 @@ const QUESTIONS = [
       type: "mettre-en-relation"
     },
     soustag: "4 documents",
-    updatedAt: "2026-06-29T15:57:55.614Z"
+    updatedAt: "2026-06-29T15:57:55.614Z",
+    _imgs: ["bataille_taverne.png", "bataille_saint-charles.png"]
   },
   {
     id: "Q407",
@@ -19910,7 +19911,8 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 3,
     reponse: {nombre: 5, type: "lignes"},
-    updatedAt: "2026-06-29T15:52:56.956Z"
+    updatedAt: "2026-06-29T15:52:56.956Z",
+    _imgs: ["assemblee_six_comtes.png", "aut_col_britannique_rebellions.png"]
   },
   {
     id: "Q414",
@@ -23046,7 +23048,8 @@ const QUESTIONS = [
     points: 1,
     reponse: {ref: "ligne_1830-1875.png", type: "image"},
     soustag: "Ligne du temps",
-    updatedAt: "2026-06-29T16:16:15.535Z"
+    updatedAt: "2026-06-29T16:16:15.535Z",
+    _imgs: ["aanb_conference_londres.jpg", "ligne_1830-1875.png"]
   },
   {
     aspects: [{aspect: "Relations fédérales-provinciales"}],
@@ -25150,7 +25153,8 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     reponse: {nombre: 1, type: "lignes"},
-    updatedAt: "2026-06-29T15:40:36.855Z"
+    updatedAt: "2026-06-29T15:40:36.855Z",
+    _imgs: ["portrait_pontiac.jpg"]
   },
   {
     aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
