@@ -5487,6 +5487,14 @@ const REGLETTES = {
       {desc: "L'élève établit incorrectement le fait ou ne l'établit pas.", pts: 0}
     ],
     oi: "Établir des faits"
+  },
+  "Q578": {
+    colonnes: ["2 points", "0 point"],
+    niveaux: [
+      {desc: "L'élève situe tous les faits dans le temps.", pts: 2},
+      {desc: "L'élève ne situe pas tous les faits dans le temps.", pts: 0}
+    ],
+    oi: "Situer dans le temps"
   }
 }
 
@@ -5739,7 +5747,9 @@ const IMAGE_DB = {
   "portrait_louis_riel.jpg": {src: "images/portrait_louis_riel.jpg"},
   "portrait_honore_mercier.jpg": {src: "images/portrait_honore_mercier.jpg"},
   "portrait_pontiac.jpg": {src: "images/portrait_pontiac.jpg"},
-  "rebellions_bataille_st-denis.jpg": {src: "images/rebellions_bataille_st-denis.jpg"}
+  "rebellions_bataille_st-denis.jpg": {src: "images/rebellions_bataille_st-denis.jpg"},
+  "aanb_conference_charlottetown.jpg": {src: "images/aanb_conference_charlottetown.jpg"},
+  "aanb_conference_quebec.jpg": {src: "images/aanb_conference_quebec.jpg"}
 }
 
 const QUESTIONS = [
@@ -25203,5 +25213,62 @@ const QUESTIONS = [
     points: 1,
     reponse: {nombre: 1, type: "lignes"},
     updatedAt: "2026-06-29T16:14:45.264Z"
+  },
+  {
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        cols: [
+          {
+            ref: "aanb_conference_londres.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            soustitre: "Conférence de Londres",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "aanb_conference_charlottetown.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            source: "Adapté de Béatrice Craig, Histoire du Canada, Oxford University Press, 2012.",
+            texte: "« Les rivalités politiques et régionales empêchent fréquemment l'adoption de mesures importantes, alimentant une période où les ministères tombent les uns après les autres avant d'avoir réalisé leurs projets. »",
+            titre: "Document C"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "aanb_conference_quebec.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            soustitre: "Conférence de Québec",
+            titre: "Document D"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Les documents A à D présentent des événements liés à la formation du Dominion du Canada. Placez ces documents par ordre chronologique.",
+    guide: "C - B - D - A",
+    id: "Q578",
+    niveau: 4,
+    oi: "Situer dans le temps",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    reponse: {ref: "ligne_abDc.png", type: "image"},
+    soustag: "Ordre chronologique",
+    updatedAt: "2026-06-29T17:09:41.487Z"
   }
 ]
