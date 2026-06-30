@@ -5669,6 +5669,15 @@ const REGLETTES = {
       {desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)", pts: 0}
     ],
     oi: "Mettre en relation des faits"
+  },
+  "Q594": {
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {desc: "L'élève met en relation tous les faits. (4 sur 4)", pts: 2},
+      {desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)", pts: 1},
+      {desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)", pts: 0}
+    ],
+    oi: "Mettre en relation des faits"
   }
 }
 
@@ -5935,7 +5944,8 @@ const IMAGE_DB = {
   "tableau_manitoba_ecole_catholiques.jpg": {src: "images/tableau_manitoba_ecole_catholiques.jpg", w: 1200, h: 960},
   "conflits_metis_ouest.jpg": {src: "images/conflits_metis_ouest.jpg", w: 1200, h: 1015},
   "tableau_revenus_federal_provincial.jpg": {src: "images/tableau_revenus_federal_provincial.jpg"},
-  "arpentage_terres_ouest_canadien.jpg": {src: "images/arpentage_terres_ouest_canadien.jpg"}
+  "arpentage_terres_ouest_canadien.jpg": {src: "images/arpentage_terres_ouest_canadien.jpg"},
+  "metis_thomas_scott.jpg": {src: "images/metis_thomas_scott.jpg"}
 }
 
 const QUESTIONS = [
@@ -26051,5 +26061,71 @@ const QUESTIONS = [
       type: "mettre-en-relation"
     },
     updatedAt: "2026-06-30T20:03:24.149Z"
+  },
+  {
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        cols: [
+          {
+            ref: "metis_thomas_scott.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026.",
+            soustitre: "Exécution de Thomas Scott",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "metis_deuxieme_soulevement_batoche.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            soustitre: "Bataille de Batoche",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            source: "Adapté de Sarah Carter, Aboriginal People and Colonizers of Western Canada to 1900, University of Toronto Press, 1999.",
+            texte: "« Le changement d'autorité sur la Terre de Rupert transforme les rapports entre le gouvernement canadien et les Métis, qui contestent les décisions prises sans leur participation. »",
+            titre: "Document C"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            source: "Adapté de Gerald Friesen, The Canadian Prairies: A History, University of Toronto Press, 1987.",
+            texte: "« Le retour de Louis Riel renforce l'organisation politique des Métis et contribue à transformer leurs revendications en une confrontation ouverte avec le gouvernement canadien. »",
+            titre: "Document D"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Les documents A à D présentent des faits liés à deux soulèvements des Métis. Associez chaque document au soulèvement correspondant.",
+    guide: {
+      entetes: ["Soulèvement de la rivière Rouge", "Soulèvement du Nord-Ouest"],
+      rangees: [
+        ["A et C", "B et D"]
+      ],
+      type: "grille"
+    },
+    id: "Q594",
+    niveau: 4,
+    oi: "Mettre en relation des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    reponse: {
+      double: true,
+      elements: ["Soulèvement de la rivière Rouge", "Soulèvement du Nord-Ouest"],
+      type: "mettre-en-relation"
+    },
+    updatedAt: "2026-06-30T20:08:40.966Z"
   }
 ]
