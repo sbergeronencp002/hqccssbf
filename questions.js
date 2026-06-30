@@ -5523,13 +5523,18 @@ const REGLETTES = {
     oi: "Établir des faits"
   },
   "Q582": {
-    colonnes: ["2 points", "1 point", "0 point"],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {desc: "L'élève détermine correctement le facteur explicatif.", pts: 2},
-      {desc: "L'élève détermine plus ou moins correctement le facteur explicatif.", pts: 1},
-      {desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas.", pts: 0}
+      {desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité.", pts: 3},
+      {
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité.",
+        pts: 2
+      },
+      {desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité.", pts: 1},
+      {desc: "L'élève précise un seul élément ou n'en précise pas.", pts: 0}
     ],
-    oi: "Déterminer des causes et des conséquences"
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens"
   },
   "Q583": {
     colonnes: ["2 points", "1 point", "0 point"],
@@ -5868,7 +5873,8 @@ const IMAGE_DB = {
   "tableau_revenus_depenses_quebec.jpg": {src: "images/tableau_revenus_depenses_quebec.jpg", w: 1200, h: 863},
   "aanb_manitoba.jpg": {src: "images/aanb_manitoba.jpg", w: 1158, h: 643},
   "tableau_manitoba_ecole_catholiques.jpg": {src: "images/tableau_manitoba_ecole_catholiques.jpg", w: 1200, h: 960},
-  "conflits_metis_ouest.jpg": {src: "images/conflits_metis_ouest.jpg", w: 1200, h: 1015}
+  "conflits_metis_ouest.jpg": {src: "images/conflits_metis_ouest.jpg", w: 1200, h: 1015},
+  "tableau_revenus_federal_provincial.jpg": {src: "images/tableau_revenus_federal_provincial.jpg"}
 }
 
 const QUESTIONS = [
@@ -25536,25 +25542,46 @@ const QUESTIONS = [
       {
         cols: [
           {
-            ref: "tableau_depenses_provincial.jpg",
-            source: "Adapté de Donald Creighton, The Road to Confederation, Macmillan of Canada, 1964.",
-            soustitre: "Dépenses du gouvernement du Québec (en milliers de dollars)",
+            ref: "tableau_revenus_federal_provincial.jpg",
+            source: "Adapté de l'Acte de l'Amérique du Nord britannique, 1867.",
+            soustitre: "Répartition de certaines sources de revenus après 1867",
             titre: "Document A"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "tableau_revenus_depenses_quebec.jpg",
+            source: "Adapté de Donald Creighton, The Road to Confederation, Macmillan of Canada, 1964.",
+            soustitre: "Revenus et dépenses gouvernement du Québec (en milliers de dollars)",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "conference_interprovinciale_1887.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            soustitre: "Conférence interprovinciale de Québec",
+            titre: "Document C"
           }
         ],
         type: "textes"
       }
     ],
-    enonce: "Indiquez une raison pour laquelle les provinces réclament davantage de revenus dans les premières décennies de la Confédération.",
-    guide: "Les provinces réclament davantage de revenus parce que leurs dépenses augmentent pour exercer les responsabilités qui leur sont attribuées.\nLes provinces ont besoin de plus de revenus pour financer leurs champs de compétence.\nLes dépenses provinciales augmentent, ce qui pousse les provinces à réclamer davantage de revenus.\nLes responsabilités des provinces coûtent de plus en plus cher à exercer.",
+    enonce: "Expliquez comment le partage des revenus entre le gouvernement fédéral et les provinces amène les provinces à défendre davantage leur autonomie.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une source de revenus attribuée au gouvernement fédéral\n• une difficulté financière rencontrée par les provinces\n• un moyen utilisé par les provinces pour défendre leur autonomie",
+    guide: "Le gouvernement fédéral perçoit les droits de douane (ou les taxes d'accise) (une source de revenus attribuée au gouvernement fédéral). Les provinces manquent alors de ressources financières (une difficulté financière rencontrée par les provinces). Elles convoquent la Conférence interprovinciale de 1887 afin de défendre leur autonomie (un moyen utilisé par les provinces pour défendre leur autonomie).",
     id: "Q582",
     niveau: 4,
-    oi: "Déterminer des causes et des conséquences",
+    oi: "Établir des liens de causalité",
     periode: "P5 — 1840 – 1896",
-    points: 2,
-    reponse: {nombre: 2, type: "lignes"},
-    soustag: "Cause",
-    updatedAt: "2026-06-29T19:21:32.787Z"
+    points: 3,
+    reponse: {nombre: 5, type: "lignes"},
+    updatedAt: "2026-06-30T19:10:43.942Z"
   },
   {
     aspects: [{aspect: "Relations fédérales-provinciales"}],
