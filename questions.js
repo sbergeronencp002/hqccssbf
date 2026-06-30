@@ -5578,6 +5578,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
       {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
+  },
+  "Q588": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève dégage correctement la similitude."},
+      {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."},
+      {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}
+    ]
   }
 }
 
@@ -25661,5 +25670,42 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "La création de la province du Manitoba.",
     updatedAt: "2026-06-30T01:20:34.977Z"
+  },
+  {
+    id: "Q588",
+    niveau: 4,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Similitude",
+    enonce: "Indiquez une similitude dans les revendications des Métis lors des soulèvements de 1869-1870 et de 1885.",
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les représentants de la rivière Rouge réclament le respect des terres occupées, des droits politiques et des usages des habitants avant l’entrée dans la fédération. »",
+            soustitre: "1869-1870",
+            source: "Adapté de la Liste des droits, gouvernement provisoire de la rivière Rouge, 1869."
+          }
+        ]
+      },
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document B",
+            texte: "Les Métis demandent la reconnaissance officielle de leurs terres, de leurs titres de propriété et de leur représentation politique dans l’Ouest canadien. »",
+            soustitre: "1885",
+            source: "Adapté de George F. G. Stanley, The Birth of Western Canada, University of Toronto Press, 1960."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Dans les deux cas, les Métis réclament la protection de leurs terres et de leurs droits.",
+    updatedAt: "2026-06-30T01:22:19.862Z"
   }
 ]
