@@ -5558,13 +5558,18 @@ const REGLETTES = {
     ]
   },
   "Q585": {
-    oi: "Déterminer des causes et des conséquences",
-    colonnes: ["2 points", "1 point", "0 point"],
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
-      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
-      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
-    ]
+      {desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité.", pts: 3},
+      {
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité.",
+        pts: 2
+      },
+      {desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité.", pts: 1},
+      {desc: "L'élève précise un seul élément ou n'en précise pas.", pts: 0}
+    ],
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens"
   },
   "Q586": {
     oi: "Déterminer des causes et des conséquences",
@@ -5874,7 +5879,8 @@ const IMAGE_DB = {
   "aanb_manitoba.jpg": {src: "images/aanb_manitoba.jpg", w: 1158, h: 643},
   "tableau_manitoba_ecole_catholiques.jpg": {src: "images/tableau_manitoba_ecole_catholiques.jpg", w: 1200, h: 960},
   "conflits_metis_ouest.jpg": {src: "images/conflits_metis_ouest.jpg", w: 1200, h: 1015},
-  "tableau_revenus_federal_provincial.jpg": {src: "images/tableau_revenus_federal_provincial.jpg"}
+  "tableau_revenus_federal_provincial.jpg": {src: "images/tableau_revenus_federal_provincial.jpg"},
+  "arpentage_terres_ouest_canadien.jpg": {src: "images/arpentage_terres_ouest_canadien.jpg"}
 }
 
 const QUESTIONS = [
@@ -25647,30 +25653,50 @@ const QUESTIONS = [
     updatedAt: "2026-06-30T01:00:28.440Z"
   },
   {
-    id: "Q585",
-    niveau: 4,
-    oi: "Déterminer des causes et des conséquences",
-    periode: "P5 — 1840 – 1896",
-    points: 2,
-    soustag: "Conséquence",
-    enonce: "Indiquez une conséquence des revendications des provinces sur l'autonomie provinciale.",
     aspects: [{aspect: "Relations fédérales-provinciales"}],
     documents: [
       {
-        type: "textes",
         cols: [
           {
-            titre: "Document A",
-            ref: "conference_interprovinciale_1887.jpg",
-            soustitre: "Conférence interprovinciale de Québec",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."
+            ref: "arpentage_terres_ouest_canadien.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI).",
+            soustitre: "Arpentage des terres dans l'Ouest canadien",
+            titre: "Document A"
           }
-        ]
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            source: "Adapté de la Pétition des Métis de la Saskatchewan, 1884.",
+            texte: "« Les Métis demandent au gouvernement de régler rapidement la question de leurs terres avant l'arrivée de nouveaux colons. »",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "metis_deuxieme_soulevement_batoche.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            soustitre: "Bataille de Batoche",
+            titre: "Document C"
+          }
+        ],
+        type: "textes"
       }
     ],
-    reponse: {type: "lignes", nombre: 2},
-    guide: "L'autonomie provinciale est davantage défendue et affirmée.",
-    updatedAt: "2026-06-30T01:04:53.565Z"
+    enonce: "Expliquez comment les décisions du gouvernement canadien entraînent une réaction des Métis dans l'Ouest canadien en 1885.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une décision du gouvernement canadien\n• une revendication des Métis\n• une réaction des Métis",
+    guide: "Le gouvernement canadien procède à l'arpentage des terres (ou favorise la colonisation de l'Ouest sans reconnaître les droits fonciers des Métis) (Une décision du gouvernement canadien). Les Métis réclament la protection de leurs terres et de leurs droits (Une revendication des Métis). Ils réagissent en se soulevant dans l'Ouest canadien en 1885 (Une réaction des Métis).",
+    id: "Q585",
+    niveau: 4,
+    oi: "Établir des liens de causalité",
+    periode: "P5 — 1840 – 1896",
+    points: 3,
+    reponse: {nombre: 5, type: "lignes"},
+    updatedAt: "2026-06-30T19:22:59.205Z"
   },
   {
     id: "Q586",
