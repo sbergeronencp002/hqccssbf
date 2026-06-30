@@ -5637,6 +5637,29 @@ const REGLETTES = {
     ],
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions"
+  },
+  "Q592": {
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
+    niveaux: [
+      {
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions.",
+        pts: 3
+      },
+      {
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre.",
+        pts: 2
+      },
+      {
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas.",
+        pts: 1
+      },
+      {
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas.",
+        pts: 0
+      }
+    ],
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions"
   }
 }
 
@@ -25905,5 +25928,53 @@ const QUESTIONS = [
     reponse: {nombre: 3, type: "lignes"},
     soustag: "Position – 3 acteurs",
     updatedAt: "2026-06-30T19:34:38.299Z"
+  },
+  {
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        cols: [
+          {
+            auteur: "Wilfrid Laurier",
+            source: "Adapté des Débats de la Chambre des communes du Canada, 1896.",
+            texte: "« Les droits des minorités doivent être respectés. Les écoles catholiques constituent une garantie importante pour préserver la langue, la religion et les libertés reconnues par la Constitution. »",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            auteur: "Thomas Greenway",
+            source: "Adapté des Débats de l'Assemblée législative du Manitoba, 1890.",
+            texte: "« Un système d'écoles publiques, administré par la province et commun à tous les citoyens, répond mieux aux besoins de la population que des écoles confessionnelles distinctes. »",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            auteur: "Honoré Mercier,",
+            source: "Adapté d'un discours d'Honoré Mercier, 1890.",
+            texte: "« Les Canadiens français ne peuvent accepter que les droits scolaires des catholiques soient supprimés, puisqu'ils contribuent à préserver leur langue, leur religion et leur identité nationale. »",
+            titre: "Document C"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Les documents A à C présentent le point de vue de trois acteurs concernant les écoles catholiques hors Québec. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+    guide: "Thomas Greenway s'oppose au maintien des écoles catholiques hors Québec (la différence), tandis que Wilfrid Laurier et Honoré Mercier appuient leur maintien (la similitude).",
+    id: "Q592",
+    niveau: 4,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P5 — 1840 – 1896",
+    points: 3,
+    reponse: {nombre: 3, type: "lignes"},
+    soustag: "Position – 3 acteurs",
+    updatedAt: "2026-06-30T19:41:21.981Z"
   }
 ]
