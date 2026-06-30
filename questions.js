@@ -5678,6 +5678,11 @@ const REGLETTES = {
       {desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)", pts: 0}
     ],
     oi: "Mettre en relation des faits"
+  },
+  "Q595": {
+    colonnes: ["1 point", "0 point"],
+    niveaux: [{desc: "L'élève situe le fait dans l'espace.", pts: 1}, {desc: "L'élève ne situe pas le fait dans l'espace.", pts: 0}],
+    oi: "Situer dans l'espace"
   }
 }
 
@@ -5945,7 +5950,8 @@ const IMAGE_DB = {
   "conflits_metis_ouest.jpg": {src: "images/conflits_metis_ouest.jpg", w: 1200, h: 1015},
   "tableau_revenus_federal_provincial.jpg": {src: "images/tableau_revenus_federal_provincial.jpg"},
   "arpentage_terres_ouest_canadien.jpg": {src: "images/arpentage_terres_ouest_canadien.jpg"},
-  "metis_thomas_scott.jpg": {src: "images/metis_thomas_scott.jpg"}
+  "metis_thomas_scott.jpg": {src: "images/metis_thomas_scott.jpg"},
+  "ecoles_catholiques_manitoba.jpg": {src: "images/ecoles_catholiques_manitoba.jpg"}
 }
 
 const QUESTIONS = [
@@ -26127,5 +26133,23 @@ const QUESTIONS = [
       type: "mettre-en-relation"
     },
     updatedAt: "2026-06-30T20:08:40.966Z"
+  },
+  {
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        cols: [{ref: "ecoles_catholiques_manitoba.jpg", source: "Carte du Canada. Adaptée d'après d-maps.com.", titre: "Document A"}],
+        type: "textes"
+      }
+    ],
+    enonce: "À partir du document A, indiquez la lettre correspondant l'enjeu des écoles catholiques du Manitoba.",
+    guide: "A",
+    id: "Q595",
+    niveau: 4,
+    oi: "Situer dans l'espace",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    reponse: {type: "tableau_2col"},
+    updatedAt: "2026-06-30T20:16:26.837Z"
   }
 ]
