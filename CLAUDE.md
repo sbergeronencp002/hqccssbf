@@ -41,8 +41,10 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 `uploadImage()` redimensionne à 1200 px max puis **choisit le format le plus léger** : PNG si l'image a de la transparence, sinon le plus petit entre PNG et JPEG 0.85 (l'extension du nom suit le format choisi). Évite les PNG 24 bits non compressés (cause des images à 2,5 Mo). Le remplacement (`documents.html`) encode selon l'extension de la cible.
 
 ### Cache-bust actuel
-`app.js?v=46`, `style.css?v=25`, `oi-config.js?v=1`, `questions-io.js?v=1`, `reglettes.js?v=v2` (admin) — incrémenter à chaque changement majeur.
-`documents.html` charge `oi-config.js?v=1` + `questions-io.js?v=1` + `questions.js?v=1`.
+`app.js?v=49`, `style.css?v=29`, `oi-config.js?v=1`, `questions-io.js?v=2`, `reglettes.js?v=2` (admin) — incrémenter à chaque changement majeur.
+`documents.html` charge `oi-config.js?v=1` + `questions-io.js?v=2` + `questions.js?v=1`.
+
+⚠️ Cette table doit être mise à jour à chaque incrément de `?v=` dans le HTML — sinon un futur agent repart d'un mauvais numéro de version.
 
 ---
 
@@ -373,3 +375,14 @@ Quand le PAT expire ou est révoqué :
 Permissions requises sur le PAT : `repo` (accès complet au dépôt).
 
 Symptôme d'un token invalide dans admin.html : statut « ✗ Token invalide ou expiré » + toast d'erreur. Depuis le durcissement de `loadImages()`/`loadQuestionsJs()`, la lecture bascule en anonyme (dépôt public), donc la consultation et la liste d'images continuent de fonctionner — seule la **publication** exige un token valide.
+
+---
+
+## Worker Cloudflare (voie de publication rapide)
+
+`admin.html` peut publier via un Worker Cloudflare (`/publish`, voir champ « URL Worker » dans l'UI) au lieu du PUT GitHub direct — voie prioritaire quand configurée, avec fallback GitHub Actions (`repository_dispatch` sur `publish-question.yml`) puis PUT direct si le Worker n'est pas configuré ou échoue.
+
+- `workerUrl` et `workerSecret` sont stockés en clair dans `localStorage` du navigateur du prof (jamais saisis ailleurs, jamais commités).
+- Le secret du Worker est un **secret partagé statique** (pas de rotation automatique, pas de durée de vie courte) : quiconque le lit dans `localStorage` peut publier/supprimer des questions indéfiniment tant qu'il n'est pas changé.
+- ⚠️ Contrairement à la voie PUT GitHub directe (3 tentatives avec re-fetch SHA sur conflit 409), l'appel `/publish` au Worker **n'a aucune logique de retry côté client** — la gestion de concurrence dépend entièrement du code du Worker (hors de ce dépôt, non auditable ici).
+- Si le secret Worker fuite ou doit être renouvelé : le régénérer côté Cloudflare, puis le recoller dans le champ correspondant d'admin.html (même mécanisme que le PAT GitHub — jamais écrit dans un fichier commité).
