@@ -5596,6 +5596,11 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
       {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
+  },
+  "Q590": {
+    oi: "Situer dans l'espace",
+    colonnes: ["2 points", "0 point"],
+    niveaux: [{pts: 2, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]
   }
 }
 
@@ -5859,7 +5864,8 @@ const IMAGE_DB = {
   "tableau_depenses_provincial.jpg": {src: "images/tableau_depenses_provincial.jpg"},
   "tableau_revenus_depenses_quebec.jpg": {src: "images/tableau_revenus_depenses_quebec.jpg", w: 1200, h: 863},
   "aanb_manitoba.jpg": {src: "images/aanb_manitoba.jpg", w: 1158, h: 643},
-  "tableau_manitoba_ecole_catholiques.jpg": {src: "images/tableau_manitoba_ecole_catholiques.jpg", w: 1200, h: 960}
+  "tableau_manitoba_ecole_catholiques.jpg": {src: "images/tableau_manitoba_ecole_catholiques.jpg", w: 1200, h: 960},
+  "conflits_metis_ouest.jpg": {src: "images/conflits_metis_ouest.jpg", w: 1200, h: 1015}
 }
 
 const QUESTIONS = [
@@ -25743,5 +25749,35 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "Préserver les droits des catholiques francophones.\nAssurer l'enseignement en français et de la religion catholique.\nProtéger l'identité des communautés francophones catholiques.\nDéfendre les droits des minorités catholiques françaises.",
     updatedAt: "2026-06-30T01:27:23.453Z"
+  },
+  {
+    id: "Q590",
+    niveau: 4,
+    oi: "Situer dans l'espace",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    enonce: "À partir du document, indiquez la lettre correspondant à chacun des événements suivants :\n• le premier soulèvement métis\n• le deuxième soulèvement métis",
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [{titre: "Document A", ref: "conflits_metis_ouest.jpg", source: "Carte du Canada. Adaptée d'après d-maps.com."}]
+      }
+    ],
+    reponse: {
+      type: "grille",
+      entetes: ["Premier soulèvement", "Deuxième soulèvement"],
+      rangees: [
+        ["", ""]
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: ["Premier soulèvement", "Deuxième soulèvement"],
+      rangees: [
+        ["C", "B"]
+      ]
+    },
+    updatedAt: "2026-06-30T01:50:26.870Z"
   }
 ]
