@@ -5608,12 +5608,12 @@ const REGLETTES = {
     ]
   },
   "Q590": {
-    oi: "Situer dans l'espace",
     colonnes: ["2 points", "0 point"],
     niveaux: [
-      {pts: 2, desc: "L'élève situe les faits dans l'espace."},
-      {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}
-    ]
+      {desc: "L'élève situe les faits dans l'espace.", pts: 2},
+      {desc: "L'élève ne situe pas les faits dans l'espace.", pts: 0}
+    ],
+    oi: "Situer dans l'espace"
   },
   "Q591": {
     colonnes: ["3 points", "2 points", "1 point", "0 point"],
@@ -25871,34 +25871,34 @@ const QUESTIONS = [
     updatedAt: "2026-06-30T01:27:23.453Z"
   },
   {
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        cols: [{ref: "conflits_metis_ouest.jpg", source: "Carte du Canada. Adaptée d'après d-maps.com.", titre: "Document A"}],
+        type: "textes"
+      }
+    ],
+    enonce: "À partir du document A, indiquez la lettre correspondant à chacun des événements suivants :\n• le premier soulèvement métis\n• le deuxième soulèvement métis",
+    guide: {
+      entetes: ["Premier soulèvement", "Deuxième soulèvement"],
+      rangees: [
+        ["C", "B"]
+      ],
+      type: "grille"
+    },
     id: "Q590",
     niveau: 4,
     oi: "Situer dans l'espace",
     periode: "P5 — 1840 – 1896",
     points: 2,
-    enonce: "À partir du document, indiquez la lettre correspondant à chacun des événements suivants :\n• le premier soulèvement métis\n• le deuxième soulèvement métis",
-    aspects: [{aspect: "Relations fédérales-provinciales"}],
-    documents: [
-      {
-        type: "textes",
-        cols: [{titre: "Document A", ref: "conflits_metis_ouest.jpg", source: "Carte du Canada. Adaptée d'après d-maps.com."}]
-      }
-    ],
     reponse: {
-      type: "grille",
       entetes: ["Premier soulèvement", "Deuxième soulèvement"],
       rangees: [
         ["", ""]
-      ]
+      ],
+      type: "grille"
     },
-    guide: {
-      type: "grille",
-      entetes: ["Premier soulèvement", "Deuxième soulèvement"],
-      rangees: [
-        ["C", "B"]
-      ]
-    },
-    updatedAt: "2026-06-30T01:50:43.851Z"
+    updatedAt: "2026-06-30T20:14:00.657Z"
   },
   {
     aspects: [{aspect: "Relations fédérales-provinciales"}],
