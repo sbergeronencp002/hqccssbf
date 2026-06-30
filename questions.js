@@ -25994,7 +25994,7 @@ const QUESTIONS = [
           {
             ref: "pendaison_louis_riel.jpg",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026.",
-            soustitre: "Pendaison de Louis Riel",
+            soustitre: "Exécution de Louis Riel",
             titre: "Document A"
           }
         ],
@@ -26014,9 +26014,8 @@ const QUESTIONS = [
       {
         cols: [
           {
-            ref: "metis_deuxieme_soulevement_batoche.jpg",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
-            soustitre: "Bataille de Batoche",
+            source: "Adapté de J.M. Bumsted, The Peoples of Canada, Oxford University Press, 2003.",
+            texte: "« La victoire des troupes canadiennes à Batoche confirme l'autorité du gouvernement fédéral sur les Territoires du Nord-Ouest et transforme durablement l'histoire de l'Ouest. »",
             titre: "Document C"
           }
         ],
@@ -26026,7 +26025,6 @@ const QUESTIONS = [
         cols: [
           {
             source: "Adapté de la Loi sur le Manitoba, 1870.",
-            soustitre: "Création du Manitoba",
             texte: "« Une nouvelle province est créée dans l'Ouest canadien. Ses habitants obtiennent notamment la protection de certaines terres et de certains droits reconnus par la loi. »",
             titre: "Document D"
           }
@@ -26052,6 +26050,6 @@ const QUESTIONS = [
       elements: ["Soulèvement de la rivière Rouge", "Soulèvement du Nord-Ouest"],
       type: "mettre-en-relation"
     },
-    updatedAt: "2026-06-30T19:58:59.560Z"
+    updatedAt: "2026-06-30T20:03:24.149Z"
   }
 ]
