@@ -5587,6 +5587,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."},
       {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}
     ]
+  },
+  "Q589": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
+    ]
   }
 }
 
@@ -5849,7 +5858,8 @@ const IMAGE_DB = {
   "tableau_sources_revenus_federal.jpg": {src: "images/tableau_sources_revenus_federal.jpg"},
   "tableau_depenses_provincial.jpg": {src: "images/tableau_depenses_provincial.jpg"},
   "tableau_revenus_depenses_quebec.jpg": {src: "images/tableau_revenus_depenses_quebec.jpg", w: 1200, h: 863},
-  "aanb_manitoba.jpg": {src: "images/aanb_manitoba.jpg", w: 1158, h: 643}
+  "aanb_manitoba.jpg": {src: "images/aanb_manitoba.jpg", w: 1158, h: 643},
+  "tableau_manitoba_ecole_catholiques.jpg": {src: "images/tableau_manitoba_ecole_catholiques.jpg", w: 1200, h: 960}
 }
 
 const QUESTIONS = [
@@ -25707,5 +25717,31 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "Dans les deux cas, les Métis réclament la protection de leurs terres et de leurs droits.",
     updatedAt: "2026-06-30T01:22:19.862Z"
+  },
+  {
+    id: "Q589",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une raison pour laquelle les Canadiens français défendent le maintien des écoles catholiques hors Québec.",
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "tableau_manitoba_ecole_catholiques.jpg",
+            soustitre: "Évolution de la reconnaissance des écoles catholiques au Manitoba",
+            source: "Adapté de Manitoba Schools Question; Jean Hamelin, Histoire du Québec contemporain, tome I, Boréal, 1989."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Préserver les droits des catholiques francophones.\nAssurer l'enseignement en français et de la religion catholique.\nProtéger l'identité des communautés francophones catholiques.\nDéfendre les droits des minorités catholiques françaises.",
+    updatedAt: "2026-06-30T01:27:23.453Z"
   }
 ]
