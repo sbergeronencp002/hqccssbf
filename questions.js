@@ -26026,6 +26026,7 @@ const QUESTIONS = [
         cols: [
           {
             source: "Adapté de la Loi sur le Manitoba, 1870.",
+            soustitre: "Création du Manitoba",
             texte: "« Une nouvelle province est créée dans l'Ouest canadien. Ses habitants obtiennent notamment la protection de certaines terres et de certains droits reconnus par la loi. »",
             titre: "Document D"
           }
@@ -26051,6 +26052,6 @@ const QUESTIONS = [
       elements: ["Soulèvement de la rivière Rouge", "Soulèvement du Nord-Ouest"],
       type: "mettre-en-relation"
     },
-    updatedAt: "2026-06-30T19:55:32.510Z"
+    updatedAt: "2026-06-30T19:58:59.560Z"
   }
 ]
