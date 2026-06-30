@@ -25444,7 +25444,7 @@ const QUESTIONS = [
           {
             ref: "soldats_gendarmerie.jpg",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI).",
-            soustitre: "Soldat au Nord-Ouest vers 1885",
+            soustitre: "Soldat dans l'Ouest canadien vers 1885",
             titre: "Document A"
           }
         ],
@@ -25466,7 +25466,7 @@ const QUESTIONS = [
           {
             ref: "comptoir_postal_1870.jpg",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI).",
-            soustitre: "Bureau de poste au Québec vers 1880",
+            soustitre: "Bureau de poste au Québec vers 1870",
             titre: "Document C"
           }
         ],
@@ -25477,7 +25477,7 @@ const QUESTIONS = [
           {
             ref: "hopital_quebec_1870.jpg",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI).",
-            soustitre: "Salle d'hôpital au Québec vers 1890",
+            soustitre: "Salle d'hôpital au Québec vers 1880",
             titre: "Document D"
           }
         ],
@@ -25503,8 +25503,7 @@ const QUESTIONS = [
       type: "mettre-en-relation"
     },
     soustag: "4 documents",
-    updatedAt: "2026-06-29T18:45:39.355Z",
-    _imgs: ["soldats_gendarmerie.jpg", "ecole_quebec_1870.jpg", "comptoir_postal_1870.jpg", "hopital_quebec_1870.jpg"]
+    updatedAt: "2026-06-30T19:36:46.894Z"
   },
   {
     aspects: [{aspect: "Relations fédérales-provinciales"}],
