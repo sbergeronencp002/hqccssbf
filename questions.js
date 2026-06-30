@@ -26142,7 +26142,7 @@ const QUESTIONS = [
         type: "textes"
       }
     ],
-    enonce: "À partir du document A, indiquez la lettre correspondant l'enjeu des écoles catholiques du Manitoba.",
+    enonce: "À partir du document A, indiquez la lettre correspondant au territoire où survient la question des écoles du Manitoba.",
     guide: "A",
     id: "Q595",
     niveau: 4,
@@ -26150,6 +26150,6 @@ const QUESTIONS = [
     periode: "P5 — 1840 – 1896",
     points: 1,
     reponse: {type: "tableau_2col"},
-    updatedAt: "2026-06-30T20:16:26.837Z"
+    updatedAt: "2026-06-30T20:20:53.015Z"
   }
 ]
