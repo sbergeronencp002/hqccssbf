@@ -5569,6 +5569,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
       {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
+  },
+  "Q587": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
+    ]
   }
 }
 
@@ -5830,7 +5839,8 @@ const IMAGE_DB = {
   "hopital_quebec_1870.jpg": {src: "images/hopital_quebec_1870.jpg"},
   "tableau_sources_revenus_federal.jpg": {src: "images/tableau_sources_revenus_federal.jpg"},
   "tableau_depenses_provincial.jpg": {src: "images/tableau_depenses_provincial.jpg"},
-  "tableau_revenus_depenses_quebec.jpg": {src: "images/tableau_revenus_depenses_quebec.jpg", w: 1200, h: 863}
+  "tableau_revenus_depenses_quebec.jpg": {src: "images/tableau_revenus_depenses_quebec.jpg", w: 1200, h: 863},
+  "aanb_manitoba.jpg": {src: "images/aanb_manitoba.jpg", w: 1158, h: 643}
 }
 
 const QUESTIONS = [
@@ -25632,5 +25642,24 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "Défendre l'autonomie des provinces.\nDéfendre les droits des provinces.\nS'opposer à la centralisation des pouvoirs fédéraux.",
     updatedAt: "2026-06-30T01:09:30.316Z"
+  },
+  {
+    id: "Q587",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence du soulèvement de la rivière Rouge sur l'organisation du territoire canadien.",
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [{titre: "Document A", ref: "aanb_manitoba.jpg", source: "Récitus."}]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "La création de la province du Manitoba.",
+    updatedAt: "2026-06-30T01:20:34.977Z"
   }
 ]
