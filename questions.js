@@ -5791,7 +5791,6 @@ const IMAGE_DB = {
   "ligne_1755-1795.png": {src: "images/ligne_1755-1795.png"},
   "revolte_pontiac.png": {src: "images/revolte_pontiac.png"},
   "org_pol_regime_militaire.png": {src: "images/org_pol_regime_militaire.png"},
-  "carte_proclamation_royale_territoire.png": {src: "images/carte_proclamation_royale_territoire.png"},
   "org_pol_apres_1763.png": {src: "images/org_pol_apres_1763.png"},
   "org_pol_1774_acte_quebec.png": {src: "images/org_pol_1774_acte_quebec.png"},
   "mercantilisme_britannique.png": {src: "images/mercantilisme_britannique.png"},
@@ -5943,7 +5942,6 @@ const IMAGE_DB = {
   "comptoir_postal_1870.jpg": {src: "images/comptoir_postal_1870.jpg"},
   "hopital_quebec_1870.jpg": {src: "images/hopital_quebec_1870.jpg"},
   "tableau_sources_revenus_federal.jpg": {src: "images/tableau_sources_revenus_federal.jpg"},
-  "tableau_depenses_provincial.jpg": {src: "images/tableau_depenses_provincial.jpg"},
   "tableau_revenus_depenses_quebec.jpg": {src: "images/tableau_revenus_depenses_quebec.jpg", w: 1200, h: 863},
   "aanb_manitoba.jpg": {src: "images/aanb_manitoba.jpg", w: 1158, h: 643},
   "tableau_manitoba_ecole_catholiques.jpg": {src: "images/tableau_manitoba_ecole_catholiques.jpg", w: 1200, h: 960},
@@ -26142,7 +26140,7 @@ const QUESTIONS = [
         type: "textes"
       }
     ],
-    enonce: "À partir du document A, indiquez la lettre correspondant l'enjeu des écoles catholiques du Manitoba.",
+    enonce: "À partir du document A, indiquez la lettre correspondant au territoire où survient la question des écoles du Manitoba.",
     guide: "A",
     id: "Q595",
     niveau: 4,
@@ -26150,6 +26148,6 @@ const QUESTIONS = [
     periode: "P5 — 1840 – 1896",
     points: 1,
     reponse: {type: "tableau_2col"},
-    updatedAt: "2026-06-30T20:16:26.837Z"
+    updatedAt: "2026-06-30T20:20:53.015Z"
   }
 ]
