@@ -5614,6 +5614,29 @@ const REGLETTES = {
       {pts: 2, desc: "L'élève situe les faits dans l'espace."},
       {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}
     ]
+  },
+  "Q591": {
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
+    niveaux: [
+      {
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions.",
+        pts: 3
+      },
+      {
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre.",
+        pts: 2
+      },
+      {
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas.",
+        pts: 1
+      },
+      {
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas.",
+        pts: 0
+      }
+    ],
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions"
   }
 }
 
@@ -25835,5 +25858,53 @@ const QUESTIONS = [
       ]
     },
     updatedAt: "2026-06-30T01:50:43.851Z"
+  },
+  {
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        cols: [
+          {
+            auteur: "Louis Riel",
+            source: "Adapté de la Pétition des Métis de la Saskatchewan au gouvernement du Canada, 16 décembre 1884.",
+            texte: "« Nous demandons que le gouvernement reconnaisse nos titres de propriété et protège nos terres avant que de nouveaux colons viennent s'établir dans notre région. »",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            auteur: "Gabriel Dumont",
+            source: "Adapté de George F.G. Stanley, The Birth of Western Canada: A History of the Riel Rebellions, University of Toronto Press, 1960.",
+            texte: "« Les Métis ne cherchent pas le conflit. Ils veulent obtenir justice et défendre leurs terres, leurs familles et les droits qu'ils réclament depuis plusieurs années. »",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            auteur: "John A. Macdonald",
+            source: "Adapté des Débats de la Chambre des communes du Canada, 1885.",
+            texte: "« Le gouvernement doit maintenir l'ordre dans les Territoires du Nord-Ouest et faire respecter les lois du Dominion malgré les revendications présentées par les Métis. »",
+            titre: "Document C"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Les documents A à C présentent le point de vue de trois acteurs concernant le soulèvement des Métis de 1885. Nommez l'acteur qui présente une position différente et comparez cette position à celle des deux autres acteurs.",
+    guide: "John A. Macdonald s'oppose à la reconnaissance des droits territoriaux des Métis (la différence), tandis que Louis Riel et Gabriel Dumont appuient la reconnaissance de ces droits (la similitude).",
+    id: "Q591",
+    niveau: 4,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P5 — 1840 – 1896",
+    points: 3,
+    reponse: {nombre: 3, type: "lignes"},
+    soustag: "Position – 3 acteurs",
+    updatedAt: "2026-06-30T19:34:38.299Z"
   }
 ]
