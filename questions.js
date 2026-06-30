@@ -5560,6 +5560,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
       {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
+  },
+  "Q586": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
+    ]
   }
 }
 
@@ -25597,5 +25606,31 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "L'autonomie provinciale est davantage défendue et affirmée.",
     updatedAt: "2026-06-30T01:04:53.565Z"
+  },
+  {
+    id: "Q586",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une raison pour laquelle Honoré Mercier convoque la Conférence interprovinciale de 1887.",
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "conference_interprovinciale_1887.jpg",
+            soustitre: "Conférence interprovinciale de Québec",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Défendre l'autonomie des provinces.\nDéfendre les droits des provinces.\nS'opposer à la centralisation des pouvoirs fédéraux.",
+    updatedAt: "2026-06-30T01:09:30.316Z"
   }
 ]
