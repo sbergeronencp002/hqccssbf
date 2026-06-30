@@ -5660,6 +5660,15 @@ const REGLETTES = {
     ],
     oi: "Dégager des différences et des similitudes",
     variante: "acteur-positions"
+  },
+  "Q593": {
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {desc: "L'élève met en relation tous les faits. (4 sur 4)", pts: 2},
+      {desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)", pts: 1},
+      {desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)", pts: 0}
+    ],
+    oi: "Mettre en relation des faits"
   }
 }
 
@@ -25976,5 +25985,72 @@ const QUESTIONS = [
     reponse: {nombre: 3, type: "lignes"},
     soustag: "Position – 3 acteurs",
     updatedAt: "2026-06-30T19:41:21.981Z"
+  },
+  {
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        cols: [
+          {
+            ref: "pendaison_louis_riel.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026.",
+            soustitre: "Pendaison de Louis Riel",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "metis_premier_soulevement_fort_garry.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            soustitre: "Louis Riel met sur pied un gouvernement provisoire",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "metis_deuxieme_soulevement_batoche.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            soustitre: "Bataille de Batoche",
+            titre: "Document C"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            source: "Adapté de la Loi sur le Manitoba, 1870.",
+            texte: "« Une nouvelle province est créée dans l'Ouest canadien. Ses habitants obtiennent notamment la protection de certaines terres et de certains droits reconnus par la loi. »",
+            titre: "Document D"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Les documents A à D présentent des faits liés à deux soulèvements des Métis. Associez chaque document au soulèvement correspondant.",
+    guide: {
+      entetes: ["Soulèvement de la rivière Rouge", "Soulèvement du Nord-Ouest"],
+      rangees: [
+        ["B et D", "A et C"]
+      ],
+      type: "grille"
+    },
+    id: "Q593",
+    niveau: 4,
+    oi: "Mettre en relation des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    reponse: {
+      double: true,
+      elements: ["Soulèvement de la rivière Rouge", "Soulèvement du Nord-Ouest"],
+      type: "mettre-en-relation"
+    },
+    updatedAt: "2026-06-30T19:55:32.510Z"
   }
 ]
