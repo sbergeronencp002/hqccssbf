@@ -5600,7 +5600,10 @@ const REGLETTES = {
   "Q590": {
     oi: "Situer dans l'espace",
     colonnes: ["2 points", "0 point"],
-    niveaux: [{pts: 2, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]
+    niveaux: [
+      {pts: 2, desc: "L'élève situe les faits dans l'espace."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}
+    ]
   }
 }
 
@@ -25778,6 +25781,6 @@ const QUESTIONS = [
         ["C", "B"]
       ]
     },
-    updatedAt: "2026-06-30T01:50:26.870Z"
+    updatedAt: "2026-06-30T01:50:43.851Z"
   }
 ]
