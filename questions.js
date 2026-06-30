@@ -5542,6 +5542,15 @@ const REGLETTES = {
       {desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas.", pts: 0}
     ],
     oi: "Dégager des différences et des similitudes"
+  },
+  "Q584": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
+    ]
   }
 }
 
@@ -5802,7 +5811,8 @@ const IMAGE_DB = {
   "comptoir_postal_1870.jpg": {src: "images/comptoir_postal_1870.jpg"},
   "hopital_quebec_1870.jpg": {src: "images/hopital_quebec_1870.jpg"},
   "tableau_sources_revenus_federal.jpg": {src: "images/tableau_sources_revenus_federal.jpg"},
-  "tableau_depenses_provincial.jpg": {src: "images/tableau_depenses_provincial.jpg"}
+  "tableau_depenses_provincial.jpg": {src: "images/tableau_depenses_provincial.jpg"},
+  "tableau_revenus_depenses_quebec.jpg": {src: "images/tableau_revenus_depenses_quebec.jpg", w: 1200, h: 863}
 }
 
 const QUESTIONS = [
@@ -25526,5 +25536,31 @@ const QUESTIONS = [
     reponse: {nombre: 2, type: "lignes"},
     soustag: "Divergence – 2 acteurs",
     updatedAt: "2026-06-29T19:29:36.131Z"
+  },
+  {
+    id: "Q584",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence du partage des revenus entre le gouvernement fédéral et les provinces sur les finances des provinces.",
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "tableau_revenus_depenses_quebec.jpg",
+            soustitre: "Revenus et dépenses gouvernement du Québec (en milliers de dollars)",
+            source: "Adapté de Donald Creighton, The Road to Confederation, Macmillan of Canada, 1964."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Les revenus des provinces deviennent insuffisants pour couvrir leurs dépenses.",
+    updatedAt: "2026-06-30T01:00:28.440Z"
   }
 ]
