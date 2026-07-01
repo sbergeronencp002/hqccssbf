@@ -5970,7 +5970,9 @@ const IMAGE_DB = {
   "ecoles_catholiques_manitoba.jpg": {src: "images/ecoles_catholiques_manitoba.jpg"},
   "tableau_tarifs_douaniers_pol_nationale.jpg": {src: "images/tableau_tarifs_douaniers_pol_nationale.jpg"},
   "tableau_exportations_canadiennes_1870.jpg": {src: "images/tableau_exportations_canadiennes_1870.jpg"},
-  "jacques_cartier_scorbut.jpg": {src: "images/jacques_cartier_scorbut.jpg"}
+  "jacques_cartier_scorbut.jpg": {src: "images/jacques_cartier_scorbut.jpg"},
+  "jacques_cartier_fondation_charlesbourg_royal.jpg": {src: "images/jacques_cartier_fondation_charlesbourg_royal.jpg"},
+  "jacques_cartier_hochelaga.jpg": {src: "images/jacques_cartier_hochelaga.jpg"}
 }
 
 const QUESTIONS = [
@@ -8355,8 +8357,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« En explorant les environs de Charlesbourg-Royal, les Français croient avoir découvert de l’or et des diamants. De retour en France, ils constatent toutefois qu’il s’agit plutôt de pyrite de fer et de quartz, des minéraux sans grande valeur. »",
-            source: "Jacques Lacoursière, Canada-Québec, 1534-2010. Québec, Les Éditions du Septentrion, 2011"
+            ref: "jacques_cartier_fondation_charlesbourg_royal.jpg",
+            soustitre: "Fondation de Charlesbourg-Royal",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."
           }
         ]
       },
@@ -8375,8 +8378,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« Cartier remonte le fleuve Saint-Laurent jusqu’à Stadaconé et Hochelaga, révélant l’importance de cette voie de navigation pour l’exploration du continent. »",
-            source: "Jean-Pierre Charland, À l’aube du XXIe siècle. Montréal, Lidec."
+            ref: "jacques_cartier_hochelaga.jpg",
+            soustitre: "Jacques Cartier à Hochelaga",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."
           }
         ]
       }
@@ -8391,7 +8395,8 @@ const QUESTIONS = [
       rangees: [
         ["B", "C", "A"]
       ]
-    }
+    },
+    updatedAt: "2026-07-01T01:31:48.028Z"
   },
   {
     id: "Q73",
