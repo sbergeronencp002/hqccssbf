@@ -2644,13 +2644,13 @@ const QUESTIONS = [
  enonce: "Les documents A à C présentent des faits relatifs aux voyages de Jacques Cartier. Inscrivez à l’endroit approprié la lettre du document correspondant à chacun de ses trois voyages.",
  aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document A", ref: "jacques_cartier_scorbut.jpg", soustitre: "Jacques Cartier découvre un remède contre le scorbut", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document A", ref: "jacques_cartier_scorbut.jpg", soustitre: "Les Autochtones soignent l'équipage de Cartier du scorbut", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
   {type: "textes", cols: [{titre: "Document B", texte: "« Cartier fonde Charlesbourg-Royal près de Cap-Rouge dans le but d’établir une colonie permanente en Amérique du Nord. »", source: "Marcel Trudel, Histoire de la Nouvelle-France. Montréal, Fides."}]},
   {type: "textes", cols: [{titre: "Document C", ref: "jacques_cartier_croix.jpg", soustitre: "Prise de possession d'un territoire par Jacques Cartier", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}
  ],
  reponse: {type: "mettre-en-relation", elements: ["Premier voyage", "Deuxième voyage", "Troisième voyage"]},
  guide: {type: "grille", entetes: ["Premier voyage", "Deuxième voyage", "Troisième voyage"], rangees: [["C", "A", "B"]]},
- updatedAt: "2026-07-01T01:35:59.766Z"
+ updatedAt: "2026-07-01T17:47:27.515Z"
 },
 {
  id: "Q72",
