@@ -6977,10 +6977,10 @@ const QUESTIONS = [
  points: 1,
  enonce: "Indiquez le nom de la première alliance conclue entre les Français et certaines nations autochtones en 1603.",
  aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
- documents: [{type: "textes", cols: [{titre: "Document A", texte: "« En 1603, à Tadoussac, les Français concluent une alliance avec les Innus, les Algonquins et les Wendats. Cette entente marque le début d'une collaboration durable entre les alliés. »", source: "Alain Beaulieu, Stéphanie Béreau et Jean Tanguay, Les Autochtones du Québec : des premières alliances aux revendications contemporaines, Montréal, Fides, 2013, p. 63. Adapté."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« En 1603, à Tadoussac, les Français concluent une alliance avec les Innus, les Algonquins et les Wendats. Cette entente marque le début d'une collaboration durable entre les alliés. »", source: "Adapté de Alain Beaulieu, Les Autochtones du Québec : des premières alliances aux revendications contemporaines, Montréal, Fides, 2013."}]}],
  reponse: {type: "lignes", nombre: 1},
  guide: "L'alliance franco-amérindienne de 1603",
- updatedAt: "2026-06-10T19:11:19.139Z"
+ updatedAt: "2026-07-01T18:13:58.967Z"
 },
 {
  id: "Q352",
