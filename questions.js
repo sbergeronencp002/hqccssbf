@@ -10989,7 +10989,7 @@ const QUESTIONS = [
  oi: "Établir des liens de causalité",
  periode: "P5 — 1840 – 1896",
  points: 3,
- enonce: "Expliquez comment la situation économique des années 1870 amène le gouvernement fédéral à intervenir dans le développement économique du Dominion du Canada.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une difficulté économique du Dominion du Canada dans les années 1870\n• une mesure économique mise en place par le gouvernement de John A. Macdonald\n• une conséquence sur les manufactures canadiennes",
+ enonce: "Expliquez comment la situation économique des années 1870 amène le gouvernement fédéral à intervenir dans le développement économique du Dominion du Canada.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une difficulté économique du dominion dans les années 1870\n• une mesure économique mise en place par le gouvernement \n• une conséquence sur les manufactures canadiennes",
  aspects: [{aspect: "Politique nationale"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", ref: "tableau_crise_economique_1873_faillites.jpg", soustitre: "Évolution du nombre de faillites au Dominion du Canada", source: "Adapté de Jean Hamelin et Yves Roby, Histoire économique du Québec, 1851-1896, Fides, 1971."}]},
@@ -10998,6 +10998,6 @@ const QUESTIONS = [
  ],
  reponse: {type: "lignes", nombre: 5},
  guide: "La crise économique des années 1870 entraîne un ralentissement de l'économie canadienne (une difficulté économique du Dominion du Canada). En réaction, le gouvernement adopte la Politique nationale (une mesure économique mise en place par le gouvernement). Cette politique favorise le développement des manufactures canadiennes grâce à des tarifs douaniers (une conséquence sur la production industrielle des manufactures canadiennes).",
- updatedAt: "2026-07-01T20:22:21.904Z"
+ updatedAt: "2026-07-01T20:24:32.807Z"
 }
 ]
