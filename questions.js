@@ -5970,7 +5970,8 @@ const IMAGE_DB = {
   "ecoles_catholiques_manitoba.jpg": {src: "images/ecoles_catholiques_manitoba.jpg"},
   "tableau_tarifs_douaniers_pol_nationale.jpg": {src: "images/tableau_tarifs_douaniers_pol_nationale.jpg"},
   "tableau_exportations_canadiennes_1870.jpg": {src: "images/tableau_exportations_canadiennes_1870.jpg"},
-  "jacques_cartier_scrobu.jpg": {src: "images/jacques_cartier_scrobu.jpg"}
+  "jacques_cartier_fondation_charlesbourg_royal.jpg": {src: "images/jacques_cartier_fondation_charlesbourg_royal.jpg"},
+  "jacques_cartier_hochelaga.jpg": {src: "images/jacques_cartier_hochelaga.jpg"}
 }
 
 const QUESTIONS = [
@@ -8299,9 +8300,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "jacques_cartier_scrobu.jpg",
-            soustitre: "Jacques Cartier découvre un remède contre le scorbut",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."
+            texte: "« Durant l’hiver, les Iroquoiens enseignent aux Français un remède contre le scorbut préparé à partir de l’écorce et des aiguilles de cèdre. »",
+            source: "Jacques Mathieu, La Nouvelle-France. Québec, Les Presses de l’Université Laval."
           }
         ]
       },
@@ -8320,8 +8320,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            ref: "jacques_cartier_1534.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."
+            texte: "« Cartier explore le golfe du Saint-Laurent et prend possession du territoire à Gaspé au nom du roi de France en y faisant ériger une croix. »",
+            source: "Jacques Lacoursière, Canada-Québec, 1534-2010. Québec, Les Éditions du Septentrion, 2011."
           }
         ]
       }
@@ -8336,8 +8336,7 @@ const QUESTIONS = [
       rangees: [
         ["C", "A", "B"]
       ]
-    },
-    updatedAt: "2026-07-01T01:16:47.106Z"
+    }
   },
   {
     id: "Q72",
@@ -8354,8 +8353,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« En explorant les environs de Charlesbourg-Royal, les Français croient avoir découvert de l’or et des diamants. De retour en France, ils constatent toutefois qu’il s’agit plutôt de pyrite de fer et de quartz, des minéraux sans grande valeur. »",
-            source: "Jacques Lacoursière, Canada-Québec, 1534-2010. Québec, Les Éditions du Septentrion, 2011"
+            ref: "jacques_cartier_fondation_charlesbourg_royal.jpg",
+            soustitre: "Fondation de Charlesbourg-Royal",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."
           }
         ]
       },
@@ -8374,8 +8374,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« Cartier remonte le fleuve Saint-Laurent jusqu’à Stadaconé et Hochelaga, révélant l’importance de cette voie de navigation pour l’exploration du continent. »",
-            source: "Jean-Pierre Charland, À l’aube du XXIe siècle. Montréal, Lidec."
+            ref: "jacques_cartier_hochelaga.jpg",
+            soustitre: "Jacques Cartier à Hochelaga",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."
           }
         ]
       }
@@ -8390,7 +8391,8 @@ const QUESTIONS = [
       rangees: [
         ["B", "C", "A"]
       ]
-    }
+    },
+    updatedAt: "2026-07-01T01:21:46.570Z"
   },
   {
     id: "Q73",
