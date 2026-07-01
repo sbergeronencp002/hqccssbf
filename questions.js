@@ -2683,14 +2683,14 @@ const QUESTIONS = [
  enonce: "Les documents A à D présentent des faits relatifs aux tentatives de colonisation françaises en Amérique du Nord. Inscrivez à l’endroit approprié la lettre du document correspondant à chacune de ces tentatives.",
  aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document A", texte: "« [...], en Acadie, Pierre Dugua de Mons et Samuel de Champlain fondent, au nom du roi Henri IV, une colonie dans un lieu mieux protégé et plus favorable à l’agriculture. »", source: "Raymonde Litalien (dir.) et Denis Vaugeois (dir.), Champlain : la naissance de l’Amérique française. Québec, Les Éditions du Septentrion, 2004."}]},
+  {type: "textes", cols: [{titre: "Document A", texte: "« [...], en Acadie, Pierre Dugua de Mons et Samuel de Champlain fondent, au nom du roi Henri IV, une colonie dans un lieu mieux protégé et plus favorable à l’agriculture. »", source: "Raymonde Litalien (dir.) et Denis Vaugeois (dir.), Champlain : la naissance de l’Amérique française. Québec, 2004."}]},
   {type: "textes", cols: [{titre: "Document B", texte: "« Les colons installés à la colonie, près de Cap-Rouge, affrontent un hiver difficile, des tensions avec les Iroquoiens et découvrent que les prétendus diamants et pépites d’or sont en réalité du quartz et de la pyrite de fer. »", source: "Adapté de W. J. Eccles, France in America, Fitzhenry & Whiteside, 1990."}]},
   {type: "textes", cols: [{titre: "Document C", texte: "« Les premiers établissements reposent autant sur les alliances avec les peuples autochtones que sur les intérêts commerciaux, notamment ceux liés à l'exploitation des ressources du territoire. »", source: "Adapté de Gilles Havard et Cécile Vidal, Histoire de l'Amérique française, Flammarion, 2003."}]},
-  {type: "textes", cols: [{titre: "Document D", texte: "« Une trentaine de colons sont abandonnés sur cette île sablonneuse, où les tempêtes, l’isolement et le manque de ressources rendent les conditions de vie extrêmement difficiles. »", source: "Marcel Trudel, Histoire de la Nouvelle-France. Montréal, Fides."}]}
+  {type: "textes", cols: [{titre: "Document D", texte: "« Une trentaine de colons sont abandonnés sur cette île sablonneuse, où les tempêtes, l’isolement et le manque de ressources rendent les conditions de vie extrêmement difficiles. »", source: "Marcel Trudel, Histoire de la Nouvelle-France. Montréal, Fides, 1983."}]}
  ],
  reponse: {type: "mettre-en-relation", elements: ["Charlesbourg-Royal", "Île de Sable", "Port-Royal", "Tadoussac"]},
  guide: {type: "grille", entetes: ["Charlesbourg-Royal", "Île de Sable", "Port-Royal", "Tadoussac"], rangees: [["B", "D", "A", "C"]]},
- updatedAt: "2026-07-01T01:28:03.653Z"
+ updatedAt: "2026-07-01T18:06:22.061Z"
 },
 {
  id: "Q75",
