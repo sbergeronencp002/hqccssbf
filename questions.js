@@ -3470,18 +3470,17 @@ const QUESTIONS = [
  periode: "P2 — 1608 – 1760",
  points: 2,
  soustag: "Ordre chronologique",
- enonce: "Les documents A à D présentent des faits liés aux relations franco-amérindiennes sous le régime français. Placez ces documents par ordre chronologique.",
+ enonce: "Les documents A à D présentent des faits liés aux relations franco-autochtones sous le régime français. Placez ces documents par ordre chronologique.",
  aspects: [{aspect: "Guerre et diplomatie chez les Premières Nations"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", texte: "« [...] le roi de France envoie le régiment de Carignan-Salières en Nouvelle-France afin de protéger la colonie contre les attaques iroquoises et de rétablir la sécurité dans la vallée du Saint-Laurent. »", source: "Marcel Trudel, Initiation à la Nouvelle-France, Holt, Rinehart et Winston, 1968."}]},
   {type: "textes", cols: [{titre: "Document B", ref: "gravure_destruction_huronie.png", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]},
-  {type: "textes", cols: [{titre: "Document C", ref: "bataille_lac_champlain.png", soustitre: "Alliance franco-amérindienne", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.", auteur: ""}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "bataille_lac_champlain.png", soustitre: "Bataille du lac Champlain", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]},
   {type: "textes", cols: [{titre: "Document D", texte: "« [...] les Français et plusieurs Premières Nations concluent la Grande Paix de Montréal, mettant fin à des décennies de conflits et favorisant la stabilité dans la région des Grands Lacs. »", source: "Gilles Havard et Cécile Vidal, Histoire de l’Amérique française, Flammarion, 2003."}]}
  ],
  reponse: {type: "image", ref: "ligne_bcAd.png"},
  guide: "C - B - A - D",
- updatedAt: "2026-06-25T13:45:53.915Z",
- _imgs: ["gravure_destruction_huronie.png", "bataille_lac_champlain.png", "ligne_bcAd.png"]
+ updatedAt: "2026-07-01T16:01:19.455Z"
 },
 {
  id: "Q120",
