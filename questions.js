@@ -6997,11 +6997,11 @@ const QUESTIONS = [
  documents: [
   {type: "textes", cols: [{titre: "Document A", texte: "« Pour plusieurs nations autochtones, les premiers contacts avec les Européens permettent d'obtenir de nouveaux biens recherchés, notamment des outils de métal qui améliorent certaines activités quotidiennes et renforcent les réseaux d'échange existants. »", auteur: "Bruce G. Trigger", source: "Adapté de Bruce G. Trigger, Les Enfants d'Aataentsic : l'histoire du peuple huron, Montréal, Libre Expression, 1991."}]},
   {type: "textes", cols: [{titre: "Document B", texte: "« Les échanges avec les Européens procurent à plusieurs groupes autochtones des avantages économiques et stratégiques. Ces contacts favorisent également la création de nouvelles alliances qui renforcent leur influence dans la région. »", auteur: "Alain Beaulieu", source: "Adapté de Alain Beaulieu, Les Autochtones du Québec : des premières alliances aux revendications contemporaines, Montréal, Fides, 2013."}]},
-  {type: "textes", cols: [{titre: "Document C", texte: "« Derrière les avantages immédiats des échanges se profilent d'importants bouleversements. Les contacts avec les Européens contribuent progressivement à transformer les sociétés autochtones et à les rendre plus dépendantes du commerce européen. »", auteur: "Denys Delâge", source: "Adapté de Denys Delâge, Le Pays renversé : Amérindiens et Européens en Amérique du Nord-Est, 1600-1664, Montréal, Boréal, 1991."}]}
+  {type: "textes", cols: [{titre: "Document C", texte: "« Derrière les avantages immédiats des échanges se profilent d'importants bouleversements. Les contacts avec les Européens contribuent progressivement à transformer les sociétés autochtones et à les rendre plus dépendantes du commerce européen. »", auteur: "Denys Delâge", source: "Adapté de Denys Delâge, Le Pays renversé : Amérindiens et Européens en Amérique du Nord-Est, Montréal, Boréal, 1991."}]}
  ],
  reponse: {type: "lignes", nombre: 3},
  guide: "Denys Delâge considère que les premiers contacts entraînent surtout des conséquences négatives pour les Autochtones, alors que Bruce G. Trigger et Alain Beaulieu estiment qu'ils procurent principalement des avantages aux peuples autochtones.",
- updatedAt: "2026-07-01T18:14:33.702Z"
+ updatedAt: "2026-07-01T18:33:10.019Z"
 },
 {
  id: "Q353",
