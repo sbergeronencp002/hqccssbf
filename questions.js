@@ -5680,18 +5680,9 @@ const REGLETTES = {
     oi: "Mettre en relation des faits"
   },
   "Q595": {
-    oi: "Situer dans l'espace",
     colonnes: ["1 point", "0 point"],
-    niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]
-  },
-  "Q596": {
-    oi: "Déterminer des causes et des conséquences",
-    colonnes: ["2 points", "1 point", "0 point"],
-    niveaux: [
-      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
-      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
-      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
-    ]
+    niveaux: [{desc: "L'élève situe le fait dans l'espace.", pts: 1}, {desc: "L'élève ne situe pas le fait dans l'espace.", pts: 0}],
+    oi: "Situer dans l'espace"
   }
 }
 
@@ -5958,8 +5949,7 @@ const IMAGE_DB = {
   "tableau_revenus_federal_provincial.jpg": {src: "images/tableau_revenus_federal_provincial.jpg"},
   "arpentage_terres_ouest_canadien.jpg": {src: "images/arpentage_terres_ouest_canadien.jpg"},
   "metis_thomas_scott.jpg": {src: "images/metis_thomas_scott.jpg"},
-  "ecoles_catholiques_manitoba.jpg": {src: "images/ecoles_catholiques_manitoba.jpg"},
-  "tableau_exportations_canadiennes_1870.jpg": {src: "images/tableau_exportations_canadiennes_1870.jpg", w: 1200, h: 960}
+  "ecoles_catholiques_manitoba.jpg": {src: "images/ecoles_catholiques_manitoba.jpg"}
 }
 
 const QUESTIONS = [
@@ -22896,7 +22886,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "bois_navires.png",
-            soustitre: "Nombre de navires construits au Bas-Canada entre 1800 et 1840",
+            soustitre: "Nombre de navires construits au Bas-Canada",
             source: "Adapté de Serge Courville, Histoire du Québec : un parcours, Québec, Éditions CEC."
           }
         ]
@@ -25559,7 +25549,8 @@ const QUESTIONS = [
       type: "mettre-en-relation"
     },
     soustag: "4 documents",
-    updatedAt: "2026-06-30T19:36:46.894Z"
+    updatedAt: "2026-06-30T19:36:46.894Z",
+    _imgs: ["soldats_gendarmerie.jpg", "ecole_quebec_1870.jpg", "comptoir_postal_1870.jpg", "hopital_quebec_1870.jpg"]
   },
   {
     aspects: [{aspect: "Relations fédérales-provinciales"}],
@@ -25618,7 +25609,8 @@ const QUESTIONS = [
     periode: "P5 — 1840 – 1896",
     points: 1,
     reponse: {nombre: 1, type: "lignes"},
-    updatedAt: "2026-06-29T19:12:30.119Z"
+    updatedAt: "2026-06-29T19:12:30.119Z",
+    _imgs: ["tableau_sources_revenus_federal.jpg"]
   },
   {
     aspects: [{aspect: "Relations fédérales-provinciales"}],
@@ -25665,7 +25657,12 @@ const QUESTIONS = [
     periode: "P5 — 1840 – 1896",
     points: 3,
     reponse: {nombre: 5, type: "lignes"},
-    updatedAt: "2026-06-30T19:10:43.942Z"
+    updatedAt: "2026-06-30T19:10:43.942Z",
+    _imgs: [
+      "tableau_revenus_federal_provincial.jpg",
+      "tableau_revenus_depenses_quebec.jpg",
+      "conference_interprovinciale_1887.jpg"
+    ]
   },
   {
     aspects: [{aspect: "Relations fédérales-provinciales"}],
@@ -25728,7 +25725,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Les revenus des provinces deviennent insuffisants pour couvrir leurs dépenses.",
-    updatedAt: "2026-06-30T01:00:28.440Z"
+    updatedAt: "2026-06-30T01:00:28.440Z",
+    _imgs: ["tableau_revenus_depenses_quebec.jpg"]
   },
   {
     aspects: [{aspect: "Relations fédérales-provinciales"}],
@@ -25774,7 +25772,8 @@ const QUESTIONS = [
     periode: "P5 — 1840 – 1896",
     points: 3,
     reponse: {nombre: 5, type: "lignes"},
-    updatedAt: "2026-06-30T19:22:59.205Z"
+    updatedAt: "2026-06-30T19:22:59.205Z",
+    _imgs: ["arpentage_terres_ouest_canadien.jpg", "metis_deuxieme_soulevement_batoche.jpg"]
   },
   {
     id: "Q586",
@@ -25800,7 +25799,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Défendre l'autonomie des provinces.\nDéfendre les droits des provinces.\nS'opposer à la centralisation des pouvoirs fédéraux.",
-    updatedAt: "2026-06-30T01:09:30.316Z"
+    updatedAt: "2026-06-30T01:09:30.316Z",
+    _imgs: ["conference_interprovinciale_1887.jpg"]
   },
   {
     id: "Q587",
@@ -25819,7 +25819,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "La création de la province du Manitoba.",
-    updatedAt: "2026-06-30T01:20:34.977Z"
+    updatedAt: "2026-06-30T01:20:34.977Z",
+    _imgs: ["aanb_manitoba.jpg"]
   },
   {
     id: "Q588",
@@ -25882,7 +25883,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Préserver les droits des catholiques francophones.\nAssurer l'enseignement en français et de la religion catholique.\nProtéger l'identité des communautés francophones catholiques.\nDéfendre les droits des minorités catholiques françaises.",
-    updatedAt: "2026-06-30T01:27:23.453Z"
+    updatedAt: "2026-06-30T01:27:23.453Z",
+    _imgs: ["tableau_manitoba_ecole_catholiques.jpg"]
   },
   {
     aspects: [{aspect: "Relations fédérales-provinciales"}],
@@ -25912,7 +25914,8 @@ const QUESTIONS = [
       ],
       type: "grille"
     },
-    updatedAt: "2026-06-30T20:14:00.657Z"
+    updatedAt: "2026-06-30T20:14:00.657Z",
+    _imgs: ["conflits_metis_ouest.jpg"]
   },
   {
     aspects: [{aspect: "Relations fédérales-provinciales"}],
@@ -26074,7 +26077,8 @@ const QUESTIONS = [
       elements: ["Soulèvement de la rivière Rouge", "Soulèvement du Nord-Ouest"],
       type: "mettre-en-relation"
     },
-    updatedAt: "2026-06-30T20:03:24.149Z"
+    updatedAt: "2026-06-30T20:03:24.149Z",
+    _imgs: ["pendaison_louis_riel.jpg", "metis_premier_soulevement_fort_garry.jpg"]
   },
   {
     aspects: [{aspect: "Relations fédérales-provinciales"}],
@@ -26140,50 +26144,26 @@ const QUESTIONS = [
       elements: ["Soulèvement de la rivière Rouge", "Soulèvement du Nord-Ouest"],
       type: "mettre-en-relation"
     },
-    updatedAt: "2026-06-30T20:08:40.966Z"
+    updatedAt: "2026-06-30T20:08:40.966Z",
+    _imgs: ["metis_thomas_scott.jpg", "metis_deuxieme_soulevement_batoche.jpg"]
   },
   {
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        cols: [{ref: "ecoles_catholiques_manitoba.jpg", source: "Carte du Canada. Adaptée d'après d-maps.com.", titre: "Document A"}],
+        type: "textes"
+      }
+    ],
+    enonce: "À partir du document A, indiquez la lettre correspondant au territoire où survient la question des écoles du Manitoba.",
+    guide: "A",
     id: "Q595",
     niveau: 4,
     oi: "Situer dans l'espace",
     periode: "P5 — 1840 – 1896",
     points: 1,
-    enonce: "À partir du document A, indiquez la lettre correspondant à la province concernée par la question des écoles du Manitoba.",
-    aspects: [{aspect: "Relations fédérales-provinciales"}],
-    documents: [
-      {
-        type: "textes",
-        cols: [{titre: "Document A", ref: "ecoles_catholiques_manitoba.jpg", source: "Carte du Canada. Adaptée d'après d-maps.com."}]
-      }
-    ],
     reponse: {type: "tableau_2col"},
-    guide: "A",
-    updatedAt: "2026-07-01T00:24:09.528Z"
-  },
-  {
-    id: "Q596",
-    niveau: 4,
-    oi: "Déterminer des causes et des conséquences",
-    periode: "P5 — 1840 – 1896",
-    points: 2,
-    soustag: "Cause",
-    enonce: "Indiquez une cause de l'adoption de la Politique nationale par le gouvernement de John A. Madonald.",
-    aspects: [{aspect: "Politique nationale"}],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "tableau_exportations_canadiennes_1870.jpg",
-            soustitre: "Évolution de la valeur des exportations canadiennes",
-            source: "Adapté de Kenneth Norrie, Douglas Owram et J.C. Herbert Emery, A History of the Canadian Economy, Harcourt Brace Canada, 2008."
-          }
-        ]
-      }
-    ],
-    reponse: {type: "lignes", nombre: 2},
-    guide: "La crise économique de 1873.\nLe ralentissement de l'économie canadienne.",
-    updatedAt: "2026-07-01T00:36:30.989Z"
+    updatedAt: "2026-06-30T20:20:53.015Z",
+    _imgs: ["ecoles_catholiques_manitoba.jpg"]
   }
 ]
