@@ -2615,14 +2615,10 @@ const QUESTIONS = [
  soustag: "Cause",
  enonce: "Indiquez une cause de l’alliance conclue entre certaines nations autochtones et Samuel de Champlain en 1603.",
  aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
- documents: [
-  {
-   type: "textes",
-   cols: [{titre: "Document A", texte: "« La rencontre diplomatique de 1603 marque le début d’une relation durable entre les Français et plusieurs nations autochtones. Cette entente repose sur des intérêts communs et sur la volonté de maintenir des relations avantageuses dans un contexte de rivalités entre différents peuples. »", source: "Raymonde Litalien (dir.) et Denis Vaugeois (dir.), Champlain : la naissance de l’Amérique française. Québec, Les Éditions du Septentrion, 2004."}]
-  }
- ],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« La rencontre diplomatique de 1603 marque le début d’une relation durable entre les Français et plusieurs nations autochtones. Cette entente repose sur des intérêts communs et sur la volonté de maintenir des relations avantageuses dans un contexte de rivalités entre différents peuples. »", source: "Adapté de Alain Beaulieu, Les Autochtones du Québec : des premières alliances aux revendications contemporaines, Fides, 2013."}]}],
  reponse: {type: "lignes", nombre: 2},
- guide: "Les nations autochtones concluent une alliance avec les Français afin d’obtenir un appui militaire contre leurs ennemis ou pour développer les échanges commerciaux."
+ guide: "Les nations autochtones concluent une alliance avec les Français afin d’obtenir un appui militaire contre leurs ennemis ou pour développer les échanges commerciaux.",
+ updatedAt: "2026-07-01T17:44:23.194Z"
 },
 {
  id: "Q70",
