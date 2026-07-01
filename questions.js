@@ -1108,7 +1108,8 @@ const REGLETTES = {
 "Q596": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q598": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
 "Q599": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
-"Q600": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]}
+"Q600": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
+"Q601": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]}
 }
 
 const IMAGE_DB = {
@@ -10885,5 +10886,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 1},
  guide: "Le Canadien Pacifique.",
  updatedAt: "2026-07-01T12:58:56.126Z"
+},
+{
+ id: "Q601",
+ niveau: 4,
+ oi: "Situer dans le temps",
+ periode: "P5 — 1840 – 1896",
+ points: 1,
+ soustag: "Ligne du temps",
+ enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+ aspects: [{aspect: "Politique nationale"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« [...] une crise économique frappe le Canada. Le ralentissement des échanges, les faillites et le chômage alimentent les critiques envers le gouvernement en place. Cette conjoncture favorise le retour au pouvoir des conservateurs de John A. Macdonald. »", source: "Adapté de Jacques Paul Couturier, Un passé composé : le Canada de 1850 à nos jours, Éditions d’Acadie, 2000."}]}],
+ reponse: {type: "image", ref: "ligne_1830-1890.png"},
+ guide: "C - 1873.",
+ updatedAt: "2026-07-01T19:27:38.751Z"
 }
 ]
