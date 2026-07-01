@@ -40,9 +40,23 @@ header nav a:hover { background:rgba(255,255,255,.12); color:#fff; }
 
 .rv-note { font-size:.78rem; color:var(--ink-3); font-style:italic; }
 
-.rv-guide-label { color:#2A7A4A !important; }
+.rv-guide-label { color:#2A7A4A !important; display:flex; align-items:center; justify-content:space-between; gap:.5rem; }
 .rv-guide-box { background:#EAF6EE; border:1px solid #CDE9D6; border-radius:8px; padding:.75rem 1rem; font-size:.85rem; color:var(--ink); line-height:1.6; }
 .rv-guide-empty { color:var(--ink-3); font-style:italic; }
+.rv-guide-edit-btn { font-size:.68rem; font-weight:600; text-transform:none; letter-spacing:0; color:#2A7A4A; background:#fff; border:1px solid #CDE9D6; border-radius:5px; padding:.15rem .55rem; cursor:pointer; font-family:inherit; }
+.rv-guide-edit-btn:hover { background:#EAF6EE; }
+.rv-guide-textarea { width:100%; min-height:110px; padding:.6rem .75rem; border:1px solid #CDE9D6; border-radius:6px; font-family:inherit; font-size:.85rem; color:var(--ink); resize:vertical; background:#fff; }
+.rv-guide-textarea:focus { outline:none; border-color:#2A7A4A; }
+.rv-guide-edit-actions { display:flex; align-items:center; gap:.5rem; margin-top:.5rem; justify-content:flex-end; }
+.rv-guide-status { font-size:.75rem; margin-right:auto; color:var(--ink-3); }
+.rv-guide-status.ok { color:#276539; }
+.rv-guide-status.err { color:#842029; }
+.rv-guide-btn-cancel, .rv-guide-btn-save { padding:.35rem .85rem; border-radius:6px; font-size:.78rem; font-weight:500; cursor:pointer; border:1px solid transparent; font-family:inherit; }
+.rv-guide-btn-cancel { background:var(--paper-2); color:var(--ink-2); border-color:var(--border); }
+.rv-guide-btn-cancel:hover { background:var(--paper-3); }
+.rv-guide-btn-save { background:#1B3B6F; color:#fff; }
+.rv-guide-btn-save:hover { opacity:.88; }
+.rv-guide-btn-save:disabled { opacity:.5; cursor:not-allowed; }
 
 .rv-progress { text-align:center; padding:.5rem 0 .35rem; font-size:.82rem; color:var(--ink-2); font-weight:500; }
 .rv-hint { text-align:center; padding:0 0 1.5rem; font-size:.68rem; color:var(--ink-3); opacity:.75; }
@@ -127,11 +141,13 @@ header nav a:hover { background:rgba(255,255,255,.12); color:#fff; }
 </div>
 
 <script src="oi-config.js?v=1"></script>
+<script src="questions-io.js?v=3"></script>
 <script src="contexte.js"></script>
 <script src="questions.js?v=1"></script>
 <script>
 // Page autonome (comme documents.html) : pas de dépendance à app.js.
-// Charge oi-config.js (styles OI), contexte.js (périodes/aspects) et questions.js
+// Charge oi-config.js (styles OI), questions-io.js (sérialiseur partagé pour
+// l'édition du guide), contexte.js (périodes/aspects) et questions.js
 // (QUESTIONS, REGLETTES, IMAGE_DB) en lecture seule — aucune écriture ici.
 
 function rvEscLine(s) {
@@ -160,6 +176,62 @@ function rvFold(s) {
 }
 function rvOiStyle(oi) {
   return (typeof OI_CONFIG !== 'undefined' && OI_CONFIG[oi]) || {color:'var(--ink-2)', bg:'var(--paper-3)'};
+}
+
+// Token lu depuis le stockage partagé avec admin.html/documents.html (jamais saisi ici)
+function rvGetToken() {
+  return localStorage.getItem('gh_token') || sessionStorage.getItem('gh_token') || '';
+}
+function rvRequireToken() {
+  const t = rvGetToken();
+  if(!t) throw new Error('Token GitHub manquant — connectez-vous dans admin.html d\'abord.');
+  return t;
+}
+const RV_REPO = 'sbergeronencp002/hqccssbf';
+const RV_API  = 'https://api.github.com/repos/' + RV_REPO + '/contents/';
+
+// Lecture fraîche de questions.js → mutation ciblée → réécriture (PUT), 1 retry sur conflit SHA
+async function rvApplyQuestionsEdit(mutate, commitMsg) {
+  const token = rvRequireToken();
+  for(let attempt = 0; attempt < 2; attempt++) {
+    const rq = await fetch(RV_API + 'questions.js?t=' + Date.now(), {
+      headers: {Authorization: 'token ' + token}, cache: 'no-store'
+    });
+    if(!rq.ok) throw new Error('Lecture questions.js (' + rq.status + ')');
+    const dq = await rq.json();
+    let content;
+    if(dq.content) {
+      const rawBytes = Uint8Array.from(atob(dq.content.replace(/\n/g,'')), c => c.charCodeAt(0));
+      content = new TextDecoder('utf-8').decode(rawBytes);
+    } else if(dq.download_url) {
+      const dlUrl = dq.download_url.includes('?') ? dq.download_url + '&t=' + Date.now() : dq.download_url + '?t=' + Date.now();
+      const raw = await fetch(dlUrl, {cache: 'no-store'});
+      if(!raw.ok) throw new Error('Impossible de télécharger questions.js : ' + raw.status);
+      content = await raw.text();
+    } else {
+      throw new Error("Réponse inattendue de l'API GitHub pour questions.js");
+    }
+    let parsed;
+    try {
+      parsed = new Function(content + '\n return { REGLETTES, IMAGE_DB, QUESTIONS };')();
+    } catch(e) {
+      throw new Error('questions.js illisible : ' + e.message);
+    }
+    const changed = mutate(parsed);
+    if(!changed) return false;
+    const out = generateQuestionsJs(parsed.QUESTIONS, parsed.REGLETTES, parsed.IMAGE_DB);
+    const enc = new TextEncoder().encode(out);
+    let binary = ''; enc.forEach(b => binary += String.fromCharCode(b));
+    const rp = await fetch(RV_API + 'questions.js', {
+      method: 'PUT',
+      headers: {Authorization: 'token ' + token, 'Content-Type': 'application/json'},
+      body: JSON.stringify({message: commitMsg, content: btoa(binary), sha: dq.sha})
+    });
+    if(rp.ok) return true;
+    if(rp.status === 409 && attempt === 0) continue;
+    throw new Error('Échec écriture questions.js (' + rp.status + ')');
+  }
+  throw new Error('Conflit persistant — réessayez.');
 }
 function rvDocsForRender(documents) {
   const docs = documents || [];
@@ -555,10 +627,73 @@ function rvBuildCardHtml(q) {
     }
   }
 
-  html += '<div class="q-section-label rv-guide-label">📘 Guide de correction</div>';
-  html += '<div class="rv-guide-box">' + rvRenderGuide(q) + '</div>';
+  const isTextGuide = q.guide === undefined || q.guide === false || typeof q.guide === 'string';
+  html += '<div class="q-section-label rv-guide-label">📘 Guide de correction'
+    + (isTextGuide ? '<button class="rv-guide-edit-btn" onclick="rvEditGuide()">✏ Modifier</button>' : '')
+    + '</div>';
+  html += '<div class="rv-guide-box" id="rv-guide-box">' + rvRenderGuide(q) + '</div>';
+  if(!isTextGuide) html += '<div class="rv-note" style="margin-top:.35rem">Guide en tableau — modifiable dans admin.html.</div>';
 
   return html;
+}
+
+function rvEditGuide() {
+  const q = rvList[rvIndex];
+  if(!q) return;
+  const current = typeof q.guide === 'string' ? q.guide : '';
+  const box = document.getElementById('rv-guide-box');
+  box.innerHTML = '<textarea id="rv-guide-textarea" class="rv-guide-textarea"></textarea>'
+    + '<div class="rv-guide-edit-actions">'
+    + '<span class="rv-guide-status" id="rv-guide-status"></span>'
+    + '<button class="rv-guide-btn-cancel" onclick="rvCancelGuideEdit()">Annuler</button>'
+    + '<button class="rv-guide-btn-save" id="rv-guide-save-btn" onclick="rvSaveGuide()">Enregistrer</button>'
+    + '</div>';
+  const ta = document.getElementById('rv-guide-textarea');
+  ta.value = current;
+  ta.focus();
+}
+
+function rvCancelGuideEdit() {
+  const q = rvList[rvIndex];
+  if(!q) return;
+  document.getElementById('rv-guide-box').innerHTML = rvRenderGuide(q);
+}
+
+async function rvSaveGuide() {
+  const q = rvList[rvIndex];
+  if(!q) return;
+  const id = q.id;
+  const newVal = document.getElementById('rv-guide-textarea').value;
+  const btn = document.getElementById('rv-guide-save-btn');
+  const status = document.getElementById('rv-guide-status');
+  btn.disabled = true;
+  status.className = 'rv-guide-status';
+  status.textContent = 'Enregistrement…';
+  try {
+    const changed = await rvApplyQuestionsEdit(parsed => {
+      const target = parsed.QUESTIONS.find(x => x.id === id);
+      if(!target) throw new Error('Question ' + id + ' introuvable');
+      if(typeof target.guide !== 'string' && target.guide !== false && target.guide !== undefined) {
+        throw new Error('Ce guide est un tableau — non modifiable ici.');
+      }
+      if((target.guide || '') === newVal) return false;
+      target.guide = newVal;
+      return true;
+    }, 'Modifier le guide de correction — ' + id);
+    q.guide = newVal;
+    const master = QUESTIONS.find(x => x.id === id);
+    if(master) master.guide = newVal;
+    status.className = 'rv-guide-status ok';
+    status.textContent = changed ? '✓ Enregistré.' : 'Aucun changement.';
+    setTimeout(() => {
+      const box = document.getElementById('rv-guide-box');
+      if(box) box.innerHTML = rvRenderGuide(q);
+    }, 700);
+  } catch(err) {
+    status.className = 'rv-guide-status err';
+    status.textContent = '✗ ' + err.message;
+    btn.disabled = false;
+  }
 }
 
 function rvRenderCard() {
@@ -615,6 +750,7 @@ document.addEventListener('keydown', e => {
   let startX = 0, startY = 0, dragging = false;
   const wrap = document.getElementById('rv-card-wrap');
   wrap.addEventListener('pointerdown', e => {
+    if(e.target.closest('textarea, input, button, select, a')) return;
     dragging = true; startX = e.clientX; startY = e.clientY;
   });
   function endDrag(e) {
