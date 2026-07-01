@@ -2127,24 +2127,14 @@ const QUESTIONS = [
  enonce: "À partir des documents A à D, indiquez la lettre du document qui fait références à l'organisation territoriale des groupes autochtones.",
  aspects: [{aspect: "Premiers occupants du territoire"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document D", ref: "village_iroquoien_vers_1500.png", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", auteur: ""}]},
-  {type: "textes", cols: [{titre: "Document B", texte: "« Ils n’ont point de demeure arrêtée, mais vont de lieu en lieu selon les saisons, transportant leurs cabanes et vivant de la chasse, de la pêche et de ce que le pays leur fournit pour subsister. »", auteur: "Marc Lescarbot", source: "Histoire de la Nouvelle-France (1609)."}]},
-  {
-   type: "textes",
-   cols: [
-    {
-     titre: "Document C",
-     texte: "« [Ils] habitent la vallée du Saint-Laurent et les berges des Grands Lacs. [Ils] ont adopté un mode de vie sédentaire axé sur la culture des “trois sœurs” […] Comme ils vivent essentiellement de l’agriculture, [ils] ont besoin d’un territoire relativement petit mais fertile. »",
-     source: "Alain DALONGEVILLE (dir.), Présences : une histoire thématique du Québec, manuel de l’élève, histoire et éducation à la  citoyenneté, 2e année du 2e cycle du secondaire, Anjou, Les Éditions CEC, 2008, vol. 1, p. 28."
-    }
-   ]
-  },
+  {type: "textes", cols: [{titre: "Document D", ref: "village_iroquoien_vers_1500.png", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Ils n’ont point de demeure arrêtée, mais vont de lieu en lieu selon les saisons, transportant leurs cabanes et vivant de la chasse, de la pêche et de ce que le pays leur fournit pour subsister. »", source: "Adapté de Gilles Bibeau, Les Autochtones. La part effacée du Québec, Mémoire d’encrier, 2020."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« [Ils] habitent la vallée du Saint-Laurent et les berges des Grands Lacs. [Ils] ont adopté un mode de vie sédentaire axé sur la culture des “trois sœurs” […] Comme ils vivent essentiellement de l’agriculture, [ils] ont besoin d’un territoire relativement petit mais fertile. »", source: "Adapté de Olive Patricia Dickason, Les Premières Nations du Canada, Septentrion, 1996."}]},
   {type: "textes", cols: [{titre: "Document D", ref: "campement_algonquien.png", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}
  ],
  reponse: {type: "mettre-en-relation", elements: ["Algonquiens", "Iroquoiens"], double: true},
  guide: {type: "grille", entetes: ["Algonquiens", "Iroquoiens"], rangees: [["B et D", "A et C"]]},
- updatedAt: "2026-06-09T03:27:00.693Z",
- _imgs: ["village_iroquoien_vers_1500.png", "campement_algonquien.png"]
+ updatedAt: "2026-07-01T17:34:07.447Z"
 },
 {
  id: "Q38",
