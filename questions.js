@@ -2647,12 +2647,12 @@ const QUESTIONS = [
  aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", ref: "jacques_cartier_fondation_charlesbourg_royal.jpg", soustitre: "Fondation de Charlesbourg-Royal", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
-  {type: "textes", cols: [{titre: "Document B", texte: "« À Gaspé, Cartier revendique le territoire pour la France et entre en contact avec des Iroquoiens du Saint-Laurent. »", source: "Jean-François Cardin et autres, Le Québec : héritages et projets. Laval, Éditions HRW."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« À Gaspé, Cartier revendique le territoire pour la France et entre en contact avec des Iroquoiens du Saint-Laurent. »", source: "Adapté de Jean-François Cardin et autres, Le Québec : héritages et projets. Laval, HRW, 2003."}]},
   {type: "textes", cols: [{titre: "Document C", ref: "jacques_cartier_hochelaga.jpg", soustitre: "Jacques Cartier à Hochelaga", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}
  ],
  reponse: {type: "mettre-en-relation", elements: ["Premier voyage", "Deuxième voyage", "Troisième voyage"]},
  guide: {type: "grille", entetes: ["Premier voyage", "Deuxième voyage", "Troisième voyage"], rangees: [["B", "C", "A"]]},
- updatedAt: "2026-07-01T01:31:48.028Z"
+ updatedAt: "2026-07-01T18:02:39.350Z"
 },
 {
  id: "Q73",
