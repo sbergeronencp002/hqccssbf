@@ -1465,7 +1465,7 @@ const QUESTIONS = [
    type: "textes",
    cols: [{titre: "Document A", texte: "« Les représentants des Treize Colonies en viennent à la conclusion que leurs droits ne peuvent plus être protégés au sein de l'Empire britannique. Ils choisissent alors de rompre leurs liens politiques avec la métropole et d'affirmer leur droit de se gouverner eux-mêmes. »", soustitre: "Déclaration d'indépendance des États-Unis", source: "Texte adapté de Alan Taylor, American Revolutions: A Continental History, 1750-1804, W. W. Norton & Company, 2016."}]
   },
-  {type: "textes", cols: [{titre: "Document B", ref: "invasion_americaine.png", soustitre: "Combats dans les rue de Québec lors de l'invasion américaine", source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de l'invasion américaine, 2026."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "invasion_americaine.png", soustitre: "Combats dans les rue de Québec lors de l'invasion américaine", source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de l'invasion américaine, 2026.", auteur: ""}]},
   {type: "textes", cols: [{titre: "Document C", ref: "capitulation_mtl_1760.png", soustitre: "Capitulation de Montréal", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.", auteur: ""}]},
   {type: "textes", cols: [{titre: "Document D", texte: "« Les autorités britanniques souhaitent transformer la nouvelle colonie en introduisant les institutions politiques et juridiques anglaises. Elles espèrent ainsi intégrer progressivement les Canadiens au modèle britannique et favoriser l'arrivée d'immigrants anglophones. »", soustitre: "Proclamation royale", source: "Texte adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 2 : De 1760 à 1791, Québec Amérique, 1995."}]}
  ],
@@ -4964,7 +4964,7 @@ const QUESTIONS = [
  soustag: "Ligne du temps",
  enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
  aspects: [{aspect: "Invasion américaine"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "invasion_americaine.png", soustitre: "Combats dans les rue de Québec lors de l'invasion américaine", source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de l'invasion américaine, 2026."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "invasion_americaine.png", soustitre: "Combats dans les rue de Québec lors de l'invasion américaine", source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de l'invasion américaine, 2026.", auteur: ""}]}],
  reponse: {type: "image", ref: "ligne_1760-1800.png"},
  guide: "B",
  _imgs: ["invasion_americaine.png", "ligne_1760-1800.png"]
