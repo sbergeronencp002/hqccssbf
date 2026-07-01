@@ -1549,7 +1549,7 @@ const QUESTIONS = [
     }
    ]
   },
-  {type: "textes", cols: [{titre: "Document B", ref: "recensement_colonie_n-f.png", soustitre: "Recensement des célibataires de la Nouvelle-France en 1666"}]}
+  {type: "textes", cols: [{titre: "Document B", ref: "recensement_colonie_n-f.png", soustitre: "Recensement des célibataires de la Nouvelle-France en 1666", auteur: "", source: "Adapté de Statistique Canada, Recensements du Canada, 1665 à 1871 : Jean Talon, 2015."}]}
  ],
  reponse: {type: "cause-consequence"},
  guide: {type: "grille", entetes: ["Élément", "Document"], rangees: [["Cause", "B"], ["Conséquence", "A"]]},
