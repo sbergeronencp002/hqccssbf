@@ -1112,7 +1112,8 @@ const REGLETTES = {
 "Q601": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q602": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q603": {oi: "Situer dans le temps", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}]},
-"Q604": {oi: "Situer dans le temps", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}]}
+"Q604": {oi: "Situer dans le temps", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}]},
+"Q605": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]}
 }
 
 const IMAGE_DB = {
@@ -10955,5 +10956,23 @@ const QUESTIONS = [
  reponse: {type: "avant-apres", label: "Retour au pouvoir de John A. Macdonald en 1878"},
  guide: {type: "grille", entetes: ["Avant", "Retour au pouvoir de John A. Macdonald en 1878", "Après"], rangees: [["A et D", "", "B et C"]]},
  updatedAt: "2026-07-01T19:40:46.642Z"
+},
+{
+ id: "Q605",
+ niveau: 4,
+ oi: "Mettre en relation des faits",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "3 documents",
+ enonce: "Les documents A à C présentent des mesures adoptées dans le cadre de la Politique nationale. Associez chaque document à l'un des éléments de cette politique.",
+ aspects: [{aspect: "Politique nationale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Le gouvernement choisit de protéger les entreprises canadiennes contre la concurrence étrangère afin de favoriser le développement de la production manufacturière au pays. »", source: "Adapté de Donald Creighton, The Road to Confederation, Macmillan of Canada, 1964."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Un vaste réseau de transport est considéré comme essentiel pour relier les différentes régions du pays, stimuler les échanges et renforcer l'unité nationale. »", source: "Adapté de J. M. S. Careless, Canada: A Story of Challenge, Macmillan of Canada, 1970."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Le gouvernement encourage l'établissement de nouveaux colons dans les Prairies afin d'accroître la population, de mettre les terres en valeur et de soutenir l'expansion économique du pays. »", source: "Adapté de Paul-André Linteau, René Durocher et Jean-Claude Robert, Histoire du Québec contemporain, tome 1, Boréal, 1989."}]}
+ ],
+ reponse: {type: "mettre-en-relation", elements: ["Chemin de fer transcontinental", "Colonisation de l'Ouest", "Politique tarifaire"]},
+ guide: {type: "grille", entetes: ["Chemin de fer transcontinental", "Colonisation de l'Ouest", "Politique tarifaire"], rangees: [["B", "C", "A"]]},
+ updatedAt: "2026-07-01T19:44:50.798Z"
 }
 ]
