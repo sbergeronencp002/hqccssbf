@@ -1582,7 +1582,10 @@ const QUESTIONS = [
  soustag: "Continuité",
  enonce: "Indiquez un élément de continuité dans la façon de faire du commerce en Amérique du Nord durant les périodes présentées dans les documents A et B.",
  aspects: [{aspect: "Commerce des fourrures"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "troc_1600.png", soustitre: "Vers 1600", source: "MEES."}]}, {type: "textes", cols: [{titre: "Document B", ref: "troc_1700.png", soustitre: "Vers 1700", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.", auteur: ""}]}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "troc_1600.png", soustitre: "Vers 1600", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", auteur: ""}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "troc_1700.png", soustitre: "Vers 1700", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.", auteur: ""}]}
+ ],
  reponse: {type: "lignes", nombre: 2},
  guide: "Le troc ou l’échange de fourrures contre d’autres produits.",
  _imgs: ["troc_1600.png", "troc_1700.png"]
