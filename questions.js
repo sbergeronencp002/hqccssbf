@@ -10863,12 +10863,11 @@ const QUESTIONS = [
  periode: "P5 — 1840 – 1896",
  points: 2,
  soustag: "Cause",
- enonce: "Indiquez une cause de l'adoption de la Politique nationale en 1879.",
+ enonce: "Indiquez une cause de l'adoption de la Politique nationale par le gouvernement de John A. Macdonald en 1879.",
  aspects: [{aspect: "Politique nationale"}],
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_exportations_canadiennes_1870.jpg", soustitre: "Évolution des exportations canadiennes", source: "Adapté de Kenneth Norrie, Douglas Owram et J.C. Herbert Emery, A History of the Canadian Economy, Harcourt Brace Canada, 2008."}]}],
  reponse: {type: "lignes", nombre: 2},
- guide: "La diminution des exportations canadiennes.\nLa crise économique (dépression de 1873).\nLes difficultés économiques du Canada.",
- updatedAt: "2026-07-01T00:56:56.946Z",
- _imgs: ["tableau_exportations_canadiennes_1870.jpg"]
+ guide: "La crise économique de 1873.\nLa baisse des exportations canadiennes.\nLe ralentissement de l'économie canadienne.",
+ updatedAt: "2026-07-01T12:30:37.946Z"
 }
 ]
