@@ -1,12 +1,13 @@
 // Service Worker — HQC · CSSBF
-// Stratégie : cache-first pour les assets, réseau-first pour questions.js,
-// cache-first pour les images (fetch au premier accès, cache ensuite).
+// Stratégie : cache-first pour les assets, réseau-first pour questions.js et
+// questions-index.js (données régénérées à chaque publication), cache-first
+// pour les images (fetch au premier accès, cache ensuite).
 
-const CACHE = 'hqc-v1';
+const CACHE = 'hqc-v2';
 const PRECACHE = [
   './index.html',
-  './style.css?v=25',
-  './app.js?v=46',
+  './style.css?v=29',
+  './app.js?v=49',
   './oi-config.js?v=1',
   './contexte.js',
 ];
@@ -34,8 +35,9 @@ self.addEventListener('fetch', e => {
   // Requêtes externes (API GitHub, fonts…) — bypass SW
   if (url.origin !== self.location.origin) return;
 
-  // questions.js — réseau en premier (données fraîches), cache si hors ligne
-  if (url.pathname.endsWith('/questions.js')) {
+  // questions.js et questions-index.js — réseau en premier (données fraîches
+  // régénérées à chaque publication Admin), cache si hors ligne
+  if (url.pathname.endsWith('/questions.js') || url.pathname.endsWith('/questions-index.js')) {
     e.respondWith(
       fetch(e.request)
         .then(r => {
