@@ -2067,7 +2067,7 @@ const QUESTIONS = [
  soustag: "Situer 1 élément",
  enonce: "À partir du document A, indiquez la lettre du territoire occupé par la famille linguistique algonquienne vers 1500.",
  aspects: [{aspect: "Premiers occupants du territoire"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_familles_linguistiques_autochtones_lettres.png"}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_familles_linguistiques_autochtones_lettres.png", auteur: "", source: "Récitus."}]}],
  reponse: {type: "tableau_2col"},
  guide: "C",
  _imgs: ["carte_familles_linguistiques_autochtones_lettres.png"]
@@ -2081,7 +2081,7 @@ const QUESTIONS = [
  soustag: "Situer 1 élément",
  enonce: "À partir du document A, indiquez la lettre du territoire occupé par la famille linguistique iroquoienne vers 1500.",
  aspects: [{aspect: "Premiers occupants du territoire"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_familles_linguistiques_autochtones_lettres.png"}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_familles_linguistiques_autochtones_lettres.png", auteur: "", source: "Récitus."}]}],
  reponse: {type: "tableau_2col"},
  guide: "B",
  _imgs: ["carte_familles_linguistiques_autochtones_lettres.png"]
@@ -2095,7 +2095,7 @@ const QUESTIONS = [
  soustag: "Situer 1 élément",
  enonce: "À partir du document A, indiquez la lettre du territoire occupé par la nation inuite vers 1500.",
  aspects: [{aspect: "Premiers occupants du territoire"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_familles_linguistiques_autochtones_lettres.png"}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_familles_linguistiques_autochtones_lettres.png", auteur: "", source: "Récitus."}]}],
  reponse: {type: "tableau_2col"},
  guide: "A",
  _imgs: ["carte_familles_linguistiques_autochtones_lettres.png"]
