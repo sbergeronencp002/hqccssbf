@@ -8482,7 +8482,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             texte: "« Les colons installés à la colonie, près de Cap-Rouge, affrontent un hiver difficile, des tensions avec les Iroquoiens et découvrent que les prétendus diamants et pépites d’or sont en réalité du quartz et de la pyrite de fer. »",
-            source: "Jacques Lacoursière, Canada-Québec, 1534-2010. Québec, Les Éditions du Septentrion, 2011."
+            source: "Adapté de W. J. Eccles, France in America, Fitzhenry & Whiteside, 1990."
           }
         ]
       },
@@ -8491,8 +8491,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« Cartier[...] au nom du roi François Ier, fonde un établissement à Cap-Rouge [...]. Cette tentative de colonisation vise à établir une présence française permanente et à exploiter les richesses que les Français croient avoir découvertes sur le territoire. »",
-            source: "Jacques Lacoursière, Canada-Québec, 1534-2010. Québec, Les Éditions du Septentrion, 2011."
+            texte: "« Les premiers établissements reposent autant sur les alliances avec les peuples autochtones que sur les intérêts commerciaux, notamment ceux liés à l'exploitation des ressources du territoire. »",
+            source: "Adapté de Gilles Havard et Cécile Vidal, Histoire de l'Amérique française, Flammarion, 2003."
           }
         ]
       },
@@ -8515,9 +8515,10 @@ const QUESTIONS = [
       type: "grille",
       entetes: ["Charlesbourg-Royal", "Île de Sable", "Port-Royal", "Tadoussac"],
       rangees: [
-        ["B", "D", "C", "A"]
+        ["B", "D", "A", "A"]
       ]
-    }
+    },
+    updatedAt: "2026-07-01T01:27:36.581Z"
   },
   {
     id: "Q75",
