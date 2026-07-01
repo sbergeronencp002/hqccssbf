@@ -8303,7 +8303,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "jacques_cartier_scorbut.jpg",
-            soustitre: "Jacques Cartier découvre un remède contre le scorbut",
+            soustitre: "Le remède au scorbut",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."
           }
         ]
@@ -8341,7 +8341,7 @@ const QUESTIONS = [
         ["C", "A", "B"]
       ]
     },
-    updatedAt: "2026-07-01T01:35:59.766Z"
+    updatedAt: "2026-07-01T03:02:11.478Z"
   },
   {
     id: "Q72",
