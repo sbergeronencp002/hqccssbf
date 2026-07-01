@@ -2095,11 +2095,11 @@ const QUESTIONS = [
  aspects: [{aspect: "Réseaux d'échange autochtones"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", texte: "« Pour subvenir à leurs besoins, [les Cris, Ojibwés, Innus, Béothuks et Outaouais] suivent le gibier dans ses déplacements. Ils ont donc besoin d’un vaste territoire où abondent le gibier, le poisson et les fruits. »", source: "Adapté de Gilles Bibeau, Les Autochtones. La part effacée du Québec, Mémoire d’encrier, 2020."}]},
-  {type: "textes", cols: [{titre: "Document B", texte: "« D’immenses champs potagers sont entretenus à l’extérieur des [palissades]; c’est là qu’on trouve, entre autres légumes, les maïs, fèves et courges de plusieurs variétés qui constituent pour eux une alimentation complète. »", source: "Adapté de Micheline BLANCHETTE, La vie traditionnelle des Premières Nations du Québec, Sherbrooke, Les Éditions G.G.C., 2011."}]}
+  {type: "textes", cols: [{titre: "Document B", texte: "« D’immenses champs potagers sont entretenus à l’extérieur des [palissades]; c’est là qu’on trouve, entre autres légumes, les maïs, fèves et courges de plusieurs variétés qui constituent pour eux une alimentation complète. »", source: "Adapté de Micheline Blanchette, La vie traditionnelle des Premières Nations du Québec, Sherbrooke, G.G.C., 2011."}]}
  ],
  reponse: {type: "mettre-en-relation", elements: ["Algonquiens", "Iroquoiens"]},
  guide: {type: "grille", entetes: ["Algonquiens", "Iroquoiens"], rangees: [["A", "B"]]},
- updatedAt: "2026-07-01T17:32:26.660Z"
+ updatedAt: "2026-07-01T18:00:53.556Z"
 },
 {
  id: "Q37",
