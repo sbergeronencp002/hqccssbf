@@ -5680,9 +5680,9 @@ const REGLETTES = {
     oi: "Mettre en relation des faits"
   },
   "Q595": {
+    oi: "Situer dans l'espace",
     colonnes: ["1 point", "0 point"],
-    niveaux: [{desc: "L'élève situe le fait dans l'espace.", pts: 1}, {desc: "L'élève ne situe pas le fait dans l'espace.", pts: 0}],
-    oi: "Situer dans l'espace"
+    niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]
   }
 }
 
@@ -26133,21 +26133,21 @@ const QUESTIONS = [
     updatedAt: "2026-06-30T20:08:40.966Z"
   },
   {
-    aspects: [{aspect: "Relations fédérales-provinciales"}],
-    documents: [
-      {
-        cols: [{ref: "ecoles_catholiques_manitoba.jpg", source: "Carte du Canada. Adaptée d'après d-maps.com.", titre: "Document A"}],
-        type: "textes"
-      }
-    ],
-    enonce: "À partir du document A, indiquez la lettre correspondant au territoire où survient la question des écoles du Manitoba.",
-    guide: "A",
     id: "Q595",
     niveau: 4,
     oi: "Situer dans l'espace",
     periode: "P5 — 1840 – 1896",
     points: 1,
+    enonce: "À partir du document A, indiquez la lettre correspondant à la province concernée par la question des écoles du Manitoba.",
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [{titre: "Document A", ref: "ecoles_catholiques_manitoba.jpg", source: "Carte du Canada. Adaptée d'après d-maps.com."}]
+      }
+    ],
     reponse: {type: "tableau_2col"},
-    updatedAt: "2026-06-30T20:20:53.015Z"
+    guide: "A",
+    updatedAt: "2026-07-01T00:24:09.528Z"
   }
 ]
