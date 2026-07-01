@@ -6879,14 +6879,13 @@ const QUESTIONS = [
  enonce: "Expliquez comment le territoire occupé par les Iroquoiens détermine leur mode de vie.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Une particularité du sol dans les basses terres du Saint-Laurent \n• La principale activité de subsistance pratiquée par les Iroquoiens \n• Le mode de vie des Iroquoiens",
  aspects: [{aspect: "Premiers occupants du territoire"}, {aspect: "Réseaux d'échange autochtones"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document A", texte: "« Les Iroquoiens occupent les basses terres du Saint-Laurent, une région caractérisée par des sols fertiles et un climat relativement favorable. Ces conditions naturelles permettent la culture de plantes alimentaires sur une base régulière. »", source: "Bruce G. Trigger, Les Enfants d'Aataentsic : l'histoire du peuple huron, Montréal, Libre Expression, 1991, p. 35-36. Adapté."}]},
-  {type: "textes", cols: [{titre: "Document B", ref: "village_iroquoien_vers_1500.png", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", auteur: ""}]},
-  {type: "textes", cols: [{titre: "Document C", texte: "« Puisqu’ils cultivent la terre et récoltent leurs aliments au même endroit, les Iroquoiens vivent dans des villages permanents composés de maisons longues où résident plusieurs familles apparentées. »", source: "Marcel Trudel, Histoire de la Nouvelle-France, tome II : Le comptoir, 1604-1627, Montréal, Fides, 1966, p. 18-19. Adapté."}]}
+  {type: "textes", cols: [{titre: "Document A", texte: "« Les Iroquoiens occupent les basses terres du Saint-Laurent, une région caractérisée par des sols fertiles et un climat relativement favorable. Ces conditions naturelles permettent la culture de plantes alimentaires sur une base régulière. »", source: "Adapté de Bruce G. Trigger, Les Enfants d'Aataentsic : l'histoire du peuple huron, Montréal, Libre Expression, 1991."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "village_iroquoien_vers_1500.png", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Puisqu’ils cultivent la terre et récoltent leurs aliments au même endroit, les Iroquoiens vivent dans des villages permanents composés de maisons longues où résident plusieurs familles apparentées. »", source: "Adapté de Marcel Trudel, Histoire de la Nouvelle-France, tome II : Le comptoir, 1604-1627, Montréal, Fides, 1966."}]}
  ],
  reponse: {type: "lignes", nombre: 5},
  guide: "Les basses terres du Saint-Laurent possèdent des sols fertiles favorables à l'agriculture (une particularité du sol dans les basses terres du Saint-Laurent). Cette caractéristique permet aux Iroquoiens de cultiver principalement le maïs (la principale activité de subsistance pratiquée par les Iroquoiens). Comme ils produisent leur nourriture au même endroit, ils vivent dans des villages permanents et adoptent un mode de vie sédentaire (le mode de vie des Iroquoiens).",
- updatedAt: "2026-06-10T15:39:45.208Z",
- _imgs: ["village_iroquoien_vers_1500.png"]
+ updatedAt: "2026-07-01T18:11:17.716Z"
 },
 {
  id: "Q346",
