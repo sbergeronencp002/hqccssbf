@@ -2701,7 +2701,7 @@ const QUESTIONS = [
  soustag: "Ligne du temps",
  enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
  aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "jacques_cartier_1534.png", source: "C. W. Jefferys, Jacques Cartier at Gaspé, 1534, domaine public."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "jacques_cartier_1534.png", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.", auteur: ""}]}],
  reponse: {type: "image", ref: "ligne_1475-1575.png"},
  guide: "C.",
  _imgs: ["jacques_cartier_1534.png", "ligne_1475-1575.png"]
