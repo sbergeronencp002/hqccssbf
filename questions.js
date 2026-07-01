@@ -5683,6 +5683,24 @@ const REGLETTES = {
     colonnes: ["1 point", "0 point"],
     niveaux: [{desc: "L'élève situe le fait dans l'espace.", pts: 1}, {desc: "L'élève ne situe pas le fait dans l'espace.", pts: 0}],
     oi: "Situer dans l'espace"
+  },
+  "Q597": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
+    ]
+  },
+  "Q596": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
+    ]
   }
 }
 
@@ -5949,7 +5967,13 @@ const IMAGE_DB = {
   "tableau_revenus_federal_provincial.jpg": {src: "images/tableau_revenus_federal_provincial.jpg"},
   "arpentage_terres_ouest_canadien.jpg": {src: "images/arpentage_terres_ouest_canadien.jpg"},
   "metis_thomas_scott.jpg": {src: "images/metis_thomas_scott.jpg"},
-  "ecoles_catholiques_manitoba.jpg": {src: "images/ecoles_catholiques_manitoba.jpg"}
+  "ecoles_catholiques_manitoba.jpg": {src: "images/ecoles_catholiques_manitoba.jpg"},
+  "tableau_tarifs_douaniers_pol_nationale.jpg": {src: "images/tableau_tarifs_douaniers_pol_nationale.jpg"},
+  "tableau_exportations_canadiennes_1870.jpg": {src: "images/tableau_exportations_canadiennes_1870.jpg"},
+  "jacques_cartier_scorbut.jpg": {src: "images/jacques_cartier_scorbut.jpg", w: 1141, h: 1200},
+  "jacques_cartier_fondation_charlesbourg_royal.jpg": {src: "images/jacques_cartier_fondation_charlesbourg_royal.jpg"},
+  "jacques_cartier_hochelaga.jpg": {src: "images/jacques_cartier_hochelaga.jpg"},
+  "jacques_cartier_croix.jpg": {src: "images/jacques_cartier_croix.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -8278,8 +8302,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Durant l’hiver, les Iroquoiens enseignent aux Français un remède contre le scorbut préparé à partir de l’écorce et des aiguilles de cèdre. »",
-            source: "Jacques Mathieu, La Nouvelle-France. Québec, Les Presses de l’Université Laval."
+            ref: "jacques_cartier_scorbut.jpg",
+            soustitre: "Jacques Cartier découvre un remède contre le scorbut",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."
           }
         ]
       },
@@ -8298,8 +8323,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« Cartier explore le golfe du Saint-Laurent et prend possession du territoire à Gaspé au nom du roi de France en y faisant ériger une croix. »",
-            source: "Jacques Lacoursière, Canada-Québec, 1534-2010. Québec, Les Éditions du Septentrion, 2011."
+            ref: "jacques_cartier_croix.jpg",
+            soustitre: "Prise de possession d'un territoire par Jacques Cartier",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."
           }
         ]
       }
@@ -8314,7 +8340,8 @@ const QUESTIONS = [
       rangees: [
         ["C", "A", "B"]
       ]
-    }
+    },
+    updatedAt: "2026-07-01T01:35:59.766Z"
   },
   {
     id: "Q72",
@@ -8331,8 +8358,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« En explorant les environs de Charlesbourg-Royal, les Français croient avoir découvert de l’or et des diamants. De retour en France, ils constatent toutefois qu’il s’agit plutôt de pyrite de fer et de quartz, des minéraux sans grande valeur. »",
-            source: "Jacques Lacoursière, Canada-Québec, 1534-2010. Québec, Les Éditions du Septentrion, 2011"
+            ref: "jacques_cartier_fondation_charlesbourg_royal.jpg",
+            soustitre: "Fondation de Charlesbourg-Royal",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."
           }
         ]
       },
@@ -8351,8 +8379,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« Cartier remonte le fleuve Saint-Laurent jusqu’à Stadaconé et Hochelaga, révélant l’importance de cette voie de navigation pour l’exploration du continent. »",
-            source: "Jean-Pierre Charland, À l’aube du XXIe siècle. Montréal, Lidec."
+            ref: "jacques_cartier_hochelaga.jpg",
+            soustitre: "Jacques Cartier à Hochelaga",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."
           }
         ]
       }
@@ -8367,7 +8396,8 @@ const QUESTIONS = [
       rangees: [
         ["B", "C", "A"]
       ]
-    }
+    },
+    updatedAt: "2026-07-01T01:31:48.028Z"
   },
   {
     id: "Q73",
@@ -8394,7 +8424,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« [...], des marchands français tentent d’établir un poste permanent à l’embouchure du Saguenay afin de soutenir le commerce des fourrures et d’assurer une présence durable sur le territoire. »",
+            texte: "« [...] des marchands français tentent d’établir un poste permanent à l’embouchure du Saguenay afin de soutenir le commerce des fourrures et d’assurer une présence durable sur le territoire. »",
             source: "Jacques Lacoursière, Canada-Québec, 1534-2010. Québec, Les Éditions du Septentrion, 2011."
           }
         ]
@@ -8430,7 +8460,8 @@ const QUESTIONS = [
       rangees: [
         ["D", "C", "A", "B"]
       ]
-    }
+    },
+    updatedAt: "2026-07-01T01:28:46.344Z"
   },
   {
     id: "Q74",
@@ -8458,7 +8489,7 @@ const QUESTIONS = [
           {
             titre: "Document B",
             texte: "« Les colons installés à la colonie, près de Cap-Rouge, affrontent un hiver difficile, des tensions avec les Iroquoiens et découvrent que les prétendus diamants et pépites d’or sont en réalité du quartz et de la pyrite de fer. »",
-            source: "Jacques Lacoursière, Canada-Québec, 1534-2010. Québec, Les Éditions du Septentrion, 2011."
+            source: "Adapté de W. J. Eccles, France in America, Fitzhenry & Whiteside, 1990."
           }
         ]
       },
@@ -8467,8 +8498,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« Cartier[...] au nom du roi François Ier, fonde un établissement à Cap-Rouge [...]. Cette tentative de colonisation vise à établir une présence française permanente et à exploiter les richesses que les Français croient avoir découvertes sur le territoire. »",
-            source: "Jacques Lacoursière, Canada-Québec, 1534-2010. Québec, Les Éditions du Septentrion, 2011."
+            texte: "« Les premiers établissements reposent autant sur les alliances avec les peuples autochtones que sur les intérêts commerciaux, notamment ceux liés à l'exploitation des ressources du territoire. »",
+            source: "Adapté de Gilles Havard et Cécile Vidal, Histoire de l'Amérique française, Flammarion, 2003."
           }
         ]
       },
@@ -8491,9 +8522,10 @@ const QUESTIONS = [
       type: "grille",
       entetes: ["Charlesbourg-Royal", "Île de Sable", "Port-Royal", "Tadoussac"],
       rangees: [
-        ["B", "D", "C", "A"]
+        ["B", "D", "A", "C"]
       ]
-    }
+    },
+    updatedAt: "2026-07-01T01:28:03.653Z"
   },
   {
     id: "Q75",
@@ -22886,7 +22918,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "bois_navires.png",
-            soustitre: "Nombre de navires construits au Bas-Canada entre 1800 et 1840",
+            soustitre: "Nombre de navires construits au Bas-Canada",
             source: "Adapté de Serge Courville, Histoire du Québec : un parcours, Québec, Éditions CEC."
           }
         ]
@@ -25549,7 +25581,8 @@ const QUESTIONS = [
       type: "mettre-en-relation"
     },
     soustag: "4 documents",
-    updatedAt: "2026-06-30T19:36:46.894Z"
+    updatedAt: "2026-06-30T19:36:46.894Z",
+    _imgs: ["soldats_gendarmerie.jpg", "ecole_quebec_1870.jpg", "comptoir_postal_1870.jpg", "hopital_quebec_1870.jpg"]
   },
   {
     aspects: [{aspect: "Relations fédérales-provinciales"}],
@@ -25608,7 +25641,8 @@ const QUESTIONS = [
     periode: "P5 — 1840 – 1896",
     points: 1,
     reponse: {nombre: 1, type: "lignes"},
-    updatedAt: "2026-06-29T19:12:30.119Z"
+    updatedAt: "2026-06-29T19:12:30.119Z",
+    _imgs: ["tableau_sources_revenus_federal.jpg"]
   },
   {
     aspects: [{aspect: "Relations fédérales-provinciales"}],
@@ -25655,7 +25689,12 @@ const QUESTIONS = [
     periode: "P5 — 1840 – 1896",
     points: 3,
     reponse: {nombre: 5, type: "lignes"},
-    updatedAt: "2026-06-30T19:10:43.942Z"
+    updatedAt: "2026-06-30T19:10:43.942Z",
+    _imgs: [
+      "tableau_revenus_federal_provincial.jpg",
+      "tableau_revenus_depenses_quebec.jpg",
+      "conference_interprovinciale_1887.jpg"
+    ]
   },
   {
     aspects: [{aspect: "Relations fédérales-provinciales"}],
@@ -25718,7 +25757,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Les revenus des provinces deviennent insuffisants pour couvrir leurs dépenses.",
-    updatedAt: "2026-06-30T01:00:28.440Z"
+    updatedAt: "2026-06-30T01:00:28.440Z",
+    _imgs: ["tableau_revenus_depenses_quebec.jpg"]
   },
   {
     aspects: [{aspect: "Relations fédérales-provinciales"}],
@@ -25764,7 +25804,8 @@ const QUESTIONS = [
     periode: "P5 — 1840 – 1896",
     points: 3,
     reponse: {nombre: 5, type: "lignes"},
-    updatedAt: "2026-06-30T19:22:59.205Z"
+    updatedAt: "2026-06-30T19:22:59.205Z",
+    _imgs: ["arpentage_terres_ouest_canadien.jpg", "metis_deuxieme_soulevement_batoche.jpg"]
   },
   {
     id: "Q586",
@@ -25790,7 +25831,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Défendre l'autonomie des provinces.\nDéfendre les droits des provinces.\nS'opposer à la centralisation des pouvoirs fédéraux.",
-    updatedAt: "2026-06-30T01:09:30.316Z"
+    updatedAt: "2026-06-30T01:09:30.316Z",
+    _imgs: ["conference_interprovinciale_1887.jpg"]
   },
   {
     id: "Q587",
@@ -25809,7 +25851,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "La création de la province du Manitoba.",
-    updatedAt: "2026-06-30T01:20:34.977Z"
+    updatedAt: "2026-06-30T01:20:34.977Z",
+    _imgs: ["aanb_manitoba.jpg"]
   },
   {
     id: "Q588",
@@ -25872,7 +25915,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Préserver les droits des catholiques francophones.\nAssurer l'enseignement en français et de la religion catholique.\nProtéger l'identité des communautés francophones catholiques.\nDéfendre les droits des minorités catholiques françaises.",
-    updatedAt: "2026-06-30T01:27:23.453Z"
+    updatedAt: "2026-06-30T01:27:23.453Z",
+    _imgs: ["tableau_manitoba_ecole_catholiques.jpg"]
   },
   {
     aspects: [{aspect: "Relations fédérales-provinciales"}],
@@ -25902,7 +25946,8 @@ const QUESTIONS = [
       ],
       type: "grille"
     },
-    updatedAt: "2026-06-30T20:14:00.657Z"
+    updatedAt: "2026-06-30T20:14:00.657Z",
+    _imgs: ["conflits_metis_ouest.jpg"]
   },
   {
     aspects: [{aspect: "Relations fédérales-provinciales"}],
@@ -26064,7 +26109,8 @@ const QUESTIONS = [
       elements: ["Soulèvement de la rivière Rouge", "Soulèvement du Nord-Ouest"],
       type: "mettre-en-relation"
     },
-    updatedAt: "2026-06-30T20:03:24.149Z"
+    updatedAt: "2026-06-30T20:03:24.149Z",
+    _imgs: ["pendaison_louis_riel.jpg", "metis_premier_soulevement_fort_garry.jpg"]
   },
   {
     aspects: [{aspect: "Relations fédérales-provinciales"}],
@@ -26130,7 +26176,8 @@ const QUESTIONS = [
       elements: ["Soulèvement de la rivière Rouge", "Soulèvement du Nord-Ouest"],
       type: "mettre-en-relation"
     },
-    updatedAt: "2026-06-30T20:08:40.966Z"
+    updatedAt: "2026-06-30T20:08:40.966Z",
+    _imgs: ["metis_thomas_scott.jpg", "metis_deuxieme_soulevement_batoche.jpg"]
   },
   {
     aspects: [{aspect: "Relations fédérales-provinciales"}],
@@ -26148,6 +26195,61 @@ const QUESTIONS = [
     periode: "P5 — 1840 – 1896",
     points: 1,
     reponse: {type: "tableau_2col"},
-    updatedAt: "2026-06-30T20:20:53.015Z"
+    updatedAt: "2026-06-30T20:20:53.015Z",
+    _imgs: ["ecoles_catholiques_manitoba.jpg"]
+  },
+  {
+    id: "Q597",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de la crise économique de 1873 sur les décisions du gouvernement canadien.",
+    aspects: [{aspect: "Politique nationale"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "tableau_tarifs_douaniers_pol_nationale.jpg",
+            soustitre: "Évolution des tarifs douaniers au Canada",
+            source: "Adapté de Michael Bliss, Northern Enterprise: Five Centuries of Canadian Business, McClelland and Stewart, 1987."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Le gouvernement adopte de la Politique nationale.\nLe gouvernement hausse les tarifs douaniers.",
+    updatedAt: "2026-07-01T00:46:23.447Z",
+    _imgs: ["tableau_tarifs_douaniers_pol_nationale.jpg"]
+  },
+  {
+    id: "Q596",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une cause de l'adoption de la Politique nationale en 1879.",
+    aspects: [{aspect: "Politique nationale"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "tableau_exportations_canadiennes_1870.jpg",
+            soustitre: "Évolution des exportations canadiennes",
+            source: "Adapté de Kenneth Norrie, Douglas Owram et J.C. Herbert Emery, A History of the Canadian Economy, Harcourt Brace Canada, 2008."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "La diminution des exportations canadiennes.\nLa crise économique (dépression de 1873).\nLes difficultés économiques du Canada.",
+    updatedAt: "2026-07-01T00:56:56.946Z",
+    _imgs: ["tableau_exportations_canadiennes_1870.jpg"]
   }
 ]

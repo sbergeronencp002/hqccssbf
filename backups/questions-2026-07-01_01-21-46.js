@@ -938,12 +938,12 @@ const REGLETTES = {
     ]
   },
   "Q104": {
-    oi: "Situer dans le temps",
     colonnes: ["2 points", "0 point"],
     niveaux: [
-      {pts: 2, desc: "L'élève situe tous les faits dans le temps."},
-      {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}
-    ]
+      {desc: "L'élève situe tous les faits dans le temps.", pts: 2},
+      {desc: "L'élève ne situe pas tous les faits dans le temps.", pts: 0}
+    ],
+    oi: "Situer dans le temps"
   },
   "Q105": {
     oi: "Déterminer des causes et des conséquences",
@@ -3809,13 +3809,13 @@ const REGLETTES = {
     ]
   },
   "Q406": {
-    oi: "Mettre en relation des faits",
     colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
-      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
-      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
-    ]
+      {desc: "L'élève met en relation tous les faits. (4 sur 4)", pts: 2},
+      {desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)", pts: 1},
+      {desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)", pts: 0}
+    ],
+    oi: "Mettre en relation des faits"
   },
   "Q407": {
     oi: "Mettre en relation des faits",
@@ -3872,18 +3872,18 @@ const REGLETTES = {
     ]
   },
   "Q413": {
-    oi: "Établir des liens de causalité",
-    variante: "3 éléments — 2 liens",
     colonnes: ["3 points", "2 points", "1 point", "0 point"],
     niveaux: [
-      {pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."},
+      {desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité.", pts: 3},
       {
-        pts: 2,
-        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité.",
+        pts: 2
       },
-      {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."},
-      {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}
-    ]
+      {desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité.", pts: 1},
+      {desc: "L'élève précise un seul élément ou n'en précise pas.", pts: 0}
+    ],
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens"
   },
   "Q414": {
     oi: "Situer dans le temps",
@@ -4875,12 +4875,12 @@ const REGLETTES = {
     oi: "Situer dans le temps"
   },
   "Q516": {
+    oi: "Situer dans le temps",
     colonnes: ["1 point", "0 point"],
     niveaux: [
-      {desc: "L'élève situe les faits dans le temps.", pts: 1},
-      {desc: "L'élève ne situe pas les faits dans le temps.", pts: 0}
-    ],
-    oi: "Situer dans le temps"
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
+    ]
   },
   "Q517": {
     colonnes: ["1 point", "0 point"],
@@ -5383,30 +5383,323 @@ const REGLETTES = {
     ]
   },
   "Q565": {
-    oi: "Mettre en relation des faits",
     colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"},
-      {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"},
-      {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}
-    ]
+      {desc: "L'élève met en relation tous les faits. (4 sur 4)", pts: 2},
+      {desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)", pts: 1},
+      {desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)", pts: 0}
+    ],
+    oi: "Mettre en relation des faits"
   },
   "Q566": {
-    oi: "Mettre en relation des faits",
-    colonnes: ["2 points", "1 point", "0 point"],
+    oi: "Situer dans l'espace",
+    colonnes: ["2 points", "0 point"],
     niveaux: [
-      {pts: 2, desc: "L'élève met en relation tous les faits. (2 sur 2)"},
-      {pts: 1, desc: "L'élève met en relation certains faits. (1 sur 2)"},
-      {pts: 0, desc: "L'élève ne met pas en relation les faits. (0 sur 2)"}
+      {pts: 2, desc: "L'élève situe les faits dans l'espace."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}
     ]
   },
   "Q567": {
-    oi: "Mettre en relation des faits",
+    oi: "Situer dans l'espace",
+    colonnes: ["2 points", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève situe les faits dans l'espace."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}
+    ]
+  },
+  "Q568": {
+    oi: "Situer dans l'espace",
+    colonnes: ["2 points", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève situe les faits dans l'espace."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}
+    ]
+  },
+  "Q569": {
+    oi: "Établir des faits",
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
+    ]
+  },
+  "Q570": {
+    oi: "Déterminer des causes et des conséquences",
     colonnes: ["2 points", "1 point", "0 point"],
     niveaux: [
-      {pts: 2, desc: "L'élève met en relation tous les faits. (2 sur 2)"},
-      {pts: 1, desc: "L'élève met en relation certains faits. (1 sur 2)"},
-      {pts: 0, desc: "L'élève ne met pas en relation les faits. (0 sur 2)"}
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
+    ]
+  },
+  "Q571": {
+    oi: "Établir des faits",
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
+    ]
+  },
+  "Q572": {
+    oi: "Situer dans le temps",
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {pts: 1, desc: "L'élève situe les faits dans le temps."},
+      {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}
+    ]
+  },
+  "Q573": {
+    oi: "Établir des faits",
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
+    ]
+  },
+  "Q574": {
+    oi: "Établir des faits",
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {pts: 1, desc: "L'élève établit correctement le fait."},
+      {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}
+    ]
+  },
+  "Q575": {
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {desc: "L'élève établit correctement le fait.", pts: 1},
+      {desc: "L'élève établit incorrectement le fait ou ne l'établit pas.", pts: 0}
+    ],
+    oi: "Établir des faits"
+  },
+  "Q576": {
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {desc: "L'élève établit correctement le fait.", pts: 1},
+      {desc: "L'élève établit incorrectement le fait ou ne l'établit pas.", pts: 0}
+    ],
+    oi: "Établir des faits"
+  },
+  "Q577": {
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {desc: "L'élève établit correctement le fait.", pts: 1},
+      {desc: "L'élève établit incorrectement le fait ou ne l'établit pas.", pts: 0}
+    ],
+    oi: "Établir des faits"
+  },
+  "Q578": {
+    colonnes: ["2 points", "0 point"],
+    niveaux: [
+      {desc: "L'élève situe tous les faits dans le temps.", pts: 2},
+      {desc: "L'élève ne situe pas tous les faits dans le temps.", pts: 0}
+    ],
+    oi: "Situer dans le temps"
+  },
+  "Q579": {
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {desc: "L'élève met en relation tous les faits. (4 sur 4)", pts: 2},
+      {desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)", pts: 1},
+      {desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)", pts: 0}
+    ],
+    oi: "Mettre en relation des faits"
+  },
+  "Q580": {
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {desc: "L'élève dégage correctement la différence.", pts: 2},
+      {desc: "L'élève dégage plus ou moins correctement la différence.", pts: 1},
+      {desc: "L'élève dégage incorrectement la différence ou ne la dégage pas.", pts: 0}
+    ],
+    oi: "Dégager des différences et des similitudes"
+  },
+  "Q581": {
+    colonnes: ["1 point", "0 point"],
+    niveaux: [
+      {desc: "L'élève établit correctement le fait.", pts: 1},
+      {desc: "L'élève établit incorrectement le fait ou ne l'établit pas.", pts: 0}
+    ],
+    oi: "Établir des faits"
+  },
+  "Q582": {
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
+    niveaux: [
+      {desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité.", pts: 3},
+      {
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité.",
+        pts: 2
+      },
+      {desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité.", pts: 1},
+      {desc: "L'élève précise un seul élément ou n'en précise pas.", pts: 0}
+    ],
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens"
+  },
+  "Q583": {
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {desc: "L'élève établit correctement le point de divergence entre les points de vue.", pts: 2},
+      {
+        desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue.",
+        pts: 1
+      },
+      {desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas.", pts: 0}
+    ],
+    oi: "Dégager des différences et des similitudes"
+  },
+  "Q584": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
+    ]
+  },
+  "Q585": {
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
+    niveaux: [
+      {desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité.", pts: 3},
+      {
+        desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité.",
+        pts: 2
+      },
+      {desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité.", pts: 1},
+      {desc: "L'élève précise un seul élément ou n'en précise pas.", pts: 0}
+    ],
+    oi: "Établir des liens de causalité",
+    variante: "3 éléments — 2 liens"
+  },
+  "Q586": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
+    ]
+  },
+  "Q587": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
+    ]
+  },
+  "Q588": {
+    oi: "Dégager des différences et des similitudes",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève dégage correctement la similitude."},
+      {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."},
+      {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}
+    ]
+  },
+  "Q589": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
+    ]
+  },
+  "Q590": {
+    colonnes: ["2 points", "0 point"],
+    niveaux: [
+      {desc: "L'élève situe les faits dans l'espace.", pts: 2},
+      {desc: "L'élève ne situe pas les faits dans l'espace.", pts: 0}
+    ],
+    oi: "Situer dans l'espace"
+  },
+  "Q591": {
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
+    niveaux: [
+      {
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions.",
+        pts: 3
+      },
+      {
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre.",
+        pts: 2
+      },
+      {
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas.",
+        pts: 1
+      },
+      {
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas.",
+        pts: 0
+      }
+    ],
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions"
+  },
+  "Q592": {
+    colonnes: ["3 points", "2 points", "1 point", "0 point"],
+    niveaux: [
+      {
+        desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions.",
+        pts: 3
+      },
+      {
+        desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre.",
+        pts: 2
+      },
+      {
+        desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas.",
+        pts: 1
+      },
+      {
+        desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas.",
+        pts: 0
+      }
+    ],
+    oi: "Dégager des différences et des similitudes",
+    variante: "acteur-positions"
+  },
+  "Q593": {
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {desc: "L'élève met en relation tous les faits. (4 sur 4)", pts: 2},
+      {desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)", pts: 1},
+      {desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)", pts: 0}
+    ],
+    oi: "Mettre en relation des faits"
+  },
+  "Q594": {
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {desc: "L'élève met en relation tous les faits. (4 sur 4)", pts: 2},
+      {desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)", pts: 1},
+      {desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)", pts: 0}
+    ],
+    oi: "Mettre en relation des faits"
+  },
+  "Q595": {
+    colonnes: ["1 point", "0 point"],
+    niveaux: [{desc: "L'élève situe le fait dans l'espace.", pts: 1}, {desc: "L'élève ne situe pas le fait dans l'espace.", pts: 0}],
+    oi: "Situer dans l'espace"
+  },
+  "Q597": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
+    ]
+  },
+  "Q596": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
     ]
   }
 }
@@ -5515,9 +5808,7 @@ const IMAGE_DB = {
   "capitulation_mtl_1760.png": {src: "images/capitulation_mtl_1760.png"},
   "ligne_1755-1795.png": {src: "images/ligne_1755-1795.png"},
   "revolte_pontiac.png": {src: "images/revolte_pontiac.png"},
-  "arrivee_loyalistes.png": {src: "images/arrivee_loyalistes.png"},
   "org_pol_regime_militaire.png": {src: "images/org_pol_regime_militaire.png"},
-  "carte_proclamation_royale_territoire.png": {src: "images/carte_proclamation_royale_territoire.png"},
   "org_pol_apres_1763.png": {src: "images/org_pol_apres_1763.png"},
   "org_pol_1774_acte_quebec.png": {src: "images/org_pol_1774_acte_quebec.png"},
   "mercantilisme_britannique.png": {src: "images/mercantilisme_britannique.png"},
@@ -5654,7 +5945,34 @@ const IMAGE_DB = {
   "reserves_autochtones.jpg": {src: "images/reserves_autochtones.jpg"},
   "famille_autochtones_1850.jpg": {src: "images/famille_autochtones_1850.jpg"},
   "coaliation_acteurs.png": {src: "images/coaliation_acteurs.png", w: 1200, h: 460},
-  "provinces_canada_1867.jpg": {src: "images/provinces_canada_1867.jpg"}
+  "provinces_canada_1867.jpg": {src: "images/provinces_canada_1867.jpg"},
+  "provinces_canada_1867_non.jpg": {src: "images/provinces_canada_1867_non.jpg", w: 1200, h: 725},
+  "missions_autochtones_1850.jpg": {src: "images/missions_autochtones_1850.jpg", w: 1200, h: 800},
+  "conference_interprovinciale_1887.jpg": {src: "images/conference_interprovinciale_1887.jpg"},
+  "portrait_louis_riel.jpg": {src: "images/portrait_louis_riel.jpg"},
+  "portrait_honore_mercier.jpg": {src: "images/portrait_honore_mercier.jpg"},
+  "portrait_pontiac.jpg": {src: "images/portrait_pontiac.jpg"},
+  "rebellions_bataille_st-denis.jpg": {src: "images/rebellions_bataille_st-denis.jpg"},
+  "aanb_conference_charlottetown.jpg": {src: "images/aanb_conference_charlottetown.jpg"},
+  "aanb_conference_quebec.jpg": {src: "images/aanb_conference_quebec.jpg"},
+  "soldats_gendarmerie.jpg": {src: "images/soldats_gendarmerie.jpg"},
+  "ecole_quebec_1870.jpg": {src: "images/ecole_quebec_1870.jpg"},
+  "comptoir_postal_1870.jpg": {src: "images/comptoir_postal_1870.jpg"},
+  "hopital_quebec_1870.jpg": {src: "images/hopital_quebec_1870.jpg"},
+  "tableau_sources_revenus_federal.jpg": {src: "images/tableau_sources_revenus_federal.jpg"},
+  "tableau_revenus_depenses_quebec.jpg": {src: "images/tableau_revenus_depenses_quebec.jpg", w: 1200, h: 863},
+  "aanb_manitoba.jpg": {src: "images/aanb_manitoba.jpg", w: 1158, h: 643},
+  "tableau_manitoba_ecole_catholiques.jpg": {src: "images/tableau_manitoba_ecole_catholiques.jpg", w: 1200, h: 960},
+  "conflits_metis_ouest.jpg": {src: "images/conflits_metis_ouest.jpg", w: 1200, h: 1015},
+  "tableau_revenus_federal_provincial.jpg": {src: "images/tableau_revenus_federal_provincial.jpg"},
+  "arpentage_terres_ouest_canadien.jpg": {src: "images/arpentage_terres_ouest_canadien.jpg"},
+  "metis_thomas_scott.jpg": {src: "images/metis_thomas_scott.jpg"},
+  "ecoles_catholiques_manitoba.jpg": {src: "images/ecoles_catholiques_manitoba.jpg"},
+  "tableau_tarifs_douaniers_pol_nationale.jpg": {src: "images/tableau_tarifs_douaniers_pol_nationale.jpg"},
+  "tableau_exportations_canadiennes_1870.jpg": {src: "images/tableau_exportations_canadiennes_1870.jpg"},
+  "jacques_cartier_scrobu.jpg": {src: "images/jacques_cartier_scrobu.jpg"},
+  "jacques_cartier_hochelaga.jpg": {src: "images/jacques_cartier_hochelaga.jpg", w: 1200, h: 1037},
+  "jacques_cartier_fondation_charlesbourg_royal.jpg": {src: "images/jacques_cartier_fondation_charlesbourg_royal.jpg", w: 1200, h: 820}
 }
 
 const QUESTIONS = [
@@ -5736,7 +6054,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_acBd.png"},
     guide: "C - D - B - A",
-    updatedAt: "2026-06-25T13:45:06.253Z"
+    updatedAt: "2026-06-25T13:45:06.253Z",
+    _imgs: ["fondation_quebec_1608.png", "ligne_acBd.png"]
   },
   {
     id: "Q3",
@@ -5755,13 +6074,15 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "bataille_lac_champlain.png",
             soustitre: "Bataille du lac Champlain",
-            source: "Bibliothèque et Archives nationales du Québec (BAnQ)."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "image", ref: "ligne_1550-1750.png"},
-    guide: "B"
+    guide: "B",
+    _imgs: ["bataille_lac_champlain.png", "ligne_1550-1750.png"]
   },
   {
     id: "Q4",
@@ -5802,7 +6123,8 @@ const QUESTIONS = [
             titre: "Document C",
             ref: "capitulation_mtl_1760.png",
             soustitre: "Capitulation de Montréal",
-            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de la capitulation de Montréal, 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       },
@@ -5826,7 +6148,8 @@ const QUESTIONS = [
         ["C et D", "", "A et B"]
       ]
     },
-    updatedAt: "2026-06-03T11:31:34.474Z"
+    updatedAt: "2026-06-03T11:31:34.474Z",
+    _imgs: ["invasion_americaine.png", "capitulation_mtl_1760.png"]
   },
   {
     id: "Q5",
@@ -5844,7 +6167,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "tableau_2col"},
-    guide: "A"
+    guide: "A",
+    _imgs: ["loyalistes_province_quebec.png"]
   },
   {
     id: "Q6",
@@ -5945,13 +6269,15 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "cause_rivalites_coloniales.png",
-            source: "Adaptation contemporaine d’une caricature historique, réalisée avec l’aide de l’intelligence artificielle (ChatGPT, 2026)."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Le commerce des fourrures ou le contrôle du territoire ou la rivalité entre les métropoles."
+    guide: "Le commerce des fourrures ou le contrôle du territoire ou la rivalité entre les métropoles.",
+    _imgs: ["cause_rivalites_coloniales.png"]
   },
   {
     id: "Q9",
@@ -5993,7 +6319,8 @@ const QUESTIONS = [
         ["Cause", "B"],
         ["Conséquence", "A"]
       ]
-    }
+    },
+    _imgs: ["recensement_colonie_n-f.png"]
   },
   {
     id: "Q10",
@@ -6012,7 +6339,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_1774_acte_quebec.png",
             soustitre: "Organisation politique de la Province de Québec après 1774",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
@@ -6023,14 +6351,16 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "Organisation politique du Haut-Canada et du Bas-Canada après 1791",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "La population peut désormais élire des députés à la Chambre d'assemblée ou une partie de la population obtient le droit de participer à l'élection des représentants ou la création d'une Chambre d'assemblée permet à la population d'être représentée par des députés élus.",
-    updatedAt: "2026-06-12T11:43:39.302Z"
+    updatedAt: "2026-06-12T11:43:39.302Z",
+    _imgs: ["org_pol_1774_acte_quebec.png", "org_pol_1791_acte_const.png"]
   },
   {
     id: "Q11",
@@ -6048,11 +6378,20 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [{titre: "Document B", ref: "troc_1700.png", soustitre: "Vers 1700", source: "MEES."}]
+        cols: [
+          {
+            titre: "Document B",
+            ref: "troc_1700.png",
+            soustitre: "Vers 1700",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
+          }
+        ]
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Le troc ou l’échange de fourrures contre d’autres produits."
+    guide: "Le troc ou l’échange de fourrures contre d’autres produits.",
+    _imgs: ["troc_1600.png", "troc_1700.png"]
   },
   {
     id: "Q12",
@@ -6071,7 +6410,8 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "org_pol_1774_acte_quebec.png",
             soustitre: "Organisation politique de la Province de Québec après 1774",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
@@ -6082,14 +6422,16 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "Organisation politique du Haut-Canada et du Bas-Canada après 1791",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 4},
     guide: "Il y a changement, car il y a une Assemblée législative à partir de 1791 (ou car il y a mise en place d’une chambre d’assemblée durant cette période). \nou \nIl y a continuité, car le gouverneur détient tous les pouvoirs entre 1774 et 1791 (ou car le gouverneur a toujours les pleins pouvoirs durant cette période).",
-    updatedAt: "2026-06-12T11:44:36.624Z"
+    updatedAt: "2026-06-12T11:44:36.624Z",
+    _imgs: ["org_pol_1774_acte_quebec.png", "org_pol_1791_acte_const.png"]
   },
   {
     id: "Q13",
@@ -6162,7 +6504,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "papineau_foule.png",
             soustitre: "Louis-Joseph Papineau  s’adressant à la foule",
-            source: "Henri Julien, illustration des assemblées patriotes de 1837. Adaptée."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       },
@@ -6189,7 +6532,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 4},
     guide: "Les Patriotes revendiquent l’obtention de la responsabilité ministérielle ou le contrôle du budget par l’Assemblée ou l’élection des membres du conseil législatif (ene revendication des Patriotes). \nCes revendications sont refusées par Londres (la réponse de Londres). Devant le refus de Londres, les Patriotes invitent la population à boycotter les produits britanniques ou organisent des assemblées populaires ou se soulèvent (une action de protestation populaire).",
-    updatedAt: "2026-06-12T15:29:39.916Z"
+    updatedAt: "2026-06-12T15:29:39.916Z",
+    _imgs: ["papineau_foule.png"]
   },
   {
     id: "Q15",
@@ -6256,7 +6600,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "chrono_dbAc.png"},
     guide: "D - B - A - C",
-    updatedAt: "2026-06-25T13:49:47.607Z"
+    updatedAt: "2026-06-25T13:49:47.607Z",
+    _imgs: ["camp_oui_1995.png", "rapatriment_constitution.png", "chrono_dbAc.png"]
   },
   {
     id: "Q17",
@@ -6274,7 +6619,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "image", ref: "ligne_1950-2010.png"},
-    guide: "C"
+    guide: "C",
+    _imgs: ["crise_oka.png", "ligne_1950-2010.png"]
   },
   {
     id: "Q18",
@@ -6322,7 +6668,8 @@ const QUESTIONS = [
       rangees: [
         ["B et D", "", "A et C"]
       ]
-    }
+    },
+    _imgs: ["logos_societe_etat.png", "barrages_hydro_baie_james.png"]
   },
   {
     id: "Q19",
@@ -6340,7 +6687,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "tableau_2col"},
-    guide: "C"
+    guide: "C",
+    _imgs: ["territoire_exploite_minerai_fer.png"]
   },
   {
     id: "Q20",
@@ -6368,7 +6716,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Le Front de libération du Québec recourt à la violence (ex. : enlèvements, attentats à la bombe), alors que le Parti québécois recourt à l’exercice de la démocratie (ex. : élections, référendum)."
+    guide: "Le Front de libération du Québec recourt à la violence (ex. : enlèvements, attentats à la bombe), alors que le Parti québécois recourt à l’exercice de la démocratie (ex. : élections, référendum).",
+    _imgs: ["victoire_pq_1976.png"]
   },
   {
     id: "Q21",
@@ -6471,14 +6820,16 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_1840_acte_union.png",
             soustitre: "Organisation politique de la colonie entre en 1840",
-            source: "Récitus."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Obtenir la responsabilité ministérielle (ou le gouvernement responsable) ou obtenir que les membres du Conseil exécutif soient désormais choisis parmi les membres de l’Assemblée législative ou former la majorité à la Chambre d’assemblée.",
-    updatedAt: "2026-06-12T12:26:16.322Z"
+    updatedAt: "2026-06-12T12:26:16.322Z",
+    _imgs: ["org_pol_1840_acte_union.png"]
   },
   {
     id: "Q24",
@@ -6513,7 +6864,8 @@ const QUESTIONS = [
         ["Cause", "A"],
         ["Conséquence", "B"]
       ]
-    }
+    },
+    _imgs: ["echanges_canada_etats-unis_1850-1860.png"]
   },
   {
     id: "Q25",
@@ -6556,7 +6908,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "Organisation politique du Haut-Canada et du Bas-Canada après 1791",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
@@ -6567,14 +6920,16 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "org_pol_1840_acte_union.png",
             soustitre: "Organisation politique du Canada-Uni aprés 1840",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Le droit de veto (ou Le droit de rejeter des projets de loi soumis par la Chambre d’assemblée) ou le pouvoir exécutif (ou Le pouvoir de nommer les membres des conseils exécutif et législatif) ou le pouvoir de dissoudre la Chambre d’assemblée.",
-    updatedAt: "2026-06-12T12:27:32.373Z"
+    updatedAt: "2026-06-12T12:27:32.373Z",
+    _imgs: ["org_pol_1791_acte_const.png", "org_pol_1840_acte_union.png"]
   },
   {
     id: "Q27",
@@ -6732,7 +7087,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Le détroit de Béring (ou la Béringie).",
-    updatedAt: "2026-06-09T03:12:05.846Z"
+    updatedAt: "2026-06-09T03:12:05.846Z",
+    _imgs: ["carte_premiers_occ_peuplement.png"]
   },
   {
     id: "Q31",
@@ -6750,7 +7106,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Les Iroquoiens.",
-    updatedAt: "2026-06-09T13:54:31.842Z"
+    updatedAt: "2026-06-09T13:54:31.842Z",
+    _imgs: ["carte_familles_linguistiques_autochtones_1500.png"]
   },
   {
     id: "Q32",
@@ -6768,7 +7125,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Les Algonquiens.",
-    updatedAt: "2026-06-09T13:54:41.475Z"
+    updatedAt: "2026-06-09T13:54:41.475Z",
+    _imgs: ["carte_familles_linguistiques_autochtones_1500.png"]
   },
   {
     id: "Q33",
@@ -6786,7 +7144,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "tableau_2col"},
-    guide: "C"
+    guide: "C",
+    _imgs: ["carte_familles_linguistiques_autochtones_lettres.png"]
   },
   {
     id: "Q34",
@@ -6804,7 +7163,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "tableau_2col"},
-    guide: "B"
+    guide: "B",
+    _imgs: ["carte_familles_linguistiques_autochtones_lettres.png"]
   },
   {
     id: "Q35",
@@ -6822,7 +7182,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "tableau_2col"},
-    guide: "A"
+    guide: "A",
+    _imgs: ["carte_familles_linguistiques_autochtones_lettres.png"]
   },
   {
     id: "Q36",
@@ -6883,7 +7244,8 @@ const QUESTIONS = [
           {
             titre: "Document D",
             ref: "village_iroquoien_vers_1500.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
@@ -6931,7 +7293,8 @@ const QUESTIONS = [
         ["B et D", "A et C"]
       ]
     },
-    updatedAt: "2026-06-09T03:27:00.693Z"
+    updatedAt: "2026-06-09T03:27:00.693Z",
+    _imgs: ["village_iroquoien_vers_1500.png", "campement_algonquien.png"]
   },
   {
     id: "Q38",
@@ -7097,14 +7460,16 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "tradition_chamanique_1500.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Il soigne les malades ou dirige des cérémonies ou interprète les rêves ou communique avec les esprits.",
-    updatedAt: "2026-06-09T13:06:02.574Z"
+    updatedAt: "2026-06-09T13:06:02.574Z",
+    _imgs: ["tradition_chamanique_1500.png"]
   },
   {
     id: "Q42",
@@ -7202,7 +7567,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Par l’observation ou l’imitation ou la participation aux activités des adultes.",
-    updatedAt: "2026-06-09T13:18:57.625Z"
+    updatedAt: "2026-06-09T13:18:57.625Z",
+    _imgs: ["education_enfants_1500.png"]
   },
   {
     id: "Q45",
@@ -7226,7 +7592,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Le partage des biens.",
-    updatedAt: "2026-06-09T13:53:16.790Z"
+    updatedAt: "2026-06-09T13:53:16.790Z",
+    _imgs: ["partage_1500.png"]
   },
   {
     id: "Q46",
@@ -7274,7 +7641,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "La tradition orale.",
-    updatedAt: "2026-06-09T13:11:41.200Z"
+    updatedAt: "2026-06-09T13:11:41.200Z",
+    _imgs: ["tradition_orale_1500.png"]
   },
   {
     id: "Q48",
@@ -7335,7 +7703,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Le don et contre-don.",
-    updatedAt: "2026-06-09T13:15:11.136Z"
+    updatedAt: "2026-06-09T13:15:11.136Z",
+    _imgs: ["don_contre-don.png"]
   },
   {
     id: "Q50",
@@ -7359,7 +7728,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Les hommes de la communauté.",
-    updatedAt: "2026-06-09T14:22:26.140Z"
+    updatedAt: "2026-06-09T14:22:26.140Z",
+    _imgs: ["prise_decision_algonquien.png"]
   },
   {
     id: "Q51",
@@ -7383,7 +7753,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Le troc.",
-    updatedAt: "2026-06-09T14:47:25.912Z"
+    updatedAt: "2026-06-09T14:47:25.912Z",
+    _imgs: ["troc_1500.png"]
   },
   {
     id: "Q52",
@@ -7402,7 +7773,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Les nations autochtones ont accès à des ressources qu’elles ne trouvent pas sur leur propre territoire ou elles obtiennent des ressources provenant de régions éloignées ou des biens circulent sur de vastes territoires.",
-    updatedAt: "2026-06-09T14:48:41.398Z"
+    updatedAt: "2026-06-09T14:48:41.398Z",
+    _imgs: ["carte_reseaux_echanges_1500.png"]
   },
   {
     id: "Q53",
@@ -7421,7 +7793,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Les ressources peuvent être transportées sur de longues distances ou les échanges entre les nations sont facilités ou les réseaux d’échange s’étendent sur de vastes territoires.",
-    updatedAt: "2026-06-09T14:48:14.169Z"
+    updatedAt: "2026-06-09T14:48:14.169Z",
+    _imgs: ["carte_reseaux_echanges_1500.png"]
   },
   {
     id: "Q54",
@@ -7445,7 +7818,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Le canot d’écorce.",
-    updatedAt: "2026-06-09T14:42:45.101Z"
+    updatedAt: "2026-06-09T14:42:45.101Z",
+    _imgs: ["canot_ecorce_echanges.png"]
   },
   {
     id: "Q55",
@@ -7531,7 +7905,8 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     reponse: {nombre: 1, type: "lignes"},
-    updatedAt: "2026-06-19T18:53:50.742Z"
+    updatedAt: "2026-06-19T18:53:50.742Z",
+    _imgs: ["portrait_james_murray.png"]
   },
   {
     id: "Q58",
@@ -7677,7 +8052,8 @@ const QUESTIONS = [
     periode: "P3 — 1760 – 1791",
     points: 1,
     reponse: {nombre: 1, type: "lignes"},
-    updatedAt: "2026-06-19T18:47:29.508Z"
+    updatedAt: "2026-06-19T18:47:29.508Z",
+    _imgs: ["portrait_guy_carleton.png"]
   },
   {
     id: "Q63",
@@ -7701,7 +8077,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Le contrôle des territoire de chasse et de pêche.",
-    updatedAt: "2026-06-09T14:04:33.618Z"
+    updatedAt: "2026-06-09T14:04:33.618Z",
+    _imgs: ["objets_rivalites.png"]
   },
   {
     id: "Q64",
@@ -7832,7 +8209,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 5},
     guide: "Les rivalités pour le contrôle des territoires de chasse (ou des réseaux d’échange) (un objet de rivalité entre les nations autochtones) poussent certaines nations à conclure des alliances afin de renforcer leur défense ou leur puissance militaire (l’objectif des alliances entre les nations autochtones). Lors des conflits, les prisonniers capturés (le sort des prisonniers) peuvent être adoptés par la nation victorieuse ou mis à mort.",
-    updatedAt: "2026-06-15T12:23:58.509Z"
+    updatedAt: "2026-06-15T12:23:58.509Z",
+    _imgs: ["prisonnier_autochtone_1500.png"]
   },
   {
     id: "Q68",
@@ -7905,7 +8283,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "image", ref: "ligne_1550-1750.png"},
-    guide: "B"
+    guide: "B",
+    _imgs: ["ligne_1550-1750.png"]
   },
   {
     id: "Q71",
@@ -7922,8 +8301,9 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            texte: "« Durant l’hiver, les Iroquoiens enseignent aux Français un remède contre le scorbut préparé à partir de l’écorce et des aiguilles de cèdre. »",
-            source: "Jacques Mathieu, La Nouvelle-France. Québec, Les Presses de l’Université Laval."
+            ref: "jacques_cartier_scrobu.jpg",
+            soustitre: "Jacques Cartier découvre un remède contre le scorbut",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."
           }
         ]
       },
@@ -7942,8 +8322,8 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            texte: "« Cartier explore le golfe du Saint-Laurent et prend possession du territoire à Gaspé au nom du roi de France en y faisant ériger une croix. »",
-            source: "Jacques Lacoursière, Canada-Québec, 1534-2010. Québec, Les Éditions du Septentrion, 2011."
+            ref: "jacques_cartier_1534.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."
           }
         ]
       }
@@ -7958,7 +8338,8 @@ const QUESTIONS = [
       rangees: [
         ["C", "A", "B"]
       ]
-    }
+    },
+    updatedAt: "2026-07-01T01:16:47.106Z"
   },
   {
     id: "Q72",
@@ -8161,7 +8542,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "image", ref: "ligne_1475-1575.png"},
-    guide: "C."
+    guide: "C.",
+    _imgs: ["jacques_cartier_1534.png", "ligne_1475-1575.png"]
   },
   {
     id: "Q76",
@@ -8185,7 +8567,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "image", ref: "ligne_1475-1575.png"},
-    guide: "C."
+    guide: "C.",
+    _imgs: ["ligne_1475-1575.png"]
   },
   {
     id: "Q77",
@@ -8240,7 +8623,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_acBd.png"},
     guide: "C - A - B - D",
-    updatedAt: "2026-06-25T13:49:14.267Z"
+    updatedAt: "2026-06-25T13:49:14.267Z",
+    _imgs: ["ligne_acBd.png"]
   },
   {
     id: "Q78",
@@ -8258,7 +8642,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "tableau_2col"},
-    guide: "B."
+    guide: "B.",
+    _imgs: ["carte_seigneurie_n-f.png"]
   },
   {
     id: "Q79",
@@ -8282,7 +8667,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Une diminution importante de la population autochtone."
+    guide: "Une diminution importante de la population autochtone.",
+    _imgs: ["graphique_pop_autochtone_n-f.png"]
   },
   {
     id: "Q80",
@@ -8396,7 +8782,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les Treize colonies ne peuvent prendre de l’expansion ou l’occupation française limite leur expansion ou leur territoire est limité."
+    guide: "Les Treize colonies ne peuvent prendre de l’expansion ou l’occupation française limite leur expansion ou leur territoire est limité.",
+    _imgs: ["carte_amerique_nord_1700.png"]
   },
   {
     id: "Q85",
@@ -8423,7 +8810,8 @@ const QUESTIONS = [
       rangees: [
         ["B", "C"]
       ]
-    }
+    },
+    _imgs: ["carte_amerique_nord_1700_lettres.png"]
   },
   {
     id: "Q86",
@@ -8505,7 +8893,8 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "evangelisation_n-f.jpg",
-            source: "C. W. Jefferys, Jesuit missionary preaching to Indigenous people, domaine public."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       },
@@ -8525,7 +8914,8 @@ const QUESTIONS = [
           {
             titre: "Document C",
             ref: "education_n-f.jpg",
-            source: "C. W. Jefferys, The Ursulines Teaching Indian Girls, domaine public."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       }
@@ -8540,7 +8930,8 @@ const QUESTIONS = [
       rangees: [
         ["C", "A", "B"]
       ]
-    }
+    },
+    _imgs: ["evangelisation_n-f.jpg", "education_n-f.jpg"]
   },
   {
     id: "Q88",
@@ -8559,13 +8950,15 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "debarquement_plaines_abraham.png",
             soustitre: "La bataille des plaines d’Abraham à Québec",
-            source: "Hervey Smyth, A View of the Taking of Quebec, September 13, 1759, vers 1760, Library and Archives Canada, C-000342."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "image", ref: "ligne_1600-1800.png"},
-    guide: "D"
+    guide: "D",
+    _imgs: ["debarquement_plaines_abraham.png", "ligne_1600-1800.png"]
   },
   {
     id: "Q89",
@@ -8694,7 +9087,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "image", ref: "ligne_abDc.png"},
-    guide: "C – B – D – A."
+    guide: "C – B – D – A.",
+    _imgs: ["ligne_abDc.png"]
   },
   {
     id: "Q91",
@@ -8852,7 +9246,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "Il y a changement, car après la Conquête, des marchands britanniques prennent part au commerce des fourrures. OU Il y a continuité, car entre 1713 et 1783, les Amérindiens (ou les Canadiens) sont des acteurs importants dans le commerce des fourrures. OU Il y a continuité, car après la Conquête, la fourrure est toujours le principal produit d’exportation dans la colonie."
+    guide: "Il y a changement, car après la Conquête, des marchands britanniques prennent part au commerce des fourrures. OU Il y a continuité, car entre 1713 et 1783, les Amérindiens (ou les Canadiens) sont des acteurs importants dans le commerce des fourrures. OU Il y a continuité, car après la Conquête, la fourrure est toujours le principal produit d’exportation dans la colonie.",
+    _imgs: ["commence_fourrure_n-f.png"]
   },
   {
     id: "Q95",
@@ -8904,7 +9299,8 @@ const QUESTIONS = [
       rangees: [
         ["A et C", "B et D"]
       ]
-    }
+    },
+    _imgs: ["carte_acte_quebec_1774.png", "carte_proclamation_royale_1763.png"]
   },
   {
     id: "Q96",
@@ -8974,7 +9370,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "La traite des fourrures demeure une activité économique importante dans la colonie ou la fourrure demeure un important produit d’exportation ou le commerce des fourrures se poursuit après la Conquête."
+    guide: "La traite des fourrures demeure une activité économique importante dans la colonie ou la fourrure demeure un important produit d’exportation ou le commerce des fourrures se poursuit après la Conquête.",
+    _imgs: ["exportations_nouvelle_france_1755.png", "exportations_province_quebec_1770.png"]
   },
   {
     id: "Q98",
@@ -8993,14 +9390,16 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "accroissement_naturel_bas-canada_1790-1840.png",
             soustitre: "Naissances et décès au Bas-Canada  entre 1790 et 1840",
-            source: "Adapté de Hubert Charbonneau, La population du Québec : études rétrospectives, Montréal, Boréal Express, 1973."
+            source: "Adapté de Hubert Charbonneau, La population du Québec : études rétrospectives, Montréal, Boréal Express, 1973.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Les naissances demeurent plus nombreuses que les décès\nL'accroissement naturel demeure important",
-    updatedAt: "2026-06-12T12:14:18.999Z"
+    updatedAt: "2026-06-12T12:14:18.999Z",
+    _imgs: ["accroissement_naturel_bas-canada_1790-1840.png"]
   },
   {
     id: "Q99",
@@ -9018,7 +9417,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "1791-1840_grosse_ile.png",
             soustitre: "Grosse-Île et l’accueil des immigrants",
-            source: "Bibliothèque et Archives Canada, C-013656; image modifiée par Sébastien Bergeron, 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       },
@@ -9038,13 +9438,15 @@ const QUESTIONS = [
           {
             titre: "Document C",
             ref: "1820_immigration_irlandaise.png",
-            source: "The Illustrated London News/Bibliothèque et Archives Canada/C-006556; image modifiée par Sébastien Bergeron, 2026."
+            source: "adaptation libre inspirée The Illustrated London News/Bibliothèque et Archives Canada/C-006556.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 5},
-    guide: "Les immigrants sont malades (ou affaiblis) à leur arrivée dans la colonie (L’état de santé des immigrants des îles Britanniques à leur arrivée dans la colonie), ce qui contribue à propager des épidémies (ou le choléra) dans la population (Un problème de santé publique dans la colonie). Cette situation amène les autorités coloniales à mettre en place une station de quarantaine (ou un hôpital) à Grosse-Île ou à isoler les immigrants à Grosse-Île (Une action des autorités coloniales à Grosse-Île)."
+    guide: "Les immigrants sont malades (ou affaiblis) à leur arrivée dans la colonie (L’état de santé des immigrants des îles Britanniques à leur arrivée dans la colonie), ce qui contribue à propager des épidémies (ou le choléra) dans la population (Un problème de santé publique dans la colonie). Cette situation amène les autorités coloniales à mettre en place une station de quarantaine (ou un hôpital) à Grosse-Île ou à isoler les immigrants à Grosse-Île (Une action des autorités coloniales à Grosse-Île).",
+    _imgs: ["1791-1840_grosse_ile.png", "1820_immigration_irlandaise.png"]
   },
   {
     id: "Q100",
@@ -9217,7 +9619,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "execution_patriotes.png",
             soustitre: "Exécution des Patriotes",
-            source: "Bibliothèque et Archives Canada/C-013493."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       },
@@ -9248,7 +9651,8 @@ const QUESTIONS = [
             titre: "Document D",
             ref: "bataille_st-eustache.png",
             soustitre: "Bataille de Saint-Eustache",
-            source: "Bibliothèque et Archives Canada/C-000396."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       }
@@ -9260,63 +9664,68 @@ const QUESTIONS = [
       rangees: [
         ["B et C", "", "A et D"]
       ]
-    }
+    },
+    _imgs: ["execution_patriotes.png", "bataille_st-eustache.png"]
   },
   {
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
+    documents: [
+      {
+        cols: [
+          {
+            ref: "independance_bas-canada.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            soustitre: "La déclaration d'indépendance du Bas-Canada",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            source: "Adapté de Yvan Lamonde, Histoire sociale des idées au Québec, tome 1, Fides, 2000.",
+            soustitre: "La publication du Rapport Durham",
+            texte: "« À la suite des affrontements, une enquête est confiée à un représentant britannique afin d'expliquer les causes des troubles et de recommander des changements pour l'avenir de la colonie. »",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            source: "Adapté de Gilles Laporte, Patriotes et Loyaux, Septentrion, 2004.",
+            soustitre: "L'adoption des 92 Résolutions par le Parti Patriote",
+            texte: "« Des représentants de la population présentent un long ensemble de demandes afin d'obtenir davantage de pouvoir politique et un meilleur contrôle des décisions prises dans la colonie. »",
+            titre: "Document C"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "rebellions_bataille_st-denis.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            soustitre: "La bataille de Saint-Denis",
+            titre: "Document D"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Les documents A à D présentent des événements liés aux soulèvements de 1837-1838. Placez ces documents par ordre chronologique.",
+    guide: "C - D - A - B",
     id: "Q104",
     niveau: 3,
     oi: "Situer dans le temps",
     periode: "P4 — 1791 – 1840",
     points: 2,
+    reponse: {ref: "ligne_bcAd.png", type: "image"},
     soustag: "Ordre chronologique",
-    enonce: "Les documents A à D présentent des événements liés aux soulèvements de 1837-1838. Placez ces documents par ordre chronologique.",
-    aspects: [{aspect: "Soulèvements de 1837-1838"}],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "execution_patriotes.png",
-            soustitre: "Exécution des Patriotes",
-            source: "Bibliothèque et Archives Canada/C-013493."
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            texte: "« Les résolutions Russell ferment la porte à toute réforme constitutionnelle sérieuse. En refusant les principales revendications des Patriotes, Londres confirme que les Canadiens français n’obtiendront aucun véritable contrôle sur leur gouvernement. »",
-            source: "Gilles Laporte, Patriotes et Loyaux : mobilisation politique et leadership régional en 1837 et 1838, Québec, Septentrion, 2004."
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document C",
-            texte: "« Les 92 Résolutions constituent le programme politique le plus complet jamais formulé par le Parti patriote pour réclamer une véritable démocratie parlementaire. »",
-            source: "Jacques Lacoursière, Histoire populaire du Québec, tome 3, Québec, Septentrion, 1996."
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document D",
-            ref: "bataille_st-eustache.png",
-            soustitre: "Bataille de Saint-Eustache",
-            source: "Bibliothèque et Archives Canada/C-000396."
-          }
-        ]
-      }
-    ],
-    reponse: {type: "image", ref: "ligne_abDc.png"},
-    guide: "C - B - D - A"
+    updatedAt: "2026-06-29T16:06:13.047Z",
+    _imgs: ["independance_bas-canada.png", "rebellions_bataille_st-denis.jpg", "ligne_bcAd.png"]
   },
   {
     id: "Q105",
@@ -9342,7 +9751,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Les exportations de bois des colonies vers la Grande-Bretagne augmentent fortement.",
-    updatedAt: "2026-06-15T15:19:13.819Z"
+    updatedAt: "2026-06-15T15:19:13.819Z",
+    _imgs: ["exportation_bois_1790-1840.png"]
   },
   {
     id: "Q106",
@@ -9368,7 +9778,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Les exportations de bois des colonies vers la Grande-Bretagne augmentent fortement après 1806.",
-    updatedAt: "2026-06-15T15:18:44.694Z"
+    updatedAt: "2026-06-15T15:18:44.694Z",
+    _imgs: ["exportation_bois_1790-1840.png"]
   },
   {
     id: "Q107",
@@ -9411,7 +9822,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "population_1763.png",
             soustitre: "Composition de la population de la colonie en 1763",
-            source: "adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal."
+            source: "Adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal.",
+            auteur: ""
           }
         ]
       },
@@ -9429,7 +9841,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "La proportion de la population anglophone augmente entre 1763 et 1784 ou la population anglophone passe de 1 % à 15 % ou la proportion de la population francophone diminue entre 1763 et 1784.",
-    updatedAt: "2026-06-12T12:17:02.769Z"
+    updatedAt: "2026-06-12T12:17:02.769Z",
+    _imgs: ["population_1763.png", "population_1783.png"]
   },
   {
     id: "Q109",
@@ -9448,7 +9861,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "population_1763.png",
             soustitre: "Composition de la population de la colonie en 1763",
-            source: "adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal."
+            source: "Adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal.",
+            auteur: ""
           }
         ]
       },
@@ -9466,7 +9880,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "La population francophone demeure majoritaire dans la colonie entre 1763 et 1784 ou la population anglophone demeure minoritaire dans la colonie entre 1763 et 1784.",
-    updatedAt: "2026-06-12T12:17:54.954Z"
+    updatedAt: "2026-06-12T12:17:54.954Z",
+    _imgs: ["population_1763.png", "population_1783.png"]
   },
   {
     id: "Q110",
@@ -9485,7 +9900,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "population_1763.png",
             soustitre: "Composition de la population de la colonie en 1763",
-            source: "adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal."
+            source: "Adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal.",
+            auteur: ""
           }
         ]
       },
@@ -9503,7 +9919,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Il y a une continuité dans la composition de la population de la colonie entre 1763 et 1784 puisque les francophones demeurent majoritaires.\n\nIl y a un changement dans la composition de la population de la colonie puisque la proportion de la population anglophone augmente entre 1763 et 1784. Elle passe de 1 % à 15 % de la population.",
-    updatedAt: "2026-06-12T12:18:44.141Z"
+    updatedAt: "2026-06-12T12:18:44.141Z",
+    _imgs: ["population_1763.png", "population_1783.png"]
   },
   {
     id: "Q111",
@@ -9526,7 +9943,14 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [{titre: "Document B", ref: "loyalistes.png", source: "Bibliothèque et Archives Canada/C-020587."}]
+        cols: [
+          {
+            titre: "Document B",
+            ref: "loyalistes.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
+          }
+        ]
       },
       {
         type: "textes",
@@ -9540,7 +9964,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 5},
-    guide: "En 1783, la Grande-Bretagne reconnaît l’indépendance des États-Unis à la suite de la victoire américaine lors de la guerre d’indépendance (le résultat de la guerre d’indépendance américaine en 1783). Plusieurs Loyalistes quittent les États-Unis pour s’établir dans la Province de Québec (un groupe qui migre vers la Province de Québec. Cette migration augmente la population anglophone dans la colonie et modifie la composition démographique de la Province de Québec (un changement démographique dans la Province de Québec)."
+    guide: "En 1783, la Grande-Bretagne reconnaît l’indépendance des États-Unis à la suite de la victoire américaine lors de la guerre d’indépendance (le résultat de la guerre d’indépendance américaine en 1783). Plusieurs Loyalistes quittent les États-Unis pour s’établir dans la Province de Québec (un groupe qui migre vers la Province de Québec. Cette migration augmente la population anglophone dans la colonie et modifie la composition démographique de la Province de Québec (un changement démographique dans la Province de Québec).",
+    _imgs: ["loyalistes.png"]
   },
   {
     id: "Q112",
@@ -9577,7 +10002,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 5},
-    guide: "La prise de Constantinople par les Ottomans modifie le commerce entre l’Europe et l’Asie (changement dans le commerce européen). Plusieurs royaumes européens cherchent alors une nouvelle route maritime pour accéder à l'Asie (un objectif des royaumes européens). Pour atteindre cet objectif, plusieurs États européens financent des voyages d’exploration au 16e siècle (un moyen utilisé)."
+    guide: "La prise de Constantinople par les Ottomans modifie le commerce entre l’Europe et l’Asie (changement dans le commerce européen). Plusieurs royaumes européens cherchent alors une nouvelle route maritime pour accéder à l'Asie (un objectif des royaumes européens). Pour atteindre cet objectif, plusieurs États européens financent des voyages d’exploration au 16e siècle (un moyen utilisé).",
+    _imgs: ["voyages_exploration.png"]
   },
   {
     id: "Q113",
@@ -9595,7 +10021,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les pêcheurs européens fréquentent le golfe du Saint-Laurent afin d’exploiter les importantes ressources halieutiques, notamment la morue ou les Européens fréquentent le golfe du Saint-Laurent pour pratiquer la pêche à la morue."
+    guide: "Les pêcheurs européens fréquentent le golfe du Saint-Laurent afin d’exploiter les importantes ressources halieutiques, notamment la morue ou les Européens fréquentent le golfe du Saint-Laurent pour pratiquer la pêche à la morue.",
+    _imgs: ["carte_premiers_contacts.png"]
   },
   {
     id: "Q114",
@@ -9613,7 +10040,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les nations autochtones développent des échanges commerciaux avec les Européens ou certaines nations autochtones entrent en contact avec les Européens par le commerce ou les contacts entre Autochtones et Européens deviennent plus fréquents dans le golfe du Saint-Laurent."
+    guide: "Les nations autochtones développent des échanges commerciaux avec les Européens ou certaines nations autochtones entrent en contact avec les Européens par le commerce ou les contacts entre Autochtones et Européens deviennent plus fréquents dans le golfe du Saint-Laurent.",
+    _imgs: ["carte_premiers_contacts.png"]
   },
   {
     id: "Q115",
@@ -9651,7 +10079,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 5},
     guide: "Les Européens fréquentent le golfe du Saint-Laurent pour pratiquer la pêche et la chasse à la baleine (une activité pratiquée par les Européens dans le golfe du Saint-Laurent). Leur présence favorise des rencontres avec certaines nations autochtones dans des lieux de séchage de la morue situés sur les rives du golfe (un lieu d’échange entre les groupes autochtones et européens). Des produits européens, comme des couteaux, et des produits autochtones, comme des fourrures, sont alors échangés sous forme de troc (des produits échangés entre les Européens et certaines nations autochtones).",
-    updatedAt: "2026-06-15T12:33:10.393Z"
+    updatedAt: "2026-06-15T12:33:10.393Z",
+    _imgs: ["carte_premiers_contacts.png"]
   },
   {
     id: "Q116",
@@ -9769,7 +10198,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 5},
     guide: "Le traité de Paris de 1783 accorde aux États-Unis les territoires situés au sud des Grands Lacs (un territoire perdu à la suite du traité de Paris de 1783). Cette perte territoriale complique les activités des compagnies de fourrures et l’accès à certaines routes commerciales (une conséquence sur les activités des compagnies de fourrures). Afin de poursuivre et développer le commerce des fourrures, les compagnies déplacent leurs activités vers le Nord-Ouest et établissent de nouveaux postes de traite (une action entreprise par les compagnies afin de développer le commerce vers le Nord-Ouest).",
-    updatedAt: "2026-06-15T12:28:07.489Z"
+    updatedAt: "2026-06-15T12:28:07.489Z",
+    _imgs: ["graphique_poste_de_traite_1780.png"]
   },
   {
     id: "Q118",
@@ -9807,7 +10237,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 5},
     guide: "Les habitants de la Nouvelle-France exploitent des ressources comme les fourrures de castor (une ressource exploitée dans la colonie). La métropole française impose une politique économique où la colonie doit fournir des matières premières à la France et acheter les produits transformés provenant de la métropole (une mesure économique imposée par la métropole). Cette situation favorise le développement du commerce des fourrures ou plusieurs compagnies privilégient les profits commerciaux plutôt que le peuplement et le développement de la colonie (une conséquence économique pour la colonie).",
-    updatedAt: "2026-06-15T12:32:52.807Z"
+    updatedAt: "2026-06-15T12:32:52.807Z",
+    _imgs: ["carte_mercantilisme_fourrures_1600.png"]
   },
   {
     id: "Q119",
@@ -9846,7 +10277,8 @@ const QUESTIONS = [
             titre: "Document C",
             ref: "bataille_lac_champlain.png",
             soustitre: "Alliance franco-amérindienne",
-            source: "Theodor de Bry, gravure du 17e siècle, Bibliothèque et Archives Canada."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       },
@@ -9863,7 +10295,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_bcAd.png"},
     guide: "C - B - A - D",
-    updatedAt: "2026-06-25T13:45:53.915Z"
+    updatedAt: "2026-06-25T13:45:53.915Z",
+    _imgs: ["gravure_destruction_huronie.png", "bataille_lac_champlain.png", "ligne_bcAd.png"]
   },
   {
     id: "Q120",
@@ -9903,7 +10336,8 @@ const QUESTIONS = [
             titre: "Document C",
             ref: "bataille_lac_champlain.png",
             soustitre: "Bataille du lac Champlain",
-            source: "Theodor de Bry, gravure du 17e siècle, Bibliothèque et Archives Canada."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       },
@@ -9939,7 +10373,8 @@ const QUESTIONS = [
         ["C", "A", "B", "D"]
       ]
     },
-    updatedAt: "2026-06-09T16:14:23.744Z"
+    updatedAt: "2026-06-09T16:14:23.744Z",
+    _imgs: ["gravure_destruction_huronie.png", "bataille_lac_champlain.png"]
   },
   {
     id: "Q121",
@@ -9957,7 +10392,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "La destruction des villages hurons ou la destruction de la Huronie ou la dispersion des Hurons après les attaques iroquoises."
+    guide: "La destruction des villages hurons ou la destruction de la Huronie ou la dispersion des Hurons après les attaques iroquoises.",
+    _imgs: ["carte_destruction_huronie_1640.png"]
   },
   {
     id: "Q122",
@@ -9983,7 +10419,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Il y a une diminution des exportations de fourrures ou il y a un affaiblissement des alliances commerciales ou difficulté pour les Français d’obtenir des fourrures ou insécurité sur les routes commerciales.",
-    updatedAt: "2026-06-12T12:24:49.017Z"
+    updatedAt: "2026-06-12T12:24:49.017Z",
+    _imgs: ["exportations_fourrures_huronie.png"]
   },
   {
     id: "Q123",
@@ -10008,7 +10445,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "Il y a un changement dans le commerce des fourrures. Les exportations diminuent fortement autour de 1650.\n\nOU\n\nIl y a une continuité dans le commerce des fourrures puisque les exportations demeurent présentes durant toute la période entre 1620 et 1670."
+    guide: "Il y a un changement dans le commerce des fourrures. Les exportations diminuent fortement autour de 1650.\n\nOU\n\nIl y a une continuité dans le commerce des fourrures puisque les exportations demeurent présentes durant toute la période entre 1620 et 1670.",
+    _imgs: ["exportations_fourrures_huronie.png"]
   },
   {
     id: "Q124",
@@ -10033,7 +10471,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les exportations de fourrures diminuent fortement autour de 1650."
+    guide: "Les exportations de fourrures diminuent fortement autour de 1650.",
+    _imgs: ["grahique_b_exportations_fourrures_huronie.png"]
   },
   {
     id: "Q125",
@@ -10059,7 +10498,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1575-1775.png"},
     guide: "B",
-    updatedAt: "2026-06-09T16:14:58.207Z"
+    updatedAt: "2026-06-09T16:14:58.207Z",
+    _imgs: ["gravure_destruction_huronie.png", "ligne_1575-1775.png"]
   },
   {
     id: "Q126",
@@ -10127,7 +10567,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "image", ref: "ligne_1550-1750.png"},
-    guide: "B"
+    guide: "B",
+    _imgs: ["ligne_1550-1750.png"]
   },
   {
     id: "Q128",
@@ -10166,7 +10607,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 5},
     guide: "Au milieu du 17e siècle, les Haudenosaunee (Iroquois) attaquent les villages hurons afin de contrôler le commerce des fourrures (un conflit impliquant les Haudenosaunee (Iroquois)). Ces conflits entraînent la destruction de la Huronie en 1648-1649 et forcent plusieurs Hurons-Wendats à abandonner leur territoire (une conséquence territoriale chez les Hurons-Wendats). Une partie des survivants se réfugie près de Québec, notamment dans la région de Lorette (une région d’accueil des populations déplacées).",
-    updatedAt: "2026-06-15T12:24:47.039Z"
+    updatedAt: "2026-06-15T12:24:47.039Z",
+    _imgs: ["gravure_destruction_huronie.png", "carte_destruction_huronie_1640.png"]
   },
   {
     id: "Q129",
@@ -10179,11 +10621,12 @@ const QUESTIONS = [
     documents: [
       {
         type: "textes",
-        cols: [{titre: "Document A", ref: "carte_villages_domicilies_autochtones.png", source: "Récitus."}]
+        cols: [{titre: "Document A", ref: "carte_villages_domicilies_autochtones.png", source: "Récitus.", auteur: ""}]
       }
     ],
     reponse: {type: "lignes", nombre: 1},
-    guide: "Kahnawake ou Kanesatake."
+    guide: "Kahnawake ou Kanesatake.",
+    _imgs: ["carte_villages_domicilies_autochtones.png"]
   },
   {
     id: "Q130",
@@ -10203,12 +10646,13 @@ const QUESTIONS = [
             texte: "« Plusieurs communautés autochtones établies dans la vallée du Saint-Laurent vivent près des établissements français, où missionnaires, commerçants et autorités coloniales entretiennent des relations étroites avec elles. »",
             source: "Adapté de Denys Delâge, Le pays renversé, Boréal, 1991."
           },
-          {titre: "", ref: "carte_villages_domicilies_autochtones.png", source: "Récitus."}
+          {titre: "", ref: "carte_villages_domicilies_autochtones.png", source: "Récitus.", auteur: ""}
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les villages domiciliés sont établis près des établissements français afin de favoriser les alliances entre les Français et certaines nations autochtones."
+    guide: "Les villages domiciliés sont établis près des établissements français afin de favoriser les alliances entre les Français et certaines nations autochtones.",
+    _imgs: ["carte_villages_domicilies_autochtones.png"]
   },
   {
     id: "Q131",
@@ -10233,11 +10677,12 @@ const QUESTIONS = [
       },
       {
         type: "textes",
-        cols: [{titre: "Document B", ref: "carte_villages_domicilies_autochtones.png", source: "Récitus."}]
+        cols: [{titre: "Document B", ref: "carte_villages_domicilies_autochtones.png", source: "Récitus.", auteur: ""}]
       }
     ],
     reponse: {type: "lignes", nombre: 4},
-    guide: "Il y a changement puisque certaines communautés vivent maintenant près des établissements français dans la vallée du Saint-Laurent vers 1750.\n\nou \n\nIl y a continuité puisque plusieurs groupes autochtones fréquentent encore leurs territoires de chasse et leurs campements saisonniers entre 1700 et 1750."
+    guide: "Il y a changement puisque certaines communautés vivent maintenant près des établissements français dans la vallée du Saint-Laurent vers 1750.\n\nou \n\nIl y a continuité puisque plusieurs groupes autochtones fréquentent encore leurs territoires de chasse et leurs campements saisonniers entre 1700 et 1750.",
+    _imgs: ["carte_villages_domicilies_autochtones.png"]
   },
   {
     id: "Q132",
@@ -10262,7 +10707,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "image", ref: "ligne_1600-1700.png"},
-    guide: "C"
+    guide: "C",
+    _imgs: ["filles_du_roy.png", "ligne_1600-1700.png"]
   },
   {
     id: "Q133",
@@ -10300,7 +10746,8 @@ const QUESTIONS = [
           {
             titre: "Document C",
             ref: "siege_quebec_1690.png",
-            source: "Bibliothèque et Archives Canada, Siège de Québec par les Britanniques, domaine public."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       },
@@ -10326,7 +10773,8 @@ const QUESTIONS = [
       rangees: [
         ["A et C", "B et D"]
       ]
-    }
+    },
+    _imgs: ["quebec_frere_kirke.png", "siege_quebec_1690.png"]
   },
   {
     id: "Q134",
@@ -10345,13 +10793,15 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "siege_quebec_1690.png",
             soustitre: "Siège de Québec par Phips",
-            source: "Bibliothèque et Archives Canada, Siège de Québec par Phips, domaine public."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "image", ref: "ligne_1600-1700.png"},
-    guide: "D"
+    guide: "D",
+    _imgs: ["siege_quebec_1690.png", "ligne_1600-1700.png"]
   },
   {
     id: "Q135",
@@ -10376,7 +10826,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "image", ref: "ligne_1600-1700.png"},
-    guide: "B"
+    guide: "B",
+    _imgs: ["quebec_frere_kirke.png", "ligne_1600-1700.png"]
   },
   {
     id: "Q136",
@@ -10435,7 +10886,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_abDc.png"},
     guide: "B - C - D - A",
-    updatedAt: "2026-06-25T13:48:43.197Z"
+    updatedAt: "2026-06-25T13:48:43.197Z",
+    _imgs: ["fondation_tadoussac.png", "fondation_quebec.png", "ligne_abDc.png"]
   },
   {
     id: "Q137",
@@ -10494,7 +10946,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_abDc.png"},
     guide: "B - C - D - A",
-    updatedAt: "2026-06-25T13:48:23.898Z"
+    updatedAt: "2026-06-25T13:48:23.898Z",
+    _imgs: ["fondation_mtl.png", "fondation_t-r.png", "ligne_abDc.png"]
   },
   {
     id: "Q138",
@@ -10558,7 +11011,8 @@ const QUESTIONS = [
       rangees: [
         ["A - C", "", "B - D"]
       ]
-    }
+    },
+    _imgs: ["colon_louis_hebert.png", "regiment_car-salieres.png"]
   },
   {
     id: "Q139",
@@ -10633,7 +11087,8 @@ const QUESTIONS = [
         ["B", "A", "D", "C"]
       ]
     },
-    updatedAt: "2026-06-14T16:33:04.311Z"
+    updatedAt: "2026-06-14T16:33:04.311Z",
+    _imgs: ["filles_du_roy.png", "fondation_qubec_1608.png"]
   },
   {
     id: "Q140",
@@ -10658,7 +11113,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "image", ref: "ligne_1600-1700.png"},
-    guide: "B"
+    guide: "B",
+    _imgs: ["ligne_1600-1700.png"]
   },
   {
     id: "Q141",
@@ -10683,7 +11139,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "image", ref: "ligne_1600-1800.png"},
-    guide: "C"
+    guide: "C",
+    _imgs: ["ligne_1600-1800.png"]
   },
   {
     id: "Q142",
@@ -10702,13 +11159,15 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "grande_paix_mtl.png",
             soustitre: "Grande Paix de Montréal",
-            source: "Illustration générée à partir de représentations historiques de la Nouvelle-France."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "image", ref: "ligne_1600-1800.png"},
-    guide: "C"
+    guide: "C",
+    _imgs: ["grande_paix_mtl.png", "ligne_1600-1800.png"]
   },
   {
     id: "Q143",
@@ -10810,7 +11269,8 @@ const QUESTIONS = [
           {
             titre: "Document C",
             ref: "chantier_naval.png",
-            source: "Illustration générée à partir de représentations historiques de la Nouvelle-France."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       }
@@ -10825,7 +11285,8 @@ const QUESTIONS = [
       rangees: [
         ["A", "C", "B"]
       ]
-    }
+    },
+    _imgs: ["regiment_car-salieres.png", "filles_du_roy.png", "chantier_naval.png"]
   },
   {
     id: "Q145",
@@ -10902,7 +11363,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Le mercantilisme.",
-    updatedAt: "2026-06-09T15:04:59.357Z"
+    updatedAt: "2026-06-09T15:04:59.357Z",
+    _imgs: ["mercantilisme_nf.png"]
   },
   {
     id: "Q147",
@@ -11125,13 +11587,15 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "conseil_souverain.png",
-            source: "Illustration générée à partir de représentations historiques de la Nouvelle-France."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 1},
-    guide: "Le Conseil souverain."
+    guide: "Le Conseil souverain.",
+    _imgs: ["conseil_souverain.png"]
   },
   {
     id: "Q153",
@@ -11172,7 +11636,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les Français concentrent leurs établissements le long du fleuve Saint-Laurent parce qu’il constitue la principale voie de transport ou de commerce en Nouvelle-France vers 1650."
+    guide: "Les Français concentrent leurs établissements le long du fleuve Saint-Laurent parce qu’il constitue la principale voie de transport ou de commerce en Nouvelle-France vers 1650.",
+    _imgs: ["carte_territoire_occupe_1650.png"]
   },
   {
     id: "Q155",
@@ -11190,7 +11655,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "La concentration des établissements français dans la vallée du Saint-Laurent favorise le développement du peuplement et des échanges commerciaux vers 1650."
+    guide: "La concentration des établissements français dans la vallée du Saint-Laurent favorise le développement du peuplement et des échanges commerciaux vers 1650.",
+    _imgs: ["carte_territoire_occupe_1650.png"]
   },
   {
     id: "Q156",
@@ -11232,7 +11698,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Les possessions françaises couvrent un territoire plus vaste que les possessions britanniques.",
-    updatedAt: "2026-06-18T20:07:54.009Z"
+    updatedAt: "2026-06-18T20:07:54.009Z",
+    _imgs: ["territoire_revendique_france_1700.png"]
   },
   {
     id: "Q158",
@@ -11250,7 +11717,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "La présence de territoires contestés entraîne une augmentation des rivalités et des conflits entre les Français et les Britanniques en Amérique du Nord vers 1700."
+    guide: "La présence de territoires contestés entraîne une augmentation des rivalités et des conflits entre les Français et les Britanniques en Amérique du Nord vers 1700.",
+    _imgs: ["territoire_revendique_france_1700.png"]
   },
   {
     id: "Q159",
@@ -11272,7 +11740,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Le territoire occupé par les Français s’étend davantage vers l’ouest et le sud.\nLes Français établissent davantage de forts et de postes de traite.\nLes Français explorent davantage l’intérieur du continent.\nLe réseau territorial français devient plus vaste entre 1650 et 1700."
+    guide: "Le territoire occupé par les Français s’étend davantage vers l’ouest et le sud.\nLes Français établissent davantage de forts et de postes de traite.\nLes Français explorent davantage l’intérieur du continent.\nLe réseau territorial français devient plus vaste entre 1650 et 1700.",
+    _imgs: ["carte_territoire_occupe_1650.png", "territoire_occupe_1700.png"]
   },
   {
     id: "Q160",
@@ -11294,7 +11763,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Le peuplement français demeure concentré dans la vallée du Saint-Laurent.\nQuébec, Trois-Rivières et Montréal restent les principaux centres de peuplement.\nLes établissements français demeurent situés près des voies navigables."
+    guide: "Le peuplement français demeure concentré dans la vallée du Saint-Laurent.\nQuébec, Trois-Rivières et Montréal restent les principaux centres de peuplement.\nLes établissements français demeurent situés près des voies navigables.",
+    _imgs: ["carte_territoire_occupe_1650.png", "territoire_occupe_1700.png"]
   },
   {
     id: "Q161",
@@ -11316,7 +11786,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "Il y a un changement dans l’étendue du territoire occupé par les Français entre 1650 et 1700. Vers 1700, les Français occupent un territoire beaucoup plus vaste qui s’étend jusqu’aux Grands Lacs et au fleuve Mississippi, alors qu’en 1650 le territoire occupé est principalement concentré dans la vallée du Saint-Laurent.\n\nRéponse attendue — Continuité\n\nIl y a une continuité dans l’étendue du territoire occupé par les Français entre 1650 et 1700. En 1650 comme en 1700, les Français occupent toujours la vallée du Saint-Laurent, notamment autour de Québec, Trois-Rivières et Montréal."
+    guide: "Il y a un changement dans l’étendue du territoire occupé par les Français entre 1650 et 1700. Vers 1700, les Français occupent un territoire beaucoup plus vaste qui s’étend jusqu’aux Grands Lacs et au fleuve Mississippi, alors qu’en 1650 le territoire occupé est principalement concentré dans la vallée du Saint-Laurent.\n\nRéponse attendue — Continuité\n\nIl y a une continuité dans l’étendue du territoire occupé par les Français entre 1650 et 1700. En 1650 comme en 1700, les Français occupent toujours la vallée du Saint-Laurent, notamment autour de Québec, Trois-Rivières et Montréal.",
+    _imgs: ["carte_territoire_occupe_1650.png", "territoire_occupe_1700.png"]
   },
   {
     id: "Q162",
@@ -11652,7 +12123,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "Il y a changement puisque, en 1713, à la suite du traité d’Utrecht, la France perd plusieurs de ses possessions, notamment l’Acadie, Terre-Neuve et la baie d’Hudson, au profit de la Grande-Bretagne.\n\nIl y a continuité puisque la France possède toujours des territoires en Amérique du Nord en 1700 comme en 1713, notamment dans la vallée du Saint-Laurent."
+    guide: "Il y a changement puisque, en 1713, à la suite du traité d’Utrecht, la France perd plusieurs de ses possessions, notamment l’Acadie, Terre-Neuve et la baie d’Hudson, au profit de la Grande-Bretagne.\n\nIl y a continuité puisque la France possède toujours des territoires en Amérique du Nord en 1700 comme en 1713, notamment dans la vallée du Saint-Laurent.",
+    _imgs: ["territoire_revendique_1700.png", "territoire_revendique_1713.png"]
   },
   {
     id: "Q171",
@@ -11729,7 +12201,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "Les Français explorent de nouveaux territoires afin de développer le commerce des fourrures (un motif des voyages d'exploration sur le continent). Ils y établissent des forts et des postes de traite pour assurer une présence française (un moyen utilisé pour assurer une présence française). Cette présence permet à la France de revendiquer de nouveaux territoires, ce qui contribue à l'expansion de son territoire en Amérique du Nord (une conséquence sur le territoire revendiqué par la France)."
+    guide: "Les Français explorent de nouveaux territoires afin de développer le commerce des fourrures (un motif des voyages d'exploration sur le continent). Ils y établissent des forts et des postes de traite pour assurer une présence française (un moyen utilisé pour assurer une présence française). Cette présence permet à la France de revendiquer de nouveaux territoires, ce qui contribue à l'expansion de son territoire en Amérique du Nord (une conséquence sur le territoire revendiqué par la France).",
+    _imgs: ["carte_exploration_territoire_1700.png"]
   },
   {
     id: "Q173",
@@ -11756,7 +12229,8 @@ const QUESTIONS = [
       rangees: [
         ["C", "B"]
       ]
-    }
+    },
+    _imgs: ["territoires_perdus_1713.png"]
   },
   {
     id: "Q174",
@@ -11801,7 +12275,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "Changement\n\nIl y a un changement dans l’administration de la Nouvelle-France entre 1627 et 1663. En 1627, la colonie est administrée par la Compagnie des Cent-Associés. En 1663, le gouvernement royal est instauré et l’administration est confiée au gouverneur, à l’intendant et au Conseil souverain.\n\nContinuité\n\nIl y a une continuité dans l’administration de la Nouvelle-France entre 1627 et 1663. En 1627 comme en 1663, la colonie demeure sous l’autorité du roi de France et de la métropole française."
+    guide: "Changement\n\nIl y a un changement dans l’administration de la Nouvelle-France entre 1627 et 1663. En 1627, la colonie est administrée par la Compagnie des Cent-Associés. En 1663, le gouvernement royal est instauré et l’administration est confiée au gouverneur, à l’intendant et au Conseil souverain.\n\nContinuité\n\nIl y a une continuité dans l’administration de la Nouvelle-France entre 1627 et 1663. En 1627 comme en 1663, la colonie demeure sous l’autorité du roi de France et de la métropole française.",
+    _imgs: ["org_pol_avant_1663.png", "org_pol_apres_1663.png"]
   },
   {
     id: "Q176",
@@ -11840,7 +12315,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 4},
     guide: "La Compagnie des Cent-Associés est responsable du peuplement de la colonie (une responsabilité de la Compagnie des Cent-Associés). Comme la population demeure faible en Nouvelle-France (une difficulté rencontrée dans le développement de la colonie), le roi de France instaure le gouvernement royal en 1663 (une intervention du roi de France en 1663).",
-    updatedAt: "2026-06-15T15:19:58.283Z"
+    updatedAt: "2026-06-15T15:19:58.283Z",
+    _imgs: ["evolution_pop_n-f.png", "org_pol_apres_1663.png"]
   },
   {
     id: "Q177",
@@ -11857,7 +12333,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 1},
-    guide: "La paroisse."
+    guide: "La paroisse.",
+    _imgs: ["paroisse_n-f.png"]
   },
   {
     id: "Q178",
@@ -11880,7 +12357,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 1},
-    guide: "Le régime seigneurial."
+    guide: "Le régime seigneurial.",
+    _imgs: ["regime_seigneurial_n-f.png"]
   },
   {
     id: "Q179",
@@ -11953,7 +12431,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "Continuité. \n\nEn 1670 comme en 1740, les immigrants français proviennent principalement des mêmes régions de France. La Normandie demeure la principale région d'origine, représentant 28 % des immigrants en 1670 et 26 % en 1740. L'Île-de-France et l'Aunis figurent également parmi les régions les plus représentées durant toute la période.\n\nChangement. \n\nEntre 1670 et 1740, la proportion d'immigrants provenant de certaines régions varie. Par exemple, la part des immigrants originaires de la Normandie passe de 28 % à 26 %, tandis que celle des « autres régions » augmente de 14 % à 16 %. La répartition géographique des immigrants se modifie donc légèrement entre 1670 et 1740."
+    guide: "Continuité. \n\nEn 1670 comme en 1740, les immigrants français proviennent principalement des mêmes régions de France. La Normandie demeure la principale région d'origine, représentant 28 % des immigrants en 1670 et 26 % en 1740. L'Île-de-France et l'Aunis figurent également parmi les régions les plus représentées durant toute la période.\n\nChangement. \n\nEntre 1670 et 1740, la proportion d'immigrants provenant de certaines régions varie. Par exemple, la part des immigrants originaires de la Normandie passe de 28 % à 26 %, tandis que celle des « autres régions » augmente de 14 % à 16 %. La répartition géographique des immigrants se modifie donc légèrement entre 1670 et 1740.",
+    _imgs: ["origines_geo_1670.png", "origines_geo_1740.png"]
   },
   {
     id: "Q181",
@@ -12013,7 +12492,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "La Normandie demeure la principale région d'origine des immigrants français. Elle représente 28 % des immigrants vers 1670 et 26 % vers 1740."
+    guide: "La Normandie demeure la principale région d'origine des immigrants français. Elle représente 28 % des immigrants vers 1670 et 26 % vers 1740.",
+    _imgs: ["origines_geo_1670.png", "origines_geo_1740.png"]
   },
   {
     id: "Q183",
@@ -12049,7 +12529,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "Continuité.\n\nEn 1670 comme en 1740, les artisans constituent le principal groupe social parmi les immigrants français en Nouvelle-France. Ils représentent 35 % des immigrants vers 1670 et 38 % vers 1740.\n\nChangement.\n\nChangement. Entre 1670 et 1740, la répartition des origines sociales des immigrants français se modifie. La proportion de bourgeois et marchands augmente de 5 % à 8 %, tandis que celle des soldats passe de 10 % à 8 %."
+    guide: "Continuité.\n\nEn 1670 comme en 1740, les artisans constituent le principal groupe social parmi les immigrants français en Nouvelle-France. Ils représentent 35 % des immigrants vers 1670 et 38 % vers 1740.\n\nChangement.\n\nChangement. Entre 1670 et 1740, la répartition des origines sociales des immigrants français se modifie. La proportion de bourgeois et marchands augmente de 5 % à 8 %, tandis que celle des soldats passe de 10 % à 8 %.",
+    _imgs: ["origines_sociale_1670.png", "origines_sociale_1740.png"]
   },
   {
     id: "Q184",
@@ -12157,7 +12638,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les deux places publiques servent de lieu d'échanges commerciaux (ou de commerce)."
+    guide: "Les deux places publiques servent de lieu d'échanges commerciaux (ou de commerce).",
+    _imgs: ["place_publique_qc.png", "place_publique_mtl.png"]
   },
   {
     id: "Q187",
@@ -12193,7 +12675,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les échanges commerciaux (le troc, le commerce)."
+    guide: "Les échanges commerciaux (le troc, le commerce).",
+    _imgs: ["place_publique_qc.png", "place_publique_mtl.png"]
   },
   {
     id: "Q188",
@@ -12297,7 +12780,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "L'adoption d'éléments culturels européens, notamment dans l'habillement ou les armes (arquebuse)."
+    guide: "L'adoption d'éléments culturels européens, notamment dans l'habillement ou les armes (arquebuse).",
+    _imgs: ["huron_1600.png", "huron_1700.png"]
   },
   {
     id: "Q191",
@@ -12467,7 +12951,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "L'animisme.",
-    updatedAt: "2026-06-09T13:44:04.877Z"
+    updatedAt: "2026-06-09T13:44:04.877Z",
+    _imgs: ["ceremonie_animisme.png"]
   },
   {
     id: "Q197",
@@ -12503,7 +12988,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "L'agriculture demeure la principale activité de subsistance pratiquée par les colons français en Nouvelle-France."
+    guide: "L'agriculture demeure la principale activité de subsistance pratiquée par les colons français en Nouvelle-France.",
+    _imgs: ["agriculture_1670.png", "agriculture_1750.png"]
   },
   {
     id: "Q198",
@@ -12526,7 +13012,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 1},
-    guide: "Le commerce triangulaire."
+    guide: "Le commerce triangulaire.",
+    _imgs: ["commerce_triangulaire.png"]
   },
   {
     id: "Q199",
@@ -12678,7 +13165,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 3},
-    guide: "Changement\nIl y a changement, car après l'instauration du gouvernement royal en 1663, de nouvelles activités économiques apparaissent dans la colonie. Vers 1700, on retrouve notamment la construction navale, les forges et les tanneries.\n\nContinuité\nIl y a continuité, car le commerce des fourrures, l'agriculture et la pêche sont pratiqués avant et après l'instauration du gouvernement royal. Ces activités sont présentes vers 1663 comme vers 1700."
+    guide: "Changement\nIl y a changement, car après l'instauration du gouvernement royal en 1663, de nouvelles activités économiques apparaissent dans la colonie. Vers 1700, on retrouve notamment la construction navale, les forges et les tanneries.\n\nContinuité\nIl y a continuité, car le commerce des fourrures, l'agriculture et la pêche sont pratiqués avant et après l'instauration du gouvernement royal. Ces activités sont présentes vers 1663 comme vers 1700.",
+    _imgs: ["activites_eco_1670.png", "activites_eco_1750.png"]
   },
   {
     id: "Q203",
@@ -12696,14 +13184,16 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "activites_habitants_n-f_1740.png",
             soustitre: "Activités économiques pratiques par les habitants vers 1740",
-            source: "Adapté de synthèses historiques sur la structure économique de la Nouvelle-France au XVIIIe siècle."
+            source: "Adapté des données démographiques présentées par Marcel Trudel, Initiation à la Nouvelle-France : histoire et institutions, 1968.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "L'agriculture.",
-    updatedAt: "2026-06-12T12:20:21.867Z"
+    updatedAt: "2026-06-12T12:20:21.867Z",
+    _imgs: ["activites_habitants_n-f_1740.png"]
   },
   {
     id: "Q204",
@@ -12722,13 +13212,15 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "activites_habitants_n-f_1740.png",
             soustitre: "Population de la Nouvelle-France (1663-1760)",
-            source: "Adapté des données démographiques présentées par Marcel Trudel, Initiation à la Nouvelle-France : histoire et institutions, 1968."
+            source: "Adapté des données démographiques présentées par Marcel Trudel, Initiation à la Nouvelle-France : histoire et institutions, 1968.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "L'augmentation de la population ou la croissance de la population."
+    guide: "L'augmentation de la population ou la croissance de la population.",
+    _imgs: ["activites_habitants_n-f_1740.png"]
   },
   {
     id: "Q205",
@@ -12797,7 +13289,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "Les autorités coloniales investissent dans plusieurs projets économiques (une mesure mise en place par les autorités coloniales). Cette intervention favorise le développement du travail du fer aux Forges du Saint-Maurice (une activité artisanale qui se développe). L'apparition de cette nouvelle activité contribue à diversifier les activités économiques de la colonie (une conséquence sur la diversification de l'économie de la colonie).",
-    updatedAt: "2026-06-15T12:31:13.778Z"
+    updatedAt: "2026-06-15T12:31:13.778Z",
+    _imgs: ["activies_econiques_1663_1740.png"]
   },
   {
     id: "Q207",
@@ -12820,7 +13313,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 1},
-    guide: "La pratique de la religion catholique."
+    guide: "La pratique de la religion catholique.",
+    _imgs: ["eglise_catholique_n-f_1700.png"]
   },
   {
     id: "Q208",
@@ -12845,7 +13339,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les colons produisent davantage de biens localement ou les colons s'adaptent aux ressources du territoire ou les colons deviennent plus autonomes ou les marchandises arrivent moins rapidement de France."
+    guide: "Les colons produisent davantage de biens localement ou les colons s'adaptent aux ressources du territoire ou les colons deviennent plus autonomes ou les marchandises arrivent moins rapidement de France.",
+    _imgs: ["traversee_atlantique_1700.png"]
   },
   {
     id: "Q209",
@@ -12881,7 +13376,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Entre 1650 et 1700, les habitations des colons changent. Les maisons d'abord construites en bois avec une toiture peu inclinée sont de plus en plus construites en pierre avec une toiture plus inclinée."
+    guide: "Entre 1650 et 1700, les habitations des colons changent. Les maisons d'abord construites en bois avec une toiture peu inclinée sont de plus en plus construites en pierre avec une toiture plus inclinée.",
+    _imgs: ["maison_1650.png", "maison_1700.png"]
   },
   {
     id: "Q210",
@@ -12905,7 +13401,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les colons utilisent des raquettes pour se déplacer durant l'hiver. (ou toute réponse équivalente démontrant l'adaptation des déplacements à la neige.)"
+    guide: "Les colons utilisent des raquettes pour se déplacer durant l'hiver. (ou toute réponse équivalente démontrant l'adaptation des déplacements à la neige.)",
+    _imgs: ["coureur_bois_n-f.png"]
   },
   {
     id: "Q211",
@@ -12929,7 +13426,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 2},
-    guide: "Les colons adoptent le canot comme moyen de transport."
+    guide: "Les colons adoptent le canot comme moyen de transport.",
+    _imgs: ["canot_ecorce.png"]
   },
   {
     id: "Q212",
@@ -12952,7 +13450,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 1},
-    guide: "Le canot."
+    guide: "Le canot.",
+    _imgs: ["canot_ecorce.png"]
   },
   {
     id: "Q213",
@@ -13097,7 +13596,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_abDc.png"},
     guide: "C - A - D - B",
-    updatedAt: "2026-06-25T13:48:03.923Z"
+    updatedAt: "2026-06-25T13:48:03.923Z",
+    _imgs: ["ligne_abDc.png"]
   },
   {
     id: "Q216",
@@ -13268,7 +13768,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "image", ref: "ligne_1760-1800.png"},
-    guide: "B"
+    guide: "B",
+    _imgs: ["invasion_americaine.png", "ligne_1760-1800.png"]
   },
   {
     id: "Q220",
@@ -13287,13 +13788,15 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "capitulation_mtl_1760.png",
             soustitre: "Capitulation de Montréal",
-            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de la capitulation de Montréal, 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "image", ref: "ligne_1755-1795.png"},
-    guide: "A"
+    guide: "A",
+    _imgs: ["capitulation_mtl_1760.png", "ligne_1755-1795.png"]
   },
   {
     id: "Q221",
@@ -13318,7 +13821,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "image", ref: "ligne_1760-1800.png"},
-    guide: "A"
+    guide: "A",
+    _imgs: ["ligne_1760-1800.png"]
   },
   {
     id: "Q222",
@@ -13337,13 +13841,15 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "revolte_pontiac.png",
             soustitre: "Révolte de Pontiac",
-            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de la révolte de Pontiac, 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "image", ref: "ligne_1760-1800.png"},
-    guide: "A"
+    guide: "A",
+    _imgs: ["revolte_pontiac.png", "ligne_1760-1800.png"]
   },
   {
     id: "Q223",
@@ -13368,7 +13874,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "image", ref: "ligne_1760-1800.png"},
-    guide: "B"
+    guide: "B",
+    _imgs: ["ligne_1760-1800.png"]
   },
   {
     id: "Q224",
@@ -13385,15 +13892,17 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document A",
-            ref: "arrivee_loyalistes.png",
+            ref: "loyalistes.png",
             soustitre: "Arrivée des premiers Loyalistes",
-            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de l'arrivée des Loyalistes, 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."
           }
         ]
       }
     ],
     reponse: {type: "image", ref: "ligne_1760-1800.png"},
-    guide: "B"
+    guide: "B",
+    updatedAt: "2026-06-28T18:43:42.615Z",
+    _imgs: ["loyalistes.png", "ligne_1760-1800.png"]
   },
   {
     id: "Q225",
@@ -13418,7 +13927,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "image", ref: "ligne_1760-1800.png"},
-    guide: "C"
+    guide: "C",
+    _imgs: ["ligne_1760-1800.png"]
   },
   {
     id: "Q226",
@@ -13468,7 +13978,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Le gouvernement de la colonie passe sous l'autorité britannique ou la colonie est divisée en trois districts administrés par des gouverneurs britanniques.",
-    updatedAt: "2026-06-12T12:09:54.169Z"
+    updatedAt: "2026-06-12T12:09:54.169Z",
+    _imgs: ["org_pol_regime_militaire.png"]
   },
   {
     id: "Q228",
@@ -13623,7 +14134,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "capitulation_mtl_1760.png",
             soustitre: "Capitulation de Montréal",
-            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de la capitulation de Montréal, 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       },
@@ -13644,7 +14156,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "La victoire britannique (le résultat de la guerre de la Conquête) lors de la guerre de la Conquête est confirmée par le Traité de Paris de 1763 (le traité qui met fin à la guerre). Par ce traité, la France cède le Canada à la Grande-Bretagne, ce qui agrandit les possessions britanniques et réduit le territoire français en Amérique du Nord (une modification du territoire).",
-    updatedAt: "2026-06-18T11:58:06.288Z"
+    updatedAt: "2026-06-18T11:58:06.288Z",
+    _imgs: ["capitulation_mtl_1760.png", "carte_proclamation_royale_1763.png"]
   },
   {
     id: "Q233",
@@ -13705,7 +14218,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "Changement\n\nIl y a changement, car après 1763, le régime militaire est remplacé par une administration civile britannique. ou Il y a changement, car entre 1760 et 1770, la colonie passe d'un régime militaire à un régime civil britannique.\n\nContinuité\n\nIl y a continuité, car entre 1760 et 1770, la colonie demeure sous l'autorité de la Couronne britannique. ou Il y a continuité, car entre 1760 et 1770, la colonie est administrée par des autorités britanniques.",
-    updatedAt: "2026-06-12T12:10:15.183Z"
+    updatedAt: "2026-06-12T12:10:15.183Z",
+    _imgs: ["org_pol_regime_militaire.png", "org_pol_apres_1763.png"]
   },
   {
     id: "Q235",
@@ -13858,7 +14372,8 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "revolte_pontiac.png",
-            source: "Reconstitution historique réalisée à l'aide de ChatGPT/OpenAI, inspirée de représentations de la révolte de Pontiac, 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       },
@@ -13879,7 +14394,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "La révolte menée par Pontiac (une action d'un chef autochtone) pousse les autorités britanniques à reconnaître certains droits territoriaux aux Autochtones dans la Proclamation royale (un droit reconnu aux Autochtones). Cette décision entraîne la création d'un territoire réservé aux Autochtones (un effet sur les territoires britanniques nord-américains).",
-    updatedAt: "2026-06-15T12:30:39.086Z"
+    updatedAt: "2026-06-15T12:30:39.086Z",
+    _imgs: ["revolte_pontiac.png", "carte_proclamation_royale_1763.png"]
   },
   {
     id: "Q241",
@@ -13921,7 +14437,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "population_1763.png",
             soustitre: "Composition de la population de la Province de Québec en 1763",
-            source: "adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal."
+            source: "Adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal.",
+            auteur: ""
           }
         ]
       },
@@ -13948,7 +14465,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "Les Canadiens catholiques forment la majorité de la population de la colonie (la composition de la population de la colonie). Le gouverneur Murray leur accorde certaines concessions, notamment sur le plan religieux (une décision prise par Murray). Les Canadiens peuvent ainsi continuer à pratiquer leur religion catholique (une conséquence pour les Canadiens).",
-    updatedAt: "2026-06-15T12:23:07.596Z"
+    updatedAt: "2026-06-15T12:23:07.596Z",
+    _imgs: ["population_1763.png"]
   },
   {
     id: "Q243",
@@ -14062,7 +14580,8 @@ const QUESTIONS = [
         ["B et D", "A et C", "", ""]
       ]
     },
-    updatedAt: "2026-06-25T12:36:15.852Z"
+    updatedAt: "2026-06-25T12:36:15.852Z",
+    _imgs: ["org_pol_apres_1763.png", "org_pol_regime_militaire.png"]
   },
   {
     id: "Q246",
@@ -14085,7 +14604,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "Changement :\nIl y a changement, car en 1774, la Province de Québec est beaucoup plus grande qu’en 1763. Elle s’étend maintenant vers les Grands Lacs et la vallée de l’Ohio.\n\nContinuité :\nIl y a continuité, car entre 1763 et 1774, la Province de Québec demeure une possession britannique située dans la région de la vallée du Saint-Laurent.",
-    updatedAt: "2026-06-07T00:48:22.548Z"
+    updatedAt: "2026-06-07T00:48:22.548Z",
+    _imgs: ["carte_proclamation_royale_1763.png", "carte_acte_quebec_1774.png"]
   },
   {
     id: "Q247",
@@ -14115,14 +14635,16 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "org_pol_1774_acte_quebec.png",
             soustitre: "Organisation politique de la colonie après 1774",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "Changement :\nIl y a changement, car en 1774, le Conseil de Québec devient le Conseil exécutif et le Conseil législatif.\n\nContinuité :\nIl y a continuité, car entre 1763 et 1774, la Province de Québec demeure dirigée par un gouverneur britannique nommé par le roi.",
-    updatedAt: "2026-06-12T12:09:32.861Z"
+    updatedAt: "2026-06-12T12:09:32.861Z",
+    _imgs: ["org_pol_apres_1763.png", "org_pol_1774_acte_quebec.png"]
   },
   {
     id: "Q248",
@@ -14609,14 +15131,16 @@ const QUESTIONS = [
             titre: "Document C",
             ref: "org_pol_1774_acte_quebec.png",
             soustitre: "Organisation politique de la colonie après 1774",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "Les tensions ou le mécontentement dans les Treize colonies (événements dans les Treize colonies) inquiètent les autorités britanniques. Pour maintenir stabilité de la Province de Québec et assurer la loyauté de ses habitants (objectif poursuivi par les autorités britanniques), les autorités adoptent l'Acte de Québec (nom d'une nouvelle constitution mise en place en 1774).",
-    updatedAt: "2026-06-15T12:23:24.743Z"
+    updatedAt: "2026-06-15T12:23:24.743Z",
+    _imgs: ["org_pol_1774_acte_quebec.png"]
   },
   {
     id: "Q263",
@@ -14654,7 +15178,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "La victoire britannique (un résultat de la guerre de Succession d'Espagne) mène à la signature du traité d'Utrecht (le traité qui met fin à cette guerre). À la suite de ce traité, la France perd l'Acadie, Terre-Neuve et la baie d'Hudson (une modification du territoire de l'Amérique du Nord).",
-    updatedAt: "2026-06-15T12:30:21.391Z"
+    updatedAt: "2026-06-15T12:30:21.391Z",
+    _imgs: ["territoire_revendique_1713.png"]
   },
   {
     id: "Q264",
@@ -14692,7 +15217,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "Les Treize colonies obtiennent leur indépendance (l'issue de la guerre de l'indépendance des États-Unis). Le traité de Paris de 1783 met fin au conflit (le traité qui met fin à cette guerre). Les États-Unis sont reconnus et leur territoire s'étend jusqu'au Mississippi (une modification du territoire de l'Amérique du Nord) ou la Province de Québec perd la région au sud des Grands Lacs ou la vallée de l'Ohio.",
-    updatedAt: "2026-06-15T12:29:42.033Z"
+    updatedAt: "2026-06-15T12:29:42.033Z",
+    _imgs: ["carte_province_quebec_1783.png"]
   },
   {
     id: "Q265",
@@ -14715,7 +15241,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Il y a changement, car en 1783, la Province de Québec perd la vallée de l'Ohio ou le territoire situé au sud des Grands Lacs.",
-    updatedAt: "2026-06-07T17:39:22.175Z"
+    updatedAt: "2026-06-07T17:39:22.175Z",
+    _imgs: ["carte_acte_quebec_1774.png", "carte_province_quebec_1783.png"]
   },
   {
     id: "Q266",
@@ -14850,7 +15377,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "Les États-Unis obtiennent leur indépendance (l'issue de la guerre d'Indépendance des États-Unis). Des Loyalistes, demeurés fidèles à la Couronne britannique (un groupe britannique qui demeure fidèle à la Couronne), quittent les États-Unis et s'établissent notamment en Gaspésie ou en Estrie (une région qui accueille les migrants).",
-    updatedAt: "2026-06-15T12:29:20.861Z"
+    updatedAt: "2026-06-15T12:29:20.861Z",
+    _imgs: ["carte_migration_loyalistes_1783.png"]
   },
   {
     id: "Q271",
@@ -15052,7 +15580,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Le mercantilisme.",
-    updatedAt: "2026-06-08T11:39:02.382Z"
+    updatedAt: "2026-06-08T11:39:02.382Z",
+    _imgs: ["mercantilisme_britannique.png"]
   },
   {
     id: "Q277",
@@ -15137,7 +15666,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "La Grande-Bretagne applique le mercantilisme (le nom de cette politique économique). Cette politique vise à enrichir la métropole en tirant profit de ses colonies (un objectif poursuivi par la métropole). Par conséquent, la Province de Québec exporte principalement des matières premières vers la Grande-Bretagne et importe des produits manufacturés britanniques (une conséquence sur les échanges commerciaux de la Province de Québec).",
-    updatedAt: "2026-06-15T12:28:59.518Z"
+    updatedAt: "2026-06-15T12:28:59.518Z",
+    _imgs: ["mercantilisme_britannique.png"]
   },
   {
     id: "Q279",
@@ -15291,7 +15821,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "L'augmentation des surplus agricoles ou l'augmentation des exportations de blé.",
-    updatedAt: "2026-06-08T12:38:17.314Z"
+    updatedAt: "2026-06-08T12:38:17.314Z",
+    _imgs: ["production_blé_minots.png"]
   },
   {
     id: "Q284",
@@ -15364,7 +15895,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Les Canadiens ou les Canadiens francophones.",
-    updatedAt: "2026-06-12T01:26:59.447Z"
+    updatedAt: "2026-06-12T01:26:59.447Z",
+    _imgs: ["composition_population_1790.png"]
   },
   {
     id: "Q287",
@@ -15389,7 +15921,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Le français.",
-    updatedAt: "2026-06-08T13:37:42.803Z"
+    updatedAt: "2026-06-08T13:37:42.803Z",
+    _imgs: ["langues_parlees_1790.png"]
   },
   {
     id: "Q288",
@@ -15600,7 +16133,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "La construction d'églises anglicanes.",
-    updatedAt: "2026-06-08T14:21:37.586Z"
+    updatedAt: "2026-06-08T14:21:37.586Z",
+    _imgs: ["eglise_anglicane_1780.png"]
   },
   {
     id: "Q295",
@@ -15671,7 +16205,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "Changement\nIl y a changement, car vers 1790 des institutions de l'Église anglicane sont présentes dans la colonie alors qu'en 1750 les institutions religieuses sont principalement catholiques.\n\nContinuité\nIl y a continuité, car en 1750 comme en 1790, des institutions religieuses jouent un rôle important dans l'enseignement (ou les soins aux malades) dans la colonie.",
-    updatedAt: "2026-06-08T15:11:10.844Z"
+    updatedAt: "2026-06-08T15:11:10.844Z",
+    _imgs: ["eglise_catholique_n-f_1700.png"]
   },
   {
     id: "Q297",
@@ -15707,7 +16242,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "Changement\nIl y a changement, car en 1750 les institutions religieuses présentes dans la colonie sont principalement catholiques, tandis qu'en 1790 des institutions religieuses britanniques (ou anglicanes) sont également présentes.\n\n\nContinuité\nIl y a continuité, car en 1750 comme en 1790, l'Église catholique est présente dans la colonie.",
-    updatedAt: "2026-06-08T14:20:42.537Z"
+    updatedAt: "2026-06-08T14:20:42.537Z",
+    _imgs: ["eglise_anglicane_1780.png"]
   },
   {
     id: "Q298",
@@ -15799,7 +16335,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "Les familles canadiennes comptent souvent plusieurs enfants (caractéristique des familles canadiennes), ce qui entraîne une augmentation de la population (transformation démographique). Cette croissance démographique favorise le défrichement de nouvelles terres et l'expansion du territoire occupé (effet sur l'occupation du territoire).",
-    updatedAt: "2026-06-15T12:27:43.650Z"
+    updatedAt: "2026-06-15T12:27:43.650Z",
+    _imgs: ["populaton_1760_1790.png"]
   },
   {
     id: "Q300",
@@ -15844,7 +16381,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "Des marchands, fonctionnaires ou anciens militaires britanniques s'établissent dans la colonie (groupe d'immigrants britanniques). Leur arrivée augmente la proportion d'habitants d'origine britannique (transformation démographique). La composition de la population devient plus diversifiée (effet sur la composition de la population).",
-    updatedAt: "2026-06-15T12:27:18.374Z"
+    updatedAt: "2026-06-15T12:27:18.374Z",
+    _imgs: ["composition_population_1760-1790.png"]
   },
   {
     id: "Q301",
@@ -15870,7 +16408,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1790-1850.png"},
     guide: "A",
-    updatedAt: "2026-06-09T00:35:03.978Z"
+    updatedAt: "2026-06-09T00:35:03.978Z",
+    _imgs: ["ligne_1790-1850.png"]
   },
   {
     id: "Q302",
@@ -15896,7 +16435,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1790-1850.png"},
     guide: "B",
-    updatedAt: "2026-06-09T00:36:24.268Z"
+    updatedAt: "2026-06-09T00:36:24.268Z",
+    _imgs: ["ligne_1790-1850.png"]
   },
   {
     id: "Q303",
@@ -15922,7 +16462,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1790-1850.png"},
     guide: "B",
-    updatedAt: "2026-06-09T00:39:05.263Z"
+    updatedAt: "2026-06-09T00:39:05.263Z",
+    _imgs: ["carte_bataille_chateauguay.png", "ligne_1790-1850.png"]
   },
   {
     id: "Q304",
@@ -15948,7 +16489,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1790-1850.png"},
     guide: "C",
-    updatedAt: "2026-06-16T00:37:02.022Z"
+    updatedAt: "2026-06-16T00:37:02.022Z",
+    _imgs: ["ligne_1790-1850.png"]
   },
   {
     id: "Q305",
@@ -15974,7 +16516,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1790-1850.png"},
     guide: "C",
-    updatedAt: "2026-06-09T00:41:51.882Z"
+    updatedAt: "2026-06-09T00:41:51.882Z",
+    _imgs: ["ligne_1790-1850.png"]
   },
   {
     id: "Q306",
@@ -16000,7 +16543,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1790-1850.png"},
     guide: "C",
-    updatedAt: "2026-06-09T00:42:47.579Z"
+    updatedAt: "2026-06-09T00:42:47.579Z",
+    _imgs: ["ligne_1790-1850.png"]
   },
   {
     id: "Q307",
@@ -16026,7 +16570,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1790-1850.png"},
     guide: "D",
-    updatedAt: "2026-06-09T00:43:35.190Z"
+    updatedAt: "2026-06-09T00:43:35.190Z",
+    _imgs: ["ligne_1790-1850.png"]
   },
   {
     id: "Q308",
@@ -16052,7 +16597,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1790-1850.png"},
     guide: "D",
-    updatedAt: "2026-06-09T00:44:16.294Z"
+    updatedAt: "2026-06-09T00:44:16.294Z",
+    _imgs: ["ligne_1790-1850.png"]
   },
   {
     id: "Q309",
@@ -16078,7 +16624,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1790-1850.png"},
     guide: "B",
-    updatedAt: "2026-06-12T16:05:56.441Z"
+    updatedAt: "2026-06-12T16:05:56.441Z",
+    _imgs: ["fondation_banque_mtl.png", "ligne_1790-1850.png"]
   },
   {
     id: "Q310",
@@ -16104,7 +16651,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1790-1850.png"},
     guide: "C",
-    updatedAt: "2026-06-09T00:47:35.589Z"
+    updatedAt: "2026-06-09T00:47:35.589Z",
+    _imgs: ["ligne_1790-1850.png"]
   },
   {
     id: "Q311",
@@ -16130,7 +16678,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1790-1850.png"},
     guide: "D",
-    updatedAt: "2026-06-09T00:48:25.135Z"
+    updatedAt: "2026-06-09T00:48:25.135Z",
+    _imgs: ["ligne_1790-1850.png"]
   },
   {
     id: "Q312",
@@ -16154,7 +16703,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "L'Asie.",
-    updatedAt: "2026-06-09T03:11:53.270Z"
+    updatedAt: "2026-06-09T03:11:53.270Z",
+    _imgs: ["carte_premiers_occ_peuplement.png"]
   },
   {
     id: "Q313",
@@ -16219,14 +16769,16 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "village_iroquoien_vers_1500.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Les Iroquoiens ont un mode de vie sédentaire.",
-    updatedAt: "2026-06-09T03:21:05.717Z"
+    updatedAt: "2026-06-09T03:21:05.717Z",
+    _imgs: ["village_iroquoien_vers_1500.png"]
   },
   {
     id: "Q316",
@@ -16250,7 +16802,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Les Algonquiens ont un mode de vie nomade.",
-    updatedAt: "2026-06-09T03:24:57.996Z"
+    updatedAt: "2026-06-09T03:24:57.996Z",
+    _imgs: ["campement_algonquien.png"]
   },
   {
     id: "Q317",
@@ -16318,7 +16871,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Une structure matrilinéaire.",
-    updatedAt: "2026-06-09T13:01:41.823Z"
+    updatedAt: "2026-06-09T13:01:41.823Z",
+    _imgs: ["societe_matrilineaire_1500.png"]
   },
   {
     id: "Q319",
@@ -16342,7 +16896,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Une structure patrilinéaire.",
-    updatedAt: "2026-06-09T13:02:29.886Z"
+    updatedAt: "2026-06-09T13:02:29.886Z",
+    _imgs: ["société_patrilineaire_1500.png"]
   },
   {
     id: "Q320",
@@ -16359,14 +16914,16 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "tradition_chamanique_1500.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Le chaman.",
-    updatedAt: "2026-06-09T13:07:09.304Z"
+    updatedAt: "2026-06-09T13:07:09.304Z",
+    _imgs: ["tradition_chamanique_1500.png"]
   },
   {
     id: "Q321",
@@ -16390,7 +16947,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "L'adoption.",
-    updatedAt: "2026-06-09T14:09:09.338Z"
+    updatedAt: "2026-06-09T14:09:09.338Z",
+    _imgs: ["prisonnier_autochtone_1500.png"]
   },
   {
     id: "Q322",
@@ -16414,7 +16972,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "La guerre ou les expéditions guerrières.",
-    updatedAt: "2026-06-09T14:15:52.334Z"
+    updatedAt: "2026-06-09T14:15:52.334Z",
+    _imgs: ["raids_autochtones.png"]
   },
   {
     id: "Q323",
@@ -16438,7 +16997,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Les femmes de la commaunauté ou les mères de clan.",
-    updatedAt: "2026-06-09T14:28:10.753Z"
+    updatedAt: "2026-06-09T14:28:10.753Z",
+    _imgs: ["prise_decision_iroquoiens.png"]
   },
   {
     id: "Q324",
@@ -16462,7 +17022,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Transmettre les connaissances ou les traditions ou les valeurs.",
-    updatedAt: "2026-06-09T14:36:44.054Z"
+    updatedAt: "2026-06-09T14:36:44.054Z",
+    _imgs: ["tradition_chamanique_aines_1500.png"]
   },
   {
     id: "Q325",
@@ -16486,7 +17047,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Samuel de Champlain.",
-    updatedAt: "2026-06-09T15:09:50.360Z"
+    updatedAt: "2026-06-09T15:09:50.360Z",
+    _imgs: ["samuel_champlain.png"]
   },
   {
     id: "Q326",
@@ -16510,7 +17072,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Jean Talon.",
-    updatedAt: "2026-06-09T15:14:15.470Z"
+    updatedAt: "2026-06-09T15:14:15.470Z",
+    _imgs: ["jean_talon.png"]
   },
   {
     id: "Q327",
@@ -16534,7 +17097,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "François de Montmorency-Laval ou Monseigneur de Laval.",
-    updatedAt: "2026-06-09T15:18:51.495Z"
+    updatedAt: "2026-06-09T15:18:51.495Z",
+    _imgs: ["monseigneur_laval_eveque.png"]
   },
   {
     id: "Q328",
@@ -16578,7 +17142,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_1774_acte_quebec.png",
             soustitre: "Organisation politique de la colonie entre 1774 et 1791",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
@@ -16589,14 +17154,16 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "Organisation politique de la colonie à partir de 1791",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "Changement\nIl y a changement, car en 1791, l’Acte constitutionnel crée une Chambre d’assemblée élue par la population et divise la colonie en Haut-Canada et Bas-Canada, alors qu’en 1774, la Province de Québec ne possède pas de Chambre d’assemblée et forme une seule colonie.\n\nou \n\nIl y a changement, car en 1791, chaque colonie possède une Chambre d’assemblée élue, tandis qu’en 1774, le gouverneur dirige avec le Conseil exécutif et le Conseil législatif sans assemblée élue.\n\nContinuité\nIl y a continuité, car en 1774 comme en 1791, le gouverneur demeure nommé par les autorités britanniques et conserve un rôle important dans l'administration de la colonie.",
-    updatedAt: "2026-06-12T12:02:01.545Z"
+    updatedAt: "2026-06-12T12:02:01.545Z",
+    _imgs: ["org_pol_1774_acte_quebec.png", "org_pol_1791_acte_const.png"]
   },
   {
     id: "Q330",
@@ -16615,7 +17182,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_1774_acte_quebec.png",
             soustitre: "Organisation politique de la colonie après 1774",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
@@ -16626,14 +17194,16 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "Organisation politique de la colonie après 1791",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Entre 1774 et 1791, la population obtient des représentants élus grâce à la création d'une Chambre d'assemblée dans le Bas-Canada et le Haut-Canada.\n\nou\n\nEn 1791, la population peut élire des députés à la Chambre d'assemblée, alors qu'en 1774 elle ne participe pas à l'élection d'une institution politique.",
-    updatedAt: "2026-06-12T12:07:24.684Z"
+    updatedAt: "2026-06-12T12:07:24.684Z",
+    _imgs: ["org_pol_1774_acte_quebec.png", "org_pol_1791_acte_const.png"]
   },
   {
     id: "Q331",
@@ -16651,14 +17221,16 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "Organisation politique du Haut-Canada et du Bas-Canada après 1791",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Chambre d'assemblée ou assemblée législative.",
-    updatedAt: "2026-06-12T12:02:29.636Z"
+    updatedAt: "2026-06-12T12:02:29.636Z",
+    _imgs: ["org_pol_1791_acte_const.png"]
   },
   {
     id: "Q332",
@@ -16687,7 +17259,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "La Province de Québec est divisée en Haut-Canada et Bas-Canada ou création du Haut-Canada ou création du Bas-Canada ou le territoire de la colonie est partagé en deux colonies distinctes.",
-    updatedAt: "2026-06-09T18:46:14.794Z"
+    updatedAt: "2026-06-09T18:46:14.794Z",
+    _imgs: ["carte_province_quebec_1783.png", "carte_acte_constitutionnel_1791.png"]
   },
   {
     id: "Q333",
@@ -16900,7 +17473,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "L'Acte constitutionnel de 1791 permet l'élection d'une Chambre d'assemblée (nom de la constitution, institution politique créée par cette constitution). Une partie de la population peut alors choisir des députés, ce qui augmente sa représentation politique (conséquence sur la représentation politique de la population).",
-    updatedAt: "2026-06-15T12:24:21.488Z"
+    updatedAt: "2026-06-15T12:24:21.488Z",
+    _imgs: ["elections_bas-canada_1792.png", "institutions_politiques_acte_const_1791.png"]
   },
   {
     id: "Q339",
@@ -16943,14 +17517,16 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "Organisation politique du Haut-Canada et du Bas-Canada après 1791",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Le gouverneur sanctionne ou refuse les lois ou nomme les membres du Conseil exécutif ou nomme les membres du Conseil législatif ou convoque ou dissout la Chambre d'assemblée ou représente la Couronne britannique ou dirige l'administration de la colonie.",
-    updatedAt: "2026-06-12T12:03:00.453Z"
+    updatedAt: "2026-06-12T12:03:00.453Z",
+    _imgs: ["org_pol_1791_acte_const.png"]
   },
   {
     id: "Q341",
@@ -17074,7 +17650,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Le contrôle des finances publiques ou l'utilisation des revenus de la colonie ou le budget de la colonie.",
-    updatedAt: "2026-06-10T01:16:31.294Z"
+    updatedAt: "2026-06-10T01:16:31.294Z",
+    _imgs: ["debats_parlementaires.png"]
   },
   {
     id: "Q344",
@@ -17155,7 +17732,8 @@ const QUESTIONS = [
           {
             titre: "Document B",
             ref: "village_iroquoien_vers_1500.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
@@ -17172,7 +17750,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 5},
     guide: "Les basses terres du Saint-Laurent possèdent des sols fertiles favorables à l'agriculture (une particularité du sol dans les basses terres du Saint-Laurent). Cette caractéristique permet aux Iroquoiens de cultiver principalement le maïs (la principale activité de subsistance pratiquée par les Iroquoiens). Comme ils produisent leur nourriture au même endroit, ils vivent dans des villages permanents et adoptent un mode de vie sédentaire (le mode de vie des Iroquoiens).",
-    updatedAt: "2026-06-10T15:39:45.208Z"
+    updatedAt: "2026-06-10T15:39:45.208Z",
+    _imgs: ["village_iroquoien_vers_1500.png"]
   },
   {
     id: "Q346",
@@ -17216,7 +17795,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 5},
     guide: "Les Algonquiens occupent un territoire forestier dont les sols sont peu favorables à l’agriculture (une caractéristique du territoire occupé par les Algonquiens). Ils pratiquent donc principalement la chasse et la pêche pour se nourrir (la principale activité de subsistance pratiquée par les Algonquiens). Comme les ressources sont dispersées sur le territoire, ils se déplacent selon les saisons et adoptent un mode de vie nomade (le mode de vie des Algonquiens).",
-    updatedAt: "2026-06-10T15:55:11.597Z"
+    updatedAt: "2026-06-10T15:55:11.597Z",
+    _imgs: ["campement_algonquien.png"]
   },
   {
     id: "Q347",
@@ -17244,7 +17824,8 @@ const QUESTIONS = [
         ["A", "C"]
       ]
     },
-    updatedAt: "2026-06-10T19:10:40.934Z"
+    updatedAt: "2026-06-10T19:10:40.934Z",
+    _imgs: ["carte_lieux_echanges.png"]
   },
   {
     id: "Q348",
@@ -17317,7 +17898,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "tableau_2col"},
     guide: "B",
-    updatedAt: "2026-06-10T18:59:04.977Z"
+    updatedAt: "2026-06-10T18:59:04.977Z",
+    _imgs: ["carte_cartier_1534.png"]
   },
   {
     id: "Q350",
@@ -17361,7 +17943,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 5},
     guide: "L'alliance franco-amérindienne de 1603 (le nom de l'alliance conclue en 1603) permet aux Français de bénéficier des connaissances du territoire et des voies de circulation transmises par leurs alliés autochtones (un avantage procuré aux Français par cette alliance). Cette aide favorise leur établissement permanent et leur présence dans la vallée du Saint-Laurent (une conséquence sur l'occupation du territoire par les Français).",
-    updatedAt: "2026-06-15T12:25:12.611Z"
+    updatedAt: "2026-06-15T12:25:12.611Z",
+    _imgs: ["alliance_franco-ame.png"]
   },
   {
     id: "Q351",
@@ -17452,7 +18035,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "tableau_2col"},
     guide: "D",
-    updatedAt: "2026-06-10T18:48:29.025Z"
+    updatedAt: "2026-06-10T18:48:29.025Z",
+    _imgs: ["carte_monde.png"]
   },
   {
     id: "Q354",
@@ -17471,7 +18055,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "tableau_2col"},
     guide: "C",
-    updatedAt: "2026-06-10T19:04:25.412Z"
+    updatedAt: "2026-06-10T19:04:25.412Z",
+    _imgs: ["carte_amerique_nord.png"]
   },
   {
     id: "Q355",
@@ -17496,7 +18081,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "tableau_2col"},
     guide: "C",
-    updatedAt: "2026-06-10T19:09:29.534Z"
+    updatedAt: "2026-06-10T19:09:29.534Z",
+    _imgs: ["carte_golfe_st-laurent.png"]
   },
   {
     id: "Q356",
@@ -17629,7 +18215,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Canadien français \nPopulation canadienne-française",
-    updatedAt: "2026-06-11T15:20:43.662Z"
+    updatedAt: "2026-06-11T15:20:43.662Z",
+    _imgs: ["population_bas-canada_1800.png"]
   },
   {
     id: "Q359",
@@ -17654,7 +18241,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Français.",
-    updatedAt: "2026-06-12T00:23:21.676Z"
+    updatedAt: "2026-06-12T00:23:21.676Z",
+    _imgs: ["langues_parlees_bas-canada_1800.png"]
   },
   {
     id: "Q360",
@@ -17956,7 +18544,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Tensions politiques\nOpposition entre Canadiens français et Britanniques\nFormation de partis politiques défendant des intérêts différents\nDéveloppement du nationalisme canadien\nDéveloppement du nationalisme britannique\nConflits à la Chambre d'assemblée",
-    updatedAt: "2026-06-11T12:05:34.072Z"
+    updatedAt: "2026-06-11T12:05:34.072Z",
+    _imgs: ["debats_parlementaires.png"]
   },
   {
     id: "Q367",
@@ -17999,7 +18588,8 @@ const QUESTIONS = [
         ["B", "A"]
       ]
     },
-    updatedAt: "2026-06-12T12:19:34.660Z"
+    updatedAt: "2026-06-12T12:19:34.660Z",
+    _imgs: ["population_bas-canada_1800.png"]
   },
   {
     id: "Q368",
@@ -18045,7 +18635,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 5},
     guide: "La présence de francophones et d'anglophones dans le Bas-Canada (composition linguistique) amène les Canadiens français (groupe de population) à chercher à accroître leur influence politique, ce qui provoque la formation de partis opposés et des tensions à la Chambre d'assemblée (conséquence politique).",
-    updatedAt: "2026-06-15T12:25:31.423Z"
+    updatedAt: "2026-06-15T12:25:31.423Z",
+    _imgs: ["population_bas-canada_1800.png", "debats_parlementaires.png"]
   },
   {
     id: "Q369",
@@ -18069,7 +18660,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Obtenir l'indépendance.\nSe libérer d'une puissance étrangère.\nSe gouverner soi-même.\nChoisir son propre gouvernement.\nContrôler ses institutions politiques.",
-    updatedAt: "2026-06-11T15:17:15.265Z"
+    updatedAt: "2026-06-11T15:17:15.265Z",
+    _imgs: ["mouvement_liberation.png"]
   },
   {
     id: "Q370",
@@ -18093,7 +18685,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "États-Unis.",
-    updatedAt: "2026-06-11T15:19:29.266Z"
+    updatedAt: "2026-06-11T15:19:29.266Z",
+    _imgs: ["mouvement_liberation.png"]
   },
   {
     id: "Q371",
@@ -18141,7 +18734,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Journal\nPrese écrite",
-    updatedAt: "2026-06-11T15:26:15.234Z"
+    updatedAt: "2026-06-11T15:26:15.234Z",
+    _imgs: ["journal_le_canadien.png"]
   },
   {
     id: "Q373",
@@ -18186,7 +18780,8 @@ const QUESTIONS = [
         ["B", "A"]
       ]
     },
-    updatedAt: "2026-06-12T00:19:17.743Z"
+    updatedAt: "2026-06-12T00:19:17.743Z",
+    _imgs: ["journal_le_canadien.png"]
   },
   {
     id: "Q374",
@@ -18317,7 +18912,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "Organisation politique du Haut-Canada et du Bas-Canada après 1791",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
@@ -18334,7 +18930,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Il y a continuité, car la Chambre d'assemblée continue de représenter la population entre 1791 et 1840.",
-    updatedAt: "2026-06-12T12:03:42.432Z"
+    updatedAt: "2026-06-12T12:03:42.432Z",
+    _imgs: ["org_pol_1791_acte_const.png"]
   },
   {
     id: "Q379",
@@ -18369,7 +18966,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "Changement\nIl y a changement, car le nombre de journaux augmente entre 1790 et 1830, ce qui favorise la diffusion des idées politiques dans la colonie.\n\nContinuité\nIl y a continuité, car les journaux continuent de servir à la diffusion des idées politiques entre 1790 et 1830.",
-    updatedAt: "2026-06-12T00:18:14.267Z"
+    updatedAt: "2026-06-12T00:18:14.267Z",
+    _imgs: ["journaux_bas-canada.png"]
   },
   {
     id: "Q380",
@@ -18550,7 +19148,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Agent des Indiens",
-    updatedAt: "2026-06-12T00:17:27.544Z"
+    updatedAt: "2026-06-12T00:17:27.544Z",
+    _imgs: ["agents_indiens_bas-canada.png"]
   },
   {
     id: "Q385",
@@ -18574,7 +19173,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Abolition de l'esclavage \nFin de l'esclavage",
-    updatedAt: "2026-06-12T00:47:44.586Z"
+    updatedAt: "2026-06-12T00:47:44.586Z",
+    _imgs: ["abolition_esclavage_bas-canada.png"]
   },
   {
     id: "Q386",
@@ -18592,14 +19192,16 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "accroissement_naturel_bas-canada_1790-1840.png",
             soustitre: "Naissances et décès au Bas-Canada  entre 1790 et 1840",
-            source: "Adapté de Hubert Charbonneau, La population du Québec : études rétrospectives, Montréal, Boréal Express, 1973."
+            source: "Adapté de Hubert Charbonneau, La population du Québec : études rétrospectives, Montréal, Boréal Express, 1973.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "L'accroissement naturel.",
-    updatedAt: "2026-06-12T12:14:42.909Z"
+    updatedAt: "2026-06-12T12:14:42.909Z",
+    _imgs: ["accroissement_naturel_bas-canada_1790-1840.png"]
   },
   {
     id: "Q387",
@@ -18624,7 +19226,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "L'immigration.",
-    updatedAt: "2026-06-12T12:20:53.298Z"
+    updatedAt: "2026-06-12T12:20:53.298Z",
+    _imgs: ["evolution_demo_haut-canada_1790-1840.png"]
   },
   {
     id: "Q388",
@@ -18744,7 +19347,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 5},
     guide: "L'immigration britannique (mouvement migratoire) amène de nombreux Britanniques dans le Haut-Canada (groupe de population concerné) ce qui contribue à l'augmentation de la population de cette colonie (changement démographique).",
-    updatedAt: "2026-06-15T12:21:00.973Z"
+    updatedAt: "2026-06-15T12:21:00.973Z",
+    _imgs: ["evolution_demo_haut-canada_1790-1840.png", "evolution_pop_haut-canada_1790-1840.png"]
   },
   {
     id: "Q392",
@@ -18762,7 +19366,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "accroissement_naturel_bas-canada_1790-1840.png",
             soustitre: "Naissances et décès au Bas-Canada entre 1790 et 1840",
-            source: "Adapté de Jacques Henripin, La population canadienne au début du XIXe siècle, Montréal."
+            source: "Adapté de Hubert Charbonneau, La population du Québec : études rétrospectives, Montréal, Boréal Express, 1973.",
+            auteur: ""
           }
         ]
       },
@@ -18789,7 +19394,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 5},
     guide: "L'accroissement naturel (phénomène démographique) touche principalement les Canadiens français (groupe de population concerné), ce qui entraîne une forte augmentation de la population du Bas-Canada (changement dans la population)",
-    updatedAt: "2026-06-15T12:20:35.462Z"
+    updatedAt: "2026-06-15T12:20:35.462Z",
+    _imgs: ["accroissement_naturel_bas-canada_1790-1840.png", "evolution_pop_bas-canada_1790-1840.png"]
   },
   {
     id: "Q393",
@@ -18888,7 +19494,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "tableau_2col"},
     guide: "B",
-    updatedAt: "2026-06-12T03:57:43.165Z"
+    updatedAt: "2026-06-12T03:57:43.165Z",
+    _imgs: ["carte_conflits_armes_bas-canada_1837.png"]
   },
   {
     id: "Q396",
@@ -18913,7 +19520,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "tableau_2col"},
     guide: "D",
-    updatedAt: "2026-06-15T12:48:28.024Z"
+    updatedAt: "2026-06-15T12:48:28.024Z",
+    _imgs: ["carte_conflits_armes_haut-canada_1838.png"]
   },
   {
     id: "Q397",
@@ -19176,14 +19784,16 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "assemblee_six_comtes.png",
-            source: "Charles Alexander Smith, L'Assemblée des Six-Comtés, 1891. Reproduction adaptée."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Les assemblées populaires.",
-    updatedAt: "2026-06-12T14:13:02.122Z"
+    updatedAt: "2026-06-12T14:13:02.122Z",
+    _imgs: ["assemblee_six_comtes.png"]
   },
   {
     id: "Q404",
@@ -19207,7 +19817,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Mandats d’arrestation\nArrestation de chefs patriotes\nIntervention de l’armée britannique\nEmprisonnement de Patriotes",
-    updatedAt: "2026-06-12T14:16:51.224Z"
+    updatedAt: "2026-06-12T14:16:51.224Z",
+    _imgs: ["aut_col_britannique_rebellions.png"]
   },
   {
     id: "Q405",
@@ -19231,74 +19842,76 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "La Déclaration d'indépendance du Bas-Canada.",
-    updatedAt: "2026-06-12T14:22:53.180Z"
+    updatedAt: "2026-06-12T14:22:53.180Z",
+    _imgs: ["independance_bas-canada.png"]
   },
   {
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
+    documents: [
+      {
+        cols: [
+          {
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 3.",
+            texte: "« En novembre 1837, les Patriotes dirigés par Wolfred Nelson remportent une victoire contre les troupes britanniques lors de la bataille de Saint-Denis. »",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "bataille_taverne.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            soustitre: "Bataille d'Odelltown",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            source: "Adapté de J.M.S. Careless, Canada: A Story of Challenge.",
+            texte: "« En décembre 1837, un groupe de réformistes dirigé par William Lyon Mackenzie entreprend une marche vers Toronto afin de renverser le gouvernement colonial. »",
+            titre: "Document C"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "bataille_saint-charles.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            soustitre: "Bataille de Saint-Charles",
+            titre: "Document D"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Les documents A à D présentent des faits liés aux rébellions de 1837-1838. Indiquez si chaque document fait référence aux rébellions du Bas-Canada ou aux rébellions du Haut-Canada.",
+    guide: {
+      entetes: ["Rébellions au Bas-Canada", "Rébellions au Haut-Canada"],
+      rangees: [
+        ["A et D", "B et C"]
+      ],
+      type: "grille"
+    },
     id: "Q406",
     niveau: 3,
     oi: "Mettre en relation des faits",
     periode: "P4 — 1791 – 1840",
     points: 2,
-    soustag: "4 documents",
-    enonce: "Les documents A à D présentent des faits liés aux rébellions de 1837-1838. Indiquez si chaque document fait référence aux rébellions du Bas-Canada ou aux rébellions du Haut-Canada.",
-    aspects: [{aspect: "Soulèvements de 1837-1838"}],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            texte: "« En novembre 1837, les Patriotes dirigés par Wolfred Nelson remportent une victoire contre les troupes britanniques lors de la bataille de Saint-Denis. »",
-            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 3."
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            ref: "bataille_taverne.png",
-            soustitre: "Bataille de la taverne Montgomery",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document C",
-            texte: "« En décembre 1837, un groupe de réformistes dirigé par William Lyon Mackenzie entreprend une marche vers Toronto afin de renverser le gouvernement colonial. »",
-            source: "Adapté de J.M.S. Careless, Canada: A Story of Challenge."
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document D",
-            ref: "bataille_saint-charles.png",
-            soustitre: "Bataille de Saint-Charles",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
-          }
-        ]
-      }
-    ],
     reponse: {
-      type: "mettre-en-relation",
+      double: true,
       elements: ["Rébellions au Bas-Canada", "Rébellions au Haut-Canada"],
-      double: true
+      type: "mettre-en-relation"
     },
-    guide: {
-      type: "grille",
-      entetes: ["Rébellions au Bas-Canada", "Rébellions au Haut-Canada"],
-      rangees: [
-        ["A et D", "B et C"]
-      ]
-    },
-    updatedAt: "2026-06-12T15:23:28.020Z"
+    soustag: "4 documents",
+    updatedAt: "2026-06-29T15:57:55.614Z",
+    _imgs: ["bataille_taverne.png", "bataille_saint-charles.png"]
   },
   {
     id: "Q407",
@@ -19371,14 +19984,16 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "Organisation politique du Haut-Canada et du Bas-Canada après 1791",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Le mécontentement envers le gouvernement colonial\nLe pouvoir du Conseil législatif\nLe refus de la responsabilité ministérielle\nLe manque de pouvoir de la Chambre d'assemblée\nLes revendications des Patriotes pour obtenir des réformes politiques",
-    updatedAt: "2026-06-15T17:48:28.647Z"
+    updatedAt: "2026-06-15T17:48:28.647Z",
+    _imgs: ["org_pol_1791_acte_const.png"]
   },
   {
     id: "Q409",
@@ -19396,14 +20011,16 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "papineau_foule.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "La tenue d'assemblées populaires.\nLa mobilisation des Patriotes.",
-    updatedAt: "2026-06-12T15:33:00.180Z"
+    updatedAt: "2026-06-12T15:33:00.180Z",
+    _imgs: ["papineau_foule.png"]
   },
   {
     id: "Q410",
@@ -19428,7 +20045,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Émission de mandats d'arrestation contre des chefs patriotes.\nRépression du mouvement patriote.\nDéploiement de troupes britanniques.\nArrestation de Patriotes.\nAugmentation des tensions politiques.\nDéclenchement du conflit armé.\nDébut des rébellions de 1837.",
-    updatedAt: "2026-06-12T15:54:40.050Z"
+    updatedAt: "2026-06-12T15:54:40.050Z",
+    _imgs: ["aut_col_britannique_rebellions.png"]
   },
   {
     id: "Q411",
@@ -19462,7 +20080,7 @@ const QUESTIONS = [
     periode: "P4 — 1791 – 1840",
     points: 2,
     soustag: "Similitude",
-    enonce: "À partir des documents A et B, indiquez une similitude dans les revendications polituques entre les mouvements de contestation du Bas-Canada et du Haut-Canada.",
+    enonce: "À partir des documents A et B, indiquez une similitude dans les revendications politiques entre les mouvements de contestation du Bas-Canada et du Haut-Canada.",
     aspects: [{aspect: "Soulèvements de 1837-1838"}],
     documents: [
       {
@@ -19490,51 +20108,52 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Les deux mouvements réclament des réformes politiques.\nLes deux mouvements souhaitent accroître le pouvoir de l'Assemblée élue.\nLes deux mouvements contestent le pouvoir des autorités nommées.\nLes deux mouvements demandent un gouvernement plus représentatif.",
-    updatedAt: "2026-06-18T23:35:16.890Z"
+    updatedAt: "2026-06-27T19:14:06.199Z"
   },
   {
+    aspects: [{aspect: "Soulèvements de 1837-1838"}],
+    documents: [
+      {
+        cols: [
+          {
+            ref: "assemblee_six_comtes.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "aut_col_britannique_rebellions.png",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            source: "Adapté de Allan Greer, Habitants et Patriotes, Boréal, 1997.",
+            texte: "« La confrontation entre les contestataires et les soldats mène à plusieurs affrontements armés en 1837. Ces événements marquent un tournant important dans l'histoire politique de la colonie. »",
+            titre: "Document C"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Expliquez comment les moyens utilisés par les Patriotes pour faire valoir leurs revendications entraînent des conséquences dans la colonie en 1837.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un moyen utilisé par les Patriotes\n• une réaction des autorités coloniales\n• une conséquence dans la colonie",
+    guide: "Les Patriotes organisent des assemblées populaires (un moyen utilisé par les Patriotes) afin de faire valoir leurs revendications. En réaction, les autorités coloniales émettent des mandats d'arrestation contre plusieurs chefs patriotes (une réaction des autorités coloniales). Cette situation contribue au déclenchement du conflit armé en 1837 (une conséquence dans la colonie).",
     id: "Q413",
     niveau: 3,
     oi: "Établir des liens de causalité",
     periode: "P4 — 1791 – 1840",
     points: 3,
-    enonce: "Expliquez comment les moyens utilisés par les Patriotes pour faire valoir leurs revendications entraînent des conséquences dans la colonie en 1837.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• un moyen utilisé par les Patriotes\n• une réaction des autorités coloniales\n• une conséquence dans la colonie",
-    aspects: [{aspect: "Soulèvements de 1837-1838"}],
-    documents: [
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document A",
-            ref: "assemblee_six_comtes.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document B",
-            texte: "« Après l'échec des démarches politiques et l'arrestation de plusieurs chefs du mouvement, des combats éclatent entre les Patriotes et les troupes britanniques dans différentes régions de la colonie. »",
-            source: "Adapté de Michel Brunet, Les Canadiens après la Conquête."
-          }
-        ]
-      },
-      {
-        type: "textes",
-        cols: [
-          {
-            titre: "Document C",
-            ref: "aut_col_britannique_rebellions.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
-          }
-        ]
-      }
-    ],
-    reponse: {type: "lignes", nombre: 5},
-    guide: "Les Patriotes organisent des assemblées populaires (un moyen utilisé par les Patriotes) afin de faire valoir leurs revendications. En réaction, les autorités coloniales émettent des mandats d'arrestation contre plusieurs chefs patriotes (une réaction des autorités coloniales). Cette situation contribue au déclenchement du conflit armé en 1837 (une conséquence dans la colonie).",
-    updatedAt: "2026-06-15T12:20:08.753Z"
+    reponse: {nombre: 5, type: "lignes"},
+    updatedAt: "2026-06-29T15:52:56.956Z",
+    _imgs: ["assemblee_six_comtes.png", "aut_col_britannique_rebellions.png"]
   },
   {
     id: "Q414",
@@ -19560,7 +20179,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1790-1850.png"},
     guide: "C",
-    updatedAt: "2026-06-12T16:03:49.321Z"
+    updatedAt: "2026-06-12T16:03:49.321Z",
+    _imgs: ["inauguration_canal_lachine.png", "ligne_1790-1850.png"]
   },
   {
     id: "Q415",
@@ -19631,7 +20251,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 5},
     guide: "La Banque de Montréal (une institution financière) accorde des prêts aux commerçants et aux entrepreneurs (un moyen utilisé pour soutenir les activités économiques). Ces prêts favorisent les investissements et le développement du commerce dans la colonie (un effet sur l'économie de la colonie).",
-    updatedAt: "2026-06-15T12:19:35.007Z"
+    updatedAt: "2026-06-15T12:19:35.007Z",
+    _imgs: ["fondation_banque_mtl.png", "inauguration_canal_lachine.png"]
   },
   {
     id: "Q417",
@@ -19680,7 +20301,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Le chemin de fer.\nLe transport ferroviaire.",
-    updatedAt: "2026-06-12T16:20:12.913Z"
+    updatedAt: "2026-06-12T16:20:12.913Z",
+    _imgs: ["chemin_de_fer_locomotive.png"]
   },
   {
     id: "Q419",
@@ -19725,7 +20347,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 5},
     guide: "Le chemin de fer (une infrastructure de transport aménagée) permet de transporter plus rapidement les personnes et les marchandises (une amélioration des transports). Cette amélioration favorise les échanges commerciaux et contribue au développement économique de la colonie (un effet sur l'économie de la colonie).",
-    updatedAt: "2026-06-15T12:19:02.768Z"
+    updatedAt: "2026-06-15T12:19:02.768Z",
+    _imgs: ["chemin_de_fer_locomotive.png", "port_mtl_1830.png"]
   },
   {
     id: "Q420",
@@ -19836,7 +20459,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "L'apparition des cantons.\nL'établissement de cantons en plus des seigneuries.",
-    updatedAt: "2026-06-13T12:44:13.144Z"
+    updatedAt: "2026-06-13T12:44:13.144Z",
+    _imgs: ["territoire_agricole_1800.png", "territoire_agricole_1830.png"]
   },
   {
     id: "Q423",
@@ -19860,7 +20484,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Les Corn Laws.",
-    updatedAt: "2026-06-12T17:58:30.594Z"
+    updatedAt: "2026-06-12T17:58:30.594Z",
+    _imgs: ["corn_laws.png"]
   },
   {
     id: "Q424",
@@ -19899,7 +20524,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Les terres des seigneuries sont longues et étroites alors que celles des cantons sont plus carrées ou rectangulaires.",
-    updatedAt: "2026-06-18T23:38:21.301Z"
+    updatedAt: "2026-06-18T23:38:21.301Z",
+    _imgs: ["territoire_agricole_1800.png", "territoire_agricole_1830.png"]
   },
   {
     id: "Q425",
@@ -19942,7 +20568,8 @@ const QUESTIONS = [
         ["B", "A"]
       ]
     },
-    updatedAt: "2026-06-19T20:38:18.604Z"
+    updatedAt: "2026-06-19T20:38:18.604Z",
+    _imgs: ["corn_laws_exportations.png", "corn_laws_tarifs.png"]
   },
   {
     id: "Q426",
@@ -19981,7 +20608,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "Changement\nIl y a changement, car au milieu du XIXe siècle de nouveaux cantons sont ouverts dans plusieurs régions de la colonie, alors qu'au début du XIXe siècle le territoire est principalement organisé en seigneuries.\n\nContinuité\nIl y a continuité, car au milieu du XIXe siècle le régime seigneurial structure encore l'occupation du territoire dans la vallée du Saint-Laurent, comme au début du XIXe siècle.",
-    updatedAt: "2026-06-14T12:11:35.861Z"
+    updatedAt: "2026-06-14T12:11:35.861Z",
+    _imgs: ["territoire_agricole_1800.png", "territoire_agricole_1830.png"]
   },
   {
     id: "Q427",
@@ -20112,7 +20740,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "L'appauvrissement des sols\nLa diminution de la fertilité des sols\nLa culture intensive du blé\nL'exploitation répétée des mêmes terres agricoles",
-    updatedAt: "2026-06-14T13:21:09.255Z"
+    updatedAt: "2026-06-14T13:21:09.255Z",
+    _imgs: ["bas_canada_sols_appauvris.png"]
   },
   {
     id: "Q431",
@@ -20138,7 +20767,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Colonisation de nouvelles régions\nDéplacement de familles vers des régions de colonisation\nMigration vers de nouveaux territoires\nÉtablissement de familles dans de nouvelles régions",
-    updatedAt: "2026-06-14T13:24:19.774Z"
+    updatedAt: "2026-06-14T13:24:19.774Z",
+    _imgs: ["bas_canada_crise_agricole.png"]
   },
   {
     id: "Q432",
@@ -20177,7 +20807,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "L'épuisement progressif des fourrures dans les régions exploitées (la difficulté liée au commerce des fourrures) pousse les marchands à établir de nouveaux postes de traite vers l'Ouest (la mesure prise par les marchands). Cette mesure entraîne l'expansion du territoire exploité jusqu'aux Prairies et aux Rocheuses (la conséquence sur le territoire exploité).",
-    updatedAt: "2026-06-15T12:35:02.759Z"
+    updatedAt: "2026-06-15T12:35:02.759Z",
+    _imgs: ["provenance_fourrures_marchands.png", "territoire_compagnies_fourrure.png"]
   },
   {
     id: "Q433",
@@ -20203,7 +20834,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Il y a continuité, car entre 1834 et 1840 le Bas-Canada enregistre un déficit de production agricole (blé) chaque année ou la production de blé demeure insuffisante pour répondre aux besoins de la population.",
-    updatedAt: "2026-06-14T17:37:55.563Z"
+    updatedAt: "2026-06-14T17:37:55.563Z",
+    _imgs: ["crise_agricole_production_ble.png"]
   },
   {
     id: "Q434",
@@ -20249,7 +20881,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 5},
     guide: "La Compagnie de la Baie d'Hudson et la Compagnie du Nord-Ouest se livrent une forte concurrence pour contrôler le commerce des fourrures (une caractéristique des relations entre les deux compagnies). Cette situation entraîne des conflits et une augmentation des coûts liés à la traite des fourrures (une conséquence de cette situation). Les autorités britanniques approuvent la fusion des deux compagnies en 1821 (une mesure prise par les autorités britanniques).",
-    updatedAt: "2026-06-15T12:17:28.874Z"
+    updatedAt: "2026-06-15T12:17:28.874Z",
+    _imgs: ["compagnies_fourrures_1820.png", "postes_traite_1795-1820.png"]
   },
   {
     id: "Q435",
@@ -20274,7 +20907,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "tableau_2col"},
     guide: "B",
-    updatedAt: "2026-06-15T12:43:43.060Z"
+    updatedAt: "2026-06-15T12:43:43.060Z",
+    _imgs: ["territoire_exploite_fourrure_1820.png"]
   },
   {
     id: "Q436",
@@ -20300,7 +20934,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Expansion des activités de traite vers l'Ouest\nDéplacement des activités de traite vers l'Ouest\nExpansion des territoires exploités vers les Prairies\nExploitation accrue de l'Ouest\nOuverture de nouveaux territoires de traite dans l'Ouest\nDéveloppement de la traite dans les Prairies et au-delà",
-    updatedAt: "2026-06-15T13:15:47.498Z"
+    updatedAt: "2026-06-15T13:15:47.498Z",
+    _imgs: ["provenance_fourrures_marchands.png"]
   },
   {
     id: "Q437",
@@ -20326,7 +20961,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Diminution du nombre de fourrures provenant de la vallée du Saint-Laurent et des Grands Lacs\nDiminution des fourrures dans la vallée du Saint-Laurent et les Grands Lacs\nRaréfaction des fourrures dans les régions traditionnellement exploitées\nÉpuisement progressif des ressources en fourrures dans l'Est\nBaisse des approvisionnements en provenance des Grands Lacs et de la vallée du Saint-Laurent",
-    updatedAt: "2026-06-15T13:11:47.965Z"
+    updatedAt: "2026-06-15T13:11:47.965Z",
+    _imgs: ["fourrures_1780-1820.png"]
   },
   {
     id: "Q438",
@@ -20352,7 +20988,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Les activités de traite se déplacent vers l'Ouest entre 1780 et 1820.\nLes territoires exploités pour le commerce des fourrures s'étendent des Grands Lacs vers les Prairies et l'Ouest.\nL'importance des territoires de l'Ouest augmente alors que celle de la vallée du Saint-Laurent et des Grands Lacs diminue entre 1780 et 1820.",
-    updatedAt: "2026-06-15T13:15:33.908Z"
+    updatedAt: "2026-06-15T13:15:33.908Z",
+    _imgs: ["fourrures_1780-1820.png"]
   },
   {
     id: "Q439",
@@ -20378,7 +21015,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Le commerce des fourrures demeure important entre 1780 et 1820.\nLes exportations de fourrures demeurent élevées entre 1780 et 1820.\nLe nombre de fourrures exportées reste important tout au long de la période.\nLe commerce des fourrures constitue toujours une activité économique importante vers 1780 et vers 1820.",
-    updatedAt: "2026-06-15T13:23:37.614Z"
+    updatedAt: "2026-06-15T13:23:37.614Z",
+    _imgs: ["exportations_fourrure_1780-1820.png"]
   },
   {
     id: "Q440",
@@ -20687,7 +21325,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 5},
     guide: "Le blocus continental imposé par Napoléon limite les échanges entre la Grande-Bretagne et plusieurs pays européens fournisseurs de bois (la situation en Europe vers 1800). Pour favoriser l'approvisionnement en bois provenant de ses colonies, la Grande-Bretagne accorde des tarifs préférentiels au bois colonial (une mesure mise en place). Cette mesure entraîne une augmentation des exportations et contribue au développement du commerce du bois au Bas-Canada (une conséquence sur le commerce du bois).",
-    updatedAt: "2026-06-15T15:33:47.971Z"
+    updatedAt: "2026-06-15T15:33:47.971Z",
+    _imgs: ["blocus_continental.png", "exportation_bois_1790-1840.png"]
   },
   {
     id: "Q448",
@@ -20712,7 +21351,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Le blocus continental.",
-    updatedAt: "2026-06-15T15:35:27.345Z"
+    updatedAt: "2026-06-15T15:35:27.345Z",
+    _imgs: ["blocus_continental.png"]
   },
   {
     id: "Q449",
@@ -20755,14 +21395,16 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "bois_nouvelles_activites.png",
             soustitre: "Transformation du bois au Bas-Canada vers 1820",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Sciage du bois\nTransformation du bois dans une scierie\nProduction de madriers\nProduction de planches\nÉquarrissage du bois",
-    updatedAt: "2026-06-15T15:40:32.605Z"
+    updatedAt: "2026-06-15T15:40:32.605Z",
+    _imgs: ["bois_nouvelles_activites.png"]
   },
   {
     id: "Q451",
@@ -20788,7 +21430,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Création d'emplois\nAugmentation du nombre de travailleurs\nHausse de l'emploi dans l'industrie du bois\nPlus de personnes travaillent dans les scieries et les chantiers forestiers",
-    updatedAt: "2026-06-15T17:42:43.010Z"
+    updatedAt: "2026-06-15T17:42:43.010Z",
+    _imgs: ["bois_emplois.png"]
   },
   {
     id: "Q452",
@@ -20825,7 +21468,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "Changement\nIl y a changement, car entre 1800 et 1840, le nombre de travailleurs liés à l'industrie du bois augmente, passant d'environ 2 500 à 14 000.\nou\nIl y a changement, car entre 1800 et 1840, les métiers liés à l'industrie du bois occupent un nombre beaucoup plus élevé de travailleurs.\n\nContinuité\nIl y a continuité, car en 1800 comme en 1840, les bûcherons constituent le groupe de travailleurs le plus nombreux dans l'industrie du bois.\nou\nIl y a continuité, car les bûcherons demeurent les principaux travailleurs de l'industrie du bois entre 1800 et 1840.",
-    updatedAt: "2026-06-15T16:41:42.683Z"
+    updatedAt: "2026-06-15T16:41:42.683Z",
+    _imgs: ["bois_emplois_1800.png", "bois_emplois_1840.png"]
   },
   {
     id: "Q453",
@@ -20853,7 +21497,8 @@ const QUESTIONS = [
         ["B", "A"]
       ]
     },
-    updatedAt: "2026-06-15T16:49:48.089Z"
+    updatedAt: "2026-06-15T16:49:48.089Z",
+    _imgs: ["territoire_bois_exploitation.png"]
   },
   {
     id: "Q454",
@@ -20903,7 +21548,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Construction navale\nIndustrie de la construction navale\nChantiers navals\nIndustrie navale",
-    updatedAt: "2026-06-15T16:56:49.489Z"
+    updatedAt: "2026-06-15T16:56:49.489Z",
+    _imgs: ["bois_chantier_naval.png"]
   },
   {
     id: "Q456",
@@ -20931,7 +21577,8 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "bois_nouvelles_activites.png",
             soustitre: "Transformation du bois au Bas-Canada vers 1820",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
@@ -20949,7 +21596,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 5},
     guide: "La Grande-Bretagne accorde des tarifs préférentiels au bois provenant de ses colonies (une mesure). Cette politique augmente la demande pour le bois du Bas-Canada (une ressource en demande). L'essor du commerce du bois favorise alors le développement de la construction navale, une industrie en croissance dans la colonie (une industrie liée au bois en croissance).",
-    updatedAt: "2026-06-15T17:23:37.935Z"
+    updatedAt: "2026-06-15T17:23:37.935Z",
+    _imgs: ["bois_nouvelles_activites.png", "bois_chantier_naval.png"]
   },
   {
     id: "Q457",
@@ -21185,7 +21833,8 @@ const QUESTIONS = [
         ["B", "A"]
       ]
     },
-    updatedAt: "2026-06-15T23:59:44.570Z"
+    updatedAt: "2026-06-15T23:59:44.570Z",
+    _imgs: ["grosse_ile_station_quarantaine.png"]
   },
   {
     id: "Q464",
@@ -21204,7 +21853,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "tableau_2col"},
     guide: "A",
-    updatedAt: "2026-06-16T00:06:47.984Z"
+    updatedAt: "2026-06-16T00:06:47.984Z",
+    _imgs: ["territoire_immigration_1820.png"]
   },
   {
     id: "Q465",
@@ -21345,7 +21995,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Cantons-de-l'Est.",
-    updatedAt: "2026-06-16T00:22:02.582Z"
+    updatedAt: "2026-06-16T00:22:02.582Z",
+    _imgs: ["cantons_immigration.png"]
   },
   {
     id: "Q471",
@@ -21620,7 +22271,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "tableau_2col"},
     guide: "A",
-    updatedAt: "2026-06-16T00:48:02.873Z"
+    updatedAt: "2026-06-16T00:48:02.873Z",
+    _imgs: ["carte_bataille_chateauguay.png"]
   },
   {
     id: "Q480",
@@ -21804,7 +22456,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "Instauration de la responsabilité ministérielle\nUnion du Haut-Canada et du Bas-Canada\nCréation d'un gouvernement unique pour les deux Canadas",
-    updatedAt: "2026-06-16T13:42:27.085Z"
+    updatedAt: "2026-06-16T13:42:27.085Z",
+    _imgs: ["org_pol_gouvernement_responsable_1848.png"]
   },
   {
     id: "Q486",
@@ -22005,7 +22658,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "Organisation politique du Haut-Canada et du Bas-Canada après 1791",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
@@ -22033,7 +22687,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 5},
     guide: "Au Bas-Canada, les élus contrôlent peu le gouvernement (problème observé dans le fonctionnement des institutions). Cette situation provoque des tensions politiques entre l'Assemblée et les autorités coloniales (conséquence politique). Durham recommande donc la responsabilité ministérielle pour donner davantage d'influence aux représentants élus (recommandation formulée par Durham).",
-    updatedAt: "2026-06-16T13:59:13.287Z"
+    updatedAt: "2026-06-16T13:59:13.287Z",
+    _imgs: ["org_pol_1791_acte_const.png", "org_pol_gouvernement_responsable_1848.png"]
   },
   {
     id: "Q493",
@@ -22078,7 +22733,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 5},
     guide: "Au Bas-Canada, les Canadiens français sont majoritaires, mais une minorité britannique est aussi présente (caractéristique de la population). Selon Durham, les différences entre ces deux groupes causent des tensions dans la colonie (problème identifié par Durham). Il recommande donc l’assimilation des Canadiens français à la population britannique (solution proposée).",
-    updatedAt: "2026-06-16T14:13:03.376Z"
+    updatedAt: "2026-06-16T14:13:03.376Z",
+    _imgs: ["population_bas-canada_1735.png"]
   },
   {
     id: "Q494",
@@ -22104,7 +22760,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "Changement\nIl y a changement puisque le nombre de paroisses catholiques passe de 150 à 250 entre 1790 et 1830.\nIl y a changement puisque le nombre de paroisses anglicanes passe de 0 à 40 entre 1790 et 1830.\nIl y a changement puisque le nombre de paroisses catholiques et anglicanes augmente entre 1790 et 1830.\n\nContinuité\nIl y a continuité puisque les paroisses catholiques demeurent plus nombreuses que les paroisses anglicanes en 1790 comme en 1830.\nIl y a continuité puisque l'Église catholique compte davantage de paroisses que l'Église anglicane en 1790 comme en 1830.",
-    updatedAt: "2026-06-16T18:04:41.206Z"
+    updatedAt: "2026-06-16T18:04:41.206Z",
+    _imgs: ["eglise_paroisses_1790-1830.png"]
   },
   {
     id: "Q495",
@@ -22130,7 +22787,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "Changement\nIl y a changement puisque le bois passe de 15 % des exportations en 1800 à 65 % en 1840.\nIl y a changement puisque les fourrures passent de 45 % des exportations en 1800 à 10 % en 1840.\n\nContinuité\nIl y a continuité puisque le Bas-Canada exporte encore du blé et de la farine en 1800 et en 1840.\nIl y a continuité puisque les autres produits représentent 10 % des exportations en 1800 et en 1840.",
-    updatedAt: "2026-06-16T18:12:54.764Z"
+    updatedAt: "2026-06-16T18:12:54.764Z",
+    _imgs: ["exportations_bas-canada.png"]
   },
   {
     id: "Q496",
@@ -22156,7 +22814,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Il y a continuité puisque la Grande-Bretagne demeure la principale destination des exportations de bois en 1800 et en 1840.",
-    updatedAt: "2026-06-16T18:20:16.946Z"
+    updatedAt: "2026-06-16T18:20:16.946Z",
+    _imgs: ["bois_exportations_bas-canada.png"]
   },
   {
     id: "Q497",
@@ -22206,7 +22865,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Le gouverneur conserve le pouvoir de refuser des projets de loi pendant toute la période.\nLe gouverneur continue d'exercer son droit de veto entre 1792 et 1838.\nLe gouverneur maintient son autorité sur les lois adoptées par la Chambre d'assemblée.",
-    updatedAt: "2026-06-16T18:36:37.578Z"
+    updatedAt: "2026-06-16T18:36:37.578Z",
+    _imgs: ["gouverneur_veto.png"]
   },
   {
     id: "Q499",
@@ -22232,7 +22892,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Le commerce du bois crée de nombreux emplois dans la colonie.",
-    updatedAt: "2026-06-16T18:51:58.925Z"
+    updatedAt: "2026-06-16T18:51:58.925Z",
+    _imgs: ["bois_emplois_1800-1840.png"]
   },
   {
     id: "Q500",
@@ -22250,7 +22911,7 @@ const QUESTIONS = [
           {
             titre: "Document A",
             ref: "bois_navires.png",
-            soustitre: "Nombre de navires construits au Bas-Canada entre 1800 et 1840",
+            soustitre: "Nombre de navires construits au Bas-Canada",
             source: "Adapté de Serge Courville, Histoire du Québec : un parcours, Québec, Éditions CEC."
           }
         ]
@@ -22258,7 +22919,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Le nombre de navires construits augmente.\nLa construction navale se développe.\nLes chantiers navals emploient davantage de travailleurs.",
-    updatedAt: "2026-06-16T19:01:10.061Z"
+    updatedAt: "2026-06-16T19:01:10.061Z",
+    _imgs: ["bois_navires.png"]
   },
   {
     id: "Q501",
@@ -22281,7 +22943,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Entre 1791 et 1840, le Haut-Canada et le Bas-Canada sont réunis pour former la Province du Canada.\nEntre 1791 et 1840, la colonie passe d'une organisation en deux territoires distincts (Haut-Canada et Bas-Canada) à une seule colonie appelée Province du Canada.",
-    updatedAt: "2026-06-18T12:35:29.900Z"
+    updatedAt: "2026-06-18T12:35:29.900Z",
+    _imgs: ["carte_acte_constitutionnel_1791.png", "carte_acte_union_1840.jpg"]
   },
   {
     id: "Q502",
@@ -22324,7 +22987,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "Organisation politique du Haut-Canada et du Bas-Canada entre 1791 et 1840",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
@@ -22335,14 +22999,16 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "org_pol_1840_acte_union.png",
             soustitre: "Organisation politique de la Province du Canada à partir de 1840",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "Changement\nEntre 1791 et 1840, l'organisation politique change. En 1791, le Haut-Canada et le Bas-Canada possèdent chacun leur propre chambre d'assemblée. En 1840, ils partagent une seule Assemblée législative.\n\nContinuité\nEntre 1791 et 1840, il y a continuité dans l'organisation politique de la colonie. En 1791 comme en 1840, la population élit des représentants à une assemblée législative.",
-    updatedAt: "2026-06-18T12:52:51.755Z"
+    updatedAt: "2026-06-18T12:52:51.755Z",
+    _imgs: ["org_pol_1791_acte_const.png", "org_pol_1840_acte_union.png"]
   },
   {
     id: "Q504",
@@ -22369,7 +23035,8 @@ const QUESTIONS = [
           {
             titre: "Document B",
             ref: "org_pol_1840_acte_union.png",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
@@ -22387,7 +23054,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 5},
     guide: "L'Acte d'Union (le nom de la constitution adoptée en 1840) est adopté par les autorités britanniques. Cette constitution crée une seule Assemblée législative pour le Haut-Canada et le Bas-Canada (un changement dans l'organisation politique de la colonie). Cette mesure réduit l'influence politique des habitants du Bas-Canada, qui ont le même nombre de députés que ceux du Canada-Ouest malgré une population plus nombreuse (une conséquence pour la population du Bas-Canada).",
-    updatedAt: "2026-06-22T18:30:55.177Z"
+    updatedAt: "2026-06-22T18:30:55.177Z",
+    _imgs: ["org_pol_1840_acte_union.png", "tableau_representation_politique_1840.jpg"]
   },
   {
     aspects: [{aspect: "Acte d'Union"}],
@@ -22398,7 +23066,8 @@ const QUESTIONS = [
             ref: "org_pol_1840_acte_union.png",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
             soustitre: "Adoption de l'Acte d'Union",
-            titre: "Document A"
+            titre: "Document A",
+            auteur: ""
           }
         ],
         type: "textes"
@@ -22413,7 +23082,8 @@ const QUESTIONS = [
     points: 1,
     reponse: {ref: "ligne_1830-1875.png", type: "image"},
     soustag: "Ligne du temps",
-    updatedAt: "2026-06-22T11:53:19.031Z"
+    updatedAt: "2026-06-22T11:53:19.031Z",
+    _imgs: ["org_pol_1840_acte_union.png", "ligne_1830-1875.png"]
   },
   {
     id: "Q506",
@@ -22439,7 +23109,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1845-1890.png"},
     guide: "A - 1845 à 1847",
-    updatedAt: "2026-06-21T01:07:15.686Z"
+    updatedAt: "2026-06-21T01:07:15.686Z",
+    _imgs: ["immigration_irlandaise.jpg", "ligne_1845-1890.png"]
   },
   {
     id: "Q508",
@@ -22465,7 +23136,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1830-1875.png"},
     guide: "B - 1854",
-    updatedAt: "2026-06-21T00:55:08.031Z"
+    updatedAt: "2026-06-21T00:55:08.031Z",
+    _imgs: ["abolition_regime_seigneurial.jpg", "ligne_1830-1875.png"]
   },
   {
     id: "Q509",
@@ -22491,7 +23163,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1830-1875.png"},
     guide: "B - 1849",
-    updatedAt: "2026-06-21T01:05:12.846Z"
+    updatedAt: "2026-06-21T01:05:12.846Z",
+    _imgs: ["incendie_parlement.jpg", "ligne_1830-1875.png"]
   },
   {
     id: "Q507",
@@ -22517,7 +23190,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1830-1890.png"},
     guide: "B - 1854 à 1866",
-    updatedAt: "2026-06-21T01:10:04.679Z"
+    updatedAt: "2026-06-21T01:10:04.679Z",
+    _imgs: ["traite_reciprocite.jpg", "ligne_1830-1890.png"]
   },
   {
     id: "Q510",
@@ -22543,7 +23217,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1845-1890.png"},
     guide: "A - 1848",
-    updatedAt: "2026-06-22T00:15:44.591Z"
+    updatedAt: "2026-06-22T00:15:44.591Z",
+    _imgs: ["org_pol_gouvernement_responsable_1848.png", "ligne_1845-1890.png"]
   },
   {
     id: "Q511",
@@ -22575,7 +23250,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P5 — 1840 – 1896",
     points: 1,
-    enonce: "Indiquez le nom donné aux territoires réservés aux Autochtones au Bas-Canada.",
+    enonce: "Indiquez le nom donné aux territoires créés pour regrouper les Autochtones dans la Province du Canada à la suite du rapport Bagot.",
     aspects: [{aspect: "Affaires indiennes"}],
     documents: [
       {
@@ -22590,8 +23265,8 @@ const QUESTIONS = [
       }
     ],
     reponse: {type: "lignes", nombre: 1},
-    guide: "Réserves indiennes.",
-    updatedAt: "2026-06-22T00:19:25.871Z"
+    guide: "Les réserves.\nLes réserves indiennes.",
+    updatedAt: "2026-06-28T11:36:09.136Z"
   },
   {
     aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
@@ -22599,9 +23274,8 @@ const QUESTIONS = [
       {
         cols: [
           {
-            auteur: "Ébauche de l'Acte d'Amérique du Nord britannique",
             ref: "aanb_conference_londres.jpg",
-            source: "adaptation libre inspirée de Robert Harris, The Fathers of Confederation, 1883.",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
             soustitre: "Conférence de Londres",
             titre: "Document A"
           }
@@ -22618,7 +23292,8 @@ const QUESTIONS = [
     points: 1,
     reponse: {ref: "ligne_1830-1875.png", type: "image"},
     soustag: "Ligne du temps",
-    updatedAt: "2026-06-22T11:43:45.256Z"
+    updatedAt: "2026-06-29T16:16:15.535Z",
+    _imgs: ["aanb_conference_londres.jpg", "ligne_1830-1875.png"]
   },
   {
     aspects: [{aspect: "Relations fédérales-provinciales"}],
@@ -22645,7 +23320,8 @@ const QUESTIONS = [
     points: 1,
     reponse: {ref: "ligne_1845-1890.png", type: "image"},
     soustag: "Ligne du temps",
-    updatedAt: "2026-06-22T12:05:16.137Z"
+    updatedAt: "2026-06-22T12:05:16.137Z",
+    _imgs: ["pendaison_louis_riel.jpg", "ligne_1845-1890.png"]
   },
   {
     aspects: [{aspect: "Relations fédérales-provinciales"}],
@@ -22672,34 +23348,35 @@ const QUESTIONS = [
     points: 1,
     reponse: {ref: "ligne_1845-1890.png", type: "image"},
     soustag: "Ligne du temps",
-    updatedAt: "2026-06-22T12:04:11.416Z"
+    updatedAt: "2026-06-22T12:04:11.416Z",
+    _imgs: ["metis_premier_soulevement_fort_garry.jpg", "ligne_1845-1890.png"]
   },
   {
-    aspects: [{aspect: "Relations fédérales-provinciales"}],
-    documents: [
-      {
-        cols: [
-          {
-            auteur: "Bataille de Batoche",
-            ref: "metis_deuxieme_soulevement_batoche.jpg",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
-            soustitre: "Deuxième soulèvement des Métis",
-            titre: "Document A"
-          }
-        ],
-        type: "textes"
-      }
-    ],
-    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
-    guide: "C - 1885",
     id: "Q516",
     niveau: 4,
     oi: "Situer dans le temps",
     periode: "P5 — 1840 – 1896",
     points: 1,
-    reponse: {ref: "ligne_1845-1890.png", type: "image"},
     soustag: "Ligne du temps",
-    updatedAt: "2026-06-22T12:13:36.869Z"
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "metis_deuxieme_soulevement_batoche.jpg",
+            soustitre: "Bataille de Batoche",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "image", ref: "ligne_1845-1890.png"},
+    guide: "C - 1885",
+    updatedAt: "2026-06-28T17:44:04.248Z",
+    _imgs: ["metis_deuxieme_soulevement_batoche.jpg", "ligne_1845-1890.png"]
   },
   {
     aspects: [{aspect: "Première phase d'industrialisation"}],
@@ -22725,7 +23402,8 @@ const QUESTIONS = [
     points: 1,
     reponse: {ref: "ligne_1845-1890.png", type: "image"},
     soustag: "Ligne du temps",
-    updatedAt: "2026-06-22T12:24:22.574Z"
+    updatedAt: "2026-06-22T12:24:22.574Z",
+    _imgs: ["legalisation_syndicat_canada.jpg", "ligne_1845-1890.png"]
   },
   {
     id: "Q518",
@@ -22937,7 +23615,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "org_pol_1791_acte_const.png",
             soustitre: "Organisation politique du Haut-Canada et du Bas-Canada entre 1791 et 1840",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
@@ -22948,14 +23627,16 @@ const QUESTIONS = [
             titre: "Document B",
             ref: "org_pol_1840_acte_union.png",
             soustitre: "Organisation politique de la Province du Canada à partir de 1840",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 3},
     guide: "La représentation politique des Canadiens français diminue entre 1791 et 1840.\nLes Canadiens français sont majoritaires dans l'Assemblée du Bas-Canada en 1791, mais ne le sont plus après l'Union de 1840.\nEn 1840, les Canadiens français obtiennent le même nombre de députés que le Canada-Ouest malgré leur population plus nombreuse.",
-    updatedAt: "2026-06-22T18:39:13.657Z"
+    updatedAt: "2026-06-22T18:39:13.657Z",
+    _imgs: ["org_pol_1791_acte_const.png", "org_pol_1840_acte_union.png"]
   },
   {
     id: "Q525",
@@ -23005,7 +23686,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1830-1875.png"},
     guide: "B - 1846",
-    updatedAt: "2026-06-22T18:56:18.286Z"
+    updatedAt: "2026-06-22T18:56:18.286Z",
+    _imgs: ["ligne_1830-1875.png"]
   },
   {
     id: "Q527",
@@ -23124,7 +23806,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 5},
     guide: "Le Royaume-Uni adopte le libre-échange (le nom de la nouvelle politique économique). La Province du Canada perd alors ses avantages commerciaux et doit trouver de nouveaux débouchés (une conséquence pour l'économie de la Province du Canada). Elle signe ensuite le traité de réciprocité avec les États-Unis (une entente signée avec les États-Unis).",
-    updatedAt: "2026-06-22T19:10:38.346Z"
+    updatedAt: "2026-06-22T19:10:38.346Z",
+    _imgs: ["tableau_exportations_1846_1854.jpg"]
   },
   {
     id: "Q531",
@@ -23175,7 +23858,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Les exportations vers les États-Unis augmentent.\nLe commerce avec les États-Unis se développe.",
-    updatedAt: "2026-06-22T20:42:14.122Z"
+    updatedAt: "2026-06-22T20:42:14.122Z",
+    _imgs: ["tableau_exportations_usa_millions.jpg"]
   },
   {
     id: "Q533",
@@ -23201,7 +23885,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Les marchés d'exportation de la Province du Canada se déplacent progressivement du Royaume-Uni vers les États-Unis.\nLes États-Unis prennent plus d'importance comme partenaire commercial.",
-    updatedAt: "2026-06-23T00:53:06.479Z"
+    updatedAt: "2026-06-23T00:53:06.479Z",
+    _imgs: ["tableau_exportations_province_canada.jpg"]
   },
   {
     id: "Q534",
@@ -23315,14 +24000,16 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "alliance_baldwin_lafontaine.jpg",
             soustitre: "Robert Baldwin et Louis-Hippolyte La Fontaine",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       }
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Les réformistes du Canada-Est et du Canada-Ouest forment une alliance politique.",
-    updatedAt: "2026-06-23T01:02:51.514Z"
+    updatedAt: "2026-06-23T01:02:51.514Z",
+    _imgs: ["alliance_baldwin_lafontaine.jpg"]
   },
   {
     id: "Q538",
@@ -23446,7 +24133,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_abCd.png"},
     guide: "B - D - C - A",
-    updatedAt: "2026-06-25T13:45:27.915Z"
+    updatedAt: "2026-06-25T13:45:27.915Z",
+    _imgs: ["ligne_abCd.png"]
   },
   {
     id: "Q540",
@@ -23505,7 +24193,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_abCd.png"},
     guide: "B - D - C - A",
-    updatedAt: "2026-06-25T13:44:36.051Z"
+    updatedAt: "2026-06-25T13:44:36.051Z",
+    _imgs: ["ligne_abCd.png"]
   },
   {
     id: "Q541",
@@ -23585,7 +24274,8 @@ const QUESTIONS = [
             titre: "Document A",
             ref: "alliance_baldwin_lafontaine.jpg",
             soustitre: "Robert Baldwin et Louis-Hippolyte La Fontaine",
-            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            auteur: ""
           }
         ]
       },
@@ -23612,7 +24302,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 5},
     guide: "Les réformistes du Canada-Est et du Canada-Ouest s'allient (une alliance entre les réformistes). Cette alliance leur permet d'obtenir l'appui de la majorité des représentants à l'Assemblée législative (une conséquence politique à l'assemblée législative). Cette majorité favorise l'établissement du gouvernement responsable (le gouvernement responsable).",
-    updatedAt: "2026-06-24T13:07:51.712Z"
+    updatedAt: "2026-06-24T13:07:51.712Z",
+    _imgs: ["alliance_baldwin_lafontaine.jpg", "org_pol_gouvernement_responsable_1848.png"]
   },
   {
     id: "Q544",
@@ -23675,7 +24366,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Succession rapide des gouvernements.\nDifficulté à former un gouvernement stable.\nRetard dans l'adoption de lois et de projets.\nBlocage du fonctionnement politique de la colonie.\nDifficulté à obtenir l'appui d'une majorité à l'Assemblée.",
-    updatedAt: "2026-06-24T14:05:19.140Z"
+    updatedAt: "2026-06-24T14:05:19.140Z",
+    _imgs: ["instabilite_politique.jpg"]
   },
   {
     id: "Q546",
@@ -23701,7 +24393,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Difficulté de former une majorité stable à l'Assemblée législative.\nAucun parti ne réussit à obtenir une majorité stable.\nLes partis politiques sont trop divisés.\nLes gouvernements sont souvent minoritaires.\nLes députés du Canada-Est et du Canada-Ouest ont des intérêts divergents.",
-    updatedAt: "2026-06-24T14:10:53.638Z"
+    updatedAt: "2026-06-24T14:10:53.638Z",
+    _imgs: ["gouvernement_minoritaire.jpg"]
   },
   {
     id: "Q547",
@@ -23727,7 +24420,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Les Premières Nations occupent un territoire plus petit.\nLe territoire occupé par les Premières Nations diminue.\nLa superficie occupée par les Premières Nations diminue.",
-    updatedAt: "2026-06-24T15:51:48.785Z"
+    updatedAt: "2026-06-24T15:51:48.785Z",
+    _imgs: ["reserves_autochtones.jpg"]
   },
   {
     id: "Q548",
@@ -23753,7 +24447,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1830-1890.png"},
     guide: "A",
-    updatedAt: "2026-06-24T15:55:56.342Z"
+    updatedAt: "2026-06-24T15:55:56.342Z",
+    _imgs: ["ligne_1830-1890.png"]
   },
   {
     id: "Q549",
@@ -23798,7 +24493,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 5},
     guide: "Le Rapport Bagot (nom du rapport) recommande le regroupement des Premières Nations sur des réserves. Cette mesure entraîne une occupation plus limitée du territoire par les communautés autochtones (conséquence pour les communautés autochtones). Cette volonté d'encadrement contribue plus tard à l'adoption de la Loi sur les Indiens (nom de la loi adoptée).",
-    updatedAt: "2026-06-24T16:52:51.486Z"
+    updatedAt: "2026-06-24T16:52:51.486Z",
+    _imgs: ["reserves_autochtones.jpg"]
   },
   {
     id: "Q550",
@@ -23907,7 +24603,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "Le christianisme se diffuse chez certaines Premières Nations.\nCertaines Premières Nations adoptent la religion chrétienne.\nLe nombre de chrétiens augmente chez certaines Premières Nations.\nLes croyances chrétiennes prennent plus d'importance.",
-    updatedAt: "2026-06-24T17:01:19.317Z"
+    updatedAt: "2026-06-24T17:01:19.317Z",
+    _imgs: ["famille_autochtones_1850.jpg"]
   },
   {
     id: "Q554",
@@ -23981,7 +24678,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "image", ref: "ligne_1830-1890.png"},
     guide: "C - 1876.",
-    updatedAt: "2026-06-24T23:37:46.377Z"
+    updatedAt: "2026-06-24T23:37:46.377Z",
+    _imgs: ["ligne_1830-1890.png"]
   },
   {
     id: "Q556",
@@ -24027,7 +24725,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 5},
     guide: "L'instabilité ministérielle (une situation politique dans la Province du Canada) amène les principaux chefs politiques à former la Grande Coalition (une action des chefs des partis politiques). Cette coalition convainc le Parlement britannique d'adopter l'Acte de l'Amérique du Nord britannique (le nom de la nouvelle constitution adoptée en 1867).",
-    updatedAt: "2026-06-25T12:23:35.342Z"
+    updatedAt: "2026-06-25T12:23:35.342Z",
+    _imgs: ["instabilite_politique.jpg", "coaliation_acteurs.png"]
   },
   {
     id: "Q557",
@@ -24035,7 +24734,7 @@ const QUESTIONS = [
     oi: "Établir des faits",
     periode: "P5 — 1840 – 1896",
     points: 1,
-    enonce: "ndiquez le nom donné à l'alliance formée par les principaux chefs politiques de la Province du Canada.",
+    enonce: "Indiquez le nom donné à l'alliance formée par les principaux chefs politiques de la Province du Canada.",
     aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
     documents: [
       {
@@ -24051,7 +24750,7 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 1},
     guide: "La Grande Coalition.",
-    updatedAt: "2026-06-25T01:08:48.445Z"
+    updatedAt: "2026-06-25T20:57:34.232Z"
   },
   {
     id: "Q558",
@@ -24077,7 +24776,8 @@ const QUESTIONS = [
     ],
     reponse: {type: "lignes", nombre: 2},
     guide: "L'instabilité ministérielle.\nLa difficulté de former une majorité stable à l'Assemblée législative.\nLes fréquents changements de gouvernement.",
-    updatedAt: "2026-06-25T01:25:14.784Z"
+    updatedAt: "2026-06-25T01:25:14.784Z",
+    _imgs: ["instabilite_politique.jpg"]
   },
   {
     id: "Q559",
@@ -24363,22 +25063,808 @@ const QUESTIONS = [
     updatedAt: "2026-06-25T13:40:19.832Z"
   },
   {
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}, {aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        cols: [
+          {
+            source: "Adapté de l’Acte de l’Amérique du Nord britannique, 1867.",
+            texte: "« Le gouvernement général doit assurer la défense du territoire, organiser les forces militaires et protéger les colonies contre les menaces extérieures. »",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            source: "Adapté de l’Acte de l’Amérique du Nord britannique, 1867.",
+            texte: "« Les assemblées locales conservent le pouvoir d’adopter des lois concernant l’éducation, selon les droits reconnus aux minorités religieuses. »",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            source: "Adapté de l’Acte de l’Amérique du Nord britannique, 1867.",
+            texte: "« Les établissements de santé, les hôpitaux et les institutions de bienfaisance sont placés sous la responsabilité des gouvernements des provinces. »",
+            titre: "Document C"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            source: "Adapté de l’Acte de l’Amérique du Nord britannique, 1867.",
+            texte: "« Les lois concernant la monnaie, les banques et les échanges commerciaux relèvent d’une autorité commune à l’ensemble du nouveau pays. »",
+            titre: "Document D"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Les documents A à D présentent des responsabilités attribuées par l'Acte de l'Amérique du Nord britannique. Associez chaque document au palier de gouvernement correspondant.",
+    guide: {
+      entetes: ["Gouvernement fédéral", "Gouvernement provincial"],
+      rangees: [
+        ["A et D", "B et C"]
+      ],
+      type: "grille"
+    },
     id: "Q565",
     niveau: 4,
     oi: "Mettre en relation des faits",
     periode: "P5 — 1840 – 1896",
     points: 2,
+    reponse: {
+      double: true,
+      elements: ["Gouvernement fédéral", "Gouvernement provincial"],
+      type: "mettre-en-relation"
+    },
     soustag: "4 documents",
-    enonce: "Les documents A à D présentent des responsabilités attribuées par l'Acte de l'Amérique du Nord britannique. Associez chaque document au palier de gouvernement correspondant.",
+    updatedAt: "2026-06-29T18:28:05.810Z"
+  },
+  {
+    id: "Q566",
+    niveau: 4,
+    oi: "Situer dans l'espace",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Situer 2 éléments",
+    enonce: "À partir du document A, indiquez la lettre qui correspond au territoire : \n• de la colonie de la Nouvelle-Écosse\n• du Canada-Est",
     aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [{titre: "Document A", ref: "provinces_canada_1867.jpg", source: "Carte du Québec. Adaptée d'après d-maps.com."}]
+      }
+    ],
+    reponse: {
+      type: "grille",
+      entetes: ["Nouvelle-Écosse", "Canada-Est"],
+      rangees: [
+        ["D", "B"]
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: ["Nouvelle-Écosse", "Canada-Est"],
+      rangees: [
+        ["D", "B"]
+      ]
+    },
+    updatedAt: "2026-06-25T20:55:58.937Z",
+    _imgs: ["provinces_canada_1867.jpg"]
+  },
+  {
+    id: "Q567",
+    niveau: 4,
+    oi: "Situer dans l'espace",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Situer 2 éléments",
+    enonce: "À partir du document A, indiquez la lettre qui correspond au territoire : \n• de la colonie du Nouveau-Brunswick\n• du Canada-Ouest",
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [{titre: "Document A", ref: "provinces_canada_1867.jpg", source: "Carte du Québec. Adaptée d'après d-maps.com."}]
+      }
+    ],
+    reponse: {
+      type: "grille",
+      entetes: ["Nouveau-Brunswick", "Canada-Ouest"],
+      rangees: [
+        ["", ""]
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: ["Nouveau-Brunswick", "Canada-Ouest"],
+      rangees: [
+        ["C", "A"]
+      ]
+    },
+    updatedAt: "2026-06-25T20:56:19.526Z",
+    _imgs: ["provinces_canada_1867.jpg"]
+  },
+  {
+    id: "Q568",
+    niveau: 4,
+    oi: "Situer dans l'espace",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Situer 2 éléments",
+    enonce: "À partir du document A, indiquez la lettre qui correspond au territoire des colonies qui n'adhèrent pas au Dominion du Canada en 1867 :\n• de l'Île-du-Prince-Édouard\n• de Terre-Neuve",
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [{titre: "Document A", ref: "provinces_canada_1867_non.jpg", source: "Carte du Québec. Adaptée d'après d-maps.com."}]
+      }
+    ],
+    reponse: {
+      type: "grille",
+      entetes: ["Île-du-Prince-Édouard", "Terre-Neuve"],
+      rangees: [
+        ["", ""]
+      ]
+    },
+    guide: {
+      type: "grille",
+      entetes: ["Île-du-Prince-Édouard", "Terre-Neuve"],
+      rangees: [
+        ["C", "D"]
+      ]
+    },
+    updatedAt: "2026-06-25T20:54:41.305Z",
+    _imgs: ["provinces_canada_1867_non.jpg"]
+  },
+  {
+    id: "Q569",
+    niveau: 4,
+    oi: "Établir des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    enonce: "Indiquez le nom de la constitution adoptée en 1840 par les autoritées britanniques.",
+    aspects: [{aspect: "Acte d'Union"}],
     documents: [
       {
         type: "textes",
         cols: [
           {
             titre: "Document A",
-            texte: "« Le gouvernement général doit assurer la défense du territoire, organiser les forces militaires et protéger les colonies contre les menaces extérieures. »",
-            source: "Adapté de l’Acte de l’Amérique du Nord britannique, 1867."
+            texte: "« En 1840, les autorités britanniques adoptent une nouvelle constitution afin de réunir le Haut-Canada et le Bas-Canada au sein d'une même colonie. »",
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 3, Septentrion, 1996."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 1},
+    guide: "Acte d’Union",
+    updatedAt: "2026-06-27T14:12:29.841Z"
+  },
+  {
+    id: "Q570",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez un objectif poursuivi par les autorités coloniales et l'Église catholique auprès des Premières Nations au milieu du XIXᵉ siècle.",
+    aspects: [{aspect: "Affaires indiennes"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "missions_autochtones_1850.jpg",
+            soustitre: "Mission catholique auprès des Premières Nations",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Évangéliser les Premières Nations.\nFavoriser la sédentarisation des Premières Nations.\nEncourager un mode de vie sédentaire.",
+    updatedAt: "2026-06-27T14:24:24.620Z",
+    _imgs: ["missions_autochtones_1850.jpg"]
+  },
+  {
+    id: "Q571",
+    niveau: 4,
+    oi: "Établir des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    enonce: "Indiquez le nom de l'établissement religieux fondé auprès des Premières Nations au milieu du XIXe siècle.",
+    aspects: [{aspect: "Affaires indiennes"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "missions_autochtones_1850.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 1},
+    guide: "Une mission catholique.",
+    updatedAt: "2026-06-27T14:26:22.831Z",
+    _imgs: ["missions_autochtones_1850.jpg"]
+  },
+  {
+    id: "Q572",
+    niveau: 4,
+    oi: "Situer dans le temps",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    soustag: "Ligne du temps",
+    enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "conference_interprovinciale_1887.jpg",
+            soustitre: "Conférence interprovinciale de Québec",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "image", ref: "ligne_1830-1890.png"},
+    guide: "C - 1887.",
+    updatedAt: "2026-06-28T17:06:29.812Z",
+    _imgs: ["conference_interprovinciale_1887.jpg", "ligne_1830-1890.png"]
+  },
+  {
+    id: "Q573",
+    niveau: 4,
+    oi: "Établir des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    enonce: "Indiquez le nom du chef métis associé aux soulèvements des Métis dans l’Ouest canadien.",
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "portrait_louis_riel.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 1},
+    guide: "Louis Riel.",
+    updatedAt: "2026-06-28T17:22:12.093Z",
+    _imgs: ["portrait_louis_riel.jpg"]
+  },
+  {
+    id: "Q574",
+    niveau: 4,
+    oi: "Établir des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    enonce: "Indiquez le nom du premier ministre du Québec qui convoque la première conférence interprovinciale.",
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "portrait_honore_mercier.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 1},
+    guide: "Honoré Mercier.",
+    updatedAt: "2026-06-28T17:31:40.004Z",
+    _imgs: ["portrait_honore_mercier.jpg"]
+  },
+  {
+    aspects: [{aspect: "Statut des Indiens"}],
+    documents: [
+      {
+        cols: [
+          {
+            ref: "portrait_pontiac.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Indiquez le nom du chef autochtone qui dirige un soulèvement contre les Britanniques.",
+    guide: "Pontiac.",
+    id: "Q575",
+    niveau: 3,
+    oi: "Établir des faits",
+    periode: "P3 — 1760 – 1791",
+    points: 1,
+    reponse: {nombre: 1, type: "lignes"},
+    updatedAt: "2026-06-29T15:40:36.855Z",
+    _imgs: ["portrait_pontiac.jpg"]
+  },
+  {
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        cols: [
+          {
+            source: "Adapté de John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec, Septentrion, 2009.",
+            texte: "« Les dirigeants des principaux partis politiques s'unissent pour trouver une solution durable aux difficultés politiques qui paralysent la Province du Canada. »",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Indiquez l’objectif principal de la Grande Coalition.",
+    guide: "Réaliser le projet de fédération canadienne.\nRéaliser le projet d'union.",
+    id: "Q576",
+    niveau: 4,
+    oi: "Établir des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    reponse: {nombre: 1, type: "lignes"},
+    updatedAt: "2026-06-29T16:13:45.831Z"
+  },
+  {
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        cols: [
+          {
+            source: "Adapté de l’Acte de l’Amérique du Nord britannique, 1867.",
+            texte: "« En 1867, l’Acte de l’Amérique du Nord britannique unit l’Ontario, le Québec, le Nouveau-Brunswick et la Nouvelle-Écosse dans une nouvelle entité politique. »",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Indiquez le nom de la nouvelle entité politique créée en 1867.",
+    guide: "Dominion du Canada.",
+    id: "Q577",
+    niveau: 4,
+    oi: "Établir des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    reponse: {nombre: 1, type: "lignes"},
+    updatedAt: "2026-06-29T16:14:45.264Z"
+  },
+  {
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        cols: [
+          {
+            ref: "aanb_conference_londres.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            soustitre: "Conférence de Londres",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "aanb_conference_charlottetown.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            source: "Adapté de Béatrice Craig, Histoire du Canada, Oxford University Press, 2012.",
+            texte: "« Les rivalités politiques et régionales empêchent fréquemment l'adoption de mesures importantes, alimentant une période où les ministères tombent les uns après les autres avant d'avoir réalisé leurs projets. »",
+            titre: "Document C"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "aanb_conference_quebec.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            soustitre: "Conférence de Québec",
+            titre: "Document D"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Les documents A à D présentent des événements liés à la formation du Dominion du Canada. Placez ces documents par ordre chronologique.",
+    guide: "C - B - D - A",
+    id: "Q578",
+    niveau: 4,
+    oi: "Situer dans le temps",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    reponse: {ref: "ligne_abDc.png", type: "image"},
+    soustag: "Ordre chronologique",
+    updatedAt: "2026-06-29T17:09:41.487Z",
+    _imgs: ["aanb_conference_londres.jpg", "aanb_conference_charlottetown.jpg", "aanb_conference_quebec.jpg", "ligne_abDc.png"]
+  },
+  {
+    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    documents: [
+      {
+        cols: [
+          {
+            ref: "soldats_gendarmerie.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI).",
+            soustitre: "Soldat dans l'Ouest canadien vers 1885",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "ecole_quebec_1870.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI).",
+            soustitre: "École catholique au Québec vers 1890",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "comptoir_postal_1870.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI).",
+            soustitre: "Bureau de poste au Québec vers 1870",
+            titre: "Document C"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "hopital_quebec_1870.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI).",
+            soustitre: "Salle d'hôpital au Québec vers 1880",
+            titre: "Document D"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Les documents A à D présentent des champs de compétence relevant des gouvernements fédéral et provinciaux. Associez chaque document au palier de gouvernement correspondant.",
+    guide: {
+      entetes: ["Gouvernement fédéral", "Gouvernement provincial"],
+      rangees: [
+        ["A et C", "B et D"]
+      ],
+      type: "grille"
+    },
+    id: "Q579",
+    niveau: 4,
+    oi: "Mettre en relation des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    reponse: {
+      double: true,
+      elements: ["Gouvernement fédéral", "Gouvernement provincial"],
+      type: "mettre-en-relation"
+    },
+    soustag: "4 documents",
+    updatedAt: "2026-06-30T19:36:46.894Z",
+    _imgs: ["soldats_gendarmerie.jpg", "ecole_quebec_1870.jpg", "comptoir_postal_1870.jpg", "hopital_quebec_1870.jpg"]
+  },
+  {
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        cols: [
+          {
+            source: "Adapté de Donald Creighton, The Road to Confederation, Macmillan of Canada, 1964.",
+            texte: "« La Confédération attribue certaines responsabilités à une autorité commune afin d'assurer ce qui touche l'ensemble du pays, tout en laissant d'autres questions être administrées autrement selon les besoins. »",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, Tome 4, Septentrion, 1997.",
+            texte: "« La nouvelle organisation politique permet de conserver l'administration de plusieurs services qui répondent aux réalités propres de chaque province et aux besoins de leur population. »",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Les documents A et B présentent des champs de compétence relevant de deux ordres de gouvernement. Indiquez une différence entre les champs de compétence de ces deux ordres de gouvernement.",
+    guide: "Le gouvernement fédéral exerce des champs de compétence qui concernent l'ensemble du pays, tandis que les gouvernements provinciaux exercent des champs de compétence qui répondent aux besoins propres de chaque province.",
+    id: "Q580",
+    niveau: 4,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    reponse: {nombre: 2, type: "lignes"},
+    soustag: "Différence",
+    updatedAt: "2026-06-29T18:55:08.859Z"
+  },
+  {
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        cols: [
+          {
+            ref: "tableau_sources_revenus_federal.jpg",
+            source: "Adapté de M.C. Urquhart et K.A.H. Buckley (dir.), Historical Statistics of Canada, Cambridge University Press, 1965.",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Indiquez la principale source de revenus du gouvernement fédéral après 1867.",
+    guide: "Les droits de douanes.",
+    id: "Q581",
+    niveau: 4,
+    oi: "Établir des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    reponse: {nombre: 1, type: "lignes"},
+    updatedAt: "2026-06-29T19:12:30.119Z",
+    _imgs: ["tableau_sources_revenus_federal.jpg"]
+  },
+  {
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        cols: [
+          {
+            ref: "tableau_revenus_federal_provincial.jpg",
+            source: "Adapté de l'Acte de l'Amérique du Nord britannique, 1867.",
+            soustitre: "Répartition de certaines sources de revenus après 1867",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "tableau_revenus_depenses_quebec.jpg",
+            source: "Adapté de Donald Creighton, The Road to Confederation, Macmillan of Canada, 1964.",
+            soustitre: "Revenus et dépenses gouvernement du Québec (en milliers de dollars)",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "conference_interprovinciale_1887.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            soustitre: "Conférence interprovinciale de Québec",
+            titre: "Document C"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Expliquez comment le partage des revenus entre le gouvernement fédéral et les provinces amène les provinces à défendre davantage leur autonomie.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une source de revenus attribuée au gouvernement fédéral\n• une difficulté financière rencontrée par les provinces\n• un moyen utilisé par les provinces pour défendre leur autonomie",
+    guide: "Le gouvernement fédéral perçoit les droits de douane (ou les taxes d'accise) (une source de revenus attribuée au gouvernement fédéral). Les provinces manquent alors de ressources financières (une difficulté financière rencontrée par les provinces). Elles convoquent la Conférence interprovinciale de 1887 afin de défendre leur autonomie (un moyen utilisé par les provinces pour défendre leur autonomie).",
+    id: "Q582",
+    niveau: 4,
+    oi: "Établir des liens de causalité",
+    periode: "P5 — 1840 – 1896",
+    points: 3,
+    reponse: {nombre: 5, type: "lignes"},
+    updatedAt: "2026-06-30T19:10:43.942Z",
+    _imgs: [
+      "tableau_revenus_federal_provincial.jpg",
+      "tableau_revenus_depenses_quebec.jpg",
+      "conference_interprovinciale_1887.jpg"
+    ]
+  },
+  {
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        cols: [
+          {
+            auteur: "John A. Macdonald",
+            source: "Adapté de John A. Macdonald, Parliamentary Debates on the Subject of the Confederation of the British North American Provinces, Hunter, Rose & Co., 1865.",
+            texte: "« Toutes les grandes questions qui touchent les intérêts généraux seront confiées au gouvernement général, tandis que les intérêts locaux demeureront entre les mains des autorités locales. »",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            auteur: "Honoré Mercier",
+            source: "Adapté d'Honoré Mercier, discours à la Conférence interprovinciale de Québec, 1887.",
+            texte: "« Les provinces doivent conserver les pouvoirs que leur garantit la Constitution et résister à toute atteinte portée à leur autonomie. »",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en désaccord?",
+    guide: "L'autonomie provinciale.\nLa centralisation des pouvoirs.",
+    id: "Q583",
+    niveau: 4,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    reponse: {nombre: 2, type: "lignes"},
+    soustag: "Divergence – 2 acteurs",
+    updatedAt: "2026-06-29T19:29:36.131Z"
+  },
+  {
+    id: "Q584",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence du partage des revenus entre le gouvernement fédéral et les provinces sur les finances des provinces.",
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "tableau_revenus_depenses_quebec.jpg",
+            soustitre: "Revenus et dépenses gouvernement du Québec (en milliers de dollars)",
+            source: "Adapté de Donald Creighton, The Road to Confederation, Macmillan of Canada, 1964."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Les revenus des provinces deviennent insuffisants pour couvrir leurs dépenses.",
+    updatedAt: "2026-06-30T01:00:28.440Z",
+    _imgs: ["tableau_revenus_depenses_quebec.jpg"]
+  },
+  {
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        cols: [
+          {
+            ref: "arpentage_terres_ouest_canadien.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI).",
+            soustitre: "Arpentage des terres dans l'Ouest canadien",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            source: "Adapté de la Pétition des Métis de la Saskatchewan, 1884.",
+            texte: "« Les Métis demandent au gouvernement de régler rapidement la question de leurs terres avant l'arrivée de nouveaux colons. »",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "metis_deuxieme_soulevement_batoche.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            soustitre: "Bataille de Batoche",
+            titre: "Document C"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Expliquez comment les décisions du gouvernement canadien entraînent une réaction des Métis dans l'Ouest canadien en 1885.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une décision du gouvernement canadien\n• une revendication des Métis\n• une réaction des Métis",
+    guide: "Le gouvernement canadien procède à l'arpentage des terres (ou favorise la colonisation de l'Ouest sans reconnaître les droits fonciers des Métis) (Une décision du gouvernement canadien). Les Métis réclament la protection de leurs terres et de leurs droits (Une revendication des Métis). Ils réagissent en se soulevant dans l'Ouest canadien en 1885 (Une réaction des Métis).",
+    id: "Q585",
+    niveau: 4,
+    oi: "Établir des liens de causalité",
+    periode: "P5 — 1840 – 1896",
+    points: 3,
+    reponse: {nombre: 5, type: "lignes"},
+    updatedAt: "2026-06-30T19:22:59.205Z",
+    _imgs: ["arpentage_terres_ouest_canadien.jpg", "metis_deuxieme_soulevement_batoche.jpg"]
+  },
+  {
+    id: "Q586",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une raison pour laquelle Honoré Mercier convoque la Conférence interprovinciale de 1887.",
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "conference_interprovinciale_1887.jpg",
+            soustitre: "Conférence interprovinciale de Québec",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Défendre l'autonomie des provinces.\nDéfendre les droits des provinces.\nS'opposer à la centralisation des pouvoirs fédéraux.",
+    updatedAt: "2026-06-30T01:09:30.316Z",
+    _imgs: ["conference_interprovinciale_1887.jpg"]
+  },
+  {
+    id: "Q587",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence du soulèvement de la rivière Rouge sur l'organisation du territoire canadien.",
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [{titre: "Document A", ref: "aanb_manitoba.jpg", source: "Récitus."}]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "La création de la province du Manitoba.",
+    updatedAt: "2026-06-30T01:20:34.977Z",
+    _imgs: ["aanb_manitoba.jpg"]
+  },
+  {
+    id: "Q588",
+    niveau: 4,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Similitude",
+    enonce: "Indiquez une similitude dans les revendications des Métis lors des soulèvements de 1869-1870 et de 1885.",
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            texte: "« Les représentants de la rivière Rouge réclament le respect des terres occupées, des droits politiques et des usages des habitants avant l’entrée dans la fédération. »",
+            soustitre: "1869-1870",
+            source: "Adapté de la Liste des droits, gouvernement provisoire de la rivière Rouge, 1869."
           }
         ]
       },
@@ -24387,98 +25873,374 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« Les assemblées locales conservent le pouvoir d’adopter des lois concernant l’éducation, selon les droits reconnus aux minorités religieuses. »",
-            source: "Adapté de l’Acte de l’Amérique du Nord britannique, 1867."
+            texte: "Les Métis demandent la reconnaissance officielle de leurs terres, de leurs titres de propriété et de leur représentation politique dans l’Ouest canadien. »",
+            soustitre: "1885",
+            source: "Adapté de George F. G. Stanley, The Birth of Western Canada, University of Toronto Press, 1960."
           }
         ]
-      },
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Dans les deux cas, les Métis réclament la protection de leurs terres et de leurs droits.",
+    updatedAt: "2026-06-30T01:22:19.862Z"
+  },
+  {
+    id: "Q589",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une raison pour laquelle les Canadiens français défendent le maintien des écoles catholiques hors Québec.",
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
       {
         type: "textes",
         cols: [
           {
-            titre: "Document C",
-            texte: "« Les établissements de santé, les hôpitaux et les institutions de bienfaisance sont placés sous la responsabilité des gouvernements des provinces. »",
-            source: "Adapté de l’Acte de l’Amérique du Nord britannique, 1867."
+            titre: "Document A",
+            ref: "tableau_manitoba_ecole_catholiques.jpg",
+            soustitre: "Évolution de la reconnaissance des écoles catholiques au Manitoba",
+            source: "Adapté de Manitoba Schools Question; Jean Hamelin, Histoire du Québec contemporain, tome I, Boréal, 1989."
           }
         ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Préserver les droits des catholiques francophones.\nAssurer l'enseignement en français et de la religion catholique.\nProtéger l'identité des communautés francophones catholiques.\nDéfendre les droits des minorités catholiques françaises.",
+    updatedAt: "2026-06-30T01:27:23.453Z",
+    _imgs: ["tableau_manitoba_ecole_catholiques.jpg"]
+  },
+  {
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        cols: [{ref: "conflits_metis_ouest.jpg", source: "Carte du Canada. Adaptée d'après d-maps.com.", titre: "Document A"}],
+        type: "textes"
+      }
+    ],
+    enonce: "À partir du document A, indiquez la lettre correspondant à chacun des événements suivants :\n• le premier soulèvement métis\n• le deuxième soulèvement métis",
+    guide: {
+      entetes: ["Premier soulèvement", "Deuxième soulèvement"],
+      rangees: [
+        ["C", "B"]
+      ],
+      type: "grille"
+    },
+    id: "Q590",
+    niveau: 4,
+    oi: "Situer dans l'espace",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    reponse: {
+      entetes: ["Premier soulèvement", "Deuxième soulèvement"],
+      rangees: [
+        ["", ""]
+      ],
+      type: "grille"
+    },
+    updatedAt: "2026-06-30T20:14:00.657Z",
+    _imgs: ["conflits_metis_ouest.jpg"]
+  },
+  {
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        cols: [
+          {
+            auteur: "Louis Riel",
+            source: "Adapté de la Pétition des Métis de la Saskatchewan au gouvernement du Canada, 16 décembre 1884.",
+            texte: "« Nous demandons que le gouvernement reconnaisse nos titres de propriété et protège nos terres avant que de nouveaux colons viennent s'établir dans notre région. »",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
       },
+      {
+        cols: [
+          {
+            auteur: "Gabriel Dumont",
+            source: "Adapté de George F.G. Stanley, The Birth of Western Canada: A History of the Riel Rebellions, University of Toronto Press, 1960.",
+            texte: "« Les Métis ne cherchent pas le conflit. Ils veulent obtenir justice et défendre leurs terres, leurs familles et les droits qu'ils réclament depuis plusieurs années. »",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            auteur: "John A. Macdonald",
+            source: "Adapté des Débats de la Chambre des communes du Canada, 1885.",
+            texte: "« Le gouvernement doit maintenir l'ordre dans les Territoires du Nord-Ouest et faire respecter les lois du Dominion malgré les revendications présentées par les Métis. »",
+            titre: "Document C"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Les documents A à C présentent le point de vue de trois acteurs concernant le soulèvement des Métis de 1885. Nommez l'acteur qui présente une position différente et comparez cette position à celle des deux autres acteurs.",
+    guide: "John A. Macdonald s'oppose à la reconnaissance des droits territoriaux des Métis (la différence), tandis que Louis Riel et Gabriel Dumont appuient la reconnaissance de ces droits (la similitude).",
+    id: "Q591",
+    niveau: 4,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P5 — 1840 – 1896",
+    points: 3,
+    reponse: {nombre: 3, type: "lignes"},
+    soustag: "Position – 3 acteurs",
+    updatedAt: "2026-06-30T19:34:38.299Z"
+  },
+  {
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        cols: [
+          {
+            auteur: "Wilfrid Laurier",
+            source: "Adapté des Débats de la Chambre des communes du Canada, 1896.",
+            texte: "« Les droits des minorités doivent être respectés. Les écoles catholiques constituent une garantie importante pour préserver la langue, la religion et les libertés reconnues par la Constitution. »",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            auteur: "Thomas Greenway",
+            source: "Adapté des Débats de l'Assemblée législative du Manitoba, 1890.",
+            texte: "« Un système d'écoles publiques, administré par la province et commun à tous les citoyens, répond mieux aux besoins de la population que des écoles confessionnelles distinctes. »",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            auteur: "Honoré Mercier,",
+            source: "Adapté d'un discours d'Honoré Mercier, 1890.",
+            texte: "« Les Canadiens français ne peuvent accepter que les droits scolaires des catholiques soient supprimés, puisqu'ils contribuent à préserver leur langue, leur religion et leur identité nationale. »",
+            titre: "Document C"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Les documents A à C présentent le point de vue de trois acteurs concernant les écoles catholiques hors Québec. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+    guide: "Thomas Greenway s'oppose au maintien des écoles catholiques hors Québec (la différence), tandis que Wilfrid Laurier et Honoré Mercier appuient leur maintien (la similitude).",
+    id: "Q592",
+    niveau: 4,
+    oi: "Dégager des différences et des similitudes",
+    periode: "P5 — 1840 – 1896",
+    points: 3,
+    reponse: {nombre: 3, type: "lignes"},
+    soustag: "Position – 3 acteurs",
+    updatedAt: "2026-06-30T19:41:21.981Z"
+  },
+  {
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        cols: [
+          {
+            ref: "pendaison_louis_riel.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026.",
+            soustitre: "Exécution de Louis Riel",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "metis_premier_soulevement_fort_garry.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.",
+            soustitre: "Louis Riel met sur pied un gouvernement provisoire",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            source: "Adapté de J.M. Bumsted, The Peoples of Canada, Oxford University Press, 2003.",
+            texte: "« La victoire des troupes canadiennes à Batoche confirme l'autorité du gouvernement fédéral sur les Territoires du Nord-Ouest et transforme durablement l'histoire de l'Ouest. »",
+            titre: "Document C"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            source: "Adapté de la Loi sur le Manitoba, 1870.",
+            texte: "« Une nouvelle province est créée dans l'Ouest canadien. Ses habitants obtiennent notamment la protection de certaines terres et de certains droits reconnus par la loi. »",
+            titre: "Document D"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Les documents A à D présentent des faits liés à deux soulèvements des Métis. Associez chaque document au soulèvement correspondant.",
+    guide: {
+      entetes: ["Soulèvement de la rivière Rouge", "Soulèvement du Nord-Ouest"],
+      rangees: [
+        ["B et D", "A et C"]
+      ],
+      type: "grille"
+    },
+    id: "Q593",
+    niveau: 4,
+    oi: "Mettre en relation des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    reponse: {
+      double: true,
+      elements: ["Soulèvement de la rivière Rouge", "Soulèvement du Nord-Ouest"],
+      type: "mettre-en-relation"
+    },
+    updatedAt: "2026-06-30T20:03:24.149Z",
+    _imgs: ["pendaison_louis_riel.jpg", "metis_premier_soulevement_fort_garry.jpg"]
+  },
+  {
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        cols: [
+          {
+            ref: "metis_thomas_scott.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026.",
+            soustitre: "Exécution de Thomas Scott",
+            titre: "Document A"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            ref: "metis_deuxieme_soulevement_batoche.jpg",
+            source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.",
+            soustitre: "Bataille de Batoche",
+            titre: "Document B"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            source: "Adapté de Sarah Carter, Aboriginal People and Colonizers of Western Canada to 1900, University of Toronto Press, 1999.",
+            texte: "« Le changement d'autorité sur la Terre de Rupert transforme les rapports entre le gouvernement canadien et les Métis, qui contestent les décisions prises sans leur participation. »",
+            titre: "Document C"
+          }
+        ],
+        type: "textes"
+      },
+      {
+        cols: [
+          {
+            source: "Adapté de Gerald Friesen, The Canadian Prairies: A History, University of Toronto Press, 1987.",
+            texte: "« Le retour de Louis Riel renforce l'organisation politique des Métis et contribue à transformer leurs revendications en une confrontation ouverte avec le gouvernement canadien. »",
+            titre: "Document D"
+          }
+        ],
+        type: "textes"
+      }
+    ],
+    enonce: "Les documents A à D présentent des faits liés à deux soulèvements des Métis. Associez chaque document au soulèvement correspondant.",
+    guide: {
+      entetes: ["Soulèvement de la rivière Rouge", "Soulèvement du Nord-Ouest"],
+      rangees: [
+        ["A et C", "B et D"]
+      ],
+      type: "grille"
+    },
+    id: "Q594",
+    niveau: 4,
+    oi: "Mettre en relation des faits",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    reponse: {
+      double: true,
+      elements: ["Soulèvement de la rivière Rouge", "Soulèvement du Nord-Ouest"],
+      type: "mettre-en-relation"
+    },
+    updatedAt: "2026-06-30T20:08:40.966Z",
+    _imgs: ["metis_thomas_scott.jpg", "metis_deuxieme_soulevement_batoche.jpg"]
+  },
+  {
+    aspects: [{aspect: "Relations fédérales-provinciales"}],
+    documents: [
+      {
+        cols: [{ref: "ecoles_catholiques_manitoba.jpg", source: "Carte du Canada. Adaptée d'après d-maps.com.", titre: "Document A"}],
+        type: "textes"
+      }
+    ],
+    enonce: "À partir du document A, indiquez la lettre correspondant au territoire où survient la question des écoles du Manitoba.",
+    guide: "A",
+    id: "Q595",
+    niveau: 4,
+    oi: "Situer dans l'espace",
+    periode: "P5 — 1840 – 1896",
+    points: 1,
+    reponse: {type: "tableau_2col"},
+    updatedAt: "2026-06-30T20:20:53.015Z",
+    _imgs: ["ecoles_catholiques_manitoba.jpg"]
+  },
+  {
+    id: "Q597",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de la crise économique de 1873 sur les décisions du gouvernement canadien.",
+    aspects: [{aspect: "Politique nationale"}],
+    documents: [
       {
         type: "textes",
         cols: [
           {
-            titre: "Document D",
-            texte: "« Les lois concernant la monnaie, les banques et les échanges commerciaux relèvent d’une autorité commune à l’ensemble du nouveau pays. »",
-            source: "Adapté de l’Acte de l’Amérique du Nord britannique, 1867."
+            titre: "Document A",
+            ref: "tableau_tarifs_douaniers_pol_nationale.jpg",
+            soustitre: "Évolution des tarifs douaniers au Canada",
+            source: "Adapté de Michael Bliss, Northern Enterprise: Five Centuries of Canadian Business, McClelland and Stewart, 1987."
           }
         ]
       }
     ],
-    reponse: {
-      type: "mettre-en-relation",
-      elements: ["Gouvernement fédéral", "Gouvernement provincial"],
-      double: true
-    },
-    guide: {
-      type: "grille",
-      entetes: ["Gouvernement fédéral", "Gouvernement provincial"],
-      rangees: [
-        ["A et D", "B et C"]
-      ]
-    },
-    updatedAt: "2026-06-25T20:35:08.202Z"
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Le gouvernement adopte de la Politique nationale.\nLe gouvernement hausse les tarifs douaniers.",
+    updatedAt: "2026-07-01T00:46:23.447Z"
   },
   {
-    id: "Q566",
+    id: "Q596",
     niveau: 4,
-    oi: "Mettre en relation des faits",
+    oi: "Déterminer des causes et des conséquences",
     periode: "P5 — 1840 – 1896",
     points: 2,
-    enonce: "À partir du document A, indiquez la lettre qui correspond au territoire : \n• de la province du Nouvelle-Écosse\n• de la province du Québec",
-    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
+    soustag: "Cause",
+    enonce: "Indiquez une cause de l'adoption de la Politique nationale en 1879.",
+    aspects: [{aspect: "Politique nationale"}],
     documents: [
       {
         type: "textes",
-        cols: [{titre: "Document A", ref: "provinces_canada_1867.jpg", source: "Carte du Québec. Adaptée d'après d-maps.com."}]
+        cols: [
+          {
+            titre: "Document A",
+            ref: "tableau_exportations_canadiennes_1870.jpg",
+            soustitre: "Évolution des exportations canadiennes",
+            source: "Adapté de Kenneth Norrie, Douglas Owram et J.C. Herbert Emery, A History of the Canadian Economy, Harcourt Brace Canada, 2008."
+          }
+        ]
       }
     ],
-    reponse: {
-      type: "mettre-en-relation",
-      elements: ["Nouvelle-Écosse", "Québec"]
-    },
-    guide: {
-      type: "grille",
-      entetes: ["Nouvelle-Écosse", "Québec"],
-      rangees: [
-        ["D", "B"]
-      ]
-    },
-    updatedAt: "2026-06-25T20:43:43.207Z"
-  },
-  {
-    id: "Q567",
-    niveau: 4,
-    oi: "Mettre en relation des faits",
-    periode: "P5 — 1840 – 1896",
-    points: 2,
-    enonce: "À partir du document A, indiquez la lettre qui correspond au territoire : \n• de la province du Nouveau-Brunswick\n• de la province de l'Ontario",
-    aspects: [{aspect: "Acte de l'Amérique du Nord britannique"}],
-    documents: [
-      {
-        type: "textes",
-        cols: [{titre: "Document A", ref: "provinces_canada_1867.jpg", source: "Carte du Québec. Adaptée d'après d-maps.com."}]
-      }
-    ],
-    reponse: {
-      type: "mettre-en-relation",
-      elements: ["Nouveau-Brunswick", "Ontario"]
-    },
-    guide: {
-      type: "grille",
-      entetes: ["Nouveau-Brunswick", "Ontario"],
-      rangees: [
-        ["C", "A"]
-      ]
-    },
-    updatedAt: "2026-06-25T20:44:56.686Z"
+    reponse: {type: "lignes", nombre: 2},
+    guide: "La diminution des exportations canadiennes.\nLa crise économique (dépression de 1873).\nLes difficultés économiques du Canada.",
+    updatedAt: "2026-07-01T00:56:56.946Z"
   }
 ]
