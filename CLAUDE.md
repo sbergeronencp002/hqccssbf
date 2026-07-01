@@ -31,7 +31,8 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 | `reglettes.js` | Préréglages de réglettes par OI (`REGLETTES_PRESET`) — chargé par admin uniquement |
 | `contexte.js` | Données statiques : `PERIODES_PAR_NIVEAU`, `ASPECTS_PAR_PERIODE` |
 | `oi-config.js` | **Source unique des OI** : `OI_CONFIG` (styles, sous-tags, auto-réponse) + `OI_LIST` (ordre du menu). Chargé par index.html, admin.html ET documents.html |
-| `questions-io.js` | **Sérialiseur partagé** : `serializeValue`, `ensureImageDbComplete`, `generateQuestionsJs`. Source unique du format de `questions.js` — chargé par admin.html ET documents.html (évite la duplication/divergence) |
+| `questions-io.js` | **Sérialiseur partagé** : `serializeValue`, `ensureImageDbComplete`, `generateQuestionsJs`, `generateIndexJs`. Source unique du format de `questions.js` et `questions-index.js` — chargé par admin.html ET documents.html |
+| `questions-index.js` | **Index allégé** (~200 Ko) : `QUESTIONS` avec champs grille seulement (id, oi, période, niveau, points, soustag, aspects, énoncé). Chargé par index.html au démarrage. Régénéré automatiquement par admin.html à chaque publication. |
 | `tools/validate-questions.mjs` | **Validateur de données** (node) : vérifie `questions.js` contre `oi-config.js`, `contexte.js` et les fichiers `images/`. Lancé en hook SessionStart (`.claude/settings.json`). `node tools/validate-questions.mjs` |
 | `style.css` | Styles du site public |
 | `docx.js` | Librairie docx.js (857 Ko) — chargée en lazy au 1er clic « Générer » |
@@ -41,8 +42,9 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 `uploadImage()` redimensionne à 1200 px max puis **choisit le format le plus léger** : PNG si l'image a de la transparence, sinon le plus petit entre PNG et JPEG 0.85 (l'extension du nom suit le format choisi). Évite les PNG 24 bits non compressés (cause des images à 2,5 Mo). Le remplacement (`documents.html`) encode selon l'extension de la cible.
 
 ### Cache-bust actuel
-`app.js?v=49`, `style.css?v=29`, `oi-config.js?v=1`, `questions-io.js?v=2`, `reglettes.js?v=2` (admin) — incrémenter à chaque changement majeur.
-`documents.html` charge `oi-config.js?v=1` + `questions-io.js?v=2` + `questions.js?v=1`.
+`app.js?v=49`, `style.css?v=29`, `oi-config.js?v=1`, `questions-io.js?v=3`, `reglettes.js?v=2` (admin) — incrémenter à chaque changement majeur.
+`index.html` charge `questions-index.js?v=1` (index allégé, 200 Ko) — `questions.js` est chargé en lazy par app.js sans version fixe (cache-bust par timestamp).
+`documents.html` charge `oi-config.js?v=1` + `questions-io.js?v=3` + `questions.js?v=1`.
 
 ⚠️ Cette table doit être mise à jour à chaque incrément de `?v=` dans le HTML — sinon un futur agent repart d'un mauvais numéro de version.
 
