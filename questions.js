@@ -1113,7 +1113,13 @@ const REGLETTES = {
 "Q602": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q603": {oi: "Situer dans le temps", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}]},
 "Q604": {oi: "Situer dans le temps", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}]},
-"Q605": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]}
+"Q605": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
+"Q606": {
+ oi: "Établir des liens de causalité",
+ variante: "3 éléments — 2 liens",
+ colonnes: ["3 points", "2 points", "1 point", "0 point"],
+ niveaux: [{pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."}, {pts: 2, desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."}, {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."}, {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}]
+}
 }
 
 const IMAGE_DB = {
@@ -1387,7 +1393,9 @@ const IMAGE_DB = {
 "jacques_cartier_croix.jpg": {src: "images/jacques_cartier_croix.jpg", w: 1200, h: 800},
 "carte_jacques_cartier_1534.png": {src: "images/carte_jacques_cartier_1534.png"},
 "politique_nationale.jpg": {src: "images/politique_nationale.jpg"},
-"canadien_pacifique.jpg": {src: "images/canadien_pacifique.jpg"}
+"canadien_pacifique.jpg": {src: "images/canadien_pacifique.jpg"},
+"tableau_crise_economique_1873_faillites.jpg": {src: "images/tableau_crise_economique_1873_faillites.jpg"},
+"tableau_crise_economique_1873_production.jpg": {src: "images/tableau_crise_economique_1873_production.jpg"}
 }
 
 const QUESTIONS = [
@@ -10974,5 +10982,22 @@ const QUESTIONS = [
  reponse: {type: "mettre-en-relation", elements: ["Chemin de fer transcontinental", "Colonisation de l'Ouest", "Politique tarifaire"]},
  guide: {type: "grille", entetes: ["Chemin de fer transcontinental", "Colonisation de l'Ouest", "Politique tarifaire"], rangees: [["B", "C", "A"]]},
  updatedAt: "2026-07-01T19:44:50.798Z"
+},
+{
+ id: "Q606",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P5 — 1840 – 1896",
+ points: 3,
+ enonce: "Expliquez comment la situation économique des années 1870 amène le gouvernement fédéral à intervenir dans le développement économique du Dominion du Canada.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une difficulté économique du Dominion du Canada dans les années 1870\n• une mesure économique mise en place par le gouvernement de John A. Macdonald\n• une conséquence sur les manufactures canadiennes",
+ aspects: [{aspect: "Politique nationale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "tableau_crise_economique_1873_faillites.jpg", soustitre: "Évolution du nombre de faillites au Canada", source: "Adapté de Jean Hamelin et Yves Roby, Histoire économique du Québec, 1851-1896, Fides, 1971."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "tableau_tarifs_douaniers_pol_nationale.jpg", soustitre: "Évolution des tarifs douaniers au Canada", source: "Adapté de J. M. S. Careless, Canada: A Story of Challenge, Macmillan of Canada, 1970."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "tableau_crise_economique_1873_production.jpg", soustitre: "Valeur de la production manufacturière au Canada", source: "Adapté de Paul-André Linteau, Histoire du Québec contemporain. Tome I : De la Confédération à la crise (1867-1929), Boréal, 1989."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "La crise économique des années 1870 entraîne un ralentissement de l'économie canadienne (une difficulté économique du Dominion du Canada). En réaction, le gouvernement adopte la Politique nationale (une mesure économique mise en place par le gouvernement). Cette politique favorise le développement des manufactures canadiennes grâce à des tarifs douaniers (une conséquence sur la production industrielle des manufactures canadiennes).",
+ updatedAt: "2026-07-01T20:11:26.730Z"
 }
 ]
