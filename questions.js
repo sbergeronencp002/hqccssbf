@@ -5970,9 +5970,10 @@ const IMAGE_DB = {
   "ecoles_catholiques_manitoba.jpg": {src: "images/ecoles_catholiques_manitoba.jpg"},
   "tableau_tarifs_douaniers_pol_nationale.jpg": {src: "images/tableau_tarifs_douaniers_pol_nationale.jpg"},
   "tableau_exportations_canadiennes_1870.jpg": {src: "images/tableau_exportations_canadiennes_1870.jpg"},
-  "jacques_cartier_scorbut.jpg": {src: "images/jacques_cartier_scorbut.jpg"},
+  "jacques_cartier_scorbut.jpg": {src: "images/jacques_cartier_scorbut.jpg", w: 1141, h: 1200},
   "jacques_cartier_fondation_charlesbourg_royal.jpg": {src: "images/jacques_cartier_fondation_charlesbourg_royal.jpg"},
-  "jacques_cartier_hochelaga.jpg": {src: "images/jacques_cartier_hochelaga.jpg"}
+  "jacques_cartier_hochelaga.jpg": {src: "images/jacques_cartier_hochelaga.jpg"},
+  "jacques_cartier_croix.jpg": {src: "images/jacques_cartier_croix.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -8322,7 +8323,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document C",
-            ref: "jacques_cartier_1534.png",
+            ref: "jacques_cartier_croix.jpg",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."
           }
         ]
@@ -8339,8 +8340,7 @@ const QUESTIONS = [
         ["C", "A", "B"]
       ]
     },
-    updatedAt: "2026-07-01T01:16:47.106Z",
-    _imgs: ["jacques_cartier_scrobu.jpg", "jacques_cartier_1534.png"]
+    updatedAt: "2026-07-01T01:33:30.788Z"
   },
   {
     id: "Q72",
