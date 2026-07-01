@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Révision — HQC · CSSBF</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&display=swap">
+<link rel="stylesheet" href="style.css?v=29">
+<style>
+header nav { display:flex; align-items:center; gap:.25rem; margin-left:auto; }
+header nav a { padding:.45rem .9rem; border-radius:6px; color:rgba(255,255,255,.75); text-decoration:none; font-size:.8rem; font-weight:500; transition:background .15s,color .15s; white-space:nowrap; cursor:pointer; }
+header nav a:hover { background:rgba(255,255,255,.12); color:#fff; }
+
+.rv-toolbar { background:var(--paper-2); border-bottom:1px solid var(--border); padding:.75rem 1.5rem; display:flex; gap:1rem; align-items:flex-end; flex-wrap:wrap; }
+.rv-field { display:flex; flex-direction:column; gap:.25rem; }
+.rv-field label { font-size:.65rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-3); font-weight:500; }
+.rv-toolbar select { width:180px; }
+.rv-toolbar input[type=search] { width:200px; padding:.5rem .75rem; border:1px solid var(--border); border-radius:4px; font-family:inherit; font-size:.8rem; background:var(--paper); color:var(--ink); }
+.rv-toolbar input[type=search]:focus { outline:none; border-color:var(--ink-2); }
+.rv-reset { padding:.5rem .85rem; background:transparent; border:1px solid var(--border); border-radius:4px; font-size:.75rem; color:var(--ink-3); cursor:pointer; }
+.rv-reset:hover { background:var(--paper-3); color:var(--ink); }
+.rv-stat { margin-left:auto; font-size:.78rem; color:var(--ink-3); }
+.rv-stat b { color:var(--ink-2); }
+
+.rv-stage { display:flex; align-items:stretch; gap:1rem; padding:1.5rem 1.5rem .5rem; max-width:920px; margin:0 auto; }
+.rv-arrow { flex-shrink:0; width:44px; align-self:center; height:72px; border-radius:8px; border:1px solid var(--border); background:#fff; color:var(--ink-2); font-size:1.6rem; cursor:pointer; transition:all .15s; }
+.rv-arrow:hover:not(:disabled) { background:var(--paper-2); color:var(--ink); }
+.rv-arrow:disabled { opacity:.3; cursor:default; }
+
+.rv-card-wrap { flex:1; min-width:0; touch-action:pan-y; }
+.rv-card-wrap img { -webkit-user-drag:none; user-select:none; }
+.rv-card { background:#fff; border:1px solid var(--border); border-radius:12px; padding:1.5rem 1.75rem; min-height:60vh; box-shadow:0 2px 14px rgba(0,0,0,.05); }
+
+.rv-topline { display:flex; align-items:center; justify-content:space-between; gap:.5rem; margin-bottom:.15rem; }
+.rv-id { font-size:.72rem; color:var(--ink-3); font-weight:600; flex-shrink:0; }
+.rv-aspect { font-size:.78rem; color:var(--ink-2); opacity:.85; margin-bottom:2px; }
+.rv-points { font-size:.7rem; color:var(--ink-3); font-weight:600; margin-bottom:.4rem; }
+
+.rv-note { font-size:.78rem; color:var(--ink-3); font-style:italic; }
+
+.rv-guide-label { color:#2A7A4A !important; }
+.rv-guide-box { background:#EAF6EE; border:1px solid #CDE9D6; border-radius:8px; padding:.75rem 1rem; font-size:.85rem; color:var(--ink); line-height:1.6; }
+.rv-guide-empty { color:var(--ink-3); font-style:italic; }
+
+.rv-progress { text-align:center; padding:.5rem 0 .35rem; font-size:.82rem; color:var(--ink-2); font-weight:500; }
+.rv-hint { text-align:center; padding:0 0 1.5rem; font-size:.68rem; color:var(--ink-3); opacity:.75; }
+
+.rv-empty { text-align:center; padding:3rem 1rem; color:var(--ink-3); font-size:.9rem; }
+
+@keyframes rvSlideL { from{opacity:0; transform:translateX(-16px);} to{opacity:1; transform:translateX(0);} }
+@keyframes rvSlideR { from{opacity:0; transform:translateX(16px);} to{opacity:1; transform:translateX(0);} }
+.slide-in-left .rv-card { animation:rvSlideL .22s ease; }
+.slide-in-right .rv-card { animation:rvSlideR .22s ease; }
+
+@media (max-width:640px) {
+  .rv-stage { padding:1rem .4rem; gap:.35rem; }
+  .rv-arrow { width:32px; height:56px; font-size:1.3rem; }
+  .rv-card { padding:1.1rem; }
+  .rv-toolbar select, .rv-toolbar input[type=search] { width:140px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>HQC · CSSBF</h1>
+  <span style="font-size:0.7rem;color:rgba(255,255,255,0.6);letter-spacing:0.08em;text-transform:uppercase;margin-left:12px">Révision — défilement par carte</span>
+  <nav>
+    <a href="admin.html">⚙ Admin</a>
+    <a href="documents.html">🖼 Documents</a>
+    <a href="index.html">← Site</a>
+  </nav>
+</header>
+
+<div class="rv-toolbar">
+  <div class="rv-field">
+    <label for="f-search">Recherche</label>
+    <input type="search" id="f-search" placeholder="Mot-clé…" oninput="rvDebouncedApply()">
+  </div>
+  <div class="rv-field">
+    <label for="f-niveau">Niveau</label>
+    <select id="f-niveau" onchange="rvOnNiveauChange()">
+      <option value="">Tous</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+  </div>
+  <div class="rv-field">
+    <label for="f-periode">Période</label>
+    <select id="f-periode" onchange="rvOnPeriodeChange()">
+      <option value="">Toutes</option>
+    </select>
+  </div>
+  <div class="rv-field">
+    <label for="f-aspect">Aspect</label>
+    <select id="f-aspect" onchange="rvApplyFilters()">
+      <option value="">Tous</option>
+    </select>
+  </div>
+  <div class="rv-field">
+    <label for="f-oi">Opération intellectuelle</label>
+    <select id="f-oi" onchange="rvApplyFilters()">
+      <option value="">Toutes</option>
+    </select>
+  </div>
+  <button class="rv-reset" onclick="rvResetFilters()">↺ Réinitialiser</button>
+  <div class="rv-stat" id="rv-stat">0 question</div>
+</div>
+
+<div class="rv-stage">
+  <button class="rv-arrow" id="rv-prev" onclick="rvNav(-1)" aria-label="Question précédente">‹</button>
+  <div class="rv-card-wrap" id="rv-card-wrap">
+    <div class="rv-card" id="rv-card"></div>
+  </div>
+  <button class="rv-arrow" id="rv-next" onclick="rvNav(1)" aria-label="Question suivante">›</button>
+</div>
+<div class="rv-progress" id="rv-pos">0 / 0</div>
+<div class="rv-hint">← → ou glisser pour naviguer</div>
+
+<div class="lightbox" id="rv-lightbox" onclick="rvCloseLightbox(event)">
+  <button class="lightbox-close" onclick="rvCloseLightbox()">×</button>
+  <div id="lightbox-viewport">
+    <img id="rv-lightbox-img" src="" alt="Image agrandie" draggable="false">
+  </div>
+</div>
+
+<script src="oi-config.js?v=1"></script>
+<script src="contexte.js"></script>
+<script src="questions.js?v=1"></script>
+<script>
+// Page autonome (comme documents.html) : pas de dépendance à app.js.
+// Charge oi-config.js (styles OI), contexte.js (périodes/aspects) et questions.js
+// (QUESTIONS, REGLETTES, IMAGE_DB) en lecture seule — aucune écriture ici.
+
+function rvEscLine(s) {
+  return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+function rvBoldify(s) {
+  return s.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+}
+function rvFormatTexte(text) {
+  let html = '', inList = false;
+  (text || '').split('\n').forEach(line => {
+    if(line.startsWith('• ')) {
+      if(!inList) { html += '<ul style="margin:2px 0 2px 14px;padding:0">'; inList = true; }
+      html += '<li>' + rvBoldify(rvEscLine(line.slice(2))) + '</li>';
+    } else {
+      if(inList) { html += '</ul>'; inList = false; }
+      if(line.trim()) html += rvBoldify(rvEscLine(line)) + '<br>';
+      else html += '<br>';
+    }
+  });
+  if(inList) html += '</ul>';
+  return html;
+}
+function rvFold(s) {
+  return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+function rvOiStyle(oi) {
+  return (typeof OI_CONFIG !== 'undefined' && OI_CONFIG[oi]) || {color:'var(--ink-2)', bg:'var(--paper-3)'};
+}
+function rvDocsForRender(documents) {
+  const docs = documents || [];
+  const allSingleTextes = docs.every(d => d && d.type === 'textes' && (d.cols||[]).length === 1);
+  if((docs.length === 2 || docs.length === 4) && allSingleTextes) {
+    return [{ type: 'textes', cols: docs.map(d => d.cols[0]), colsPerRow: 2 }];
+  }
+  return docs;
+}
+
+const periodeOrder = (typeof PERIODES_PAR_NIVEAU !== 'undefined')
+  ? [...PERIODES_PAR_NIVEAU['3'], ...PERIODES_PAR_NIVEAU['4']]
+  : [];
+let rvAspects = [];
+let rvList = [];
+let rvIndex = 0;
+
+function rvFill(id, vals, placeholder) {
+  const el = document.getElementById(id);
+  el.innerHTML = `<option value="">${placeholder}</option>`;
+  vals.forEach(v => { const o = document.createElement('option'); o.value = v; o.textContent = v; el.appendChild(o); });
+}
+function rvFillAspect(id, aspects, order) {
+  const el = document.getElementById(id);
+  el.innerHTML = '<option value="">Tous</option>';
+  order.forEach(p => {
+    const group = aspects.filter(a => a.periode === p);
+    if(!group.length) return;
+    const og = document.createElement('optgroup');
+    og.label = p;
+    group.forEach(a => {
+      const o = document.createElement('option');
+      o.value = a.aspect; o.textContent = a.aspect;
+      og.appendChild(o);
+    });
+    el.appendChild(og);
+  });
+}
+
+function rvPopulateFilters() {
+  const allOis = [...new Set(QUESTIONS.map(q => q.oi))].sort((a,b) => a.localeCompare(b,'fr'));
+  const aspectsByPeriode = {};
+  QUESTIONS.forEach(q => {
+    (q.aspects||[]).forEach(a => {
+      if(!aspectsByPeriode[q.periode]) aspectsByPeriode[q.periode] = new Set();
+      aspectsByPeriode[q.periode].add(a.aspect);
+    });
+  });
+  rvAspects = periodeOrder.flatMap(p => {
+    if(!aspectsByPeriode[p]) return [];
+    return [...aspectsByPeriode[p]].sort((a,b) => a.localeCompare(b,'fr')).map(a => ({aspect:a, periode:p}));
+  });
+  const periodesPresentes = new Set(QUESTIONS.map(q => q.periode));
+  const periodes = periodeOrder.filter(p => periodesPresentes.has(p));
+
+  rvFill('f-periode', periodes, 'Toutes');
+  rvFillAspect('f-aspect', rvAspects, periodeOrder);
+  rvFill('f-oi', allOis, 'Toutes');
+}
+
+function rvOnNiveauChange() {
+  const niveau = document.getElementById('f-niveau').value;
+  const allowedPeriodes = niveau ? PERIODES_PAR_NIVEAU[niveau] : periodeOrder;
+
+  const periodeEl = document.getElementById('f-periode');
+  const currentPeriode = periodeEl.value;
+  periodeEl.innerHTML = '<option value="">Toutes</option>';
+  allowedPeriodes.forEach(p => {
+    const o = document.createElement('option');
+    o.value = o.textContent = p;
+    periodeEl.appendChild(o);
+  });
+  periodeEl.value = allowedPeriodes.includes(currentPeriode) ? currentPeriode : '';
+
+  const periode = periodeEl.value;
+  const filteredAspects = periode
+    ? rvAspects.filter(a => a.periode === periode)
+    : rvAspects.filter(a => allowedPeriodes.includes(a.periode));
+  rvFillAspect('f-aspect', filteredAspects, periodeOrder);
+  document.getElementById('f-aspect').value = '';
+
+  rvApplyFilters();
+}
+
+function rvOnPeriodeChange() {
+  const niveau = document.getElementById('f-niveau').value;
+  const periode = document.getElementById('f-periode').value;
+  const allowedPeriodes = niveau ? PERIODES_PAR_NIVEAU[niveau] : periodeOrder;
+  const filteredAspects = periode
+    ? rvAspects.filter(a => a.periode === periode)
+    : rvAspects.filter(a => allowedPeriodes.includes(a.periode));
+  rvFillAspect('f-aspect', filteredAspects, periodeOrder);
+  document.getElementById('f-aspect').value = '';
+  rvApplyFilters();
+}
+
+let _rvSearchTimer = 0;
+function rvDebouncedApply() {
+  clearTimeout(_rvSearchTimer);
+  _rvSearchTimer = setTimeout(rvApplyFilters, 280);
+}
+
+function rvApplyFilters() {
+  const oi      = document.getElementById('f-oi').value;
+  const aspect  = document.getElementById('f-aspect').value;
+  const periode = document.getElementById('f-periode').value;
+  const niveau  = document.getElementById('f-niveau').value;
+  const search  = rvFold((document.getElementById('f-search').value || '').trim());
+  const currentOi = oi;
+
+  const filtered = [];
+  const oiSet = new Set();
+  for(const q of QUESTIONS) {
+    const niveauOk  = !niveau  || String(q.niveau) === niveau;
+    const periodeOk = !periode || q.periode === periode;
+    const aspectOk  = !aspect  || (q.aspects||[]).some(a => a.aspect === aspect);
+    if(niveauOk && periodeOk && aspectOk) oiSet.add(q.oi);
+    if(!niveauOk || !periodeOk || !aspectOk) continue;
+    if(oi && q.oi !== oi) continue;
+    if(search) {
+      const idx = rvFold([q.enonce||'', q.oi||'', q.periode||'', ...(q.aspects||[]).map(a=>a.aspect)].join(' '));
+      if(!idx.includes(search)) continue;
+    }
+    filtered.push(q);
+  }
+
+  filtered.sort((a, b) => {
+    if(a.niveau !== b.niveau) return a.niveau - b.niveau;
+    const pa = periodeOrder.indexOf(a.periode), pb = periodeOrder.indexOf(b.periode);
+    if(pa !== pb) return pa - pb;
+    return (parseInt(a.id.replace(/\D/g,''))||0) - (parseInt(b.id.replace(/\D/g,''))||0);
+  });
+
+  const relevantOis = [...oiSet].sort((a,b) => a.localeCompare(b,'fr'));
+  rvFill('f-oi', relevantOis, 'Toutes');
+  if(relevantOis.includes(currentOi)) document.getElementById('f-oi').value = currentOi;
+
+  rvList = filtered;
+  rvIndex = 0;
+  const totalPts = filtered.reduce((s,q) => s+(q.points||0), 0);
+  document.getElementById('rv-stat').innerHTML =
+    filtered.length === QUESTIONS.length
+      ? `<b>${filtered.length}</b> questions`
+      : `<b>${filtered.length}</b> question${filtered.length!==1?'s':''} · ${totalPts} pt${totalPts!==1?'s':''}`;
+  rvRenderCard();
+}
+
+function rvResetFilters() {
+  ['f-niveau','f-periode','f-aspect','f-oi','f-search'].forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.value = '';
+  });
+  rvPopulateFilters();
+  rvApplyFilters();
+}
+
+function rvRenderReponse(q) {
+  if(!q.reponse || q.reponse === false) return '';
+  if(q.reponse === true) {
+    return '<div style="border-bottom:1px solid var(--border);height:28px;margin:6px 0"></div>';
+  }
+  if(q.reponse.type === 'tableau_3col') {
+    const {col1='', col2='', col3=''} = q.reponse;
+    const S = 'border:1px solid var(--ink-2);text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem';
+    return '<table style="border-collapse:collapse;margin:8px 0;">'
+      + '<tr>'
+      + '<td style="' + S + '">' + rvEscLine(col1) + '</td>'
+      + '<td style="' + S + ';vertical-align:middle" rowspan="2">' + rvEscLine(col2) + '</td>'
+      + '<td style="' + S + '">' + rvEscLine(col3) + '</td>'
+      + '</tr><tr>'
+      + '<td style="border:1px solid var(--ink-2);background:var(--paper-2);height:50px;min-width:80px"></td>'
+      + '<td style="border:1px solid var(--ink-2);background:var(--paper-2);height:50px;min-width:80px"></td>'
+      + '</tr></table>';
+  }
+  if(q.reponse.type === 'image') {
+    const img = IMAGE_DB[q.reponse.ref];
+    if(!img) return '';
+    const reduire = q.soustag === 'Ordre chronologique' || q.soustag === 'Ligne du temps';
+    const imgStyle = reduire ? ' style="max-width:75%"' : '';
+    return '<div class="doc-img-wrap"><img src="' + img.src + '" alt="Image de réponse" class="doc-img"' + imgStyle + ' draggable="false" onclick="rvOpenLightbox(\'' + img.src + '\')" title="Cliquer pour agrandir"></div>';
+  }
+  if(q.reponse.type === 'lignes') {
+    const n = q.reponse.nombre || 1;
+    return '<div>' + Array(n).fill('<div style="border-bottom:1px solid var(--border);height:28px;margin:6px 0"></div>').join('') + '</div>';
+  }
+  if(q.reponse.type === 'tableau') {
+    let html = '<table style="border-collapse:collapse;margin:8px 0;font-size:0.8rem;">'
+      + '<tr><th style="border:0.5px solid var(--border);padding:4px 8px;background:var(--paper-2);text-align:left"></th>'
+      + '<th style="border:0.5px solid var(--border);padding:4px 8px;background:var(--paper-2);text-align:center">Document</th></tr>';
+    (q.reponse.lignes||[]).forEach(l => {
+      html += '<tr><td style="border:0.5px solid var(--border);padding:4px 8px">' + rvEscLine(l.label) + '</td>'
+            + '<td style="border:0.5px solid var(--border);padding:4px 30px"></td></tr>';
+    });
+    html += '</table>';
+    return html;
+  }
+  if(q.reponse.type === 'grille') {
+    const {entetes=[], rangees=[]} = q.reponse;
+    const TH = 'border:0.5px solid var(--border);padding:4px 8px;background:var(--paper-2);text-align:center;font-weight:600;font-size:0.8rem';
+    const TD = 'border:0.5px solid var(--border);padding:4px 8px;font-size:0.8rem';
+    let html = '<table style="border-collapse:collapse;margin:8px 0;">';
+    html += '<tr>' + entetes.map(h => `<th style="${TH}">${rvEscLine(h)}</th>`).join('') + '</tr>';
+    rangees.forEach(row => {
+      html += '<tr>' + row.map((cell, ci) => `<td style="${TD}${ci===0?';font-weight:500':';min-width:60px;height:24px'}">${rvEscLine(cell)}</td>`).join('') + '</tr>';
+    });
+    html += '</table>';
+    return html;
+  }
+  if(q.reponse.type === 'tableau_2col') {
+    const CS = 'border:1px solid var(--ink-2);text-align:center;padding:6px 8px;font-size:0.8rem;width:113px';
+    return '<table style="border-collapse:collapse;margin:8px 0;">'
+      + '<tr><td style="' + CS + ';font-weight:600;background:var(--paper-2)">Réponse</td>'
+      + '<td style="' + CS + ';background:var(--paper);height:40px"></td></tr>'
+      + '</table>';
+  }
+  if(q.reponse.type === 'cause-consequence') {
+    const B = 'border:1px solid var(--ink-2)';
+    const TH = B + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem;white-space:nowrap';
+    const TC = B + ';text-align:center;padding:8px 16px';
+    const circle = '<span style="display:inline-block;width:1.25cm;height:1.25cm;border-radius:50%;border:1.5px solid #000"></span>';
+    return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:8px 0">'
+      + ['Cause','Conséquence'].map(l => '<tr><td style="' + TH + '">' + l + '</td><td style="' + TC + '">' + circle + '</td></tr>').join('')
+      + '</table>';
+  }
+  if(q.reponse.type === 'mettre-en-relation') {
+    const els = q.reponse.elements || [];
+    const n = els.length;
+    const B = 'border:1px solid var(--ink-2)';
+    const circle = '<span style="display:inline-block;width:1.25cm;height:1.25cm;border-radius:50%;border:1.5px solid #000"></span>';
+    const TH = B + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem';
+    const TC = B + ';text-align:center;padding:8px 4px';
+    const colPct = Math.floor(100 / n) + '%';
+    if(n === 2 && q.reponse.double) {
+      const BT = 'border-top:1px solid var(--ink-2);border-bottom:1px solid var(--ink-2)';
+      const TC_NR = B + ';border-right:none;text-align:center;padding:8px 10px';
+      const SN   = BT + ';border-left:none;border-right:none;text-align:center;padding:8px 6px;font-size:0.8rem';
+      const TC_NL = B + ';border-left:none;text-align:center;padding:8px 10px';
+      return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:8px 0">'
+        + els.map(e => '<tr>'
+          + '<td style="' + TH + ';white-space:nowrap">' + rvEscLine(e) + '</td>'
+          + '<td style="' + TC_NR + '">' + circle + '</td>'
+          + '<td style="' + SN + '">et</td>'
+          + '<td style="' + TC_NL + '">' + circle + '</td>'
+          + '</tr>').join('')
+        + '</table>';
+    }
+    if(n === 2) {
+      return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:8px 0">'
+        + els.map(e => '<tr><td style="' + TH + ';white-space:nowrap">' + rvEscLine(e) + '</td><td style="' + TC + ';text-align:center;padding:8px 16px">' + circle + '</td></tr>').join('')
+        + '</table>';
+    }
+    return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin:8px 0">'
+      + '<tr>' + els.map(e => '<td style="' + TH + ';width:' + colPct + '">' + rvEscLine(e) + '</td>').join('') + '</tr>'
+      + '<tr>' + els.map(() => '<td style="' + TC + ';text-align:center">' + circle + '</td>').join('') + '</tr>'
+      + '</table>';
+  }
+  if(q.reponse.type === 'situer-dans-lespace') {
+    const els = q.reponse.elements || ['Élément 1','Élément 2'];
+    const B = 'border:1px solid var(--ink-2)';
+    const TH = B + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem';
+    const TC = B + ';text-align:center;padding:12px 16px';
+    const circle = '<span style="display:inline-block;width:1.25cm;height:1.25cm;border-radius:50%;border:1.5px solid #000"></span>';
+    return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:8px 0">'
+      + '<tr>' + els.map(e => '<td style="' + TH + '">' + rvEscLine(e) + '</td>').join('') + '</tr>'
+      + '<tr>' + els.map(() => '<td style="' + TC + '">' + circle + '</td>').join('') + '</tr>'
+      + '</table>';
+  }
+  if(q.reponse.type === 'avant-apres') {
+    const lbl = q.reponse.label || '';
+    const B = 'border:1px solid var(--ink-2)';
+    const circle = '<span style="display:inline-block;width:2cm;height:2cm;border-radius:50%;border:1.5px solid #000"></span>';
+    const sideCell = '<div style="display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 4px">' + circle + '<span style="font-size:0.8rem">et</span>' + circle + '</div>';
+    return '<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin:8px 0">'
+      + '<tr>'
+      + '<td style="' + B + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem;width:33%">Avant</td>'
+      + '<td style="' + B + ';text-align:center;font-weight:700;padding:8px;font-size:0.85rem;width:34%;vertical-align:middle" rowspan="2">' + rvEscLine(lbl) + '</td>'
+      + '<td style="' + B + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem;width:33%">Après</td>'
+      + '</tr><tr>'
+      + '<td style="' + B + '">' + sideCell + '</td>'
+      + '<td style="' + B + '">' + sideCell + '</td>'
+      + '</tr></table>';
+  }
+  return '';
+}
+
+function rvRenderDoc(d) {
+  if(d.type === 'textes') {
+    const cpr = d.colsPerRow || d.cols.length || 1;
+    const colW = Math.floor(100/cpr);
+    function renderCol(col) {
+      let h = '<td style="width:' + colW + '%;padding:6px;vertical-align:top;border:0.5px solid var(--border)">';
+      h += '<div style="font-size:0.75rem;font-weight:600;color:var(--ink)">' + rvEscLine(col.titre||'') + '</div>';
+      if(col.soustitre) h += '<div style="font-size:0.7rem;font-style:italic;color:var(--ink-2);margin-bottom:4px">' + rvEscLine(col.soustitre) + '</div>';
+      else h += '<div style="margin-bottom:4px"></div>';
+      if(col.texte) {
+        h += '<div style="font-size:0.75rem;color:var(--ink-2);line-height:1.5">' + rvFormatTexte(col.texte) + '</div>';
+      } else if(col.ref) {
+        const img2 = IMAGE_DB[col.ref];
+        if(img2) h += '<div class="doc-img-tile" style="max-width:100%" onclick="rvOpenLightbox(\'' + img2.src + '\')"><img src="' + img2.src + '" alt="' + rvEscLine(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:180px;object-fit:contain" draggable="false"></div>';
+      }
+      if(col.auteur) h += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + rvEscLine(col.auteur) + '</div>';
+      if(col.source) h += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + rvEscLine(col.source) + '</div>';
+      h += '</td>';
+      return h;
+    }
+    let html = '<table style="width:100%;border-collapse:collapse;margin-bottom:8px">';
+    for(let i=0; i<d.cols.length; i+=cpr) {
+      html += '<tr>' + d.cols.slice(i, i+cpr).map(renderCol).join('') + '</tr>';
+    }
+    html += '</table>';
+    return html;
+  }
+  if(d.type === 'tableau') {
+    let html = '<div class="doc-img-tiles">';
+    d.cols.forEach(function(col) {
+      const img = IMAGE_DB[col.ref];
+      if(!img) return;
+      html += '<div class="doc-img-tile" onclick="rvOpenLightbox(\'' + img.src + '\')">';
+      html += '<img src="' + img.src + '" alt="' + rvEscLine(col.titre||col.ref||'Document') + '" draggable="false">';
+      if(col.titre) html += '<div class="doc-img-tile-label">' + rvEscLine(col.titre) + '</div>';
+      if(col.soustitre) html += '<div class="doc-img-tile-sub">' + rvEscLine(col.soustitre) + '</div>';
+      html += '</div>';
+    });
+    html += '</div>';
+    return html;
+  }
+  const img = IMAGE_DB[d.ref];
+  if(img) {
+    let html = '<div class="doc-img-tiles"><div class="doc-img-tile" onclick="rvOpenLightbox(\'' + img.src + '\')">';
+    html += '<img src="' + img.src + '" alt="' + rvEscLine(d.titre||d.ref||'Document') + '" style="max-width:200px;max-height:200px;object-fit:contain" draggable="false">';
+    if(d.titre) html += '<div class="doc-img-tile-label">' + rvEscLine(d.titre) + '</div>';
+    html += '</div></div>';
+    return html;
+  }
+  return '<div><span class="doc-chip">' + rvEscLine(d.type||'') + ' — ' + rvEscLine(d.ref||'') + '</span></div>';
+}
+
+function rvRenderGuide(q) {
+  if(!q.guide) return '<span class="rv-guide-empty">Aucun corrigé renseigné.</span>';
+  if(typeof q.guide === 'string') return rvFormatTexte(q.guide);
+  if(q.guide.type === 'grille' || q.guide.type === 'tableau') {
+    const TH = 'border:0.5px solid var(--border);padding:4px 10px;background:#fff;font-weight:600;font-size:0.8rem';
+    const TD = 'border:0.5px solid var(--border);padding:4px 10px;font-size:0.8rem;background:#fff';
+    let html = '<table style="border-collapse:collapse;margin-top:2px">';
+    if(q.guide.type === 'grille') {
+      html += '<tr>' + q.guide.entetes.map(h => `<th style="${TH}">${rvEscLine(h)}</th>`).join('') + '</tr>';
+      q.guide.rangees.forEach(row => {
+        html += '<tr>' + row.map((cell, ci) => `<td style="${TD}${ci===0?';font-weight:500':''}">${rvEscLine(cell)}</td>`).join('') + '</tr>';
+      });
+    } else {
+      html += `<tr><th style="${TH}"></th><th style="${TH}">Document</th></tr>`;
+      q.guide.lignes.forEach(l => {
+        html += `<tr><td style="${TD};font-weight:500">${rvEscLine(l.label)}</td><td style="${TD};text-align:center">${rvEscLine(l.valeur)}</td></tr>`;
+      });
+    }
+    html += '</table>';
+    return html;
+  }
+  return '<span class="rv-guide-empty">Aucun corrigé renseigné.</span>';
+}
+
+function rvBuildCardHtml(q) {
+  const st = rvOiStyle(q.oi);
+  const aspects = (q.aspects||[]).map(a => a.aspect).join(' · ');
+  let html = '<div class="rv-topline">';
+  html += `<span class="q-oi-badge" style="color:${st.color};background:${st.bg}">${rvEscLine(q.oi)}</span>`;
+  html += `<span class="rv-id">${rvEscLine(q.id)} · ${rvEscLine(q.periode||'')}</span>`;
+  html += '</div>';
+  if(aspects) html += `<div class="rv-aspect">${rvEscLine(aspects)}</div>`;
+  html += `<div class="rv-points">${q.points}&thinsp;pt${q.points > 1 ? 's' : ''}</div>`;
+
+  html += '<div class="q-section-label">Question</div>';
+  html += '<div class="q-full-enonce">' + rvFormatTexte(q.enonce) + '</div>';
+
+  const docsR = rvDocsForRender(q.documents);
+  if(docsR.length) {
+    html += '<div class="q-section-label">Documents</div>';
+    html += '<div class="q-docs-images">' + docsR.map(d => rvRenderDoc(d)).join('<div class="doc-spacer"></div>') + '</div>';
+  }
+
+  const rep = rvRenderReponse(q);
+  if(rep) html += '<div class="q-section-label">Espace réponse</div>' + rep;
+
+  const r = REGLETTES[q.id];
+  if(r) {
+    html += '<div class="q-section-label">Réglette</div>';
+    if(r.variante) {
+      html += '<div class="rv-note">Réglette complexe — disponible dans le cahier généré (admin/index).</div>';
+    } else {
+      html += '<table class="reglette-table">' + (r.niveaux||[]).map(n =>
+        `<tr><td class="r-pts-cell">${n.pts}&thinsp;pt${n.pts > 1 ? 's' : ''}</td><td class="r-desc-cell">${rvEscLine(n.desc)}</td></tr>`
+      ).join('') + '</table>';
+    }
+  }
+
+  html += '<div class="q-section-label rv-guide-label">📘 Guide de correction</div>';
+  html += '<div class="rv-guide-box">' + rvRenderGuide(q) + '</div>';
+
+  return html;
+}
+
+function rvRenderCard() {
+  const card = document.getElementById('rv-card');
+  const pos  = document.getElementById('rv-pos');
+  if(!rvList.length) {
+    card.innerHTML = '<div class="rv-empty">Aucune question ne correspond aux filtres.</div>';
+    pos.textContent = '0 / 0';
+    document.getElementById('rv-prev').disabled = true;
+    document.getElementById('rv-next').disabled = true;
+    return;
+  }
+  if(rvIndex < 0) rvIndex = 0;
+  if(rvIndex >= rvList.length) rvIndex = rvList.length - 1;
+  const q = rvList[rvIndex];
+  card.innerHTML = rvBuildCardHtml(q);
+  pos.textContent = (rvIndex+1) + ' / ' + rvList.length;
+  document.getElementById('rv-prev').disabled = rvIndex === 0;
+  document.getElementById('rv-next').disabled = rvIndex === rvList.length - 1;
+}
+
+function rvNav(dir) {
+  if(!rvList.length) return;
+  const next = rvIndex + dir;
+  if(next < 0 || next >= rvList.length) return;
+  rvIndex = next;
+  const wrap = document.getElementById('rv-card-wrap');
+  wrap.classList.remove('slide-in-left','slide-in-right');
+  void wrap.offsetWidth;
+  rvRenderCard();
+  wrap.classList.add(dir > 0 ? 'slide-in-right' : 'slide-in-left');
+}
+
+function rvOpenLightbox(src) {
+  document.getElementById('rv-lightbox-img').src = src;
+  document.getElementById('rv-lightbox').classList.add('open');
+}
+function rvCloseLightbox(e) {
+  if(e && e.target.id !== 'rv-lightbox') return;
+  document.getElementById('rv-lightbox').classList.remove('open');
+}
+
+// Navigation clavier (flèches) — ignorée si un champ de filtre a le focus
+document.addEventListener('keydown', e => {
+  const tag = (document.activeElement && document.activeElement.tagName) || '';
+  if(tag === 'INPUT' || tag === 'SELECT' || tag === 'TEXTAREA') return;
+  if(e.key === 'ArrowLeft')  { e.preventDefault(); rvNav(-1); }
+  if(e.key === 'ArrowRight') { e.preventDefault(); rvNav(1); }
+  if(e.key === 'Escape')     { rvCloseLightbox(); }
+});
+
+// Navigation tactile / souris (Pointer Events unifiés) sur la carte
+(function() {
+  let startX = 0, startY = 0, dragging = false;
+  const wrap = document.getElementById('rv-card-wrap');
+  wrap.addEventListener('pointerdown', e => {
+    dragging = true; startX = e.clientX; startY = e.clientY;
+  });
+  function endDrag(e) {
+    if(!dragging) return;
+    dragging = false;
+    const dx = e.clientX - startX, dy = e.clientY - startY;
+    if(Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)) {
+      rvNav(dx < 0 ? 1 : -1);
+    }
+  }
+  wrap.addEventListener('pointerup', endDrag);
+  wrap.addEventListener('pointercancel', () => { dragging = false; });
+})();
+
+if(typeof QUESTIONS !== 'undefined') {
+  rvPopulateFilters();
+  rvApplyFilters();
+}
+</script>
+</body>
+</html>
