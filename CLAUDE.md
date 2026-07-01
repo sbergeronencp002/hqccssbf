@@ -11,7 +11,7 @@
 
 `questions.js` est géré **exclusivement** par `admin.html` qui publie directement sur `main` via l'API GitHub. Ne jamais modifier ce fichier via un commit git — les changements n'apparaîtraient pas sur le site et créeraient des conflits de données avec les publications admin.
 
-Mes commits git ne doivent contenir que des fichiers de code : `app.js`, `style.css`, `admin.html`, `index.html`, `oi-config.js`, `reglettes.js`, `contexte.js`, `CLAUDE.md`, etc.
+Mes commits git ne doivent contenir que des fichiers de code : `app.js`, `style.css`, `admin.html`, `index.html`, `documents.html`, `revision.html`, `oi-config.js`, `reglettes.js`, `contexte.js`, `CLAUDE.md`, etc.
 
 ---
 
@@ -26,6 +26,7 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 | `index.html` | Site public (filtres, cartes, panier, prévisualisation, génération DOCX) |
 | `admin.html` | Interface de saisie/modification des questions — pousse via GitHub Contents API |
 | `documents.html` | **Gestion Documents & Images** — galerie de toutes les images, vue par question, images non utilisées. Renomme / remplace / supprime des images et édite les sous-titres directement via l'API GitHub (token partagé avec admin.html). JS autonome inline (pas de dépendance à `app.js`) |
+| `revision.html` | **Révision par cartes** — parcourt les 600 questions une à la fois (filtres niveau/période/aspect/OI/recherche), navigation ← → clavier, glisser tactile/souris (Pointer Events) ou flèches, tout affiché sur une carte : énoncé, documents, réglette, espace réponse ET guide/corrigé. Page de lecture seule pour l'enseignant, JS autonome inline (pas de dépendance à `app.js`) |
 | `app.js` | Toute la logique du site public (rendu, filtres, panier, DOCX) |
 | `questions.js` | Données : `REGLETTES`, `IMAGE_DB`, `QUESTIONS` — généré et écrit par admin |
 | `reglettes.js` | Préréglages de réglettes par OI (`REGLETTES_PRESET`) — chargé par admin uniquement |
