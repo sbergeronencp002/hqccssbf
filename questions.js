@@ -10841,7 +10841,7 @@ const QUESTIONS = [
  soustag: "Conséquence",
  enonce: "Indiquez une conséquence de la crise économique de 1873 sur la politique économique du gouvernement de John A. Macdonald.",
  aspects: [{aspect: "Politique nationale"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_tarifs_douaniers_pol_nationale.jpg", soustitre: "Évolution des tarifs douaniers au Canada", source: "Adapté de Michael Bliss, Northern Enterprise: Five Centuries of Canadian Business, McClelland and Stewart, 1987."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_tarifs_douaniers_pol_nationale.jpg", soustitre: "Évolution des tarifs douaniers au Dominion du Canada", source: "Adapté de Michael Bliss, Northern Enterprise: Five Centuries of Canadian Business, McClelland and Stewart, 1987."}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "Augmentation des tarifs douaniers.\nAdoption d'une politique tarifaire protectionniste.\nAdoption de la Politique nationale.",
  updatedAt: "2026-07-01T12:25:22.610Z"
