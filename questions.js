@@ -6396,10 +6396,10 @@ const QUESTIONS = [
  points: 1,
  enonce: "Indiquez la famille linguistique à laquelle appartiennent les Hurons-Wendat.",
  aspects: [{aspect: "Premiers occupants du territoire"}],
- documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Les Hurons-Wendat font partie des peuples [...] établis dans la région des Grands Lacs. »", source: "Bruce G. Trigger, Les Enfants d'Aataentsic : l'histoire du peuple huron, Montréal, Libre Expression, 1991."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Les Hurons-Wendat font partie des peuples [...] établis dans la région des Grands Lacs. »", source: "Adapté de Bruce G. Trigger, Les Enfants d'Aataentsic : l'histoire du peuple huron, Montréal, Libre Expression, 1991."}]}],
  reponse: {type: "lignes", nombre: 1},
  guide: "Famille linguistique iroquoienne.",
- updatedAt: "2026-06-09T03:13:20.440Z"
+ updatedAt: "2026-07-01T18:09:32.391Z"
 },
 {
  id: "Q314",
