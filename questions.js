@@ -6452,12 +6452,12 @@ const QUESTIONS = [
  enonce: "Les documents A et B présentent des caractéristiques de l’organisation sociale de sociétés autochtones vers 1500. Associez chaque document au type de structure sociale correspondant.",
  aspects: [{aspect: "Rapports sociaux chez les Autochtones"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document A", texte: "« Chez les Iroquoiens, l'appartenance au clan se transmet par la mère. Les femmes occupent une place importante dans l'organisation familiale et sociale. »", source: "Jacques Lacoursière, Histoire populaire du Québec, tome 1, Québec Amérique, 1995."}]},
-  {type: "textes", cols: [{titre: "Document B", texte: "« Chez plusieurs peuples algonquiens, les groupes de chasse sont dirigés par des hommes et certains rôles ainsi que certains biens sont transmis de père en fils. »", source: "Denys Delâge, Le pays renversé : Amérindiens et Européens en Amérique du Nord-Est, 1600-1664, Boréal, 1991."}]}
+  {type: "textes", cols: [{titre: "Document A", texte: "« Chez les Iroquoiens, l'appartenance au clan se transmet par la mère. Les femmes occupent une place importante dans l'organisation familiale et sociale. »", source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 1, Québec Amérique, 1995."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Chez plusieurs peuples algonquiens, les groupes de chasse sont dirigés par des hommes et certains rôles ainsi que certains biens sont transmis de père en fils. »", source: "Adapté de Denys Delâge, Le pays renversé : Amérindiens et Européens en Amérique du Nord-Est, 1600-1664, Boréal, 1991."}]}
  ],
  reponse: {type: "mettre-en-relation", elements: ["Société matrilinéaire", "Société patrilinéaire"]},
  guide: {type: "grille", entetes: ["Société matrilinéaire", "Société patrilinéaire"], rangees: [["A", "B"]]},
- updatedAt: "2026-06-09T12:56:39.995Z"
+ updatedAt: "2026-07-01T18:10:37.778Z"
 },
 {
  id: "Q318",
