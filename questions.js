@@ -5683,6 +5683,15 @@ const REGLETTES = {
     oi: "Situer dans l'espace",
     colonnes: ["1 point", "0 point"],
     niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]
+  },
+  "Q596": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
+    ]
   }
 }
 
@@ -5949,7 +5958,8 @@ const IMAGE_DB = {
   "tableau_revenus_federal_provincial.jpg": {src: "images/tableau_revenus_federal_provincial.jpg"},
   "arpentage_terres_ouest_canadien.jpg": {src: "images/arpentage_terres_ouest_canadien.jpg"},
   "metis_thomas_scott.jpg": {src: "images/metis_thomas_scott.jpg"},
-  "ecoles_catholiques_manitoba.jpg": {src: "images/ecoles_catholiques_manitoba.jpg"}
+  "ecoles_catholiques_manitoba.jpg": {src: "images/ecoles_catholiques_manitoba.jpg"},
+  "tableau_exportations_canadiennes_1870.jpg": {src: "images/tableau_exportations_canadiennes_1870.jpg", w: 1200, h: 960}
 }
 
 const QUESTIONS = [
@@ -26149,5 +26159,31 @@ const QUESTIONS = [
     reponse: {type: "tableau_2col"},
     guide: "A",
     updatedAt: "2026-07-01T00:24:09.528Z"
+  },
+  {
+    id: "Q596",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une cause de l'adoption de la Politique nationale par le gouvernement de John A. Madonald.",
+    aspects: [{aspect: "Politique nationale"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "tableau_exportations_canadiennes_1870.jpg",
+            soustitre: "Évolution de la valeur des exportations canadiennes",
+            source: "Adapté de Kenneth Norrie, Douglas Owram et J.C. Herbert Emery, A History of the Canadian Economy, Harcourt Brace Canada, 2008."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "La crise économique de 1873.\nLe ralentissement de l'économie canadienne.",
+    updatedAt: "2026-07-01T00:36:30.989Z"
   }
 ]
