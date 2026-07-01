@@ -1110,7 +1110,8 @@ const REGLETTES = {
 "Q599": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
 "Q600": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
 "Q601": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
-"Q602": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]}
+"Q602": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
+"Q603": {oi: "Situer dans le temps", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}]}
 }
 
 const IMAGE_DB = {
@@ -10915,5 +10916,24 @@ const QUESTIONS = [
  reponse: {type: "image", ref: "ligne_1845-1890.png"},
  guide: "C - 1879.",
  updatedAt: "2026-07-01T19:31:32.102Z"
+},
+{
+ id: "Q603",
+ niveau: 4,
+ oi: "Situer dans le temps",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Ordre chronologique",
+ enonce: "Les documents A à D présentent des faits relatifs à l'évolution économique du Dominion du Canada. Placez les documents en ordre chronologique.",
+ aspects: [{aspect: "Politique nationale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Une crise économique frappe le Canada au cours des années 1870. Le ralentissement des échanges, les faillites et le chômage alimentent les critiques envers le gouvernement en place. »", soustitre: "Crise économique", source: "Adapté de Paul-André Linteau, René Durocher et Jean-Claude Robert, Histoire du Québec contemporain, tome 1, Boréal, 1989."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "canadien_pacifique.jpg", soustitre: "Construction du Canadien Pacifique", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "politique_nationale.jpg", soustitre: "Adoption de la Politique nationale", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document D", texte: "« La Colombie-Britannique accepte d’entrer dans la Confédération à condition que le gouvernement fédéral construise un chemin de fer reliant la province au reste du Canada. »", soustitre: "Entrée de la Colombie-Britannique dans la Confédération", source: "Adapté de Desmond Morton, A Short History of Canada, McClelland & Stewart, 2001."}]}
+ ],
+ reponse: {type: "image", ref: "ligne_abCd.png"},
+ guide: "D - A - C - B",
+ updatedAt: "2026-07-01T19:36:26.663Z"
 }
 ]
