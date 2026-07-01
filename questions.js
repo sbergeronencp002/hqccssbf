@@ -10928,14 +10928,14 @@ const QUESTIONS = [
  enonce: "Les documents A à D présentent des faits relatifs à l'évolution économique du Dominion du Canada. Placez les documents en ordre chronologique.",
  aspects: [{aspect: "Politique nationale"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document A", texte: "« Une crise économique frappe le Canada au cours des années 1870. Le ralentissement des échanges, les faillites et le chômage alimentent les critiques envers le gouvernement en place. »", soustitre: "Crise économique", source: "Adapté de Paul-André Linteau, René Durocher et Jean-Claude Robert, Histoire du Québec contemporain, tome 1, Boréal, 1989."}]},
+  {type: "textes", cols: [{titre: "Document A", texte: "« Une crise économique frappe le Canada et les pays occidentaux. Le ralentissement des échanges, les faillites et le chômage alimentent les critiques envers le gouvernement en place. »", soustitre: "Crise économique", source: "Adapté de Paul-André Linteau, René Durocher et Jean-Claude Robert, Histoire du Québec contemporain, tome 1, Boréal, 1989."}]},
   {type: "textes", cols: [{titre: "Document B", ref: "canadien_pacifique.jpg", soustitre: "Construction du Canadien Pacifique", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
   {type: "textes", cols: [{titre: "Document C", ref: "politique_nationale.jpg", soustitre: "Adoption de la Politique nationale", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
   {type: "textes", cols: [{titre: "Document D", texte: "« La Colombie-Britannique accepte d’entrer dans la Confédération à condition que le gouvernement fédéral construise un chemin de fer reliant la province au reste du Canada. »", soustitre: "Entrée de la Colombie-Britannique dans la Confédération", source: "Adapté de Desmond Morton, A Short History of Canada, McClelland & Stewart, 2001."}]}
  ],
  reponse: {type: "image", ref: "ligne_abCd.png"},
  guide: "D - A - C - B",
- updatedAt: "2026-07-01T19:36:26.663Z"
+ updatedAt: "2026-07-01T19:41:02.528Z"
 },
 {
  id: "Q604",
