@@ -8324,6 +8324,7 @@ const QUESTIONS = [
           {
             titre: "Document C",
             ref: "jacques_cartier_croix.jpg",
+            soustitre: "Prise de possession d'un territoire par Jacques Cartier",
             source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."
           }
         ]
@@ -8340,7 +8341,7 @@ const QUESTIONS = [
         ["C", "A", "B"]
       ]
     },
-    updatedAt: "2026-07-01T01:33:30.788Z"
+    updatedAt: "2026-07-01T01:35:59.766Z"
   },
   {
     id: "Q72",
