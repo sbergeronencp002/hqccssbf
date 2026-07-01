@@ -1106,7 +1106,8 @@ const REGLETTES = {
 "Q595": {colonnes: ["1 point", "0 point"], niveaux: [{desc: "L'élève situe le fait dans l'espace.", pts: 1}, {desc: "L'élève ne situe pas le fait dans l'espace.", pts: 0}], oi: "Situer dans l'espace"},
 "Q597": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q596": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q598": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]}
+"Q598": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
+"Q599": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -10884,5 +10885,18 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 1},
  guide: "La Politique nationale.",
  updatedAt: "2026-07-01T12:40:45.683Z"
+},
+{
+ id: "Q599",
+ niveau: 4,
+ oi: "Établir des faits",
+ periode: "P5 — 1840 – 1896",
+ points: 1,
+ enonce: "Indiquez le nom du premier ministre canadien qui met en œuvre la Politique nationale en 1879.",
+ aspects: [{aspect: "Politique nationale"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "politique_nationale.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}],
+ reponse: {type: "lignes", nombre: 1},
+ guide: "John A. Macdonald.",
+ updatedAt: "2026-07-01T12:46:37.885Z"
 }
 ]
