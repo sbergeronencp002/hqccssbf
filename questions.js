@@ -1109,7 +1109,8 @@ const REGLETTES = {
 "Q598": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
 "Q599": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
 "Q600": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
-"Q601": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]}
+"Q601": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
+"Q602": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]}
 }
 
 const IMAGE_DB = {
@@ -10900,5 +10901,19 @@ const QUESTIONS = [
  reponse: {type: "image", ref: "ligne_1830-1890.png"},
  guide: "C - 1873.",
  updatedAt: "2026-07-01T19:27:38.751Z"
+},
+{
+ id: "Q602",
+ niveau: 4,
+ oi: "Situer dans le temps",
+ periode: "P5 — 1840 – 1896",
+ points: 1,
+ soustag: "Ligne du temps",
+ enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
+ aspects: [{aspect: "Politique nationale"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Afin de stimuler l'économie canadienne, le gouvernement adopte une nouvelle politique économique fondée sur la protection des manufactures canadiennes, le développement du réseau ferroviaire et le peuplement de l'Ouest. »", soustitre: "Adoption de la Politique nationale par John A Madcdonald", source: "Adapté de Donald Creighton, The Road to Confederation, Macmillan of Canada, 1964."}]}],
+ reponse: {type: "image", ref: "ligne_1845-1890.png"},
+ guide: "C - 1879.",
+ updatedAt: "2026-07-01T19:31:32.102Z"
 }
 ]
