@@ -5692,6 +5692,15 @@ const REGLETTES = {
       {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
       {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
     ]
+  },
+  "Q596": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement le facteur explicatif."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."},
+      {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}
+    ]
   }
 }
 
@@ -5959,7 +5968,8 @@ const IMAGE_DB = {
   "arpentage_terres_ouest_canadien.jpg": {src: "images/arpentage_terres_ouest_canadien.jpg"},
   "metis_thomas_scott.jpg": {src: "images/metis_thomas_scott.jpg"},
   "ecoles_catholiques_manitoba.jpg": {src: "images/ecoles_catholiques_manitoba.jpg"},
-  "tableau_tarifs_douaniers_pol_nationale.jpg": {src: "images/tableau_tarifs_douaniers_pol_nationale.jpg"}
+  "tableau_tarifs_douaniers_pol_nationale.jpg": {src: "images/tableau_tarifs_douaniers_pol_nationale.jpg"},
+  "tableau_exportations_canadiennes_1870.jpg": {src: "images/tableau_exportations_canadiennes_1870.jpg"}
 }
 
 const QUESTIONS = [
@@ -26201,5 +26211,31 @@ const QUESTIONS = [
     reponse: {type: "lignes", nombre: 2},
     guide: "Le gouvernement adopte de la Politique nationale.\nLe gouvernement hausse les tarifs douaniers.",
     updatedAt: "2026-07-01T00:46:23.447Z"
+  },
+  {
+    id: "Q596",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Cause",
+    enonce: "Indiquez une cause de l'adoption de la Politique nationale en 1879.",
+    aspects: [{aspect: "Politique nationale"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "tableau_exportations_canadiennes_1870.jpg",
+            soustitre: "Évolution des exportations canadiennes",
+            source: "Adapté de Kenneth Norrie, Douglas Owram et J.C. Herbert Emery, A History of the Canadian Economy, Harcourt Brace Canada, 2008."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "La diminution des exportations canadiennes.\nLa crise économique (dépression de 1873).\nLes difficultés économiques du Canada.",
+    updatedAt: "2026-07-01T00:56:56.946Z"
   }
 ]
