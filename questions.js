@@ -2731,14 +2731,13 @@ const QUESTIONS = [
  aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", texte: "« Lors de son voyage, [...] Jacques Cartier remonte le fleuve Saint-Laurent jusqu’aux villages iroquoiens de Stadaconé et d’Hochelaga, démontrant que cette voie navigable permet d’explorer l’intérieur du continent nord-américain. »", source: "Jacques Lacoursière, Canada-Québec, 1534-2010. Québec, Les Éditions du Septentrion, 2011"}]},
-  {type: "textes", cols: [{titre: "Document B", texte: "« [...] Jacques Cartier ramène en France le chef Donnacona, espérant que son témoignage sur les territoires explorés et sur les richesses du continent convaincra François Ier de soutenir de nouvelles expéditions. »", source: "Jacques Mathieu, La Nouvelle-France. Québec, Les Presses de l’Université Laval."}]},
-  {type: "textes", cols: [{titre: "Document C", texte: "« À Gaspé, en juillet [...], Jacques Cartier fait ériger une grande croix portant les armes du roi François Ier et prend officiellement possession du territoire au nom de la France. »", source: "Jacques Cartier, Relations; cité notamment par Jacques Lacoursière dans Canada-Québec, 1534-2010. Québec, Les Éditions du Septentrion, 2011."}]},
-  {type: "textes", cols: [{titre: "Document D", texte: "« [...] Jacques Cartier établit à Cap-Rouge la colonie de Charlesbourg-Royal, première tentative française de peuplement dans la vallée du Saint-Laurent. L’entreprise vise à fonder un établissement permanent et à exploiter les ressources que l’on croit précieuses. »", source: "Marcel Trudel, Histoire de la Nouvelle-France. Montréal, Fides."}]}
+  {type: "textes", cols: [{titre: "Document B", texte: "« [...] Jacques Cartier ramène en France le chef Donnacona, espérant que son témoignage sur les territoires explorés et sur les richesses du continent convaincra François Ier de soutenir de nouvelles expéditions. »", source: "Jacques Mathieu, La Nouvelle-France. Québec, Les Presses de l’Université Laval, 2010."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« À Gaspé, en juillet [...], Jacques Cartier fait ériger une grande croix portant les armes du roi François Ier et prend officiellement possession du territoire au nom de la France. »", source: "Jacques Cartier, Relations; cité notamment par Jacques Lacoursière dans Canada-Québec, 1534-2010. Québec, Septentrion, 2011."}]},
+  {type: "textes", cols: [{titre: "Document D", texte: "« [...] Jacques Cartier établit à Cap-Rouge la colonie de Charlesbourg-Royal, première tentative française de peuplement dans la vallée du Saint-Laurent. L’entreprise vise à fonder un établissement permanent et à exploiter les ressources que l’on croit précieuses. »", source: "Marcel Trudel, Histoire de la Nouvelle-France. Montréal, Fides, 1983."}]}
  ],
  reponse: {type: "image", ref: "ligne_acBd.png"},
  guide: "C - A - B - D",
- updatedAt: "2026-06-25T13:49:14.267Z",
- _imgs: ["ligne_acBd.png"]
+ updatedAt: "2026-07-01T18:07:47.398Z"
 },
 {id: "Q78", niveau: 3, oi: "Situer dans l'espace", periode: "P2 — 1608 – 1760", points: 1, soustag: "Situer 1 élément", enonce: "À partir du document A, indiquez la lettre qui correspond au territoire sur lequel les seigneuries ont été concédées avant 1663.", aspects: [{aspect: "Régime seigneurial"}], documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_seigneurie_n-f.png", source: "MEES."}]}], reponse: {type: "tableau_2col"}, guide: "B.", _imgs: ["carte_seigneurie_n-f.png"]},
 {
