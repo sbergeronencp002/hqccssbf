@@ -983,8 +983,20 @@ async function applyQuestionsEdit(mutate, commitMsg) {
     });
     if (!rq.ok) throw new Error('Lecture questions.js (' + rq.status + ')');
     const dq = await rq.json();
-    const rawBytes = Uint8Array.from(atob(dq.content.replace(/\n/g,'')), c => c.charCodeAt(0));
-    const content = new TextDecoder('utf-8').decode(rawBytes);
+    let content;
+    if (dq.content) {
+      // Fichier ≤ 1 Mo : contenu inline base64
+      const rawBytes = Uint8Array.from(atob(dq.content.replace(/\n/g,'')), c => c.charCodeAt(0));
+      content = new TextDecoder('utf-8').decode(rawBytes);
+    } else if (dq.download_url) {
+      // Fichier > 1 Mo : téléchargement direct
+      const dlUrl = dq.download_url.includes('?') ? dq.download_url + '&t=' + Date.now() : dq.download_url + '?t=' + Date.now();
+      const raw = await fetch(dlUrl, {cache: 'no-store'});
+      if (!raw.ok) throw new Error('Impossible de télécharger questions.js : ' + raw.status);
+      content = await raw.text();
+    } else {
+      throw new Error("Réponse inattendue de l'API GitHub pour questions.js");
+    }
     let parsed;
     try {
       parsed = new Function(content + '\n return { REGLETTES, IMAGE_DB, QUESTIONS };')();
