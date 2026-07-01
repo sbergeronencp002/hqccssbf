@@ -6929,13 +6929,13 @@ const QUESTIONS = [
  enonce: "Les documents A à C présentent des aspects des alliances et des rivalités entre les Premières Nations vers 1500. Associez chaque document à l'élément correspondant.",
  aspects: [{aspect: "Alliances et rivalités au sein des Premières Nations"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document A", texte: "« Afin de mieux se défendre contre leurs ennemis et d'accroître leur influence, plusieurs nations concluent des ententes avec d'autres groupes et coordonnent leurs actions lors des conflits. »", source: "Denys Delâge, Le Pays renversé, adaptation."}]},
-  {type: "textes", cols: [{titre: "Document B", texte: "« Certaines nations cherchent à contrôler des territoires de chasse, des voies de circulation ou des lieux d'échange qui leur procurent des ressources et des avantages stratégiques. »", source: "Alain Beaulieu, Les Autochtones du Québec, adaptation."}]},
-  {type: "textes", cols: [{titre: "Document C", texte: "« Les prisonniers capturés lors des affrontements peuvent être adoptés afin de remplacer des membres décédés ou être exécutés selon les traditions de la nation victorieuse. »", source: "Bruce G. Trigger, Les Enfants d'Aataentsic, adaptation."}]}
+  {type: "textes", cols: [{titre: "Document A", texte: "« Afin de mieux se défendre contre leurs ennemis et d'accroître leur influence, plusieurs nations concluent des ententes avec d'autres groupes et coordonnent leurs actions lors des conflits. »", source: "Adapté de Denys Delâge, Le Pays renversé : Amérindiens et Européens en Amérique du Nord-Est, 1600-1664, Boréal, 1991."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Certaines nations cherchent à contrôler des territoires de chasse, des voies de circulation ou des lieux d'échange qui leur procurent des ressources et des avantages stratégiques. »", source: "Adapté de Alain Beaulieu, Les Autochtones du Québec : des premières alliances aux revendications contemporaines, Fides, 2013."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Les prisonniers capturés lors des affrontements peuvent être adoptés afin de remplacer des membres décédés ou être exécutés selon les traditions de la nation victorieuse. »", source: "Adapté de Georges E. Sioui, Pour une histoire amérindienne de l'Amérique, Presses de l'Université Laval, 1999."}]}
  ],
  reponse: {type: "mettre-en-relation", elements: ["Objets de rivalité", "Système d'alliances", "Sort des prisonniers"]},
  guide: {type: "grille", entetes: ["Objets de rivalité", "Système d'alliances", "Sort des prisonniers"], rangees: [["B", "A", "C"]]},
- updatedAt: "2026-06-10T17:23:45.679Z"
+ updatedAt: "2026-07-01T18:12:52.572Z"
 },
 {
  id: "Q349",
