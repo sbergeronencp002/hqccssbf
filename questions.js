@@ -8515,10 +8515,10 @@ const QUESTIONS = [
       type: "grille",
       entetes: ["Charlesbourg-Royal", "Île de Sable", "Port-Royal", "Tadoussac"],
       rangees: [
-        ["B", "D", "A", "A"]
+        ["B", "D", "A", "C"]
       ]
     },
-    updatedAt: "2026-07-01T01:27:36.581Z"
+    updatedAt: "2026-07-01T01:28:03.653Z"
   },
   {
     id: "Q75",
