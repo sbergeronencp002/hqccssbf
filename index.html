@@ -190,18 +190,17 @@
 <script src="oi-config.js?v=1"></script>
 <script src="app.js?v=49"></script>
 <script>
-  // Charge questions.js en mode revalidation (ETag → 304 si inchangé) : les données
-  // restent toujours fraîches SANS re-télécharger ~1 Mo à chaque visite (le navigateur
-  // sert depuis son cache après un 304). Repli sur l'injection <script> avec cache-bust
-  // à la minute si fetch échoue (réseau, vieux navigateur, fichier illisible).
-  (function loadQuestions() {
+  // Charge questions-index.js (~200 Ko, champs grille seulement) pour affichage immédiat.
+  // Les données complètes (documents, réponse, guide, réglettes) sont chargées en lazy
+  // par app.js (ensureDataLoaded) au premier clic « Détail », prévisualisation ou DOCX.
+  (function loadIndex() {
     function fallback() {
       var qs = document.createElement('script');
-      qs.src = 'questions.js?t=' + Date.now();
+      qs.src = 'questions-index.js?v=1&t=' + Date.now();
       qs.onload = function() { initSite(); };
       document.head.appendChild(qs);
     }
-    fetch('questions.js?t=' + Date.now(), { cache: 'no-cache' })
+    fetch('questions-index.js?v=1&t=' + Date.now(), { cache: 'no-cache' })
       .then(function(r) { if (!r.ok) throw new Error(r.status); return r.text(); })
       .then(function(src) {
         var ok = false;

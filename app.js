@@ -67,6 +67,35 @@ let NEW_IDS = new Set();        // 10 questions les plus récentes
 let panier = [];                // ids du panier (déclaré ici : utilisé dès initSite via render → buildTileHtml)
 let _imgDocxCache = {};         // cache data-URL des images résolues pour DOCX (ne pas muter IMAGE_DB)
 
+// Champs complets (documents, réponse, guide, réglettes, IMAGE_DB) chargés en lazy
+// au premier openQModal / prévisualiser / genererDocx. REGLETTES et IMAGE_DB sont
+// initialisés vides ici car questions.js n'est plus chargé comme <script>.
+let REGLETTES = {};
+let IMAGE_DB = {};
+let _dataLoaded = false;
+let _dataLoadPromise = null;
+
+async function ensureDataLoaded() {
+  if (_dataLoaded) return;
+  if (_dataLoadPromise) return _dataLoadPromise;
+  _dataLoadPromise = (async () => {
+    const r = await fetch('questions.js?t=' + Date.now(), { cache: 'no-store' });
+    if (!r.ok) throw new Error('Impossible de charger les données complètes (' + r.status + ')');
+    const src = await r.text();
+    const result = new Function(src + '\nreturn{REGLETTES,IMAGE_DB,QUESTIONS}')();
+    REGLETTES = result.REGLETTES;
+    IMAGE_DB  = result.IMAGE_DB;
+    // Enrichir les objets slim déjà dans Q_MAP avec les champs complets
+    for (const q of result.QUESTIONS) {
+      const slim = Q_MAP.get(q.id);
+      if (slim) Object.assign(slim, q);
+      else Q_MAP.set(q.id, q);
+    }
+    _dataLoaded = true;
+  })();
+  return _dataLoadPromise;
+}
+
 function populateFilters() {
   Q_MAP = new Map(QUESTIONS.map(q => [q.id, q]));
   Q_SEARCH_IDX = new Map(QUESTIONS.map(q => [q.id,
@@ -355,11 +384,27 @@ function buildReglettHTML(q) {
   </table>`;
 }
 
-function openQModal(id) {
+async function openQModal(id) {
   _tzStore.length = 0;
   const q = Q_MAP.get(id);
   if(!q) return;
   const st = oiStyle(q.oi);
+
+  // Ouvrir le modal tout de suite avec un spinner, puis remplir après chargement des données
+  if(!_dataLoaded) {
+    const modal = document.getElementById('q-modal');
+    if(modal) {
+      document.getElementById('q-modal-body').innerHTML =
+        '<div style="text-align:center;padding:2rem;color:var(--ink-3)">Chargement…</div>';
+      modal.classList.add('open');
+      document.body.classList.add('modal-open');
+    }
+    try { await ensureDataLoaded(); } catch(e) {
+      document.getElementById('q-modal-body').innerHTML =
+        '<div style="color:red;padding:1rem">Erreur de chargement : ' + e.message + '</div>';
+      return;
+    }
+  }
 
   const header = document.getElementById('q-modal-header');
   header.style.background = st.bg;
@@ -896,8 +941,9 @@ function closeTextZoomBtn() {
 }
 
 
-function previsualiser(guideMode) {
+async function previsualiser(guideMode) {
   if(panier.length === 0) { showWarn('Le panier est vide.'); return; }
+  await ensureDataLoaded();
   const body = document.getElementById('preview-body');
   if(guideMode) {
     // Guide preview — numéros + réponses seulement
@@ -1348,6 +1394,7 @@ async function resolveImages(neededKeys) {
 let _docxLoadPromise = null;
 async function genererDocx(includeGuide=false) {
   if(panier.length === 0) return;
+  await ensureDataLoaded();
   const btn = includeGuide ? document.getElementById('btn-generer-guide') : document.getElementById('btn-generer');
   const btnOther = includeGuide ? document.getElementById('btn-generer') : document.getElementById('btn-generer-guide');
   if(btn) { btn.disabled = true; btn.textContent = '⏳ Génération…'; }

@@ -54,6 +54,18 @@ function ensureImageDbComplete(questions, imageDb) {
   });
 }
 
+// Génère questions-index.js : version allégée de QUESTIONS (champs grille seulement).
+// Utilisé par index.html pour le chargement initial rapide (~200 Ko vs ~900 Ko).
+const _INDEX_FIELDS = ['id','niveau','oi','periode','points','soustag','aspects','enonce'];
+function generateIndexJs(questions) {
+  const slim = questions.map(q => {
+    const s = {};
+    _INDEX_FIELDS.forEach(k => { if(q[k] !== undefined) s[k] = q[k]; });
+    return s;
+  });
+  return 'const QUESTIONS = [\n' + slim.map(q => serializeValue(q,0)).join(',\n') + '\n]\n';
+}
+
 // Reconstruit le fichier questions.js complet (REGLETTES + IMAGE_DB + QUESTIONS).
 function generateQuestionsJs(questions, reglettes, imageDb) {
   ensureImageDbComplete(questions, imageDb);

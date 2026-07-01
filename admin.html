@@ -9,7 +9,7 @@
 <script src="reglettes.js?v=2"></script>
 <script src="contexte.js"></script>
 <script src="oi-config.js?v=1"></script>
-<script src="questions-io.js?v=2"></script>
+<script src="questions-io.js?v=3"></script>
 <style>
 :root {
   --ink: #1a1814; --ink-2: #4a4740; --ink-3: #8a8680;
@@ -1124,6 +1124,7 @@ async function supprimerQuestion() {
       }
       const result = await putResp.json();
       questionsFileSha = result.content.sha;
+      publishIndex(token, `Supprimer ${idSupp}`);  // fire-and-forget
     }
 
     toast(`${idSupp} supprimé.`, 'ok');
@@ -1237,6 +1238,26 @@ let currentQuestions = [];
 let currentReglettes = {};
 let currentImageDb = {};
 let questionsFileSha = '';
+let indexFileSha = '';  // SHA de questions-index.js (mis à jour après chaque PUT)
+
+// Publie questions-index.js en fire-and-forget après une publication réussie de questions.js.
+async function publishIndex(token, commitMsg) {
+  try {
+    if(!indexFileSha) {
+      const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions-index.js?ref=${BRANCH}&t=${Date.now()}`,
+        { headers:{ Authorization:`token ${token}` }, cache:'no-store' });
+      if(r.ok) { const d = await r.json(); indexFileSha = d.sha; }
+    }
+    const content = utf8b64(generateIndexJs(currentQuestions));
+    const body = { message: commitMsg + ' [index]', content, branch: BRANCH };
+    if(indexFileSha) body.sha = indexFileSha;
+    const r2 = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions-index.js`, {
+      method:'PUT', headers:{ Authorization:`token ${token}`, 'Content-Type':'application/json' },
+      body: JSON.stringify(body)
+    });
+    if(r2.ok) { const d2 = await r2.json(); indexFileSha = d2.content.sha; }
+  } catch(_) {}  // fire-and-forget : une erreur ici ne bloque pas
+}
 
 async function loadRecentImages() {
   try { RECENT_IMAGES = JSON.parse(localStorage.getItem('hqc_recent_images') || '[]'); } catch(_) { RECENT_IMAGES = []; }
@@ -2195,6 +2216,8 @@ async function publier() {
     }
 
     questionsFileSha = putResult.content.sha;
+    publishIndex(token, commitMsg);  // fire-and-forget
+
     const nums = currentQuestions.map(q=>parseInt(q.id.replace(/\D/g,''))).filter(n=>!isNaN(n));
     const nextId = 'Q' + (nums.length ? Math.max(...nums)+1 : 1);
     document.getElementById('q-id').value = nextId;
