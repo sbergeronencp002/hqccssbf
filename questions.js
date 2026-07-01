@@ -1105,7 +1105,8 @@ const REGLETTES = {
 "Q594": {colonnes: ["2 points", "1 point", "0 point"], niveaux: [{desc: "L'élève met en relation tous les faits. (4 sur 4)", pts: 2}, {desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)", pts: 1}, {desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)", pts: 0}], oi: "Mettre en relation des faits"},
 "Q595": {colonnes: ["1 point", "0 point"], niveaux: [{desc: "L'élève situe le fait dans l'espace.", pts: 1}, {desc: "L'élève ne situe pas le fait dans l'espace.", pts: 0}], oi: "Situer dans l'espace"},
 "Q597": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
-"Q596": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q596": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q598": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1377,7 +1378,8 @@ const IMAGE_DB = {
 "jacques_cartier_fondation_charlesbourg_royal.jpg": {src: "images/jacques_cartier_fondation_charlesbourg_royal.jpg"},
 "jacques_cartier_hochelaga.jpg": {src: "images/jacques_cartier_hochelaga.jpg"},
 "jacques_cartier_croix.jpg": {src: "images/jacques_cartier_croix.jpg", w: 1200, h: 800},
-"carte_jacques_cartier_1534.png": {src: "images/carte_jacques_cartier_1534.png"}
+"carte_jacques_cartier_1534.png": {src: "images/carte_jacques_cartier_1534.png"},
+"politique_nationale.jpg": {src: "images/politique_nationale.jpg"}
 }
 
 const QUESTIONS = [
@@ -10869,5 +10871,18 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "La crise économique de 1873.\nLa baisse des exportations canadiennes.\nLe ralentissement de l'économie canadienne.",
  updatedAt: "2026-07-01T12:30:37.946Z"
+},
+{
+ id: "Q598",
+ niveau: 4,
+ oi: "Établir des faits",
+ periode: "P5 — 1840 – 1896",
+ points: 1,
+ enonce: "Indiquez le nom de la politique économique mise en place par John A. Macdonald en 1879.",
+ aspects: [{aspect: "Politique nationale"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "politique_nationale.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}],
+ reponse: {type: "lignes", nombre: 1},
+ guide: "La Politique nationale.",
+ updatedAt: "2026-07-01T12:40:45.683Z"
 }
 ]
