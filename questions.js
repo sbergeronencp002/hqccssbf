@@ -3344,7 +3344,7 @@ const QUESTIONS = [
  soustag: "Cause",
  enonce: "Indiquez une raison qui explique la fréquentation du golfe du Saint-Laurent par les pêcheurs européens au 16e siècle.",
  aspects: [{aspect: "Premiers contacts"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_premiers_contacts.png", source: "Récitus."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_premiers_contacts.png", source: "Récitus.", auteur: ""}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "Les pêcheurs européens fréquentent le golfe du Saint-Laurent afin d’exploiter les importantes ressources halieutiques, notamment la morue ou les Européens fréquentent le golfe du Saint-Laurent pour pratiquer la pêche à la morue.",
  _imgs: ["carte_premiers_contacts.png"]
@@ -3358,7 +3358,7 @@ const QUESTIONS = [
  soustag: "Conséquence",
  enonce: "Indiquez une conséquence de la fréquentation du golfe du Saint-Laurent par les Européens au 16e siècle pour les nations autochtones.",
  aspects: [{aspect: "Premiers contacts"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_premiers_contacts.png"}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_premiers_contacts.png", auteur: "", source: "Récitus."}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "Les nations autochtones développent des échanges commerciaux avec les Européens ou certaines nations autochtones entrent en contact avec les Européens par le commerce ou les contacts entre Autochtones et Européens deviennent plus fréquents dans le golfe du Saint-Laurent.",
  _imgs: ["carte_premiers_contacts.png"]
@@ -3373,7 +3373,7 @@ const QUESTIONS = [
  aspects: [{aspect: "Premiers contacts"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", texte: "« Sur certaines côtes du golfe du Saint-Laurent, des groupes autochtones fréquentent les endroits utilisés par les Européens pour préparer et faire sécher la morue durant la belle saison. »", source: "Adapté de Laurier Turgeon, Pêcheurs basques et Amérindiens au XVIe siècle, Québec, Septentrion, 2003."}]},
-  {type: "textes", cols: [{titre: "Document B", ref: "carte_premiers_contacts.png", source: "Récitus."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "carte_premiers_contacts.png", source: "Récitus.", auteur: ""}]},
   {type: "textes", cols: [{titre: "Document C", texte: "« Les contacts entre Européens et Autochtones favorisent la circulation de produits provenant des deux groupes, comme des peaux d’animaux et des objets fabriqués en Europe. »", source: "Adapté de Bruce G. Trigger, Les Enfants d’Aataentsic : l’histoire du peuple huron, Montréal, Libre Expression, 1991."}]}
  ],
  reponse: {type: "lignes", nombre: 5},
