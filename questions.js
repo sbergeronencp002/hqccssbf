@@ -2843,7 +2843,7 @@ const QUESTIONS = [
  soustag: "Conséquence",
  enonce: "Indique une conséquence de l'occupation française en Amérique du Nord sur le territoire des Treize colonies.",
  aspects: [{aspect: "Guerres intercoloniales"}, {aspect: "Territoire français en Amérique"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_amerique_nord_1700.png", soustitre: "Carte de l'Amérique du Nord vers 1700"}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_amerique_nord_1700.png", soustitre: "Carte de l'Amérique du Nord vers 1700", auteur: "", source: "Récitus."}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "Les Treize colonies ne peuvent prendre de l’expansion ou l’occupation française limite leur expansion ou leur territoire est limité.",
  _imgs: ["carte_amerique_nord_1700.png"]
