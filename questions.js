@@ -8418,7 +8418,7 @@ const QUESTIONS = [
         cols: [
           {
             titre: "Document B",
-            texte: "« [...], des marchands français tentent d’établir un poste permanent à l’embouchure du Saguenay afin de soutenir le commerce des fourrures et d’assurer une présence durable sur le territoire. »",
+            texte: "« [...] des marchands français tentent d’établir un poste permanent à l’embouchure du Saguenay afin de soutenir le commerce des fourrures et d’assurer une présence durable sur le territoire. »",
             source: "Jacques Lacoursière, Canada-Québec, 1534-2010. Québec, Les Éditions du Septentrion, 2011."
           }
         ]
@@ -8454,7 +8454,8 @@ const QUESTIONS = [
       rangees: [
         ["D", "C", "A", "B"]
       ]
-    }
+    },
+    updatedAt: "2026-07-01T01:28:46.344Z"
   },
   {
     id: "Q74",
