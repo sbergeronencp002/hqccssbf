@@ -1073,5 +1073,15 @@ const QUESTIONS = [
 {id: "Q602", niveau: 4, oi: "Situer dans le temps", periode: "P5 — 1840 – 1896", points: 1, soustag: "Ligne du temps", aspects: [{aspect: "Politique nationale"}], enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.", updatedAt: "2026-07-01T19:31:32.102Z"},
 {id: "Q603", niveau: 4, oi: "Situer dans le temps", periode: "P5 — 1840 – 1896", points: 2, soustag: "Ordre chronologique", aspects: [{aspect: "Politique nationale"}], enonce: "Les documents A à D présentent des faits relatifs à l'évolution économique du Dominion du Canada. Placez les documents en ordre chronologique.", updatedAt: "2026-07-01T19:41:02.528Z"},
 {id: "Q604", niveau: 4, oi: "Situer dans le temps", periode: "P5 — 1840 – 1896", points: 2, soustag: "Ordre chronologique", aspects: [{aspect: "Politique nationale"}], enonce: "Les documents A à D font référence à des événements liés à l'évolution économique du Dominion du Canada. Indiquez si les faits présentés dans ces documents surviennent avant ou après le retour au pouvoir de John A. Macdonald en 1878.", updatedAt: "2026-07-01T19:40:46.642Z"},
-{id: "Q605", niveau: 4, oi: "Mettre en relation des faits", periode: "P5 — 1840 – 1896", points: 2, soustag: "3 documents", aspects: [{aspect: "Politique nationale"}], enonce: "Les documents A à C présentent des mesures adoptées dans le cadre de la Politique nationale. Associez chaque document à l'un des éléments de cette politique.", updatedAt: "2026-07-01T19:44:50.798Z"}
+{id: "Q605", niveau: 4, oi: "Mettre en relation des faits", periode: "P5 — 1840 – 1896", points: 2, soustag: "3 documents", aspects: [{aspect: "Politique nationale"}], enonce: "Les documents A à C présentent des mesures adoptées dans le cadre de la Politique nationale. Associez chaque document à l'un des éléments de cette politique.", updatedAt: "2026-07-01T19:44:50.798Z"},
+{
+ id: "Q606",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P5 — 1840 – 1896",
+ points: 3,
+ aspects: [{aspect: "Politique nationale"}],
+ enonce: "Expliquez comment la situation économique des années 1870 amène le gouvernement fédéral à intervenir dans le développement économique du Dominion du Canada.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une difficulté économique du Dominion du Canada dans les années 1870\n• une mesure économique mise en place par le gouvernement de John A. Macdonald\n• une conséquence sur les manufactures canadiennes",
+ updatedAt: "2026-07-01T20:11:26.730Z"
+}
 ]
