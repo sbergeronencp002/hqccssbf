@@ -5842,7 +5842,6 @@ const IMAGE_DB = {
   "elections_bas-canada_1792.png": {src: "images/elections_bas-canada_1792.png"},
   "institutions_politiques_acte_const_1791.png": {src: "images/institutions_politiques_acte_const_1791.png"},
   "debats_parlementaires.png": {src: "images/debats_parlementaires.png"},
-  "carte_cartier_1534.png": {src: "images/carte_cartier_1534.png"},
   "alliance_franco-ame.png": {src: "images/alliance_franco-ame.png", w: 1200, h: 900},
   "carte_monde.png": {src: "images/carte_monde.png", w: 1200, h: 685},
   "carte_amerique_nord.png": {src: "images/carte_amerique_nord.png", w: 1056, h: 1200},
@@ -5973,7 +5972,8 @@ const IMAGE_DB = {
   "jacques_cartier_scorbut.jpg": {src: "images/jacques_cartier_scorbut.jpg", w: 1141, h: 1200},
   "jacques_cartier_fondation_charlesbourg_royal.jpg": {src: "images/jacques_cartier_fondation_charlesbourg_royal.jpg"},
   "jacques_cartier_hochelaga.jpg": {src: "images/jacques_cartier_hochelaga.jpg"},
-  "jacques_cartier_croix.jpg": {src: "images/jacques_cartier_croix.jpg", w: 1200, h: 800}
+  "jacques_cartier_croix.jpg": {src: "images/jacques_cartier_croix.jpg", w: 1200, h: 800},
+  "carte_jacques_cartier_1534.png": {src: "images/carte_jacques_cartier_1534.png"}
 }
 
 const QUESTIONS = [
@@ -17900,7 +17900,7 @@ const QUESTIONS = [
     documents: [
       {
         type: "textes",
-        cols: [{titre: "Document A", ref: "carte_cartier_1534.png", source: "Carte du Québec. Adaptée d'après d-maps.com."}]
+        cols: [{titre: "Document A", ref: "carte_jacques_cartier_1534.png", source: "Carte du Québec. Adaptée d'après d-maps.com."}]
       }
     ],
     reponse: {type: "tableau_2col"},
