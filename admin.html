@@ -2101,33 +2101,28 @@ async function publier() {
       resetForm(true);
 
     } catch(e) {
-      // Si le Worker est inaccessible (réseau scolaire), basculer sur GitHub Actions
-      if(e.message === 'Failed to fetch') {
-        const token = getToken();
-        if(!token) { toast('Worker inaccessible et pas de token GitHub.', 'err'); btn.disabled=false; btn.textContent='Publier sur GitHub'; return; }
-        try {
-          const q2 = buildQuestion();
-          const r2 = buildReglette(q2.id) ?? currentReglettes[q2.id] ?? { oi: q2.oi, colonnes:[], niveaux:[] };
-          const cm = editingId ? `Modifier ${q2.id} — ${q2.oi}` : `Ajouter ${q2.id} — ${q2.oi} (${q2.periode})`;
-          await publierViaDispatch(token, 'upsert', q2, r2, editingId, cm, btn, status);
-          // Recharger l'état depuis GitHub après l'Action
-          await fetchFreshState(token);
-          const nums2 = currentQuestions.map(x=>parseInt(x.id.replace(/\D/g,''))).filter(n=>!isNaN(n));
-          const nid2 = 'Q'+(nums2.length?Math.max(...nums2)+1:1);
-          document.getElementById('q-id').value = nid2;
-          document.getElementById('next-id-badge').textContent = nid2;
-          toast(`${q2.id} publié via GitHub Actions !`, 'ok');
-          renderDashboard();
-          status.textContent = `✓ ${q2.id} publié — visible maintenant`;
-          editingId = null;
-          resetForm(true);
-        } catch(e2) {
-          toast('Erreur : ' + e2.message, 'err');
-          console.error(e2);
-        }
-      } else {
-        toast('Erreur Worker : ' + e.message, 'err');
-        console.error(e);
+      // Worker inaccessible (réseau) OU erreur applicative → basculer sur GitHub Actions
+      const token = getToken();
+      if(!token) { toast('Worker indisponible : ' + e.message, 'err'); btn.disabled=false; btn.textContent='Publier sur GitHub'; return; }
+      toast('Worker indisponible — bascule sur GitHub…', 'err');
+      try {
+        const q2 = buildQuestion();
+        const r2 = buildReglette(q2.id) ?? currentReglettes[q2.id] ?? { oi: q2.oi, colonnes:[], niveaux:[] };
+        const cm = editingId ? `Modifier ${q2.id} — ${q2.oi}` : `Ajouter ${q2.id} — ${q2.oi} (${q2.periode})`;
+        await publierViaDispatch(token, 'upsert', q2, r2, editingId, cm, btn, status);
+        await fetchFreshState(token);
+        const nums2 = currentQuestions.map(x=>parseInt(x.id.replace(/\D/g,''))).filter(n=>!isNaN(n));
+        const nid2 = 'Q'+(nums2.length?Math.max(...nums2)+1:1);
+        document.getElementById('q-id').value = nid2;
+        document.getElementById('next-id-badge').textContent = nid2;
+        toast(`${q2.id} publié via GitHub Actions !`, 'ok');
+        renderDashboard();
+        status.textContent = `✓ ${q2.id} publié — visible maintenant`;
+        editingId = null;
+        resetForm(true);
+      } catch(e2) {
+        toast('Erreur : ' + e2.message, 'err');
+        console.error(e2);
       }
     } finally {
       btn.disabled = false;
