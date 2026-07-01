@@ -10853,8 +10853,8 @@ const QUESTIONS = [
  aspects: [{aspect: "Politique nationale"}],
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_tarifs_douaniers_pol_nationale.jpg", soustitre: "Évolution des tarifs douaniers au Canada", source: "Adapté de Michael Bliss, Northern Enterprise: Five Centuries of Canadian Business, McClelland and Stewart, 1987."}]}],
  reponse: {type: "lignes", nombre: 2},
- guide: "Le gouvernement adopte de la Politique nationale.\nLe gouvernement hausse les tarifs douaniers.",
- updatedAt: "2026-07-01T12:16:19.633Z"
+ guide: "Augmenter les tarifs douaniers.\nAdopter une politique tarifaire protectionniste.\nAdopter la Politique nationale.",
+ updatedAt: "2026-07-01T12:17:31.841Z"
 },
 {
  id: "Q596",
