@@ -6409,10 +6409,10 @@ const QUESTIONS = [
  points: 1,
  enonce: "Indiquez la famille linguistique à laquelle appartiennent les Innus.",
  aspects: [{aspect: "Premiers occupants du territoire"}],
- documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Les Innus occupent un immense territoire correspondant en grande partie au Bouclier canadien. Ils y pratiquent la chasse, la pêche et le piégeage en se déplaçant selon les saisons et les ressources disponibles. »", source: "Denys Delâge, Le pays renversé : Amérindiens et Européens en Amérique du Nord-Est, 1600-1664, Montréal, Boréal, 1991."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Les Innus occupent un immense territoire correspondant en grande partie au Bouclier canadien. Ils y pratiquent la chasse, la pêche et le piégeage en se déplaçant selon les saisons et les ressources disponibles. »", source: "Adapté de Denys Delâge, Le pays renversé : Amérindiens et Européens en Amérique du Nord-Est, 1600-1664, Montréal, Boréal, 1991."}]}],
  reponse: {type: "lignes", nombre: 1},
  guide: "Famille linguistique algonquienne.",
- updatedAt: "2026-06-09T03:16:19.575Z"
+ updatedAt: "2026-07-01T18:09:45.454Z"
 },
 {
  id: "Q315",
