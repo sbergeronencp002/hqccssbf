@@ -10994,7 +10994,7 @@ const QUESTIONS = [
  documents: [
   {type: "textes", cols: [{titre: "Document A", ref: "tableau_crise_economique_1873_faillites.jpg", soustitre: "Évolution du nombre de faillites au Dominion du Canada", source: "Adapté de Jean Hamelin et Yves Roby, Histoire économique du Québec, 1851-1896, Fides, 1971."}]},
   {type: "textes", cols: [{titre: "Document B", ref: "tableau_tarifs_douaniers_pol_nationale.jpg", soustitre: "Évolution des tarifs douaniers au Canada", source: "Adapté de J. M. S. Careless, Canada: A Story of Challenge, Macmillan of Canada, 1970."}]},
-  {type: "textes", cols: [{titre: "Document C", ref: "tableau_crise_economique_1873_production.jpg", soustitre: "Valeur de la production manufacturière au Canada", source: "Adapté de Paul-André Linteau, Histoire du Québec contemporain. Tome I : De la Confédération à la crise (1867-1929), Boréal, 1989."}]}
+  {type: "textes", cols: [{titre: "Document C", ref: "tableau_crise_economique_1873_production.jpg", soustitre: "Valeur de la production manufacturière au Dominion du Canada", source: "Adapté de Paul-André Linteau, Histoire du Québec contemporain. Tome I : De la Confédération à la crise (1867-1929), Boréal, 1989."}]}
  ],
  reponse: {type: "lignes", nombre: 5},
  guide: "La crise économique des années 1870 entraîne un ralentissement de l'économie canadienne (une difficulté économique du Dominion du Canada). En réaction, le gouvernement adopte la Politique nationale (une mesure économique mise en place par le gouvernement). Cette politique favorise le développement des manufactures canadiennes grâce à des tarifs douaniers (une conséquence sur la production industrielle des manufactures canadiennes).",
