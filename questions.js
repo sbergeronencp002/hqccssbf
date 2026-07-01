@@ -1397,18 +1397,12 @@ const QUESTIONS = [
  documents: [
   {
    type: "textes",
-   cols: [
-    {
-     titre: "Document A",
-     texte: "« La rencontre diplomatique de 1603 […] contribue à jeter les bases d’un réseau d’alliance franco-amérindien. Cette rencontre ouvre aussi la voie à l’établissement d’une colonie française en Amérique du Nord […] Champlain […] renouvellera à deux reprises sa participation à des expéditions contre les Iroquois […] »",
-     source: "Raymonde LITALIEN (dir.) et Denis VAUGEOIS (dir.), Champlain : la naissance de l’Amérique française, Québec, Les éditions du Septentrion, 2004, p. 160."
-    }
-   ]
+   cols: [{titre: "Document A", texte: "« La rencontre diplomatique de 1603 […] contribue à jeter les bases d’un réseau d’alliance franco-amérindien. Cette rencontre ouvre aussi la voie à l’établissement d’une colonie française en Amérique du Nord […] Champlain […] renouvellera à deux reprises sa participation à des expéditions contre les Iroquois […] »", source: "Adapté de Alain Beaulieu, Les Autochtones du Québec : des premières alliances aux revendications contemporaines, Fides, 2013."}]
   }
  ],
  reponse: {type: "lignes", nombre: 1},
  guide: "Les Montagnais ou les Etchemins (ou les Malécites) ou les Algonquins ou les Hurons ou les Micmacs ou les Abénaquis.",
- updatedAt: "2026-06-19T16:32:30.382Z"
+ updatedAt: "2026-07-01T17:48:48.921Z"
 },
 {
  id: "Q2",
