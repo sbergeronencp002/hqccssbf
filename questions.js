@@ -2181,13 +2181,14 @@ const QUESTIONS = [
  enonce: "Les documents A à D présentent des faits sur la prise de décision chez les Algonquiens et les Iroquoiens vers 1500. Indiquez les lettres des documents qui correspondent à chacun des groupes.",
  aspects: [{aspect: "Prise de décision chez les Autochtones"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document A", texte: "« Chez les Hurons, les femmes aînées de chaque clan désignent les chefs et peuvent les remplacer si elles jugent qu’ils ne remplissent pas adéquatement leurs responsabilités. Les décisions importantes sont prises en conseil, où les chefs recherchent l’accord des membres de la communauté. »", auteur: "Bruce G. Trigger"}]},
-  {type: "textes", cols: [{titre: "Document B", texte: "« Chez les [nations nomades], les chefs exercent une autorité limitée. Ils dirigent par persuasion et leur influence dépend de leur expérience, de leurs talents de chasseurs et de la confiance du groupe. »", auteur: "Denys Delâge"}]},
-  {type: "textes", cols: [{titre: "Document C", texte: "« Chez les Montagnais et les Malécites, le chef possède une autorité limitée. Il dirige grâce à son expérience, à son courage et à sa générosité. Ses décisions ne s’imposent pas par la force, mais reposent sur la confiance et l’adhésion volontaire des membres du groupe. »", auteur: "Marc Lescarbot"}]},
-  {type: "textes", cols: [{titre: "Document D", texte: "« Dans les sociétés autochtone, les mères de clan choisissent les chefs et exercent une influence importante sur la vie politique. Les chefs ne décident pas seuls : ils consultent les autres membres du village et cherchent à obtenir un consensus avant d’agir. »", auteur: "Olive Patricia Dickason"}]}
+  {type: "textes", cols: [{titre: "Document A", texte: "« Chez les Hurons, les femmes aînées de chaque clan désignent les chefs et peuvent les remplacer si elles jugent qu’ils ne remplissent pas adéquatement leurs responsabilités. Les décisions importantes sont prises en conseil, où les chefs recherchent l’accord des membres de la communauté. »", source: "Adapté de Bruce G. Trigger, Les Enfants d'Aataentsic : l'histoire du peuple huron, Libre Expression, 1991."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Chez les [nations nomades], les chefs exercent une autorité limitée. Ils dirigent par persuasion et leur influence dépend de leur expérience, de leurs talents de chasseurs et de la confiance du groupe. »", source: "Adapté de Denys Delâge, Le Pays renversé, Boréal, 1991."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Chez les Montagnais et les Malécites, le chef possède une autorité limitée. Il dirige grâce à son expérience, à son courage et à sa générosité. Ses décisions ne s’imposent pas par la force, mais reposent sur la confiance et l’adhésion volontaire des membres du groupe. »", source: "Adapté de Olive Patricia Dickason, Les Premières Nations du Canada, Septentrion, 1996."}]},
+  {type: "textes", cols: [{titre: "Document D", texte: "« Dans les sociétés autochtone, les mères de clan choisissent les chefs et exercent une influence importante sur la vie politique. Les chefs ne décident pas seuls : ils consultent les autres membres du village et cherchent à obtenir un consensus avant d’agir. »", source: "Adapté de Roland Viau, Enfants du néant et mangeurs d'âmes, Boréal, 1997."}]}
  ],
  reponse: {type: "mettre-en-relation", elements: ["Algonquiens", "Iroquoiens"], double: true},
- guide: {type: "grille", entetes: ["Algonquiens", "Iroquoiens"], rangees: [["B et D", "A et C"]]}
+ guide: {type: "grille", entetes: ["Algonquiens", "Iroquoiens"], rangees: [["B et C", "A et D"]]},
+ updatedAt: "2026-07-01T17:38:42.276Z"
 },
 {
  id: "Q41",
