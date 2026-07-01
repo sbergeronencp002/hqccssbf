@@ -2629,10 +2629,10 @@ const QUESTIONS = [
  soustag: "Ligne du temps",
  enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période durant laquelle surviennent les faits présentés dans le document A.",
  aspects: [{aspect: "Exploration et occupation du territoire par les Français"}],
- documents: [{type: "textes", cols: [{titre: "Document A", texte: "« La rencontre diplomatique [...] jette les bases de l’alliance franco-amérindienne. Cette entente permet aux nations autochtones alliées aux Français de renforcer leur position face à leurs adversaires et de développer des relations commerciales avantageuses. »", source: "Raymonde Litalien (dir.) et Denis Vaugeois (dir.), Champlain : la naissance de l’Amérique française. Québec, Les Éditions du Septentrion, 2004."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« La rencontre diplomatique [...] jette les bases de l’alliance franco-amérindienne. Cette entente permet aux nations autochtones alliées aux Français de renforcer leur position face à leurs adversaires et de développer des relations commerciales avantageuses. »", source: "Adapté de Alain Beaulieu, Les Autochtones du Québec : des premières alliances aux revendications contemporaines, Fides, 2013."}]}],
  reponse: {type: "image", ref: "ligne_1550-1750.png"},
- guide: "B",
- _imgs: ["ligne_1550-1750.png"]
+ guide: "B.",
+ updatedAt: "2026-07-01T17:44:50.674Z"
 },
 {
  id: "Q71",
