@@ -1414,7 +1414,7 @@ const QUESTIONS = [
  enonce: "Les documents A à D présentent des faits relatifs aux premières tentatives d’établissement d’Européens en Amérique du Nord. Placez ces documents par ordre chronologique.",
  aspects: [{aspect: "Exploration et occupation du territoire par les Français"}, {aspect: "Premiers contacts"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document A", ref: "fondation_quebec_1608.png", soustitre: "Fondation de Québec et construction de l’Habitation", source: "Gravure de l'habitation de Québec, Samuel de Champlain, 1613. Bibliothèque et Archives Canada."}]},
+  {type: "textes", cols: [{titre: "Document A", ref: "fondation_quebec_1608.png", soustitre: "Fondation de Québec", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]},
   {
    type: "textes",
    cols: [
@@ -1430,7 +1430,7 @@ const QUESTIONS = [
  ],
  reponse: {type: "image", ref: "ligne_acBd.png"},
  guide: "C - D - B - A",
- updatedAt: "2026-07-01T17:53:50.729Z"
+ updatedAt: "2026-07-01T17:58:16.388Z"
 },
 {
  id: "Q3",
