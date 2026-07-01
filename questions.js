@@ -10992,7 +10992,7 @@ const QUESTIONS = [
  enonce: "Expliquez comment la situation économique des années 1870 amène le gouvernement fédéral à intervenir dans le développement économique du Dominion du Canada.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une difficulté économique du Dominion du Canada dans les années 1870\n• une mesure économique mise en place par le gouvernement de John A. Macdonald\n• une conséquence sur les manufactures canadiennes",
  aspects: [{aspect: "Politique nationale"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document A", ref: "tableau_crise_economique_1873_faillites.jpg", soustitre: "Évolution du nombre de faillites au Canada", source: "Adapté de Jean Hamelin et Yves Roby, Histoire économique du Québec, 1851-1896, Fides, 1971."}]},
+  {type: "textes", cols: [{titre: "Document A", ref: "tableau_crise_economique_1873_faillites.jpg", soustitre: "Évolution du nombre de faillites au Dominion du Canada", source: "Adapté de Jean Hamelin et Yves Roby, Histoire économique du Québec, 1851-1896, Fides, 1971."}]},
   {type: "textes", cols: [{titre: "Document B", ref: "tableau_tarifs_douaniers_pol_nationale.jpg", soustitre: "Évolution des tarifs douaniers au Canada", source: "Adapté de J. M. S. Careless, Canada: A Story of Challenge, Macmillan of Canada, 1970."}]},
   {type: "textes", cols: [{titre: "Document C", ref: "tableau_crise_economique_1873_production.jpg", soustitre: "Valeur de la production manufacturière au Canada", source: "Adapté de Paul-André Linteau, Histoire du Québec contemporain. Tome I : De la Confédération à la crise (1867-1929), Boréal, 1989."}]}
  ],
