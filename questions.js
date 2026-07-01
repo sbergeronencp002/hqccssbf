@@ -2275,9 +2275,10 @@ const QUESTIONS = [
  soustag: "Conséquence",
  enonce: "Indiquez une conséquence du partage des biens au sein des sociétés autochtones.",
  aspects: [{aspect: "Rapports sociaux chez les Autochtones"}],
- documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Le partage des biens constitue une valeur importante dans plusieurs sociétés autochtones. Les produits de la chasse, de la pêche et de la cueillette sont répartis entre les membres du groupe selon leurs besoins et les circonstances. »", auteur: "Cornelius J. Jaenen."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Le partage des biens constitue une valeur importante dans plusieurs sociétés autochtones. Les produits de la chasse, de la pêche et de la cueillette sont répartis entre les membres du groupe selon leurs besoins et les circonstances. »", source: "Adapté de Georges E. Sioui, Pour une histoire amérindienne de l'Amérique, Presses de l'Université Laval, 1999."}]}],
  reponse: {type: "lignes", nombre: 2},
- guide: "La subsistance de tous est favorisée ou les membres du groupe peuvent répondre à leurs besoins."
+ guide: "La subsistance de tous est favorisée ou les membres du groupe peuvent répondre à leurs besoins.",
+ updatedAt: "2026-07-01T17:41:24.483Z"
 },
 {
  id: "Q47",
