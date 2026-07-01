@@ -5683,6 +5683,15 @@ const REGLETTES = {
     colonnes: ["1 point", "0 point"],
     niveaux: [{desc: "L'élève situe le fait dans l'espace.", pts: 1}, {desc: "L'élève ne situe pas le fait dans l'espace.", pts: 0}],
     oi: "Situer dans l'espace"
+  },
+  "Q597": {
+    oi: "Déterminer des causes et des conséquences",
+    colonnes: ["2 points", "1 point", "0 point"],
+    niveaux: [
+      {pts: 2, desc: "L'élève détermine correctement la conséquence."},
+      {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."},
+      {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}
+    ]
   }
 }
 
@@ -5949,7 +5958,8 @@ const IMAGE_DB = {
   "tableau_revenus_federal_provincial.jpg": {src: "images/tableau_revenus_federal_provincial.jpg"},
   "arpentage_terres_ouest_canadien.jpg": {src: "images/arpentage_terres_ouest_canadien.jpg"},
   "metis_thomas_scott.jpg": {src: "images/metis_thomas_scott.jpg"},
-  "ecoles_catholiques_manitoba.jpg": {src: "images/ecoles_catholiques_manitoba.jpg"}
+  "ecoles_catholiques_manitoba.jpg": {src: "images/ecoles_catholiques_manitoba.jpg"},
+  "tableau_tarifs_douaniers_pol_nationale.jpg": {src: "images/tableau_tarifs_douaniers_pol_nationale.jpg"}
 }
 
 const QUESTIONS = [
@@ -26165,5 +26175,31 @@ const QUESTIONS = [
     reponse: {type: "tableau_2col"},
     updatedAt: "2026-06-30T20:20:53.015Z",
     _imgs: ["ecoles_catholiques_manitoba.jpg"]
+  },
+  {
+    id: "Q597",
+    niveau: 4,
+    oi: "Déterminer des causes et des conséquences",
+    periode: "P5 — 1840 – 1896",
+    points: 2,
+    soustag: "Conséquence",
+    enonce: "Indiquez une conséquence de la crise économique de 1873 sur les décisions du gouvernement canadien.",
+    aspects: [{aspect: "Politique nationale"}],
+    documents: [
+      {
+        type: "textes",
+        cols: [
+          {
+            titre: "Document A",
+            ref: "tableau_tarifs_douaniers_pol_nationale.jpg",
+            soustitre: "Évolution des tarifs douaniers au Canada",
+            source: "Adapté de Michael Bliss, Northern Enterprise: Five Centuries of Canadian Business, McClelland and Stewart, 1987."
+          }
+        ]
+      }
+    ],
+    reponse: {type: "lignes", nombre: 2},
+    guide: "Le gouvernement adopte de la Politique nationale.\nLe gouvernement hausse les tarifs douaniers.",
+    updatedAt: "2026-07-01T00:46:23.447Z"
   }
 ]
