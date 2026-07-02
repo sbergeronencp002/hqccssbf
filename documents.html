@@ -302,7 +302,6 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
 
 <script src="oi-config.js?v=1"></script>
 <script src="questions-io.js?v=3"></script>
-<script src="questions.js?v=1"></script>
 <script>
 // Token lu depuis le stockage partagé avec admin.html (jamais hardcodé)
 function getToken() {
@@ -386,7 +385,7 @@ function tileHtml(q) {
 </div>`;
 }
 
-(async function init() {
+async function init() {
   const questions = [];
   QUESTIONS.forEach(q => {
     const docImgs = [];
@@ -460,6 +459,31 @@ function tileHtml(q) {
     `<b>${Object.keys(imgMap).length}</b> images · <b>${sharedCount}</b> partagées · <b>${questions.length}</b> questions${orphans.length ? ` · <b style="color:#842029">${orphans.length} non utilisée${orphans.length>1?'s':''}</b>` : ''}`;
 
   fetchSizes(Object.keys(imgMap));
+}
+
+// Charge questions.js avec cache-bust (timestamp) plutôt qu'un <script src="?v=1">
+// statique : sinon le navigateur peut servir indéfiniment une copie mise en cache
+// sous cette URL fixe, masquant les questions/images ajoutées depuis.
+(function loadQuestionsThenInit() {
+  function fallback() {
+    const qs = document.createElement('script');
+    qs.src = 'questions.js?v=1&t=' + Date.now();
+    qs.onload = init;
+    document.head.appendChild(qs);
+  }
+  fetch('questions.js?t=' + Date.now(), { cache: 'no-store' })
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+    .then(src => {
+      let ok = false;
+      try {
+        const s = document.createElement('script');
+        s.textContent = src;
+        document.head.appendChild(s);
+        ok = (typeof QUESTIONS !== 'undefined');
+      } catch (e) { ok = false; }
+      if (ok) init(); else fallback();
+    })
+    .catch(fallback);
 })();
 
 function fetchSizes(imgs) {
