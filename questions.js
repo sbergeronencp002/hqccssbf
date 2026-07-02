@@ -1119,7 +1119,8 @@ const REGLETTES = {
  variante: "3 éléments — 2 liens",
  colonnes: ["3 points", "2 points", "1 point", "0 point"],
  niveaux: [{pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."}, {pts: 2, desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."}, {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."}, {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}]
-}
+},
+"Q607": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -10999,5 +11000,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 5},
  guide: "La crise économique des années 1870 entraîne un ralentissement de l'économie canadienne (une difficulté économique du Dominion du Canada). En réaction, le gouvernement adopte la Politique nationale (une mesure économique mise en place par le gouvernement). Cette politique favorise le développement des manufactures canadiennes grâce à des tarifs douaniers (une conséquence sur la production industrielle des manufactures canadiennes).",
  updatedAt: "2026-07-01T20:24:32.807Z"
+},
+{
+ id: "Q607",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Changement",
+ enonce: "Indiquez un changement dans les relations entre le gouvernement fédéral et les provinces concernant les champs de compétence après 1867.",
+ aspects: [{aspect: "Relations fédérales-provinciales"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« La Constitution partage les responsabilités entre le gouvernement fédéral et les provinces. Chacun doit exercer les pouvoirs qui lui sont confiés. »", soustitre: "Vers 1870", source: "Adapté de George-Étienne Cartier, Débats sur la Confédération, 1870."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les provinces doivent défendre leurs droits et leurs champs de compétence lorsque le gouvernement fédéral intervient dans leurs responsabilités. »", source: "Adapté d'Honoré Mercier, discours à la Conférence interprovinciale, 1887."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les provinces défendent davantage leurs champs de compétence.\nLes provinces défendent davantage leur autonomie.\nLes provinces réclament davantage le respect de leurs champs de compétence.\nLes provinces s'unissent pour défendre leurs champs de compétence.",
+ updatedAt: "2026-07-02T01:19:50.622Z"
 }
 ]
