@@ -1098,5 +1098,6 @@ const QUESTIONS = [
  aspects: [{aspect: "Politique nationale"}],
  enonce: "Expliquez comment l'entrée d'une nouvelle province dans le Dominion du Canada contribue à son développement territorial.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• le nom d'une nouvelle province intégrée au Dominion du Canada\n• un engagement du gouvernement fédéral envers cette province\n• une conséquence sur le développement territorial du Dominion",
  updatedAt: "2026-07-02T12:42:50.912Z"
-}
+},
+{id: "Q613", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P5 — 1840 – 1896", points: 2, soustag: "Changement", aspects: [{aspect: "Politique nationale"}, {aspect: "Relations fédérales-provinciales"}], enonce: "À partir des documents A et B, indiquez un changement dans l'organisation territoriale du Dominion du Canada entre 1867 et 1870.", updatedAt: "2026-07-02T12:50:19.751Z"}
 ]
