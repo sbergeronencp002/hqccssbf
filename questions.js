@@ -11121,13 +11121,13 @@ const QUESTIONS = [
  enonce: "Expliquez comment l'entrée d'une nouvelle province dans le Dominion du Canada contribue à son développement territorial.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• le nom d'une nouvelle province intégrée au Dominion du Canada\n• un engagement du gouvernement fédéral envers cette province\n• une conséquence sur le développement territorial du Dominion",
  aspects: [{aspect: "Politique nationale"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document A", ref: "recitus_canada_1871.jpg", soustitre: "Le territoire du Dominion du Canada en 1871", source: "Adapté de RÉCIT de l'univers social, Le territoire du Canada en 1871."}]},
+  {type: "textes", cols: [{titre: "Document A", ref: "recitus_canada_1871.jpg", source: "Adapté de RÉCIT de l'univers social, Le territoire du Dominion du Canada en 1871."}]},
   {type: "textes", cols: [{titre: "Document B", texte: "« Le gouvernement du Dominion s'engage à entreprendre la construction d'un chemin de fer reliant la Colombie-Britannique au réseau ferroviaire du Canada et à en assurer l'achèvement dans les dix années suivant l'Union. »", source: "Adapté des Conditions d'entrée de la Colombie-Britannique dans la Confédération, article 11, 1871."}]},
   {type: "textes", cols: [{titre: "Document C", ref: "tableau_reseau_ferroviaire.jpg", soustitre: "Évolution du réseau ferroviaire au Dominion du Canada", source: "Adapté de Statistique Canada, Statistiques historiques du Canada, Ottawa, 1983."}]}
  ],
  reponse: {type: "lignes", nombre: 5},
  guide: "La Colombie-Britannique entre dans le Dominion du Canada (le nom d'une nouvelle province). En échange, le gouvernement fédéral s'engage à construire un chemin de fer transcontinental (un engagement du gouvernement fédéral). Ce chemin de fer favorise le développement territorial du Dominion (une conséquence sur le développement territorial du Dominion).",
- updatedAt: "2026-07-02T12:42:50.912Z"
+ updatedAt: "2026-07-02T12:50:44.577Z"
 },
 {
  id: "Q613",
