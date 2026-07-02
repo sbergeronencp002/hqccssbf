@@ -1088,5 +1088,15 @@ const QUESTIONS = [
 {id: "Q608", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P5 — 1840 – 1896", points: 2, soustag: "Continuité", aspects: [{aspect: "Relations fédérales-provinciales"}], enonce: "Indiquez une continuité entre les soulèvements des Métis de 1869-1870 et de 1885.", updatedAt: "2026-07-02T01:21:51.946Z"},
 {id: "Q609", niveau: 4, oi: "Dégager des différences et des similitudes", periode: "P5 — 1840 – 1896", points: 2, soustag: "Convergence – 2 acteurs", aspects: [{aspect: "Politique nationale"}], enonce: "Les documents A et B présentent le point de vue de deux acteurs. Indiquez le point précis sur lequel ces deux acteurs sont d'accord.", updatedAt: "2026-07-02T12:15:53.052Z"},
 {id: "Q610", niveau: 4, oi: "Dégager des différences et des similitudes", periode: "P5 — 1840 – 1896", points: 2, soustag: "Divergence – 2 acteurs", aspects: [{aspect: "Politique nationale"}], enonce: "Les documents A et B présentent le point de vue de deux acteurs. Indiquez le point précis sur lequel ces deux acteurs sont en désaccord.", updatedAt: "2026-07-02T12:18:52.992Z"},
-{id: "Q611", niveau: 4, oi: "Dégager des différences et des similitudes", periode: "P5 — 1840 – 1896", points: 3, soustag: "Position – 3 acteurs", aspects: [{aspect: "Politique nationale"}], enonce: "Les documents A à C présentent la position de trois acteurs concernant la Politique nationale. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.", updatedAt: "2026-07-02T12:23:32.690Z"}
+{id: "Q611", niveau: 4, oi: "Dégager des différences et des similitudes", periode: "P5 — 1840 – 1896", points: 3, soustag: "Position – 3 acteurs", aspects: [{aspect: "Politique nationale"}], enonce: "Les documents A à C présentent la position de trois acteurs concernant la Politique nationale. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.", updatedAt: "2026-07-02T12:23:32.690Z"},
+{
+ id: "Q612",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P5 — 1840 – 1896",
+ points: 3,
+ aspects: [{aspect: "Politique nationale"}],
+ enonce: "Expliquez comment l'entrée d'une nouvelle province dans le Dominion du Canada contribue à son développement territorial.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• le nom d'une nouvelle province intégrée au Dominion du Canada\n• un engagement du gouvernement fédéral envers cette province\n• une conséquence sur le développement territorial du Dominion",
+ updatedAt: "2026-07-02T12:42:50.912Z"
+}
 ]
