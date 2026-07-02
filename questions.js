@@ -1134,6 +1134,12 @@ const REGLETTES = {
   {pts: 1, desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."},
   {pts: 0, desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."}
  ]
+},
+"Q612": {
+ oi: "Établir des liens de causalité",
+ variante: "3 éléments — 2 liens",
+ colonnes: ["3 points", "2 points", "1 point", "0 point"],
+ niveaux: [{pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."}, {pts: 2, desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."}, {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."}, {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}]
 }
 }
 
@@ -1410,7 +1416,9 @@ const IMAGE_DB = {
 "politique_nationale.jpg": {src: "images/politique_nationale.jpg"},
 "canadien_pacifique.jpg": {src: "images/canadien_pacifique.jpg"},
 "tableau_crise_economique_1873_faillites.jpg": {src: "images/tableau_crise_economique_1873_faillites.jpg"},
-"tableau_crise_economique_1873_production.jpg": {src: "images/tableau_crise_economique_1873_production.jpg"}
+"tableau_crise_economique_1873_production.jpg": {src: "images/tableau_crise_economique_1873_production.jpg"},
+"recitus_canada_1871.jpg": {src: "images/recitus_canada_1871.jpg"},
+"tableau_reseau_ferroviaire.jpg": {src: "images/tableau_reseau_ferroviaire.jpg"}
 }
 
 const QUESTIONS = [
@@ -11100,5 +11108,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 3},
  guide: "Richard Cartwright s'oppose à l'imposition de tarifs douaniers sur les produits manufacturés importés (la différence), tandis que John A. Macdonald et Samuel Leonard Tilley appuient l'imposition de tarifs douaniers (la similitude).",
  updatedAt: "2026-07-02T12:23:32.690Z"
+},
+{
+ id: "Q612",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P5 — 1840 – 1896",
+ points: 3,
+ enonce: "Expliquez comment l'entrée d'une nouvelle province dans le Dominion du Canada contribue à son développement territorial.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• le nom d'une nouvelle province intégrée au Dominion du Canada\n• un engagement du gouvernement fédéral envers cette province\n• une conséquence sur le développement territorial du Dominion",
+ aspects: [{aspect: "Politique nationale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "recitus_canada_1871.jpg", soustitre: "Le territoire du Dominion du Canada en 1871", source: "Adapté de RÉCIT de l'univers social, Le territoire du Canada en 1871."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Le gouvernement du Dominion s'engage à entreprendre la construction d'un chemin de fer reliant la Colombie-Britannique au réseau ferroviaire du Canada et à en assurer l'achèvement dans les dix années suivant l'Union. »", source: "Adapté des Conditions d'entrée de la Colombie-Britannique dans la Confédération, article 11, 1871."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "tableau_reseau_ferroviaire.jpg", soustitre: "Évolution du réseau ferroviaire au Dominion du Canada", source: "Adapté de Statistique Canada, Statistiques historiques du Canada, Ottawa, 1983."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "La Colombie-Britannique entre dans le Dominion du Canada (le nom d'une nouvelle province). En échange, le gouvernement fédéral s'engage à construire un chemin de fer transcontinental (un engagement du gouvernement fédéral). Ce chemin de fer favorise le développement territorial du Dominion (une conséquence sur le développement territorial du Dominion).",
+ updatedAt: "2026-07-02T12:42:50.912Z"
 }
 ]
