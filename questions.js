@@ -1427,7 +1427,7 @@ const QUESTIONS = [
  enonce: "Les documents A à D présentent des faits relatifs aux premières tentatives d’établissement d’Européens en Amérique du Nord. Placez ces documents par ordre chronologique.",
  aspects: [{aspect: "Exploration et occupation du territoire par les Français"}, {aspect: "Premiers contacts"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document A", ref: "fondation_quebec_1608.png", soustitre: "Fondation de Québec", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026.", auteur: ""}]},
+  {type: "textes", cols: [{titre: "Document A", ref: "fondation_quebec_1608.png", soustitre: "Fondation de Québec", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]},
   {
    type: "textes",
    cols: [
@@ -1438,12 +1438,12 @@ const QUESTIONS = [
     }
    ]
   },
-  {type: "textes", cols: [{titre: "Document C", texte: "« […] Giovanni Caboto, navigateur d’origine italienne, entreprend pour le compte de marchands anglais de Bristol un voyage d’exploration. Muni d’une autorisation du roi d’Angleterre, il cherche à découvrir un chemin [vers l’Asie] situé plus au nord que celui que Colomb avait pris. »", source: "Adapté de Jean-François CARDIN et autres, Le Québec : héritages et projets, 2e éd., Laval, Éditions HRW, 1994, p. 26."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« […] Giovanni Caboto, navigateur d’origine italienne, entreprend pour le compte de marchands anglais de Bristol un voyage d’exploration. Muni d’une autorisation du roi d’Angleterre, il cherche à découvrir un chemin [vers l’Asie] situé plus au nord que celui que Colomb avait pris. »", source: "Adapté de Jean-François CARDIN et autres, Le Québec : héritages et projets, 2e éd., Laval, HRW, 1994, p. 26."}]},
   {type: "textes", cols: [{titre: "Document D", texte: "« [Cartier] choisit […] l’embouchure de la rivière Cap-Rouge, où il établit la colonie de Charlesbourg-Royal. Il y fait construire deux forts. En explorant les lieux, les Français croient découvrir des feuilles d’or et des diamants. Devant l’hostilité grandissante des Amérindiens, Cartier décide de rentrer en France […] »", source: "Adapté d'Éric Thierry, Jacques Cartier, Éditions du Septentrion, 2005."}]}
  ],
  reponse: {type: "image", ref: "ligne_acBd.png"},
  guide: "C - D - B - A",
- updatedAt: "2026-07-01T17:58:16.388Z"
+ updatedAt: "2026-07-02T01:13:19.273Z"
 },
 {
  id: "Q3",
