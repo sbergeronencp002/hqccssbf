@@ -1142,7 +1142,8 @@ const REGLETTES = {
  niveaux: [{pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."}, {pts: 2, desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."}, {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."}, {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}]
 },
 "Q613": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
-"Q614": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
+"Q614": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
+"Q615": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1422,7 +1423,8 @@ const IMAGE_DB = {
 "recitus_canada_1871.jpg": {src: "images/recitus_canada_1871.jpg"},
 "tableau_reseau_ferroviaire.jpg": {src: "images/tableau_reseau_ferroviaire.jpg"},
 "recitus_canada_1867.jpg": {src: "images/recitus_canada_1867.jpg", w: 1200, h: 670},
-"recitus_canada_1870.jpg": {src: "images/recitus_canada_1870.jpg", w: 690, h: 385}
+"recitus_canada_1870.jpg": {src: "images/recitus_canada_1870.jpg", w: 690, h: 385},
+"recitus_canada_1873.jpg": {src: "images/recitus_canada_1873.jpg", w: 1200, h: 670}
 }
 
 const QUESTIONS = [
@@ -11157,5 +11159,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "La Colombie-Britannique entre dans le Dominion du Canada.\nLa Colombie-Britannique devient une province du Dominion du Canada.",
  updatedAt: "2026-07-02T12:52:48.662Z"
+},
+{
+ id: "Q615",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Changement",
+ enonce: "À partir des documents A et B, indiquez un changement dans l'organisation territoriale du Dominion du Canada au début des années 1870.",
+ aspects: [{aspect: "Politique nationale"}, {aspect: "Relations fédérales-provinciales"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "recitus_canada_1871.jpg", source: "Adapté de RÉCIT de l'univers social, Le territoire du Dominion du Canada en 1871."}]}, {type: "textes", cols: [{titre: "Document B", ref: "recitus_canada_1873.jpg", source: "Adapté de RÉCIT de l'univers social, Le territoire du Dominion du Canada en 1873."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "L'Île-du-Prince-Édouard entre dans le Dominion du Canada.\nL'Île-du-Prince-Édouard devient une province du Dominion du Canada.",
+ updatedAt: "2026-07-02T12:54:24.002Z"
 }
 ]
