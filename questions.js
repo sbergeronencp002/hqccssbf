@@ -1140,7 +1140,8 @@ const REGLETTES = {
  variante: "3 éléments — 2 liens",
  colonnes: ["3 points", "2 points", "1 point", "0 point"],
  niveaux: [{pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."}, {pts: 2, desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."}, {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."}, {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}]
-}
+},
+"Q613": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1418,7 +1419,9 @@ const IMAGE_DB = {
 "tableau_crise_economique_1873_faillites.jpg": {src: "images/tableau_crise_economique_1873_faillites.jpg"},
 "tableau_crise_economique_1873_production.jpg": {src: "images/tableau_crise_economique_1873_production.jpg"},
 "recitus_canada_1871.jpg": {src: "images/recitus_canada_1871.jpg"},
-"tableau_reseau_ferroviaire.jpg": {src: "images/tableau_reseau_ferroviaire.jpg"}
+"tableau_reseau_ferroviaire.jpg": {src: "images/tableau_reseau_ferroviaire.jpg"},
+"recitus_canada_1867.jpg": {src: "images/recitus_canada_1867.jpg", w: 1200, h: 670},
+"recitus_canada_1870.jpg": {src: "images/recitus_canada_1870.jpg", w: 690, h: 385}
 }
 
 const QUESTIONS = [
@@ -11125,5 +11128,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 5},
  guide: "La Colombie-Britannique entre dans le Dominion du Canada (le nom d'une nouvelle province). En échange, le gouvernement fédéral s'engage à construire un chemin de fer transcontinental (un engagement du gouvernement fédéral). Ce chemin de fer favorise le développement territorial du Dominion (une conséquence sur le développement territorial du Dominion).",
  updatedAt: "2026-07-02T12:42:50.912Z"
+},
+{
+ id: "Q613",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Changement",
+ enonce: "À partir des documents A et B, indiquez un changement dans l'organisation territoriale du Dominion du Canada entre 1867 et 1870.",
+ aspects: [{aspect: "Politique nationale"}, {aspect: "Relations fédérales-provinciales"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "recitus_canada_1867.jpg", source: "Adapté de RÉCIT de l'univers social, Le territoire du Dominion du Canada en 1867."}]}, {type: "textes", cols: [{titre: "Document B", ref: "recitus_canada_1870.jpg", source: "Adapté de RÉCIT de l'univers social, Le territoire du Dominion du Canada en 1870."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Le Manitoba devient une province du Dominion du Canada.\nLe Canada acquiert la Terre de Rupert et les Territoires du Nord-Ouest.\nLe territoire du Dominion du Canada s'agrandit vers l'ouest.",
+ updatedAt: "2026-07-02T12:50:19.751Z"
 }
 ]
