@@ -1085,5 +1085,6 @@ const QUESTIONS = [
  updatedAt: "2026-07-01T20:24:32.807Z"
 },
 {id: "Q607", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P5 — 1840 – 1896", points: 2, soustag: "Changement", aspects: [{aspect: "Relations fédérales-provinciales"}], enonce: "Indiquez un changement dans les relations entre le gouvernement fédéral et les provinces concernant les champs de compétence après 1867.", updatedAt: "2026-07-02T01:19:50.622Z"},
-{id: "Q608", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P5 — 1840 – 1896", points: 2, soustag: "Continuité", aspects: [{aspect: "Relations fédérales-provinciales"}], enonce: "Indiquez une continuité entre les soulèvements des Métis de 1869-1870 et de 1885.", updatedAt: "2026-07-02T01:21:51.946Z"}
+{id: "Q608", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P5 — 1840 – 1896", points: 2, soustag: "Continuité", aspects: [{aspect: "Relations fédérales-provinciales"}], enonce: "Indiquez une continuité entre les soulèvements des Métis de 1869-1870 et de 1885.", updatedAt: "2026-07-02T01:21:51.946Z"},
+{id: "Q609", niveau: 4, oi: "Dégager des différences et des similitudes", periode: "P5 — 1840 – 1896", points: 2, soustag: "Convergence – 2 acteurs", aspects: [{aspect: "Politique nationale"}], enonce: "Les documents A et B présentent le point de vue de deux acteurs. Indiquez le point précis sur lequel ces deux acteurs sont d'accord.", updatedAt: "2026-07-02T12:15:53.052Z"}
 ]
