@@ -1122,7 +1122,8 @@ const REGLETTES = {
 },
 "Q607": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q608": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
-"Q609": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]}
+"Q609": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
+"Q610": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -11053,5 +11054,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Ils sont d'accord pour protéger les manufactures canadiennes au moyen de tarifs douaniers.",
  updatedAt: "2026-07-02T12:15:53.052Z"
+},
+{
+ id: "Q610",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Divergence – 2 acteurs",
+ enonce: "Les documents A et B présentent le point de vue de deux acteurs. Indiquez le point précis sur lequel ces deux acteurs sont en désaccord.",
+ aspects: [{aspect: "Politique nationale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Les tarifs protecteurs enrichissent quelques manufacturiers, mais ils imposent des prix plus élevés à l'ensemble de la population et freinent le commerce. »", auteur: "Richard Cartwright", source: "Adapté de Richard Cartwright, discours à la Chambre des communes, 1879."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Pour assurer la prospérité du Dominion, il faut protéger les industries canadiennes contre la concurrence étrangère. Une protection convenable favorisera le travail et le développement des manufactures. »", auteur: "John A. Macdonald", source: "Adapté de John A. Macdonald, discours sur la Politique nationale, Chambre des communes, 1879."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Ils sont en désaccord sur l'imposition de tarifs douaniers protecteurs sur les produits manufacturés importés.",
+ updatedAt: "2026-07-02T12:18:52.992Z"
 }
 ]
