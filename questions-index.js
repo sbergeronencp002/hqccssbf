@@ -1083,5 +1083,6 @@ const QUESTIONS = [
  aspects: [{aspect: "Politique nationale"}],
  enonce: "Expliquez comment la situation économique des années 1870 amène le gouvernement fédéral à intervenir dans le développement économique du Dominion du Canada.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une difficulté économique du dominion dans les années 1870\n• une mesure économique mise en place par le gouvernement \n• une conséquence sur les manufactures canadiennes",
  updatedAt: "2026-07-01T20:24:32.807Z"
-}
+},
+{id: "Q607", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P5 — 1840 – 1896", points: 2, soustag: "Changement", aspects: [{aspect: "Relations fédérales-provinciales"}], enonce: "Indiquez un changement dans les relations entre le gouvernement fédéral et les provinces concernant les champs de compétence après 1867.", updatedAt: "2026-07-02T01:19:50.622Z"}
 ]
