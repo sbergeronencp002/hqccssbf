@@ -1120,7 +1120,8 @@ const REGLETTES = {
  colonnes: ["3 points", "2 points", "1 point", "0 point"],
  niveaux: [{pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."}, {pts: 2, desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."}, {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."}, {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}]
 },
-"Q607": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
+"Q607": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
+"Q608": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -11017,5 +11018,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les provinces défendent davantage leurs champs de compétence.\nLes provinces défendent davantage leur autonomie.\nLes provinces réclament davantage le respect de leurs champs de compétence.\nLes provinces s'unissent pour défendre leurs champs de compétence.",
  updatedAt: "2026-07-02T01:19:50.622Z"
+},
+{
+ id: "Q608",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Continuité",
+ enonce: "Indiquez une continuité entre les soulèvements des Métis de 1869-1870 et de 1885.",
+ aspects: [{aspect: "Relations fédérales-provinciales"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Nous demandons que nos terres soient reconnues et protégées afin d'assurer les droits de notre population dans ce territoire. »", soustitre: "Premier soulèvement (1869-1870)", source: "Adapté de la Liste des droits des Métis, Gouvernement provisoire de la Rivière-Rouge, 1869."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les Métis demandent encore que leurs titres de propriété soient reconnus et que leurs terres soient protégées par le gouvernement canadien. »", soustitre: "Deuxième soulèvement (1885)", source: "Adapté de la Pétition des Métis de la Saskatchewan au gouvernement du Canada, 1884."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les Métis revendiquent la reconnaissance de leurs droits territoriaux.",
+ updatedAt: "2026-07-02T01:21:51.946Z"
 }
 ]
