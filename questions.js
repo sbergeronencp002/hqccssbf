@@ -1121,7 +1121,8 @@ const REGLETTES = {
  niveaux: [{pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."}, {pts: 2, desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."}, {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."}, {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}]
 },
 "Q607": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
-"Q608": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]}
+"Q608": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
+"Q609": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -11035,5 +11036,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les Métis revendiquent la reconnaissance de leurs droits territoriaux.",
  updatedAt: "2026-07-02T01:21:51.946Z"
+},
+{
+ id: "Q609",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Convergence – 2 acteurs",
+ enonce: "Les documents A et B présentent le point de vue de deux acteurs. Indiquez le point précis sur lequel ces deux acteurs sont d'accord.",
+ aspects: [{aspect: "Politique nationale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Il est nécessaire de créer un système de protection qui permette aux industries canadiennes de se développer et d'approvisionner le marché intérieur. »", auteur: "John A. Macdonald", source: "Adapté de John A. Macdonald, discours sur la Politique nationale à la Chambre des communes, 1879."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Une protection raisonnable favorisera l'établissement des manufactures et procurera du travail à la population canadienne. »", auteur: "Samuel Leonard Tilley", source: "Adapté de Samuel Leonard Tilley, discours à la Chambre des communes, 1879."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Ils sont d'accord pour protéger les manufactures canadiennes au moyen de tarifs douaniers.",
+ updatedAt: "2026-07-02T12:15:53.052Z"
 }
 ]
