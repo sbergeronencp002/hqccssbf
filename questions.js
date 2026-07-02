@@ -1123,7 +1123,18 @@ const REGLETTES = {
 "Q607": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q608": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
 "Q609": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
-"Q610": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]}
+"Q610": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]},
+"Q611": {
+ oi: "Dégager des différences et des similitudes",
+ variante: "acteur-positions",
+ colonnes: ["3 points", "2 points", "1 point", "0 point"],
+ niveaux: [
+  {pts: 3, desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."},
+  {pts: 2, desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."},
+  {pts: 1, desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."},
+  {pts: 0, desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."}
+ ]
+}
 }
 
 const IMAGE_DB = {
@@ -11071,5 +11082,23 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Ils sont en désaccord sur l'imposition de tarifs douaniers protecteurs sur les produits manufacturés importés.",
  updatedAt: "2026-07-02T12:18:52.992Z"
+},
+{
+ id: "Q611",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P5 — 1840 – 1896",
+ points: 3,
+ soustag: "Position – 3 acteurs",
+ enonce: "Les documents A à C présentent la position de trois acteurs concernant la Politique nationale. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+ aspects: [{aspect: "Politique nationale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Pour assurer la prospérité du Dominion, il faut protéger les industries canadiennes contre la concurrence étrangère. »", auteur: "John A. Macdonald", source: "Adapté de John A. Macdonald, discours sur la Politique nationale, Chambre des communes, 1879."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Une protection raisonnable favorisera le développement des manufactures canadiennes et procurera du travail à la population. »", auteur: "Samuel Leonard Tilley", source: "Adapté de Samuel Leonard Tilley, discours à la Chambre des communes, 1879."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Les tarifs protecteurs imposent des prix plus élevés aux consommateurs et nuisent au commerce du Dominion. »", auteur: "Richard Cartwright", source: "Adapté de Richard Cartwright, discours à la Chambre des communes, 1879."}]}
+ ],
+ reponse: {type: "lignes", nombre: 3},
+ guide: "Richard Cartwright s'oppose à l'imposition de tarifs douaniers sur les produits manufacturés (la différence), tandis que John A. Macdonald et Samuel Leonard Tilley appuient l'imposition de tarifs douaniers (la smilitude).",
+ updatedAt: "2026-07-02T12:23:06.424Z"
 }
 ]
