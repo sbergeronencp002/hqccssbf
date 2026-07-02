@@ -11098,7 +11098,7 @@ const QUESTIONS = [
   {type: "textes", cols: [{titre: "Document C", texte: "« Les tarifs protecteurs imposent des prix plus élevés aux consommateurs et nuisent au commerce du Dominion. »", auteur: "Richard Cartwright", source: "Adapté de Richard Cartwright, discours à la Chambre des communes, 1879."}]}
  ],
  reponse: {type: "lignes", nombre: 3},
- guide: "Richard Cartwright s'oppose à l'imposition de tarifs douaniers sur les produits manufacturés (la différence), tandis que John A. Macdonald et Samuel Leonard Tilley appuient l'imposition de tarifs douaniers (la smilitude).",
- updatedAt: "2026-07-02T12:23:06.424Z"
+ guide: "Richard Cartwright s'oppose à l'imposition de tarifs douaniers sur les produits manufacturés importés (la différence), tandis que John A. Macdonald et Samuel Leonard Tilley appuient l'imposition de tarifs douaniers (la similitude).",
+ updatedAt: "2026-07-02T12:23:32.690Z"
 }
 ]
