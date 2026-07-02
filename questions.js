@@ -3373,7 +3373,7 @@ const QUESTIONS = [
  aspects: [{aspect: "Premiers contacts"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", texte: "« Au cours du 15e siècle, plusieurs routes commerciales utilisées par les marchands européens deviennent plus difficiles d’accès. Certains produits provenant de l’Orient circulent moins facilement vers l’Europe. »", source: "Adapté de Marcel Trudel, Initiation à la Nouvelle-France : histoire et institutions, Montréal, Holt, Rinehart et Winston, 1968."}]},
-  {type: "textes", cols: [{titre: "Document B", ref: "voyages_exploration.png", source: "Récitus."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "voyages_exploration.png", source: "Adapté de RÉCIT de l'univers social, Les voyages d'explorateurs.", auteur: ""}]},
   {type: "textes", cols: [{titre: "Document C", texte: "« Les royaumes européens cherchent à développer de nouvelles voies maritimes afin d’accroître leurs échanges commerciaux avec les régions orientales. »", source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 1 : Des origines à 1791, Québec, Septentrion, 1995."}]}
  ],
  reponse: {type: "lignes", nombre: 5},
