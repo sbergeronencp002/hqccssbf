@@ -46,6 +46,12 @@ const imageFiles = new Set(
   readdirSync(join(ROOT, 'images')).filter((f) => !f.startsWith('.'))
 );
 
+const VALID_REPONSE_TYPES = new Set([
+  'lignes', 'image', 'tableau', 'grille', 'tableau_2col', 'tableau_3col',
+  'cause-consequence', 'mettre-en-relation', 'situer-dans-lespace', 'avant-apres',
+]);
+const VALID_GUIDE_TYPES = new Set(['grille', 'tableau']);
+
 const oiKeys = new Set(Object.keys(OI_CONFIG));
 const periodeToNiveau = {};
 for (const [niv, periodes] of Object.entries(PERIODES_PAR_NIVEAU)) {
@@ -64,6 +70,19 @@ for (const q of QUESTIONS) {
   else seenIds.add(q.id);
 
   if (!oiKeys.has(q.oi)) err(`${tag} : OI inconnue « ${q.oi} » (absente d'oi-config.js)`);
+  else if (q.soustag) {
+    const validSoustags = OI_CONFIG[q.oi].soustags || [];
+    if (!validSoustags.includes(q.soustag)) {
+      err(`${tag} : sous-tag « ${q.soustag} » absent de la liste de « ${q.oi} » dans oi-config.js`);
+    }
+  }
+
+  if (q.reponse && typeof q.reponse === 'object' && !VALID_REPONSE_TYPES.has(q.reponse.type)) {
+    err(`${tag} : type de réponse inconnu « ${q.reponse.type} »`);
+  }
+  if (q.guide && typeof q.guide === 'object' && !VALID_GUIDE_TYPES.has(q.guide.type)) {
+    err(`${tag} : type de guide inconnu « ${q.guide.type} »`);
+  }
 
   const niv = String(q.niveau);
   if (!PERIODES_PAR_NIVEAU[niv]) {

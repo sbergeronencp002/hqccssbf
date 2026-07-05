@@ -152,6 +152,10 @@ header nav a:hover { background:rgba(255,255,255,.12); color:#fff; }
 function rvEscLine(s) {
   return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
+// Échappe pour un attribut HTML entre guillemets doubles (ex. alt).
+function rvEscAttr(s) {
+  return rvEscLine(s).replace(/"/g,'&quot;');
+}
 function rvBoldify(s) {
   return s.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 }
@@ -529,7 +533,7 @@ function rvRenderDoc(d) {
         h += '<div style="font-size:0.75rem;color:var(--ink-2);line-height:1.5">' + rvFormatTexte(col.texte) + '</div>';
       } else if(col.ref) {
         const img2 = IMAGE_DB[col.ref];
-        if(img2) h += '<div class="doc-img-tile" style="max-width:100%" onclick="rvOpenLightbox(\'' + img2.src + '\')"><img src="' + img2.src + '" alt="' + rvEscLine(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:180px;object-fit:contain" draggable="false"></div>';
+        if(img2) h += '<div class="doc-img-tile" style="max-width:100%" onclick="rvOpenLightbox(\'' + img2.src + '\')"><img src="' + img2.src + '" alt="' + rvEscAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:180px;object-fit:contain" draggable="false"></div>';
       }
       if(col.auteur) h += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + rvEscLine(col.auteur) + '</div>';
       if(col.source) h += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + rvEscLine(col.source) + '</div>';
@@ -549,7 +553,7 @@ function rvRenderDoc(d) {
       const img = IMAGE_DB[col.ref];
       if(!img) return;
       html += '<div class="doc-img-tile" onclick="rvOpenLightbox(\'' + img.src + '\')">';
-      html += '<img src="' + img.src + '" alt="' + rvEscLine(col.titre||col.ref||'Document') + '" draggable="false">';
+      html += '<img src="' + img.src + '" alt="' + rvEscAttr(col.titre||col.ref||'Document') + '" draggable="false">';
       if(col.titre) html += '<div class="doc-img-tile-label">' + rvEscLine(col.titre) + '</div>';
       if(col.soustitre) html += '<div class="doc-img-tile-sub">' + rvEscLine(col.soustitre) + '</div>';
       html += '</div>';
@@ -560,7 +564,7 @@ function rvRenderDoc(d) {
   const img = IMAGE_DB[d.ref];
   if(img) {
     let html = '<div class="doc-img-tiles"><div class="doc-img-tile" onclick="rvOpenLightbox(\'' + img.src + '\')">';
-    html += '<img src="' + img.src + '" alt="' + rvEscLine(d.titre||d.ref||'Document') + '" style="max-width:200px;max-height:200px;object-fit:contain" draggable="false">';
+    html += '<img src="' + img.src + '" alt="' + rvEscAttr(d.titre||d.ref||'Document') + '" style="max-width:200px;max-height:200px;object-fit:contain" draggable="false">';
     if(d.titre) html += '<div class="doc-img-tile-label">' + rvEscLine(d.titre) + '</div>';
     html += '</div></div>';
     return html;
@@ -576,13 +580,13 @@ function rvRenderGuide(q) {
     const TD = 'border:0.5px solid var(--border);padding:4px 10px;font-size:0.8rem;background:#fff';
     let html = '<table style="border-collapse:collapse;margin-top:2px">';
     if(q.guide.type === 'grille') {
-      html += '<tr>' + q.guide.entetes.map(h => `<th style="${TH}">${rvEscLine(h)}</th>`).join('') + '</tr>';
-      q.guide.rangees.forEach(row => {
+      html += '<tr>' + (q.guide.entetes||[]).map(h => `<th style="${TH}">${rvEscLine(h)}</th>`).join('') + '</tr>';
+      (q.guide.rangees||[]).forEach(row => {
         html += '<tr>' + row.map((cell, ci) => `<td style="${TD}${ci===0?';font-weight:500':''}">${rvEscLine(cell)}</td>`).join('') + '</tr>';
       });
     } else {
       html += `<tr><th style="${TH}"></th><th style="${TH}">Document</th></tr>`;
-      q.guide.lignes.forEach(l => {
+      (q.guide.lignes||[]).forEach(l => {
         html += `<tr><td style="${TD};font-weight:500">${rvEscLine(l.label)}</td><td style="${TD};text-align:center">${rvEscLine(l.valeur)}</td></tr>`;
       });
     }
@@ -749,7 +753,7 @@ document.addEventListener('keydown', e => {
   let startX = 0, startY = 0, dragging = false;
   const wrap = document.getElementById('rv-card-wrap');
   wrap.addEventListener('pointerdown', e => {
-    if(e.target.closest('textarea, input, button, select, a')) return;
+    if(e.target.closest('textarea, input, button, select, a')) { dragging = false; return; }
     dragging = true; startX = e.clientX; startY = e.clientY;
   });
   function endDrag(e) {

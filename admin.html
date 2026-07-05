@@ -1110,21 +1110,27 @@ async function supprimerQuestion() {
       currentQuestions = currentQuestions.filter(q => q.id !== idSupp);
       delete currentReglettes[idSupp];
 
-      const encoded = utf8b64(generateQuestionsJs(currentQuestions, currentReglettes, currentImageDb));
-      const putResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js`, {
-        method: 'PUT',
-        headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: `Supprimer ${idSupp}`, content: encoded, sha: questionsFileSha, branch: BRANCH })
-      });
-      if(!putResp.ok) {
+      let putResp, putResult;
+      for(let attempt = 0; attempt < 3; attempt++) {
+        if(attempt > 0) {
+          await fetchFreshState(token);
+          currentQuestions = currentQuestions.filter(q => q.id !== idSupp);
+          delete currentReglettes[idSupp];
+        }
+        const encoded = utf8b64(generateQuestionsJs(currentQuestions, currentReglettes, currentImageDb));
+        putResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js`, {
+          method: 'PUT',
+          headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: `Supprimer ${idSupp}`, content: encoded, sha: questionsFileSha, branch: BRANCH })
+        });
+        if(putResp.ok) { putResult = await putResp.json(); break; }
         let m = putResp.status;
         try { const e = await putResp.json(); m = e.message || m; } catch(_) {}
-        if(putResp.status === 409 || String(m).toLowerCase().includes('fast forward') || String(m).toLowerCase().includes('conflict'))
-          throw new Error('Conflit : un·e collègue a publié en même temps. Rechargez (F5) et réessayez.');
-        throw new Error(m);
+        const isConflict = putResp.status === 409 || String(m).toLowerCase().includes('fast forward') || String(m).toLowerCase().includes('conflict');
+        if(!isConflict || attempt === 2) throw new Error(isConflict ? 'Conflit persistant après 3 tentatives. Rechargez (F5) et réessayez.' : m);
+        await new Promise(r => setTimeout(r, 800 * (attempt + 1)));
       }
-      const result = await putResp.json();
-      questionsFileSha = result.content.sha;
+      questionsFileSha = putResult.content.sha;
       publishIndex(token, `Supprimer ${idSupp}`);  // fire-and-forget
     }
 
@@ -1210,6 +1216,11 @@ async function uploadImage() {
     // SHA d'un éventuel fichier existant de même nom (pour l'écraser proprement).
     const existingSha = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/images/${name}?ref=${BRANCH}&t=${Date.now()}`, { headers:{ Authorization:`token ${token}` } })
       .then(r => r.ok ? r.json().then(d => d.sha || '') : '').catch(() => '');
+    if(existingSha && !confirm(`« ${name} » existe déjà — l'écraser ? Toutes les questions qui l'utilisent afficheront la nouvelle image.`)) {
+      statusEl.textContent = '✗ Téléversement annulé.';
+      btn.disabled = false;
+      return;
+    }
     const putResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/images/${name}`, {
       method:'PUT',
       headers:{ Authorization:`token ${token}`, 'Content-Type':'application/json' },
@@ -1402,7 +1413,9 @@ async function loadQuestionsJs() {
     const nums = currentQuestions.map(q => parseInt(q.id.replace(/\D/g,''))).filter(n=>!isNaN(n));
     const nextNum = nums.length ? Math.max(...nums) + 1 : 1;
     const nextId = 'Q' + nextNum;
-    document.getElementById('q-id').value = nextId;
+    // Ne pas écraser l'id en cours d'édition (ex. token rechargé pendant une modification) :
+    // sinon la question éditée serait republiée sous un nouvel id, désynchronisant réglette/index.
+    if(!editingId) document.getElementById('q-id').value = nextId;
     document.getElementById('next-id-badge').textContent = nextId;
     if(!tokenKo) {
       document.getElementById('token-status').textContent = '✓ Connecté';
@@ -2011,6 +2024,19 @@ function validateForm() {
   if(repType === 'tableau' && !document.getElementById('rep-lignes')?.value.trim()) errors.push('Lignes du tableau réponse vides');
   const oi = document.getElementById('q-oi').value;
   if((REGLETTES_PRESET[oi] || []).length > 0 && document.getElementById('reg-preset').value === '') errors.push('Réglette non sélectionnée');
+  // Chaque bloc/colonne image doit avoir un fichier sélectionné, sinon le document
+  // publié est vide (ref:'') et n'affiche rien sur le site public.
+  document.querySelectorAll('#docs-list > .block').forEach(docEl => {
+    if(docEl.dataset.type === 'image' && !docEl.querySelector('[id$="-ref"]')?.value) {
+      errors.push('Image de document non sélectionnée');
+    } else if(docEl.dataset.type === 'textes-image') {
+      docEl.querySelectorAll('.col-block').forEach(colEl => {
+        if(colEl.dataset.type !== 'texte' && !colEl.querySelector('[id$="-ref"]')?.value) {
+          errors.push('Image de document non sélectionnée');
+        }
+      });
+    }
+  });
   return errors;
 }
 
@@ -2064,7 +2090,10 @@ async function publier() {
         return;
       }
 
-      if(!q.guide && !confirm('⚠️ Cette question n\'a pas de guide de correction.\n\nPublier quand même ?')) return;
+      const wPubWarnings = [];
+      if(!q.guide) wPubWarnings.push('• Cette question n\'a pas de guide de correction.');
+      if(document.getElementById('rep-type').value === 'grille' && q.reponse === false) wPubWarnings.push('• Le tableau (grille) de réponse est vide — aucune réponse ne sera affichée.');
+      if(wPubWarnings.length && !confirm('⚠️ Avertissements avant publication :\n\n' + wPubWarnings.join('\n') + '\n\nPublier quand même ?')) return;
 
       const resp = await fetch(workerUrl + '/publish', {
         method: 'POST',
@@ -2085,7 +2114,7 @@ async function publier() {
       } else {
         currentQuestions.push(q);
       }
-      currentReglettes[q.id] = r;
+      if(r != null) currentReglettes[q.id] = r;
       questionsFileSha = data.sha;
 
       document.getElementById('q-id').value = data.nextId;
@@ -2163,6 +2192,7 @@ async function publier() {
 
     const pubWarnings = [];
     if(!q.guide) pubWarnings.push('• Cette question n\'a pas de guide de correction.');
+    if(document.getElementById('rep-type').value === 'grille' && q.reponse === false) pubWarnings.push('• Le tableau (grille) de réponse est vide — aucune réponse ne sera affichée.');
     if(pubWarnings.length && !confirm('⚠️ Avertissements avant publication :\n\n' + pubWarnings.join('\n') + '\n\nPublier quand même ?')) {
       btn.disabled = false; btn.textContent = 'Publier sur GitHub'; return;
     }
@@ -2194,7 +2224,7 @@ async function publier() {
         } else {
           throw new Error(`L'identifiant ${q.id} a été ajouté par un autre utilisateur entre-temps. Rechargez (F5).`);
         }
-        currentReglettes[q.id] = r;
+        if(r !== null) currentReglettes[q.id] = r;
         refsUsed.forEach(ref => { if(!currentImageDb[ref]) currentImageDb[ref] = { src: 'images/' + ref }; });
       }
       const encoded2 = utf8b64(generateQuestionsJs(currentQuestions, currentReglettes, currentImageDb));

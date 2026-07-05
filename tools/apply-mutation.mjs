@@ -45,7 +45,7 @@ QUESTIONS.forEach(q => {
 
 // ── Sérialiseur (copie exacte de questions-io.js) ────────────────────────────
 function _isScalar(v) {
-  return v === null || v === false || v === true || typeof v === 'number' || typeof v === 'string';
+  return v === null || v === undefined || v === false || v === true || typeof v === 'number' || typeof v === 'string';
 }
 function _isFlat(v) {
   if (_isScalar(v)) return true;
@@ -54,7 +54,7 @@ function _isFlat(v) {
 }
 function serializeValue(v, indent = 0) {
   const pad = '  '.repeat(indent), pad1 = '  '.repeat(indent + 1);
-  if (_isScalar(v)) return v === null ? 'null' : typeof v === 'string' ? JSON.stringify(v) : String(v);
+  if (_isScalar(v)) return v === null || v === undefined ? 'null' : typeof v === 'string' ? JSON.stringify(v) : String(v);
   if (Array.isArray(v)) {
     if (!v.length) return '[]';
     if (v.every(_isFlat)) {

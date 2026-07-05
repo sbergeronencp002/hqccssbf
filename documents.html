@@ -622,6 +622,12 @@ async function deleteOrphan(img) {
   const btn = document.querySelector(`#orphan-${CSS.escape(img)} .btn-delete`);
   if (btn) { btn.disabled = true; btn.textContent = '⏳…'; }
   try {
+    // 0. Revérifier sur l'état FRAIS de questions.js (pas l'instantané figé au chargement
+    //    de la page) qu'aucune question n'a été publiée entre-temps avec cette image.
+    if (!(await isImageStillOrphan(img))) {
+      throw new Error(img + ' est maintenant utilisée par une question — rafraîchissez la page.');
+    }
+
     // 1. Get SHA of image file
     const r1 = await fetch(API + 'images/' + encodeURIComponent(img), {
       headers: {Authorization: 'token ' + requireToken()}
@@ -663,6 +669,7 @@ async function deleteOrphan(img) {
 
 let replaceTarget = '';
 let replaceB64 = '';
+let replaceBytes = 0;
 
 function openReplace(img) {
   replaceTarget = img;
@@ -687,6 +694,11 @@ function handleReplaceFile(file) {
   if (!file) return;
   const status = document.getElementById('replace-status');
   status.textContent = '';
+  if (!/^image\/(png|jpe?g)$/i.test(file.type)) {
+    status.className = 'replace-status err';
+    status.textContent = '✗ Fichier non pris en charge — déposez une image PNG ou JPEG.';
+    return;
+  }
   const reader = new FileReader();
   reader.onload = function(ev) {
     const img = new Image();
@@ -706,6 +718,7 @@ function handleReplaceFile(file) {
       const dataUrl = isJpg ? canvas.toDataURL('image/jpeg', 0.85) : canvas.toDataURL('image/png');
       replaceB64 = dataUrl.split(',')[1];
       const bytes = Math.round(replaceB64.length * 3 / 4);
+      replaceBytes = bytes;
       const ko = Math.round(bytes / 1024);
       const cls = ko < 400 ? 'ok' : ko < 800 ? 'warn' : 'big';
       document.getElementById('replace-preview-img').src = dataUrl;
@@ -745,6 +758,8 @@ async function confirmReplace() {
       el.src = newSrc;
     });
     if (currentLbImg === replaceTarget) document.getElementById('lb-img').src = newSrc;
+    sizeCache[replaceTarget] = replaceBytes;
+    applySizeBadge(replaceTarget, replaceBytes);
     status.className = 'replace-status ok';
     status.textContent = '✓ Image remplacée. Le cache GitHub Pages peut prendre quelques minutes.';
   } catch(err) {
@@ -799,6 +814,7 @@ async function confirmRename() {
   status.className = 'rename-status';
   status.textContent = 'Récupération du fichier…';
 
+  const oldNameForDelete = renameTarget;
   try {
     // 1. Get old file (SHA + content)
     const r1 = await fetch(API + 'images/' + encodeURIComponent(renameTarget), {
@@ -838,14 +854,22 @@ async function confirmRename() {
       return did;
     }, 'Rename ' + renameTarget + ' → ' + newName + ' (refs)');
 
+    // Les refs de questions.js pointent déjà vers newName et le nouveau fichier existe :
+    // refléter l'état local dès maintenant, avant la suppression de l'ancien fichier — si
+    // celle-ci échoue ensuite, le pire résiduel est un ancien fichier orphelin récupérable
+    // via cette même page, pas une incohérence entre le DOM et questions.js.
+    updateDomAfterRename(renameTarget, newName);
+    renameTarget = newName;
+    document.getElementById('rename-old-label').textContent = 'Image actuelle : ' + newName;
+
     // 4. Supprimer l'ancien fichier image (en dernier).
-    status.textContent = 'Suppression de ' + renameTarget + '…';
-    const r3 = await fetch(API + 'images/' + encodeURIComponent(renameTarget), {
+    status.textContent = 'Suppression de ' + oldNameForDelete + '…';
+    const r3 = await fetch(API + 'images/' + encodeURIComponent(oldNameForDelete), {
       method: 'DELETE',
       headers: {Authorization: 'token ' + requireToken(), 'Content-Type': 'application/json'},
-      body: JSON.stringify({message: 'Rename ' + renameTarget + ' → ' + newName, sha: d1.sha})
+      body: JSON.stringify({message: 'Rename ' + oldNameForDelete + ' → ' + newName, sha: d1.sha})
     });
-    if (!r3.ok) throw new Error('Échec suppression ' + renameTarget + ' (' + r3.status + ')');
+    if (!r3.ok) throw new Error('Fichier renommé, mais échec de suppression de l\'ancien ' + oldNameForDelete + ' (' + r3.status + ') — orphelin à nettoyer manuellement.');
 
     if (refsChanged) {
       status.className = 'rename-status ok';
@@ -854,9 +878,6 @@ async function confirmRename() {
       status.className = 'rename-status warn';
       status.textContent = '✓ Fichier renommé (aucune référence trouvée dans questions.js).';
     }
-    updateDomAfterRename(renameTarget, newName);
-    renameTarget = newName;
-    document.getElementById('rename-old-label').textContent = 'Image actuelle : ' + newName;
     setTimeout(closeRenameModal, 1800);
 
   } catch(err) {
@@ -900,6 +921,18 @@ function updateDomAfterRename(oldName, newName) {
   if (imgMap[oldName]) { imgMap[newName] = imgMap[oldName]; delete imgMap[oldName]; }
   // Update sizeCache
   if (sizeCache[oldName]) { sizeCache[newName] = sizeCache[oldName]; delete sizeCache[oldName]; }
+  // Update allImgGroups (sinon un re-tri régénère la grille avec l'ancien nom, image cassée)
+  const grp = allImgGroups.find(([name]) => name === oldName);
+  if (grp) grp[0] = newName;
+  // Update la ligne "orpheline" correspondante (id, libellé, bouton Supprimer)
+  const orphanRow = document.getElementById('orphan-' + CSS.escape(oldName));
+  if (orphanRow) {
+    orphanRow.id = 'orphan-' + CSS.escape(newName);
+    const label = orphanRow.querySelector('.img-label');
+    if (label) label.textContent = newName.replace(/\.[^.]+$/, '');
+    const delBtn = orphanRow.querySelector('.btn-delete');
+    if (delBtn) delBtn.setAttribute('onclick', 'deleteOrphan(' + JSON.stringify(newName) + ')');
+  }
   // Update les refs en mémoire des questions (sinon l'édition de sous-titre casse après un rename)
   Object.values(qById).forEach(q => {
     (q.documents || []).forEach(doc => (doc.cols || []).forEach(col => {
@@ -946,8 +979,8 @@ async function applySourceToAll() {
         for (const doc of (q.documents || [])) {
           for (const col of (doc.cols || [])) {
             if (col.ref !== img) continue;
-            if (auteur !== undefined && col.auteur !== auteur) { col.auteur = auteur; modified = true; }
-            if (source !== undefined && col.source !== source) { col.source = source; modified = true; }
+            if (auteur !== '' && col.auteur !== auteur) { col.auteur = auteur; modified = true; }
+            if (source !== '' && col.source !== source) { col.source = source; modified = true; }
           }
         }
       }
@@ -960,7 +993,10 @@ async function applySourceToAll() {
         if (!q) return;
         for (const doc of (q.documents || [])) {
           for (const col of (doc.cols || [])) {
-            if (col.ref === img) { col.auteur = auteur; col.source = source; }
+            if (col.ref === img) {
+              if (auteur !== '') col.auteur = auteur;
+              if (source !== '') col.source = source;
+            }
           }
         }
       });
@@ -1000,9 +1036,29 @@ function setSoustitreLocal(id, img, val) {
 }
 
 // Lecture fraîche de questions.js → mutation ciblée → réécriture (PUT), avec 1 retry sur conflit SHA
+// Relit questions.js à l'instant présent et retourne vrai si aucune question ne
+// référence encore `img` (dans un document ou en réponse-image) — utilisé pour
+// revérifier juste avant une suppression irréversible, au cas où une publication
+// concurrente (autre onglet / admin.html) aurait entre-temps réutilisé l'image.
+async function isImageStillOrphan(img) {
+  const rq = await fetch(API + 'questions.js?t=' + Date.now(), { cache: 'no-store' });
+  if (!rq.ok) throw new Error('Lecture questions.js (' + rq.status + ')');
+  const content = await rq.text();
+  let parsed;
+  try {
+    parsed = new Function(content + '\n return { QUESTIONS };')();
+  } catch(e) {
+    throw new Error('questions.js illisible : ' + e.message);
+  }
+  return !parsed.QUESTIONS.some(q =>
+    (q.documents || []).some(d => (d.cols || []).some(c => c.ref === img)) ||
+    (q.reponse && q.reponse.ref === img)
+  );
+}
+
 async function applyQuestionsEdit(mutate, commitMsg) {
   const token = requireToken();
-  for (let attempt = 0; attempt < 2; attempt++) {
+  for (let attempt = 0; attempt < 3; attempt++) {
     const rq = await fetch(API + 'questions.js?t=' + Date.now(), {
       headers: {Authorization: 'token ' + token}, cache: 'no-store'
     });
@@ -1039,7 +1095,7 @@ async function applyQuestionsEdit(mutate, commitMsg) {
       body: JSON.stringify({message: commitMsg, content: btoa(binary), sha: dq.sha})
     });
     if (rp.ok) return true;
-    if (rp.status === 409 && attempt === 0) continue; // conflit SHA → on relit et on réessaie
+    if (rp.status === 409 && attempt < 2) continue; // conflit SHA → on relit et on réessaie
     throw new Error('Échec écriture questions.js (' + rp.status + ')');
   }
   throw new Error('Conflit persistant — réessayez.');

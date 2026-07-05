@@ -256,7 +256,7 @@ function resetFilters() {
     const el = document.getElementById(id);
     if(el) el.value = '';
   });
-  applyFilters();
+  onNiveauChange();
 }
 
 function buildReglettHTML(q) {
@@ -273,7 +273,7 @@ function buildReglettHTML(q) {
     const S4 = S + ';border-left:none';
     return `<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%">
       <tr>
-        <td style="${SB};width:22%" rowspan="6">${r.oi}</td>
+        <td style="${SB};width:22%" rowspan="6">${escLine(r.oi)}</td>
         <td style="${S2};width:26%" rowspan="3">L'élève précise les trois éléments</td>
         <td style="${S3};width:35%">et établit correctement deux liens de causalité.</td>
         <td style="${S4};width:17%">3 points</td>
@@ -308,7 +308,7 @@ function buildReglettHTML(q) {
     const S4 = S + ';border-left:none';
     return `<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%">
       <tr>
-        <td style="${SB};width:22%" rowspan="5">${r.oi}</td>
+        <td style="${SB};width:22%" rowspan="5">${escLine(r.oi)}</td>
         <td style="${S2};width:43%" rowspan="4">L'élève nomme correctement l'acteur qui présente une position différente</td>
         <td style="${S3}">et présente correctement les deux positions.</td>
         <td style="${S4};width:17%">3 points</td>
@@ -338,7 +338,7 @@ function buildReglettHTML(q) {
     const S4 = S + ';border-left:none';
     return `<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%">
       <tr>
-        <td style="${SB};width:22%" rowspan="6">${r.oi}</td>
+        <td style="${SB};width:22%" rowspan="6">${escLine(r.oi)}</td>
         <td style="${S2};width:37%" rowspan="3">L'élève indique s'il y a changement ou continuité</td>
         <td style="${S3}">et présente des faits qui le montrent correctement.</td>
         <td style="${S4};width:20%">3 points (ou 2 points)</td>
@@ -384,7 +384,9 @@ function buildReglettHTML(q) {
   </table>`;
 }
 
+let _qModalReqSeq = 0;
 async function openQModal(id) {
+  const reqId = ++_qModalReqSeq;
   _tzStore.length = 0;
   const q = Q_MAP.get(id);
   if(!q) return;
@@ -400,10 +402,13 @@ async function openQModal(id) {
       document.body.classList.add('modal-open');
     }
     try { await ensureDataLoaded(); } catch(e) {
+      if(reqId !== _qModalReqSeq) return;
       document.getElementById('q-modal-body').innerHTML =
         '<div style="color:red;padding:1rem">Erreur de chargement : ' + e.message + '</div>';
       return;
     }
+    // Un autre appel a été lancé entre-temps (double clic) — on abandonne ce rendu périmé
+    if(reqId !== _qModalReqSeq) return;
   }
 
   const header = document.getElementById('q-modal-header');
@@ -960,13 +965,13 @@ async function previsualiser(guideMode) {
           const TD = 'border:0.5px solid var(--border);padding:3px 10px';
           guideContent = '<table style="border-collapse:collapse;font-size:0.8rem;margin-top:4px">';
           if(q.guide.type === 'grille') {
-            guideContent += '<tr>' + q.guide.entetes.map(h=>`<th style="${TH}">${escLine(h)}</th>`).join('') + '</tr>';
-            q.guide.rangees.forEach(function(row) {
+            guideContent += '<tr>' + (q.guide.entetes||[]).map(h=>`<th style="${TH}">${escLine(h)}</th>`).join('') + '</tr>';
+            (q.guide.rangees||[]).forEach(function(row) {
               guideContent += '<tr>' + row.map(function(cell,ci){ return `<td style="${TD}${ci===0?';font-weight:500':''}">${escLine(cell)}</td>`; }).join('') + '</tr>';
             });
           } else {
             guideContent += `<tr><th style="${TH}"></th><th style="${TH}">Document</th></tr>`;
-            q.guide.lignes.forEach(function(l) {
+            (q.guide.lignes||[]).forEach(function(l) {
               guideContent += `<tr><td style="${TD};font-weight:500">${escLine(l.label)}</td><td style="${TD};text-align:center">${escLine(l.valeur)}</td></tr>`;
             });
           }
@@ -1085,7 +1090,7 @@ async function previsualiser(guideMode) {
             + '</tr></table>';
         } else if(q.reponse.type === 'image') {
           const imgPrev = IMAGE_DB[q.reponse.ref];
-          if(imgPrev) previewReponse += '<img src="' + imgPrev.src + '" style="max-width:100%;max-height:80px;object-fit:contain;margin:8px 0;display:block">';
+          if(imgPrev) previewReponse += '<img src="' + escAttr(imgPrev.src) + '" style="max-width:100%;max-height:80px;object-fit:contain;margin:8px 0;display:block">';
         } else if(q.reponse.type === 'lignes') {
           previewReponse = Array(q.reponse.nombre || 1).fill('<div class="reponse-ligne-pleine" style="border-bottom:1px solid #999;height:28px;margin:6px 0"></div>').join('');
         } else if(q.reponse.type === 'tableau') {
@@ -1234,6 +1239,7 @@ function retirerPanier(id) {
 }
 
 function viderPanier() {
+  if(panier.length && !confirm('Vider le panier ?')) return;
   const ids = [...panier];
   panier = [];
   ids.forEach(id => updateTileState(id));
