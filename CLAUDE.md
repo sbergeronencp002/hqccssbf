@@ -45,7 +45,8 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 ### Cache-bust actuel
 `app.js?v=49`, `style.css?v=29`, `oi-config.js?v=1`, `questions-io.js?v=3`, `reglettes.js?v=2` (admin) — incrémenter à chaque changement majeur.
 `index.html` charge `questions-index.js?v=1` (index allégé, 200 Ko) — `questions.js` est chargé en lazy par app.js sans version fixe (cache-bust par timestamp).
-`documents.html` charge `oi-config.js?v=1` + `questions-io.js?v=3` + `questions.js?v=1`.
+`documents.html` charge `oi-config.js?v=1` + `questions-io.js?v=3` ; `questions.js` est chargé dynamiquement (fetch cache-bust par timestamp, comme index.html) — jamais en `<script src>` statique.
+`revision.html` charge `oi-config.js?v=1` + `questions-io.js?v=3` + `contexte.js` ; `questions.js` est chargé de la même façon (fetch cache-bust par timestamp).
 
 ⚠️ Cette table doit être mise à jour à chaque incrément de `?v=` dans le HTML — sinon un futur agent repart d'un mauvais numéro de version.
 
