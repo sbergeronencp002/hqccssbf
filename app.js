@@ -123,77 +123,21 @@ function populateFilters() {
   const periodesPresentes = new Set(QUESTIONS.map(q=>q.periode));
   const periodes = periodeOrder.filter(p => periodesPresentes.has(p));
 
-  fill('f-periode', periodes, "Toutes");
-  fillAspect('f-aspect', aspects, periodeOrder);
-  fillOi('f-oi', allOis, "Toutes");
+  fillSelect('f-periode', periodes, "Toutes");
+  fillAspectSelect('f-aspect', aspects, periodeOrder);
+  fillSelect('f-oi', allOis, "Toutes");
 }
 
-function fill(id, vals, placeholder) {
-  const el = document.getElementById(id);
-  el.innerHTML = `<option value="">${placeholder}</option>`;
-  vals.forEach(v=>{ const o=document.createElement('option'); o.value=v; o.textContent=v; el.appendChild(o); });
-}
-
-function fillAspect(id, aspects, periodeOrder) {
-  const el = document.getElementById(id);
-  el.innerHTML = '<option value="">Tous</option>';
-  periodeOrder.forEach(p=>{
-    const group = aspects.filter(a=>a.periode===p);
-    if(!group.length) return;
-    const og = document.createElement('optgroup');
-    og.label = p;
-    group.forEach(a=>{
-      const o = document.createElement('option');
-      o.value = a.aspect;
-      o.textContent = a.aspect;
-      og.appendChild(o);
-    });
-    el.appendChild(og);
-  });
-}
-
-function fillOi(id, ois, placeholder) {
-  const el = document.getElementById(id);
-  el.innerHTML = `<option value="">${placeholder}</option>`;
-  ois.forEach(v=>{ const o=document.createElement('option'); o.value=v; o.textContent=v; el.appendChild(o); });
-}
+// Ids des <select> de la cascade niveau→période→aspect (voir filters.js, chargé avant app.js).
+const FILTER_IDS = { niveau: 'f-niveau', periode: 'f-periode', aspect: 'f-aspect' };
 
 function onPeriodeChange() {
-  const niveau  = document.getElementById('f-niveau').value;
-  const periode = document.getElementById('f-periode').value;
-  const allowedPeriodes = niveau ? PERIODES_PAR_NIVEAU[niveau] : periodeOrder;
-  const filteredAspects = periode
-    ? aspects.filter(a => a.periode === periode)
-    : aspects.filter(a => allowedPeriodes.includes(a.periode));
-  fillAspect('f-aspect', filteredAspects, periodeOrder);
-  document.getElementById('f-aspect').value = '';
+  cascadePeriodeChange(FILTER_IDS, aspects, periodeOrder, PERIODES_PAR_NIVEAU);
   applyFilters();
 }
 
 function onNiveauChange() {
-  const niveau = document.getElementById('f-niveau').value;
-  const allowedPeriodes = niveau ? PERIODES_PAR_NIVEAU[niveau] : periodeOrder;
-
-  // Rebuild période dropdown
-  const periodeEl = document.getElementById('f-periode');
-  const currentPeriode = periodeEl.value;
-  periodeEl.innerHTML = '<option value="">Toutes</option>';
-  allowedPeriodes.forEach(p => {
-    const o = document.createElement('option');
-    o.value = o.textContent = p;
-    periodeEl.appendChild(o);
-  });
-  if(allowedPeriodes.includes(currentPeriode)) periodeEl.value = currentPeriode;
-  else periodeEl.value = '';
-
-  // Rebuild aspect dropdown
-  const periode = periodeEl.value;
-  const filteredAspects = periode
-    ? aspects.filter(a => a.periode === periode)
-    : aspects.filter(a => allowedPeriodes.includes(a.periode));
-  fillAspect('f-aspect', filteredAspects, periodeOrder);
-  document.getElementById('f-aspect').value = '';
-
+  cascadeNiveauChange(FILTER_IDS, aspects, periodeOrder, PERIODES_PAR_NIVEAU);
   applyFilters();
 }
 
@@ -236,7 +180,7 @@ function applyFilters() {
   });
 
   const relevantOis = [...oiSet].sort((a,b)=>a.localeCompare(b,'fr'));
-  fillOi('f-oi', relevantOis, "Toutes");
+  fillSelect('f-oi', relevantOis, "Toutes");
   if(relevantOis.includes(currentOi)) document.getElementById('f-oi').value = currentOi;
 
   const totalPtsFilt = filtered.reduce((s,q)=>s+(q.points||0), 0);

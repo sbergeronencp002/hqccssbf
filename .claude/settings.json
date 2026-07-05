@@ -7,6 +7,16 @@
             "type": "command",
             "command": "node tools/validate-questions.mjs 2>&1 | tail -40 || true",
             "statusMessage": "Validation des données…"
+          },
+          {
+            "type": "command",
+            "command": "node tools/smoke-test.mjs 2>&1 | tail -40 || true",
+            "statusMessage": "Tests de fumée…"
+          },
+          {
+            "type": "command",
+            "command": "node tools/check-escaping.mjs 2>&1 | tail -40 || true",
+            "statusMessage": "Scan anti-XSS…"
           }
         ]
       }

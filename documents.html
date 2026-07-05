@@ -172,9 +172,14 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
 .rename-status.err{color:#842029}
 .rename-status.ok{color:#276539}
 .rename-status.warn{color:#856404}
+.page-lock-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(255,255,255,.55);cursor:wait;align-items:center;justify-content:center}
+.page-lock-overlay.show{display:flex}
+.page-lock-badge{background:#1B3B6F;color:#fff;padding:.6rem 1.1rem;border-radius:8px;font-size:.82rem;font-weight:500;box-shadow:0 4px 16px rgba(0,0,0,.25)}
 </style>
 </head>
 <body>
+
+<div class="page-lock-overlay" id="page-lock-overlay"><span class="page-lock-badge" id="page-lock-badge">⏳ Opération en cours…</span></div>
 
 <header>
   <div class="header-brand">
@@ -615,12 +620,24 @@ function closeLb(e) {
 }
 document.addEventListener('keydown', e => { if (e.key==='Escape') { closeLb(); closeRenameModal(); closeReplaceModal(); closeSubModal(); } });
 
+// Verrouille toute la page (overlay plein écran) pendant une opération GitHub
+// asynchrone (suppression, renommage, remplacement, édition de sous-titre/source) :
+// empêche de lancer une 2e opération concurrente sur la même image ou une autre
+// pendant qu'une écriture est en cours.
+function setPageLocked(locked, msg) {
+  const el = document.getElementById('page-lock-overlay');
+  if (!el) return;
+  el.classList.toggle('show', locked);
+  if (locked && msg) document.getElementById('page-lock-badge').textContent = msg;
+}
+
 // ── Delete orphan ────────────────────────────────────────────────────────────
 
 async function deleteOrphan(img) {
   if (!confirm(`Supprimer définitivement « ${img} » du dépôt GitHub ?\nCette action est irréversible (hors historique git).`)) return;
   const btn = document.querySelector(`#orphan-${CSS.escape(img)} .btn-delete`);
   if (btn) { btn.disabled = true; btn.textContent = '⏳…'; }
+  setPageLocked(true, 'Suppression de ' + img + '…');
   try {
     // 0. Revérifier sur l'état FRAIS de questions.js (pas l'instantané figé au chargement
     //    de la page) qu'aucune question n'a été publiée entre-temps avec cette image.
@@ -662,6 +679,8 @@ async function deleteOrphan(img) {
   } catch(err) {
     if (btn) { btn.disabled = false; btn.textContent = '🗑 Supprimer'; }
     alert('Erreur : ' + err.message);
+  } finally {
+    setPageLocked(false);
   }
 }
 
@@ -737,6 +756,7 @@ async function confirmReplace() {
   const btn = document.getElementById('replace-confirm-btn');
   const status = document.getElementById('replace-status');
   btn.disabled = true;
+  setPageLocked(true, 'Remplacement de ' + replaceTarget + '…');
   status.className = 'replace-status';
   status.textContent = 'Récupération du SHA…';
   try {
@@ -766,6 +786,8 @@ async function confirmReplace() {
     status.className = 'replace-status err';
     status.textContent = '✗ ' + err.message;
     btn.disabled = false;
+  } finally {
+    setPageLocked(false);
   }
 }
 
@@ -811,6 +833,7 @@ async function confirmRename() {
   }
 
   btn.disabled = true;
+  setPageLocked(true, 'Renommage de ' + renameTarget + '…');
   status.className = 'rename-status';
   status.textContent = 'Récupération du fichier…';
 
@@ -862,6 +885,16 @@ async function confirmRename() {
     renameTarget = newName;
     document.getElementById('rename-old-label').textContent = 'Image actuelle : ' + newName;
 
+    // Revérifier sur l'état FRAIS de questions.js qu'aucune question n'a été publiée entre-
+    // temps (autre onglet / admin.html) avec une référence à l'ancien nom — sinon supprimer
+    // le fichier casserait cette référence toute neuve.
+    if (!(await isImageStillOrphan(oldNameForDelete))) {
+      status.className = 'rename-status warn';
+      status.textContent = '✓ Renommé, mais « ' + oldNameForDelete + ' » est de nouveau référencée par une question récente — fichier non supprimé (à nettoyer manuellement si besoin).';
+      setTimeout(closeRenameModal, 2600);
+      return;
+    }
+
     // 4. Supprimer l'ancien fichier image (en dernier).
     status.textContent = 'Suppression de ' + oldNameForDelete + '…';
     const r3 = await fetch(API + 'images/' + encodeURIComponent(oldNameForDelete), {
@@ -884,6 +917,8 @@ async function confirmRename() {
     status.className = 'rename-status err';
     status.textContent = '✗ ' + err.message + ' — actualisez la page pour voir l\'état réel.';
     btn.disabled = false;
+  } finally {
+    setPageLocked(false);
   }
 }
 
@@ -969,6 +1004,7 @@ async function applySourceToAll() {
   const btn    = document.getElementById('lb-src-apply');
   const status = document.getElementById('lb-src-status');
   btn.disabled = true;
+  setPageLocked(true, 'Mise à jour de ' + ids.length + ' question' + (ids.length > 1 ? 's' : '') + '…');
   status.style.color = 'var(--ink-3)';
   status.textContent = '⏳ Publication…';
   try {
@@ -1011,6 +1047,7 @@ async function applySourceToAll() {
     status.style.color = '#c0392b';
     status.textContent = '✗ ' + e.message;
   } finally {
+    setPageLocked(false);
     btn.disabled = false;
   }
 }
@@ -1130,6 +1167,7 @@ async function confirmSoustitre() {
   const btn = document.getElementById('sub-confirm-btn');
   const status = document.getElementById('sub-status');
   btn.disabled = true;
+  setPageLocked(true, 'Enregistrement du sous-titre…');
   status.className = 'rename-status';
   status.textContent = 'Enregistrement…';
   try {
@@ -1158,6 +1196,8 @@ async function confirmSoustitre() {
     status.className = 'rename-status err';
     status.textContent = '✗ ' + err.message;
     btn.disabled = false;
+  } finally {
+    setPageLocked(false);
   }
 }
 </script>

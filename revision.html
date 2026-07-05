@@ -143,6 +143,7 @@ header nav a:hover { background:rgba(255,255,255,.12); color:#fff; }
 <script src="oi-config.js?v=1"></script>
 <script src="questions-io.js?v=3"></script>
 <script src="contexte.js"></script>
+<script src="filters.js?v=1"></script>
 <script>
 // Page autonome (comme documents.html) : pas de dépendance à app.js.
 // Charge oi-config.js (styles OI), questions-io.js (sérialiseur partagé pour
@@ -252,27 +253,8 @@ let rvAspects = [];
 let rvList = [];
 let rvIndex = 0;
 
-function rvFill(id, vals, placeholder) {
-  const el = document.getElementById(id);
-  el.innerHTML = `<option value="">${placeholder}</option>`;
-  vals.forEach(v => { const o = document.createElement('option'); o.value = v; o.textContent = v; el.appendChild(o); });
-}
-function rvFillAspect(id, aspects, order) {
-  const el = document.getElementById(id);
-  el.innerHTML = '<option value="">Tous</option>';
-  order.forEach(p => {
-    const group = aspects.filter(a => a.periode === p);
-    if(!group.length) return;
-    const og = document.createElement('optgroup');
-    og.label = p;
-    group.forEach(a => {
-      const o = document.createElement('option');
-      o.value = a.aspect; o.textContent = a.aspect;
-      og.appendChild(o);
-    });
-    el.appendChild(og);
-  });
-}
+// Ids des <select> de la cascade niveau→période→aspect (voir filters.js, chargé plus haut).
+const RV_FILTER_IDS = { niveau: 'f-niveau', periode: 'f-periode', aspect: 'f-aspect' };
 
 function rvPopulateFilters() {
   const allOis = [...new Set(QUESTIONS.map(q => q.oi))].sort((a,b) => a.localeCompare(b,'fr'));
@@ -290,44 +272,18 @@ function rvPopulateFilters() {
   const periodesPresentes = new Set(QUESTIONS.map(q => q.periode));
   const periodes = periodeOrder.filter(p => periodesPresentes.has(p));
 
-  rvFill('f-periode', periodes, 'Toutes');
-  rvFillAspect('f-aspect', rvAspects, periodeOrder);
-  rvFill('f-oi', allOis, 'Toutes');
+  fillSelect('f-periode', periodes, 'Toutes');
+  fillAspectSelect('f-aspect', rvAspects, periodeOrder);
+  fillSelect('f-oi', allOis, 'Toutes');
 }
 
 function rvOnNiveauChange() {
-  const niveau = document.getElementById('f-niveau').value;
-  const allowedPeriodes = niveau ? PERIODES_PAR_NIVEAU[niveau] : periodeOrder;
-
-  const periodeEl = document.getElementById('f-periode');
-  const currentPeriode = periodeEl.value;
-  periodeEl.innerHTML = '<option value="">Toutes</option>';
-  allowedPeriodes.forEach(p => {
-    const o = document.createElement('option');
-    o.value = o.textContent = p;
-    periodeEl.appendChild(o);
-  });
-  periodeEl.value = allowedPeriodes.includes(currentPeriode) ? currentPeriode : '';
-
-  const periode = periodeEl.value;
-  const filteredAspects = periode
-    ? rvAspects.filter(a => a.periode === periode)
-    : rvAspects.filter(a => allowedPeriodes.includes(a.periode));
-  rvFillAspect('f-aspect', filteredAspects, periodeOrder);
-  document.getElementById('f-aspect').value = '';
-
+  cascadeNiveauChange(RV_FILTER_IDS, rvAspects, periodeOrder, PERIODES_PAR_NIVEAU);
   rvApplyFilters();
 }
 
 function rvOnPeriodeChange() {
-  const niveau = document.getElementById('f-niveau').value;
-  const periode = document.getElementById('f-periode').value;
-  const allowedPeriodes = niveau ? PERIODES_PAR_NIVEAU[niveau] : periodeOrder;
-  const filteredAspects = periode
-    ? rvAspects.filter(a => a.periode === periode)
-    : rvAspects.filter(a => allowedPeriodes.includes(a.periode));
-  rvFillAspect('f-aspect', filteredAspects, periodeOrder);
-  document.getElementById('f-aspect').value = '';
+  cascadePeriodeChange(RV_FILTER_IDS, rvAspects, periodeOrder, PERIODES_PAR_NIVEAU);
   rvApplyFilters();
 }
 
@@ -338,6 +294,10 @@ function rvDebouncedApply() {
 }
 
 function rvApplyFilters() {
+  // Empêche de perdre une édition de guide non enregistrée en changeant de filtre : le
+  // <select>/l'input a déjà pris sa nouvelle valeur au moment du onchange/oninput (on ne
+  // la remet pas en arrière si l'utilisateur annule), mais la carte n'est pas régénérée.
+  if(!confirmDiscardGuideEdit()) return;
   const oi      = document.getElementById('f-oi').value;
   const aspect  = document.getElementById('f-aspect').value;
   const periode = document.getElementById('f-periode').value;
@@ -369,7 +329,7 @@ function rvApplyFilters() {
   });
 
   const relevantOis = [...oiSet].sort((a,b) => a.localeCompare(b,'fr'));
-  rvFill('f-oi', relevantOis, 'Toutes');
+  fillSelect('f-oi', relevantOis, 'Toutes');
   if(relevantOis.includes(currentOi)) document.getElementById('f-oi').value = currentOi;
 
   rvList = filtered;
@@ -640,6 +600,11 @@ function rvBuildCardHtml(q) {
   return html;
 }
 
+// Valeur du guide au moment de l'ouverture de l'édition — sert à détecter une
+// modification non enregistrée avant de naviguer ou de changer les filtres
+// (voir hasUnsavedGuideEdit / confirmDiscardGuideEdit ci-dessous).
+let _rvGuideOriginal = null;
+
 function rvEditGuide() {
   const q = rvList[rvIndex];
   if(!q) return;
@@ -654,12 +619,28 @@ function rvEditGuide() {
   const ta = document.getElementById('rv-guide-textarea');
   ta.value = current;
   ta.focus();
+  _rvGuideOriginal = current;
 }
 
 function rvCancelGuideEdit() {
   const q = rvList[rvIndex];
   if(!q) return;
+  _rvGuideOriginal = null;
   document.getElementById('rv-guide-box').innerHTML = rvRenderGuide(q);
+}
+
+// Vrai si le textarea d'édition du guide est ouvert et contient des changements
+// non enregistrés par rapport à la valeur chargée par rvEditGuide().
+function hasUnsavedGuideEdit() {
+  const ta = document.getElementById('rv-guide-textarea');
+  return !!ta && _rvGuideOriginal !== null && ta.value !== _rvGuideOriginal;
+}
+
+// À appeler avant toute navigation/changement de filtre qui régénère la carte :
+// demande confirmation si une édition de guide non enregistrée serait perdue.
+function confirmDiscardGuideEdit() {
+  if(!hasUnsavedGuideEdit()) return true;
+  return confirm('Le corrigé modifié n\'a pas été enregistré. Continuer et perdre ces changements ?');
 }
 
 async function rvSaveGuide() {
@@ -686,6 +667,7 @@ async function rvSaveGuide() {
     q.guide = newVal;
     const master = QUESTIONS.find(x => x.id === id);
     if(master) master.guide = newVal;
+    _rvGuideOriginal = null;
     status.className = 'rv-guide-status ok';
     status.textContent = changed ? '✓ Enregistré.' : 'Aucun changement.';
     setTimeout(() => {
@@ -722,6 +704,7 @@ function rvNav(dir) {
   if(!rvList.length) return;
   const next = rvIndex + dir;
   if(next < 0 || next >= rvList.length) return;
+  if(!confirmDiscardGuideEdit()) return;
   rvIndex = next;
   const wrap = document.getElementById('rv-card-wrap');
   wrap.classList.remove('slide-in-left','slide-in-right');
@@ -750,22 +733,29 @@ document.addEventListener('keydown', e => {
 
 // Navigation tactile / souris (Pointer Events unifiés) sur la carte
 (function() {
-  let startX = 0, startY = 0, dragging = false;
+  // setPointerCapture lie tout le geste (jusqu'au pointerup/pointercancel) au pointerId qui
+  // l'a commencé, même si le relâchement a lieu hors des limites de #rv-card-wrap : plus
+  // besoin d'un booléen `dragging` global qui pouvait rester bloqué à `true` si un pointerup
+  // survenait hors de l'élément et n'était jamais reçu (voir historique : ce bug pouvait
+  // transformer un simple clic sur un bouton en navigation involontaire).
+  let startX = 0, startY = 0, activePointerId = null;
   const wrap = document.getElementById('rv-card-wrap');
   wrap.addEventListener('pointerdown', e => {
-    if(e.target.closest('textarea, input, button, select, a')) { dragging = false; return; }
-    dragging = true; startX = e.clientX; startY = e.clientY;
+    if(e.target.closest('textarea, input, button, select, a')) return;
+    activePointerId = e.pointerId;
+    startX = e.clientX; startY = e.clientY;
+    wrap.setPointerCapture(e.pointerId);
   });
   function endDrag(e) {
-    if(!dragging) return;
-    dragging = false;
+    if(e.pointerId !== activePointerId) return;
+    activePointerId = null;
     const dx = e.clientX - startX, dy = e.clientY - startY;
     if(Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)) {
       rvNav(dx < 0 ? 1 : -1);
     }
   }
   wrap.addEventListener('pointerup', endDrag);
-  wrap.addEventListener('pointercancel', () => { dragging = false; });
+  wrap.addEventListener('pointercancel', e => { if(e.pointerId === activePointerId) activePointerId = null; });
 })();
 
 // Charge questions.js avec cache-bust (timestamp) plutôt qu'un <script src="?v=1">
