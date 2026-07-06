@@ -1150,7 +1150,8 @@ const REGLETTES = {
  colonnes: ["3 points", "2 points", "1 point", "0 point"],
  niveaux: [{pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."}, {pts: 2, desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."}, {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."}, {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}]
 },
-"Q617": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q617": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q618": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -11213,5 +11214,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les traités numérotés prévoient la création de réserves pour les Premières Nations.",
  updatedAt: "2026-07-06T12:43:22.487Z"
+},
+{
+ id: "Q618",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une conséquence de la signature des traités numérotés sur les Premières Nations.",
+ aspects: [{aspect: "Politique nationale"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_traites_reserves.jpg", soustitre: "Traités numérotés et création des réserves entre 1870 et 1895", source: "Adapté de Relations Couronne-Autochtones et Affaires du Nord Canada; Gouvernement du Canada, Loi sur les Indiens; The Canadian Encyclopedia."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "La création de réserves pour les Premières Nations.",
+ updatedAt: "2026-07-06T12:44:42.189Z"
 }
 ]
