@@ -1128,5 +1128,6 @@ const QUESTIONS = [
  updatedAt: "2026-07-06T23:25:19.451Z"
 },
 {id: "Q623", niveau: 4, oi: "Établir des faits", periode: "P5 — 1840 – 1896", points: 1, aspects: [{aspect: "Migrations"}], enonce: "Indiquez une mesure mise en place au Québec pour freiner l’émigration des Canadiens français vers les États-Unis.", updatedAt: "2026-07-06T23:30:05.961Z"},
-{id: "Q624", niveau: 4, oi: "Mettre en relation des faits", periode: "P5 — 1840 – 1896", points: 2, aspects: [{aspect: "Migrations"}], enonce: "Les documents A à C présentent des faits liés à différents mouvements migratoires dans la seconde moitié du XIXᵉ siècle. Associez chaque document au mouvement migratoire correspondant.", updatedAt: "2026-07-06T23:35:16.724Z"}
+{id: "Q624", niveau: 4, oi: "Mettre en relation des faits", periode: "P5 — 1840 – 1896", points: 2, aspects: [{aspect: "Migrations"}], enonce: "Les documents A à C présentent des faits liés à différents mouvements migratoires dans la seconde moitié du XIXᵉ siècle. Associez chaque document au mouvement migratoire correspondant.", updatedAt: "2026-07-06T23:35:16.724Z"},
+{id: "Q625", niveau: 4, oi: "Mettre en relation des faits", periode: "P5 — 1840 – 1896", points: 2, aspects: [{aspect: "Migrations"}], enonce: "Les documents A à C présentent des faits liés à différents mouvements migratoires dans la seconde moitié du XIXᵉ siècle. Associez chaque document au mouvement migratoire correspondant.", updatedAt: "2026-07-06T23:36:57.986Z"}
 ]
