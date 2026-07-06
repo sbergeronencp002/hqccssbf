@@ -1162,7 +1162,8 @@ const REGLETTES = {
  niveaux: [{pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."}, {pts: 2, desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."}, {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."}, {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}]
 },
 "Q623": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
-"Q624": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]}
+"Q624": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
+"Q625": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]}
 }
 
 const IMAGE_DB = {
@@ -11333,5 +11334,22 @@ const QUESTIONS = [
  reponse: {type: "mettre-en-relation", elements: ["Émigration vers les États-Unis", "Immigration transatlantique", "Ouverture de régions de colonisation"]},
  guide: {type: "grille", entetes: ["Émigration vers les États-Unis", "Immigration transatlantique", "Ouverture de régions de colonisation"], rangees: [["C", "A", "B"]]},
  updatedAt: "2026-07-06T23:35:16.724Z"
+},
+{
+ id: "Q625",
+ niveau: 4,
+ oi: "Mettre en relation des faits",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ enonce: "Les documents A à C présentent des faits liés à différents mouvements migratoires dans la seconde moitié du XIXᵉ siècle. Associez chaque document au mouvement migratoire correspondant.",
+ aspects: [{aspect: "Migrations"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Les activités économiques se concentrent de plus en plus dans les centres urbains, où l'industrie offre des possibilités de travail qui attirent une population toujours plus nombreuse. »", source: "Adapté de Paul-André Linteau, René Durocher et Jean-Claude Robert, Histoire du Québec contemporain. Tome I : De la Confédération à la crise (1867-1929), Boréal, 1989."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« La présence de nombreuses familles irlandaises contribue à diversifier la population de plusieurs localités et à soutenir leur croissance démographique au cours du XIXᵉ siècle. »", source: "Adapté de Marianna O'Gallagher, Grosse Île : Gateway to Canada, 1832-1937, Carraig Books, 1984."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Plusieurs paroisses voient partir une partie de leur population active. Ce phénomène alimente les débats sur l'avenir des communautés canadiennes-françaises au cours de la seconde moitié du XIXᵉ siècle. »", source: "Adapté de Yves Roby, Les Franco-Américains de la Nouvelle-Angleterre, 1776-1930, Septentrion, 1990."}]}
+ ],
+ reponse: {type: "mettre-en-relation", elements: ["Exode rural", "Émigration vers les États-Unis", "Immigration transatlantique"]},
+ guide: {type: "grille", entetes: ["Exode rural", "Émigration vers les États-Unis", "Immigration transatlantique"], rangees: [["A", "C", "B"]]},
+ updatedAt: "2026-07-06T23:36:57.986Z"
 }
 ]
