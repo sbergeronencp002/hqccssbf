@@ -1151,7 +1151,8 @@ const REGLETTES = {
  niveaux: [{pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."}, {pts: 2, desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."}, {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."}, {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}]
 },
 "Q617": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q618": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q618": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q619": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -1434,7 +1435,8 @@ const IMAGE_DB = {
 "recitus_canada_1870.jpg": {src: "images/recitus_canada_1870.jpg", w: 690, h: 385},
 "recitus_canada_1873.jpg": {src: "images/recitus_canada_1873.jpg", w: 1200, h: 670},
 "recitus_traites_numerotes_1871.jpg": {src: "images/recitus_traites_numerotes_1871.jpg", w: 1150, h: 700},
-"tableau_traites_reserves.jpg": {src: "images/tableau_traites_reserves.jpg", w: 1200, h: 800}
+"tableau_traites_reserves.jpg": {src: "images/tableau_traites_reserves.jpg", w: 1200, h: 800},
+"tableau_population_rurale_urbaine_1840-1890.jpg": {src: "images/tableau_population_rurale_urbaine_1840-1890.jpg"}
 }
 
 const QUESTIONS = [
@@ -11228,5 +11230,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "La création de réserves pour les Premières Nations.\nLes Premières nations cèdent leur territoire au gouvernement ou à la couronne britannique.",
  updatedAt: "2026-07-06T12:48:28.014Z"
+},
+{
+ id: "Q619",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P5 — 1840 – 1896",
+ points: 3,
+ soustag: "Changement ou continuité",
+ enonce: "À partir du document A, indiquez s’il y a changement ou continuité dans la répartition de la population entre les milieux urbain et rural au Québec. Justifiez votre choix à l’aide de faits qui montrent le changement ou la continuité et d’un repère de temps.",
+ aspects: [{aspect: "Migrations"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_population_rurale_urbaine_1840-1890.jpg", soustitre: "Répartition de la population entre les milieux urbain et rural", source: "Adapté de Paul-André Linteau, René Durocher et Jean-Claude Robert, Histoire du Québec contemporain. Tome I : De la Confédération à la crise (1867-1929), Boréal, 1989."}]}],
+ reponse: {type: "lignes", nombre: 3},
+ guide: "Changement.\nEntre 1840 et 1890, la proportion de la population vivant en milieu urbain augmente de 12 % à 32 %, tandis que la proportion vivant en milieu rural diminue de 88 % à 68 %.\n\nContinuité\nDe 1840 à 1890, la majorité de la population vit en milieu rural tout au long de la période, malgré l'augmentation de la population urbaine.",
+ updatedAt: "2026-07-06T15:34:28.981Z"
 }
 ]
