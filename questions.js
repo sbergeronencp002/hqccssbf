@@ -11193,12 +11193,12 @@ const QUESTIONS = [
  aspects: [{aspect: "Politique nationale"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", ref: "recitus_canada_1873.jpg", source: "Adapté de RÉCIT de l'univers social, Le territoire du Dominion du Canada en 1873."}]},
-  {type: "textes", cols: [{titre: "Document B", ref: "recitus_traites_numerotes_1871.jpg", soustitre: "Traités numérotés et création des réserves entre 1870 et 1895", source: "Adapté de Relations Couronne-Autochtones et Affaires du Nord Canada; Gouvernement du Canada, Loi sur les Indiens; The Canadian Encyclopedia."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "tableau_traites_reserves.jpg", soustitre: "Traités numérotés et création des réserves entre 1870 et 1895", source: "Adapté de Relations Couronne-Autochtones et Affaires du Nord Canada; Gouvernement du Canada, Loi sur les Indiens; The Canadian Encyclopedia."}]},
   {type: "textes", cols: [{titre: "Document C", texte: "« La réserve est une parcelle de terrain dont Sa Majesté est propriétaire et qu'elle a mise de côté à l'usage et au profit d'une bande. Sous réserve des dispositions de la loi et de tout traité ou cession, le gouverneur en conseil peut décider si l'utilisation de ces terres sert à l'usage et au profit de la bande. »", source: "Adapté de la Loi sur les Indiens, 1876; version consolidée, art. 2 et 18."}]}
  ],
  reponse: {type: "lignes", nombre: 5},
  guide: "Le gouvernement canadien acquiert la Terre de Rupert et les Territoires du Nord-Ouest (une conséquence de l'expansion territoriale du Dominion du Canada). Il signe ensuite des traités numérotés avec plusieurs Premières Nations (une intervention du gouvernement canadien auprès des Premières Nations). Par la suite, il adopte la Loi sur les Indiens (l'adoption d'une loi concernant les Premières Nations).",
- updatedAt: "2026-07-06T12:40:33.692Z"
+ updatedAt: "2026-07-06T12:43:42.891Z"
 },
 {
  id: "Q617",
