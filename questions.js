@@ -1163,7 +1163,8 @@ const REGLETTES = {
 },
 "Q623": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
 "Q624": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
-"Q625": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]}
+"Q625": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
+"Q626": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -11351,5 +11352,19 @@ const QUESTIONS = [
  reponse: {type: "mettre-en-relation", elements: ["Exode rural", "Émigration vers les États-Unis", "Immigration transatlantique"]},
  guide: {type: "grille", entetes: ["Exode rural", "Émigration vers les États-Unis", "Immigration transatlantique"], rangees: [["A", "C", "B"]]},
  updatedAt: "2026-07-06T23:36:57.986Z"
+},
+{
+ id: "Q626",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une cause de l'exode rural au Québec au cours de la seconde moitié du XIXᵉ siècle.",
+ aspects: [{aspect: "Migrations"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Les villes deviennent des centres de production importants. Les emplois industriels y attirent des hommes, des femmes et des enfants à la recherche d’un revenu. »", source: "Adapté de Jacques Paul Couturier, Un passé composé : le Canada de 1850 à nos jours, Éditions d’Acadie, 2000."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les possibilités d'emploi dans les villes.\nLa croissance de l'industrie.\nLes difficultés dans les milieux ruraux.",
+ updatedAt: "2026-07-06T23:40:26.571Z"
 }
 ]
