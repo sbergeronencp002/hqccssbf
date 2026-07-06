@@ -1124,7 +1124,7 @@ const QUESTIONS = [
  periode: "P5 — 1840 – 1896",
  points: 3,
  aspects: [{aspect: "Migrations"}],
- enonce: "Expliquez comment les difficultés dans les milieux ruraux entraînent une intervention des autorités provinciales afin de limiter un mouvement migratoire vers l'extérieur du Québec.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux. \n\n• une difficulté dans les milieux ruraux\n• un mouvement migratoire vers l'extérieur du Québec\n• une intervention des autorités provinciales Réponse attendue.",
- updatedAt: "2026-07-06T21:59:30.163Z"
+ enonce: "Expliquez comment les difficultés dans les milieux ruraux entraînent une intervention des autorités provinciales afin de limiter un mouvement migratoire vers l'extérieur du Québec.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux. \n\n• une difficulté dans les milieux ruraux\n• un mouvement migratoire vers l'extérieur du Québec\n• une intervention des autorités provinciales",
+ updatedAt: "2026-07-06T23:25:19.451Z"
 }
 ]
