@@ -1166,7 +1166,8 @@ const REGLETTES = {
 "Q625": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
 "Q626": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q627": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
-"Q628": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]}
+"Q628": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]},
+"Q629": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -11399,5 +11400,19 @@ const QUESTIONS = [
  reponse: {type: "cause-consequence"},
  guide: {type: "grille", entetes: ["Cause", "Conséquence"], rangees: [["B", "A"]]},
  updatedAt: "2026-07-06T23:46:57.634Z"
+},
+{
+ id: "Q629",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une cause de l'ouverture de nouvelles régions de colonisation au Québec au cours de la seconde moitié du XIXᵉ siècle.",
+ aspects: [{aspect: "Migrations"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_émigration_usa_1840-1890.jpg", soustitre: "Évolution de l'émigration vers les États-Unis", source: "Adapté de Yves Roby, Les Franco-Américains de la Nouvelle-Angleterre, 1776-1930, Septentrion, 1990."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "L'émigration des Canadiens français vers les États-Unis.\nLa rareté des terres agricoles.\nLe morcellement des terres agricoles.",
+ updatedAt: "2026-07-06T23:49:05.990Z"
 }
 ]
