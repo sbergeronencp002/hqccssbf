@@ -1101,5 +1101,15 @@ const QUESTIONS = [
 },
 {id: "Q613", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P5 — 1840 – 1896", points: 2, soustag: "Changement", aspects: [{aspect: "Politique nationale"}, {aspect: "Relations fédérales-provinciales"}], enonce: "À partir des documents A et B, indiquez un changement dans l'organisation territoriale du Dominion du Canada entre 1867 et 1870.", updatedAt: "2026-07-02T12:50:19.751Z"},
 {id: "Q614", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P5 — 1840 – 1896", points: 2, soustag: "Changement", aspects: [{aspect: "Politique nationale"}, {aspect: "Relations fédérales-provinciales"}], enonce: "À partir des documents A et B, indiquez un changement dans l'organisation territoriale du Dominion du Canada au début des années 1870.", updatedAt: "2026-07-02T12:52:48.662Z"},
-{id: "Q615", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P5 — 1840 – 1896", points: 2, soustag: "Changement", aspects: [{aspect: "Politique nationale"}, {aspect: "Relations fédérales-provinciales"}], enonce: "À partir des documents A et B, indiquez un changement dans l'organisation territoriale du Dominion du Canada au début des années 1870.", updatedAt: "2026-07-02T12:54:24.002Z"}
+{id: "Q615", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P5 — 1840 – 1896", points: 2, soustag: "Changement", aspects: [{aspect: "Politique nationale"}, {aspect: "Relations fédérales-provinciales"}], enonce: "À partir des documents A et B, indiquez un changement dans l'organisation territoriale du Dominion du Canada au début des années 1870.", updatedAt: "2026-07-02T12:54:24.002Z"},
+{
+ id: "Q616",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P5 — 1840 – 1896",
+ points: 3,
+ aspects: [{aspect: "Politique nationale"}],
+ enonce: "Expliquez comment l'expansion territoriale du Dominion du Canada entraîne l'adoption d'une loi concernant les Premières Nations.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une conséquence de l'expansion territoriale du Dominion du Canada\n• une intervention du gouvernement canadien auprès des Premières Nations\n• l'adoption d'une loi concernant les Premières Nations",
+ updatedAt: "2026-07-06T12:40:33.692Z"
+}
 ]
