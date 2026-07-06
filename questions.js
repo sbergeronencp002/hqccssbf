@@ -11291,7 +11291,7 @@ const QUESTIONS = [
  oi: "Établir des liens de causalité",
  periode: "P5 — 1840 – 1896",
  points: 3,
- enonce: "Expliquez comment les difficultés dans les milieux ruraux entraînent une intervention des autorités provinciales afin de limiter un mouvement migratoire vers l'extérieur du Québec.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux. \n\n• une difficulté dans les milieux ruraux\n• un mouvement migratoire vers l'extérieur du Québec\n• une intervention des autorités provinciales Réponse attendue.",
+ enonce: "Expliquez comment les difficultés dans les milieux ruraux entraînent une intervention des autorités provinciales afin de limiter un mouvement migratoire vers l'extérieur du Québec.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux. \n\n• une difficulté dans les milieux ruraux\n• un mouvement migratoire vers l'extérieur du Québec\n• une intervention des autorités provinciales",
  aspects: [{aspect: "Migrations"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", ref: "tableau_superficie_fermes.jpg", soustitre: "Évolution de la taille des exploitations agricoles", source: "Adapté de Serge Courville, Entre ville et campagne : l’essor du village dans les seigneuries du Bas-Canada, Les Presses de l’Université Laval, 1990."}]},
@@ -11300,6 +11300,6 @@ const QUESTIONS = [
  ],
  reponse: {type: "lignes", nombre: 5},
  guide: "La rareté des terres agricoles ou la crise agricole (une difficulté dans les milieux ruraux) pousse de nombreux Canadiens français à émigrer vers les États-Unis (un mouvement migratoire vers l'extérieur du Québec). Pour limiter cette émigration, les autorités provinciales favorisent l'ouverture de nouvelles régions de colonisation (une intervention des autorités provinciales).",
- updatedAt: "2026-07-06T21:59:30.163Z"
+ updatedAt: "2026-07-06T23:25:19.451Z"
 }
 ]
