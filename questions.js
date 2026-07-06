@@ -11226,7 +11226,7 @@ const QUESTIONS = [
  aspects: [{aspect: "Politique nationale"}],
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_traites_reserves.jpg", soustitre: "Traités numérotés et création des réserves entre 1870 et 1895", source: "Adapté de Relations Couronne-Autochtones et Affaires du Nord Canada; Gouvernement du Canada, Loi sur les Indiens; The Canadian Encyclopedia."}]}],
  reponse: {type: "lignes", nombre: 2},
- guide: "La création de réserves pour les Premières Nations.",
- updatedAt: "2026-07-06T12:44:42.189Z"
+ guide: "La création de réserves pour les Premières Nations.\nLes Premières nations cèdent leur territoire au gouvernement ou à la couronne britannique.",
+ updatedAt: "2026-07-06T12:48:28.014Z"
 }
 ]
