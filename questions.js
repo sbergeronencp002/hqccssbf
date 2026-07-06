@@ -1143,7 +1143,13 @@ const REGLETTES = {
 },
 "Q613": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q614": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
-"Q615": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
+"Q615": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
+"Q616": {
+ oi: "Établir des liens de causalité",
+ variante: "3 éléments — 2 liens",
+ colonnes: ["3 points", "2 points", "1 point", "0 point"],
+ niveaux: [{pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."}, {pts: 2, desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."}, {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."}, {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}]
+}
 }
 
 const IMAGE_DB = {
@@ -1424,7 +1430,9 @@ const IMAGE_DB = {
 "tableau_reseau_ferroviaire.jpg": {src: "images/tableau_reseau_ferroviaire.jpg"},
 "recitus_canada_1867.jpg": {src: "images/recitus_canada_1867.jpg", w: 1200, h: 670},
 "recitus_canada_1870.jpg": {src: "images/recitus_canada_1870.jpg", w: 690, h: 385},
-"recitus_canada_1873.jpg": {src: "images/recitus_canada_1873.jpg", w: 1200, h: 670}
+"recitus_canada_1873.jpg": {src: "images/recitus_canada_1873.jpg", w: 1200, h: 670},
+"recitus_traites_numerotes_1871.jpg": {src: "images/recitus_traites_numerotes_1871.jpg", w: 1150, h: 700},
+"tableau_traites_reserves.jpg": {src: "images/tableau_traites_reserves.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -11173,5 +11181,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "L'Île-du-Prince-Édouard entre dans le Dominion du Canada.\nL'Île-du-Prince-Édouard devient une province du Dominion du Canada.",
  updatedAt: "2026-07-02T12:54:24.002Z"
+},
+{
+ id: "Q616",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P5 — 1840 – 1896",
+ points: 3,
+ enonce: "Expliquez comment l'expansion territoriale du Dominion du Canada entraîne l'adoption d'une loi concernant les Premières Nations.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une conséquence de l'expansion territoriale du Dominion du Canada\n• une intervention du gouvernement canadien auprès des Premières Nations\n• l'adoption d'une loi concernant les Premières Nations",
+ aspects: [{aspect: "Politique nationale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "recitus_canada_1873.jpg", source: "Adapté de RÉCIT de l'univers social, Le territoire du Dominion du Canada en 1873."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "recitus_traites_numerotes_1871.jpg", soustitre: "Traités numérotés et création des réserves entre 1870 et 1895", source: "Adapté de Relations Couronne-Autochtones et Affaires du Nord Canada; Gouvernement du Canada, Loi sur les Indiens; The Canadian Encyclopedia."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« La réserve est une parcelle de terrain dont Sa Majesté est propriétaire et qu'elle a mise de côté à l'usage et au profit d'une bande. Sous réserve des dispositions de la loi et de tout traité ou cession, le gouverneur en conseil peut décider si l'utilisation de ces terres sert à l'usage et au profit de la bande. »", source: "Adapté de la Loi sur les Indiens, 1876; version consolidée, art. 2 et 18."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "Le gouvernement canadien acquiert la Terre de Rupert et les Territoires du Nord-Ouest (une conséquence de l'expansion territoriale du Dominion du Canada). Il signe ensuite des traités numérotés avec plusieurs Premières Nations (une intervention du gouvernement canadien auprès des Premières Nations). Par la suite, il adopte la Loi sur les Indiens (l'adoption d'une loi concernant les Premières Nations).",
+ updatedAt: "2026-07-06T12:40:33.692Z"
 }
 ]
