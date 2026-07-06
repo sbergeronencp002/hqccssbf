@@ -1168,7 +1168,8 @@ const REGLETTES = {
 "Q627": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q628": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]},
 "Q629": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q630": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
+"Q630": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
+"Q631": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]}
 }
 
 const IMAGE_DB = {
@@ -11429,5 +11430,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Le peuplement de nouvelles régions.\nLa création de nouvelles paroisses.\nL'augmentation de la population dans les nouvelles régions de colonisation.\nLa mise en valeur de nouvelles terres agricoles.",
  updatedAt: "2026-07-06T23:49:49.579Z"
+},
+{
+ id: "Q631",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Cause et conséquence",
+ enonce: "Les documents A et B présentent des faits relatifs à l'ouverture de nouvelles régions de colonisation. Indiquez si chaque document présente une cause ou une conséquence de cette mesure.",
+ aspects: [{aspect: "Migrations"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "tableau_population_region_colonisation.jpg", soustitre: "Évolution de la population des régions de colonisation", source: "Adapté de Serge Courville, Le Québec : genèses et mutations du territoire, Presses de l'Université Laval, 2000."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "tableau_superficie_fermes.jpg", soustitre: "Évolution de la taille des exploitations agricoles", source: "Adapté de Serge Courville, Entre ville et campagne : l’essor du village dans les seigneuries du Bas-Canada, Les Presses de l’Université Laval, 1990."}]}
+ ],
+ reponse: {type: "cause-consequence"},
+ guide: {type: "grille", entetes: ["Cause", "Conséquence"], rangees: [["B", "A"]]},
+ updatedAt: "2026-07-06T23:52:37.283Z"
 }
 ]
