@@ -1153,7 +1153,8 @@ const REGLETTES = {
 "Q617": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q618": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q619": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q620": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q620": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q621": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -1438,7 +1439,8 @@ const IMAGE_DB = {
 "recitus_traites_numerotes_1871.jpg": {src: "images/recitus_traites_numerotes_1871.jpg", w: 1150, h: 700},
 "tableau_traites_reserves.jpg": {src: "images/tableau_traites_reserves.jpg", w: 1200, h: 800},
 "tableau_population_rurale_urbaine_1840-1890.jpg": {src: "images/tableau_population_rurale_urbaine_1840-1890.jpg"},
-"tableau_immigration_émigration_quebec_1840-1890.jpg": {src: "images/tableau_immigration_émigration_quebec_1840-1890.jpg"}
+"tableau_immigration_émigration_quebec_1840-1890.jpg": {src: "images/tableau_immigration_émigration_quebec_1840-1890.jpg"},
+"tableau_population_region_colonisation.jpg": {src: "images/tableau_population_region_colonisation.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -11260,5 +11262,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 3},
  guide: "Changement.\nL'immigration diminue (180 000 à 80 000), tandis que l'émigration augmente (20 000 à 80 000) entre 1840-1849 et 1880-1889.\n\nContinuité.\nLe Québec connaît d'importants mouvements migratoires durant toute la période, de 1840-1849 à 1880-1889.",
  updatedAt: "2026-07-06T18:08:56.390Z"
+},
+{
+ id: "Q621",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P5 — 1840 – 1896",
+ points: 3,
+ soustag: "Changement ou continuité",
+ enonce: "À partir du document A, indiquez s'il y a changement ou continuité dans le nombre de colons installés dans les nouvelles régions entre 1850 et 1890. Justifiez votre choix à l'aide de faits qui montrent le changement ou la continuité et d'un repère de temps.",
+ aspects: [{aspect: "Migrations"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_population_region_colonisation.jpg", soustitre: "Évolution de la population des régions de colonisation", source: "Adapté de Serge Courville, Le Québec : genèses et mutations du territoire, Presses de l'Université Laval, 2000."}]}],
+ reponse: {type: "lignes", nombre: 3},
+ guide: "Changement.\nLe nombre de colons augmente dans toutes les régions entre 1850 et 1890.\nL'écart entre le Saguenay et les autres régions s'accroît entre 1850 et 1890.\n\nContinuité.\nLe Saguenay demeure la région qui accueille le plus grand nombre de colons entre 1850 et 1890.\nToutes les régions connaissent une croissance importante de leur population de colons entre 1850 et 1890.",
+ updatedAt: "2026-07-06T18:41:04.546Z"
 }
 ]
