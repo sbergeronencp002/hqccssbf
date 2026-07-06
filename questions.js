@@ -1161,7 +1161,8 @@ const REGLETTES = {
  colonnes: ["3 points", "2 points", "1 point", "0 point"],
  niveaux: [{pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."}, {pts: 2, desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."}, {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."}, {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}]
 },
-"Q623": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]}
+"Q623": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
+"Q624": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]}
 }
 
 const IMAGE_DB = {
@@ -11315,5 +11316,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 1},
  guide: "Ouverture des régions de colonisation.",
  updatedAt: "2026-07-06T23:30:05.961Z"
+},
+{
+ id: "Q624",
+ niveau: 4,
+ oi: "Mettre en relation des faits",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ enonce: "Les documents A à C présentent des faits liés à différents mouvements migratoires dans la seconde moitié du XIXᵉ siècle. Associez chaque document au mouvement migratoire correspondant.",
+ aspects: [{aspect: "Migrations"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Au milieu du XIXᵉ siècle, plusieurs familles irlandaises s'établissent dans la colonie. Leur présence contribue à la croissance de certaines communautés, particulièrement dans les grands centres. »", source: "Adapté de Marianna O'Gallagher, Grosse Île : Gateway to Canada, 1832-1937, Carraig Books, 1984."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Au cours de la seconde moitié du XIXe siècle, de nouvelles paroisses sont fondées dans des territoires jusque-là peu occupés, transformant progressivement l'occupation du territoire. »", source: "Adapté de Serge Courville, Le Québec : genèses et mutations du territoire, Presses de l'Université Laval, 2000."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Plusieurs familles quittent leur paroisse dans l'espoir d'améliorer leurs conditions de vie. Ce départ suscite de nombreuses inquiétudes chez les élites canadiennes-françaises. »", source: "Adapté de Yves Roby, Les Franco-Américains de la Nouvelle-Angleterre, 1776-1930, Septentrion, 1990."}]}
+ ],
+ reponse: {type: "mettre-en-relation", elements: ["Émigration vers les États-Unis", "Immigration transatlantique", "Ouverture de régions de colonisation"]},
+ guide: {type: "grille", entetes: ["Émigration vers les États-Unis", "Immigration transatlantique", "Ouverture de régions de colonisation"], rangees: [["C", "A", "B"]]},
+ updatedAt: "2026-07-06T23:35:16.724Z"
 }
 ]
