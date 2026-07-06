@@ -1125,6 +1125,6 @@ const QUESTIONS = [
  points: 3,
  aspects: [{aspect: "Migrations"}],
  enonce: "Expliquez comment les difficultés dans les milieux ruraux entraînent une intervention des autorités provinciales afin de limiter un mouvement migratoire vers l'extérieur du Québec.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux. \n\n• une difficulté dans les milieux ruraux\n• un mouvement migratoire vers l'extérieur du Québec\n• une intervention des autorités provinciales Réponse attendue.",
- updatedAt: "2026-07-06T21:58:28.905Z"
+ updatedAt: "2026-07-06T21:59:30.163Z"
 }
 ]
