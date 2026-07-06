@@ -1113,5 +1113,5 @@ const QUESTIONS = [
  updatedAt: "2026-07-06T12:43:42.891Z"
 },
 {id: "Q617", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P5 — 1840 – 1896", points: 2, soustag: "Cause", aspects: [{aspect: "Politique nationale"}], enonce: "Indiquez une raison qui explique l'augmentation du nombre de réserves après la signature des traités numérotés.", updatedAt: "2026-07-06T12:43:22.487Z"},
-{id: "Q618", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P5 — 1840 – 1896", points: 2, soustag: "Cause", aspects: [{aspect: "Politique nationale"}], enonce: "Indiquez une conséquence de la signature des traités numérotés sur les Premières Nations.", updatedAt: "2026-07-06T12:44:42.189Z"}
+{id: "Q618", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P5 — 1840 – 1896", points: 2, soustag: "Cause", aspects: [{aspect: "Politique nationale"}], enonce: "Indiquez une conséquence de la signature des traités numérotés sur les Premières Nations.", updatedAt: "2026-07-06T12:48:28.014Z"}
 ]
