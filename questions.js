@@ -1154,7 +1154,13 @@ const REGLETTES = {
 "Q618": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q619": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q620": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q621": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q621": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q622": {
+ oi: "Établir des liens de causalité",
+ variante: "3 éléments — 2 liens",
+ colonnes: ["3 points", "2 points", "1 point", "0 point"],
+ niveaux: [{pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."}, {pts: 2, desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."}, {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."}, {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}]
+}
 }
 
 const IMAGE_DB = {
@@ -1440,7 +1446,9 @@ const IMAGE_DB = {
 "tableau_traites_reserves.jpg": {src: "images/tableau_traites_reserves.jpg", w: 1200, h: 800},
 "tableau_population_rurale_urbaine_1840-1890.jpg": {src: "images/tableau_population_rurale_urbaine_1840-1890.jpg"},
 "tableau_immigration_émigration_quebec_1840-1890.jpg": {src: "images/tableau_immigration_émigration_quebec_1840-1890.jpg"},
-"tableau_population_region_colonisation.jpg": {src: "images/tableau_population_region_colonisation.jpg", w: 1200, h: 800}
+"tableau_population_region_colonisation.jpg": {src: "images/tableau_population_region_colonisation.jpg", w: 1200, h: 800},
+"tableau_superficie_fermes.jpg": {src: "images/tableau_superficie_fermes.jpg"},
+"tableau_émigration_usa_1840-1890.jpg": {src: "images/tableau_émigration_usa_1840-1890.jpg"}
 }
 
 const QUESTIONS = [
@@ -11276,5 +11284,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 3},
  guide: "Changement.\nLe nombre de colons augmente dans toutes les régions entre 1850 et 1890.\nL'écart entre le Saguenay et les autres régions s'accroît entre 1850 et 1890.\n\nContinuité.\nLe Saguenay demeure la région qui accueille le plus grand nombre de colons entre 1850 et 1890.\nToutes les régions connaissent une croissance importante de leur population de colons entre 1850 et 1890.",
  updatedAt: "2026-07-06T18:41:04.546Z"
+},
+{
+ id: "Q622",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P5 — 1840 – 1896",
+ points: 3,
+ enonce: "Expliquez comment les difficultés dans les milieux ruraux entraînent une intervention des autorités provinciales afin de limiter un mouvement migratoire vers l'extérieur du Québec.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux. \n\n• une difficulté dans les milieux ruraux\n• un mouvement migratoire vers l'extérieur du Québec\n• une intervention des autorités provinciales Réponse attendue.",
+ aspects: [{aspect: "Migrations"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "tableau_superficie_fermes.jpg", soustitre: "Évolution de la taille des exploitations agricoles", source: "Adapté de Serge Courville, Entre ville et campagne : l’essor du village dans les seigneuries du Bas-Canada, Les Presses de l’Université Laval, 1990."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« De nouvelles paroisses apparaissent dans des territoires jusqu'alors peu occupés. Des familles s'y établissent progressivement, transformant l'organisation du peuplement dans plusieurs régions du Québec. »", source: "Adapté de Serge Courville, Le Québec : genèses et mutations du territoire, Presses de l'Université Laval, 2000."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "tableau_émigration_usa_1840-1890.jpg", soustitre: "Évolution de l'émigration vers les États-Unis", source: "Adapté de Yves Roby, Les Franco-Américains de la Nouvelle-Angleterre, 1776-1930, Septentrion, 1990."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "La rareté des terres agricoles ou la crise agricole (une difficulté dans les milieux ruraux) pousse de nombreux Canadiens français à émigrer vers les États-Unis (un mouvement migratoire vers l'extérieur du Québec). Pour limiter cette émigration, les autorités provinciales favorisent l'ouverture de nouvelles régions de colonisation (une intervention des autorités provinciales).",
+ updatedAt: "2026-07-06T21:58:28.905Z"
 }
 ]
