@@ -1160,7 +1160,8 @@ const REGLETTES = {
  variante: "3 éléments — 2 liens",
  colonnes: ["3 points", "2 points", "1 point", "0 point"],
  niveaux: [{pts: 3, desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité."}, {pts: 2, desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité."}, {pts: 1, desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité."}, {pts: 0, desc: "L'élève précise un seul élément ou n'en précise pas."}]
-}
+},
+"Q623": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -11301,5 +11302,18 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 5},
  guide: "La rareté des terres agricoles ou la crise agricole (une difficulté dans les milieux ruraux) pousse de nombreux Canadiens français à émigrer vers les États-Unis (un mouvement migratoire vers l'extérieur du Québec). Pour limiter cette émigration, les autorités provinciales favorisent l'ouverture de nouvelles régions de colonisation (une intervention des autorités provinciales).",
  updatedAt: "2026-07-06T23:25:19.451Z"
+},
+{
+ id: "Q623",
+ niveau: 4,
+ oi: "Établir des faits",
+ periode: "P5 — 1840 – 1896",
+ points: 1,
+ enonce: "Indiquez une mesure mise en place au Québec pour freiner l’émigration des Canadiens français vers les États-Unis.",
+ aspects: [{aspect: "Migrations"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Coloniser chez nous, voilà le moyen le plus puissant de porter remède […] à ce fléau du départ des nôtres […] Élever un enfant, en faire un homme, et perdre ensuite, au profit de pays étrangers, le bénéfice de son intelligence et de son travail, n’est-ce pas un malheur qu’on ne saurait trop déplorer? »", source: "Adapté de Antoine Labelle, Le Nord de Montréal, Montréal, Eusèbe Senécal, 1880."}]}],
+ reponse: {type: "lignes", nombre: 1},
+ guide: "Ouverture des régions de colonisation.",
+ updatedAt: "2026-07-06T23:30:05.961Z"
 }
 ]
