@@ -11300,6 +11300,6 @@ const QUESTIONS = [
  ],
  reponse: {type: "lignes", nombre: 5},
  guide: "La rareté des terres agricoles ou la crise agricole (une difficulté dans les milieux ruraux) pousse de nombreux Canadiens français à émigrer vers les États-Unis (un mouvement migratoire vers l'extérieur du Québec). Pour limiter cette émigration, les autorités provinciales favorisent l'ouverture de nouvelles régions de colonisation (une intervention des autorités provinciales).",
- updatedAt: "2026-07-06T21:58:28.905Z"
+ updatedAt: "2026-07-06T21:59:30.163Z"
 }
 ]
