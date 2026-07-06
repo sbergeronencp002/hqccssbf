@@ -1111,5 +1111,6 @@ const QUESTIONS = [
  aspects: [{aspect: "Politique nationale"}],
  enonce: "Expliquez comment l'expansion territoriale du Dominion du Canada entraîne l'adoption d'une loi concernant les Premières Nations.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• une conséquence de l'expansion territoriale du Dominion du Canada\n• une intervention du gouvernement canadien auprès des Premières Nations\n• l'adoption d'une loi concernant les Premières Nations",
  updatedAt: "2026-07-06T12:40:33.692Z"
-}
+},
+{id: "Q617", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P5 — 1840 – 1896", points: 2, soustag: "Cause", aspects: [{aspect: "Politique nationale"}], enonce: "Indiquez une raison qui explique l'augmentation du nombre de réserves après la signature des traités numérotés.", updatedAt: "2026-07-06T12:43:22.487Z"}
 ]
