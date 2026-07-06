@@ -1126,5 +1126,6 @@ const QUESTIONS = [
  aspects: [{aspect: "Migrations"}],
  enonce: "Expliquez comment les difficultés dans les milieux ruraux entraînent une intervention des autorités provinciales afin de limiter un mouvement migratoire vers l'extérieur du Québec.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux. \n\n• une difficulté dans les milieux ruraux\n• un mouvement migratoire vers l'extérieur du Québec\n• une intervention des autorités provinciales",
  updatedAt: "2026-07-06T23:25:19.451Z"
-}
+},
+{id: "Q623", niveau: 4, oi: "Établir des faits", periode: "P5 — 1840 – 1896", points: 1, aspects: [{aspect: "Migrations"}], enonce: "Indiquez une mesure mise en place au Québec pour freiner l’émigration des Canadiens français vers les États-Unis.", updatedAt: "2026-07-06T23:30:05.961Z"}
 ]
