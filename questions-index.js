@@ -1113,5 +1113,6 @@ const QUESTIONS = [
  updatedAt: "2026-07-06T12:43:42.891Z"
 },
 {id: "Q617", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P5 — 1840 – 1896", points: 2, soustag: "Cause", aspects: [{aspect: "Politique nationale"}], enonce: "Indiquez une raison qui explique l'augmentation du nombre de réserves après la signature des traités numérotés.", updatedAt: "2026-07-06T12:43:22.487Z"},
-{id: "Q618", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P5 — 1840 – 1896", points: 2, soustag: "Cause", aspects: [{aspect: "Politique nationale"}], enonce: "Indiquez une conséquence de la signature des traités numérotés sur les Premières Nations.", updatedAt: "2026-07-06T12:48:28.014Z"}
+{id: "Q618", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P5 — 1840 – 1896", points: 2, soustag: "Cause", aspects: [{aspect: "Politique nationale"}], enonce: "Indiquez une conséquence de la signature des traités numérotés sur les Premières Nations.", updatedAt: "2026-07-06T12:48:28.014Z"},
+{id: "Q619", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P5 — 1840 – 1896", points: 3, soustag: "Changement ou continuité", aspects: [{aspect: "Migrations"}], enonce: "À partir du document A, indiquez s’il y a changement ou continuité dans la répartition de la population entre les milieux urbain et rural au Québec. Justifiez votre choix à l’aide de faits qui montrent le changement ou la continuité et d’un repère de temps.", updatedAt: "2026-07-06T15:34:28.981Z"}
 ]
