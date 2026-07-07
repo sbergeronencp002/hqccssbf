@@ -11286,8 +11286,8 @@ const QUESTIONS = [
  aspects: [{aspect: "Migrations"}],
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_immigration_émigration_quebec_1840-1890.jpg", soustitre: "Évolution des mouvements migratoires au Québec", source: "Adapté de Paul-André Linteau, René Durocher et Jean-Claude Robert, Histoire du Québec contemporain. Tome I : De la Confédération à la crise (1867-1929), Boréal, 1989."}]}],
  reponse: {type: "lignes", nombre: 3},
- guide: "Changement.\nL'immigration diminue (180 000 à 80 000), tandis que l'émigration augmente (20 000 à 80 000) entre 1840-1849 et 1880-1889.\n\nContinuité.\nLe Québec connaît d'importants mouvements migratoires durant toute la période, de 1840-1849 à 1880-1889.",
- updatedAt: "2026-07-06T18:08:56.390Z"
+ guide: "Il y a changement, car l'immigration diminue tandis que l'émigration augmente entre 1840 et 1880 (ou 180 000 immigrants et 20 000 émigrants en 1840-1849, comparativement à 80 000 immigrants et 80 000 émigrants en 1880-1889).\n\nIl y a continuité, car des mouvements d'immigration et d'émigration (ou les mouvements migratoires) sont présents tout au long de la période entre 1840 et 1880 (ou à chaque décennie, des personnes immigrent au Québec et d'autres l'émigrent).",
+ updatedAt: "2026-07-07T01:31:01.211Z"
 },
 {
  id: "Q621",
