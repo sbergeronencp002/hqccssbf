@@ -1170,7 +1170,8 @@ const REGLETTES = {
 "Q629": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q630": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q631": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]},
-"Q632": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q632": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q633": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1458,7 +1459,8 @@ const IMAGE_DB = {
 "tableau_immigration_émigration_quebec_1840-1890.jpg": {src: "images/tableau_immigration_émigration_quebec_1840-1890.jpg"},
 "tableau_population_region_colonisation.jpg": {src: "images/tableau_population_region_colonisation.jpg", w: 1200, h: 800},
 "tableau_superficie_fermes.jpg": {src: "images/tableau_superficie_fermes.jpg"},
-"tableau_émigration_usa_1840-1890.jpg": {src: "images/tableau_émigration_usa_1840-1890.jpg"}
+"tableau_émigration_usa_1840-1890.jpg": {src: "images/tableau_émigration_usa_1840-1890.jpg"},
+"tableau_population_centres_manufacturiers.jpg": {src: "images/tableau_population_centres_manufacturiers.jpg"}
 }
 
 const QUESTIONS = [
@@ -11462,5 +11464,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les difficultés économiques en Europe.\nLa famine en Irlande.\nLes mauvaises récoltes en Europe.\nLa pauvreté en Europe.\nLa recherche de meilleures conditions de vie.",
  updatedAt: "2026-07-06T23:53:53.487Z"
+},
+{
+ id: "Q633",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Conséquence",
+ enonce: "Indiquez une conséquence de l'immigration transatlantique au Québec au cours de la seconde moitié du XIXᵉ siècle.",
+ aspects: [{aspect: "Migrations"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_population_centres_manufacturiers.jpg", soustitre: "Évolution de la population des principaux centres manufacturiers", source: "Adapté de Paul-André Linteau, Histoire de Montréal depuis la Confédération, Boréal, 1992."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "La croissance de la population du Québec.\nL'augmentation de la population urbaine.",
+ updatedAt: "2026-07-07T00:00:19.602Z"
 }
 ]
