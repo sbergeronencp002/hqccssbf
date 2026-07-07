@@ -1197,7 +1197,8 @@ const REGLETTES = {
  ]
 },
 "Q648": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
-"Q649": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q649": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q650": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -11763,5 +11764,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les anticléricaux veulent limiter l'influence de l'Église dans les affaires publiques.\nLes anticléricaux sont favorables à la séparation de l'Église et de l'État.\nIls s'opposent à l'intervention du clergé dans la vie politique.",
  updatedAt: "2026-07-07T23:28:52.240Z"
+},
+{
+ id: "Q650",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une raison pour laquelle les ultramontanistes contestent l'influence de l'Institut canadien de Montréal dans la société au cours de la seconde moitié du XIXᵉ siècle.",
+ aspects: [{aspect: "Présence de l'Église catholique"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Les ouvrages qui attaquent la religion ou propagent de fausses doctrines mettent en danger la foi des fidèles. Les catholiques doivent éviter ces lectures. »", source: "Adapté d'Ignace Bourget, Mandements, lettres pastorales et circulaires, 1858."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les ultramontanistes veulent empêcher la diffusion d'idées contraires à la doctrine catholique.\nIls craignent que les idées libérales affaiblissent l'influence de l'Église.\nIls souhaitent protéger la foi catholique contre des ouvrages jugés dangereux.\nIls s'opposent à la diffusion de livres condamnés par l'Église.",
+ updatedAt: "2026-07-07T23:30:47.981Z"
 }
 ]
