@@ -11694,14 +11694,14 @@ const QUESTIONS = [
  periode: "P5 — 1840 – 1896",
  points: 2,
  soustag: "Convergence – 2 acteurs",
- enonce: "Les documents A et B présentent le point de vue de deux acteurs. Indiquez le point précis sur lequel ces deux acteurs sont d'accord.",
+ enonce: "Les documents A et B présentent le point de vue de deux acteurs. Indiquez le point précis sur lequel ces deux acteurs sont en désaccord.",
  aspects: [{aspect: "Présence de l'Église catholique"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document A", texte: "« Ceux qui enseignent que l'Église ne doit pas intervenir dans les questions politiques s'écartent de leurs devoirs. La religion doit guider les fidèles jusque dans la vie publique. »", auteur: "Ignace Bourget", source: "Adapté d'Ignace Bourget, Mandements, lettres pastorales et circulaires, 1875."}]},
-  {type: "textes", cols: [{titre: "Document B", texte: "« Les électeurs accomplissent un devoir devant Dieu. Le prêtre possède le droit de les guider, puisque la religion ne peut être séparée des affaires politiques. »", auteur: "Louis-François Laflèche", source: "Adapté de Louis-François Laflèche, Quelques considérations sur les rapports de la société civile avec la religion et la famille, 1866."}]}
+  {type: "textes", cols: [{titre: "Document A", texte: "« Les choses ne peuvent bien aller dans un pays que lorsque le clergé demeure à l'autel et que l'État administre les affaires publiques. Dès que le clergé intervient en politique, les difficultés commencent. »", auteur: "Louis-Antoine Dessaulles", source: "Adapté de Louis-Antoine Dessaulles, Discours et écrits politiques, 1873."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Ceux qui prétendent que l'Église ne doit pas intervenir dans les questions politiques s'éloignent des principes religieux. Les fidèles doivent suivre les enseignements de leurs pasteurs jusque dans la vie publique. »", auteur: "Ignace Bourget", source: "Adapté d'Ignace Bourget, Mandements, lettres pastorales et circulaires, 1875."}]}
  ],
  reponse: {type: "lignes", nombre: 2},
- guide: "L'Église catholique doit intervenir dans la vie politique.",
- updatedAt: "2026-07-07T23:07:49.916Z"
+ guide: "Le rôle de l'Église dans la vie politique.",
+ updatedAt: "2026-07-07T23:11:02.860Z"
 }
 ]
