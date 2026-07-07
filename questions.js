@@ -1176,7 +1176,8 @@ const REGLETTES = {
 "Q635": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]},
 "Q636": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q637": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q638": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]}
+"Q638": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
+"Q639": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -11558,5 +11559,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les femmes mariées demeurent soumises à l'autorité de leur mari entre 1860 et 1890 (ou elles doivent obtenir l'autorisation de leur mari pour exercer plusieurs droits civils en 1860 comme en 1890).",
  updatedAt: "2026-07-07T01:36:59.639Z"
+},
+{
+ id: "Q639",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Convergence – 2 acteurs",
+ enonce: "Les documents A et B présentent le point de vue de deux actrices sur le rôle des femmes dans la société. Indiquez le point précis sur lequel ces deux actrices sont d’accord.",
+ aspects: [{aspect: "Rôle des femmes"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Les femmes peuvent contribuer au progrès de la société en participant aux œuvres sociales, à l'éducation et aux réformes qui améliorent les conditions de vie des familles. »", auteur: "Lady Ishbel Maria Gordon Aberdeen", source: "Adapté de Lady Aberdeen, discours au National Council of Women of Canada, 1893."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les femmes doivent pouvoir mettre leurs connaissances et leurs compétences au service de la société afin de favoriser le bien-être collectif et le progrès social. »", soustitre: "Emily Howard Stowe", source: "Adapté d'Emily Howard Stowe, discours à la Canadian Women's Suffrage Association, vers 1889."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les deux souhaitent améliorer la condition des femmes.\nLes deux favorisent une plus grande participation des femmes à la vie publique.",
+ updatedAt: "2026-07-07T01:41:01.826Z"
 }
 ]
