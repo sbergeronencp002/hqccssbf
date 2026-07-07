@@ -1177,7 +1177,8 @@ const REGLETTES = {
 "Q636": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q637": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q638": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
-"Q639": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]}
+"Q639": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
+"Q640": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -11576,5 +11577,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les deux souhaitent améliorer la condition des femmes.\nLes deux favorisent une plus grande participation des femmes à la vie publique.",
  updatedAt: "2026-07-07T01:42:13.615Z"
+},
+{
+ id: "Q640",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Convergence – 2 acteurs",
+ enonce: "Les documents A et B présentent le point de vue de deux acteurs. Indiquez le point précis sur lequel ces deux acteurs sont d'accord.",
+ aspects: [{aspect: "Rôle des femmes"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Les communautés religieuses accomplissent une œuvre essentielle en instruisant la jeunesse, en soignant les malades et en portant secours aux personnes les plus démunies. »", auteur: "Ignace Bourget", source: "Adapté d'Ignace Bourget, Lettre pastorale, 1858."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Notre mission consiste à accueillir les pauvres, à soigner les malades et à offrir une éducation chrétienne à ceux et celles qui en ont besoin. »", auteur: "Les Sœurs Grises", source: "Adapté des Constitutions des Sœurs Grises de Montréal, vers 1871."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les deux considèrent que les femmes contribuent à la société par l'éducation ou les soins aux malades.",
+ updatedAt: "2026-07-07T01:43:32.027Z"
 }
 ]
