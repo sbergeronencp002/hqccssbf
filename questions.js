@@ -1179,7 +1179,8 @@ const REGLETTES = {
 "Q638": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
 "Q639": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
 "Q640": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
-"Q641": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
+"Q641": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
+"Q642": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1471,7 +1472,8 @@ const IMAGE_DB = {
 "tableau_population_centres_manufacturiers.jpg": {src: "images/tableau_population_centres_manufacturiers.jpg"},
 "carte_regions_colonisation_1840-1890.jpg": {src: "images/carte_regions_colonisation_1840-1890.jpg"},
 "tableau_travail_usines_hommes-femmes.jpg": {src: "images/tableau_travail_usines_hommes-femmes.jpg", w: 1200, h: 800},
-"young_women_christian_association.jpg": {src: "images/young_women_christian_association.jpg"}
+"young_women_christian_association.jpg": {src: "images/young_women_christian_association.jpg"},
+"tableau_organisations_feminines.jpg": {src: "images/tableau_organisations_feminines.jpg", w: 1200, h: 841}
 }
 
 const QUESTIONS = [
@@ -11610,5 +11612,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les femmes ou les familles en difficulté reçoivent davantage de services d’aide et de soutien.\nLes jeunes femmes ont davantage accès à l'hébergement et à l'entraide.\nLes femmes ont davantage accès à l'éducation ou à la formation.\nLes œuvres sociales destinées aux femmes et aux enfants se développent.",
  updatedAt: "2026-07-07T01:49:09.537Z"
+},
+{
+ id: "Q642",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Continuité",
+ enonce: "À partir du document A, indiquez un élément de continuité concernant les organisations féminines anglophones entre 1851 et 1894.",
+ aspects: [{aspect: "Rôle des femmes"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_organisations_feminines.jpg", soustitre: "Organisations féminines anglophones au Canada", source: "Adapté de Veronica Strong-Boag, The Parliament of Women: The National Council of Women of Canada, 1893-1929, National Museum of Man, 1976."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Des organisations féminines anglophones continuent d'être fondées entre 1851 et 1894.\nLes femmes anglophones continuent de créer des organisations entre 1851 et 1894.",
+ updatedAt: "2026-07-07T01:59:18.342Z"
 }
 ]
