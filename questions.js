@@ -1173,7 +1173,8 @@ const REGLETTES = {
 "Q632": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q633": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q634": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]},
-"Q635": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]}
+"Q635": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]},
+"Q636": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -11509,5 +11510,19 @@ const QUESTIONS = [
  reponse: {type: "situer-dans-lespace", elements: ["Gaspésie", "Laurentides"]},
  guide: {type: "grille", entetes: ["Gaspésie", "Laurentides"], rangees: [["D", "B"]]},
  updatedAt: "2026-07-07T00:10:52.952Z"
+},
+{
+ id: "Q636",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une cause de l'augmentation du nombre de femmes salariées au cours de la seconde moitié du XIXᵉ siècle.",
+ aspects: [{aspect: "Rôle des femmes"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Entre 1850 et 1890, le nombre de manufactures augmente rapidement dans plusieurs villes du Québec. Les usines de textile, de vêtements, de chaussures et de tabac emploient une main-d'œuvre de plus en plus nombreuse. »", source: "Adapté de Paul-André Linteau, Histoire du Québec contemporain. Tome I : De la Confédération à la crise (1867-1929), Boréal, 1989."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "L'industrialisation.\nLe développement des manufactures.",
+ updatedAt: "2026-07-07T01:22:30.968Z"
 }
 ]
