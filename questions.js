@@ -1171,7 +1171,8 @@ const REGLETTES = {
 "Q630": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q631": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]},
 "Q632": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q633": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
+"Q633": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
+"Q634": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]}
 }
 
 const IMAGE_DB = {
@@ -1460,7 +1461,8 @@ const IMAGE_DB = {
 "tableau_population_region_colonisation.jpg": {src: "images/tableau_population_region_colonisation.jpg", w: 1200, h: 800},
 "tableau_superficie_fermes.jpg": {src: "images/tableau_superficie_fermes.jpg"},
 "tableau_émigration_usa_1840-1890.jpg": {src: "images/tableau_émigration_usa_1840-1890.jpg"},
-"tableau_population_centres_manufacturiers.jpg": {src: "images/tableau_population_centres_manufacturiers.jpg"}
+"tableau_population_centres_manufacturiers.jpg": {src: "images/tableau_population_centres_manufacturiers.jpg"},
+"carte_regions_colonisation_1840-1890.jpg": {src: "images/carte_regions_colonisation_1840-1890.jpg"}
 }
 
 const QUESTIONS = [
@@ -11478,5 +11480,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "La croissance de la population du Québec.\nL'augmentation de la population urbaine.",
  updatedAt: "2026-07-07T00:00:19.602Z"
+},
+{
+ id: "Q634",
+ niveau: 4,
+ oi: "Situer dans l'espace",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Situer 2 éléments",
+ enonce: "À partir du document A, indiquez la lettre correspondant à chacune des régions de colonisation ouvertes au milieu du XIXᵉ siècle :\n• Outaouais\n• Saguenay",
+ aspects: [{aspect: "Migrations"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_regions_colonisation_1840-1890.jpg", source: "Carte du Québec. Adaptée d'après d-maps.com."}]}],
+ reponse: {type: "situer-dans-lespace", elements: ["Outaouais", "Saguenay"]},
+ guide: {type: "grille", entetes: ["Outaouais", "Saguenay"], rangees: [["A", "C"]]},
+ updatedAt: "2026-07-07T00:10:08.242Z"
 }
 ]
