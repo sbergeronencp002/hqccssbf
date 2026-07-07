@@ -1174,7 +1174,8 @@ const REGLETTES = {
 "Q633": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q634": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]},
 "Q635": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]},
-"Q636": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q636": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q637": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -1464,7 +1465,8 @@ const IMAGE_DB = {
 "tableau_superficie_fermes.jpg": {src: "images/tableau_superficie_fermes.jpg"},
 "tableau_émigration_usa_1840-1890.jpg": {src: "images/tableau_émigration_usa_1840-1890.jpg"},
 "tableau_population_centres_manufacturiers.jpg": {src: "images/tableau_population_centres_manufacturiers.jpg"},
-"carte_regions_colonisation_1840-1890.jpg": {src: "images/carte_regions_colonisation_1840-1890.jpg"}
+"carte_regions_colonisation_1840-1890.jpg": {src: "images/carte_regions_colonisation_1840-1890.jpg"},
+"tableau_travail_usines_hommes-femmes.jpg": {src: "images/tableau_travail_usines_hommes-femmes.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -11524,5 +11526,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "L'industrialisation.\nLe développement des manufactures.",
  updatedAt: "2026-07-07T01:22:30.968Z"
+},
+{
+ id: "Q637",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P5 — 1840 – 1896",
+ points: 3,
+ soustag: "Changement ou continuité",
+ enonce: "À partir du document, indiquez s'il y a changement ou continuité dans la proportion de femmes travaillant dans les manufactures entre 1860 et 1890. Justifiez votre choix par des faits qui montrent le changement ou la continuité et par un repère de temps.",
+ aspects: [{aspect: "Rôle des femmes"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_travail_usines_hommes-femmes.jpg", soustitre: "Évolution de la composition de la main-d'œuvre manufacturière", source: "Adapté de Fernand Ouellet, Histoire économique et sociale du Québec, 1760-1850 : Structures et conjoncture, Fides, 1966."}]}],
+ reponse: {type: "lignes", nombre: 3},
+ guide: "Il y a changement, car la proportion de femmes travaillant dans les manufactures augmente entre 1860 et 1890 (ou de 29 % en 1860 à 42 % en 1890).\n\nIl y a continuité, car les femmes demeurent moins nombreuses que les hommes dans les manufactures entre 1860 et 1890 (ou elles représentent moins de la moitié de la main-d'œuvre en 1860 comme en 1890).",
+ updatedAt: "2026-07-07T01:27:42.945Z"
 }
 ]
