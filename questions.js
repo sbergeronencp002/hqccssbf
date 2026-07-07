@@ -1182,7 +1182,8 @@ const REGLETTES = {
 "Q641": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q642": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
 "Q643": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
-"Q644": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]}
+"Q644": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
+"Q645": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]}
 }
 
 const IMAGE_DB = {
@@ -1478,7 +1479,9 @@ const IMAGE_DB = {
 "tableau_organisations_feminines.jpg": {src: "images/tableau_organisations_feminines.jpg", w: 1200, h: 841},
 "portrait_dessaulles.jpg": {src: "images/portrait_dessaulles.jpg"},
 "portrait_ignace_bourget.jpg": {src: "images/portrait_ignace_bourget.jpg"},
-"portrait_tardivel.jpg": {src: "images/portrait_tardivel.jpg"}
+"portrait_tardivel.jpg": {src: "images/portrait_tardivel.jpg"},
+"portrait_francois-xavier_garneau.jpg": {src: "images/portrait_francois-xavier_garneau.jpg", w: 927, h: 1200},
+"portrait_lafleche.jpg": {src: "images/portrait_lafleche.jpg", w: 1068, h: 1200}
 }
 
 const QUESTIONS = [
@@ -11665,5 +11668,22 @@ const QUESTIONS = [
  reponse: {type: "mettre-en-relation", elements: ["Anticléricalisme", "Nationalisme de survivance", "Ultramontanisme"]},
  guide: {type: "grille", entetes: ["Anticléricalisme", "Nationalisme de survivance", "Ultramontanisme"], rangees: [["B", "C", "A"]]},
  updatedAt: "2026-07-07T22:55:16.408Z"
+},
+{
+ id: "Q645",
+ niveau: 4,
+ oi: "Mettre en relation des faits",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ enonce: "Les documents A à C présentent des idées associées à différents mouvements de pensée au Québec dans la seconde moitié du XIXᵉ siècle. Inscrivez à l'endroit approprié la lettre correspondant à chacun des mouvements de pensée",
+ aspects: [{aspect: "Présence de l'Église catholique"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "portrait_lafleche.jpg", soustitre: "Louis-François Laflèche", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les institutions civiles remplissent mieux leur rôle lorsque les autorités religieuses se consacrent à leur mission spirituelle plutôt qu’à l’administration des affaires politiques de l’État. »", source: "Adapté de Louis-Antoine Dessaulles, Discours et écrits politiques, 1873."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "portrait_francois-xavier_garneau.jpg", soustitre: "François-Xavier Garneau", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]}
+ ],
+ reponse: {type: "mettre-en-relation", elements: ["Anticléricalisme", "Nationalisme de survivance", "Ultramontanisme"]},
+ guide: {type: "grille", entetes: ["Anticléricalisme", "Nationalisme de survivance", "Ultramontanisme"], rangees: [["B", "C", "A"]]},
+ updatedAt: "2026-07-07T22:59:46.686Z"
 }
 ]
