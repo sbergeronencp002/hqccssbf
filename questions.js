@@ -1175,7 +1175,8 @@ const REGLETTES = {
 "Q634": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]},
 "Q635": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]},
 "Q636": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q637": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q637": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q638": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -11540,5 +11541,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 3},
  guide: "Il y a changement, car la proportion de femmes travaillant dans les manufactures augmente entre 1860 et 1890 (ou de 29 % en 1860 à 42 % en 1890).\n\nIl y a continuité, car les femmes demeurent moins nombreuses que les hommes dans les manufactures entre 1860 et 1890 (ou elles représentent moins de la moitié de la main-d'œuvre en 1860 comme en 1890).",
  updatedAt: "2026-07-07T01:27:42.945Z"
+},
+{
+ id: "Q638",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Continuité",
+ enonce: "À partir des documents A et B, indiquez un élément de continuité dans le statut juridique des femmes mariées entre 1860 et 1890.",
+ aspects: [{aspect: "Rôle des femmes"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Au milieu du XIXᵉ siècle, la femme mariée demeure juridiquement sous l'autorité de son mari, qui administre généralement les biens du ménage. »", soustitre: "Vers 1860", source: "Adapté de Bettina Bradbury, Familles ouvrières à Montréal. Âge, genre et survie quotidienne pendant la phase d'industrialisation, Boréal, 1995."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« À la fin du XIXᵉ siècle, les revendications en faveur d'une amélioration du statut juridique des femmes prennent de l'importance, même si l'égalité devant la loi est encore loin d'être acquise. »", soustitre: "Vers 1890", source: "Adapté de Denyse Baillargeon, Brève histoire des femmes au Québec, Boréal, 2012."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les femmes mariées demeurent soumises à l'autorité de leur mari entre 1860 et 1890 (ou elles doivent obtenir l'autorisation de leur mari pour exercer plusieurs droits civils en 1860 comme en 1890).",
+ updatedAt: "2026-07-07T01:36:59.639Z"
 }
 ]
