@@ -11300,8 +11300,8 @@ const QUESTIONS = [
  aspects: [{aspect: "Migrations"}],
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_population_region_colonisation.jpg", soustitre: "Évolution de la population des régions de colonisation", source: "Adapté de Serge Courville, Le Québec : genèses et mutations du territoire, Presses de l'Université Laval, 2000."}]}],
  reponse: {type: "lignes", nombre: 3},
- guide: "Changement.\nLe nombre de colons augmente dans toutes les régions entre 1850 et 1890.\nL'écart entre le Saguenay et les autres régions s'accroît entre 1850 et 1890.\n\nContinuité.\nLe Saguenay demeure la région qui accueille le plus grand nombre de colons entre 1850 et 1890.\nToutes les régions connaissent une croissance importante de leur population de colons entre 1850 et 1890.",
- updatedAt: "2026-07-06T18:41:04.546Z"
+ guide: "Il y a changement, car le nombre de colons installés dans les nouvelles régions augmente entre 1850 et 1890 (ou passe de 8 000 à 50 000 au Saguenay, de 2 000 à 35 000 dans les Laurentides, de 1 000 à 34 000 en Outaouais ou de 3 000 à 22 000 en Gaspésie).\n\nIl y a continuité, car le Saguenay demeure la région qui compte le plus grand nombre de colons entre 1850 et 1890 (ou 8 000 en 1850 et 50 000 en 1890).",
+ updatedAt: "2026-07-07T01:29:56.311Z"
 },
 {
  id: "Q622",
