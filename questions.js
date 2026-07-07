@@ -1184,7 +1184,18 @@ const REGLETTES = {
 "Q643": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
 "Q644": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
 "Q645": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
-"Q646": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]}
+"Q646": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
+"Q647": {
+ oi: "Dégager des différences et des similitudes",
+ variante: "acteur-positions",
+ colonnes: ["3 points", "2 points", "1 point", "0 point"],
+ niveaux: [
+  {pts: 3, desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."},
+  {pts: 2, desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."},
+  {pts: 1, desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."},
+  {pts: 0, desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."}
+ ]
+}
 }
 
 const IMAGE_DB = {
@@ -11703,5 +11714,23 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Le rôle de l'Église dans la vie politique.",
  updatedAt: "2026-07-07T23:11:02.860Z"
+},
+{
+ id: "Q647",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P5 — 1840 – 1896",
+ points: 3,
+ soustag: "Position – 3 acteurs",
+ enonce: "Les documents A à C présentent le point de vue de trois acteurs sur le rôle de l'Église dans la société. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+ aspects: [{aspect: "Présence de l'Église catholique"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Une société progresse lorsque les citoyens peuvent discuter librement des affaires publiques. Les débats politiques doivent appartenir à tous, sans être dirigés par l'autorité religieuse. »", auteur: "Arthur Buies", source: "Adapté d'Arthur Buies, Chroniques, Typographie A. Periard, 1873."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Ceux qui prétendent que l'Église ne doit pas intervenir dans les questions politiques s'éloignent des principes religieux. Les fidèles doivent suivre les enseignements de leurs pasteurs jusque dans la vie publique. »", auteur: "Ignace Bourget", source: "Adapté d'Ignace Bourget, Mandements, lettres pastorales et circulaires, 1875."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Les choses ne peuvent bien aller dans un pays que lorsque le clergé demeure à l'autel et que l'État administre les affaires publiques. Dès que le clergé intervient en politique, les difficultés commencent. »", auteur: "Louis-Antoine Dessaulles", source: "Adapté de Louis-Antoine Dessaulles, Discours et écrits politiques, 1873."}]}
+ ],
+ reponse: {type: "lignes", nombre: 3},
+ guide: "Bourget mentionne que l'Église (ou le clergé ou la religion) doit intervenir dans la vie politique (ou influencer la vie politique), alors que Dessaulles et Buies affirment le contraire.",
+ updatedAt: "2026-07-07T23:17:36.638Z"
 }
 ]
