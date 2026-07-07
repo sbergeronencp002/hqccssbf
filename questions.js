@@ -1178,7 +1178,8 @@ const REGLETTES = {
 "Q637": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q638": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
 "Q639": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
-"Q640": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]}
+"Q640": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
+"Q641": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1469,7 +1470,8 @@ const IMAGE_DB = {
 "tableau_émigration_usa_1840-1890.jpg": {src: "images/tableau_émigration_usa_1840-1890.jpg"},
 "tableau_population_centres_manufacturiers.jpg": {src: "images/tableau_population_centres_manufacturiers.jpg"},
 "carte_regions_colonisation_1840-1890.jpg": {src: "images/carte_regions_colonisation_1840-1890.jpg"},
-"tableau_travail_usines_hommes-femmes.jpg": {src: "images/tableau_travail_usines_hommes-femmes.jpg", w: 1200, h: 800}
+"tableau_travail_usines_hommes-femmes.jpg": {src: "images/tableau_travail_usines_hommes-femmes.jpg", w: 1200, h: 800},
+"young_women_christian_association.jpg": {src: "images/young_women_christian_association.jpg"}
 }
 
 const QUESTIONS = [
@@ -11594,5 +11596,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les deux considèrent que les femmes contribuent à la société par l'éducation ou les soins aux malades.",
  updatedAt: "2026-07-07T01:43:32.027Z"
+},
+{
+ id: "Q641",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Conséquence",
+ enonce: "Indiquez une conséquence des actions des organisations féminines anglophones sur la société canadienne à la fin du XIXᵉ siècle.",
+ aspects: [{aspect: "Rôle des femmes"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "young_women_christian_association.jpg", soustitre: "Les services offerts par la Young Women’s Christian Association", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les femmes ou les familles en difficulté reçoivent davantage de services d’aide et de soutien.\nLes jeunes femmes ont davantage accès à l'hébergement et à l'entraide.\nLes femmes ont davantage accès à l'éducation ou à la formation.\nLes œuvres sociales destinées aux femmes et aux enfants se développent.",
+ updatedAt: "2026-07-07T01:49:09.537Z"
 }
 ]
