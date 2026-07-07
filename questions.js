@@ -11272,8 +11272,8 @@ const QUESTIONS = [
  aspects: [{aspect: "Migrations"}],
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_population_rurale_urbaine_1840-1890.jpg", soustitre: "Évolution de la répartition de la population entre les milieux urbain et rural", source: "Adapté de Paul-André Linteau, René Durocher et Jean-Claude Robert, Histoire du Québec contemporain. Tome I : De la Confédération à la crise (1867-1929), Boréal, 1989."}]}],
  reponse: {type: "lignes", nombre: 3},
- guide: "Changement.\nEntre 1840 et 1890, la proportion de la population vivant en milieu urbain augmente de 12 % à 32 %, tandis que la proportion vivant en milieu rural diminue de 88 % à 68 %.\n\nContinuité.\nDe 1840 à 1890, la majorité de la population vit en milieu rural tout au long de la période, malgré l'augmentation de la population urbaine.",
- updatedAt: "2026-07-06T18:46:34.461Z"
+ guide: "Il y a changement, car la proportion de la population vivant en milieu urbain augmente entre 1840 et 1890 (ou de 12 % en 1840 à 32 % en 1890).\n\nIl y a continuité, car la majorité de la population vit en milieu rural entre 1840 et 1890 (ou 88 % en 1840 et 68 % en 1890).",
+ updatedAt: "2026-07-07T01:29:07.472Z"
 },
 {
  id: "Q620",
