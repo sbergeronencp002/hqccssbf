@@ -11567,7 +11567,7 @@ const QUESTIONS = [
  periode: "P5 — 1840 – 1896",
  points: 2,
  soustag: "Convergence – 2 acteurs",
- enonce: "Les documents A et B présentent le point de vue de deux actrices sur le rôle des femmes dans la société. Indiquez le point précis sur lequel ces deux actrices sont d’accord.",
+ enonce: "Les documents A et B présentent le point de vue de deux actrices. Indiquez le point précis sur lequel ces deux actrices sont d’accord.",
  aspects: [{aspect: "Rôle des femmes"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", texte: "« Les femmes peuvent contribuer au progrès de la société en participant aux œuvres sociales, à l'éducation et aux réformes qui améliorent les conditions de vie des familles. »", auteur: "Lady Ishbel Maria Gordon Aberdeen", source: "Adapté de Lady Aberdeen, discours au National Council of Women of Canada, 1893."}]},
@@ -11575,6 +11575,6 @@ const QUESTIONS = [
  ],
  reponse: {type: "lignes", nombre: 2},
  guide: "Les deux souhaitent améliorer la condition des femmes.\nLes deux favorisent une plus grande participation des femmes à la vie publique.",
- updatedAt: "2026-07-07T01:41:01.826Z"
+ updatedAt: "2026-07-07T01:42:13.615Z"
 }
 ]
