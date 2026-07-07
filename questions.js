@@ -1180,7 +1180,8 @@ const REGLETTES = {
 "Q639": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
 "Q640": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
 "Q641": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
-"Q642": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]}
+"Q642": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
+"Q643": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]}
 }
 
 const IMAGE_DB = {
@@ -1473,7 +1474,8 @@ const IMAGE_DB = {
 "carte_regions_colonisation_1840-1890.jpg": {src: "images/carte_regions_colonisation_1840-1890.jpg"},
 "tableau_travail_usines_hommes-femmes.jpg": {src: "images/tableau_travail_usines_hommes-femmes.jpg", w: 1200, h: 800},
 "young_women_christian_association.jpg": {src: "images/young_women_christian_association.jpg"},
-"tableau_organisations_feminines.jpg": {src: "images/tableau_organisations_feminines.jpg", w: 1200, h: 841}
+"tableau_organisations_feminines.jpg": {src: "images/tableau_organisations_feminines.jpg", w: 1200, h: 841},
+"portrait_dessaulles.jpg": {src: "images/portrait_dessaulles.jpg"}
 }
 
 const QUESTIONS = [
@@ -11626,5 +11628,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Des organisations féminines anglophones continuent d'être fondées entre 1851 et 1894.\nLes femmes anglophones continuent de créer des organisations entre 1851 et 1894.",
  updatedAt: "2026-07-07T01:59:18.342Z"
+},
+{
+ id: "Q643",
+ niveau: 4,
+ oi: "Mettre en relation des faits",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ enonce: "Les documents A à C présentent des idées associées à différents mouvements de pensée au Québec dans la seconde moitié du XIXᵉ siècle. Inscrivez à l'endroit approprié la lettre correspondant à chacun des mouvements de pensée",
+ aspects: [{aspect: "Présence de l'Église catholique"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Les citoyens doivent écouter les enseignements de l’Église, car la religion guide les consciences et doit inspirer les décisions qui concernent l’ensemble de la société. »", source: "Adapté de Louis-François Laflèche, Quelques considérations sur les rapports de la société civile avec la religion et la famille, 1866."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "portrait_dessaulles.jpg", soustitre: "Louis-Antoine Dessaulles", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« La nation canadienne-française préservera son avenir en protégeant sa langue, sa religion et les traditions qui ont permis à son peuple de traverser les épreuves. »", source: "Adapté de Jules-Paul Tardivel, La Vérité, 1885."}]}
+ ],
+ reponse: {type: "mettre-en-relation", elements: ["Anticléricalisme", "Nationalisme de survivance", "Ultramontanisme"]},
+ guide: {type: "grille", entetes: ["Anticléricalisme", "Nationalisme de survivance", "Ultramontanisme"], rangees: [["B", "C", "A"]]},
+ updatedAt: "2026-07-07T20:02:14.230Z"
 }
 ]
