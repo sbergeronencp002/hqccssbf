@@ -1183,7 +1183,8 @@ const REGLETTES = {
 "Q642": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
 "Q643": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
 "Q644": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
-"Q645": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]}
+"Q645": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
+"Q646": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -11685,5 +11686,22 @@ const QUESTIONS = [
  reponse: {type: "mettre-en-relation", elements: ["Anticléricalisme", "Nationalisme de survivance", "Ultramontanisme"]},
  guide: {type: "grille", entetes: ["Anticléricalisme", "Nationalisme de survivance", "Ultramontanisme"], rangees: [["B", "C", "A"]]},
  updatedAt: "2026-07-07T22:59:46.686Z"
+},
+{
+ id: "Q646",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Convergence – 2 acteurs",
+ enonce: "Les documents A et B présentent le point de vue de deux acteurs. Indiquez le point précis sur lequel ces deux acteurs sont d'accord.",
+ aspects: [{aspect: "Présence de l'Église catholique"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Ceux qui enseignent que l'Église ne doit pas intervenir dans les questions politiques s'écartent de leurs devoirs. La religion doit guider les fidèles jusque dans la vie publique. »", auteur: "Ignace Bourget", source: "Adapté d'Ignace Bourget, Mandements, lettres pastorales et circulaires, 1875."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les électeurs accomplissent un devoir devant Dieu. Le prêtre possède le droit de les guider, puisque la religion ne peut être séparée des affaires politiques. »", auteur: "Louis-François Laflèche", source: "Adapté de Louis-François Laflèche, Quelques considérations sur les rapports de la société civile avec la religion et la famille, 1866."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "L'Église catholique doit intervenir dans la vie politique.",
+ updatedAt: "2026-07-07T23:07:49.916Z"
 }
 ]
