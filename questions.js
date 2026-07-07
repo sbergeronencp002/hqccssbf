@@ -1196,7 +1196,8 @@ const REGLETTES = {
   {pts: 0, desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."}
  ]
 },
-"Q648": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
+"Q648": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
+"Q649": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -11748,5 +11749,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les institutions sociales sont administrées séparément par les catholiques et les protestants.\nLes services sociaux sont organisés selon la confession religieuse.\nLes deux communautés disposent de leurs propres réseaux d'institutions.",
  updatedAt: "2026-07-07T23:25:05.387Z"
+},
+{
+ id: "Q649",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une raison pour laquelle les anticléricaux critiquent l'influence de l'Église catholique dans la société durant la seconde moitié du XIXᵉ siècle.",
+ aspects: [{aspect: "Présence de l'Église catholique"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Les choses ne peuvent bien aller dans un pays que lorsque le clergé demeure à l'autel et que l'État administre les affaires publiques. Dès que le clergé intervient en politique, les difficultés commencent. »", source: "Adapté de Louis-Antoine Dessaulles, Discours et écrits politiques, 1873."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les anticléricaux veulent limiter l'influence de l'Église dans les affaires publiques.\nLes anticléricaux sont favorables à la séparation de l'Église et de l'État.\nIls s'opposent à l'intervention du clergé dans la vie politique.",
+ updatedAt: "2026-07-07T23:28:52.240Z"
 }
 ]
