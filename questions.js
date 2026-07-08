@@ -1199,7 +1199,8 @@ const REGLETTES = {
 "Q648": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q649": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q650": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q651": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q651": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q652": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1499,7 +1500,8 @@ const IMAGE_DB = {
 "portrait_francois-xavier_garneau.jpg": {src: "images/portrait_francois-xavier_garneau.jpg", w: 927, h: 1200},
 "portrait_lafleche.jpg": {src: "images/portrait_lafleche.jpg", w: 1068, h: 1200},
 "tableau_dualite_confession.jpg": {src: "images/tableau_dualite_confession.jpg", w: 1200, h: 625},
-"tableau_pop_anglo_franco.jpg": {src: "images/tableau_pop_anglo_franco.jpg", w: 1200, h: 610}
+"tableau_pop_anglo_franco.jpg": {src: "images/tableau_pop_anglo_franco.jpg", w: 1200, h: 610},
+"histoire_du_canada_fxg.jpg": {src: "images/histoire_du_canada_fxg.jpg", w: 800, h: 1200}
 }
 
 const QUESTIONS = [
@@ -11794,5 +11796,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "La crainte de l'assimilation des Canadiens français.",
  updatedAt: "2026-07-08T00:37:19.700Z"
+},
+{
+ id: "Q652",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Conséquence",
+ enonce: "Indiquez une conséquence de la publication d'œuvres patriotiques au Québec au cours de la seconde moitié du XIXᵉ siècle.",
+ aspects: [{aspect: "Manifestations socioculturelles"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_pop_anglo_franco.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI)."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Le sentiment national canadien-français se renforce.\nL'identité canadienne-française est valorisée.\nL'histoire des Canadiens français est mise en valeur.\nLe nationalisme de survivance est favorisé.",
+ updatedAt: "2026-07-08T00:44:27.526Z"
 }
 ]
