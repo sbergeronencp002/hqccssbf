@@ -1204,7 +1204,8 @@ const REGLETTES = {
 "Q653": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
 "Q654": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q655": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
-"Q656": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
+"Q656": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
+"Q657": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1508,7 +1509,8 @@ const IMAGE_DB = {
 "histoire_du_canada_fxg.jpg": {src: "images/histoire_du_canada_fxg.jpg", w: 800, h: 1200},
 "tableau_auteurs_autrices.jpg": {src: "images/tableau_auteurs_autrices.jpg"},
 "tableau_ens_supérieur.jpg": {src: "images/tableau_ens_supérieur.jpg"},
-"tableau_diplomes_1840-1890.jpg": {src: "images/tableau_diplomes_1840-1890.jpg", w: 1200, h: 1072}
+"tableau_diplomes_1840-1890.jpg": {src: "images/tableau_diplomes_1840-1890.jpg", w: 1200, h: 1072},
+"tableau_industrie_laitiere.jpg": {src: "images/tableau_industrie_laitiere.jpg", w: 1200, h: 864}
 }
 
 const QUESTIONS = [
@@ -11813,7 +11815,7 @@ const QUESTIONS = [
  soustag: "Conséquence",
  enonce: "Indiquez une conséquence de la publication d'œuvres patriotiques au Québec au cours de la seconde moitié du XIXᵉ siècle.",
  aspects: [{aspect: "Manifestations socioculturelles"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "histoire_du_canada_fxg.jpg", soustitre: "Histoire du Canada de François-Xavier Garneau", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "histoire_du_canada_fxg.jpg", soustitre: "Histoire du Canada de François-Xavier Garneau", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI)."}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "Le sentiment national canadien-français se renforce.\nL'identité canadienne-française est valorisée.\nL'histoire des Canadiens français est mise en valeur.\nLe nationalisme de survivance est favorisé.",
  updatedAt: "2026-07-08T00:46:25.258Z"
@@ -11829,7 +11831,7 @@ const QUESTIONS = [
  aspects: [{aspect: "Manifestations socioculturelles"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", texte: "« Ce roman historique est rapidement devenu un classique de la littérature canadienne-française en évoquant la Conquête et les traditions d'une société que plusieurs souhaitent préserver dans la mémoire collective. »", soustitre: "Les Anciens Canadiens de Philippe Aubert de Gaspé", source: "Adapté de Maurice Lemire, Dictionnaire des œuvres littéraires du Québec, Fides, 1978."}]},
-  {type: "textes", cols: [{titre: "Document B", ref: "histoire_du_canada_fxg.jpg", soustitre: "Histoire du Canada de François-Xavier Garneau", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}
+  {type: "textes", cols: [{titre: "Document B", ref: "histoire_du_canada_fxg.jpg", soustitre: "Histoire du Canada de François-Xavier Garneau", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI)."}]}
  ],
  reponse: {type: "lignes", nombre: 2},
  guide: "Elles valorisent l'identité canadienne-française.\nElles mettent en valeur l'histoire nationale.\nElles défendent la survivance des Canadiens français.",
@@ -11876,5 +11878,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Un plus grand nombre de professionnels sont formés au Québec.\nDavantage de personnes obtiennent une formation universitaire.\nLes professions libérales se développent.",
  updatedAt: "2026-07-08T01:06:15.539Z"
+},
+{
+ id: "Q657",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Changement",
+ enonce: "Indiquez un changement dans les exploitations agricoles du Québec concernant la production agricole entre 1850 et 1895.",
+ aspects: [{aspect: "Exploitations agricoles"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_industrie_laitiere.jpg", soustitre: "Évolution de l'élevage laitier et des fromageries au Québec", source: "Adapté de Recensement du Canada, 1891, Volume III – Manufactures, Gouvernement du Canada, 1893."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "La production laitière prend davantage d'importance.",
+ updatedAt: "2026-07-08T03:29:16.089Z"
 }
 ]
