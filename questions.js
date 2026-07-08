@@ -1210,7 +1210,8 @@ const REGLETTES = {
 "Q659": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q660": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q661": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
-"Q662": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q662": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q663": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1517,7 +1518,8 @@ const IMAGE_DB = {
 "tableau_diplomes_1840-1890.jpg": {src: "images/tableau_diplomes_1840-1890.jpg", w: 1200, h: 1072},
 "tableau_industrie_laitiere.jpg": {src: "images/tableau_industrie_laitiere.jpg", w: 1200, h: 864},
 "agricuteur_1850.jpg": {src: "images/agricuteur_1850.jpg"},
-"agriculteur_1890.jpg": {src: "images/agriculteur_1890.jpg"}
+"agriculteur_1890.jpg": {src: "images/agriculteur_1890.jpg"},
+"tableau_bois_scieries.jpg": {src: "images/tableau_bois_scieries.jpg"}
 }
 
 const QUESTIONS = [
@@ -11972,5 +11974,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "L'épuisement des forêts déjà exploitées.\nL'ouverture de nouvelles voies de transport.",
  updatedAt: "2026-07-08T03:59:32.699Z"
+},
+{
+ id: "Q663",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Conséquence",
+ enonce: "Indiquez une conséquence du développement de l'industrie du bois de sciage au Québec dans la seconde moitié du XIXᵉ siècle.",
+ aspects: [{aspect: "Industrie forestière"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_bois_scieries.jpg", soustitre: "Évolution du nombre de scieries au Québec", source: "Adapté de Serge Courville, Histoire du Québec. Espace et société, Éditions du Renouveau pédagogique, 1996."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Augmentation du nombre de scieries.\nCréation d'emplois.\nDéveloppement de villes industrielles.\nAugmentation des exportations de bois scié.\nTransformation accrue du bois au Québec.",
+ updatedAt: "2026-07-08T04:02:56.661Z"
 }
 ]
