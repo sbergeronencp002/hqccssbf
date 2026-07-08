@@ -1211,7 +1211,8 @@ const REGLETTES = {
 "Q660": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q661": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q662": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q663": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
+"Q663": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
+"Q664": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1519,7 +1520,8 @@ const IMAGE_DB = {
 "tableau_industrie_laitiere.jpg": {src: "images/tableau_industrie_laitiere.jpg", w: 1200, h: 864},
 "agricuteur_1850.jpg": {src: "images/agricuteur_1850.jpg"},
 "agriculteur_1890.jpg": {src: "images/agriculteur_1890.jpg"},
-"tableau_bois_scieries.jpg": {src: "images/tableau_bois_scieries.jpg"}
+"tableau_bois_scieries.jpg": {src: "images/tableau_bois_scieries.jpg"},
+"tableau_bois_equarris.jpg": {src: "images/tableau_bois_equarris.jpg", w: 1200, h: 675}
 }
 
 const QUESTIONS = [
@@ -11988,5 +11990,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Augmentation du nombre de scieries.\nCréation d'emplois.\nDéveloppement de villes industrielles.\nAugmentation des exportations de bois scié.\nTransformation accrue du bois au Québec.",
  updatedAt: "2026-07-08T04:02:56.661Z"
+},
+{
+ id: "Q664",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Changement",
+ enonce: "Indiquez un changement dans la transformation du bois au Québec entre 1840 et 1895.",
+ aspects: [{aspect: "Industrie forestière"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_bois_equarris.jpg", soustitre: "Évolution de la transformation du bois au Québec", source: "Adapté de Jean Hamelin et Yves Roby, Histoire économique du Québec, 1851-1896, Fides, 1971."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Une plus grande part du bois est transformée en bois de sciage.\nOn transforme davantage le bois au Québec.\nLes scieries remplacent progressivement les simples chantiers d'équarrissage.",
+ updatedAt: "2026-07-08T04:05:43.743Z"
 }
 ]
