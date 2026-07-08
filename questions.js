@@ -1205,7 +1205,8 @@ const REGLETTES = {
 "Q654": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q655": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
 "Q656": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
-"Q657": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
+"Q657": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
+"Q658": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1510,7 +1511,9 @@ const IMAGE_DB = {
 "tableau_auteurs_autrices.jpg": {src: "images/tableau_auteurs_autrices.jpg"},
 "tableau_ens_supérieur.jpg": {src: "images/tableau_ens_supérieur.jpg"},
 "tableau_diplomes_1840-1890.jpg": {src: "images/tableau_diplomes_1840-1890.jpg", w: 1200, h: 1072},
-"tableau_industrie_laitiere.jpg": {src: "images/tableau_industrie_laitiere.jpg", w: 1200, h: 864}
+"tableau_industrie_laitiere.jpg": {src: "images/tableau_industrie_laitiere.jpg", w: 1200, h: 864},
+"agricuteur_1850.jpg": {src: "images/agricuteur_1850.jpg"},
+"agriculteur_1890.jpg": {src: "images/agriculteur_1890.jpg"}
 }
 
 const QUESTIONS = [
@@ -11892,5 +11895,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "La production laitière prend davantage d'importance.",
  updatedAt: "2026-07-08T03:29:16.089Z"
+},
+{
+ id: "Q658",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Changement",
+ enonce: "Indiquez un changement dans les méthodes de travail des agriculteurs entre 1850 et 1895.",
+ aspects: [{aspect: "Exploitations agricoles"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "agricuteur_1850.jpg", soustitre: "Agriculture vers 1850", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}, {type: "textes", cols: [{titre: "Document B", ref: "agriculteur_1890.jpg", soustitre: "Agriculture vers 1895", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les agriculteurs utilisent davantage de machines agricoles pour effectuer les récoltes.\nLes travaux agricoles deviennent plus mécanisés.\nLes outils manuels sont progressivement remplacés par des machines.\nLa récolte est de plus en plus effectuée à l'aide de moissonneuses plutôt qu'à la faux.",
+ updatedAt: "2026-07-08T03:39:05.155Z"
 }
 ]
