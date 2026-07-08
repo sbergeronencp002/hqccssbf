@@ -1209,7 +1209,8 @@ const REGLETTES = {
 "Q658": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q659": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q660": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q661": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
+"Q661": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
+"Q662": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -11957,5 +11958,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "L'exploitation forestière s'étend vers de nouvelles régions.",
  updatedAt: "2026-07-08T03:58:00.246Z"
+},
+{
+ id: "Q662",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une raison pour laquelle l'exploitation forestière s'étend vers de nouvelles régions au cours de la seconde moitié du XIXᵉ siècle.",
+ aspects: [{aspect: "Industrie forestière"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« À mesure que les peuplements forestiers des régions accessibles diminuent, les exploitants ouvrent des chantiers dans des territoires toujours plus éloignés, rendus accessibles par les nouveaux moyens de transport. »", source: "Adapté de Serge Courville, Histoire du Québec. Un parcours, Les Presses de l'Université Laval, 2008."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "L'épuisement des forêts déjà exploitées.\nL'ouverture de nouvelles voies de transport.",
+ updatedAt: "2026-07-08T03:59:32.699Z"
 }
 ]
