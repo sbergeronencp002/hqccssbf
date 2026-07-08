@@ -11806,9 +11806,9 @@ const QUESTIONS = [
  soustag: "Conséquence",
  enonce: "Indiquez une conséquence de la publication d'œuvres patriotiques au Québec au cours de la seconde moitié du XIXᵉ siècle.",
  aspects: [{aspect: "Manifestations socioculturelles"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_pop_anglo_franco.jpg", soustitre: "Histoire du Canada de François-Xavier Garneau", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI)."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "histoire_du_canada_fxg.jpg", soustitre: "Histoire du Canada de François-Xavier Garneau", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI)."}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "Le sentiment national canadien-français se renforce.\nL'identité canadienne-française est valorisée.\nL'histoire des Canadiens français est mise en valeur.\nLe nationalisme de survivance est favorisé.",
- updatedAt: "2026-07-08T00:44:48.032Z"
+ updatedAt: "2026-07-08T00:46:25.258Z"
 }
 ]
