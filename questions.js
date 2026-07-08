@@ -1200,7 +1200,8 @@ const REGLETTES = {
 "Q649": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q650": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q651": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q652": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
+"Q652": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
+"Q653": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -11810,5 +11811,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Le sentiment national canadien-français se renforce.\nL'identité canadienne-française est valorisée.\nL'histoire des Canadiens français est mise en valeur.\nLe nationalisme de survivance est favorisé.",
  updatedAt: "2026-07-08T00:46:25.258Z"
+},
+{
+ id: "Q653",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Continuité",
+ enonce: "Indiquez une continuité concernant les œuvres patriotiques entre les années 1860 et 1890.",
+ aspects: [{aspect: "Manifestations socioculturelles"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Ce roman historique est rapidement devenu un classique de la littérature canadienne-française en évoquant la Conquête et les traditions d'une société que plusieurs souhaitent préserver dans la mémoire collective. »", soustitre: "Les Anciens Canadiens de Philippe Aubert de Gaspé", source: "Adapté de Maurice Lemire, Dictionnaire des œuvres littéraires du Québec, Fides, 1978."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "histoire_du_canada_fxg.jpg", soustitre: "Histoire du Canada de François-Xavier Garneau", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI)."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Elles valorisent l'identité canadienne-française.\nElles mettent en valeur l'histoire nationale.\nElles défendent la survivance des Canadiens français.",
+ updatedAt: "2026-07-08T00:49:29.192Z"
 }
 ]
