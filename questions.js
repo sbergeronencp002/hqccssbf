@@ -1203,7 +1203,8 @@ const REGLETTES = {
 "Q652": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q653": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
 "Q654": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
-"Q655": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]}
+"Q655": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
+"Q656": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1506,7 +1507,8 @@ const IMAGE_DB = {
 "tableau_pop_anglo_franco.jpg": {src: "images/tableau_pop_anglo_franco.jpg", w: 1200, h: 610},
 "histoire_du_canada_fxg.jpg": {src: "images/histoire_du_canada_fxg.jpg", w: 800, h: 1200},
 "tableau_auteurs_autrices.jpg": {src: "images/tableau_auteurs_autrices.jpg"},
-"tableau_ens_supérieur.jpg": {src: "images/tableau_ens_supérieur.jpg"}
+"tableau_ens_supérieur.jpg": {src: "images/tableau_ens_supérieur.jpg"},
+"tableau_diplomes_1840-1890.jpg": {src: "images/tableau_diplomes_1840-1890.jpg", w: 1200, h: 1072}
 }
 
 const QUESTIONS = [
@@ -11860,5 +11862,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les communautés religieuses continuent de diriger les établissements d'enseignement supérieur.\nL'Église catholique conserve une influence importante sur l'enseignement supérieur.\nLes établissements d'enseignement supérieur demeurent confessionnels.\nL'enseignement supérieur demeure sous l'autorité des Églises.",
  updatedAt: "2026-07-08T01:02:58.709Z"
+},
+{
+ id: "Q656",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Conséquence",
+ enonce: "Indiquez une conséquence du développement de l'enseignement supérieur au Québec au cours de la seconde moitié du XIXᵉ siècle.",
+ aspects: [{aspect: "Manifestations socioculturelles"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_diplomes_1840-1890.jpg", soustitre: "Évolution du nombre de diplômés de l'enseignement supérieur", source: "Adapté de Jean Hamelin et Yves Roby, Histoire économique du Québec, 1851-1896, Fides, 1971."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Un plus grand nombre de professionnels sont formés au Québec.\nDavantage de personnes obtiennent une formation universitaire.\nLes professions libérales se développent.",
+ updatedAt: "2026-07-08T01:06:15.539Z"
 }
 ]
