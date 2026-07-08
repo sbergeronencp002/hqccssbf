@@ -1208,7 +1208,8 @@ const REGLETTES = {
 "Q657": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q658": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q659": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
-"Q660": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q660": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q661": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -11939,5 +11940,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Le régime seigneurial est jugé inadapté aux besoins d'une agriculture moderne.\nLe gouvernement souhaite remplacer le régime seigneurial par un système de propriété privée.",
  updatedAt: "2026-07-08T03:50:58.170Z"
+},
+{
+ id: "Q661",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Changement",
+ enonce: "Indiquez un changement concernant les régions d'exploitation forestière au Québec entre 1850 et 1895.",
+ aspects: [{aspect: "Industrie forestière"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "Les principaux chantiers forestiers sont concentrés dans les vallées de l'Outaouais et du Saint-Laurent, où les rivières facilitent le transport du bois vers les marchés d'exportation. »", soustitre: "Vers 1850", source: "Adapté de John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec, Septentrion, 2003."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Vers la fin du XIXᵉ siècle, l'exploitation forestière gagne la Mauricie, le Saguenay et les Laurentides, où l'abondance des forêts alimente la croissance de l'industrie du bois. »", source: "Adapté de Serge Courville, Histoire du Québec. Un parcours, Les Presses de l'Université Laval, 2008."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "L'exploitation forestière s'étend vers de nouvelles régions.",
+ updatedAt: "2026-07-08T03:58:00.246Z"
 }
 ]
