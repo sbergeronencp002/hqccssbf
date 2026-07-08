@@ -1201,7 +1201,8 @@ const REGLETTES = {
 "Q650": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q651": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q652": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
-"Q653": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]}
+"Q653": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
+"Q654": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1502,7 +1503,8 @@ const IMAGE_DB = {
 "portrait_lafleche.jpg": {src: "images/portrait_lafleche.jpg", w: 1068, h: 1200},
 "tableau_dualite_confession.jpg": {src: "images/tableau_dualite_confession.jpg", w: 1200, h: 625},
 "tableau_pop_anglo_franco.jpg": {src: "images/tableau_pop_anglo_franco.jpg", w: 1200, h: 610},
-"histoire_du_canada_fxg.jpg": {src: "images/histoire_du_canada_fxg.jpg", w: 800, h: 1200}
+"histoire_du_canada_fxg.jpg": {src: "images/histoire_du_canada_fxg.jpg", w: 800, h: 1200},
+"tableau_auteurs_autrices.jpg": {src: "images/tableau_auteurs_autrices.jpg"}
 }
 
 const QUESTIONS = [
@@ -11828,5 +11830,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Elles valorisent l'identité canadienne-française.\nElles mettent en valeur l'histoire nationale.\nElles défendent la survivance des Canadiens français.",
  updatedAt: "2026-07-08T00:49:29.192Z"
+},
+{
+ id: "Q654",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Changement",
+ enonce: "Indiquez un changement concernant la place des femmes dans la littérature au cours de la seconde moitié du XIXᵉ siècle.",
+ aspects: [{aspect: "Manifestations socioculturelles"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_auteurs_autrices.jpg", soustitre: "Publication d'œuvres littéraires au Québec", source: "Maurice Lemire (dir.), La vie littéraire au Québec, tome IV, Les Presses de l'Université Laval, 1999."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les femmes occupent une place plus importante dans la littérature québécoise.\nLes femmes publient davantage d'œuvres littéraires.\nDes femmes deviennent des auteures reconnues.\nLa littérature féminine émerge au Québec.\nLes femmes participent davantage à la vie littéraire.",
+ updatedAt: "2026-07-08T00:53:45.237Z"
 }
 ]
