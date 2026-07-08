@@ -11813,7 +11813,7 @@ const QUESTIONS = [
  soustag: "Conséquence",
  enonce: "Indiquez une conséquence de la publication d'œuvres patriotiques au Québec au cours de la seconde moitié du XIXᵉ siècle.",
  aspects: [{aspect: "Manifestations socioculturelles"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "histoire_du_canada_fxg.jpg", soustitre: "Histoire du Canada de François-Xavier Garneau", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI)."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "histoire_du_canada_fxg.jpg", soustitre: "Histoire du Canada de François-Xavier Garneau", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "Le sentiment national canadien-français se renforce.\nL'identité canadienne-française est valorisée.\nL'histoire des Canadiens français est mise en valeur.\nLe nationalisme de survivance est favorisé.",
  updatedAt: "2026-07-08T00:46:25.258Z"
@@ -11829,7 +11829,7 @@ const QUESTIONS = [
  aspects: [{aspect: "Manifestations socioculturelles"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", texte: "« Ce roman historique est rapidement devenu un classique de la littérature canadienne-française en évoquant la Conquête et les traditions d'une société que plusieurs souhaitent préserver dans la mémoire collective. »", soustitre: "Les Anciens Canadiens de Philippe Aubert de Gaspé", source: "Adapté de Maurice Lemire, Dictionnaire des œuvres littéraires du Québec, Fides, 1978."}]},
-  {type: "textes", cols: [{titre: "Document B", ref: "histoire_du_canada_fxg.jpg", soustitre: "Histoire du Canada de François-Xavier Garneau", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI)."}]}
+  {type: "textes", cols: [{titre: "Document B", ref: "histoire_du_canada_fxg.jpg", soustitre: "Histoire du Canada de François-Xavier Garneau", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}
  ],
  reponse: {type: "lignes", nombre: 2},
  guide: "Elles valorisent l'identité canadienne-française.\nElles mettent en valeur l'histoire nationale.\nElles défendent la survivance des Canadiens français.",
