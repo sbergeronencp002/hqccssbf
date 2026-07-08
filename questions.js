@@ -1202,7 +1202,8 @@ const REGLETTES = {
 "Q651": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q652": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q653": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
-"Q654": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
+"Q654": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
+"Q655": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1504,7 +1505,8 @@ const IMAGE_DB = {
 "tableau_dualite_confession.jpg": {src: "images/tableau_dualite_confession.jpg", w: 1200, h: 625},
 "tableau_pop_anglo_franco.jpg": {src: "images/tableau_pop_anglo_franco.jpg", w: 1200, h: 610},
 "histoire_du_canada_fxg.jpg": {src: "images/histoire_du_canada_fxg.jpg", w: 800, h: 1200},
-"tableau_auteurs_autrices.jpg": {src: "images/tableau_auteurs_autrices.jpg"}
+"tableau_auteurs_autrices.jpg": {src: "images/tableau_auteurs_autrices.jpg"},
+"tableau_ens_supérieur.jpg": {src: "images/tableau_ens_supérieur.jpg"}
 }
 
 const QUESTIONS = [
@@ -11844,5 +11846,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les femmes occupent une place plus importante dans la littérature québécoise.\nLes femmes publient davantage d'œuvres littéraires.\nDes femmes deviennent des auteures reconnues.\nLa littérature féminine émerge au Québec.\nLes femmes participent davantage à la vie littéraire.",
  updatedAt: "2026-07-08T00:53:45.237Z"
+},
+{
+ id: "Q655",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Continuité",
+ enonce: "Indiquez une continuité concernant l'enseignement supérieur au Québec entre 1840 et 1896.",
+ aspects: [{aspect: "Manifestations socioculturelles"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_ens_supérieur.jpg", soustitre: "Fondation des principales universités au Québec au XIXᵉ siècle", source: "Adapté de Paul-André Linteau, Histoire du Québec contemporain, tome 1 : De la Confédération à la crise (1867-1929), Boréal, 1989."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les communautés religieuses continuent de diriger les établissements d'enseignement supérieur.\nL'Église catholique conserve une influence importante sur l'enseignement supérieur.\nLes établissements d'enseignement supérieur demeurent confessionnels.\nL'enseignement supérieur demeure sous l'autorité des Églises.",
+ updatedAt: "2026-07-08T01:02:58.709Z"
 }
 ]
