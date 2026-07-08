@@ -1198,7 +1198,8 @@ const REGLETTES = {
 },
 "Q648": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q649": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q650": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q650": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q651": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1497,7 +1498,8 @@ const IMAGE_DB = {
 "portrait_tardivel.jpg": {src: "images/portrait_tardivel.jpg"},
 "portrait_francois-xavier_garneau.jpg": {src: "images/portrait_francois-xavier_garneau.jpg", w: 927, h: 1200},
 "portrait_lafleche.jpg": {src: "images/portrait_lafleche.jpg", w: 1068, h: 1200},
-"tableau_dualite_confession.jpg": {src: "images/tableau_dualite_confession.jpg", w: 1200, h: 625}
+"tableau_dualite_confession.jpg": {src: "images/tableau_dualite_confession.jpg", w: 1200, h: 625},
+"tableau_pop_anglo_franco.jpg": {src: "images/tableau_pop_anglo_franco.jpg", w: 1200, h: 610}
 }
 
 const QUESTIONS = [
@@ -11778,5 +11780,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les ultramontanistes veulent empêcher la diffusion d'idées contraires à la doctrine catholique.\nIls craignent que les idées libérales affaiblissent l'influence de l'Église.\nIls souhaitent protéger la foi catholique contre des ouvrages jugés dangereux.\nIls s'opposent à la diffusion de livres condamnés par l'Église.",
  updatedAt: "2026-07-07T23:30:47.981Z"
+},
+{
+ id: "Q651",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une cause de l'émergence du nationalisme de survivance au Québec dans la seconde moitié du XIXᵉ siècle.",
+ aspects: [{aspect: "Présence de l'Église catholique"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_pop_anglo_franco.jpg", soustitre: "Évolution de la composition linguistique de la population du Québec (", source: "Adapté de Paul-André Linteau, Histoire du Québec contemporain, tome 1 : De la Confédération à la crise (1867-1929), Boréal, 1989."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "La crainte de l'assimilation des Canadiens français.",
+ updatedAt: "2026-07-08T00:37:19.700Z"
 }
 ]
