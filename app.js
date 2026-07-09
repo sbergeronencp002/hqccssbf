@@ -746,7 +746,7 @@ function renderReponse(q) {
       + '</table>';
   }
   if(q.reponse.type === 'situer-dans-lespace') {
-    const els = q.reponse.elements || ['Élément 1','Élément 2'];
+    const els = (q.reponse.elements||[]).length ? q.reponse.elements : ['Élément 1','Élément 2'];
     const B = 'border:1px solid var(--ink-2)';
     const TH = B + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.8rem';
     const TC = B + ';text-align:center;padding:12px 16px';
@@ -1098,7 +1098,7 @@ async function previsualiser(guideMode) {
               + '</table>';
           }
         } else if(q.reponse.type === 'situer-dans-lespace') {
-          const elsS = q.reponse.elements || ['Élément 1','Élément 2'];
+          const elsS = (q.reponse.elements||[]).length ? q.reponse.elements : ['Élément 1','Élément 2'];
           const BSde = 'border:1px solid #999';
           const THSde = BSde + ';text-align:center;font-weight:600;padding:6px 8px;font-size:0.75rem';
           const TCSde = BSde + ';text-align:center;padding:12px 16px';
@@ -1366,15 +1366,18 @@ async function genererDocx(includeGuide=false) {
     const panierQuestions = panier.map(id => Q_MAP.get(id)).filter(Boolean);
     const imgR = k => _imgDocxCache[k] || IMAGE_DB[k]; // lit depuis le cache DOCX, pas IMAGE_DB (évite de muter IMAGE_DB avec des data URLs)
     const neededKeys = new Set();
+    const missingFromDb = new Set(); // ref utilisée mais absente d'IMAGE_DB (donnée incomplète/orpheline)
+    const track = ref => { if(!ref) return; if(IMAGE_DB[ref]) neededKeys.add(ref); else missingFromDb.add(ref); };
     panierQuestions.forEach(q => {
       (q.documents || []).forEach(d => {
-        if(d.cols) d.cols.forEach(c => { if(c.ref && IMAGE_DB[c.ref]) neededKeys.add(c.ref); });
-        if(d.ref && IMAGE_DB[d.ref]) neededKeys.add(d.ref);
+        if(d.cols) d.cols.forEach(c => track(c.ref));
+        track(d.ref);
       });
-      if(q.reponse && q.reponse.ref && IMAGE_DB[q.reponse.ref]) neededKeys.add(q.reponse.ref);
+      if(q.reponse) track(q.reponse.ref);
     });
     const failedImgs = await resolveImages([...neededKeys]);
-    if(failedImgs.length) showWarn('Images introuvables dans le DOCX : ' + failedImgs.join(', '));
+    const allMissing = [...missingFromDb, ...failedImgs];
+    if(allMissing.length) showWarn('Images introuvables dans le DOCX : ' + allMissing.join(', '));
     const {
       Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
       AlignmentType, BorderStyle, WidthType, VerticalAlign, XmlComponent
@@ -1528,11 +1531,12 @@ async function genererDocx(includeGuide=false) {
       }
 
       // Standard layout
-      if(!r.niveaux.length || !r.colonnes?.length) return [];
+      const niveaux = r.niveaux || [];
+      if(!niveaux.length || !r.colonnes?.length) return [];
       const colOI = Math.floor(PAGE_W * 0.22);
-      const colW  = Math.floor((PAGE_W - colOI) / r.niveaux.length);
-      const colLast = PAGE_W - colOI - colW * (r.niveaux.length - 1);
-      const cols = [colOI, ...r.niveaux.map((_, i) => i === r.niveaux.length - 1 ? colLast : colW)];
+      const colW  = Math.floor((PAGE_W - colOI) / niveaux.length);
+      const colLast = PAGE_W - colOI - colW * (niveaux.length - 1);
+      const cols = [colOI, ...niveaux.map((_, i) => i === niveaux.length - 1 ? colLast : colW)];
 
       return [new Table({
         width: { size: PAGE_W, type: WidthType.DXA },
@@ -1543,7 +1547,7 @@ async function genererDocx(includeGuide=false) {
               children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: r.oi, font: 'Aptos', size: 12, bold: true })] })] }),
             ...r.colonnes.map(c => cellText(c))
           ]}),
-          new TableRow({ children: r.niveaux.map(n => cellText(n.desc)) })
+          new TableRow({ children: niveaux.map(n => cellText(n.desc)) })
         ]
       })];
     }
@@ -1689,6 +1693,7 @@ async function genererDocx(includeGuide=false) {
         for(let di=0; di<docsR.length; di++) {
           const d = docsR[di];
           if(d.type === 'tableau') {
+            if(!(d.cols||[]).length) continue; // document sans colonne (données incomplètes) : rien à insérer
             const colW = Math.floor(PAGE_W / d.cols.length);
             const tableCells = d.cols.map(col => {
               const imgData = imgR(col.ref);
@@ -1714,7 +1719,8 @@ async function genererDocx(includeGuide=false) {
             });
             children.push(new docx.Table({ width:{size:PAGE_W,type:docx.WidthType.DXA}, columnWidths:d.cols.map(()=>colW), rows:[new docx.TableRow({children:tableCells})] }));
           } else if(d.type === 'textes') {
-            const cpr = d.colsPerRow || d.cols.length || 1;
+            const dCols = d.cols || [];
+            const cpr = d.colsPerRow || dCols.length || 1;
             const colW2 = Math.floor(PAGE_W / cpr);
             const makeCell = col => {
               const cellChildren = [];
@@ -1753,10 +1759,10 @@ async function genererDocx(includeGuide=false) {
               });
             };
             const docRows = [];
-            for(let i=0; i<d.cols.length; i+=cpr) {
-              docRows.push(new docx.TableRow({ children: d.cols.slice(i, i+cpr).map(makeCell) }));
+            for(let i=0; i<dCols.length; i+=cpr) {
+              docRows.push(new docx.TableRow({ children: dCols.slice(i, i+cpr).map(makeCell) }));
             }
-            children.push(new docx.Table({ width:{size:PAGE_W,type:docx.WidthType.DXA}, columnWidths:Array(cpr).fill(colW2), rows:docRows }));
+            if(docRows.length) children.push(new docx.Table({ width:{size:PAGE_W,type:docx.WidthType.DXA}, columnWidths:Array(cpr).fill(colW2), rows:docRows }));
           } else {
             children.push(new Paragraph({ children: [new TextRun({ text: '• ' + d.type + ' — ' + (d.ref||''), font: 'Aptos', size: 22 })] }));
           }
@@ -1837,7 +1843,7 @@ async function genererDocx(includeGuide=false) {
                 children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: 'Document', font: 'Aptos', size: 20, bold: true })] })] })
             ]})
           ];
-          q.reponse.lignes.forEach(l => {
+          (q.reponse.lignes||[]).forEach(l => {
             repRows.push(new TableRow({ children: [
               new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
                 children: [new Paragraph({ children: [new TextRun({ text: l.label, font: 'Aptos', size: 20 })] })] }),
@@ -1848,17 +1854,21 @@ async function genererDocx(includeGuide=false) {
           children.push(new Table({ width: { size: 0, type: WidthType.AUTO }, rows: repRows }));
         } else if(q.reponse.type === 'grille') {
           const {entetes=[], rangees=[]} = q.reponse;
-          const nCols = entetes.length || 2;
-          const gColW = Math.floor(PAGE_W / nCols);
-          const mkGCell = (text, bold) => new TableCell({
-            borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
-            children: [new Paragraph({ children: [new TextRun({ text: String(text||''), font:'Aptos', size:20, bold:!!bold })] })]
-          });
-          const gRows = [
-            new TableRow({ children: entetes.map(h => mkGCell(h, true)) }),
-            ...rangees.map(row => new TableRow({ children: row.map((cell, ci) => mkGCell(cell, ci===0)) }))
-          ];
-          children.push(new Table({ width:{size:PAGE_W, type:WidthType.DXA}, columnWidths:Array(nCols).fill(gColW), rows:gRows }));
+          // Grille sans contenu (données incomplètes) : ne rien insérer plutôt qu'une
+          // table à 0 colonne qui corromprait le document Word.
+          if(entetes.length || rangees.length) {
+            const nCols = entetes.length || rangees[0]?.length || 1;
+            const gColW = Math.floor(PAGE_W / nCols);
+            const mkGCell = (text, bold) => new TableCell({
+              borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
+              children: [new Paragraph({ children: [new TextRun({ text: String(text||''), font:'Aptos', size:20, bold:!!bold })] })]
+            });
+            const gRows = [
+              ...(entetes.length ? [new TableRow({ children: entetes.map(h => mkGCell(h, true)) })] : []),
+              ...rangees.map(row => new TableRow({ children: (row||[]).map((cell, ci) => mkGCell(cell, ci===0)) }))
+            ];
+            children.push(new Table({ width:{size:PAGE_W, type:WidthType.DXA}, columnWidths:Array(nCols).fill(gColW), rows:gRows }));
+          }
         } else if(q.reponse.type === 'cause-consequence') {
           const CIRC_CC = 450000;
           const mkCCLbl = (text) => new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: 20, bold: true })] })] });
@@ -1875,7 +1885,7 @@ async function genererDocx(includeGuide=false) {
           children.push(new Table({ width: { size: c2 * 2, type: WidthType.DXA }, columnWidths: [c2, c2], rows: [
             new TableRow({ children: [mk2('Réponse', true), mk2('')] })
           ]}));
-        } else if(q.reponse.type === 'mettre-en-relation') {
+        } else if(q.reponse.type === 'mettre-en-relation' && (q.reponse.elements||[]).length) {
           const CIRC_MER = 450000; // 1.25cm
           const els = q.reponse.elements || [];
           const n = els.length || 2;
@@ -1915,7 +1925,7 @@ async function genererDocx(includeGuide=false) {
         } else if(q.reponse.type === 'situer-dans-lespace') {
           // 2 colonnes : row 1 = labels, row 2 = cercles (comme MER horizontal n=2)
           const CIRC_SDE = 450000; // 1.25cm
-          const elsS = q.reponse.elements || ['Élément 1','Élément 2'];
+          const elsS = (q.reponse.elements||[]).length ? q.reponse.elements : ['Élément 1','Élément 2'];
           const mkSdeLbl = (text) => new TableCell({
             borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
             children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: 20, bold: true })] })]

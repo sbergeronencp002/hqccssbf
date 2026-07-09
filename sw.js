@@ -1,21 +1,32 @@
 // Service Worker — HQC · CSSBF
-// Stratégie : cache-first pour les assets, réseau-first pour questions.js et
-// questions-index.js (données régénérées à chaque publication), cache-first
-// pour les images (fetch au premier accès, cache ensuite).
-
-const CACHE = 'hqc-v2';
+// Stratégie : cache-first pour les assets versionnés (?v=N — une nouvelle version = une
+// nouvelle URL = cache-miss naturel), réseau-first avec repli cache pour index.html,
+// contexte.js, questions.js et questions-index.js (fichiers non versionnés ou régénérés
+// à chaque publication : mieux vaut une donnée fraîche que du cache indéfiniment périmé),
+// cache-first pour les images (fetch au premier accès, cache ensuite).
+//
+// ⚠️ CACHE doit être incrémenté à chaque changement de PRECACHE (cf. CLAUDE.md, table
+// « Cache-bust actuel ») — sinon les navigateurs déjà visités gardent l'ancienne liste
+// indéfiniment (self.skipWaiting()/clients.claim() ne rechargent pas les onglets ouverts).
+const CACHE = 'hqc-v4';
 const PRECACHE = [
-  './index.html',
-  './style.css?v=29',
-  './app.js?v=49',
+  './style.css?v=30',
+  './app.js?v=50',
+  './filters.js?v=1',
   './oi-config.js?v=1',
+];
+// Précachés (comme repli hors-ligne) mais TOUJOURS revalidés réseau-first dans le
+// handler 'fetch' ci-dessous : leur contenu change sans que leur URL change, un
+// cache-first pur les figerait indéfiniment.
+const NETWORK_FIRST_PRECACHE = [
+  './index.html',
   './contexte.js',
 ];
 
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(CACHE)
-      .then(c => c.addAll(PRECACHE))
+      .then(c => c.addAll([...PRECACHE, ...NETWORK_FIRST_PRECACHE]))
       .then(() => self.skipWaiting())
   );
 });
@@ -35,22 +46,30 @@ self.addEventListener('fetch', e => {
   // Requêtes externes (API GitHub, fonts…) — bypass SW
   if (url.origin !== self.location.origin) return;
 
-  // questions.js et questions-index.js — réseau en premier (données fraîches
-  // régénérées à chaque publication Admin), cache si hors ligne
-  if (url.pathname.endsWith('/questions.js') || url.pathname.endsWith('/questions-index.js')) {
+  // questions.js, questions-index.js, index.html, contexte.js — réseau en premier
+  // (contenu qui change sans que l'URL change : données régénérées à chaque publication,
+  // ou page/config modifiée sans bump de version), repli sur le cache si hors ligne.
+  const isNetworkFirst = url.pathname.endsWith('/questions.js')
+    || url.pathname.endsWith('/questions-index.js')
+    || url.pathname.endsWith('/index.html')
+    || url.pathname.endsWith('/') // navigation vers la racine du site (ex. /hqccssbf/) == index.html
+    || url.pathname.endsWith('/contexte.js');
+  if (isNetworkFirst) {
     e.respondWith(
       fetch(e.request)
         .then(r => {
-          if (r.ok) caches.open(CACHE).then(c => c.put(url.pathname, r.clone()));
+          if (r.ok) caches.open(CACHE).then(c => c.put(e.request, r.clone()));
           return r;
         })
-        .catch(() => caches.match(url.pathname).then(c => c || new Response('', { status: 503 })))
+        .catch(() => caches.match(e.request).then(c => c || new Response('', { status: 503 })))
     );
     return;
   }
 
-  // Images — cache en premier, réseau si absent
-  if (url.pathname.startsWith('/images/')) {
+  // Images — cache en premier, réseau si absent. `includes()` (pas `startsWith()`) car le
+  // site est servi sous un sous-chemin (GitHub Pages project site, ex. /hqccssbf/images/…),
+  // pas à la racine du domaine — startsWith('/images/') ne correspondait donc jamais.
+  if (url.pathname.includes('/images/')) {
     e.respondWith(
       caches.match(e.request).then(cached => {
         if (cached) return cached;
@@ -65,6 +84,6 @@ self.addEventListener('fetch', e => {
 
   // Tous les autres assets — cache en premier, réseau en secours
   e.respondWith(
-    caches.match(e.request).then(cached => cached || fetch(e.request))
+    caches.match(e.request).then(cached => cached || fetch(e.request).catch(() => cached))
   );
 });

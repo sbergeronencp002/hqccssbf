@@ -43,42 +43,43 @@ QUESTIONS.forEach(q => {
   if (q.reponse?.ref && !IMAGE_DB[q.reponse.ref]) IMAGE_DB[q.reponse.ref] = { src: 'images/' + q.reponse.ref };
 });
 
-// ── Sérialiseur (copie exacte de questions-io.js) ────────────────────────────
+// ── Sérialiseur (copie EXACTE de questions-io.js — voir la note dans worker/index.js ;
+//    les trois copies avaient divergé, provoquant un reformatage complet de questions.js
+//    à chaque alternance de voie de publication. Resynchronisé le 2026-07-09.) ──────────
 function _isScalar(v) {
   return v === null || v === undefined || v === false || v === true || typeof v === 'number' || typeof v === 'string';
 }
 function _isFlat(v) {
-  if (_isScalar(v)) return true;
-  if (Array.isArray(v) || typeof v !== 'object' || v === null) return false;
+  if(_isScalar(v)) return true;
+  if(Array.isArray(v) || typeof v !== 'object' || v === null) return false;
   return Object.values(v).every(_isScalar);
 }
-function serializeValue(v, indent = 0) {
-  const pad = '  '.repeat(indent), pad1 = '  '.repeat(indent + 1);
-  if (_isScalar(v)) return v === null || v === undefined ? 'null' : typeof v === 'string' ? JSON.stringify(v) : String(v);
-  if (Array.isArray(v)) {
-    if (!v.length) return '[]';
-    if (v.every(_isFlat)) {
-      const oneLine = '[' + v.map(i => serializeValue(i, 0)).join(', ') + ']';
-      if (oneLine.length <= 120) return oneLine;
-    }
-    return '[\n' + v.map(i => pad1 + serializeValue(i, indent + 1)).join(',\n') + '\n' + pad + ']';
+function serializeValue(v, indent=0) {
+  const pad = ' '.repeat(indent);
+  const pad1 = ' '.repeat(indent+1);
+  if(_isScalar(v)) return v === null || v === undefined ? 'null' : typeof v === 'string' ? JSON.stringify(v) : String(v);
+  if(Array.isArray(v)) {
+    if(!v.length) return '[]';
+    const items = v.map(i => serializeValue(i, indent+1));
+    const oneLine = '[' + items.join(', ') + ']';
+    if(oneLine.length <= 500) return oneLine;
+    return '[\n' + items.map(i => pad1 + i).join(',\n') + '\n' + pad + ']';
   }
   const entries = Object.entries(v);
-  if (!entries.length) return '{}';
+  if(!entries.length) return '{}';
   const fmtKey = k => /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(k) ? k : JSON.stringify(k);
-  if (entries.every(([, val]) => _isScalar(val))) {
-    const oneLine = '{' + entries.map(([k, val]) => fmtKey(k) + ': ' + serializeValue(val, 0)).join(', ') + '}';
-    if (oneLine.length <= 120) return oneLine;
-  }
-  return '{\n' + entries.map(([k, val]) => pad1 + fmtKey(k) + ': ' + serializeValue(val, indent + 1)).join(',\n') + '\n' + pad + '}';
+  const pairs = entries.map(([k,val]) => fmtKey(k) + ': ' + serializeValue(val, indent+1));
+  const oneLine = '{' + pairs.join(', ') + '}';
+  if(oneLine.length <= 500) return oneLine;
+  return '{\n' + pairs.map(p => pad1 + p).join(',\n') + '\n' + pad + '}';
 }
 
 let out = 'const REGLETTES = {\n';
-out += Object.entries(REGLETTES).map(([k, v]) => `  ${JSON.stringify(k)}: ${serializeValue(v, 1)}`).join(',\n');
+out += Object.entries(REGLETTES).map(([k,v]) => `${JSON.stringify(k)}: ${serializeValue(v,0)}`).join(',\n');
 out += '\n}\n\nconst IMAGE_DB = {\n';
-out += Object.entries(IMAGE_DB).map(([k, v]) => `  ${JSON.stringify(k)}: ${serializeValue(v, 1)}`).join(',\n');
+out += Object.entries(IMAGE_DB).map(([k,v]) => `${JSON.stringify(k)}: ${serializeValue(v,0)}`).join(',\n');
 out += '\n}\n\nconst QUESTIONS = [\n';
-out += QUESTIONS.map(q => '  ' + serializeValue(q, 1)).join(',\n');
+out += QUESTIONS.map(q => serializeValue(q,0)).join(',\n');
 out += '\n]\n';
 
 writeFileSync('questions.js', out, 'utf-8');

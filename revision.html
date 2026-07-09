@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&display=swap">
-<link rel="stylesheet" href="style.css?v=29">
+<link rel="stylesheet" href="style.css?v=30">
 <style>
 header nav { display:flex; align-items:center; gap:.25rem; margin-left:auto; }
 header nav a { padding:.45rem .9rem; border-radius:6px; color:rgba(255,255,255,.75); text-decoration:none; font-size:.8rem; font-weight:500; transition:background .15s,color .15s; white-space:nowrap; cursor:pointer; }
@@ -670,9 +670,13 @@ async function rvSaveGuide() {
     _rvGuideOriginal = null;
     status.className = 'rv-guide-status ok';
     status.textContent = changed ? '✓ Enregistré.' : 'Aucun changement.';
+    // Capturer la référence DOM maintenant : si l'utilisateur navigue vers une autre
+    // carte pendant le délai, rvRenderCard() remplace tout #rv-card (nouveau nœud
+    // #rv-guide-box) — cet ancien nœud devient détaché, et `.isConnected` l'exclut,
+    // évitant d'écrire le guide de `q` sur la carte affichée entre-temps.
+    const box = document.getElementById('rv-guide-box');
     setTimeout(() => {
-      const box = document.getElementById('rv-guide-box');
-      if(box) box.innerHTML = rvRenderGuide(q);
+      if(box && box.isConnected) box.innerHTML = rvRenderGuide(q);
     }, 700);
   } catch(err) {
     status.className = 'rv-guide-status err';
