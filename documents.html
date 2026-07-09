@@ -1072,15 +1072,35 @@ function setSoustitreLocal(id, img, val) {
   }
 }
 
-// Lecture fraîche de questions.js → mutation ciblée → réécriture (PUT), avec 1 retry sur conflit SHA
+// Lit questions.js depuis l'API GitHub Contents et décode son contenu source (base64 inline
+// si ≤ 1 Mo, sinon téléchargement via download_url) — factorisé pour que applyQuestionsEdit()
+// et isImageStillOrphan() ne puissent pas diverger (l'une décodait mal la réponse JSON avant
+// ce correctif, ce qui faisait échouer systématiquement la revérification de fraîcheur).
+async function fetchQuestionsJsSource(headers) {
+  const rq = await fetch(API + 'questions.js?t=' + Date.now(), { headers, cache: 'no-store' });
+  if (!rq.ok) throw new Error('Lecture questions.js (' + rq.status + ')');
+  const dq = await rq.json();
+  let content;
+  if (dq.content) {
+    const rawBytes = Uint8Array.from(atob(dq.content.replace(/\n/g,'')), c => c.charCodeAt(0));
+    content = new TextDecoder('utf-8').decode(rawBytes);
+  } else if (dq.download_url) {
+    const dlUrl = dq.download_url.includes('?') ? dq.download_url + '&t=' + Date.now() : dq.download_url + '?t=' + Date.now();
+    const raw = await fetch(dlUrl, {cache: 'no-store'});
+    if (!raw.ok) throw new Error('Impossible de télécharger questions.js : ' + raw.status);
+    content = await raw.text();
+  } else {
+    throw new Error("Réponse inattendue de l'API GitHub pour questions.js");
+  }
+  return { content, sha: dq.sha };
+}
+
 // Relit questions.js à l'instant présent et retourne vrai si aucune question ne
 // référence encore `img` (dans un document ou en réponse-image) — utilisé pour
 // revérifier juste avant une suppression irréversible, au cas où une publication
 // concurrente (autre onglet / admin.html) aurait entre-temps réutilisé l'image.
 async function isImageStillOrphan(img) {
-  const rq = await fetch(API + 'questions.js?t=' + Date.now(), { cache: 'no-store' });
-  if (!rq.ok) throw new Error('Lecture questions.js (' + rq.status + ')');
-  const content = await rq.text();
+  const { content } = await fetchQuestionsJsSource();
   let parsed;
   try {
     parsed = new Function(content + '\n return { QUESTIONS };')();
@@ -1096,25 +1116,7 @@ async function isImageStillOrphan(img) {
 async function applyQuestionsEdit(mutate, commitMsg) {
   const token = requireToken();
   for (let attempt = 0; attempt < 3; attempt++) {
-    const rq = await fetch(API + 'questions.js?t=' + Date.now(), {
-      headers: {Authorization: 'token ' + token}, cache: 'no-store'
-    });
-    if (!rq.ok) throw new Error('Lecture questions.js (' + rq.status + ')');
-    const dq = await rq.json();
-    let content;
-    if (dq.content) {
-      // Fichier ≤ 1 Mo : contenu inline base64
-      const rawBytes = Uint8Array.from(atob(dq.content.replace(/\n/g,'')), c => c.charCodeAt(0));
-      content = new TextDecoder('utf-8').decode(rawBytes);
-    } else if (dq.download_url) {
-      // Fichier > 1 Mo : téléchargement direct
-      const dlUrl = dq.download_url.includes('?') ? dq.download_url + '&t=' + Date.now() : dq.download_url + '?t=' + Date.now();
-      const raw = await fetch(dlUrl, {cache: 'no-store'});
-      if (!raw.ok) throw new Error('Impossible de télécharger questions.js : ' + raw.status);
-      content = await raw.text();
-    } else {
-      throw new Error("Réponse inattendue de l'API GitHub pour questions.js");
-    }
+    const { content, sha } = await fetchQuestionsJsSource({Authorization: 'token ' + token});
     let parsed;
     try {
       parsed = new Function(content + '\n return { REGLETTES, IMAGE_DB, QUESTIONS };')();
@@ -1129,7 +1131,7 @@ async function applyQuestionsEdit(mutate, commitMsg) {
     const rp = await fetch(API + 'questions.js', {
       method: 'PUT',
       headers: {Authorization: 'token ' + token, 'Content-Type': 'application/json'},
-      body: JSON.stringify({message: commitMsg, content: btoa(binary), sha: dq.sha})
+      body: JSON.stringify({message: commitMsg, content: btoa(binary), sha: sha})
     });
     if (rp.ok) return true;
     if (rp.status === 409 && attempt < 2) continue; // conflit SHA → on relit et on réessaie

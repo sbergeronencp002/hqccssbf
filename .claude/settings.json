@@ -5,18 +5,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node tools/validate-questions.mjs 2>&1 | tail -40 || true",
-            "statusMessage": "Validation des données…"
-          },
-          {
-            "type": "command",
-            "command": "node tools/smoke-test.mjs 2>&1 | tail -40 || true",
-            "statusMessage": "Tests de fumée…"
-          },
-          {
-            "type": "command",
-            "command": "node tools/check-escaping.mjs 2>&1 | tail -40 || true",
-            "statusMessage": "Scan anti-XSS…"
+            "command": "node tools/check-all.mjs 2>&1 | tail -60 || true",
+            "statusMessage": "Vérifications (données, fumée, anti-XSS)…"
           }
         ]
       }

@@ -21,61 +21,66 @@ const QUESTIONS_PATH = 'questions.js';
 const BACKUPS_PATH   = 'backups';
 const BACKUPS_KEEP   = 20;
 
-// ── Sérialiseur (copie exacte de questions-io.js) ─────────────────────────────
+// ── Sérialiseur (copie EXACTE de questions-io.js — ne pas modifier sans répercuter
+//    le changement dans questions-io.js ET tools/apply-mutation.mjs. Les trois copies
+//    avaient divergé — seuil one-line, indentation et présence du test _isFlat — ce qui
+//    provoquait un reformatage complet de questions.js à chaque alternance de voie de
+//    publication (Worker vs admin.html/documents.html). Resynchronisé le 2026-07-09.) ──
 
 function _isScalar(v) {
   return v === null || v === undefined || v === false || v === true || typeof v === 'number' || typeof v === 'string';
 }
 
+// Objet plat = toutes les valeurs sont scalaires (pas d'imbrication)
 function _isFlat(v) {
-  if (_isScalar(v)) return true;
-  if (Array.isArray(v) || typeof v !== 'object' || v === null) return false;
+  if(_isScalar(v)) return true;
+  if(Array.isArray(v) || typeof v !== 'object' || v === null) return false;
   return Object.values(v).every(_isScalar);
 }
 
-function serializeValue(v, indent = 0) {
-  const pad  = '  '.repeat(indent);
-  const pad1 = '  '.repeat(indent + 1);
-  if (_isScalar(v)) return v === null || v === undefined ? 'null' : typeof v === 'string' ? JSON.stringify(v) : String(v);
-  if (Array.isArray(v)) {
-    if (!v.length) return '[]';
-    if (v.every(_isFlat)) {
-      const items  = v.map(i => serializeValue(i, 0));
-      const oneLine = '[' + items.join(', ') + ']';
-      if (oneLine.length <= 120) return oneLine;
-    }
-    const items = v.map(i => pad1 + serializeValue(i, indent + 1));
-    return '[\n' + items.join(',\n') + '\n' + pad + ']';
+// Sérialise récursivement une valeur JS en code source compact (sans indentation).
+// Les objets et tableaux dont la représentation tient en ≤ 500 chars sont mis sur
+// une seule ligne ; sinon ils sont éclatés avec une indentation minimale (1 espace).
+function serializeValue(v, indent=0) {
+  const pad = ' '.repeat(indent);
+  const pad1 = ' '.repeat(indent+1);
+  if(_isScalar(v)) return v === null || v === undefined ? 'null' : typeof v === 'string' ? JSON.stringify(v) : String(v);
+  if(Array.isArray(v)) {
+    if(!v.length) return '[]';
+    const items = v.map(i => serializeValue(i, indent+1));
+    const oneLine = '[' + items.join(', ') + ']';
+    if(oneLine.length <= 500) return oneLine;
+    return '[\n' + items.map(i => pad1 + i).join(',\n') + '\n' + pad + ']';
   }
+  // Objet
   const entries = Object.entries(v);
-  if (!entries.length) return '{}';
+  if(!entries.length) return '{}';
   const fmtKey = k => /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(k) ? k : JSON.stringify(k);
-  if (entries.every(([, val]) => _isScalar(val))) {
-    const pairs  = entries.map(([k, val]) => fmtKey(k) + ': ' + serializeValue(val, 0));
-    const oneLine = '{' + pairs.join(', ') + '}';
-    if (oneLine.length <= 120) return oneLine;
-  }
-  const pairs = entries.map(([k, val]) => pad1 + fmtKey(k) + ': ' + serializeValue(val, indent + 1));
-  return '{\n' + pairs.join(',\n') + '\n' + pad + '}';
+  const pairs = entries.map(([k,val]) => fmtKey(k) + ': ' + serializeValue(val, indent+1));
+  const oneLine = '{' + pairs.join(', ') + '}';
+  if(oneLine.length <= 500) return oneLine;
+  return '{\n' + pairs.map(p => pad1 + p).join(',\n') + '\n' + pad + '}';
 }
 
+// Garantit que toute image référencée par une question possède une entrée IMAGE_DB.
 function ensureImageDbComplete(questions, imageDb) {
   questions.forEach(q => {
     q.documents?.forEach(d => d.cols?.forEach(c => {
-      if (c.ref && !imageDb[c.ref]) imageDb[c.ref] = { src: 'images/' + c.ref };
+      if(c.ref && !imageDb[c.ref]) imageDb[c.ref] = { src: 'images/' + c.ref };
     }));
-    if (q.reponse?.ref && !imageDb[q.reponse.ref]) imageDb[q.reponse.ref] = { src: 'images/' + q.reponse.ref };
+    if(q.reponse?.ref && !imageDb[q.reponse.ref]) imageDb[q.reponse.ref] = { src: 'images/' + q.reponse.ref };
   });
 }
 
+// Reconstruit le fichier questions.js complet (REGLETTES + IMAGE_DB + QUESTIONS).
 function generateQuestionsJs(questions, reglettes, imageDb) {
   ensureImageDbComplete(questions, imageDb);
   let out = 'const REGLETTES = {\n';
-  out += Object.entries(reglettes).map(([k, v]) => `  ${JSON.stringify(k)}: ${serializeValue(v, 1)}`).join(',\n');
+  out += Object.entries(reglettes).map(([k,v]) => `${JSON.stringify(k)}: ${serializeValue(v,0)}`).join(',\n');
   out += '\n}\n\nconst IMAGE_DB = {\n';
-  out += Object.entries(imageDb).map(([k, v]) => `  ${JSON.stringify(k)}: ${serializeValue(v, 1)}`).join(',\n');
+  out += Object.entries(imageDb).map(([k,v]) => `${JSON.stringify(k)}: ${serializeValue(v,0)}`).join(',\n');
   out += '\n}\n\nconst QUESTIONS = [\n';
-  out += questions.map(q => '  ' + serializeValue(q, 1)).join(',\n');
+  out += questions.map(q => serializeValue(q,0)).join(',\n');
   out += '\n]\n';
   return out;
 }
@@ -111,6 +116,31 @@ function jsonResp(data, status = 200) {
 
 function errResp(msg, status = 400) {
   return jsonResp({ ok: false, error: msg }, status);
+}
+
+// Comparaison à temps constant : le secret est statique (pas de rotation automatique,
+// voir CLAUDE.md) et cet endpoint est public (CORS *) — une comparaison `===` naïve
+// laisse fuir la longueur du préfixe correct via le temps de réponse.
+function timingSafeEqual(a, b) {
+  if (typeof a !== 'string' || typeof b !== 'string' || a.length !== b.length) return false;
+  let diff = 0;
+  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return diff === 0;
+}
+
+// Validation minimale du payload — cet endpoint écrit directement sur `main` sans revue
+// humaine ; un payload malformé (id non conforme, champs manquants/de mauvais type)
+// pourrait sinon corrompre questions.js ou casser le rendu public pour tous les élèves.
+function validateQuestionPayload(q) {
+  if (typeof q !== 'object' || q === null) return 'question invalide';
+  if (typeof q.id !== 'string' || !/^Q\d+$/.test(q.id)) return 'question.id invalide (attendu "Q" suivi de chiffres)';
+  if (typeof q.oi !== 'string' || !q.oi) return 'question.oi manquant';
+  if (q.niveau !== 3 && q.niveau !== 4) return 'question.niveau invalide (attendu 3 ou 4)';
+  if (typeof q.periode !== 'string' || !q.periode) return 'question.periode manquant';
+  if (typeof q.enonce !== 'string') return 'question.enonce manquant';
+  if (q.documents !== undefined && !Array.isArray(q.documents)) return 'question.documents doit être un tableau';
+  if (q.aspects !== undefined && !Array.isArray(q.aspects)) return 'question.aspects doit être un tableau';
+  return null;
 }
 
 // ── Fetch questions.js depuis GitHub ─────────────────────────────────────────
@@ -185,9 +215,15 @@ async function handlePublish(request, env, ctx) {
 
   const { secret, action, question, reglette, editingId } = body;
 
-  if (!secret || secret !== env.WORKER_SECRET) return errResp('Non autorisé', 401);
+  if (!secret || !timingSafeEqual(secret, env.WORKER_SECRET)) return errResp('Non autorisé', 401);
   if (!action || !['upsert', 'delete'].includes(action)) return errResp('action invalide');
-  if (!question?.id) return errResp('question.id manquant');
+  if (typeof question?.id !== 'string' || !/^Q\d+$/.test(question.id)) {
+    return errResp('question.id invalide (attendu "Q" suivi de chiffres)');
+  }
+  if (action === 'upsert') {
+    const payloadErr = validateQuestionPayload(question);
+    if (payloadErr) return errResp(payloadErr);
+  }
 
   const token = env.GITHUB_PAT;
 
@@ -286,8 +322,13 @@ async function handlePublish(request, env, ctx) {
     }
   }
 
-  const nums  = QUESTIONS.map(q => parseInt(q.id.replace(/\D/g, ''))).filter(n => !isNaN(n));
-  const nextId = 'Q' + (nums.length ? Math.max(...nums) + 1 : 1);
+  // L'écriture GitHub a déjà réussi à ce stade : une erreur ici ne doit pas transformer
+  // un succès en réponse d'échec (le client réessaierait et dupliquerait la mutation).
+  let nextId = null;
+  try {
+    const nums = QUESTIONS.map(q => parseInt(String(q.id).replace(/\D/g, ''))).filter(n => !isNaN(n));
+    nextId = 'Q' + (nums.length ? Math.max(...nums) + 1 : 1);
+  } catch (_) {}
 
   return jsonResp({ ok: true, sha: newSha, nextId });
 }

@@ -38,6 +38,10 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 | `tools/validate-questions.mjs` | **Validateur de données** (node) : vérifie `questions.js` contre `oi-config.js`, `contexte.js` et les fichiers `images/`. Lancé en hook SessionStart (`.claude/settings.json`). `node tools/validate-questions.mjs` |
 | `tools/smoke-test.mjs` | **Tests de fumée** (node, sans dépendance npm) : charge app.js dans un contexte vm et exerce les fonctions de rendu critiques (`escLine`/`escAttr`/`jsStr`, `buildReglettHTML`, `formatTexte`, `docsForRender`) avec des entrées adverses (payloads XSS, données incomplètes). Lancé en hook SessionStart. `node tools/smoke-test.mjs` |
 | `tools/check-escaping.mjs` | **Scanner anti-XSS** (node) : détecte les concaténations HTML non échappées dans app.js/admin.html/documents.html/revision.html. Lancé en hook SessionStart. `node tools/check-escaping.mjs` |
+| `tools/check-all.mjs` | Lance les 3 vérifications ci-dessus en une seule commande (`node tools/check-all.mjs`) — c'est celle-ci qui tourne réellement en hook SessionStart. Utiliser directement `validate-questions`/`smoke-test`/`check-escaping` seulement pour isoler une vérification précise. |
+| `worker/index.js` | **Worker Cloudflare** (`/publish`) — voie de publication rapide depuis admin.html (upsert/delete sur `questions.js` côté serveur). Contient sa propre copie du sérialiseur (**doit rester identique** à `questions-io.js`), une validation de payload et une comparaison de secret à temps constant. Non versionné/déployé automatiquement — voir `.github/workflows/deploy-worker.yml` |
+| `tools/apply-mutation.mjs` | Script exécuté par la GitHub Action `publish-question.yml` (fallback quand le Worker est inaccessible) : applique une mutation reçue via `repository_dispatch` sur `questions.js`. Contient aussi sa propre copie du sérialiseur (**doit rester identique** à `questions-io.js`) |
+| `sw.js` | Service worker : cache les assets versionnés, revalide `index.html`/`contexte.js`/`questions.js`/`questions-index.js` réseau-first, cache les images (voir section dédiée plus bas) |
 | `style.css` | Styles du site public |
 | `docx.js` | Librairie docx.js (857 Ko) — chargée en lazy au 1er clic « Générer » |
 | `backups/questions-YYYY-MM-DD_HH-MM.js` | Backups auto avant chaque publication (admin) — élagués automatiquement (`pruneBackups`, 20 conservés) |
@@ -46,12 +50,15 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 `uploadImage()` redimensionne à 1200 px max puis **choisit le format le plus léger** : PNG si l'image a de la transparence, sinon le plus petit entre PNG et JPEG 0.85 (l'extension du nom suit le format choisi). Évite les PNG 24 bits non compressés (cause des images à 2,5 Mo). Le remplacement (`documents.html`) encode selon l'extension de la cible.
 
 ### Cache-bust actuel
-`app.js?v=50`, `style.css?v=29`, `oi-config.js?v=1`, `questions-io.js?v=3`, `filters.js?v=1`, `reglettes.js?v=2` (admin) — incrémenter à chaque changement majeur.
+`app.js?v=50`, `style.css?v=30`, `oi-config.js?v=1`, `questions-io.js?v=3`, `filters.js?v=1`, `reglettes.js?v=3` (admin) — incrémenter à chaque changement majeur.
 `index.html` charge `filters.js?v=1` (avant `app.js`) puis `questions-index.js?v=1` (index allégé, 200 Ko) — `questions.js` est chargé en lazy par app.js sans version fixe (cache-bust par timestamp).
 `documents.html` charge `oi-config.js?v=1` + `questions-io.js?v=3` ; `questions.js` est chargé dynamiquement (fetch cache-bust par timestamp, comme index.html) — jamais en `<script src>` statique.
 `revision.html` charge `oi-config.js?v=1` + `questions-io.js?v=3` + `contexte.js` + `filters.js?v=1` ; `questions.js` est chargé de la même façon (fetch cache-bust par timestamp).
 
 ⚠️ Cette table doit être mise à jour à chaque incrément de `?v=` dans le HTML — sinon un futur agent repart d'un mauvais numéro de version.
+
+### Service worker (`sw.js`)
+Précache `style.css`, `app.js`, `filters.js`, `oi-config.js` (avec leur `?v=N` — un futur bump de version doit aussi être répercuté dans le tableau `PRECACHE` de `sw.js`, sinon l'ancienne version reste précachée). `index.html` et `contexte.js` sont précachés mais **toujours revalidés réseau-first** (comme `questions.js`/`questions-index.js`) car leur contenu peut changer sans que leur URL change. `CACHE` (actuellement `hqc-v4`) doit être incrémenté à chaque changement de la liste `PRECACHE`.
 
 ---
 
@@ -64,67 +71,64 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
 | `escLine(s)` | 2 | Échappe `&<>` avant insertion HTML |
-| `boldify(s)` | 5 | Convertit `**x**` → `<strong>` |
-| `formatTexte(text)` | 8 | Formate énoncés (listes • et gras) |
-| `oiStyle(oi)` | 35 | Retourne classe CSS + couleur pour une OI |
-| `buildTileHtml(q)` | 420 | HTML d'une carte question dans la grille |
-| `render(list)` | 441 | Affiche les cartes filtrées (pagination 50/page) |
-| `renderMore()` | 456 | Charge 50 cartes supplémentaires |
-| `renderDoc(d)` | 519 | HTML d'un document (texte/image/colonnes) |
-| `renderReponse(q)` | 570 | HTML de l'espace réponse selon `q.reponse.type` |
-| `buildReglettHTML(q)` | 200 | HTML de la réglette (+ variantes complexes hardcodées) |
-| `openQModal(id)` | 325 | Ouvre le modal détail d'une question |
-| `closeQModal()` | 380 | Ferme le modal |
-| `toggleTexte(btn)` | 504 | Expand/collapse texte long dans un document |
-| `openLightbox(src)` | 699 | Ouvre l'image en plein écran |
+| `escAttr(s)` | 6 | Échappe pour un attribut HTML entre guillemets (ajoute `"`) |
+| `jsStr(s)` | 10 | Échappe pour une chaîne JS entre apostrophes (`onclick="…('…')"`) |
+| `boldify(s)` | 13 | Convertit `**x**` → `<strong>` |
+| `formatTexte(text)` | 16 | Formate énoncés (listes • et gras) |
+| `docsForRender(documents)` | 43 | Fusionne les documents « textes » 1 colonne en tableau 2 colonnes |
+| `oiStyle(oi)` | 56 | Retourne classe CSS + couleur pour une OI (dérivé d'`OI_CONFIG`) |
+| `buildReglettHTML(q)` | 206 | HTML de la réglette (+ variantes complexes hardcodées) |
+| `openQModal(id)` | 332 | Ouvre le modal détail d'une question (protégé contre double-clic par `_qModalReqSeq`) |
+| `closeQModal()` | 412 | Ferme le modal |
+| `buildTileHtml(q)` | 463 | HTML d'une carte question dans la grille |
+| `render(list)` | 488 | Affiche les cartes filtrées (pagination 50/page) |
+| `renderMore()` | 503 | Charge 50 cartes supplémentaires |
+| `initSite()` | 516 | Point d'entrée : fetch questions.js + populateFilters + applyFilters + panier |
+| `toggleTexte(btn)` | 564 | Expand/collapse texte long dans un document |
+| `renderDoc(d)` | 579 | HTML d'un document (texte/image/colonnes) |
+| `renderReponse(q)` | 648 | HTML de l'espace réponse selon `q.reponse.type` |
+| `window.openLightbox(src)` | 791 | Ouvre l'image en plein écran |
 
 ### Filtres
 
+> La cascade niveau→période→aspect (`fillSelect`, `fillAspectSelect`, `cascadeNiveauChange`, `cascadePeriodeChange`) vit dans **`filters.js`** (chargé avant app.js) — partagée avec revision.html, voir plus bas.
+
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `populateFilters()` | 45 | Initialise tous les filtres depuis les données |
-| `fill(id, vals, placeholder)` | 72 | Remplit un `<select>` |
-| `fillAspect(id, aspects, periodeOrder)` | 78 | Remplit le filtre aspect avec optgroups |
-| `fillOi(id, ois, placeholder)` | 96 | Remplit le filtre OI |
-| `onPeriodeChange()` | 102 | Cascade période → aspects + OI |
-| `onNiveauChange()` | 114 | Cascade niveau → périodes |
-| `debouncedApplyFilters()` | 143 | Debounce 280 ms pour la recherche texte |
-| `applyFilters()` | 148 | Applique tous les filtres et re-rend |
-| `resetFilters()` | 192 | Remet tous les filtres à zéro |
+| `populateFilters()` | 99 | Initialise tous les filtres depuis les données |
+| `onPeriodeChange()` | 134 | Cascade période → aspects + OI (délègue à `cascadePeriodeChange` de filters.js) |
+| `onNiveauChange()` | 139 | Cascade niveau → périodes (délègue à `cascadeNiveauChange` de filters.js) |
+| `debouncedApplyFilters()` | 146 | Debounce 280 ms pour la recherche texte |
+| `applyFilters()` | 151 | Applique tous les filtres et re-rend |
+| `resetFilters()` | 198 | Remet tous les filtres à zéro |
 
 ### Panier
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `togglePanier(id)` | 959 | Ajoute/retire une question du panier |
-| `updatePanierBar()` | 975 | Met à jour la barre panier + sauvegarde localStorage |
-| `refreshPanierButtons()` | 971 | Resynchronise l'état des boutons sur les tuiles |
-| `retirerPanier(id)` | 985 | Retire une question spécifique |
-| `viderPanier()` | 992 | Vide le panier (avec confirmation) |
-| `melangerPanier()` | 1012 | Fisher-Yates shuffle |
-| `openCahier()` / `closeCahier()` | 1020/1026 | Panneau latéral du panier |
-| `renderCahier()` | 1031 | Rendu de la liste dans le panneau |
+| `togglePanier(id)` | 1152 | Ajoute/retire une question du panier |
+| `refreshPanierButtons()` | 1164 | Resynchronise l'état des boutons sur les tuiles |
+| `updatePanierBar()` | 1168 | Met à jour la barre panier + sauvegarde localStorage |
+| `retirerPanier(id)` | 1178 | Retire une question spécifique |
+| `viderPanier()` | 1185 | Vide le panier (avec confirmation) |
+| `melangerPanier()` | 1206 | Fisher-Yates shuffle |
+| `openCahier()` / `closeCahier()` | 1214/1220 | Panneau latéral du panier |
+| `renderCahier()` | 1225 | Rendu de la liste dans le panneau |
 
 ### Drag-and-drop panier
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `cahierDragStart/Over/Drop/End` | 1072–1109 | DnD HTML5 pour réordonner le panier |
+| `cahierDragStart/Over/Drop/End` | 1266/1272/1283/1297 | DnD HTML5 pour réordonner le panier |
 
 ### Prévisualisation & DOCX
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `previsualiser(guideMode)` | 708 | Ouvre le modal de prévisualisation HTML |
-| `closePreviewBtn()` | 955 | Ferme la prévisualisation |
-| `resolveImages(neededKeys)` | 1110 | Charge les images en base64 depuis GitHub |
-| `genererDocx(includeGuide)` | 1149 | Génère et télécharge le DOCX |
-
-### Init
-
-| Fonction | Ligne | Rôle |
-|----------|-------|------|
-| `initSite()` | 469 | Point d'entrée : fetch questions.js + populateFilters + applyFilters + panier |
+| `previsualiser(guideMode)` | 893 | Ouvre le modal de prévisualisation HTML |
+| `closePreviewBtn()` | 1148 | Ferme la prévisualisation |
+| `resolveImages(neededKeys)` | 1305 | Charge les images en base64 depuis GitHub |
+| `genererDocx(includeGuide)` | 1345 | Génère et télécharge le DOCX (~700 lignes, toutes les variantes de réponse/guide) |
 
 ---
 
@@ -136,90 +140,93 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `utf8b64(str)` | 392 | Encode UTF-8 → base64 (remplace unescape dépréciée) |
-| `saveToken()` / `getToken()` | 409/416 | Gestion du PAT (sessionStorage ou localStorage) |
-| `init()` | 1026 | Point d'entrée : charge token, recent images, questions, images, réglettes |
-| `loadQuestionsJs()` | 1082 | Fetch questions.js depuis GitHub ; si token 401/403 → statut « Token invalide » + relecture anonyme |
-| `refreshImageSelects()` | 1040 | Re-remplit tous les `<select>` d'images en préservant la valeur |
-| `loadImages()` | 1049 | Fetch liste images GitHub (3 tentatives, repli anonyme si 401/403, secours via IMAGE_DB, toasts d'erreur) |
-| `loadReglettesJs()` | 1128 | Fetch reglettes.js, met à jour REGLETTES_PRESET |
-| `loadRecentImages()` | 982 | Charge RECENT_IMAGES depuis localStorage |
-| `addRecentImage(name)` | 1004 | Ajoute au front de RECENT_IMAGES (max 3) |
-| `buildImageOptions()` | 1008 | Construit les `<option>` : récentes ⭐ + séparateur + reste |
+| `utf8b64(str)` | 457 | Encode UTF-8 → base64 (remplace unescape dépréciée) |
+| `saveToken()` / `getToken()` | 474/481 | Gestion du PAT (sessionStorage ou localStorage) |
+| `init()` | 1327 | Point d'entrée : charge token, recent images, questions, images, réglettes |
+| `loadQuestionsJs()` | 1392 | Fetch questions.js depuis GitHub ; si token 401/403 → statut « Token invalide » + relecture anonyme |
+| `refreshImageSelects()` | 1350 | Re-remplit tous les `<select>` d'images en préservant la valeur |
+| `loadImages()` | 1359 | Fetch liste images GitHub (3 tentatives, repli anonyme si 401/403, secours via IMAGE_DB, toasts d'erreur) |
+| `loadReglettesJs()` | 1475 | Fetch reglettes.js, met à jour REGLETTES_PRESET |
+| `loadRecentImages()` | 1283 | Charge RECENT_IMAGES depuis localStorage |
+| `addRecentImage(name)` | 1305 | Ajoute au front de RECENT_IMAGES (max 3) |
+| `buildImageOptions()` | 1309 | Construit les `<option>` : récentes ⭐ + séparateur + reste |
 
 ### Formulaire contexte
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `updatePeriodes()` | 423 | Met à jour le `<select>` période selon niveau |
-| `updateAspects()` | 431 | Génère les checkboxes d'aspects selon période |
-| `updateSoustag()` | 446 | Affiche/cache les pills sous-tag selon OI |
-| `getSoustag()` / `setSoustag()` | 463/468 | Lit/pose la valeur du sous-tag sélectionné |
-| `updatePresets()` | 492 | Peuple le `<select>` réglette selon OI |
-| `autoReponseFromOI()` | 478 | Auto-sélectionne le type de réponse pour certaines OI |
+| `updatePeriodes()` | 498 | Met à jour le `<select>` période selon niveau |
+| `updateAspects()` | 506 | Génère les checkboxes d'aspects selon période |
+| `updateSoustag()` | 521 | Affiche/cache les pills sous-tag selon OI |
+| `getSoustag()` / `setSoustag()` | 538/543 | Lit/pose la valeur du sous-tag sélectionné |
+| `updatePresets()` | 567 | Peuple le `<select>` réglette selon OI |
+| `autoReponseFromOI()` | 553 | Auto-sélectionne le type de réponse pour certaines OI |
 
 ### Mode édition
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `setMode(mode)` | 503 | Bascule Nouvelle question ↔ Modifier |
-| `populateEditSearch()` | 519 | Peuple la liste de recherche en mode édition |
-| `filterEditList()` | 540 | Filtre + affiche les résultats de recherche |
-| `editKeyNav(e)` | 610 | Navigation clavier (↑↓ Enter) dans la liste |
-| `loadQuestion(id)` | 637 | Charge une question existante dans le formulaire |
-| `dupliquerQuestion()` | 621 | Duplique la question sélectionnée |
-| `supprimerQuestion()` | 846 | Supprime + renuméroter (fetch → filter → push) |
+| `setEditingId(id)` | 698 | Set `editingId` + verrouille/déverrouille `#q-id` en conséquence — **seul point d'écriture** de `editingId`, ne jamais l'assigner directement ailleurs |
+| `setMode(mode)` | 723 | Bascule Nouvelle question ↔ Modifier |
+| `populateEditSearch()` | 739 | Peuple la liste de recherche en mode édition |
+| `filterEditList()` | 760 | Filtre + affiche les résultats de recherche |
+| `editKeyNav(e)` | 830 | Navigation clavier (↑↓ Enter) dans la liste |
+| `dupliquerQuestion()` | 841 | Duplique la question sélectionnée |
+| `loadQuestion(id)` | 857 | Charge une question existante dans le formulaire |
+| `supprimerQuestion()` | 1090 | Supprime (retry+refetch via `putQuestionsJsWithRetry`) + renuméroter |
+
+### Formulaire — verrouillage pendant requête
+
+| Fonction | Ligne | Rôle |
+|----------|-------|------|
+| `setFormLocked(locked, exceptEl)` | 712 | Désactive tous les champs/boutons de `#app` pendant une requête réseau (`exceptEl` = bouton déclencheur, déjà géré par son appelant) |
 
 ### Documents
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `addDoc(type)` | 1171 | Ajoute un bloc document (textes / image / textes-image) |
-| `addCol(docId, type)` | 1218 | Ajoute une colonne dans un doc textes-image |
-| `imageSelect(id)` | 1245 | Retourne un `<select>` d'images avec récentes en haut |
-| `removeEl(id)` | 1249 | Supprime un bloc DOM |
-| `moveDoc(id, dir)` | 1251 | Déplace un bloc document ↑ ou ↓ |
-| `richToolbar(id)` | 1151 | HTML de la toolbar Gras / Puce |
+| `onUploadFileChange()` | 1166 | Auto-remplit le champ nom depuis le fichier sélectionné |
+| `uploadImage()` | 1173 | Redimensionne (max 1200px) + pousse sur GitHub (confirmation si écrase un fichier existant) + met à jour RECENT_IMAGES |
+| `richToolbar(id)` | 1499 | HTML de la toolbar Gras / Puce |
+| `addDoc(type)` | 1519 | Ajoute un bloc document (textes / image / textes-image) |
+| `addCol(docId, type)` | 1568 | Ajoute une colonne dans un doc textes-image |
+| `imageSelect(id)` | 1595 | Retourne un `<select>` d'images avec récentes en haut |
+| `removeEl(id)` | 1621 | Supprime un bloc DOM |
+| `moveDoc(id, dir)` | 1663 | Déplace un bloc document ↑ ou ↓ |
 
 ### Réponse & guide
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `updateReponseUI()` | 1263 | Affiche les champs selon le type de réponse choisi |
-| `updateRepGrille(data)` | 1372 | Rend le tableau grille pour espace réponse |
-| `getRepGrilleValues()` | 1394 | Lit les valeurs du tableau grille réponse |
-| `updateGuideUI()` | 1409 | Affiche les champs guide (texte ou grille) |
-| `updateGrille(data)` | 1432 | Rend le tableau grille pour le guide |
-| `getGrilleValues()` | 1454 | Lit les valeurs du tableau grille guide |
+| `updateReponseUI()` | 1675 | Affiche les champs selon le type de réponse choisi |
+| `updateRepGrille(data)` | 1784 | Rend le tableau grille pour espace réponse |
+| `getRepGrilleValues()` | 1806 | Lit les valeurs du tableau grille réponse |
+| `updateGuideUI()` | 1821 | Affiche les champs guide (texte ou grille) |
+| `updateGrille(data)` | 1844 | Rend le tableau grille pour le guide |
+| `getGrilleValues()` | 1866 | Lit les valeurs du tableau grille guide |
 
 ### Publication
 
-| Fonction | Ligne | Rôle |
-|----------|-------|------|
-| `buildQuestion()` | 1465 | Construit l'objet `q` à partir du formulaire |
-| `buildReglette(id)` | 1594 | Construit l'objet réglette depuis le preset sélectionné |
-| `validateForm()` | 1645 | Valide les champs requis, retourne tableau d'erreurs |
-| `publier()` | 1686 | Fetch SHA → backup → build → PUT GitHub (3 tentatives) |
-| `fetchFreshState(token)` | 820 | Recharge questions.js depuis GitHub, met à jour SHA + globals |
-| `generateQuestionsJs(...)` | 1632 | Sérialise REGLETTES + IMAGE_DB + QUESTIONS en JS |
-| `serializeValue(v, indent)` | 1605 | Sérialisation récursive d'un objet JS en code source |
-| `ensureImageDbComplete(...)` | 1623 | Ajoute les refs images manquantes dans IMAGE_DB |
-| `resetForm(keepId)` | 1809 | Remet le formulaire à zéro |
-
-### Upload image
+> `serializeValue`/`generateQuestionsJs`/`ensureImageDbComplete` ne sont **plus définis dans admin.html** — chargés depuis `questions-io.js` (source unique, voir plus haut).
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `uploadImage()` | 916 | Redimensionne (max 1200px) + pousse sur GitHub + met à jour RECENT_IMAGES |
-| `onUploadFileChange()` | 909 | Auto-remplit le champ nom depuis le fichier sélectionné |
+| `fetchFreshState(token)` | 1073 | Recharge questions.js depuis GitHub, met à jour SHA + globals |
+| `buildQuestion()` | 1877 | Construit l'objet `q` à partir du formulaire |
+| `buildReglette(id)` | 2008 | Construit l'objet réglette depuis le preset sélectionné (`null` = conserver l'existante) |
+| `VALIDATION_RULES` / `validateForm()` | 2028/2061 | Liste déclarative de règles `{message, check()}` — étendre ici plutôt qu'avec des `if` ad hoc |
+| `putQuestionsJsWithRetry(token, commitMsg, mutate)` | 2095 | Retry+refetch+conflit 409 factorisé (utilisé par `publier()` ET `supprimerQuestion()`) |
+| `publier()` | 2115 | Backup → build → `putQuestionsJsWithRetry` (voie directe) ou Worker/GitHub Actions |
+| `publierViaDispatch(...)` | 2299 | Fallback `repository_dispatch` quand le Worker est inaccessible |
+| `resetForm(keepId)` | 2347 | Remet le formulaire à zéro (appelle `setEditingId(null)`) |
 
 ### Dashboard
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `renderDashboard()` | 1841 | Calcule et affiche les stats (barres par période/OI) |
-| `toggleDashboard()` | 1833 | Expand/collapse le tableau de bord |
-| `toast(msg, type)` | 1916 | Affiche un toast 3,5 s (type: `'ok'` ou `'err'`) |
+| `toggleDashboard()` | 2371 | Expand/collapse le tableau de bord |
+| `renderDashboard()` | 2379 | Calcule et affiche les stats (barres par période/OI) |
+| `toast(msg, type)` | 2642 | Affiche un toast 3,5 s (type: `'ok'` ou `'err'`) |
 
 > Note : l'éditeur de contexte.js (`loadContexteJs` / `publierContexteJs`) n'existe plus dans admin.html — contexte.js est chargé statiquement.
 
@@ -252,14 +259,60 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 
 | Fonction | Rôle |
 |----------|------|
-| `deleteOrphan(img)` | Supprime une image orpheline du dépôt + retire son entrée d'`IMAGE_DB` |
-| `openReplace` / `handleReplaceFile` / `confirmReplace` | Remplace le contenu d'une image (redimensionne max 1200 px, PUT même nom + SHA) |
-| `openRename` / `confirmRename` / `updateDomAfterRename` | Renomme une image : crée le nouveau fichier, supprime l'ancien, met à jour les refs dans `questions.js` (retry sur conflit 409) |
+| `setPageLocked(locked, msg)` | Overlay plein écran pendant toute opération GitHub asynchrone (empêche une action concurrente) |
+| `fetchQuestionsJsSource(headers)` | Lit + décode questions.js depuis l'API Contents GitHub (base64 inline ou `download_url`) — **source unique**, utilisée par `applyQuestionsEdit` ET `isImageStillOrphan` |
+| `isImageStillOrphan(img)` | Relit questions.js à l'instant présent ; vrai si `img` n'est référencée par aucune question — revérification juste avant une suppression irréversible (`deleteOrphan`, avant l'étape 4 de `confirmRename`) |
+| `deleteOrphan(img)` | Revérifie via `isImageStillOrphan`, puis supprime une image orpheline du dépôt + retire son entrée d'`IMAGE_DB` |
+| `openReplace` / `handleReplaceFile` / `confirmReplace` | Remplace le contenu d'une image (redimensionne max 1200 px, filtre les types non-image, PUT même nom + SHA, rafraîchit le badge de taille) |
+| `openRename` / `confirmRename` / `updateDomAfterRename` | Renomme une image : crée le nouveau fichier, met à jour les refs dans `questions.js`, reflète l'état local (dont `allImgGroups` + ligne orpheline), revérifie via `isImageStillOrphan` avant de supprimer l'ancien fichier (retry sur conflit 409) |
 | `openSoustitre` / `confirmSoustitre` | Édite le sous-titre du document référençant l'image |
-| `applyQuestionsEdit(mutate, msg)` | Lecture fraîche → mutation ciblée → réécriture de `questions.js` (1 retry sur conflit SHA) |
-| `serializeValue` / `ensureImageDbComplete` / `generateQuestionsJs` | Sérialiseur **identique à admin.html** (même format de sortie pour éviter les divergences) |
+| `applyQuestionsEdit(mutate, msg)` | `fetchQuestionsJsSource` → mutation ciblée → réécriture de `questions.js` (3 tentatives sur conflit SHA) |
+| `serializeValue` / `ensureImageDbComplete` / `generateQuestionsJs` | Chargées depuis `questions-io.js` (source unique, pas de copie locale) |
 
 > ⚠️ Comme admin.html, cette page **écrit directement `questions.js` sur `main` via l'API GitHub** — ne jamais toucher `questions.js` via git.
+
+---
+
+## Index des fonctions — revision.html
+
+> Page autonome (JS inline ~ligne 147, préfixe `rv` sur toutes les fonctions/globales pour éviter les collisions). Lecture seule sauf le guide texte (édition via l'API GitHub, token partagé avec admin.html).
+
+### Échappement, formatage, filtres
+
+| Fonction | Rôle |
+|----------|------|
+| `rvEscLine(s)` / `rvEscAttr(s)` | Échappement HTML / attribut (`rvEscAttr` ajoute les guillemets, utilisé pour les `alt=`) |
+| `rvBoldify(s)` / `rvFormatTexte(text)` | Mêmes conventions que `boldify`/`formatTexte` d'app.js |
+| `rvDocsForRender(documents)` | Fusion 2/4 documents « textes » — même logique que `docsForRender` d'app.js |
+| `rvOiStyle(oi)` | Style d'une OI, dérivé d'`OI_CONFIG` |
+| `RV_FILTER_IDS` / `rvPopulateFilters()` / `rvOnNiveauChange()` / `rvOnPeriodeChange()` | Cascade de filtres — délèguent à `cascadeNiveauChange`/`cascadePeriodeChange` de **filters.js** (partagé avec app.js) |
+| `rvDebouncedApply()` / `rvApplyFilters()` | Debounce recherche + application des filtres (garde `confirmDiscardGuideEdit()` en tête — voir plus bas) |
+| `rvResetFilters()` | Remet tous les filtres à zéro |
+
+### Rendu de la carte
+
+| Fonction | Rôle |
+|----------|------|
+| `rvRenderReponse(q)` | HTML de l'espace réponse selon `q.reponse.type` (même structure que `renderReponse` d'app.js) |
+| `rvRenderDoc(d)` | HTML d'un document |
+| `rvRenderGuide(q)` | HTML du guide (texte, grille ou tableau) |
+| `rvBuildCardHtml(q)` | Assemble toute la carte (énoncé, documents, réglette, réponse, guide) |
+| `rvRenderCard()` | Rend la carte courante (`rvList[rvIndex]`) + met à jour la pagination |
+| `rvNav(dir)` | Navigue ±1 (garde `confirmDiscardGuideEdit()` en tête) |
+| `rvOpenLightbox(src)` / `rvCloseLightbox(e)` | Lightbox image |
+
+### Édition du guide (texte seulement)
+
+| Fonction | Rôle |
+|----------|------|
+| `rvApplyQuestionsEdit(mutate, commitMsg)` | Lecture fraîche → mutation ciblée → réécriture de `questions.js` (retry sur conflit SHA) — équivalent de `applyQuestionsEdit` (documents.html) pour cette page |
+| `_rvGuideOriginal` / `hasUnsavedGuideEdit()` / `confirmDiscardGuideEdit()` | Détecte une édition de guide non enregistrée et confirme avant de naviguer/changer de filtre |
+| `rvEditGuide()` / `rvCancelGuideEdit()` | Ouvre/annule l'édition du textarea |
+| `rvSaveGuide()` | Enregistre ; capture la référence DOM de `#rv-guide-box` avant le délai de 700 ms (`.isConnected`) pour ne jamais écrire sur la carte affichée entre-temps si l'utilisateur a navigué |
+
+### Navigation tactile
+
+Geste swipe géré par une IIFE en fin de fichier (pas de fonctions nommées) : `pointerdown`/`pointerup`/`pointercancel` avec `setPointerCapture`/`activePointerId` (pas un booléen `dragging`) pour lier tout le geste au pointeur qui l'a commencé, même si le relâchement a lieu hors de `#rv-card-wrap`.
 
 ---
 

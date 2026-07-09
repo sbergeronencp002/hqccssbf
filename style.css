@@ -529,13 +529,6 @@ select:focus { outline: none; border-color: var(--ink-2); }
 }
 .cfb-alt:hover { opacity: 0.80; }
 .cfb-alt:disabled { opacity: 0.38; cursor: not-allowed; }
-.cfb-exam {
-  flex: 1; padding: 8px 10px; border-radius: 7px; font-size: 0.78rem; font-weight: 600;
-  font-family: inherit; cursor: pointer;
-  background: #7c3aed; color: #fff; border: none;
-  transition: opacity 0.15s;
-}
-.cfb-exam:hover { opacity: 0.86; }
 
 /* Compat modal footer */
 .modal-footer .btn-vider {
@@ -617,7 +610,6 @@ select:focus { outline: none; border-color: var(--ink-2); }
 .doc-img { max-width:100%; max-height:180px; object-fit:contain; border:0.5px solid var(--border); border-radius:4px; cursor:zoom-in; }
 
 .doc-spacer { height:1rem; }
-.doc-img-titre { font-size:0.8rem; font-style:italic; color:var(--ink-2); margin-bottom:6px; }
 
 .lightbox {
   display:none; position:fixed; top:0; left:0; right:0; bottom:0;
