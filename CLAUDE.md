@@ -39,8 +39,8 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 | `tools/smoke-test.mjs` | **Tests de fumée** (node, sans dépendance npm) : charge app.js dans un contexte vm et exerce les fonctions de rendu critiques (`escLine`/`escAttr`/`jsStr`, `buildReglettHTML`, `formatTexte`, `docsForRender`) avec des entrées adverses (payloads XSS, données incomplètes). Lancé en hook SessionStart. `node tools/smoke-test.mjs` |
 | `tools/check-escaping.mjs` | **Scanner anti-XSS** (node) : détecte les concaténations HTML non échappées dans app.js/admin.html/documents.html/revision.html. Lancé en hook SessionStart. `node tools/check-escaping.mjs` |
 | `tools/check-all.mjs` | Lance les 3 vérifications ci-dessus en une seule commande (`node tools/check-all.mjs`) — c'est celle-ci qui tourne réellement en hook SessionStart. Utiliser directement `validate-questions`/`smoke-test`/`check-escaping` seulement pour isoler une vérification précise. |
-| `worker/index.js` | **Worker Cloudflare** (`/publish`) — voie de publication rapide depuis admin.html (upsert/delete sur `questions.js` côté serveur). Contient sa propre copie du sérialiseur (**doit rester identique** à `questions-io.js`), une validation de payload et une comparaison de secret à temps constant. Non versionné/déployé automatiquement — voir `.github/workflows/deploy-worker.yml` |
-| `tools/apply-mutation.mjs` | Script exécuté par la GitHub Action `publish-question.yml` (fallback quand le Worker est inaccessible) : applique une mutation reçue via `repository_dispatch` sur `questions.js`. Contient aussi sa propre copie du sérialiseur (**doit rester identique** à `questions-io.js`) |
+| `worker/index.js` | **Worker Cloudflare** (`/publish`) — voie de publication rapide depuis admin.html (upsert/delete sur `questions.js` côté serveur). Contient sa propre copie du sérialiseur (**doit rester identique** à `questions-io.js`), une validation de payload, une comparaison de secret à temps constant, et refuse un upsert si `editingId !== question.id` (protection contre un client obsolète qui remplacerait silencieusement la mauvaise question — cf. incidents Q670/Q676 du 2026-07-13). Non versionné/déployé automatiquement — voir `.github/workflows/deploy-worker.yml` |
+| `tools/apply-mutation.mjs` | Script exécuté par la GitHub Action `publish-question.yml` (fallback quand le Worker est inaccessible) : applique une mutation reçue via `repository_dispatch` sur `questions.js`. Contient aussi sa propre copie du sérialiseur (**doit rester identique** à `questions-io.js`) et la même protection `editingId !== question.id` que `worker/index.js` |
 | `sw.js` | Service worker : cache les assets versionnés, revalide `index.html`/`contexte.js`/`questions.js`/`questions-index.js` réseau-first, cache les images (voir section dédiée plus bas) |
 | `style.css` | Styles du site public |
 | `docx.js` | Librairie docx.js (857 Ko) — chargée en lazy au 1er clic « Générer » |
@@ -142,68 +142,69 @@ Précache `style.css`, `app.js`, `filters.js`, `oi-config.js` (avec leur `?v=N` 
 |----------|-------|------|
 | `utf8b64(str)` | 457 | Encode UTF-8 → base64 (remplace unescape dépréciée) |
 | `saveToken()` / `getToken()` | 474/481 | Gestion du PAT (sessionStorage ou localStorage) |
-| `init()` | 1327 | Point d'entrée : charge token, recent images, questions, images, réglettes |
-| `loadQuestionsJs()` | 1392 | Fetch questions.js depuis GitHub ; si token 401/403 → statut « Token invalide » + relecture anonyme |
-| `refreshImageSelects()` | 1350 | Re-remplit tous les `<select>` d'images en préservant la valeur |
-| `loadImages()` | 1359 | Fetch liste images GitHub (3 tentatives, repli anonyme si 401/403, secours via IMAGE_DB, toasts d'erreur) |
-| `loadReglettesJs()` | 1475 | Fetch reglettes.js, met à jour REGLETTES_PRESET |
-| `loadRecentImages()` | 1283 | Charge RECENT_IMAGES depuis localStorage |
-| `addRecentImage(name)` | 1305 | Ajoute au front de RECENT_IMAGES (max 3) |
-| `buildImageOptions()` | 1309 | Construit les `<option>` : récentes ⭐ + séparateur + reste |
+| `ADMIN_BUILD` / `isAdminStale()` | 491/494 | Marqueur de version + détection d'onglet obsolète (refetch `admin.html`, compare le marqueur) — un onglet resté ouvert depuis avant un correctif continue d'exécuter l'ancien JS ; voir aussi `showStaleBanner()` (503) et l'appel bloquant dans `publier()` |
+| `init()` | 1351 | Point d'entrée : charge token, recent images, questions, images, réglettes ; lance aussi `isAdminStale()` (une fois + toutes les 5 min) |
+| `loadQuestionsJs()` | 1418 | Fetch questions.js depuis GitHub ; si token 401/403 → statut « Token invalide » + relecture anonyme |
+| `refreshImageSelects()` | 1376 | Re-remplit tous les `<select>` d'images en préservant la valeur |
+| `loadImages()` | 1385 | Fetch liste images GitHub (3 tentatives, repli anonyme si 401/403, secours via IMAGE_DB, toasts d'erreur) |
+| `loadReglettesJs()` | 1501 | Fetch reglettes.js, met à jour REGLETTES_PRESET |
+| `loadRecentImages()` | 1307 | Charge RECENT_IMAGES depuis localStorage |
+| `addRecentImage(name)` | 1329 | Ajoute au front de RECENT_IMAGES (max 3) |
+| `buildImageOptions()` | 1333 | Construit les `<option>` : récentes ⭐ + séparateur + reste |
 
 ### Formulaire contexte
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `updatePeriodes()` | 498 | Met à jour le `<select>` période selon niveau |
-| `updateAspects()` | 506 | Génère les checkboxes d'aspects selon période |
-| `updateSoustag()` | 521 | Affiche/cache les pills sous-tag selon OI |
-| `getSoustag()` / `setSoustag()` | 538/543 | Lit/pose la valeur du sous-tag sélectionné |
-| `updatePresets()` | 567 | Peuple le `<select>` réglette selon OI |
-| `autoReponseFromOI()` | 553 | Auto-sélectionne le type de réponse pour certaines OI |
+| `updatePeriodes()` | 522 | Met à jour le `<select>` période selon niveau |
+| `updateAspects()` | 530 | Génère les checkboxes d'aspects selon période |
+| `updateSoustag()` | 545 | Affiche/cache les pills sous-tag selon OI |
+| `getSoustag()` / `setSoustag()` | 562/567 | Lit/pose la valeur du sous-tag sélectionné |
+| `updatePresets()` | 591 | Peuple le `<select>` réglette selon OI |
+| `autoReponseFromOI()` | 577 | Auto-sélectionne le type de réponse pour certaines OI |
 
 ### Mode édition
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `setEditingId(id)` | 698 | Set `editingId` + verrouille/déverrouille `#q-id` en conséquence — **seul point d'écriture** de `editingId`, ne jamais l'assigner directement ailleurs |
-| `setMode(mode)` | 723 | Bascule Nouvelle question ↔ Modifier |
-| `populateEditSearch()` | 739 | Peuple la liste de recherche en mode édition |
-| `filterEditList()` | 760 | Filtre + affiche les résultats de recherche |
-| `editKeyNav(e)` | 830 | Navigation clavier (↑↓ Enter) dans la liste |
-| `dupliquerQuestion()` | 841 | Duplique la question sélectionnée |
-| `loadQuestion(id)` | 857 | Charge une question existante dans le formulaire |
-| `supprimerQuestion()` | 1090 | Supprime (retry+refetch via `putQuestionsJsWithRetry`) + renuméroter |
+| `setEditingId(id)` | 722 | Set `editingId` + verrouille/déverrouille `#q-id` en conséquence — **seul point d'écriture** de `editingId`, ne jamais l'assigner directement ailleurs |
+| `setMode(mode)` | 747 | Bascule Nouvelle question ↔ Modifier |
+| `populateEditSearch()` | 763 | Peuple la liste de recherche en mode édition |
+| `filterEditList()` | 784 | Filtre + affiche les résultats de recherche |
+| `editKeyNav(e)` | 854 | Navigation clavier (↑↓ Enter) dans la liste |
+| `dupliquerQuestion()` | 865 | Duplique la question sélectionnée (repasse `editingId` à `null` avant d'assigner le nouvel id — ne jamais publier avec `editingId` pointant vers l'ancienne question) |
+| `loadQuestion(id)` | 881 | Charge une question existante dans le formulaire |
+| `supprimerQuestion()` | 1114 | Supprime (retry+refetch via `putQuestionsJsWithRetry`) + renuméroter |
 
 ### Formulaire — verrouillage pendant requête
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `setFormLocked(locked, exceptEl)` | 712 | Désactive tous les champs/boutons de `#app` pendant une requête réseau (`exceptEl` = bouton déclencheur, déjà géré par son appelant) |
+| `setFormLocked(locked, exceptEl)` | 736 | Désactive tous les champs/boutons de `#app` pendant une requête réseau (`exceptEl` = bouton déclencheur, déjà géré par son appelant) |
 
 ### Documents
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `onUploadFileChange()` | 1166 | Auto-remplit le champ nom depuis le fichier sélectionné |
-| `uploadImage()` | 1173 | Redimensionne (max 1200px) + pousse sur GitHub (confirmation si écrase un fichier existant) + met à jour RECENT_IMAGES |
-| `richToolbar(id)` | 1499 | HTML de la toolbar Gras / Puce |
-| `addDoc(type)` | 1519 | Ajoute un bloc document (textes / image / textes-image) |
-| `addCol(docId, type)` | 1568 | Ajoute une colonne dans un doc textes-image |
-| `imageSelect(id)` | 1595 | Retourne un `<select>` d'images avec récentes en haut |
-| `removeEl(id)` | 1621 | Supprime un bloc DOM |
-| `moveDoc(id, dir)` | 1663 | Déplace un bloc document ↑ ou ↓ |
+| `onUploadFileChange()` | 1190 | Auto-remplit le champ nom depuis le fichier sélectionné |
+| `uploadImage()` | 1197 | Redimensionne (max 1200px) + pousse sur GitHub (confirmation si écrase un fichier existant) + met à jour RECENT_IMAGES |
+| `richToolbar(id)` | 1525 | HTML de la toolbar Gras / Puce |
+| `addDoc(type)` | 1545 | Ajoute un bloc document (textes / image / textes-image) |
+| `addCol(docId, type)` | 1594 | Ajoute une colonne dans un doc textes-image |
+| `imageSelect(id)` | 1621 | Retourne un `<select>` d'images avec récentes en haut |
+| `removeEl(id)` | 1647 | Supprime un bloc DOM |
+| `moveDoc(id, dir)` | 1689 | Déplace un bloc document ↑ ou ↓ |
 
 ### Réponse & guide
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `updateReponseUI()` | 1675 | Affiche les champs selon le type de réponse choisi |
-| `updateRepGrille(data)` | 1784 | Rend le tableau grille pour espace réponse |
-| `getRepGrilleValues()` | 1806 | Lit les valeurs du tableau grille réponse |
-| `updateGuideUI()` | 1821 | Affiche les champs guide (texte ou grille) |
-| `updateGrille(data)` | 1844 | Rend le tableau grille pour le guide |
-| `getGrilleValues()` | 1866 | Lit les valeurs du tableau grille guide |
+| `updateReponseUI()` | 1701 | Affiche les champs selon le type de réponse choisi |
+| `updateRepGrille(data)` | 1810 | Rend le tableau grille pour espace réponse |
+| `getRepGrilleValues()` | 1832 | Lit les valeurs du tableau grille réponse |
+| `updateGuideUI()` | 1847 | Affiche les champs guide (texte ou grille) |
+| `updateGrille(data)` | 1870 | Rend le tableau grille pour le guide |
+| `getGrilleValues()` | 1892 | Lit les valeurs du tableau grille guide |
 
 ### Publication
 
@@ -211,22 +212,22 @@ Précache `style.css`, `app.js`, `filters.js`, `oi-config.js` (avec leur `?v=N` 
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `fetchFreshState(token)` | 1073 | Recharge questions.js depuis GitHub, met à jour SHA + globals |
-| `buildQuestion()` | 1877 | Construit l'objet `q` à partir du formulaire |
-| `buildReglette(id)` | 2008 | Construit l'objet réglette depuis le preset sélectionné (`null` = conserver l'existante) |
-| `VALIDATION_RULES` / `validateForm()` | 2028/2061 | Liste déclarative de règles `{message, check()}` — étendre ici plutôt qu'avec des `if` ad hoc |
-| `putQuestionsJsWithRetry(token, commitMsg, mutate)` | 2095 | Retry+refetch+conflit 409 factorisé (utilisé par `publier()` ET `supprimerQuestion()`) |
-| `publier()` | 2115 | Backup → build → `putQuestionsJsWithRetry` (voie directe) ou Worker/GitHub Actions |
-| `publierViaDispatch(...)` | 2299 | Fallback `repository_dispatch` quand le Worker est inaccessible |
-| `resetForm(keepId)` | 2347 | Remet le formulaire à zéro (appelle `setEditingId(null)`) |
+| `fetchFreshState(token)` | 1097 | Recharge questions.js depuis GitHub, met à jour SHA + globals |
+| `buildQuestion()` | 1903 | Construit l'objet `q` à partir du formulaire |
+| `buildReglette(id)` | 2034 | Construit l'objet réglette depuis le preset sélectionné (`null` = conserver l'existante) |
+| `VALIDATION_RULES` / `validateForm()` | 2054/2087 | Liste déclarative de règles `{message, check()}` — étendre ici plutôt qu'avec des `if` ad hoc |
+| `putQuestionsJsWithRetry(token, commitMsg, mutate)` | 2121 | Retry+refetch+conflit 409 factorisé (utilisé par `publier()` ET `supprimerQuestion()`) |
+| `publier()` | 2141 | Vérifie d'abord `isAdminStale()` (bloque avec confirmation si une nouvelle version est déployée), refuse toute publication où `editingId !== q.id` (incohérence = client obsolète), puis backup → build → `putQuestionsJsWithRetry` (voie directe) ou Worker/GitHub Actions |
+| `publierViaDispatch(...)` | 2343 | Fallback `repository_dispatch` quand le Worker est inaccessible |
+| `resetForm(keepId)` | 2391 | Remet le formulaire à zéro (appelle `setEditingId(null)`) |
 
 ### Dashboard
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `toggleDashboard()` | 2371 | Expand/collapse le tableau de bord |
-| `renderDashboard()` | 2379 | Calcule et affiche les stats (barres par période/OI) |
-| `toast(msg, type)` | 2642 | Affiche un toast 3,5 s (type: `'ok'` ou `'err'`) |
+| `toggleDashboard()` | 2415 | Expand/collapse le tableau de bord |
+| `renderDashboard()` | 2423 | Calcule et affiche les stats (barres par période/OI) |
+| `toast(msg, type)` | 2686 | Affiche un toast 3,5 s (type: `'ok'` ou `'err'`) |
 
 > Note : l'éditeur de contexte.js (`loadContexteJs` / `publierContexteJs`) n'existe plus dans admin.html — contexte.js est chargé statiquement.
 

@@ -220,6 +220,12 @@ async function handlePublish(request, env, ctx) {
   if (typeof question?.id !== 'string' || !/^Q\d+$/.test(question.id)) {
     return errResp('question.id invalide (attendu "Q" suivi de chiffres)');
   }
+  // Le client verrouille #q-id dès que editingId est posé (admin.html/setEditingId) — les
+  // deux ne devraient donc jamais diverger. Un écart signale un client obsolète (bug déjà vu :
+  // remplace silencieusement la question à editingId par le contenu d'une autre) — refuser.
+  if (action === 'upsert' && editingId && editingId !== question.id) {
+    return errResp(`editingId (${editingId}) ne correspond pas à question.id (${question.id}) — publication refusée`, 409);
+  }
   if (action === 'upsert') {
     const payloadErr = validateQuestionPayload(question);
     if (payloadErr) return errResp(payloadErr);

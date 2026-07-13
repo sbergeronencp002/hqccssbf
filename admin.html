@@ -485,6 +485,30 @@ const OWNER  = 'sbergeronencp002';
 const REPO   = 'hqccssbf';
 const BRANCH = 'main';
 
+// Un onglet resté ouvert continue d'exécuter le JS chargé à l'ouverture, même
+// après un déploiement de correctifs (deux incidents de perte de question ce
+// jour-là venaient d'un onglet obsolète). ADMIN_BUILD doit être incrémenté à
+// chaque modification d'admin.html ; isAdminStale() compare avec la version
+// réellement déployée avant chaque publication.
+const ADMIN_BUILD = '2026-07-13-1';
+async function isAdminStale() {
+  try {
+    const r = await fetch(`admin.html?t=${Date.now()}`, { cache: 'no-store' });
+    if(!r.ok) return false;
+    const html = await r.text();
+    const m = html.match(/const ADMIN_BUILD = '([^']+)'/);
+    return !!(m && m[1] !== ADMIN_BUILD);
+  } catch(_) { return false; } // hors ligne / réseau indisponible → ne bloque pas
+}
+function showStaleBanner() {
+  if(document.getElementById('stale-banner')) return;
+  const div = document.createElement('div');
+  div.id = 'stale-banner';
+  div.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:9999;background:#c0392b;color:#fff;padding:12px 16px;text-align:center;font-weight:bold;box-shadow:0 2px 8px rgba(0,0,0,.3);';
+  div.textContent = '⚠️ Cette page a été mise à jour depuis son chargement — rechargez (F5) avant de publier, sinon vous risquez d\'écraser des données.';
+  document.body.prepend(div);
+}
+
 // ── Worker URL ────────────────────────────────────────────────────────
 // URL assignée par Cloudflare après le premier déploiement (wrangler deploy).
 // Format : https://hqccssbf-admin.<sous-domaine-CF>.workers.dev
@@ -1345,6 +1369,8 @@ async function init() {
   await Promise.all([loadQuestionsJs(), loadImages(), loadReglettesJs(), loadRecentImages()]);
   // Rafraîchit les selects après que loadRecentImages ait rempli RECENT_IMAGES
   refreshImageSelects();
+  if(await isAdminStale()) showStaleBanner();
+  setInterval(async () => { if(await isAdminStale()) showStaleBanner(); }, 5 * 60 * 1000);
 }
 
 function refreshImageSelects() {
@@ -2116,6 +2142,11 @@ async function publier() {
   const errors = validateForm();
   if(errors.length) { toast('Champs manquants : ' + errors.join(', '), 'err'); return; }
 
+  if(await isAdminStale()) {
+    showStaleBanner();
+    if(!confirm('⚠️ Cette page a été mise à jour depuis son chargement.\n\nPublier avec une version obsolète risque d\'écraser une question existante.\n\nRecommandé : annuler et recharger (F5).\n\nPublier quand même ?')) return;
+  }
+
   const workerUrl    = localStorage.getItem('workerUrl') || '';
   const workerSecret = getWorkerSecret();
 
@@ -2134,6 +2165,13 @@ async function publier() {
 
       if(!editingId && currentQuestions.find(x => x.id === q.id)) {
         toast(`L'identifiant ${q.id} existe déjà — rechargez (F5).`, 'err');
+        return;
+      }
+      // #q-id est verrouillé (disabled) dès que editingId est posé (setEditingId) — les deux
+      // ne devraient donc jamais diverger. Un écart signale un JS obsolète (onglet resté ouvert
+      // depuis avant ce verrou) : refuser plutôt que de remplacer silencieusement une autre question.
+      if(editingId && editingId !== q.id) {
+        toast(`Incohérence : édition de ${editingId} mais id publié ${q.id}. Publication annulée — rechargez (F5).`, 'err');
         return;
       }
 
@@ -2235,6 +2273,12 @@ async function publier() {
 
     if(!editingId && currentQuestions.find(x => x.id === q.id)) {
       toast(`L'identifiant ${q.id} existe déjà — rechargez (F5) pour obtenir le prochain ID libre.`, 'err');
+      btn.disabled = false; btn.textContent = 'Publier sur GitHub';
+      return;
+    }
+    // Voir le commentaire équivalent dans la voie Worker ci-dessus.
+    if(editingId && editingId !== q.id) {
+      toast(`Incohérence : édition de ${editingId} mais id publié ${q.id}. Publication annulée — rechargez (F5).`, 'err');
       btn.disabled = false; btn.textContent = 'Publier sur GitHub';
       return;
     }

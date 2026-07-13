@@ -7,6 +7,13 @@ const payload = JSON.parse(process.env.PAYLOAD);
 const { action, question, reglette, editingId } = payload;
 
 if (!question?.id) { console.error('question.id manquant'); process.exit(1); }
+// Voir le commentaire équivalent dans worker/index.js : editingId et question.id ne devraient
+// jamais diverger (le champ id est verrouillé côté client dès qu'on édite) — un écart signale
+// un client obsolète qui remplacerait silencieusement la mauvaise question.
+if (action !== 'delete' && editingId && editingId !== question.id) {
+  console.error(`editingId (${editingId}) ne correspond pas à question.id (${question.id}) — mutation refusée`);
+  process.exit(1);
+}
 
 // ── Lire et parser questions.js ──────────────────────────────────────────────
 const content = readFileSync('questions.js', 'utf-8');
