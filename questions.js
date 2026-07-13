@@ -9530,7 +9530,7 @@ const QUESTIONS = [
  enonce: "À partir des documents A et B, indiquez un changement ou une continuité dans l'organisation politique de la colonie entre 1791 et 1840. Justifiez votre réponse à l'aide de faits et d'un repère de temps.",
  aspects: [{aspect: "Acte d'Union"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document A", ref: "org_pol_1791_acte_const.png", soustitre: "Organisation politique du Haut-Canada et du Bas-Canada entre 1791 et 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", auteur: ""}]},
+  {type: "textes", cols: [{titre: "Document A", ref: "org_pol_1791_acte_const.png", soustitre: "Organisation politique avant 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]},
   {type: "textes", cols: [{titre: "Document B", ref: "org_pol_1840_acte_union.png", soustitre: "Organisation politique de la Province du Canada à partir de 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", auteur: ""}]}
  ],
  reponse: {type: "lignes", nombre: 3},
