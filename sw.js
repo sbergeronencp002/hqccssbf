@@ -49,11 +49,19 @@ self.addEventListener('fetch', e => {
   // questions.js, questions-index.js, index.html, contexte.js — réseau en premier
   // (contenu qui change sans que l'URL change : données régénérées à chaque publication,
   // ou page/config modifiée sans bump de version), repli sur le cache si hors ligne.
+  // admin.html/documents.html/revision.html sont ici pour la même raison : ce sont des
+  // pages d'édition dont le JS change au fil des correctifs — un onglet ou un cache SW
+  // figé sur une ancienne version peut alors réintroduire un bug déjà corrigé (vécu :
+  // une page restée en cache-first pouvait servir un revision.html obsolète qui, lui,
+  // ne connaissait pas encore le correctif de lecture via l'API GitHub).
   const isNetworkFirst = url.pathname.endsWith('/questions.js')
     || url.pathname.endsWith('/questions-index.js')
     || url.pathname.endsWith('/index.html')
     || url.pathname.endsWith('/') // navigation vers la racine du site (ex. /hqccssbf/) == index.html
-    || url.pathname.endsWith('/contexte.js');
+    || url.pathname.endsWith('/contexte.js')
+    || url.pathname.endsWith('/admin.html')
+    || url.pathname.endsWith('/documents.html')
+    || url.pathname.endsWith('/revision.html');
   if (isNetworkFirst) {
     e.respondWith(
       fetch(e.request)

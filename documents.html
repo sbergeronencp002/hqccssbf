@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
 <title>Documents & Images — HQC CSSBF</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -466,29 +468,37 @@ async function init() {
   fetchSizes(Object.keys(imgMap));
 }
 
-// Charge questions.js avec cache-bust (timestamp) plutôt qu'un <script src="?v=1">
-// statique : sinon le navigateur peut servir indéfiniment une copie mise en cache
-// sous cette URL fixe, masquant les questions/images ajoutées depuis.
+// Charge questions.js via l'API GitHub en priorité plutôt que le site statique : GitHub
+// Pages est servi derrière un CDN qui peut continuer à servir une ancienne version pendant
+// un moment après une publication, même avec un cache-bust par timestamp sur l'URL (le CDN
+// peut ignorer la query string pour la clé de cache) — l'API GitHub, elle, reflète toujours
+// l'état réel du dépôt (voir fetchQuestionsJsSource, déjà utilisée pour les éditions).
+// Repli sur le site statique puis sur une balise <script> si l'API échoue.
 (function loadQuestionsThenInit() {
-  function fallback() {
+  function runSource(src) {
+    try {
+      const s = document.createElement('script');
+      s.textContent = src;
+      document.head.appendChild(s);
+      return typeof QUESTIONS !== 'undefined';
+    } catch (e) { return false; }
+  }
+  function scriptTagFallback() {
     const qs = document.createElement('script');
     qs.src = 'questions.js?v=1&t=' + Date.now();
     qs.onload = init;
     document.head.appendChild(qs);
   }
-  fetch('questions.js?t=' + Date.now(), { cache: 'no-store' })
-    .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
-    .then(src => {
-      let ok = false;
-      try {
-        const s = document.createElement('script');
-        s.textContent = src;
-        document.head.appendChild(s);
-        ok = (typeof QUESTIONS !== 'undefined');
-      } catch (e) { ok = false; }
-      if (ok) init(); else fallback();
-    })
-    .catch(fallback);
+  function staticFetchFallback() {
+    fetch('questions.js?t=' + Date.now(), { cache: 'no-store' })
+      .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+      .then(src => { if (runSource(src)) init(); else scriptTagFallback(); })
+      .catch(scriptTagFallback);
+  }
+  const token = getToken();
+  fetchQuestionsJsSource(token ? {Authorization: 'token ' + token} : undefined)
+    .then(({content}) => { if (runSource(content)) init(); else staticFetchFallback(); })
+    .catch(staticFetchFallback);
 })();
 
 function fetchSizes(imgs) {
