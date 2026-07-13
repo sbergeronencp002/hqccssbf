@@ -1114,7 +1114,17 @@ const QUESTIONS = [
 },
 {id: "Q617", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P5 — 1840 – 1896", points: 2, soustag: "Cause", aspects: [{aspect: "Politique nationale"}], enonce: "Indiquez une raison qui explique l'augmentation du nombre de réserves après la signature des traités numérotés.", updatedAt: "2026-07-06T12:43:22.487Z"},
 {id: "Q618", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P5 — 1840 – 1896", points: 2, soustag: "Cause", aspects: [{aspect: "Politique nationale"}], enonce: "Indiquez une conséquence de la signature des traités numérotés sur les Premières Nations.", updatedAt: "2026-07-06T12:48:28.014Z"},
-{id: "Q619", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P5 — 1840 – 1896", points: 3, soustag: "Changement ou continuité", aspects: [{aspect: "Migrations"}], enonce: "À partir du document A, indiquez s’il y a changement ou continuité dans la répartition de la population entre les milieux urbain et rural au Québec. Justifiez votre choix à l’aide de faits qui montrent le changement ou la continuité et d’un repère de temps.", updatedAt: "2026-07-07T01:29:07.472Z"},
+{
+ id: "Q619",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P5 — 1840 – 1896",
+ points: 3,
+ soustag: "Changement ou continuité",
+ aspects: [{aspect: "Migrations"}, {aspect: "Première phase d'industrialisation"}],
+ enonce: "À partir du document A, indiquez s’il y a changement ou continuité dans la répartition de la population entre les milieux urbain et rural au Québec. Justifiez votre choix à l’aide de faits qui montrent le changement ou la continuité et d’un repère de temps.",
+ updatedAt: "2026-07-13T15:22:41.179Z"
+},
 {id: "Q620", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P5 — 1840 – 1896", points: 3, soustag: "Changement ou continuité", aspects: [{aspect: "Migrations"}], enonce: "À partir du document A, indiquez s'il y a changement ou continuité dans les mouvements migratoires au Québec entre 1840 et 1880. Justifiez votre choix à l'aide de faits qui montrent le changement ou la continuité et d'un repère de temps.", updatedAt: "2026-07-07T01:31:01.211Z"},
 {id: "Q621", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P5 — 1840 – 1896", points: 3, soustag: "Changement ou continuité", aspects: [{aspect: "Migrations"}], enonce: "À partir du document A, indiquez s'il y a changement ou continuité dans le nombre de colons installés dans les nouvelles régions entre 1850 et 1890. Justifiez votre choix à l'aide de faits qui montrent le changement ou la continuité et d'un repère de temps.", updatedAt: "2026-07-07T01:29:56.311Z"},
 {
@@ -1181,7 +1191,7 @@ const QUESTIONS = [
 {id: "Q674", niveau: 4, oi: "Dégager des différences et des similitudes", periode: "P5 — 1840 – 1896", points: 2, soustag: "Différence", aspects: [{aspect: "Première phase d'industrialisation"}], enonce: "Indiquez une différence entre les conditions de travail des hommes et celles des femmes dans les manufactures au cours de la seconde moitié du XIXᵉ siècle.", updatedAt: "2026-07-13T14:13:28.016Z"},
 {id: "Q675", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P5 — 1840 – 1896", points: 2, soustag: "Cause", aspects: [{aspect: "Première phase d'industrialisation"}], enonce: "Indiquez une raison pour laquelle des ouvriers forment des syndicats au Québec dans la seconde moitié du XIXᵉ siècle.", updatedAt: "2026-07-13T14:17:16.620Z"},
 {id: "Q676", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P5 — 1840 – 1896", points: 2, soustag: "Changement", aspects: [{aspect: "Première phase d'industrialisation"}], enonce: "Indiquez un changement concernant l'organisation des ouvriers au Québec dans la seconde moitié du XIXᵉ siècle.", updatedAt: "2026-07-13T14:39:13.526Z"},
-{id: "Q677", niveau: 4, oi: "Établir des faits", periode: "P5 — 1840 – 1896", points: 1, aspects: [{aspect: "Première phase d'industrialisation"}], enonce: "Indiquez un moyen utilisé par les ouvriers pour faire valoir leurs revendications dans la seconde moitié du XIXᵉ siècle.", updatedAt: "2026-07-13T14:42:31.464Z"},
+{id: "Q677", niveau: 4, oi: "Établir des faits", periode: "P5 — 1840 – 1896", points: 1, aspects: [{aspect: "Première phase d'industrialisation"}], enonce: "Indiquez un moyen utilisé par les ouvriers pour faire valoir leurs revendications dans la seconde moitié du XIXᵉ siècle.", updatedAt: "2026-07-13T15:11:31.283Z"},
 {id: "Q678", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P5 — 1840 – 1896", points: 2, soustag: "Cause", aspects: [{aspect: "Première phase d'industrialisation"}], enonce: "Indiquez une cause de l'urbanisation au Québec dans la seconde moitié du XIXᵉ siècle.", updatedAt: "2026-07-13T14:49:31.818Z"},
 {id: "Q679", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P5 — 1840 – 1896", points: 2, soustag: "Conséquence", aspects: [{aspect: "Première phase d'industrialisation"}], enonce: "Indiquez une conséquence de l'urbanisation sur les villes du Québec dans la seconde moitié du XIXᵉ siècle.", updatedAt: "2026-07-13T14:56:18.806Z"}
 ]
