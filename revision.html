@@ -219,9 +219,19 @@ function rvRequireToken() {
 const RV_REPO = 'sbergeronencp002/hqccssbf';
 const RV_API  = 'https://api.github.com/repos/' + RV_REPO + '/contents/';
 
+// GitHub peut mettre plusieurs dizaines de secondes à propager un commit sur tous ses
+// réplicas de lecture (vécu le 2026-07-13 : une « lecture fraîche » 35 s après un commit
+// précédent a quand même renvoyé l'état d'AVANT ce commit, l'écrasant silencieusement).
+// On espace donc les écritures d'au moins RV_WRITE_COOLDOWN_MS pour réduire ce risque —
+// ça ne l'élimine pas garantie, mais le rend très improbable en usage normal.
+let _rvLastWriteAt = 0;
+const RV_WRITE_COOLDOWN_MS = 12000;
+
 // Lecture fraîche de questions.js → mutation ciblée → réécriture (PUT), 1 retry sur conflit SHA
 async function rvApplyQuestionsEdit(mutate, commitMsg) {
   const token = rvRequireToken();
+  const wait = RV_WRITE_COOLDOWN_MS - (Date.now() - _rvLastWriteAt);
+  if(wait > 0) await new Promise(r => setTimeout(r, wait));
   for(let attempt = 0; attempt < 2; attempt++) {
     const rq = await fetch(RV_API + 'questions.js?t=' + Date.now(), {
       headers: {Authorization: 'token ' + token}, cache: 'no-store'
@@ -256,7 +266,7 @@ async function rvApplyQuestionsEdit(mutate, commitMsg) {
       headers: {Authorization: 'token ' + token, 'Content-Type': 'application/json'},
       body: JSON.stringify({message: commitMsg, content: btoa(binary), sha: dq.sha})
     });
-    if(rp.ok) return true;
+    if(rp.ok) { _rvLastWriteAt = Date.now(); return true; }
     if(rp.status === 409 && attempt === 0) continue;
     throw new Error('Échec écriture questions.js (' + rp.status + ')');
   }

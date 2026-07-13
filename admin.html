@@ -2133,9 +2133,23 @@ async function pruneBackups(token) {
 // ré-application de `mutate()` avant chaque nouvelle tentative) en cas de conflit SHA (409).
 // Centralise la logique jusque-là dupliquée entre publier() et supprimerQuestion() — met à
 // jour questionsFileSha en cas de succès, laisse l'exception se propager sinon.
+// GitHub peut mettre plusieurs dizaines de secondes à propager un commit sur tous ses
+// réplicas de lecture (vécu le 2026-07-13 : une « lecture fraîche » 35 s après un commit
+// précédent — depuis une autre page — a quand même renvoyé l'état d'AVANT ce commit,
+// l'écrasant silencieusement). Espacer d'au moins QJS_WRITE_COOLDOWN_MS la relecture
+// après conflit réduit ce risque (admin.html évite déjà l'essentiel du problème en
+// gardant un état local optimiste plutôt qu'en relisant à chaque publication — cette
+// relecture ne se produit qu'en cas de conflit 409).
+let _qjsLastWriteAt = 0;
+const QJS_WRITE_COOLDOWN_MS = 12000;
+
 async function putQuestionsJsWithRetry(token, commitMsg, mutate) {
   for(let attempt = 0; attempt < 3; attempt++) {
-    if(attempt > 0) await fetchFreshState(token);
+    if(attempt > 0) {
+      const wait = QJS_WRITE_COOLDOWN_MS - (Date.now() - _qjsLastWriteAt);
+      if(wait > 0) await new Promise(r => setTimeout(r, wait));
+      await fetchFreshState(token);
+    }
     mutate();
     const encoded = utf8b64(generateQuestionsJs(currentQuestions, currentReglettes, currentImageDb));
     const putResp = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/questions.js`, {
@@ -2143,7 +2157,7 @@ async function putQuestionsJsWithRetry(token, commitMsg, mutate) {
       headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: commitMsg, content: encoded, sha: questionsFileSha, branch: BRANCH })
     });
-    if(putResp.ok) { questionsFileSha = (await putResp.json()).content.sha; return; }
+    if(putResp.ok) { questionsFileSha = (await putResp.json()).content.sha; _qjsLastWriteAt = Date.now(); return; }
     let msg = putResp.status;
     try { const err = await putResp.json(); msg = err.message || msg; } catch(_) {}
     const isConflict = putResp.status === 409 || String(msg).toLowerCase().includes('fast forward') || String(msg).toLowerCase().includes('conflict');

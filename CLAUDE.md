@@ -450,6 +450,16 @@ Symptôme d'un token invalide dans admin.html : statut « ✗ Token invalide ou 
 
 ---
 
+## ⚠️ Latence de propagation de l'API GitHub (écritures rapprochées sur questions.js)
+
+Découvert le 2026-07-13 : l'API Contents de GitHub n'est **pas instantanément cohérente** entre ses différents réplicas de lecture. Sous des écritures rapprochées sur le même fichier (plusieurs modifications en moins d'une minute, par ex. via revision.html/documents.html), une « lecture fraîche » censée précéder chaque écriture peut renvoyer un état antérieur au commit précédent — jusqu'à **35 secondes** de retard observé. Résultat concret : la 2ᵉ modification écrase silencieusement la 1ʳᵉ, même si chaque écriture individuellement relit l'état avant de muter et que le SHA de base est accepté sans conflit 409 (les deux lectures/écritures ont simplement touché des réplicas différents, chacun cohérent avec lui-même).
+
+Ce n'est **pas** le même problème que le cache CDN de GitHub Pages (documenté plus haut) — celui-là concerne le site déployé et se contourne en lisant via l'API. Celui-ci concerne l'API elle-même et n'a pas de contournement définitif, seulement une atténuation : `rvApplyQuestionsEdit` (revision.html), `applyQuestionsEdit` (documents.html) et `putQuestionsJsWithRetry` (admin.html, seulement sur le chemin de relecture après conflit 409) imposent un délai minimum de **12 secondes** entre deux écritures successives sur `questions.js` (`RV_WRITE_COOLDOWN_MS` / `WRITE_COOLDOWN_MS` / `QJS_WRITE_COOLDOWN_MS`) avant de relire — ça ne garantit pas l'absence du problème, mais le rend très improbable en usage normal.
+
+**Conséquence pratique pour l'enseignant** : éviter d'enchaîner plusieurs modifications de documents/guide/énoncé en quelques secondes sur revision.html/documents.html ; attendre la confirmation « ✓ Enregistré » entre deux modifications. Si un cas de perte de données ressemblant à ceci se reproduit (un champ tout juste modifié revient à son ancienne valeur après une modification suivante), vérifier l'historique git des commits `questions.js` autour de l'heure concernée — la même signature (un commit dont le diff « annule » un changement du commit juste précédent sur un champ non lié à l'intention du commit) confirme ce phénomène plutôt qu'un bogue de code classique.
+
+---
+
 ## Worker Cloudflare (voie de publication rapide)
 
 `admin.html` peut publier via un Worker Cloudflare (`/publish`, voir champ « URL Worker » dans l'UI) au lieu du PUT GitHub direct — voie prioritaire quand configurée, avec fallback GitHub Actions (`repository_dispatch` sur `publish-question.yml`) puis PUT direct si le Worker n'est pas configuré ou échoue.
