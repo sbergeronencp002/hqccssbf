@@ -11474,7 +11474,7 @@ const QUESTIONS = [
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_population_rurale_urbaine_1840-1890.jpg", soustitre: "Évolution de la répartition de la population entre les milieux urbain et rural", source: "Adapté de Paul-André Linteau, René Durocher et Jean-Claude Robert, Histoire du Québec contemporain. Tome I : De la Confédération à la crise (1867-1929), Boréal, 1989."}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "La croissance de la population urbaine.\nL'augmentation de la population des villes.\nLe développement des villes.",
- updatedAt: "2026-07-06T23:41:39.151Z"
+ updatedAt: "2026-07-13T15:23:34.233Z"
 },
 {
  id: "Q628",
