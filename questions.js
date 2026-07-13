@@ -1297,7 +1297,6 @@ const IMAGE_DB = {
 "territoire_occupe_1700.png": {src: "images/territoire_occupe_1700.png"},
 "carte_premiers_occ_peuplement.png": {src: "images/carte_premiers_occ_peuplement.png"},
 "territoire_revendique_1713.png": {src: "images/territoire_revendique_1713.png"},
-"territoire_revendique_1700.png": {src: "images/territoire_revendique_1700.png"},
 "territoires_perdus_1713.png": {src: "images/territoires_perdus_1713.png"},
 "org_pol_apres_1663.png": {src: "images/org_pol_apres_1663.png"},
 "paroisse_n-f.png": {src: "images/paroisse_n-f.png"},
@@ -4389,10 +4388,10 @@ const QUESTIONS = [
  soustag: "Changement ou continuité",
  enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité concernant les possessions françaises en Amérique du Nord entre 1700 et 1713. Justifiez votre choix par des faits et un repère de temps.",
  aspects: [{aspect: "Territoire français en Amérique"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "territoire_revendique_1700.png", source: "Récitus."}]}, {type: "textes", cols: [{titre: "Document B", ref: "territoire_revendique_1713.png", source: "Récitus."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "territoire_revendique_france_1700.png", source: "Récitus."}]}, {type: "textes", cols: [{titre: "Document B", ref: "territoire_revendique_1713.png", source: "Récitus."}]}],
  reponse: {type: "lignes", nombre: 3},
  guide: "Il y a changement puisque, en 1713, à la suite du traité d’Utrecht, la France perd plusieurs de ses possessions, notamment l’Acadie, Terre-Neuve et la baie d’Hudson, au profit de la Grande-Bretagne.\n\nIl y a continuité puisque la France possède toujours des territoires en Amérique du Nord en 1700 comme en 1713, notamment dans la vallée du Saint-Laurent.",
- _imgs: ["territoire_revendique_1700.png", "territoire_revendique_1713.png"]
+ _imgs: ["territoire_revendique_france_1700.png", "territoire_revendique_1713.png"]
 },
 {
  id: "Q171",
