@@ -1227,7 +1227,8 @@ const REGLETTES = {
 "Q678": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q679": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q675": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q676": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
+"Q676": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
+"Q680": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -1547,7 +1548,8 @@ const IMAGE_DB = {
 "tableau_salaires_hommes-femmes_1890.jpg": {src: "images/tableau_salaires_hommes-femmes_1890.jpg"},
 "associations_ouvrieres_1890.jpg": {src: "images/associations_ouvrieres_1890.jpg"},
 "tableau_population_montreal_1850-1890.jpg": {src: "images/tableau_population_montreal_1850-1890.jpg", w: 1200, h: 800},
-"tableau_organisations_ouvrieres.jpg": {src: "images/tableau_organisations_ouvrieres.jpg"}
+"tableau_organisations_ouvrieres.jpg": {src: "images/tableau_organisations_ouvrieres.jpg"},
+"tableau_salaires_depenses_1890.jpg": {src: "images/tableau_salaires_depenses_1890.jpg", w: 1200, h: 600}
 }
 
 const QUESTIONS = [
@@ -12254,5 +12256,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "La population des villes augmente.\nLes villes prennent de l'expansion.\nLes quartiers urbains se développent.\nLes besoins en logements augmentent.\nDe nouveaux quartiers ouvriers apparaissent.",
  updatedAt: "2026-07-13T14:56:18.806Z"
+},
+{
+ id: "Q680",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P5 — 1840 – 1896",
+ points: 3,
+ enonce: "Expliquez comment les conditions de travail dans les manufactures favorisent l'organisation du mouvement ouvrier dans la seconde moitié du XIXᵉ siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n• une condition de travail dans les manufactures\n• un moyen utilisé par les ouvriers\n• un objectif poursuivi",
+ aspects: [{aspect: "Première phase d'industrialisation"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "associations_ouvrieres_1890.jpg", soustitre: "Assemblée des Chevaliers du travail", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les ouvriers travaillent de longues journées pour un faible salaire dans des ateliers souvent peu sécuritaires. Plusieurs choisissent alors de s'unir afin de défendre ensemble leurs intérêts auprès des employeurs. »", source: "Adapté de Jacques Rouillard, Histoire du syndicalisme québécois : des origines à nos jours, Boréal, 2004."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "tableau_salaires_depenses_1890.jpg", soustitre: "Comparaison des salaires des hommes et des femmes dans les manufactures", source: "Adapté de Bettina Bradbury, Working Families: Age, Gender, and Daily Survival in Industrializing Montreal, Oxford University Press, 1993."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "Les ouvriers travaillent souvent dans de mauvaises conditions (condition de travail). Ils se regroupent en syndicats ou tiennent des assemblées pour défendre leurs revendications (moyen utilisé). Ils cherchent ainsi à obtenir de meilleures conditions de travail ou de meilleurs salaires (objectif poursuivi).",
+ updatedAt: "2026-07-13T15:49:39.123Z"
 }
 ]
