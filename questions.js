@@ -1222,7 +1222,7 @@ const REGLETTES = {
 "Q672": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q670": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
 "Q673": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
-"Q675": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q674": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la différence."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la différence."}, {pts: 0, desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1297,7 +1297,6 @@ const IMAGE_DB = {
 "territoire_occupe_1700.png": {src: "images/territoire_occupe_1700.png"},
 "carte_premiers_occ_peuplement.png": {src: "images/carte_premiers_occ_peuplement.png"},
 "territoire_revendique_1713.png": {src: "images/territoire_revendique_1713.png"},
-"territoire_revendique_1700.png": {src: "images/territoire_revendique_1700.png"},
 "territoires_perdus_1713.png": {src: "images/territoires_perdus_1713.png"},
 "org_pol_apres_1663.png": {src: "images/org_pol_apres_1663.png"},
 "paroisse_n-f.png": {src: "images/paroisse_n-f.png"},
@@ -1539,7 +1538,8 @@ const IMAGE_DB = {
 "atelier_chaussaures.jpg": {src: "images/atelier_chaussaures.jpg", w: 1200, h: 800},
 "manufactures_chaussures.jpg": {src: "images/manufactures_chaussures.jpg", w: 1200, h: 800},
 "industrie_forestiere_1890.jpg": {src: "images/industrie_forestiere_1890.jpg", w: 1200, h: 800},
-"quartiers_ouvriers_1890.jpg": {src: "images/quartiers_ouvriers_1890.jpg"}
+"quartiers_ouvriers_1890.jpg": {src: "images/quartiers_ouvriers_1890.jpg"},
+"tableau_salaires_hommes-femmes_1890.jpg": {src: "images/tableau_salaires_hommes-femmes_1890.jpg"}
 }
 
 const QUESTIONS = [
@@ -4388,10 +4388,10 @@ const QUESTIONS = [
  soustag: "Changement ou continuité",
  enonce: "À partir des documents A et B, indiquez s’il y a changement ou continuité concernant les possessions françaises en Amérique du Nord entre 1700 et 1713. Justifiez votre choix par des faits et un repère de temps.",
  aspects: [{aspect: "Territoire français en Amérique"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "territoire_revendique_1700.png", source: "Récitus."}]}, {type: "textes", cols: [{titre: "Document B", ref: "territoire_revendique_1713.png", source: "Récitus."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "territoire_revendique_france_1700.png", source: "Récitus."}]}, {type: "textes", cols: [{titre: "Document B", ref: "territoire_revendique_1713.png", source: "Récitus."}]}],
  reponse: {type: "lignes", nombre: 3},
  guide: "Il y a changement puisque, en 1713, à la suite du traité d’Utrecht, la France perd plusieurs de ses possessions, notamment l’Acadie, Terre-Neuve et la baie d’Hudson, au profit de la Grande-Bretagne.\n\nIl y a continuité puisque la France possède toujours des territoires en Amérique du Nord en 1700 comme en 1713, notamment dans la vallée du Saint-Laurent.",
- _imgs: ["territoire_revendique_1700.png", "territoire_revendique_1713.png"]
+ _imgs: ["territoire_revendique_france_1700.png", "territoire_revendique_1713.png"]
 },
 {
  id: "Q171",
@@ -12165,17 +12165,17 @@ const QUESTIONS = [
  updatedAt: "2026-07-13T14:08:13.150Z"
 },
 {
- id: "Q675",
+ id: "Q674",
  niveau: 4,
- oi: "Déterminer des causes et des conséquences",
+ oi: "Dégager des différences et des similitudes",
  periode: "P5 — 1840 – 1896",
  points: 2,
- soustag: "Cause",
- enonce: "Indiquez une raison pour laquelle des ouvriers forment des syndicats au Québec dans la seconde moitié du XIXᵉ siècle.",
+ soustag: "Différence",
+ enonce: "Indiquez une différence entre les conditions de travail des hommes et celles des femmes dans les manufactures au cours de la seconde moitié du XIXᵉ siècle.",
  aspects: [{aspect: "Première phase d'industrialisation"}],
- documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Les journées s'étirent du matin au soir, tandis que les salaires demeurent insuffisants pour plusieurs familles. Les travailleurs ne disposent d'aucune protection lorsque surviennent une blessure ou une période sans emploi. »", source: "Adapté de Jean Hamelin et Yves Roby, Histoire économique du Québec, 1851-1896, Fides, 1971."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_salaires_hommes-femmes_1890.jpg", soustitre: "Comparaison des salaires des hommes et des femmes dans les manufactures", source: "Adapté de Bettina Bradbury, Working Families: Age, Gender, and Daily Survival in Industrializing Montreal, Oxford University Press, 1993."}]}],
  reponse: {type: "lignes", nombre: 2},
- guide: "Les ouvriers cherchent à obtenir de meilleurs salaires.\nLes ouvriers cherchent à réduire la durée de leur journée de travail.\nLes ouvriers cherchent à améliorer la sécurité dans les manufactures.\nLes ouvriers cherchent à obtenir de meilleures conditions de travail.",
- updatedAt: "2026-07-13T14:17:16.620Z"
+ guide: "Les femmes reçoivent un salaire inférieur à celui des hommes.\nLes hommes gagnent davantage que les femmes.",
+ updatedAt: "2026-07-13T14:13:28.016Z"
 }
 ]
