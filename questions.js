@@ -1989,7 +1989,7 @@ const QUESTIONS = [
  periode: "P5 — 1840 – 1896",
  points: 2,
  soustag: "Convergence – 2 acteurs",
- enonce: "Les documents A et B présentent le point de vue de deux acteurs.Sur quel point précis sont-ils en accord?",
+ enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?",
  aspects: [{aspect: "Migrations"}],
  documents: [
   {
@@ -2002,7 +2002,7 @@ const QUESTIONS = [
   }
  ],
  reponse: {type: "lignes", nombre: 2},
- guide: "L’importance de coloniser les régions (ou la colonisation des régions).",
+ guide: "L’importance de coloniser les régions.\nLa colonisation des régions.",
  updatedAt: "2026-06-18T17:56:50.357Z"
 },
 {
