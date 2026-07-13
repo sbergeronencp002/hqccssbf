@@ -1216,7 +1216,8 @@ const REGLETTES = {
 "Q665": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q666": {oi: "Situer dans l'espace", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]},
 "Q667": {oi: "Situer dans l'espace", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]},
-"Q668": {oi: "Situer dans l'espace", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]}
+"Q668": {oi: "Situer dans l'espace", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]},
+"Q669": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]}
 }
 
 const IMAGE_DB = {
@@ -12070,5 +12071,23 @@ const QUESTIONS = [
  reponse: {type: "tableau_2col"},
  guide: "C",
  updatedAt: "2026-07-13T12:25:49.835Z"
+},
+{
+ id: "Q669",
+ niveau: 4,
+ oi: "Mettre en relation des faits",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "3 documents",
+ enonce: "Les documents A à C présentent des secteurs d'activité qui se mécanisent. Inscrivez à l'endroit approprié la lettre correspondant à chacun des secteurs d'activité.",
+ aspects: [{aspect: "Première phase d'industrialisation"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "agriculteur_1890.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« De nouvelles installations permettent de débiter les billes à un rythme plus soutenu. Les opérations autrefois réalisées lentement sont accélérées, ce qui augmente considérablement la quantité de matériau transformé chaque jour. »", source: "Adapté de Arthur R. M. Lower, The North American Assault on the Canadian Forest, Ryerson Press, 1938."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« La vapeur met en mouvement plusieurs appareils réunis dans un même établissement. Les travailleurs accomplissent des tâches précises tandis que les différentes opérations permettent de fabriquer rapidement une quantité croissante de produits. »", source: "Adapté de Jean Hamelin et Yves Roby, Histoire économique du Québec, 1851-1896, Fides, 1971."}]}
+ ],
+ reponse: {type: "mettre-en-relation", elements: ["Agriculture", "Bois", "Manufactures"]},
+ guide: {type: "grille", entetes: ["Agriculture", "Bois", "Manufactures"], rangees: [["A", "B", "C"]]},
+ updatedAt: "2026-07-13T13:13:51.866Z"
 }
 ]
