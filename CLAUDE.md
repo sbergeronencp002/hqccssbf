@@ -52,13 +52,17 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 ### Cache-bust actuel
 `app.js?v=50`, `style.css?v=30`, `oi-config.js?v=1`, `questions-io.js?v=3`, `filters.js?v=1`, `reglettes.js?v=3` (admin) — incrémenter à chaque changement majeur.
 `index.html` charge `filters.js?v=1` (avant `app.js`) puis `questions-index.js?v=1` (index allégé, 200 Ko) — `questions.js` est chargé en lazy par app.js sans version fixe (cache-bust par timestamp).
-`documents.html` charge `oi-config.js?v=1` + `questions-io.js?v=3` ; `questions.js` est chargé dynamiquement (fetch cache-bust par timestamp, comme index.html) — jamais en `<script src>` statique.
-`revision.html` charge `oi-config.js?v=1` + `questions-io.js?v=3` + `contexte.js` + `filters.js?v=1` ; `questions.js` est chargé de la même façon (fetch cache-bust par timestamp).
+`documents.html` charge `oi-config.js?v=1` + `questions-io.js?v=3` ; `questions.js` est chargé via l'API GitHub Contents en priorité (comme admin.html), repli sur le fetch du site statique puis sur une balise `<script>` si l'API échoue — jamais en `<script src>` statique direct.
+`revision.html` charge `oi-config.js?v=1` + `questions-io.js?v=3` + `contexte.js` + `filters.js?v=1` ; `questions.js` est chargé de la même façon (API GitHub en priorité).
+
+⚠️ Pourquoi l'API en priorité plutôt que le fetch du site statique : GitHub Pages est servi derrière un CDN qui peut continuer à servir une ancienne version d'un fichier après une publication, même avec un cache-bust par timestamp sur l'URL (le CDN peut ignorer la query string pour la clé de cache) — l'API GitHub, elle, reflète toujours l'état réel du dépôt. `index.html` (site public, gros volume de visiteurs anonymes) garde volontairement le fetch du site statique pour ne pas taper le quota anonyme de l'API (60 req/h) ; `documents.html`/`revision.html`/`admin.html` sont des outils enseignant à faible trafic, l'API y est donc sûre par défaut.
 
 ⚠️ Cette table doit être mise à jour à chaque incrément de `?v=` dans le HTML — sinon un futur agent repart d'un mauvais numéro de version.
 
 ### Service worker (`sw.js`)
 Précache `style.css`, `app.js`, `filters.js`, `oi-config.js` (avec leur `?v=N` — un futur bump de version doit aussi être répercuté dans le tableau `PRECACHE` de `sw.js`, sinon l'ancienne version reste précachée). `index.html` et `contexte.js` sont précachés mais **toujours revalidés réseau-first** (comme `questions.js`/`questions-index.js`) car leur contenu peut changer sans que leur URL change. `CACHE` (actuellement `hqc-v4`) doit être incrémenté à chaque changement de la liste `PRECACHE` (pas nécessaire pour un simple changement de logique dans le handler `fetch` — voir images ci-dessous — puisque ça ne change pas ce qui est précaché).
+
+`admin.html`, `documents.html`, `revision.html` sont **aussi réseau-first** (même traitement que `questions.js`/`index.html`) : ce sont des pages d'édition dont le JS change au fil des correctifs — un cache SW figé sur une ancienne version peut réintroduire un bug déjà corrigé, parce que la page obsolète ignore encore le correctif (vécu le 2026-07-13 : un correctif de lecture via l'API GitHub dans revision.html ne pouvait pas prendre effet tant que l'ancien revision.html restait servi depuis le cache).
 
 Images : **stale-while-revalidate** (pas cache-first pur) — sert le cache immédiatement s'il existe, mais relance toujours une requête réseau en arrière-plan pour rafraîchir l'entrée. Nécessaire car remplacer une image (documents.html/admin.html) garde le même nom de fichier donc la même URL ; un cache-first pur servirait l'ancienne version indéfiniment. Avec cette stratégie, l'image à jour apparaît au 2ᵉ chargement au plus tard.
 
