@@ -1224,7 +1224,8 @@ const REGLETTES = {
 "Q673": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q674": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la différence."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la différence."}, {pts: 0, desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."}]},
 "Q677": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
-"Q678": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q678": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q679": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1542,7 +1543,8 @@ const IMAGE_DB = {
 "industrie_forestiere_1890.jpg": {src: "images/industrie_forestiere_1890.jpg", w: 1200, h: 800},
 "quartiers_ouvriers_1890.jpg": {src: "images/quartiers_ouvriers_1890.jpg"},
 "tableau_salaires_hommes-femmes_1890.jpg": {src: "images/tableau_salaires_hommes-femmes_1890.jpg"},
-"associations_ouvrieres_1890.jpg": {src: "images/associations_ouvrieres_1890.jpg"}
+"associations_ouvrieres_1890.jpg": {src: "images/associations_ouvrieres_1890.jpg"},
+"tableau_population_montreal_1850-1890.jpg": {src: "images/tableau_population_montreal_1850-1890.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -12207,5 +12209,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Le développement des manufactures.\nLa création d'emplois en ville.\nL'industrialisation attire les travailleurs.",
  updatedAt: "2026-07-13T14:49:31.818Z"
+},
+{
+ id: "Q679",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Conséquence",
+ enonce: "Indiquez une conséquence de l'urbanisation sur les villes du Québec dans la seconde moitié du XIXᵉ siècle.",
+ aspects: [{aspect: "Première phase d'industrialisation"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_population_montreal_1850-1890.jpg", soustitre: "Évolution démographique de Montréal", source: "Adapté des recensements du Canada, 1851, 1861, 1871, 1881 et 1891."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "La population des villes augmente.\nLes villes prennent de l'expansion.\nLes quartiers urbains se développent.\nLes besoins en logements augmentent.\nDe nouveaux quartiers ouvriers apparaissent.",
+ updatedAt: "2026-07-13T14:56:18.806Z"
 }
 ]
