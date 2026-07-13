@@ -2040,7 +2040,7 @@ const QUESTIONS = [
     }
    ]
   },
-  {type: "textes", cols: [{titre: "Document B", ref: "echanges_canada_etats-unis_1850-1860.png"}]}
+  {type: "textes", cols: [{titre: "Document B", ref: "echanges_canada_etats-unis_1850-1860.png", source: "Adapté de Michel ALLARD et autres, Les Deux-Canadas : 1810-1867, Montréal, Guérin, 1985."}]}
  ],
  reponse: {type: "cause-consequence"},
  guide: {type: "grille", entetes: ["Élément", "Document"], rangees: [["Cause", "A"], ["Conséquence", "B"]]},
