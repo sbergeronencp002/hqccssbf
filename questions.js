@@ -1218,7 +1218,7 @@ const REGLETTES = {
 "Q667": {oi: "Situer dans l'espace", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]},
 "Q668": {oi: "Situer dans l'espace", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]},
 "Q669": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
-"Q670": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]}
+"Q671": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]}
 }
 
 const IMAGE_DB = {
@@ -1531,7 +1531,7 @@ const IMAGE_DB = {
 "certificat_action_1895.jpg": {src: "images/certificat_action_1895.jpg", w: 1200, h: 802},
 "recitus_reseau_ferroviaire_situer.png": {src: "images/recitus_reseau_ferroviaire_situer.png", w: 1200, h: 600},
 "tableau_secteurs_production_1870-1890.jpg": {src: "images/tableau_secteurs_production_1870-1890.jpg", w: 1200, h: 800},
-"industrie_forestiere_1890.jpg": {src: "images/industrie_forestiere_1890.jpg"}
+"travail_manufactures.jpg": {src: "images/travail_manufactures.jpg"}
 }
 
 const QUESTIONS = [
@@ -12093,7 +12093,7 @@ const QUESTIONS = [
  updatedAt: "2026-07-13T13:13:51.866Z"
 },
 {
- id: "Q670",
+ id: "Q671",
  niveau: 4,
  oi: "Mettre en relation des faits",
  periode: "P5 — 1840 – 1896",
@@ -12102,12 +12102,12 @@ const QUESTIONS = [
  enonce: "Les documents A à C présentent des secteurs d'activité qui se mécanisent. Inscrivez à l'endroit approprié la lettre correspondant à chacun des secteurs d'activité.",
  aspects: [{aspect: "Première phase d'industrialisation"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document A", texte: "« Dans les grands établissements, les travailleurs surveillent des appareils qui exécutent désormais certaines opérations autrefois accomplies avec des outils manuels. La fabrication devient ainsi plus rapide, plus régulière et beaucoup plus abondante. »", source: "Adapté de Paul-André Linteau, René Durocher et Jean-Claude Robert, Histoire du Québec contemporain, Boréal, 1989."}]},
-  {type: "textes", cols: [{titre: "Document B", ref: "industrie_forestiere_1890.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]},
-  {type: "textes", cols: [{titre: "Document C", texte: "« Une nouvelle machine permet de séparer plus rapidement le grain de la paille. Cette opération, autrefois longue et exigeante, peut désormais être réalisée en moins de temps et sur de plus grandes quantités. »", source: "Adapté de Jean Hamelin et Yves Roby, Histoire économique du Québec, 1851-1896, Fides, 1971."}]}
+  {type: "textes", cols: [{titre: "Document A", ref: "travail_manufactures.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les billes sont entraînées vers de grandes lames mises en mouvement par une force motrice. Le travail s’effectue plus rapidement et l’établissement peut produire une quantité beaucoup plus importante de planches. »", source: "Adapté de Arthur R. M. Lower, The North American Assault on the Canadian Forest, Ryerson Press, 1938."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« L’usage de nouveaux appareils permet d’accomplir les travaux saisonniers plus rapidement. La coupe et la récolte, autrefois réalisées par plusieurs hommes, exigent désormais moins de temps et une main-d’œuvre moins nombreuse. »", source: "Adapté de Normand Séguin, Agriculture et colonisation au Québec, Boréal Express, 1980."}]}
  ],
  reponse: {type: "mettre-en-relation", elements: ["Agriculture", "Bois", "Manufactures"]},
  guide: {type: "grille", entetes: ["Agriculture", "Bois", "Manufactures"], rangees: [["C", "B", "A"]]},
- updatedAt: "2026-07-13T13:16:17.436Z"
+ updatedAt: "2026-07-13T13:19:08.036Z"
 }
 ]
