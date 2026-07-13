@@ -1203,5 +1203,15 @@ const QUESTIONS = [
  aspects: [{aspect: "Première phase d'industrialisation"}],
  enonce: "Expliquez comment les conditions de travail dans les manufactures favorisent l'organisation du mouvement ouvrier dans la seconde moitié du XIXᵉ siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n• une condition de travail dans les manufactures\n• un moyen utilisé par les ouvriers\n• un objectif poursuivi",
  updatedAt: "2026-07-13T15:49:39.123Z"
+},
+{
+ id: "Q681",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P5 — 1840 – 1896",
+ points: 3,
+ aspects: [{aspect: "Première phase d'industrialisation"}],
+ enonce: "Expliquez comment le développement d'un nouveau réseau de transport favorise les échanges commerciaux dans la seconde moitié du XIXᵉ siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• le développement d'un nouveau réseau de transport\n• la circulation des marchandises entre les régions\n• une conséquence sur les échanges commerciaux",
+ updatedAt: "2026-07-13T16:02:27.622Z"
 }
 ]
