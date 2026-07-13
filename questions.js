@@ -1212,7 +1212,8 @@ const REGLETTES = {
 "Q661": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q662": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q663": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
-"Q664": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
+"Q664": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
+"Q665": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1521,7 +1522,8 @@ const IMAGE_DB = {
 "agricuteur_1850.jpg": {src: "images/agricuteur_1850.jpg"},
 "agriculteur_1890.jpg": {src: "images/agriculteur_1890.jpg"},
 "tableau_bois_scieries.jpg": {src: "images/tableau_bois_scieries.jpg"},
-"tableau_bois_equarris.jpg": {src: "images/tableau_bois_equarris.jpg", w: 1200, h: 675}
+"tableau_bois_equarris.jpg": {src: "images/tableau_bois_equarris.jpg", w: 1200, h: 675},
+"certificat_action_1895.jpg": {src: "images/certificat_action_1895.jpg", w: 1200, h: 802}
 }
 
 const QUESTIONS = [
@@ -12004,5 +12006,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Une plus grande part du bois est transformée en bois de sciage.\nOn transforme davantage le bois au Québec.\nLes scieries remplacent progressivement les simples chantiers d'équarrissage.",
  updatedAt: "2026-07-08T04:05:43.743Z"
+},
+{
+ id: "Q665",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Changement",
+ enonce: "Indiquez un changement concernant le financement des entreprises entre 1850 et 1895.",
+ aspects: [{aspect: "Première phase d'industrialisation"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« La famille Molson investit ses propres capitaux afin d'établir et d'agrandir sa brasserie située à Montréal. L'entreprise demeure contrôlée par les membres de la famille. »", soustitre: "Vers 1850", source: "Adapté de Paul-André Linteau et René Durocher, Histoire du Québec contemporain, Boréal, 1989."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "certificat_action_1895.jpg", soustitre: "Certificat d’action d’une compagnie industrielle vers 1895", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les entreprises ont davantage recours aux banques pour obtenir du financement.\nLes entreprises obtiennent davantage de financement par la vente d'actions.",
+ updatedAt: "2026-07-13T11:57:55.147Z"
 }
 ]
