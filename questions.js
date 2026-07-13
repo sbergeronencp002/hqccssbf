@@ -2040,7 +2040,7 @@ const QUESTIONS = [
     }
    ]
   },
-  {type: "textes", cols: [{titre: "Document B", ref: "echanges_canada_etats-unis_1850-1860.png", auteur: "Michel ALLARD et autres, Les Deux-Canadas : 1810-1867, Montréal, Guérin, 1985."}]}
+  {type: "textes", cols: [{titre: "Document B", ref: "echanges_canada_etats-unis_1850-1860.png"}]}
  ],
  reponse: {type: "cause-consequence"},
  guide: {type: "grille", entetes: ["Élément", "Document"], rangees: [["Cause", "A"], ["Conséquence", "B"]]},
@@ -2069,7 +2069,7 @@ const QUESTIONS = [
  enonce: "Les documents A et B présentent la structure politique de la colonie à deux périodes différentes. Quel pouvoir le gouverneur conserve-t-il d’une période à l’autre?",
  aspects: [{aspect: "Acte d'Union"}, {aspect: "Gouvernement responsable"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document A", ref: "org_pol_1791_acte_const.png", soustitre: "Organisation politique du Haut-Canada et du Bas-Canada après 1791", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", auteur: ""}]},
+  {type: "textes", cols: [{titre: "Document A", ref: "org_pol_1791_acte_const.png", soustitre: "Organisation politique du Haut-Canada et du Bas-Canada entre 1791 et 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]},
   {type: "textes", cols: [{titre: "Document B", ref: "org_pol_1840_acte_union.png", soustitre: "Organisation politique du Canada-Uni aprés 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", auteur: ""}]}
  ],
  reponse: {type: "lignes", nombre: 2},
