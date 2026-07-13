@@ -1219,7 +1219,8 @@ const REGLETTES = {
 "Q668": {oi: "Situer dans l'espace", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]},
 "Q669": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
 "Q671": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
-"Q672": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
+"Q672": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
+"Q670": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]}
 }
 
 const IMAGE_DB = {
@@ -1534,7 +1535,8 @@ const IMAGE_DB = {
 "tableau_secteurs_production_1870-1890.jpg": {src: "images/tableau_secteurs_production_1870-1890.jpg", w: 1200, h: 800},
 "travail_manufactures.jpg": {src: "images/travail_manufactures.jpg"},
 "atelier_chaussaures.jpg": {src: "images/atelier_chaussaures.jpg", w: 1200, h: 800},
-"manufactures_chaussures.jpg": {src: "images/manufactures_chaussures.jpg", w: 1200, h: 800}
+"manufactures_chaussures.jpg": {src: "images/manufactures_chaussures.jpg", w: 1200, h: 800},
+"industrie_forestiere_1890.jpg": {src: "images/industrie_forestiere_1890.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -12094,6 +12096,24 @@ const QUESTIONS = [
  reponse: {type: "mettre-en-relation", elements: ["Agriculture", "Bois", "Manufactures"]},
  guide: {type: "grille", entetes: ["Agriculture", "Bois", "Manufactures"], rangees: [["A", "B", "C"]]},
  updatedAt: "2026-07-13T13:13:51.866Z"
+},
+{
+ id: "Q670",
+ niveau: 4,
+ oi: "Mettre en relation des faits",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "3 documents",
+ enonce: "Les documents A à C présentent des secteurs d'activité qui se mécanisent. Inscrivez à l'endroit approprié la lettre correspondant à chacun des secteurs d'activité.",
+ aspects: [{aspect: "Première phase d'industrialisation"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Dans les grands établissements, les travailleurs surveillent des appareils qui exécutent désormais certaines opérations autrefois accomplies avec des outils manuels. La fabrication devient ainsi plus rapide, plus régulière et beaucoup plus abondante. »", source: "Adapté de Paul-André Linteau, René Durocher et Jean-Claude Robert, Histoire du Québec contemporain, Boréal, 1989."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "industrie_forestiere_1890.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Une nouvelle machine permet de séparer plus rapidement le grain de la paille. Cette opération, autrefois longue et exigeante, peut désormais être réalisée en moins de temps et sur de plus grandes quantités. »", source: "Adapté de Jean Hamelin et Yves Roby, Histoire économique du Québec, 1851-1896, Fides, 1971."}]}
+ ],
+ reponse: {type: "mettre-en-relation", elements: ["Agriculture", "Bois", "Manufactures"]},
+ guide: {type: "grille", entetes: ["Agriculture", "Bois", "Manufactures"], rangees: [["C", "B", "A"]]},
+ updatedAt: "2026-07-13T14:03:24.366Z"
 },
 {
  id: "Q671",
