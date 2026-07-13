@@ -1228,7 +1228,8 @@ const REGLETTES = {
 "Q679": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q675": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q676": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
-"Q680": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q680": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q681": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -1549,7 +1550,9 @@ const IMAGE_DB = {
 "associations_ouvrieres_1890.jpg": {src: "images/associations_ouvrieres_1890.jpg"},
 "tableau_population_montreal_1850-1890.jpg": {src: "images/tableau_population_montreal_1850-1890.jpg", w: 1200, h: 800},
 "tableau_organisations_ouvrieres.jpg": {src: "images/tableau_organisations_ouvrieres.jpg"},
-"tableau_salaires_depenses_1890.jpg": {src: "images/tableau_salaires_depenses_1890.jpg", w: 1200, h: 600}
+"tableau_salaires_depenses_1890.jpg": {src: "images/tableau_salaires_depenses_1890.jpg", w: 1200, h: 600},
+"recitus_reseau_ferroviaire_1896.png": {src: "images/recitus_reseau_ferroviaire_1896.png", w: 1200, h: 600},
+"tableau_exportations_canadiennes_1870-1890.jpg": {src: "images/tableau_exportations_canadiennes_1870-1890.jpg", w: 1200, h: 805}
 }
 
 const QUESTIONS = [
@@ -12273,5 +12276,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 5},
  guide: "Les ouvriers travaillent souvent dans de mauvaises conditions (condition de travail). Ils se regroupent en syndicats ou tiennent des assemblées pour défendre leurs revendications (moyen utilisé). Ils cherchent ainsi à obtenir de meilleures conditions de travail ou de meilleurs salaires (objectif poursuivi).",
  updatedAt: "2026-07-13T15:49:39.123Z"
+},
+{
+ id: "Q681",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P5 — 1840 – 1896",
+ points: 3,
+ enonce: "Expliquez comment le développement d'un nouveau réseau de transport favorise les échanges commerciaux dans la seconde moitié du XIXᵉ siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• le développement d'un nouveau réseau de transport\n• la circulation des marchandises entre les régions\n• une conséquence sur les échanges commerciaux",
+ aspects: [{aspect: "Première phase d'industrialisation"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "recitus_reseau_ferroviaire_1896.png", source: "Récitus."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les nouvelles voies ferrées permettent d'expédier les marchandises plus rapidement et à moindre coût. Les producteurs peuvent désormais rejoindre des marchés éloignés auparavant difficiles d'accès. »", source: "Adapté de Harold A. Innis, A History of the Canadian Pacific Railway, McClelland and Stewart, 1923."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "tableau_exportations_canadiennes_1870-1890.jpg", soustitre: "Évolution des exportations canadiennes", source: "Adapté de Canada Year Book, Dominion Bureau of Statistics, éditions statistiques de la fin du XIXᵉ siècle."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "Le développement du réseau ferroviaire relie les principales régions (développement d'un nouveau réseau de transport). Les marchandises circulent plus rapidement et plus facilement entre les régions et vers de nouveaux marchés (circulation des marchandises entre les régions). Les échanges commerciaux augmentent et s'étendent à l'échelle du pays (conséquence sur les échanges commerciaux).",
+ updatedAt: "2026-07-13T16:02:27.622Z"
 }
 ]
