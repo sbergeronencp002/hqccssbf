@@ -9548,8 +9548,8 @@ const QUESTIONS = [
  aspects: [{aspect: "Acte d'Union"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", texte: "« Londres réagit promptement à la publication du Rapport sur les affaires de l’Amérique septentrionale britannique. En 1840, l’union des colonies du Bas-Canada et du Haut-Canada est réalisée. »", source: "John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec, Québec, Septentrion, 2009, p. 153."}]},
-  {type: "textes", cols: [{titre: "Document B", ref: "org_pol_1840_acte_union.png", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", soustitre: "Organisation politique après 1840"}]},
-  {type: "textes", cols: [{titre: "Document C", ref: "tableau_representation_politique_1840.jpg", soustitre: "Répartition des députés à l’Assemblée législative de la Province du Canada e 1840", source: "Adapté de Jacques Lacoursière, Jean Provencher et Denis Vaugeois, Canada-Québec : synthèse historique, Montréal, ERPI, 2000."}]}
+  {type: "textes", cols: [{titre: "Document B", ref: "org_pol_1840_acte_union.png", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", auteur: ""}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "tableau_representation_politique_1840.jpg", soustitre: "Répartition des députés à l’Assemblée législative de la Province du Canada en 1840", source: "Adapté de Jacques Lacoursière, Jean Provencher et Denis Vaugeois, Canada-Québec : synthèse historique, Montréal, ERPI, 2000."}]}
  ],
  reponse: {type: "lignes", nombre: 5},
  guide: "L'Acte d'Union (le nom de la constitution adoptée en 1840) est adopté par les autorités britanniques. Cette constitution crée une seule Assemblée législative pour le Haut-Canada et le Bas-Canada (un changement dans l'organisation politique de la colonie). Cette mesure réduit l'influence politique des habitants du Bas-Canada, qui ont le même nombre de députés que ceux du Canada-Ouest malgré une population plus nombreuse (une conséquence pour la population du Bas-Canada).",
