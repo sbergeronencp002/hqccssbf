@@ -276,7 +276,7 @@ Précache `style.css`, `app.js`, `filters.js`, `oi-config.js` (avec leur `?v=N` 
 
 ## Index des fonctions — revision.html
 
-> Page autonome (JS inline ~ligne 147, préfixe `rv` sur toutes les fonctions/globales pour éviter les collisions). Lecture seule sauf le guide texte (édition via l'API GitHub, token partagé avec admin.html).
+> Page autonome (JS inline ~ligne 147, préfixe `rv` sur toutes les fonctions/globales pour éviter les collisions). Lecture seule sauf les champs textuels éditables (guide, énoncé, documents « textes » — édition via l'API GitHub, token partagé avec admin.html). La réglette, les images, et les champs structurels (niveau/OI/période/points/aspects/type de réponse) restent modifiables uniquement dans admin.html.
 
 ### Échappement, formatage, filtres
 
@@ -287,7 +287,7 @@ Précache `style.css`, `app.js`, `filters.js`, `oi-config.js` (avec leur `?v=N` 
 | `rvDocsForRender(documents)` | Fusion 2/4 documents « textes » — même logique que `docsForRender` d'app.js |
 | `rvOiStyle(oi)` | Style d'une OI, dérivé d'`OI_CONFIG` |
 | `RV_FILTER_IDS` / `rvPopulateFilters()` / `rvOnNiveauChange()` / `rvOnPeriodeChange()` | Cascade de filtres — délèguent à `cascadeNiveauChange`/`cascadePeriodeChange` de **filters.js** (partagé avec app.js) |
-| `rvDebouncedApply()` / `rvApplyFilters()` | Debounce recherche + application des filtres (garde `confirmDiscardGuideEdit()` en tête — voir plus bas) |
+| `rvDebouncedApply()` / `rvApplyFilters()` | Debounce recherche + application des filtres (garde `confirmDiscardEdit()` en tête — voir plus bas) |
 | `rvResetFilters()` | Remet tous les filtres à zéro |
 
 ### Rendu de la carte
@@ -295,21 +295,26 @@ Précache `style.css`, `app.js`, `filters.js`, `oi-config.js` (avec leur `?v=N` 
 | Fonction | Rôle |
 |----------|------|
 | `rvRenderReponse(q)` | HTML de l'espace réponse selon `q.reponse.type` (même structure que `renderReponse` d'app.js) |
-| `rvRenderDoc(d)` | HTML d'un document |
+| `rvFindColPath(documents, col)` | Retrouve `{docIdx, colIdx}` d'une colonne dans le tableau **original** `q.documents` par identité d'objet — `rvDocsForRender` fusionne l'affichage (2/4 colonnes par rangée) mais les objets `col` restent les mêmes références, donc ça fonctionne même sur la structure fusionnée |
+| `rvRenderDocColInner(col, path)` | Contenu d'une cellule de document « textes » (titre/sous-titre/texte-ou-image/auteur/source + bouton ✏), partagé entre le rendu initial et la restauration après annulation/enregistrement |
+| `rvRenderDoc(d, origDocuments)` | HTML d'un document — `origDocuments` (= `q.documents`, non fusionné) sert à `rvFindColPath` pour les boutons d'édition des colonnes « textes » |
 | `rvRenderGuide(q)` | HTML du guide (texte, grille ou tableau) |
 | `rvBuildCardHtml(q)` | Assemble toute la carte (énoncé, documents, réglette, réponse, guide) |
 | `rvRenderCard()` | Rend la carte courante (`rvList[rvIndex]`) + met à jour la pagination |
-| `rvNav(dir)` | Navigue ±1 (garde `confirmDiscardGuideEdit()` en tête) |
+| `rvNav(dir)` | Navigue ±1 (garde `confirmDiscardEdit()` en tête) |
 | `rvOpenLightbox(src)` / `rvCloseLightbox(e)` | Lightbox image |
 
-### Édition du guide (texte seulement)
+### Édition des champs textuels (guide, énoncé, documents « textes »)
+
+> Un seul champ éditable à la fois sur la carte — ouvrir un 2ᵉ champ pendant qu'un autre est en cours d'édition affiche une alerte plutôt que de permettre des éditions concurrentes.
 
 | Fonction | Rôle |
 |----------|------|
-| `rvApplyQuestionsEdit(mutate, commitMsg)` | Lecture fraîche → mutation ciblée → réécriture de `questions.js` (retry sur conflit SHA) — équivalent de `applyQuestionsEdit` (documents.html) pour cette page |
-| `_rvGuideOriginal` / `hasUnsavedGuideEdit()` / `confirmDiscardGuideEdit()` | Détecte une édition de guide non enregistrée et confirme avant de naviguer/changer de filtre |
-| `rvEditGuide()` / `rvCancelGuideEdit()` | Ouvre/annule l'édition du textarea |
-| `rvSaveGuide()` | Enregistre ; capture la référence DOM de `#rv-guide-box` avant le délai de 700 ms (`.isConnected`) pour ne jamais écrire sur la carte affichée entre-temps si l'utilisateur a navigué |
+| `rvApplyQuestionsEdit(mutate, commitMsg)` | Lecture fraîche → mutation ciblée → réécriture de `questions.js` (retry sur conflit SHA) — équivalent de `applyQuestionsEdit` (documents.html) pour cette page ; utilisée par les 3 types d'édition ci-dessous |
+| `_rvActiveEdit` / `rvBeginEdit(key, isDirty, cancelFn)` / `rvEndEdit()` / `hasUnsavedEdit()` / `confirmDiscardEdit()` | État générique d'édition en cours (remplace l'ancien `_rvGuideOriginal` spécifique au guide) — `rvBeginEdit` refuse d'ouvrir un 2ᵉ champ tant qu'un autre (`key` différente) est actif ; `confirmDiscardEdit()` protège la navigation/le changement de filtre |
+| `rvEditGuide()` / `rvCancelGuideEdit()` / `rvSaveGuide()` | Guide de correction (texte seulement — un guide en tableau reste modifiable uniquement dans admin.html) |
+| `rvEditEnonce()` / `rvCancelEnonceEdit()` / `rvSaveEnonce()` | Énoncé de la question — refuse un énoncé vide |
+| `rvEditDoc(docIdx, colIdx)` / `rvCancelDocEdit(docIdx, colIdx)` / `rvSaveDocEdit(docIdx, colIdx)` / `rvApplyDocFields(col, fields)` | Titre/sous-titre/texte/auteur/source d'une colonne de document « textes » (`docIdx`/`colIdx` réfèrent toujours au tableau original — voir `rvFindColPath`) ; `rvApplyDocFields` factorise le « chaîne vide → suppression de la clé » entre l'état local et la mutation appliquée à `questions.js` |
 
 ### Navigation tactile
 

@@ -58,6 +58,14 @@ header nav a:hover { background:rgba(255,255,255,.12); color:#fff; }
 .rv-guide-btn-save:hover { opacity:.88; }
 .rv-guide-btn-save:disabled { opacity:.5; cursor:not-allowed; }
 
+/* Étiquette de section avec bouton d'édition (énoncé, documents) — même layout que
+   .rv-guide-label mais sans sa couleur verte propre au guide. */
+.rv-label-flex { display:flex; align-items:center; justify-content:space-between; gap:.5rem; }
+.rv-doc-edit-btn { position:absolute; top:4px; right:4px; }
+.rv-doc-field-label { display:block; font-size:.68rem; font-weight:600; color:var(--ink-3); margin-top:.35rem; }
+.rv-doc-input { width:100%; padding:.35rem .5rem; margin-top:.1rem; border:1px solid var(--border); border-radius:5px; font-family:inherit; font-size:.78rem; color:var(--ink); background:#fff; }
+.rv-doc-input:focus { outline:none; border-color:#1B3B6F; }
+
 .rv-progress { text-align:center; padding:.5rem 0 .35rem; font-size:.82rem; color:var(--ink-2); font-weight:500; }
 .rv-hint { text-align:center; padding:0 0 1.5rem; font-size:.68rem; color:var(--ink-3); opacity:.75; }
 
@@ -237,6 +245,27 @@ async function rvApplyQuestionsEdit(mutate, commitMsg) {
   }
   throw new Error('Conflit persistant — réessayez.');
 }
+// Un seul champ éditable à la fois sur la carte (guide, énoncé, ou un document) : plus
+// simple à raisonner que plusieurs éditions concurrentes, et suffisant en pratique.
+// `isDirty()` compare le DOM courant à la valeur chargée à l'ouverture de l'édition.
+let _rvActiveEdit = null;
+function rvBeginEdit(key, isDirty, cancelFn) {
+  if(_rvActiveEdit && _rvActiveEdit.key !== key) {
+    alert('Enregistrez ou annulez l\'édition en cours avant d\'en commencer une autre.');
+    return false;
+  }
+  _rvActiveEdit = { key, isDirty, cancel: cancelFn };
+  return true;
+}
+function rvEndEdit() { _rvActiveEdit = null; }
+function hasUnsavedEdit() { return !!_rvActiveEdit && _rvActiveEdit.isDirty(); }
+// À appeler avant toute navigation/changement de filtre qui régénère la carte :
+// demande confirmation si une édition non enregistrée serait perdue.
+function confirmDiscardEdit() {
+  if(!hasUnsavedEdit()) return true;
+  return confirm('Des modifications non enregistrées seraient perdues. Continuer ?');
+}
+
 function rvDocsForRender(documents) {
   const docs = documents || [];
   const allSingleTextes = docs.every(d => d && d.type === 'textes' && (d.cols||[]).length === 1);
@@ -294,10 +323,11 @@ function rvDebouncedApply() {
 }
 
 function rvApplyFilters() {
-  // Empêche de perdre une édition de guide non enregistrée en changeant de filtre : le
+  // Empêche de perdre une édition non enregistrée en changeant de filtre : le
   // <select>/l'input a déjà pris sa nouvelle valeur au moment du onchange/oninput (on ne
   // la remet pas en arrière si l'utilisateur annule), mais la carte n'est pas régénérée.
-  if(!confirmDiscardGuideEdit()) return;
+  if(!confirmDiscardEdit()) return;
+  rvEndEdit();
   const oi      = document.getElementById('f-oi').value;
   const aspect  = document.getElementById('f-aspect').value;
   const periode = document.getElementById('f-periode').value;
@@ -480,25 +510,49 @@ function rvRenderReponse(q) {
   return '';
 }
 
-function rvRenderDoc(d) {
+// Retrouve la position (docIdx, colIdx) d'une colonne dans le tableau ORIGINAL
+// (non fusionné) q.documents, par identité d'objet — rvDocsForRender() peut regrouper
+// plusieurs documents mono-colonne dans un document synthétique pour l'affichage
+// (2 ou 4 colonnes par rangée), mais les objets `col` restent les mêmes références.
+function rvFindColPath(documents, col) {
+  for(let di=0; di<(documents||[]).length; di++) {
+    const cols = documents[di].cols;
+    if(!cols) continue;
+    const ci = cols.indexOf(col);
+    if(ci !== -1) return {docIdx: di, colIdx: ci};
+  }
+  return null;
+}
+
+// Contenu d'une cellule de document « textes » (hors <td> englobant) — partagé entre le
+// rendu initial et la restauration après annulation/enregistrement d'une édition.
+function rvRenderDocColInner(col, path) {
+  let h = '';
+  if(path) h += '<button class="rv-guide-edit-btn rv-doc-edit-btn" onclick="rvEditDoc(' + path.docIdx + ',' + path.colIdx + ')" title="Modifier ce document">✏</button>';
+  h += '<div style="font-size:0.75rem;font-weight:600;color:var(--ink)">' + rvEscLine(col.titre||'') + '</div>';
+  if(col.soustitre) h += '<div style="font-size:0.7rem;font-style:italic;color:var(--ink-2);margin-bottom:4px">' + rvEscLine(col.soustitre) + '</div>';
+  else h += '<div style="margin-bottom:4px"></div>';
+  if(col.texte) {
+    h += '<div style="font-size:0.75rem;color:var(--ink-2);line-height:1.5">' + rvFormatTexte(col.texte) + '</div>';
+  } else if(col.ref) {
+    const img2 = IMAGE_DB[col.ref];
+    if(img2) h += '<div class="doc-img-tile" style="max-width:100%" onclick="rvOpenLightbox(\'' + img2.src + '\')"><img src="' + img2.src + '" alt="' + rvEscAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:180px;object-fit:contain" draggable="false"></div>';
+  }
+  if(col.auteur) h += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + rvEscLine(col.auteur) + '</div>';
+  if(col.source) h += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + rvEscLine(col.source) + '</div>';
+  return h;
+}
+
+function rvRenderDoc(d, origDocuments) {
   if(d.type === 'textes') {
     const cpr = d.colsPerRow || d.cols.length || 1;
     const colW = Math.floor(100/cpr);
     function renderCol(col) {
-      let h = '<td style="width:' + colW + '%;padding:6px;vertical-align:top;border:0.5px solid var(--border)">';
-      h += '<div style="font-size:0.75rem;font-weight:600;color:var(--ink)">' + rvEscLine(col.titre||'') + '</div>';
-      if(col.soustitre) h += '<div style="font-size:0.7rem;font-style:italic;color:var(--ink-2);margin-bottom:4px">' + rvEscLine(col.soustitre) + '</div>';
-      else h += '<div style="margin-bottom:4px"></div>';
-      if(col.texte) {
-        h += '<div style="font-size:0.75rem;color:var(--ink-2);line-height:1.5">' + rvFormatTexte(col.texte) + '</div>';
-      } else if(col.ref) {
-        const img2 = IMAGE_DB[col.ref];
-        if(img2) h += '<div class="doc-img-tile" style="max-width:100%" onclick="rvOpenLightbox(\'' + img2.src + '\')"><img src="' + img2.src + '" alt="' + rvEscAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:180px;object-fit:contain" draggable="false"></div>';
-      }
-      if(col.auteur) h += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + rvEscLine(col.auteur) + '</div>';
-      if(col.source) h += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + rvEscLine(col.source) + '</div>';
-      h += '</td>';
-      return h;
+      const path = rvFindColPath(origDocuments, col);
+      const cellId = path ? ' id="rv-doc-cell-' + path.docIdx + '-' + path.colIdx + '"' : '';
+      return '<td' + cellId + ' style="width:' + colW + '%;padding:6px;vertical-align:top;border:0.5px solid var(--border);position:relative">'
+        + rvRenderDocColInner(col, path)
+        + '</td>';
     }
     let html = '<table style="width:100%;border-collapse:collapse;margin-bottom:8px">';
     for(let i=0; i<d.cols.length; i+=cpr) {
@@ -566,13 +620,15 @@ function rvBuildCardHtml(q) {
   if(aspects) html += `<div class="rv-aspect">${rvEscLine(aspects)}</div>`;
   html += `<div class="rv-points">${q.points}&thinsp;pt${q.points > 1 ? 's' : ''}</div>`;
 
-  html += '<div class="q-section-label">Question</div>';
-  html += '<div class="q-full-enonce">' + rvFormatTexte(q.enonce) + '</div>';
+  html += '<div class="q-section-label rv-label-flex">Question'
+    + '<button class="rv-guide-edit-btn" onclick="rvEditEnonce()">✏ Modifier</button>'
+    + '</div>';
+  html += '<div class="q-full-enonce" id="rv-enonce-box">' + rvFormatTexte(q.enonce) + '</div>';
 
   const docsR = rvDocsForRender(q.documents);
   if(docsR.length) {
     html += '<div class="q-section-label">Documents</div>';
-    html += '<div class="q-docs-images">' + docsR.map(d => rvRenderDoc(d)).join('<div class="doc-spacer"></div>') + '</div>';
+    html += '<div class="q-docs-images">' + docsR.map(d => rvRenderDoc(d, q.documents)).join('<div class="doc-spacer"></div>') + '</div>';
   }
 
   const rep = rvRenderReponse(q);
@@ -600,15 +656,14 @@ function rvBuildCardHtml(q) {
   return html;
 }
 
-// Valeur du guide au moment de l'ouverture de l'édition — sert à détecter une
-// modification non enregistrée avant de naviguer ou de changer les filtres
-// (voir hasUnsavedGuideEdit / confirmDiscardGuideEdit ci-dessous).
-let _rvGuideOriginal = null;
-
 function rvEditGuide() {
   const q = rvList[rvIndex];
   if(!q) return;
   const current = typeof q.guide === 'string' ? q.guide : '';
+  if(!rvBeginEdit('guide', () => {
+    const ta = document.getElementById('rv-guide-textarea');
+    return !!ta && ta.value !== current;
+  }, rvCancelGuideEdit)) return;
   const box = document.getElementById('rv-guide-box');
   box.innerHTML = '<textarea id="rv-guide-textarea" class="rv-guide-textarea"></textarea>'
     + '<div class="rv-guide-edit-actions">'
@@ -619,28 +674,13 @@ function rvEditGuide() {
   const ta = document.getElementById('rv-guide-textarea');
   ta.value = current;
   ta.focus();
-  _rvGuideOriginal = current;
 }
 
 function rvCancelGuideEdit() {
   const q = rvList[rvIndex];
   if(!q) return;
-  _rvGuideOriginal = null;
+  rvEndEdit();
   document.getElementById('rv-guide-box').innerHTML = rvRenderGuide(q);
-}
-
-// Vrai si le textarea d'édition du guide est ouvert et contient des changements
-// non enregistrés par rapport à la valeur chargée par rvEditGuide().
-function hasUnsavedGuideEdit() {
-  const ta = document.getElementById('rv-guide-textarea');
-  return !!ta && _rvGuideOriginal !== null && ta.value !== _rvGuideOriginal;
-}
-
-// À appeler avant toute navigation/changement de filtre qui régénère la carte :
-// demande confirmation si une édition de guide non enregistrée serait perdue.
-function confirmDiscardGuideEdit() {
-  if(!hasUnsavedGuideEdit()) return true;
-  return confirm('Le corrigé modifié n\'a pas été enregistré. Continuer et perdre ces changements ?');
 }
 
 async function rvSaveGuide() {
@@ -665,9 +705,7 @@ async function rvSaveGuide() {
       return true;
     }, 'Modifier le guide de correction — ' + id);
     q.guide = newVal;
-    const master = QUESTIONS.find(x => x.id === id);
-    if(master) master.guide = newVal;
-    _rvGuideOriginal = null;
+    rvEndEdit();
     status.className = 'rv-guide-status ok';
     status.textContent = changed ? '✓ Enregistré.' : 'Aucun changement.';
     // Capturer la référence DOM maintenant : si l'utilisateur navigue vers une autre
@@ -677,6 +715,173 @@ async function rvSaveGuide() {
     const box = document.getElementById('rv-guide-box');
     setTimeout(() => {
       if(box && box.isConnected) box.innerHTML = rvRenderGuide(q);
+    }, 700);
+  } catch(err) {
+    status.className = 'rv-guide-status err';
+    status.textContent = '✗ ' + err.message;
+    btn.disabled = false;
+  }
+}
+
+// ── Édition de l'énoncé (même pattern que le guide) ──────────────────────────
+function rvEditEnonce() {
+  const q = rvList[rvIndex];
+  if(!q) return;
+  const current = q.enonce || '';
+  if(!rvBeginEdit('enonce', () => {
+    const ta = document.getElementById('rv-enonce-textarea');
+    return !!ta && ta.value !== current;
+  }, rvCancelEnonceEdit)) return;
+  const box = document.getElementById('rv-enonce-box');
+  box.innerHTML = '<textarea id="rv-enonce-textarea" class="rv-guide-textarea"></textarea>'
+    + '<div class="rv-guide-edit-actions">'
+    + '<span class="rv-guide-status" id="rv-enonce-status"></span>'
+    + '<button class="rv-guide-btn-cancel" onclick="rvCancelEnonceEdit()">Annuler</button>'
+    + '<button class="rv-guide-btn-save" id="rv-enonce-save-btn" onclick="rvSaveEnonce()">Enregistrer</button>'
+    + '</div>';
+  const ta = document.getElementById('rv-enonce-textarea');
+  ta.value = current;
+  ta.focus();
+}
+
+function rvCancelEnonceEdit() {
+  const q = rvList[rvIndex];
+  if(!q) return;
+  rvEndEdit();
+  document.getElementById('rv-enonce-box').innerHTML = rvFormatTexte(q.enonce);
+}
+
+async function rvSaveEnonce() {
+  const q = rvList[rvIndex];
+  if(!q) return;
+  const id = q.id;
+  const newVal = document.getElementById('rv-enonce-textarea').value.trim();
+  const btn = document.getElementById('rv-enonce-save-btn');
+  const status = document.getElementById('rv-enonce-status');
+  if(!newVal) {
+    status.className = 'rv-guide-status err';
+    status.textContent = "✗ L'énoncé ne peut pas être vide.";
+    return;
+  }
+  btn.disabled = true;
+  status.className = 'rv-guide-status';
+  status.textContent = 'Enregistrement…';
+  try {
+    const changed = await rvApplyQuestionsEdit(parsed => {
+      const target = parsed.QUESTIONS.find(x => x.id === id);
+      if(!target) throw new Error('Question ' + id + ' introuvable');
+      if((target.enonce || '') === newVal) return false;
+      target.enonce = newVal;
+      return true;
+    }, 'Modifier l\'énoncé — ' + id);
+    q.enonce = newVal;
+    rvEndEdit();
+    status.className = 'rv-guide-status ok';
+    status.textContent = changed ? '✓ Enregistré.' : 'Aucun changement.';
+    const box = document.getElementById('rv-enonce-box');
+    setTimeout(() => {
+      if(box && box.isConnected) box.innerHTML = rvFormatTexte(q.enonce);
+    }, 700);
+  } catch(err) {
+    status.className = 'rv-guide-status err';
+    status.textContent = '✗ ' + err.message;
+    btn.disabled = false;
+  }
+}
+
+// ── Édition d'un document « textes » (titre/sous-titre/texte/auteur/source) ─────────
+// docIdx/colIdx réfèrent toujours au tableau ORIGINAL q.documents (voir rvFindColPath),
+// pas à la structure fusionnée utilisée pour l'affichage.
+function rvEditDoc(docIdx, colIdx) {
+  const q = rvList[rvIndex];
+  const col = q?.documents?.[docIdx]?.cols?.[colIdx];
+  if(!col) return;
+  const orig = { titre: col.titre||'', soustitre: col.soustitre||'', texte: col.texte||'', auteur: col.auteur||'', source: col.source||'' };
+  const isImgCol = !!col.ref;
+  const key = 'doc:' + docIdx + ':' + colIdx;
+  if(!rvBeginEdit(key, () => {
+    if(document.getElementById('rvd-titre').value !== orig.titre) return true;
+    if(document.getElementById('rvd-soustitre').value !== orig.soustitre) return true;
+    if(!isImgCol && document.getElementById('rvd-texte').value !== orig.texte) return true;
+    if(document.getElementById('rvd-auteur').value !== orig.auteur) return true;
+    if(document.getElementById('rvd-source').value !== orig.source) return true;
+    return false;
+  }, () => rvCancelDocEdit(docIdx, colIdx))) return;
+
+  const cell = document.getElementById('rv-doc-cell-' + docIdx + '-' + colIdx);
+  if(!cell) return;
+  cell.innerHTML = '<label class="rv-doc-field-label">Titre</label>'
+    + '<input id="rvd-titre" class="rv-doc-input" value="' + rvEscAttr(orig.titre) + '">'
+    + '<label class="rv-doc-field-label">Sous-titre</label>'
+    + '<input id="rvd-soustitre" class="rv-doc-input" value="' + rvEscAttr(orig.soustitre) + '">'
+    + (isImgCol ? '' : '<label class="rv-doc-field-label">Texte</label>'
+      + '<textarea id="rvd-texte" class="rv-guide-textarea" style="min-height:70px">' + rvEscLine(orig.texte) + '</textarea>')
+    + '<label class="rv-doc-field-label">Auteur</label>'
+    + '<input id="rvd-auteur" class="rv-doc-input" value="' + rvEscAttr(orig.auteur) + '">'
+    + '<label class="rv-doc-field-label">Source</label>'
+    + '<input id="rvd-source" class="rv-doc-input" value="' + rvEscAttr(orig.source) + '">'
+    + '<div class="rv-guide-edit-actions">'
+    + '<span class="rv-guide-status" id="rv-doc-status"></span>'
+    + '<button class="rv-guide-btn-cancel" onclick="rvCancelDocEdit(' + docIdx + ',' + colIdx + ')">Annuler</button>'
+    + '<button class="rv-guide-btn-save" id="rv-doc-save-btn" onclick="rvSaveDocEdit(' + docIdx + ',' + colIdx + ')">Enregistrer</button>'
+    + '</div>';
+  document.getElementById('rvd-titre').focus();
+}
+
+function rvCancelDocEdit(docIdx, colIdx) {
+  const q = rvList[rvIndex];
+  const col = q?.documents?.[docIdx]?.cols?.[colIdx];
+  const cell = document.getElementById('rv-doc-cell-' + docIdx + '-' + colIdx);
+  if(!col || !cell) return;
+  rvEndEdit();
+  cell.innerHTML = rvRenderDocColInner(col, {docIdx, colIdx});
+}
+
+// Applique les 5 champs textuels sur un objet colonne (partagé entre l'état local et la
+// mutation appliquée à questions.js — chaîne vide → suppression de la clé, comme admin.html).
+function rvApplyDocFields(col, f) {
+  col.titre = f.titre;
+  if(f.soustitre) col.soustitre = f.soustitre; else delete col.soustitre;
+  if(f.texte !== undefined) col.texte = f.texte;
+  if(f.auteur) col.auteur = f.auteur; else delete col.auteur;
+  if(f.source) col.source = f.source; else delete col.source;
+}
+
+async function rvSaveDocEdit(docIdx, colIdx) {
+  const q = rvList[rvIndex];
+  const col = q?.documents?.[docIdx]?.cols?.[colIdx];
+  if(!col) return;
+  const id = q.id;
+  const isImgCol = !!col.ref;
+  const fields = {
+    titre: document.getElementById('rvd-titre').value.trim(),
+    soustitre: document.getElementById('rvd-soustitre').value.trim(),
+    texte: isImgCol ? undefined : document.getElementById('rvd-texte').value,
+    auteur: document.getElementById('rvd-auteur').value.trim(),
+    source: document.getElementById('rvd-source').value.trim(),
+  };
+  const btn = document.getElementById('rv-doc-save-btn');
+  const status = document.getElementById('rv-doc-status');
+  btn.disabled = true;
+  status.className = 'rv-guide-status';
+  status.textContent = 'Enregistrement…';
+  try {
+    const changed = await rvApplyQuestionsEdit(parsed => {
+      const target = parsed.QUESTIONS.find(x => x.id === id);
+      if(!target) throw new Error('Question ' + id + ' introuvable');
+      const tCol = target.documents?.[docIdx]?.cols?.[colIdx];
+      if(!tCol) throw new Error('Document introuvable — la structure a peut-être changé, rechargez (F5).');
+      const before = JSON.stringify(tCol);
+      rvApplyDocFields(tCol, fields);
+      return JSON.stringify(tCol) !== before;
+    }, 'Modifier un document — ' + id);
+    rvApplyDocFields(col, fields);
+    rvEndEdit();
+    status.className = 'rv-guide-status ok';
+    status.textContent = changed ? '✓ Enregistré.' : 'Aucun changement.';
+    const cell = document.getElementById('rv-doc-cell-' + docIdx + '-' + colIdx);
+    setTimeout(() => {
+      if(cell && cell.isConnected) cell.innerHTML = rvRenderDocColInner(col, {docIdx, colIdx});
     }, 700);
   } catch(err) {
     status.className = 'rv-guide-status err';
@@ -708,7 +913,8 @@ function rvNav(dir) {
   if(!rvList.length) return;
   const next = rvIndex + dir;
   if(next < 0 || next >= rvList.length) return;
-  if(!confirmDiscardGuideEdit()) return;
+  if(!confirmDiscardEdit()) return;
+  rvEndEdit();
   rvIndex = next;
   const wrap = document.getElementById('rv-card-wrap');
   wrap.classList.remove('slide-in-left','slide-in-right');
