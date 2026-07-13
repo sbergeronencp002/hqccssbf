@@ -972,25 +972,54 @@ document.addEventListener('keydown', e => {
 // statique : sinon le navigateur peut servir indéfiniment une copie mise en cache
 // sous cette URL fixe, masquant les questions ajoutées/modifiées depuis.
 (function loadQuestionsThenInit() {
-  function fallback() {
+  function runSource(src) {
+    try {
+      const s = document.createElement('script');
+      s.textContent = src;
+      document.head.appendChild(s);
+      return typeof QUESTIONS !== 'undefined';
+    } catch (e) { return false; }
+  }
+  function scriptTagFallback() {
     const qs = document.createElement('script');
     qs.src = 'questions.js?v=1&t=' + Date.now();
     qs.onload = () => { rvPopulateFilters(); rvApplyFilters(); };
     document.head.appendChild(qs);
   }
-  fetch('questions.js?t=' + Date.now(), { cache: 'no-store' })
-    .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
-    .then(src => {
-      let ok = false;
-      try {
-        const s = document.createElement('script');
-        s.textContent = src;
-        document.head.appendChild(s);
-        ok = (typeof QUESTIONS !== 'undefined');
-      } catch (e) { ok = false; }
-      if (ok) { rvPopulateFilters(); rvApplyFilters(); } else fallback();
+  function staticFetchFallback() {
+    fetch('questions.js?t=' + Date.now(), { cache: 'no-store' })
+      .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+      .then(src => { if (runSource(src)) { rvPopulateFilters(); rvApplyFilters(); } else scriptTagFallback(); })
+      .catch(scriptTagFallback);
+  }
+  // Lit d'abord via l'API GitHub (comme admin.html) plutôt que le site statique : GitHub
+  // Pages est servi derrière un CDN qui peut continuer à servir une ancienne version de
+  // questions.js pendant un moment après une publication, même avec le cache-bust par
+  // timestamp sur l'URL (le CDN peut ignorer la query string pour la clé de cache).
+  // L'API GitHub, elle, reflète toujours l'état réel du dépôt. Repli sur le site statique
+  // si l'API échoue (hors ligne, quota anonyme de 60 req/h dépassé, etc.).
+  const token = rvGetToken();
+  fetch(RV_API + 'questions.js?ref=main&t=' + Date.now(), {
+    headers: token ? {Authorization: 'token ' + token} : {},
+    cache: 'no-store'
+  })
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(d => {
+      if (d.content) {
+        const rawBytes = Uint8Array.from(atob(d.content.replace(/\n/g,'')), c => c.charCodeAt(0));
+        return new TextDecoder('utf-8').decode(rawBytes);
+      }
+      if (d.download_url) {
+        const dlUrl = d.download_url + (d.download_url.includes('?') ? '&' : '?') + 't=' + Date.now();
+        return fetch(dlUrl, { cache: 'no-store' }).then(raw => {
+          if (!raw.ok) throw new Error('download_url ' + raw.status);
+          return raw.text();
+        });
+      }
+      throw new Error('Réponse API inattendue');
     })
-    .catch(fallback);
+    .then(src => { if (runSource(src)) { rvPopulateFilters(); rvApplyFilters(); } else staticFetchFallback(); })
+    .catch(staticFetchFallback);
 })();
 </script>
 </body>
