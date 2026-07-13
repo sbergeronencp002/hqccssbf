@@ -9652,7 +9652,7 @@ const QUESTIONS = [
  oi: "Établir des faits",
  periode: "P5 — 1840 – 1896",
  points: 1,
- enonce: "Indiquez le nom du rapport qui recommande de regrouper les Autochtones dans des réserves et de favoriser leur assimilation.",
+ enonce: "Indiquez le nom du rapport qui recommande de regrouper les membres des Premières nations dans des réserves et de favoriser leur assimilation.",
  aspects: [{aspect: "Affaires indiennes"}],
  documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Les enfants indiens devraient être séparés autant que possible de l'influence de leurs parents et recevoir une éducation conforme aux habitudes de la population blanche. »", source: "Report on the Affairs of the Indians in Canada, Commission Bagot, Province du Canada, 1844."}]}],
  reponse: {type: "lignes", nombre: 1},
