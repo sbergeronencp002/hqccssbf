@@ -2002,7 +2002,7 @@ const QUESTIONS = [
   }
  ],
  reponse: {type: "lignes", nombre: 2},
- guide: "L’importance de coloniser les régions.\nLa colonisation des régions.",
+ guide: "L’importance de coloniser les régions (ou la colonisation des régions).",
  updatedAt: "2026-06-18T17:56:50.357Z"
 },
 {
@@ -2014,7 +2014,7 @@ const QUESTIONS = [
  soustag: "Cause",
  enonce: "Dans quel but les Réformistes de la Province du Canada forment-ils une alliance en 1841?",
  aspects: [{aspect: "Gouvernement responsable"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "org_pol_1840_acte_union.png", soustitre: "Organisation politique de la colonie entre en 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", auteur: ""}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "org_pol_1840_acte_union.png", soustitre: "Organisation politique de la colonie en 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "Obtenir la responsabilité ministérielle (ou le gouvernement responsable) ou obtenir que les membres du Conseil exécutif soient désormais choisis parmi les membres de l’Assemblée législative ou former la majorité à la Chambre d’assemblée.",
  updatedAt: "2026-06-12T12:26:16.322Z",
