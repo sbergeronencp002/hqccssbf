@@ -12033,11 +12033,11 @@ const QUESTIONS = [
  periode: "P5 — 1840 – 1896",
  points: 1,
  soustag: "Situer 1 élément",
- enonce: "À partir du document A, indiquez la lettre correspondant au chemin de fer du Canadien Pacifique.",
+ enonce: "À partir du document A, indiquez la lettre correspondant au chemin de fer du Grand Tronc.",
  aspects: [{aspect: "Première phase d'industrialisation"}],
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "recitus_reseau_ferroviaire_situer.png", source: "Adapté de Récitus."}]}],
  reponse: {type: "tableau_2col"},
- guide: "A",
- updatedAt: "2026-07-13T12:19:52.653Z"
+ guide: "B",
+ updatedAt: "2026-07-13T12:20:23.544Z"
 }
 ]
