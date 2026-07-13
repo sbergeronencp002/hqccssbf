@@ -1218,7 +1218,8 @@ const REGLETTES = {
 "Q667": {oi: "Situer dans l'espace", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]},
 "Q668": {oi: "Situer dans l'espace", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]},
 "Q669": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
-"Q671": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]}
+"Q671": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
+"Q672": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1531,7 +1532,9 @@ const IMAGE_DB = {
 "certificat_action_1895.jpg": {src: "images/certificat_action_1895.jpg", w: 1200, h: 802},
 "recitus_reseau_ferroviaire_situer.png": {src: "images/recitus_reseau_ferroviaire_situer.png", w: 1200, h: 600},
 "tableau_secteurs_production_1870-1890.jpg": {src: "images/tableau_secteurs_production_1870-1890.jpg", w: 1200, h: 800},
-"travail_manufactures.jpg": {src: "images/travail_manufactures.jpg"}
+"travail_manufactures.jpg": {src: "images/travail_manufactures.jpg"},
+"atelier_chaussaures.jpg": {src: "images/atelier_chaussaures.jpg", w: 1200, h: 800},
+"manufactures_chaussures.jpg": {src: "images/manufactures_chaussures.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -12109,5 +12112,19 @@ const QUESTIONS = [
  reponse: {type: "mettre-en-relation", elements: ["Agriculture", "Bois", "Manufactures"]},
  guide: {type: "grille", entetes: ["Agriculture", "Bois", "Manufactures"], rangees: [["C", "B", "A"]]},
  updatedAt: "2026-07-13T13:19:08.036Z"
+},
+{
+ id: "Q672",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Changement",
+ enonce: "Indiquez un changement concernant l'organisation du travail dans la seconde moitié du XIXᵉ siècle.",
+ aspects: [{aspect: "Première phase d'industrialisation"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "atelier_chaussaures.jpg", soustitre: "Vers 1870", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}, {type: "textes", cols: [{titre: "Document B", ref: "manufactures_chaussures.jpg", soustitre: "Vers 1890", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Le travail passe d'une production réalisée par un artisan à une production où les tâches sont réparties entre plusieurs ouvriers.\nLa production artisanale est progressivement remplacée par une organisation du travail en manufacture.",
+ updatedAt: "2026-07-13T13:58:45.043Z"
 }
 ]
