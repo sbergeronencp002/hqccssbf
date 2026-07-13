@@ -1527,7 +1527,8 @@ const IMAGE_DB = {
 "tableau_bois_scieries.jpg": {src: "images/tableau_bois_scieries.jpg"},
 "tableau_bois_equarris.jpg": {src: "images/tableau_bois_equarris.jpg", w: 1200, h: 675},
 "certificat_action_1895.jpg": {src: "images/certificat_action_1895.jpg", w: 1200, h: 802},
-"recitus_reseau_ferroviaire_situer.png": {src: "images/recitus_reseau_ferroviaire_situer.png", w: 1200, h: 600}
+"recitus_reseau_ferroviaire_situer.png": {src: "images/recitus_reseau_ferroviaire_situer.png", w: 1200, h: 600},
+"tableau_secteurs_production_1870-1890.jpg": {src: "images/tableau_secteurs_production_1870-1890.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -11721,7 +11722,7 @@ const QUESTIONS = [
  oi: "Mettre en relation des faits",
  periode: "P5 — 1840 – 1896",
  points: 2,
- enonce: "Les documents A à C présentent des idées associées à différents mouvements de pensée au Québec dans la seconde moitié du XIXᵉ siècle. Inscrivez à l'endroit approprié la lettre correspondant à chacun des mouvements de pensée",
+ enonce: "Les documents A à C présentent des idées associées à différents mouvements de pensée au Québec dans la seconde moitié du XIXᵉ siècle. Inscrivez à l'endroit approprié la lettre correspondant à chacun des mouvements de pensée.",
  aspects: [{aspect: "Présence de l'Église catholique"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", ref: "portrait_lafleche.jpg", soustitre: "Louis-François Laflèche", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]},
@@ -11730,7 +11731,7 @@ const QUESTIONS = [
  ],
  reponse: {type: "mettre-en-relation", elements: ["Anticléricalisme", "Nationalisme de survivance", "Ultramontanisme"]},
  guide: {type: "grille", entetes: ["Anticléricalisme", "Nationalisme de survivance", "Ultramontanisme"], rangees: [["B", "C", "A"]]},
- updatedAt: "2026-07-07T22:59:46.686Z"
+ updatedAt: "2026-07-13T13:03:55.541Z"
 },
 {
  id: "Q646",
