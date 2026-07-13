@@ -2073,7 +2073,7 @@ const QUESTIONS = [
   {type: "textes", cols: [{titre: "Document B", ref: "org_pol_1840_acte_union.png", soustitre: "Organisation politique du Canada-Uni aprés 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", auteur: ""}]}
  ],
  reponse: {type: "lignes", nombre: 2},
- guide: "Le droit de veto.\nLe droit de rejeter des projets de loi soumis par la Chambre d’assemblée.\nLe pouvoir exécutif.\nLe pouvoir de nommer les membres des conseils exécutif et législatif.\nLe pouvoir de dissoudre la Chambre d’assemblée.",
+ guide: "Le droit de veto (ou Le droit de rejeter des projets de loi soumis par la Chambre d’assemblée) ou le pouvoir exécutif (ou Le pouvoir de nommer les membres des conseils exécutif et législatif) ou le pouvoir de dissoudre la Chambre d’assemblée.",
  updatedAt: "2026-06-12T12:27:32.373Z",
  _imgs: ["org_pol_1791_acte_const.png", "org_pol_1840_acte_union.png"]
 },
@@ -9501,7 +9501,7 @@ const QUESTIONS = [
  soustag: "Changement",
  enonce: "À partir des documents A et B, indiquez un changement dans l'organisation territoriale de la colonie entre 1791 et 1840.",
  aspects: [{aspect: "Acte d'Union"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_acte_constitutionnel_1791.png", source: "Récitus.", auteur: ""}]}, {type: "textes", cols: [{titre: "Document B", ref: "carte_acte_union_1840.jpg", source: "Reécitus."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_acte_constitutionnel_1791.png", source: "Récitus.", auteur: ""}]}, {type: "textes", cols: [{titre: "Document B", ref: "carte_acte_union_1840.jpg", source: "Récitus."}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "Entre 1791 et 1840, le Haut-Canada et le Bas-Canada sont réunis pour former la Province du Canada.\nEntre 1791 et 1840, la colonie passe d'une organisation en deux territoires distincts (Haut-Canada et Bas-Canada) à une seule colonie appelée Province du Canada.",
  updatedAt: "2026-06-18T12:35:29.900Z",
