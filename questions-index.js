@@ -1193,5 +1193,15 @@ const QUESTIONS = [
 {id: "Q676", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P5 — 1840 – 1896", points: 2, soustag: "Changement", aspects: [{aspect: "Première phase d'industrialisation"}], enonce: "Indiquez un changement concernant l'organisation des ouvriers au Québec dans la seconde moitié du XIXᵉ siècle.", updatedAt: "2026-07-13T14:39:13.526Z"},
 {id: "Q677", niveau: 4, oi: "Établir des faits", periode: "P5 — 1840 – 1896", points: 1, aspects: [{aspect: "Première phase d'industrialisation"}], enonce: "Indiquez un moyen utilisé par les ouvriers pour faire valoir leurs revendications dans la seconde moitié du XIXᵉ siècle.", updatedAt: "2026-07-13T15:11:31.283Z"},
 {id: "Q678", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P5 — 1840 – 1896", points: 2, soustag: "Cause", aspects: [{aspect: "Première phase d'industrialisation"}], enonce: "Indiquez une cause de l'urbanisation au Québec dans la seconde moitié du XIXᵉ siècle.", updatedAt: "2026-07-13T14:49:31.818Z"},
-{id: "Q679", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P5 — 1840 – 1896", points: 2, soustag: "Conséquence", aspects: [{aspect: "Première phase d'industrialisation"}], enonce: "Indiquez une conséquence de l'urbanisation sur les villes du Québec dans la seconde moitié du XIXᵉ siècle.", updatedAt: "2026-07-13T14:56:18.806Z"}
+{id: "Q679", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P5 — 1840 – 1896", points: 2, soustag: "Conséquence", aspects: [{aspect: "Première phase d'industrialisation"}], enonce: "Indiquez une conséquence de l'urbanisation sur les villes du Québec dans la seconde moitié du XIXᵉ siècle.", updatedAt: "2026-07-13T14:56:18.806Z"},
+{
+ id: "Q680",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P5 — 1840 – 1896",
+ points: 3,
+ aspects: [{aspect: "Première phase d'industrialisation"}],
+ enonce: "Expliquez comment les conditions de travail dans les manufactures favorisent l'organisation du mouvement ouvrier dans la seconde moitié du XIXᵉ siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n• une condition de travail dans les manufactures\n• un moyen utilisé par les ouvriers\n• un objectif poursuivi",
+ updatedAt: "2026-07-13T15:49:39.123Z"
+}
 ]
