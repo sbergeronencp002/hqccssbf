@@ -58,7 +58,9 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 ⚠️ Cette table doit être mise à jour à chaque incrément de `?v=` dans le HTML — sinon un futur agent repart d'un mauvais numéro de version.
 
 ### Service worker (`sw.js`)
-Précache `style.css`, `app.js`, `filters.js`, `oi-config.js` (avec leur `?v=N` — un futur bump de version doit aussi être répercuté dans le tableau `PRECACHE` de `sw.js`, sinon l'ancienne version reste précachée). `index.html` et `contexte.js` sont précachés mais **toujours revalidés réseau-first** (comme `questions.js`/`questions-index.js`) car leur contenu peut changer sans que leur URL change. `CACHE` (actuellement `hqc-v4`) doit être incrémenté à chaque changement de la liste `PRECACHE`.
+Précache `style.css`, `app.js`, `filters.js`, `oi-config.js` (avec leur `?v=N` — un futur bump de version doit aussi être répercuté dans le tableau `PRECACHE` de `sw.js`, sinon l'ancienne version reste précachée). `index.html` et `contexte.js` sont précachés mais **toujours revalidés réseau-first** (comme `questions.js`/`questions-index.js`) car leur contenu peut changer sans que leur URL change. `CACHE` (actuellement `hqc-v4`) doit être incrémenté à chaque changement de la liste `PRECACHE` (pas nécessaire pour un simple changement de logique dans le handler `fetch` — voir images ci-dessous — puisque ça ne change pas ce qui est précaché).
+
+Images : **stale-while-revalidate** (pas cache-first pur) — sert le cache immédiatement s'il existe, mais relance toujours une requête réseau en arrière-plan pour rafraîchir l'entrée. Nécessaire car remplacer une image (documents.html/admin.html) garde le même nom de fichier donc la même URL ; un cache-first pur servirait l'ancienne version indéfiniment. Avec cette stratégie, l'image à jour apparaît au 2ᵉ chargement au plus tard.
 
 ---
 

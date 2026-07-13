@@ -66,18 +66,26 @@ self.addEventListener('fetch', e => {
     return;
   }
 
-  // Images — cache en premier, réseau si absent. `includes()` (pas `startsWith()`) car le
-  // site est servi sous un sous-chemin (GitHub Pages project site, ex. /hqccssbf/images/…),
-  // pas à la racine du domaine — startsWith('/images/') ne correspondait donc jamais.
+  // Images — stale-while-revalidate. `includes()` (pas `startsWith()`) car le site est
+  // servi sous un sous-chemin (GitHub Pages project site, ex. /hqccssbf/images/…), pas à
+  // la racine du domaine — startsWith('/images/') ne correspondait donc jamais.
+  // Un remplacement d'image (documents.html/admin.html, même nom de fichier, contenu
+  // modifié) garde la même URL : un cache-first pur ne revaliderait jamais et servirait
+  // l'ancienne version indéfiniment. On sert le cache immédiatement s'il existe (rapide,
+  // fonctionne hors-ligne) mais on relance systématiquement une requête réseau en arrière-
+  // plan pour rafraîchir le cache — l'image à jour apparaît donc au 2ᵉ chargement au plus
+  // tard, au lieu de rester figée tant que le cache SW n'est pas vidé manuellement.
   if (url.pathname.includes('/images/')) {
     e.respondWith(
-      caches.match(e.request).then(cached => {
-        if (cached) return cached;
-        return fetch(e.request).then(r => {
-          if (r.ok) caches.open(CACHE).then(c => c.put(e.request, r.clone()));
-          return r;
-        });
-      })
+      caches.open(CACHE).then(cache =>
+        cache.match(e.request).then(cached => {
+          const network = fetch(e.request).then(r => {
+            if (r.ok) cache.put(e.request, r.clone());
+            return r;
+          }).catch(() => cached);
+          return cached || network;
+        })
+      )
     );
     return;
   }
