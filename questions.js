@@ -12222,10 +12222,10 @@ const QUESTIONS = [
  points: 1,
  enonce: "Indiquez un moyen utilisé par les ouvriers pour faire valoir leurs revendications dans la seconde moitié du XIXᵉ siècle.",
  aspects: [{aspect: "Première phase d'industrialisation"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "associations_ouvrieres_1890.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "associations_ouvrieres_1890.jpg", soustitre: "Assemblée des Chevaliers du travail", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}],
  reponse: {type: "lignes", nombre: 1},
  guide: "Les ouvriers s'organisent en syndicats.",
- updatedAt: "2026-07-13T14:42:31.464Z"
+ updatedAt: "2026-07-13T15:11:31.283Z"
 },
 {
  id: "Q678",
