@@ -1221,7 +1221,8 @@ const REGLETTES = {
 "Q671": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
 "Q672": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q670": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
-"Q673": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
+"Q673": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
+"Q674": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la différence."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la différence."}, {pts: 0, desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1538,7 +1539,8 @@ const IMAGE_DB = {
 "atelier_chaussaures.jpg": {src: "images/atelier_chaussaures.jpg", w: 1200, h: 800},
 "manufactures_chaussures.jpg": {src: "images/manufactures_chaussures.jpg", w: 1200, h: 800},
 "industrie_forestiere_1890.jpg": {src: "images/industrie_forestiere_1890.jpg", w: 1200, h: 800},
-"quartiers_ouvriers_1890.jpg": {src: "images/quartiers_ouvriers_1890.jpg"}
+"quartiers_ouvriers_1890.jpg": {src: "images/quartiers_ouvriers_1890.jpg"},
+"tableau_salaires_hommes-femmes_1890.jpg": {src: "images/tableau_salaires_hommes-femmes_1890.jpg"}
 }
 
 const QUESTIONS = [
@@ -12162,5 +12164,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les familles ouvrières vivent dans des logements surpeuplés et insalubres.\nLes familles ouvrières vivent dans des quartiers pauvres.\nLes familles ouvrières habitent près des manufactures.\nLes conditions de logement des familles ouvrières sont précaires.",
  updatedAt: "2026-07-13T14:08:13.150Z"
+},
+{
+ id: "Q674",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Différence",
+ enonce: "Indiquez une différence entre les conditions de travail des hommes et celles des femmes dans les manufactures au cours de la seconde moitié du XIXᵉ siècle.",
+ aspects: [{aspect: "Première phase d'industrialisation"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_salaires_hommes-femmes_1890.jpg", soustitre: "Comparaison des salaires des hommes et des femmes dans les manufactures", source: "Adapté de Bettina Bradbury, Working Families: Age, Gender, and Daily Survival in Industrializing Montreal, Oxford University Press, 1993."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les femmes reçoivent un salaire inférieur à celui des hommes.\nLes hommes gagnent davantage que les femmes.",
+ updatedAt: "2026-07-13T14:13:28.016Z"
 }
 ]
