@@ -1222,7 +1222,8 @@ const REGLETTES = {
 "Q672": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q670": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
 "Q673": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
-"Q674": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la différence."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la différence."}, {pts: 0, desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."}]}
+"Q674": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la différence."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la différence."}, {pts: 0, desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."}]},
+"Q676": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1539,7 +1540,8 @@ const IMAGE_DB = {
 "manufactures_chaussures.jpg": {src: "images/manufactures_chaussures.jpg", w: 1200, h: 800},
 "industrie_forestiere_1890.jpg": {src: "images/industrie_forestiere_1890.jpg", w: 1200, h: 800},
 "quartiers_ouvriers_1890.jpg": {src: "images/quartiers_ouvriers_1890.jpg"},
-"tableau_salaires_hommes-femmes_1890.jpg": {src: "images/tableau_salaires_hommes-femmes_1890.jpg"}
+"tableau_salaires_hommes-femmes_1890.jpg": {src: "images/tableau_salaires_hommes-femmes_1890.jpg"},
+"tableau_organisations_ouvrieres.jpg": {src: "images/tableau_organisations_ouvrieres.jpg"}
 }
 
 const QUESTIONS = [
@@ -12177,5 +12179,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les femmes reçoivent un salaire inférieur à celui des hommes.\nLes hommes gagnent davantage que les femmes.",
  updatedAt: "2026-07-13T14:13:28.016Z"
+},
+{
+ id: "Q676",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P5 — 1840 – 1896",
+ points: 2,
+ soustag: "Changement",
+ enonce: "Indiquez un changement concernant l'organisation des ouvriers au Québec dans la seconde moitié du XIXᵉ siècle.",
+ aspects: [{aspect: "Première phase d'industrialisation"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_organisations_ouvrieres.jpg", soustitre: "Évolution du nombre d'assemblées des Chevaliers du travail au Québec", source: "Adapté de Paul-André Linteau et al., Histoire du Québec contemporain, Montréal, Boréal."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Le nombre d'organisations ouvrières augmente.\nLes organisations ouvrières deviennent plus nombreuses.\nLes ouvriers s'organisent davantage pour défendre leurs intérêts.\nLe mouvement ouvrier prend de l'importance.",
+ updatedAt: "2026-07-13T14:39:13.526Z"
 }
 ]
