@@ -2016,7 +2016,7 @@ const QUESTIONS = [
  aspects: [{aspect: "Gouvernement responsable"}],
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "org_pol_1840_acte_union.png", soustitre: "Organisation politique de la colonie entre en 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", auteur: ""}]}],
  reponse: {type: "lignes", nombre: 2},
- guide: "Pour btenir la responsabilité ministérielle ou le gouvernement responsable.\nPour obtenir que les membres du Conseil exécutif soient désormais choisis parmi les membres de l’Assemblée législative.\nPour former la majorité à la Chambre d’assemblée.",
+ guide: "Obtenir la responsabilité ministérielle (ou le gouvernement responsable) ou obtenir que les membres du Conseil exécutif soient désormais choisis parmi les membres de l’Assemblée législative ou former la majorité à la Chambre d’assemblée.",
  updatedAt: "2026-06-12T12:26:16.322Z",
  _imgs: ["org_pol_1840_acte_union.png"]
 },
@@ -2027,7 +2027,7 @@ const QUESTIONS = [
  periode: "P5 — 1840 – 1896",
  points: 2,
  soustag: "Cause et conséquence",
- enonce: "Au milieu du 19e siècle, la Grande-Bretagne adopte une politique de libre-échange. Inscrivez la lettre du document qui présente une cause de l’adoption de cette politique et la lettre de celui qui en présente une conséquence pour la Province du Canada.",
+ enonce: "Au milieu du XIXe siècle, la Grande-Bretagne adopte une politique de libre-échange. Inscrivez la lettre du document qui présente une cause de l’adoption de cette politique et la lettre de celui qui en présente une conséquence pour la Province du Canada.",
  aspects: [{aspect: "Économie coloniale"}],
  documents: [
   {
