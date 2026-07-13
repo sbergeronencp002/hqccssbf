@@ -11350,11 +11350,11 @@ const QUESTIONS = [
  points: 3,
  soustag: "Changement ou continuité",
  enonce: "À partir du document A, indiquez s’il y a changement ou continuité dans la répartition de la population entre les milieux urbain et rural au Québec. Justifiez votre choix à l’aide de faits qui montrent le changement ou la continuité et d’un repère de temps.",
- aspects: [{aspect: "Migrations"}],
+ aspects: [{aspect: "Migrations"}, {aspect: "Première phase d'industrialisation"}],
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_population_rurale_urbaine_1840-1890.jpg", soustitre: "Évolution de la répartition de la population entre les milieux urbain et rural", source: "Adapté de Paul-André Linteau, René Durocher et Jean-Claude Robert, Histoire du Québec contemporain. Tome I : De la Confédération à la crise (1867-1929), Boréal, 1989."}]}],
  reponse: {type: "lignes", nombre: 3},
  guide: "Il y a changement, car la proportion de la population vivant en milieu urbain augmente entre 1840 et 1890 (ou de 12 % en 1840 à 32 % en 1890).\n\nIl y a continuité, car la majorité de la population vit en milieu rural entre 1840 et 1890 (ou 88 % en 1840 et 68 % en 1890).",
- updatedAt: "2026-07-07T01:29:07.472Z"
+ updatedAt: "2026-07-13T15:22:41.179Z"
 },
 {
  id: "Q620",
