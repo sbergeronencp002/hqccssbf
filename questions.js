@@ -1213,7 +1213,8 @@ const REGLETTES = {
 "Q662": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q663": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q664": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
-"Q665": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
+"Q665": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
+"Q666": {oi: "Situer dans l'espace", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]}
 }
 
 const IMAGE_DB = {
@@ -1523,7 +1524,8 @@ const IMAGE_DB = {
 "agriculteur_1890.jpg": {src: "images/agriculteur_1890.jpg"},
 "tableau_bois_scieries.jpg": {src: "images/tableau_bois_scieries.jpg"},
 "tableau_bois_equarris.jpg": {src: "images/tableau_bois_equarris.jpg", w: 1200, h: 675},
-"certificat_action_1895.jpg": {src: "images/certificat_action_1895.jpg", w: 1200, h: 802}
+"certificat_action_1895.jpg": {src: "images/certificat_action_1895.jpg", w: 1200, h: 802},
+"recitus_reseau_ferroviaire_situer.png": {src: "images/recitus_reseau_ferroviaire_situer.png", w: 1200, h: 600}
 }
 
 const QUESTIONS = [
@@ -12023,5 +12025,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les entreprises ont davantage recours aux banques pour obtenir du financement.\nLes entreprises obtiennent davantage de financement par la vente d'actions.",
  updatedAt: "2026-07-13T11:57:55.147Z"
+},
+{
+ id: "Q666",
+ niveau: 4,
+ oi: "Situer dans l'espace",
+ periode: "P5 — 1840 – 1896",
+ points: 1,
+ soustag: "Situer 1 élément",
+ enonce: "À partir du document A, indiquez la lettre correspondant au chemin de fer du Canadien Pacifique.",
+ aspects: [{aspect: "Première phase d'industrialisation"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "recitus_reseau_ferroviaire_situer.png", source: "Adapté de Récitus."}]}],
+ reponse: {type: "tableau_2col"},
+ guide: "A",
+ updatedAt: "2026-07-13T12:19:52.653Z"
 }
 ]
