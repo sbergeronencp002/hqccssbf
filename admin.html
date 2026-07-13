@@ -451,6 +451,21 @@ header a:hover { color: #fff; }
 <div id="toast"></div>
 
 <script>
+// Un navigateur ne revérifie sw.js qu'au plus une fois par 24h par défaut (throttle du
+// navigateur, indépendant de tout cache-bust côté serveur) — un F5 ou même fermer/rouvrir
+// l'onglet ne suffit donc pas à récupérer un correctif tout juste déployé si cette page
+// est encore contrôlée par un ancien service worker. On force la vérification ici et on
+// recharge une seule fois si un nouveau SW prend effectivement le relais.
+if ('serviceWorker' in navigator) {
+  let _swReloaded = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (_swReloaded) return;
+    _swReloaded = true;
+    location.reload();
+  });
+  navigator.serviceWorker.getRegistration().then(reg => { if (reg) reg.update(); }).catch(() => {});
+}
+
 // ── TOKEN ─────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', init);
 

@@ -310,6 +310,21 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
 <script src="oi-config.js?v=1"></script>
 <script src="questions-io.js?v=3"></script>
 <script>
+// Un navigateur ne revérifie sw.js qu'au plus une fois par 24h par défaut (throttle du
+// navigateur, indépendant de tout cache-bust côté serveur) — un F5 ou même fermer/rouvrir
+// l'onglet ne suffit donc pas à récupérer un correctif tout juste déployé si cette page
+// est encore contrôlée par un ancien service worker. On force la vérification ici et on
+// recharge une seule fois si un nouveau SW prend effectivement le relais.
+if ('serviceWorker' in navigator) {
+  let _swReloaded = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (_swReloaded) return;
+    _swReloaded = true;
+    location.reload();
+  });
+  navigator.serviceWorker.getRegistration().then(reg => { if (reg) reg.update(); }).catch(() => {});
+}
+
 // Token lu depuis le stockage partagé avec admin.html (jamais hardcodé)
 function getToken() {
   return localStorage.getItem('gh_token') || sessionStorage.getItem('gh_token') || '';
