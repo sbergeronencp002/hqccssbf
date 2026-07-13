@@ -2002,7 +2002,7 @@ const QUESTIONS = [
   }
  ],
  reponse: {type: "lignes", nombre: 2},
- guide: "L’importance de coloniser les régions\nLa colonisation des régions.",
+ guide: "L’importance de coloniser les régions.\nLa colonisation des régions.",
  updatedAt: "2026-06-18T17:56:50.357Z"
 },
 {
