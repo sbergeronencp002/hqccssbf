@@ -10008,7 +10008,7 @@ const QUESTIONS = [
  ],
  reponse: {type: "lignes", nombre: 2},
  guide: "La fin des tarifs préférentiels accordés aux colonies.\nL'adoption du libre-échange par le Royaume-Uni.",
- updatedAt: "2026-06-22T20:52:56.880Z"
+ updatedAt: "2026-07-14T12:18:41.559Z"
 },
 {
  id: "Q536",
