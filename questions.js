@@ -9536,7 +9536,7 @@ const QUESTIONS = [
  enonce: "Expliquez comment la constitution adoptée par les autorités britanniques en 1840 modifie la représentation politique des habitants de la Province du Canada.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux :\n\n• Le nom de la constitution adoptée en 1840\n• Un changement dans l'organisation politique de la colonie\n• Une conséquence pour la population du Bas-Canada",
  aspects: [{aspect: "Acte d'Union"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document A", texte: "« Londres réagit promptement à la publication du Rapport sur les affaires de l’Amérique septentrionale britannique. En 1840, l’union des colonies du Bas-Canada et du Haut-Canada est réalisée. »", source: "John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec, Québec, Septentrion, 2009, p. 153."}]},
+  {type: "textes", cols: [{titre: "Document A", texte: "« Londres réagit promptement à la publication du Rapport sur les affaires de l’Amérique septentrionale britannique. En 1840, l’union des colonies du Bas-Canada et du Haut-Canada est réalisée. »", source: "John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec, Québec, Septentrion, 2009."}]},
   {type: "textes", cols: [{titre: "Document B", ref: "org_pol_1840_acte_union.png", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", soustitre: "Organisation politique après 1840"}]},
   {type: "textes", cols: [{titre: "Document C", ref: "tableau_representation_politique_1840.jpg", soustitre: "Répartition des députés à l’Assemblée législative de la Province du Canada en 1840", source: "Adapté de Jacques Lacoursière, Jean Provencher et Denis Vaugeois, Canada-Québec : synthèse historique, Montréal, ERPI, 2000."}]}
  ],
@@ -10008,7 +10008,7 @@ const QUESTIONS = [
  ],
  reponse: {type: "lignes", nombre: 2},
  guide: "La fin des tarifs préférentiels accordés aux colonies.\nL'adoption du libre-échange par le Royaume-Uni.",
- updatedAt: "2026-07-14T12:18:41.559Z"
+ updatedAt: "2026-06-22T20:52:56.880Z"
 },
 {
  id: "Q536",
