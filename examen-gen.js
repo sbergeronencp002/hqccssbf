@@ -33,7 +33,8 @@ const EX_ATTEMPTS_PER_LEVEL = 150;
 const EX_FAVORI_BASE_TARGET = {
   'Dégager des différences et des similitudes': 3,
   'Déterminer des causes et des conséquences': 3,
-  'Établir des liens de causalité': 2
+  'Établir des liens de causalité': 2,
+  'Déterminer des changements et des continuités': 3
 };
 
 // Paliers de la cible pour l'OI favorite, du plus ambitieux au plus permissif : si le
@@ -68,9 +69,12 @@ const EX_OI_HARD_CAP = {
 // candidats coûtent 3 points) mathématiquement inatteignable. Faire passer « Établir des
 // faits » de ≤2 à ≤3 UNIQUEMENT quand la causalité est la favorite choisie par l'enseignant
 // libère juste assez de marge — le plafond ≤2 reste inchangé pour tous les autres examens
-// (aucune favorite, ou une autre favorite).
+// (aucune favorite, ou une autre favorite). Même situation pour « Déterminer des changements
+// et des continuités » (cible favorite à 3, ≥2 sinon) sur P2/P5 : minimum vérifié à 26/27
+// points avec les plafonds normaux, ramené à exactement 25 avec ce même assouplissement.
 const EX_OI_HARD_CAP_RELAX = {
-  'Établir des liens de causalité': { 'Établir des faits': 3 }
+  'Établir des liens de causalité': { 'Établir des faits': 3 },
+  'Déterminer des changements et des continuités': { 'Établir des faits': 3 }
 };
 
 function exEffectiveHardCap(oi, favoriOi) {
@@ -244,16 +248,20 @@ function exComputeOiQuota(oiList, favoriOi, favoriTarget, fixedTargets) {
 }
 
 // Plafond effectif pour une OI donnée dans cette tentative : sa cible fixe (`fixedTargets`)
-// si elle en a une — une cible fixe est un choix délibéré qui prime sur EX_OI_HARD_CAP,
+// et/ou la cible de l'OI favorite (si `oi` est l'OI favorite) priment sur EX_OI_HARD_CAP,
 // même si celui-ci est normalement plus bas pour cette OI (ex. « Établir des faits » ≤2 en
-// temps normal, mais cible fixe à 3 pour P1 — voir EX_OI_FIXED_TARGET_BY_PERIODE) — sinon
-// le plus contraignant entre EX_OI_HARD_CAP (assoupli via EX_OI_HARD_CAP_RELAX si
-// applicable à ce favori) et la cible de l'OI favorite (si `oi` est l'OI favorite).
+// temps normal, mais cible fixe à 3 pour P1 — voir EX_OI_FIXED_TARGET_BY_PERIODE). Quand
+// une OI a À LA FOIS une cible fixe ET est la favorite (ex. « Déterminer des changements
+// et des continuités », toujours ≥2, mais jusqu'à 3 si choisie comme favorite), la plus
+// grande des deux prime — le choix explicite de l'enseignant doit pouvoir dépasser une
+// préférence de fond, jamais l'inverse. Sinon, repli sur EX_OI_HARD_CAP (assoupli via
+// EX_OI_HARD_CAP_RELAX si applicable à ce favori).
 function exOiCap(oi, favoriOi, favoriTarget, fixedTargets) {
   const fixed = fixedTargets[oi];
-  const hard = fixed != null ? Infinity : exEffectiveHardCap(oi, favoriOi);
-  const favori = (oi === favoriOi && favoriTarget > 0) ? favoriTarget : Infinity;
-  return Math.min(hard != null ? hard : Infinity, fixed != null ? fixed : Infinity, favori);
+  const favori = (oi === favoriOi && favoriTarget > 0) ? favoriTarget : null;
+  if (fixed != null || favori != null) return Math.max(fixed || 0, favori || 0);
+  const hard = exEffectiveHardCap(oi, favoriOi);
+  return hard != null ? hard : Infinity;
 }
 
 function exShuffle(arr, rng) {
@@ -596,9 +604,13 @@ function exTryBuild(questions, slots, oiList, favoriOi, favoriTarget, fixedTarge
   if (new Set(selected.map(q => q.oi)).size < oiList.length) return null; // variété OI non atteinte
   // L'OI favorite doit apparaître exactement `favoriTarget` fois (pas juste « au moins »).
   if (favoriOi && favoriTarget > 0 && oiCounts[favoriOi] !== favoriTarget) return null;
-  // Les OI à cible fixe doivent apparaître exactement ce nombre de fois, toujours.
-  for (const oi of Object.keys(fixedTargets)) {
-    if ((oiCounts[oi] || 0) !== fixedTargets[oi]) return null;
+  // Les OI à cible fixe doivent apparaître exactement ce nombre de fois, toujours — via
+  // `targets` (fixedTargets fusionné avec la cible favorite en phase 1), pas `fixedTargets`
+  // brut : sinon une OI à la fois « cible fixe » et « favorite » (ex. Déterminer des
+  // changements et des continuités, toujours ≥2 mais jusqu'à 3 si favorite) serait
+  // rejetée dès que la cible favorite (3) dépasse sa cible fixe de fond (2).
+  for (const oi of Object.keys(targets)) {
+    if ((oiCounts[oi] || 0) !== targets[oi]) return null;
   }
 
   return { selected, points };
