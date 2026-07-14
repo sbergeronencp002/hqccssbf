@@ -1049,7 +1049,7 @@ const REGLETTES = {
 "Q578": {colonnes: ["2 points", "0 point"], niveaux: [{desc: "L'élève situe tous les faits dans le temps.", pts: 2}, {desc: "L'élève ne situe pas tous les faits dans le temps.", pts: 0}], oi: "Situer dans le temps"},
 "Q579": {colonnes: ["2 points", "1 point", "0 point"], niveaux: [{desc: "L'élève met en relation tous les faits. (4 sur 4)", pts: 2}, {desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)", pts: 1}, {desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)", pts: 0}], oi: "Mettre en relation des faits"},
 "Q580": {colonnes: ["2 points", "1 point", "0 point"], niveaux: [{desc: "L'élève dégage correctement la différence.", pts: 2}, {desc: "L'élève dégage plus ou moins correctement la différence.", pts: 1}, {desc: "L'élève dégage incorrectement la différence ou ne la dégage pas.", pts: 0}], oi: "Dégager des différences et des similitudes"},
-"Q581": {colonnes: ["1 point", "0 point"], niveaux: [{desc: "L'élève établit correctement le fait.", pts: 1}, {desc: "L'élève établit incorrectement le fait ou ne l'établit pas.", pts: 0}], oi: "Établir des faits"},
+"Q581": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
 "Q582": {
  colonnes: ["3 points", "2 points", "1 point", "0 point"],
  niveaux: [{desc: "L'élève précise les trois éléments et établit correctement deux liens de causalité.", pts: 3}, {desc: "L'élève précise les trois éléments et établit un lien de causalité, ou précise deux éléments et établit un lien de causalité.", pts: 2}, {desc: "L'élève précise les trois éléments ou deux éléments sans établir correctement de lien de causalité.", pts: 1}, {desc: "L'élève précise un seul élément ou n'en précise pas.", pts: 0}],
@@ -10728,18 +10728,17 @@ const QUESTIONS = [
  updatedAt: "2026-06-29T18:55:08.859Z"
 },
 {
- aspects: [{aspect: "Relations fédérales-provinciales"}],
- documents: [{cols: [{ref: "tableau_sources_revenus_federal.jpg", source: "Adapté de M.C. Urquhart et K.A.H. Buckley (dir.), Historical Statistics of Canada, Cambridge University Press, 1965.", titre: "Document A"}], type: "textes"}],
- enonce: "Indiquez la principale source de revenus du gouvernement fédéral après 1867.",
- guide: "Les droits de douanes.",
  id: "Q581",
  niveau: 4,
  oi: "Établir des faits",
  periode: "P5 — 1840 – 1896",
  points: 1,
- reponse: {nombre: 1, type: "lignes"},
- updatedAt: "2026-06-29T19:12:30.119Z",
- _imgs: ["tableau_sources_revenus_federal.jpg"]
+ enonce: "Indiquez la principale source de revenus du gouvernement fédéral après 1867.",
+ aspects: [{aspect: "Relations fédérales-provinciales"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Durant les premières décennies de la Confédération, l’activité commerciale fournit à Ottawa une part essentielle de ses ressources financières, particulièrement grâce aux prélèvements associés aux produits provenant de l’étranger. »", source: "Adapté de Livio Di Matteo, A Federal Fiscal History: Canada, 1867–2017, Fraser Institute, 2017."}]}],
+ reponse: {type: "lignes", nombre: 1},
+ guide: "Les droits de douanes.",
+ updatedAt: "2026-07-14T14:34:06.168Z"
 },
 {
  aspects: [{aspect: "Relations fédérales-provinciales"}],
@@ -10831,7 +10830,7 @@ const QUESTIONS = [
  periode: "P5 — 1840 – 1896",
  points: 2,
  soustag: "Conséquence",
- enonce: "Indiquez une conséquence du soulèvement des Métis à la Rivière Rouge sur l'organisation du territoire canadien.",
+ enonce: "Indiquez une conséquence du soulèvement de la rivière Rouge sur l'organisation du territoire canadien.",
  aspects: [{aspect: "Relations fédérales-provinciales"}],
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "aanb_manitoba.jpg", source: "Récitus."}]}],
  reponse: {type: "lignes", nombre: 2},
