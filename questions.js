@@ -9689,7 +9689,7 @@ const QUESTIONS = [
 },
 {
  aspects: [{aspect: "Relations fédérales-provinciales"}],
- documents: [{cols: [{ref: "pendaison_louis_riel.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", soustitre: "Pendaison de Louis Riel", titre: "Document A"}], type: "textes"}],
+ documents: [{cols: [{auteur: "Ébauche de l'Acte d'Amérique du Nord britannique", ref: "pendaison_louis_riel.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", soustitre: "Pendaison de Louis Riel", titre: "Document A"}], type: "textes"}],
  enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
  guide: "C - 1885",
  id: "Q514",
@@ -9704,7 +9704,7 @@ const QUESTIONS = [
 },
 {
  aspects: [{aspect: "Relations fédérales-provinciales"}],
- documents: [{cols: [{auteur: "Résistance métisse à la Rivière-Rouge", ref: "metis_premier_soulevement_fort_garry.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", soustitre: "Premier soulèvement Métis", titre: "Document A"}], type: "textes"}],
+ documents: [{cols: [{ref: "metis_premier_soulevement_fort_garry.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", soustitre: "Premier soulèvement Métis", titre: "Document A"}], type: "textes"}],
  enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
  guide: "B - 1869-1870",
  id: "Q515",
