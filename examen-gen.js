@@ -137,12 +137,30 @@ const EX_ASPECT_REPEAT_BY_PERIODE = {
 // ajouté un jour, il se met à fonctionner sans aucun changement de code.
 const EX_FAVORI_SCENARIOS_BY_PERIODE = {
   'P1 — Des origines à 1608': {
+    // « Déterminer des causes et des conséquences » n'a que 2 sous-tags distincts en P1
+    // (« Cause »/« Conséquence ») — insuffisant pour 3 occurrences sous la règle « jamais
+    // deux fois le même sous-tag ». Exception explicite demandée par l'enseignant :
+    // `relaxDiversity` désactive cette règle pour CETTE OI, dans CE scénario précis
+    // uniquement (jamais un relâchement global — voir baseFilterOk dans exTryBuild).
+    // `extraSlots` : Causes(3)+Causalité(2)+Mettre en relation(2)+Différences(2)+Faits(4)
+    // = 13 questions, 2 de plus que les 11 slots de base — sans ça, la cible échouait
+    // silencieusement (aucun slot libre) et retombait sur le niveau de repli.
     'Déterminer des causes et des conséquences': [
-      { targets: { 'Déterminer des causes et des conséquences': 3, 'Établir des faits': 4 } },
+      {
+        targets: { 'Déterminer des causes et des conséquences': 3, 'Établir des faits': 4 },
+        relaxDiversity: ['Déterminer des causes et des conséquences'],
+        extraSlots: { 'Rapports sociaux chez les Autochtones': 2 }
+      },
       { targets: {} }
     ],
+    // Même limite de données que ci-dessus (2 sous-tags distincts seulement : « Convergence
+    // – 2 acteurs »/« Position – 3 acteurs ») — même exception demandée par l'enseignant.
     'Dégager des différences et des similitudes': [
-      { targets: { 'Dégager des différences et des similitudes': 3, 'Établir des faits': 4 } },
+      {
+        targets: { 'Dégager des différences et des similitudes': 3, 'Établir des faits': 4 },
+        relaxDiversity: ['Dégager des différences et des similitudes'],
+        extraSlots: { 'Rapports sociaux chez les Autochtones': 2 }
+      },
       { targets: {} }
     ],
     'Établir des liens de causalité': [
@@ -313,7 +331,8 @@ function exOtherMinCost(slots, coveredSlots, candidateSlotKey, minCostBySlot) {
 // cible alors qu'une combinaison à budget suffisant existe (slots propres à chacune,
 // moins chers) — observé en pratique en combinant une OI à cible fixe et une OI favorite
 // dont tous les candidats coûtent 3 points.
-function exTryBuild(questions, slots, oiList, favoriOi, favoriTarget, fixedTargets, maxPoints, rng) {
+function exTryBuild(questions, slots, oiList, favoriOi, favoriTarget, fixedTargets, maxPoints, rng, relaxDiversityOis) {
+  const relaxDiversity = relaxDiversityOis || new Set();
   const aspects = slots.flatMap(s => s.aspects);
   const bySlot = new Map(slots.map(s => {
     const key = s.aspects.slice().sort().join('|');
@@ -337,6 +356,7 @@ function exTryBuild(questions, slots, oiList, favoriOi, favoriTarget, fixedTarge
 
   function baseFilterOk(q) {
     if (usedIds.has(q.id)) return false;
+    if (relaxDiversity.has(q.oi)) return true; // exception explicite : diversité désactivée pour cette OI
     const qKey = exDiversityKey(q);
     if (qKey && usedOiTag.has(q.oi + '||' + qKey)) return false;
     return true;
@@ -437,6 +457,7 @@ function exTryBuild(questions, slots, oiList, favoriOi, favoriTarget, fixedTarge
       const alternatives = bySlot.get(slotKey)
         .filter(c => c.id !== q.id && c.oi === q.oi && !usedIds.has(c.id) && c.points > q.points)
         .filter(c => {
+          if (relaxDiversity.has(c.oi)) return true;
           const cKey = exDiversityKey(c);
           if (!cKey) return true;
           return cKey === qKeyOld || !usedOiTag.has(c.oi + '||' + cKey);
@@ -453,6 +474,63 @@ function exTryBuild(questions, slots, oiList, favoriOi, favoriTarget, fixedTarge
       slotKeyOf.delete(q.id); slotKeyOf.set(alt.id, slotKey);
       points += alt.points - q.points;
       boosted = true;
+    }
+  }
+
+  // ── PHASE 3b : échange de slot entre deux OI différentes ─────────────────────────────
+  // Le remplacement ci-dessus ne considère que des alternatives de la MÊME OI sur le MÊME
+  // slot — inefficace si le slot assigné à une OI n'offre qu'un seul sous-tag (aucune
+  // alternative plus chère possible SUR CET ASPECT PRÉCIS), même si un autre slot (assigné
+  // à une autre OI) a justement un candidat de cette OI plus cher. Échanger lequel des deux
+  // slots héberge quelle OI ne change aucun compte par OI (juste les points).
+  let pairBoosted = true;
+  let pairGuard = 0;
+  while (points < maxPoints && pairBoosted && pairGuard < slots.length * slots.length) {
+    pairBoosted = false;
+    pairGuard++;
+    for (let i = 0; i < selected.length && !pairBoosted; i++) {
+      for (let j = 0; j < selected.length && !pairBoosted; j++) {
+        if (i === j) continue;
+        const q1 = selected[i], q2 = selected[j];
+        if (q1.oi === q2.oi) continue;
+        const slot1 = slotKeyOf.get(q1.id), slot2 = slotKeyOf.get(q2.id);
+        const key1Old = exDiversityKey(q1), key2Old = exDiversityKey(q2);
+        // retire temporairement les deux clés en cours, pour évaluer les alternatives
+        // sans qu'elles se bloquent elles-mêmes.
+        if (key1Old) usedOiTag.delete(q1.oi + '||' + key1Old);
+        if (key2Old) usedOiTag.delete(q2.oi + '||' + key2Old);
+
+        const diversityOk = c => relaxDiversity.has(c.oi) || !exDiversityKey(c) || !usedOiTag.has(c.oi + '||' + exDiversityKey(c));
+        const alt1Options = bySlot.get(slot1).filter(c => c.oi === q2.oi && c.id !== q2.id && !usedIds.has(c.id) && diversityOk(c));
+        const alt2Options = bySlot.get(slot2).filter(c => c.oi === q1.oi && c.id !== q1.id && !usedIds.has(c.id) && diversityOk(c));
+
+        let bestDelta = 0, bestAlt1 = null, bestAlt2 = null;
+        for (const a1 of alt1Options) {
+          for (const a2 of alt2Options) {
+            if (a1.id === a2.id) continue;
+            const delta = (a1.points + a2.points) - (q1.points + q2.points);
+            if (delta > bestDelta && points + delta <= maxPoints) { bestDelta = delta; bestAlt1 = a1; bestAlt2 = a2; }
+          }
+        }
+
+        if (key1Old) usedOiTag.add(q1.oi + '||' + key1Old);
+        if (key2Old) usedOiTag.add(q2.oi + '||' + key2Old);
+
+        if (bestAlt1 && bestAlt2) {
+          selected[i] = bestAlt1; selected[j] = bestAlt2;
+          usedIds.delete(q1.id); usedIds.delete(q2.id);
+          usedIds.add(bestAlt1.id); usedIds.add(bestAlt2.id);
+          if (key1Old) usedOiTag.delete(q1.oi + '||' + key1Old);
+          if (key2Old) usedOiTag.delete(q2.oi + '||' + key2Old);
+          const newKey1 = exDiversityKey(bestAlt1), newKey2 = exDiversityKey(bestAlt2);
+          if (newKey1) usedOiTag.add(bestAlt1.oi + '||' + newKey1);
+          if (newKey2) usedOiTag.add(bestAlt2.oi + '||' + newKey2);
+          slotKeyOf.delete(q1.id); slotKeyOf.delete(q2.id);
+          slotKeyOf.set(bestAlt1.id, slot1); slotKeyOf.set(bestAlt2.id, slot2);
+          points += bestDelta;
+          pairBoosted = true;
+        }
+      }
     }
   }
 
@@ -548,7 +626,7 @@ function exGenererExamen({ questions, periode, aspects, oiList, favoriOi, maxPoi
 
   // Construit les slots + l'OI atteignable pour un jeu (aspectRepeat, fixedTargetsRaw)
   // donné, puis tente exTryBuild jusqu'à EX_ATTEMPTS_PER_LEVEL fois.
-  function tryLevel(aspectRepeat, fixedTargetsRaw, favoriOiForBuild, favoriTargetForBuild) {
+  function tryLevel(aspectRepeat, fixedTargetsRaw, favoriOiForBuild, favoriTargetForBuild, relaxDiversityOis) {
     const slots = exBuildAspectSlots(pool, aspects, aspectRepeat);
     const availableOis = new Set();
     slots.forEach(s => {
@@ -564,7 +642,7 @@ function exGenererExamen({ questions, periode, aspects, oiList, favoriOi, maxPoi
 
     for (let attempt = 0; attempt < EX_ATTEMPTS_PER_LEVEL; attempt++) {
       attemptsTotal++;
-      const result = exTryBuild(pool, slots, effectiveOiList, favoriOiForBuild, favoriTargetForBuild, fixedTargets, maxPoints, rng);
+      const result = exTryBuild(pool, slots, effectiveOiList, favoriOiForBuild, favoriTargetForBuild, fixedTargets, maxPoints, rng, relaxDiversityOis);
       if (result) return result;
     }
     return null;
@@ -596,7 +674,8 @@ function exGenererExamen({ questions, periode, aspects, oiList, favoriOi, maxPoi
     });
     const fixedTargetsRaw = { ...baseFixedTarget, ...(scenario.targets || {}) };
     appliedFixedTargets = fixedTargetsRaw;
-    const result = tryLevel(aspectRepeat, fixedTargetsRaw, null, 0);
+    const relaxDiversityOis = new Set(scenario.relaxDiversity || []);
+    const result = tryLevel(aspectRepeat, fixedTargetsRaw, null, 0, relaxDiversityOis);
     if (result) return finalize(result);
   }
 
