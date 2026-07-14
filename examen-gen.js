@@ -281,36 +281,60 @@ function exTryBuild(questions, aspects, oiList, favoriOi, favoriTarget, fixedTar
   return { selected, points };
 }
 
-// Réordonne une liste triée (ordre des aspects du programme) pour qu'aucune OI ne se
-// retrouve deux fois de suite, en perturbant le moins possible l'ordre de départ : pour
-// chaque paire consécutive identique, on échange avec la question valide la plus proche
-// plus loin dans la liste (en évitant d'en créer une nouvelle avec le voisin suivant
-// quand c'est possible). Plusieurs passes au cas où un échange en révèle un autre.
-// Toujours réalisable ici : aucune OI ne peut dépasser ~3 occurrences sur 14 questions
-// (largement en dessous du plafond théorique d'arrangeabilité, ceil(14/2) = 7).
-// Algorithme classique « reorganize string » : regroupe par OI (en conservant l'ordre
-// relatif d'origine — l'ordre des aspects — à l'intérieur de chaque groupe), place les
-// groupes les plus fréquents en premier aux indices pairs (0, 2, 4…) puis continue aux
-// indices impairs. Garanti sans deux éléments identiques adjacents tant qu'aucun groupe
-// ne dépasse ceil(n/2) occurrences — toujours vrai ici (max ~3 sur 14, plafond 7).
-function exReorderNoAdjacentOi(list) {
-  const n = list.length;
+// Écarts d'indices visés entre deux occurrences d'une même OI, du plus confortable
+// (4 = 3 questions différentes entre les deux) au strict minimum (2 = jamais adjacentes,
+// dernier filet de sécurité si les comptes par OI rendent un espacement plus large
+// impossible sur cette liste précise).
+const EX_OI_SPACING_GAPS = [4, 3, 2];
+
+// Place gloutonnement les questions en respectant (si possible) l'écart minGap entre
+// deux occurrences d'une même OI : à chaque position, choisit parmi les OI dont le
+// dernier placement remonte à au moins minGap celle qui a le plus de questions encore
+// en attente (pour éviter de la coincer plus tard) ; si aucune OI n'est éligible (écart
+// infaisable ici), relâche au minimum en prenant la moins récemment placée. Algorithme
+// classique de réarrangement à distance minimale (cf. « Rearrange String k Distance
+// Apart ») — l'ordre relatif d'origine (ordre des aspects) est conservé au sein de
+// chaque groupe.
+function exSpreadOi(list, minGap) {
   const groups = new Map();
   list.forEach(item => {
     if (!groups.has(item.oi)) groups.set(item.oi, []);
     groups.get(item.oi).push(item);
   });
-  const groupList = [...groups.values()].sort((a, b) => b.length - a.length);
-  const result = new Array(n);
-  let idx = 0;
-  for (const group of groupList) {
-    for (const item of group) {
-      if (idx >= n) idx = 1; // repli sur les indices impairs une fois les pairs remplis
-      result[idx] = item;
-      idx += 2;
-    }
+  const queues = [...groups.values()].map(items => ({ items: items.slice(), lastIdx: -Infinity }));
+  const result = [];
+  for (let i = 0; i < list.length; i++) {
+    const eligible = queues.filter(g => g.items.length && (i - g.lastIdx) >= minGap);
+    const pool = eligible.length ? eligible : queues.filter(g => g.items.length);
+    pool.sort((a, b) => (eligible.length ? b.items.length - a.items.length : 0) || a.lastIdx - b.lastIdx);
+    const picked = pool[0];
+    picked.lastIdx = i;
+    result.push(picked.items.shift());
   }
   return result;
+}
+
+function exSpacingOk(list, minGap) {
+  const lastIdx = new Map();
+  for (let i = 0; i < list.length; i++) {
+    const oi = list[i].oi;
+    if (lastIdx.has(oi) && (i - lastIdx.get(oi)) < minGap) return false;
+    lastIdx.set(oi, i);
+  }
+  return true;
+}
+
+// Réordonne une liste triée (ordre des aspects du programme) pour espacer au mieux les
+// répétitions d'une même OI : essaie l'écart le plus confortable de EX_OI_SPACING_GAPS
+// en premier, retient le premier qui respecte réellement cet écart sur cette liste
+// précise, et se rabat sur un écart plus court sinon — la seule garantie absolue est de
+// ne jamais placer deux questions de la même OI l'une juste après l'autre.
+function exReorderNoAdjacentOi(list) {
+  for (const gap of EX_OI_SPACING_GAPS) {
+    const candidate = exSpreadOi(list, gap);
+    if (exSpacingOk(candidate, gap)) return candidate;
+  }
+  return exSpreadOi(list, 2);
 }
 
 // Génère un examen pour une période donnée.
