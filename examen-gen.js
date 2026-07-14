@@ -4,10 +4,14 @@
 // testable directement via node (voir tools/test-examen-gen.mjs).
 //
 // Contraintes de sélection (pour une période donnée) :
-//   - chaque aspect du programme (ASPECTS_PAR_PERIODE) est couvert par
-//     exactement une question, jamais deux fois ;
+//   - chaque aspect du programme (ASPECTS_PAR_PERIODE) est couvert par exactement une
+//     question dédiée, jamais deux fois, jamais partagée avec un autre aspect (une
+//     question à aspects multiples ne peut être retenue que pour un seul d'entre eux :
+//     le nombre de questions finales est donc toujours égal au nombre d'aspects) ;
 //   - total des points ≤ maxPoints ;
 //   - les 8 OI sont toutes représentées au moins une fois (variété) ;
+//   - jamais deux questions de la même OI avec le même sous-tag (soustag) — si une OI
+//     revient plusieurs fois, chaque occurrence doit couvrir un sous-type différent ;
 //   - l'OI « favorite » choisie par l'enseignant reçoit un quota renforcé
 //     (environ la moitié des questions) sans écraser les autres.
 // ─────────────────────────────────────────────────────────────────────────────
@@ -106,6 +110,7 @@ function exTryBuild(questions, aspects, oiList, favoriOi, maxPoints, rng, biasFr
   const oiRemaining = exComputeOiQuota(oiList, favoriOi, aspects.length, biasFraction);
   const covered = new Set();
   const usedIds = new Set();
+  const usedOiTag = new Set(); // "OI||soustag" déjà pris — jamais deux fois le même sous-tag pour une OI
   const selected = [];
   let points = 0;
 
@@ -116,6 +121,11 @@ function exTryBuild(questions, aspects, oiList, favoriOi, maxPoints, rng, biasFr
       if (usedIds.has(q.id)) return false;
       const qAspects = exAspectsOf(q);
       if (!qAspects.every(a => !covered.has(a))) return false; // conflit : un des aspects du candidat est déjà couvert
+      // Une question ne doit couvrir qu'un seul aspect du programme à la fois (jamais
+      // deux d'un coup) : sinon le nombre de questions finales tomberait sous le nombre
+      // d'aspects, ce qui n'est pas ce qui est attendu (une question par aspect).
+      if (qAspects.filter(a => aspects.includes(a)).length > 1) return false;
+      if (q.soustag && usedOiTag.has(q.oi + '||' + q.soustag)) return false;
       const otherMin = exOtherMinCost(aspects, covered, qAspects, minCostByAspect);
       return points + q.points + otherMin <= maxPoints;
     });
@@ -136,11 +146,13 @@ function exTryBuild(questions, aspects, oiList, favoriOi, maxPoints, rng, biasFr
     selected.push(picked);
     usedIds.add(picked.id);
     exAspectsOf(picked).forEach(a => covered.add(a));
+    if (picked.soustag) usedOiTag.add(picked.oi + '||' + picked.soustag);
     points += picked.points;
     oiRemaining[picked.oi]--;
   }
 
   if (covered.size !== aspects.length) return null;
+  if (selected.length !== aspects.length) return null; // une question par aspect, jamais moins
   if (points > maxPoints) return null;
   if (new Set(selected.map(q => q.oi)).size < oiList.length) return null; // variété OI non atteinte
 
@@ -152,9 +164,9 @@ function exTryBuild(questions, aspects, oiList, favoriOi, maxPoints, rng, biasFr
 //   aspects     : liste des aspects du programme à couvrir (ASPECTS_PAR_PERIODE[periode])
 //   oiList      : liste canonique des OI (OI_LIST)
 //   favoriOi    : OI à privilégier (ou null/undefined)
-//   maxPoints   : budget de points maximum (20 par défaut)
+//   maxPoints   : budget de points maximum (25 par défaut)
 //   rng         : générateur pseudo-aléatoire optionnel (tests reproductibles)
-function exGenererExamen({ questions, periode, aspects, oiList, favoriOi, maxPoints = 20, rng }) {
+function exGenererExamen({ questions, periode, aspects, oiList, favoriOi, maxPoints = 25, rng }) {
   const pool = questions.filter(q => q.periode === periode);
   const levels = favoriOi ? EX_BIAS_LEVELS : [0];
   let attemptsTotal = 0;

@@ -136,7 +136,7 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
       <thead><tr><th>#</th><th>Aspect du programme</th><th>OI</th><th>Pts</th><th>Docs</th><th>Énoncé</th><th></th></tr></thead>
       <tbody id="ex-tbody"></tbody>
     </table>
-    <p class="note">🔀 remplace la question par une autre couvrant le(s) même(s) aspect(s), en respectant le budget de 20 points. La variété/quota d'OI n'est pas revérifiée après un remplacement manuel — vérifiez la colonne OI ci-dessus si vous en faites plusieurs.</p>
+    <p class="note">🔀 remplace la question par une autre couvrant le(s) même(s) aspect(s), en respectant le budget de points et la règle « jamais deux fois le même sous-tag pour une OI ». La variété/quota d'OI n'est pas revérifiée après un remplacement manuel — vérifiez la colonne OI ci-dessus si vous en faites plusieurs.</p>
 
     <div class="actions-row">
       <button class="btn" onclick="exGenerate()">🎲 Régénérer tout</button>
@@ -190,6 +190,7 @@ let IMAGE_DB = {};
 let EX_SELECTION = null;   // liste des questions sélectionnées (ordre d'examen)
 let EX_DOCMAP = null;      // { docItems, byQuestion } — voir examen-gen.js
 let EX_PERIODE = null;
+const EX_MAX_POINTS = 25;
 
 const PERIODES_ALL = [...(PERIODES_PAR_NIVEAU['3'] || []), ...(PERIODES_PAR_NIVEAU['4'] || [])];
 
@@ -237,7 +238,7 @@ function exGenerate() {
   // setTimeout : laisse le navigateur peindre le bouton désactivé avant le calcul (peut prendre ~1s)
   setTimeout(() => {
     try {
-      const res = exGenererExamen({ questions: QUESTIONS, periode, aspects, oiList: OI_LIST, favoriOi, maxPoints: 20 });
+      const res = exGenererExamen({ questions: QUESTIONS, periode, aspects, oiList: OI_LIST, favoriOi, maxPoints: EX_MAX_POINTS });
       if (!res.ok) { toast(res.reason, 'err'); return; }
       EX_SELECTION = res.selected;
       EX_DOCMAP = exBuildDocMap(EX_SELECTION);
@@ -249,7 +250,7 @@ function exGenerate() {
         titreInput.dataset.auto = '1';
       }
       exRender(favoriOi);
-      toast('Examen généré : ' + res.points + ' / 20 points, ' + res.attempts + ' tentative(s).', 'ok');
+      toast('Examen généré : ' + res.points + ' / ' + EX_MAX_POINTS + ' points, ' + res.attempts + ' tentative(s).', 'ok');
     } catch (e) {
       console.error(e);
       toast('Erreur : ' + e.message, 'err');
@@ -272,7 +273,7 @@ function exRender(favoriOi) {
 
   const summary = document.getElementById('ex-summary');
   summary.innerHTML =
-    '<span class="chip ' + (totalPoints <= 20 ? 'ok' : 'warn') + '"><b>' + totalPoints + '</b> / 20 points</span>' +
+    '<span class="chip ' + (totalPoints <= EX_MAX_POINTS ? 'ok' : 'warn') + '"><b>' + totalPoints + '</b> / ' + EX_MAX_POINTS + ' points</span>' +
     '<span class="chip ok"><b>' + aspects.length + '</b> / ' + aspects.length + ' aspects couverts</span>' +
     '<span class="chip ' + (oiMissing.length ? 'warn' : 'ok') + '"><b>' + (OI_LIST.length - oiMissing.length) + '</b> / ' + OI_LIST.length + ' OI représentées</span>' +
     (favoriOi ? '<span class="chip"><b>' + (oiCounts[favoriOi] || 0) + '</b> question(s) — ' + escH(favoriOi) + '</span>' : '');
@@ -307,16 +308,18 @@ function exSwapOne(qId) {
   const oldAspects = exAspectsOf(old).slice().sort();
   const usedIds = new Set(EX_SELECTION.map(q => q.id));
   const totalPoints = EX_SELECTION.reduce((s, q) => s + q.points, 0);
+  const otherOiTags = new Set(EX_SELECTION.filter((q, i) => i !== idx && q.soustag).map(q => q.oi + '||' + q.soustag));
 
   const candidates = QUESTIONS.filter(q =>
     q.periode === EX_PERIODE &&
     q.id !== old.id &&
     !usedIds.has(q.id) &&
     exAspectsOf(q).slice().sort().join('|') === oldAspects.join('|') &&
-    (totalPoints - old.points + q.points) <= 20
+    (totalPoints - old.points + q.points) <= EX_MAX_POINTS &&
+    !(q.soustag && otherOiTags.has(q.oi + '||' + q.soustag))
   );
   if (!candidates.length) {
-    toast("Aucune autre question ne couvre exactement le(s) même(s) aspect(s) dans le budget de points restant.", 'err');
+    toast("Aucune autre question ne couvre exactement le(s) même(s) aspect(s) dans le budget de points restant, sans réutiliser un sous-tag déjà pris pour la même OI.", 'err');
     return;
   }
   const picked = candidates[Math.floor(Math.random() * candidates.length)];
