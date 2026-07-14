@@ -10830,13 +10830,12 @@ const QUESTIONS = [
  periode: "P5 — 1840 – 1896",
  points: 2,
  soustag: "Conséquence",
- enonce: "Indiquez une conséquence du soulèvement de la rivière Rouge sur l'organisation du territoire canadien.",
+ enonce: "Indiquez une conséquence du soulèvement des Métis à la rivière Rouge sur l'organisation du territoire canadien.",
  aspects: [{aspect: "Relations fédérales-provinciales"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "aanb_manitoba.jpg", source: "Adapté de RÉCIT de l'univers social, Le territoire du Dominion du Canada en 1870."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "aanb_manitoba.jpg", source: "Récitus."}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "La création de la province du Manitoba.",
- updatedAt: "2026-06-30T01:20:34.977Z",
- _imgs: ["aanb_manitoba.jpg"]
+ updatedAt: "2026-07-14T14:36:11.365Z"
 },
 {
  id: "Q588",
