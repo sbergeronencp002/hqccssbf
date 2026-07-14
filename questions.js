@@ -10832,7 +10832,7 @@ const QUESTIONS = [
  soustag: "Conséquence",
  enonce: "Indiquez une conséquence du soulèvement de la rivière Rouge sur l'organisation du territoire canadien.",
  aspects: [{aspect: "Relations fédérales-provinciales"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "aanb_manitoba.jpg", source: "Récitus."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "aanb_manitoba.jpg", source: "Adapté de RÉCIT de l'univers social, Le territoire du Dominion du Canada en 1870."}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "La création de la province du Manitoba.",
  updatedAt: "2026-06-30T01:20:34.977Z",
