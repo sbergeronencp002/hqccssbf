@@ -1230,7 +1230,7 @@ const REGLETTES = {
 "Q689": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q690": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q691": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
-"Q692": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]}
+"Q692": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1563,8 +1563,7 @@ const IMAGE_DB = {
 "bataille_crete_vimy.jpg": {src: "images/bataille_crete_vimy.jpg", w: 1200, h: 800},
 "statut_de_westminster.jpg": {src: "images/statut_de_westminster.jpg", w: 1200, h: 800},
 "droit_de_vote_femmes_canada_1918.jpg": {src: "images/droit_de_vote_femmes_canada_1918.jpg", w: 1200, h: 800},
-"bataille_caen_ww2.jpg": {src: "images/bataille_caen_ww2.jpg", w: 1200, h: 960},
-"droit_de_vote_femmes_quebec_1940.jpg": {src: "images/droit_de_vote_femmes_quebec_1940.jpg"}
+"bataille_caen_ww2.jpg": {src: "images/bataille_caen_ww2.jpg", w: 1200, h: 960}
 }
 
 const QUESTIONS = [
@@ -12457,15 +12456,15 @@ const QUESTIONS = [
 {
  id: "Q692",
  niveau: 4,
- oi: "Situer dans le temps",
+ oi: "Déterminer des causes et des conséquences",
  periode: "P6 — 1896 – 1945",
- points: 1,
- soustag: "Ligne du temps",
- enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
- aspects: [{aspect: "Luttes des femmes"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "droit_de_vote_femmes_quebec_1940.jpg", soustitre: "Octroi du droit de vote aux Québécoises", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}],
- reponse: {type: "image", ref: "ligne_1890-1950.png"},
- guide: "C - 1940.",
- updatedAt: "2026-07-14T23:34:02.685Z"
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une raison pour laquelle des intellectuels nationalistes fondent la revue L’Action française en 1917.",
+ aspects: [{aspect: "Clérico-nationalisme"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Notre action doit éveiller chez les Canadiens français la conscience de leurs intérêts, fortifier leur volonté et les préparer à travailler au relèvement de leur nationalité. »", source: "Adapté de Lionel Groulx, « Pour l’Action française », dans Dix ans d’Action française, Montréal, Bibliothèque de l’Action française, 1926, p. 44-45."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Pour défendre les intérêts des Canadiens français.\nPour promouvoir le nationalisme canadien-français.\nPour assurer la survivance de la nation canadienne-française.",
+ updatedAt: "2026-07-14T23:39:20.900Z"
 }
 ]
