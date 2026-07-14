@@ -935,7 +935,7 @@ const REGLETTES = {
 "Q514": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q515": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q516": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
-"Q517": {colonnes: ["1 point", "0 point"], niveaux: [{desc: "L'élève situe les faits dans le temps.", pts: 1}, {desc: "L'élève ne situe pas les faits dans le temps.", pts: 0}], oi: "Situer dans le temps"},
+"Q517": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q518": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]},
 "Q519": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
 "Q520": {
@@ -9730,19 +9730,18 @@ const QUESTIONS = [
  _imgs: ["metis_deuxieme_soulevement_batoche.jpg", "ligne_1845-1890.png"]
 },
 {
- aspects: [{aspect: "Première phase d'industrialisation"}],
- documents: [{cols: [{ref: "legalisation_syndicat_canada.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", soustitre: "Légalisation des syndicats au Canada", titre: "Document A"}], type: "textes"}],
- enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
- guide: "B - 1872",
  id: "Q517",
  niveau: 4,
  oi: "Situer dans le temps",
  periode: "P5 — 1840 – 1896",
  points: 1,
- reponse: {ref: "ligne_1845-1890.png", type: "image"},
  soustag: "Ligne du temps",
- updatedAt: "2026-06-22T12:24:22.574Z",
- _imgs: ["legalisation_syndicat_canada.jpg", "ligne_1845-1890.png"]
+ enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
+ aspects: [{aspect: "Première phase d'industrialisation"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "legalisation_syndicat_canada.jpg", soustitre: "Légalisation des syndicats au Canada", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}],
+ reponse: {type: "image", ref: "ligne_1845-1890.png"},
+ guide: "B - 1872",
+ updatedAt: "2026-07-14T12:03:48.249Z"
 },
 {
  id: "Q518",
