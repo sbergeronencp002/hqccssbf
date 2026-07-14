@@ -539,6 +539,8 @@ function updatePeriodes() {
   const periodes = PERIODES_PAR_NIVEAU[niveau] || [];
   const sel = document.getElementById('q-periode');
   sel.innerHTML = periodes.map(p => `<option value="${p}">${p}</option>`).join('');
+  const defaultPeriode = periodes.find(p => p.startsWith('P6'));
+  if (defaultPeriode) sel.value = defaultPeriode;
   updateAspects();
 }
 
