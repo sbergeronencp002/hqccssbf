@@ -9796,7 +9796,7 @@ const QUESTIONS = [
   {type: "textes", cols: [{titre: "Document C", texte: "« La nouvelle constitution accorde aux Canadiens français une influence politique inférieure à celle à laquelle leur population leur donne droit. »", auteur: "Louis-Hippolyte La Fontaine", source: "Adapté de Louis-Hippolyte La Fontaine, discours politiques, années 1840."}]}
  ],
  reponse: {type: "lignes", nombre: 3},
- guide: "Louis-Hippolyte La Fontaine s'oppose à l'Acte d'Union puisqu'il réduit l'influence politique des Canadiens français (la différence), alors que Lord Durham et Lord Sydenham y sont favorable (la similitude).",
+ guide: "Louis-Hippolyte La Fontaine s'oppose à l'Acte d'Union puisqu'il réduit l'influence politique des Canadiens français (la différence), alors que Lord Durham et Lord Sydenham y sont favorable",
  updatedAt: "2026-06-22T18:14:58.721Z"
 },
 {
@@ -9851,7 +9851,7 @@ const QUESTIONS = [
  enonce: "À partir des documents A et B, indiquez un changement concernant la représentation politique des habitants du Bas-Canada entre 1791 et 1840.",
  aspects: [{aspect: "Acte d'Union"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document A", ref: "org_pol_1791_acte_const.png", soustitre: "Organisation politique du Haut-Canada et du Bas-Canada entre 1791 et 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", auteur: ""}]},
+  {type: "textes", cols: [{titre: "Document A", ref: "org_pol_1791_acte_const.png", soustitre: "Organisation politique avant 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]},
   {type: "textes", cols: [{titre: "Document B", ref: "org_pol_1840_acte_union.png", soustitre: "Organisation politique de la Province du Canada à partir de 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", auteur: ""}]}
  ],
  reponse: {type: "lignes", nombre: 3},
