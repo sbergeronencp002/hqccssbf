@@ -933,7 +933,7 @@ const REGLETTES = {
 "Q512": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
 "Q513": {colonnes: ["1 point", "0 point"], niveaux: [{desc: "L'élève situe les faits dans le temps.", pts: 1}, {desc: "L'élève ne situe pas les faits dans le temps.", pts: 0}], oi: "Situer dans le temps"},
 "Q514": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
-"Q515": {colonnes: ["1 point", "0 point"], niveaux: [{desc: "L'élève situe les faits dans le temps.", pts: 1}, {desc: "L'élève ne situe pas les faits dans le temps.", pts: 0}], oi: "Situer dans le temps"},
+"Q515": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q516": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q517": {colonnes: ["1 point", "0 point"], niveaux: [{desc: "L'élève situe les faits dans le temps.", pts: 1}, {desc: "L'élève ne situe pas les faits dans le temps.", pts: 0}], oi: "Situer dans le temps"},
 "Q518": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]},
@@ -9701,19 +9701,18 @@ const QUESTIONS = [
  updatedAt: "2026-07-14T11:59:05.264Z"
 },
 {
- aspects: [{aspect: "Relations fédérales-provinciales"}],
- documents: [{cols: [{ref: "metis_premier_soulevement_fort_garry.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", soustitre: "Résistance métisse à Rivière-Rouge", titre: "Document A"}], type: "textes"}],
- enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
- guide: "B - 1869-1870",
  id: "Q515",
  niveau: 4,
  oi: "Situer dans le temps",
  periode: "P5 — 1840 – 1896",
  points: 1,
- reponse: {ref: "ligne_1845-1890.png", type: "image"},
  soustag: "Ligne du temps",
- updatedAt: "2026-06-22T12:04:11.416Z",
- _imgs: ["metis_premier_soulevement_fort_garry.jpg", "ligne_1845-1890.png"]
+ enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
+ aspects: [{aspect: "Relations fédérales-provinciales"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "metis_premier_soulevement_fort_garry.jpg", soustitre: "Résistance métisse à Rivière-Rouge", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}],
+ reponse: {type: "image", ref: "ligne_1845-1890.png"},
+ guide: "B - 1869-1870",
+ updatedAt: "2026-07-14T11:59:51.164Z"
 },
 {
  id: "Q516",
