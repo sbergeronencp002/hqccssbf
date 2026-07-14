@@ -121,6 +121,36 @@ const EX_ASPECT_REPEAT_BY_PERIODE = {
   }
 };
 
+// Scénarios propres à une période ET à l'OI favorite choisie par l'enseignant : ajustent
+// la distribution de base (cibles fixes et/ou nombre de slots) pour cette combinaison
+// précise, essayés AVANT la dégradation générique habituelle (du plus ambitieux au repli
+// explicite sur la base, dans l'ordre du tableau). `extraSlots` ajoute des occurrences
+// supplémentaires à un aspect déjà répétable (voir EX_ASPECT_REPEAT_BY_PERIODE) quand la
+// cible visée dépasse le nombre de slots de base.
+//
+// P1 : Causes et Différences n'ont chacune que 2 sous-tags distincts dans les données de
+// cette période (« Cause »/« Conséquence » pour l'une, « Convergence – 2 acteurs »/
+// « Position – 3 acteurs » pour l'autre) — un 3e niveau y est donc mathématiquement
+// impossible tant que ces sous-tags ne sont pas enrichis (admin.html), quel que soit le
+// budget. Le niveau ambitieux reste listé ci-dessous : il échoue proprement et retombe
+// sur la base (repli explicite `{}`) plutôt que d'être retiré — si un 3e sous-tag est
+// ajouté un jour, il se met à fonctionner sans aucun changement de code.
+const EX_FAVORI_SCENARIOS_BY_PERIODE = {
+  'P1 — Des origines à 1608': {
+    'Déterminer des causes et des conséquences': [
+      { targets: { 'Déterminer des causes et des conséquences': 3, 'Établir des faits': 4 } },
+      { targets: {} }
+    ],
+    'Dégager des différences et des similitudes': [
+      { targets: { 'Dégager des différences et des similitudes': 3, 'Établir des faits': 4 } },
+      { targets: {} }
+    ],
+    'Établir des liens de causalité': [
+      { targets: { 'Établir des liens de causalité': 3 }, extraSlots: { 'Rapports sociaux chez les Autochtones': 1 } }
+    ]
+  }
+};
+
 // Paliers de dégradation des cibles fixes, du plus ambitieux (valeurs de `targetMap`
 // telles quelles) au plus permissif (1 pour chacune — en dessous, la variété générale
 // garantit déjà au moins une occurrence, donc 1 est le plancher utile).
@@ -505,66 +535,86 @@ function exReorderNoAdjacentOi(list) {
 //   rng         : générateur pseudo-aléatoire optionnel (tests reproductibles)
 function exGenererExamen({ questions, periode, aspects, oiList, favoriOi, maxPoints = 25, rng }) {
   const pool = questions.filter(q => q.periode === periode);
-  const slots = exBuildAspectSlots(pool, aspects, EX_ASPECT_REPEAT_BY_PERIODE[periode]);
-
-  // OI réellement atteignables dans cette période : une OI absente de tout candidat
-  // valide pour un slot (ex. « Déterminer des changements et des continuités » en P1, la
-  // toute première période du programme) ne peut évidemment pas faire partie d'une
-  // exigence de variété ni d'une cible fixe — sinon échec garanti à chaque tentative.
-  // Une période peut aussi exclure explicitement certaines OI de la variété générale
-  // (EX_OI_VARIETY_EXCLUDE_BY_PERIODE) au profit d'une distribution ciblée.
-  const availableOis = new Set();
-  slots.forEach(s => {
-    const slotKey = s.aspects.slice().sort().join('|');
-    pool.forEach(q => {
-      const qa = exAspectsOf(q).filter(a => aspects.includes(a));
-      if (qa.length && qa.slice().sort().join('|') === slotKey) availableOis.add(q.oi);
-    });
-  });
+  const baseAspectRepeat = EX_ASPECT_REPEAT_BY_PERIODE[periode] || {};
   const varietyExclude = new Set(EX_OI_VARIETY_EXCLUDE_BY_PERIODE[periode] || []);
-  const effectiveOiList = oiList.filter(oi => availableOis.has(oi) && !varietyExclude.has(oi));
-
   // Cibles fixes globales (EX_OI_FIXED_TARGET) + cibles propres à cette période
   // (EX_OI_FIXED_TARGET_BY_PERIODE) — ex. P1 où l'enseignant a choisi une distribution
   // d'OI précise à la place de la variété générale habituelle.
-  const periodeFixedTarget = { ...EX_OI_FIXED_TARGET, ...(EX_OI_FIXED_TARGET_BY_PERIODE[periode] || {}) };
+  const baseFixedTarget = { ...EX_OI_FIXED_TARGET, ...(EX_OI_FIXED_TARGET_BY_PERIODE[periode] || {}) };
 
-  const favoriLevels = favoriOi ? exFavoriTargetLevels(favoriOi) : [0];
-  const fixedLevels = exFixedTargetLevels(periodeFixedTarget).map(level => {
-    const filtered = {};
-    Object.keys(level).forEach(oi => { if (availableOis.has(oi)) filtered[oi] = level[oi]; });
-    return filtered;
-  });
   let attemptsTotal = 0;
   let appliedTarget = 0;
-  let appliedFixedTargets = fixedLevels[0];
+  let appliedFixedTargets = baseFixedTarget;
+
+  // Construit les slots + l'OI atteignable pour un jeu (aspectRepeat, fixedTargetsRaw)
+  // donné, puis tente exTryBuild jusqu'à EX_ATTEMPTS_PER_LEVEL fois.
+  function tryLevel(aspectRepeat, fixedTargetsRaw, favoriOiForBuild, favoriTargetForBuild) {
+    const slots = exBuildAspectSlots(pool, aspects, aspectRepeat);
+    const availableOis = new Set();
+    slots.forEach(s => {
+      const slotKey = s.aspects.slice().sort().join('|');
+      pool.forEach(q => {
+        const qa = exAspectsOf(q).filter(a => aspects.includes(a));
+        if (qa.length && qa.slice().sort().join('|') === slotKey) availableOis.add(q.oi);
+      });
+    });
+    const effectiveOiList = oiList.filter(oi => availableOis.has(oi) && !varietyExclude.has(oi));
+    const fixedTargets = {};
+    Object.keys(fixedTargetsRaw).forEach(oi => { if (availableOis.has(oi)) fixedTargets[oi] = fixedTargetsRaw[oi]; });
+
+    for (let attempt = 0; attempt < EX_ATTEMPTS_PER_LEVEL; attempt++) {
+      attemptsTotal++;
+      const result = exTryBuild(pool, slots, effectiveOiList, favoriOiForBuild, favoriTargetForBuild, fixedTargets, maxPoints, rng);
+      if (result) return result;
+    }
+    return null;
+  }
+
+  function finalize(result) {
+    // Ordonne les questions selon l'ordre canonique des aspects (ordre du programme),
+    // puis corrige les OI consécutives identiques (voir exReorderNoAdjacentOi).
+    const byAspectOrder = result.selected.slice().sort((a, b) => {
+      const ia = Math.min(...exAspectsOf(a).map(x => aspects.indexOf(x)).filter(i => i >= 0));
+      const ib = Math.min(...exAspectsOf(b).map(x => aspects.indexOf(x)).filter(i => i >= 0));
+      return ia - ib;
+    });
+    const selected = exReorderNoAdjacentOi(byAspectOrder);
+    return {
+      ok: true, selected, points: result.points, attempts: attemptsTotal,
+      favoriTargetApplied: appliedTarget, fixedTargetsApplied: appliedFixedTargets
+    };
+  }
+
+  // 1) Scénarios propres à (période, favori) — voir EX_FAVORI_SCENARIOS_BY_PERIODE.
+  // Traités comme des cibles fixes pures (favoriOi/favoriTarget désactivés pour la
+  // construction elle-même : la cible de l'OI favorite est déjà encodée dans `targets`).
+  const favoriScenarios = ((EX_FAVORI_SCENARIOS_BY_PERIODE[periode] || {})[favoriOi]) || [];
+  for (const scenario of favoriScenarios) {
+    const aspectRepeat = { ...baseAspectRepeat };
+    Object.keys(scenario.extraSlots || {}).forEach(a => {
+      aspectRepeat[a] = (aspectRepeat[a] || 1) + scenario.extraSlots[a];
+    });
+    const fixedTargetsRaw = { ...baseFixedTarget, ...(scenario.targets || {}) };
+    appliedFixedTargets = fixedTargetsRaw;
+    const result = tryLevel(aspectRepeat, fixedTargetsRaw, null, 0);
+    if (result) return finalize(result);
+  }
+
+  // 2) Repli générique habituel : dégradation des cibles fixes de base + de l'OI
+  // favorite (préférence de fond, indépendante des scénarios ci-dessus).
+  const favoriLevels = favoriOi ? exFavoriTargetLevels(favoriOi) : [0];
+  const fixedLevels = exFixedTargetLevels(baseFixedTarget);
   // L'OI favorite est le choix explicite de l'enseignant pour CET examen ; les cibles
   // fixes sont une préférence de fond. En cas de conflit de budget entre les deux
   // (ex. une OI favorite dont tous les candidats coûtent 3 points + une cible fixe à 2),
   // on assouplit d'abord les cibles fixes avant de sacrifier davantage l'OI favorite —
   // d'où la boucle favori à l'extérieur, cibles fixes à l'intérieur.
   for (const favoriTarget of favoriLevels) {
-    for (const fixedTargets of fixedLevels) {
+    for (const fixedTargetsRaw of fixedLevels) {
       appliedTarget = favoriTarget;
-      appliedFixedTargets = fixedTargets;
-      for (let attempt = 0; attempt < EX_ATTEMPTS_PER_LEVEL; attempt++) {
-        attemptsTotal++;
-        const result = exTryBuild(pool, slots, effectiveOiList, favoriOi, favoriTarget, fixedTargets, maxPoints, rng);
-        if (result) {
-          // Ordonne les questions selon l'ordre canonique des aspects (ordre du programme),
-          // puis corrige les OI consécutives identiques (voir exReorderNoAdjacentOi).
-          const byAspectOrder = result.selected.slice().sort((a, b) => {
-            const ia = Math.min(...exAspectsOf(a).map(x => aspects.indexOf(x)).filter(i => i >= 0));
-            const ib = Math.min(...exAspectsOf(b).map(x => aspects.indexOf(x)).filter(i => i >= 0));
-            return ia - ib;
-          });
-          const selected = exReorderNoAdjacentOi(byAspectOrder);
-          return {
-            ok: true, selected, points: result.points, attempts: attemptsTotal,
-            favoriTargetApplied: appliedTarget, fixedTargetsApplied: appliedFixedTargets
-          };
-        }
-      }
+      appliedFixedTargets = fixedTargetsRaw;
+      const result = tryLevel(baseAspectRepeat, fixedTargetsRaw, favoriOi, favoriTarget);
+      if (result) return finalize(result);
     }
   }
   return {
@@ -666,6 +716,6 @@ if (typeof module !== 'undefined' && module.exports) {
     exReorderNoAdjacentOi, exHasDocCitation, exOrderDocItems, exFixedTargetLevels,
     exFavoriTargetLevels, exTryBuild, exEffectiveHardCap, EX_OI_HARD_CAP_RELAX,
     exBuildAspectSlots, EX_OI_FIXED_TARGET_BY_PERIODE, EX_OI_VARIETY_EXCLUDE_BY_PERIODE,
-    EX_ASPECT_REPEAT_BY_PERIODE
+    EX_ASPECT_REPEAT_BY_PERIODE, EX_FAVORI_SCENARIOS_BY_PERIODE
   };
 }
