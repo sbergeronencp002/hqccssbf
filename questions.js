@@ -1222,7 +1222,8 @@ const REGLETTES = {
 "Q681": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q682": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q683": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]},
-"Q684": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]}
+"Q684": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
+"Q685": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -12325,5 +12326,19 @@ const QUESTIONS = [
  reponse: {type: "image", ref: "ligne_1890-1950.png"},
  guide: "A - 1899 à 1902.",
  updatedAt: "2026-07-14T17:39:03.887Z"
+},
+{
+ id: "Q685",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Conséquence",
+ enonce: "Indiquez une conséquence du soutien militaire du Canada à la Grande-Bretagne sur la vie politique canadienne au début du XXᵉ siècle.",
+ aspects: [{aspect: "Statut du Canada dans l'Empire britannique"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« La guerre des Boers ravive au Canada les oppositions entre ceux qui souhaitent renforcer les liens avec l’Empire britannique et ceux qui réclament davantage d’autonomie. »", source: "Adapté de Robert Comeau et Luc Desrochers, Le Devoir : un journal indépendant (1910-1995), Presses de l’Université du Québec, 1996."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Le soutien militaire à la Grande-Bretagne provoque des divisions entre les impérialistes et les nationalistes canadiens-français.\nIl accentue les tensions entre les Canadiens anglais et les Canadiens français.\nIl contribue à diviser la population canadienne sur la participation aux guerres de l’Empire britannique.",
+ updatedAt: "2026-07-14T17:51:14.320Z"
 }
 ]
