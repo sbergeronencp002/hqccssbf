@@ -49,14 +49,40 @@ function exFavoriTargetLevels(favoriOi) {
 const EX_OI_HARD_CAP = {
   'Mettre en relation des faits': 2,
   'Établir des faits': 2,
-  'Situer dans le temps': 2
+  'Situer dans le temps': 2,
+  "Situer dans l'espace": 1
 };
 
+// OI dont le nombre d'occurrences est fixé une fois pour toutes (pas juste un plafond,
+// une cible exacte), indépendamment de l'OI favorite choisie par l'enseignant. Reste
+// active par défaut, mais peut dégrader (voir exFixedTargetLevels) si elle entre en
+// conflit de budget avec la cible de l'OI favorite — l'OI favorite est le choix explicite
+// de l'enseignant pour CET examen, elle passe donc avant cette préférence de fond.
+const EX_OI_FIXED_TARGET = { 'Déterminer des changements et des continuités': 2 };
+
+// Paliers de dégradation des cibles fixes, du plus ambitieux (valeurs de EX_OI_FIXED_TARGET
+// telles quelles) au plus permissif (1 pour chacune — en dessous, la variété générale
+// garantit déjà au moins une occurrence, donc 1 est le plancher utile).
+function exFixedTargetLevels() {
+  const keys = Object.keys(EX_OI_FIXED_TARGET);
+  if (!keys.length) return [{}];
+  const maxTarget = Math.max(...keys.map(k => EX_OI_FIXED_TARGET[k]));
+  const levels = [];
+  for (let t = maxTarget; t >= 1; t--) {
+    const level = {};
+    keys.forEach(k => { level[k] = Math.min(EX_OI_FIXED_TARGET[k], t); });
+    levels.push(level);
+  }
+  return levels;
+}
+
 // Répartition cible du nombre de questions par OI : 1 de base pour chacune (garantit la
-// variété), et exactement `favoriTarget` pour l'OI favorite si celle-ci dépasse 1.
-function exComputeOiQuota(oiList, favoriOi, favoriTarget) {
+// variété), les cibles fixes (`fixedTargets`), et exactement `favoriTarget` pour l'OI
+// favorite si celle-ci dépasse 1.
+function exComputeOiQuota(oiList, favoriOi, favoriTarget, fixedTargets) {
   const quota = {};
   oiList.forEach(oi => { quota[oi] = 1; });
+  Object.keys(fixedTargets).forEach(oi => { quota[oi] = fixedTargets[oi]; });
   if (favoriOi && oiList.includes(favoriOi) && favoriTarget > 1) {
     quota[favoriOi] = favoriTarget;
   }
@@ -64,11 +90,13 @@ function exComputeOiQuota(oiList, favoriOi, favoriTarget) {
 }
 
 // Plafond effectif pour une OI donnée dans cette tentative : le plus contraignant entre
-// EX_OI_HARD_CAP et la cible de l'OI favorite (si `oi` est l'OI favorite).
-function exOiCap(oi, favoriOi, favoriTarget) {
+// EX_OI_HARD_CAP, sa cible fixe (`fixedTargets`) et la cible de l'OI favorite (si `oi`
+// est l'OI favorite).
+function exOiCap(oi, favoriOi, favoriTarget, fixedTargets) {
   const hard = EX_OI_HARD_CAP[oi];
+  const fixed = fixedTargets[oi];
   const favori = (oi === favoriOi && favoriTarget > 0) ? favoriTarget : Infinity;
-  return Math.min(hard != null ? hard : Infinity, favori);
+  return Math.min(hard != null ? hard : Infinity, fixed != null ? fixed : Infinity, favori);
 }
 
 function exShuffle(arr, rng) {
@@ -131,65 +159,112 @@ function exOtherMinCost(aspects, covered, candidateAspects, minCostByAspect) {
   return sum;
 }
 
-function exTryBuild(questions, aspects, oiList, favoriOi, favoriTarget, maxPoints, rng) {
+// Construction en deux phases :
+//   1) satisfaire d'abord les OI à cible exacte (fixes + favorite, l'OI la plus
+//      contrainte — le moins d'aspects disponibles — en premier), en choisissant leurs
+//      candidats au coût marginal le plus bas (le plus proche du plancher de l'aspect) ;
+//   2) glouton MRV habituel (variété/plafonds/richesse documentaire) pour le reste.
+// Sans cette réservation préalable, deux OI à cible coûteuse peuvent se marcher dessus
+// sur leurs aspects communs lors d'un glouton à une seule passe et manquer chacune leur
+// cible alors qu'une combinaison à budget suffisant existe (aspects propres à chacune,
+// moins chers) — observé en pratique en combinant une OI à cible fixe et une OI favorite
+// dont tous les candidats coûtent 3 points.
+function exTryBuild(questions, aspects, oiList, favoriOi, favoriTarget, fixedTargets, maxPoints, rng) {
   const byAspect = new Map(aspects.map(a => [a, questions.filter(q => exAspectsOf(q).includes(a))]));
   for (const a of aspects) {
     if (!byAspect.get(a).length) return null; // aspect sans aucun candidat : impossible
   }
   const minCostByAspect = exMinCostByAspect(byAspect);
 
-  // MRV (Minimum Remaining Values) : traiter en premier les aspects les plus
-  // rares réduit le risque d'échec en fin de construction ; léger mélange
-  // pour varier les examens générés d'une fois à l'autre.
-  const order = exShuffle(aspects, rng).sort((a, b) => byAspect.get(a).length - byAspect.get(b).length);
-
-  const oiRemaining = exComputeOiQuota(oiList, favoriOi, favoriTarget);
-  const oiCounts = {};
   const covered = new Set();
   const usedIds = new Set();
   const usedOiTag = new Set(); // "OI||clé de diversité" déjà pris — jamais deux fois la même pour une OI
+  const oiCounts = {};
   const selected = [];
   let points = 0;
+
+  function baseFilterOk(q) {
+    if (usedIds.has(q.id)) return false;
+    const qAspects = exAspectsOf(q);
+    if (!qAspects.every(a => !covered.has(a))) return false; // conflit : un aspect du candidat déjà couvert
+    // Une question ne doit couvrir qu'un seul aspect du programme à la fois (jamais deux
+    // d'un coup) : sinon le nombre de questions finales tomberait sous le nombre d'aspects.
+    if (qAspects.filter(a => aspects.includes(a)).length > 1) return false;
+    const qKey = exDiversityKey(q);
+    if (qKey && usedOiTag.has(q.oi + '||' + qKey)) return false;
+    return true;
+  }
+
+  function commit(q) {
+    selected.push(q);
+    usedIds.add(q.id);
+    exAspectsOf(q).forEach(a => covered.add(a));
+    const key = exDiversityKey(q);
+    if (key) usedOiTag.add(q.oi + '||' + key);
+    oiCounts[q.oi] = (oiCounts[q.oi] || 0) + 1;
+    points += q.points;
+  }
+
+  // ── PHASE 1 : cibles exactes (fixes + favorite) ──────────────────────────────
+  const targets = { ...fixedTargets };
+  if (favoriOi && favoriTarget > 0) targets[favoriOi] = favoriTarget;
+  const availCount = oi => aspects.filter(a => byAspect.get(a).some(q => q.oi === oi)).length;
+  const targetOis = Object.keys(targets).sort((a, b) => availCount(a) - availCount(b));
+
+  for (const oi of targetOis) {
+    while ((oiCounts[oi] || 0) < targets[oi]) {
+      const eligibleAspects = aspects.filter(a => !covered.has(a) && byAspect.get(a).some(q => q.oi === oi));
+      const scored = [];
+      for (const a of eligibleAspects) {
+        for (const q of byAspect.get(a)) {
+          if (q.oi !== oi || !baseFilterOk(q)) continue;
+          const otherMin = exOtherMinCost(aspects, covered, exAspectsOf(q), minCostByAspect);
+          if (points + q.points + otherMin > maxPoints) continue;
+          scored.push({ q, marginal: q.points - minCostByAspect[a], jitter: (rng || Math.random)() });
+        }
+      }
+      if (!scored.length) return null; // cible infaisable pour cette OI dans ce budget
+      scored.sort((a, b) => (a.marginal - b.marginal) || (a.jitter - b.jitter));
+      commit(scored[0].q);
+    }
+  }
+
+  // ── PHASE 2 : glouton MRV habituel pour les aspects restants ─────────────────
+  const oiRemaining = exComputeOiQuota(oiList, favoriOi, favoriTarget, fixedTargets);
+  Object.keys(oiCounts).forEach(oi => { oiRemaining[oi] = (oiRemaining[oi] || 0) - oiCounts[oi]; });
+
+  const remainingAspects = aspects.filter(a => !covered.has(a));
+  const order = exShuffle(remainingAspects, rng).sort((a, b) => byAspect.get(a).length - byAspect.get(b).length);
 
   for (const aspect of order) {
     if (covered.has(aspect)) continue;
 
-    let candidates = byAspect.get(aspect).filter(q => {
-      if (usedIds.has(q.id)) return false;
-      const qAspects = exAspectsOf(q);
-      if (!qAspects.every(a => !covered.has(a))) return false; // conflit : un des aspects du candidat est déjà couvert
-      // Une question ne doit couvrir qu'un seul aspect du programme à la fois (jamais
-      // deux d'un coup) : sinon le nombre de questions finales tomberait sous le nombre
-      // d'aspects, ce qui n'est pas ce qui est attendu (une question par aspect).
-      if (qAspects.filter(a => aspects.includes(a)).length > 1) return false;
-      const qKey = exDiversityKey(q);
-      if (qKey && usedOiTag.has(q.oi + '||' + qKey)) return false;
-      if ((oiCounts[q.oi] || 0) >= exOiCap(q.oi, favoriOi, favoriTarget)) return false; // plafond OI atteint
-      const otherMin = exOtherMinCost(aspects, covered, qAspects, minCostByAspect);
+    const candidates = byAspect.get(aspect).filter(q => {
+      if (!baseFilterOk(q)) return false;
+      if ((oiCounts[q.oi] || 0) >= exOiCap(q.oi, favoriOi, favoriTarget, fixedTargets)) return false; // plafond OI atteint
+      const otherMin = exOtherMinCost(aspects, covered, exAspectsOf(q), minCostByAspect);
       return points + q.points + otherMin <= maxPoints;
     });
     if (!candidates.length) return null;
 
     const scored = candidates.map(q => ({
       q,
-      // Le bonus est proportionnel au déficit de quota de l'OI du candidat (et non
-      // un simple drapeau « encore du quota ? ») : au début, l'OI favorite a un
-      // déficit bien plus élevé que les autres (quota renforcé) et tire donc
-      // fortement la sélection tant qu'elle n'a pas été assez utilisée.
-      score: Math.max(0, oiRemaining[q.oi]) * 4 + exDocRichness(q) + (rng || Math.random)() * 3
+      // Le bonus est proportionnel au déficit de quota de l'OI du candidat (et non un
+      // simple drapeau « encore du quota ? ») : les OI déjà comblées en phase 1 ont un
+      // déficit nul ou négatif ici et ne sont donc plus artificiellement favorisées.
+      // Léger malus au coût en points : à budget serré (cibles fixes/favorite déjà
+      // engagées en phase 1), préférer le candidat le moins cher entre deux aspects
+      // équivalents laisse plus de marge pour les aspects encore à traiter plus loin
+      // dans la boucle — sans ce malus, un candidat plus cher mais mieux noté sur la
+      // richesse documentaire pouvait grignoter la marge nécessaire à un aspect ultérieur.
+      score: Math.max(0, oiRemaining[q.oi] || 0) * 4 + exDocRichness(q) - q.points * 3 + (rng || Math.random)() * 3
     }));
     scored.sort((a, b) => b.score - a.score);
     const topN = scored.slice(0, Math.min(3, scored.length));
     const picked = topN[Math.floor((rng || Math.random)() * topN.length)].q;
 
-    selected.push(picked);
-    usedIds.add(picked.id);
-    exAspectsOf(picked).forEach(a => covered.add(a));
-    const pickedKey = exDiversityKey(picked);
-    if (pickedKey) usedOiTag.add(picked.oi + '||' + pickedKey);
-    oiCounts[picked.oi] = (oiCounts[picked.oi] || 0) + 1;
-    points += picked.points;
-    oiRemaining[picked.oi]--;
+    commit(picked);
+    if (oiRemaining[picked.oi] != null) oiRemaining[picked.oi]--;
   }
 
   if (covered.size !== aspects.length) return null;
@@ -198,6 +273,10 @@ function exTryBuild(questions, aspects, oiList, favoriOi, favoriTarget, maxPoint
   if (new Set(selected.map(q => q.oi)).size < oiList.length) return null; // variété OI non atteinte
   // L'OI favorite doit apparaître exactement `favoriTarget` fois (pas juste « au moins »).
   if (favoriOi && favoriTarget > 0 && oiCounts[favoriOi] !== favoriTarget) return null;
+  // Les OI à cible fixe doivent apparaître exactement ce nombre de fois, toujours.
+  for (const oi of Object.keys(fixedTargets)) {
+    if ((oiCounts[oi] || 0) !== fixedTargets[oi]) return null;
+  }
 
   return { selected, points };
 }
@@ -243,24 +322,37 @@ function exReorderNoAdjacentOi(list) {
 //   rng         : générateur pseudo-aléatoire optionnel (tests reproductibles)
 function exGenererExamen({ questions, periode, aspects, oiList, favoriOi, maxPoints = 25, rng }) {
   const pool = questions.filter(q => q.periode === periode);
-  const levels = favoriOi ? exFavoriTargetLevels(favoriOi) : [0];
+  const favoriLevels = favoriOi ? exFavoriTargetLevels(favoriOi) : [0];
+  const fixedLevels = exFixedTargetLevels();
   let attemptsTotal = 0;
   let appliedTarget = 0;
-  for (const favoriTarget of levels) {
-    appliedTarget = favoriTarget;
-    for (let attempt = 0; attempt < EX_ATTEMPTS_PER_LEVEL; attempt++) {
-      attemptsTotal++;
-      const result = exTryBuild(pool, aspects, oiList, favoriOi, favoriTarget, maxPoints, rng);
-      if (result) {
-        // Ordonne les questions selon l'ordre canonique des aspects (ordre du programme),
-        // puis corrige les OI consécutives identiques (voir exReorderNoAdjacentOi).
-        const byAspectOrder = result.selected.slice().sort((a, b) => {
-          const ia = Math.min(...exAspectsOf(a).map(x => aspects.indexOf(x)).filter(i => i >= 0));
-          const ib = Math.min(...exAspectsOf(b).map(x => aspects.indexOf(x)).filter(i => i >= 0));
-          return ia - ib;
-        });
-        const selected = exReorderNoAdjacentOi(byAspectOrder);
-        return { ok: true, selected, points: result.points, attempts: attemptsTotal, favoriTargetApplied: appliedTarget };
+  let appliedFixedTargets = fixedLevels[0];
+  // L'OI favorite est le choix explicite de l'enseignant pour CET examen ; les cibles
+  // fixes sont une préférence de fond. En cas de conflit de budget entre les deux
+  // (ex. une OI favorite dont tous les candidats coûtent 3 points + une cible fixe à 2),
+  // on assouplit d'abord les cibles fixes avant de sacrifier davantage l'OI favorite —
+  // d'où la boucle favori à l'extérieur, cibles fixes à l'intérieur.
+  for (const favoriTarget of favoriLevels) {
+    for (const fixedTargets of fixedLevels) {
+      appliedTarget = favoriTarget;
+      appliedFixedTargets = fixedTargets;
+      for (let attempt = 0; attempt < EX_ATTEMPTS_PER_LEVEL; attempt++) {
+        attemptsTotal++;
+        const result = exTryBuild(pool, aspects, oiList, favoriOi, favoriTarget, fixedTargets, maxPoints, rng);
+        if (result) {
+          // Ordonne les questions selon l'ordre canonique des aspects (ordre du programme),
+          // puis corrige les OI consécutives identiques (voir exReorderNoAdjacentOi).
+          const byAspectOrder = result.selected.slice().sort((a, b) => {
+            const ia = Math.min(...exAspectsOf(a).map(x => aspects.indexOf(x)).filter(i => i >= 0));
+            const ib = Math.min(...exAspectsOf(b).map(x => aspects.indexOf(x)).filter(i => i >= 0));
+            return ia - ib;
+          });
+          const selected = exReorderNoAdjacentOi(byAspectOrder);
+          return {
+            ok: true, selected, points: result.points, attempts: attemptsTotal,
+            favoriTargetApplied: appliedTarget, fixedTargetsApplied: appliedFixedTargets
+          };
+        }
       }
     }
   }
@@ -360,6 +452,7 @@ if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     exComputeOiQuota, exGenererExamen, exBuildDocMap, exRemapTexte, exRemapTitre,
     exFlattenDocs, exDocRichness, exAspectsOf, exDiversityKey, exOiCap,
-    exReorderNoAdjacentOi, exHasDocCitation, exOrderDocItems
+    exReorderNoAdjacentOi, exHasDocCitation, exOrderDocItems, exFixedTargetLevels,
+    exFavoriTargetLevels, exTryBuild
   };
 }
