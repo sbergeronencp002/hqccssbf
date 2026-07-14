@@ -10105,7 +10105,7 @@ const QUESTIONS = [
  periode: "P5 — 1840 – 1896",
  points: 2,
  soustag: "Conséquence",
- enonce: "Indiquez une conséquence de l'alliance entre les réformistes du Canada-Est et du Canada-Ouest.",
+ enonce: "Indiquez une conséquence sur l'organisation politique de l'alliance entre les réformistes du Canada-Est et du Canada-Ouest.",
  aspects: [{aspect: "Gouvernement responsable"}],
  documents: [{type: "textes", cols: [{titre: "Document A", texte: "« En travaillant ensemble, les députés réformistes du Canada-Est et du Canada-Ouest réussissent à obtenir l'appui d'une majorité de représentants au sein de l'Assemblée législative. »", source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, tome 4, Septentrion, 1997."}]}],
  reponse: {type: "lignes", nombre: 2},
