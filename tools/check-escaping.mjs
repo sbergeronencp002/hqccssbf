@@ -22,7 +22,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const FILES = ['app.js', 'admin.html', 'documents.html', 'revision.html'];
+const FILES = ['app.js', 'admin.html', 'documents.html', 'revision.html', 'examen.html'];
 
 // Champs de données textuelles susceptibles de contenir du HTML saisi par un humain.
 const FIELDS = ['oi','titre','soustitre','texte','auteur','source','enonce','guide',

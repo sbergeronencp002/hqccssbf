@@ -61,7 +61,8 @@ self.addEventListener('fetch', e => {
     || url.pathname.endsWith('/contexte.js')
     || url.pathname.endsWith('/admin.html')
     || url.pathname.endsWith('/documents.html')
-    || url.pathname.endsWith('/revision.html');
+    || url.pathname.endsWith('/revision.html')
+    || url.pathname.endsWith('/examen.html');
   if (isNetworkFirst) {
     e.respondWith(
       fetch(e.request)
