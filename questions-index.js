@@ -1215,5 +1215,6 @@ const QUESTIONS = [
  updatedAt: "2026-07-13T16:02:27.622Z"
 },
 {id: "Q682", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Cause", aspects: [{aspect: "Statut du Canada dans l'Empire britannique"}], enonce: "Indiquez une raison pour laquelle le Canada participe aux guerres menées par l’Empire britannique au début du XXᵉ siècle.", updatedAt: "2026-07-14T17:24:26.420Z"},
-{id: "Q683", niveau: 4, oi: "Dégager des différences et des similitudes", periode: "P6 — 1896 – 1945", points: 2, soustag: "Divergence – 2 acteurs", aspects: [{aspect: "Statut du Canada dans l'Empire britannique"}], enonce: "Le document A présente le point de vue de deux acteurs. Sur quel point précis sont-ils en désaccord?", updatedAt: "2026-07-14T17:29:16.650Z"}
+{id: "Q683", niveau: 4, oi: "Dégager des différences et des similitudes", periode: "P6 — 1896 – 1945", points: 2, soustag: "Divergence – 2 acteurs", aspects: [{aspect: "Statut du Canada dans l'Empire britannique"}], enonce: "Le document A présente le point de vue de deux acteurs. Sur quel point précis sont-ils en désaccord?", updatedAt: "2026-07-14T17:29:16.650Z"},
+{id: "Q684", niveau: 4, oi: "Situer dans le temps", periode: "P6 — 1896 – 1945", points: 1, soustag: "Ligne du temps", aspects: [{aspect: "Statut du Canada dans l'Empire britannique"}], enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.", updatedAt: "2026-07-14T17:39:03.887Z"}
 ]
