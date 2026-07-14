@@ -9837,12 +9837,13 @@ const QUESTIONS = [
  enonce: "À partir des documents A et B, indiquez un changement concernant la représentation politique des habitants du Bas-Canada entre 1791 et 1840.",
  aspects: [{aspect: "Acte d'Union"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document A", ref: "org_pol_1791_acte_const.png", soustitre: "Organisation politique avant 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]},
-  {type: "textes", cols: [{titre: "Document B", ref: "org_pol_1840_acte_union.png", soustitre: "Organisation politique après 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}
+  {type: "textes", cols: [{titre: "Document A", ref: "org_pol_1791_acte_const.png", soustitre: "Organisation politique du Haut-Canada et du Bas-Canada entre 1791 et 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", auteur: ""}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "org_pol_1840_acte_union.png", soustitre: "Organisation politique de la Province du Canada à partir de 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", auteur: ""}]}
  ],
  reponse: {type: "lignes", nombre: 3},
  guide: "La représentation politique des Canadiens français diminue entre 1791 et 1840.\nLes Canadiens français sont majoritaires dans l'Assemblée du Bas-Canada en 1791, mais ne le sont plus après l'Union de 1840.\nEn 1840, les Canadiens français obtiennent le même nombre de députés que le Canada-Ouest malgré leur population plus nombreuse.",
- updatedAt: "2026-07-14T12:06:11.130Z"
+ updatedAt: "2026-06-22T18:39:13.657Z",
+ _imgs: ["org_pol_1791_acte_const.png", "org_pol_1840_acte_union.png"]
 },
 {
  id: "Q525",
@@ -10006,7 +10007,7 @@ const QUESTIONS = [
   {type: "textes", cols: [{titre: "Document B", texte: "« Les marchands de la colonie risquent de perdre un avantage important si les produits coloniaux ne sont plus favorisés sur le marché britannique. »", source: "Adapté d'une prise de position attribuée à John Molson."}]}
  ],
  reponse: {type: "lignes", nombre: 2},
- guide: "Ils sont en désaccord sur la fin des tarifs préférentiels accordés aux colonies.\nIls sont en désaccord sur l'adoption du libre-échange par le Royaume-Uni.",
+ guide: "La fin des tarifs préférentiels accordés aux colonies.\nL'adoption du libre-échange par le Royaume-Uni.",
  updatedAt: "2026-06-22T20:52:56.880Z"
 },
 {
