@@ -9728,10 +9728,10 @@ const QUESTIONS = [
  soustag: "Ligne du temps",
  enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
  aspects: [{aspect: "Première phase d'industrialisation"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "legalisation_syndicat_canada.jpg", soustitre: "Légalisation des syndicats au Canada", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "recitus_reseau_ferroviaire_1896.png", soustitre: "Légalisation des syndicats au Canada", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}],
  reponse: {type: "image", ref: "ligne_1845-1890.png"},
  guide: "B - 1872",
- updatedAt: "2026-07-14T12:05:27.818Z"
+ updatedAt: "2026-07-14T12:13:59.935Z"
 },
 {
  id: "Q518",
