@@ -94,7 +94,9 @@ function exMkRuns(line, font, size) {
 function exMkLine(line, font, size) {
   const { Paragraph, TextRun } = docx;
   if (line.startsWith('• ')) {
-    return new Paragraph({ indent: { left: 200 }, children: [new TextRun({ text: '• ', font, size }), ...exMkRuns(line.slice(2), font, size)] });
+    // Retrait en accolade (hanging indent) : si la puce s'étend sur 2 lignes, la 2ᵉ ligne
+    // s'aligne sous le texte (426) plutôt que sous la puce elle-même (426-142=284).
+    return new Paragraph({ indent: { left: 426, hanging: 142 }, children: [new TextRun({ text: '• ', font, size }), ...exMkRuns(line.slice(2), font, size)] });
   }
   return new Paragraph({ children: exMkRuns(line, font, size) });
 }
@@ -412,7 +414,9 @@ async function exDownloadQuestionnaire() {
       const { letterToNum } = EX_DOCMAP.byQuestion.get(q.id);
       const enonce = exRemapTexte(q.enonce || '', letterToNum);
       const lines = enonce.split('\n');
-      children.push(new Paragraph({ spacing: { before: 200 }, children: [new TextRun({ text: (idx + 1) + '.  ', font: 'Aptos', size: 24, bold: true }), ...exMkRuns(lines[0], 'Aptos', 24)] }));
+      // Retrait en accolade (hanging indent) : si l'énoncé s'étend sur 2 lignes, la 2ᵉ
+      // ligne s'aligne sous le texte plutôt que de revenir à la marge de gauche.
+      children.push(new Paragraph({ spacing: { before: 200 }, indent: { left: 284, hanging: 284 }, children: [new TextRun({ text: (idx + 1) + '.  ', font: 'Aptos', size: 24, bold: true }), ...exMkRuns(lines[0], 'Aptos', 24)] }));
       lines.slice(1).forEach(line => { if (line.trim()) children.push(exMkLine(line, 'Aptos', 24)); });
       children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
 
