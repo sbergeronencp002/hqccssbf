@@ -312,6 +312,7 @@ function exTryBuild(questions, slots, oiList, favoriOi, favoriTarget, fixedTarge
     return true;
   }
 
+  const slotKeyOf = new Map(); // q.id -> slot occupé, pour la phase 3 (maximisation du budget)
   function commit(q, slotKey) {
     selected.push(q);
     usedIds.add(q.id);
@@ -320,6 +321,7 @@ function exTryBuild(questions, slots, oiList, favoriOi, favoriTarget, fixedTarge
     if (key) usedOiTag.add(q.oi + '||' + key);
     oiCounts[q.oi] = (oiCounts[q.oi] || 0) + 1;
     points += q.points;
+    slotKeyOf.set(q.id, slotKey);
   }
 
   // ── PHASE 1 : cibles exactes (fixes + favorite) ──────────────────────────────
@@ -382,6 +384,46 @@ function exTryBuild(questions, slots, oiList, favoriOi, favoriTarget, fixedTarge
 
     commit(picked, slot.key);
     if (oiRemaining[picked.oi] != null) oiRemaining[picked.oi]--;
+  }
+
+  // ── PHASE 3 : maximiser le budget utilisé (viser maxPoints, jamais le dépasser) ──────
+  // La phase 1 privilégie le coût marginal le plus bas pour chaque cible — quand les
+  // aspects/OI sont presque tous « ciblés » (ex. distribution d'OI dédiée à une période,
+  // voir EX_OI_FIXED_TARGET_BY_PERIODE), il reste peu ou pas de slots libres en phase 2
+  // pour absorber le budget restant, et le total peut finir bien en dessous de maxPoints.
+  // On tente alors de remplacer chaque question par une alternative plus chère de la
+  // MÊME OI sur le MÊME slot (jamais un changement d'OI : les comptes par OI restent
+  // exacts), en respectant toujours la règle de diversité (clé déjà prise ailleurs pour
+  // cette OI). Plusieurs passes, au cas où un remplacement en libère un autre.
+  let boosted = true;
+  let guard = 0;
+  while (points < maxPoints && boosted && guard < slots.length * 4) {
+    boosted = false;
+    guard++;
+    for (const q of selected.slice()) {
+      if (points >= maxPoints) break;
+      const slotKey = slotKeyOf.get(q.id);
+      const qKeyOld = exDiversityKey(q);
+      const alternatives = bySlot.get(slotKey)
+        .filter(c => c.id !== q.id && c.oi === q.oi && !usedIds.has(c.id) && c.points > q.points)
+        .filter(c => {
+          const cKey = exDiversityKey(c);
+          if (!cKey) return true;
+          return cKey === qKeyOld || !usedOiTag.has(c.oi + '||' + cKey);
+        })
+        .sort((a, b) => b.points - a.points);
+      const alt = alternatives.find(c => points - q.points + c.points <= maxPoints);
+      if (!alt) continue;
+      const idx = selected.indexOf(q);
+      selected[idx] = alt;
+      usedIds.delete(q.id); usedIds.add(alt.id);
+      if (qKeyOld) usedOiTag.delete(q.oi + '||' + qKeyOld);
+      const altKey = exDiversityKey(alt);
+      if (altKey) usedOiTag.add(alt.oi + '||' + altKey);
+      slotKeyOf.delete(q.id); slotKeyOf.set(alt.id, slotKey);
+      points += alt.points - q.points;
+      boosted = true;
+    }
   }
 
   if (coveredSlots.size !== slots.length) return null;
