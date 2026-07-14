@@ -9501,7 +9501,7 @@ const QUESTIONS = [
  soustag: "Changement",
  enonce: "À partir des documents A et B, indiquez un changement dans l'organisation territoriale de la colonie entre 1791 et 1840.",
  aspects: [{aspect: "Acte d'Union"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_acte_constitutionnel_1791.png", source: "Récitus.", auteur: ""}]}, {type: "textes", cols: [{titre: "Document B", ref: "carte_acte_union_1840.jpg", source: "Reécitus."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_acte_constitutionnel_1791.png", source: "Récitus.", auteur: ""}]}, {type: "textes", cols: [{titre: "Document B", ref: "carte_acte_union_1840.jpg", source: "Récitus."}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "Entre 1791 et 1840, le Haut-Canada et le Bas-Canada sont réunis pour former la Province du Canada.\nEntre 1791 et 1840, la colonie passe d'une organisation en deux territoires distincts (Haut-Canada et Bas-Canada) à une seule colonie appelée Province du Canada.",
  updatedAt: "2026-06-18T12:35:29.900Z",
