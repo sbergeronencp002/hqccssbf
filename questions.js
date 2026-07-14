@@ -9851,8 +9851,8 @@ const QUESTIONS = [
  enonce: "À partir des documents A et B, indiquez un changement concernant la représentation politique des habitants du Bas-Canada entre 1791 et 1840.",
  aspects: [{aspect: "Acte d'Union"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document A", ref: "org_pol_1791_acte_const.png", soustitre: "Organisation politique avant 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]},
-  {type: "textes", cols: [{titre: "Document B", ref: "org_pol_1840_acte_union.png", soustitre: "Organisation politique de la Province du Canada à partir de 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", auteur: ""}]}
+  {type: "textes", cols: [{titre: "Document A", ref: "org_pol_1791_acte_const.png", soustitre: "Organisation politique du Haut-Canada et du Bas-Canada entre 1791 et 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", auteur: ""}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "org_pol_1840_acte_union.png", soustitre: "Organisation politique après 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}
  ],
  reponse: {type: "lignes", nombre: 3},
  guide: "La représentation politique des Canadiens français diminue entre 1791 et 1840.\nLes Canadiens français sont majoritaires dans l'Assemblée du Bas-Canada en 1791, mais ne le sont plus après l'Union de 1840.\nEn 1840, les Canadiens français obtiennent le même nombre de députés que le Canada-Ouest malgré leur population plus nombreuse.",
