@@ -1213,5 +1213,6 @@ const QUESTIONS = [
  aspects: [{aspect: "Première phase d'industrialisation"}],
  enonce: "Expliquez comment le développement d'un nouveau réseau de transport favorise les échanges commerciaux dans la seconde moitié du XIXᵉ siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• le développement d'un nouveau réseau de transport\n• la circulation des marchandises entre les régions\n• une conséquence sur les échanges commerciaux",
  updatedAt: "2026-07-13T16:02:27.622Z"
-}
+},
+{id: "Q682", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Cause", aspects: [{aspect: "Statut du Canada dans l'Empire britannique"}], enonce: "Indiquez une raison pour laquelle le Canada participe aux guerres menées par l’Empire britannique au début du XXᵉ siècle.", updatedAt: "2026-07-14T17:24:26.420Z"}
 ]
