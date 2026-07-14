@@ -1227,7 +1227,8 @@ const REGLETTES = {
 "Q686": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]},
 "Q687": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]},
 "Q688": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q689": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]}
+"Q689": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
+"Q690": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]}
 }
 
 const IMAGE_DB = {
@@ -1558,7 +1559,8 @@ const IMAGE_DB = {
 "portrait_wilfrid_laurier.jpg": {src: "images/portrait_wilfrid_laurier.jpg"},
 "portrait_armand_lavergne.jpg": {src: "images/portrait_armand_lavergne.jpg"},
 "bataille_crete_vimy.jpg": {src: "images/bataille_crete_vimy.jpg", w: 1200, h: 800},
-"statut_de_westminster.jpg": {src: "images/statut_de_westminster.jpg", w: 1200, h: 800}
+"statut_de_westminster.jpg": {src: "images/statut_de_westminster.jpg", w: 1200, h: 800},
+"droit_de_vote_femmes_canada_1918.jpg": {src: "images/droit_de_vote_femmes_canada_1918.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -12419,5 +12421,19 @@ const QUESTIONS = [
  reponse: {type: "image", ref: "ligne_1890-1950.png"},
  guide: "C - 1931.",
  updatedAt: "2026-07-14T18:59:12.298Z"
+},
+{
+ id: "Q690",
+ niveau: 4,
+ oi: "Situer dans le temps",
+ periode: "P6 — 1896 – 1945",
+ points: 1,
+ soustag: "Ligne du temps",
+ enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
+ aspects: [{aspect: "Statut du Canada dans l'Empire britannique"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "droit_de_vote_femmes_canada_1918.jpg", soustitre: "Octroi du droit de vote aux Canadiennes", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}],
+ reponse: {type: "image", ref: "ligne_1890-1950.png"},
+ guide: "B - 1918.",
+ updatedAt: "2026-07-14T19:47:13.545Z"
 }
 ]
