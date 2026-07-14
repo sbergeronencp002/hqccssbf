@@ -2064,8 +2064,7 @@ const QUESTIONS = [
  ],
  reponse: {type: "lignes", nombre: 2},
  guide: "Le droit de veto.\nLe droit de rejeter des projets de loi soumis par la Chambre d’assemblée.\nLe pouvoir exécutif.\nLe pouvoir de nommer les membres des conseils exécutif et législatif.\nLe pouvoir de dissoudre la Chambre d’assemblée.",
- updatedAt: "2026-06-12T12:27:32.373Z",
- _imgs: ["org_pol_1791_acte_const.png", "org_pol_1840_acte_union.png"]
+ updatedAt: "2026-07-14T13:36:59.162Z"
 },
 {
  id: "Q27",
