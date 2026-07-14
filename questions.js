@@ -1225,7 +1225,8 @@ const REGLETTES = {
 "Q684": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q685": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q686": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]},
-"Q687": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]}
+"Q687": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]},
+"Q688": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -1554,7 +1555,8 @@ const IMAGE_DB = {
 "portrait_henri_bourassa.jpg": {src: "images/portrait_henri_bourassa.jpg"},
 "portrait_sam_hughes.jpg": {src: "images/portrait_sam_hughes.jpg"},
 "portrait_wilfrid_laurier.jpg": {src: "images/portrait_wilfrid_laurier.jpg"},
-"portrait_armand_lavergne.jpg": {src: "images/portrait_armand_lavergne.jpg"}
+"portrait_armand_lavergne.jpg": {src: "images/portrait_armand_lavergne.jpg"},
+"bataille_crete_vimy.jpg": {src: "images/bataille_crete_vimy.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -12384,5 +12386,22 @@ const QUESTIONS = [
  reponse: {type: "mettre-en-relation", elements: ["Impérialisme", "Nationalisme canadien-français"], double: true},
  guide: {type: "grille", entetes: ["Impérialisme", "Nationalisme canadien-français"], rangees: [["A et C", "B et D"]]},
  updatedAt: "2026-07-14T18:19:48.170Z"
+},
+{
+ id: "Q688",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ enonce: "Expliquez comment la participation du Canada aux guerres de l’Empire britannique contribue à un changement de son statut constitutionnel.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La participation du Dominion du Canada à un conflit aux côtés de l’Empire britannique\n• Une manifestation de l’autonomie croissante du Canada\n• Un changement du statut constitutionnel du Canada",
+ aspects: [{aspect: "Statut du Canada dans l'Empire britannique"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "bataille_crete_vimy.jpg", soustitre: "Les soldats canadiens à la bataille de Vim", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« À la fin de la guerre, le Canada signe séparément le traité de Versailles et devient membre de la Société des Nations. »", source: "Adapté de The Canadian Encyclopedia, « Constitutional History of Canada », Historica Canada."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« À partir de 1931, le Parlement britannique ne peut plus adopter de lois applicables au Canada sans le consentement du gouvernement canadien. »", source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec. Tome 4 : 1896 à 1960, Septentrion, 1997."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "Le Dominion du Canada participe à la Première Guerre mondiale aux côtés de l’Empire britannique (la participation du Dominion du Canada à un conflit aux côtés de l’Empire britannique). Il signe ensuite distinctement le traité de Versailles (une manifestation de l’autonomie croissante du Canada). En 1931, le Statut de Westminster reconnaît son autonomie législative (un changement du statut constitutionnel du Canada).",
+ updatedAt: "2026-07-14T18:37:13.678Z"
 }
 ]
