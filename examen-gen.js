@@ -165,6 +165,51 @@ const EX_FAVORI_SCENARIOS_BY_PERIODE = {
     ],
     'Établir des liens de causalité': [
       { targets: { 'Établir des liens de causalité': 3 }, extraSlots: { 'Rapports sociaux chez les Autochtones': 1 } }
+    ],
+    // « Aucune préférence » (favoriOi === null, coïncide avec la clé "null" ci-dessous) :
+    // même besoin de 25 points par défaut. La question de Causes en plus est épinglée
+    // (`aspectPin`) sur « Exploration et occupation du territoire par les Français »
+    // (demande explicite de l'enseignant) — la 2ᵉ instance de cet aspect n'accepte alors
+    // QUE des candidats Causes (voir pinnedOi dans exTryBuild) ; la question de Faits en
+    // plus reste sur un slot générique (au choix de l'algorithme, comme les autres OI).
+    null: [
+      {
+        targets: { 'Déterminer des causes et des conséquences': 3, 'Établir des faits': 4 },
+        relaxDiversity: ['Déterminer des causes et des conséquences'],
+        extraSlots: {
+          'Exploration et occupation du territoire par les Français': 1,
+          'Rapports sociaux chez les Autochtones': 1
+        },
+        aspectPin: { 'Exploration et occupation du territoire par les Français': 'Déterminer des causes et des conséquences' }
+      },
+      { targets: {} }
+    ]
+  },
+  // P3 n'a pas de cible fixe de base (contrairement à P1) — juste la variété générale
+  // habituelle (≥1 par OI). « Acte de Québec » et « Situation sociodémographique » sont
+  // les 2 aspects choisis pour porter les 2 occurrences en plus demandées (parmi les 4
+  // aspects à plus grand nombre de candidats : Acte de Québec, Invasion américaine,
+  // Proclamation royale, Situation sociodémographique) — tous deux ont plusieurs sous-tags
+  // distincts pour Causes/Différences, donc aucune exception `relaxDiversity` requise ici
+  // (contrairement à P1) pour une cible de seulement 2.
+  'P3 — 1760 – 1791': {
+    'Déterminer des causes et des conséquences': [
+      {
+        targets: { 'Déterminer des causes et des conséquences': 2, 'Établir des faits': 2 },
+        extraSlots: { 'Acte de Québec': 1, 'Situation sociodémographique': 1 }
+      }
+    ],
+    'Dégager des différences et des similitudes': [
+      {
+        targets: { 'Dégager des différences et des similitudes': 2, 'Établir des faits': 2 },
+        extraSlots: { 'Acte de Québec': 1, 'Situation sociodémographique': 1 }
+      }
+    ],
+    'Établir des liens de causalité': [
+      {
+        targets: { 'Établir des liens de causalité': 2 },
+        extraSlots: { 'Acte de Québec': 1, 'Situation sociodémographique': 1 }
+      }
     ]
   }
 };
@@ -261,8 +306,9 @@ function exDiversityKey(q) {
 // candidat dédié est fusionné avec tous les aspects que touchent SES candidats — le
 // nombre de questions final descend d'autant que d'aspects fusionnés (1 par groupe au
 // lieu d'1 par aspect). N'affecte aucun aspect qui a par ailleurs un candidat dédié.
-function exBuildAspectSlots(pool, aspects, aspectRepeat) {
+function exBuildAspectSlots(pool, aspects, aspectRepeat, aspectPin) {
   const repeat = aspectRepeat || {};
+  const pin = aspectPin || {};
   const parent = new Map(aspects.map(a => [a, a]));
   function find(a) { let r = a; while (parent.get(r) !== r) r = parent.get(r); return r; }
   function union(a, b) { const ra = find(a), rb = find(b); if (ra !== rb) parent.set(ra, rb); }
@@ -292,10 +338,16 @@ function exBuildAspectSlots(pool, aspects, aspectRepeat) {
   groups.forEach(list => {
     const key = list.slice().sort().join(' + ');
     // Une répétition n'est permise que sur un aspect seul (pas un groupe déjà fusionné) —
-    // chaque instance devient un slot distinct exigeant sa propre question.
+    // chaque instance devient un slot distinct exigeant sa propre question. La 1ʳᵉ instance
+    // reste toujours libre (n'importe quelle OI) ; `pin[aspect]` (si présent) épingle les
+    // instances SUPPLÉMENTAIRES (2ᵉ et suivantes) à une OI précise — voir `pinnedOi` dans
+    // exTryBuild, qui restreint alors ce slot aux seuls candidats de cette OI.
     const n = (list.length === 1 && repeat[list[0]]) ? repeat[list[0]] : 1;
+    const pinnedOi = list.length === 1 ? pin[list[0]] : null;
     for (let i = 1; i <= n; i++) {
-      slots.push({ key: n > 1 ? key + ' #' + i : key, aspects: list });
+      const slot = { key: n > 1 ? key + ' #' + i : key, aspects: list };
+      if (i > 1 && pinnedOi) slot.pinnedOi = pinnedOi;
+      slots.push(slot);
     }
   });
   return slots;
@@ -338,7 +390,8 @@ function exTryBuild(questions, slots, oiList, favoriOi, favoriTarget, fixedTarge
     const key = s.aspects.slice().sort().join('|');
     const cands = questions.filter(q => {
       const qa = exAspectsOf(q).filter(a => aspects.includes(a));
-      return qa.length && qa.slice().sort().join('|') === key;
+      if (!qa.length || qa.slice().sort().join('|') !== key) return false;
+      return !s.pinnedOi || q.oi === s.pinnedOi;
     });
     return [s.key, cands];
   }));
@@ -389,11 +442,14 @@ function exTryBuild(questions, slots, oiList, favoriOi, favoriTarget, fixedTarge
           if (q.oi !== oi || !baseFilterOk(q)) continue;
           const otherMin = exOtherMinCost(slots, coveredSlots, s.key, minCostBySlot);
           if (points + q.points + otherMin > maxPoints) continue;
-          scored.push({ q, slotKey: s.key, marginal: q.points - minCostBySlot[s.key], jitter: (rng || Math.random)() });
+          scored.push({ q, slotKey: s.key, pinned: s.pinnedOi === oi ? 1 : 0, marginal: q.points - minCostBySlot[s.key], jitter: (rng || Math.random)() });
         }
       }
       if (!scored.length) return null; // cible infaisable pour cette OI dans ce budget
-      scored.sort((a, b) => (a.marginal - b.marginal) || (a.jitter - b.jitter));
+      // Priorité absolue à un slot épinglé pour cette OI (`pinnedOi`) — sinon il risquerait
+      // de ne jamais être consommé (aucune autre OI ne peut le remplir) et de faire échouer
+      // toute la tentative une fois la cible déjà atteinte par d'autres slots.
+      scored.sort((a, b) => (b.pinned - a.pinned) || (a.marginal - b.marginal) || (a.jitter - b.jitter));
       commit(scored[0].q, scored[0].slotKey);
     }
   }
@@ -626,8 +682,8 @@ function exGenererExamen({ questions, periode, aspects, oiList, favoriOi, maxPoi
 
   // Construit les slots + l'OI atteignable pour un jeu (aspectRepeat, fixedTargetsRaw)
   // donné, puis tente exTryBuild jusqu'à EX_ATTEMPTS_PER_LEVEL fois.
-  function tryLevel(aspectRepeat, fixedTargetsRaw, favoriOiForBuild, favoriTargetForBuild, relaxDiversityOis) {
-    const slots = exBuildAspectSlots(pool, aspects, aspectRepeat);
+  function tryLevel(aspectRepeat, fixedTargetsRaw, favoriOiForBuild, favoriTargetForBuild, relaxDiversityOis, aspectPin) {
+    const slots = exBuildAspectSlots(pool, aspects, aspectRepeat, aspectPin);
     const availableOis = new Set();
     slots.forEach(s => {
       const slotKey = s.aspects.slice().sort().join('|');
@@ -675,7 +731,7 @@ function exGenererExamen({ questions, periode, aspects, oiList, favoriOi, maxPoi
     const fixedTargetsRaw = { ...baseFixedTarget, ...(scenario.targets || {}) };
     appliedFixedTargets = fixedTargetsRaw;
     const relaxDiversityOis = new Set(scenario.relaxDiversity || []);
-    const result = tryLevel(aspectRepeat, fixedTargetsRaw, null, 0, relaxDiversityOis);
+    const result = tryLevel(aspectRepeat, fixedTargetsRaw, null, 0, relaxDiversityOis, scenario.aspectPin);
     if (result) return finalize(result);
   }
 
