@@ -104,7 +104,7 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
 
 <div class="toolbar">
   <div class="field"><label for="ex-periode">Période</label>
-    <select id="ex-periode"></select>
+    <select id="ex-periode" onchange="updateFavoriOptions()"></select>
   </div>
   <div class="field"><label for="ex-favori">OI à privilégier</label>
     <select id="ex-favori">
@@ -212,10 +212,27 @@ async function loadQuestions() {
   IMAGE_DB  = result.IMAGE_DB;
 }
 
+// Désactive/masque les options de favori dont l'OI n'a aucune question dans la période
+// choisie (ex. « Déterminer des changements et des continuités » n'existe pas en P1) —
+// évite de proposer un favori qui ne peut de toute façon jamais s'appliquer.
+function updateFavoriOptions() {
+  const periode = document.getElementById('ex-periode').value;
+  const sel = document.getElementById('ex-favori');
+  const availableOis = new Set(QUESTIONS.filter(q => q.periode === periode).map(q => q.oi));
+  [...sel.options].forEach(opt => {
+    if (!opt.value) return; // « Aucune préférence » toujours disponible
+    const available = availableOis.has(opt.value);
+    opt.disabled = !available;
+    opt.hidden = !available;
+  });
+  if (sel.options[sel.selectedIndex] && sel.options[sel.selectedIndex].disabled) sel.value = '';
+}
+
 loadQuestions().then(() => {
   const btn = document.getElementById('btn-generer');
   btn.disabled = false;
   btn.textContent = '🎲 Générer';
+  updateFavoriOptions();
 }).catch(e => {
   console.error(e);
   toast('Erreur de chargement des données : ' + e.message, 'err');
