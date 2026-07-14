@@ -53,6 +53,24 @@ const EX_OI_HARD_CAP = {
   "Situer dans l'espace": 1
 };
 
+// Assouplissement de plafond scopé STRICTEMENT à un favori précis — jamais un relâchement
+// global du plafond. Analyse par recherche exhaustive (branch-and-bound, voir historique) :
+// avec les 4 plafonds ci-dessus, le budget de 25 points est déjà utilisé à 100 % sans marge,
+// rendant la cible de 2 pour l'OI favorite « Établir des liens de causalité » (dont tous les
+// candidats coûtent 3 points) mathématiquement inatteignable. Faire passer « Établir des
+// faits » de ≤2 à ≤3 UNIQUEMENT quand la causalité est la favorite choisie par l'enseignant
+// libère juste assez de marge — le plafond ≤2 reste inchangé pour tous les autres examens
+// (aucune favorite, ou une autre favorite).
+const EX_OI_HARD_CAP_RELAX = {
+  'Établir des liens de causalité': { 'Établir des faits': 3 }
+};
+
+function exEffectiveHardCap(oi, favoriOi) {
+  const relax = EX_OI_HARD_CAP_RELAX[favoriOi];
+  if (relax && relax[oi] != null) return relax[oi];
+  return EX_OI_HARD_CAP[oi];
+}
+
 // OI dont le nombre d'occurrences est fixé une fois pour toutes (pas juste un plafond,
 // une cible exacte), indépendamment de l'OI favorite choisie par l'enseignant. Reste
 // active par défaut, mais peut dégrader (voir exFixedTargetLevels) si elle entre en
@@ -90,10 +108,10 @@ function exComputeOiQuota(oiList, favoriOi, favoriTarget, fixedTargets) {
 }
 
 // Plafond effectif pour une OI donnée dans cette tentative : le plus contraignant entre
-// EX_OI_HARD_CAP, sa cible fixe (`fixedTargets`) et la cible de l'OI favorite (si `oi`
-// est l'OI favorite).
+// EX_OI_HARD_CAP (assoupli via EX_OI_HARD_CAP_RELAX si applicable à ce favori), sa cible
+// fixe (`fixedTargets`) et la cible de l'OI favorite (si `oi` est l'OI favorite).
 function exOiCap(oi, favoriOi, favoriTarget, fixedTargets) {
-  const hard = EX_OI_HARD_CAP[oi];
+  const hard = exEffectiveHardCap(oi, favoriOi);
   const fixed = fixedTargets[oi];
   const favori = (oi === favoriOi && favoriTarget > 0) ? favoriTarget : Infinity;
   return Math.min(hard != null ? hard : Infinity, fixed != null ? fixed : Infinity, favori);
@@ -477,6 +495,6 @@ if (typeof module !== 'undefined' && module.exports) {
     exComputeOiQuota, exGenererExamen, exBuildDocMap, exRemapTexte, exRemapTitre,
     exFlattenDocs, exDocRichness, exAspectsOf, exDiversityKey, exOiCap,
     exReorderNoAdjacentOi, exHasDocCitation, exOrderDocItems, exFixedTargetLevels,
-    exFavoriTargetLevels, exTryBuild
+    exFavoriTargetLevels, exTryBuild, exEffectiveHardCap, EX_OI_HARD_CAP_RELAX
   };
 }

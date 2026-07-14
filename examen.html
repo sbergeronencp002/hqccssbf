@@ -305,6 +305,7 @@ function exSwapOne(qId) {
   const idx = EX_SELECTION.findIndex(q => q.id === qId);
   if (idx === -1) return;
   const old = EX_SELECTION[idx];
+  const favoriOi = document.getElementById('ex-favori').value || null;
   const oldAspects = exAspectsOf(old).slice().sort();
   const usedIds = new Set(EX_SELECTION.map(q => q.id));
   const totalPoints = EX_SELECTION.reduce((s, q) => s + q.points, 0);
@@ -321,7 +322,7 @@ function exSwapOne(qId) {
     (totalPoints - old.points + q.points) <= EX_MAX_POINTS &&
     !(exDiversityKey(q) && otherOiTags.has(q.oi + '||' + exDiversityKey(q))) &&
     (otherOiCounts[q.oi] || 0) < Math.min(
-      EX_OI_HARD_CAP[q.oi] != null ? EX_OI_HARD_CAP[q.oi] : Infinity,
+      exEffectiveHardCap(q.oi, favoriOi) != null ? exEffectiveHardCap(q.oi, favoriOi) : Infinity,
       EX_OI_FIXED_TARGET[q.oi] != null ? EX_OI_FIXED_TARGET[q.oi] : Infinity
     )
   );
