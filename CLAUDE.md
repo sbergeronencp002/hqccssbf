@@ -375,7 +375,7 @@ Geste swipe géré par une IIFE en fin de fichier (pas de fonctions nommées) : 
 | Fonction | Rôle |
 |----------|------|
 | `exResolveImages(neededKeys)` | Fetch + redimensionne (max 1200px) + met en cache base64 les images nécessaires (porté de `resolveImages` d'app.js) |
-| `exBuildReglette(qId, C, pageW)` | Réglette (standard + 3 variantes complexes), taille 8 pt, chaque rangée en `cantSplit:true` (jamais coupée entre deux pages) — porté de `buildReglette` d'app.js. `pageW` = largeur de contenu (le questionnaire a des marges 1cm/2cm, différentes de `EX_PAGE_W` utilisé par le dossier/guide) |
+| `exBuildReglette(qId, C, pageW)` | Réglette (standard + 3 variantes complexes), taille 6 pt, chaque rangée en `cantSplit:true` (jamais coupée entre deux pages) — porté de `buildReglette` d'app.js. `pageW` = largeur de contenu (le questionnaire a des marges 1cm/2cm, différentes de `EX_PAGE_W` utilisé par le dossier/guide) |
 | `exBuildReponse(q, C, EllipseRun, imgR, pageW)` | Espace réponse selon `q.reponse.type` (tous les types : lignes, image, tableau_2col, grille, cause-consequence, mettre-en-relation, situer-dans-lespace, avant-apres) — porté de `genererDocx` d'app.js. Même paramètre `pageW` que `exBuildReglette` |
 | `exDownloadQuestionnaire()` | DOCX 1 : titre + questions numérotées (énoncé avec documents renumérotés, espace réponse, réglette) — pas de documents inline (ils sont dans le dossier séparé) |
 | `exDownloadDossier()` | DOCX 2 : tous les documents de `EX_DOCMAP.docItems`, 2 par rangée, numérotés globalement |

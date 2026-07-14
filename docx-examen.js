@@ -154,7 +154,7 @@ function exBuildReglette(qId, C, pageW) {
   const r = REGLETTES[qId];
   if (!r) return [];
   const { BORDER, BORDERS, CELL_MARGINS } = C;
-  const RS = 16; // taille du texte des réglettes : 8 pt (demi-points docx)
+  const RS = 12; // taille du texte des réglettes : 6 pt (demi-points docx)
   const cellText = (text, bold = false) => new TableCell({
     borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
     children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: RS, bold })] })]
