@@ -938,17 +938,7 @@ const REGLETTES = {
 "Q517": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q518": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]},
 "Q519": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
-"Q520": {
- oi: "Dégager des différences et des similitudes",
- variante: "acteur-positions",
- colonnes: ["3 points", "2 points", "1 point", "0 point"],
- niveaux: [
-  {pts: 3, desc: "L'élève nomme correctement l'acteur qui présente une position différente ET présente correctement les deux positions."},
-  {pts: 2, desc: "L'élève nomme correctement l'acteur ET présente correctement une position et plus ou moins correctement l'autre."},
-  {pts: 1, desc: "L'élève nomme correctement l'acteur ET présente plus ou moins correctement les deux positions, OU présente correctement une position et incorrectement l'autre ou ne la présente pas."},
-  {pts: 0, desc: "L'élève présente au mieux une position plus ou moins correctement, OU nomme incorrectement l'acteur ou ne le nomme pas."}
- ]
-},
+"Q520": {oi: "Dégager des différences et des similitudes", variante: "acteur-positions", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q521": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q522": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q523": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
@@ -9792,8 +9782,8 @@ const QUESTIONS = [
   {type: "textes", cols: [{titre: "Document C", texte: "« La nouvelle constitution accorde aux Canadiens français une influence politique inférieure à celle à laquelle leur population leur donne droit. »", auteur: "Louis-Hippolyte La Fontaine", source: "Adapté de Louis-Hippolyte La Fontaine, discours politiques, années 1840."}]}
  ],
  reponse: {type: "lignes", nombre: 3},
- guide: "Louis-Hippolyte La Fontaine s'oppose à l'Acte d'Union puisqu'il réduit l'influence politique des Canadiens français (la différence), alors que Lord Durham et Lord Sydenham y sont favorable",
- updatedAt: "2026-06-22T18:14:58.721Z"
+ guide: "Louis-Hippolyte La Fontaine s'oppose à l'Acte d'Union puisqu'il réduit l'influence politique des Canadiens français (la différence), alors que Lord Durham et Lord Sydenham y sont favorables (similitude).",
+ updatedAt: "2026-07-14T12:04:14.578Z"
 },
 {
  id: "Q521",
