@@ -14,16 +14,31 @@
 //     revient plusieurs fois, chaque occurrence doit couvrir un sous-type différent ;
 //   - certaines OI ont un plafond dur, indépendant de l'OI favorite (voir EX_OI_HARD_CAP) ;
 //   - l'OI « favorite » choisie par l'enseignant apparaît un nombre de fois exact
-//     (EX_FAVORI_TARGET_LEVELS), pas juste « au moins une fois de plus ».
+//     (voir EX_FAVORI_BASE_TARGET), pas juste « au moins une fois de plus » ;
+//   - jamais deux questions consécutives de la même OI dans l'ordre final de l'examen.
 // ─────────────────────────────────────────────────────────────────────────────
 
 const EX_ATTEMPTS_PER_LEVEL = 150;
-// Nombre de questions visé pour l'OI favorite, du plus ambitieux au plus permissif :
-// si ce nombre exact n'est pas atteignable (budget de points, sous-tags disponibles…)
-// en EX_ATTEMPTS_PER_LEVEL essais, on redescend d'un cran plutôt que d'échouer — mieux
-// vaut un favori plus modeste qu'aucun examen valide. 0 = pas de ciblage particulier
-// (l'OI reste garantie au moins une fois par la règle de variété générale).
-const EX_FAVORI_TARGET_LEVELS = [2, 1, 0];
+
+// Nombre de questions visé pour chaque OI sélectionnable comme favorite — certaines OI
+// se prêtent à davantage de répétitions (sous-tags plus nombreux) que d'autres.
+const EX_FAVORI_BASE_TARGET = {
+  'Dégager des différences et des similitudes': 3,
+  'Déterminer des causes et des conséquences': 3,
+  'Établir des liens de causalité': 2
+};
+
+// Paliers de la cible pour l'OI favorite, du plus ambitieux au plus permissif : si le
+// nombre exact n'est pas atteignable (budget de points, sous-tags disponibles…) en
+// EX_ATTEMPTS_PER_LEVEL essais, on redescend d'un cran plutôt que d'échouer — mieux vaut
+// un favori plus modeste qu'aucun examen valide. 0 = pas de ciblage particulier (l'OI
+// reste garantie au moins une fois par la règle de variété générale).
+function exFavoriTargetLevels(favoriOi) {
+  const base = EX_FAVORI_BASE_TARGET[favoriOi] != null ? EX_FAVORI_BASE_TARGET[favoriOi] : 2;
+  const levels = [];
+  for (let t = base; t >= 0; t--) levels.push(t);
+  return levels;
+}
 
 // Plafond dur du nombre d'occurrences pour certaines OI, indépendant de l'OI favorite —
 // certains types de questions ne doivent jamais apparaître plus de N fois dans un même
@@ -31,7 +46,11 @@ const EX_FAVORI_TARGET_LEVELS = [2, 1, 0];
 // sous-tag encode déjà le nombre de documents, donc la règle « jamais deux fois le même
 // sous-tag pour une OI » garantit déjà la variété du nombre de documents entre les
 // occurrences — ce plafond limite juste combien de fois le format revient).
-const EX_OI_HARD_CAP = { 'Mettre en relation des faits': 2 };
+const EX_OI_HARD_CAP = {
+  'Mettre en relation des faits': 2,
+  'Établir des faits': 2,
+  'Situer dans le temps': 2
+};
 
 // Répartition cible du nombre de questions par OI : 1 de base pour chacune (garantit la
 // variété), et exactement `favoriTarget` pour l'OI favorite si celle-ci dépasse 1.
@@ -183,6 +202,38 @@ function exTryBuild(questions, aspects, oiList, favoriOi, favoriTarget, maxPoint
   return { selected, points };
 }
 
+// Réordonne une liste triée (ordre des aspects du programme) pour qu'aucune OI ne se
+// retrouve deux fois de suite, en perturbant le moins possible l'ordre de départ : pour
+// chaque paire consécutive identique, on échange avec la question valide la plus proche
+// plus loin dans la liste (en évitant d'en créer une nouvelle avec le voisin suivant
+// quand c'est possible). Plusieurs passes au cas où un échange en révèle un autre.
+// Toujours réalisable ici : aucune OI ne peut dépasser ~3 occurrences sur 14 questions
+// (largement en dessous du plafond théorique d'arrangeabilité, ceil(14/2) = 7).
+// Algorithme classique « reorganize string » : regroupe par OI (en conservant l'ordre
+// relatif d'origine — l'ordre des aspects — à l'intérieur de chaque groupe), place les
+// groupes les plus fréquents en premier aux indices pairs (0, 2, 4…) puis continue aux
+// indices impairs. Garanti sans deux éléments identiques adjacents tant qu'aucun groupe
+// ne dépasse ceil(n/2) occurrences — toujours vrai ici (max ~3 sur 14, plafond 7).
+function exReorderNoAdjacentOi(list) {
+  const n = list.length;
+  const groups = new Map();
+  list.forEach(item => {
+    if (!groups.has(item.oi)) groups.set(item.oi, []);
+    groups.get(item.oi).push(item);
+  });
+  const groupList = [...groups.values()].sort((a, b) => b.length - a.length);
+  const result = new Array(n);
+  let idx = 0;
+  for (const group of groupList) {
+    for (const item of group) {
+      if (idx >= n) idx = 1; // repli sur les indices impairs une fois les pairs remplis
+      result[idx] = item;
+      idx += 2;
+    }
+  }
+  return result;
+}
+
 // Génère un examen pour une période donnée.
 //   questions   : QUESTIONS filtrées (ou non — le filtre par période est fait ici)
 //   aspects     : liste des aspects du programme à couvrir (ASPECTS_PAR_PERIODE[periode])
@@ -192,7 +243,7 @@ function exTryBuild(questions, aspects, oiList, favoriOi, favoriTarget, maxPoint
 //   rng         : générateur pseudo-aléatoire optionnel (tests reproductibles)
 function exGenererExamen({ questions, periode, aspects, oiList, favoriOi, maxPoints = 25, rng }) {
   const pool = questions.filter(q => q.periode === periode);
-  const levels = favoriOi ? EX_FAVORI_TARGET_LEVELS : [0];
+  const levels = favoriOi ? exFavoriTargetLevels(favoriOi) : [0];
   let attemptsTotal = 0;
   let appliedTarget = 0;
   for (const favoriTarget of levels) {
@@ -201,12 +252,14 @@ function exGenererExamen({ questions, periode, aspects, oiList, favoriOi, maxPoi
       attemptsTotal++;
       const result = exTryBuild(pool, aspects, oiList, favoriOi, favoriTarget, maxPoints, rng);
       if (result) {
-        // Ordonne les questions selon l'ordre canonique des aspects (ordre du programme)
-        const selected = result.selected.slice().sort((a, b) => {
+        // Ordonne les questions selon l'ordre canonique des aspects (ordre du programme),
+        // puis corrige les OI consécutives identiques (voir exReorderNoAdjacentOi).
+        const byAspectOrder = result.selected.slice().sort((a, b) => {
           const ia = Math.min(...exAspectsOf(a).map(x => aspects.indexOf(x)).filter(i => i >= 0));
           const ib = Math.min(...exAspectsOf(b).map(x => aspects.indexOf(x)).filter(i => i >= 0));
           return ia - ib;
         });
+        const selected = exReorderNoAdjacentOi(byAspectOrder);
         return { ok: true, selected, points: result.points, attempts: attemptsTotal, favoriTargetApplied: appliedTarget };
       }
     }
@@ -233,26 +286,48 @@ function exFlattenDocs(q) {
   return flat;
 }
 
-// Construit la numérotation globale (1, 2, 3…) dans l'ordre des questions
-// sélectionnées, et retourne :
+// Détecte si l'énoncé cite explicitement des documents par lettre (« document(s) A »,
+// « A et B », « A à C »…) — même regex que exRemapTexte, sans capturer les numéros.
+function exHasDocCitation(enonce) {
+  return /documents?\s+[A-Z]/i.test(enonce || '');
+}
+
+// Construit l'ordre final des documents pour le dossier documentaire. Les documents
+// d'une question dont l'énoncé cite des lettres précises (ex. « les documents A à C »)
+// restent groupés et dans leur ordre d'origine — le texte s'y réfère comme une séquence,
+// ils doivent donc rester consécutifs — mais ce bloc peut être placé n'importe où dans
+// le dossier. Les documents des questions SANS citation explicite sont traités
+// individuellement et mélangés dans tout le dossier (jamais forcément groupés par
+// question), pour davantage de mélange là où rien n'impose de les garder ensemble.
+function exOrderDocItems(selection, rng) {
+  const blocks = [];
+  selection.forEach(q => {
+    const flat = exFlattenDocs(q).map(({ col, letter }) => ({ qId: q.id, col, letter }));
+    if (!flat.length) return;
+    if (exHasDocCitation(q.enonce) && flat.length > 1) {
+      blocks.push(flat);
+    } else {
+      flat.forEach(item => blocks.push([item]));
+    }
+  });
+  return exShuffle(blocks, rng).flat();
+}
+
+// Construit la numérotation globale (1, 2, 3…) selon l'ordre mélangé de exOrderDocItems,
+// et retourne :
 //   - docItems  : liste plate { qId, qIndex, col, num, titre } pour le dossier
 //   - byQuestion: Map qId → { letterToNum: {A:1,B:2,...}, items:[...] }
-function exBuildDocMap(selection) {
+function exBuildDocMap(selection, rng) {
+  const byQuestion = new Map(selection.map((q, qIndex) => [q.id, { letterToNum: {}, items: [], qIndex }]));
   const docItems = [];
-  const byQuestion = new Map();
   let num = 0;
-  selection.forEach((q, qIndex) => {
-    const flat = exFlattenDocs(q);
-    const letterToNum = {};
-    const items = [];
-    flat.forEach(({ col, letter }) => {
-      num += 1;
-      letterToNum[letter] = num;
-      const item = { qId: q.id, qIndex, col, num, titre: exRemapTitre(col.titre, num) };
-      items.push(item);
-      docItems.push(item);
-    });
-    byQuestion.set(q.id, { letterToNum, items });
+  exOrderDocItems(selection, rng).forEach(({ qId, col, letter }) => {
+    num += 1;
+    const entry = byQuestion.get(qId);
+    entry.letterToNum[letter] = num;
+    const item = { qId, qIndex: entry.qIndex, col, num, titre: exRemapTitre(col.titre, num) };
+    entry.items.push(item);
+    docItems.push(item);
   });
   return { docItems, byQuestion };
 }
@@ -284,6 +359,7 @@ function exRemapTexte(text, letterToNum) {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     exComputeOiQuota, exGenererExamen, exBuildDocMap, exRemapTexte, exRemapTitre,
-    exFlattenDocs, exDocRichness, exAspectsOf
+    exFlattenDocs, exDocRichness, exAspectsOf, exDiversityKey, exOiCap,
+    exReorderNoAdjacentOi, exHasDocCitation, exOrderDocItems
   };
 }
