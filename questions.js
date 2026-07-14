@@ -9501,7 +9501,7 @@ const QUESTIONS = [
  soustag: "Changement",
  enonce: "À partir des documents A et B, indiquez un changement dans l'organisation territoriale de la colonie entre 1791 et 1840.",
  aspects: [{aspect: "Acte d'Union"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_acte_constitutionnel_1791.png", source: "Récitus.", auteur: ""}]}, {type: "textes", cols: [{titre: "Document B", ref: "carte_acte_union_1840.jpg", source: "Récitus."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_acte_constitutionnel_1791.png", source: "Récitus.", auteur: ""}]}, {type: "textes", cols: [{titre: "Document B", ref: "carte_acte_union_1840.jpg", source: "Reécitus."}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "Entre 1791 et 1840, le Haut-Canada et le Bas-Canada sont réunis pour former la Province du Canada.\nEntre 1791 et 1840, la colonie passe d'une organisation en deux territoires distincts (Haut-Canada et Bas-Canada) à une seule colonie appelée Province du Canada.",
  updatedAt: "2026-06-18T12:35:29.900Z",
@@ -9689,7 +9689,7 @@ const QUESTIONS = [
 },
 {
  aspects: [{aspect: "Relations fédérales-provinciales"}],
- documents: [{cols: [{auteur: "Ébauche de l'Acte d'Amérique du Nord britannique", ref: "pendaison_louis_riel.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", soustitre: "Pendaison de Louis Riel", titre: "Document A"}], type: "textes"}],
+ documents: [{cols: [{ref: "pendaison_louis_riel.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", soustitre: "Pendaison de Louis Riel", titre: "Document A"}], type: "textes"}],
  enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
  guide: "C - 1885",
  id: "Q514",
