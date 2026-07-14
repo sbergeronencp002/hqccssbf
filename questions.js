@@ -12365,7 +12365,7 @@ const QUESTIONS = [
  periode: "P6 — 1896 – 1945",
  points: 2,
  soustag: "4 documents",
- enonce: "Les documents A à D présentent quatre acteurs. Associez chacun de ces acteurs au courant d’idées auquel il est associé.",
+ enonce: "Les documents A à D présentent des acteurs ayant marqué le début du XXe siècle. Associez chaque acteur au courant d’idées qui lui correspond.",
  aspects: [{aspect: "Statut du Canada dans l'Empire britannique"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", ref: "portrait_henri_bourassa.jpg", soustitre: "Portrait de Henri Bourassa", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]},
@@ -12375,7 +12375,7 @@ const QUESTIONS = [
  ],
  reponse: {type: "mettre-en-relation", elements: ["Impérialisme", "Nationalisme canadien-français"], double: true},
  guide: {type: "grille", entetes: ["Impérialisme", "Nationalisme canadien-français"], rangees: [["B et D", "A et C"]]},
- updatedAt: "2026-07-14T18:16:20.511Z"
+ updatedAt: "2026-07-14T23:46:41.403Z"
 },
 {
  id: "Q687",
