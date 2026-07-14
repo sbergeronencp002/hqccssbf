@@ -12446,10 +12446,10 @@ const QUESTIONS = [
  points: 1,
  soustag: "Ligne du temps",
  enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
- aspects: [{aspect: "Statut du Canada dans l'Empire britannique"}],
+ aspects: [{aspect: "Seconde Guerre mondiale"}],
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "bataille_caen_ww2.jpg", soustitre: "Les forces canadiennes lors de la campagne de Normandie", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}],
  reponse: {type: "image", ref: "ligne_1890-1950.png"},
  guide: "C - 1944.",
- updatedAt: "2026-07-14T19:49:59.464Z"
+ updatedAt: "2026-07-14T19:57:20.040Z"
 }
 ]
