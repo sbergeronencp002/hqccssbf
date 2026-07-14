@@ -86,17 +86,52 @@ function exEffectiveHardCap(oi, favoriOi) {
 // de l'enseignant pour CET examen, elle passe donc avant cette préférence de fond.
 const EX_OI_FIXED_TARGET = { 'Déterminer des changements et des continuités': 2 };
 
-// Paliers de dégradation des cibles fixes, du plus ambitieux (valeurs de EX_OI_FIXED_TARGET
+// Cibles exactes par OI propres à une période précise, EN PLUS de EX_OI_FIXED_TARGET
+// (fusionnées dans exGenererExamen). Cas d'usage : une période trop courte pour la variété
+// générale habituelle (voir EX_OI_VARIETY_EXCLUDE_BY_PERIODE) où l'enseignant préfère une
+// distribution d'OI précise à la place — ex. P1 (seulement 7 aspects du programme).
+const EX_OI_FIXED_TARGET_BY_PERIODE = {
+  'P1 — Des origines à 1608': {
+    'Déterminer des causes et des conséquences': 2,
+    'Établir des liens de causalité': 2,
+    'Mettre en relation des faits': 2,
+    'Dégager des différences et des similitudes': 2,
+    'Établir des faits': 3
+  }
+};
+
+// OI à exclure de l'exigence de variété générale pour une période précise (ex. P1 : Situer
+// dans le temps / dans l'espace laissés de côté par choix de l'enseignant, au profit d'une
+// distribution d'OI ciblée sur les 7 aspects disponibles — voir EX_OI_FIXED_TARGET_BY_PERIODE).
+const EX_OI_VARIETY_EXCLUDE_BY_PERIODE = {
+  'P1 — Des origines à 1608': ['Situer dans le temps', "Situer dans l'espace"]
+};
+
+// Aspects pouvant être couverts par PLUSIEURS questions distinctes (au lieu d'une seule),
+// quand le contenu de cet aspect précis a assez d'OI/sous-tags différents pour le
+// supporter — ex. P1 où l'enseignant a choisi de doubler (ou tripler) 3 aspects précis
+// pour atteindre le total de questions correspondant à EX_OI_FIXED_TARGET_BY_PERIODE.
+// Absent de la config = comportement par défaut (1 question par aspect, comme partout
+// ailleurs).
+const EX_ASPECT_REPEAT_BY_PERIODE = {
+  'P1 — Des origines à 1608': {
+    'Rapports sociaux chez les Autochtones': 3,
+    'Premiers occupants du territoire': 2,
+    'Premiers contacts': 2
+  }
+};
+
+// Paliers de dégradation des cibles fixes, du plus ambitieux (valeurs de `targetMap`
 // telles quelles) au plus permissif (1 pour chacune — en dessous, la variété générale
 // garantit déjà au moins une occurrence, donc 1 est le plancher utile).
-function exFixedTargetLevels() {
-  const keys = Object.keys(EX_OI_FIXED_TARGET);
+function exFixedTargetLevels(targetMap) {
+  const keys = Object.keys(targetMap);
   if (!keys.length) return [{}];
-  const maxTarget = Math.max(...keys.map(k => EX_OI_FIXED_TARGET[k]));
+  const maxTarget = Math.max(...keys.map(k => targetMap[k]));
   const levels = [];
   for (let t = maxTarget; t >= 1; t--) {
     const level = {};
-    keys.forEach(k => { level[k] = Math.min(EX_OI_FIXED_TARGET[k], t); });
+    keys.forEach(k => { level[k] = Math.min(targetMap[k], t); });
     levels.push(level);
   }
   return levels;
@@ -115,12 +150,15 @@ function exComputeOiQuota(oiList, favoriOi, favoriTarget, fixedTargets) {
   return quota;
 }
 
-// Plafond effectif pour une OI donnée dans cette tentative : le plus contraignant entre
-// EX_OI_HARD_CAP (assoupli via EX_OI_HARD_CAP_RELAX si applicable à ce favori), sa cible
-// fixe (`fixedTargets`) et la cible de l'OI favorite (si `oi` est l'OI favorite).
+// Plafond effectif pour une OI donnée dans cette tentative : sa cible fixe (`fixedTargets`)
+// si elle en a une — une cible fixe est un choix délibéré qui prime sur EX_OI_HARD_CAP,
+// même si celui-ci est normalement plus bas pour cette OI (ex. « Établir des faits » ≤2 en
+// temps normal, mais cible fixe à 3 pour P1 — voir EX_OI_FIXED_TARGET_BY_PERIODE) — sinon
+// le plus contraignant entre EX_OI_HARD_CAP (assoupli via EX_OI_HARD_CAP_RELAX si
+// applicable à ce favori) et la cible de l'OI favorite (si `oi` est l'OI favorite).
 function exOiCap(oi, favoriOi, favoriTarget, fixedTargets) {
-  const hard = exEffectiveHardCap(oi, favoriOi);
   const fixed = fixedTargets[oi];
+  const hard = fixed != null ? Infinity : exEffectiveHardCap(oi, favoriOi);
   const favori = (oi === favoriOi && favoriTarget > 0) ? favoriTarget : Infinity;
   return Math.min(hard != null ? hard : Infinity, fixed != null ? fixed : Infinity, favori);
 }
@@ -175,7 +213,8 @@ function exDiversityKey(q) {
 // candidat dédié est fusionné avec tous les aspects que touchent SES candidats — le
 // nombre de questions final descend d'autant que d'aspects fusionnés (1 par groupe au
 // lieu d'1 par aspect). N'affecte aucun aspect qui a par ailleurs un candidat dédié.
-function exBuildAspectSlots(pool, aspects) {
+function exBuildAspectSlots(pool, aspects, aspectRepeat) {
+  const repeat = aspectRepeat || {};
   const parent = new Map(aspects.map(a => [a, a]));
   function find(a) { let r = a; while (parent.get(r) !== r) r = parent.get(r); return r; }
   function union(a, b) { const ra = find(a), rb = find(b); if (ra !== rb) parent.set(ra, rb); }
@@ -200,7 +239,18 @@ function exBuildAspectSlots(pool, aspects) {
     if (!groups.has(root)) groups.set(root, []);
     groups.get(root).push(a);
   });
-  return [...groups.values()].map(list => ({ key: list.slice().sort().join(' + '), aspects: list }));
+
+  const slots = [];
+  groups.forEach(list => {
+    const key = list.slice().sort().join(' + ');
+    // Une répétition n'est permise que sur un aspect seul (pas un groupe déjà fusionné) —
+    // chaque instance devient un slot distinct exigeant sa propre question.
+    const n = (list.length === 1 && repeat[list[0]]) ? repeat[list[0]] : 1;
+    for (let i = 1; i <= n; i++) {
+      slots.push({ key: n > 1 ? key + ' #' + i : key, aspects: list });
+    }
+  });
+  return slots;
 }
 
 // Coût minimal (en points) pour couvrir chaque slot, tous candidats confondus.
@@ -413,12 +463,14 @@ function exReorderNoAdjacentOi(list) {
 //   rng         : générateur pseudo-aléatoire optionnel (tests reproductibles)
 function exGenererExamen({ questions, periode, aspects, oiList, favoriOi, maxPoints = 25, rng }) {
   const pool = questions.filter(q => q.periode === periode);
-  const slots = exBuildAspectSlots(pool, aspects);
+  const slots = exBuildAspectSlots(pool, aspects, EX_ASPECT_REPEAT_BY_PERIODE[periode]);
 
   // OI réellement atteignables dans cette période : une OI absente de tout candidat
   // valide pour un slot (ex. « Déterminer des changements et des continuités » en P1, la
   // toute première période du programme) ne peut évidemment pas faire partie d'une
   // exigence de variété ni d'une cible fixe — sinon échec garanti à chaque tentative.
+  // Une période peut aussi exclure explicitement certaines OI de la variété générale
+  // (EX_OI_VARIETY_EXCLUDE_BY_PERIODE) au profit d'une distribution ciblée.
   const availableOis = new Set();
   slots.forEach(s => {
     const slotKey = s.aspects.slice().sort().join('|');
@@ -427,10 +479,16 @@ function exGenererExamen({ questions, periode, aspects, oiList, favoriOi, maxPoi
       if (qa.length && qa.slice().sort().join('|') === slotKey) availableOis.add(q.oi);
     });
   });
-  const effectiveOiList = oiList.filter(oi => availableOis.has(oi));
+  const varietyExclude = new Set(EX_OI_VARIETY_EXCLUDE_BY_PERIODE[periode] || []);
+  const effectiveOiList = oiList.filter(oi => availableOis.has(oi) && !varietyExclude.has(oi));
+
+  // Cibles fixes globales (EX_OI_FIXED_TARGET) + cibles propres à cette période
+  // (EX_OI_FIXED_TARGET_BY_PERIODE) — ex. P1 où l'enseignant a choisi une distribution
+  // d'OI précise à la place de la variété générale habituelle.
+  const periodeFixedTarget = { ...EX_OI_FIXED_TARGET, ...(EX_OI_FIXED_TARGET_BY_PERIODE[periode] || {}) };
 
   const favoriLevels = favoriOi ? exFavoriTargetLevels(favoriOi) : [0];
-  const fixedLevels = exFixedTargetLevels().map(level => {
+  const fixedLevels = exFixedTargetLevels(periodeFixedTarget).map(level => {
     const filtered = {};
     Object.keys(level).forEach(oi => { if (availableOis.has(oi)) filtered[oi] = level[oi]; });
     return filtered;
@@ -565,6 +623,7 @@ if (typeof module !== 'undefined' && module.exports) {
     exFlattenDocs, exDocRichness, exAspectsOf, exDiversityKey, exOiCap,
     exReorderNoAdjacentOi, exHasDocCitation, exOrderDocItems, exFixedTargetLevels,
     exFavoriTargetLevels, exTryBuild, exEffectiveHardCap, EX_OI_HARD_CAP_RELAX,
-    exBuildAspectSlots
+    exBuildAspectSlots, EX_OI_FIXED_TARGET_BY_PERIODE, EX_OI_VARIETY_EXCLUDE_BY_PERIODE,
+    EX_ASPECT_REPEAT_BY_PERIODE
   };
 }
