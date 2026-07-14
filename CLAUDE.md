@@ -27,6 +27,9 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 | `admin.html` | Interface de saisie/modification des questions — pousse via GitHub Contents API |
 | `documents.html` | **Gestion Documents & Images** — galerie de toutes les images, vue par question, images non utilisées. Renomme / remplace / supprime des images et édite les sous-titres directement via l'API GitHub (token partagé avec admin.html). JS autonome inline (pas de dépendance à `app.js`) |
 | `revision.html` | **Révision par cartes** — parcourt les 600 questions une à la fois (filtres niveau/période/aspect/OI/recherche), navigation ← → clavier, glisser tactile/souris (Pointer Events) ou flèches, tout affiché sur une carte : énoncé, documents, réglette, espace réponse ET guide/corrigé. Page de lecture seule pour l'enseignant, JS autonome inline (pas de dépendance à `app.js`) |
+| `examen.html` | **Générateur d'examens** — pour une période choisie, sélectionne automatiquement une question par aspect du programme (jamais deux fois), budget de points ≤ 20, variété des 8 OI garantie + quota renforcé pour une OI « favorite » choisie par l'enseignant (cause-conséquence / similitudes-différences / liens de causalité), en préférant les questions à documents riches. Permet un remplacement manuel question par question (🔀, même aspect(s), budget respecté). Génère 3 DOCX distincts : questionnaire (énoncés + réglettes + espaces réponse, documents renumérotés en chiffres), dossier documentaire (tous les documents, numérotés globalement, 2/rangée), guide de correction. Lecture seule (aucune écriture sur `questions.js`), JS autonome inline (pas de dépendance à `app.js`) |
+| `examen-gen.js` | **Algorithme pur** de sélection (exact-cover des aspects + budget de points + quota OI avec dégradation progressive si le budget le rend infaisable) et de renumérotation globale des documents (lettres locales → chiffres, avec remap des mentions « document(s) X » dans l'énoncé/guide). Aucune dépendance au DOM — testable via node. Chargé par `examen.html` |
+| `docx-examen.js` | Génération des 3 DOCX de `examen.html` via docx.js (réglettes + espaces réponse portés de `app.js`, rendu du dossier documentaire avec documents renumérotés) |
 | `app.js` | Toute la logique du site public (rendu, filtres, panier, DOCX) |
 | `questions.js` | Données : `REGLETTES`, `IMAGE_DB`, `QUESTIONS` — généré et écrit par admin |
 | `reglettes.js` | Préréglages de réglettes par OI (`REGLETTES_PRESET`) — chargé par admin uniquement |
@@ -54,6 +57,7 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 `index.html` charge `filters.js?v=1` (avant `app.js`) puis `questions-index.js?v=1` (index allégé, 200 Ko) — `questions.js` est chargé en lazy par app.js sans version fixe (cache-bust par timestamp).
 `documents.html` charge `oi-config.js?v=1` + `questions-io.js?v=3` ; `questions.js` est chargé via l'API GitHub Contents en priorité (comme admin.html), repli sur le fetch du site statique puis sur une balise `<script>` si l'API échoue — jamais en `<script src>` statique direct.
 `revision.html` charge `oi-config.js?v=1` + `questions-io.js?v=3` + `contexte.js` + `filters.js?v=1` ; `questions.js` est chargé de la même façon (API GitHub en priorité).
+`examen.html` charge `oi-config.js?v=1` + `contexte.js` + `examen-gen.js?v=1` ; `questions.js` est chargé par simple fetch réseau (pas l'API GitHub) — page lecture seule, une fraîcheur à quelques minutes près n'a pas d'impact (pas de SHA à préserver pour une écriture). `docx-examen.js?v=1` est chargé en dernier (dépend des globales définies dans le script inline de la page).
 
 ⚠️ Pourquoi l'API en priorité plutôt que le fetch du site statique : GitHub Pages est servi derrière un CDN qui peut continuer à servir une ancienne version d'un fichier après une publication, même avec un cache-bust par timestamp sur l'URL (le CDN peut ignorer la query string pour la clé de cache) — l'API GitHub, elle, reflète toujours l'état réel du dépôt. `app.js` (`ensureDataLoaded()`, chargement lazy du questions.js complet au 1ᵉʳ `openQModal`/prévisualisation/DOCX du site public) fait de même, mais avec repli silencieux sur le fetch du site statique en cas d'échec — ne se produit qu'une fois par chargement de page (pas par question ouverte), donc le quota anonyme de l'API (60 req/h) n'est pas un risque même avec beaucoup de visiteurs.
 
@@ -62,7 +66,7 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 ### Service worker (`sw.js`)
 Précache `style.css`, `app.js`, `filters.js`, `oi-config.js` (avec leur `?v=N` — un futur bump de version doit aussi être répercuté dans le tableau `PRECACHE` de `sw.js`, sinon l'ancienne version reste précachée). `index.html` et `contexte.js` sont précachés mais **toujours revalidés réseau-first** (comme `questions.js`/`questions-index.js`) car leur contenu peut changer sans que leur URL change. `CACHE` (actuellement `hqc-v5`) doit être incrémenté à chaque changement de la liste `PRECACHE` (pas nécessaire pour un simple changement de logique dans le handler `fetch` — voir images ci-dessous — puisque ça ne change pas ce qui est précaché).
 
-`admin.html`, `documents.html`, `revision.html` sont **aussi réseau-first** (même traitement que `questions.js`/`index.html`) : ce sont des pages d'édition dont le JS change au fil des correctifs — un cache SW figé sur une ancienne version peut réintroduire un bug déjà corrigé, parce que la page obsolète ignore encore le correctif (vécu le 2026-07-13 : un correctif de lecture via l'API GitHub dans revision.html ne pouvait pas prendre effet tant que l'ancien revision.html restait servi depuis le cache).
+`admin.html`, `documents.html`, `revision.html`, `examen.html` sont **aussi réseau-first** (même traitement que `questions.js`/`index.html`) : ce sont des pages d'édition/outils dont le JS change au fil des correctifs — un cache SW figé sur une ancienne version peut réintroduire un bug déjà corrigé, parce que la page obsolète ignore encore le correctif (vécu le 2026-07-13 : un correctif de lecture via l'API GitHub dans revision.html ne pouvait pas prendre effet tant que l'ancien revision.html restait servi depuis le cache).
 
 Images : **stale-while-revalidate** (pas cache-first pur) — sert le cache immédiatement s'il existe, mais relance toujours une requête réseau en arrière-plan pour rafraîchir l'entrée. Nécessaire car remplacer une image (documents.html/admin.html) garde le même nom de fichier donc la même URL ; un cache-first pur servirait l'ancienne version indéfiniment. Avec cette stratégie, l'image à jour apparaît au 2ᵉ chargement au plus tard.
 
@@ -325,6 +329,45 @@ Images : **stale-while-revalidate** (pas cache-first pur) — sert le cache imm�
 ### Navigation tactile
 
 Geste swipe géré par une IIFE en fin de fichier (pas de fonctions nommées) : `pointerdown`/`pointerup`/`pointercancel` avec `setPointerCapture`/`activePointerId` (pas un booléen `dragging`) pour lier tout le geste au pointeur qui l'a commencé, même si le relâchement a lieu hors de `#rv-card-wrap`.
+
+---
+
+## Index des fonctions — examen.html / examen-gen.js / docx-examen.js
+
+> Page autonome (JS inline). Lecture seule : aucune écriture sur `questions.js`. La logique de sélection/numérotation vit dans `examen-gen.js` (pur, testable via node) ; la génération DOCX vit dans `docx-examen.js`.
+
+### examen-gen.js (algorithme pur)
+
+| Fonction | Rôle |
+|----------|------|
+| `exComputeOiQuota(oiList, favoriOi, totalSlots, biasFraction)` | Quota cible de questions par OI : 1 de base chacune (variété), puis une part de `biasFraction` du reliquat pour l'OI favorite |
+| `exTryBuild(questions, aspects, oiList, favoriOi, maxPoints, rng, biasFraction)` | Une tentative de construction (glouton + MRV : aspects aux candidats les plus rares traités en premier) ; retourne `null` si un aspect n'a plus de candidat valide (déjà utilisé, conflit d'aspect, budget de points dépassé) |
+| `exGenererExamen({questions, periode, aspects, oiList, favoriOi, maxPoints, rng})` | Boucle `exTryBuild` sur des paliers de `biasFraction` décroissants (`EX_BIAS_LEVELS`) — si le quota renforcé maximal est infaisable dans le budget de points (ex. une OI dont tous les candidats coûtent 3 points), redescend d'un cran plutôt que d'échouer. Trie le résultat selon l'ordre canonique des aspects du programme |
+| `exBuildDocMap(selection)` | Numérote tous les documents des questions sélectionnées en une séquence globale (1, 2, 3…) dans l'ordre des questions ; retourne `{docItems, byQuestion}` (`byQuestion.get(id).letterToNum` = table lettre locale → numéro global) |
+| `exRemapTexte(text, letterToNum)` | Remplace « document(s) A/A et B/A à C » par les numéros globaux dans un texte (énoncé, guide) — ne touche à rien d'autre (ex. « la lettre » qui désigne un repère dessiné à l'intérieur d'une image reste inchangé, il n'est jamais précédé du mot « document ») |
+| `exRemapTitre(titre, num)` | Idem pour le titre d'un document (« Document A » → « Document 3 », conserve le texte après la lettre s'il y en a) |
+
+⚠️ Le quota renforcé est une **cible**, pas une garantie : si l'OI favorite n'a par exemple que des questions à 3 points dans les données d'une période, le budget de 20 points peut mathématiquement limiter sa présence à 1 question — `examen.html` affiche le nombre réel obtenu plutôt que de prétendre atteindre systématiquement ~50 % des questions.
+
+### examen.html (UI)
+
+| Fonction | Rôle |
+|----------|------|
+| `loadQuestions()` | Fetch `questions.js` (réseau simple, pas l'API GitHub — page lecture seule) |
+| `exGenerate()` | Lit période + OI favori, appelle `exGenererExamen`, stocke `EX_SELECTION`/`EX_DOCMAP`/`EX_PERIODE`, affiche le résultat |
+| `exRender(favoriOi)` | Construit le résumé (points/aspects/OI), la distribution par OI et le tableau des questions sélectionnées |
+| `exSwapOne(qId)` | Remplace une question par une autre couvrant exactement le(s) même(s) aspect(s), dans le budget de points restant — ne revérifie pas la variété/le quota d'OI après coup (override manuel assumé) |
+
+### docx-examen.js (génération des 3 DOCX)
+
+| Fonction | Rôle |
+|----------|------|
+| `exResolveImages(neededKeys)` | Fetch + redimensionne (max 1200px) + met en cache base64 les images nécessaires (porté de `resolveImages` d'app.js) |
+| `exBuildReglette(qId, C)` | Réglette (standard + 3 variantes complexes) — porté de `buildReglette` d'app.js |
+| `exBuildReponse(q, C, EllipseRun, imgR)` | Espace réponse selon `q.reponse.type` (tous les types : lignes, image, tableau_2col, grille, cause-consequence, mettre-en-relation, situer-dans-lespace, avant-apres) — porté de `genererDocx` d'app.js |
+| `exDownloadQuestionnaire()` | DOCX 1 : titre + questions numérotées (énoncé avec documents renumérotés, espace réponse, réglette) — pas de documents inline (ils sont dans le dossier séparé) |
+| `exDownloadDossier()` | DOCX 2 : tous les documents de `EX_DOCMAP.docItems`, 2 par rangée, numérotés globalement |
+| `exDownloadGuide()` | DOCX 3 : réponse attendue par question (texte ou grille), documents renumérotés dans le texte du guide si présents |
 
 ---
 
