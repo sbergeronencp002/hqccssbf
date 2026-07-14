@@ -1230,7 +1230,8 @@ const REGLETTES = {
 "Q689": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q690": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q691": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
-"Q692": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q692": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q693": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]}
 }
 
 const IMAGE_DB = {
@@ -1563,7 +1564,8 @@ const IMAGE_DB = {
 "bataille_crete_vimy.jpg": {src: "images/bataille_crete_vimy.jpg", w: 1200, h: 800},
 "statut_de_westminster.jpg": {src: "images/statut_de_westminster.jpg", w: 1200, h: 800},
 "droit_de_vote_femmes_canada_1918.jpg": {src: "images/droit_de_vote_femmes_canada_1918.jpg", w: 1200, h: 800},
-"bataille_caen_ww2.jpg": {src: "images/bataille_caen_ww2.jpg", w: 1200, h: 960}
+"bataille_caen_ww2.jpg": {src: "images/bataille_caen_ww2.jpg", w: 1200, h: 960},
+"portrait_lionnel_groulx.jpg": {src: "images/portrait_lionnel_groulx.jpg", w: 900, h: 1200}
 }
 
 const QUESTIONS = [
@@ -12466,5 +12468,23 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Pour défendre les intérêts des Canadiens français.\nPour promouvoir le nationalisme canadien-français.\nPour assurer la survivance de la nation canadienne-française.",
  updatedAt: "2026-07-14T23:39:20.900Z"
+},
+{
+ id: "Q693",
+ niveau: 4,
+ oi: "Mettre en relation des faits",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "3 documents",
+ enonce: "Les documents A à C présentent des acteurs ayant marqué le début du XXe siècle. Associez chaque acteur au courant d’idées qui lui correspond.",
+ aspects: [{aspect: "Clérico-nationalisme"}, {aspect: "Statut du Canada dans l'Empire britannique"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "portrait_wilfrid_laurier.jpg", soustitre: "Portrait de Wilfrid Laurier", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "portrait_henri_bourassa.jpg", soustitre: "Portrait de Henri Bourassa", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "portrait_lionnel_groulx.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]}
+ ],
+ reponse: {type: "mettre-en-relation", elements: ["Clérico-nationalisme", "Libéralisme", "Nationalisme canadien"]},
+ guide: {type: "grille", entetes: ["Clérico-nationalisme", "Libéralisme", "Nationalisme canadien"], rangees: [["C", "A", "B"]]},
+ updatedAt: "2026-07-14T23:45:53.419Z"
 }
 ]
