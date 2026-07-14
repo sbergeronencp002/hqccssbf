@@ -2060,7 +2060,7 @@ const QUESTIONS = [
  aspects: [{aspect: "Acte d'Union"}, {aspect: "Gouvernement responsable"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", ref: "org_pol_1791_acte_const.png", soustitre: "Organisation politique avant 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]},
-  {type: "textes", cols: [{titre: "Document B", ref: "org_pol_1840_acte_union.png", soustitre: "Organisation politique du Canada-Uni aprés 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", auteur: ""}]}
+  {type: "textes", cols: [{titre: "Document B", ref: "org_pol_1840_acte_union.png", soustitre: "Organisation politique aprés 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}
  ],
  reponse: {type: "lignes", nombre: 2},
  guide: "Le droit de veto.\nLe droit de rejeter des projets de loi soumis par la Chambre d’assemblée.\nLe pouvoir exécutif.\nLe pouvoir de nommer les membres des conseils exécutif et législatif.\nLe pouvoir de dissoudre la Chambre d’assemblée.",
