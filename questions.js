@@ -1221,7 +1221,8 @@ const REGLETTES = {
 "Q680": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q681": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q682": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q683": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]}
+"Q683": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]},
+"Q684": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]}
 }
 
 const IMAGE_DB = {
@@ -1544,7 +1545,9 @@ const IMAGE_DB = {
 "tableau_organisations_ouvrieres.jpg": {src: "images/tableau_organisations_ouvrieres.jpg"},
 "tableau_salaires_depenses_1890.jpg": {src: "images/tableau_salaires_depenses_1890.jpg", w: 1200, h: 600},
 "recitus_reseau_ferroviaire_1896.png": {src: "images/recitus_reseau_ferroviaire_1896.png", w: 1200, h: 600},
-"tableau_exportations_canadiennes_1870-1890.jpg": {src: "images/tableau_exportations_canadiennes_1870-1890.jpg", w: 1200, h: 805}
+"tableau_exportations_canadiennes_1870-1890.jpg": {src: "images/tableau_exportations_canadiennes_1870-1890.jpg", w: 1200, h: 805},
+"ligne_1890-1950.png": {src: "images/ligne_1890-1950.png", w: 1200, h: 291},
+"guerre_des_boers_1899.jpg": {src: "images/guerre_des_boers_1899.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -12308,5 +12311,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "La participation militaire du Canada à la guerre des Boers.\nLe soutien militaire du Canada à la Grande-Bretagne.",
  updatedAt: "2026-07-14T17:29:16.650Z"
+},
+{
+ id: "Q684",
+ niveau: 4,
+ oi: "Situer dans le temps",
+ periode: "P6 — 1896 – 1945",
+ points: 1,
+ soustag: "Ligne du temps",
+ enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
+ aspects: [{aspect: "Statut du Canada dans l'Empire britannique"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "guerre_des_boers_1899.jpg", soustitre: "La participation militaire canadienne à la guerre des Boers", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}],
+ reponse: {type: "image", ref: "ligne_1890-1950.png"},
+ guide: "A - 1899 à 1902.",
+ updatedAt: "2026-07-14T17:39:03.887Z"
 }
 ]
