@@ -308,7 +308,10 @@ function exSwapOne(qId) {
   const oldAspects = exAspectsOf(old).slice().sort();
   const usedIds = new Set(EX_SELECTION.map(q => q.id));
   const totalPoints = EX_SELECTION.reduce((s, q) => s + q.points, 0);
-  const otherOiTags = new Set(EX_SELECTION.filter((q, i) => i !== idx && q.soustag).map(q => q.oi + '||' + q.soustag));
+  const others = EX_SELECTION.filter((q, i) => i !== idx);
+  const otherOiTags = new Set(others.filter(q => exDiversityKey(q)).map(q => q.oi + '||' + exDiversityKey(q)));
+  const otherOiCounts = {};
+  others.forEach(q => { otherOiCounts[q.oi] = (otherOiCounts[q.oi] || 0) + 1; });
 
   const candidates = QUESTIONS.filter(q =>
     q.periode === EX_PERIODE &&
@@ -316,10 +319,11 @@ function exSwapOne(qId) {
     !usedIds.has(q.id) &&
     exAspectsOf(q).slice().sort().join('|') === oldAspects.join('|') &&
     (totalPoints - old.points + q.points) <= EX_MAX_POINTS &&
-    !(q.soustag && otherOiTags.has(q.oi + '||' + q.soustag))
+    !(exDiversityKey(q) && otherOiTags.has(q.oi + '||' + exDiversityKey(q))) &&
+    (otherOiCounts[q.oi] || 0) < (EX_OI_HARD_CAP[q.oi] != null ? EX_OI_HARD_CAP[q.oi] : Infinity)
   );
   if (!candidates.length) {
-    toast("Aucune autre question ne couvre exactement le(s) même(s) aspect(s) dans le budget de points restant, sans réutiliser un sous-tag déjà pris pour la même OI.", 'err');
+    toast("Aucune autre question ne couvre exactement le(s) même(s) aspect(s) dans le budget de points restant, sans réutiliser un sous-tag déjà pris pour la même OI ni dépasser un plafond d'OI.", 'err');
     return;
   }
   const picked = candidates[Math.floor(Math.random() * candidates.length)];

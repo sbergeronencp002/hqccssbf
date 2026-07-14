@@ -12,39 +12,44 @@
 //   - les 8 OI sont toutes représentées au moins une fois (variété) ;
 //   - jamais deux questions de la même OI avec le même sous-tag (soustag) — si une OI
 //     revient plusieurs fois, chaque occurrence doit couvrir un sous-type différent ;
-//   - l'OI « favorite » choisie par l'enseignant reçoit un quota renforcé
-//     (environ la moitié des questions) sans écraser les autres.
+//   - certaines OI ont un plafond dur, indépendant de l'OI favorite (voir EX_OI_HARD_CAP) ;
+//   - l'OI « favorite » choisie par l'enseignant apparaît un nombre de fois exact
+//     (EX_FAVORI_TARGET_LEVELS), pas juste « au moins une fois de plus ».
 // ─────────────────────────────────────────────────────────────────────────────
 
 const EX_ATTEMPTS_PER_LEVEL = 150;
-// Paliers de renforcement du quota de l'OI favorite, du plus marqué au plus
-// neutre : si le budget de points (serré : 20 max, souvent ~18 de minimum
-// incompressible) rend un palier trop contraignant pour être satisfait en
-// EX_ATTEMPTS_PER_LEVEL essais, on redescend d'un cran plutôt que d'échouer —
-// mieux vaut un quota renforcé plus modeste qu'aucun examen valide.
-const EX_BIAS_LEVELS = [0.8, 0.6, 0.4, 0.2, 0];
+// Nombre de questions visé pour l'OI favorite, du plus ambitieux au plus permissif :
+// si ce nombre exact n'est pas atteignable (budget de points, sous-tags disponibles…)
+// en EX_ATTEMPTS_PER_LEVEL essais, on redescend d'un cran plutôt que d'échouer — mieux
+// vaut un favori plus modeste qu'aucun examen valide. 0 = pas de ciblage particulier
+// (l'OI reste garantie au moins une fois par la règle de variété générale).
+const EX_FAVORI_TARGET_LEVELS = [2, 1, 0];
 
-// Répartition cible du nombre de questions par OI : 1 de base pour chacune
-// (garantit la variété), puis une partie du reste pour l'OI favorite (quota
-// renforcé, module par `biasFraction`) et le reliquat réparti entre les autres OI.
-function exComputeOiQuota(oiList, favoriOi, totalSlots, biasFraction) {
+// Plafond dur du nombre d'occurrences pour certaines OI, indépendant de l'OI favorite —
+// certains types de questions ne doivent jamais apparaître plus de N fois dans un même
+// examen (ex. « Mettre en relation des faits » jongle avec plusieurs documents ; son
+// sous-tag encode déjà le nombre de documents, donc la règle « jamais deux fois le même
+// sous-tag pour une OI » garantit déjà la variété du nombre de documents entre les
+// occurrences — ce plafond limite juste combien de fois le format revient).
+const EX_OI_HARD_CAP = { 'Mettre en relation des faits': 2 };
+
+// Répartition cible du nombre de questions par OI : 1 de base pour chacune (garantit la
+// variété), et exactement `favoriTarget` pour l'OI favorite si celle-ci dépasse 1.
+function exComputeOiQuota(oiList, favoriOi, favoriTarget) {
   const quota = {};
   oiList.forEach(oi => { quota[oi] = 1; });
-  let remaining = totalSlots - oiList.length;
-  if (remaining < 0) remaining = 0;
-
-  if (favoriOi && oiList.includes(favoriOi) && biasFraction > 0) {
-    const bonus = Math.min(remaining, Math.ceil(remaining * biasFraction));
-    quota[favoriOi] += bonus;
-    remaining -= bonus;
-    const others = oiList.filter(oi => oi !== favoriOi);
-    let i = 0;
-    while (remaining > 0 && others.length) { quota[others[i % others.length]]++; remaining--; i++; }
-  } else {
-    let i = 0;
-    while (remaining > 0) { quota[oiList[i % oiList.length]]++; remaining--; i++; }
+  if (favoriOi && oiList.includes(favoriOi) && favoriTarget > 1) {
+    quota[favoriOi] = favoriTarget;
   }
   return quota;
+}
+
+// Plafond effectif pour une OI donnée dans cette tentative : le plus contraignant entre
+// EX_OI_HARD_CAP et la cible de l'OI favorite (si `oi` est l'OI favorite).
+function exOiCap(oi, favoriOi, favoriTarget) {
+  const hard = EX_OI_HARD_CAP[oi];
+  const favori = (oi === favoriOi && favoriTarget > 0) ? favoriTarget : Infinity;
+  return Math.min(hard != null ? hard : Infinity, favori);
 }
 
 function exShuffle(arr, rng) {
@@ -75,6 +80,18 @@ function exAspectsOf(q) {
   return (q.aspects || []).map(x => x.aspect);
 }
 
+// Clé de diversité au sein d'une même OI (jamais deux fois la même pour une OI donnée) :
+// le sous-tag habituellement, sauf pour « Mettre en relation des faits » où le sous-tag
+// est parfois absent en données (Q593/Q624/…) alors que le nombre de documents, lui, est
+// toujours dérivable directement de `q.documents` — plus fiable que le sous-tag ici.
+function exDiversityKey(q) {
+  if (q.oi === 'Mettre en relation des faits') {
+    const nDocs = (q.documents || []).reduce((s, d) => s + (d.cols || [d]).length, 0);
+    return String(nDocs);
+  }
+  return q.soustag || '';
+}
+
 // Coût minimal (en points) pour couvrir chaque aspect, tous candidats confondus.
 // Utilisé pour vérifier qu'il reste assez de budget de points pour couvrir
 // les aspects encore non traités avant de valider un choix.
@@ -95,7 +112,7 @@ function exOtherMinCost(aspects, covered, candidateAspects, minCostByAspect) {
   return sum;
 }
 
-function exTryBuild(questions, aspects, oiList, favoriOi, maxPoints, rng, biasFraction) {
+function exTryBuild(questions, aspects, oiList, favoriOi, favoriTarget, maxPoints, rng) {
   const byAspect = new Map(aspects.map(a => [a, questions.filter(q => exAspectsOf(q).includes(a))]));
   for (const a of aspects) {
     if (!byAspect.get(a).length) return null; // aspect sans aucun candidat : impossible
@@ -107,10 +124,11 @@ function exTryBuild(questions, aspects, oiList, favoriOi, maxPoints, rng, biasFr
   // pour varier les examens générés d'une fois à l'autre.
   const order = exShuffle(aspects, rng).sort((a, b) => byAspect.get(a).length - byAspect.get(b).length);
 
-  const oiRemaining = exComputeOiQuota(oiList, favoriOi, aspects.length, biasFraction);
+  const oiRemaining = exComputeOiQuota(oiList, favoriOi, favoriTarget);
+  const oiCounts = {};
   const covered = new Set();
   const usedIds = new Set();
-  const usedOiTag = new Set(); // "OI||soustag" déjà pris — jamais deux fois le même sous-tag pour une OI
+  const usedOiTag = new Set(); // "OI||clé de diversité" déjà pris — jamais deux fois la même pour une OI
   const selected = [];
   let points = 0;
 
@@ -125,7 +143,9 @@ function exTryBuild(questions, aspects, oiList, favoriOi, maxPoints, rng, biasFr
       // deux d'un coup) : sinon le nombre de questions finales tomberait sous le nombre
       // d'aspects, ce qui n'est pas ce qui est attendu (une question par aspect).
       if (qAspects.filter(a => aspects.includes(a)).length > 1) return false;
-      if (q.soustag && usedOiTag.has(q.oi + '||' + q.soustag)) return false;
+      const qKey = exDiversityKey(q);
+      if (qKey && usedOiTag.has(q.oi + '||' + qKey)) return false;
+      if ((oiCounts[q.oi] || 0) >= exOiCap(q.oi, favoriOi, favoriTarget)) return false; // plafond OI atteint
       const otherMin = exOtherMinCost(aspects, covered, qAspects, minCostByAspect);
       return points + q.points + otherMin <= maxPoints;
     });
@@ -146,7 +166,9 @@ function exTryBuild(questions, aspects, oiList, favoriOi, maxPoints, rng, biasFr
     selected.push(picked);
     usedIds.add(picked.id);
     exAspectsOf(picked).forEach(a => covered.add(a));
-    if (picked.soustag) usedOiTag.add(picked.oi + '||' + picked.soustag);
+    const pickedKey = exDiversityKey(picked);
+    if (pickedKey) usedOiTag.add(picked.oi + '||' + pickedKey);
+    oiCounts[picked.oi] = (oiCounts[picked.oi] || 0) + 1;
     points += picked.points;
     oiRemaining[picked.oi]--;
   }
@@ -155,6 +177,8 @@ function exTryBuild(questions, aspects, oiList, favoriOi, maxPoints, rng, biasFr
   if (selected.length !== aspects.length) return null; // une question par aspect, jamais moins
   if (points > maxPoints) return null;
   if (new Set(selected.map(q => q.oi)).size < oiList.length) return null; // variété OI non atteinte
+  // L'OI favorite doit apparaître exactement `favoriTarget` fois (pas juste « au moins »).
+  if (favoriOi && favoriTarget > 0 && oiCounts[favoriOi] !== favoriTarget) return null;
 
   return { selected, points };
 }
@@ -168,14 +192,14 @@ function exTryBuild(questions, aspects, oiList, favoriOi, maxPoints, rng, biasFr
 //   rng         : générateur pseudo-aléatoire optionnel (tests reproductibles)
 function exGenererExamen({ questions, periode, aspects, oiList, favoriOi, maxPoints = 25, rng }) {
   const pool = questions.filter(q => q.periode === periode);
-  const levels = favoriOi ? EX_BIAS_LEVELS : [0];
+  const levels = favoriOi ? EX_FAVORI_TARGET_LEVELS : [0];
   let attemptsTotal = 0;
-  let appliedBias = 0;
-  for (const biasFraction of levels) {
-    appliedBias = biasFraction;
+  let appliedTarget = 0;
+  for (const favoriTarget of levels) {
+    appliedTarget = favoriTarget;
     for (let attempt = 0; attempt < EX_ATTEMPTS_PER_LEVEL; attempt++) {
       attemptsTotal++;
-      const result = exTryBuild(pool, aspects, oiList, favoriOi, maxPoints, rng, biasFraction);
+      const result = exTryBuild(pool, aspects, oiList, favoriOi, favoriTarget, maxPoints, rng);
       if (result) {
         // Ordonne les questions selon l'ordre canonique des aspects (ordre du programme)
         const selected = result.selected.slice().sort((a, b) => {
@@ -183,7 +207,7 @@ function exGenererExamen({ questions, periode, aspects, oiList, favoriOi, maxPoi
           const ib = Math.min(...exAspectsOf(b).map(x => aspects.indexOf(x)).filter(i => i >= 0));
           return ia - ib;
         });
-        return { ok: true, selected, points: result.points, attempts: attemptsTotal, biasApplied: appliedBias };
+        return { ok: true, selected, points: result.points, attempts: attemptsTotal, favoriTargetApplied: appliedTarget };
       }
     }
   }
