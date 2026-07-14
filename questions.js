@@ -1223,7 +1223,8 @@ const REGLETTES = {
 "Q682": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q683": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]},
 "Q684": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
-"Q685": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
+"Q685": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
+"Q686": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]}
 }
 
 const IMAGE_DB = {
@@ -1548,7 +1549,9 @@ const IMAGE_DB = {
 "recitus_reseau_ferroviaire_1896.png": {src: "images/recitus_reseau_ferroviaire_1896.png", w: 1200, h: 600},
 "tableau_exportations_canadiennes_1870-1890.jpg": {src: "images/tableau_exportations_canadiennes_1870-1890.jpg", w: 1200, h: 805},
 "ligne_1890-1950.png": {src: "images/ligne_1890-1950.png", w: 1200, h: 291},
-"guerre_des_boers_1899.jpg": {src: "images/guerre_des_boers_1899.jpg", w: 1200, h: 800}
+"guerre_des_boers_1899.jpg": {src: "images/guerre_des_boers_1899.jpg", w: 1200, h: 800},
+"portrait_henri_bourassa.jpg": {src: "images/portrait_henri_bourassa.jpg"},
+"portrait_sam_hughes.jpg": {src: "images/portrait_sam_hughes.jpg"}
 }
 
 const QUESTIONS = [
@@ -12340,5 +12343,24 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Le soutien militaire à la Grande-Bretagne provoque des divisions entre les impérialistes et les nationalistes canadiens-français.\nIl accentue les tensions entre les Canadiens anglais et les Canadiens français.\nIl contribue à diviser la population canadienne sur la participation aux guerres de l’Empire britannique.",
  updatedAt: "2026-07-14T17:51:14.320Z"
+},
+{
+ id: "Q686",
+ niveau: 4,
+ oi: "Mettre en relation des faits",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "4 documents",
+ enonce: "Les documents A à D présentent quatre acteurs. Associez chacun de ces acteurs au courant d’idées auquel il est associé.",
+ aspects: [{aspect: "Statut du Canada dans l'Empire britannique"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "portrait_henri_bourassa.jpg", soustitre: "Portrait de Henri Bourassa", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Lorsque la Grande-Bretagne est en guerre, le Canada est en guerre. »", auteur: "Wilfrid Laurier", source: "Adapté de Wilfrid Laurier, discours à la Chambre des communes du Canada, 1910."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Le Canada doit demeurer maître de ses décisions et ne pas être entraîné automatiquement dans les guerres de l’Empire. »", auteur: "Armand Lavergne", source: "Adapté d’Armand Lavergne, discours et écrits politiques, début du XXᵉ siècle."}]},
+  {type: "textes", cols: [{titre: "Document D", ref: "portrait_sam_hughes.jpg", soustitre: "Portrait de Sam Hughes", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]}
+ ],
+ reponse: {type: "mettre-en-relation", elements: ["Impérialisme", "Nationalisme canadien-français"], double: true},
+ guide: {type: "grille", entetes: ["Impérialisme", "Nationalisme canadien-français"], rangees: [["B et D", "A et C"]]},
+ updatedAt: "2026-07-14T18:16:20.511Z"
 }
 ]
