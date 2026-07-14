@@ -70,7 +70,8 @@ function exB64ToBytes(src) {
   return bytes;
 }
 
-const EX_PAGE_W = 9360; // 6.5 pouces en DXA (marges 2.54cm)
+const EX_PAGE_W = 9360; // 6.5 pouces en DXA (marges 2.54cm) — dossier documentaire et guide de correction
+const EX_PAGE_W_Q = 11106; // page 12240 DXA (lettre) - marges 1cm/1cm (567+567) — questionnaire seulement
 
 function exBuildConstants() {
   const { BorderStyle } = docx;
@@ -143,19 +144,25 @@ function exMakeEllipseRun() {
 // ─────────────────────────────────────────────────────────────────────────────
 // Réglette (portée depuis app.js genererDocx → buildReglette)
 // ─────────────────────────────────────────────────────────────────────────────
-function exBuildReglette(qId, C) {
+// `pageW` : largeur de contenu utilisable (DXA) — le questionnaire a des marges plus
+// étroites que le dossier/guide, donc une largeur différente de EX_PAGE_W.
+// Toutes les rangées ont `cantSplit: true` : la réglette ne doit jamais être coupée
+// entre deux pages (une rangée ne peut pas se scinder ; vu la taille compacte d'une
+// réglette, ça revient en pratique à garder toute la table sur une seule page).
+function exBuildReglette(qId, C, pageW) {
   const { Table, TableRow, TableCell, Paragraph, TextRun, AlignmentType, BorderStyle, WidthType, VerticalAlign } = docx;
   const r = REGLETTES[qId];
   if (!r) return [];
   const { BORDER, BORDERS, CELL_MARGINS } = C;
+  const RS = 16; // taille du texte des réglettes : 8 pt (demi-points docx)
   const cellText = (text, bold = false) => new TableCell({
     borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
-    children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: 20, bold })] })]
+    children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: RS, bold })] })]
   });
 
   if (r.variante === '3 éléments — 2 liens') {
-    const col1 = Math.floor(EX_PAGE_W * 0.22), col2 = Math.floor(EX_PAGE_W * 0.26), col3 = Math.floor(EX_PAGE_W * 0.35);
-    const col4 = EX_PAGE_W - col1 - col2 - col3;
+    const col1 = Math.floor(pageW * 0.22), col2 = Math.floor(pageW * 0.26), col3 = Math.floor(pageW * 0.35);
+    const col4 = pageW - col1 - col2 - col3;
     const BN = { style: BorderStyle.NONE, size: 0, color: 'FFFFFF' };
     const BC2 = { top: BORDER, bottom: BORDER, left: BORDER, right: BN };
     const BC3 = { top: BORDER, bottom: BORDER, left: BN, right: BN };
@@ -164,20 +171,20 @@ function exBuildReglette(qId, C) {
       borders: b, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
       rowSpan: rs > 1 ? rs : undefined, columnSpan: cs > 1 ? cs : undefined,
       width: w ? { size: w, type: WidthType.DXA } : undefined,
-      children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: 20, bold })] })]
+      children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: RS, bold })] })]
     });
     return [new Table({ width: { size: 0, type: WidthType.AUTO }, rows: [
-      new TableRow({ children: [mk(r.oi, true, 6, 1, col1), mk("L'élève précise les trois éléments", false, 3, 1, col2, BC2), mk('et établit correctement deux liens de causalité.', false, 1, 1, col3, BC3), mk('3 points', false, 1, 1, col4, BC4)] }),
-      new TableRow({ children: [mk('et établit correctement un lien de causalité.', false, 1, 1, col3, BC3), mk('2 points', false, 1, 1, col4, BC4)] }),
-      new TableRow({ children: [mk("mais n'établit correctement aucun lien de causalité.", false, 1, 1, col3, BC3), mk('1 point', false, 1, 1, col4, BC4)] }),
-      new TableRow({ children: [mk('L’élève précise deux éléments', false, 2, 1, col2, BC2), mk('et établit correctement un lien de causalité.', false, 1, 1, col3, BC3), mk('2 points', false, 1, 1, col4, BC4)] }),
-      new TableRow({ children: [mk("mais n'établit correctement aucun lien de causalité.", false, 1, 1, col3, BC3), mk('1 point', false, 1, 1, col4, BC4)] }),
-      new TableRow({ children: [mk("L'élève précise un seul élément ou n'en précise pas.", false, 1, 2, col2 + col3, BC2), mk('0 point', false, 1, 1, col4, BC4)] }),
+      new TableRow({ cantSplit: true, children: [mk(r.oi, true, 6, 1, col1), mk("L'élève précise les trois éléments", false, 3, 1, col2, BC2), mk('et établit correctement deux liens de causalité.', false, 1, 1, col3, BC3), mk('3 points', false, 1, 1, col4, BC4)] }),
+      new TableRow({ cantSplit: true, children: [mk('et établit correctement un lien de causalité.', false, 1, 1, col3, BC3), mk('2 points', false, 1, 1, col4, BC4)] }),
+      new TableRow({ cantSplit: true, children: [mk("mais n'établit correctement aucun lien de causalité.", false, 1, 1, col3, BC3), mk('1 point', false, 1, 1, col4, BC4)] }),
+      new TableRow({ cantSplit: true, children: [mk('L’élève précise deux éléments', false, 2, 1, col2, BC2), mk('et établit correctement un lien de causalité.', false, 1, 1, col3, BC3), mk('2 points', false, 1, 1, col4, BC4)] }),
+      new TableRow({ cantSplit: true, children: [mk("mais n'établit correctement aucun lien de causalité.", false, 1, 1, col3, BC3), mk('1 point', false, 1, 1, col4, BC4)] }),
+      new TableRow({ cantSplit: true, children: [mk("L'élève précise un seul élément ou n'en précise pas.", false, 1, 2, col2 + col3, BC2), mk('0 point', false, 1, 1, col4, BC4)] }),
     ]})];
   }
 
   if (r.variante === 'acteur-positions') {
-    const c1 = Math.floor(EX_PAGE_W * 0.22), c2 = Math.floor(EX_PAGE_W * 0.43), c3 = Math.floor(EX_PAGE_W * 0.22), c4 = EX_PAGE_W - c1 - c2 - c3;
+    const c1 = Math.floor(pageW * 0.22), c2 = Math.floor(pageW * 0.43), c3 = Math.floor(pageW * 0.22), c4 = pageW - c1 - c2 - c3;
     const BN = { style: BorderStyle.NONE, size: 0, color: 'FFFFFF' };
     const BC2 = { top: BORDER, bottom: BORDER, left: BORDER, right: BN };
     const BC3 = { top: BORDER, bottom: BORDER, left: BN, right: BN };
@@ -186,19 +193,19 @@ function exBuildReglette(qId, C) {
       borders: b, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
       rowSpan: rs > 1 ? rs : undefined, columnSpan: cs > 1 ? cs : undefined,
       width: w ? { size: w, type: WidthType.DXA } : undefined,
-      children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: t, font: 'Aptos', size: 20, bold })] })]
+      children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: t, font: 'Aptos', size: RS, bold })] })]
     });
     return [new Table({ width: { size: 0, type: WidthType.AUTO }, rows: [
-      new TableRow({ children: [mk(r.oi, true, 5, 1, c1), mk("L'élève nomme correctement l'acteur qui présente une position différente", false, 4, 1, c2, BC2), mk('et présente correctement les deux positions.', false, 1, 1, c3, BC3), mk('3 points', false, 1, 1, c4, BC4)] }),
-      new TableRow({ children: [mk("et présente correctement une position et plus ou moins correctement l'autre position.", false, 1, 1, c3, BC3), mk('2 points', false, 1, 1, c4, BC4)] }),
-      new TableRow({ children: [mk("et présente plus ou moins correctement les deux positions, ou présente correctement une position et incorrectement l'autre ou ne la présente pas.", false, 1, 1, c3, BC3), mk('1 point', false, 1, 1, c4, BC4)] }),
-      new TableRow({ children: [mk('et présente tout au plus une seule position plus ou moins correctement.', false, 1, 1, c3, BC3), mk('0 point', false, 1, 1, c4, BC4)] }),
-      new TableRow({ children: [mk("L'élève nomme incorrectement l'acteur qui présente une position différente ou ne le nomme pas.", false, 1, 2, c2 + c3, BC2), mk('0 point', false, 1, 1, c4, BC4)] }),
+      new TableRow({ cantSplit: true, children: [mk(r.oi, true, 5, 1, c1), mk("L'élève nomme correctement l'acteur qui présente une position différente", false, 4, 1, c2, BC2), mk('et présente correctement les deux positions.', false, 1, 1, c3, BC3), mk('3 points', false, 1, 1, c4, BC4)] }),
+      new TableRow({ cantSplit: true, children: [mk("et présente correctement une position et plus ou moins correctement l'autre position.", false, 1, 1, c3, BC3), mk('2 points', false, 1, 1, c4, BC4)] }),
+      new TableRow({ cantSplit: true, children: [mk("et présente plus ou moins correctement les deux positions, ou présente correctement une position et incorrectement l'autre ou ne la présente pas.", false, 1, 1, c3, BC3), mk('1 point', false, 1, 1, c4, BC4)] }),
+      new TableRow({ cantSplit: true, children: [mk('et présente tout au plus une seule position plus ou moins correctement.', false, 1, 1, c3, BC3), mk('0 point', false, 1, 1, c4, BC4)] }),
+      new TableRow({ cantSplit: true, children: [mk("L'élève nomme incorrectement l'acteur qui présente une position différente ou ne le nomme pas.", false, 1, 2, c2 + c3, BC2), mk('0 point', false, 1, 1, c4, BC4)] }),
     ]})];
   }
 
   if (r.variante === 'changement-continuité') {
-    const c1 = Math.floor(EX_PAGE_W * 0.22), c2 = Math.floor(EX_PAGE_W * 0.37), c3 = Math.floor(EX_PAGE_W * 0.21), c4 = EX_PAGE_W - c1 - c2 - c3;
+    const c1 = Math.floor(pageW * 0.22), c2 = Math.floor(pageW * 0.37), c3 = Math.floor(pageW * 0.21), c4 = pageW - c1 - c2 - c3;
     const BN = { style: BorderStyle.NONE, size: 0, color: 'FFFFFF' };
     const BC2 = { top: BORDER, bottom: BORDER, left: BORDER, right: BN };
     const BC3 = { top: BORDER, bottom: BORDER, left: BN, right: BN };
@@ -207,33 +214,33 @@ function exBuildReglette(qId, C) {
       borders: b, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER,
       rowSpan: rs > 1 ? rs : undefined, columnSpan: cs > 1 ? cs : undefined,
       width: w ? { size: w, type: WidthType.DXA } : undefined,
-      children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: t, font: 'Aptos', size: 20, bold })] })]
+      children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: t, font: 'Aptos', size: RS, bold })] })]
     });
     return [new Table({ width: { size: 0, type: WidthType.AUTO }, rows: [
-      new TableRow({ children: [mk(r.oi, true, 6, 1, c1), mk("L'élève indique s'il y a changement ou continuité", false, 3, 1, c2, BC2), mk('et présente des faits qui le montrent correctement.', false, 1, 1, c3, BC3), mk('3 points (ou 2 points)', false, 1, 1, c4, BC4)] }),
-      new TableRow({ children: [mk('et présente des faits qui le montrent plus ou moins correctement.', false, 1, 1, c3, BC3), mk('2 points (ou 1 point)', false, 1, 1, c4, BC4)] }),
-      new TableRow({ children: [mk("et présente des faits qui le montrent incorrectement ou n'en présente pas.", false, 1, 1, c3, BC3), mk('0 point', false, 1, 1, c4, BC4)] }),
-      new TableRow({ children: [mk("L'élève n'indique pas s'il y a changement ou continuité", false, 3, 1, c2, BC2), mk('mais présente des faits exacts.', false, 1, 1, c3, BC3), mk('2 points (ou 1 point)', false, 1, 1, c4, BC4)] }),
-      new TableRow({ children: [mk('mais présente des faits plus ou moins exacts.', false, 1, 1, c3, BC3), mk('1 point (ou 0 point)', false, 1, 1, c4, BC4)] }),
-      new TableRow({ children: [mk('et présente des faits inexacts ou n\'en présente pas.', false, 1, 1, c3, BC3), mk('0 point', false, 1, 1, c4, BC4)] }),
+      new TableRow({ cantSplit: true, children: [mk(r.oi, true, 6, 1, c1), mk("L'élève indique s'il y a changement ou continuité", false, 3, 1, c2, BC2), mk('et présente des faits qui le montrent correctement.', false, 1, 1, c3, BC3), mk('3 points (ou 2 points)', false, 1, 1, c4, BC4)] }),
+      new TableRow({ cantSplit: true, children: [mk('et présente des faits qui le montrent plus ou moins correctement.', false, 1, 1, c3, BC3), mk('2 points (ou 1 point)', false, 1, 1, c4, BC4)] }),
+      new TableRow({ cantSplit: true, children: [mk("et présente des faits qui le montrent incorrectement ou n'en présente pas.", false, 1, 1, c3, BC3), mk('0 point', false, 1, 1, c4, BC4)] }),
+      new TableRow({ cantSplit: true, children: [mk("L'élève n'indique pas s'il y a changement ou continuité", false, 3, 1, c2, BC2), mk('mais présente des faits exacts.', false, 1, 1, c3, BC3), mk('2 points (ou 1 point)', false, 1, 1, c4, BC4)] }),
+      new TableRow({ cantSplit: true, children: [mk('mais présente des faits plus ou moins exacts.', false, 1, 1, c3, BC3), mk('1 point (ou 0 point)', false, 1, 1, c4, BC4)] }),
+      new TableRow({ cantSplit: true, children: [mk('et présente des faits inexacts ou n\'en présente pas.', false, 1, 1, c3, BC3), mk('0 point', false, 1, 1, c4, BC4)] }),
     ]})];
   }
 
   const niveaux = r.niveaux || [];
   if (!niveaux.length || !(r.colonnes || []).length) return [];
-  const colOI = Math.floor(EX_PAGE_W * 0.22);
-  const colW = Math.floor((EX_PAGE_W - colOI) / niveaux.length);
-  const colLast = EX_PAGE_W - colOI - colW * (niveaux.length - 1);
+  const colOI = Math.floor(pageW * 0.22);
+  const colW = Math.floor((pageW - colOI) / niveaux.length);
+  const colLast = pageW - colOI - colW * (niveaux.length - 1);
   const cols = [colOI, ...niveaux.map((_, i) => (i === niveaux.length - 1 ? colLast : colW))];
   return [new Table({
-    width: { size: EX_PAGE_W, type: WidthType.DXA }, columnWidths: cols,
+    width: { size: pageW, type: WidthType.DXA }, columnWidths: cols,
     rows: [
-      new TableRow({ children: [
+      new TableRow({ cantSplit: true, children: [
         new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, rowSpan: 2,
-          children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: r.oi, font: 'Aptos', size: 20, bold: true })] })] }),
+          children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: r.oi, font: 'Aptos', size: RS, bold: true })] })] }),
         ...r.colonnes.map(c => cellText(c))
       ]}),
-      new TableRow({ children: niveaux.map(n => cellText(n.desc)) })
+      new TableRow({ cantSplit: true, children: niveaux.map(n => cellText(n.desc)) })
     ]
   })];
 }
@@ -241,7 +248,7 @@ function exBuildReglette(qId, C) {
 // ─────────────────────────────────────────────────────────────────────────────
 // Espace réponse (porté depuis app.js genererDocx)
 // ─────────────────────────────────────────────────────────────────────────────
-function exBuildReponse(q, C, EllipseRun, imgR) {
+function exBuildReponse(q, C, EllipseRun, imgR, pageW) {
   const { Table, TableRow, TableCell, Paragraph, TextRun, AlignmentType, BorderStyle, WidthType, VerticalAlign } = docx;
   const { BORDER, BORDERS, CELL_MARGINS } = C;
   const out = [];
@@ -272,7 +279,7 @@ function exBuildReponse(q, C, EllipseRun, imgR) {
     const rows = [];
     for (let i = 0; i < nb; i++) rows.push(mkRow(i === 0));
     if (!rows.length) rows.push(mkRow(true));
-    out.push(new Table({ width: { size: EX_PAGE_W, type: WidthType.DXA }, columnWidths: [EX_PAGE_W], borders: { top: BN_L, bottom: BN_L, left: BN_L, right: BN_L, insideH: BN_L, insideV: BN_L }, rows }));
+    out.push(new Table({ width: { size: pageW, type: WidthType.DXA }, columnWidths: [pageW], borders: { top: BN_L, bottom: BN_L, left: BN_L, right: BN_L, insideH: BN_L, insideV: BN_L }, rows }));
   } else if (q.reponse.type === 'tableau_2col') {
     const c2 = 1701;
     const mk2 = (t, bold = false) => new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, width: { size: c2, type: WidthType.DXA }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: t, font: 'Aptos', size: 20, bold })] })] });
@@ -281,13 +288,13 @@ function exBuildReponse(q, C, EllipseRun, imgR) {
     const { entetes = [], rangees = [] } = q.reponse;
     if (entetes.length || rangees.length) {
       const nCols = entetes.length || (rangees[0] || []).length || 1;
-      const gColW = Math.floor(EX_PAGE_W / nCols);
+      const gColW = Math.floor(pageW / nCols);
       const mkGCell = (text, bold) => new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, children: [new Paragraph({ children: [new TextRun({ text: String(text || ''), font: 'Aptos', size: 20, bold: !!bold })] })] });
       const gRows = [
         ...(entetes.length ? [new TableRow({ children: entetes.map(h => mkGCell(h, true)) })] : []),
         ...rangees.map(row => new TableRow({ children: (row || []).map((cell, ci) => mkGCell(cell, ci === 0)) }))
       ];
-      out.push(new Table({ width: { size: EX_PAGE_W, type: WidthType.DXA }, columnWidths: Array(nCols).fill(gColW), rows: gRows }));
+      out.push(new Table({ width: { size: pageW, type: WidthType.DXA }, columnWidths: Array(nCols).fill(gColW), rows: gRows }));
     }
   } else if (q.reponse.type === 'cause-consequence') {
     const CIRC = 450000;
@@ -301,8 +308,8 @@ function exBuildReponse(q, C, EllipseRun, imgR) {
     const CIRC = 450000;
     const els = q.reponse.elements || [];
     const n = els.length || 2;
-    const colW = Math.floor(EX_PAGE_W / n);
-    const colWidths = Array(n).fill(0).map((_, i) => (i === n - 1 ? EX_PAGE_W - colW * (n - 1) : colW));
+    const colW = Math.floor(pageW / n);
+    const colWidths = Array(n).fill(0).map((_, i) => (i === n - 1 ? pageW - colW * (n - 1) : colW));
     const mkLblCell = (text, w) => new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, width: { size: w, type: WidthType.DXA }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: 20, bold: true })] })] });
     const mkCircCell = (w) => { const p = new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 80, after: 80 }, children: [] }); p.root.push(new EllipseRun(CIRC, CIRC)); return new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, width: { size: w, type: WidthType.DXA }, children: [p] }); };
     if (n === 2 && q.reponse.double) {
@@ -314,7 +321,7 @@ function exBuildReponse(q, C, EllipseRun, imgR) {
     } else if (n === 2) {
       out.push(new Table({ width: { size: 0, type: WidthType.AUTO }, rows: els.map(e => new TableRow({ height: { value: 800, rule: 'atLeast' }, children: [mkLblCell(e, 0), mkCircCell(1134 * 2)] })) }));
     } else {
-      out.push(new Table({ width: { size: EX_PAGE_W, type: WidthType.DXA }, columnWidths: colWidths, rows: [
+      out.push(new Table({ width: { size: pageW, type: WidthType.DXA }, columnWidths: colWidths, rows: [
         new TableRow({ children: els.map((e, i) => mkLblCell(e, colWidths[i])) }),
         new TableRow({ height: { value: 800, rule: 'atLeast' }, children: colWidths.map(w => mkCircCell(w)) })
       ]}));
@@ -330,8 +337,8 @@ function exBuildReponse(q, C, EllipseRun, imgR) {
     ]}));
   } else if (q.reponse.type === 'avant-apres') {
     const CIRC_EMU = 720000;
-    const cMid = Math.floor(EX_PAGE_W * 0.38);
-    const cSide = Math.floor((EX_PAGE_W - cMid) / 2);
+    const cMid = Math.floor(pageW * 0.38);
+    const cSide = Math.floor((pageW - cMid) / 2);
     const etW = 680;
     const cCirc = Math.floor((cSide - etW) / 2);
     const cCircL = cSide - etW - cCirc;
@@ -339,7 +346,7 @@ function exBuildReponse(q, C, EllipseRun, imgR) {
     const mkCircCell = (w, bl, br) => { const p = new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 80, after: 80 }, children: [] }); p.root.push(new EllipseRun(CIRC_EMU, CIRC_EMU)); return new TableCell({ borders: { top: BORDER, bottom: BORDER, left: bl, right: br }, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, width: { size: w, type: WidthType.DXA }, children: [p] }); };
     const mkEtCell = (w) => new TableCell({ borders: { top: BORDER, bottom: BORDER, left: BNN, right: BNN }, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, width: { size: w, type: WidthType.DXA }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: 'et', font: 'Aptos', size: 20, bold: true })] })] });
     const mkHdr = (text, cs, w) => new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, columnSpan: cs > 1 ? cs : undefined, width: { size: w, type: WidthType.DXA }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text, font: 'Aptos', size: 20, bold: true })] })] });
-    out.push(new Table({ width: { size: EX_PAGE_W, type: WidthType.DXA }, columnWidths: [cCirc, etW, cCircL, cMid, cCirc, etW, cCircL], rows: [
+    out.push(new Table({ width: { size: pageW, type: WidthType.DXA }, columnWidths: [cCirc, etW, cCircL, cMid, cCirc, etW, cCircL], rows: [
       new TableRow({ children: [
         mkHdr('Avant', 3, cSide),
         new TableCell({ borders: BORDERS, margins: CELL_MARGINS, verticalAlign: VerticalAlign.CENTER, rowSpan: 2, width: { size: cMid, type: WidthType.DXA }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: q.reponse.label || '', font: 'Aptos', size: 20, bold: true })] })] }),
@@ -405,17 +412,17 @@ async function exDownloadQuestionnaire() {
       const { letterToNum } = EX_DOCMAP.byQuestion.get(q.id);
       const enonce = exRemapTexte(q.enonce || '', letterToNum);
       const lines = enonce.split('\n');
-      children.push(new Paragraph({ spacing: { before: 200 }, children: [new TextRun({ text: (idx + 1) + '.  ', font: 'Aptos', size: 24, bold: true }), new TextRun({ text: '(' + q.points + ' pt' + (q.points > 1 ? 's' : '') + ')  ', font: 'Aptos', size: 18, italics: true }), ...exMkRuns(lines[0], 'Aptos', 24)] }));
+      children.push(new Paragraph({ spacing: { before: 200 }, children: [new TextRun({ text: (idx + 1) + '.  ', font: 'Aptos', size: 24, bold: true }), ...exMkRuns(lines[0], 'Aptos', 24)] }));
       lines.slice(1).forEach(line => { if (line.trim()) children.push(exMkLine(line, 'Aptos', 24)); });
       children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
 
-      exBuildReponse(q, C, EllipseRun, imgR).forEach(el => children.push(el));
+      exBuildReponse(q, C, EllipseRun, imgR, EX_PAGE_W_Q).forEach(el => children.push(el));
       children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
-      exBuildReglette(q.id, C).forEach(el => children.push(el));
+      exBuildReglette(q.id, C, EX_PAGE_W_Q).forEach(el => children.push(el));
       children.push(new Paragraph({ children: [new TextRun({ text: '' })] }));
     });
 
-    const doc = new Document({ sections: [{ properties: { page: { size: { width: 12240, height: 15840 }, margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 } } }, children }] });
+    const doc = new Document({ sections: [{ properties: { page: { size: { width: 12240, height: 15840 }, margin: { top: 1134, right: 567, bottom: 1134, left: 567 } } }, children }] });
     await exSaveDocx(doc, 'questionnaire_' + exSlug(EX_PERIODE) + '.docx', 'btn-questionnaire');
   } catch (e) {
     console.error(e);
