@@ -222,11 +222,12 @@ Images : **stale-while-revalidate** (pas cache-first pur) — sert le cache imm�
 
 | Fonction | Ligne | Rôle |
 |----------|-------|------|
-| `fetchFreshState(token)` | 1097 | Recharge questions.js depuis GitHub, met à jour SHA + globals |
+| `fetchFreshState(token)` | 1128 | Recharge questions.js depuis GitHub (lecture simple), met à jour SHA + globals via `_assignFreshState` — utilisé pour les rafraîchissements post-publication (déjà appliquée côté serveur, simple confort UI) |
+| `fetchFreshStateStable(token)` | 1146 | Comme `fetchFreshState`, mais relit deux fois de suite (espacées de 3 s) et n'accepte la lecture que si les deux SHA concordent (réplicas stabilisés — voir section Latence de propagation) ; utilisé avant une mutation (suppression, retry après conflit 409) |
 | `buildQuestion()` | 1903 | Construit l'objet `q` à partir du formulaire |
 | `buildReglette(id)` | 2034 | Construit l'objet réglette depuis le preset sélectionné (`null` = conserver l'existante) |
 | `VALIDATION_RULES` / `validateForm()` | 2054/2087 | Liste déclarative de règles `{message, check()}` — étendre ici plutôt qu'avec des `if` ad hoc |
-| `putQuestionsJsWithRetry(token, commitMsg, mutate)` | 2121 | Retry+refetch+conflit 409 factorisé (utilisé par `publier()` ET `supprimerQuestion()`) |
+| `putQuestionsJsWithRetry(token, commitMsg, mutate)` | 2171 | Retry+refetch stabilisé+conflit 409 factorisé (utilisé par `publier()` ET `supprimerQuestion()`) |
 | `publier()` | 2141 | Vérifie d'abord `isAdminStale()` (bloque avec confirmation si une nouvelle version est déployée), refuse toute publication où `editingId !== q.id` (incohérence = client obsolète), puis backup → build → `putQuestionsJsWithRetry` (voie directe) ou Worker/GitHub Actions |
 | `publierViaDispatch(...)` | 2343 | Fallback `repository_dispatch` quand le Worker est inaccessible |
 | `resetForm(keepId)` | 2391 | Remet le formulaire à zéro (appelle `setEditingId(null)`) |
@@ -271,13 +272,14 @@ Images : **stale-while-revalidate** (pas cache-first pur) — sert le cache imm�
 | Fonction | Rôle |
 |----------|------|
 | `setPageLocked(locked, msg)` | Overlay plein écran pendant toute opération GitHub asynchrone (empêche une action concurrente) |
-| `fetchQuestionsJsSource(headers)` | Lit + décode questions.js depuis l'API Contents GitHub (base64 inline ou `download_url`) — **source unique**, utilisée par `applyQuestionsEdit` ET `isImageStillOrphan` |
-| `isImageStillOrphan(img)` | Relit questions.js à l'instant présent ; vrai si `img` n'est référencée par aucune question — revérification juste avant une suppression irréversible (`deleteOrphan`, avant l'étape 4 de `confirmRename`) |
+| `fetchQuestionsJsSource(headers)` | Lit + décode questions.js depuis l'API Contents GitHub (base64 inline ou `download_url`) — **source unique**, utilisée par `fetchStableQuestionsJs` ET `isImageStillOrphan` |
+| `fetchStableQuestionsJs(headers)` | Relit deux fois de suite (espacées de 3 s) via `fetchQuestionsJsSource` ; n'accepte la lecture que si les deux SHA concordent (réplicas stabilisés — voir section Latence de propagation), sinon réessaie jusqu'à 45 s |
+| `isImageStillOrphan(img)` | Relit questions.js à l'instant présent (lecture simple, pas stabilisée — vérification secondaire) ; vrai si `img` n'est référencée par aucune question — revérification juste avant une suppression irréversible (`deleteOrphan`, avant l'étape 4 de `confirmRename`) |
 | `deleteOrphan(img)` | Revérifie via `isImageStillOrphan`, puis supprime une image orpheline du dépôt + retire son entrée d'`IMAGE_DB` |
 | `openReplace` / `handleReplaceFile` / `confirmReplace` | Remplace le contenu d'une image (redimensionne max 1200 px, filtre les types non-image, PUT même nom + SHA, rafraîchit le badge de taille) |
 | `openRename` / `confirmRename` / `updateDomAfterRename` | Renomme une image : crée le nouveau fichier, met à jour les refs dans `questions.js`, reflète l'état local (dont `allImgGroups` + ligne orpheline), revérifie via `isImageStillOrphan` avant de supprimer l'ancien fichier (retry sur conflit 409) |
 | `openSoustitre` / `confirmSoustitre` | Édite le sous-titre du document référençant l'image |
-| `applyQuestionsEdit(mutate, msg)` | `fetchQuestionsJsSource` → mutation ciblée → réécriture de `questions.js` (3 tentatives sur conflit SHA) |
+| `applyQuestionsEdit(mutate, msg)` | `fetchStableQuestionsJs` → mutation ciblée → réécriture de `questions.js` (3 tentatives sur conflit SHA) |
 | `serializeValue` / `ensureImageDbComplete` / `generateQuestionsJs` | Chargées depuis `questions-io.js` (source unique, pas de copie locale) |
 
 > ⚠️ Comme admin.html, cette page **écrit directement `questions.js` sur `main` via l'API GitHub** — ne jamais toucher `questions.js` via git.
@@ -320,7 +322,8 @@ Images : **stale-while-revalidate** (pas cache-first pur) — sert le cache imm�
 
 | Fonction | Rôle |
 |----------|------|
-| `rvApplyQuestionsEdit(mutate, commitMsg)` | Lecture fraîche → mutation ciblée → réécriture de `questions.js` (retry sur conflit SHA) — équivalent de `applyQuestionsEdit` (documents.html) pour cette page ; utilisée par les 3 types d'édition ci-dessous |
+| `rvFetchQuestionsJsSource(headers)` / `rvFetchStableQuestionsJs(headers)` | Équivalents de `fetchQuestionsJsSource`/`fetchStableQuestionsJs` (documents.html) pour cette page |
+| `rvApplyQuestionsEdit(mutate, commitMsg)` | Lecture fraîche stabilisée (`rvFetchStableQuestionsJs`) → mutation ciblée → réécriture de `questions.js` (retry sur conflit SHA) — équivalent de `applyQuestionsEdit` (documents.html) pour cette page ; utilisée par les 3 types d'édition ci-dessous |
 | `_rvActiveEdit` / `rvBeginEdit(key, isDirty, cancelFn)` / `rvEndEdit()` / `hasUnsavedEdit()` / `confirmDiscardEdit()` | État générique d'édition en cours (remplace l'ancien `_rvGuideOriginal` spécifique au guide) — `rvBeginEdit` refuse d'ouvrir un 2ᵉ champ tant qu'un autre (`key` différente) est actif ; `confirmDiscardEdit()` protège la navigation/le changement de filtre |
 | `rvEditGuide()` / `rvCancelGuideEdit()` / `rvSaveGuide()` | Guide de correction (texte seulement — un guide en tableau reste modifiable uniquement dans admin.html) |
 | `rvEditEnonce()` / `rvCancelEnonceEdit()` / `rvSaveEnonce()` | Énoncé de la question — refuse un énoncé vide |
@@ -497,7 +500,11 @@ Symptôme d'un token invalide dans admin.html : statut « ✗ Token invalide ou 
 
 Découvert le 2026-07-13 : l'API Contents de GitHub n'est **pas instantanément cohérente** entre ses différents réplicas de lecture. Sous des écritures rapprochées sur le même fichier (plusieurs modifications en moins d'une minute, par ex. via revision.html/documents.html), une « lecture fraîche » censée précéder chaque écriture peut renvoyer un état antérieur au commit précédent — jusqu'à **35 secondes** de retard observé. Résultat concret : la 2ᵉ modification écrase silencieusement la 1ʳᵉ, même si chaque écriture individuellement relit l'état avant de muter et que le SHA de base est accepté sans conflit 409 (les deux lectures/écritures ont simplement touché des réplicas différents, chacun cohérent avec lui-même).
 
-Ce n'est **pas** le même problème que le cache CDN de GitHub Pages (documenté plus haut) — celui-là concerne le site déployé et se contourne en lisant via l'API. Celui-ci concerne l'API elle-même et n'a pas de contournement définitif, seulement une atténuation : `rvApplyQuestionsEdit` (revision.html), `applyQuestionsEdit` (documents.html) et `putQuestionsJsWithRetry` (admin.html, seulement sur le chemin de relecture après conflit 409) imposent un délai minimum de **12 secondes** entre deux écritures successives sur `questions.js` (`RV_WRITE_COOLDOWN_MS` / `WRITE_COOLDOWN_MS` / `QJS_WRITE_COOLDOWN_MS`) avant de relire — ça ne garantit pas l'absence du problème, mais le rend très improbable en usage normal.
+Ce n'est **pas** le même problème que le cache CDN de GitHub Pages (documenté plus haut) — celui-là concerne le site déployé et se contourne en lisant via l'API. Celui-ci concerne l'API elle-même et n'a pas de contournement définitif.
+
+Un délai fixe avant de relire (essayé en premier, 12 secondes) **s'est révélé insuffisant** : incident reproduit le 2026-07-14 sur `revision.html` avec seulement 14 secondes entre deux écritures — le sous-titre d'un document venait d'être modifié, la modification suivante (sur un autre document de la même question, 14 s plus tard) a relu un état encore périmé et a silencieusement effacé la première. Corrigé via `tools/apply-mutation.mjs`-style : lecture directe de l'API GitHub, comparaison de la valeur attendue, réécriture ciblée.
+
+La parade actuelle : `rvFetchStableQuestionsJs` (revision.html), `fetchStableQuestionsJs` (documents.html) et `fetchFreshStateStable` (admin.html, seulement sur le chemin de relecture après conflit 409 ou avant une suppression) ne se contentent plus d'attendre un délai fixe — elles **relisent deux fois de suite** (espacées de 3 secondes) et ne considèrent la lecture fiable que si les deux lectures renvoient le **même SHA** (réplicas stabilisés). Sinon elles réessaient jusqu'à 45 secondes avant d'abandonner (avec un avertissement en console) plutôt que de bloquer indéfiniment. Ça ne garantit toujours pas l'absence totale du problème (deux lectures consécutives pourraient en théorie toucher le même réplica en retard), mais c'est une vérification active de fraîcheur plutôt qu'un pari sur une durée arbitraire — et ça s'adapte : plus rapide que 12 s quand les réplicas sont déjà cohérents, plus patient qu'un délai fixe quand ils ne le sont pas.
 
 **Conséquence pratique pour l'enseignant** : éviter d'enchaîner plusieurs modifications de documents/guide/énoncé en quelques secondes sur revision.html/documents.html ; attendre la confirmation « ✓ Enregistré » entre deux modifications. Si un cas de perte de données ressemblant à ceci se reproduit (un champ tout juste modifié revient à son ancienne valeur après une modification suivante), vérifier l'historique git des commits `questions.js` autour de l'heure concernée — la même signature (un commit dont le diff « annule » un changement du commit juste précédent sur un champ non lié à l'intention du commit) confirme ce phénomène plutôt qu'un bogue de code classique.
 
