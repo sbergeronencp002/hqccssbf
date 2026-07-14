@@ -1450,7 +1450,7 @@ const IMAGE_DB = {
 "pendaison_louis_riel.jpg": {src: "images/pendaison_louis_riel.jpg"},
 "metis_premier_soulevement_fort_garry.jpg": {src: "images/metis_premier_soulevement_fort_garry.jpg"},
 "metis_deuxieme_soulevement_batoche.jpg": {src: "images/metis_deuxieme_soulevement_batoche.jpg"},
-"legalisation_syndicat_canada.jpg": {src: "images/legalisation_syndicat_canada.jpg"},
+"legalisation_syndicat_canada.jpg": {src: "images/legalisation_syndicat_canada.jpg", w: 1200, h: 800},
 "tableau_exportations_1846_1854.jpg": {src: "images/tableau_exportations_1846_1854.jpg"},
 "tableau_exportations_usa_millions.jpg": {src: "images/tableau_exportations_usa_millions.jpg"},
 "tableau_exportations_province_canada.jpg": {src: "images/tableau_exportations_province_canada.jpg"},
@@ -9731,7 +9731,7 @@ const QUESTIONS = [
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "legalisation_syndicat_canada.jpg", soustitre: "Légalisation des syndicats au Canada", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}],
  reponse: {type: "image", ref: "ligne_1845-1890.png"},
  guide: "B - 1872",
- updatedAt: "2026-07-14T12:03:48.249Z"
+ updatedAt: "2026-07-14T12:05:27.818Z"
 },
 {
  id: "Q518",
