@@ -9501,11 +9501,10 @@ const QUESTIONS = [
  soustag: "Changement",
  enonce: "À partir des documents A et B, indiquez un changement dans l'organisation territoriale de la colonie entre 1791 et 1840.",
  aspects: [{aspect: "Acte d'Union"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_acte_constitutionnel_1791.png", source: "Récitus.", auteur: ""}]}, {type: "textes", cols: [{titre: "Document B", ref: "carte_acte_union_1840.jpg", source: "Reécitus."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_acte_constitutionnel_1791.png", source: "Récitus."}]}, {type: "textes", cols: [{titre: "Document B", ref: "carte_acte_union_1840.jpg", source: "Récitus."}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "Entre 1791 et 1840, le Haut-Canada et le Bas-Canada sont réunis pour former la Province du Canada.\nEntre 1791 et 1840, la colonie passe d'une organisation en deux territoires distincts (Haut-Canada et Bas-Canada) à une seule colonie appelée Province du Canada.",
- updatedAt: "2026-06-18T12:35:29.900Z",
- _imgs: ["carte_acte_constitutionnel_1791.png", "carte_acte_union_1840.jpg"]
+ updatedAt: "2026-07-14T11:58:26.037Z"
 },
 {
  id: "Q502",
@@ -9852,7 +9851,7 @@ const QUESTIONS = [
  aspects: [{aspect: "Acte d'Union"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", ref: "org_pol_1791_acte_const.png", soustitre: "Organisation politique du Haut-Canada et du Bas-Canada entre 1791 et 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", auteur: ""}]},
-  {type: "textes", cols: [{titre: "Document B", ref: "org_pol_1840_acte_union.png", soustitre: "Organisation politique après 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}
+  {type: "textes", cols: [{titre: "Document B", ref: "org_pol_1840_acte_union.png", soustitre: "Organisation politique de la Province du Canada à partir de 1840", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", auteur: ""}]}
  ],
  reponse: {type: "lignes", nombre: 3},
  guide: "La représentation politique des Canadiens français diminue entre 1791 et 1840.\nLes Canadiens français sont majoritaires dans l'Assemblée du Bas-Canada en 1791, mais ne le sont plus après l'Union de 1840.\nEn 1840, les Canadiens français obtiennent le même nombre de députés que le Canada-Ouest malgré leur population plus nombreuse.",
