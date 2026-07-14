@@ -11625,7 +11625,7 @@ const QUESTIONS = [
   {type: "textes", cols: [{titre: "Document B", texte: "« À la fin du XIXᵉ siècle, les revendications en faveur d'une amélioration du statut juridique des femmes prennent de l'importance, même si l'égalité devant la loi est encore loin d'être acquise. »", soustitre: "Vers 1890", source: "Adapté de Denyse Baillargeon, Brève histoire des femmes au Québec, Boréal, 2012."}]}
  ],
  reponse: {type: "lignes", nombre: 2},
- guide: "Les femmes mariées demeurent soumises à l'autorité de leur mari entre 1860 et 1890 (ou elles doivent obtenir l'autorisation de leur mari pour exercer plusieurs droits civils en 1860 comme en 1890).",
+ guide: "Les femmes mariées demeurent soumises à l'autorité de leur mari entre 1860 et 1890.\nElles doivent obtenir l'autorisation de leur mari pour exercer plusieurs droits civils en 1860 comme en 1890.",
  updatedAt: "2026-07-07T01:36:59.639Z"
 },
 {
