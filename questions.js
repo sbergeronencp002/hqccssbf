@@ -1231,7 +1231,8 @@ const REGLETTES = {
 "Q690": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q691": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q692": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q693": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]}
+"Q693": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
+"Q694": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -12486,5 +12487,19 @@ const QUESTIONS = [
  reponse: {type: "mettre-en-relation", elements: ["Clérico-nationalisme", "Libéralisme", "Nationalisme canadien"]},
  guide: {type: "grille", entetes: ["Clérico-nationalisme", "Libéralisme", "Nationalisme canadien"], rangees: [["C", "A", "B"]]},
  updatedAt: "2026-07-14T23:45:53.419Z"
+},
+{
+ id: "Q694",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une raison pour laquelle des membres du clergé et des intellectuels proposent le Programme de restauration sociale durant la crise économique des années 1930.",
+ aspects: [{aspect: "Clérico-nationalisme"}, {aspect: "Grande dépression"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« La crise que nous traversons exige de toutes les bonnes volontés un effort énergique de redressement. […] Ce sont les abus [du régime capitaliste] qui l’ont vicié. Ce sont eux qu’il faut faire disparaître. »", source: "Adapté de l’École sociale populaire, Programme de restauration sociale, Montréal, École sociale populaire, 1933."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Pour remédier aux problèmes causés par la crise économique.\nPour réformer le système économique.\nPour corriger les abus du capitalisme.\nPour proposer des solutions aux problèmes sociaux et économiques de la crise.",
+ updatedAt: "2026-07-15T00:44:19.014Z"
 }
 ]
