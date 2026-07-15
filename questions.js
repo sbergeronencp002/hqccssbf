@@ -1232,7 +1232,8 @@ const REGLETTES = {
 "Q691": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q692": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q693": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
-"Q694": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q694": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q695": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1566,7 +1567,8 @@ const IMAGE_DB = {
 "statut_de_westminster.jpg": {src: "images/statut_de_westminster.jpg", w: 1200, h: 800},
 "droit_de_vote_femmes_canada_1918.jpg": {src: "images/droit_de_vote_femmes_canada_1918.jpg", w: 1200, h: 800},
 "bataille_caen_ww2.jpg": {src: "images/bataille_caen_ww2.jpg", w: 1200, h: 960},
-"portrait_lionnel_groulx.jpg": {src: "images/portrait_lionnel_groulx.jpg", w: 900, h: 1200}
+"portrait_lionnel_groulx.jpg": {src: "images/portrait_lionnel_groulx.jpg", w: 900, h: 1200},
+"tableau_caisses_populaires_quebec_1900-1930.jpg": {src: "images/tableau_caisses_populaires_quebec_1900-1930.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -12501,5 +12503,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Pour remédier aux problèmes causés par la crise économique.\nPour réformer le système économique.\nPour corriger les abus du capitalisme.\nPour proposer des solutions aux problèmes sociaux et économiques de la crise.",
  updatedAt: "2026-07-15T00:44:19.014Z"
+},
+{
+ id: "Q695",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Changement",
+ enonce: "Indiquez un changement concernant le mouvement coopératif au Québec entre 1900 et 1930.",
+ aspects: [{aspect: "Clérico-nationalisme"}, {aspect: "Église catholique"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_caisses_populaires_quebec_1900-1930.jpg", soustitre: "Évolution du nombre de caisses populaires au Québec", source: "Adapté de Pierre Poulin, Histoire du Mouvement Desjardins, tome 2 : La percée des caisses populaires, 1920-1944, Québec, Québec/Amérique, 1994."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Le nombre de caisses populaires augmente.\nLes caisses populaires se multiplient au Québec.\nLe réseau des caisses populaires prend de l’expansion.",
+ updatedAt: "2026-07-15T00:51:25.830Z"
 }
 ]
