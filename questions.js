@@ -1234,7 +1234,8 @@ const REGLETTES = {
 "Q693": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
 "Q694": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q695": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
-"Q696": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q696": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q697": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1569,7 +1570,8 @@ const IMAGE_DB = {
 "droit_de_vote_femmes_canada_1918.jpg": {src: "images/droit_de_vote_femmes_canada_1918.jpg", w: 1200, h: 800},
 "bataille_caen_ww2.jpg": {src: "images/bataille_caen_ww2.jpg", w: 1200, h: 960},
 "portrait_lionnel_groulx.jpg": {src: "images/portrait_lionnel_groulx.jpg", w: 900, h: 1200},
-"tableau_caisses_populaires_quebec_1900-1930.jpg": {src: "images/tableau_caisses_populaires_quebec_1900-1930.jpg", w: 1200, h: 800}
+"tableau_caisses_populaires_quebec_1900-1930.jpg": {src: "images/tableau_caisses_populaires_quebec_1900-1930.jpg", w: 1200, h: 800},
+"tableau_depenses_gouvernements.jpg": {src: "images/tableau_depenses_gouvernements.jpg", w: 1200, h: 751}
 }
 
 const QUESTIONS = [
@@ -12532,5 +12534,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Une grande partie de l’économie québécoise est contrôlée par des intérêts étrangers.\nLes capitaux étrangers occupent une place importante dans l’économie québécoise.\nLes Canadiens français occupent une place limitée dans l’économie.\nLes nationalistes souhaitent réduire la dépendance économique des Canadiens français.",
  updatedAt: "2026-07-15T00:58:48.408Z"
+},
+{
+ id: "Q697",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une raison pour laquelle le gouvernement fédéral instaure un impôt sur le revenu pendant la Première Guerre mondiale.",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_depenses_gouvernements.jpg", soustitre: "Évolution des dépenses fédérales en temps de guerre", source: "Adapté de Canada, ministère des Finances, Tableaux de référence financiers, données historiques sur les dépenses budgétaires du gouvernement fédéral."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Pour augmenter les revenus du gouvernement fédéral afin de financer l’effort de guerre.\nPour payer les dépenses croissantes liées à la guerre.\nPour financer la participation du Canada à la Première Guerre mondiale.",
+ updatedAt: "2026-07-15T01:09:11.588Z"
 }
 ]
