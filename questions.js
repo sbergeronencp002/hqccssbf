@@ -1233,7 +1233,8 @@ const REGLETTES = {
 "Q692": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q693": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
 "Q694": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q695": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
+"Q695": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
+"Q696": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -12517,5 +12518,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Le nombre de caisses populaires augmente.\nLes caisses populaires se multiplient au Québec.\nLe réseau des caisses populaires prend de l’expansion.",
  updatedAt: "2026-07-15T00:51:25.830Z"
+},
+{
+ id: "Q696",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une raison pour laquelle les nationalistes canadiens-français souhaitent accroître la présence des francophones dans l’économie.",
+ aspects: [{aspect: "Clérico-nationalisme"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Les Canadiens français doivent acquérir une plus grande maîtrise de leur vie économique et développer leurs propres entreprises et institutions. »", source: "Adapté d’Esdras Minville, textes sur le capital étranger et le problème économique canadien-français, publiés dans L’Action française, 1923-1924."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Une grande partie de l’économie québécoise est contrôlée par des intérêts étrangers.\nLes capitaux étrangers occupent une place importante dans l’économie québécoise.\nLes Canadiens français occupent une place limitée dans l’économie.\nLes nationalistes souhaitent réduire la dépendance économique des Canadiens français.",
+ updatedAt: "2026-07-15T00:58:48.408Z"
 }
 ]
