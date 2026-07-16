@@ -1264,7 +1264,8 @@ const REGLETTES = {
 "Q724": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q725": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
 "Q726": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
-"Q727": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]}
+"Q727": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
+"Q728": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (2 sur 2)"}, {pts: 1, desc: "L'élève met en relation certains faits. (1 sur 2)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (0 sur 2)"}]}
 }
 
 const IMAGE_DB = {
@@ -13046,5 +13047,22 @@ const QUESTIONS = [
  reponse: {type: "image", ref: "ligne_1890-1950.png"},
  guide: "C - 1935.",
  updatedAt: "2026-07-16T23:45:38.593Z"
+},
+{
+ id: "Q728",
+ niveau: 4,
+ oi: "Mettre en relation des faits",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "2 documents",
+ enonce: "À partir des documents A et B, indiquez le numéro du document qui présente :\n• une ressource exploitée durant la deuxième phase d'industrialisation;\n• la principale provenance des capitaux investis au Canada durant cette phase.",
+ aspects: [{aspect: "Deuxième phase d'industrialisation"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Les immenses ressources minérales et hydrauliques du Québec attirent des industries nouvelles et favorisent le développement économique de régions jusque-là peu peuplées. »", source: "Adapté de Paul-André Linteau, René Durocher et Jean-Claude Robert, Histoire du Québec contemporain. Tome 1 : De la Confédération à la crise (1867-1929), Boréal, 1989."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Au cours de la première moitié du XXᵉ siècle, les investisseurs américains remplacent progressivement les Britanniques et occupent une place de plus en plus importante dans le développement économique du Canada. »", source: "Adapté de Harold A. Innis, Essays in Canadian Economic History, University of Toronto Press, 1956."}]}
+ ],
+ reponse: {type: "mettre-en-relation", elements: ["Ressource exploitée", "Provenance des capitaux"]},
+ guide: {type: "grille", entetes: ["Ressource exploitée", "Provenance des capitaux"], rangees: [["B", "A"]]},
+ updatedAt: "2026-07-16T23:51:39.875Z"
 }
 ]
