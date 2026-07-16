@@ -1254,7 +1254,8 @@ const REGLETTES = {
 "Q714": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q715": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q716": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
-"Q717": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q717": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q718": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -12865,5 +12866,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 3},
  guide: "Changement\nIl y a changement, car les États-Unis remplacent le Royaume-Uni comme principale provenance des capitaux investis au Canada à partir de 1930.\n\nContinuité\nIl y a continuité, car les capitaux investis au Canada proviennent principalement de pays étrangers entre 1900 et 1945.",
  updatedAt: "2026-07-16T18:46:36.438Z"
+},
+{
+ id: "Q718",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Changement",
+ enonce: "Indiquez un changement concernant la principale provenance des capitaux investis au Canada entre 1900 et 1945.",
+ aspects: [{aspect: "Deuxième phase d'industrialisation"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_provenance_capitaux_etrangers.jpg", soustitre: "Évolution de l’origine des investissements étrangers au Canada (", source: "Adapté de Hugh G. J. Aitken, American Capital and Canadian Resources, Harvard University Press, 1961."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les capitaux investis au Canada proviennent de moins en moins du Royaume-Uni et de plus en plus des États-Unis.\nLa principale provenance des capitaux passe du Royaume-Uni aux États-Unis.",
+ updatedAt: "2026-07-16T18:47:15.007Z"
 }
 ]
