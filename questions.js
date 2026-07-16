@@ -1259,7 +1259,8 @@ const REGLETTES = {
 "Q719": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q720": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]},
 "Q721": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]},
-"Q722": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]}
+"Q722": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]},
+"Q723": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]}
 }
 
 const IMAGE_DB = {
@@ -12956,5 +12957,19 @@ const QUESTIONS = [
  reponse: {type: "grille", entetes: ["Abitibi", "Mauricie"], rangees: [["", ""]]},
  guide: {type: "grille", entetes: ["Abitibi", "Mauricie"], rangees: [["A", "C"]]},
  updatedAt: "2026-07-16T19:39:42.186Z"
+},
+{
+ id: "Q723",
+ niveau: 4,
+ oi: "Situer dans l'espace",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Situer 2 éléments",
+ enonce: "À partir du document A, indiquez la lettre correspondant à chacune des régions suivantes :\n• l'Estrie, où se développe l'industrie minière de l'amiante\n• le Saguenay–Lac-Saint-Jean, où se développe l'industrie de l'aluminium",
+ aspects: [{aspect: "Deuxième phase d'industrialisation"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_regions_ressources_naturelles.png", source: "Carte du Québec. Adaptée d'après d-maps.com."}]}],
+ reponse: {type: "grille", entetes: ["Estrie", "Saguenay–Lac-Saint-Jean"], rangees: [["", ""]]},
+ guide: {type: "grille", entetes: ["Estrie", "Saguenay–Lac-Saint-Jean"], rangees: [["D", "B"]]},
+ updatedAt: "2026-07-16T19:43:48.892Z"
 }
 ]
