@@ -1238,7 +1238,8 @@ const REGLETTES = {
 "Q697": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q698": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
 "Q699": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
-"Q700": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]}
+"Q700": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
+"Q701": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]}
 }
 
 const IMAGE_DB = {
@@ -1576,7 +1577,8 @@ const IMAGE_DB = {
 "tableau_caisses_populaires_quebec_1900-1930.jpg": {src: "images/tableau_caisses_populaires_quebec_1900-1930.jpg", w: 1200, h: 800},
 "tableau_depenses_gouvernements.jpg": {src: "images/tableau_depenses_gouvernements.jpg", w: 1200, h: 751},
 "bataille_normandie_ww2.jpg": {src: "images/bataille_normandie_ww2.jpg", w: 1200, h: 900},
-"élection_wilfrid_laurier_1896.jpg": {src: "images/élection_wilfrid_laurier_1896.jpg"}
+"élection_wilfrid_laurier_1896.jpg": {src: "images/élection_wilfrid_laurier_1896.jpg"},
+"pensionnat_indiens_quebec_1934.jpg": {src: "images/pensionnat_indiens_quebec_1934.jpg", w: 1200, h: 900}
 }
 
 const QUESTIONS = [
@@ -12597,5 +12599,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 1},
  guide: "Wilfrid Laurier.",
  updatedAt: "2026-07-16T12:33:11.462Z"
+},
+{
+ id: "Q701",
+ niveau: 4,
+ oi: "Situer dans le temps",
+ periode: "P6 — 1896 – 1945",
+ points: 1,
+ soustag: "Ligne du temps",
+ enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
+ aspects: [{aspect: "Politique intérieure canadienne"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "pensionnat_indiens_quebec_1934.jpg", soustitre: "Ouverture du premier pensionnat indien au Québec", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}],
+ reponse: {type: "image", ref: "ligne_1890-1950.png"},
+ guide: "C - 1934.",
+ updatedAt: "2026-07-16T12:41:52.645Z"
 }
 ]
