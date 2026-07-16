@@ -1246,7 +1246,8 @@ const REGLETTES = {
 "Q705": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q706": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q707": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
-"Q708": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q708": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q709": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1589,7 +1590,9 @@ const IMAGE_DB = {
 "tableau_revenus_fédéral_1905-1945.jpg": {src: "images/tableau_revenus_fédéral_1905-1945.jpg", w: 1200, h: 800},
 "portrait_enfant_avant_pensionnat.jpg": {src: "images/portrait_enfant_avant_pensionnat.jpg", w: 1200, h: 960},
 "portrait_enfant_après_pensionnat.jpg": {src: "images/portrait_enfant_après_pensionnat.jpg", w: 960, h: 1200},
-"tableau_population_ouest_canadien.jpg": {src: "images/tableau_population_ouest_canadien.jpg", w: 1200, h: 800}
+"tableau_population_ouest_canadien.jpg": {src: "images/tableau_population_ouest_canadien.jpg", w: 1200, h: 800},
+"carte_canada_1900.jpg": {src: "images/carte_canada_1900.jpg", w: 1200, h: 945},
+"carte_canada_1905.jpg": {src: "images/carte_canada_1905.jpg", w: 1200, h: 945}
 }
 
 const QUESTIONS = [
@@ -12731,5 +12734,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Pour administrer plus efficacement les territoires de l'Ouest en raison de leur croissance démographique et de leur colonisation.",
  updatedAt: "2026-07-16T15:28:20.057Z"
+},
+{
+ id: "Q709",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Changement",
+ enonce: "À partir des documents A et B, indiquez un changement concernant l'organisation du territoire canadien au début du XXe siècle.",
+ aspects: [{aspect: "Politique intérieure canadienne"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_canada_1900.jpg", soustitre: "Le territoire canadien en 1900", source: "Adapté d'après Wikimedia Commons, carte des provinces et territoires du Canada."}]}, {type: "textes", cols: [{titre: "Document B", ref: "carte_canada_1905.jpg", soustitre: "Le territoire canadien en 1905", source: "Adapté d'après Wikimedia Commons, carte des provinces et territoires du Canada."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Création de la province de l'Alberta.\nCréation de la province de la Saskatchewan.\nLes provinces de l'Alberta et de la Saskatchewan sont créées.",
+ updatedAt: "2026-07-16T15:52:00.077Z"
 }
 ]
