@@ -1235,7 +1235,8 @@ const REGLETTES = {
 "Q694": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q695": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q696": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q697": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q697": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q698": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -12549,5 +12550,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Pour augmenter les revenus du gouvernement fédéral afin de financer l’effort de guerre.\nPour payer les dépenses croissantes liées à la guerre.\nPour financer la participation du Canada à la Première Guerre mondiale.",
  updatedAt: "2026-07-15T01:09:11.588Z"
+},
+{
+ id: "Q698",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Convergence – 2 acteurs",
+ enonce: "Les documents présentent le point de vue de deux acteurs. Sur quel point précis sont-ils d’accord?",
+ aspects: [{aspect: "Clérico-nationalisme"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Un peuple ne peut conserver sa liberté s'il abandonne sa langue, ses traditions et ses droits. Il doit les défendre pour assurer son avenir au sein du Canada. »", auteur: "Henri Bourassa", source: "Adapté d’Henri Bourassa, Le patriotisme canadien-français : ce qu’il est, ce qu’il doit être, Montréal, Imprimerie du Devoir, 1913."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Notre devoir est de préserver la langue française, la foi catholique et les institutions nationales afin d'assurer le développement et la survivance de la nation canadienne-française. »", auteur: "Lionel Groulx", source: "Adapté de Lionel Groulx, Dix ans d’Action française, Montréal, Bibliothèque de l’Action française, 1926."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "L'importance de défendre les intérêts des Canadiens français.\nL'importance de préserver l'identité canadienne-française.",
+ updatedAt: "2026-07-16T12:23:26.295Z"
 }
 ]
