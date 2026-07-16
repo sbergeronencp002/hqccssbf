@@ -1255,7 +1255,8 @@ const REGLETTES = {
 "Q715": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q716": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q717": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q718": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
+"Q718": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
+"Q719": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1604,7 +1605,8 @@ const IMAGE_DB = {
 "carte_canada_1905_lettres.jpg": {src: "images/carte_canada_1905_lettres.jpg"},
 "tableau_municipalites_minieres.jpg": {src: "images/tableau_municipalites_minieres.jpg"},
 "tableau_production_dom_manu.jpg": {src: "images/tableau_production_dom_manu.jpg"},
-"tableau_provenance_capitaux_etrangers.jpg": {src: "images/tableau_provenance_capitaux_etrangers.jpg", w: 1200, h: 800}
+"tableau_provenance_capitaux_etrangers.jpg": {src: "images/tableau_provenance_capitaux_etrangers.jpg", w: 1200, h: 800},
+"tableau_exportations_canadienne.jpg": {src: "images/tableau_exportations_canadienne.jpg"}
 }
 
 const QUESTIONS = [
@@ -12880,5 +12882,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les capitaux investis au Canada proviennent de moins en moins du Royaume-Uni et de plus en plus des États-Unis.\nLa principale provenance des capitaux passe du Royaume-Uni aux États-Unis.",
  updatedAt: "2026-07-16T18:47:15.007Z"
+},
+{
+ id: "Q719",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Changement",
+ enonce: "Indiquez un changement concernant les principaux produits exportés par le Canada vers les États-Unis entre 1900 et 1945.",
+ aspects: [{aspect: "Deuxième phase d'industrialisation"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_exportations_canadienne.jpg", soustitre: "Évolution des exportations canadiennes vers les États-Unis", source: "Adapté de Statistique Canada, Statistiques historiques du Canada, séries sur le commerce extérieur et les exportations selon les groupes de produits, Gouvernement du Canada."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les produits manufacturés remplacent progressivement les produits agricoles parmi les principales exportations canadiennes.\nLes produits manufacturés deviennent la principale catégorie de produits exportés vers les États-Unis.",
+ updatedAt: "2026-07-16T19:01:43.152Z"
 }
 ]
