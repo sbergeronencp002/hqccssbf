@@ -1091,7 +1091,7 @@ const REGLETTES = {
  oi: "Dégager des différences et des similitudes",
  variante: "acteur-positions"
 },
-"Q593": {colonnes: ["2 points", "1 point", "0 point"], niveaux: [{desc: "L'élève met en relation tous les faits. (4 sur 4)", pts: 2}, {desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)", pts: 1}, {desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)", pts: 0}], oi: "Mettre en relation des faits"},
+"Q593": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]},
 "Q594": {colonnes: ["2 points", "1 point", "0 point"], niveaux: [{desc: "L'élève met en relation tous les faits. (4 sur 4)", pts: 2}, {desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)", pts: 1}, {desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)", pts: 0}], oi: "Mettre en relation des faits"},
 "Q595": {colonnes: ["1 point", "0 point"], niveaux: [{desc: "L'élève situe le fait dans l'espace.", pts: 1}, {desc: "L'élève ne situe pas le fait dans l'espace.", pts: 0}], oi: "Situer dans l'espace"},
 "Q597": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
@@ -11002,23 +11002,22 @@ const QUESTIONS = [
  updatedAt: "2026-06-30T19:41:21.981Z"
 },
 {
- aspects: [{aspect: "Relations fédérales-provinciales"}],
- documents: [
-  {cols: [{ref: "pendaison_louis_riel.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026.", soustitre: "Exécution de Louis Riel", titre: "Document A"}], type: "textes"},
-  {cols: [{ref: "metis_premier_soulevement_fort_garry.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026.", soustitre: "Louis Riel met sur pied un gouvernement provisoire", titre: "Document B"}], type: "textes"},
-  {cols: [{source: "Adapté de J.M. Bumsted, The Peoples of Canada, Oxford University Press, 2003.", texte: "« La victoire des troupes canadiennes à Batoche confirme l'autorité du gouvernement fédéral sur les Territoires du Nord-Ouest et transforme durablement l'histoire de l'Ouest. »", titre: "Document C"}], type: "textes"},
-  {cols: [{source: "Adapté de la Loi sur le Manitoba, 1870.", texte: "« Une nouvelle province est créée dans l'Ouest canadien. Ses habitants obtiennent notamment la protection de certaines terres et de certains droits reconnus par la loi. »", titre: "Document D"}], type: "textes"}
- ],
- enonce: "Les documents A à D présentent des faits liés à deux soulèvements des Métis. Associez chaque document au soulèvement correspondant.",
- guide: {entetes: ["Soulèvement de la rivière Rouge", "Soulèvement du Nord-Ouest"], rangees: [["B et D", "A et C"]], type: "grille"},
  id: "Q593",
  niveau: 4,
  oi: "Mettre en relation des faits",
  periode: "P5 — 1840 – 1896",
  points: 2,
- reponse: {double: true, elements: ["Soulèvement de la rivière Rouge", "Soulèvement du Nord-Ouest"], type: "mettre-en-relation"},
- updatedAt: "2026-06-30T20:03:24.149Z",
- _imgs: ["pendaison_louis_riel.jpg", "metis_premier_soulevement_fort_garry.jpg"]
+ enonce: "Les documents A à D présentent des faits liés à deux soulèvements des Métis. Associez chaque document au soulèvement correspondant.",
+ aspects: [{aspect: "Relations fédérales-provinciales"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "pendaison_louis_riel.jpg", soustitre: "Exécution de Louis Riel", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "metis_premier_soulevement_fort_garry.jpg", soustitre: "Louis Riel met sur pied un gouvernement provisoire", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« La victoire des troupes canadiennes à Batoche confirme l'autorité du gouvernement fédéral sur les Territoires du Nord-Ouest et transforme durablement l'histoire de l'Ouest. »", source: "Adapté de J.M. Bumsted, The Peoples of Canada, Oxford University Press, 2003."}]},
+  {type: "textes", cols: [{titre: "Document D", texte: "« Une nouvelle province est créée dans l'Ouest canadien. Ses habitants obtiennent notamment la protection de certaines terres et de certains droits reconnus par la loi. »", source: "Adapté de la Loi sur le Manitoba, 1870."}]}
+ ],
+ reponse: {type: "mettre-en-relation", elements: ["Soulèvement de la rivière Rouge", "Soulèvement du Nord-Ouest"], double: true},
+ guide: {type: "grille", entetes: ["Soulèvement de la rivière Rouge", "Soulèvement du Nord-Ouest"], rangees: [["B et D", "A et C"]]},
+ updatedAt: "2026-07-16T23:54:36.068Z"
 },
 {
  aspects: [{aspect: "Relations fédérales-provinciales"}],
