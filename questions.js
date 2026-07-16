@@ -1239,7 +1239,8 @@ const REGLETTES = {
 "Q698": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
 "Q699": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q700": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
-"Q701": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]}
+"Q701": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
+"Q702": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1578,7 +1579,8 @@ const IMAGE_DB = {
 "tableau_depenses_gouvernements.jpg": {src: "images/tableau_depenses_gouvernements.jpg", w: 1200, h: 751},
 "bataille_normandie_ww2.jpg": {src: "images/bataille_normandie_ww2.jpg", w: 1200, h: 900},
 "élection_wilfrid_laurier_1896.jpg": {src: "images/élection_wilfrid_laurier_1896.jpg"},
-"pensionnat_indiens_quebec_1934.jpg": {src: "images/pensionnat_indiens_quebec_1934.jpg", w: 1200, h: 900}
+"pensionnat_indiens_quebec_1934.jpg": {src: "images/pensionnat_indiens_quebec_1934.jpg", w: 1200, h: 900},
+"tableau_revenus_fédéral_1905-1945.jpg": {src: "images/tableau_revenus_fédéral_1905-1945.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -12613,5 +12615,19 @@ const QUESTIONS = [
  reponse: {type: "image", ref: "ligne_1890-1950.png"},
  guide: "C - 1934.",
  updatedAt: "2026-07-16T12:41:52.645Z"
+},
+{
+ id: "Q702",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Changement",
+ enonce: "Indiquez un changement concernant les pouvoirs fiscaux du gouvernement fédéral entre 1915 et 1945.",
+ aspects: [{aspect: "Politique intérieure canadienne"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_revenus_fédéral_1905-1945.jpg", soustitre: "Évolution des principales sources de revenus du gouvernement fédéral", source: "Adapté de Robert Bothwell, Canada and the United States: The Politics of Partnership, University of Toronto Press, 1992, et des Comptes publics du Canada."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "L'impôt sur le revenu devient la principale source de revenus du gouvernement fédéral.\nLe gouvernement fédéral dépend davantage de l'impôt sur le revenu.\nLes revenus provenant de l'impôt sur le revenu augmentent.\nLes droits de douane et les taxes d'accise représentent une part moins importante des revenus fédéraux.\nLe gouvernement fédéral diversifie ses sources de revenus en instaurant l'impôt sur le revenu.",
+ updatedAt: "2026-07-16T12:51:20.425Z"
 }
 ]
