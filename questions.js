@@ -1252,7 +1252,8 @@ const REGLETTES = {
 "Q711": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q713": {oi: "Situer dans le temps", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}]},
 "Q714": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
-"Q715": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
+"Q715": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
+"Q716": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -12834,5 +12835,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "La production manufacturière augmente.\nLa production manufacturière prend une place plus importante dans l'économie canadienne.\nLa production manufacturière remplace progressivement la production domestique.\nLa production domestique diminue au profit de la production manufacturière.",
  updatedAt: "2026-07-16T18:30:53.486Z"
+},
+{
+ id: "Q716",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Conséquence",
+ enonce: "Indiquez une conséquence de la concentration des entreprises dans quelques grandes compagnies.",
+ aspects: [{aspect: "Deuxième phase d'industrialisation"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« La tendance aux fusions d'entreprises devient particulièrement marquée vers la fin de la décennie 1900-1910 et suscite des inquiétudes en raison de l'élimination de la concurrence. »", source: "Adapté de Department of Labour, Industrial Mergers and Over-Capitalization, Ottawa, 1915."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "La diminution de la concurrence.\nLa domination d’un secteur économique par quelques grandes compagnies.\nLa disparition ou l’absorption de plusieurs petites entreprises.\nL’augmentation du pouvoir économique des grandes compagnies.\nLa création de monopoles ou de quasi-monopoles.",
+ updatedAt: "2026-07-16T18:37:53.150Z"
 }
 ]
