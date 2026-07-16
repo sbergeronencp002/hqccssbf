@@ -12951,12 +12951,12 @@ const QUESTIONS = [
  periode: "P6 — 1896 – 1945",
  points: 2,
  soustag: "Situer 2 éléments",
- enonce: "À partir du document A, indiquez la lettre correspondant à chacune des régions suivantes :\n• l'Abitibi, où se développe l'industrie minière\n• la Mauricie, où se développe l'industrie des pâtes et papiers",
+ enonce: "À partir du document A, indiquez la lettre correspondant à chacune des régions suivantes :\n• l'Abitibi, où se développe l'industrie minière;\n• la Mauricie, où se développe l'industrie des pâtes et papiers.",
  aspects: [{aspect: "Deuxième phase d'industrialisation"}],
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_regions_ressources_naturelles.png", source: "Carte du Québec. Adaptée d'après d-maps.com."}]}],
  reponse: {type: "grille", entetes: ["Abitibi", "Mauricie"], rangees: [["", ""]]},
  guide: {type: "grille", entetes: ["Abitibi", "Mauricie"], rangees: [["A", "C"]]},
- updatedAt: "2026-07-16T19:44:58.614Z"
+ updatedAt: "2026-07-16T19:39:42.186Z"
 },
 {
  id: "Q723",
@@ -12970,6 +12970,6 @@ const QUESTIONS = [
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_regions_ressources_naturelles.png", source: "Carte du Québec. Adaptée d'après d-maps.com."}]}],
  reponse: {type: "grille", entetes: ["Estrie", "Saguenay–Lac-Saint-Jean"], rangees: [["", ""]]},
  guide: {type: "grille", entetes: ["Estrie", "Saguenay–Lac-Saint-Jean"], rangees: [["D", "B"]]},
- updatedAt: "2026-07-16T19:43:48.892Z"
+ updatedAt: "2026-07-16T19:45:43.788Z"
 }
 ]
