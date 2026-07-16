@@ -1257,7 +1257,8 @@ const REGLETTES = {
 "Q717": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q718": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q719": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
-"Q720": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]}
+"Q720": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]},
+"Q721": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]}
 }
 
 const IMAGE_DB = {
@@ -1609,7 +1610,9 @@ const IMAGE_DB = {
 "tableau_provenance_capitaux_etrangers.jpg": {src: "images/tableau_provenance_capitaux_etrangers.jpg", w: 1200, h: 800},
 "tableau_exportations_canadienne.jpg": {src: "images/tableau_exportations_canadienne.jpg"},
 "barrage_hydrolectrique_1920.jpg": {src: "images/barrage_hydrolectrique_1920.jpg"},
-"manufacture_textile_vapeur.jpg": {src: "images/manufacture_textile_vapeur.jpg"}
+"manufacture_textile_vapeur.jpg": {src: "images/manufacture_textile_vapeur.jpg"},
+"manufacture_lourde.jpg": {src: "images/manufacture_lourde.jpg", w: 1200, h: 960},
+"manufacture_alimentation.jpg": {src: "images/manufacture_alimentation.jpg", w: 1200, h: 960}
 }
 
 const QUESTIONS = [
@@ -12918,5 +12921,24 @@ const QUESTIONS = [
  reponse: {type: "mettre-en-relation", elements: ["Première phase industrielle", "Deuxième phase industrielle"]},
  guide: {type: "grille", entetes: ["Première phase industrielle", "Deuxième phase industrielle"], rangees: [["A et C", "B et D"]]},
  updatedAt: "2026-07-16T19:10:27.987Z"
+},
+{
+ id: "Q721",
+ niveau: 4,
+ oi: "Mettre en relation des faits",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "4 documents",
+ enonce: "Les documents A à D présentent des faits relatifs aux deux phases d'industrialisation au Canada. Associez chaque document à la phase d'industrialisation correspondante.",
+ aspects: [{aspect: "Deuxième phase d'industrialisation"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Les manufactures produisent désormais des biens plus complexes grâce à la mécanisation et à l'utilisation généralisée de l'électricité. »", source: "Adapté de John A. Dickinson et Brian Young, Brève histoire socio-économique du Québec, Septentrion, 2009."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "manufacture_alimentation.jpg", soustitre: "Manufacture de l'industrie alimentaire à Montréal", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "manufacture_lourde.jpg", soustitre: "Manufacture d'industrie lourde à Montréal", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document D", texte: "« Les industries du textile et de la chaussure dominent l'activité manufacturière durant la seconde moitié du XIXᵉ siècle. »", source: "Adapté de Paul-André Linteau, Histoire du Canada, PUM, 2008."}]}
+ ],
+ reponse: {type: "mettre-en-relation", elements: ["Première phase industrielle", "Deuxième phase industrielle"]},
+ guide: {type: "grille", entetes: ["Première phase industrielle", "Deuxième phase industrielle"], rangees: [["B et D", "A et C"]]},
+ updatedAt: "2026-07-16T19:29:03.394Z"
 }
 ]
