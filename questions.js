@@ -1258,7 +1258,8 @@ const REGLETTES = {
 "Q718": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q719": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q720": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]},
-"Q721": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]}
+"Q721": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]},
+"Q722": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]}
 }
 
 const IMAGE_DB = {
@@ -1612,7 +1613,8 @@ const IMAGE_DB = {
 "barrage_hydrolectrique_1920.jpg": {src: "images/barrage_hydrolectrique_1920.jpg"},
 "manufacture_textile_vapeur.jpg": {src: "images/manufacture_textile_vapeur.jpg"},
 "manufacture_lourde.jpg": {src: "images/manufacture_lourde.jpg", w: 1200, h: 960},
-"manufacture_alimentation.jpg": {src: "images/manufacture_alimentation.jpg", w: 1200, h: 960}
+"manufacture_alimentation.jpg": {src: "images/manufacture_alimentation.jpg", w: 1200, h: 960},
+"carte_regions_ressources_naturelles.png": {src: "images/carte_regions_ressources_naturelles.png", w: 919, h: 1200}
 }
 
 const QUESTIONS = [
@@ -12940,5 +12942,19 @@ const QUESTIONS = [
  reponse: {type: "mettre-en-relation", elements: ["Première phase industrielle", "Deuxième phase industrielle"]},
  guide: {type: "grille", entetes: ["Première phase industrielle", "Deuxième phase industrielle"], rangees: [["B et D", "A et C"]]},
  updatedAt: "2026-07-16T19:29:03.394Z"
+},
+{
+ id: "Q722",
+ niveau: 4,
+ oi: "Situer dans l'espace",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Situer 2 éléments",
+ enonce: "À partir du document A, indiquez la lettre correspondant à chacune des régions suivantes :\n• l'Abitibi, où se développe l'industrie minière;\n• la Mauricie, où se développe l'industrie des pâtes et papiers.",
+ aspects: [{aspect: "Deuxième phase d'industrialisation"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_regions_ressources_naturelles.png", source: "Carte du Québec. Adaptée d'après d-maps.com."}]}],
+ reponse: {type: "grille", entetes: ["Abitibi", "Mauricie"], rangees: [["", ""]]},
+ guide: {type: "grille", entetes: ["Abitibi", "Mauricie"], rangees: [["A", "C"]]},
+ updatedAt: "2026-07-16T19:39:42.186Z"
 }
 ]
