@@ -1249,7 +1249,8 @@ const REGLETTES = {
 "Q708": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q709": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q710": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]},
-"Q711": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q711": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q713": {oi: "Situer dans le temps", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}]}
 }
 
 const IMAGE_DB = {
@@ -12782,5 +12783,24 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 5},
  guide: "Le gouvernement fédéral favorise le peuplement de l'Ouest en encourageant l'immigration (la politique de peuplement de l'Ouest). Cette politique entraîne une augmentation de la population dans les Prairies (la situation démographique des Prairies). Le gouvernement fédéral crée alors les provinces de l'Alberta et de la Saskatchewan en 1905 (une modification du territoire canadien en 1905).",
  updatedAt: "2026-07-16T16:17:16.369Z"
+},
+{
+ id: "Q713",
+ niveau: 4,
+ oi: "Situer dans le temps",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Ordre chronologique",
+ enonce: "Les documents A à D présentent des faits liés à l'évolution du statut du Canada dans l'Empire britannique. Placez-les par ordre chronologique.",
+ aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Seconde Guerre mondiale"}, {aspect: "Statut du Canada dans l'Empire britannique"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "bataille_crete_vimy.jpg", soustitre: "Les soldats canadiens à la bataille de Vimy", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "bataille_normandie_ww2.jpg", soustitre: "Le débarquement des soldats canadiens en Normandie", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "guerre_des_boers_1899.jpg", soustitre: "Le Canada participe à la guerre des Boers", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document D", ref: "statut_de_westminster.jpg", soustitre: "L’adoption du Statut de Westminster", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}
+ ],
+ reponse: {type: "image", ref: "ligne_abDc.png"},
+ guide: "C - A - D - B",
+ updatedAt: "2026-07-16T18:10:59.565Z"
 }
 ]
