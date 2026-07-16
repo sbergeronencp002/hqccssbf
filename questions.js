@@ -1240,7 +1240,8 @@ const REGLETTES = {
 "Q699": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q700": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
 "Q701": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
-"Q702": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
+"Q702": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
+"Q703": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -12629,5 +12630,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "L'impôt sur le revenu devient la principale source de revenus du gouvernement fédéral.\nLe gouvernement fédéral dépend davantage de l'impôt sur le revenu.\nLes revenus provenant de l'impôt sur le revenu augmentent.\nLes droits de douane et les taxes d'accise représentent une part moins importante des revenus fédéraux.\nLe gouvernement fédéral diversifie ses sources de revenus en instaurant l'impôt sur le revenu.",
  updatedAt: "2026-07-16T12:51:20.425Z"
+},
+{
+ id: "Q703",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Continuité",
+ enonce: "Indiquez un élément de continuité concernant les revendications des minorités franco-catholiques au Canada entre 1896 et 1945.",
+ aspects: [{aspect: "Politique intérieure canadienne"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Les Canadiens français du Manitoba réclament le rétablissement de leurs écoles confessionnelles ainsi que le droit d'y enseigner en français. »", soustitre: "Question des écoles du Manitoba - 1896", source: "Adapté de Gouvernement du Canada, Rapport de la Commission Laurier-Greenway, 1896."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les associations franco-ontariennes demandent le maintien de l'enseignement en français dans les écoles malgré les restrictions imposées par le Règlement 17. »", soustitre: "Règlement 17 en Ontario - 1912", source: "Adapté de l'Association canadienne-française d'éducation d'Ontario (ACFÉO), Mémoire sur le Règlement 17, 1912."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les minorités franco-catholiques continuent de revendiquer leurs droits scolaires et linguistiques.",
+ updatedAt: "2026-07-16T14:59:26.088Z"
 }
 ]
