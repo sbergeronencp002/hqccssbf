@@ -1262,7 +1262,8 @@ const REGLETTES = {
 "Q722": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]},
 "Q723": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]},
 "Q724": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q725": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]}
+"Q725": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
+"Q726": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]}
 }
 
 const IMAGE_DB = {
@@ -13014,5 +13015,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les provinces revendiquent le respect de leurs compétences constitutionnelles par le gouvernement fédéral.\nLes provinces veulent préserver leurs pouvoirs.\nLes provinces s'opposent à l'empiétement du gouvernement fédéral dans leurs champs de compétence.\nLes provinces revendiquent une plus grande autonomie.\nLes provinces contestent les interventions du gouvernement fédéral dans leurs compétences.",
  updatedAt: "2026-07-16T23:37:51.704Z"
+},
+{
+ id: "Q726",
+ niveau: 4,
+ oi: "Situer dans le temps",
+ periode: "P6 — 1896 – 1945",
+ points: 1,
+ soustag: "Ligne du temps",
+ enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
+ aspects: [{aspect: "Culture de masse"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« La création de Radio-Canada marque une étape importante dans l'affirmation d'une identité culturelle canadienne en offrant un réseau public capable de concurrencer l'influence croissante des stations américaines. »", soustitre: "Création de la Société Radio-Canada", source: "Adapté de Paul-André Linteau, René Durocher, Jean-Claude Robert et François Ricard, Histoire du Québec contemporain. Tome 2 : Le Québec depuis 1930, Boréal, 1989."}]}],
+ reponse: {type: "image", ref: "ligne_1890-1950.png"},
+ guide: "C - 1936.",
+ updatedAt: "2026-07-16T23:43:04.644Z"
 }
 ]
