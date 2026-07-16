@@ -12578,10 +12578,10 @@ const QUESTIONS = [
  points: 1,
  soustag: "Ligne du temps",
  enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
- aspects: [{aspect: "Seconde Guerre mondiale"}],
+ aspects: [{aspect: "Politique intérieure canadienne"}],
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "élection_wilfrid_laurier_1896.jpg", soustitre: "Élection de Wilfrid Laurier", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}],
  reponse: {type: "image", ref: "ligne_1890-1950.png"},
  guide: "A - 1896.",
- updatedAt: "2026-07-16T12:31:16.834Z"
+ updatedAt: "2026-07-16T12:32:35.802Z"
 }
 ]
