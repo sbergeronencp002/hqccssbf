@@ -1251,5 +1251,15 @@ const QUESTIONS = [
 {id: "Q707", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P6 — 1896 – 1945", points: 2, soustag: "Continuité", aspects: [{aspect: "Politique intérieure canadienne"}], enonce: "Indiquez un élément de continuité concernant la politique du gouvernement fédéral à l'égard des populations des Premières Nations dans la première moitié du XXe siècle.", updatedAt: "2026-07-16T15:24:11.243Z"},
 {id: "Q708", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Cause", aspects: [{aspect: "Politique intérieure canadienne"}], enonce: "Indiquez une raison pour laquelle le gouvernement fédéral crée les provinces de l'Alberta et de la Saskatchewan en 1905.", updatedAt: "2026-07-16T15:28:20.057Z"},
 {id: "Q709", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P6 — 1896 – 1945", points: 2, soustag: "Changement", aspects: [{aspect: "Politique intérieure canadienne"}], enonce: "À partir des documents A et B, indiquez un changement concernant l'organisation du territoire canadien au début du XXe siècle.", updatedAt: "2026-07-16T15:52:00.077Z"},
-{id: "Q710", niveau: 4, oi: "Situer dans l'espace", periode: "P6 — 1896 – 1945", points: 2, soustag: "Situer 2 éléments", aspects: [{aspect: "Politique intérieure canadienne"}], enonce: "À partir du document A, indiquez la lettre correspondant au territoire de chacune des provinces :\n• Alberta\n• Saskatchewan", updatedAt: "2026-07-16T15:57:11.899Z"}
+{id: "Q710", niveau: 4, oi: "Situer dans l'espace", periode: "P6 — 1896 – 1945", points: 2, soustag: "Situer 2 éléments", aspects: [{aspect: "Politique intérieure canadienne"}], enonce: "À partir du document A, indiquez la lettre correspondant au territoire de chacune des provinces :\n• Alberta\n• Saskatchewan", updatedAt: "2026-07-16T15:57:11.899Z"},
+{
+ id: "Q711",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ aspects: [{aspect: "Politique intérieure canadienne"}],
+ enonce: "Expliquez comment la politique de peuplement de l'Ouest amène le gouvernement fédéral à modifier le territoire canadien en 1905\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La politique de peuplement de l'Ouest canadien\n• La situation démographique des Prairies\n• Une modification du territoire canadien en 1905",
+ updatedAt: "2026-07-16T16:17:16.369Z"
+}
 ]
