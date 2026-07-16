@@ -1236,7 +1236,8 @@ const REGLETTES = {
 "Q695": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q696": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q697": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q698": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]}
+"Q698": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
+"Q699": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1573,7 +1574,8 @@ const IMAGE_DB = {
 "portrait_lionnel_groulx.jpg": {src: "images/portrait_lionnel_groulx.jpg", w: 900, h: 1200},
 "tableau_caisses_populaires_quebec_1900-1930.jpg": {src: "images/tableau_caisses_populaires_quebec_1900-1930.jpg", w: 1200, h: 800},
 "tableau_depenses_gouvernements.jpg": {src: "images/tableau_depenses_gouvernements.jpg", w: 1200, h: 751},
-"bataille_normandie_ww2.jpg": {src: "images/bataille_normandie_ww2.jpg", w: 1200, h: 900}
+"bataille_normandie_ww2.jpg": {src: "images/bataille_normandie_ww2.jpg", w: 1200, h: 900},
+"revue_action_francaise.jpg": {src: "images/revue_action_francaise.jpg"}
 }
 
 const QUESTIONS = [
@@ -12567,5 +12569,18 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "L'importance de défendre les intérêts des Canadiens français.\nL'importance de préserver l'identité canadienne-française.",
  updatedAt: "2026-07-16T12:23:26.295Z"
+},
+{
+ id: "Q699",
+ niveau: 4,
+ oi: "Établir des faits",
+ periode: "P6 — 1896 – 1945",
+ points: 1,
+ enonce: "À partir du document A, nommez le mouvement de pensée auquel est associée la revue présentée.",
+ aspects: [{aspect: "Clérico-nationalisme"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "revue_action_francaise.jpg", soustitre: "Couverture de la revue L’Action française", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}],
+ reponse: {type: "lignes", nombre: 1},
+ guide: "Le clérico-nationalisme.",
+ updatedAt: "2026-07-16T12:27:20.807Z"
 }
 ]
