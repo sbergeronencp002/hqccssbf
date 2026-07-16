@@ -1261,7 +1261,8 @@ const REGLETTES = {
 "Q721": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]},
 "Q722": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]},
 "Q723": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]},
-"Q724": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q724": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q725": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -12991,5 +12992,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 5},
  guide: "Le développement de l'hydroélectricité (le développement d'une nouvelle source d'énergie) favorise l'implantation de nouvelles industries, comme les industries des pâtes et papiers (l'implantation de nouvelles industries). Ces nouvelles industries contribuent à l'augmentation de la production manufacturière (la production manufacturière).",
  updatedAt: "2026-07-16T20:19:42.068Z"
+},
+{
+ id: "Q725",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Continuité",
+ enonce: "À partir des documents A et B, indiquez un élément de continuité dans les revendications des provinces face au gouvernement fédéral entre 1887 et 1939.",
+ aspects: [{aspect: "Grande dépression"}, {aspect: "Politique intérieure canadienne"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Les provinces doivent exercer pleinement les droits que leur confère la Constitution afin de préserver leur autonomie contre toute tendance à la centralisation. »", auteur: "Honoré Mercier", source: "Adapté de Honoré Mercier, discours à la Conférence interprovinciale de Québec, Québec, 20 octobre 1887."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les pouvoirs provinciaux constituent la garantie essentielle de l'autonomie du Québec au sein de la fédération canadienne. »", auteur: "Maurice Duplessis", source: "Adapté de Maurice Duplessis, discours politique, 1939, cité dans Robert Rumilly, Maurice Duplessis et son temps, Fides."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les provinces revendiquent le respect de leurs compétences constitutionnelles par le gouvernement fédéral.\nLes provinces veulent préserver leurs pouvoirs.\nLes provinces s'opposent à l'empiétement du gouvernement fédéral dans leurs champs de compétence.\nLes provinces revendiquent une plus grande autonomie.\nLes provinces contestent les interventions du gouvernement fédéral dans leurs compétences.",
+ updatedAt: "2026-07-16T23:37:51.704Z"
 }
 ]
