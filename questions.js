@@ -1260,7 +1260,8 @@ const REGLETTES = {
 "Q720": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]},
 "Q721": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]},
 "Q722": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]},
-"Q723": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]}
+"Q723": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]},
+"Q724": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -1615,7 +1616,9 @@ const IMAGE_DB = {
 "manufacture_textile_vapeur.jpg": {src: "images/manufacture_textile_vapeur.jpg"},
 "manufacture_lourde.jpg": {src: "images/manufacture_lourde.jpg", w: 1200, h: 960},
 "manufacture_alimentation.jpg": {src: "images/manufacture_alimentation.jpg", w: 1200, h: 960},
-"carte_regions_ressources_naturelles.png": {src: "images/carte_regions_ressources_naturelles.png", w: 919, h: 1200}
+"carte_regions_ressources_naturelles.png": {src: "images/carte_regions_ressources_naturelles.png", w: 919, h: 1200},
+"usines_pates_papiers.jpg": {src: "images/usines_pates_papiers.jpg"},
+"tableau_production_manufacturiere_1900-1940.jpg": {src: "images/tableau_production_manufacturiere_1900-1940.jpg"}
 }
 
 const QUESTIONS = [
@@ -12971,5 +12974,22 @@ const QUESTIONS = [
  reponse: {type: "grille", entetes: ["Estrie", "Saguenay–Lac-Saint-Jean"], rangees: [["", ""]]},
  guide: {type: "grille", entetes: ["Estrie", "Saguenay–Lac-Saint-Jean"], rangees: [["D", "B"]]},
  updatedAt: "2026-07-16T19:45:43.788Z"
+},
+{
+ id: "Q724",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ enonce: "Expliquez comment le développement d'une nouvelle source d'énergie favorise l'augmentation de la production manufacturière au Québec durant la première moitié du XXᵉ siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Le développement d'une nouvelle source d'énergie\n• L'implantation de nouvelles manufactures\n• L'augmentation de la production manufacturière",
+ aspects: [{aspect: "Deuxième phase d'industrialisation"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Grâce au développement de l'énergie hydraulique, certaines régions du Québec attirent de nouvelles entreprises qui augmentent progressivement l'activité manufacturière et stimulent leur développement économique. »", source: "Adapté de Paul-André Linteau, Histoire du Canada, Presses de l'Université de Montréal, 2008."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "usines_pates_papiers.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "tableau_production_manufacturiere_1900-1940.jpg", soustitre: "Évolution de la production manufacturière au Québec", source: "Adapté de Statistique Canada, Statistiques historiques du Canada, section E – Manufactures et industrie, Gouvernement du Canada."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "Le développement de l'hydroélectricité (le développement d'une nouvelle source d'énergie) favorise l'implantation de nouvelles industries, comme les industries des pâtes et papiers (l'implantation de nouvelles industries). Ces nouvelles industries contribuent à l'augmentation de la production manufacturière (la production manufacturière).",
+ updatedAt: "2026-07-16T20:16:23.168Z"
 }
 ]
