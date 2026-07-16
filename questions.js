@@ -1237,7 +1237,8 @@ const REGLETTES = {
 "Q696": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q697": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q698": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
-"Q699": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]}
+"Q699": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
+"Q700": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -12578,10 +12579,23 @@ const QUESTIONS = [
  points: 1,
  soustag: "Ligne du temps",
  enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
- aspects: [{aspect: "Politique intérieure canadienne"}],
+ aspects: [{aspect: "Seconde Guerre mondiale"}],
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "élection_wilfrid_laurier_1896.jpg", soustitre: "Élection de Wilfrid Laurier", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}],
  reponse: {type: "image", ref: "ligne_1890-1950.png"},
  guide: "A - 1896.",
- updatedAt: "2026-07-16T12:32:35.802Z"
+ updatedAt: "2026-07-16T12:31:16.834Z"
+},
+{
+ id: "Q700",
+ niveau: 4,
+ oi: "Établir des faits",
+ periode: "P6 — 1896 – 1945",
+ points: 1,
+ enonce: "Indiquez le nom du premier ministre qui dirige le gouvernement canadien durant l'ère libérale de 1896 à 1911.",
+ aspects: [{aspect: "Politique intérieure canadienne"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "portrait_wilfrid_laurier.jpg", soustitre: "Portrait de Wilfrid Laurier", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]}],
+ reponse: {type: "lignes", nombre: 1},
+ guide: "Wilfrid Laurier.",
+ updatedAt: "2026-07-16T12:33:11.462Z"
 }
 ]
