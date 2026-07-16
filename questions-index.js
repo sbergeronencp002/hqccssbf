@@ -1261,5 +1261,6 @@ const QUESTIONS = [
  aspects: [{aspect: "Politique intérieure canadienne"}],
  enonce: "Expliquez comment la politique de peuplement de l'Ouest amène le gouvernement fédéral à modifier le territoire canadien en 1905\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La politique de peuplement de l'Ouest canadien\n• La situation démographique des Prairies\n• Une modification du territoire canadien en 1905",
  updatedAt: "2026-07-16T16:17:16.369Z"
-}
+},
+{id: "Q712", niveau: 4, oi: "Mettre en relation des faits", periode: "P6 — 1896 – 1945", points: 2, soustag: "4 documents", aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Seconde Guerre mondiale"}], enonce: "Les documents A à D présentent deux événements liés à la conscription au Canada. Associez la lettre de chacun des événements à la guerre durant laquelle il se déroule.", updatedAt: "2026-07-16T18:02:44.582Z"}
 ]
