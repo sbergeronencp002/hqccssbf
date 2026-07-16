@@ -1241,7 +1241,8 @@ const REGLETTES = {
 "Q700": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
 "Q701": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q702": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
-"Q703": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]}
+"Q703": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
+"Q704": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -12647,5 +12648,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les minorités franco-catholiques continuent de revendiquer leurs droits scolaires et linguistiques.",
  updatedAt: "2026-07-16T14:59:26.088Z"
+},
+{
+ id: "Q704",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Convergence – 2 acteurs",
+ enonce: "Les documents présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?",
+ aspects: [{aspect: "Politique intérieure canadienne"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Nous demandons que nos enfants puissent recevoir leur instruction dans leur langue et selon leur foi, comme le garantissaient les droits qui nous avaient été reconnus. »", auteur: "Adélard Langevin", source: "Adapté de Mgr Adélard Langevin, mémoire sur la Question des écoles du Manitoba, 1895."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Le règlement no 17 bannit le français des écoles nouvelles et le soumet ailleurs à des restrictions qui rendent son enseignement presque impossible. »", auteur: "Napoléon Belcourt", source: "Adapté de Napoléon-A. Belcourt, Le français dans l'Ontario, Montréal, 1912."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les deux défendent l'enseignement en français. \nLes deux défendent les écoles françaises.\nLes deux défendent les droits des minorités francophones.",
+ updatedAt: "2026-07-16T15:07:45.095Z"
 }
 ]
