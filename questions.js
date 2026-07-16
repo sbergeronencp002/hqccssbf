@@ -1571,7 +1571,8 @@ const IMAGE_DB = {
 "bataille_caen_ww2.jpg": {src: "images/bataille_caen_ww2.jpg", w: 1200, h: 960},
 "portrait_lionnel_groulx.jpg": {src: "images/portrait_lionnel_groulx.jpg", w: 900, h: 1200},
 "tableau_caisses_populaires_quebec_1900-1930.jpg": {src: "images/tableau_caisses_populaires_quebec_1900-1930.jpg", w: 1200, h: 800},
-"tableau_depenses_gouvernements.jpg": {src: "images/tableau_depenses_gouvernements.jpg", w: 1200, h: 751}
+"tableau_depenses_gouvernements.jpg": {src: "images/tableau_depenses_gouvernements.jpg", w: 1200, h: 751},
+"bataille_normandie_ww2.jpg": {src: "images/bataille_normandie_ww2.jpg", w: 1200, h: 900}
 }
 
 const QUESTIONS = [
@@ -12456,10 +12457,10 @@ const QUESTIONS = [
  soustag: "Ligne du temps",
  enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
  aspects: [{aspect: "Seconde Guerre mondiale"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "bataille_caen_ww2.jpg", soustitre: "Les forces canadiennes lors de la campagne de Normandie", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "bataille_normandie_ww2.jpg", soustitre: "Débarquement des soldats canadiens en Normandie", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}],
  reponse: {type: "image", ref: "ligne_1890-1950.png"},
  guide: "C - 1944.",
- updatedAt: "2026-07-14T19:57:20.040Z"
+ updatedAt: "2026-07-16T12:13:26.074Z"
 },
 {
  id: "Q692",
