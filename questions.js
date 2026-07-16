@@ -12622,11 +12622,16 @@ const QUESTIONS = [
  points: 1,
  soustag: "Ligne du temps",
  enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
- aspects: [{aspect: "Seconde Guerre mondiale"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "élection_wilfrid_laurier_1896.jpg", soustitre: "Élection de Wilfrid Laurier", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}],
+ aspects: [{aspect: "Éducation et formation technique"}, {aspect: "Seconde Guerre mondiale"}],
+ documents: [
+  {
+   type: "textes",
+   cols: [{titre: "Document A", texte: "« L'adoption de la fréquentation scolaire obligatoire marque un tournant majeur dans l'histoire de l'éducation québécoise et témoigne d'un engagement accru de l'État envers l'instruction publique. »", soustitre: "Adoption de la Loi sur la fréquentation scolaire obligatoire", source: "Adapté de Paul-André Linteau, René Durocher, Jean-Claude Robert et François Ricard, Histoire du Québec contemporain. Tome 2 : Le Québec depuis 1930, Boréal, 1989."}]
+  }
+ ],
  reponse: {type: "image", ref: "ligne_1890-1950.png"},
- guide: "A - 1896.",
- updatedAt: "2026-07-16T12:31:16.834Z"
+ guide: "C - 1943.",
+ updatedAt: "2026-07-16T23:41:36.525Z"
 },
 {
  id: "Q700",
