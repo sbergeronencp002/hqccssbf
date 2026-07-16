@@ -12990,6 +12990,6 @@ const QUESTIONS = [
  ],
  reponse: {type: "lignes", nombre: 5},
  guide: "Le développement de l'hydroélectricité (le développement d'une nouvelle source d'énergie) favorise l'implantation de nouvelles industries, comme les industries des pâtes et papiers (l'implantation de nouvelles industries). Ces nouvelles industries contribuent à l'augmentation de la production manufacturière (la production manufacturière).",
- updatedAt: "2026-07-16T20:16:23.168Z"
+ updatedAt: "2026-07-16T20:19:42.068Z"
 }
 ]
