@@ -1263,7 +1263,8 @@ const REGLETTES = {
 "Q723": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]},
 "Q724": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q725": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
-"Q726": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]}
+"Q726": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
+"Q727": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]}
 }
 
 const IMAGE_DB = {
@@ -13029,5 +13030,21 @@ const QUESTIONS = [
  reponse: {type: "image", ref: "ligne_1890-1950.png"},
  guide: "C - 1936.",
  updatedAt: "2026-07-16T23:43:04.644Z"
+},
+{
+ id: "Q727",
+ niveau: 4,
+ oi: "Situer dans le temps",
+ periode: "P6 — 1896 – 1945",
+ points: 1,
+ soustag: "Ligne du temps",
+ enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
+ aspects: [{aspect: "Grande dépression"}, {aspect: "Politique intérieure canadienne"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« L’apparition d’une banque centrale au Canada ne découle pas uniquement de difficultés bancaires; elle résulte également des bouleversements monétaires et des revendications politiques de la Dépression. »", soustitre: "La fondation de la Banque du Canada", source: "Adapté de Michael D. Bordo et Angela Redish, « Why Did the Bank of Canada Emerge in 1935? », The Journal of Economic History, vol. 47, no 2, Cambridge University Press, 1987."}]}
+ ],
+ reponse: {type: "image", ref: "ligne_1890-1950.png"},
+ guide: "C - 1935.",
+ updatedAt: "2026-07-16T23:45:38.593Z"
 }
 ]
