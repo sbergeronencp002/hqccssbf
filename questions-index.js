@@ -1272,5 +1272,15 @@ const QUESTIONS = [
 {id: "Q720", niveau: 4, oi: "Mettre en relation des faits", periode: "P6 — 1896 – 1945", points: 2, soustag: "4 documents", aspects: [{aspect: "Deuxième phase d'industrialisation"}], enonce: "Les documents A à D présentent des faits relatifs aux deux phases d'industrialisation au Canada. Associez chaque document à la phase d'industrialisation correspondante.", updatedAt: "2026-07-16T19:10:27.987Z"},
 {id: "Q721", niveau: 4, oi: "Mettre en relation des faits", periode: "P6 — 1896 – 1945", points: 2, soustag: "4 documents", aspects: [{aspect: "Deuxième phase d'industrialisation"}], enonce: "Les documents A à D présentent des faits relatifs aux deux phases d'industrialisation au Canada. Associez chaque document à la phase d'industrialisation correspondante.", updatedAt: "2026-07-16T19:29:03.394Z"},
 {id: "Q722", niveau: 4, oi: "Situer dans l'espace", periode: "P6 — 1896 – 1945", points: 2, soustag: "Situer 2 éléments", aspects: [{aspect: "Deuxième phase d'industrialisation"}], enonce: "À partir du document A, indiquez la lettre correspondant à chacune des régions suivantes :\n• l'Abitibi, où se développe l'industrie minière;\n• la Mauricie, où se développe l'industrie des pâtes et papiers.", updatedAt: "2026-07-16T19:39:42.186Z"},
-{id: "Q723", niveau: 4, oi: "Situer dans l'espace", periode: "P6 — 1896 – 1945", points: 2, soustag: "Situer 2 éléments", aspects: [{aspect: "Deuxième phase d'industrialisation"}], enonce: "À partir du document A, indiquez la lettre correspondant à chacune des régions suivantes :\n• l'Estrie, où se développe l'industrie minière de l'amiante\n• le Saguenay–Lac-Saint-Jean, où se développe l'industrie de l'aluminium", updatedAt: "2026-07-16T19:45:43.788Z"}
+{id: "Q723", niveau: 4, oi: "Situer dans l'espace", periode: "P6 — 1896 – 1945", points: 2, soustag: "Situer 2 éléments", aspects: [{aspect: "Deuxième phase d'industrialisation"}], enonce: "À partir du document A, indiquez la lettre correspondant à chacune des régions suivantes :\n• l'Estrie, où se développe l'industrie minière de l'amiante\n• le Saguenay–Lac-Saint-Jean, où se développe l'industrie de l'aluminium", updatedAt: "2026-07-16T19:45:43.788Z"},
+{
+ id: "Q724",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ aspects: [{aspect: "Deuxième phase d'industrialisation"}],
+ enonce: "Expliquez comment le développement d'une nouvelle source d'énergie favorise l'augmentation de la production manufacturière au Québec durant la première moitié du XXᵉ siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Le développement d'une nouvelle source d'énergie\n• L'implantation de nouvelles manufactures\n• L'augmentation de la production manufacturière",
+ updatedAt: "2026-07-16T20:16:23.168Z"
+}
 ]
