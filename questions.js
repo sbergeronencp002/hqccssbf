@@ -1251,7 +1251,8 @@ const REGLETTES = {
 "Q710": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]},
 "Q711": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q713": {oi: "Situer dans le temps", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}]},
-"Q714": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
+"Q714": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
+"Q715": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1598,7 +1599,8 @@ const IMAGE_DB = {
 "carte_canada_1900.jpg": {src: "images/carte_canada_1900.jpg", w: 1200, h: 945},
 "carte_canada_1905.jpg": {src: "images/carte_canada_1905.jpg", w: 1200, h: 945},
 "carte_canada_1905_lettres.jpg": {src: "images/carte_canada_1905_lettres.jpg"},
-"tableau_municipalites_minieres.jpg": {src: "images/tableau_municipalites_minieres.jpg"}
+"tableau_municipalites_minieres.jpg": {src: "images/tableau_municipalites_minieres.jpg"},
+"tableau_production_dom_manu.jpg": {src: "images/tableau_production_dom_manu.jpg"}
 }
 
 const QUESTIONS = [
@@ -12818,5 +12820,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Développement de nouvelles villes.\nDéveloppement des infrastructures (chemins de fer, routes).\nPeuplement de nouvelles régions.\nCroissance économique régionale.",
  updatedAt: "2026-07-16T18:23:43.017Z"
+},
+{
+ id: "Q715",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Changement",
+ enonce: "Indiquez un changement concernant la production manufacturière au Canada entre 1896 et 1945.",
+ aspects: [{aspect: "Deuxième phase d'industrialisation"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_production_dom_manu.jpg", soustitre: "Évolution de la production domestique et manufacturière au Québec", source: "Adapté de Statistique Canada, Statistiques historiques du Canada, séries sur les manufactures et la production industrielle, Gouvernement du Canada."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "La production manufacturière augmente.\nLa production manufacturière prend une place plus importante dans l'économie canadienne.\nLa production manufacturière remplace progressivement la production domestique.\nLa production domestique diminue au profit de la production manufacturière.",
+ updatedAt: "2026-07-16T18:30:53.486Z"
 }
 ]
