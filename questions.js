@@ -1245,7 +1245,8 @@ const REGLETTES = {
 "Q704": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
 "Q705": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q706": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
-"Q707": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]}
+"Q707": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
+"Q708": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1587,7 +1588,8 @@ const IMAGE_DB = {
 "pensionnat_indiens_quebec_1934.jpg": {src: "images/pensionnat_indiens_quebec_1934.jpg", w: 1200, h: 900},
 "tableau_revenus_fédéral_1905-1945.jpg": {src: "images/tableau_revenus_fédéral_1905-1945.jpg", w: 1200, h: 800},
 "portrait_enfant_avant_pensionnat.jpg": {src: "images/portrait_enfant_avant_pensionnat.jpg", w: 1200, h: 960},
-"portrait_enfant_après_pensionnat.jpg": {src: "images/portrait_enfant_après_pensionnat.jpg", w: 960, h: 1200}
+"portrait_enfant_après_pensionnat.jpg": {src: "images/portrait_enfant_après_pensionnat.jpg", w: 960, h: 1200},
+"tableau_population_ouest_canadien.jpg": {src: "images/tableau_population_ouest_canadien.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -12715,5 +12717,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Le gouvernement fédéral poursuit une politique d'assimilation des populations des Premières Nations.",
  updatedAt: "2026-07-16T15:24:11.243Z"
+},
+{
+ id: "Q708",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une raison pour laquelle le gouvernement fédéral crée les provinces de l'Alberta et de la Saskatchewan en 1905.",
+ aspects: [{aspect: "Politique intérieure canadienne"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_population_ouest_canadien.jpg", soustitre: "Évolution démographique de l'Ouest canadien avant la création de l'Alberta et de la Saskatchewan Augmentation de la population de l'Ouest ca", source: "Adapté de Recensement des provinces du Nord-Ouest, 1906, Bureau du recensement et de la statistique, Ottawa, 1907."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Pour administrer plus efficacement les territoires de l'Ouest en raison de leur croissance démographique et de leur colonisation.",
+ updatedAt: "2026-07-16T15:28:20.057Z"
 }
 ]
