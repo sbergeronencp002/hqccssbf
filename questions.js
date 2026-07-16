@@ -1249,8 +1249,7 @@ const REGLETTES = {
 "Q708": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q709": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q710": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]},
-"Q711": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q712": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]}
+"Q711": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -1596,9 +1595,7 @@ const IMAGE_DB = {
 "tableau_population_ouest_canadien.jpg": {src: "images/tableau_population_ouest_canadien.jpg", w: 1200, h: 800},
 "carte_canada_1900.jpg": {src: "images/carte_canada_1900.jpg", w: 1200, h: 945},
 "carte_canada_1905.jpg": {src: "images/carte_canada_1905.jpg", w: 1200, h: 945},
-"carte_canada_1905_lettres.jpg": {src: "images/carte_canada_1905_lettres.jpg"},
-"crise_conscription_1917.jpg": {src: "images/crise_conscription_1917.jpg", w: 1200, h: 800},
-"affiche_conscription_ww2.jpg": {src: "images/affiche_conscription_ww2.jpg", w: 900, h: 1200}
+"carte_canada_1905_lettres.jpg": {src: "images/carte_canada_1905_lettres.jpg"}
 }
 
 const QUESTIONS = [
@@ -12438,7 +12435,7 @@ const QUESTIONS = [
  enonce: "Expliquez comment la participation du Canada aux guerres de l’Empire britannique contribue à un changement de son statut constitutionnel.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La participation du Dominion du Canada à un conflit aux côtés de l’Empire britannique\n• Une manifestation de l’autonomie croissante du Canada\n• Un changement du statut constitutionnel du Canada",
  aspects: [{aspect: "Statut du Canada dans l'Empire britannique"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document A", ref: "bataille_crete_vimy.jpg", soustitre: "Les soldats canadiens à la bataille de Vim", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document A", ref: "bataille_crete_vimy.jpg", soustitre: "Les soldats canadiens à la bataille de Vimy", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
   {type: "textes", cols: [{titre: "Document B", texte: "« À la fin de la guerre, le Canada signe séparément le traité de Versailles et devient membre de la Société des Nations. »", source: "Adapté de The Canadian Encyclopedia, « Constitutional History of Canada », Historica Canada."}]},
   {type: "textes", cols: [{titre: "Document C", texte: "« À partir de 1931, le Parlement britannique ne peut plus adopter de lois applicables au Canada sans le consentement du gouvernement canadien. »", source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec. Tome 4 : 1896 à 1960, Septentrion, 1997."}]}
  ],
@@ -12785,24 +12782,5 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 5},
  guide: "Le gouvernement fédéral favorise le peuplement de l'Ouest en encourageant l'immigration (la politique de peuplement de l'Ouest). Cette politique entraîne une augmentation de la population dans les Prairies (la situation démographique des Prairies). Le gouvernement fédéral crée alors les provinces de l'Alberta et de la Saskatchewan en 1905 (une modification du territoire canadien en 1905).",
  updatedAt: "2026-07-16T16:17:16.369Z"
-},
-{
- id: "Q712",
- niveau: 4,
- oi: "Mettre en relation des faits",
- periode: "P6 — 1896 – 1945",
- points: 2,
- soustag: "4 documents",
- enonce: "Les documents A à D présentent deux événements liés à la conscription au Canada. Associez la lettre de chacun des événements à la guerre durant laquelle il se déroule.",
- aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Seconde Guerre mondiale"}],
- documents: [
-  {type: "textes", cols: [{titre: "Document A", ref: "affiche_conscription_ww2.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]},
-  {type: "textes", cols: [{titre: "Document B", texte: "« Il est impossible de mener cette guerre à bonne fin sans les renforts que seule la conscription peut fournir. »", auteur: "Robert Borden", source: "Adapté de Robert Laird Borden, discours à la Chambre des communes sur la Loi du service militaire, Ottawa, 18 mai 1917."}]},
-  {type: "textes", cols: [{titre: "Document C", texte: "« Notre gouvernement n'imposera pas la conscription pour le service outre-mer sans avoir d'abord consulté la population canadienne par voie de plébiscite. »", auteur: "William Lyon Mackenzie King", source: "Adapté de William Lyon Mackenzie King, allocution radiodiffusée annonçant le plébiscite sur la conscription, Ottawa, 1942."}]},
-  {type: "textes", cols: [{titre: "Document D", ref: "crise_conscription_1917.jpg", soustitre: "Émeute contre la conscription à Québec", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}
- ],
- reponse: {type: "mettre-en-relation", elements: ["Première Guerre mondiale", "Deuxième Guerre mondiale"], double: true},
- guide: {type: "grille", entetes: ["Première Guerre mondiale", "Deuxième Guerre mondiale"], rangees: [["B et D", "A et C"]]},
- updatedAt: "2026-07-16T18:02:44.582Z"
 }
 ]
