@@ -1236,7 +1236,8 @@ const REGLETTES = {
 "Q695": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q696": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q697": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q698": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]}
+"Q698": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
+"Q699": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]}
 }
 
 const IMAGE_DB = {
@@ -1573,7 +1574,8 @@ const IMAGE_DB = {
 "portrait_lionnel_groulx.jpg": {src: "images/portrait_lionnel_groulx.jpg", w: 900, h: 1200},
 "tableau_caisses_populaires_quebec_1900-1930.jpg": {src: "images/tableau_caisses_populaires_quebec_1900-1930.jpg", w: 1200, h: 800},
 "tableau_depenses_gouvernements.jpg": {src: "images/tableau_depenses_gouvernements.jpg", w: 1200, h: 751},
-"bataille_normandie_ww2.jpg": {src: "images/bataille_normandie_ww2.jpg", w: 1200, h: 900}
+"bataille_normandie_ww2.jpg": {src: "images/bataille_normandie_ww2.jpg", w: 1200, h: 900},
+"élection_wilfrid_laurier_1896.jpg": {src: "images/élection_wilfrid_laurier_1896.jpg"}
 }
 
 const QUESTIONS = [
@@ -2139,7 +2141,7 @@ const QUESTIONS = [
  periode: "P6 — 1896 – 1945",
  points: 2,
  soustag: "3 documents",
- enonce: "Les documents A à C font référence à différents nationalismes au Québec au XXe siècle. Indiquez à l’endroit approprié la lettre du document correspondant à chacun des nationalismes.",
+ enonce: "Les documents A à C font référence à différents nationalismes au Québec au 20e siècle. Indiquez à l’endroit approprié la lettre du document correspondant à chacun des nationalismes.",
  aspects: [{aspect: "Clérico-nationalisme"}, {aspect: "Politique intérieure canadienne"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", texte: "« Lorsque la Grande-Bretagne est en guerre, le Canada est en guerre. »", auteur: "Wilfrid Laurier"}]},
@@ -2147,8 +2149,7 @@ const QUESTIONS = [
   {type: "textes", cols: [{titre: "Document C", texte: "« Nous ne serons de bons Canadiens qu’en étant d’abord de bons Canadiens français catholiques. »", auteur: "Lionel Groulx"}]}
  ],
  reponse: {type: "mettre-en-relation", elements: ["Clérico-nationalisme", "Impérialisme", "Nationalisme canadien-français"]},
- guide: {type: "grille", entetes: ["Élément", "Document"], rangees: [["Clérico-nationalisme", "C"], ["Impérialisme", "A"], ["Nationalisme canadien-français", "B"]]},
- updatedAt: "2026-07-16T12:28:49.830Z"
+ guide: {type: "grille", entetes: ["Élément", "Document"], rangees: [["Clérico-nationalisme", "C"], ["Impérialisme", "A"], ["Nationalisme canadien-français", "B"]]}
 },
 {
  id: "Q29",
@@ -12568,5 +12569,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "L'importance de défendre les intérêts des Canadiens français.\nL'importance de préserver l'identité canadienne-française.",
  updatedAt: "2026-07-16T12:23:26.295Z"
+},
+{
+ id: "Q699",
+ niveau: 4,
+ oi: "Situer dans le temps",
+ periode: "P6 — 1896 – 1945",
+ points: 1,
+ soustag: "Ligne du temps",
+ enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
+ aspects: [{aspect: "Seconde Guerre mondiale"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "élection_wilfrid_laurier_1896.jpg", soustitre: "Élection de Wilfrid Laurier", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}],
+ reponse: {type: "image", ref: "ligne_1890-1950.png"},
+ guide: "A - 1896.",
+ updatedAt: "2026-07-16T12:31:16.834Z"
 }
 ]
