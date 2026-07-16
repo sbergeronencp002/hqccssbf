@@ -1265,7 +1265,8 @@ const REGLETTES = {
 "Q725": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
 "Q726": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q727": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
-"Q728": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (2 sur 2)"}, {pts: 1, desc: "L'élève met en relation certains faits. (1 sur 2)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (0 sur 2)"}]}
+"Q728": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (2 sur 2)"}, {pts: 1, desc: "L'élève met en relation certains faits. (1 sur 2)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (0 sur 2)"}]},
+"Q729": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]}
 }
 
 const IMAGE_DB = {
@@ -1622,7 +1623,8 @@ const IMAGE_DB = {
 "manufacture_alimentation.jpg": {src: "images/manufacture_alimentation.jpg", w: 1200, h: 960},
 "carte_regions_ressources_naturelles.png": {src: "images/carte_regions_ressources_naturelles.png", w: 919, h: 1200},
 "usines_pates_papiers.jpg": {src: "images/usines_pates_papiers.jpg"},
-"tableau_production_manufacturiere_1900-1940.jpg": {src: "images/tableau_production_manufacturiere_1900-1940.jpg"}
+"tableau_production_manufacturiere_1900-1940.jpg": {src: "images/tableau_production_manufacturiere_1900-1940.jpg"},
+"conference_quebec.jpg": {src: "images/conference_quebec.jpg"}
 }
 
 const QUESTIONS = [
@@ -13064,5 +13066,19 @@ const QUESTIONS = [
  reponse: {type: "mettre-en-relation", elements: ["Ressource exploitée", "Provenance des capitaux"]},
  guide: {type: "grille", entetes: ["Ressource exploitée", "Provenance des capitaux"], rangees: [["B", "A"]]},
  updatedAt: "2026-07-16T23:51:39.875Z"
+},
+{
+ id: "Q729",
+ niveau: 4,
+ oi: "Situer dans le temps",
+ periode: "P6 — 1896 – 1945",
+ points: 1,
+ soustag: "Ligne du temps",
+ enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
+ aspects: [{aspect: "Éducation et formation technique"}, {aspect: "Seconde Guerre mondiale"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "conference_quebec.jpg", soustitre: "Conférence de Québec", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]}],
+ reponse: {type: "image", ref: "ligne_1890-1950.png"},
+ guide: "C - 1943-1944.",
+ updatedAt: "2026-07-16T23:54:12.376Z"
 }
 ]
