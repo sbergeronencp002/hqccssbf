@@ -1282,5 +1282,6 @@ const QUESTIONS = [
  aspects: [{aspect: "Deuxième phase d'industrialisation"}],
  enonce: "Expliquez comment le développement d'une nouvelle source d'énergie favorise l'augmentation de la production manufacturière au Québec durant la première moitié du XXᵉ siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Le développement d'une nouvelle source d'énergie\n• L'implantation de nouvelles manufactures\n• L'augmentation de la production manufacturière",
  updatedAt: "2026-07-16T20:19:42.068Z"
-}
+},
+{id: "Q725", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P6 — 1896 – 1945", points: 2, soustag: "Continuité", aspects: [{aspect: "Grande dépression"}, {aspect: "Politique intérieure canadienne"}], enonce: "À partir des documents A et B, indiquez un élément de continuité dans les revendications des provinces face au gouvernement fédéral entre 1887 et 1939.", updatedAt: "2026-07-16T23:37:51.704Z"}
 ]
