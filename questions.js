@@ -1247,7 +1247,8 @@ const REGLETTES = {
 "Q706": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q707": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
 "Q708": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q709": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
+"Q709": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
+"Q710": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]}
 }
 
 const IMAGE_DB = {
@@ -1592,7 +1593,8 @@ const IMAGE_DB = {
 "portrait_enfant_après_pensionnat.jpg": {src: "images/portrait_enfant_après_pensionnat.jpg", w: 960, h: 1200},
 "tableau_population_ouest_canadien.jpg": {src: "images/tableau_population_ouest_canadien.jpg", w: 1200, h: 800},
 "carte_canada_1900.jpg": {src: "images/carte_canada_1900.jpg", w: 1200, h: 945},
-"carte_canada_1905.jpg": {src: "images/carte_canada_1905.jpg", w: 1200, h: 945}
+"carte_canada_1905.jpg": {src: "images/carte_canada_1905.jpg", w: 1200, h: 945},
+"carte_canada_1905_lettres.jpg": {src: "images/carte_canada_1905_lettres.jpg"}
 }
 
 const QUESTIONS = [
@@ -12748,5 +12750,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Création de la province de l'Alberta.\nCréation de la province de la Saskatchewan.\nLes provinces de l'Alberta et de la Saskatchewan sont créées.",
  updatedAt: "2026-07-16T15:52:00.077Z"
+},
+{
+ id: "Q710",
+ niveau: 4,
+ oi: "Situer dans l'espace",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Situer 2 éléments",
+ enonce: "À partir du document A, indiquez la lettre correspondant au territoire de chacune des provinces :\n• Alberta\n• Saskatchewan",
+ aspects: [{aspect: "Politique intérieure canadienne"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "carte_canada_1905_lettres.jpg", source: "Adapté d'après Wikimedia Commons, carte des provinces et territoires du Canada."}]}],
+ reponse: {type: "situer-dans-lespace", elements: ["Alberta", "Saskatchewan"]},
+ guide: {type: "grille", entetes: ["Alberta", "Saskatchewan"], rangees: [["C", "B"]]},
+ updatedAt: "2026-07-16T15:57:11.899Z"
 }
 ]
