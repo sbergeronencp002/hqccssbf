@@ -1244,7 +1244,8 @@ const REGLETTES = {
 "Q703": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
 "Q704": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
 "Q705": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q706": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
+"Q706": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
+"Q707": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -12697,5 +12698,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les Premières Nations perdent une partie de leur langue et de leur culture.\nAffaiblissement des langues autochtones.\nPerte de traditions culturelles.\nSéparation des enfants de leur famille.\nRupture de la transmission culturelle.",
  updatedAt: "2026-07-16T15:14:41.395Z"
+},
+{
+ id: "Q707",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Continuité",
+ enonce: "Indiquez un élément de continuité concernant la politique du gouvernement fédéral à l'égard des populations des Premières Nations dans la première moitié du XXe siècle.",
+ aspects: [{aspect: "Politique intérieure canadienne"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Notre objectif est de poursuivre nos efforts jusqu'à ce qu'il ne reste plus un seul Indien au Canada qui n'ait été absorbé dans le corps politique. »", soustitre: "Objectif du gouvernement fédéral vers 1920", source: "Adapté de Duncan Campbell Scott, témoignage devant le Comité spécial de la Chambre des communes sur le projet de loi modifiant la Loi sur les Indiens, Ottawa, 1920."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Le but de l'éducation des Indiens est de les préparer à prendre leur place dans la société canadienne comme citoyens autonomes et intégrés. »", soustitre: "Objectif du gouvernement fédéral vers 1940", source: "Adapté de R.T. Ferrier, The Indian Day Schools of the Dominion, ministère des Mines et des Ressources, Direction des Affaires indiennes, Ottawa, 1943."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Le gouvernement fédéral poursuit une politique d'assimilation des populations des Premières Nations.",
+ updatedAt: "2026-07-16T15:24:11.243Z"
 }
 ]
