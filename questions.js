@@ -12435,13 +12435,13 @@ const QUESTIONS = [
  enonce: "Expliquez comment la participation du Canada aux guerres de l’Empire britannique contribue à un changement de son statut constitutionnel.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La participation du Dominion du Canada à un conflit aux côtés de l’Empire britannique\n• Une manifestation de l’autonomie croissante du Canada\n• Un changement du statut constitutionnel du Canada",
  aspects: [{aspect: "Statut du Canada dans l'Empire britannique"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document A", ref: "bataille_crete_vimy.jpg", soustitre: "Les soldats canadiens à la bataille de Vimy", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document A", ref: "bataille_crete_vimy.jpg", soustitre: "Les soldats canadiens à la bataille de Vim", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
   {type: "textes", cols: [{titre: "Document B", texte: "« À la fin de la guerre, le Canada signe séparément le traité de Versailles et devient membre de la Société des Nations. »", source: "Adapté de The Canadian Encyclopedia, « Constitutional History of Canada », Historica Canada."}]},
   {type: "textes", cols: [{titre: "Document C", texte: "« À partir de 1931, le Parlement britannique ne peut plus adopter de lois applicables au Canada sans le consentement du gouvernement canadien. »", source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec. Tome 4 : 1896 à 1960, Septentrion, 1997."}]}
  ],
  reponse: {type: "lignes", nombre: 5},
  guide: "Le Dominion du Canada participe à la Première Guerre mondiale aux côtés de l’Empire britannique (la participation du Dominion du Canada à un conflit aux côtés de l’Empire britannique). Il signe ensuite distinctement le traité de Versailles (une manifestation de l’autonomie croissante du Canada). En 1931, le Statut de Westminster reconnaît son autonomie législative (un changement du statut constitutionnel du Canada).",
- updatedAt: "2026-07-16T16:21:15.411Z"
+ updatedAt: "2026-07-14T18:37:13.678Z"
 },
 {
  id: "Q689",
@@ -12733,10 +12733,10 @@ const QUESTIONS = [
  soustag: "Cause",
  enonce: "Indiquez une raison pour laquelle le gouvernement fédéral crée les provinces de l'Alberta et de la Saskatchewan en 1905.",
  aspects: [{aspect: "Politique intérieure canadienne"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_population_ouest_canadien.jpg", soustitre: "Évolution démographique de l'Ouest canadien avant la création de l'Alberta et de la Saskatchewan Augmentation de la population de l'Ouest ca", source: "Adapté de Recensement des provinces du Nord-Ouest, 1906, Bureau du recensement et de la statistique, Ottawa, 1907."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_population_ouest_canadien.jpg", soustitre: "Évolution démographique de l'Ouest canadien", source: "Adapté de Recensement des provinces du Nord-Ouest, 1906, Bureau du recensement et de la statistique, Ottawa, 1907."}]}],
  reponse: {type: "lignes", nombre: 2},
- guide: "Pour administrer plus efficacement les territoires de l'Ouest en raison de leur croissance démographique et de leur colonisation.",
- updatedAt: "2026-07-16T15:28:20.057Z"
+ guide: "La population de l'Ouest canadien augmente fortement.\nL'Ouest canadien connaît une forte croissance démographique.\nLa population des Prairies augmente rapidement.\nLe gouvernement souhaite mieux administrer une région dont la population augmente.",
+ updatedAt: "2026-07-16T16:22:38.563Z"
 },
 {
  id: "Q709",
