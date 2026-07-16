@@ -1248,7 +1248,8 @@ const REGLETTES = {
 "Q707": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
 "Q708": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q709": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
-"Q710": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]}
+"Q710": {oi: "Situer dans l'espace", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe les faits dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas les faits dans l'espace."}]},
+"Q711": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -12764,5 +12765,22 @@ const QUESTIONS = [
  reponse: {type: "situer-dans-lespace", elements: ["Alberta", "Saskatchewan"]},
  guide: {type: "grille", entetes: ["Alberta", "Saskatchewan"], rangees: [["C", "B"]]},
  updatedAt: "2026-07-16T15:57:11.899Z"
+},
+{
+ id: "Q711",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ enonce: "Expliquez comment la politique de peuplement de l'Ouest amène le gouvernement fédéral à modifier le territoire canadien en 1905\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La politique de peuplement de l'Ouest canadien\n• La situation démographique des Prairies\n• Une modification du territoire canadien en 1905",
+ aspects: [{aspect: "Politique intérieure canadienne"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« En 1896, Clifford Sifton lança une ambitieuse campagne de promotion pour attirer des colons d'Europe et des agriculteurs américains au Canada. »", source: "Adapté de Dictionnaire biographique du Canada, « Politique d'immigration de Wilfrid Laurier », Université Laval / University of Toronto, 2025."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "tableau_population_ouest_canadien.jpg", soustitre: "Évolution démographique de l'Ouest canadien", source: "Adapté de Recensement des provinces du Nord-Ouest, 1906, Bureau du recensement et de la statistique, Ottawa, 1907."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "carte_canada_1905.jpg", soustitre: "Le territoire canadien en 1905", source: "Adapté d'après Wikimedia Commons, carte des provinces et territoires du Canada."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "Le gouvernement fédéral favorise le peuplement de l'Ouest en encourageant l'immigration (la politique de peuplement de l'Ouest). Cette politique entraîne une augmentation de la population dans les Prairies (la situation démographique des Prairies). Le gouvernement fédéral crée alors les provinces de l'Alberta et de la Saskatchewan en 1905 (une modification du territoire canadien en 1905).",
+ updatedAt: "2026-07-16T16:17:16.369Z"
 }
 ]
