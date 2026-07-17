@@ -1355,5 +1355,6 @@ const QUESTIONS = [
  enonce: "À partir du document A, indiquez s'il y a changement ou continuité concernant les salaires des hommes et des femmes travaillant dans les usines au cours de la première moitié du XXᵉ siècle. Justifiez votre réponse à l'aide de faits tirés du document et d'un repère de temps.",
  updatedAt: "2026-07-17T13:18:47.749Z"
 },
-{id: "Q753", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Conséquence", aspects: [{aspect: "Luttes des femmes"}], enonce: "Indiquez une conséquence de l'obtention du droit de vote des femmes au Québec.", updatedAt: "2026-07-17T13:36:17.601Z"}
+{id: "Q753", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Conséquence", aspects: [{aspect: "Luttes des femmes"}], enonce: "Indiquez une conséquence de l'obtention du droit de vote des femmes au Québec.", updatedAt: "2026-07-17T13:36:17.601Z"},
+{id: "Q754", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Cause", aspects: [{aspect: "Luttes des femmes"}], enonce: "Indiquez une raison pour laquelle des groupes de femmes réclament une meilleure reconnaissance juridique durant la première moitié du XXᵉ siècle.", updatedAt: "2026-07-17T13:40:45.853Z"}
 ]
