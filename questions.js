@@ -1281,7 +1281,8 @@ const REGLETTES = {
 "Q742": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q743": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la similitude."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."}, {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}]},
 "Q744": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
-"Q746": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]}
+"Q746": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
+"Q747": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -13352,5 +13353,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 1},
  guide: "Le hockey.",
  updatedAt: "2026-07-17T12:47:22.124Z"
+},
+{
+ id: "Q747",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une raison expliquant le développement des cabarets dans les grands centres urbains au cours des années 1920.",
+ aspects: [{aspect: "Culture de masse"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Au cours des années folles, les loisirs prennent une place grandissante dans la vie urbaine. Les cabarets attirent une clientèle nombreuse à la recherche de divertissements et de nouveautés. »", source: "Adapté de Paul-André Linteau, Histoire de Montréal depuis la Confédération, Montréal, Boréal, 1992."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les années folles favorisent le développement des loisirs.\nLa population consacre davantage de temps aux loisirs.\nLa prohibition aux États-Unis attire des touristes américains à Montréal.",
+ updatedAt: "2026-07-17T12:50:50.956Z"
 }
 ]
