@@ -1289,7 +1289,8 @@ const REGLETTES = {
 "Q751": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q752": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q753": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
-"Q754": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q754": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q755": {oi: "Dégager des différences et des similitudes", variante: "acteur-positions", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -13479,5 +13480,23 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les femmes ne bénéficient pas des mêmes droits que les hommes.\nLes femmes revendiquent l'égalité juridique avec les hommes.",
  updatedAt: "2026-07-17T13:40:45.853Z"
+},
+{
+ id: "Q755",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ soustag: "Position – 3 acteurs",
+ enonce: "Les documents A à C présentent la position de trois acteurs sur la reconnaissance juridique des femmes durant la première moitié du XXᵉ siècle. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+ aspects: [{aspect: "Luttes des femmes"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Les femmes doivent bénéficier des mêmes droits civils que les hommes afin d'être reconnues comme des citoyennes à part entière. »", auteur: "Thérèse Casgrain", source: "Adapté de Thérèse Casgrain, Une femme chez les hommes, Montréal, Éditions du Jour, 1971."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les devoirs propres à la femme dans la famille justifient le maintien des règles juridiques qui assurent l'ordre et la stabilité de la société. »", auteur: "Mgr Georges Gauthier", source: "Adapté de Georges Gauthier, Mandements, lettres pastorales et circulaires des évêques de Montréal, Archevêché de Montréal, années 1930."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Refuser aux femmes les mêmes droits juridiques qu'aux hommes maintient une injustice qui ne peut être acceptée dans une société moderne. »", auteur: "Idola Saint-Jean", source: "Adapté de Idola Saint-Jean, allocutions de la Ligue des droits de la femme, années 1930, Bibliothèque et Archives nationales du Québec."}]}
+ ],
+ reponse: {type: "lignes", nombre: 3},
+ guide: "Mgr Georges Gauthier affirme que les femmes ne doivent pas obtenir les mêmes droits juridiques que les hommes, alors que Thérèse Casgrain et Idola Saint-Jean affirment le contraire.\nMgr Georges Gauthier affirme qu'il faut maintenir les droits des femmes tels quels, alors que Thérèse Casgrain et Idola Saint-Jean réclament l'égalité juridique entre les femmes et les hommes.",
+ updatedAt: "2026-07-17T13:47:38.712Z"
 }
 ]
