@@ -13193,6 +13193,6 @@ const QUESTIONS = [
  ],
  reponse: {type: "lignes", nombre: 2},
  guide: "Le Canada acquiert une autonomie législative par rapport au Royaume-Uni.\nLe Parlement britannique ne peut plus légiférer pour le Canada sans son consentement.\nLe Canada devient juridiquement égal au Royaume-Uni dans le Commonwealth.\nLe Canada obtient une plus grande indépendance politique.",
- updatedAt: "2026-07-17T03:15:30.977Z"
+ updatedAt: "2026-07-17T03:16:24.011Z"
 }
 ]
