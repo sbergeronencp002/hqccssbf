@@ -1299,5 +1299,6 @@ const QUESTIONS = [
  updatedAt: "2026-07-17T00:04:06.316Z"
 },
 {id: "Q731", niveau: 4, oi: "Situer dans le temps", periode: "P6 — 1896 – 1945", points: 1, soustag: "Ligne du temps", aspects: [{aspect: "Seconde Guerre mondiale"}], enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.", updatedAt: "2026-07-17T00:41:14.112Z"},
-{id: "Q732", niveau: 4, oi: "Situer dans le temps", periode: "P6 — 1896 – 1945", points: 2, soustag: "Ordre chronologique", aspects: [{aspect: "Flux migratoires"}], enonce: "Les documents A à Dfont référence à l’immigration au Canada entre 1900 et 1960. Placez-les par ordre chronologique.", updatedAt: "2026-07-17T02:55:42.308Z"}
+{id: "Q732", niveau: 4, oi: "Situer dans le temps", periode: "P6 — 1896 – 1945", points: 2, soustag: "Ordre chronologique", aspects: [{aspect: "Flux migratoires"}], enonce: "Les documents A à Dfont référence à l’immigration au Canada entre 1900 et 1960. Placez-les par ordre chronologique.", updatedAt: "2026-07-17T02:55:42.308Z"},
+{id: "Q733", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Cause et conséquence", aspects: [{aspect: "Grande dépression"}], enonce: "Entre 1929 et 1939, le Canada est touché par la Grande dépression. Inscrivez le numéro du document qui présente :\n• une cause de la Grande dépression\n• une conséquence de la Grande dépression au Canada", updatedAt: "2026-07-17T03:02:44.633Z"}
 ]
