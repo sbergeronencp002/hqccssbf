@@ -1314,5 +1314,6 @@ const QUESTIONS = [
  updatedAt: "2026-07-17T03:29:12.552Z"
 },
 {id: "Q737", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Cause", aspects: [{aspect: "Milieux urbains"}], enonce: "Indiquez une raison pour laquelle les autorités municipales adoptent des mesures de santé publique dans les villes au début du XXᵉ siècle.", updatedAt: "2026-07-17T11:57:36.433Z"},
-{id: "Q739", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Cause", aspects: [{aspect: "Milieux urbains"}], enonce: "Indiquez une raison pour laquelle les municipalités développent les infrastructures urbaines au début du XXᵉ siècle.", updatedAt: "2026-07-17T12:05:47.341Z"}
+{id: "Q739", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Cause", aspects: [{aspect: "Milieux urbains"}], enonce: "Indiquez une raison pour laquelle les municipalités développent les infrastructures urbaines au début du XXᵉ siècle.", updatedAt: "2026-07-17T12:05:47.341Z"},
+{id: "Q740", niveau: 4, oi: "Dégager des différences et des similitudes", periode: "P6 — 1896 – 1945", points: 2, soustag: "Convergence – 2 acteurs", aspects: [{aspect: "Milieux urbains"}], enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils d'accord?", updatedAt: "2026-07-17T12:09:20.877Z"}
 ]
