@@ -1300,7 +1300,8 @@ const REGLETTES = {
 "Q762": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
 "Q763": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]},
 "Q764": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
-"Q765": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
+"Q765": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
+"Q766": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -13665,5 +13666,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les communautés religieuses prennent en charge une partie importante des services sociaux, comme les soins aux malades et l’aide aux personnes démunies.",
  updatedAt: "2026-07-17T14:44:33.185Z"
+},
+{
+ id: "Q766",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Continuité",
+ enonce: "À partir des documents A et B, indiquez un élément de continuité concernant l’influence de l’Église catholique dans la société québécoise entre 1896 et 1945.",
+ aspects: [{aspect: "Église catholique"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« L’Église catholique occupe une place centrale dans la société québécoise. Elle exerce une influence considérable dans les domaines de l’éducation, de la santé et des œuvres de charité. »", soustitre: "Vers 1900", source: "Adapté de Paul-André Linteau et autres, Histoire du Québec contemporain, tome 1 : De la Confédération à la crise, Montréal, Boréal, 1989."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Malgré les transformations sociales de la première moitié du XXᵉ siècle, l’Église demeure une institution majeure qui conserve un rôle important dans plusieurs secteurs de la société québécoise. »", soustitre: "Vers 1940", source: "Adapté de Paul-André Linteau et autres, Histoire du Québec contemporain, tome 2 : Le Québec depuis 1930, Montréal, Boréal, 1989."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "L’Église catholique maintient une influence importante dans les institutions sociales (éducation, santé, œuvres de charité) entre 1896 et 1940.",
+ updatedAt: "2026-07-17T14:47:45.661Z"
 }
 ]
