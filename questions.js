@@ -1299,7 +1299,8 @@ const REGLETTES = {
 "Q761": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q762": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
 "Q763": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]},
-"Q764": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]}
+"Q764": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
+"Q765": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -13650,5 +13651,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 1},
  guide: "Les caisses populaires Desjardins.",
  updatedAt: "2026-07-17T14:38:58.425Z"
+},
+{
+ id: "Q765",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Conséquence",
+ enonce: "Indiquez une conséquence de l’influence de l’Église catholique sur les services sociaux au Québec durant la première moitié du XXᵉ siècle.",
+ aspects: [{aspect: "Église catholique"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Durant la première moitié du XXᵉ siècle, les communautés religieuses occupent une place importante dans l’organisation des services sociaux. Elles dirigent notamment des hôpitaux, des orphelinats et des œuvres de charité afin d’aider la population. »", source: "Adapté de Paul-André Linteau et autres, Histoire du Québec contemporain, tome 1 : De la Confédération à la crise, Montréal, Boréal, 1989."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les communautés religieuses prennent en charge une partie importante des services sociaux, comme les soins aux malades et l’aide aux personnes démunies.",
+ updatedAt: "2026-07-17T14:44:33.185Z"
 }
 ]
