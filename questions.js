@@ -1298,7 +1298,8 @@ const REGLETTES = {
 "Q760": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]},
 "Q761": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q762": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
-"Q763": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]}
+"Q763": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]},
+"Q764": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -13636,5 +13637,18 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "La place de l’Église catholique dans l’organisation de la société.",
  updatedAt: "2026-07-17T14:37:42.852Z"
+},
+{
+ id: "Q764",
+ niveau: 4,
+ oi: "Établir des faits",
+ periode: "P6 — 1896 – 1945",
+ points: 1,
+ enonce: "Indiquez le nomd d'une organisation créée afin de favoriser l’autonomie économique des Canadiens français au début du XXᵉ siècle.",
+ aspects: [{aspect: "Église catholique"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Ces institutions financières permettent aux Canadiens français d’épargner, d’obtenir du crédit et de soutenir le développement économique de leur communauté. »", source: "« Ces institutions financières permettent aux Canadiens français d’épargner, d’obtenir du crédit et de soutenir le développement économique de leur communauté. »"}]}],
+ reponse: {type: "lignes", nombre: 1},
+ guide: "Les caisses populaires Desjardins.",
+ updatedAt: "2026-07-17T14:38:58.425Z"
 }
 ]
