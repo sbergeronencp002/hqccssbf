@@ -1298,5 +1298,5 @@ const QUESTIONS = [
  enonce: "Expliquez comment les difficultés économiques des entreprises canadiennes à la suite du krach boursier amènent le gouvernement fédéral à intervenir davantage dans l'économie durant les années 1930.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Les difficultés économiques des entreprises canadiennes\n• La situation de l'emploi\n• Une intervention du gouvernement fédéral dans l'économie",
  updatedAt: "2026-07-17T00:04:06.316Z"
 },
-{id: "Q731", niveau: 4, oi: "Situer dans le temps", periode: "P6 — 1896 – 1945", points: 1, soustag: "Ligne du temps", aspects: [{aspect: "Deuxième phase d'industrialisation"}], enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.", updatedAt: "2026-07-17T00:09:28.228Z"}
+{id: "Q731", niveau: 4, oi: "Situer dans le temps", periode: "P6 — 1896 – 1945", points: 1, soustag: "Ligne du temps", aspects: [{aspect: "Seconde Guerre mondiale"}], enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.", updatedAt: "2026-07-17T00:41:14.112Z"}
 ]
