@@ -12630,7 +12630,7 @@ const QUESTIONS = [
  points: 1,
  soustag: "Ligne du temps",
  enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
- aspects: [{aspect: "Éducation et formation technique"}, {aspect: "Seconde Guerre mondiale"}],
+ aspects: [{aspect: "Éducation et formation technique"}],
  documents: [
   {
    type: "textes",
@@ -12639,7 +12639,7 @@ const QUESTIONS = [
  ],
  reponse: {type: "image", ref: "ligne_1890-1950.png"},
  guide: "C - 1943.",
- updatedAt: "2026-07-16T23:41:36.525Z"
+ updatedAt: "2026-07-17T00:07:42.023Z"
 },
 {
  id: "Q700",
