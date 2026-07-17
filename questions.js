@@ -13426,11 +13426,11 @@ const QUESTIONS = [
  periode: "P6 — 1896 – 1945",
  points: 3,
  soustag: "Changement ou continuité",
- enonce: "Indiquez s'il y a changement ou continuité concernant la présence des femmes sur le marché du travail entre 1901 et 1941. Justifiez votre réponse par des faits qui montrent le changement ou la continuité et par un repère de temps.",
+ enonce: "À partir du document A, indiquez s'il y a changement ou continuité concernant la présence des femmes sur le marché du travail entre 1901 et 1941. Justifiez votre réponse par des faits qui montrent le changement ou la continuité et par un repère de temps.",
  aspects: [{aspect: "Luttes des femmes"}],
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_marche_travail_hommes_femmes.jpg", soustitre: "Évolution du marché du travail", source: "Adapté de Bureau fédéral de la statistique, Recensement du Canada, 1901, 1911, 1921, 1931 et 1941, Ottawa, Imprimeur du Roi."}]}],
  reponse: {type: "lignes", nombre: 3},
  guide: "Changement\nEntre 1901 et 1941, la proportion de femmes occupant un emploi rémunéré augmente, passant de 13 % à 27 %, tandis que celle des hommes diminue légèrement, de 82 % à 74 %.\n\nContinuité\nEntre 1901 et 1941, les hommes demeurent majoritaires sur le marché du travail. Leur proportion reste nettement supérieure à celle des femmes tout au long de la période, malgré une légère baisse.",
- updatedAt: "2026-07-17T13:12:01.003Z"
+ updatedAt: "2026-07-17T13:12:34.309Z"
 }
 ]
