@@ -1287,7 +1287,8 @@ const REGLETTES = {
 "Q749": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
 "Q750": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
 "Q751": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q752": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q752": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q753": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1666,7 +1667,8 @@ const IMAGE_DB = {
 "tableau_femmes_etudes.jpg": {src: "images/tableau_femmes_etudes.jpg", w: 1200, h: 800},
 "manufacture_femmes.jpg": {src: "images/manufacture_femmes.jpg", w: 1200, h: 900},
 "tableau_marche_travail_hommes_femmes.jpg": {src: "images/tableau_marche_travail_hommes_femmes.jpg", w: 1200, h: 800},
-"tableau_salaire_moyen_hommes_femmes.jpg": {src: "images/tableau_salaire_moyen_hommes_femmes.jpg", w: 1200, h: 800}
+"tableau_salaire_moyen_hommes_femmes.jpg": {src: "images/tableau_salaire_moyen_hommes_femmes.jpg", w: 1200, h: 800},
+"affiche_femme_election.jpg": {src: "images/affiche_femme_election.jpg"}
 }
 
 const QUESTIONS = [
@@ -13448,5 +13450,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 3},
  guide: "Changement\nIl y a changement, car les salaires hebdomadaires moyens des hommes et des femmes augmentent entre 1901 et 1941.\nIl y a changement, car les salaires hebdomadaires moyens des hommes et des femmes sont plus élevés en 1941 qu'en 1901.\n\nContinuité\nIl y a continuité, car les hommes gagnent un salaire hebdomadaire moyen plus élevé que les femmes en 1901 comme en 1941.\nIl y a continuité, car les hommes reçoivent un salaire hebdomadaire moyen supérieur à celui des femmes tout au long de la première moitié du XXᵉ siècle.",
  updatedAt: "2026-07-17T13:18:47.749Z"
+},
+{
+ id: "Q753",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Conséquence",
+ enonce: "Indiquez une conséquence de l'obtention du droit de vote des femmes au Québec.",
+ aspects: [{aspect: "Luttes des femmes"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "affiche_femme_election.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les femmes peuvent voter aux élections provinciales.\nLes femmes peuvent se présenter comme candidates aux élections provinciales.\nLes femmes participent davantage à la vie politique québécoise.",
+ updatedAt: "2026-07-17T13:36:17.601Z"
 }
 ]
