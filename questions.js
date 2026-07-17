@@ -1266,7 +1266,8 @@ const REGLETTES = {
 "Q726": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q727": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q728": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (2 sur 2)"}, {pts: 1, desc: "L'élève met en relation certains faits. (1 sur 2)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (0 sur 2)"}]},
-"Q729": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]}
+"Q729": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
+"Q730": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -1624,7 +1625,9 @@ const IMAGE_DB = {
 "carte_regions_ressources_naturelles.png": {src: "images/carte_regions_ressources_naturelles.png", w: 919, h: 1200},
 "usines_pates_papiers.jpg": {src: "images/usines_pates_papiers.jpg"},
 "tableau_production_manufacturiere_1900-1940.jpg": {src: "images/tableau_production_manufacturiere_1900-1940.jpg"},
-"conference_quebec.jpg": {src: "images/conference_quebec.jpg"}
+"conference_quebec.jpg": {src: "images/conference_quebec.jpg"},
+"tableau_faillites_entreprises.jpg": {src: "images/tableau_faillites_entreprises.jpg", w: 1200, h: 800},
+"tableau_chomage.jpg": {src: "images/tableau_chomage.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -13079,5 +13082,22 @@ const QUESTIONS = [
  reponse: {type: "image", ref: "ligne_1890-1950.png"},
  guide: "C - 1943-1944.",
  updatedAt: "2026-07-16T23:54:12.376Z"
+},
+{
+ id: "Q730",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ enonce: "Expliquez comment les difficultés économiques des entreprises canadiennes à la suite du krach boursier amènent le gouvernement fédéral à intervenir davantage dans l'économie durant les années 1930.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Les difficultés économiques des entreprises canadiennes\n• La situation de l'emploi\n• Une intervention du gouvernement fédéral dans l'économie",
+ aspects: [{aspect: "Grande dépression"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "tableau_faillites_entreprises.jpg", soustitre: "Évolution du nombre d'entreprises en faillite au Canada", source: "Adapté de Bureau fédéral de la statistique, Annuaire du Canada 1935, chapitre « Faillites et insolvabilités », Ottawa, Imprimeur du Roi, 1935."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les gouvernements multiplient les chantiers publics afin de procurer du travail aux milliers de chômeurs touchés par la Grande Dépression. »", source: "Adapté de Pierre Berton, The Great Depression: 1929-1939, Anchor Canada, 1990."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "tableau_chomage.jpg", soustitre: "Évolution du taux de chômage au Canada", source: "Adapté de Statistique Canada, Statistiques historiques du Canada, section D – Population active, emploi et chômage, Gouvernement du Canada."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "Les difficultés économiques des entreprises canadiennes (les difficultés économiques des entreprises canadiennes) entraînent une hausse du chômage (la situation de l'emploi). Pour répondre à cette situation, le gouvernement fédéral intervient davantage dans l'économie, notamment en créant la Banque du Canada ou en mettant en œuvre le New Deal de Bennett (une intervention du gouvernement fédéral dans l'économie).",
+ updatedAt: "2026-07-17T00:04:06.316Z"
 }
 ]
