@@ -1343,5 +1343,16 @@ const QUESTIONS = [
 {id: "Q748", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P6 — 1896 – 1945", points: 2, soustag: "Changement", aspects: [{aspect: "Luttes des femmes"}], enonce: "Indiquez un changement concernant l'accès des femmes aux études supérieures durant la première moitié du XXᵉ siècle.", updatedAt: "2026-07-17T12:59:29.297Z"},
 {id: "Q749", niveau: 4, oi: "Dégager des différences et des similitudes", periode: "P6 — 1896 – 1945", points: 2, soustag: "Convergence – 2 acteurs", aspects: [{aspect: "Luttes des femmes"}], enonce: "Le document présente le point de vue de deux acteurs. Sur quel point précis sont-ils d'accord?", updatedAt: "2026-07-17T13:01:38.268Z"},
 {id: "Q750", niveau: 4, oi: "Établir des faits", periode: "P6 — 1896 – 1945", points: 1, aspects: [{aspect: "Luttes des femmes"}], enonce: "Indiquez un secteur d'activité qui emploie un grand nombre de femmes durant la première moitié du XXᵉ siècle.", updatedAt: "2026-07-17T13:04:34.788Z"},
-{id: "Q751", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P6 — 1896 – 1945", points: 3, soustag: "Changement ou continuité", aspects: [{aspect: "Luttes des femmes"}], enonce: "À partir du document A, indiquez s'il y a changement ou continuité concernant la présence des femmes sur le marché du travail entre 1901 et 1941. Justifiez votre réponse par des faits qui montrent le changement ou la continuité et par un repère de temps.", updatedAt: "2026-07-17T13:12:34.309Z"}
+{id: "Q751", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P6 — 1896 – 1945", points: 3, soustag: "Changement ou continuité", aspects: [{aspect: "Luttes des femmes"}], enonce: "À partir du document A, indiquez s'il y a changement ou continuité concernant la présence des femmes sur le marché du travail entre 1901 et 1941. Justifiez votre réponse par des faits qui montrent le changement ou la continuité et par un repère de temps.", updatedAt: "2026-07-17T13:12:34.309Z"},
+{
+ id: "Q752",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ soustag: "Changement ou continuité",
+ aspects: [{aspect: "Luttes des femmes"}],
+ enonce: "À partir du document A, indiquez s'il y a changement ou continuité concernant les salaires des hommes et des femmes travaillant dans les usines au cours de la première moitié du XXᵉ siècle. Justifiez votre réponse à l'aide de faits tirés du document et d'un repère de temps.",
+ updatedAt: "2026-07-17T13:18:47.749Z"
+}
 ]
