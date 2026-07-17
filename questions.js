@@ -1278,7 +1278,8 @@ const REGLETTES = {
 "Q739": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q740": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
 "Q741": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q742": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q742": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q743": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la similitude."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."}, {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1651,7 +1652,8 @@ const IMAGE_DB = {
 "tableau_population_urbaine_rurale.jpg": {src: "images/tableau_population_urbaine_rurale.jpg", w: 1200, h: 1200},
 "travaux_aqueducs_egouts.jpg": {src: "images/travaux_aqueducs_egouts.jpg", w: 1200, h: 900},
 "tableau_population_montreal.jpg": {src: "images/tableau_population_montreal.jpg", w: 1200, h: 800},
-"tramway.jpg": {src: "images/tramway.jpg", w: 1200, h: 900}
+"tramway.jpg": {src: "images/tramway.jpg", w: 1200, h: 900},
+"radio_famille.jpg": {src: "images/radio_famille.jpg", w: 1200, h: 900}
 }
 
 const QUESTIONS = [
@@ -13303,5 +13305,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 5},
  guide: "La population de Montréal augmente rapidement au cours de la première moitié du XXᵉ siècle (la situation démographique des villes). Ceci a pour effet d'accroître les besoins de la population des villes (les besoins de la population des villes). Les municipalités développent les services municipaux, notamment les transports, les loisirs et la protection contre les incendies (le développement des services municipaux).",
  updatedAt: "2026-07-17T12:31:35.946Z"
+},
+{
+ id: "Q743",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Similitude",
+ enonce: "À partir des documents A et B, indiquez une similitude entre la radio et le cinéma comme moyens de diffusion de la culture de masse.",
+ aspects: [{aspect: "Culture de masse"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "radio_famille.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Aller au cinéma figure parmi les loisirs les plus prisés des Québécois depuis plus d'un siècle, les salles de projection devenant rapidement des lieux de rassemblement populaires. »", source: "Adapté de Catherine Gill, Petite histoire des salles de cinéma au Québec, Bibliothèque et Archives nationales du Québec (BAnQ), 2025."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "La radio et le cinéma diffusent des divertissements à un vaste public.\nLa radio et le cinéma permettent à une grande partie de la population d’accéder aux mêmes contenus culturels.\nLa radio et le cinéma contribuent à diffuser la culture populaire américaine.",
+ updatedAt: "2026-07-17T12:38:40.813Z"
 }
 ]
