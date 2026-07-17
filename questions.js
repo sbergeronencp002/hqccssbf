@@ -1279,7 +1279,8 @@ const REGLETTES = {
 "Q740": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
 "Q741": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q742": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q743": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la similitude."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."}, {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}]}
+"Q743": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la similitude."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."}, {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}]},
+"Q744": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -13322,5 +13323,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "La radio et le cinéma diffusent des divertissements à un vaste public.\nLa radio et le cinéma permettent à une grande partie de la population d’accéder aux mêmes contenus culturels.\nLa radio et le cinéma contribuent à diffuser la culture populaire américaine.",
  updatedAt: "2026-07-17T12:38:40.813Z"
+},
+{
+ id: "Q744",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Conséquence",
+ enonce: "Indiquez une conséquence de la popularité des romans du terroir sur la société canadienne-française.",
+ aspects: [{aspect: "Culture de masse"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Nous sommes venus il y a trente ans, et nous avons pris ce pays. Nous l'avons défriché. Nous y avons vécu. Nous y sommes restés. »", source: "Louis Hémon, Maria Chapdelaine, Montréal, J.-A. LeFebvre, 1916 (éd. canadienne)."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les romans du terroir contribuent à valoriser la vie rurale et agricole.\nIls renforcent l’attachement aux valeurs traditionnelles canadiennes-françaises.\nIls contribuent à promouvoir la famille, la religion et l’attachement à la terre.",
+ updatedAt: "2026-07-17T12:41:04.208Z"
 }
 ]
