@@ -1370,7 +1370,7 @@ const QUESTIONS = [
  periode: "P6 — 1896 – 1945",
  points: 3,
  aspects: [{aspect: "Mouvement syndical"}],
- enonce: "Expliquez comment les conditions de travail des ouvriers favorisent l’adoption de mesures gouvernementales durant la première moitié du XXᵉ siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Les conditions de travail des ouvriers\n• Les revendications des travailleurs\n• Une mesure mise en place par le gouvernement",
- updatedAt: "2026-07-17T14:21:56.059Z"
+ enonce: "Expliquez comment les conditions de travail des ouvriers poussent le gouvernement à adopter des mesures durant la première moitié du XXᵉ siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Les conditions de travail des ouvriers\n• Les revendications des travailleurs\n• Une mesure mise en place par le gouvernement",
+ updatedAt: "2026-07-17T14:27:48.107Z"
 }
 ]
