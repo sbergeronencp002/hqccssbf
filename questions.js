@@ -13593,7 +13593,7 @@ const QUESTIONS = [
  oi: "Établir des liens de causalité",
  periode: "P6 — 1896 – 1945",
  points: 3,
- enonce: "Expliquez comment les conditions de travail des ouvriers favorisent l’adoption de mesures gouvernementales durant la première moitié du XXᵉ siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Les conditions de travail des ouvriers\n• Les revendications des travailleurs\n• Une mesure mise en place par le gouvernement",
+ enonce: "Expliquez comment les conditions de travail des ouvriers poussent le gouvernement à adopter des mesures durant la première moitié du XXᵉ siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Les conditions de travail des ouvriers\n• Les revendications des travailleurs\n• Une mesure mise en place par le gouvernement",
  aspects: [{aspect: "Mouvement syndical"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", texte: "« Dans plusieurs manufactures, les ouvriers travaillent de longues heures dans des conditions difficiles. Les accidents sont fréquents et les salaires demeurent faibles. Les travailleurs réclament une meilleure protection. »", source: "Adapté de Jacques Paul Couturier, Un passé composé : le Canada de 1850 à nos jours, Moncton, Éditions d’Acadie, 2000, p. 135-136."}]},
@@ -13602,6 +13602,6 @@ const QUESTIONS = [
  ],
  reponse: {type: "lignes", nombre: 5},
  guide: "Les ouvriers travaillent dans des conditions difficiles (les conditions de travail des ouvriers). Ils réclament une meilleure protection et de meilleures conditions de travail (les revendications des travailleurs). Le gouvernement adopte des lois pour protéger les travailleurs, comme la Loi des accidents du travail de 1909 (une mesure mise en place par le gouvernement).",
- updatedAt: "2026-07-17T14:21:56.059Z"
+ updatedAt: "2026-07-17T14:27:48.107Z"
 }
 ]
