@@ -1283,7 +1283,8 @@ const REGLETTES = {
 "Q744": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q746": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
 "Q747": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q748": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
+"Q748": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
+"Q749": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -13383,5 +13384,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Le nombre de femmes fréquentant l'université augmente.\nLes femmes sont de plus en plus nombreuses à poursuivre des études supérieures.",
  updatedAt: "2026-07-17T12:59:29.297Z"
+},
+{
+ id: "Q749",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Convergence – 2 acteurs",
+ enonce: "Le document présente le point de vue de deux acteurs. Sur quel point précis sont-ils d'accord?",
+ aspects: [{aspect: "Luttes des femmes"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Les jeunes filles doivent recevoir une instruction solide afin d'acquérir les connaissances nécessaires pour exercer une profession, participer pleinement à la société et contribuer au progrès collectif. »", auteur: "Marie Gérin-Lajoie", source: "Adapté de Marie Gérin-Lajoie, Le rôle de la femme, Montréal, Éditions de l'Action canadienne-française, 1911."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« L'accès des femmes à une éducation complète leur permet de développer leurs capacités, d'occuper des emplois qualifiés et de prendre toute leur place dans la société. »", auteur: "Idola Saint-Jean", source: "Adapté de Idola Saint-Jean, L'œuvre de la Ligue des droits de la femme, conférence prononcée à Montréal, vers 1930; reproduite dans Les discours d'Idola Saint-Jean, Bibliothèque et Archives nationales du Québec."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les femmes doivent avoir accès à l'éducation.\nLes femmes doivent pouvoir poursuivre des études supérieures.",
+ updatedAt: "2026-07-17T13:01:38.268Z"
 }
 ]
