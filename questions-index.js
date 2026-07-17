@@ -1287,5 +1287,15 @@ const QUESTIONS = [
 {id: "Q726", niveau: 4, oi: "Situer dans le temps", periode: "P6 — 1896 – 1945", points: 1, soustag: "Ligne du temps", aspects: [{aspect: "Culture de masse"}], enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.", updatedAt: "2026-07-16T23:43:04.644Z"},
 {id: "Q727", niveau: 4, oi: "Situer dans le temps", periode: "P6 — 1896 – 1945", points: 1, soustag: "Ligne du temps", aspects: [{aspect: "Grande dépression"}, {aspect: "Politique intérieure canadienne"}], enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.", updatedAt: "2026-07-16T23:45:38.593Z"},
 {id: "Q728", niveau: 4, oi: "Mettre en relation des faits", periode: "P6 — 1896 – 1945", points: 2, soustag: "2 documents", aspects: [{aspect: "Deuxième phase d'industrialisation"}], enonce: "À partir des documents A et B, indiquez le numéro du document qui présente :\n• une ressource exploitée durant la deuxième phase d'industrialisation;\n• la principale provenance des capitaux investis au Canada durant cette phase.", updatedAt: "2026-07-16T23:51:39.875Z"},
-{id: "Q729", niveau: 4, oi: "Situer dans le temps", periode: "P6 — 1896 – 1945", points: 1, soustag: "Ligne du temps", aspects: [{aspect: "Éducation et formation technique"}, {aspect: "Seconde Guerre mondiale"}], enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.", updatedAt: "2026-07-16T23:54:12.376Z"}
+{id: "Q729", niveau: 4, oi: "Situer dans le temps", periode: "P6 — 1896 – 1945", points: 1, soustag: "Ligne du temps", aspects: [{aspect: "Éducation et formation technique"}, {aspect: "Seconde Guerre mondiale"}], enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.", updatedAt: "2026-07-16T23:54:12.376Z"},
+{
+ id: "Q730",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ aspects: [{aspect: "Grande dépression"}],
+ enonce: "Expliquez comment les difficultés économiques des entreprises canadiennes à la suite du krach boursier amènent le gouvernement fédéral à intervenir davantage dans l'économie durant les années 1930.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Les difficultés économiques des entreprises canadiennes\n• La situation de l'emploi\n• Une intervention du gouvernement fédéral dans l'économie",
+ updatedAt: "2026-07-17T00:04:06.316Z"
+}
 ]
