@@ -1275,7 +1275,8 @@ const REGLETTES = {
 "Q735": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q736": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q737": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q739": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q739": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q740": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -13245,5 +13246,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "La croissance de la population urbaine augmente les besoins en infrastructures.\nLa croissance de la population urbaine.\nLa nécessité d'améliorer les réseaux d'aqueduc et d'égouts.",
  updatedAt: "2026-07-17T12:05:47.341Z"
+},
+{
+ id: "Q740",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Convergence – 2 acteurs",
+ enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils d'accord?",
+ aspects: [{aspect: "Milieux urbains"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« La prévention des maladies contagieuses passe par une meilleure hygiène, un approvisionnement en eau salubre et des interventions soutenues afin de protéger la santé de l'ensemble de la population. »", auteur: "Médecin hygiéniste", source: "Adapté de Conseil d'hygiène de la province de Québec, Rapport annuel du Conseil d'hygiène de la province de Québec, Québec, Imprimeur du Roi, 1912."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les visites à domicile, la vaccination et l'éducation sanitaire permettent de prévenir plusieurs maladies et d'améliorer durablement les conditions de vie des familles dans les quartiers urbains. »", auteur: "Infirmière de santé publique", source: "Adapté de Victorian Order of Nurses for Canada, Annual Report, Montréal, 1925."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Des mesures de santé publique sont nécessaires pour protéger la population.\nLa nécessité des mesures de santé publique.",
+ updatedAt: "2026-07-17T12:09:20.877Z"
 }
 ]
