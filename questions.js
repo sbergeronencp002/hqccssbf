@@ -1294,7 +1294,8 @@ const REGLETTES = {
 "Q756": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
 "Q757": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q758": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]},
-"Q759": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q759": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q760": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]}
 }
 
 const IMAGE_DB = {
@@ -1677,7 +1678,8 @@ const IMAGE_DB = {
 "affiche_femme_election.jpg": {src: "images/affiche_femme_election.jpg"},
 "fondation_ctcc.jpg": {src: "images/fondation_ctcc.jpg", w: 1200, h: 800},
 "tableau_syndicats_catholiques.jpg": {src: "images/tableau_syndicats_catholiques.jpg"},
-"tableau_syndicats.jpg": {src: "images/tableau_syndicats.jpg", w: 1200, h: 800}
+"tableau_syndicats.jpg": {src: "images/tableau_syndicats.jpg", w: 1200, h: 800},
+"syndicat_etranger.jpg": {src: "images/syndicat_etranger.jpg", w: 1200, h: 960}
 }
 
 const QUESTIONS = [
@@ -13563,5 +13565,24 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 3},
  guide: "Changement\nIl y a un changement, puisqu'en 1900 les syndicats internationaux dominent l'organisation syndicale, alors qu'en 1930 les syndicats catholiques occupent une place plus importante.\n\nContinuité\nIl y a une continuité, puisque les syndicats internationaux occupent une place importante dans l'organisation syndicale en 1900 comme en 1930.",
  updatedAt: "2026-07-17T14:08:44.447Z"
+},
+{
+ id: "Q760",
+ niveau: 4,
+ oi: "Mettre en relation des faits",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "4 documents",
+ enonce: "Les documents A à D présentent des faits relatifs à l'organisation syndicale durant la première moitié du XXᵉ siècle. Associez les documents qui se rapportent à chacun des syndicats présentés.",
+ aspects: [{aspect: "Mouvement syndical"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "fondation_ctcc.jpg", soustitre: "La fondation de la Confédération des travailleurs catholiques du Canada (CTCC)", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Notre organisation rassemble les travailleurs de différents pays et permet de coordonner leurs efforts afin de défendre leurs droits dans l’industrie. »", source: "Adapté de American Federation of Labor, Proceedings of the Annual Convention, 1910."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Il faut préserver les travailleurs canadiens-français de l’influence étrangère et favoriser des organisations ouvrières qui respectent les traditions religieuses de notre société. »", source: "Adapté de Lionel Groulx, Une croisade d’éducation, Montréal, L’Action française, 1916."}]},
+  {type: "textes", cols: [{titre: "Document D", ref: "syndicat_etranger.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}
+ ],
+ reponse: {type: "mettre-en-relation", elements: ["Syndicats catholiques (CTCC)", "Syndicats internationaux américains"], double: true},
+ guide: {type: "grille", entetes: ["Syndicats catholiques (CTCC)", "Syndicats internationaux américains"], rangees: [["A et C", "B et D"]]},
+ updatedAt: "2026-07-17T14:12:38.138Z"
 }
 ]
