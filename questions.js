@@ -1275,7 +1275,7 @@ const REGLETTES = {
 "Q735": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q736": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q737": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q738": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q739": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1644,8 +1644,7 @@ const IMAGE_DB = {
 "tableau_dow_jones.jpg": {src: "images/tableau_dow_jones.jpg", w: 1200, h: 800},
 "tableau_depenses_ww2.jpg": {src: "images/tableau_depenses_ww2.jpg"},
 "afiche_enrolement_ww2.jpg": {src: "images/afiche_enrolement_ww2.jpg"},
-"tableau_mortalité_infantile.jpg": {src: "images/tableau_mortalité_infantile.jpg"},
-"tableau_maladies.jpg": {src: "images/tableau_maladies.jpg"}
+"tableau_mortalité_infantile.jpg": {src: "images/tableau_mortalité_infantile.jpg"}
 }
 
 const QUESTIONS = [
@@ -13234,17 +13233,17 @@ const QUESTIONS = [
  updatedAt: "2026-07-17T11:57:36.433Z"
 },
 {
- id: "Q738",
+ id: "Q739",
  niveau: 4,
  oi: "Déterminer des causes et des conséquences",
  periode: "P6 — 1896 – 1945",
  points: 2,
  soustag: "Cause",
- enonce: "Indiquez une conséquence de l'amélioration des mesures de santé publique dans les milieux urbains au cours de la première moitié du XXᵉ siècle.",
+ enonce: "Indiquez une raison pour laquelle les municipalités développent les infrastructures urbaines au début du XXᵉ siècle.",
  aspects: [{aspect: "Milieux urbains"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_maladies.jpg", soustitre: "Évolution de la mortalité causée par certaines maladies infectieuses", source: "Adapté de Bureau fédéral de la statistique, Annuaire du Canada 1942, section « Statistiques de l'état civil et santé publique », Ottawa, Imprimeur du Roi, 1942."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« L'accroissement rapide de la population exige la construction de nouveaux aqueducs, l'agrandissement des réseaux d'égouts ainsi que l'amélioration des rues afin de répondre aux besoins croissants des citoyens. »", source: "Adapté de Ville de Montréal, Rapport annuel du Service des travaux publics, Montréal, 1913."}]}],
  reponse: {type: "lignes", nombre: 2},
- guide: "Le nombre de décès causés par les maladies infectieuses diminue.\nLa diminution des décès causés par les maladies infectieuses.\nLa diminution de la mortalité.\nLa diminution de la mortalité infantile.\nL'amélioration de l'état de santé de la population.",
- updatedAt: "2026-07-17T12:03:39.209Z"
+ guide: "La croissance de la population urbaine augmente les besoins en infrastructures.\nLa croissance de la population urbaine.\nLa nécessité d'améliorer les réseaux d'aqueduc et d'égouts.",
+ updatedAt: "2026-07-17T12:05:47.341Z"
 }
 ]
