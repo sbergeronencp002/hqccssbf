@@ -1293,7 +1293,8 @@ const REGLETTES = {
 "Q755": {oi: "Dégager des différences et des similitudes", variante: "acteur-positions", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q756": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
 "Q757": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
-"Q758": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]}
+"Q758": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]},
+"Q759": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -1675,7 +1676,8 @@ const IMAGE_DB = {
 "tableau_salaire_moyen_hommes_femmes.jpg": {src: "images/tableau_salaire_moyen_hommes_femmes.jpg", w: 1200, h: 800},
 "affiche_femme_election.jpg": {src: "images/affiche_femme_election.jpg"},
 "fondation_ctcc.jpg": {src: "images/fondation_ctcc.jpg", w: 1200, h: 800},
-"tableau_syndicats_catholiques.jpg": {src: "images/tableau_syndicats_catholiques.jpg"}
+"tableau_syndicats_catholiques.jpg": {src: "images/tableau_syndicats_catholiques.jpg"},
+"tableau_syndicats.jpg": {src: "images/tableau_syndicats.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -13547,5 +13549,19 @@ const QUESTIONS = [
  reponse: {type: "cause-consequence"},
  guide: {type: "grille", entetes: ["Cause", "Conséquence"], rangees: [["B", "A"]]},
  updatedAt: "2026-07-17T14:02:04.607Z"
+},
+{
+ id: "Q759",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ soustag: "Changement ou continuité",
+ enonce: "À partir du document A, indiquez s’il y a changement ou continuité concernant l’organisation syndicale au Québec entre 1900 et 1930. Justifiez votre choix par des faits qui montrent le changement ou la continuité et par un repère de temps.",
+ aspects: [{aspect: "Mouvement syndical"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_syndicats.jpg", soustitre: "Évolution des affiliations syndicales au Québec", source: "Adapté de Fernand Harvey, Histoire de la CSN, 1921-1981, Boréal, 1984; et Commission des relations du travail, Histoire du mouvement syndical au Québec."}]}],
+ reponse: {type: "lignes", nombre: 3},
+ guide: "Changement\nIl y a un changement, puisqu'en 1900 les syndicats internationaux dominent l'organisation syndicale, alors qu'en 1930 les syndicats catholiques occupent une place plus importante.\n\nContinuité\nIl y a une continuité, puisque les syndicats internationaux occupent une place importante dans l'organisation syndicale en 1900 comme en 1930.",
+ updatedAt: "2026-07-17T14:08:44.447Z"
 }
 ]
