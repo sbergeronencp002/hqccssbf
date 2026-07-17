@@ -1285,7 +1285,8 @@ const REGLETTES = {
 "Q747": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q748": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q749": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
-"Q750": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]}
+"Q750": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
+"Q751": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1662,7 +1663,8 @@ const IMAGE_DB = {
 "radio_famille.jpg": {src: "images/radio_famille.jpg", w: 1200, h: 900},
 "hockey.jpg": {src: "images/hockey.jpg"},
 "tableau_femmes_etudes.jpg": {src: "images/tableau_femmes_etudes.jpg", w: 1200, h: 800},
-"manufacture_femmes.jpg": {src: "images/manufacture_femmes.jpg", w: 1200, h: 900}
+"manufacture_femmes.jpg": {src: "images/manufacture_femmes.jpg", w: 1200, h: 900},
+"tableau_marche_travail_hommes_femmes.jpg": {src: "images/tableau_marche_travail_hommes_femmes.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -13416,5 +13418,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 1},
  guide: "Le travail en manufcature.\nLe travail en usine.",
  updatedAt: "2026-07-17T13:04:34.788Z"
+},
+{
+ id: "Q751",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Changement",
+ enonce: "Indiquez un changement concernant la présence des femmes sur le marché du travail durant la première moitié du XXᵉ siècle.",
+ aspects: [{aspect: "Luttes des femmes"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_marche_travail_hommes_femmes.jpg", soustitre: "Évolution du marché du travail", source: "Adapté de Bureau fédéral de la statistique, Recensement du Canada, 1901, 1911, 1921, 1931 et 1941, Ottawa, Imprimeur du Roi."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "La proportion de femmes occupant un emploi rémunéré augmente.\nLes femmes sont de plus en plus présentes sur le marché du travail.",
+ updatedAt: "2026-07-17T13:09:55.365Z"
 }
 ]
