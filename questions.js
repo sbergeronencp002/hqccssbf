@@ -1282,7 +1282,8 @@ const REGLETTES = {
 "Q743": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la similitude."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."}, {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}]},
 "Q744": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q746": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
-"Q747": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q747": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q748": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1657,7 +1658,8 @@ const IMAGE_DB = {
 "tableau_population_montreal.jpg": {src: "images/tableau_population_montreal.jpg", w: 1200, h: 800},
 "tramway.jpg": {src: "images/tramway.jpg", w: 1200, h: 900},
 "radio_famille.jpg": {src: "images/radio_famille.jpg", w: 1200, h: 900},
-"hockey.jpg": {src: "images/hockey.jpg"}
+"hockey.jpg": {src: "images/hockey.jpg"},
+"tableau_femmes_etudes.jpg": {src: "images/tableau_femmes_etudes.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -13367,5 +13369,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les années folles favorisent le développement des loisirs.\nLa population consacre davantage de temps aux loisirs.\nLa prohibition aux États-Unis attire des touristes américains à Montréal.",
  updatedAt: "2026-07-17T12:50:50.956Z"
+},
+{
+ id: "Q748",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Changement",
+ enonce: "Indiquez un changement concernant l'accès des femmes aux études supérieures durant la première moitié du XXᵉ siècle.",
+ aspects: [{aspect: "Luttes des femmes"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_femmes_etudes.jpg", soustitre: "Évolution du nombre d'étudiantes universitaires au Québec", source: "Adapté de Paul-André Linteau, René Durocher, Jean-Claude Robert et François Ricard, Histoire du Québec contemporain, tome 2 : Le Québec depuis 1930, Boréal, 1986."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Le nombre de femmes fréquentant l'université augmente.\nLes femmes sont de plus en plus nombreuses à poursuivre des études supérieures.",
+ updatedAt: "2026-07-17T12:59:29.297Z"
 }
 ]
