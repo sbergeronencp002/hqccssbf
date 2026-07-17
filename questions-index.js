@@ -1374,5 +1374,6 @@ const QUESTIONS = [
  updatedAt: "2026-07-17T14:27:48.107Z"
 },
 {id: "Q762", niveau: 4, oi: "Établir des faits", periode: "P6 — 1896 – 1945", points: 1, aspects: [{aspect: "Mouvement syndical"}], enonce: "Indiquez un moyen utilisé par les ouvriers pour améliorer leurs conditions de travail durant la première moitié du XXᵉ siècle.", updatedAt: "2026-07-17T14:33:55.061Z"},
-{id: "Q763", niveau: 4, oi: "Dégager des différences et des similitudes", periode: "P6 — 1896 – 1945", points: 2, soustag: "Divergence – 2 acteurs", aspects: [{aspect: "Église catholique"}], enonce: "Le document présente le point de vue de deux acteurs. Sur quel point précis sont-ils en désaccord?", updatedAt: "2026-07-17T14:37:42.852Z"}
+{id: "Q763", niveau: 4, oi: "Dégager des différences et des similitudes", periode: "P6 — 1896 – 1945", points: 2, soustag: "Divergence – 2 acteurs", aspects: [{aspect: "Église catholique"}], enonce: "Le document présente le point de vue de deux acteurs. Sur quel point précis sont-ils en désaccord?", updatedAt: "2026-07-17T14:37:42.852Z"},
+{id: "Q764", niveau: 4, oi: "Établir des faits", periode: "P6 — 1896 – 1945", points: 1, aspects: [{aspect: "Église catholique"}], enonce: "Indiquez le nomd d'une organisation créée afin de favoriser l’autonomie économique des Canadiens français au début du XXᵉ siècle.", updatedAt: "2026-07-17T14:38:58.425Z"}
 ]
