@@ -1302,7 +1302,7 @@ const REGLETTES = {
 "Q764": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
 "Q765": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q766": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
-"Q767": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
+"Q768": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1689,7 +1689,7 @@ const IMAGE_DB = {
 "syndicat_etranger.jpg": {src: "images/syndicat_etranger.jpg", w: 1200, h: 960},
 "tableau_lois_ouvriers.jpg": {src: "images/tableau_lois_ouvriers.jpg", w: 1200, h: 833},
 "tableau_greves.jpg": {src: "images/tableau_greves.jpg", w: 1200, h: 960},
-"tableau_effectif_religieux.jpg": {src: "images/tableau_effectif_religieux.jpg"}
+"tableaau_appartenance_religieuse.jpg": {src: "images/tableaau_appartenance_religieuse.jpg"}
 }
 
 const QUESTIONS = [
@@ -13687,17 +13687,17 @@ const QUESTIONS = [
  updatedAt: "2026-07-17T14:47:45.661Z"
 },
 {
- id: "Q767",
+ id: "Q768",
  niveau: 4,
- oi: "Déterminer des causes et des conséquences",
+ oi: "Déterminer des changements et des continuités",
  periode: "P6 — 1896 – 1945",
  points: 2,
- soustag: "Conséquence",
- enonce: "Indiquez une conséquence de l’augmentation de l’effectif religieux catholique au Québec durant la première moitié du XXᵉ siècle.",
+ soustag: "Continuité",
+ enonce: "À partir du document, indiquez un élément de continuité concernant l'appartenance religieuse de la population québécoise dans la première moitié du XXe siècle.",
  aspects: [{aspect: "Église catholique"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_effectif_religieux.jpg", soustitre: "Évolution des effectifs religieux au Québec", source: "Adapté de Jean Hamelin et Nicole Gagnon, Histoire du catholicisme québécois, tome III : Le XXᵉ siècle, Boréal Express, 1984."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableaau_appartenance_religieuse.jpg", soustitre: "volution de l'appartenance religieuse au Québec", source: "Adapté de Bureau fédéral de la statistique, Recensement du Canada, 1901, 1921 et 1941, Ottawa, Imprimeur du Roi."}]}],
  reponse: {type: "lignes", nombre: 2},
- guide: "L’Église catholique accroît son influence dans l’éducation (ou les écoles).\nL’Église catholique développe son rôle dans les services sociaux (ou les hôpitaux, les œuvres de charité).\nLe nombre d’institutions dirigées par des communautés religieuses augmente.",
- updatedAt: "2026-07-17T14:57:39.366Z"
+ guide: "La grande majorité de la population québécoise demeure catholique tout au long de la première moitié du XXe siècle.",
+ updatedAt: "2026-07-17T15:00:59.448Z"
 }
 ]
