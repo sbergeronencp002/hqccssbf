@@ -1629,7 +1629,9 @@ const IMAGE_DB = {
 "conference_quebec.jpg": {src: "images/conference_quebec.jpg"},
 "tableau_faillites_entreprises.jpg": {src: "images/tableau_faillites_entreprises.jpg", w: 1200, h: 800},
 "tableau_chomage.jpg": {src: "images/tableau_chomage.jpg", w: 1200, h: 800},
-"new_deal_bennet.jpg": {src: "images/new_deal_bennet.jpg"}
+"new_deal_bennet.jpg": {src: "images/new_deal_bennet.jpg"},
+"premier_cinema_montreal_1906.jpg": {src: "images/premier_cinema_montreal_1906.jpg", w: 1200, h: 900},
+"grands_travaux.jpg": {src: "images/grands_travaux.jpg", w: 1200, h: 900}
 }
 
 const QUESTIONS = [
@@ -13080,10 +13082,10 @@ const QUESTIONS = [
  soustag: "Ligne du temps",
  enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
  aspects: [{aspect: "Grande dépression"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "new_deal_bennet.jpg", soustitre: "Le New Deal de Bennett et les travaux publics", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "grands_travaux.jpg", soustitre: "Le New Deal de Bennett et les travaux publics", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}],
  reponse: {type: "image", ref: "ligne_1890-1950.png"},
  guide: "C - 1935.",
- updatedAt: "2026-07-17T00:08:15.346Z"
+ updatedAt: "2026-07-17T00:43:17.348Z"
 },
 {
  id: "Q730",
