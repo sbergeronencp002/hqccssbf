@@ -1297,7 +1297,8 @@ const REGLETTES = {
 "Q759": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q760": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]},
 "Q761": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q762": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]}
+"Q762": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
+"Q763": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -13618,5 +13619,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 1},
  guide: "Les ouvriers utilisent la grève pour faire pression sur les employeurs afin d’améliorer leurs conditions de travail.",
  updatedAt: "2026-07-17T14:33:55.061Z"
+},
+{
+ id: "Q763",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Divergence – 2 acteurs",
+ enonce: "Le document présente le point de vue de deux acteurs. Sur quel point précis sont-ils en désaccord?",
+ aspects: [{aspect: "Église catholique"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« L’Église catholique demeure le guide moral de notre peuple; elle doit conserver son influence sur l’éducation, la famille et les institutions nationales. »", auteur: "Lionel Groulx", source: "Adapté de Lionel Groulx, Directives, Montréal, Éditions du Zodiaque, 1937."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« La société moderne doit se libérer de l’emprise religieuse afin de favoriser la liberté individuelle, la pensée critique et le progrès collectif. »", auteur: "Jean-Charles Harvey", source: "Adapté de Jean-Charles Harvey, Les Demi-civilisés, Montréal, Éditions du Totem, 1934."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "La place de l’Église catholique dans l’organisation de la société.",
+ updatedAt: "2026-07-17T14:37:42.852Z"
 }
 ]
