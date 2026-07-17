@@ -1281,7 +1281,7 @@ const REGLETTES = {
 "Q742": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q743": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la similitude."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."}, {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}]},
 "Q744": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
-"Q745": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]}
+"Q746": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1655,7 +1655,8 @@ const IMAGE_DB = {
 "travaux_aqueducs_egouts.jpg": {src: "images/travaux_aqueducs_egouts.jpg", w: 1200, h: 900},
 "tableau_population_montreal.jpg": {src: "images/tableau_population_montreal.jpg", w: 1200, h: 800},
 "tramway.jpg": {src: "images/tramway.jpg", w: 1200, h: 900},
-"radio_famille.jpg": {src: "images/radio_famille.jpg", w: 1200, h: 900}
+"radio_famille.jpg": {src: "images/radio_famille.jpg", w: 1200, h: 900},
+"hockey.jpg": {src: "images/hockey.jpg"}
 }
 
 const QUESTIONS = [
@@ -13340,20 +13341,16 @@ const QUESTIONS = [
  updatedAt: "2026-07-17T12:41:04.208Z"
 },
 {
- id: "Q745",
+ id: "Q746",
  niveau: 4,
- oi: "Dégager des différences et des similitudes",
+ oi: "Établir des faits",
  periode: "P6 — 1896 – 1945",
- points: 2,
- soustag: "Convergence – 2 acteurs",
- enonce: "Le document présente le point de vue de deux acteurs. Sur quel point précis sont-ils d'accord?",
+ points: 1,
+ enonce: "Indiquez le nom d'un sport professionnel populaire qui contribue à la diffusion de la culture de masse durant la première moitié du XXᵉ siècle.",
  aspects: [{aspect: "Culture de masse"}],
- documents: [
-  {type: "textes", cols: [{titre: "Document A", texte: "« Grâce aux retransmissions radiophoniques, des milliers de Canadiens peuvent suivre les matchs de hockey en direct, même lorsqu'ils vivent loin des grands centres. »", auteur: "Foster Hewitt, commentateur sportif", source: "Adapté de Foster Hewitt, émissions General Motors Hockey Broadcast, Canadian Radio Broadcasting Commission, vers 1931."}]},
-  {type: "textes", cols: [{titre: "Document B", texte: "« La radio fait connaître le hockey professionnel à un public toujours plus nombreux et contribue à accroître l'intérêt pour notre sport partout au Canada. »", auteur: "Frank Calder, président de la LNH", source: "Adapté de Frank Calder, allocutions reproduites dans The Gazette (Montréal), années 1930."}]}
- ],
- reponse: {type: "lignes", nombre: 2},
- guide: "La radio permet au hockey professionnel de rejoindre un public plus vaste.\nLes deux acteurs reconnaissent que la radio contribue à accroître la popularité du hockey professionnel.",
- updatedAt: "2026-07-17T12:44:30.388Z"
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "hockey.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}],
+ reponse: {type: "lignes", nombre: 1},
+ guide: "Le hockey.",
+ updatedAt: "2026-07-17T12:47:22.124Z"
 }
 ]
