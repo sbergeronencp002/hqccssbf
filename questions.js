@@ -1276,7 +1276,8 @@ const REGLETTES = {
 "Q736": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q737": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q739": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q740": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]}
+"Q740": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
+"Q741": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -1645,7 +1646,9 @@ const IMAGE_DB = {
 "tableau_dow_jones.jpg": {src: "images/tableau_dow_jones.jpg", w: 1200, h: 800},
 "tableau_depenses_ww2.jpg": {src: "images/tableau_depenses_ww2.jpg"},
 "afiche_enrolement_ww2.jpg": {src: "images/afiche_enrolement_ww2.jpg"},
-"tableau_mortalité_infantile.jpg": {src: "images/tableau_mortalité_infantile.jpg"}
+"tableau_mortalité_infantile.jpg": {src: "images/tableau_mortalité_infantile.jpg"},
+"tableau_population_urbaine_rurale.jpg": {src: "images/tableau_population_urbaine_rurale.jpg", w: 1200, h: 1200},
+"travaux_aqueducs_egouts.jpg": {src: "images/travaux_aqueducs_egouts.jpg", w: 1200, h: 900}
 }
 
 const QUESTIONS = [
@@ -13263,5 +13266,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Des mesures de santé publique sont nécessaires pour protéger la population.\nLa nécessité des mesures de santé publique.",
  updatedAt: "2026-07-17T12:09:20.877Z"
+},
+{
+ id: "Q741",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ enonce: "Expliquez comment la situation démographique des villes amène les autorités municipales à développer les infrastructures et les services urbains au début du XXᵉ siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La situation démographique des villes\n• Les besoins de la population des villes\n• Une intervention des autorités municipales",
+ aspects: [{aspect: "Milieux urbains"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "tableau_population_urbaine_rurale.jpg", soustitre: "Évolution de la population urbaine au Québec", source: "Adapté de Statistique Canada, Statistiques historiques du Canada, section A – Population et démographie, Gouvernement du Canada."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« L'augmentation rapide de la population oblige les municipalités à répondre à des besoins croissants en eau potable, en égouts, en transport et en protection contre les incendies. »", source: "Adapté de Paul-André Linteau, René Durocher et Jean-Claude Robert, Histoire du Québec contemporain, tome I : De la Confédération à la crise (1867-1929), Boréal, 1989."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "travaux_aqueducs_egouts.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "La population des villes augmente rapidement (la situation démographique des villes). Cette croissance accroît les besoins en eau potable, en égouts, en transport et en protection contre les incendies (les besoins de la population des villes). Les autorités municipales développent alors les infrastructures et les services urbains afin de répondre à ces besoins (une intervention des autorités municipales).",
+ updatedAt: "2026-07-17T12:22:51.612Z"
 }
 ]
