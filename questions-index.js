@@ -1325,5 +1325,15 @@ const QUESTIONS = [
  aspects: [{aspect: "Milieux urbains"}],
  enonce: "Expliquez comment la situation démographique des villes amène les autorités municipales à développer les infrastructures et les services urbains au début du XXᵉ siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La situation démographique des villes\n• Les besoins de la population des villes\n• Une intervention des autorités municipales",
  updatedAt: "2026-07-17T12:22:51.612Z"
+},
+{
+ id: "Q742",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ aspects: [{aspect: "Milieux urbains"}],
+ enonce: "Expliquez comment la situation démographique des villes favorise le développement des services municipaux au cours de la première moitié du XXᵉ siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La situation démographique des villes\n• Les besoins de la population des villes\n• Le développement des services municipaux",
+ updatedAt: "2026-07-17T12:31:35.946Z"
 }
 ]
