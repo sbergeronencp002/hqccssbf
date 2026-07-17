@@ -1302,5 +1302,15 @@ const QUESTIONS = [
 {id: "Q732", niveau: 4, oi: "Situer dans le temps", periode: "P6 — 1896 – 1945", points: 2, soustag: "Ordre chronologique", aspects: [{aspect: "Flux migratoires"}], enonce: "Les documents A à Dfont référence à l’immigration au Canada entre 1900 et 1960. Placez-les par ordre chronologique.", updatedAt: "2026-07-17T02:55:42.308Z"},
 {id: "Q733", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Cause et conséquence", aspects: [{aspect: "Grande dépression"}], enonce: "Entre 1929 et 1939, le Canada est touché par la Grande dépression. Inscrivez le numéro du document qui présente :\n• une cause de la Grande dépression\n• une conséquence de la Grande dépression au Canada", updatedAt: "2026-07-17T03:02:44.633Z"},
 {id: "Q734", niveau: 4, oi: "Mettre en relation des faits", periode: "P6 — 1896 – 1945", points: 2, soustag: "2 documents", aspects: [{aspect: "Luttes des femmes"}], enonce: "Les documents A et B présentent des faits liés au droit de vote des femmes. Associez chaque document au palier de gouvernement correspondant.", updatedAt: "2026-07-17T03:09:49.869Z"},
-{id: "Q735", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P6 — 1896 – 1945", points: 2, soustag: "Changement", aspects: [{aspect: "Statut du Canada dans l'Empire britannique"}], enonce: "Indiquez un changement dans la relation entre le Canada et le Royaume-Uni suite à l'adoption du Statut de Westminster en 1931.", updatedAt: "2026-07-17T03:16:24.011Z"}
+{id: "Q735", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P6 — 1896 – 1945", points: 2, soustag: "Changement", aspects: [{aspect: "Statut du Canada dans l'Empire britannique"}], enonce: "Indiquez un changement dans la relation entre le Canada et le Royaume-Uni suite à l'adoption du Statut de Westminster en 1931.", updatedAt: "2026-07-17T03:16:24.011Z"},
+{
+ id: "Q736",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ aspects: [{aspect: "Seconde Guerre mondiale"}],
+ enonce: "Expliquez comment la participation militaire du Canada à la Seconde Guerre mondiale amène le gouvernement canadien à intervenir dans les finances publiques.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux. \n\n• La participation militaire du Canada à la Seconde Guerre mondiale  \n• Les dépenses du gouvernement fédéral \n• Un moyen de financement mis en place par le gouvernement fédéral",
+ updatedAt: "2026-07-17T03:29:12.552Z"
+}
 ]
