@@ -1267,7 +1267,8 @@ const REGLETTES = {
 "Q727": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q728": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (2 sur 2)"}, {pts: 1, desc: "L'élève met en relation certains faits. (1 sur 2)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (0 sur 2)"}]},
 "Q729": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
-"Q730": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q730": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q731": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]}
 }
 
 const IMAGE_DB = {
@@ -13100,5 +13101,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 5},
  guide: "Les difficultés économiques des entreprises canadiennes (les difficultés économiques des entreprises canadiennes) entraînent une hausse du chômage (la situation de l'emploi). Pour répondre à cette situation, le gouvernement fédéral intervient davantage dans l'économie, notamment en créant la Banque du Canada ou en mettant en œuvre le New Deal de Bennett (une intervention du gouvernement fédéral dans l'économie).",
  updatedAt: "2026-07-17T00:04:06.316Z"
+},
+{
+ id: "Q731",
+ niveau: 4,
+ oi: "Situer dans le temps",
+ periode: "P6 — 1896 – 1945",
+ points: 1,
+ soustag: "Ligne du temps",
+ enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
+ aspects: [{aspect: "Deuxième phase d'industrialisation"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "conference_quebec.jpg", soustitre: "Conférence de Québec", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]}],
+ reponse: {type: "image", ref: "ligne_1890-1950.png"},
+ guide: "C - 1935.",
+ updatedAt: "2026-07-17T00:09:28.228Z"
 }
 ]
