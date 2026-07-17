@@ -1271,7 +1271,8 @@ const REGLETTES = {
 "Q731": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q732": {oi: "Situer dans le temps", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}]},
 "Q733": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]},
-"Q734": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (2 sur 2)"}, {pts: 1, desc: "L'élève met en relation certains faits. (1 sur 2)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (0 sur 2)"}]}
+"Q734": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (2 sur 2)"}, {pts: 1, desc: "L'élève met en relation certains faits. (1 sur 2)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (0 sur 2)"}]},
+"Q735": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -13176,5 +13177,22 @@ const QUESTIONS = [
  reponse: {type: "mettre-en-relation", elements: ["Canada", "Québec"]},
  guide: {type: "grille", entetes: ["Canada", "Québec"], rangees: [["A", "B"]]},
  updatedAt: "2026-07-17T03:09:49.869Z"
+},
+{
+ id: "Q735",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Changement",
+ enonce: "Indiquez un changement dans la relation entre le Canada et le Royaume-Uni suite à l'adoption du Statut de Westminster en 1931.",
+ aspects: [{aspect: "Statut du Canada dans l'Empire britannique"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Toute loi adoptée dans une colonie qui est incompatible avec une loi du Parlement britannique est, dans la mesure de cette incompatibilité, sans effet. »", soustitre: "Avant 1931", source: "Adapté de Colonial Laws Validity Act, 1865, 28 & 29 Vict., c. 63, art. 2, Parlement du Royaume-Uni."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Aucune loi adoptée par le Parlement du Royaume-Uni ne s’applique à un dominion, sauf à la demande et avec le consentement de celui-ci. »", soustitre: "Après 1931", source: "Adapté de Statute of Westminster, 1931, 22 Geo. V, c. 4, art. 4, Parlement du Royaume-Uni."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Le Canada acquiert une autonomie législative par rapport au Royaume-Uni.\nLe Parlement britannique ne peut plus légiférer pour le Canada sans son consentement.\nLe Canada devient juridiquement égal au Royaume-Uni dans le Commonwealth.\nLe Canada obtient une plus grande indépendance politique.",
+ updatedAt: "2026-07-17T03:15:30.977Z"
 }
 ]
