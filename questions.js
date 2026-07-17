@@ -1292,7 +1292,8 @@ const REGLETTES = {
 "Q754": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q755": {oi: "Dégager des différences et des similitudes", variante: "acteur-positions", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q756": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
-"Q757": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]}
+"Q757": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
+"Q758": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]}
 }
 
 const IMAGE_DB = {
@@ -1673,7 +1674,8 @@ const IMAGE_DB = {
 "tableau_marche_travail_hommes_femmes.jpg": {src: "images/tableau_marche_travail_hommes_femmes.jpg", w: 1200, h: 800},
 "tableau_salaire_moyen_hommes_femmes.jpg": {src: "images/tableau_salaire_moyen_hommes_femmes.jpg", w: 1200, h: 800},
 "affiche_femme_election.jpg": {src: "images/affiche_femme_election.jpg"},
-"fondation_ctcc.jpg": {src: "images/fondation_ctcc.jpg", w: 1200, h: 800}
+"fondation_ctcc.jpg": {src: "images/fondation_ctcc.jpg", w: 1200, h: 800},
+"tableau_syndicats_catholiques.jpg": {src: "images/tableau_syndicats_catholiques.jpg"}
 }
 
 const QUESTIONS = [
@@ -13528,5 +13530,22 @@ const QUESTIONS = [
  reponse: {type: "image", ref: "ligne_1890-1950.png"},
  guide: "B - 1921.",
  updatedAt: "2026-07-17T13:57:13.615Z"
+},
+{
+ id: "Q758",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Cause et conséquence",
+ enonce: "Dans la première moitié du XXᵉ siècle, des syndicats catholiques sont fondés au Québec.\n\nInscrivez la lettre du document qui présente :\n• une cause de la fondation des syndicats catholiques\n• une conséquence de la fondation des syndicats catholiques",
+ aspects: [{aspect: "Mouvement syndical"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "tableau_syndicats_catholiques.jpg", soustitre: "Évolution du nombre de syndicats catholiques au Québec", source: "Adapté de Commission des relations du travail, Histoire du mouvement syndical au Québec; et Fernand Harvey, Histoire de la CSN, 1921-1981, Boréal, 1984."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les unions catholiques doivent offrir aux travailleurs une organisation conforme à la doctrine sociale de l'Église et les préserver de l'influence des unions internationales. »", source: "Adapté de Jacques Rouillard, Histoire du syndicalisme québécois, Montréal, Boréal, 2004, p. 89."}]}
+ ],
+ reponse: {type: "cause-consequence"},
+ guide: {type: "grille", entetes: ["Cause", "Conséquence"], rangees: [["B", "A"]]},
+ updatedAt: "2026-07-17T14:02:04.607Z"
 }
 ]
