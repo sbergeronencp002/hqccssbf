@@ -1362,5 +1362,15 @@ const QUESTIONS = [
 {id: "Q757", niveau: 4, oi: "Situer dans le temps", periode: "P6 — 1896 – 1945", points: 1, soustag: "Ligne du temps", aspects: [{aspect: "Mouvement syndical"}], enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.", updatedAt: "2026-07-17T13:57:13.615Z"},
 {id: "Q758", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Cause et conséquence", aspects: [{aspect: "Mouvement syndical"}], enonce: "Dans la première moitié du XXᵉ siècle, des syndicats catholiques sont fondés au Québec.\n\nInscrivez la lettre du document qui présente :\n• une cause de la fondation des syndicats catholiques\n• une conséquence de la fondation des syndicats catholiques", updatedAt: "2026-07-17T14:02:04.607Z"},
 {id: "Q759", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P6 — 1896 – 1945", points: 3, soustag: "Changement ou continuité", aspects: [{aspect: "Mouvement syndical"}], enonce: "À partir du document A, indiquez s’il y a changement ou continuité concernant l’organisation syndicale au Québec entre 1900 et 1930. Justifiez votre choix par des faits qui montrent le changement ou la continuité et par un repère de temps.", updatedAt: "2026-07-17T14:08:44.447Z"},
-{id: "Q760", niveau: 4, oi: "Mettre en relation des faits", periode: "P6 — 1896 – 1945", points: 2, soustag: "4 documents", aspects: [{aspect: "Mouvement syndical"}], enonce: "Les documents A à D présentent des faits relatifs à l'organisation syndicale durant la première moitié du XXᵉ siècle. Associez les documents qui se rapportent à chacun des syndicats présentés.", updatedAt: "2026-07-17T14:12:38.138Z"}
+{id: "Q760", niveau: 4, oi: "Mettre en relation des faits", periode: "P6 — 1896 – 1945", points: 2, soustag: "4 documents", aspects: [{aspect: "Mouvement syndical"}], enonce: "Les documents A à D présentent des faits relatifs à l'organisation syndicale durant la première moitié du XXᵉ siècle. Associez les documents qui se rapportent à chacun des syndicats présentés.", updatedAt: "2026-07-17T14:12:38.138Z"},
+{
+ id: "Q761",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ aspects: [{aspect: "Mouvement syndical"}],
+ enonce: "Expliquez comment les conditions de travail des ouvriers favorisent l’adoption de mesures gouvernementales durant la première moitié du XXᵉ siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Les conditions de travail des ouvriers\n• Les revendications des travailleurs\n• Une mesure mise en place par le gouvernement",
+ updatedAt: "2026-07-17T14:21:56.059Z"
+}
 ]
