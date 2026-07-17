@@ -1288,7 +1288,8 @@ const REGLETTES = {
 "Q750": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
 "Q751": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q752": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q753": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
+"Q753": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
+"Q754": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -13464,5 +13465,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les femmes peuvent voter aux élections provinciales.\nLes femmes peuvent se présenter comme candidates aux élections provinciales.\nLes femmes participent davantage à la vie politique québécoise.",
  updatedAt: "2026-07-17T13:36:17.601Z"
+},
+{
+ id: "Q754",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une raison pour laquelle des groupes de femmes réclament une meilleure reconnaissance juridique durant la première moitié du XXᵉ siècle.",
+ aspects: [{aspect: "Luttes des femmes"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Tant que la femme mariée demeurera légalement dépendante de son mari, elle ne jouira pas des mêmes droits civils que les autres citoyens. »", source: "Adapté de Marie Gérin-Lajoie, Le rôle de la femme, Montréal, Éditions de l'Action canadienne-française, 1911."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les femmes ne bénéficient pas des mêmes droits que les hommes.\nLes femmes revendiquent l'égalité juridique avec les hommes.",
+ updatedAt: "2026-07-17T13:40:45.853Z"
 }
 ]
