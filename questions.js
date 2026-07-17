@@ -13082,7 +13082,7 @@ const QUESTIONS = [
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "new_deal_bennet.jpg", soustitre: "Le New Deal de Bennett et les travaux publics", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}],
  reponse: {type: "image", ref: "ligne_1890-1950.png"},
  guide: "C - 1935.",
- updatedAt: "2026-07-17T00:07:13.806Z"
+ updatedAt: "2026-07-17T00:08:15.346Z"
 },
 {
  id: "Q730",
