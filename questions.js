@@ -13432,8 +13432,8 @@ const QUESTIONS = [
  aspects: [{aspect: "Luttes des femmes"}],
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_marche_travail_hommes_femmes.jpg", soustitre: "Évolution du marché du travail", source: "Adapté de Bureau fédéral de la statistique, Recensement du Canada, 1901, 1911, 1921, 1931 et 1941, Ottawa, Imprimeur du Roi."}]}],
  reponse: {type: "lignes", nombre: 3},
- guide: "Changement\nEntre 1901 et 1941, la proportion de femmes occupant un emploi rémunéré augmente, passant de 13 % à 27 %, tandis que celle des hommes diminue légèrement, de 82 % à 74 %.\n\nContinuité\nEntre 1901 et 1941, les hommes demeurent majoritaires sur le marché du travail. Leur proportion reste nettement supérieure à celle des femmes tout au long de la période, malgré une légère baisse.",
- updatedAt: "2026-07-17T13:12:34.309Z"
+ guide: "Changement\nIl y a changement, car la proportion de femmes occupant un emploi rémunéré augmente, passant de 13 % en 1901 à 27 % en 1941.\n\nContinuité\nIl y a continuité, car les hommes sont proportionnellement plus nombreux que les femmes à occuper un emploi rémunéré en 1901 comme en 1941.",
+ updatedAt: "2026-07-17T13:19:32.132Z"
 },
 {
  id: "Q752",
