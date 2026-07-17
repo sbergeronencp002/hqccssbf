@@ -1286,7 +1286,7 @@ const REGLETTES = {
 "Q748": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q749": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
 "Q750": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
-"Q751": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
+"Q751": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -13424,13 +13424,13 @@ const QUESTIONS = [
  niveau: 4,
  oi: "Déterminer des changements et des continuités",
  periode: "P6 — 1896 – 1945",
- points: 2,
- soustag: "Changement",
- enonce: "Indiquez un changement concernant la présence des femmes sur le marché du travail durant la première moitié du XXᵉ siècle.",
+ points: 3,
+ soustag: "Changement ou continuité",
+ enonce: "Indiquez s'il y a changement ou continuité concernant la présence des femmes sur le marché du travail entre 1901 et 1941. Justifiez votre réponse par des faits qui montrent le changement ou la continuité et par un repère de temps.",
  aspects: [{aspect: "Luttes des femmes"}],
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_marche_travail_hommes_femmes.jpg", soustitre: "Évolution du marché du travail", source: "Adapté de Bureau fédéral de la statistique, Recensement du Canada, 1901, 1911, 1921, 1931 et 1941, Ottawa, Imprimeur du Roi."}]}],
- reponse: {type: "lignes", nombre: 2},
- guide: "La proportion de femmes occupant un emploi rémunéré augmente.\nLes femmes sont de plus en plus présentes sur le marché du travail.",
- updatedAt: "2026-07-17T13:09:55.365Z"
+ reponse: {type: "lignes", nombre: 3},
+ guide: "Changement\nEntre 1901 et 1941, la proportion de femmes occupant un emploi rémunéré augmente, passant de 13 % à 27 %, tandis que celle des hommes diminue légèrement, de 82 % à 74 %.\n\nContinuité\nEntre 1901 et 1941, les hommes demeurent majoritaires sur le marché du travail. Leur proportion reste nettement supérieure à celle des femmes tout au long de la période, malgré une légère baisse.",
+ updatedAt: "2026-07-17T13:12:01.003Z"
 }
 ]
