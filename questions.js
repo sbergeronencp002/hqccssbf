@@ -1268,7 +1268,8 @@ const REGLETTES = {
 "Q728": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (2 sur 2)"}, {pts: 1, desc: "L'élève met en relation certains faits. (1 sur 2)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (0 sur 2)"}]},
 "Q729": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q730": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q731": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]}
+"Q731": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
+"Q732": {oi: "Situer dans le temps", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}]}
 }
 
 const IMAGE_DB = {
@@ -1631,7 +1632,9 @@ const IMAGE_DB = {
 "tableau_chomage.jpg": {src: "images/tableau_chomage.jpg", w: 1200, h: 800},
 "new_deal_bennet.jpg": {src: "images/new_deal_bennet.jpg"},
 "premier_cinema_montreal_1906.jpg": {src: "images/premier_cinema_montreal_1906.jpg", w: 1200, h: 900},
-"grands_travaux.jpg": {src: "images/grands_travaux.jpg", w: 1200, h: 900}
+"grands_travaux.jpg": {src: "images/grands_travaux.jpg", w: 1200, h: 900},
+"affiche_ouest_canadien.jpg": {src: "images/affiche_ouest_canadien.jpg", w: 890, h: 1200},
+"camp_internement_ww2.jpg": {src: "images/camp_internement_ww2.jpg", w: 1200, h: 900}
 }
 
 const QUESTIONS = [
@@ -13117,5 +13120,24 @@ const QUESTIONS = [
  reponse: {type: "image", ref: "ligne_1890-1950.png"},
  guide: "C - 1935.",
  updatedAt: "2026-07-17T00:41:14.112Z"
+},
+{
+ id: "Q732",
+ niveau: 4,
+ oi: "Situer dans le temps",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Ordre chronologique",
+ enonce: "Les documents A à Dfont référence à l’immigration au Canada entre 1900 et 1960. Placez-les par ordre chronologique.",
+ aspects: [{aspect: "Flux migratoires"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« La crise économique entraîne une chute spectaculaire de l'immigration, alors que le gouvernement cherche d'abord à protéger les emplois des résidents déjà établis. »", source: "Adapté de Donald Avery, Reluctant Host: Canada's Response to Immigrant Workers, 1896-1994, McClelland & Stewart, Toronto, 1995, p. 116."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "camp_internement_ww2.jpg", soustitre: "Internement de civils dans un camp canadien"}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "affiche_ouest_canadien.jpg", soustitre: "La promotion de l'Ouest canadien par Wilfrid Laurier", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]},
+  {type: "textes", cols: [{titre: "Document D", texte: "« La politique canadienne favorise certains groupes d'immigrants tout en autorisant l'exclusion de personnes jugées moins désirables selon des critères économiques, sociaux ou culturels définis par le gouvernement. »", source: "Adapté de Ninette Kelley et Michael Trebilcock, The Making of the Mosaic: A History of Canadian Immigration Policy, 2ᵉ éd., University of Toronto Press, Toronto, 2010, p. 170."}]}
+ ],
+ reponse: {type: "image", ref: "ligne_bcAd.png"},
+ guide: "C - D - A - B",
+ updatedAt: "2026-07-17T02:55:42.308Z"
 }
 ]
