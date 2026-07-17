@@ -1296,7 +1296,8 @@ const REGLETTES = {
 "Q758": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]},
 "Q759": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q760": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]},
-"Q761": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q761": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q762": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1681,7 +1682,8 @@ const IMAGE_DB = {
 "tableau_syndicats_catholiques.jpg": {src: "images/tableau_syndicats_catholiques.jpg"},
 "tableau_syndicats.jpg": {src: "images/tableau_syndicats.jpg", w: 1200, h: 800},
 "syndicat_etranger.jpg": {src: "images/syndicat_etranger.jpg", w: 1200, h: 960},
-"tableau_lois_ouvriers.jpg": {src: "images/tableau_lois_ouvriers.jpg", w: 1200, h: 833}
+"tableau_lois_ouvriers.jpg": {src: "images/tableau_lois_ouvriers.jpg", w: 1200, h: 833},
+"tableau_greves.jpg": {src: "images/tableau_greves.jpg", w: 1200, h: 960}
 }
 
 const QUESTIONS = [
@@ -13603,5 +13605,18 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 5},
  guide: "Les ouvriers travaillent dans des conditions difficiles (les conditions de travail des ouvriers). Ils réclament une meilleure protection et de meilleures conditions de travail (les revendications des travailleurs). Le gouvernement adopte des lois pour protéger les travailleurs, comme la Loi des accidents du travail de 1909 (une mesure mise en place par le gouvernement).",
  updatedAt: "2026-07-17T14:27:48.107Z"
+},
+{
+ id: "Q762",
+ niveau: 4,
+ oi: "Établir des faits",
+ periode: "P6 — 1896 – 1945",
+ points: 1,
+ enonce: "Indiquez un moyen utilisé par les ouvriers pour améliorer leurs conditions de travail durant la première moitié du XXᵉ siècle.",
+ aspects: [{aspect: "Mouvement syndical"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_greves.jpg", soustitre: "Conflits de travail au Québec", source: "Adapté de Jacques Rouillard, Histoire du syndicalisme québécois, Boréal, 1989."}]}],
+ reponse: {type: "lignes", nombre: 1},
+ guide: "Les ouvriers utilisent la grève pour faire pression sur les employeurs afin d’améliorer leurs conditions de travail.",
+ updatedAt: "2026-07-17T14:33:55.061Z"
 }
 ]
