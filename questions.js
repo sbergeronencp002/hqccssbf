@@ -1295,7 +1295,8 @@ const REGLETTES = {
 "Q757": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q758": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]},
 "Q759": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q760": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]}
+"Q760": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]},
+"Q761": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -1679,7 +1680,8 @@ const IMAGE_DB = {
 "fondation_ctcc.jpg": {src: "images/fondation_ctcc.jpg", w: 1200, h: 800},
 "tableau_syndicats_catholiques.jpg": {src: "images/tableau_syndicats_catholiques.jpg"},
 "tableau_syndicats.jpg": {src: "images/tableau_syndicats.jpg", w: 1200, h: 800},
-"syndicat_etranger.jpg": {src: "images/syndicat_etranger.jpg", w: 1200, h: 960}
+"syndicat_etranger.jpg": {src: "images/syndicat_etranger.jpg", w: 1200, h: 960},
+"tableau_lois_ouvriers.jpg": {src: "images/tableau_lois_ouvriers.jpg", w: 1200, h: 833}
 }
 
 const QUESTIONS = [
@@ -13584,5 +13586,22 @@ const QUESTIONS = [
  reponse: {type: "mettre-en-relation", elements: ["Syndicats catholiques (CTCC)", "Syndicats internationaux américains"], double: true},
  guide: {type: "grille", entetes: ["Syndicats catholiques (CTCC)", "Syndicats internationaux américains"], rangees: [["A et C", "B et D"]]},
  updatedAt: "2026-07-17T14:12:38.138Z"
+},
+{
+ id: "Q761",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ enonce: "Expliquez comment les conditions de travail des ouvriers favorisent l’adoption de mesures gouvernementales durant la première moitié du XXᵉ siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Les conditions de travail des ouvriers\n• Les revendications des travailleurs\n• Une mesure mise en place par le gouvernement",
+ aspects: [{aspect: "Mouvement syndical"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Dans plusieurs manufactures, les ouvriers travaillent de longues heures dans des conditions difficiles. Les accidents sont fréquents et les salaires demeurent faibles. Les travailleurs réclament une meilleure protection. »", source: "Adapté de Jacques Paul Couturier, Un passé composé : le Canada de 1850 à nos jours, Moncton, Éditions d’Acadie, 2000, p. 135-136."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "tableau_lois_ouvriers.jpg", soustitre: "Évolution de la législation ouvrière au Québec", source: "Adapté de Jacques Rouillard, Histoire du syndicalisme québécois, Boréal, 1989."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Les ouvriers doivent pouvoir s’organiser afin de défendre leurs intérêts et obtenir de meilleures conditions de travail, notamment des salaires plus élevés et une protection contre les accidents. »", source: "Adapté de Jacques Rouillard, Histoire du syndicalisme québécois, Montréal, Boréal, 2004."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "Les ouvriers travaillent dans des conditions difficiles (les conditions de travail des ouvriers). Ils réclament une meilleure protection et de meilleures conditions de travail (les revendications des travailleurs). Le gouvernement adopte des lois pour protéger les travailleurs, comme la Loi des accidents du travail de 1909 (une mesure mise en place par le gouvernement).",
+ updatedAt: "2026-07-17T14:21:56.059Z"
 }
 ]
