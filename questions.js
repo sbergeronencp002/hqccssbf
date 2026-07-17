@@ -1269,7 +1269,8 @@ const REGLETTES = {
 "Q729": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q730": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q731": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
-"Q732": {oi: "Situer dans le temps", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}]}
+"Q732": {oi: "Situer dans le temps", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}]},
+"Q733": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]}
 }
 
 const IMAGE_DB = {
@@ -1634,7 +1635,8 @@ const IMAGE_DB = {
 "premier_cinema_montreal_1906.jpg": {src: "images/premier_cinema_montreal_1906.jpg", w: 1200, h: 900},
 "grands_travaux.jpg": {src: "images/grands_travaux.jpg", w: 1200, h: 900},
 "affiche_ouest_canadien.jpg": {src: "images/affiche_ouest_canadien.jpg", w: 890, h: 1200},
-"camp_internement_ww2.jpg": {src: "images/camp_internement_ww2.jpg", w: 1200, h: 900}
+"camp_internement_ww2.jpg": {src: "images/camp_internement_ww2.jpg", w: 1200, h: 900},
+"tableau_dow_jones.jpg": {src: "images/tableau_dow_jones.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -13139,5 +13141,22 @@ const QUESTIONS = [
  reponse: {type: "image", ref: "ligne_bcAd.png"},
  guide: "C - D - A - B",
  updatedAt: "2026-07-17T02:55:42.308Z"
+},
+{
+ id: "Q733",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Cause et conséquence",
+ enonce: "Entre 1929 et 1939, le Canada est touché par la Grande dépression. Inscrivez le numéro du document qui présente :\n• une cause de la Grande dépression\n• une conséquence de la Grande dépression au Canada",
+ aspects: [{aspect: "Grande dépression"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "tableau_faillites_entreprises.jpg", soustitre: "Évolution du nombre d'entreprises en faillite au Canada", source: "Adapté de Bureau fédéral de la statistique, Annuaire du Canada 1935, chapitre « Faillites et insolvabilités », Ottawa, Imprimeur du Roi, 1935."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "tableau_dow_jones.jpg", soustitre: "Évolution de l'indice Dow Jones", source: "Adapté de S&P Dow Jones Indices LLC, Historical Data – Dow Jones Industrial Average (DJIA), données mensuelles de clôture, 1928-1932."}]}
+ ],
+ reponse: {type: "cause-consequence"},
+ guide: {type: "grille", entetes: ["Cause", "Conséquence"], rangees: [["B", "A"]]},
+ updatedAt: "2026-07-17T03:02:44.633Z"
 }
 ]
