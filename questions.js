@@ -1272,7 +1272,8 @@ const REGLETTES = {
 "Q732": {oi: "Situer dans le temps", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}]},
 "Q733": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]},
 "Q734": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (2 sur 2)"}, {pts: 1, desc: "L'élève met en relation certains faits. (1 sur 2)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (0 sur 2)"}]},
-"Q735": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
+"Q735": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
+"Q736": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -1638,7 +1639,9 @@ const IMAGE_DB = {
 "grands_travaux.jpg": {src: "images/grands_travaux.jpg", w: 1200, h: 900},
 "affiche_ouest_canadien.jpg": {src: "images/affiche_ouest_canadien.jpg", w: 890, h: 1200},
 "camp_internement_ww2.jpg": {src: "images/camp_internement_ww2.jpg", w: 1200, h: 900},
-"tableau_dow_jones.jpg": {src: "images/tableau_dow_jones.jpg", w: 1200, h: 800}
+"tableau_dow_jones.jpg": {src: "images/tableau_dow_jones.jpg", w: 1200, h: 800},
+"tableau_depenses_ww2.jpg": {src: "images/tableau_depenses_ww2.jpg"},
+"afiche_enrolement_ww2.jpg": {src: "images/afiche_enrolement_ww2.jpg"}
 }
 
 const QUESTIONS = [
@@ -13194,5 +13197,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Le Canada acquiert une autonomie législative par rapport au Royaume-Uni.\nLe Parlement britannique ne peut plus légiférer pour le Canada sans son consentement.\nLe Canada devient juridiquement égal au Royaume-Uni dans le Commonwealth.\nLe Canada obtient une plus grande indépendance politique.",
  updatedAt: "2026-07-17T03:16:24.011Z"
+},
+{
+ id: "Q736",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ enonce: "Expliquez comment la participation militaire du Canada à la Seconde Guerre mondiale amène le gouvernement canadien à intervenir dans les finances publiques.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux. \n\n• La participation militaire du Canada à la Seconde Guerre mondiale  \n• Les dépenses du gouvernement fédéral \n• Un moyen de financement mis en place par le gouvernement fédéral",
+ aspects: [{aspect: "Seconde Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "tableau_depenses_ww2.jpg", soustitre: "Évolution des dépenses du gouvernement fédéral", source: "Adapté de Statistique Canada, Principales dépenses fédérales, années terminées le 31 mars, 1930 à 1946, Annuaire du Canada, édition de 1947; Historical Statistics of Canada, section H."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Pour soutenir l'effort de guerre, l'État mobilise non seulement les ressources humaines et industrielles, mais aussi l'épargne de la population, appelée à contribuer directement au financement du conflit. »", source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, t. 4, Sillery, Septentrion, 1997."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "afiche_enrolement_ww2.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "Le Canada participe à la Seconde Guerre mondiale en envoyant des hommes au front (la participation militaire du Canada à la Seconde Guerre mondiale). Les dépenses du gouvernement fédéral augmentent (les dépenses du gouvernement fédéral). Pour les financer, le gouvernement vend des obligations de la Victoire (un moyen de financement mis en place par le gouvernement fédéral).",
+ updatedAt: "2026-07-17T03:29:12.552Z"
 }
 ]
