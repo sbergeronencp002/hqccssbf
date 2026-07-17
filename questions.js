@@ -1270,7 +1270,8 @@ const REGLETTES = {
 "Q730": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q731": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q732": {oi: "Situer dans le temps", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}]},
-"Q733": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]}
+"Q733": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]},
+"Q734": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (2 sur 2)"}, {pts: 1, desc: "L'élève met en relation certains faits. (1 sur 2)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (0 sur 2)"}]}
 }
 
 const IMAGE_DB = {
@@ -13158,5 +13159,22 @@ const QUESTIONS = [
  reponse: {type: "cause-consequence"},
  guide: {type: "grille", entetes: ["Cause", "Conséquence"], rangees: [["B", "A"]]},
  updatedAt: "2026-07-17T03:02:44.633Z"
+},
+{
+ id: "Q734",
+ niveau: 4,
+ oi: "Mettre en relation des faits",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "2 documents",
+ enonce: "Les documents A et B présentent des faits liés au droit de vote des femmes. Associez chaque document au palier de gouvernement correspondant.",
+ aspects: [{aspect: "Luttes des femmes"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Il n'est plus possible de refuser aux femmes la place qui leur revient dans la vie publique; leur dévouement mérite d'être reconnu par des droits égaux. »", auteur: "Robert Laird Borden", source: "Adapté d'un discours de Robert Laird Borden, House of Commons Debates, 12 septembre 1918, Ottawa, King's Printer, 1918."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les femmes réclament depuis longtemps la reconnaissance de leurs droits civiques; il est juste que cette réforme soit enfin accomplie. »", auteur: "Adélard Godbout", source: "Adapté d'Adélard Godbout, Journal des débats de l'Assemblée législative du Québec, 25 avril 1940, Québec, Imprimeur du Roi, 1940."}]}
+ ],
+ reponse: {type: "mettre-en-relation", elements: ["Canada", "Québec"]},
+ guide: {type: "grille", entetes: ["Canada", "Québec"], rangees: [["A", "B"]]},
+ updatedAt: "2026-07-17T03:09:49.869Z"
 }
 ]
