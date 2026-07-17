@@ -1337,5 +1337,6 @@ const QUESTIONS = [
  updatedAt: "2026-07-17T12:31:35.946Z"
 },
 {id: "Q743", niveau: 4, oi: "Dégager des différences et des similitudes", periode: "P6 — 1896 – 1945", points: 2, soustag: "Similitude", aspects: [{aspect: "Culture de masse"}], enonce: "À partir des documents A et B, indiquez une similitude entre la radio et le cinéma comme moyens de diffusion de la culture de masse.", updatedAt: "2026-07-17T12:38:40.813Z"},
-{id: "Q744", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Conséquence", aspects: [{aspect: "Culture de masse"}], enonce: "Indiquez une conséquence de la popularité des romans du terroir sur la société canadienne-française.", updatedAt: "2026-07-17T12:41:04.208Z"}
+{id: "Q744", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Conséquence", aspects: [{aspect: "Culture de masse"}], enonce: "Indiquez une conséquence de la popularité des romans du terroir sur la société canadienne-française.", updatedAt: "2026-07-17T12:41:04.208Z"},
+{id: "Q745", niveau: 4, oi: "Dégager des différences et des similitudes", periode: "P6 — 1896 – 1945", points: 2, soustag: "Convergence – 2 acteurs", aspects: [{aspect: "Culture de masse"}], enonce: "Le document présente le point de vue de deux acteurs. Sur quel point précis sont-ils d'accord?", updatedAt: "2026-07-17T12:44:30.388Z"}
 ]
