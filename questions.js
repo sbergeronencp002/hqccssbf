@@ -1290,7 +1290,8 @@ const REGLETTES = {
 "Q752": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q753": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q754": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q755": {oi: "Dégager des différences et des similitudes", variante: "acteur-positions", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q755": {oi: "Dégager des différences et des similitudes", variante: "acteur-positions", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q756": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1670,7 +1671,8 @@ const IMAGE_DB = {
 "manufacture_femmes.jpg": {src: "images/manufacture_femmes.jpg", w: 1200, h: 900},
 "tableau_marche_travail_hommes_femmes.jpg": {src: "images/tableau_marche_travail_hommes_femmes.jpg", w: 1200, h: 800},
 "tableau_salaire_moyen_hommes_femmes.jpg": {src: "images/tableau_salaire_moyen_hommes_femmes.jpg", w: 1200, h: 800},
-"affiche_femme_election.jpg": {src: "images/affiche_femme_election.jpg"}
+"affiche_femme_election.jpg": {src: "images/affiche_femme_election.jpg"},
+"fondation_ctcc.jpg": {src: "images/fondation_ctcc.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -13498,5 +13500,18 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 3},
  guide: "Mgr Georges Gauthier affirme que les femmes ne doivent pas obtenir les mêmes droits juridiques que les hommes, alors que Thérèse Casgrain et Idola Saint-Jean affirment le contraire.\nMgr Georges Gauthier affirme qu'il faut maintenir les droits des femmes tels quels, alors que Thérèse Casgrain et Idola Saint-Jean réclament l'égalité juridique entre les femmes et les hommes.",
  updatedAt: "2026-07-17T13:47:38.712Z"
+},
+{
+ id: "Q756",
+ niveau: 4,
+ oi: "Établir des faits",
+ periode: "P6 — 1896 – 1945",
+ points: 1,
+ enonce: "Indiquez le nom du syndicat catholique fondé au Québec en 1921.",
+ aspects: [{aspect: "Mouvement syndical"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "fondation_ctcc.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}],
+ reponse: {type: "lignes", nombre: 1},
+ guide: "La Confédération des travailleurs catholiques du Canada (CTCC).",
+ updatedAt: "2026-07-17T13:55:56.111Z"
 }
 ]
