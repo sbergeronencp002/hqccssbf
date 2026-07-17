@@ -1627,7 +1627,8 @@ const IMAGE_DB = {
 "tableau_production_manufacturiere_1900-1940.jpg": {src: "images/tableau_production_manufacturiere_1900-1940.jpg"},
 "conference_quebec.jpg": {src: "images/conference_quebec.jpg"},
 "tableau_faillites_entreprises.jpg": {src: "images/tableau_faillites_entreprises.jpg", w: 1200, h: 800},
-"tableau_chomage.jpg": {src: "images/tableau_chomage.jpg", w: 1200, h: 800}
+"tableau_chomage.jpg": {src: "images/tableau_chomage.jpg", w: 1200, h: 800},
+"new_deal_bennet.jpg": {src: "images/new_deal_bennet.jpg"}
 }
 
 const QUESTIONS = [
@@ -13077,11 +13078,11 @@ const QUESTIONS = [
  points: 1,
  soustag: "Ligne du temps",
  enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
- aspects: [{aspect: "Éducation et formation technique"}, {aspect: "Seconde Guerre mondiale"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "conference_quebec.jpg", soustitre: "Conférence de Québec", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]}],
+ aspects: [{aspect: "Grande dépression"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "new_deal_bennet.jpg", soustitre: "Le New Deal de Bennett et les travaux publics", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}],
  reponse: {type: "image", ref: "ligne_1890-1950.png"},
- guide: "C - 1943-1944.",
- updatedAt: "2026-07-16T23:54:12.376Z"
+ guide: "C - 1935.",
+ updatedAt: "2026-07-17T00:07:13.806Z"
 },
 {
  id: "Q730",
