@@ -1315,5 +1315,15 @@ const QUESTIONS = [
 },
 {id: "Q737", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Cause", aspects: [{aspect: "Milieux urbains"}], enonce: "Indiquez une raison pour laquelle les autorités municipales adoptent des mesures de santé publique dans les villes au début du XXᵉ siècle.", updatedAt: "2026-07-17T11:57:36.433Z"},
 {id: "Q739", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Cause", aspects: [{aspect: "Milieux urbains"}], enonce: "Indiquez une raison pour laquelle les municipalités développent les infrastructures urbaines au début du XXᵉ siècle.", updatedAt: "2026-07-17T12:05:47.341Z"},
-{id: "Q740", niveau: 4, oi: "Dégager des différences et des similitudes", periode: "P6 — 1896 – 1945", points: 2, soustag: "Convergence – 2 acteurs", aspects: [{aspect: "Milieux urbains"}], enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils d'accord?", updatedAt: "2026-07-17T12:09:20.877Z"}
+{id: "Q740", niveau: 4, oi: "Dégager des différences et des similitudes", periode: "P6 — 1896 – 1945", points: 2, soustag: "Convergence – 2 acteurs", aspects: [{aspect: "Milieux urbains"}], enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils d'accord?", updatedAt: "2026-07-17T12:09:20.877Z"},
+{
+ id: "Q741",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ aspects: [{aspect: "Milieux urbains"}],
+ enonce: "Expliquez comment la situation démographique des villes amène les autorités municipales à développer les infrastructures et les services urbains au début du XXᵉ siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La situation démographique des villes\n• Les besoins de la population des villes\n• Une intervention des autorités municipales",
+ updatedAt: "2026-07-17T12:22:51.612Z"
+}
 ]
