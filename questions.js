@@ -1307,7 +1307,8 @@ const REGLETTES = {
 "Q770": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la différence."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la différence."}, {pts: 0, desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."}]},
 "Q771": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q773": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
-"Q774": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q774": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q775": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -13783,5 +13784,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 5},
  guide: "Plusieurs enfants quittent l'école avant l'âge de 14 ans (la situation scolaire des enfants au Québec). En 1943, le gouvernement adopte une loi rendant la fréquentation scolaire obligatoire (une intervention du gouvernement du Québec). Cette mesure augmente la fréquentation scolaire des enfants (une conséquence de cette intervention).",
  updatedAt: "2026-07-18T19:42:42.096Z"
+},
+{
+ id: "Q775",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Conséquence",
+ enonce: "Indiquez une conséquence de la scolarisation différente des garçons et des filles durant la première moitié du XXᵉ siècle.",
+ aspects: [{aspect: "Éducation et formation technique"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Les garçons accèdent principalement aux métiers industriels et techniques, alors que les filles sont davantage orientées vers les emplois de bureau, l'enseignement ou les soins. »", source: "Adapté de Nadia Fahmy-Eid et Micheline Dumont, Maîtresses de maison, maîtresses d'école, Montréal, Boréal, 1983."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les garçons et les filles occupent des emplois différents.\nLes garçons travaillent davantage dans les métiers techniques.\nLes filles occupent surtout des emplois traditionnellement féminins.\nLa formation oriente les garçons et les filles vers des professions différentes.",
+ updatedAt: "2026-07-18T19:45:07.196Z"
 }
 ]
