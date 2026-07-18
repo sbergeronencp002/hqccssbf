@@ -1382,5 +1382,15 @@ const QUESTIONS = [
 {id: "Q769", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P6 — 1896 – 1945", points: 2, soustag: "Changement", aspects: [{aspect: "Éducation et formation technique"}], enonce: "À partir du document A, indiquez un changement concernant la fréquentation scolaire des francophones entre 1901 et 1941.", updatedAt: "2026-07-18T19:20:51.623Z"},
 {id: "Q770", niveau: 4, oi: "Dégager des différences et des similitudes", periode: "P6 — 1896 – 1945", points: 2, soustag: "Différence", aspects: [{aspect: "Éducation et formation technique"}], enonce: "Indiquez une différence concernant la fréquentation de l'école secondaire chez les francophones et les anglophones durant la première moitié du XXᵉ siècle.", updatedAt: "2026-07-18T19:23:50.122Z"},
 {id: "Q771", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Cause", aspects: [{aspect: "Éducation et formation technique"}], enonce: "Indiquez une raison pour laquelle les anglophones fréquentent davantage l'école secondaire que les francophones durant la première moitié du XXᵉ siècle.", updatedAt: "2026-07-18T19:25:40.389Z"},
-{id: "Q773", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P6 — 1896 – 1945", points: 2, soustag: "Changement", aspects: [{aspect: "Éducation et formation technique"}], enonce: "À partir des documents A et B, indiquez un changement concernant la législation scolaire au Québec entre 1920 et 1943.", updatedAt: "2026-07-18T19:31:48.581Z"}
+{id: "Q773", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P6 — 1896 – 1945", points: 2, soustag: "Changement", aspects: [{aspect: "Éducation et formation technique"}], enonce: "À partir des documents A et B, indiquez un changement concernant la législation scolaire au Québec entre 1920 et 1943.", updatedAt: "2026-07-18T19:31:48.581Z"},
+{
+ id: "Q774",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ aspects: [{aspect: "Éducation et formation technique"}],
+ enonce: "Expliquez comment la situation scolaire des enfants amène le gouvernement du Québec à intervenir dans le domaine de l’éducation en 1943.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La situation scolaire des enfants au Québec\n• Une intervention du gouvernement du Québec\n• Une conséquence de cette intervention",
+ updatedAt: "2026-07-18T19:42:42.096Z"
+}
 ]
