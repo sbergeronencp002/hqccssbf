@@ -505,7 +505,7 @@ const BRANCH = 'main';
 // jour-là venaient d'un onglet obsolète). ADMIN_BUILD doit être incrémenté à
 // chaque modification d'admin.html ; isAdminStale() compare avec la version
 // réellement déployée avant chaque publication.
-const ADMIN_BUILD = '2026-07-13-1';
+const ADMIN_BUILD = '2026-07-18-1';
 async function isAdminStale() {
   try {
     const r = await fetch(`admin.html?t=${Date.now()}`, { cache: 'no-store' });
@@ -1111,8 +1111,16 @@ async function _fetchQuestionsRaw(headers) {
   return { sha, content };
 }
 
+// IDs déjà confirmés par un PUT GitHub réussi dans CETTE session (contrairement à
+// currentQuestions, qui peut aussi contenir une question tout juste poussée localement par
+// mutate() mais pas encore confirmée par GitHub — ex. avant le tout 1er essai d'un ajout, ou
+// pendant un essai en cours). Sert de base fiable au garde-fou anti-régression ci-dessous :
+// on ne réinjecte que ce qui est SÛREMENT déjà sur GitHub, jamais une mutation encore en vol
+// (sinon un ajout qui retente après un 409 se verrait faussement bloqué par sa propre copie
+// « déjà ajoutée par un autre utilisateur »). Mise à jour à chaque écriture confirmée.
+let confirmedIds = new Set();
+
 function _assignFreshState(sha, content) {
-  questionsFileSha = sha;
   let result;
   try {
     const fn = new Function(content + '\nreturn { REGLETTES, IMAGE_DB, QUESTIONS };');
@@ -1120,9 +1128,26 @@ function _assignFreshState(sha, content) {
   } catch(e) {
     throw new Error('questions.js est invalide ou corrompu : ' + e.message);
   }
+  // Garde-fou anti-régression : un réplica de l'API GitHub peut sembler « stable »
+  // (deux lectures consécutives identiques dans fetchFreshStateStable) tout en étant EN
+  // RETARD sur le vrai HEAD (§ Latence de propagation plus haut). Sans cette fusion, une
+  // relecture qui atterrit sur un tel réplica écraserait silencieusement une question que
+  // CETTE session vient elle-même de publier avec succès un instant plus tôt — vécu avec
+  // Q712/Q738/Q745/Q767/Q772/Q779 (2026-07-16 au 18) : chacune committée avec succès, puis
+  // effacée par la publication suivante qui a relu un état antérieur sans avertissement ni
+  // conflit 409. Toute question déjà CONFIRMÉE localement (confirmedIds) et absente de la
+  // relecture est réinjectée plutôt que perdue.
+  const freshIds = new Set(result.QUESTIONS.map(q => q.id));
+  const missing = currentQuestions.filter(q => confirmedIds.has(q.id) && !freshIds.has(q.id));
+  if(missing.length) {
+    console.warn('questions.js : relecture en retard détectée — réinjection de ' + missing.length + ' question(s) connue(s) localement : ' + missing.map(q=>q.id).join(', '));
+    result.QUESTIONS = result.QUESTIONS.concat(missing);
+  }
+  questionsFileSha = sha;
   currentQuestions = result.QUESTIONS;
   currentReglettes = result.REGLETTES;
   currentImageDb   = result.IMAGE_DB;
+  confirmedIds = new Set(currentQuestions.map(q => q.id));
   buildImageMetaMap();
   return result;
 }
@@ -1187,6 +1212,7 @@ async function supprimerQuestion() {
         currentQuestions = currentQuestions.filter(q => q.id !== idSupp);
         delete currentReglettes[idSupp];
         questionsFileSha = data.sha;
+        confirmedIds = new Set(currentQuestions.map(q => q.id));
         workerOk = true;
       } catch(we) {
         if(we.message !== 'Failed to fetch') throw we;
@@ -1492,6 +1518,7 @@ async function loadQuestionsJs() {
     currentQuestions = result.QUESTIONS;
     currentReglettes = result.REGLETTES;
     currentImageDb   = result.IMAGE_DB;
+    confirmedIds = new Set(currentQuestions.map(q => q.id));
     // Next ID
     const nums = currentQuestions.map(q => parseInt(q.id.replace(/\D/g,''))).filter(n=>!isNaN(n));
     const nextNum = nums.length ? Math.max(...nums) + 1 : 1;
@@ -2180,7 +2207,11 @@ async function putQuestionsJsWithRetry(token, commitMsg, mutate) {
       headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: commitMsg, content: encoded, sha: questionsFileSha, branch: BRANCH })
     });
-    if(putResp.ok) { questionsFileSha = (await putResp.json()).content.sha; return; }
+    if(putResp.ok) {
+      questionsFileSha = (await putResp.json()).content.sha;
+      confirmedIds = new Set(currentQuestions.map(q => q.id));
+      return;
+    }
     let msg = putResp.status;
     try { const err = await putResp.json(); msg = err.message || msg; } catch(_) {}
     const isConflict = putResp.status === 409 || String(msg).toLowerCase().includes('fast forward') || String(msg).toLowerCase().includes('conflict');
@@ -2253,6 +2284,7 @@ async function publier() {
       }
       if(r != null) currentReglettes[q.id] = r;
       questionsFileSha = data.sha;
+      confirmedIds = new Set(currentQuestions.map(x => x.id));
 
       document.getElementById('q-id').value = data.nextId;
       document.getElementById('next-id-badge').textContent = data.nextId;

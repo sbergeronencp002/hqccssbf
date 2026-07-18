@@ -295,6 +295,13 @@ async function handlePublish(request, env, ctx) {
             if (editingId !== question.id) delete fresh.REGLETTES[editingId];
           } else if (!fresh.QUESTIONS.find(q => q.id === question.id)) {
             fresh.QUESTIONS.push(question);
+          } else {
+            // L'ID a été pris par quelqu'un d'autre entre la lecture initiale et cette
+            // relecture après conflit 409 — ne JAMAIS abandonner silencieusement l'ajout
+            // (avant ce correctif : la mutation était ignorée mais la réponse restait
+            // ok:true, donnant l'illusion côté client que la question avait été publiée —
+            // cause probable des pertes silencieuses Q712/Q738/Q745/Q767/Q772/Q779).
+            return errResp(`L'identifiant ${question.id} a été ajouté par un autre utilisateur entre-temps. Rechargez (F5).`, 409);
           }
           fresh.REGLETTES[question.id] = reglette || {};
           QUESTIONS = fresh.QUESTIONS; REGLETTES = fresh.REGLETTES; IMAGE_DB = fresh.IMAGE_DB;
