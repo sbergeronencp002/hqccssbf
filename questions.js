@@ -1304,7 +1304,8 @@ const REGLETTES = {
 "Q766": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
 "Q768": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
 "Q769": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
-"Q770": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la différence."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la différence."}, {pts: 0, desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."}]}
+"Q770": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la différence."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la différence."}, {pts: 0, desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."}]},
+"Q771": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -13731,5 +13732,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les anglophones fréquentent davantage l'école secondaire que les francophones durant la première moitié du XXᵉ siècle.\nLa fréquentation de l'école secondaire est plus élevée chez les anglophones que chez les francophones.\nUne plus grande proportion d'anglophones fréquente l'école secondaire.\nLes francophones fréquentent moins l'école secondaire que les anglophones.\nLe taux de fréquentation de l'école secondaire est plus élevé chez les anglophones que chez les francophones.",
  updatedAt: "2026-07-18T19:23:50.122Z"
+},
+{
+ id: "Q771",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une raison pour laquelle les anglophones fréquentent davantage l'école secondaire que les francophones durant la première moitié du XXᵉ siècle.",
+ aspects: [{aspect: "Éducation et formation technique"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Les écoles protestantes développent rapidement un réseau d'écoles secondaires et d'établissements techniques, alors que le réseau catholique demeure davantage centré sur l'enseignement primaire. »", source: "Adapté de Ruby Heap, L'enseignement au Québec : 1867-1970, Québec, Presses de l'Université Laval, 2005."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Le réseau scolaire anglophone offre un meilleur accès à l'enseignement secondaire.\nLe réseau scolaire anglophone possède davantage d'écoles secondaires.\nLe réseau scolaire protestant développe davantage l'enseignement secondaire.",
+ updatedAt: "2026-07-18T19:25:40.389Z"
 }
 ]
