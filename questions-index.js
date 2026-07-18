@@ -1396,5 +1396,15 @@ const QUESTIONS = [
 {id: "Q775", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Conséquence", aspects: [{aspect: "Éducation et formation technique"}], enonce: "Indiquez une conséquence de la scolarisation différente des garçons et des filles durant la première moitié du XXᵉ siècle.", updatedAt: "2026-07-18T19:45:07.196Z"},
 {id: "Q776", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P6 — 1896 – 1945", points: 3, soustag: "Changement ou continuité", aspects: [{aspect: "Éducation et formation technique"}], enonce: "À partir du document A, indiquez s'il y a changement ou continuité concernant la scolarisation des garçons et des filles entre 1901 et 1941. Justifiez votre réponse à l'aide d'un repère de temps.", updatedAt: "2026-07-18T19:50:03.599Z"},
 {id: "Q777", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Cause", aspects: [{aspect: "Éducation et formation technique"}], enonce: "Indiquez une raison pour laquelle le gouvernement encourage le perfectionnement des pratiques agricoles durant la première moitié du XXᵉ siècle.", updatedAt: "2026-07-18T19:55:13.133Z"},
-{id: "Q778", niveau: 4, oi: "Dégager des différences et des similitudes", periode: "P6 — 1896 – 1945", points: 2, soustag: "Convergence – 2 acteurs", aspects: [{aspect: "Éducation et formation technique"}], enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?", updatedAt: "2026-07-18T19:57:06.688Z"}
+{id: "Q778", niveau: 4, oi: "Dégager des différences et des similitudes", periode: "P6 — 1896 – 1945", points: 2, soustag: "Convergence – 2 acteurs", aspects: [{aspect: "Éducation et formation technique"}], enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?", updatedAt: "2026-07-18T19:57:06.688Z"},
+{
+ id: "Q779",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ aspects: [{aspect: "Grande dépression"}, {aspect: "Remise en question du capitalisme"}],
+ enonce: "Expliquez comment la situation économique des années 1930 favorise l'adoption de politiques keynésiennes.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• la situation économique des années 1930\n• une politique keynésienne mise en place par le gouvernement\n• une conséquence de cette politique",
+ updatedAt: "2026-07-18T21:05:57.609Z"
+}
 ]
