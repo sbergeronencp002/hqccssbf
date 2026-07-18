@@ -1308,7 +1308,8 @@ const REGLETTES = {
 "Q771": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q773": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q774": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q775": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
+"Q775": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
+"Q776": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -1698,7 +1699,8 @@ const IMAGE_DB = {
 "tableaau_appartenance_religieuse.jpg": {src: "images/tableaau_appartenance_religieuse.jpg"},
 "tableau_frequentation_scolaire.jpg": {src: "images/tableau_frequentation_scolaire.jpg", w: 1200, h: 675},
 "tableau_reseau_scolaire_catholique_protestant.jpg": {src: "images/tableau_reseau_scolaire_catholique_protestant.jpg", w: 1200, h: 800},
-"tableau_abandon_scolaire.jpg": {src: "images/tableau_abandon_scolaire.jpg", w: 1200, h: 675}
+"tableau_abandon_scolaire.jpg": {src: "images/tableau_abandon_scolaire.jpg", w: 1200, h: 675},
+"tableau_frequentation_scolaire_filles_garcons.jpg": {src: "images/tableau_frequentation_scolaire_filles_garcons.jpg", w: 1200, h: 721}
 }
 
 const QUESTIONS = [
@@ -13798,5 +13800,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les garçons et les filles occupent des emplois différents.\nLes garçons travaillent davantage dans les métiers techniques.\nLes filles occupent surtout des emplois traditionnellement féminins.\nLa formation oriente les garçons et les filles vers des professions différentes.",
  updatedAt: "2026-07-18T19:45:07.196Z"
+},
+{
+ id: "Q776",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ soustag: "Changement ou continuité",
+ enonce: "À partir du document A, indiquez s'il y a changement ou continuité concernant la scolarisation des garçons et des filles entre 1901 et 1941. Justifiez votre réponse à l'aide d'un repère de temps.",
+ aspects: [{aspect: "Éducation et formation technique"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_frequentation_scolaire_filles_garcons.jpg", soustitre: "volution de la fréquentation scolaire des garçons et des filles", source: "Adapté de Département de l'Instruction publique du Québec, Rapport du surintendant de l'Instruction publique de la province de Québec, Québec, Imprimeur du Roi, 1901-1941."}]}],
+ reponse: {type: "lignes", nombre: 3},
+ guide: "Changement\nIl y a changement, car les filles fréquentent désormais davantage l'école que les garçons en 1941, alors que les garçons étaient plus nombreux à la fréquenter en 1901.\nIl y a changement, car les garçons fréquentent davantage l'école en 1901, tandis que les filles deviennent les plus nombreuses en 1941.\n\nContinuité\nIl y a continuité, car les garçons demeurent plus nombreux que les filles à fréquenter l'école entre 1901 et 1941.\nIl y a continuité, car les garçons fréquentent davantage l'école que les filles en 1901 comme en 1941.",
+ updatedAt: "2026-07-18T19:50:03.599Z"
 }
 ]
