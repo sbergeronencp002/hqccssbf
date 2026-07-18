@@ -1409,5 +1409,6 @@ const QUESTIONS = [
  aspects: [{aspect: "Grande dépression"}, {aspect: "Remise en question du capitalisme"}],
  enonce: "Les documents A à C présentent la position de trois acteurs sur le rôle de l'État dans l'économie durant les années 1930. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
  updatedAt: "2026-07-18T21:22:13.448Z"
-}
+},
+{id: "Q783", niveau: 4, oi: "Mettre en relation des faits", periode: "P6 — 1896 – 1945", points: 2, soustag: "3 documents", aspects: [{aspect: "Remise en question du capitalisme"}], enonce: "Les documents A à C présentent trois idéologies présentes au Québec durant la première moitié du XXᵉ siècle. Associez chacun des documents à l'idéologie correspondante.", updatedAt: "2026-07-18T21:24:42.484Z"}
 ]
