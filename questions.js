@@ -13892,7 +13892,7 @@ const QUESTIONS = [
  points: 3,
  soustag: "Position – 3 acteurs",
  enonce: "Les documents A à C présentent la position de trois acteurs sur le rôle de l'État dans l'économie durant les années 1930. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
- aspects: [{aspect: "Grande dépression"}],
+ aspects: [{aspect: "Grande dépression"}, {aspect: "Remise en question du capitalisme"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", texte: "« L'État doit intervenir afin de favoriser le développement économique et venir en aide aux citoyens touchés par la crise. »", auteur: "Adélard Godbout", source: "Adapté des Débats de l'Assemblée législative du Québec, 1943."}]},
   {type: "textes", cols: [{titre: "Document B", texte: "« Le gouvernement a le devoir d'agir pour combattre le chômage et protéger les Canadiens contre les effets de la crise économique. »", auteur: "Richard Bedford Bennett", source: "Adapté du discours radiodiffusé de Richard B. Bennett présentant le New Deal, 1935."}]},
@@ -13900,6 +13900,6 @@ const QUESTIONS = [
  ],
  reponse: {type: "lignes", nombre: 3},
  guide: "Herbert Samuel Holt affirme que l'État doit limiter son intervention dans l'économie, alors que Richard Bedford Bennett et Adélard Godbout soutiennent le contraire.\n\nHerbert Samuel Holt affirme que l'État doit limiter son intervention dans l'économie, alors que Richard Bedford Bennett et Adélard Godbout soutiennent que l'État doit intervenir davantage.",
- updatedAt: "2026-07-18T21:20:09.468Z"
+ updatedAt: "2026-07-18T21:22:13.448Z"
 }
 ]
