@@ -1314,7 +1314,8 @@ const REGLETTES = {
 "Q778": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
 "Q780": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
 "Q781": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q782": {oi: "Dégager des différences et des similitudes", variante: "acteur-positions", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q782": {oi: "Dégager des différences et des similitudes", variante: "acteur-positions", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q783": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]}
 }
 
 const IMAGE_DB = {
@@ -1706,7 +1707,9 @@ const IMAGE_DB = {
 "tableau_reseau_scolaire_catholique_protestant.jpg": {src: "images/tableau_reseau_scolaire_catholique_protestant.jpg", w: 1200, h: 800},
 "tableau_abandon_scolaire.jpg": {src: "images/tableau_abandon_scolaire.jpg", w: 1200, h: 675},
 "tableau_frequentation_scolaire_filles_garcons.jpg": {src: "images/tableau_frequentation_scolaire_filles_garcons.jpg", w: 1200, h: 721},
-"école_agricole_1940.jpg": {src: "images/école_agricole_1940.jpg", w: 1200, h: 800}
+"école_agricole_1940.jpg": {src: "images/école_agricole_1940.jpg", w: 1200, h: 800},
+"portrait_richard_bennett.jpg": {src: "images/portrait_richard_bennett.jpg"},
+"portrait_adrien_arcand.jpg": {src: "images/portrait_adrien_arcand.jpg"}
 }
 
 const QUESTIONS = [
@@ -13901,5 +13904,23 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 3},
  guide: "Herbert Samuel Holt affirme que l'État doit limiter son intervention dans l'économie, alors que Richard Bedford Bennett et Adélard Godbout soutiennent le contraire.\n\nHerbert Samuel Holt affirme que l'État doit limiter son intervention dans l'économie, alors que Richard Bedford Bennett et Adélard Godbout soutiennent que l'État doit intervenir davantage.",
  updatedAt: "2026-07-18T21:22:13.448Z"
+},
+{
+ id: "Q783",
+ niveau: 4,
+ oi: "Mettre en relation des faits",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "3 documents",
+ enonce: "Les documents A à C présentent trois idéologies présentes au Québec durant la première moitié du XXᵉ siècle. Associez chacun des documents à l'idéologie correspondante.",
+ aspects: [{aspect: "Remise en question du capitalisme"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« La prospérité repose sur l'initiative privée; l'intervention de l'État dans les affaires économiques doit demeurer limitée. »", auteur: "Herbert Samuel Holt - président de la Banque du Canada", source: "Adapté de discours et allocutions de Herbert Samuel Holt, président de Montreal Light, Heat and Power et dirigeant de la Banque Royale du Canada, années 1930."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "portrait_richard_bennett.jpg", soustitre: "Portrait Richard B. Bennett - premier ministre du Canada", auteur: "Adélard Godbout - premier ministre du Québec", source: "Adapté des Débats de l'Assemblée législative du Québec, 1943."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "portrait_adrien_arcand.jpg", soustitre: "Adrien Arcand - chef du Parti national social chrétien", source: "Adapté d'Adrien Arcand, discours et écrits publiés dans Le Goglu et Le Fasciste canadien, années 1930."}]}
+ ],
+ reponse: {type: "mettre-en-relation", elements: ["Capitalisme", "Fascisme", "Keynésianisme"]},
+ guide: {type: "grille", entetes: ["Capitalisme", "Fascisme", "Keynésianisme"], rangees: [["A", "C", "B"]]},
+ updatedAt: "2026-07-18T21:24:42.484Z"
 }
 ]
