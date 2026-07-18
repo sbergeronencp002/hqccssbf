@@ -1392,5 +1392,6 @@ const QUESTIONS = [
  aspects: [{aspect: "Éducation et formation technique"}],
  enonce: "Expliquez comment la situation scolaire des enfants amène le gouvernement du Québec à intervenir dans le domaine de l’éducation en 1943.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La situation scolaire des enfants au Québec\n• Une intervention du gouvernement du Québec\n• Une conséquence de cette intervention",
  updatedAt: "2026-07-18T19:42:42.096Z"
-}
+},
+{id: "Q775", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Conséquence", aspects: [{aspect: "Éducation et formation technique"}], enonce: "Indiquez une conséquence de la scolarisation différente des garçons et des filles durant la première moitié du XXᵉ siècle.", updatedAt: "2026-07-18T19:45:07.196Z"}
 ]
