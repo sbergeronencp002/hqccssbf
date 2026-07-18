@@ -13878,11 +13878,11 @@ const QUESTIONS = [
  points: 2,
  soustag: "Cause",
  enonce: "Indiquez une raison pour laquelle les gouvernements adoptent des politiques keynésiennes durant les années 1930.",
- aspects: [{aspect: "Grande dépression"}],
+ aspects: [{aspect: "Grande dépression"}, {aspect: "Remise en question du capitalisme"}],
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_chomage.jpg", soustitre: "Évolution du taux de chômage au Canada", source: "Adapté de Statistique Canada, Statistiques historiques du Canada, section D – Population active, emploi et chômage, Gouvernement du Canada."}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "Le chômage est très élevé.\nLa crise économique provoque une hausse du chômage.\nDe nombreuses personnes sont sans emploi.\nL'économie est en difficulté (ou en récession).",
- updatedAt: "2026-07-18T21:17:46.858Z"
+ updatedAt: "2026-07-18T21:22:26.111Z"
 },
 {
  id: "Q782",
