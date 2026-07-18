@@ -1303,7 +1303,8 @@ const REGLETTES = {
 "Q765": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q766": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
 "Q768": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
-"Q769": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
+"Q769": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
+"Q770": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la différence."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la différence."}, {pts: 0, desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1691,7 +1692,8 @@ const IMAGE_DB = {
 "tableau_lois_ouvriers.jpg": {src: "images/tableau_lois_ouvriers.jpg", w: 1200, h: 833},
 "tableau_greves.jpg": {src: "images/tableau_greves.jpg", w: 1200, h: 960},
 "tableaau_appartenance_religieuse.jpg": {src: "images/tableaau_appartenance_religieuse.jpg"},
-"tableau_frequentation_scolaire.jpg": {src: "images/tableau_frequentation_scolaire.jpg", w: 1200, h: 720}
+"tableau_frequentation_scolaire.jpg": {src: "images/tableau_frequentation_scolaire.jpg", w: 1200, h: 720},
+"tableau_reseau_scolaire_catholique_protestant.jpg": {src: "images/tableau_reseau_scolaire_catholique_protestant.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -13715,5 +13717,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "La fréquentation scolaire des francophones augmente entre 1901 et 1941.\nLe taux de fréquentation scolaire des francophones augmente entre 1901 et 1941.\nUne plus grande proportion de francophones fréquente l'école en 1941 qu'en 1901.\nLes francophones sont plus nombreux à fréquenter l'école en 1941 qu'en 1901.\nLa fréquentation scolaire des francophones est plus élevée en 1941 qu'en 1901.",
  updatedAt: "2026-07-18T19:20:51.623Z"
+},
+{
+ id: "Q770",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Différence",
+ enonce: "Indiquez une différence concernant la fréquentation de l'école secondaire chez les francophones et les anglophones durant la première moitié du XXᵉ siècle.",
+ aspects: [{aspect: "Éducation et formation technique"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_frequentation_scolaire.jpg", soustitre: "Établissements d'enseignement secondaire et technique selon le réseau scolaire", source: "Adapté de Département de l'Instruction publique du Québec, Rapport du surintendant de l'Instruction publique de la province de Québec, Québec, Imprimeur du Roi, vers 1940."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les anglophones fréquentent davantage l'école secondaire que les francophones durant la première moitié du XXᵉ siècle.\nLa fréquentation de l'école secondaire est plus élevée chez les anglophones que chez les francophones.\nUne plus grande proportion d'anglophones fréquente l'école secondaire.\nLes francophones fréquentent moins l'école secondaire que les anglophones.\nLe taux de fréquentation de l'école secondaire est plus élevé chez les anglophones que chez les francophones.",
+ updatedAt: "2026-07-18T19:23:50.122Z"
 }
 ]
