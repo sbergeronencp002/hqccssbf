@@ -1313,7 +1313,7 @@ const REGLETTES = {
 "Q777": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q778": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
 "Q780": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
-"Q781": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]}
+"Q781": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1705,9 +1705,7 @@ const IMAGE_DB = {
 "tableau_reseau_scolaire_catholique_protestant.jpg": {src: "images/tableau_reseau_scolaire_catholique_protestant.jpg", w: 1200, h: 800},
 "tableau_abandon_scolaire.jpg": {src: "images/tableau_abandon_scolaire.jpg", w: 1200, h: 675},
 "tableau_frequentation_scolaire_filles_garcons.jpg": {src: "images/tableau_frequentation_scolaire_filles_garcons.jpg", w: 1200, h: 721},
-"école_agricole_1940.jpg": {src: "images/école_agricole_1940.jpg", w: 1200, h: 800},
-"portrait_adrien_arcand.jpg": {src: "images/portrait_adrien_arcand.jpg"},
-"portrait_richard_bennett.jpg": {src: "images/portrait_richard_bennett.jpg"}
+"école_agricole_1940.jpg": {src: "images/école_agricole_1940.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -13874,19 +13872,15 @@ const QUESTIONS = [
 {
  id: "Q781",
  niveau: 4,
- oi: "Mettre en relation des faits",
+ oi: "Déterminer des causes et des conséquences",
  periode: "P6 — 1896 – 1945",
  points: 2,
- soustag: "3 documents",
- enonce: "Les documents A à C présentent trois idéologies présentes au Québec durant la première moitié du XXᵉ siècle. Associez chacun des documents à l'idéologie correspondante.",
- aspects: [{aspect: "Remise en question du capitalisme"}],
- documents: [
-  {type: "textes", cols: [{titre: "Document A", ref: "portrait_adrien_arcand.jpg", soustitre: "Adrien Arcand", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]},
-  {type: "textes", cols: [{titre: "Document B", texte: "« La prospérité d'un pays dépend de l'initiative privée et de la liberté accordée aux entreprises. »", auteur: "Herbert Samuel Holt - président de la Banque royale du Canada", source: "Adapté de discours et allocutions de Herbert Samuel Holt, président de la Banque Royale du Canada et de Montreal Light, Heat and Power, années 1920-1930."}]},
-  {type: "textes", cols: [{titre: "Document C", ref: "portrait_richard_bennett.jpg", soustitre: "Portrait de Richard B. Bennett"}]}
- ],
- reponse: {type: "mettre-en-relation", elements: ["Capitalisme", "Fascisme", "Keynésianisme"]},
- guide: {type: "grille", entetes: ["Capitalisme", "Fascisme", "Keynésianisme"], rangees: [["B", "A", "C"]]},
- updatedAt: "2026-07-18T21:14:06.205Z"
+ soustag: "Cause",
+ enonce: "Indiquez une raison pour laquelle les gouvernements adoptent des politiques keynésiennes durant les années 1930.",
+ aspects: [{aspect: "Grande dépression"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_chomage.jpg", soustitre: "Évolution du taux de chômage au Canada", source: "Adapté de Statistique Canada, Statistiques historiques du Canada, section D – Population active, emploi et chômage, Gouvernement du Canada."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Le chômage est très élevé.\nLa crise économique provoque une hausse du chômage.\nDe nombreuses personnes sont sans emploi.\nL'économie est en difficulté (ou en récession).",
+ updatedAt: "2026-07-18T21:17:46.858Z"
 }
 ]
