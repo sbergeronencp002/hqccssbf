@@ -1310,7 +1310,8 @@ const REGLETTES = {
 "Q774": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q775": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q776": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q777": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q777": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q778": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -13830,5 +13831,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Le gouvernement souhaite améliorer la productivité des exploitations agricoles.",
  updatedAt: "2026-07-18T19:55:13.133Z"
+},
+{
+ id: "Q778",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Convergence – 2 acteurs",
+ enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?",
+ aspects: [{aspect: "Éducation et formation technique"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« L'agriculture moderne exige que les cultivateurs adoptent de meilleures méthodes de culture afin d'obtenir des récoltes plus abondantes et de mieux exploiter leurs terres. »", auteur: "Joseph-Xavier Perrault", source: "Adapté de Joseph-Xavier Perrault, Conférences agricoles, Québec, Département de l'Agriculture de la province de Québec, vers 1915."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Le développement de l'agriculture dépend de la diffusion des connaissances agricoles et de l'adoption de méthodes de culture plus efficaces par les cultivateurs. »", auteur: "Alphonse Désilets", source: "Adapté d'un texte d'Alphonse Désilets, agronome, publié dans La Terre de chez nous, années 1920-1930."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les deux acteurs encouragent le perfectionnement des pratiques agricoles.",
+ updatedAt: "2026-07-18T19:57:06.688Z"
 }
 ]
