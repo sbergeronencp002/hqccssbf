@@ -1309,7 +1309,8 @@ const REGLETTES = {
 "Q773": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q774": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q775": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
-"Q776": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q776": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q777": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1700,7 +1701,8 @@ const IMAGE_DB = {
 "tableau_frequentation_scolaire.jpg": {src: "images/tableau_frequentation_scolaire.jpg", w: 1200, h: 675},
 "tableau_reseau_scolaire_catholique_protestant.jpg": {src: "images/tableau_reseau_scolaire_catholique_protestant.jpg", w: 1200, h: 800},
 "tableau_abandon_scolaire.jpg": {src: "images/tableau_abandon_scolaire.jpg", w: 1200, h: 675},
-"tableau_frequentation_scolaire_filles_garcons.jpg": {src: "images/tableau_frequentation_scolaire_filles_garcons.jpg", w: 1200, h: 721}
+"tableau_frequentation_scolaire_filles_garcons.jpg": {src: "images/tableau_frequentation_scolaire_filles_garcons.jpg", w: 1200, h: 721},
+"école_agricole_1940.jpg": {src: "images/école_agricole_1940.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -13814,5 +13816,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 3},
  guide: "Changement\nIl y a changement, car les filles fréquentent désormais davantage l'école que les garçons en 1941, alors que les garçons étaient plus nombreux à la fréquenter en 1901.\nIl y a changement, car les garçons fréquentent davantage l'école en 1901, tandis que les filles deviennent les plus nombreuses en 1941.\n\nContinuité\nIl y a continuité, car les garçons demeurent plus nombreux que les filles à fréquenter l'école entre 1901 et 1941.\nIl y a continuité, car les garçons fréquentent davantage l'école que les filles en 1901 comme en 1941.",
  updatedAt: "2026-07-18T19:50:03.599Z"
+},
+{
+ id: "Q777",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une raison pour laquelle le gouvernement encourage le perfectionnement des pratiques agricoles durant la première moitié du XXᵉ siècle.",
+ aspects: [{aspect: "Éducation et formation technique"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "école_agricole_1940.jpg", soustitre: "Agronome et élèves dans une école d'agriculture", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Le gouvernement souhaite améliorer la productivité des exploitations agricoles.",
+ updatedAt: "2026-07-18T19:55:13.133Z"
 }
 ]
