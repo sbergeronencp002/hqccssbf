@@ -1302,7 +1302,8 @@ const REGLETTES = {
 "Q764": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
 "Q765": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q766": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
-"Q768": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]}
+"Q768": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
+"Q769": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1689,7 +1690,8 @@ const IMAGE_DB = {
 "syndicat_etranger.jpg": {src: "images/syndicat_etranger.jpg", w: 1200, h: 960},
 "tableau_lois_ouvriers.jpg": {src: "images/tableau_lois_ouvriers.jpg", w: 1200, h: 833},
 "tableau_greves.jpg": {src: "images/tableau_greves.jpg", w: 1200, h: 960},
-"tableaau_appartenance_religieuse.jpg": {src: "images/tableaau_appartenance_religieuse.jpg"}
+"tableaau_appartenance_religieuse.jpg": {src: "images/tableaau_appartenance_religieuse.jpg"},
+"tableau_frequentation_scolaire.jpg": {src: "images/tableau_frequentation_scolaire.jpg", w: 1200, h: 720}
 }
 
 const QUESTIONS = [
@@ -13699,5 +13701,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "La grande majorité de la population québécoise demeure catholique tout au long de la première moitié du XXe siècle.",
  updatedAt: "2026-07-17T15:00:59.448Z"
+},
+{
+ id: "Q769",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Changement",
+ enonce: "À partir du document A, indiquez un changement concernant la fréquentation scolaire des francophones entre 1901 et 1941.",
+ aspects: [{aspect: "Éducation et formation technique"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_frequentation_scolaire.jpg", soustitre: "Évolution de la fréquentation scolaire des élèves francophones au Québec", source: "Adapté de Département de l'Instruction publique du Québec, Rapport du surintendant de l'Instruction publique de la province de Québec, 1901, 1911, 1921, 1931 et 1941, Québec, Imprimeur du Roi."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "La fréquentation scolaire des francophones augmente entre 1901 et 1941.\nLe taux de fréquentation scolaire des francophones augmente entre 1901 et 1941.\nUne plus grande proportion de francophones fréquente l'école en 1941 qu'en 1901.\nLes francophones sont plus nombreux à fréquenter l'école en 1941 qu'en 1901.\nLa fréquentation scolaire des francophones est plus élevée en 1941 qu'en 1901.",
+ updatedAt: "2026-07-18T19:20:51.623Z"
 }
 ]
