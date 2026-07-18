@@ -1306,7 +1306,7 @@ const REGLETTES = {
 "Q769": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q770": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la différence."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la différence."}, {pts: 0, desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."}]},
 "Q771": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q772": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q773": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -13749,17 +13749,20 @@ const QUESTIONS = [
  updatedAt: "2026-07-18T19:25:40.389Z"
 },
 {
- id: "Q772",
+ id: "Q773",
  niveau: 4,
- oi: "Déterminer des causes et des conséquences",
+ oi: "Déterminer des changements et des continuités",
  periode: "P6 — 1896 – 1945",
  points: 2,
- soustag: "Cause",
- enonce: "Indiquez une raison pour laquelle le gouvernement du Québec adopte une loi sur la fréquentation scolaire obligatoire en 1943.",
+ soustag: "Changement",
+ enonce: "À partir des documents A et B, indiquez un changement concernant la législation scolaire au Québec entre 1920 et 1943.",
  aspects: [{aspect: "Éducation et formation technique"}],
- documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Au début des années 1940, de nombreux enfants quittent encore l'école avant la fin de leurs études afin de travailler ou d'aider leur famille. Cette situation préoccupe plusieurs réformateurs de l'éducation. »", source: "Adapté de Dominique Marshall, Aux origines sociales de l'État-providence : Familles québécoises, obligation scolaire et allocations familiales, 1940-1955, Montréal, Presses de l'Université de Montréal, 1998."}]}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Les autorités scolaires encouragent fortement les parents à envoyer leurs enfants à l'école, mais aucune disposition législative ne les y oblige. »", source: "Adapté de Jean-Pierre Charland, Histoire de l'éducation au Québec : De l'ombre du clocher à l'économie du savoir, Montréal, Éditions du Renouveau pédagogique, 2005."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Une nouvelle loi prévoit désormais que tous les enfants âgés de 6 à 14 ans doivent recevoir un enseignement conformément aux exigences établies par l'État. »", source: "Adapté de Loi concernant la fréquentation scolaire obligatoire, S.Q. 1943, 7 Geo. VI, chap. 13."}]}
+ ],
  reponse: {type: "lignes", nombre: 2},
- guide: "Le gouvernement souhaite réduire l'abandon scolaire.\nPlusieurs enfants quittent l'école trop tôt.\nDe nombreux jeunes abandonnent leurs études pour travailler.",
- updatedAt: "2026-07-18T19:29:50.482Z"
+ guide: "La fréquentation scolaire devient obligatoire.\nLe gouvernement oblige les enfants à fréquenter l'école.\nLes enfants de 6 à 14 ans doivent désormais aller à l'école.\nLa loi rend la fréquentation scolaire obligatoire.",
+ updatedAt: "2026-07-18T19:31:48.581Z"
 }
 ]
