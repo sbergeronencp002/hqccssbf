@@ -1315,16 +1315,7 @@ const REGLETTES = {
 "Q780": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
 "Q781": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q782": {oi: "Dégager des différences et des similitudes", variante: "acteur-positions", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q783": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
-"Q712": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (4 sur 4)"}, {pts: 1, desc: "L'élève met en relation certains faits. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 4)"}]},
-"Q738": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q745": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
-"Q767": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
-"Q772": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q779": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q784": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
-"Q785": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
-"Q786": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]}
+"Q783": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]}
 }
 
 const IMAGE_DB = {
@@ -1718,13 +1709,7 @@ const IMAGE_DB = {
 "tableau_frequentation_scolaire_filles_garcons.jpg": {src: "images/tableau_frequentation_scolaire_filles_garcons.jpg", w: 1200, h: 721},
 "école_agricole_1940.jpg": {src: "images/école_agricole_1940.jpg", w: 1200, h: 800},
 "portrait_richard_bennett.jpg": {src: "images/portrait_richard_bennett.jpg"},
-"portrait_adrien_arcand.jpg": {src: "images/portrait_adrien_arcand.jpg"},
-"affiche_conscription_ww2.jpg": {src: "images/affiche_conscription_ww2.jpg", w: 900, h: 1200},
-"crise_conscription_1917.jpg": {src: "images/crise_conscription_1917.jpg", w: 1200, h: 800},
-"tableau_maladies.jpg": {src: "images/tableau_maladies.jpg"},
-"tableau_effectif_religieux.jpg": {src: "images/tableau_effectif_religieux.jpg"},
-"droit_de_vote_femmes_quebec_1940.jpg": {src: "images/droit_de_vote_femmes_quebec_1940.jpg"},
-"revue_action_francaise.jpg": {src: "images/revue_action_francaise.jpg"}
+"portrait_adrien_arcand.jpg": {src: "images/portrait_adrien_arcand.jpg"}
 }
 
 const QUESTIONS = [
@@ -13937,145 +13922,5 @@ const QUESTIONS = [
  reponse: {type: "mettre-en-relation", elements: ["Capitalisme", "Fascisme", "Keynésianisme"]},
  guide: {type: "grille", entetes: ["Capitalisme", "Fascisme", "Keynésianisme"], rangees: [["A", "C", "B"]]},
  updatedAt: "2026-07-18T21:24:42.484Z"
-},
-{
- id: "Q712",
- niveau: 4,
- oi: "Mettre en relation des faits",
- periode: "P6 — 1896 – 1945",
- points: 2,
- soustag: "4 documents",
- enonce: "Les documents A à D présentent deux événements liés à la conscription au Canada. Associez la lettre de chacun des événements à la guerre durant laquelle il se déroule.",
- aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Seconde Guerre mondiale"}],
- documents: [
-  {type: "textes", cols: [{titre: "Document A", ref: "affiche_conscription_ww2.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]},
-  {type: "textes", cols: [{titre: "Document B", texte: "« Il est impossible de mener cette guerre à bonne fin sans les renforts que seule la conscription peut fournir. »", auteur: "Robert Borden", source: "Adapté de Robert Laird Borden, discours à la Chambre des communes sur la Loi du service militaire, Ottawa, 18 mai 1917."}]},
-  {type: "textes", cols: [{titre: "Document C", texte: "« Notre gouvernement n'imposera pas la conscription pour le service outre-mer sans avoir d'abord consulté la population canadienne par voie de plébiscite. »", auteur: "William Lyon Mackenzie King", source: "Adapté de William Lyon Mackenzie King, allocution radiodiffusée annonçant le plébiscite sur la conscription, Ottawa, 1942."}]},
-  {type: "textes", cols: [{titre: "Document D", ref: "crise_conscription_1917.jpg", soustitre: "Émeute contre la conscription à Québec", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}
- ],
- reponse: {type: "mettre-en-relation", elements: ["Première Guerre mondiale", "Deuxième Guerre mondiale"], double: true},
- guide: {type: "grille", entetes: ["Première Guerre mondiale", "Deuxième Guerre mondiale"], rangees: [["B et D", "A et C"]]},
- updatedAt: "2026-07-16T18:02:44.582Z"
-},
-{
- id: "Q738",
- niveau: 4,
- oi: "Déterminer des causes et des conséquences",
- periode: "P6 — 1896 – 1945",
- points: 2,
- soustag: "Cause",
- enonce: "Indiquez une conséquence de l'amélioration des mesures de santé publique dans les milieux urbains au cours de la première moitié du XXᵉ siècle.",
- aspects: [{aspect: "Milieux urbains"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_maladies.jpg", soustitre: "Évolution de la mortalité causée par certaines maladies infectieuses", source: "Adapté de Bureau fédéral de la statistique, Annuaire du Canada 1942, section « Statistiques de l'état civil et santé publique », Ottawa, Imprimeur du Roi, 1942."}]}],
- reponse: {type: "lignes", nombre: 2},
- guide: "Le nombre de décès causés par les maladies infectieuses diminue.\nLa diminution des décès causés par les maladies infectieuses.\nLa diminution de la mortalité.\nLa diminution de la mortalité infantile.\nL'amélioration de l'état de santé de la population.",
- updatedAt: "2026-07-17T12:03:39.209Z"
-},
-{
- id: "Q745",
- niveau: 4,
- oi: "Dégager des différences et des similitudes",
- periode: "P6 — 1896 – 1945",
- points: 2,
- soustag: "Convergence – 2 acteurs",
- enonce: "Le document présente le point de vue de deux acteurs. Sur quel point précis sont-ils d'accord?",
- aspects: [{aspect: "Culture de masse"}],
- documents: [
-  {type: "textes", cols: [{titre: "Document A", texte: "« Grâce aux retransmissions radiophoniques, des milliers de Canadiens peuvent suivre les matchs de hockey en direct, même lorsqu'ils vivent loin des grands centres. »", auteur: "Foster Hewitt, commentateur sportif", source: "Adapté de Foster Hewitt, émissions General Motors Hockey Broadcast, Canadian Radio Broadcasting Commission, vers 1931."}]},
-  {type: "textes", cols: [{titre: "Document B", texte: "« La radio fait connaître le hockey professionnel à un public toujours plus nombreux et contribue à accroître l'intérêt pour notre sport partout au Canada. »", auteur: "Frank Calder, président de la LNH", source: "Adapté de Frank Calder, allocutions reproduites dans The Gazette (Montréal), années 1930."}]}
- ],
- reponse: {type: "lignes", nombre: 2},
- guide: "La radio permet au hockey professionnel de rejoindre un public plus vaste.\nLes deux acteurs reconnaissent que la radio contribue à accroître la popularité du hockey professionnel.",
- updatedAt: "2026-07-17T12:44:30.388Z"
-},
-{
- id: "Q767",
- niveau: 4,
- oi: "Déterminer des causes et des conséquences",
- periode: "P6 — 1896 – 1945",
- points: 2,
- soustag: "Conséquence",
- enonce: "Indiquez une conséquence de l’augmentation de l’effectif religieux catholique au Québec durant la première moitié du XXᵉ siècle.",
- aspects: [{aspect: "Église catholique"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_effectif_religieux.jpg", soustitre: "Évolution des effectifs religieux au Québec", source: "Adapté de Jean Hamelin et Nicole Gagnon, Histoire du catholicisme québécois, tome III : Le XXᵉ siècle, Boréal Express, 1984."}]}],
- reponse: {type: "lignes", nombre: 2},
- guide: "L’Église catholique accroît son influence dans l’éducation (ou les écoles).\nL’Église catholique développe son rôle dans les services sociaux (ou les hôpitaux, les œuvres de charité).\nLe nombre d’institutions dirigées par des communautés religieuses augmente.",
- updatedAt: "2026-07-17T14:57:39.366Z"
-},
-{
- id: "Q772",
- niveau: 4,
- oi: "Déterminer des causes et des conséquences",
- periode: "P6 — 1896 – 1945",
- points: 2,
- soustag: "Cause",
- enonce: "Indiquez une raison pour laquelle le gouvernement du Québec adopte une loi sur la fréquentation scolaire obligatoire en 1943.",
- aspects: [{aspect: "Éducation et formation technique"}],
- documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Au début des années 1940, de nombreux enfants quittent encore l'école avant la fin de leurs études afin de travailler ou d'aider leur famille. Cette situation préoccupe plusieurs réformateurs de l'éducation. »", source: "Adapté de Dominique Marshall, Aux origines sociales de l'État-providence : Familles québécoises, obligation scolaire et allocations familiales, 1940-1955, Montréal, Presses de l'Université de Montréal, 1998."}]}],
- reponse: {type: "lignes", nombre: 2},
- guide: "Le gouvernement souhaite réduire l'abandon scolaire.\nPlusieurs enfants quittent l'école trop tôt.\nDe nombreux jeunes abandonnent leurs études pour travailler.",
- updatedAt: "2026-07-18T19:29:50.482Z"
-},
-{
- id: "Q779",
- niveau: 4,
- oi: "Établir des liens de causalité",
- periode: "P6 — 1896 – 1945",
- points: 3,
- enonce: "Expliquez comment la situation économique des années 1930 favorise l'adoption de politiques keynésiennes.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• la situation économique des années 1930\n• une politique keynésienne mise en place par le gouvernement\n• une conséquence de cette politique",
- aspects: [{aspect: "Grande dépression"}, {aspect: "Remise en question du capitalisme"}],
- documents: [
-  {type: "textes", cols: [{titre: "Document A", ref: "tableau_chomage.jpg", soustitre: "Évolution du taux de chômage au Canada", source: "Adapté de Michael Bliss, The Depression Years: Canada in the 1930s, McClelland and Stewart, 1983; Statistique Canada, séries historiques sur le marché du travail."}]},
-  {type: "textes", cols: [{titre: "Document B", texte: "« L’État ne peut demeurer indifférent devant les difficultés économiques. Il doit orienter le développement de la province et favoriser une meilleure utilisation de ses ressources. »", source: "Adélard Godbout, premier ministre du Québec, 1943."}]},
-  {type: "textes", cols: [{titre: "Document C", ref: "grands_travaux.jpg", soustitre: "Chantier de travaux publics au Québec dans les années 1930", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}
- ],
- reponse: {type: "lignes", nombre: 5},
- guide: "La crise économique des années 1930 entraîne un chômage élevé et un ralentissement de l'économie (la situation économique des années 1930). Le gouvernement intervient davantage en lançant des travaux publics afin de stimuler l'économie (une politique keynésienne mise en place par le gouvernement). Cette intervention favorise la création d'emplois et contribue à la relance économique (une conséquence de cette politique).",
- updatedAt: "2026-07-18T21:05:57.609Z"
-},
-{
- id: "Q784",
- niveau: 4,
- oi: "Mettre en relation des faits",
- periode: "P6 — 1896 – 1945",
- points: 2,
- soustag: "3 documents",
- enonce: "Les documents A à C présentent trois idéologies présentes au Québec durant la première moitié du XXᵉ siècle. Associez chacun des documents à l'idéologie correspondante.",
- aspects: [{aspect: "Remise en question du capitalisme"}],
- documents: [
-  {type: "textes", cols: [{titre: "Document A", ref: "portrait_adrien_arcand.jpg", soustitre: "Adrien Arcand", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]},
-  {type: "textes", cols: [{titre: "Document B", texte: "« La prospérité d'un pays dépend de l'initiative privée et de la liberté accordée aux entreprises. »", auteur: "Herbert Samuel Holt - président de la Banque royale du Canada", source: "Adapté de discours et allocutions de Herbert Samuel Holt, président de la Banque Royale du Canada et de Montreal Light, Heat and Power, années 1920-1930."}]},
-  {type: "textes", cols: [{titre: "Document C", ref: "portrait_richard_bennett.jpg", soustitre: "Portrait de Richard B. Bennett"}]}
- ],
- reponse: {type: "mettre-en-relation", elements: ["Capitalisme", "Fascisme", "Keynésianisme"]},
- guide: {type: "grille", entetes: ["Capitalisme", "Fascisme", "Keynésianisme"], rangees: [["B", "A", "C"]]},
- updatedAt: "2026-07-18T21:14:06.205Z"
-},
-{
- id: "Q785",
- niveau: 4,
- oi: "Situer dans le temps",
- periode: "P6 — 1896 – 1945",
- points: 1,
- soustag: "Ligne du temps",
- enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.",
- aspects: [{aspect: "Luttes des femmes"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "droit_de_vote_femmes_quebec_1940.jpg", soustitre: "Octroi du droit de vote aux Québécoises", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}],
- reponse: {type: "image", ref: "ligne_1890-1950.png"},
- guide: "C - 1940.",
- updatedAt: "2026-07-14T23:34:02.685Z"
-},
-{
- id: "Q786",
- niveau: 4,
- oi: "Établir des faits",
- periode: "P6 — 1896 – 1945",
- points: 1,
- enonce: "À partir du document A, nommez le mouvement de pensée auquel est associée la revue présentée.",
- aspects: [{aspect: "Clérico-nationalisme"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "revue_action_francaise.jpg", soustitre: "Couverture de la revue L’Action française", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}],
- reponse: {type: "lignes", nombre: 1},
- guide: "Le clérico-nationalisme.",
- updatedAt: "2026-07-16T12:27:20.807Z"
 }
 ]

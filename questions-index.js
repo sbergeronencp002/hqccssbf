@@ -1410,5 +1410,23 @@ const QUESTIONS = [
  enonce: "Les documents A à C présentent la position de trois acteurs sur le rôle de l'État dans l'économie durant les années 1930. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
  updatedAt: "2026-07-18T21:22:13.448Z"
 },
-{id: "Q783", niveau: 4, oi: "Mettre en relation des faits", periode: "P6 — 1896 – 1945", points: 2, soustag: "3 documents", aspects: [{aspect: "Remise en question du capitalisme"}], enonce: "Les documents A à C présentent trois idéologies présentes au Québec durant la première moitié du XXᵉ siècle. Associez chacun des documents à l'idéologie correspondante.", updatedAt: "2026-07-18T21:24:42.484Z"}
+{id: "Q783", niveau: 4, oi: "Mettre en relation des faits", periode: "P6 — 1896 – 1945", points: 2, soustag: "3 documents", aspects: [{aspect: "Remise en question du capitalisme"}], enonce: "Les documents A à C présentent trois idéologies présentes au Québec durant la première moitié du XXᵉ siècle. Associez chacun des documents à l'idéologie correspondante.", updatedAt: "2026-07-18T21:24:42.484Z"},
+{id: "Q712", niveau: 4, oi: "Mettre en relation des faits", periode: "P6 — 1896 – 1945", points: 2, soustag: "4 documents", aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Seconde Guerre mondiale"}], enonce: "Les documents A à D présentent deux événements liés à la conscription au Canada. Associez la lettre de chacun des événements à la guerre durant laquelle il se déroule.", updatedAt: "2026-07-16T18:02:44.582Z"},
+{id: "Q738", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Cause", aspects: [{aspect: "Milieux urbains"}], enonce: "Indiquez une conséquence de l'amélioration des mesures de santé publique dans les milieux urbains au cours de la première moitié du XXᵉ siècle.", updatedAt: "2026-07-17T12:03:39.209Z"},
+{id: "Q745", niveau: 4, oi: "Dégager des différences et des similitudes", periode: "P6 — 1896 – 1945", points: 2, soustag: "Convergence – 2 acteurs", aspects: [{aspect: "Culture de masse"}], enonce: "Le document présente le point de vue de deux acteurs. Sur quel point précis sont-ils d'accord?", updatedAt: "2026-07-17T12:44:30.388Z"},
+{id: "Q767", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Conséquence", aspects: [{aspect: "Église catholique"}], enonce: "Indiquez une conséquence de l’augmentation de l’effectif religieux catholique au Québec durant la première moitié du XXᵉ siècle.", updatedAt: "2026-07-17T14:57:39.366Z"},
+{id: "Q772", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Cause", aspects: [{aspect: "Éducation et formation technique"}], enonce: "Indiquez une raison pour laquelle le gouvernement du Québec adopte une loi sur la fréquentation scolaire obligatoire en 1943.", updatedAt: "2026-07-18T19:29:50.482Z"},
+{
+ id: "Q779",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ aspects: [{aspect: "Grande dépression"}, {aspect: "Remise en question du capitalisme"}],
+ enonce: "Expliquez comment la situation économique des années 1930 favorise l'adoption de politiques keynésiennes.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• la situation économique des années 1930\n• une politique keynésienne mise en place par le gouvernement\n• une conséquence de cette politique",
+ updatedAt: "2026-07-18T21:05:57.609Z"
+},
+{id: "Q784", niveau: 4, oi: "Mettre en relation des faits", periode: "P6 — 1896 – 1945", points: 2, soustag: "3 documents", aspects: [{aspect: "Remise en question du capitalisme"}], enonce: "Les documents A à C présentent trois idéologies présentes au Québec durant la première moitié du XXᵉ siècle. Associez chacun des documents à l'idéologie correspondante.", updatedAt: "2026-07-18T21:14:06.205Z"},
+{id: "Q785", niveau: 4, oi: "Situer dans le temps", periode: "P6 — 1896 – 1945", points: 1, soustag: "Ligne du temps", aspects: [{aspect: "Luttes des femmes"}], enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.", updatedAt: "2026-07-14T23:34:02.685Z"},
+{id: "Q786", niveau: 4, oi: "Établir des faits", periode: "P6 — 1896 – 1945", points: 1, aspects: [{aspect: "Clérico-nationalisme"}], enonce: "À partir du document A, nommez le mouvement de pensée auquel est associée la revue présentée.", updatedAt: "2026-07-16T12:27:20.807Z"}
 ]
