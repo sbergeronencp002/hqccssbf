@@ -1313,7 +1313,8 @@ const REGLETTES = {
 "Q777": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q778": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
 "Q780": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
-"Q781": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q781": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q782": {oi: "Dégager des différences et des similitudes", variante: "acteur-positions", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -13882,5 +13883,23 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Le chômage est très élevé.\nLa crise économique provoque une hausse du chômage.\nDe nombreuses personnes sont sans emploi.\nL'économie est en difficulté (ou en récession).",
  updatedAt: "2026-07-18T21:17:46.858Z"
+},
+{
+ id: "Q782",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ soustag: "Position – 3 acteurs",
+ enonce: "Les documents A à C présentent la position de trois acteurs sur le rôle de l'État dans l'économie durant les années 1930. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+ aspects: [{aspect: "Grande dépression"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« L'État doit intervenir afin de favoriser le développement économique et venir en aide aux citoyens touchés par la crise. »", auteur: "Adélard Godbout", source: "Adapté des Débats de l'Assemblée législative du Québec, 1943."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Le gouvernement a le devoir d'agir pour combattre le chômage et protéger les Canadiens contre les effets de la crise économique. »", auteur: "Richard Bedford Bennett", source: "Adapté du discours radiodiffusé de Richard B. Bennett présentant le New Deal, 1935."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« La prospérité repose sur l'initiative privée; l'intervention de l'État dans les affaires économiques doit demeurer limitée. »", auteur: "Herbert Samuel Holt", source: "Adapté de discours et allocutions de Herbert Samuel Holt, président de Montreal Light, Heat and Power et dirigeant de la Banque Royale du Canada, années 1930."}]}
+ ],
+ reponse: {type: "lignes", nombre: 3},
+ guide: "Herbert Samuel Holt affirme que l'État doit limiter son intervention dans l'économie, alors que Richard Bedford Bennett et Adélard Godbout soutiennent le contraire.\n\nHerbert Samuel Holt affirme que l'État doit limiter son intervention dans l'économie, alors que Richard Bedford Bennett et Adélard Godbout soutiennent que l'État doit intervenir davantage.",
+ updatedAt: "2026-07-18T21:20:09.468Z"
 }
 ]
