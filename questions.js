@@ -1306,7 +1306,8 @@ const REGLETTES = {
 "Q769": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q770": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la différence."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la différence."}, {pts: 0, desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."}]},
 "Q771": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q773": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
+"Q773": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
+"Q774": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -1694,8 +1695,9 @@ const IMAGE_DB = {
 "tableau_lois_ouvriers.jpg": {src: "images/tableau_lois_ouvriers.jpg", w: 1200, h: 833},
 "tableau_greves.jpg": {src: "images/tableau_greves.jpg", w: 1200, h: 960},
 "tableaau_appartenance_religieuse.jpg": {src: "images/tableaau_appartenance_religieuse.jpg"},
-"tableau_frequentation_scolaire.jpg": {src: "images/tableau_frequentation_scolaire.jpg", w: 1200, h: 720},
-"tableau_reseau_scolaire_catholique_protestant.jpg": {src: "images/tableau_reseau_scolaire_catholique_protestant.jpg", w: 1200, h: 800}
+"tableau_frequentation_scolaire.jpg": {src: "images/tableau_frequentation_scolaire.jpg", w: 1200, h: 675},
+"tableau_reseau_scolaire_catholique_protestant.jpg": {src: "images/tableau_reseau_scolaire_catholique_protestant.jpg", w: 1200, h: 800},
+"tableau_abandon_scolaire.jpg": {src: "images/tableau_abandon_scolaire.jpg", w: 1200, h: 675}
 }
 
 const QUESTIONS = [
@@ -13764,5 +13766,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "La fréquentation scolaire devient obligatoire.\nLe gouvernement oblige les enfants à fréquenter l'école.\nLes enfants de 6 à 14 ans doivent désormais aller à l'école.\nLa loi rend la fréquentation scolaire obligatoire.",
  updatedAt: "2026-07-18T19:31:48.581Z"
+},
+{
+ id: "Q774",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ enonce: "Expliquez comment la situation scolaire des enfants amène le gouvernement du Québec à intervenir dans le domaine de l’éducation en 1943.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La situation scolaire des enfants au Québec\n• Une intervention du gouvernement du Québec\n• Une conséquence de cette intervention",
+ aspects: [{aspect: "Éducation et formation technique"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "tableau_abandon_scolaire.jpg", soustitre: "Évolution de l'abandon scolaire des enfants de 6 à 14 ans", source: "Adapté de Département de l'Instruction publique du Québec, Rapport du surintendant de l'Instruction publique de la province de Québec, Québec, Imprimeur du Roi, 1921 à 1951."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« En 1943, le gouvernement adopte une mesure qui oblige désormais les enfants âgés de 6 à 14 ans à recevoir un enseignement conformément aux dispositions prévues par l'État. »", source: "Adapté de Loi concernant la fréquentation scolaire obligatoire, S.Q. 1943, 7 Geo. VI, chap. 13."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "tableau_frequentation_scolaire.jpg", soustitre: "Évolution de la fréquentation scolaire des enfants de 6 à 14 ans", source: "Adapté de Département de l'Instruction publique du Québec, Rapport du surintendant de l'Instruction publique de la province de Québec, Québec, Imprimeur du Roi, vers 1940."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "Plusieurs enfants quittent l'école avant l'âge de 14 ans (la situation scolaire des enfants au Québec). En 1943, le gouvernement adopte une loi rendant la fréquentation scolaire obligatoire (une intervention du gouvernement du Québec). Cette mesure augmente la fréquentation scolaire des enfants (une conséquence de cette intervention).",
+ updatedAt: "2026-07-18T19:42:42.096Z"
 }
 ]
