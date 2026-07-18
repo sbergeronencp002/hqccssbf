@@ -1305,7 +1305,8 @@ const REGLETTES = {
 "Q768": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
 "Q769": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q770": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la différence."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la différence."}, {pts: 0, desc: "L'élève dégage incorrectement la différence ou ne la dégage pas."}]},
-"Q771": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q771": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q772": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -13746,5 +13747,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Le réseau scolaire anglophone offre un meilleur accès à l'enseignement secondaire.\nLe réseau scolaire anglophone possède davantage d'écoles secondaires.\nLe réseau scolaire protestant développe davantage l'enseignement secondaire.",
  updatedAt: "2026-07-18T19:25:40.389Z"
+},
+{
+ id: "Q772",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une raison pour laquelle le gouvernement du Québec adopte une loi sur la fréquentation scolaire obligatoire en 1943.",
+ aspects: [{aspect: "Éducation et formation technique"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Au début des années 1940, de nombreux enfants quittent encore l'école avant la fin de leurs études afin de travailler ou d'aider leur famille. Cette situation préoccupe plusieurs réformateurs de l'éducation. »", source: "Adapté de Dominique Marshall, Aux origines sociales de l'État-providence : Familles québécoises, obligation scolaire et allocations familiales, 1940-1955, Montréal, Presses de l'Université de Montréal, 1998."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Le gouvernement souhaite réduire l'abandon scolaire.\nPlusieurs enfants quittent l'école trop tôt.\nDe nombreux jeunes abandonnent leurs études pour travailler.",
+ updatedAt: "2026-07-18T19:29:50.482Z"
 }
 ]
