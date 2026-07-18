@@ -1311,7 +1311,8 @@ const REGLETTES = {
 "Q775": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q776": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q777": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q778": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]}
+"Q778": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
+"Q779": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -13848,5 +13849,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les deux acteurs encouragent le perfectionnement des pratiques agricoles.",
  updatedAt: "2026-07-18T19:57:06.688Z"
+},
+{
+ id: "Q779",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ enonce: "Expliquez comment la situation économique des années 1930 favorise l'adoption de politiques keynésiennes.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• la situation économique des années 1930\n• une politique keynésienne mise en place par le gouvernement\n• une conséquence de cette politique",
+ aspects: [{aspect: "Grande dépression"}, {aspect: "Remise en question du capitalisme"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "tableau_chomage.jpg", soustitre: "Évolution du taux de chômage au Canada", source: "Adapté de Michael Bliss, The Depression Years: Canada in the 1930s, McClelland and Stewart, 1983; Statistique Canada, séries historiques sur le marché du travail."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« L’État ne peut demeurer indifférent devant les difficultés économiques. Il doit orienter le développement de la province et favoriser une meilleure utilisation de ses ressources. »", source: "Adélard Godbout, premier ministre du Québec, 1943."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "grands_travaux.jpg", soustitre: "Chantier de travaux publics au Québec dans les années 1930", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "La crise économique des années 1930 entraîne un chômage élevé et un ralentissement de l'économie (la situation économique des années 1930). Le gouvernement intervient davantage en lançant des travaux publics afin de stimuler l'économie (une politique keynésienne mise en place par le gouvernement). Cette intervention favorise la création d'emplois et contribue à la relance économique (une conséquence de cette politique).",
+ updatedAt: "2026-07-18T21:05:57.609Z"
 }
 ]
