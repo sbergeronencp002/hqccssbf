@@ -1312,7 +1312,7 @@ const REGLETTES = {
 "Q776": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q777": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q778": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
-"Q779": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q780": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]}
 }
 
 const IMAGE_DB = {
@@ -13851,20 +13851,21 @@ const QUESTIONS = [
  updatedAt: "2026-07-18T19:57:06.688Z"
 },
 {
- id: "Q779",
+ id: "Q780",
  niveau: 4,
- oi: "Établir des liens de causalité",
+ oi: "Mettre en relation des faits",
  periode: "P6 — 1896 – 1945",
- points: 3,
- enonce: "Expliquez comment la situation économique des années 1930 favorise l'adoption de politiques keynésiennes.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• la situation économique des années 1930\n• une politique keynésienne mise en place par le gouvernement\n• une conséquence de cette politique",
- aspects: [{aspect: "Grande dépression"}, {aspect: "Remise en question du capitalisme"}],
+ points: 2,
+ soustag: "3 documents",
+ enonce: "Les documents A à C présentent trois idéologies présentes au Québec durant la première moitié du XXᵉ siècle. Associez chacun des documents à l'idéologie correspondante.",
+ aspects: [{aspect: "Remise en question du capitalisme"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document A", ref: "tableau_chomage.jpg", soustitre: "Évolution du taux de chômage au Canada", source: "Adapté de Michael Bliss, The Depression Years: Canada in the 1930s, McClelland and Stewart, 1983; Statistique Canada, séries historiques sur le marché du travail."}]},
-  {type: "textes", cols: [{titre: "Document B", texte: "« L’État ne peut demeurer indifférent devant les difficultés économiques. Il doit orienter le développement de la province et favoriser une meilleure utilisation de ses ressources. »", source: "Adélard Godbout, premier ministre du Québec, 1943."}]},
-  {type: "textes", cols: [{titre: "Document C", ref: "grands_travaux.jpg", soustitre: "Chantier de travaux publics au Québec dans les années 1930", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}
+  {type: "textes", cols: [{titre: "Document A", texte: "« La prospérité repose sur l'initiative individuelle, l'entreprise privée et la liberté du commerce. »", auteur: "Joseph Versailles - président de la Chambre de commerce de Montréal", source: "Adapté de Joseph Versailles, allocutions à la Chambre de commerce du district de Montréal, vers 1935."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« L'État doit intervenir afin de favoriser le développement économique et assurer le bien-être de la population. »", auteur: "Adélard Godbout - premier ministre du Québec", source: "Adapté des Débats de l'Assemblée législative du Québec, 1943."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Il faut un gouvernement fort, un chef unique et une nation unie pour rétablir l'ordre et la discipline. »", auteur: "Adrien Arcand - chef du Parti national social chrétien", source: "Adapté d'Adrien Arcand, discours et écrits publiés dans Le Goglu et Le Fasciste canadien, années 1930."}]}
  ],
- reponse: {type: "lignes", nombre: 5},
- guide: "La crise économique des années 1930 entraîne un chômage élevé et un ralentissement de l'économie (la situation économique des années 1930). Le gouvernement intervient davantage en lançant des travaux publics afin de stimuler l'économie (une politique keynésienne mise en place par le gouvernement). Cette intervention favorise la création d'emplois et contribue à la relance économique (une conséquence de cette politique).",
- updatedAt: "2026-07-18T21:05:57.609Z"
+ reponse: {type: "mettre-en-relation", elements: ["Capitalisme", "Fascisme", "Keynésianisme"]},
+ guide: {type: "grille", entetes: ["Capitalisme", "Fascisme", "Keynésianisme"], rangees: [["A", "C", "B"]]},
+ updatedAt: "2026-07-18T21:10:11.276Z"
 }
 ]
