@@ -13868,7 +13868,7 @@ const QUESTIONS = [
  ],
  reponse: {type: "mettre-en-relation", elements: ["Capitalisme", "Fascisme", "Keynésianisme"]},
  guide: {type: "grille", entetes: ["Capitalisme", "Fascisme", "Keynésianisme"], rangees: [["A", "C", "B"]]},
- updatedAt: "2026-07-18T21:10:11.276Z"
+ updatedAt: "2026-07-18T21:23:01.733Z"
 },
 {
  id: "Q781",
