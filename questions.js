@@ -1335,7 +1335,8 @@ const REGLETTES = {
 "Q797": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
 "Q798": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q799": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
-"Q800": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q800": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q801": {oi: "Situer dans le temps", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps. (4 sur 4)"}, {pts: 1, desc: "L'élève situe certains faits dans le temps. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"}]}
 }
 
 const IMAGE_DB = {
@@ -14298,5 +14299,24 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 5},
  guide: "La Grande Dépression entraîne un chômage important (la situation économique des années 1930). Le gouvernement provincial ouvre l'Abitibi à la colonisation afin d'y établir des familles (une région ouverte à la colonisation). Cette mesure favorise le peuplement de cette région (une conséquence de cette mesure).",
  updatedAt: "2026-07-19T13:16:09.629Z"
+},
+{
+ id: "Q801",
+ niveau: 4,
+ oi: "Situer dans le temps",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Avant et après",
+ enonce: "Les documents A à D présentent des événements marquants de l'évolution du statut politique du Canada. Indiquez si chacun de ces événements se déroule avant ou après les Années folles.",
+ aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Seconde Guerre mondiale"}, {aspect: "Statut du Canada dans l'Empire britannique"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "statut_de_westminster.jpg", soustitre: "L’adoption du Statut de Westminster", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« La signature distincte du traité par le Canada et son admission à la Société des Nations témoignent de la reconnaissance de son statut international. »", soustitre: "Discours de Robert Laird Borden sur la Société des Nations", source: "Adapté de Robert Laird Borden, Canada and the Peace, discours prononcé à la Chambre des communes du Canada, 2 septembre 1919."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Parmi les troupes alliées qui débarquent en Normandie, environ 14 000 soldats canadiens prennent d’assaut la plage Juno. »", source: "Adapté du Musée canadien de la guerre, Le Canada au jour J."}]},
+  {type: "textes", cols: [{titre: "Document D", ref: "guerre_des_boers_1899.jpg", soustitre: "Le Canada participe à la guerre des Boers", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}
+ ],
+ reponse: {type: "avant-apres", label: "Les Années folles"},
+ guide: {type: "grille", entetes: ["Avant", "Les Années folles", "Après"], rangees: [["A et C", "", "B et D"]]},
+ updatedAt: "2026-07-19T14:08:15.025Z"
 }
 ]
