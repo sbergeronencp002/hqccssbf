@@ -1347,7 +1347,8 @@ const REGLETTES = {
 "Q810": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
 "Q813": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
 "Q812": {oi: "Situer dans le temps", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps. (4 sur 4)"}, {pts: 1, desc: "L'élève situe certains faits dans le temps. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"}]},
-"Q814": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q814": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q815": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -14540,5 +14541,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Faciliter le retour des anciens combattants à la vie civile.",
  updatedAt: "2026-07-19T19:54:30.929Z"
+},
+{
+ id: "Q815",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Convergence – 2 acteurs",
+ enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Le Canada a le devoir d'aider les hommes qui reviennent du service militaire à reprendre leur place dans la société. »", auteur: "Robert Laird Borden", source: "Adapté de Robert Laird Borden, discours, 1919."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les anciens combattants méritent un soutien afin de reconstruire leur vie après les sacrifices consentis durant la guerre. »", auteur: "Newton Wesley Rowell", source: "Adapté de Newton Wesley Rowell, discours, 1919."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les anciens combattants doivent être soutenus.",
+ updatedAt: "2026-07-19T19:55:35.102Z"
 }
 ]
