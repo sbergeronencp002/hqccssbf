@@ -1343,7 +1343,8 @@ const REGLETTES = {
 "Q806": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q807": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q808": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q809": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]}
+"Q809": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
+"Q810": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -14453,5 +14454,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "La conscription.\nAu service militaire obligatoire.",
  updatedAt: "2026-07-19T19:35:35.482Z"
+},
+{
+ id: "Q810",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Changement",
+ enonce: "À partir des documents A et B, indiquez s'il y a changement ou continuité concernant le mode de recrutement des soldats entre 1914 et 1917.",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Au début de la guerre, le Canada mise entièrement sur le volontariat pour recruter les hommes destinés au Corps expéditionnaire canadien.", source: "Adapté de Desmond Morton, Une histoire militaire du Canada, Athabasca University Press, 2007."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les pertes grandissantes rendent le recrutement plus difficile et obligent le gouvernement à envisager d'autres solutions pour maintenir les effectifs. »", source: "Adapté de Béatrice Richard, La Première Guerre mondiale, 1914-1918, Septentrion, 2001."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Il y a changement, car le recrutement passe du volontariat à la conscription.\nIl y a changement, car le recrutement passe du volontariat au service militaire obligatoire.",
+ updatedAt: "2026-07-19T19:39:43.700Z"
 }
 ]
