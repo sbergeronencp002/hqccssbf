@@ -14119,11 +14119,11 @@ const QUESTIONS = [
  points: 2,
  soustag: "Cause",
  enonce: "Indiquez une raison pour laquelle le gouvernement fédéral renforce le contrôle de l'immigration durant les années 1930.",
- aspects: [{aspect: "Flux migratoires"}],
+ aspects: [{aspect: "Flux migratoires"}, {aspect: "Grande dépression"}],
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_chomage.jpg", soustitre: "Évolution du taux de chômage au Canada", source: "Adapté de Michael Bliss, The Depression Years: Canada in the 1930s, McClelland and Stewart, 1983; Statistique Canada, séries historiques sur le marché du travail."}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "Le chômage est élevé durant la Grande Dépression.\nLa crise économique réduit les possibilités d'emploi.\nLe gouvernement veut protéger les emplois des Canadiens",
- updatedAt: "2026-07-19T11:33:58.098Z"
+ updatedAt: "2026-07-19T11:36:05.956Z"
 },
 {
  id: "Q790",
