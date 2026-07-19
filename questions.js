@@ -1345,7 +1345,7 @@ const REGLETTES = {
 "Q808": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q809": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
 "Q810": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
-"Q812": {oi: "Situer dans le temps", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps. (4 sur 4)"}, {pts: 1, desc: "L'élève situe certains faits dans le temps. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"}]}
+"Q813": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1756,8 +1756,8 @@ const IMAGE_DB = {
 "tableau_volontairtes_ww1.jpg": {src: "images/tableau_volontairtes_ww1.jpg"},
 "tableau_personnes_internees.jpg": {src: "images/tableau_personnes_internees.jpg", w: 1200, h: 800},
 "tableau_volontaires_pertes_ww1.jpg": {src: "images/tableau_volontaires_pertes_ww1.jpg"},
-"discours_conscription_1917.jpg": {src: "images/discours_conscription_1917.jpg"},
-"tableau_canadiens_mobilises.jpg": {src: "images/tableau_canadiens_mobilises.jpg"}
+"tableau_canadiens_mobilises.jpg": {src: "images/tableau_canadiens_mobilises.jpg"},
+"discours_conscription_1917.jpg": {src: "images/discours_conscription_1917.jpg"}
 }
 
 const QUESTIONS = [
@@ -14507,5 +14507,22 @@ const QUESTIONS = [
  reponse: {type: "avant-apres", label: "Les Années folles"},
  guide: {type: "grille", entetes: ["Avant", "Les Années folles", "Après"], rangees: [["A et D", "", "B et C"]]},
  updatedAt: "2026-07-19T19:46:13.097Z"
+},
+{
+ id: "Q813",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Convergence – 2 acteurs",
+ enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Chaque Canadien peut contribuer à la victoire, que ce soit au front, dans les usines ou par son travail quotidien. »", auteur: "Robert Laird Borden", source: "Adapté de Robert Laird Borden, discours, 1917."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les femmes accomplissent un travail essentiel en soutenant les soldats et en maintenant la production pendant la guerre. »", auteur: "Nellie McClung", source: "Adapté de Nellie McClung, In Times Like These, 1915."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Toute la population doit contribuer à l'effort de guerre.",
+ updatedAt: "2026-07-19T19:47:43.835Z"
 }
 ]
