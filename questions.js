@@ -1740,7 +1740,8 @@ const IMAGE_DB = {
 "tableau_provenance_immigrants.jpg": {src: "images/tableau_provenance_immigrants.jpg"},
 "magasins_xenophobie.jpg": {src: "images/magasins_xenophobie.jpg"},
 "tableau_familles_abitibi.jpg": {src: "images/tableau_familles_abitibi.jpg", w: 1200, h: 777},
-"soupe_populaire.jpg": {src: "images/soupe_populaire.jpg", w: 1200, h: 841}
+"soupe_populaire.jpg": {src: "images/soupe_populaire.jpg", w: 1200, h: 841},
+"affiche_victoire_ww2.jpg": {src: "images/affiche_victoire_ww2.jpg", w: 957, h: 1200}
 }
 
 const QUESTIONS = [
@@ -13308,11 +13309,11 @@ const QUESTIONS = [
  documents: [
   {type: "textes", cols: [{titre: "Document A", ref: "tableau_depenses_ww2.jpg", soustitre: "Évolution des dépenses du gouvernement fédéral", source: "Adapté de Statistique Canada, Principales dépenses fédérales, années terminées le 31 mars, 1930 à 1946, Annuaire du Canada, édition de 1947; Historical Statistics of Canada, section H."}]},
   {type: "textes", cols: [{titre: "Document B", texte: "« Pour soutenir l'effort de guerre, l'État mobilise non seulement les ressources humaines et industrielles, mais aussi l'épargne de la population, appelée à contribuer directement au financement du conflit. »", source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec, t. 4, Sillery, Septentrion, 1997."}]},
-  {type: "textes", cols: [{titre: "Document C", ref: "afiche_enrolement_ww2.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]}
+  {type: "textes", cols: [{titre: "Document C", ref: "affiche_victoire_ww2.jpg", soustitre: "Affiche de propagande encourageant l'effort de guerre", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]}
  ],
  reponse: {type: "lignes", nombre: 5},
  guide: "Le Canada participe à la Seconde Guerre mondiale en envoyant des hommes au front (la participation militaire du Canada à la Seconde Guerre mondiale). Les dépenses du gouvernement fédéral augmentent (les dépenses du gouvernement fédéral). Pour les financer, le gouvernement vend des obligations de la Victoire (un moyen de financement mis en place par le gouvernement fédéral).",
- updatedAt: "2026-07-17T03:29:12.552Z"
+ updatedAt: "2026-07-19T13:59:06.991Z"
 },
 {
  id: "Q737",
