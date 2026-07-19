@@ -1332,7 +1332,8 @@ const REGLETTES = {
 "Q794": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q795": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q796": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q797": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]}
+"Q797": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
+"Q798": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -14248,5 +14249,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 1},
  guide: "La colonisation de nouvelles régions.\nL'ouverture de nouvelles régions à la colonisation.\nLe plan Gordon.",
  updatedAt: "2026-07-19T13:07:03.557Z"
+},
+{
+ id: "Q798",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Conséquence",
+ enonce: "Indiquez une conséquence des programmes de colonisation durant les années 1930.",
+ aspects: [{aspect: "Grande dépression"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_familles_abitibi.jpg", soustitre: "Évolution du nombre de familles établies en Abitibi", source: "Adapté de Benoît-Beaudry Gourd, Histoire de l'Abitibi-Témiscamingue, Institut québécois de recherche sur la culture, 1995."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Le peuplement de nouvelles régions.\nLa mise en valeur de nouvelles terres agricoles.\nLa création de nouvelles paroisses.\nL'augmentation de la population de l'Abitibi.\nLe développement de nouvelles communautés agricoles.",
+ updatedAt: "2026-07-19T13:08:03.422Z"
 }
 ]
