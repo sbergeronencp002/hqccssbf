@@ -1344,7 +1344,8 @@ const REGLETTES = {
 "Q807": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q808": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q809": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
-"Q810": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]}
+"Q810": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
+"Q811": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1754,7 +1755,8 @@ const IMAGE_DB = {
 "tableau_blesses_morts_ww1.jpg": {src: "images/tableau_blesses_morts_ww1.jpg"},
 "tableau_volontairtes_ww1.jpg": {src: "images/tableau_volontairtes_ww1.jpg"},
 "tableau_personnes_internees.jpg": {src: "images/tableau_personnes_internees.jpg", w: 1200, h: 800},
-"tableau_volontaires_pertes_ww1.jpg": {src: "images/tableau_volontaires_pertes_ww1.jpg"}
+"tableau_volontaires_pertes_ww1.jpg": {src: "images/tableau_volontaires_pertes_ww1.jpg"},
+"tableau_canadiens_mobilises.jpg": {src: "images/tableau_canadiens_mobilises.jpg"}
 }
 
 const QUESTIONS = [
@@ -14471,5 +14473,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Il y a changement, car le recrutement passe du volontariat à la conscription.\nIl y a changement, car le recrutement passe du volontariat au service militaire obligatoire.",
  updatedAt: "2026-07-19T19:39:43.700Z"
+},
+{
+ id: "Q811",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une raison pour laquelle de nombreuses femmes occupent de nouveaux emplois durant la Première Guerre mondiale.",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_canadiens_mobilises.jpg", soustitre: "Évolution du nombre de Canadiens mobilisés durant la Première Guerre mondiale", source: "Adapté de Bibliothèque et Archives Canada, dossiers du Corps expéditionnaire canadien."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Le départ de nombreux hommes pour le front (ou la mobilisation de nombreux hommes) crée des besoins de main-d'œuvre dans plusieurs secteurs.",
+ updatedAt: "2026-07-19T19:42:56.503Z"
 }
 ]
