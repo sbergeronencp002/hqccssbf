@@ -1724,7 +1724,8 @@ const IMAGE_DB = {
 "tableau_maladies.jpg": {src: "images/tableau_maladies.jpg"},
 "tableau_effectif_religieux.jpg": {src: "images/tableau_effectif_religieux.jpg"},
 "droit_de_vote_femmes_quebec_1940.jpg": {src: "images/droit_de_vote_femmes_quebec_1940.jpg"},
-"revue_action_francaise.jpg": {src: "images/revue_action_francaise.jpg"}
+"revue_action_francaise.jpg": {src: "images/revue_action_francaise.jpg"},
+"portrait_adelard_godbout.jpg": {src: "images/portrait_adelard_godbout.jpg", w: 900, h: 1200}
 }
 
 const QUESTIONS = [
@@ -14043,13 +14044,13 @@ const QUESTIONS = [
  enonce: "Les documents A à C présentent trois idéologies présentes au Québec durant la première moitié du XXᵉ siècle. Associez chacun des documents à l'idéologie correspondante.",
  aspects: [{aspect: "Remise en question du capitalisme"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document A", ref: "portrait_adrien_arcand.jpg", soustitre: "Adrien Arcand", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]},
-  {type: "textes", cols: [{titre: "Document B", texte: "« La prospérité d'un pays dépend de l'initiative privée et de la liberté accordée aux entreprises. »", auteur: "Herbert Samuel Holt - président de la Banque royale du Canada", source: "Adapté de discours et allocutions de Herbert Samuel Holt, président de la Banque Royale du Canada et de Montreal Light, Heat and Power, années 1920-1930."}]},
-  {type: "textes", cols: [{titre: "Document C", ref: "portrait_richard_bennett.jpg", soustitre: "Portrait de Richard B. Bennett"}]}
+  {type: "textes", cols: [{titre: "Document A", texte: "« Les divisions politiques affaiblissent le pays; une autorité forte doit guider la nation. »", auteur: "Adrien Arcand", source: "Adapté d'Adrien Arcand, discours publics, années 1930."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les travailleurs doivent contrôler les moyens de production afin d'éliminer les inégalités créées par le capitalisme. »", auteur: "Bréhaut Ryerson - militant", source: "Adapté de Stanley B. Ryerson, écrits publiés dans The Communist, années 1930."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "portrait_adelard_godbout.jpg", soustitre: "Portrait de Adélard Godbout", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]}
  ],
- reponse: {type: "mettre-en-relation", elements: ["Capitalisme", "Fascisme", "Keynésianisme"]},
- guide: {type: "grille", entetes: ["Capitalisme", "Fascisme", "Keynésianisme"], rangees: [["B", "A", "C"]]},
- updatedAt: "2026-07-18T21:14:06.205Z"
+ reponse: {type: "mettre-en-relation", elements: ["Communisme", "Fascisme", "Keynésianisme"]},
+ guide: {type: "grille", entetes: ["Communisme", "Fascisme", "Keynésianisme"], rangees: [["B", "A", "C"]]},
+ updatedAt: "2026-07-19T00:05:48.027Z"
 },
 {
  id: "Q785",
