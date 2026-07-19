@@ -1339,7 +1339,8 @@ const REGLETTES = {
 "Q801": {oi: "Situer dans le temps", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps. (4 sur 4)"}, {pts: 1, desc: "L'élève situe certains faits dans le temps. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"}]},
 "Q802": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q803": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]},
-"Q804": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q804": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q805": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]}
 }
 
 const IMAGE_DB = {
@@ -14371,5 +14372,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Le Canada participe à la Première Guerre mondiale parce qu’il fait partie de l’Empire britannique.",
  updatedAt: "2026-07-19T18:34:58.721Z"
+},
+{
+ id: "Q805",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Cause et conséquence",
+ enonce: "Les documents A et B présentent des informations sur la Loi sur les mesures de guerre. Indiquez le document qui présente une cause de son adoption et celui qui présente une conséquence de son adoption.",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "camp_internement_ww2.jpg", soustitre: "Internement de civils dans un camp canadien", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Le gouvernement doit disposer de pouvoirs suffisants pour assurer la sécurité, la défense, la paix, l'ordre et le bien-être du Canada pendant la durée de la guerre. »", source: "Adapté de Loi sur les mesures de guerre, S.C. 1914, c. 2, Parlement du Canada, 22 août 1914."}]}
+ ],
+ reponse: {type: "cause-consequence"},
+ guide: {type: "grille", entetes: ["Cause", "Conséquence"], rangees: [["B", "A"]]},
+ updatedAt: "2026-07-19T19:25:40.465Z"
 }
 ]
