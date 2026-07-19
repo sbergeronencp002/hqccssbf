@@ -1333,7 +1333,8 @@ const REGLETTES = {
 "Q795": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q796": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q797": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
-"Q798": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
+"Q798": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
+"Q799": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1737,7 +1738,8 @@ const IMAGE_DB = {
 "portrait_adelard_godbout.jpg": {src: "images/portrait_adelard_godbout.jpg", w: 900, h: 1200},
 "tableau_provenance_immigrants.jpg": {src: "images/tableau_provenance_immigrants.jpg"},
 "magasins_xenophobie.jpg": {src: "images/magasins_xenophobie.jpg"},
-"tableau_familles_abitibi.jpg": {src: "images/tableau_familles_abitibi.jpg", w: 1200, h: 777}
+"tableau_familles_abitibi.jpg": {src: "images/tableau_familles_abitibi.jpg", w: 1200, h: 777},
+"soupe_populaire.jpg": {src: "images/soupe_populaire.jpg", w: 1200, h: 841}
 }
 
 const QUESTIONS = [
@@ -14263,5 +14265,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Le peuplement de nouvelles régions.\nLa mise en valeur de nouvelles terres agricoles.\nLa création de nouvelles paroisses.\nL'augmentation de la population de l'Abitibi.\nLe développement de nouvelles communautés agricoles.",
  updatedAt: "2026-07-19T13:08:03.422Z"
+},
+{
+ id: "Q799",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Conséquence",
+ enonce: "Indiquez une conséquence de la création des secours directs durant les années 1930.",
+ aspects: [{aspect: "Grande dépression"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "soupe_populaire.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les familles pauvres reçoivent une aide financière.\nLes chômeurs obtiennent une aide gouvernementale.\nLes municipalités distribuent de l'aide aux familles.",
+ updatedAt: "2026-07-19T13:11:03.962Z"
 }
 ]
