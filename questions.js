@@ -1353,7 +1353,8 @@ const REGLETTES = {
 "Q817": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
 "Q818": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
 "Q819": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la similitude."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."}, {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}]},
-"Q820": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]}
+"Q820": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]},
+"Q821": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1768,7 +1769,8 @@ const IMAGE_DB = {
 "discours_conscription_1917.jpg": {src: "images/discours_conscription_1917.jpg"},
 "tableau_femmes_ww1_ww2.jpg": {src: "images/tableau_femmes_ww1_ww2.jpg"},
 "tableau_depenses_gvt_ww1_ww2.jpg": {src: "images/tableau_depenses_gvt_ww1_ww2.jpg"},
-"tableau_besoins_volontaires_ww2.jpg": {src: "images/tableau_besoins_volontaires_ww2.jpg", w: 1200, h: 800}
+"tableau_besoins_volontaires_ww2.jpg": {src: "images/tableau_besoins_volontaires_ww2.jpg", w: 1200, h: 800},
+"femmes_usines_ww2.jpg": {src: "images/femmes_usines_ww2.jpg"}
 }
 
 const QUESTIONS = [
@@ -14646,5 +14648,19 @@ const QUESTIONS = [
  reponse: {type: "cause-consequence"},
  guide: {type: "grille", entetes: ["Cause", "Conséquence"], rangees: [["B", "A"]]},
  updatedAt: "2026-07-19T23:51:36.230Z"
+},
+{
+ id: "Q821",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Conséquence",
+ enonce: "Indiquez une conséquence de la mobilisation des hommes durant la Seconde Guerre mondiale.",
+ aspects: [{aspect: "Seconde Guerre mondiale"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "femmes_usines_ww2.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les femmes occupent davantage d'emplois dans les industries de guerre.\nUne pénurie de main-d'œuvre favorise l'embauche des femmes.\nLa production industrielle est soutenue par le travail des femmes.\nLes femmes occupent des emplois traditionnellement réservés aux hommes.",
+ updatedAt: "2026-07-19T23:53:31.449Z"
 }
 ]
