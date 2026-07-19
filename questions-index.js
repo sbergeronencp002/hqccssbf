@@ -1462,5 +1462,6 @@ const QUESTIONS = [
  aspects: [{aspect: "Première Guerre mondiale"}],
  enonce: "Expliquez comment la situation des Alliés pendant la Première Guerre mondiale divise la population canadienne.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\nUne conséquence de la participation des Alliés au conflit\nUn besoin des Alliés\nUn enjeu qui divise la population canadienne",
  updatedAt: "2026-07-19T18:27:42.749Z"
-}
+},
+{id: "Q803", niveau: 4, oi: "Dégager des différences et des similitudes", periode: "P6 — 1896 – 1945", points: 2, soustag: "Divergence – 2 acteurs", aspects: [{aspect: "Première Guerre mondiale"}], enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en désaccord?", updatedAt: "2026-07-19T18:32:17.078Z"}
 ]
