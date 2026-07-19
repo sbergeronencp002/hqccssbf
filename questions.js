@@ -1352,7 +1352,8 @@ const REGLETTES = {
 "Q816": {oi: "Dégager des différences et des similitudes", variante: "acteur-positions", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q817": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
 "Q818": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
-"Q819": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la similitude."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."}, {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}]}
+"Q819": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la similitude."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."}, {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}]},
+"Q820": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]}
 }
 
 const IMAGE_DB = {
@@ -1766,7 +1767,8 @@ const IMAGE_DB = {
 "tableau_canadiens_mobilises.jpg": {src: "images/tableau_canadiens_mobilises.jpg"},
 "discours_conscription_1917.jpg": {src: "images/discours_conscription_1917.jpg"},
 "tableau_femmes_ww1_ww2.jpg": {src: "images/tableau_femmes_ww1_ww2.jpg"},
-"tableau_depenses_gvt_ww1_ww2.jpg": {src: "images/tableau_depenses_gvt_ww1_ww2.jpg"}
+"tableau_depenses_gvt_ww1_ww2.jpg": {src: "images/tableau_depenses_gvt_ww1_ww2.jpg"},
+"tableau_besoins_volontaires_ww2.jpg": {src: "images/tableau_besoins_volontaires_ww2.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -14627,5 +14629,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Dans les deux cas, le gouvernement fédéral obtient des pouvoirs exceptionnels.\nDans les deux cas, le gouvernement fédéral peut limiter certaines libertés civiles.",
  updatedAt: "2026-07-19T23:47:02.761Z"
+},
+{
+ id: "Q820",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Cause et conséquence",
+ enonce: "Le gouvernement canadien organise un plébiscite sur la conscription en 1942. Indiquez le document qui présente une cause et le document qui présente une conséquence.",
+ aspects: [{aspect: "Seconde Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Devant les besoins pressants de l'armée, le gouvernement décide d'envoyer des conscrits servir outre-mer afin de renforcer les forces canadiennes. »", source: "Adapté de William Lyon Mackenzie King, déclaration à la Chambre des communes du Canada annonçant l'envoi des conscrits outre-mer, Ottawa, novembre 1944."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "tableau_besoins_volontaires_ww2.jpg", soustitre: "Évolution des besoins militaires et des volontaires durant la Seconde Guerre mondiale", source: "Adapté de Anciens Combattants Canada, ressources historiques sur la mobilisation canadienne durant la Seconde Guerre mondiale."}]}
+ ],
+ reponse: {type: "cause-consequence"},
+ guide: {type: "grille", entetes: ["Cause", "Conséquence"], rangees: [["B", "A"]]},
+ updatedAt: "2026-07-19T23:51:36.230Z"
 }
 ]
