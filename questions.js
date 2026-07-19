@@ -1337,7 +1337,8 @@ const REGLETTES = {
 "Q799": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q800": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q801": {oi: "Situer dans le temps", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps. (4 sur 4)"}, {pts: 1, desc: "L'élève situe certains faits dans le temps. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"}]},
-"Q802": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q802": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q803": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -14338,5 +14339,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 5},
  guide: "Les Alliés subissent de lourdes pertes humaines (une conséquence de la participation des Alliés au conflit). Ils ont besoin de nouvelles troupes (un besoin des Alliés), ce qui amène le gouvernement canadien à imposer la conscription. Cette mesure divise la population canadienne (un enjeu qui divise la population canadienne), notamment entre les partisans et les opposants au service militaire obligatoire.",
  updatedAt: "2026-07-19T18:27:42.749Z"
+},
+{
+ id: "Q803",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Divergence – 2 acteurs",
+ enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en désaccord?",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Lorsque la Grande-Bretagne est en guerre, le Canada doit remplir son devoir envers l'Empire et participer au conflit. »", auteur: "Sam Hughes, ministre canadien de la Milice et de la Défense", source: "Adapté de Sam Hughes, discours à la Chambre des communes du Canada, Ottawa, 1914."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Le Canada ne doit pas sacrifier ses intérêts nationaux dans une guerre européenne qui ne menace ni son territoire ni sa population. »", auteur: "Henri Bourassa - journaliste et fondateur du Devoir"}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "La participation du Canada à la Première Guerre mondiale.",
+ updatedAt: "2026-07-19T18:32:17.078Z"
 }
 ]
