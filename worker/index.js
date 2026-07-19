@@ -166,6 +166,28 @@ async function fetchQuestionsRaw(token) {
   return { sha, content };
 }
 
+// Comme fetchQuestionsRaw, mais confirme la fraîcheur par une courte double lecture
+// rapprochée (même SHA deux fois) avant de continuer — voir la section « Latence de
+// propagation de l'API GitHub » de CLAUDE.md : les réplicas de lecture de l'API Contents
+// peuvent rester en retard jusqu'à ~35 s, et une lecture unique risque alors de servir de
+// base à un PUT qui écrase silencieusement une écriture plus récente sans même déclencher
+// de conflit 409 (les deux lectures/écritures touchant alors le même réplica en retard).
+// Contrairement aux voies client (fetchFreshStateStable / rvFetchStableQuestionsJs /
+// fetchStableQuestionsJs, qui réessaient jusqu'à 45 s), le Worker existe pour rester rapide
+// (~1-2 s) — on borne donc l'attente à 2 confirmations rapprochées (4 s max) plutôt qu'une
+// boucle longue : ça réduit sensiblement la fenêtre de risque sans sacrifier l'essentiel de
+// l'avantage de vitesse qui justifie l'existence même du Worker.
+async function fetchQuestionsRawStable(token) {
+  let last = await fetchQuestionsRaw(token);
+  for (let i = 0; i < 2; i++) {
+    await new Promise(r => setTimeout(r, 2000));
+    const again = await fetchQuestionsRaw(token);
+    if (again.sha === last.sha) return again;
+    last = again;
+  }
+  return last; // meilleur effort après 3 lectures — n'attend pas indéfiniment
+}
+
 // ── Backup + élagage (fire-and-forget via ctx.waitUntil) ─────────────────────
 
 async function doBackupAndPrune(token, content) {
@@ -233,10 +255,10 @@ async function handlePublish(request, env, ctx) {
 
   const token = env.GITHUB_PAT;
 
-  // 1. Récupérer l'état actuel
+  // 1. Récupérer l'état actuel (lecture stabilisée — voir fetchQuestionsRawStable)
   let sha, content, QUESTIONS, REGLETTES, IMAGE_DB;
   try {
-    ({ sha, content } = await fetchQuestionsRaw(token));
+    ({ sha, content } = await fetchQuestionsRawStable(token));
     const fn = new Function(content + '\nreturn { QUESTIONS, REGLETTES, IMAGE_DB };');
     ({ QUESTIONS, REGLETTES, IMAGE_DB } = fn());
   } catch (e) {

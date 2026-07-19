@@ -1120,12 +1120,17 @@ async function fetchQuestionsJsSource(headers) {
   return { content, sha: dq.sha };
 }
 
-// Relit questions.js à l'instant présent et retourne vrai si aucune question ne
-// référence encore `img` (dans un document ou en réponse-image) — utilisé pour
-// revérifier juste avant une suppression irréversible, au cas où une publication
-// concurrente (autre onglet / admin.html) aurait entre-temps réutilisé l'image.
+// Relit questions.js (lecture stabilisée — voir fetchStableQuestionsJs plus bas, définie
+// après cette fonction mais utilisable ici grâce au hoisting des déclarations `function`)
+// et retourne vrai si aucune question ne référence encore `img` (dans un document ou en
+// réponse-image) — utilisé pour revérifier juste avant une suppression irréversible, au cas
+// où une publication concurrente (autre onglet / admin.html) aurait entre-temps réutilisé
+// l'image. Utilise la même stabilisation que le chemin d'écriture (applyQuestionsEdit) —
+// une lecture unique risquerait de servir un réplica en retard n'ayant pas encore vu une
+// réutilisation toute récente de l'image (voir la section « Latence de propagation » de
+// CLAUDE.md).
 async function isImageStillOrphan(img) {
-  const { content } = await fetchQuestionsJsSource();
+  const { content } = await fetchStableQuestionsJs({Authorization: 'token ' + requireToken()});
   let parsed;
   try {
     parsed = new Function(content + '\n return { QUESTIONS };')();
