@@ -1351,7 +1351,8 @@ const REGLETTES = {
 "Q815": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
 "Q816": {oi: "Dégager des différences et des similitudes", variante: "acteur-positions", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q817": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
-"Q818": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]}
+"Q818": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
+"Q819": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la similitude."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."}, {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}]}
 }
 
 const IMAGE_DB = {
@@ -14609,5 +14610,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Il y a continuité, car le gouvernement fédéral augmente fortement ses dépenses afin de soutenir l'effort de guerre durant les deux conflits.",
  updatedAt: "2026-07-19T22:34:25.038Z"
+},
+{
+ id: "Q819",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Similitude",
+ enonce: "À partir des documents A et B, indiquez une similitude concernant l'adoption de la Loi sur les mesures de guerre durant la Première Guerre mondiale et la Seconde Guerre mondiale.",
+ aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Seconde Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Le gouverneur en conseil peut prendre les mesures et édicter les règlements qu'il juge, en raison de l'existence d'un état de guerre, d'invasion ou d'insurrection, nécessaires à la sécurité, à la défense, à la paix, à l'ordre et au bien-être du Canada. »", soustitre: "Première Guerre mondiale", source: "Adapté de Parlement du Canada, Loi sur les mesures de guerre (War Measures Act), 1914, S.C. 1914, c. 2."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Pendant la Seconde Guerre mondiale, la Loi sur les mesures de guerre sert notamment à justifier l'internement de milliers de Canadiens d'origine japonaise et la confiscation de leurs biens. »", soustitre: "Seconde Guerre mondiale", source: "Adapté de Desmond Morton, Une histoire militaire du Canada, Montréal, Athéna Éditions, 2009."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Dans les deux cas, le gouvernement fédéral obtient des pouvoirs exceptionnels.\nDans les deux cas, le gouvernement fédéral peut limiter certaines libertés civiles.",
+ updatedAt: "2026-07-19T23:47:02.761Z"
 }
 ]
