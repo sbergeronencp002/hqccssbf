@@ -1349,7 +1349,8 @@ const REGLETTES = {
 "Q812": {oi: "Situer dans le temps", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps. (4 sur 4)"}, {pts: 1, desc: "L'élève situe certains faits dans le temps. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"}]},
 "Q814": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q815": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
-"Q816": {oi: "Dégager des différences et des similitudes", variante: "acteur-positions", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q816": {oi: "Dégager des différences et des similitudes", variante: "acteur-positions", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q817": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1761,7 +1762,8 @@ const IMAGE_DB = {
 "tableau_personnes_internees.jpg": {src: "images/tableau_personnes_internees.jpg", w: 1200, h: 800},
 "tableau_volontaires_pertes_ww1.jpg": {src: "images/tableau_volontaires_pertes_ww1.jpg"},
 "tableau_canadiens_mobilises.jpg": {src: "images/tableau_canadiens_mobilises.jpg"},
-"discours_conscription_1917.jpg": {src: "images/discours_conscription_1917.jpg"}
+"discours_conscription_1917.jpg": {src: "images/discours_conscription_1917.jpg"},
+"tableau_femmes_ww1_ww2.jpg": {src: "images/tableau_femmes_ww1_ww2.jpg"}
 }
 
 const QUESTIONS = [
@@ -14577,5 +14579,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 3},
  guide: "André Laurendeau mentionne que le Canada ne doit pas imposer la conscription, alors que William Lyon Mackenzie King et Arthur Meighen affirment le contraire.\n\nAndré Laurendeau s'oppose à la conscription, alors que William Lyon Mackenzie King et Arthur Meighen y sont favorables.",
  updatedAt: "2026-07-19T22:08:26.866Z"
+},
+{
+ id: "Q817",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Continuité",
+ enonce: "À partir du document A, indiquez un élément de continuité concernant la participation des femmes à l'effort de guerre entre la Première Guerre mondiale et la Seconde Guerre mondiale.",
+ aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Seconde Guerre mondiale"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_femmes_ww1_ww2.jpg", soustitre: "Participation des femmes à l'industrie de guerre", source: "Adapté de Statistique Canada, données historiques sur la main-d'œuvre durant les guerres mondiales."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les femmes participent à l'effort de guerre durant les deux conflits.\nLes femmes soutiennent l'effort de guerre durant les deux conflits.\nLes femmes contribuent à l'effort de guerre durant les deux guerres.",
+ updatedAt: "2026-07-19T22:27:09.095Z"
 }
 ]
