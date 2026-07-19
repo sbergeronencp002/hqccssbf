@@ -1324,7 +1324,8 @@ const REGLETTES = {
 "Q779": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q784": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
 "Q785": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
-"Q786": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]}
+"Q786": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
+"Q787": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -1725,7 +1726,8 @@ const IMAGE_DB = {
 "tableau_effectif_religieux.jpg": {src: "images/tableau_effectif_religieux.jpg"},
 "droit_de_vote_femmes_quebec_1940.jpg": {src: "images/droit_de_vote_femmes_quebec_1940.jpg"},
 "revue_action_francaise.jpg": {src: "images/revue_action_francaise.jpg"},
-"portrait_adelard_godbout.jpg": {src: "images/portrait_adelard_godbout.jpg", w: 900, h: 1200}
+"portrait_adelard_godbout.jpg": {src: "images/portrait_adelard_godbout.jpg", w: 900, h: 1200},
+"tableau_provenance_immigrants.jpg": {src: "images/tableau_provenance_immigrants.jpg"}
 }
 
 const QUESTIONS = [
@@ -14078,5 +14080,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 1},
  guide: "Le clérico-nationalisme.",
  updatedAt: "2026-07-16T12:27:20.807Z"
+},
+{
+ id: "Q787",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ soustag: "Changement ou continuité",
+ enonce: "À partir du document A, indiquez s'il y a changement ou continuité concernant les origines ethniques des immigrants entre la fin du XIXᵉ siècle et les années 1930. Justifiez votre réponse à l'aide d'un repère de temps.",
+ aspects: [{aspect: "Flux migratoires"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_provenance_immigrants.jpg", soustitre: "Évolution des origines des immigrants au Canada", source: "Adapté de Paul-André Linteau, René Durocher, Jean-Claude Robert et François Ricard, Histoire du Québec contemporain, tome 2, Boréal, 1986."}]}],
+ reponse: {type: "lignes", nombre: 3},
+ guide: "Changement\nIl y a changement, car les immigrants proviennent davantage de l'Europe de l'Est et du Sud dans les années 1930 qu'à la fin du XIXᵉ siècle.\nIl y a changement, car la proportion d'immigrants provenant des îles Britanniques diminue entre la fin du XIXᵉ siècle et les années 1930.\n\nContinuité\nIl y a continuité, car les immigrants proviennent majoritairement de l'Europe à la fin du XIXᵉ siècle et encore dans les années 1930.\nIl y a continuité, car les immigrants proviennent toujours en majorité de pays européens entre la fin du XIXᵉ siècle et les années 1930.",
+ updatedAt: "2026-07-19T11:28:02.113Z"
 }
 ]
