@@ -789,7 +789,7 @@ function exFlattenDocs(q) {
 // Détecte si l'énoncé cite explicitement des documents par lettre (« document(s) A »,
 // « A et B », « A à C »…) — même regex que exRemapTexte, sans capturer les numéros.
 function exHasDocCitation(enonce) {
-  return /documents?\s+[A-Z]/i.test(enonce || '');
+  return /[Dd]ocuments?\s+[A-Z]\b/.test(enonce || '');
 }
 
 // Construit l'ordre final des documents pour le dossier documentaire. Les documents
@@ -850,7 +850,7 @@ function exRemapTitre(titre, num) {
 // reste inchangé, car il n'est jamais précédé du mot « document »).
 function exRemapTexte(text, letterToNum) {
   if (!text) return text;
-  return text.replace(/(documents?\s+)([A-Z](?:\s*(?:et|à|,)\s*[A-Z])*)/gi, (m, prefix, letters) => {
+  return text.replace(/([Dd]ocuments?\s+)([A-Z](?:\s*(?:et|à|,)\s*[A-Z])*)\b/g, (m, prefix, letters) => {
     const replaced = letters.replace(/[A-Z]/g, ch => (letterToNum[ch] != null ? String(letterToNum[ch]) : ch));
     return prefix + replaced;
   });

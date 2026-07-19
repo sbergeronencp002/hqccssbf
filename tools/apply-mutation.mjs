@@ -15,6 +15,26 @@ if (action !== 'delete' && editingId && editingId !== question.id) {
   process.exit(1);
 }
 
+// Copie EXACTE de validateQuestionPayload (worker/index.js) : cette voie (repository_dispatch,
+// fallback quand le Worker est inaccessible) écrit directement sur main sans autre validation —
+// sans ce garde-fou, une mutation malformée (oi/niveau/periode/enonce/documents/aspects manquant
+// ou du mauvais type) corromprait questions.js et casserait le rendu pour tous les visiteurs.
+function validateQuestionPayload(q) {
+  if (typeof q !== 'object' || q === null) return 'question invalide';
+  if (typeof q.id !== 'string' || !/^Q\d+$/.test(q.id)) return 'question.id invalide (attendu "Q" suivi de chiffres)';
+  if (typeof q.oi !== 'string' || !q.oi) return 'question.oi manquant';
+  if (q.niveau !== 3 && q.niveau !== 4) return 'question.niveau invalide (attendu 3 ou 4)';
+  if (typeof q.periode !== 'string' || !q.periode) return 'question.periode manquant';
+  if (typeof q.enonce !== 'string') return 'question.enonce manquant';
+  if (q.documents !== undefined && !Array.isArray(q.documents)) return 'question.documents doit être un tableau';
+  if (q.aspects !== undefined && !Array.isArray(q.aspects)) return 'question.aspects doit être un tableau';
+  return null;
+}
+if (action !== 'delete') {
+  const payloadError = validateQuestionPayload(question);
+  if (payloadError) { console.error('Payload invalide: ' + payloadError); process.exit(1); }
+}
+
 // ── Lire et parser questions.js ──────────────────────────────────────────────
 const content = readFileSync('questions.js', 'utf-8');
 let QUESTIONS, REGLETTES, IMAGE_DB;

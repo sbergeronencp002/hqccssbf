@@ -505,7 +505,7 @@ const BRANCH = 'main';
 // jour-là venaient d'un onglet obsolète). ADMIN_BUILD doit être incrémenté à
 // chaque modification d'admin.html ; isAdminStale() compare avec la version
 // réellement déployée avant chaque publication.
-const ADMIN_BUILD = '2026-07-18-1';
+const ADMIN_BUILD = '2026-07-19-1';
 async function isAdminStale() {
   try {
     const r = await fetch(`admin.html?t=${Date.now()}`, { cache: 'no-store' });
@@ -749,13 +749,23 @@ function setEditingId(id) {
 // au déverrouillage. `exceptEl` (généralement le bouton qui déclenche l'action)
 // est aussi exclu : chaque fonction appelante gère déjà elle-même son propre
 // état disabled/texte (y compris une logique succès/erreur asymétrique).
+// Réentrant (compteur de profondeur) : un appel verrouillé imbriqué (ex. publier()
+// verrouille avant son await réseau, puis la voie Worker/directe verrouille à nouveau
+// en interne) ne fait qu'incrémenter/décrémenter plutôt que d'écraser l'état capturé
+// par l'appel englobant — sinon le second setFormLocked(true) capture un formulaire
+// déjà quasi vide, et le premier setFormLocked(false) ne réactive plus que ça.
 let _lockedFormEls = [];
+let _lockDepth = 0;
 function setFormLocked(locked, exceptEl) {
   if(locked) {
+    _lockDepth++;
+    if(_lockDepth > 1) return;
     _lockedFormEls = [...document.querySelectorAll('#app input, #app select, #app textarea, #app button')]
       .filter(el => el !== exceptEl && !el.disabled);
     _lockedFormEls.forEach(el => el.disabled = true);
   } else {
+    _lockDepth = Math.max(0, _lockDepth - 1);
+    if(_lockDepth > 0) return;
     _lockedFormEls.forEach(el => el.disabled = false);
     _lockedFormEls = [];
   }
@@ -1214,6 +1224,9 @@ async function supprimerQuestion() {
         questionsFileSha = data.sha;
         confirmedIds = new Set(currentQuestions.map(q => q.id));
         workerOk = true;
+        // Voie Worker : ne touche pas questions-index.js (voir même commentaire dans publier())
+        const idxToken = getToken();
+        if(idxToken) publishIndex(idxToken, `Supprimer ${idSupp}`);  // fire-and-forget
       } catch(we) {
         if(we.message !== 'Failed to fetch') throw we;
         // Worker inaccessible → GitHub Actions
@@ -1222,6 +1235,7 @@ async function supprimerQuestion() {
         const statusEl = { textContent: '' };
         await publierViaDispatch(token, 'delete', { id: idSupp }, null, null, `Supprimer ${idSupp}`, btn, statusEl);
         await fetchFreshState(token);
+        publishIndex(token, `Supprimer ${idSupp}`);  // fire-and-forget — apply-mutation.mjs ne touche pas questions-index.js
         workerOk = true;
       }
       if(!workerOk) return;
@@ -1375,7 +1389,8 @@ async function publishIndex(token, commitMsg) {
       body: JSON.stringify(body)
     });
     if(r2.ok) { const d2 = await r2.json(); indexFileSha = d2.content.sha; }
-  } catch(_) {}  // fire-and-forget : une erreur ici ne bloque pas
+    else indexFileSha = '';  // sha probablement obsolète (409) — force un refetch au prochain appel plutôt que d'échouer indéfiniment
+  } catch(_) { indexFileSha = ''; }  // fire-and-forget : une erreur ici ne bloque pas la publication de questions.js
 }
 
 async function loadRecentImages() {
@@ -2052,7 +2067,9 @@ function buildQuestion() {
   let reponse = false;
   const repType = document.getElementById('rep-type').value;
   if(repType === 'lignes') {
-    reponse = { type: 'lignes', nombre: parseInt(document.getElementById('rep-nombre').value) };
+    // min/max du <input> ne sont pas appliqués (pas de soumission de <form>) — clamp explicite
+    // pour éviter un nombre ≤0/NaN qui ferait planter Array(n) sur le site public (RangeError).
+    reponse = { type: 'lignes', nombre: Math.min(10, Math.max(1, parseInt(document.getElementById('rep-nombre').value) || 1)) };
   } else if(repType === 'image') {
     reponse = { type: 'image', ref: document.getElementById('rep-ref').value };
   } else if(repType === 'tableau_3col') {
@@ -2225,6 +2242,16 @@ async function publier() {
   const errors = validateForm();
   if(errors.length) { toast('Champs manquants : ' + errors.join(', '), 'err'); return; }
 
+  // Verrouiller tout de suite, avant le fetch réseau de isAdminStale() ci-dessous :
+  // sans ça, un clic sur Dupliquer/Réinitialiser/une autre question pendant cette
+  // attente changerait editingId/le formulaire sous les pieds de cette publication
+  // déjà validée. setFormLocked est réentrant (compteur de profondeur) donc le
+  // verrouillage propre à chaque voie plus bas (Worker/direct) reste sans risque.
+  const btnTop = document.getElementById('btn-publier');
+  setFormLocked(true, btnTop);
+  btnTop.disabled = true;
+
+  try {
   if(await isAdminStale()) {
     showStaleBanner();
     if(!confirm('⚠️ Cette page a été mise à jour depuis son chargement.\n\nPublier avec une version obsolète risque d\'écraser une question existante.\n\nRecommandé : annuler et recharger (F5).\n\nPublier quand même ?')) return;
@@ -2285,6 +2312,11 @@ async function publier() {
       if(r != null) currentReglettes[q.id] = r;
       questionsFileSha = data.sha;
       confirmedIds = new Set(currentQuestions.map(x => x.id));
+      // Voie Worker : questions.js est déjà à jour côté serveur mais le Worker ne touche pas
+      // à questions-index.js (chargé par index.html au démarrage) — le publier nous-mêmes ici,
+      // sinon la grille publique diverge silencieusement de questions.js indéfiniment.
+      const idxToken = getToken();
+      if(idxToken) publishIndex(idxToken, editingId ? `Modifier ${q.id} — ${q.oi}` : `Ajouter ${q.id} — ${q.oi} (${q.periode})`);  // fire-and-forget
 
       document.getElementById('q-id').value = data.nextId;
       document.getElementById('next-id-badge').textContent = data.nextId;
@@ -2310,6 +2342,7 @@ async function publier() {
         const cm = editingId ? `Modifier ${q2.id} — ${q2.oi}` : `Ajouter ${q2.id} — ${q2.oi} (${q2.periode})`;
         await publierViaDispatch(token, 'upsert', q2, r2, editingId, cm, btn, status);
         await fetchFreshState(token);
+        publishIndex(token, cm);  // fire-and-forget — apply-mutation.mjs ne touche pas questions-index.js
         const nums2 = currentQuestions.map(x=>parseInt(x.id.replace(/\D/g,''))).filter(n=>!isNaN(n));
         const nid2 = 'Q'+(nums2.length?Math.max(...nums2)+1:1);
         document.getElementById('q-id').value = nid2;
@@ -2418,6 +2451,10 @@ async function publier() {
     setFormLocked(false);
     btn.disabled = false;
     btn.textContent = 'Publier sur GitHub';
+  }
+  } finally {
+    setFormLocked(false);
+    btnTop.disabled = false;
   }
 }
 

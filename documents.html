@@ -542,7 +542,7 @@ function sizeLabel(bytes) {
 function applySizeBadge(img, bytes) {
   const cls = sizeClass(bytes);
   const label = sizeLabel(bytes);
-  document.querySelectorAll(`[data-size-badge="${img}"]`).forEach(el => {
+  document.querySelectorAll(`[data-size-badge="${CSS.escape(img)}"]`).forEach(el => {
     el.className = 'size-badge ' + cls;
     el.textContent = label;
   });

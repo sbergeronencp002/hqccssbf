@@ -32,12 +32,14 @@ jobs:
         run: node tools/apply-mutation.mjs
 
       - name: Commit et push
+        env:
+          COMMIT_MSG: ${{ github.event.client_payload.commitMsg }}
         run: |
           git config user.name "Admin HQC"
           git config user.email "noreply@hqc-cssbf.ca"
           git add questions.js
           git diff --staged --quiet && echo "Aucun changement à committer" || \
-            git commit -m "${{ github.event.client_payload.commitMsg }}"
+            git commit -m "$COMMIT_MSG"
           # La concurrency queue ci-dessus protège contre deux jobs de CETTE Action qui se
           # chevauchent, mais pas contre une publication directe (PUT admin.html/documents.html)
           # arrivée entre le checkout et ce push : un seul retry avec rebase suffit ici, le cas

@@ -182,6 +182,11 @@ function rvEscLine(s) {
 function rvEscAttr(s) {
   return rvEscLine(s).replace(/"/g,'&quot;');
 }
+// Échappe pour une chaîne JS entre apostrophes (ex. dans un onclick="…('…')") — même
+// convention que jsStr() d'app.js.
+function rvJsStr(s) {
+  return String(s).replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+}
 function rvBoldify(s) {
   return s.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 }
@@ -296,11 +301,19 @@ async function rvApplyQuestionsEdit(mutate, commitMsg) {
 // simple à raisonner que plusieurs éditions concurrentes, et suffisant en pratique.
 // `isDirty()` compare le DOM courant à la valeur chargée à l'ouverture de l'édition.
 let _rvActiveEdit = null;
+// Incrémenté à chaque nouvelle session d'édition — permet au setTimeout différé de
+// rvSave* (voir plus bas) de détecter qu'un champ a été rouvert pour édition avant
+// que le rendu différé de l'ancienne sauvegarde ne s'applique, et de s'abstenir
+// plutôt que d'écraser le texte en cours de frappe (le nœud conteneur reste
+// `.isConnected` puisque seul son innerHTML change en cas de réouverture — cette
+// vérification à elle seule ne suffit donc pas).
+let _rvEditGen = 0;
 function rvBeginEdit(key, isDirty, cancelFn) {
   if(_rvActiveEdit && _rvActiveEdit.key !== key) {
     alert('Enregistrez ou annulez l\'édition en cours avant d\'en commencer une autre.');
     return false;
   }
+  _rvEditGen++;
   _rvActiveEdit = { key, isDirty, cancel: cancelFn };
   return true;
 }
@@ -451,7 +464,7 @@ function rvRenderReponse(q) {
     if(!img) return '';
     const reduire = q.soustag === 'Ordre chronologique' || q.soustag === 'Ligne du temps';
     const imgStyle = reduire ? ' style="max-width:75%"' : '';
-    return '<div class="doc-img-wrap"><img src="' + img.src + '" alt="Image de réponse" class="doc-img"' + imgStyle + ' draggable="false" onclick="rvOpenLightbox(\'' + img.src + '\')" title="Cliquer pour agrandir"></div>';
+    return '<div class="doc-img-wrap"><img src="' + rvEscAttr(img.src) + '" alt="Image de réponse" class="doc-img"' + imgStyle + ' draggable="false" onclick="' + rvEscAttr("rvOpenLightbox('" + rvJsStr(img.src) + "')") + '" title="Cliquer pour agrandir"></div>';
   }
   if(q.reponse.type === 'lignes') {
     const n = q.reponse.nombre || 1;
@@ -583,7 +596,7 @@ function rvRenderDocColInner(col, path) {
     h += '<div style="font-size:0.75rem;color:var(--ink-2);line-height:1.5">' + rvFormatTexte(col.texte) + '</div>';
   } else if(col.ref) {
     const img2 = IMAGE_DB[col.ref];
-    if(img2) h += '<div class="doc-img-tile" style="max-width:100%" onclick="rvOpenLightbox(\'' + img2.src + '\')"><img src="' + img2.src + '" alt="' + rvEscAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:180px;object-fit:contain" draggable="false"></div>';
+    if(img2) h += '<div class="doc-img-tile" style="max-width:100%" onclick="' + rvEscAttr("rvOpenLightbox('" + rvJsStr(img2.src) + "')") + '"><img src="' + rvEscAttr(img2.src) + '" alt="' + rvEscAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:180px;object-fit:contain" draggable="false"></div>';
   }
   if(col.auteur) h += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + rvEscLine(col.auteur) + '</div>';
   if(col.source) h += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + rvEscLine(col.source) + '</div>';
@@ -613,8 +626,8 @@ function rvRenderDoc(d, origDocuments) {
     d.cols.forEach(function(col) {
       const img = IMAGE_DB[col.ref];
       if(!img) return;
-      html += '<div class="doc-img-tile" onclick="rvOpenLightbox(\'' + img.src + '\')">';
-      html += '<img src="' + img.src + '" alt="' + rvEscAttr(col.titre||col.ref||'Document') + '" draggable="false">';
+      html += '<div class="doc-img-tile" onclick="' + rvEscAttr("rvOpenLightbox('" + rvJsStr(img.src) + "')") + '">';
+      html += '<img src="' + rvEscAttr(img.src) + '" alt="' + rvEscAttr(col.titre||col.ref||'Document') + '" draggable="false">';
       if(col.titre) html += '<div class="doc-img-tile-label">' + rvEscLine(col.titre) + '</div>';
       if(col.soustitre) html += '<div class="doc-img-tile-sub">' + rvEscLine(col.soustitre) + '</div>';
       html += '</div>';
@@ -624,8 +637,8 @@ function rvRenderDoc(d, origDocuments) {
   }
   const img = IMAGE_DB[d.ref];
   if(img) {
-    let html = '<div class="doc-img-tiles"><div class="doc-img-tile" onclick="rvOpenLightbox(\'' + img.src + '\')">';
-    html += '<img src="' + img.src + '" alt="' + rvEscAttr(d.titre||d.ref||'Document') + '" style="max-width:200px;max-height:200px;object-fit:contain" draggable="false">';
+    let html = '<div class="doc-img-tiles"><div class="doc-img-tile" onclick="' + rvEscAttr("rvOpenLightbox('" + rvJsStr(img.src) + "')") + '">';
+    html += '<img src="' + rvEscAttr(img.src) + '" alt="' + rvEscAttr(d.titre||d.ref||'Document') + '" style="max-width:200px;max-height:200px;object-fit:contain" draggable="false">';
     if(d.titre) html += '<div class="doc-img-tile-label">' + rvEscLine(d.titre) + '</div>';
     html += '</div></div>';
     return html;
@@ -755,13 +768,16 @@ async function rvSaveGuide() {
     rvEndEdit();
     status.className = 'rv-guide-status ok';
     status.textContent = changed ? '✓ Enregistré.' : 'Aucun changement.';
-    // Capturer la référence DOM maintenant : si l'utilisateur navigue vers une autre
-    // carte pendant le délai, rvRenderCard() remplace tout #rv-card (nouveau nœud
-    // #rv-guide-box) — cet ancien nœud devient détaché, et `.isConnected` l'exclut,
-    // évitant d'écrire le guide de `q` sur la carte affichée entre-temps.
+    // Capturer la référence DOM et la génération d'édition maintenant : si l'utilisateur
+    // navigue vers une autre carte pendant le délai, rvRenderCard() remplace tout #rv-card
+    // (nouveau nœud #rv-guide-box) — cet ancien nœud devient détaché, et `.isConnected`
+    // l'exclut. Si l'utilisateur rouvre CE MÊME champ pour une correction avant la fin du
+    // délai, le conteneur reste `.isConnected` (seul son innerHTML change) — la génération
+    // capturée protège ce cas-là en plus.
     const box = document.getElementById('rv-guide-box');
+    const gen = _rvEditGen;
     setTimeout(() => {
-      if(box && box.isConnected) box.innerHTML = rvRenderGuide(q);
+      if(box && box.isConnected && _rvEditGen === gen) box.innerHTML = rvRenderGuide(q);
     }, 700);
   } catch(err) {
     status.className = 'rv-guide-status err';
@@ -825,9 +841,12 @@ async function rvSaveEnonce() {
     rvEndEdit();
     status.className = 'rv-guide-status ok';
     status.textContent = changed ? '✓ Enregistré.' : 'Aucun changement.';
+    // Voir le commentaire équivalent dans rvSaveGuide : la génération protège contre une
+    // réouverture du même champ avant la fin du délai (le conteneur reste `.isConnected`).
     const box = document.getElementById('rv-enonce-box');
+    const gen = _rvEditGen;
     setTimeout(() => {
-      if(box && box.isConnected) box.innerHTML = rvFormatTexte(q.enonce);
+      if(box && box.isConnected && _rvEditGen === gen) box.innerHTML = rvFormatTexte(q.enonce);
     }, 700);
   } catch(err) {
     status.className = 'rv-guide-status err';
@@ -926,9 +945,12 @@ async function rvSaveDocEdit(docIdx, colIdx) {
     rvEndEdit();
     status.className = 'rv-guide-status ok';
     status.textContent = changed ? '✓ Enregistré.' : 'Aucun changement.';
+    // Voir le commentaire équivalent dans rvSaveGuide : la génération protège contre une
+    // réouverture du même champ avant la fin du délai (le conteneur reste `.isConnected`).
     const cell = document.getElementById('rv-doc-cell-' + docIdx + '-' + colIdx);
+    const gen = _rvEditGen;
     setTimeout(() => {
-      if(cell && cell.isConnected) cell.innerHTML = rvRenderDocColInner(col, {docIdx, colIdx});
+      if(cell && cell.isConnected && _rvEditGen === gen) cell.innerHTML = rvRenderDocColInner(col, {docIdx, colIdx});
     }, 700);
   } catch(err) {
     status.className = 'rv-guide-status err';

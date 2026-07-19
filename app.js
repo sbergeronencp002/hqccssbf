@@ -629,7 +629,7 @@ function renderDoc(d, expanded = false) {
         }
       } else if(col.ref) {
         const img2 = IMAGE_DB[col.ref];
-        if(img2) h += '<div class="doc-img-tile" style="max-width:100%" onclick="openLightbox(\'' + jsStr(img2.src) + '\')"><img src="' + escAttr(img2.src) + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:180px;object-fit:contain"></div>';
+        if(img2) h += '<div class="doc-img-tile" style="max-width:100%" onclick="' + escAttr("openLightbox('" + jsStr(img2.src) + "')") + '"><img src="' + escAttr(img2.src) + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:180px;object-fit:contain"></div>';
       }
       if(col.auteur) h += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + escLine(col.auteur) + '</div>';
       if(col.source) h += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + escLine(col.source) + '</div>';
@@ -649,7 +649,7 @@ function renderDoc(d, expanded = false) {
     d.cols.forEach(function(col) {
       const img = IMAGE_DB[col.ref];
       if(!img) return;
-      html += '<div class="doc-img-tile" onclick="openLightbox(\'' + jsStr(img.src) + '\')">';
+      html += '<div class="doc-img-tile" onclick="' + escAttr("openLightbox('" + jsStr(img.src) + "')") + '">';
       html += '<img src="' + escAttr(img.src) + '" alt="' + escAttr(col.titre||col.ref||'Document') + '">';
       if(col.titre) html += '<div class="doc-img-tile-label">' + escLine(col.titre) + '</div>';
       if(col.soustitre) html += '<div class="doc-img-tile-sub">' + escLine(col.soustitre) + '</div>';
@@ -661,7 +661,7 @@ function renderDoc(d, expanded = false) {
   // Image simple
   const img = IMAGE_DB[d.ref];
   if(img) {
-    let html = '<div class="doc-img-tiles"><div class="doc-img-tile" onclick="openLightbox(\'' + jsStr(img.src) + '\')">';
+    let html = '<div class="doc-img-tiles"><div class="doc-img-tile" onclick="' + escAttr("openLightbox('" + jsStr(img.src) + "')") + '">';
     html += '<img src="' + escAttr(img.src) + '" alt="' + escAttr(d.titre||d.ref||'Document') + '" style="max-width:200px;max-height:200px;object-fit:contain">';
     if(d.titre) html += '<div class="doc-img-tile-label">' + escLine(d.titre) + '</div>';
     html += '</div></div>';
@@ -693,10 +693,10 @@ function renderReponse(q) {
     if(!img) return '';
     const reduire = q.soustag === 'Ordre chronologique' || q.soustag === 'Ligne du temps';
     const imgStyle = reduire ? ' style="max-width:75%"' : '';
-    return '<div class="doc-img-wrap"><img src="' + escAttr(img.src) + '" alt="Image de réponse" class="doc-img"' + imgStyle + ' onclick="openLightbox(\'' + jsStr(img.src) + '\')" title="Cliquer pour agrandir"></div>';
+    return '<div class="doc-img-wrap"><img src="' + escAttr(img.src) + '" alt="Image de réponse" class="doc-img"' + imgStyle + ' onclick="' + escAttr("openLightbox('" + jsStr(img.src) + "')") + '" title="Cliquer pour agrandir"></div>';
   }
   if(q.reponse.type === 'lignes') {
-    const n = q.reponse.nombre || 1;
+    const n = Math.max(1, q.reponse.nombre || 1);
     return '<div>' + Array(n).fill('<div style="border-bottom:1px solid var(--border);height:28px;margin:6px 0"></div>').join('') + '</div>';
   }
   if(q.reponse.type === 'tableau') {
@@ -998,7 +998,7 @@ async function previsualiser(guideMode) {
               const titre = (col.titreWeb && col.titre) ? col.titre : col.ref;
               docsHtml += '<td style="width:' + Math.floor(100/d.cols.length) + '%;padding:6px;vertical-align:top;border:0.5px solid var(--border)">';
               docsHtml += '<div style="font-size:0.75rem;font-style:italic;margin-bottom:4px;color:var(--ink-2)">' + escLine(titre) + '</div>';
-              if(img) docsHtml += '<img src="' + escAttr(img.src) + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:100px;object-fit:contain;cursor:pointer" onclick="openLightbox(\'' + jsStr(img.src) + '\')">';
+              if(img) docsHtml += '<img src="' + escAttr(img.src) + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:100px;object-fit:contain;cursor:pointer" onclick="' + escAttr("openLightbox('" + jsStr(img.src) + "')") + '">';
               docsHtml += '</td>';
             });
             docsHtml += '</tr></table>';
@@ -1014,7 +1014,7 @@ async function previsualiser(guideMode) {
               if(col.texte) {
                 h += '<div style="font-size:0.72rem;color:var(--ink-2);line-height:1.5">' + formatTexte(col.texte) + '</div>';
               } else if(img) {
-                h += '<img src="' + escAttr(img.src) + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:100px;object-fit:contain;cursor:pointer" onclick="openLightbox(\'' + jsStr(img.src) + '\')">';
+                h += '<img src="' + escAttr(img.src) + '" alt="' + escAttr(col.titre||col.ref||'Document') + '" style="max-width:100%;max-height:100px;object-fit:contain;cursor:pointer" onclick="' + escAttr("openLightbox('" + jsStr(img.src) + "')") + '">';
               }
               if(col.auteur) h += '<div style="font-size:0.7rem;color:var(--ink-2);margin-top:4px;font-style:italic">' + escLine(col.auteur) + '</div>';
               if(col.source) h += '<div style="font-size:0.65rem;color:var(--ink-3);margin-top:2px;font-style:italic">' + escLine(col.source) + '</div>';
@@ -1061,7 +1061,7 @@ async function previsualiser(guideMode) {
           const imgPrev = IMAGE_DB[q.reponse.ref];
           if(imgPrev) previewReponse += '<img src="' + escAttr(imgPrev.src) + '" style="max-width:100%;max-height:80px;object-fit:contain;margin:8px 0;display:block">';
         } else if(q.reponse.type === 'lignes') {
-          previewReponse = Array(q.reponse.nombre || 1).fill('<div class="reponse-ligne-pleine" style="border-bottom:1px solid #999;height:28px;margin:6px 0"></div>').join('');
+          previewReponse = Array(Math.max(1, q.reponse.nombre || 1)).fill('<div class="reponse-ligne-pleine" style="border-bottom:1px solid #999;height:28px;margin:6px 0"></div>').join('');
         } else if(q.reponse.type === 'tableau') {
           previewReponse = '<table style="border-collapse:collapse;margin:8px 0;font-size:0.8rem;">'
             + '<tr><th style="border:0.5px solid #ccc;padding:4px 8px;background:#f5f5f5"></th><th style="border:0.5px solid #ccc;padding:4px 8px;background:#f5f5f5">Document</th></tr>'
@@ -2063,8 +2063,9 @@ async function genererDocx(includeGuide=false) {
 // ===== MODE EXAMEN =====
 let examIdx = 0;
 
-function openExam() {
+async function openExam() {
   if(!panier.length) { showWarn('Le cahier est vide.'); return; }
+  await ensureDataLoaded(); // sinon q.documents/q.reponse sont undefined si le panier a été rempli sans jamais ouvrir de modal/aperçu
   examIdx = 0;
   closeCahier();
   renderExam();
