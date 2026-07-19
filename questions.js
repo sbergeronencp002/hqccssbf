@@ -1327,7 +1327,8 @@ const REGLETTES = {
 "Q786": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
 "Q788": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q789": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q791": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la similitude."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."}, {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}]}
+"Q791": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la similitude."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."}, {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}]},
+"Q792": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -14155,5 +14156,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Le gouvernement fédéral resserre les conditions d'admission des immigrants.\nLe gouvernement fédéral renforce les contrôles à l'entrée des immigrants.\nLe gouvernement fédéral limite l'entrée des immigrants.",
  updatedAt: "2026-07-19T11:38:35.097Z"
+},
+{
+ id: "Q792",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Divergence – 2 acteurs",
+ enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en désaccord?",
+ aspects: [{aspect: "Flux migratoires"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Le Canada a besoin de cultivateurs travailleurs pour mettre en valeur les terres de l'Ouest et favoriser le développement du pays.", auteur: "Clifford Sifton - ministre de l'Intérieur", source: "Adapté de Clifford Sifton, Speech on Immigration and Western Settlement, Chambre des communes du Canada, 1899."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Le gouvernement doit limiter l'immigration afin de protéger les emplois des Canadiens en cette période de difficultés économiques. »", auteur: "Henry Herbert Stevens - député conservateur", source: "Adapté de H. H. Stevens, Débats de la Chambre des communes du Canada, Ottawa, 1931."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Le nombre d'immigrants que le gouvernement doit admettre au Canada.\nLa politique d'immigration du gouvernement fédéral.\nL'admission de nouveaux immigrants au Canada.\nLes restrictions imposées à l'immigration.",
+ updatedAt: "2026-07-19T11:41:39.628Z"
 }
 ]
