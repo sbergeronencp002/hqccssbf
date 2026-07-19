@@ -1341,7 +1341,8 @@ const REGLETTES = {
 "Q803": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]},
 "Q804": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q806": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q807": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
+"Q807": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
+"Q808": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1750,7 +1751,8 @@ const IMAGE_DB = {
 "affiche_victoire_ww2.jpg": {src: "images/affiche_victoire_ww2.jpg", w: 957, h: 1200},
 "tableau_blesses_morts_ww1.jpg": {src: "images/tableau_blesses_morts_ww1.jpg"},
 "tableau_volontairtes_ww1.jpg": {src: "images/tableau_volontairtes_ww1.jpg"},
-"tableau_personnes_internees.jpg": {src: "images/tableau_personnes_internees.jpg", w: 1200, h: 800}
+"tableau_personnes_internees.jpg": {src: "images/tableau_personnes_internees.jpg", w: 1200, h: 800},
+"tableau_volontaires_pertes_ww1.jpg": {src: "images/tableau_volontaires_pertes_ww1.jpg"}
 }
 
 const QUESTIONS = [
@@ -14419,5 +14421,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Des personnes considérées comme des ressortissants ennemis sont internées.\nDes camps d'internement sont mis en place.",
  updatedAt: "2026-07-19T19:32:05.692Z"
+},
+{
+ id: "Q808",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une raison pour laquelle le gouvernement canadien adopte la Loi du service militaire en 1917.",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_volontaires_pertes_ww1.jpg", soustitre: "Évolution du recrutement et des pertes militaires canadiennes", source: "Adapté de Bibliothèque et Archives Canada, dossiers du Corps expéditionnaire canadien."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les volontaires sont trop peu nombreux pour remplacer les soldats.",
+ updatedAt: "2026-07-19T19:33:30.655Z"
 }
 ]
