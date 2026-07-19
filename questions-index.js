@@ -1451,5 +1451,6 @@ const QUESTIONS = [
  aspects: [{aspect: "Grande dépression"}],
  enonce: "Expliquez comment la situation économique des années 1930 amène le gouvernement provincial à intervenir dans les régions.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La situation économique des années 1930\n• Une intervention du gouvernement provincial dans les régions\n• Une conséquence de cette intervention",
  updatedAt: "2026-07-19T13:16:09.629Z"
-}
+},
+{id: "Q801", niveau: 4, oi: "Situer dans le temps", periode: "P6 — 1896 – 1945", points: 2, soustag: "Avant et après", aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Seconde Guerre mondiale"}, {aspect: "Statut du Canada dans l'Empire britannique"}], enonce: "Les documents A à D présentent des événements marquants de l'évolution du statut politique du Canada. Indiquez si chacun de ces événements se déroule avant ou après les Années folles.", updatedAt: "2026-07-19T14:08:15.025Z"}
 ]
