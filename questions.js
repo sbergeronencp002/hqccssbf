@@ -1329,7 +1329,7 @@ const REGLETTES = {
 "Q789": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q791": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la similitude."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."}, {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}]},
 "Q792": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]},
-"Q793": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
+"Q794": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1731,7 +1731,8 @@ const IMAGE_DB = {
 "droit_de_vote_femmes_quebec_1940.jpg": {src: "images/droit_de_vote_femmes_quebec_1940.jpg"},
 "revue_action_francaise.jpg": {src: "images/revue_action_francaise.jpg"},
 "portrait_adelard_godbout.jpg": {src: "images/portrait_adelard_godbout.jpg", w: 900, h: 1200},
-"tableau_provenance_immigrants.jpg": {src: "images/tableau_provenance_immigrants.jpg"}
+"tableau_provenance_immigrants.jpg": {src: "images/tableau_provenance_immigrants.jpg"},
+"magasins_xenophobie.jpg": {src: "images/magasins_xenophobie.jpg"}
 }
 
 const QUESTIONS = [
@@ -14188,5 +14189,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Certains groupes d'immigrants sont exclus du Canada.\nL'immigration devient plus restrictive.\nLe gouvernement limite l'admission de certains immigrants.",
  updatedAt: "2026-07-19T11:47:06.039Z"
+},
+{
+ id: "Q794",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Conséquence",
+ enonce: "indiquez une conséquence de la montée de la xénophobie envers certains groupes d'immigrants durant la première moitié du XXᵉ siècle.",
+ aspects: [{aspect: "Flux migratoires"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "magasins_xenophobie.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Des commerces appartenant à certains groupes d'immigrants sont vandalisés.\nCertains groupes d'immigrants sont victimes de violence.",
+ updatedAt: "2026-07-19T11:50:00.861Z"
 }
 ]
