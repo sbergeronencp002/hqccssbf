@@ -1330,7 +1330,8 @@ const REGLETTES = {
 "Q791": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la similitude."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."}, {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}]},
 "Q792": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]},
 "Q794": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
-"Q795": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
+"Q795": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
+"Q796": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -14218,5 +14219,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Plusieurs entreprises font faillite.\nUne forte hausse du chômage.",
  updatedAt: "2026-07-19T12:59:17.067Z"
+},
+{
+ id: "Q796",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une raison pour laquelle le gouvernement encourage la colonisation de nouvelles régions durant les années 1930.",
+ aspects: [{aspect: "Grande dépression"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_chomage.jpg", soustitre: "Évolution du taux de chômage au Canada", source: "Adapté de Michael Bliss, The Depression Years: Canada in the 1930s, McClelland and Stewart, 1983; Statistique Canada, séries historiques sur le marché du travail."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Réduire le chômage.\nProcurer des terres aux familles sans emploi.\nInstaller des chômeurs sur des terres agricoles.\nFavoriser le peuplement de nouvelles régions.",
+ updatedAt: "2026-07-19T13:05:14.331Z"
 }
 ]
