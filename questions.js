@@ -1336,7 +1336,8 @@ const REGLETTES = {
 "Q798": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q799": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q800": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q801": {oi: "Situer dans le temps", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps. (4 sur 4)"}, {pts: 1, desc: "L'élève situe certains faits dans le temps. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"}]}
+"Q801": {oi: "Situer dans le temps", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps. (4 sur 4)"}, {pts: 1, desc: "L'élève situe certains faits dans le temps. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"}]},
+"Q802": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -1742,7 +1743,9 @@ const IMAGE_DB = {
 "magasins_xenophobie.jpg": {src: "images/magasins_xenophobie.jpg"},
 "tableau_familles_abitibi.jpg": {src: "images/tableau_familles_abitibi.jpg", w: 1200, h: 777},
 "soupe_populaire.jpg": {src: "images/soupe_populaire.jpg", w: 1200, h: 841},
-"affiche_victoire_ww2.jpg": {src: "images/affiche_victoire_ww2.jpg", w: 957, h: 1200}
+"affiche_victoire_ww2.jpg": {src: "images/affiche_victoire_ww2.jpg", w: 957, h: 1200},
+"tableau_blesses_morts_ww1.jpg": {src: "images/tableau_blesses_morts_ww1.jpg"},
+"tableau_volontairtes_ww1.jpg": {src: "images/tableau_volontairtes_ww1.jpg"}
 }
 
 const QUESTIONS = [
@@ -14318,5 +14321,22 @@ const QUESTIONS = [
  reponse: {type: "avant-apres", label: "Les Années folles"},
  guide: {type: "grille", entetes: ["Avant", "Les Années folles", "Après"], rangees: [["A et C", "", "B et D"]]},
  updatedAt: "2026-07-19T14:08:15.025Z"
+},
+{
+ id: "Q802",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ enonce: "Expliquez comment la situation des Alliés pendant la Première Guerre mondiale divise la population canadienne.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\nUne conséquence de la participation des Alliés au conflit\nUn besoin des Alliés\nUn enjeu qui divise la population canadienne",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "tableau_blesses_morts_ww1.jpg", soustitre: "Évolution des pertes militaires canadiennes", source: "Adapté de Anciens Combattants Canada, statistiques sur les pertes canadiennes de la Première Guerre mondiale."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "tableau_volontairtes_ww1.jpg", soustitre: "Évolution du recrutement volontaire au Canada", source: "Adapté de Bibliothèque et Archives Canada, dossiers du Corps expéditionnaire canadien; et Adapté de Anciens Combattants Canada, ressources historiques sur la Première Guerre mondiale."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Le volontariat a échoué. Le Canada doit recruter suffisamment d'hommes pour maintenir les quatre divisions au front, ou les laisser disparaître. »", auteur: "Robert Laird Borden", source: "Adapté du discours de Robert Laird Borden présentant le Military Service Bill à la Chambre des communes du Canada, Ottawa, 11 juin 1917."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "Les Alliés subissent de lourdes pertes humaines (une conséquence de la participation des Alliés au conflit). Ils ont besoin de nouvelles troupes (un besoin des Alliés), ce qui amène le gouvernement canadien à imposer la conscription. Cette mesure divise la population canadienne (un enjeu qui divise la population canadienne), notamment entre les partisans et les opposants au service militaire obligatoire.",
+ updatedAt: "2026-07-19T18:27:42.749Z"
 }
 ]
