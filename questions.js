@@ -1325,7 +1325,7 @@ const REGLETTES = {
 "Q784": {oi: "Mettre en relation des faits", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève met en relation tous les faits. (3 sur 3)"}, {pts: 1, desc: "L'élève met en relation certains faits. (2 sur 3)"}, {pts: 0, desc: "L'élève ne met pas en relation les faits. (1 ou 0 sur 3)"}]},
 "Q785": {oi: "Situer dans le temps", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps."}]},
 "Q786": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
-"Q787": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q788": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -14094,5 +14094,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 3},
  guide: "Changement\nIl y a changement, car les immigrants proviennent davantage de l'Europe de l'Est et du Sud dans les années 1930 qu'à la fin du XIXᵉ siècle.\nIl y a changement, car la proportion d'immigrants provenant des îles Britanniques diminue entre la fin du XIXᵉ siècle et les années 1930.\n\nContinuité\nIl y a continuité, car les immigrants proviennent majoritairement de l'Europe à la fin du XIXᵉ siècle et encore dans les années 1930.\nIl y a continuité, car les immigrants proviennent toujours en majorité de pays européens entre la fin du XIXᵉ siècle et les années 1930.",
  updatedAt: "2026-07-19T11:28:02.113Z"
+},
+{
+ id: "Q788",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une raison pour laquelle des organismes mettent en place des structures d'accueil pour les immigrants au début du XXᵉ siècle.",
+ aspects: [{aspect: "Flux migratoires"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Notre organisme offre aux immigrants des services d'accueil, de logement, d'orientation et de placement afin de faciliter leur établissement et leur intégration dans leur nouveau milieu. »", source: "Adapté de Immigrant Aid Society of Toronto, Annual Report, Toronto, vers 1912."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Faciliter l'établissement des immigrants.\nAider les immigrants à s'intégrer à la société canadienne.\nOffrir du soutien aux nouveaux arrivants.",
+ updatedAt: "2026-07-19T11:30:45.055Z"
 }
 ]
