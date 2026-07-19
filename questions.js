@@ -1348,7 +1348,8 @@ const REGLETTES = {
 "Q813": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
 "Q812": {oi: "Situer dans le temps", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps. (4 sur 4)"}, {pts: 1, desc: "L'élève situe certains faits dans le temps. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"}]},
 "Q814": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q815": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]}
+"Q815": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
+"Q816": {oi: "Dégager des différences et des similitudes", variante: "acteur-positions", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -14558,5 +14559,23 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les anciens combattants doivent être soutenus.",
  updatedAt: "2026-07-19T19:55:35.102Z"
+},
+{
+ id: "Q816",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ soustag: "Position – 3 acteurs",
+ enonce: "Les documents A à C présentent la position de trois acteurs sur la conscription durant la Seconde Guerre mondiale. Nommez l’acteur qui présente une position différente et comparez sa position à celle des deux autres.",
+ aspects: [{aspect: "Seconde Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Je demande aux Canadiens de m'autoriser à relever le gouvernement de sa promesse de ne pas imposer la conscription pour le service outre-mer si les circonstances l'exigent. »", auteur: "William Lyon Mackenzie King - premier ministre du Canada", source: "dapté de William Lyon Mackenzie King, allocution radiodiffusée précédant le plébiscite, 27 avril 1942."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Le Canada doit utiliser tous ses citoyens aptes au service militaire afin de remplir pleinement ses obligations envers les Alliés. »", auteur: "Arthur Meighen - chef du parti conservateur du Canada", source: "Adapté d'Arthur Meighen, discours politique, 1942."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Le plébiscite menace la parole donnée et ouvre la voie à une conscription que le Québec refuse. »", auteur: "André Laurendeau", source: "André Laurendeau"}]}
+ ],
+ reponse: {type: "lignes", nombre: 3},
+ guide: "André Laurendeau mentionne que le Canada ne doit pas imposer la conscription, alors que William Lyon Mackenzie King et Arthur Meighen affirment le contraire.\n\nAndré Laurendeau s'oppose à la conscription, alors que William Lyon Mackenzie King et Arthur Meighen y sont favorables.",
+ updatedAt: "2026-07-19T22:08:26.866Z"
 }
 ]
