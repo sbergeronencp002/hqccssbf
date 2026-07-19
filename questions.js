@@ -1334,7 +1334,8 @@ const REGLETTES = {
 "Q796": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q797": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
 "Q798": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
-"Q799": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
+"Q799": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
+"Q800": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -14279,5 +14280,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les familles pauvres reçoivent une aide financière.\nLes chômeurs obtiennent une aide gouvernementale.\nLes municipalités distribuent de l'aide aux familles.",
  updatedAt: "2026-07-19T13:11:03.962Z"
+},
+{
+ id: "Q800",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ enonce: "Expliquez comment la situation économique des années 1930 amène le gouvernement provincial à intervenir dans les régions.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La situation économique des années 1930\n• Une intervention du gouvernement provincial dans les régions\n• Une conséquence de cette intervention",
+ aspects: [{aspect: "Grande dépression"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "tableau_chomage.jpg", soustitre: "Évolution du taux de chômage au Canada", source: "Adapté de Michael Bliss, The Depression Years: Canada in the 1930s, McClelland and Stewart, 1983; Statistique Canada, séries historiques sur le marché du travail."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« La colonisation demeure l'un des meilleurs moyens de favoriser le développement de nos régions et d'offrir un avenir aux familles québécoises. »", auteur: "Louis-Alexandre Taschereau - premier ministre du Québec", source: "Adapté de Discours du Trône, Gouvernement du Québec, début des années 1930."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "tableau_familles_abitibi.jpg", soustitre: "Évolution du nombre de familles établies en Abitibi", source: "Adapté de Benoît-Beaudry Gourd, Histoire de l'Abitibi-Témiscamingue, Institut québécois de recherche sur la culture, 1995."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "La Grande Dépression entraîne un chômage important (la situation économique des années 1930). Le gouvernement provincial ouvre l'Abitibi à la colonisation afin d'y établir des familles (une région ouverte à la colonisation). Cette mesure favorise le peuplement de cette région (une conséquence de cette mesure).",
+ updatedAt: "2026-07-19T13:16:09.629Z"
 }
 ]
