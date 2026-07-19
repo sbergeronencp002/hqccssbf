@@ -1464,5 +1464,6 @@ const QUESTIONS = [
  updatedAt: "2026-07-19T18:27:42.749Z"
 },
 {id: "Q803", niveau: 4, oi: "Dégager des différences et des similitudes", periode: "P6 — 1896 – 1945", points: 2, soustag: "Divergence – 2 acteurs", aspects: [{aspect: "Première Guerre mondiale"}], enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en désaccord?", updatedAt: "2026-07-19T18:32:17.078Z"},
-{id: "Q804", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Cause", aspects: [{aspect: "Première Guerre mondiale"}], enonce: "Indiquez une raison pour laquelle le Canada participe à la Première Guerre mondiale.", updatedAt: "2026-07-19T18:34:58.721Z"}
+{id: "Q804", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Cause", aspects: [{aspect: "Première Guerre mondiale"}], enonce: "Indiquez une raison pour laquelle le Canada participe à la Première Guerre mondiale.", updatedAt: "2026-07-19T18:34:58.721Z"},
+{id: "Q805", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Cause et conséquence", aspects: [{aspect: "Première Guerre mondiale"}], enonce: "Les documents A et B présentent des informations sur la Loi sur les mesures de guerre. Indiquez le document qui présente une cause de son adoption et celui qui présente une conséquence de son adoption.", updatedAt: "2026-07-19T19:25:40.465Z"}
 ]
