@@ -1328,7 +1328,8 @@ const REGLETTES = {
 "Q788": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q789": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q791": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la similitude."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."}, {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}]},
-"Q792": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]}
+"Q792": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]},
+"Q793": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -14173,5 +14174,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Le nombre d'immigrants que le gouvernement doit admettre au Canada.\nLa politique d'immigration du gouvernement fédéral.\nL'admission de nouveaux immigrants au Canada.\nLes restrictions imposées à l'immigration.",
  updatedAt: "2026-07-19T11:41:39.628Z"
+},
+{
+ id: "Q793",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Conséquence",
+ enonce: "Indiquez une conséquence de la montée de la xénophobie envers certains groupes d'immigrants durant la première moitié du XXᵉ siècle.",
+ aspects: [{aspect: "Flux migratoires"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Les autorités fédérales peuvent refuser l'admission de personnes appartenant à des catégories d'immigrants jugées indésirables conformément aux dispositions de la Loi sur l'immigration. »", source: "Adapté de Gouvernement du Canada, Loi concernant l’immigration, S.C. 1910, chap. 27, modifiée en 1919."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Certains groupes d'immigrants sont exclus du Canada.\nL'immigration devient plus restrictive.\nLe gouvernement limite l'admission de certains immigrants.",
+ updatedAt: "2026-07-19T11:47:06.039Z"
 }
 ]
