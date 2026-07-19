@@ -1340,7 +1340,8 @@ const REGLETTES = {
 "Q802": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q803": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]},
 "Q804": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q806": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q806": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q807": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -1748,7 +1749,8 @@ const IMAGE_DB = {
 "soupe_populaire.jpg": {src: "images/soupe_populaire.jpg", w: 1200, h: 841},
 "affiche_victoire_ww2.jpg": {src: "images/affiche_victoire_ww2.jpg", w: 957, h: 1200},
 "tableau_blesses_morts_ww1.jpg": {src: "images/tableau_blesses_morts_ww1.jpg"},
-"tableau_volontairtes_ww1.jpg": {src: "images/tableau_volontairtes_ww1.jpg"}
+"tableau_volontairtes_ww1.jpg": {src: "images/tableau_volontairtes_ww1.jpg"},
+"tableau_personnes_internees.jpg": {src: "images/tableau_personnes_internees.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -14403,5 +14405,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Le nombre de volontaires est insuffisant pour remplacer les pertes au front.",
  updatedAt: "2026-07-19T19:27:57.067Z"
+},
+{
+ id: "Q807",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Conséquence",
+ enonce: "Indiquez une conséquence de l'adoption de la Loi sur les mesures de guerre durant la Première Guerre mondiale.",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_personnes_internees.jpg", soustitre: "Évolution du nombre de personnes internées au Canada", source: "Adapté de Parcs Canada, programme national de reconnaissance des camps d'internement de la Première Guerre mondiale."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Des personnes considérées comme des ressortissants ennemis sont internées.\nDes camps d'internement sont mis en place.",
+ updatedAt: "2026-07-19T19:32:05.692Z"
 }
 ]
