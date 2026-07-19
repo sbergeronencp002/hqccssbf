@@ -1327,7 +1327,7 @@ const REGLETTES = {
 "Q786": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
 "Q788": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q789": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
-"Q790": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q791": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la similitude."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."}, {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}]}
 }
 
 const IMAGE_DB = {
@@ -14119,11 +14119,11 @@ const QUESTIONS = [
  points: 2,
  soustag: "Cause",
  enonce: "Indiquez une raison pour laquelle le gouvernement fédéral renforce le contrôle de l'immigration durant les années 1930.",
- aspects: [{aspect: "Flux migratoires"}, {aspect: "Grande dépression"}],
+ aspects: [{aspect: "Flux migratoires"}],
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_chomage.jpg", soustitre: "Évolution du taux de chômage au Canada", source: "Adapté de Michael Bliss, The Depression Years: Canada in the 1930s, McClelland and Stewart, 1983; Statistique Canada, séries historiques sur le marché du travail."}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "Le chômage est élevé durant la Grande Dépression.\nLa crise économique réduit les possibilités d'emploi.\nLe gouvernement veut protéger les emplois des Canadiens",
- updatedAt: "2026-07-19T11:36:05.956Z"
+ updatedAt: "2026-07-19T11:33:58.098Z"
 },
 {
  id: "Q790",
@@ -14138,5 +14138,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Assurer la sécurité nationale.\nPrévenir l'entrée de personnes considérées comme une menace.\nRenforcer la sécurité du pays durant la Seconde Guerre mondiale.",
  updatedAt: "2026-07-19T11:35:36.839Z"
+},
+{
+ id: "Q791",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Similitude",
+ enonce: "Indiquez une similitude dans les mesures utilisées par le gouvernement fédéral pour renforcer le contrôle de l'immigration pendant la Grande Dépression et la Seconde Guerre mondiale.",
+ aspects: [{aspect: "Flux migratoires"}, {aspect: "Grande dépression"}, {aspect: "Seconde Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Devant le chômage persistant, le Canada restreint l'admission de nouveaux immigrants afin de préserver les possibilités d'emploi pour les travailleurs déjà établis. »", soustitre: "Grande dépression", source: "Adapté de Rapport annuel du ministère de l'Immigration et de la Colonisation, Gouvernement du Canada, 1931."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Durant la guerre, les autorités examinent rigoureusement les demandes d'admission afin de protéger le pays contre les risques pouvant compromettre sa sécurité. »", soustitre: "Seconde Guerre mondiale", source: "Adapté de Débats de la Chambre des communes du Canada, Ottawa, 1940."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Le gouvernement fédéral resserre les conditions d'admission des immigrants.\nLe gouvernement fédéral renforce les contrôles à l'entrée des immigrants.\nLe gouvernement fédéral limite l'entrée des immigrants.",
+ updatedAt: "2026-07-19T11:38:35.097Z"
 }
 ]
