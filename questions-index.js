@@ -1441,5 +1441,15 @@ const QUESTIONS = [
 {id: "Q796", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Cause", aspects: [{aspect: "Grande dépression"}], enonce: "Indiquez une raison pour laquelle le gouvernement encourage la colonisation de nouvelles régions durant les années 1930.", updatedAt: "2026-07-19T13:05:14.331Z"},
 {id: "Q797", niveau: 4, oi: "Établir des faits", periode: "P6 — 1896 – 1945", points: 1, aspects: [{aspect: "Grande dépression"}], enonce: "Indiquez une mesure mise en place par le gouvernement provincial pour lutter contre la Grande Dépression.", updatedAt: "2026-07-19T13:07:03.557Z"},
 {id: "Q798", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Conséquence", aspects: [{aspect: "Grande dépression"}], enonce: "Indiquez une conséquence des programmes de colonisation durant les années 1930.", updatedAt: "2026-07-19T13:08:03.422Z"},
-{id: "Q799", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Conséquence", aspects: [{aspect: "Grande dépression"}], enonce: "Indiquez une conséquence de la création des secours directs durant les années 1930.", updatedAt: "2026-07-19T13:11:03.962Z"}
+{id: "Q799", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Conséquence", aspects: [{aspect: "Grande dépression"}], enonce: "Indiquez une conséquence de la création des secours directs durant les années 1930.", updatedAt: "2026-07-19T13:11:03.962Z"},
+{
+ id: "Q800",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ aspects: [{aspect: "Grande dépression"}],
+ enonce: "Expliquez comment la situation économique des années 1930 amène le gouvernement provincial à intervenir dans les régions.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La situation économique des années 1930\n• Une intervention du gouvernement provincial dans les régions\n• Une conséquence de cette intervention",
+ updatedAt: "2026-07-19T13:16:09.629Z"
+}
 ]
