@@ -1345,8 +1345,7 @@ const REGLETTES = {
 "Q808": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q809": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
 "Q810": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
-"Q813": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
-"Q812": {oi: "Situer dans le temps", colonnes: ["2 points", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps."}, {pts: 0, desc: "L'élève ne situe pas tous les faits dans le temps."}]}
+"Q813": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]}
 }
 
 const IMAGE_DB = {
@@ -14333,7 +14332,7 @@ const QUESTIONS = [
  ],
  reponse: {type: "avant-apres", label: "Les Années folles"},
  guide: {type: "grille", entetes: ["Avant", "Les Années folles", "Après"], rangees: [["A et C", "", "B et D"]]},
- updatedAt: "2026-07-19T14:08:15.025Z"
+ updatedAt: "2026-07-19T19:52:27.023Z"
 },
 {
  id: "Q802",
@@ -14500,14 +14499,14 @@ const QUESTIONS = [
  enonce: "Les documents A à D présentent des événements marquants de l'évolution du statut politique du Canada. Indiquez si chacun de ces événements se déroule avant ou après les Années folles.",
  aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Seconde Guerre mondiale"}, {aspect: "Statut du Canada dans l'Empire britannique"}],
  documents: [
-  {type: "textes", cols: [{titre: "Document A", ref: "discours_conscription_1917.jpg", soustitre: "Discours de Robert Borden en faveur de la conscription", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]},
+  {type: "textes", cols: [{titre: "Document A", ref: "discours_conscription_1917.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]},
   {type: "textes", cols: [{titre: "Document B", texte: "« Le Statut de Westminster consacre l'autonomie législative du Canada tout en maintenant son appartenance au Commonwealth britannique. »", source: "Adapté de Eugénie Brouillet, La négation de la nation, Septentrion, 2005."}]},
   {type: "textes", cols: [{titre: "Document C", ref: "conference_quebec.jpg", soustitre: "Conférence de Québec", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]},
   {type: "textes", cols: [{titre: "Document D", texte: "« La guerre des Boers marque la première participation militaire du Canada à un conflit outre-mer sous le drapeau britannique. »", source: "Adapté de Desmond Morton, Une histoire militaire du Canada, Athabasca University Press, 2007."}]}
  ],
  reponse: {type: "avant-apres", label: "Les Années folles"},
  guide: {type: "grille", entetes: ["Avant", "Les Années folles", "Après"], rangees: [["A et D", "", "B et C"]]},
- updatedAt: "2026-07-19T19:51:45.888Z"
+ updatedAt: "2026-07-19T19:46:13.097Z"
 },
 {
  id: "Q813",
