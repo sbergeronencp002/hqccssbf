@@ -1329,7 +1329,8 @@ const REGLETTES = {
 "Q789": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q791": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la similitude."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."}, {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}]},
 "Q792": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]},
-"Q794": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
+"Q794": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
+"Q795": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -14203,5 +14204,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Des commerces appartenant à certains groupes d'immigrants sont vandalisés.\nCertains groupes d'immigrants sont victimes de violence.",
  updatedAt: "2026-07-19T11:50:00.861Z"
+},
+{
+ id: "Q795",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Conséquence",
+ enonce: "Indiquez une conséquence du krach boursier de 1929 au Canada.",
+ aspects: [{aspect: "Grande dépression"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_faillites_entreprises.jpg", soustitre: "Évolution du nombre d'entreprises en faillite au Canada", source: "Adapté de Bureau fédéral de la statistique, Annuaire du Canada 1935, chapitre « Faillites et insolvabilités », Ottawa, Imprimeur du Roi, 1935."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Plusieurs entreprises font faillite.\nUne forte hausse du chômage.",
+ updatedAt: "2026-07-19T12:59:17.067Z"
 }
 ]
