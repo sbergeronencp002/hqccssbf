@@ -1770,7 +1770,8 @@ const IMAGE_DB = {
 "tableau_femmes_ww1_ww2.jpg": {src: "images/tableau_femmes_ww1_ww2.jpg"},
 "tableau_depenses_gvt_ww1_ww2.jpg": {src: "images/tableau_depenses_gvt_ww1_ww2.jpg"},
 "tableau_besoins_volontaires_ww2.jpg": {src: "images/tableau_besoins_volontaires_ww2.jpg", w: 1200, h: 800},
-"femmes_usines_ww2.jpg": {src: "images/femmes_usines_ww2.jpg"}
+"femmes_usines_ww2.jpg": {src: "images/femmes_usines_ww2.jpg"},
+"femmes_usines_ww1.jpg": {src: "images/femmes_usines_ww1.jpg", w: 1200, h: 960}
 }
 
 const QUESTIONS = [
@@ -14594,12 +14595,15 @@ const QUESTIONS = [
  periode: "P6 — 1896 – 1945",
  points: 2,
  soustag: "Continuité",
- enonce: "À partir du document A, indiquez un élément de continuité concernant la participation des femmes à l'effort de guerre entre la Première Guerre mondiale et la Seconde Guerre mondiale.",
+ enonce: "À partir des documents A et B, indiquez un élément de continuité concernant la participation des femmes à l'effort de guerre entre la Première Guerre mondiale et la Seconde Guerre mondiale.",
  aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Seconde Guerre mondiale"}],
- documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_femmes_ww1_ww2.jpg", soustitre: "Participation des femmes à l'industrie de guerre", source: "Adapté de Statistique Canada, données historiques sur la main-d'œuvre durant les guerres mondiales."}]}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "femmes_usines_ww1.jpg", soustitre: "Participation des femmes à l'industrie de guerre durant la Première Guerre mondiale", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "femmes_usines_ww2.jpg", soustitre: "Participation des femmes à l'industrie de guerre durant la Seconde Guerre mondiale", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}
+ ],
  reponse: {type: "lignes", nombre: 2},
  guide: "Les femmes participent à l'effort de guerre durant les deux conflits.\nLes femmes soutiennent l'effort de guerre durant les deux conflits.\nLes femmes contribuent à l'effort de guerre durant les deux guerres.",
- updatedAt: "2026-07-19T22:27:09.095Z"
+ updatedAt: "2026-07-19T23:59:55.139Z"
 },
 {
  id: "Q818",
