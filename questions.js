@@ -1354,7 +1354,8 @@ const REGLETTES = {
 "Q818": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
 "Q819": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la similitude."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."}, {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}]},
 "Q820": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]},
-"Q821": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]}
+"Q821": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
+"Q822": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -14666,5 +14667,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Les femmes occupent davantage d'emplois dans les industries de guerre.\nUne pénurie de main-d'œuvre favorise l'embauche des femmes.\nLa production industrielle est soutenue par le travail des femmes.\nLes femmes occupent des emplois traditionnellement réservés aux hommes.",
  updatedAt: "2026-07-19T23:53:31.449Z"
+},
+{
+ id: "Q822",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Continuité",
+ enonce: "À partir des documents A et B, indiquez un élément de continuité concernant le soutien offert aux anciens combattants entre la Première Guerre mondiale et la Seconde Guerre mondiale.",
+ aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Seconde Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Après la Première Guerre mondiale, le gouvernement accorde des pensions aux anciens combattants et met en place des programmes visant à faciliter leur retour à la vie civile. »", source: "Adapté de Desmond Morton, Une histoire militaire du Canada, Montréal, Athéna Éditions, 2009."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Après la Seconde Guerre mondiale, le gouvernement maintient son soutien aux anciens combattants en offrant des pensions, tout en ajoutant des programmes de formation, de logement et de réinsertion. »", source: "Adapté de Anciens Combattants Canada, La Charte des anciens combattants, 1944."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Le gouvernement offre un soutien aux anciens combattants après les deux guerres.\nLe gouvernement met en place des mesures pour faciliter le retour des anciens combattants à la vie civile après les deux guerres.\nLe gouvernement aide les anciens combattants à se réintégrer dans la société après les deux guerres.",
+ updatedAt: "2026-07-20T00:01:38.495Z"
 }
 ]
