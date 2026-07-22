@@ -1358,7 +1358,8 @@ const REGLETTES = {
 "Q822": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
 "Q823": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q824": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q825": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q825": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q826": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -14740,5 +14741,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 5},
  guide: "La situation au front en Europe entraîne de lourdes pertes chez les Alliés (la situation au front en Europe). L'armée canadienne a besoin de nouveaux soldats pour maintenir ses effectifs (un besoin de l'armée canadienne). Le gouvernement canadien organise le plébiscite de 1942 afin d'être libéré de sa promesse de ne pas imposer la conscription outre-mer (une mesure adoptée par le gouvernement canadien en 1942).",
  updatedAt: "2026-07-22T20:39:42.528Z"
+},
+{
+ id: "Q826",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ enonce: "Expliquez comment la contribution des femmes durant la Première Guerre mondiale favorise l'adoption d'une mesure par le gouvernement fédéral.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La contribution des femmes durant la Première Guerre mondiale\n• La reconnaissance de cette contribution\n• Une mesure adoptée par le gouvernement fédéral",
+ aspects: [{aspect: "Luttes des femmes"}, {aspect: "Première Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "femmes_usines_ww1.jpg", soustitre: "Participation des femmes à l'industrie de guerre durant la Première Guerre mondiale", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les Canadiennes ont rendu des services essentiels à l'effort de guerre et ont largement contribué au succès de notre pays. »", auteur: "Robert Borden, premier ministre du Canada.", source: "Source : Adapté d'un discours de Robert Borden, 1917."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "droit_de_vote_femmes_canada_1918.jpg", soustitre: "Une annonce devant le Parlement à Ottawa", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "Les femmes contribuent à l'effort de guerre en travaillant dans les usines ou comme infirmières militaires (la contribution des femmes durant la Première Guerre mondiale). Cette contribution est reconnue par le gouvernement fédéral (la reconnaissance de cette contribution). Le gouvernement adopte la Loi des élections en temps de guerre en 1917, accordant le droit de vote fédéral à certaines femmes (une mesure adoptée par le gouvernement fédéral).",
+ updatedAt: "2026-07-22T21:12:56.053Z"
 }
 ]
