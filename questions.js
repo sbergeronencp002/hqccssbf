@@ -12609,15 +12609,15 @@ const QUESTIONS = [
  periode: "P6 — 1896 – 1945",
  points: 3,
  enonce: "Expliquez comment la participation du Canada aux guerres de l’Empire britannique contribue à un changement de son statut constitutionnel.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La participation du Dominion du Canada à un conflit aux côtés de l’Empire britannique\n• Une manifestation de l’autonomie croissante du Canada\n• Un changement du statut constitutionnel du Canada",
- aspects: [{aspect: "Statut du Canada dans l'Empire britannique"}],
+ aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Statut du Canada dans l'Empire britannique"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", ref: "bataille_crete_vimy.jpg", soustitre: "Les soldats canadiens à la bataille de Vimy", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
-  {type: "textes", cols: [{titre: "Document B", texte: "« À la fin de la guerre, le Canada signe séparément le traité de Versailles et devient membre de la Société des Nations. »", source: "Adapté de The Canadian Encyclopedia, « Constitutional History of Canada », Historica Canada."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« La participation du Canada à la Société des Nations confirme l'affirmation graduelle de son autonomie diplomatique à l'intérieur de l'Empire britannique. »", source: "Adapté de J. L. Granatstein, Canada's War: The Politics of the Mackenzie King Government, 1939–1945, Oxford University Press, 1975."}]},
   {type: "textes", cols: [{titre: "Document C", texte: "« À partir de 1931, le Parlement britannique ne peut plus adopter de lois applicables au Canada sans le consentement du gouvernement canadien. »", source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec. Tome 4 : 1896 à 1960, Septentrion, 1997."}]}
  ],
  reponse: {type: "lignes", nombre: 5},
  guide: "Le Dominion du Canada participe à la Première Guerre mondiale aux côtés de l’Empire britannique (la participation du Dominion du Canada à un conflit aux côtés de l’Empire britannique). Il signe ensuite distinctement le traité de Versailles (une manifestation de l’autonomie croissante du Canada). En 1931, le Statut de Westminster reconnaît son autonomie législative (un changement du statut constitutionnel du Canada).",
- updatedAt: "2026-07-14T18:37:13.678Z"
+ updatedAt: "2026-07-22T19:41:10.402Z"
 },
 {
  id: "Q689",
