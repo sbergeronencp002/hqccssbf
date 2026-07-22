@@ -1359,7 +1359,8 @@ const REGLETTES = {
 "Q823": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q824": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q825": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q826": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q826": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q827": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -14758,5 +14759,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 5},
  guide: "Les femmes contribuent à l'effort de guerre en travaillant dans les usines ou comme infirmières militaires (la contribution des femmes durant la Première Guerre mondiale). Cette contribution est reconnue par le gouvernement fédéral (la reconnaissance de cette contribution). Le gouvernement adopte la Loi des élections en temps de guerre en 1917, accordant le droit de vote fédéral à certaines femmes (une mesure adoptée par le gouvernement fédéral).",
  updatedAt: "2026-07-22T21:13:54.825Z"
+},
+{
+ id: "Q827",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ enonce: "Expliquez comment la contribution des femmes durant la Seconde Guerre mondiale favorise l'adoption d'une mesure par le gouvernement provincial en 1940.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La contribution des femmes durant la Seconde Guerre mondiale\n• La reconnaissance de cette contribution\n• Une mesure adoptée par le gouvernement provncial en 1940",
+ aspects: [{aspect: "Luttes des femmes"}, {aspect: "Seconde Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "femmes_usines_ww2.jpg", soustitre: "Participation des femmes à l'industrie de guerre durant la Seconde Guerre mondiale", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les femmes du Québec ont démontré, par leur contribution à l'effort de guerre, qu'elles méritent pleinement de participer à la vie démocratique. »", auteur: "Adélard Godbout, premier ministre du Québec.", source: "Adapté d'un discours d'Adélard Godbout, 1940."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "droit_de_vote_femmes_quebec_1940.jpg", soustitre: "Une annonce du gouvernement du Québec", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "Les femmes contribuent à l'effort de guerre en travaillant notamment dans les usines de guerre (la contribution des femmes durant la Seconde Guerre mondiale). Cette contribution est reconnue par le gouvernement du Québec (la reconnaissance de cette contribution). Le gouvernement provincial adopte une loi accordant aux femmes le droit de vote et d'éligibilité en 1940 (une mesure adoptée par le gouvernement provincial).",
+ updatedAt: "2026-07-22T21:18:05.072Z"
 }
 ]
