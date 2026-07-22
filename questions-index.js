@@ -1522,5 +1522,15 @@ const QUESTIONS = [
  aspects: [{aspect: "Luttes des femmes"}, {aspect: "Première Guerre mondiale"}],
  enonce: "Expliquez comment la contribution des femmes durant la Première Guerre mondiale favorise l'adoption d'une mesure par le gouvernement fédéral en 1918.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La contribution des femmes durant la Première Guerre mondiale\n• La reconnaissance de cette contribution\n• Une mesure adoptée par le gouvernement fédéral",
  updatedAt: "2026-07-22T21:13:54.825Z"
+},
+{
+ id: "Q827",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ aspects: [{aspect: "Luttes des femmes"}, {aspect: "Seconde Guerre mondiale"}],
+ enonce: "Expliquez comment la contribution des femmes durant la Seconde Guerre mondiale favorise l'adoption d'une mesure par le gouvernement provincial en 1940.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La contribution des femmes durant la Seconde Guerre mondiale\n• La reconnaissance de cette contribution\n• Une mesure adoptée par le gouvernement provncial en 1940",
+ updatedAt: "2026-07-22T21:18:05.072Z"
 }
 ]
