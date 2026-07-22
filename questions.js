@@ -1356,7 +1356,8 @@ const REGLETTES = {
 "Q820": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]},
 "Q821": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q822": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
-"Q823": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q823": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q824": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -14703,5 +14704,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 5},
  guide: "Le Dominion du Canada participe à la guerre des Boers en envoyant des volontaires en Afrique du Sud (le conflit auquel participe le Dominion du Canada en 1899). Cette participation suscite l'opposition des nationalistes canadiens-français (la position des nationalistes canadiens-français concernant cette participation). Cette opposition renforce le nationalisme canadien-français (une conséquence de ce débat sur le nationalisme canadien-français).",
  updatedAt: "2026-07-22T20:00:46.501Z"
+},
+{
+ id: "Q824",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ enonce: "Expliquez comment la situation au front pendant la Première Guerre mondiale entraîne l'adoption d'une mesure par le gouvernement canadien en 1917.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La situation au front en Europe\n• Un besoin de l'armée canadienne\n• Une mesure adoptée par le gouvernement canadien en 1917",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "tableau_volontaires_pertes_ww1.jpg", soustitre: "Évolution du recrutement et des pertes militaires canadiennes", source: "Adapté de Bibliothèque et Archives Canada, dossiers du Corps expéditionnaire canadien."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les lourdes pertes obligent continuellement le Corps canadien à recevoir de nouveaux soldats pour conserver sa capacité de combattre. »", source: "Adapté de Tim Cook, Shock Troops: Canadians Fighting the Great War, 1917-1918, Viking Canada, 2008."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Tout sujet britannique de sexe masculin répondant aux conditions prévues par la présente loi est tenu d'accomplir le service militaire. »", source: "Adapté de la Loi du service militaire, Gouvernement du Canada, 1917."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "Les pertes canadiennes augmentent tandis que le nombre de volontaires diminue (la situation au front en Europe). L'armée canadienne a alors besoin de recruter davantage de soldats pour maintenir ses effectifs (un besoin de l'armée canadienne). Le gouvernement canadien adopte la Loi du service militaire, qui instaure la conscription en 1917 (une mesure adoptée par le gouvernement canadien en 1917).",
+ updatedAt: "2026-07-22T20:35:29.398Z"
 }
 ]
