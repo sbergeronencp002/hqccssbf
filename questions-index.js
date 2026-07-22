@@ -1226,9 +1226,9 @@ const QUESTIONS = [
  oi: "Établir des liens de causalité",
  periode: "P6 — 1896 – 1945",
  points: 3,
- aspects: [{aspect: "Statut du Canada dans l'Empire britannique"}],
+ aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Statut du Canada dans l'Empire britannique"}],
  enonce: "Expliquez comment la participation du Canada aux guerres de l’Empire britannique contribue à un changement de son statut constitutionnel.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La participation du Dominion du Canada à un conflit aux côtés de l’Empire britannique\n• Une manifestation de l’autonomie croissante du Canada\n• Un changement du statut constitutionnel du Canada",
- updatedAt: "2026-07-14T18:37:13.678Z"
+ updatedAt: "2026-07-22T19:41:10.402Z"
 },
 {id: "Q689", niveau: 4, oi: "Situer dans le temps", periode: "P6 — 1896 – 1945", points: 1, soustag: "Ligne du temps", aspects: [{aspect: "Statut du Canada dans l'Empire britannique"}], enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.", updatedAt: "2026-07-14T18:59:12.298Z"},
 {id: "Q690", niveau: 4, oi: "Situer dans le temps", periode: "P6 — 1896 – 1945", points: 1, soustag: "Ligne du temps", aspects: [{aspect: "Luttes des femmes"}], enonce: "Sur la ligne du temps, encerclez la lettre qui correspond à la période pendant laquelle se déroulent les faits présentés dans le document A.", updatedAt: "2026-07-14T19:57:03.963Z"},
@@ -1482,5 +1482,15 @@ const QUESTIONS = [
 {id: "Q819", niveau: 4, oi: "Dégager des différences et des similitudes", periode: "P6 — 1896 – 1945", points: 2, soustag: "Similitude", aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Seconde Guerre mondiale"}], enonce: "À partir des documents A et B, indiquez une similitude concernant l'adoption de la Loi sur les mesures de guerre durant la Première Guerre mondiale et la Seconde Guerre mondiale.", updatedAt: "2026-07-19T23:47:02.761Z"},
 {id: "Q820", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Cause et conséquence", aspects: [{aspect: "Seconde Guerre mondiale"}], enonce: "Le gouvernement canadien organise un plébiscite sur la conscription en 1942. Indiquez le document qui présente une cause et le document qui présente une conséquence.", updatedAt: "2026-07-19T23:51:36.230Z"},
 {id: "Q821", niveau: 4, oi: "Déterminer des causes et des conséquences", periode: "P6 — 1896 – 1945", points: 2, soustag: "Conséquence", aspects: [{aspect: "Seconde Guerre mondiale"}], enonce: "Indiquez une conséquence de la mobilisation des hommes durant la Seconde Guerre mondiale.", updatedAt: "2026-07-19T23:53:31.449Z"},
-{id: "Q822", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P6 — 1896 – 1945", points: 2, soustag: "Continuité", aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Seconde Guerre mondiale"}], enonce: "À partir des documents A et B, indiquez un élément de continuité concernant le soutien offert aux anciens combattants entre la Première Guerre mondiale et la Seconde Guerre mondiale.", updatedAt: "2026-07-20T00:01:38.495Z"}
+{id: "Q822", niveau: 4, oi: "Déterminer des changements et des continuités", periode: "P6 — 1896 – 1945", points: 2, soustag: "Continuité", aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Seconde Guerre mondiale"}], enonce: "À partir des documents A et B, indiquez un élément de continuité concernant le soutien offert aux anciens combattants entre la Première Guerre mondiale et la Seconde Guerre mondiale.", updatedAt: "2026-07-20T00:01:38.495Z"},
+{
+ id: "Q823",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ aspects: [{aspect: "Statut du Canada dans l'Empire britannique"}],
+ enonce: "Expliquez comment le débat entourant la participation du Dominion du Canada à un conflit en 1899 entraîne une conséquence sur le nationalisme canadien-français.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Le conflit auquel participe le Dominion du Canada en 1899\n• La position des nationalistes canadiens-français concernant cette participation\n• Une conséquence de ce débat sur le nationalisme canadien-français",
+ updatedAt: "2026-07-22T20:00:46.501Z"
+}
 ]
