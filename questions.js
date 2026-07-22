@@ -14748,7 +14748,7 @@ const QUESTIONS = [
  oi: "Établir des liens de causalité",
  periode: "P6 — 1896 – 1945",
  points: 3,
- enonce: "Expliquez comment la contribution des femmes durant la Première Guerre mondiale favorise l'adoption d'une mesure par le gouvernement fédéral.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La contribution des femmes durant la Première Guerre mondiale\n• La reconnaissance de cette contribution\n• Une mesure adoptée par le gouvernement fédéral",
+ enonce: "Expliquez comment la contribution des femmes durant la Première Guerre mondiale favorise l'adoption d'une mesure par le gouvernement fédéral en 1918.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La contribution des femmes durant la Première Guerre mondiale\n• La reconnaissance de cette contribution\n• Une mesure adoptée par le gouvernement fédéral",
  aspects: [{aspect: "Luttes des femmes"}, {aspect: "Première Guerre mondiale"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", ref: "femmes_usines_ww1.jpg", soustitre: "Participation des femmes à l'industrie de guerre durant la Première Guerre mondiale", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
@@ -14757,6 +14757,6 @@ const QUESTIONS = [
  ],
  reponse: {type: "lignes", nombre: 5},
  guide: "Les femmes contribuent à l'effort de guerre en travaillant dans les usines ou comme infirmières militaires (la contribution des femmes durant la Première Guerre mondiale). Cette contribution est reconnue par le gouvernement fédéral (la reconnaissance de cette contribution). Le gouvernement adopte la Loi des élections en temps de guerre en 1917, accordant le droit de vote fédéral à certaines femmes (une mesure adoptée par le gouvernement fédéral).",
- updatedAt: "2026-07-22T21:12:56.053Z"
+ updatedAt: "2026-07-22T21:13:54.825Z"
 }
 ]
