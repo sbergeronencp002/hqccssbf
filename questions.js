@@ -13146,7 +13146,7 @@ const QUESTIONS = [
  oi: "Établir des liens de causalité",
  periode: "P6 — 1896 – 1945",
  points: 3,
- enonce: "Expliquez comment le développement d'une nouvelle source d'énergie favorise l'augmentation de la production manufacturière au Québec durant la première moitié du XXᵉ siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Le développement d'une nouvelle source d'énergie\n• L'implantation de nouvelles manufactures\n• L'augmentation de la production manufacturière",
+ enonce: "Expliquez comment le développement d'une nouvelle source d'énergie contribue au développement du secteur manufacturier au Québec durant la première moitié du XXᵉ siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Le développement d'une nouvelle source d'énergie\n• L'émergence de nouveaux secteurs industriels\n• Une conséquence sur la production manufacturière",
  aspects: [{aspect: "Deuxième phase d'industrialisation"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", texte: "« Grâce au développement de l'énergie hydraulique, certaines régions du Québec attirent de nouvelles entreprises qui augmentent progressivement l'activité manufacturière et stimulent leur développement économique. »", source: "Adapté de Paul-André Linteau, Histoire du Canada, Presses de l'Université de Montréal, 2008."}]},
@@ -13154,8 +13154,8 @@ const QUESTIONS = [
   {type: "textes", cols: [{titre: "Document C", ref: "tableau_production_manufacturiere_1900-1940.jpg", soustitre: "Évolution de la production manufacturière au Québec", source: "Adapté de Statistique Canada, Statistiques historiques du Canada, section E – Manufactures et industrie, Gouvernement du Canada."}]}
  ],
  reponse: {type: "lignes", nombre: 5},
- guide: "Le développement de l'hydroélectricité (le développement d'une nouvelle source d'énergie) favorise l'implantation de nouvelles industries, comme les industries des pâtes et papiers (l'implantation de nouvelles industries). Ces nouvelles industries contribuent à l'augmentation de la production manufacturière (la production manufacturière).",
- updatedAt: "2026-07-16T20:19:42.068Z"
+ guide: "Le développement de l'hydroélectricité fournit une source d'énergie abondante aux industries (le développement d'une nouvelle source d'énergie). De nouveaux secteurs industriels, comme les pâtes et papiers et l'aluminium, émergent au Québec (l'émergence de nouveaux secteurs industriels). La production manufacturière augmente (une conséquence sur la production manufacturière).",
+ updatedAt: "2026-07-22T22:57:09.964Z"
 },
 {
  id: "Q725",
