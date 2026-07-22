@@ -1512,5 +1512,15 @@ const QUESTIONS = [
  aspects: [{aspect: "Seconde Guerre mondiale"}],
  enonce: "Expliquez comment la situation au front pendant la Seconde Guerre mondiale entraîne l'adoption d'une mesure par le gouvernement canadien en 1942.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La situation au front en Europe\n• Un besoin de l'armée canadienne\n• Une mesure adoptée par le gouvernement canadien en 1942",
  updatedAt: "2026-07-22T20:39:42.528Z"
+},
+{
+ id: "Q826",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ aspects: [{aspect: "Luttes des femmes"}, {aspect: "Première Guerre mondiale"}],
+ enonce: "Expliquez comment la contribution des femmes durant la Première Guerre mondiale favorise l'adoption d'une mesure par le gouvernement fédéral.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La contribution des femmes durant la Première Guerre mondiale\n• La reconnaissance de cette contribution\n• Une mesure adoptée par le gouvernement fédéral",
+ updatedAt: "2026-07-22T21:12:56.053Z"
 }
 ]
