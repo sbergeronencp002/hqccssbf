@@ -1355,7 +1355,8 @@ const REGLETTES = {
 "Q819": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la similitude."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."}, {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}]},
 "Q820": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]},
 "Q821": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
-"Q822": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]}
+"Q822": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
+"Q823": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -1772,7 +1773,8 @@ const IMAGE_DB = {
 "tableau_depenses_gvt_ww1_ww2.jpg": {src: "images/tableau_depenses_gvt_ww1_ww2.jpg"},
 "tableau_besoins_volontaires_ww2.jpg": {src: "images/tableau_besoins_volontaires_ww2.jpg", w: 1200, h: 800},
 "femmes_usines_ww2.jpg": {src: "images/femmes_usines_ww2.jpg"},
-"femmes_usines_ww1.jpg": {src: "images/femmes_usines_ww1.jpg", w: 1200, h: 960}
+"femmes_usines_ww1.jpg": {src: "images/femmes_usines_ww1.jpg", w: 1200, h: 960},
+"tableau_guerre_boers.jpg": {src: "images/tableau_guerre_boers.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -14684,5 +14686,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 2},
  guide: "Le gouvernement offre un soutien aux anciens combattants après les deux guerres.\nLe gouvernement met en place des mesures pour faciliter le retour des anciens combattants à la vie civile après les deux guerres.\nLe gouvernement aide les anciens combattants à se réintégrer dans la société après les deux guerres.",
  updatedAt: "2026-07-20T00:01:38.495Z"
+},
+{
+ id: "Q823",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ enonce: "Expliquez comment le débat entourant la participation du Dominion du Canada à un conflit en 1899 entraîne une conséquence sur le nationalisme canadien-français.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Le conflit auquel participe le Dominion du Canada en 1899\n• La position des nationalistes canadiens-français concernant cette participation\n• Une conséquence de ce débat sur le nationalisme canadien-français",
+ aspects: [{aspect: "Statut du Canada dans l'Empire britannique"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "tableau_guerre_boers.jpg", soustitre: "Évolution du nombre de volontaires canadiens envoyés outre-mer", source: "Adapté du Musée canadien de la guerre, « Les Canadiens et la guerre d'Afrique du Sud, 1899-1902 »."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "portrait_henri_bourassa.jpg", soustitre: "Portrait de Henri Bourassa", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Réélu à plusieurs reprises, Henri Bourassa s'impose progressivement comme le principal porte-parole du nationalisme canadien-français au début du XXᵉ siècle. »", source: "Adapté de Réal Bélanger, Henri Bourassa, L'Encyclopédie canadienne."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "Le Dominion du Canada participe à la guerre des Boers en envoyant des volontaires en Afrique du Sud (le conflit auquel participe le Dominion du Canada en 1899). Cette participation suscite l'opposition des nationalistes canadiens-français (la position des nationalistes canadiens-français concernant cette participation). Cette opposition renforce le nationalisme canadien-français (une conséquence de ce débat sur le nationalisme canadien-français).",
+ updatedAt: "2026-07-22T20:00:46.501Z"
 }
 ]
