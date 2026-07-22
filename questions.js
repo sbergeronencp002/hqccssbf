@@ -1357,7 +1357,8 @@ const REGLETTES = {
 "Q821": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q822": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
 "Q823": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q824": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q824": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q825": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -1775,7 +1776,8 @@ const IMAGE_DB = {
 "tableau_besoins_volontaires_ww2.jpg": {src: "images/tableau_besoins_volontaires_ww2.jpg", w: 1200, h: 800},
 "femmes_usines_ww2.jpg": {src: "images/femmes_usines_ww2.jpg"},
 "femmes_usines_ww1.jpg": {src: "images/femmes_usines_ww1.jpg", w: 1200, h: 960},
-"tableau_guerre_boers.jpg": {src: "images/tableau_guerre_boers.jpg", w: 1200, h: 800}
+"tableau_guerre_boers.jpg": {src: "images/tableau_guerre_boers.jpg", w: 1200, h: 800},
+"tableau_volontaires_pertes_ww2.jpg": {src: "images/tableau_volontaires_pertes_ww2.jpg", w: 1200, h: 800}
 }
 
 const QUESTIONS = [
@@ -14721,5 +14723,22 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 5},
  guide: "Les pertes canadiennes augmentent tandis que le nombre de volontaires diminue (la situation au front en Europe). L'armée canadienne a alors besoin de recruter davantage de soldats pour maintenir ses effectifs (un besoin de l'armée canadienne). Le gouvernement canadien adopte la Loi du service militaire, qui instaure la conscription en 1917 (une mesure adoptée par le gouvernement canadien en 1917).",
  updatedAt: "2026-07-22T20:35:29.398Z"
+},
+{
+ id: "Q825",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ enonce: "Expliquez comment la situation au front pendant la Seconde Guerre mondiale entraîne l'adoption d'une mesure par le gouvernement canadien en 1942.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La situation au front en Europe\n• Un besoin de l'armée canadienne\n• Une mesure adoptée par le gouvernement canadien en 1942",
+ aspects: [{aspect: "Seconde Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "tableau_volontaires_pertes_ww2.jpg", soustitre: "Évolution du recrutement et des pertes militaires canadiennes", source: "Adapté de Anciens Combattants Canada, ressources historiques sur la Seconde Guerre mondiale."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les besoins de notre armée exigent que le gouvernement dispose de tous les moyens nécessaires pour assurer les renforts. »", source: "Adapté de William Lyon Mackenzie King, allocution sur le plébiscite, 1942."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Consentez-vous à relever le gouvernement de toute obligation résultant d'engagements antérieurs restreignant les méthodes de mobilisation pour le service militaire? »", auteur: "Extrait du plébiscite", source: "Adapté de la question officielle du plébiscite canadien de 1942."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "La situation au front en Europe entraîne de lourdes pertes chez les Alliés (la situation au front en Europe). L'armée canadienne a besoin de nouveaux soldats pour maintenir ses effectifs (un besoin de l'armée canadienne). Le gouvernement canadien organise le plébiscite de 1942 afin d'être libéré de sa promesse de ne pas imposer la conscription outre-mer (une mesure adoptée par le gouvernement canadien en 1942).",
+ updatedAt: "2026-07-22T20:39:42.528Z"
 }
 ]
