@@ -1361,7 +1361,8 @@ const REGLETTES = {
 "Q825": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q826": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q827": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q787": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q787": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q790": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
 }
 
 const IMAGE_DB = {
@@ -14188,7 +14189,7 @@ const QUESTIONS = [
  documents: [{type: "textes", cols: [{titre: "Document A", texte: "« En temps de guerre, le Canada doit exercer une surveillance rigoureuse des personnes qui entrent sur son territoire afin d'assurer la sécurité nationale. »", source: "Adapté de Débats de la Chambre des communes du Canada, Ottawa, 1940."}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "Assurer la sécurité nationale.\nPrévenir l'entrée de personnes considérées comme une menace.\nRenforcer la sécurité du pays durant la Seconde Guerre mondiale.",
- updatedAt: "2026-07-19T11:35:36.839Z"
+ updatedAt: "2026-07-24T01:32:44.852Z"
 },
 {
  id: "Q791",
