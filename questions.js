@@ -1361,7 +1361,7 @@ const REGLETTES = {
 "Q825": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q826": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q827": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q811": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q787": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
 }
 
 const IMAGE_DB = {
@@ -14146,7 +14146,7 @@ const QUESTIONS = [
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_provenance_immigrants.jpg", soustitre: "Évolution des origines des immigrants au Canada", source: "Adapté de Paul-André Linteau, René Durocher, Jean-Claude Robert et François Ricard, Histoire du Québec contemporain, tome 2, Boréal, 1986."}]}],
  reponse: {type: "lignes", nombre: 3},
  guide: "Changement\nIl y a changement, car les immigrants proviennent davantage de l'Europe de l'Est et du Sud dans les années 1930 qu'à la fin du XIXᵉ siècle.\nIl y a changement, car la proportion d'immigrants provenant des îles Britanniques diminue entre la fin du XIXᵉ siècle et les années 1930.\n\nContinuité\nIl y a continuité, car les immigrants proviennent majoritairement de l'Europe à la fin du XIXᵉ siècle et encore dans les années 1930.\nIl y a continuité, car les immigrants proviennent toujours en majorité de pays européens entre la fin du XIXᵉ siècle et les années 1930.",
- updatedAt: "2026-07-19T11:28:02.113Z"
+ updatedAt: "2026-07-24T01:32:01.116Z"
 },
 {
  id: "Q788",
@@ -14510,7 +14510,7 @@ const QUESTIONS = [
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_canadiens_mobilises.jpg", soustitre: "Évolution du nombre de Canadiens mobilisés durant la Première Guerre mondiale", source: "Adapté de Bibliothèque et Archives Canada, dossiers du Corps expéditionnaire canadien."}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "Le départ de nombreux hommes pour le front (ou la mobilisation de nombreux hommes) crée des besoins de main-d'œuvre dans plusieurs secteurs.",
- updatedAt: "2026-07-24T01:29:12.785Z"
+ updatedAt: "2026-07-19T19:42:56.503Z"
 },
 {
  id: "Q812",
