@@ -1361,7 +1361,10 @@ const REGLETTES = {
 "Q825": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q826": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q827": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
-"Q811": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]}
+"Q787": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q790": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q793": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
+"Q805": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]}
 }
 
 const IMAGE_DB = {
@@ -14146,7 +14149,7 @@ const QUESTIONS = [
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_provenance_immigrants.jpg", soustitre: "Évolution des origines des immigrants au Canada", source: "Adapté de Paul-André Linteau, René Durocher, Jean-Claude Robert et François Ricard, Histoire du Québec contemporain, tome 2, Boréal, 1986."}]}],
  reponse: {type: "lignes", nombre: 3},
  guide: "Changement\nIl y a changement, car les immigrants proviennent davantage de l'Europe de l'Est et du Sud dans les années 1930 qu'à la fin du XIXᵉ siècle.\nIl y a changement, car la proportion d'immigrants provenant des îles Britanniques diminue entre la fin du XIXᵉ siècle et les années 1930.\n\nContinuité\nIl y a continuité, car les immigrants proviennent majoritairement de l'Europe à la fin du XIXᵉ siècle et encore dans les années 1930.\nIl y a continuité, car les immigrants proviennent toujours en majorité de pays européens entre la fin du XIXᵉ siècle et les années 1930.",
- updatedAt: "2026-07-19T11:28:02.113Z"
+ updatedAt: "2026-07-24T01:32:01.116Z"
 },
 {
  id: "Q788",
@@ -14188,7 +14191,7 @@ const QUESTIONS = [
  documents: [{type: "textes", cols: [{titre: "Document A", texte: "« En temps de guerre, le Canada doit exercer une surveillance rigoureuse des personnes qui entrent sur son territoire afin d'assurer la sécurité nationale. »", source: "Adapté de Débats de la Chambre des communes du Canada, Ottawa, 1940."}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "Assurer la sécurité nationale.\nPrévenir l'entrée de personnes considérées comme une menace.\nRenforcer la sécurité du pays durant la Seconde Guerre mondiale.",
- updatedAt: "2026-07-19T11:35:36.839Z"
+ updatedAt: "2026-07-24T01:32:44.852Z"
 },
 {
  id: "Q791",
@@ -14236,7 +14239,7 @@ const QUESTIONS = [
  documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Les autorités fédérales peuvent refuser l'admission de personnes appartenant à des catégories d'immigrants jugées indésirables conformément aux dispositions de la Loi sur l'immigration. »", source: "Adapté de Gouvernement du Canada, Loi concernant l’immigration, S.C. 1910, chap. 27, modifiée en 1919."}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "Certains groupes d'immigrants sont exclus du Canada.\nL'immigration devient plus restrictive.\nLe gouvernement limite l'admission de certains immigrants.",
- updatedAt: "2026-07-19T11:47:06.039Z"
+ updatedAt: "2026-07-24T01:33:00.079Z"
 },
 {
  id: "Q794",
@@ -14420,7 +14423,7 @@ const QUESTIONS = [
  ],
  reponse: {type: "cause-consequence"},
  guide: {type: "grille", entetes: ["Cause", "Conséquence"], rangees: [["B", "A"]]},
- updatedAt: "2026-07-19T19:25:40.465Z"
+ updatedAt: "2026-07-24T01:33:19.176Z"
 },
 {
  id: "Q806",
@@ -14510,7 +14513,7 @@ const QUESTIONS = [
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_canadiens_mobilises.jpg", soustitre: "Évolution du nombre de Canadiens mobilisés durant la Première Guerre mondiale", source: "Adapté de Bibliothèque et Archives Canada, dossiers du Corps expéditionnaire canadien."}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "Le départ de nombreux hommes pour le front (ou la mobilisation de nombreux hommes) crée des besoins de main-d'œuvre dans plusieurs secteurs.",
- updatedAt: "2026-07-24T01:29:12.785Z"
+ updatedAt: "2026-07-19T19:42:56.503Z"
 },
 {
  id: "Q812",
