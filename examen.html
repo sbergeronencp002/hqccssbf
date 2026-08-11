@@ -110,7 +110,7 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
     <select id="ex-favori">
       <option value="">Aucune préférence</option>
       <option value="Déterminer des causes et des conséquences">Cause et conséquence</option>
-      <option value="Dégager des différences et des similitudes">Similitude et différences</option>
+      <option value="Dégager des différences et des similitudes">Similitudes et différences</option>
       <option value="Établir des liens de causalité">Établir des liens de causalité</option>
       <option value="Déterminer des changements et des continuités">Changement et continuité</option>
     </select>
@@ -270,8 +270,9 @@ function exGenerate() {
       EX_FIXED_TARGETS_APPLIED = res.fixedTargetsApplied || {};
       const titreInput = document.getElementById('ex-titre');
       if (!titreInput.value.trim() || titreInput.dataset.auto === '1') {
-        titreInput.value = 'Examen — ' + periode.replace(/^P\d+\s*—\s*/, (m) => periode.split('—')[0].trim() + ' — ');
-        titreInput.value = 'Examen — ' + periode;
+        // « P5 — 1840 – 1896 » → « Période 5 : 1840 – 1896 » (voir le placeholder du champ)
+        const m = periode.match(/^P(\d+)\s*—\s*(.+)$/);
+        titreInput.value = m ? `Examen — Période ${m[1]} : ${m[2]}` : 'Examen — ' + periode;
         titreInput.dataset.auto = '1';
       }
       exRender(favoriOi);
