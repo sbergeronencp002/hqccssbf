@@ -14820,7 +14820,7 @@ const QUESTIONS = [
  periode: "P5 — 1840 – 1896",
  points: 1,
  soustag: "Situer 1 élément",
- enonce: "À partir du document A, indiquez la lettre correspondant à la région forestière du Saguenay–Lac-Saint-Jean..",
+ enonce: "À partir du document A, indiquez la lettre correspondant à la région forestière du Saguenay–Lac-Saint-Jean.",
  aspects: [{aspect: "Industrie forestière"}],
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "regions_forestieres.jpg", source: "Carte du Québec. Adaptée d'après d-maps.com."}]}],
  reponse: {type: "tableau_2col"},
