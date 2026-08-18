@@ -26,7 +26,15 @@
 //   - jamais deux questions consécutives de la même OI dans l'ordre final de l'examen.
 // ─────────────────────────────────────────────────────────────────────────────
 
-const EX_ATTEMPTS_PER_LEVEL = 150;
+// Plafond dur (garde-fou) — en pratique, tryLevel s'arrête bien avant grâce à
+// STALE_CUTOFF (voir plus bas) dès qu'il plafonne, donc ce nombre n'est presque jamais
+// atteint. L'ancien plafond (150, sans détection de plafonnement) laissait souvent du
+// budget sur la table sur P5/P6 (budget porté à 30 — voir EX_MAX_POINTS_BY_PERIODE dans
+// examen.html) : la phase 3 de exTryBuild ne comble l'écart que par des échanges LOCAUX
+// (même slot, ou paire de slots), pas une recherche globale, donc certaines combinaisons
+// n'atteignent la cible exacte qu'une fraction du temps par tentative — seulement 30-46 %
+// selon l'OI favorite sur P5 avant ce correctif.
+const EX_ATTEMPTS_PER_LEVEL = 8000;
 
 // Nombre de questions visé pour chaque OI sélectionnable comme favorite — certaines OI
 // se prêtent à davantage de répétitions (sous-tags plus nombreux) que d'autres.
@@ -782,12 +790,34 @@ function exGenererExamen({ questions, periode, aspects, oiList, favoriOi, maxPoi
     const fixedTargets = {};
     Object.keys(fixedTargetsRaw).forEach(oi => { if (availableOis.has(oi)) fixedTargets[oi] = fixedTargetsRaw[oi]; });
 
+    // S'arrêter au premier essai valide laissait souvent du budget sur la table (la phase 3
+    // de exTryBuild ne peut combler l'écart que par des échanges LOCAUX — même slot, ou paire
+    // de slots — pas une recherche globale) : sur P5/P6 (budget porté à 30, voir
+    // EX_MAX_POINTS_BY_PERIODE dans examen.html), seulement 7-46 % des essais atteignaient
+    // exactement la cible selon l'OI favorite. On garde donc le MEILLEUR essai valide plutôt
+    // que le premier — retour immédiat seulement si un essai atteint déjà exactement la cible.
+    //
+    // STALE_CUTOFF (abandon après N essais consécutifs sans amélioration, best inclus dans le
+    // décompte dès le départ — un échec total y contribue aussi) borne le coût de cette
+    // recherche élargie : sans lui, un plafond (période/scénario dont la cible exacte est
+    // structurellement hors de portée, ex. « Déterminer des changements » en P1 dégrade
+    // toujours à 22/25 — voir EX_FAVORI_BASE_TARGET) dépenserait TOUJOURS le plafond dur
+    // EX_ATTEMPTS_PER_LEVEL en entier avant d'abandonner ce niveau, à chacun des paliers de
+    // dégradation testés (~8 s mesurées pour un cas pareil à plafond dur seul, sans ce garde-
+    // fou). 400 essais sans amélioration suffit à distinguer un vrai plafond (repéré vite, ce
+    // scénario y contribue même sans jamais réussir) d'une cible rare mais atteignable (ex.
+    // P5 favori « Déterminer des causes » : 30/30 exact avec ce filet, ~350 ms en moyenne).
+    let best = null;
+    let staleStreak = 0;
+    const STALE_CUTOFF = 400;
     for (let attempt = 0; attempt < EX_ATTEMPTS_PER_LEVEL; attempt++) {
       attemptsTotal++;
       const result = exTryBuild(pool, slots, effectiveOiList, favoriOiForBuild, favoriTargetForBuild, fixedTargets, maxPoints, rng, relaxDiversityOis);
-      if (result) return result;
+      if (result && result.points === maxPoints) return result;
+      if (result && (!best || result.points > best.points)) { best = result; staleStreak = 0; }
+      else if (++staleStreak >= STALE_CUTOFF) break;
     }
-    return null;
+    return best;
   }
 
   function finalize(result) {
