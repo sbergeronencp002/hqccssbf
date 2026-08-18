@@ -453,10 +453,39 @@ function exTryBuild(questions, slots, oiList, favoriOi, favoriTarget, fixedTarge
   // fois. Les OI largement disponibles (la plupart) restent gérées en phase 2, où la
   // préférence pour les documents riches reste pleinement effective.
   const EX_SCARCE_AVAIL_RATIO = 0.4;
+  // Une OI dont les sous-tags ont une échappatoire vraiment bon marché (1 pt) face à un
+  // sous-tag à ≥2 pts (ex. « Situer dans le temps » : « Ligne du temps » 1 pt vs « Ordre
+  // chronologique » 2 pts) se fait quasi toujours attribuer le sous-tag le moins cher quand
+  // l'OI n'obtient qu'une seule occurrence — le coût marginal, favorisé partout, écrase
+  // systématiquement le sous-tag plus cher, qui n'apparaît alors que comme 2ᵉ occurrence
+  // « bonus » quand l'OI atteint son plafond (vérifié : 0 fois sur 78 générations P5 où
+  // « Situer dans le temps » n'obtenait qu'une occurrence, sur 500 générations). Seuil
+  // volontairement étroit (min ≤1 pt) : un écart 2 pts vs 3 pts (ex. « Dégager des
+  // différences et des similitudes ») n'a pas ce problème en pratique. Élargir à « n'importe
+  // quel écart » s'est révélé trop agressif : plusieurs OI promues avec un tirage 50/50
+  // rendait le budget infaisable la plupart du temps.
+  function exSoustagCostSkew(oi) {
+    const minBySoustag = new Map();
+    for (const cands of bySlot.values()) {
+      for (const q of cands) {
+        if (q.oi !== oi) continue;
+        const k = exDiversityKey(q);
+        if (!k) continue;
+        minBySoustag.set(k, Math.min(minBySoustag.get(k) ?? Infinity, q.points));
+      }
+    }
+    const costs = [...minBySoustag.values()];
+    return costs.length >= 2 && Math.min(...costs) <= 1 && Math.max(...costs) - Math.min(...costs) >= 1;
+  }
+  // OI promues ici (scarce ou skewed, pas déjà cible fixe/favorite) : seules celles-là passent
+  // par le tirage de sous-tag pondéré ci-dessous — une cible fixe/favorite préexistante garde
+  // son comportement actuel (déjà validé).
+  const fairnessOis = new Set();
   oiList.forEach(oi => {
     if (targets[oi] != null) return; // déjà une cible fixe/favorite
     const avail = availCount(oi);
-    if (avail > 0 && avail <= slots.length * EX_SCARCE_AVAIL_RATIO) targets[oi] = 1;
+    const scarce = avail > 0 && avail <= slots.length * EX_SCARCE_AVAIL_RATIO;
+    if (scarce || exSoustagCostSkew(oi)) { targets[oi] = 1; fairnessOis.add(oi); }
   });
   const targetOis = Object.keys(targets).sort((a, b) => availCount(a) - availCount(b));
 
@@ -473,10 +502,36 @@ function exTryBuild(questions, slots, oiList, favoriOi, favoriTarget, fixedTarge
         }
       }
       if (!scored.length) return null; // cible infaisable pour cette OI dans ce budget
+      // Tirage au sort d'UN sous-tag parmi ceux encore disponibles, PONDÉRÉ par l'inverse de
+      // son coût minimum (2x plus cher = 2x moins de chances) — un tirage à poids égal faisait
+      // trop souvent un pick coûteux simultanément sur plusieurs OI, rendant le budget
+      // infaisable la plupart du temps ; cette pondération garde le sous-tag le moins cher
+      // majoritaire tout en donnant une vraie chance non nulle au(x) sous-tag(s) plus cher(s).
+      // N'AGIT QUE pour les OI de fairnessOis (scarce/skewed ci-dessus), pas pour les cibles
+      // fixes/favorite préexistantes.
+      const soustagMinCost = new Map();
+      scored.forEach(s => {
+        const k = exDiversityKey(s.q);
+        if (!k) return;
+        soustagMinCost.set(k, Math.min(soustagMinCost.get(k) ?? Infinity, s.q.points));
+      });
+      let chosenSoustag = null;
+      if (fairnessOis.has(oi) && soustagMinCost.size > 1) {
+        const entries = [...soustagMinCost.entries()];
+        const weights = entries.map(([, c]) => 1 / c);
+        const total = weights.reduce((a, b) => a + b, 0);
+        let r = (rng || Math.random)() * total;
+        for (let i = 0; i < entries.length; i++) {
+          r -= weights[i];
+          if (r <= 0) { chosenSoustag = entries[i][0]; break; }
+        }
+        if (chosenSoustag == null) chosenSoustag = entries[entries.length - 1][0];
+      }
+      scored.forEach(s => { s.soustagMatch = (chosenSoustag && exDiversityKey(s.q) !== chosenSoustag) ? 1 : 0; });
       // Priorité absolue à un slot épinglé pour cette OI (`pinnedOi`) — sinon il risquerait
       // de ne jamais être consommé (aucune autre OI ne peut le remplir) et de faire échouer
       // toute la tentative une fois la cible déjà atteinte par d'autres slots.
-      scored.sort((a, b) => (b.pinned - a.pinned) || (a.marginal - b.marginal) || (a.jitter - b.jitter));
+      scored.sort((a, b) => (b.pinned - a.pinned) || (a.soustagMatch - b.soustagMatch) || (a.marginal - b.marginal) || (a.jitter - b.jitter));
       commit(scored[0].q, scored[0].slotKey);
     }
   }

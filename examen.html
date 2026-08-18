@@ -149,7 +149,7 @@ nav a.active{background:rgba(255,255,255,.18);color:#fff}
 
 <script src="oi-config.js?v=1"></script>
 <script src="contexte.js"></script>
-<script src="examen-gen.js?v=3"></script>
+<script src="examen-gen.js?v=4"></script>
 <script>
 'use strict';
 
@@ -201,7 +201,16 @@ const EX_MAX_POINTS_DEFAULT = 25;
 // un aspect une fois les options bon marché épuisées ailleurs, ex. « Grande dépression »).
 // Minimum réel mesuré ~28 pts ; 30 pts retenu comme standard pour cette période (décision de
 // l'enseignant) plutôt que d'assouplir un plafond d'OI ou d'ajouter du contenu à 1 point.
-const EX_MAX_POINTS_BY_PERIODE = { 'P6 — 1896 – 1945': 30 };
+// P5 : le correctif d'équité des sous-tags (voir exSoustagCostSkew dans examen-gen.js — ex.
+// « Situer dans le temps »/« Situer dans l'espace » n'obtenaient jamais leur sous-tag à 2 pts
+// en occurrence unique) ne peut donner une vraie chance au sous-tag plus cher qu'avec de la
+// marge budgétaire : à 25 pts pile, le mécanisme de réessai jusqu'au succès élimine
+// systématiquement les tirages « chers » (ils réussissent bien plus rarement, donc le premier
+// succès trouvé est presque toujours un tirage bon marché — vérifié : 0 % de sous-tags chers
+// dans les examens générés à 25 pts, malgré un tirage pondéré 1/3 en leur faveur). 30 pts
+// retenu comme standard pour cette période aussi (décision de l'enseignant) — ~77 % de sous-
+// tags chers effectivement représentés à ce budget, contre 0 % avant.
+const EX_MAX_POINTS_BY_PERIODE = { 'P5 — 1840 – 1896': 30, 'P6 — 1896 – 1945': 30 };
 function exMaxPointsFor(periode) { return EX_MAX_POINTS_BY_PERIODE[periode] || EX_MAX_POINTS_DEFAULT; }
 
 const PERIODES_ALL = [...(PERIODES_PAR_NIVEAU['3'] || []), ...(PERIODES_PAR_NIVEAU['4'] || [])];
