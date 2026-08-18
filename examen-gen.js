@@ -435,10 +435,29 @@ function exTryBuild(questions, slots, oiList, favoriOi, favoriTarget, fixedTarge
     slotKeyOf.set(q.id, slotKey);
   }
 
-  // ── PHASE 1 : cibles exactes (fixes + favorite) ──────────────────────────────
+  // ── PHASE 1 : cibles exactes (fixes + favorite) + garantie d'équité pour les OI rares ──
   const targets = { ...fixedTargets };
   if (favoriOi && favoriTarget > 0) targets[favoriOi] = favoriTarget;
   const availCount = oi => slots.filter(s => bySlot.get(s.key).some(q => q.oi === oi)).length;
+  // Une OI dont les candidats sont concentrés dans peu de slots (ex. « Situer dans l'espace »
+  // présente dans seulement 4 des 14 aspects d'une période) se fait presque toujours attribuer
+  // au MÊME slot d'une génération à l'autre si on laisse la phase 2 trancher : la richesse
+  // documentaire (favorisée slot par slot) y écrase sa candidature partout ailleurs où elle
+  // est disponible, sauf dans le seul slot où elle se trouve être compétitive — celui-là,
+  // elle le « gagne » alors presque à coup sûr, indépendamment de l'ordre MRV (vérifié : un
+  // aspect donné pouvait recevoir la même OI 197 fois sur 200 générations). On réserve donc
+  // ici le quota de base (1, garantie de variété) des OI dont la disponibilité est ainsi
+  // concentrée — au coût marginal le plus bas + tirage aléatoire parmi TOUS leurs slots
+  // éligibles, comme pour une cible fixe — plutôt que de laisser la phase 2 (dominée par la
+  // richesse documentaire d'un seul slot) décider arbitrairement laquelle l'obtient à chaque
+  // fois. Les OI largement disponibles (la plupart) restent gérées en phase 2, où la
+  // préférence pour les documents riches reste pleinement effective.
+  const EX_SCARCE_AVAIL_RATIO = 0.4;
+  oiList.forEach(oi => {
+    if (targets[oi] != null) return; // déjà une cible fixe/favorite
+    const avail = availCount(oi);
+    if (avail > 0 && avail <= slots.length * EX_SCARCE_AVAIL_RATIO) targets[oi] = 1;
+  });
   const targetOis = Object.keys(targets).sort((a, b) => availCount(a) - availCount(b));
 
   for (const oi of targetOis) {
