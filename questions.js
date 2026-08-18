@@ -1364,7 +1364,8 @@ const REGLETTES = {
 "Q787": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
 "Q790": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
 "Q793": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
-"Q805": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]}
+"Q805": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]},
+"Q828": {oi: "Situer dans l'espace", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]}
 }
 
 const IMAGE_DB = {
@@ -1783,7 +1784,8 @@ const IMAGE_DB = {
 "femmes_usines_ww2.jpg": {src: "images/femmes_usines_ww2.jpg"},
 "femmes_usines_ww1.jpg": {src: "images/femmes_usines_ww1.jpg", w: 1200, h: 960},
 "tableau_guerre_boers.jpg": {src: "images/tableau_guerre_boers.jpg", w: 1200, h: 800},
-"tableau_volontaires_pertes_ww2.jpg": {src: "images/tableau_volontaires_pertes_ww2.jpg", w: 1200, h: 800}
+"tableau_volontaires_pertes_ww2.jpg": {src: "images/tableau_volontaires_pertes_ww2.jpg", w: 1200, h: 800},
+"regions_forestieres.jpg": {src: "images/regions_forestieres.jpg"}
 }
 
 const QUESTIONS = [
@@ -14780,5 +14782,19 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 5},
  guide: "Les femmes contribuent à l'effort de guerre en travaillant notamment dans les usines de guerre (la contribution des femmes durant la Seconde Guerre mondiale). Cette contribution est reconnue par le gouvernement du Québec (la reconnaissance de cette contribution). Le gouvernement provincial adopte une loi accordant aux femmes le droit de vote et d'éligibilité en 1940 (une mesure adoptée par le gouvernement provincial).",
  updatedAt: "2026-07-22T21:18:05.072Z"
+},
+{
+ id: "Q828",
+ niveau: 4,
+ oi: "Situer dans l'espace",
+ periode: "P5 — 1840 – 1896",
+ points: 1,
+ soustag: "Situer 1 élément",
+ enonce: "À partir du document A, indiquez la lettre correspondant à la région forestière de l'Outaouais.",
+ aspects: [{aspect: "Industrie forestière"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "regions_forestieres.jpg", source: "Carte du Québec. Adaptée d'après d-maps.com."}]}],
+ reponse: {type: "tableau_2col"},
+ guide: "A",
+ updatedAt: "2026-08-18T16:06:55.241Z"
 }
 ]
