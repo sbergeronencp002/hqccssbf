@@ -1366,7 +1366,8 @@ const REGLETTES = {
 "Q793": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q805": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]},
 "Q828": {oi: "Situer dans l'espace", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]},
-"Q829": {oi: "Situer dans l'espace", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]}
+"Q829": {oi: "Situer dans l'espace", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]},
+"Q830": {oi: "Situer dans l'espace", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]}
 }
 
 const IMAGE_DB = {
@@ -14811,5 +14812,19 @@ const QUESTIONS = [
  reponse: {type: "tableau_2col"},
  guide: "B",
  updatedAt: "2026-08-18T16:07:29.076Z"
+},
+{
+ id: "Q830",
+ niveau: 4,
+ oi: "Situer dans l'espace",
+ periode: "P5 — 1840 – 1896",
+ points: 1,
+ soustag: "Situer 1 élément",
+ enonce: "À partir du document A, indiquez la lettre correspondant à la région forestière du Saguenay–Lac-Saint-Jean..",
+ aspects: [{aspect: "Industrie forestière"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "regions_forestieres.jpg", source: "Carte du Québec. Adaptée d'après d-maps.com."}]}],
+ reponse: {type: "tableau_2col"},
+ guide: "C",
+ updatedAt: "2026-08-18T16:07:51.552Z"
 }
 ]
