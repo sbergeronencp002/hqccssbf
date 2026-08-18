@@ -1367,7 +1367,9 @@ const REGLETTES = {
 "Q805": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]},
 "Q828": {oi: "Situer dans l'espace", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]},
 "Q829": {oi: "Situer dans l'espace", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]},
-"Q830": {oi: "Situer dans l'espace", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]}
+"Q830": {oi: "Situer dans l'espace", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]},
+"Q831": {oi: "Situer dans l'espace", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]},
+"Q832": {oi: "Situer dans l'espace", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]}
 }
 
 const IMAGE_DB = {
@@ -1787,7 +1789,9 @@ const IMAGE_DB = {
 "femmes_usines_ww1.jpg": {src: "images/femmes_usines_ww1.jpg", w: 1200, h: 960},
 "tableau_guerre_boers.jpg": {src: "images/tableau_guerre_boers.jpg", w: 1200, h: 800},
 "tableau_volontaires_pertes_ww2.jpg": {src: "images/tableau_volontaires_pertes_ww2.jpg", w: 1200, h: 800},
-"regions_forestieres.jpg": {src: "images/regions_forestieres.jpg"}
+"regions_forestieres.jpg": {src: "images/regions_forestieres.jpg"},
+"emigration_habs.jpg": {src: "images/emigration_habs.jpg"},
+"regions_politique_nationale.jpg": {src: "images/regions_politique_nationale.jpg", w: 1200, h: 1016}
 }
 
 const QUESTIONS = [
@@ -14820,11 +14824,39 @@ const QUESTIONS = [
  periode: "P5 — 1840 – 1896",
  points: 1,
  soustag: "Situer 1 élément",
- enonce: "À partir du document A, indiquez la lettre correspondant à la région forestière du Saguenay–Lac-Saint-Jean..",
+ enonce: "À partir du document A, indiquez la lettre correspondant à la région forestière du Saguenay–Lac-Saint-Jean.",
  aspects: [{aspect: "Industrie forestière"}],
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "regions_forestieres.jpg", source: "Carte du Québec. Adaptée d'après d-maps.com."}]}],
  reponse: {type: "tableau_2col"},
  guide: "C",
  updatedAt: "2026-08-18T16:07:51.552Z"
+},
+{
+ id: "Q831",
+ niveau: 4,
+ oi: "Situer dans l'espace",
+ periode: "P5 — 1840 – 1896",
+ points: 1,
+ soustag: "Situer 1 élément",
+ enonce: "À l’aide du document A, indiquez la lettre qui correspond à la destination des Canadiens français qui émigrent vers les États-Unis dans la seconde moitié du 19e siècle.",
+ aspects: [{aspect: "Migrations"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "emigration_habs.jpg", source: "Carte du Québec. Adaptée d'après d-maps.com."}]}],
+ reponse: {type: "tableau_2col"},
+ guide: "B",
+ updatedAt: "2026-08-18T16:22:15.662Z"
+},
+{
+ id: "Q832",
+ niveau: 4,
+ oi: "Situer dans l'espace",
+ periode: "P5 — 1840 – 1896",
+ points: 1,
+ soustag: "Situer 1 élément",
+ enonce: "À l’aide du document A, indiquez la lettre qui correspond à la région visée par la colonisation dans le cadre de la Politique nationale.",
+ aspects: [{aspect: "Politique nationale"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "regions_politique_nationale.jpg", source: "Carte du Canada. Adaptée d'après d-maps.com."}]}],
+ reponse: {type: "tableau_2col"},
+ guide: "C",
+ updatedAt: "2026-08-18T16:29:50.727Z"
 }
 ]

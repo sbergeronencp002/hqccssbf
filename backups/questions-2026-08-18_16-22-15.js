@@ -1335,7 +1335,39 @@ const REGLETTES = {
 "Q797": {oi: "Établir des faits", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève établit correctement le fait."}, {pts: 0, desc: "L'élève établit incorrectement le fait ou ne l'établit pas."}]},
 "Q798": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
 "Q799": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
-"Q800": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []}
+"Q800": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q801": {oi: "Situer dans le temps", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps. (4 sur 4)"}, {pts: 1, desc: "L'élève situe certains faits dans le temps. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"}]},
+"Q802": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q803": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de divergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de divergence ou ne présente que les deux points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de divergence entre les points de vue ou ne l'établit pas."}]},
+"Q804": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q806": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q807": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
+"Q808": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q809": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
+"Q810": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le changement."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le changement."}, {pts: 0, desc: "L'élève détermine incorrectement le changement ou ne le détermine pas."}]},
+"Q813": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
+"Q812": {oi: "Situer dans le temps", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève situe tous les faits dans le temps. (4 sur 4)"}, {pts: 1, desc: "L'élève situe certains faits dans le temps. (3 ou 2 sur 4)"}, {pts: 0, desc: "L'élève ne situe pas les faits dans le temps. (1 ou 0 sur 4)"}]},
+"Q814": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q815": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève établit correctement le point de convergence entre les points de vue."}, {pts: 1, desc: "L'élève établit plus ou moins correctement le point de convergence entre les points de vue."}, {pts: 0, desc: "L'élève établit incorrectement le point de convergence entre les points de vue ou ne l'établit pas."}]},
+"Q816": {oi: "Dégager des différences et des similitudes", variante: "acteur-positions", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q817": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
+"Q818": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
+"Q819": {oi: "Dégager des différences et des similitudes", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève dégage correctement la similitude."}, {pts: 1, desc: "L'élève dégage plus ou moins correctement la similitude."}, {pts: 0, desc: "L'élève dégage incorrectement la similitude ou ne la dégage pas."}]},
+"Q820": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]},
+"Q821": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
+"Q822": {oi: "Déterminer des changements et des continuités", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la continuité."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la continuité."}, {pts: 0, desc: "L'élève détermine incorrectement la continuité ou ne la détermine pas."}]},
+"Q823": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q824": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q825": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q826": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q827": {oi: "Établir des liens de causalité", variante: "3 éléments — 2 liens", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q787": {oi: "Déterminer des changements et des continuités", variante: "changement-continuité", colonnes: ["3 points", "2 points", "1 point", "0 point"], niveaux: []},
+"Q790": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement le facteur explicatif."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement le facteur explicatif."}, {pts: 0, desc: "L'élève détermine incorrectement le facteur explicatif ou ne le détermine pas."}]},
+"Q793": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine correctement la conséquence."}, {pts: 1, desc: "L'élève détermine plus ou moins correctement la conséquence."}, {pts: 0, desc: "L'élève détermine incorrectement la conséquence ou ne la détermine pas."}]},
+"Q805": {oi: "Déterminer des causes et des conséquences", colonnes: ["2 points", "1 point", "0 point"], niveaux: [{pts: 2, desc: "L'élève détermine le facteur explicatif et la conséquence. (2 sur 2)"}, {pts: 1, desc: "L'élève détermine le facteur explicatif ou la conséquence. (1 sur 2)"}, {pts: 0, desc: "L'élève ne détermine pas le facteur explicatif ni la conséquence. (0 sur 2)"}]},
+"Q828": {oi: "Situer dans l'espace", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]},
+"Q829": {oi: "Situer dans l'espace", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]},
+"Q830": {oi: "Situer dans l'espace", colonnes: ["1 point", "0 point"], niveaux: [{pts: 1, desc: "L'élève situe le fait dans l'espace."}, {pts: 0, desc: "L'élève ne situe pas le fait dans l'espace."}]}
 }
 
 const IMAGE_DB = {
@@ -1741,7 +1773,22 @@ const IMAGE_DB = {
 "magasins_xenophobie.jpg": {src: "images/magasins_xenophobie.jpg"},
 "tableau_familles_abitibi.jpg": {src: "images/tableau_familles_abitibi.jpg", w: 1200, h: 777},
 "soupe_populaire.jpg": {src: "images/soupe_populaire.jpg", w: 1200, h: 841},
-"affiche_victoire_ww2.jpg": {src: "images/affiche_victoire_ww2.jpg", w: 957, h: 1200}
+"affiche_victoire_ww2.jpg": {src: "images/affiche_victoire_ww2.jpg", w: 957, h: 1200},
+"tableau_blesses_morts_ww1.jpg": {src: "images/tableau_blesses_morts_ww1.jpg"},
+"tableau_volontairtes_ww1.jpg": {src: "images/tableau_volontairtes_ww1.jpg"},
+"tableau_personnes_internees.jpg": {src: "images/tableau_personnes_internees.jpg", w: 1200, h: 800},
+"tableau_volontaires_pertes_ww1.jpg": {src: "images/tableau_volontaires_pertes_ww1.jpg"},
+"tableau_canadiens_mobilises.jpg": {src: "images/tableau_canadiens_mobilises.jpg"},
+"discours_conscription_1917.jpg": {src: "images/discours_conscription_1917.jpg"},
+"tableau_femmes_ww1_ww2.jpg": {src: "images/tableau_femmes_ww1_ww2.jpg"},
+"tableau_depenses_gvt_ww1_ww2.jpg": {src: "images/tableau_depenses_gvt_ww1_ww2.jpg"},
+"tableau_besoins_volontaires_ww2.jpg": {src: "images/tableau_besoins_volontaires_ww2.jpg", w: 1200, h: 800},
+"femmes_usines_ww2.jpg": {src: "images/femmes_usines_ww2.jpg"},
+"femmes_usines_ww1.jpg": {src: "images/femmes_usines_ww1.jpg", w: 1200, h: 960},
+"tableau_guerre_boers.jpg": {src: "images/tableau_guerre_boers.jpg", w: 1200, h: 800},
+"tableau_volontaires_pertes_ww2.jpg": {src: "images/tableau_volontaires_pertes_ww2.jpg", w: 1200, h: 800},
+"regions_forestieres.jpg": {src: "images/regions_forestieres.jpg"},
+"emigration_habs.jpg": {src: "images/emigration_habs.jpg", w: 932, h: 1200}
 }
 
 const QUESTIONS = [
@@ -12578,15 +12625,15 @@ const QUESTIONS = [
  periode: "P6 — 1896 – 1945",
  points: 3,
  enonce: "Expliquez comment la participation du Canada aux guerres de l’Empire britannique contribue à un changement de son statut constitutionnel.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La participation du Dominion du Canada à un conflit aux côtés de l’Empire britannique\n• Une manifestation de l’autonomie croissante du Canada\n• Un changement du statut constitutionnel du Canada",
- aspects: [{aspect: "Statut du Canada dans l'Empire britannique"}],
+ aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Statut du Canada dans l'Empire britannique"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", ref: "bataille_crete_vimy.jpg", soustitre: "Les soldats canadiens à la bataille de Vimy", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
-  {type: "textes", cols: [{titre: "Document B", texte: "« À la fin de la guerre, le Canada signe séparément le traité de Versailles et devient membre de la Société des Nations. »", source: "Adapté de The Canadian Encyclopedia, « Constitutional History of Canada », Historica Canada."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« La participation du Canada à la Société des Nations confirme l'affirmation graduelle de son autonomie diplomatique à l'intérieur de l'Empire britannique. »", source: "Adapté de J. L. Granatstein, Canada's War: The Politics of the Mackenzie King Government, 1939–1945, Oxford University Press, 1975."}]},
   {type: "textes", cols: [{titre: "Document C", texte: "« À partir de 1931, le Parlement britannique ne peut plus adopter de lois applicables au Canada sans le consentement du gouvernement canadien. »", source: "Adapté de Jacques Lacoursière, Histoire populaire du Québec. Tome 4 : 1896 à 1960, Septentrion, 1997."}]}
  ],
  reponse: {type: "lignes", nombre: 5},
  guide: "Le Dominion du Canada participe à la Première Guerre mondiale aux côtés de l’Empire britannique (la participation du Dominion du Canada à un conflit aux côtés de l’Empire britannique). Il signe ensuite distinctement le traité de Versailles (une manifestation de l’autonomie croissante du Canada). En 1931, le Statut de Westminster reconnaît son autonomie législative (un changement du statut constitutionnel du Canada).",
- updatedAt: "2026-07-14T18:37:13.678Z"
+ updatedAt: "2026-07-22T19:41:10.402Z"
 },
 {
  id: "Q689",
@@ -13108,7 +13155,7 @@ const QUESTIONS = [
  oi: "Établir des liens de causalité",
  periode: "P6 — 1896 – 1945",
  points: 3,
- enonce: "Expliquez comment le développement d'une nouvelle source d'énergie favorise l'augmentation de la production manufacturière au Québec durant la première moitié du XXᵉ siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Le développement d'une nouvelle source d'énergie\n• L'implantation de nouvelles manufactures\n• L'augmentation de la production manufacturière",
+ enonce: "Expliquez comment le développement d'une nouvelle source d'énergie contribue au développement du secteur manufacturier au Québec durant la première moitié du XXᵉ siècle.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Le développement d'une nouvelle source d'énergie\n• L'émergence de nouveaux secteurs industriels\n• Une conséquence sur la production manufacturière",
  aspects: [{aspect: "Deuxième phase d'industrialisation"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", texte: "« Grâce au développement de l'énergie hydraulique, certaines régions du Québec attirent de nouvelles entreprises qui augmentent progressivement l'activité manufacturière et stimulent leur développement économique. »", source: "Adapté de Paul-André Linteau, Histoire du Canada, Presses de l'Université de Montréal, 2008."}]},
@@ -13116,8 +13163,8 @@ const QUESTIONS = [
   {type: "textes", cols: [{titre: "Document C", ref: "tableau_production_manufacturiere_1900-1940.jpg", soustitre: "Évolution de la production manufacturière au Québec", source: "Adapté de Statistique Canada, Statistiques historiques du Canada, section E – Manufactures et industrie, Gouvernement du Canada."}]}
  ],
  reponse: {type: "lignes", nombre: 5},
- guide: "Le développement de l'hydroélectricité (le développement d'une nouvelle source d'énergie) favorise l'implantation de nouvelles industries, comme les industries des pâtes et papiers (l'implantation de nouvelles industries). Ces nouvelles industries contribuent à l'augmentation de la production manufacturière (la production manufacturière).",
- updatedAt: "2026-07-16T20:19:42.068Z"
+ guide: "Le développement de l'hydroélectricité fournit une source d'énergie abondante aux industries (le développement d'une nouvelle source d'énergie). De nouveaux secteurs industriels, comme les pâtes et papiers et l'aluminium, émergent au Québec (l'émergence de nouveaux secteurs industriels). La production manufacturière augmente (une conséquence sur la production manufacturière).",
+ updatedAt: "2026-07-22T22:57:09.964Z"
 },
 {
  id: "Q725",
@@ -14107,7 +14154,7 @@ const QUESTIONS = [
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_provenance_immigrants.jpg", soustitre: "Évolution des origines des immigrants au Canada", source: "Adapté de Paul-André Linteau, René Durocher, Jean-Claude Robert et François Ricard, Histoire du Québec contemporain, tome 2, Boréal, 1986."}]}],
  reponse: {type: "lignes", nombre: 3},
  guide: "Changement\nIl y a changement, car les immigrants proviennent davantage de l'Europe de l'Est et du Sud dans les années 1930 qu'à la fin du XIXᵉ siècle.\nIl y a changement, car la proportion d'immigrants provenant des îles Britanniques diminue entre la fin du XIXᵉ siècle et les années 1930.\n\nContinuité\nIl y a continuité, car les immigrants proviennent majoritairement de l'Europe à la fin du XIXᵉ siècle et encore dans les années 1930.\nIl y a continuité, car les immigrants proviennent toujours en majorité de pays européens entre la fin du XIXᵉ siècle et les années 1930.",
- updatedAt: "2026-07-19T11:28:02.113Z"
+ updatedAt: "2026-07-24T01:32:01.116Z"
 },
 {
  id: "Q788",
@@ -14149,7 +14196,7 @@ const QUESTIONS = [
  documents: [{type: "textes", cols: [{titre: "Document A", texte: "« En temps de guerre, le Canada doit exercer une surveillance rigoureuse des personnes qui entrent sur son territoire afin d'assurer la sécurité nationale. »", source: "Adapté de Débats de la Chambre des communes du Canada, Ottawa, 1940."}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "Assurer la sécurité nationale.\nPrévenir l'entrée de personnes considérées comme une menace.\nRenforcer la sécurité du pays durant la Seconde Guerre mondiale.",
- updatedAt: "2026-07-19T11:35:36.839Z"
+ updatedAt: "2026-07-24T01:32:44.852Z"
 },
 {
  id: "Q791",
@@ -14197,7 +14244,7 @@ const QUESTIONS = [
  documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Les autorités fédérales peuvent refuser l'admission de personnes appartenant à des catégories d'immigrants jugées indésirables conformément aux dispositions de la Loi sur l'immigration. »", source: "Adapté de Gouvernement du Canada, Loi concernant l’immigration, S.C. 1910, chap. 27, modifiée en 1919."}]}],
  reponse: {type: "lignes", nombre: 2},
  guide: "Certains groupes d'immigrants sont exclus du Canada.\nL'immigration devient plus restrictive.\nLe gouvernement limite l'admission de certains immigrants.",
- updatedAt: "2026-07-19T11:47:06.039Z"
+ updatedAt: "2026-07-24T01:33:00.079Z"
 },
 {
  id: "Q794",
@@ -14298,5 +14345,487 @@ const QUESTIONS = [
  reponse: {type: "lignes", nombre: 5},
  guide: "La Grande Dépression entraîne un chômage important (la situation économique des années 1930). Le gouvernement provincial ouvre l'Abitibi à la colonisation afin d'y établir des familles (une région ouverte à la colonisation). Cette mesure favorise le peuplement de cette région (une conséquence de cette mesure).",
  updatedAt: "2026-07-19T13:16:09.629Z"
+},
+{
+ id: "Q801",
+ niveau: 4,
+ oi: "Situer dans le temps",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Avant et après",
+ enonce: "Les documents A à D présentent des événements marquants de l'évolution du statut politique du Canada. Indiquez si chacun de ces événements se déroule avant ou après les Années folles.",
+ aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Seconde Guerre mondiale"}, {aspect: "Statut du Canada dans l'Empire britannique"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "statut_de_westminster.jpg", soustitre: "L’adoption du Statut de Westminster", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« La signature distincte du traité par le Canada et son admission à la Société des Nations témoignent de la reconnaissance de son statut international. »", soustitre: "Discours de Robert Laird Borden sur la Société des Nations", source: "Adapté de Robert Laird Borden, Canada and the Peace, discours prononcé à la Chambre des communes du Canada, 2 septembre 1919."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Parmi les troupes alliées qui débarquent en Normandie, environ 14 000 soldats canadiens prennent d’assaut la plage Juno. »", source: "Adapté du Musée canadien de la guerre, Le Canada au jour J."}]},
+  {type: "textes", cols: [{titre: "Document D", ref: "guerre_des_boers_1899.jpg", soustitre: "Le Canada participe à la guerre des Boers", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}
+ ],
+ reponse: {type: "avant-apres", label: "Les Années folles"},
+ guide: {type: "grille", entetes: ["Avant", "Les Années folles", "Après"], rangees: [["A et C", "", "B et D"]]},
+ updatedAt: "2026-07-19T14:08:15.025Z"
+},
+{
+ id: "Q802",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ enonce: "Expliquez comment la situation des Alliés pendant la Première Guerre mondiale divise la population canadienne.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\nUne conséquence de la participation des Alliés au conflit\nUn besoin des Alliés\nUn enjeu qui divise la population canadienne",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "tableau_blesses_morts_ww1.jpg", soustitre: "Évolution des pertes militaires canadiennes", source: "Adapté de Anciens Combattants Canada, statistiques sur les pertes canadiennes de la Première Guerre mondiale."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "tableau_volontairtes_ww1.jpg", soustitre: "Évolution du recrutement volontaire au Canada", source: "Adapté de Bibliothèque et Archives Canada, dossiers du Corps expéditionnaire canadien; et Adapté de Anciens Combattants Canada, ressources historiques sur la Première Guerre mondiale."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Le volontariat a échoué. Le Canada doit recruter suffisamment d'hommes pour maintenir les quatre divisions au front, ou les laisser disparaître. »", auteur: "Robert Laird Borden", source: "Adapté du discours de Robert Laird Borden présentant le Military Service Bill à la Chambre des communes du Canada, Ottawa, 11 juin 1917."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "Les Alliés subissent de lourdes pertes humaines (une conséquence de la participation des Alliés au conflit). Ils ont besoin de nouvelles troupes (un besoin des Alliés), ce qui amène le gouvernement canadien à imposer la conscription. Cette mesure divise la population canadienne (un enjeu qui divise la population canadienne), notamment entre les partisans et les opposants au service militaire obligatoire.",
+ updatedAt: "2026-07-19T18:27:42.749Z"
+},
+{
+ id: "Q803",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Divergence – 2 acteurs",
+ enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en désaccord?",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Lorsque la Grande-Bretagne est en guerre, le Canada doit remplir son devoir envers l'Empire et participer au conflit. »", auteur: "Sam Hughes, ministre canadien de la Milice et de la Défense", source: "Adapté de Sam Hughes, discours à la Chambre des communes du Canada, Ottawa, 1914."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Le Canada ne doit pas sacrifier ses intérêts nationaux dans une guerre européenne qui ne menace ni son territoire ni sa population. »", auteur: "Henri Bourassa - journaliste et fondateur du Devoir"}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "La participation du Canada à la Première Guerre mondiale.",
+ updatedAt: "2026-07-19T18:32:17.078Z"
+},
+{
+ id: "Q804",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une raison pour laquelle le Canada participe à la Première Guerre mondiale.",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Le Canada est un dominion de l’Empire britannique. La Grande-Bretagne demeure responsable de sa politique étrangère. »", source: "Adapté de Parlement du Canada, Moments fondateurs : Histoire du Canada et de son Parlement, Parlement du Canada, 2017, p. 11."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Le Canada participe à la Première Guerre mondiale parce qu’il fait partie de l’Empire britannique.",
+ updatedAt: "2026-07-19T18:34:58.721Z"
+},
+{
+ id: "Q805",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Cause et conséquence",
+ enonce: "Les documents A et B présentent des informations sur la Loi sur les mesures de guerre. Indiquez le document qui présente une cause de son adoption et celui qui présente une conséquence de son adoption.",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "camp_internement_ww2.jpg", soustitre: "Internement de civils dans un camp canadien", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Le gouvernement doit disposer de pouvoirs suffisants pour assurer la sécurité, la défense, la paix, l'ordre et le bien-être du Canada pendant la durée de la guerre. »", source: "Adapté de Loi sur les mesures de guerre, S.C. 1914, c. 2, Parlement du Canada, 22 août 1914."}]}
+ ],
+ reponse: {type: "cause-consequence"},
+ guide: {type: "grille", entetes: ["Cause", "Conséquence"], rangees: [["B", "A"]]},
+ updatedAt: "2026-07-24T01:33:19.176Z"
+},
+{
+ id: "Q806",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une raison pour laquelle le gouvernement canadien instaure la conscription en 1917.",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_volontairtes_ww1.jpg", soustitre: "Évolution du recrutement et des pertes militaires canadiennes", source: "Adapté de Bibliothèque et Archives Canada, dossiers du Corps expéditionnaire canadien."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Le nombre de volontaires est insuffisant pour remplacer les pertes au front.",
+ updatedAt: "2026-07-19T19:27:57.067Z"
+},
+{
+ id: "Q807",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Conséquence",
+ enonce: "Indiquez une conséquence de l'adoption de la Loi sur les mesures de guerre durant la Première Guerre mondiale.",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_personnes_internees.jpg", soustitre: "Évolution du nombre de personnes internées au Canada", source: "Adapté de Parcs Canada, programme national de reconnaissance des camps d'internement de la Première Guerre mondiale."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Des personnes considérées comme des ressortissants ennemis sont internées.\nDes camps d'internement sont mis en place.",
+ updatedAt: "2026-07-19T19:32:05.692Z"
+},
+{
+ id: "Q808",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une raison pour laquelle le gouvernement canadien adopte la Loi du service militaire en 1917.",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_volontaires_pertes_ww1.jpg", soustitre: "Évolution du recrutement et des pertes militaires canadiennes", source: "Adapté de Bibliothèque et Archives Canada, dossiers du Corps expéditionnaire canadien."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les volontaires sont trop peu nombreux pour remplacer les soldats.",
+ updatedAt: "2026-07-19T19:33:30.655Z"
+},
+{
+ id: "Q809",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Convergence – 2 acteurs",
+ enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Le Canada ne doit pas imposer le service militaire obligatoire, car cette mesure divise le pays et dépasse les obligations du Dominion. »", auteur: "Henri Bourassa", source: "Adapté de Henri Bourassa, Le Devoir, 1917."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« La conscription risque de semer la discorde entre les Canadiens et ne constitue pas la meilleure solution pour soutenir l'effort de guerre. »", auteur: "Wilfrid Laurier", source: "Adapté de Wilfrid Laurier, discours à la Chambre des communes du Canada, 24 juillet 1917."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "La conscription.\nAu service militaire obligatoire.",
+ updatedAt: "2026-07-19T19:35:35.482Z"
+},
+{
+ id: "Q810",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Changement",
+ enonce: "À partir des documents A et B, indiquez s'il y a changement ou continuité concernant le mode de recrutement des soldats entre 1914 et 1917.",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Au début de la guerre, le Canada mise entièrement sur le volontariat pour recruter les hommes destinés au Corps expéditionnaire canadien.", source: "Adapté de Desmond Morton, Une histoire militaire du Canada, Athabasca University Press, 2007."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les pertes grandissantes rendent le recrutement plus difficile et obligent le gouvernement à envisager d'autres solutions pour maintenir les effectifs. »", source: "Adapté de Béatrice Richard, La Première Guerre mondiale, 1914-1918, Septentrion, 2001."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Il y a changement, car le recrutement passe du volontariat à la conscription.\nIl y a changement, car le recrutement passe du volontariat au service militaire obligatoire.",
+ updatedAt: "2026-07-19T19:39:43.700Z"
+},
+{
+ id: "Q811",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une raison pour laquelle de nombreuses femmes occupent de nouveaux emplois durant la Première Guerre mondiale.",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_canadiens_mobilises.jpg", soustitre: "Évolution du nombre de Canadiens mobilisés durant la Première Guerre mondiale", source: "Adapté de Bibliothèque et Archives Canada, dossiers du Corps expéditionnaire canadien."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Le départ de nombreux hommes pour le front (ou la mobilisation de nombreux hommes) crée des besoins de main-d'œuvre dans plusieurs secteurs.",
+ updatedAt: "2026-07-19T19:42:56.503Z"
+},
+{
+ id: "Q812",
+ niveau: 4,
+ oi: "Situer dans le temps",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Avant et après",
+ enonce: "Les documents A à D présentent des événements marquants de l'évolution du statut politique du Canada. Indiquez si chacun de ces événements se déroule avant ou après les Années folles.",
+ aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Seconde Guerre mondiale"}, {aspect: "Statut du Canada dans l'Empire britannique"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "discours_conscription_1917.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Le Statut de Westminster consacre l'autonomie législative du Canada tout en maintenant son appartenance au Commonwealth britannique. »", source: "Adapté de Eugénie Brouillet, La négation de la nation, Septentrion, 2005."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "conference_quebec.jpg", soustitre: "Conférence de Québec", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]},
+  {type: "textes", cols: [{titre: "Document D", texte: "« La guerre des Boers marque la première participation militaire du Canada à un conflit outre-mer sous le drapeau britannique. »", source: "Adapté de Desmond Morton, Une histoire militaire du Canada, Athabasca University Press, 2007."}]}
+ ],
+ reponse: {type: "avant-apres", label: "Les Années folles"},
+ guide: {type: "grille", entetes: ["Avant", "Les Années folles", "Après"], rangees: [["A et D", "", "B et C"]]},
+ updatedAt: "2026-07-19T19:52:54.904Z"
+},
+{
+ id: "Q813",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Convergence – 2 acteurs",
+ enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Chaque Canadien peut contribuer à la victoire, que ce soit au front, dans les usines ou par son travail quotidien. »", auteur: "Robert Laird Borden", source: "Adapté de Robert Laird Borden, discours, 1917."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les femmes accomplissent un travail essentiel en soutenant les soldats et en maintenant la production pendant la guerre. »", auteur: "Nellie McClung", source: "Adapté de Nellie McClung, In Times Like These, 1915."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Toute la population doit contribuer à l'effort de guerre.",
+ updatedAt: "2026-07-19T19:47:43.835Z"
+},
+{
+ id: "Q814",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Cause",
+ enonce: "Indiquez une raison pour laquelle le gouvernement met en place des mesures favorisant le rétablissement civil des soldats après la Première Guerre mondiale.",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", texte: "« Des milliers de soldats canadiens reviennent au pays avec des blessures physiques ou psychologiques qui compliquent leur retour à la vie civile. »", source: "Adapté de Veterans Affairs Canada, Le retour des anciens combattants après la Première Guerre mondiale."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Faciliter le retour des anciens combattants à la vie civile.",
+ updatedAt: "2026-07-19T19:54:30.929Z"
+},
+{
+ id: "Q815",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Convergence – 2 acteurs",
+ enonce: "Les documents A et B présentent le point de vue de deux acteurs. Sur quel point précis sont-ils en accord?",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Le Canada a le devoir d'aider les hommes qui reviennent du service militaire à reprendre leur place dans la société. »", auteur: "Robert Laird Borden", source: "Adapté de Robert Laird Borden, discours, 1919."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les anciens combattants méritent un soutien afin de reconstruire leur vie après les sacrifices consentis durant la guerre. »", auteur: "Newton Wesley Rowell", source: "Adapté de Newton Wesley Rowell, discours, 1919."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les anciens combattants doivent être soutenus.",
+ updatedAt: "2026-07-19T19:55:35.102Z"
+},
+{
+ id: "Q816",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ soustag: "Position – 3 acteurs",
+ enonce: "Les documents A à C présentent la position de trois acteurs sur la conscription durant la Seconde Guerre mondiale. Nommez l’acteur qui présente une position différente et comparez sa position à celle des deux autres.",
+ aspects: [{aspect: "Seconde Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Je demande aux Canadiens de m'autoriser à relever le gouvernement de sa promesse de ne pas imposer la conscription pour le service outre-mer si les circonstances l'exigent. »", auteur: "William Lyon Mackenzie King - premier ministre du Canada", source: "dapté de William Lyon Mackenzie King, allocution radiodiffusée précédant le plébiscite, 27 avril 1942."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Le Canada doit utiliser tous ses citoyens aptes au service militaire afin de remplir pleinement ses obligations envers les Alliés. »", auteur: "Arthur Meighen - chef du parti conservateur du Canada", source: "Adapté d'Arthur Meighen, discours politique, 1942."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Le plébiscite menace la parole donnée et ouvre la voie à une conscription que le Québec refuse. »", auteur: "André Laurendeau", source: "André Laurendeau"}]}
+ ],
+ reponse: {type: "lignes", nombre: 3},
+ guide: "André Laurendeau mentionne que le Canada ne doit pas imposer la conscription, alors que William Lyon Mackenzie King et Arthur Meighen affirment le contraire.\n\nAndré Laurendeau s'oppose à la conscription, alors que William Lyon Mackenzie King et Arthur Meighen y sont favorables.",
+ updatedAt: "2026-07-19T22:08:26.866Z"
+},
+{
+ id: "Q817",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Continuité",
+ enonce: "À partir des documents A et B, indiquez un élément de continuité concernant la participation des femmes à l'effort de guerre entre la Première Guerre mondiale et la Seconde Guerre mondiale.",
+ aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Seconde Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "femmes_usines_ww1.jpg", soustitre: "Participation des femmes à l'industrie de guerre durant la Première Guerre mondiale", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "femmes_usines_ww2.jpg", soustitre: "Participation des femmes à l'industrie de guerre durant la Seconde Guerre mondiale", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les femmes participent à l'effort de guerre durant les deux conflits.\nLes femmes soutiennent l'effort de guerre durant les deux conflits.\nLes femmes contribuent à l'effort de guerre durant les deux guerres.",
+ updatedAt: "2026-07-19T23:59:55.139Z"
+},
+{
+ id: "Q818",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Continuité",
+ enonce: "Indiquez un élément de continuité concernant le rôle du gouvernement fédéral entre la Première Guerre mondiale et la Seconde Guerre mondiale.",
+ aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Seconde Guerre mondiale"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "tableau_depenses_gvt_ww1_ww2.jpg", soustitre: "Évolution des dépenses du gouvernement fédéral durant les deux guerres mondiales", source: "Adapté de Bibliothèque et Archives Canada, documents sur les finances fédérales en temps de guerre."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Il y a continuité, car le gouvernement fédéral augmente fortement ses dépenses afin de soutenir l'effort de guerre durant les deux conflits.",
+ updatedAt: "2026-07-19T22:34:25.038Z"
+},
+{
+ id: "Q819",
+ niveau: 4,
+ oi: "Dégager des différences et des similitudes",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Similitude",
+ enonce: "À partir des documents A et B, indiquez une similitude concernant l'adoption de la Loi sur les mesures de guerre durant la Première Guerre mondiale et la Seconde Guerre mondiale.",
+ aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Seconde Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Le gouverneur en conseil peut prendre les mesures et édicter les règlements qu'il juge, en raison de l'existence d'un état de guerre, d'invasion ou d'insurrection, nécessaires à la sécurité, à la défense, à la paix, à l'ordre et au bien-être du Canada. »", soustitre: "Première Guerre mondiale", source: "Adapté de Parlement du Canada, Loi sur les mesures de guerre (War Measures Act), 1914, S.C. 1914, c. 2."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Pendant la Seconde Guerre mondiale, la Loi sur les mesures de guerre sert notamment à justifier l'internement de milliers de Canadiens d'origine japonaise et la confiscation de leurs biens. »", soustitre: "Seconde Guerre mondiale", source: "Adapté de Desmond Morton, Une histoire militaire du Canada, Montréal, Athéna Éditions, 2009."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Dans les deux cas, le gouvernement fédéral obtient des pouvoirs exceptionnels.\nDans les deux cas, le gouvernement fédéral peut limiter certaines libertés civiles.",
+ updatedAt: "2026-07-19T23:47:02.761Z"
+},
+{
+ id: "Q820",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Cause et conséquence",
+ enonce: "Le gouvernement canadien organise un plébiscite sur la conscription en 1942. Indiquez le document qui présente une cause et le document qui présente une conséquence.",
+ aspects: [{aspect: "Seconde Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Devant les besoins pressants de l'armée, le gouvernement décide d'envoyer des conscrits servir outre-mer afin de renforcer les forces canadiennes. »", source: "Adapté de William Lyon Mackenzie King, déclaration à la Chambre des communes du Canada annonçant l'envoi des conscrits outre-mer, Ottawa, novembre 1944."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "tableau_besoins_volontaires_ww2.jpg", soustitre: "Évolution des besoins militaires et des volontaires durant la Seconde Guerre mondiale", source: "Adapté de Anciens Combattants Canada, ressources historiques sur la mobilisation canadienne durant la Seconde Guerre mondiale."}]}
+ ],
+ reponse: {type: "cause-consequence"},
+ guide: {type: "grille", entetes: ["Cause", "Conséquence"], rangees: [["B", "A"]]},
+ updatedAt: "2026-07-19T23:51:36.230Z"
+},
+{
+ id: "Q821",
+ niveau: 4,
+ oi: "Déterminer des causes et des conséquences",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Conséquence",
+ enonce: "Indiquez une conséquence de la mobilisation des hommes durant la Seconde Guerre mondiale.",
+ aspects: [{aspect: "Seconde Guerre mondiale"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "femmes_usines_ww2.jpg", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]}],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Les femmes occupent davantage d'emplois dans les industries de guerre.\nUne pénurie de main-d'œuvre favorise l'embauche des femmes.\nLa production industrielle est soutenue par le travail des femmes.\nLes femmes occupent des emplois traditionnellement réservés aux hommes.",
+ updatedAt: "2026-07-19T23:53:31.449Z"
+},
+{
+ id: "Q822",
+ niveau: 4,
+ oi: "Déterminer des changements et des continuités",
+ periode: "P6 — 1896 – 1945",
+ points: 2,
+ soustag: "Continuité",
+ enonce: "À partir des documents A et B, indiquez un élément de continuité concernant le soutien offert aux anciens combattants entre la Première Guerre mondiale et la Seconde Guerre mondiale.",
+ aspects: [{aspect: "Première Guerre mondiale"}, {aspect: "Seconde Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", texte: "« Après la Première Guerre mondiale, le gouvernement accorde des pensions aux anciens combattants et met en place des programmes visant à faciliter leur retour à la vie civile. »", source: "Adapté de Desmond Morton, Une histoire militaire du Canada, Montréal, Athéna Éditions, 2009."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Après la Seconde Guerre mondiale, le gouvernement maintient son soutien aux anciens combattants en offrant des pensions, tout en ajoutant des programmes de formation, de logement et de réinsertion. »", source: "Adapté de Anciens Combattants Canada, La Charte des anciens combattants, 1944."}]}
+ ],
+ reponse: {type: "lignes", nombre: 2},
+ guide: "Le gouvernement offre un soutien aux anciens combattants après les deux guerres.\nLe gouvernement met en place des mesures pour faciliter le retour des anciens combattants à la vie civile après les deux guerres.\nLe gouvernement aide les anciens combattants à se réintégrer dans la société après les deux guerres.",
+ updatedAt: "2026-07-20T00:01:38.495Z"
+},
+{
+ id: "Q823",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ enonce: "Expliquez comment le débat entourant la participation du Dominion du Canada à un conflit en 1899 entraîne une conséquence sur le nationalisme canadien-français.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• Le conflit auquel participe le Dominion du Canada en 1899\n• La position des nationalistes canadiens-français concernant cette participation\n• Une conséquence de ce débat sur le nationalisme canadien-français",
+ aspects: [{aspect: "Statut du Canada dans l'Empire britannique"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "tableau_guerre_boers.jpg", soustitre: "Évolution du nombre de volontaires canadiens envoyés outre-mer", source: "Adapté du Musée canadien de la guerre, « Les Canadiens et la guerre d'Afrique du Sud, 1899-1902 »."}]},
+  {type: "textes", cols: [{titre: "Document B", ref: "portrait_henri_bourassa.jpg", soustitre: "Portrait de Henri Bourassa", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), d'après une photographie de Bibliothèque et Archives Canada, 2026."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Réélu à plusieurs reprises, Henri Bourassa s'impose progressivement comme le principal porte-parole du nationalisme canadien-français au début du XXᵉ siècle. »", source: "Adapté de Réal Bélanger, Henri Bourassa, L'Encyclopédie canadienne."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "Le Dominion du Canada participe à la guerre des Boers en envoyant des volontaires en Afrique du Sud (le conflit auquel participe le Dominion du Canada en 1899). Cette participation suscite l'opposition des nationalistes canadiens-français (la position des nationalistes canadiens-français concernant cette participation). Cette opposition renforce le nationalisme canadien-français (une conséquence de ce débat sur le nationalisme canadien-français).",
+ updatedAt: "2026-07-22T20:00:46.501Z"
+},
+{
+ id: "Q824",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ enonce: "Expliquez comment la situation au front pendant la Première Guerre mondiale entraîne l'adoption d'une mesure par le gouvernement canadien en 1917.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La situation au front en Europe\n• Un besoin de l'armée canadienne\n• Une mesure adoptée par le gouvernement canadien en 1917",
+ aspects: [{aspect: "Première Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "tableau_volontaires_pertes_ww1.jpg", soustitre: "Évolution du recrutement et des pertes militaires canadiennes", source: "Adapté de Bibliothèque et Archives Canada, dossiers du Corps expéditionnaire canadien."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les lourdes pertes obligent continuellement le Corps canadien à recevoir de nouveaux soldats pour conserver sa capacité de combattre. »", source: "Adapté de Tim Cook, Shock Troops: Canadians Fighting the Great War, 1917-1918, Viking Canada, 2008."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Tout sujet britannique de sexe masculin répondant aux conditions prévues par la présente loi est tenu d'accomplir le service militaire. »", source: "Adapté de la Loi du service militaire, Gouvernement du Canada, 1917."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "Les pertes canadiennes augmentent tandis que le nombre de volontaires diminue (la situation au front en Europe). L'armée canadienne a alors besoin de recruter davantage de soldats pour maintenir ses effectifs (un besoin de l'armée canadienne). Le gouvernement canadien adopte la Loi du service militaire, qui instaure la conscription en 1917 (une mesure adoptée par le gouvernement canadien en 1917).",
+ updatedAt: "2026-07-22T20:35:29.398Z"
+},
+{
+ id: "Q825",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ enonce: "Expliquez comment la situation au front pendant la Seconde Guerre mondiale entraîne l'adoption d'une mesure par le gouvernement canadien en 1942.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La situation au front en Europe\n• Un besoin de l'armée canadienne\n• Une mesure adoptée par le gouvernement canadien en 1942",
+ aspects: [{aspect: "Seconde Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "tableau_volontaires_pertes_ww2.jpg", soustitre: "Évolution du recrutement et des pertes militaires canadiennes", source: "Adapté de Anciens Combattants Canada, ressources historiques sur la Seconde Guerre mondiale."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les besoins de notre armée exigent que le gouvernement dispose de tous les moyens nécessaires pour assurer les renforts. »", source: "Adapté de William Lyon Mackenzie King, allocution sur le plébiscite, 1942."}]},
+  {type: "textes", cols: [{titre: "Document C", texte: "« Consentez-vous à relever le gouvernement de toute obligation résultant d'engagements antérieurs restreignant les méthodes de mobilisation pour le service militaire? »", auteur: "Extrait du plébiscite", source: "Adapté de la question officielle du plébiscite canadien de 1942."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "La situation au front en Europe entraîne de lourdes pertes chez les Alliés (la situation au front en Europe). L'armée canadienne a besoin de nouveaux soldats pour maintenir ses effectifs (un besoin de l'armée canadienne). Le gouvernement canadien organise le plébiscite de 1942 afin d'être libéré de sa promesse de ne pas imposer la conscription outre-mer (une mesure adoptée par le gouvernement canadien en 1942).",
+ updatedAt: "2026-07-22T20:39:42.528Z"
+},
+{
+ id: "Q826",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ enonce: "Expliquez comment la contribution des femmes durant la Première Guerre mondiale favorise l'adoption d'une mesure par le gouvernement fédéral en 1918.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La contribution des femmes durant la Première Guerre mondiale\n• La reconnaissance de cette contribution\n• Une mesure adoptée par le gouvernement fédéral",
+ aspects: [{aspect: "Luttes des femmes"}, {aspect: "Première Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "femmes_usines_ww1.jpg", soustitre: "Participation des femmes à l'industrie de guerre durant la Première Guerre mondiale", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les Canadiennes ont rendu des services essentiels à l'effort de guerre et ont largement contribué au succès de notre pays. »", auteur: "Robert Borden, premier ministre du Canada.", source: "Source : Adapté d'un discours de Robert Borden, 1917."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "droit_de_vote_femmes_canada_1918.jpg", soustitre: "Une annonce devant le Parlement à Ottawa", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "Les femmes contribuent à l'effort de guerre en travaillant dans les usines ou comme infirmières militaires (la contribution des femmes durant la Première Guerre mondiale). Cette contribution est reconnue par le gouvernement fédéral (la reconnaissance de cette contribution). Le gouvernement adopte la Loi des élections en temps de guerre en 1917, accordant le droit de vote fédéral à certaines femmes (une mesure adoptée par le gouvernement fédéral).",
+ updatedAt: "2026-07-22T21:13:54.825Z"
+},
+{
+ id: "Q827",
+ niveau: 4,
+ oi: "Établir des liens de causalité",
+ periode: "P6 — 1896 – 1945",
+ points: 3,
+ enonce: "Expliquez comment la contribution des femmes durant la Seconde Guerre mondiale favorise l'adoption d'une mesure par le gouvernement provincial en 1940.\n\nRépondez à la question en précisant les éléments ci-dessous et en les liant entre eux.\n\n• La contribution des femmes durant la Seconde Guerre mondiale\n• La reconnaissance de cette contribution\n• Une mesure adoptée par le gouvernement provncial en 1940",
+ aspects: [{aspect: "Luttes des femmes"}, {aspect: "Seconde Guerre mondiale"}],
+ documents: [
+  {type: "textes", cols: [{titre: "Document A", ref: "femmes_usines_ww2.jpg", soustitre: "Participation des femmes à l'industrie de guerre durant la Seconde Guerre mondiale", source: "Reconstitution historique à des fins pédagogiques réalisée à l'aide de l'intelligence artificielle (ChatGPT, OpenAI), 2026."}]},
+  {type: "textes", cols: [{titre: "Document B", texte: "« Les femmes du Québec ont démontré, par leur contribution à l'effort de guerre, qu'elles méritent pleinement de participer à la vie démocratique. »", auteur: "Adélard Godbout, premier ministre du Québec.", source: "Adapté d'un discours d'Adélard Godbout, 1940."}]},
+  {type: "textes", cols: [{titre: "Document C", ref: "droit_de_vote_femmes_quebec_1940.jpg", soustitre: "Une annonce du gouvernement du Québec", source: "Reconstitution historique à des fins pédagogiques réalisée à l’aide de l’intelligence artificielle (ChatGPT/OpenAI), 2026."}]}
+ ],
+ reponse: {type: "lignes", nombre: 5},
+ guide: "Les femmes contribuent à l'effort de guerre en travaillant notamment dans les usines de guerre (la contribution des femmes durant la Seconde Guerre mondiale). Cette contribution est reconnue par le gouvernement du Québec (la reconnaissance de cette contribution). Le gouvernement provincial adopte une loi accordant aux femmes le droit de vote et d'éligibilité en 1940 (une mesure adoptée par le gouvernement provincial).",
+ updatedAt: "2026-07-22T21:18:05.072Z"
+},
+{
+ id: "Q828",
+ niveau: 4,
+ oi: "Situer dans l'espace",
+ periode: "P5 — 1840 – 1896",
+ points: 1,
+ soustag: "Situer 1 élément",
+ enonce: "À partir du document A, indiquez la lettre correspondant à la région forestière de l'Outaouais.",
+ aspects: [{aspect: "Industrie forestière"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "regions_forestieres.jpg", source: "Carte du Québec. Adaptée d'après d-maps.com."}]}],
+ reponse: {type: "tableau_2col"},
+ guide: "A",
+ updatedAt: "2026-08-18T16:06:55.241Z"
+},
+{
+ id: "Q829",
+ niveau: 4,
+ oi: "Situer dans l'espace",
+ periode: "P5 — 1840 – 1896",
+ points: 1,
+ soustag: "Situer 1 élément",
+ enonce: "À partir du document A, indiquez la lettre correspondant à la région forestière de la Mauricie.",
+ aspects: [{aspect: "Industrie forestière"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "regions_forestieres.jpg", source: "Carte du Québec. Adaptée d'après d-maps.com."}]}],
+ reponse: {type: "tableau_2col"},
+ guide: "B",
+ updatedAt: "2026-08-18T16:07:29.076Z"
+},
+{
+ id: "Q830",
+ niveau: 4,
+ oi: "Situer dans l'espace",
+ periode: "P5 — 1840 – 1896",
+ points: 1,
+ soustag: "Situer 1 élément",
+ enonce: "À partir du document A, indiquez la lettre correspondant à la région forestière du Saguenay–Lac-Saint-Jean.",
+ aspects: [{aspect: "Industrie forestière"}],
+ documents: [{type: "textes", cols: [{titre: "Document A", ref: "regions_forestieres.jpg", source: "Carte du Québec. Adaptée d'après d-maps.com."}]}],
+ reponse: {type: "tableau_2col"},
+ guide: "C",
+ updatedAt: "2026-08-18T16:07:51.552Z"
 }
 ]
