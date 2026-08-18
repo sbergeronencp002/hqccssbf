@@ -4685,11 +4685,11 @@ const QUESTIONS = [
  points: 2,
  soustag: "Situer 2 éléments",
  enonce: "À partir du document A, indiquez les lettres correspondant aux territoires cédés à la Grande-Bretagne à la suite du traité d’Utrecht de 1713.",
- aspects: [{aspect: "Guerres intercoloniales"}, {aspect: "Territoire français en Amérique"}],
+ aspects: [{aspect: "Guerres intercoloniales"}],
  documents: [{type: "textes", cols: [{titre: "Document A", ref: "territoires_perdus_1713.png", source: "Récitus."}]}],
  reponse: {type: "situer-dans-lespace", elements: ["Acadie", "Terre-Neuve"]},
  guide: {type: "grille", entetes: ["Acadie", "Terre-Neuve"], rangees: [["C", "B"]]},
- _imgs: ["territoires_perdus_1713.png"]
+ updatedAt: "2026-08-18T23:55:02.834Z"
 },
 {
  id: "Q174",
