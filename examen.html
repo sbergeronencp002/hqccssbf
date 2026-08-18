@@ -195,7 +195,14 @@ let EX_PERIODE = null;
 let EX_FAVORI_OI = null;
 let EX_FAVORI_TARGET_APPLIED = 0;
 let EX_FIXED_TARGETS_APPLIED = {};
-const EX_MAX_POINTS = 25;
+const EX_MAX_POINTS_DEFAULT = 25;
+// P6 : à 25 pts, aucune combinaison valide n'existe (0 succès sur 1000 essais directs — les
+// plafonds d'OI + la règle de diversité des sous-tags forcent un candidat à 3 pts sur au moins
+// un aspect une fois les options bon marché épuisées ailleurs, ex. « Grande dépression »).
+// Minimum réel mesuré ~28 pts ; 30 pts retenu comme standard pour cette période (décision de
+// l'enseignant) plutôt que d'assouplir un plafond d'OI ou d'ajouter du contenu à 1 point.
+const EX_MAX_POINTS_BY_PERIODE = { 'P6 — 1896 – 1945': 30 };
+function exMaxPointsFor(periode) { return EX_MAX_POINTS_BY_PERIODE[periode] || EX_MAX_POINTS_DEFAULT; }
 
 const PERIODES_ALL = [...(PERIODES_PAR_NIVEAU['3'] || []), ...(PERIODES_PAR_NIVEAU['4'] || [])];
 
@@ -258,9 +265,10 @@ function exGenerate() {
   btn.disabled = true; btn.textContent = '⏳ Génération…';
 
   // setTimeout : laisse le navigateur peindre le bouton désactivé avant le calcul (peut prendre ~1s)
+  const maxPoints = exMaxPointsFor(periode);
   setTimeout(() => {
     try {
-      const res = exGenererExamen({ questions: QUESTIONS, periode, aspects, oiList: OI_LIST, favoriOi, maxPoints: EX_MAX_POINTS });
+      const res = exGenererExamen({ questions: QUESTIONS, periode, aspects, oiList: OI_LIST, favoriOi, maxPoints });
       if (!res.ok) { toast(res.reason, 'err'); return; }
       EX_SELECTION = res.selected;
       EX_DOCMAP = exBuildDocMap(EX_SELECTION);
@@ -276,7 +284,7 @@ function exGenerate() {
         titreInput.dataset.auto = '1';
       }
       exRender(favoriOi);
-      toast('Examen généré : ' + res.points + ' / ' + EX_MAX_POINTS + ' points, ' + res.attempts + ' tentative(s).', 'ok');
+      toast('Examen généré : ' + res.points + ' / ' + maxPoints + ' points, ' + res.attempts + ' tentative(s).', 'ok');
     } catch (e) {
       console.error(e);
       toast('Erreur : ' + e.message, 'err');
@@ -292,6 +300,7 @@ function exRender(favoriOi) {
 
   const sel = EX_SELECTION;
   const aspects = ASPECTS_PAR_PERIODE[EX_PERIODE];
+  const maxPoints = exMaxPointsFor(EX_PERIODE);
   const totalPoints = sel.reduce((s, q) => s + q.points, 0);
   const oiCounts = {};
   sel.forEach(q => { oiCounts[q.oi] = (oiCounts[q.oi] || 0) + 1; });
@@ -299,7 +308,7 @@ function exRender(favoriOi) {
 
   const summary = document.getElementById('ex-summary');
   summary.innerHTML =
-    '<span class="chip ' + (totalPoints <= EX_MAX_POINTS ? 'ok' : 'warn') + '"><b>' + totalPoints + '</b> / ' + EX_MAX_POINTS + ' points</span>' +
+    '<span class="chip ' + (totalPoints <= maxPoints ? 'ok' : 'warn') + '"><b>' + totalPoints + '</b> / ' + maxPoints + ' points</span>' +
     '<span class="chip ok"><b>' + aspects.length + '</b> / ' + aspects.length + ' aspects couverts</span>' +
     '<span class="chip ' + (oiMissing.length ? 'warn' : 'ok') + '"><b>' + (OI_LIST.length - oiMissing.length) + '</b> / ' + OI_LIST.length + ' OI représentées</span>' +
     (favoriOi ? '<span class="chip"><b>' + (oiCounts[favoriOi] || 0) + '</b> question(s) — ' + escH(favoriOi) + '</span>' : '');
@@ -345,7 +354,7 @@ function exSwapOne(qId) {
     q.id !== old.id &&
     !usedIds.has(q.id) &&
     exAspectsOf(q).slice().sort().join('|') === oldAspects.join('|') &&
-    (totalPoints - old.points + q.points) <= EX_MAX_POINTS &&
+    (totalPoints - old.points + q.points) <= exMaxPointsFor(EX_PERIODE) &&
     !(exDiversityKey(q) && otherOiTags.has(q.oi + '||' + exDiversityKey(q))) &&
     (otherOiCounts[q.oi] || 0) < exOiCap(q.oi, favoriOi, EX_FAVORI_TARGET_APPLIED, EX_FIXED_TARGETS_APPLIED)
   );
