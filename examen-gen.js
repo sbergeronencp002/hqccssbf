@@ -124,15 +124,24 @@ const EX_OI_VARIETY_EXCLUDE_BY_PERIODE = {};
 
 // Aspects pouvant être couverts par PLUSIEURS questions distinctes (au lieu d'une seule),
 // quand le contenu de cet aspect précis a assez d'OI/sous-tags différents pour le
-// supporter — ex. P1 où l'enseignant a choisi de doubler (ou tripler) 3 aspects précis
-// pour atteindre le total de questions correspondant à EX_OI_FIXED_TARGET_BY_PERIODE.
-// Absent de la config = comportement par défaut (1 question par aspect, comme partout
-// ailleurs).
+// supporter. Absent de la config = comportement par défaut (1 question par aspect, comme
+// partout ailleurs).
+//
+// P1 : « Alliances et rivalités au sein des Premières Nations » ajouté le 2026-08-19 (5 OI
+// distincts parmi les aspects encore à 1 seul créneau — le plus riche disponible, voir
+// l'analyse par OI dans l'historique) pour porter le budget de 22 à 25 points (chiffre rond
+// demandé par l'enseignant) tout en gardant les 7 OI/7 aspects garantis à 100 %. Validé
+// fiable (>99 %, 150/150 sur un échantillon) pour aucune préférence, Causes et Différences
+// comme favori. EXCEPTION acceptée par l'enseignant : avec « Établir des liens de causalité »
+// comme favori, 25 est mathématiquement inatteignable avec cette config (vérifié par
+// recherche exhaustive à budget illimité — tous ses candidats coûtent 3 points, plafonne
+// à 24) — ce favori précis reste donc à 24/25 plutôt que 25/25 pile.
 const EX_ASPECT_REPEAT_BY_PERIODE = {
   'P1 — Des origines à 1608': {
     'Rapports sociaux chez les Autochtones': 3,
     'Premiers occupants du territoire': 2,
-    'Premiers contacts': 2
+    'Premiers contacts': 2,
+    'Alliances et rivalités au sein des Premières Nations': 2
   }
 };
 

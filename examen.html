@@ -210,13 +210,12 @@ const EX_MAX_POINTS_DEFAULT = 25;
 // dans les examens générés à 25 pts, malgré un tirage pondéré 1/3 en leur faveur). 30 pts
 // retenu comme standard pour cette période aussi (décision de l'enseignant) — ~77 % de sous-
 // tags chers effectivement représentés à ce budget, contre 0 % avant.
-// P1 : plafond naturel de la config à 11 créneaux (EX_ASPECT_REPEAT_BY_PERIODE) — testé de 20
-// à 30, le résultat converge systématiquement et exclusivement à 22 points dès que le budget
-// autorisé atteint 22 (vérifié 100 % sur 20 essais × 4 favoris à chaque palier de budget de 23
-// à 30 — toujours exactement 22, jamais plus). Un budget de 25 ou 30 ici n'ajoute donc rien et
-// affiche un total « 22/25 » ou « 22/22 » trompeur ; fixé à 22 pour que l'affichage soit toujours
-// exact (22/22).
-const EX_MAX_POINTS_BY_PERIODE = { 'P1 — Des origines à 1608': 22, 'P5 — 1840 – 1896': 30, 'P6 — 1896 – 1945': 30 };
+// P1 : 25 points (chiffre rond demandé par l'enseignant) — atteint pile grâce au 12e créneau
+// ajouté sur « Alliances et rivalités au sein des Premières Nations » (EX_ASPECT_REPEAT_BY_PERIODE,
+// voir le commentaire détaillé là-bas). Fiable à 25/25 pour aucune préférence/Causes/Différences ;
+// EXCEPTION connue et acceptée pour Causalité comme favori, qui plafonne à 24/25 (25 mathématiquement
+// hors de portée pour ce favori précis avec cette config, tous ses candidats coûtant 3 points).
+const EX_MAX_POINTS_BY_PERIODE = { 'P1 — Des origines à 1608': 25, 'P5 — 1840 – 1896': 30, 'P6 — 1896 – 1945': 30 };
 function exMaxPointsFor(periode) { return EX_MAX_POINTS_BY_PERIODE[periode] || EX_MAX_POINTS_DEFAULT; }
 
 const PERIODES_ALL = [...(PERIODES_PAR_NIVEAU['3'] || []), ...(PERIODES_PAR_NIVEAU['4'] || [])];
