@@ -164,7 +164,16 @@ const EX_FAVORI_SCENARIOS_BY_PERIODE = {
   // Proclamation royale, Situation sociodémographique) — tous deux ont plusieurs sous-tags
   // distincts pour Causes/Différences, donc aucune exception `relaxDiversity` requise ici
   // (contrairement à P1) pour une cible de seulement 2.
+  //
+  // `null` (aucune préférence, ajouté le 2026-08-19) : sans scénario dédié, P3 n'avait que les
+  // 12 créneaux de base (1 par aspect) — le budget de 25 points était alors structurellement
+  // hors de portée (plafond réel vérifié à 24, budget illimité inclus, 0/60 essais à 25). Les
+  // 2 mêmes créneaux supplémentaires que les autres favoris (sans cible fixe, juste plus de
+  // marge pour la maximisation de budget) suffisent : validé 100/100 pile.
   'P3 — 1760 – 1791': {
+    null: [
+      { targets: {}, extraSlots: { 'Acte de Québec': 1, 'Situation sociodémographique': 1 } }
+    ],
     'Déterminer des causes et des conséquences': [
       {
         targets: { 'Déterminer des causes et des conséquences': 2, 'Établir des faits': 2 },
