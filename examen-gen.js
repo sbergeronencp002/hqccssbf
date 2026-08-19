@@ -101,23 +101,26 @@ const EX_OI_FIXED_TARGET = { 'Déterminer des changements et des continuités': 
 // Cibles exactes par OI propres à une période précise, EN PLUS de EX_OI_FIXED_TARGET
 // (fusionnées dans exGenererExamen). Cas d'usage : une période trop courte pour la variété
 // générale habituelle (voir EX_OI_VARIETY_EXCLUDE_BY_PERIODE) où l'enseignant préfère une
-// distribution d'OI précise à la place — ex. P1 (seulement 7 aspects du programme).
-const EX_OI_FIXED_TARGET_BY_PERIODE = {
-  'P1 — Des origines à 1608': {
-    'Déterminer des causes et des conséquences': 2,
-    'Établir des liens de causalité': 2,
-    'Mettre en relation des faits': 2,
-    'Dégager des différences et des similitudes': 2,
-    'Établir des faits': 3
-  }
-};
+// distribution d'OI précise à la place.
+//
+// P1 avait ici une distribution forcée (Causes/Causalité/MRF/Différences à 2, Faits à 3)
+// qui excluait Situer dans le temps/l'espace ci-dessous — abandonné le 2026-08-19 : « Déterminer
+// des changements et des continuités » n'a de toute façon AUCUN candidat en P1 (0 question dans
+// les données), donc le maximum réellement atteignable est déjà 7 OI sur 8, exactement le nombre
+// d'aspects du programme (7) — la variété générale standard (1 par OI atteignable, voir
+// exGenererExamen) suffit seule à couvrir les 7 OI ET les 7 aspects sans configuration spéciale,
+// et le budget par défaut de 25 points est déjà assez large (plafond naturel observé : 22 points
+// avec les 11 créneaux de EX_ASPECT_REPEAT_BY_PERIODE ci-dessous). Contrepartie acceptée :
+// l'OI favorite (si Causes/Différences/Causalité) plafonne alors à 2 occurrences plutôt que sa
+// cible ambitieuse de 3 — les 11 créneaux sont saturés dès qu'on garantit les 7 OI, donc une
+// question de plus pour l'OI favorite entrerait directement en compétition avec Situer dans le
+// temps/l'espace pour le même créneau.
+const EX_OI_FIXED_TARGET_BY_PERIODE = {};
 
-// OI à exclure de l'exigence de variété générale pour une période précise (ex. P1 : Situer
-// dans le temps / dans l'espace laissés de côté par choix de l'enseignant, au profit d'une
-// distribution d'OI ciblée sur les 7 aspects disponibles — voir EX_OI_FIXED_TARGET_BY_PERIODE).
-const EX_OI_VARIETY_EXCLUDE_BY_PERIODE = {
-  'P1 — Des origines à 1608': ['Situer dans le temps', "Situer dans l'espace"]
-};
+// OI à exclure de l'exigence de variété générale pour une période précise. Ne sert plus pour
+// P1 depuis le 2026-08-19 (voir EX_OI_FIXED_TARGET_BY_PERIODE ci-dessus) — laissé vide, prêt
+// pour une future période dans le même cas (trop peu d'aspects pour la variété standard).
+const EX_OI_VARIETY_EXCLUDE_BY_PERIODE = {};
 
 // Aspects pouvant être couverts par PLUSIEURS questions distinctes (au lieu d'une seule),
 // quand le contenu de cet aspect précis a assez d'OI/sous-tags différents pour le
@@ -140,64 +143,12 @@ const EX_ASPECT_REPEAT_BY_PERIODE = {
 // supplémentaires à un aspect déjà répétable (voir EX_ASPECT_REPEAT_BY_PERIODE) quand la
 // cible visée dépasse le nombre de slots de base.
 //
-// P1 : Causes et Différences n'ont chacune que 2 sous-tags distincts dans les données de
-// cette période (« Cause »/« Conséquence » pour l'une, « Convergence – 2 acteurs »/
-// « Position – 3 acteurs » pour l'autre) — un 3e niveau y est donc mathématiquement
-// impossible tant que ces sous-tags ne sont pas enrichis (admin.html), quel que soit le
-// budget. Le niveau ambitieux reste listé ci-dessous : il échoue proprement et retombe
-// sur la base (repli explicite `{}`) plutôt que d'être retiré — si un 3e sous-tag est
-// ajouté un jour, il se met à fonctionner sans aucun changement de code.
+// P1 avait ici 4 scénarios dédiés (Causes/Différences/Causalité/aucune préférence) — retirés
+// le 2026-08-19 en même temps que EX_OI_FIXED_TARGET_BY_PERIODE['P1'] : la variété générale
+// standard couvre déjà les 7 OI atteignables (Changements n'a aucun candidat en P1) et les 7
+// aspects sans scénario spécial, voir le commentaire détaillé sur EX_OI_FIXED_TARGET_BY_PERIODE.
 const EX_FAVORI_SCENARIOS_BY_PERIODE = {
-  'P1 — Des origines à 1608': {
-    // « Déterminer des causes et des conséquences » n'a que 2 sous-tags distincts en P1
-    // (« Cause »/« Conséquence ») — insuffisant pour 3 occurrences sous la règle « jamais
-    // deux fois le même sous-tag ». Exception explicite demandée par l'enseignant :
-    // `relaxDiversity` désactive cette règle pour CETTE OI, dans CE scénario précis
-    // uniquement (jamais un relâchement global — voir baseFilterOk dans exTryBuild).
-    // `extraSlots` : Causes(3)+Causalité(2)+Mettre en relation(2)+Différences(2)+Faits(4)
-    // = 13 questions, 2 de plus que les 11 slots de base — sans ça, la cible échouait
-    // silencieusement (aucun slot libre) et retombait sur le niveau de repli.
-    'Déterminer des causes et des conséquences': [
-      {
-        targets: { 'Déterminer des causes et des conséquences': 3, 'Établir des faits': 4 },
-        relaxDiversity: ['Déterminer des causes et des conséquences'],
-        extraSlots: { 'Rapports sociaux chez les Autochtones': 2 }
-      },
-      { targets: {} }
-    ],
-    // Même limite de données que ci-dessus (2 sous-tags distincts seulement : « Convergence
-    // – 2 acteurs »/« Position – 3 acteurs ») — même exception demandée par l'enseignant.
-    'Dégager des différences et des similitudes': [
-      {
-        targets: { 'Dégager des différences et des similitudes': 3, 'Établir des faits': 4 },
-        relaxDiversity: ['Dégager des différences et des similitudes'],
-        extraSlots: { 'Rapports sociaux chez les Autochtones': 2 }
-      },
-      { targets: {} }
-    ],
-    'Établir des liens de causalité': [
-      { targets: { 'Établir des liens de causalité': 3 }, extraSlots: { 'Rapports sociaux chez les Autochtones': 1 } }
-    ],
-    // « Aucune préférence » (favoriOi === null, coïncide avec la clé "null" ci-dessous) :
-    // même besoin de 25 points par défaut. La question de Causes en plus est épinglée
-    // (`aspectPin`) sur « Exploration et occupation du territoire par les Français »
-    // (demande explicite de l'enseignant) — la 2ᵉ instance de cet aspect n'accepte alors
-    // QUE des candidats Causes (voir pinnedOi dans exTryBuild) ; la question de Faits en
-    // plus reste sur un slot générique (au choix de l'algorithme, comme les autres OI).
-    null: [
-      {
-        targets: { 'Déterminer des causes et des conséquences': 3, 'Établir des faits': 4 },
-        relaxDiversity: ['Déterminer des causes et des conséquences'],
-        extraSlots: {
-          'Exploration et occupation du territoire par les Français': 1,
-          'Rapports sociaux chez les Autochtones': 1
-        },
-        aspectPin: { 'Exploration et occupation du territoire par les Français': 'Déterminer des causes et des conséquences' }
-      },
-      { targets: {} }
-    ]
-  },
-  // P3 n'a pas de cible fixe de base (contrairement à P1) — juste la variété générale
+  // P3 n'a pas de cible fixe de base (contrairement à l'ancienne config P1) — juste la variété générale
   // habituelle (≥1 par OI). « Acte de Québec » et « Situation sociodémographique » sont
   // les 2 aspects choisis pour porter les 2 occurrences en plus demandées (parmi les 4
   // aspects à plus grand nombre de candidats : Acte de Québec, Invasion américaine,
@@ -258,8 +209,9 @@ function exComputeOiQuota(oiList, favoriOi, favoriTarget, fixedTargets) {
 // Plafond effectif pour une OI donnée dans cette tentative : sa cible fixe (`fixedTargets`)
 // et/ou la cible de l'OI favorite (si `oi` est l'OI favorite) priment sur EX_OI_HARD_CAP,
 // même si celui-ci est normalement plus bas pour cette OI (ex. « Établir des faits » ≤2 en
-// temps normal, mais cible fixe à 3 pour P1 — voir EX_OI_FIXED_TARGET_BY_PERIODE). Quand
-// une OI a À LA FOIS une cible fixe ET est la favorite (ex. « Déterminer des changements
+// temps normal, mais cible fixe à 2 pour « Établir des faits » dans un scénario de
+// EX_FAVORI_SCENARIOS_BY_PERIODE — voir P3 plus haut). Quand une OI a À LA FOIS une cible
+// fixe ET est la favorite (ex. « Déterminer des changements
 // et des continuités », toujours ≥2, mais jusqu'à 3 si choisie comme favorite), la plus
 // grande des deux prime — le choix explicite de l'enseignant doit pouvoir dépasser une
 // préférence de fond, jamais l'inverse. Sinon, repli sur EX_OI_HARD_CAP (assoupli via
@@ -766,8 +718,9 @@ function exGenererExamen({ questions, periode, aspects, oiList, favoriOi, maxPoi
   const baseAspectRepeat = EX_ASPECT_REPEAT_BY_PERIODE[periode] || {};
   const varietyExclude = new Set(EX_OI_VARIETY_EXCLUDE_BY_PERIODE[periode] || []);
   // Cibles fixes globales (EX_OI_FIXED_TARGET) + cibles propres à cette période
-  // (EX_OI_FIXED_TARGET_BY_PERIODE) — ex. P1 où l'enseignant a choisi une distribution
-  // d'OI précise à la place de la variété générale habituelle.
+  // (EX_OI_FIXED_TARGET_BY_PERIODE) — actuellement vide, réservé à une future période où
+  // la variété générale habituelle ne suffirait pas (ex. trop peu d'aspects pour couvrir
+  // toutes les OI, voir le commentaire sur EX_OI_FIXED_TARGET_BY_PERIODE plus haut).
   const baseFixedTarget = { ...EX_OI_FIXED_TARGET, ...(EX_OI_FIXED_TARGET_BY_PERIODE[periode] || {}) };
 
   let attemptsTotal = 0;
