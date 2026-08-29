@@ -9,14 +9,14 @@
   --border: rgba(0,0,0,0.09);
 
   /* OI — couleur accent + fond clair distinct par OI */
-  --c-sit: #3A6FA8; --c-sit-bg: #E4EDF8;
-  --c-esp: #3A8050; --c-esp-bg: #E2F0E6;
-  --c-cau: #C06030; --c-cau-bg: #F8EBE0;
-  --c-dif: #7A4A9A; --c-dif-bg: #EDE4F5;
-  --c-chg: #607880; --c-chg-bg: #E6EAEC;
-  --c-rel: #B03A3A; --c-rel-bg: #F5E4E4;
-  --c-mr:  #2A8A8A; --c-mr-bg:  #DFF0F0;
-  --c-fai: #9A6030; --c-fai-bg: #F2E8DC;
+  --c-sit: #C07C00; --c-sit-bg: #FBEFD6;
+  --c-esp: #0B6FBF; --c-esp-bg: #DCEBF9;
+  --c-cau: #6B3FA0; --c-cau-bg: #EBE2F7;
+  --c-dif: #B01D74; --c-dif-bg: #FAE0EE;
+  --c-chg: #2E8B3E; --c-chg-bg: #DFF0E2;
+  --c-rel: #D62828; --c-rel-bg: #FBE2E2;
+  --c-mr:  #0E8C8C; --c-mr-bg:  #D9F0F0;
+  --c-fai: #2E3A45; --c-fai-bg: #E7EAED;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
