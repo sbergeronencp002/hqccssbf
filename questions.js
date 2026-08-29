@@ -13285,7 +13285,7 @@ const QUESTIONS = [
  periode: "P6 — 1896 – 1945",
  points: 2,
  soustag: "Ordre chronologique",
- enonce: "Les documents A à Dfont référence à l’immigration au Canada entre 1900 et 1960. Placez-les par ordre chronologique.",
+ enonce: "Les documents A à D font référence à l’immigration au Canada entre 1900 et 1960. Placez-les par ordre chronologique.",
  aspects: [{aspect: "Flux migratoires"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", texte: "« La crise économique entraîne une chute spectaculaire de l'immigration, alors que le gouvernement cherche d'abord à protéger les emplois des résidents déjà établis. »", source: "Adapté de Donald Avery, Reluctant Host: Canada's Response to Immigrant Workers, 1896-1994, McClelland & Stewart, Toronto, 1995, p. 116."}]},
@@ -13295,7 +13295,7 @@ const QUESTIONS = [
  ],
  reponse: {type: "image", ref: "ligne_bcAd.png"},
  guide: "C - D - A - B",
- updatedAt: "2026-07-17T02:55:42.308Z"
+ updatedAt: "2026-08-29T18:28:15.624Z"
 },
 {
  id: "Q733",
