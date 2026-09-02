@@ -10022,7 +10022,7 @@ const QUESTIONS = [
  periode: "P5 — 1840 – 1896",
  points: 3,
  soustag: "Position – 3 acteurs",
- enonce: "Les documents A à C présentent le point de vue de trois acteurs sur l'adption de l'Acte d'Union. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
+ enonce: "Les documents A à C présentent le point de vue de trois acteurs sur l'adoption de l'Acte d'Union. Nommez l'acteur qui présente une position différente et comparez sa position à celle des deux autres acteurs.",
  aspects: [{aspect: "Acte d'Union"}],
  documents: [
   {type: "textes", cols: [{titre: "Document A", texte: "« L'union des deux colonies constitue le meilleur moyen d'assurer la stabilité politique et de mettre fin aux divisions qui affaiblissent le gouvernement. »", auteur: "Lord Durham", source: "Adapté de John George Lambton, Rapport sur les affaires de l'Amérique du Nord britannique, 1839."}]},
@@ -10031,7 +10031,7 @@ const QUESTIONS = [
  ],
  reponse: {type: "lignes", nombre: 3},
  guide: "Louis-Hippolyte La Fontaine s'oppose à l'Acte d'Union puisqu'il réduit l'influence politique des Canadiens français (la différence), alors que Lord Durham et Lord Sydenham y sont favorables (similitude).",
- updatedAt: "2026-07-14T12:04:14.578Z"
+ updatedAt: "2026-09-02T14:56:54.367Z"
 },
 {
  id: "Q521",
