@@ -823,3 +823,16 @@ select:focus { outline: none; border-color: var(--ink-2); }
 .doc-zoom-btn:hover { background: var(--paper-2); color: var(--ink); }
 .doc-img-tile { cursor: zoom-in; }
 
+
+/* Couverture pédagogique de la période sélectionnée */
+.coverage-panel { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem; }
+.coverage-panel h2 { font-size: 1rem; color: var(--ink-2); margin-bottom: .4rem; }
+.coverage-period { font-size: .85rem; color: var(--ink-2); }
+.coverage-summary { font-size: 1.1rem; font-weight: 500; color: #1B3B6F; margin: .65rem 0; }
+.coverage-panel summary { cursor: pointer; font-size: .85rem; padding: .4rem 0; }
+.coverage-help { font-size: .8rem; color: var(--ink-2); margin: .5rem 0 .8rem; }
+.coverage-aspects { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: .5rem; }
+.coverage-aspect { font: inherit; font-size: .8rem; text-align: left; padding: .65rem .8rem; border: 1px solid var(--border); border-radius: 6px; background: var(--paper); color: var(--ink-2); cursor: pointer; }
+.coverage-aspect:hover, .coverage-aspect[aria-pressed="true"] { border-color: var(--accent); background: #DCEBF9; color: #1B3B6F; }
+.coverage-aspect:focus-visible, .coverage-panel summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.coverage-empty { background: #FBEFD6; cursor: default; color: #705000; }
