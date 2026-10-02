@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&display=swap">
-<link rel="stylesheet" href="style.css?v=32">
+<link rel="stylesheet" href="style.css?v=33">
 </head>
 <body>
 <noscript><div style="padding:2rem;text-align:center;font-family:sans-serif;color:#1a1814">Ce site nécessite JavaScript pour fonctionner.</div></noscript>
@@ -70,6 +70,16 @@
     <div class="results-bar">
       <span id="results-label">Toutes les questions</span>
     </div>
+    <section id="coverage-panel" class="coverage-panel" aria-labelledby="coverage-title" hidden>
+      <h2 id="coverage-title">Couverture de la période</h2>
+      <p id="coverage-period" class="coverage-period"></p>
+      <p id="coverage-summary" class="coverage-summary" role="status"></p>
+      <details>
+        <summary>Voir la couverture par aspect</summary>
+        <p class="coverage-help">Cliquez sur un aspect pour afficher ses questions. Le bilan porte sur toute la période, sans les autres filtres.</p>
+        <div id="coverage-aspects" class="coverage-aspects"></div>
+      </details>
+    </section>
     <div class="q-grid" id="q-list"></div>
   </main>
 </div>
@@ -190,7 +200,7 @@
 <script src="contexte.js"></script>
 <script src="oi-config.js?v=1"></script>
 <script src="filters.js?v=1"></script>
-<script src="app.js?v=52"></script>
+<script src="app.js?v=53"></script>
 <script>
   // Charge questions-index.js (~200 Ko, champs grille seulement) pour affichage immédiat.
   // Les données complètes (documents, réponse, guide, réglettes) sont chargées en lazy

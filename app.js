@@ -217,7 +217,57 @@ function applyFilters() {
       ? `Toutes les questions (${filtered.length})`
       : `${filtered.length} question${filtered.length!==1?'s':''} · ${totalPtsFilt} pt${totalPtsFilt!==1?'s':''}`;
 
+  updatePeriodCoverage(periode, niveau);
   render(filtered);
+}
+
+// Couverture de la banque : indépendante des filtres aspect / OI / recherche.
+function computePeriodCoverage(questions, periode, niveau = '') {
+  const expected = ASPECTS_PAR_PERIODE[periode] || [];
+  const counts = new Map(expected.map(aspect => [aspect, 0]));
+  const ois = new Set();
+  let total = 0;
+  for (const q of questions) {
+    if (q.periode !== periode || (niveau && String(q.niveau) !== niveau)) continue;
+    total++;
+    if (OI_LIST.includes(q.oi)) ois.add(q.oi);
+    // Une question multiaspect compte une fois pour chaque aspect concerné.
+    const uniqueAspects = new Set((q.aspects || []).map(a => a.aspect));
+    for (const aspect of uniqueAspects) {
+      if (counts.has(aspect)) counts.set(aspect, counts.get(aspect) + 1);
+    }
+  }
+  return { total, covered: [...counts.values()].filter(n => n > 0).length,
+    expected: expected.length, ois: ois.size, oiTotal: OI_LIST.length, counts };
+}
+
+function updatePeriodCoverage(periode, niveau) {
+  const panel = document.getElementById('coverage-panel');
+  if (!panel) return;
+  panel.hidden = !periode;
+  if (!periode) return;
+  const coverage = computePeriodCoverage(QUESTIONS, periode, niveau);
+  document.getElementById('coverage-period').textContent = periode;
+  document.getElementById('coverage-summary').textContent =
+    `${coverage.total} question${coverage.total !== 1 ? 's' : ''} · ${coverage.covered} aspects sur ${coverage.expected} couverts · ${coverage.ois} OI sur ${coverage.oiTotal}`;
+  const list = document.getElementById('coverage-aspects');
+  list.replaceChildren();
+  const selected = document.getElementById('f-aspect').value;
+  for (const [aspect, count] of coverage.counts) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'coverage-aspect' + (count === 0 ? ' coverage-empty' : '');
+    button.setAttribute('aria-pressed', String(selected === aspect));
+    button.disabled = count === 0;
+    button.textContent = `${aspect} — ${count} question${count !== 1 ? 's' : ''}`;
+    button.addEventListener('click', () => {
+      document.getElementById('f-aspect').value = selected === aspect ? '' : aspect;
+      document.getElementById('f-oi').value = '';
+      document.getElementById('f-search').value = '';
+      applyFilters();
+    });
+    list.appendChild(button);
+  }
 }
 
 function resetFilters() {
