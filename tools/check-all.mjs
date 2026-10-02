@@ -16,6 +16,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const CHECKS = [
   ['Validation des données', 'tools/validate-questions.mjs'],
   ['Tests de fumée', 'tools/smoke-test.mjs'],
+  ['Validateur de publication', 'tools/test-question-validator.mjs'],
   ['Scanner anti-XSS', 'tools/check-escaping.mjs'],
 ];
 

@@ -10,6 +10,7 @@
 <script src="contexte.js"></script>
 <script src="oi-config.js?v=1"></script>
 <script src="questions-io.js?v=3"></script>
+<script src="question-validator.js?v=1"></script>
 <style>
 :root {
   --ink: #1a1814; --ink-2: #4a4740; --ink-3: #8a8680;
@@ -438,6 +439,13 @@ header a:hover { color: #fff; }
       </div>
     </div>
 
+    <section class="section" aria-labelledby="validation-title">
+      <h2 id="validation-title" class="section-title">Validation de la question</h2>
+      <p id="validation-summary" role="status">Vérification du formulaire…</p>
+      <p style="font-size:.8rem;margin:.5rem 0;color:var(--ink-2)">Les erreurs bloquent la publication. Les avertissements signalent des choix à vérifier. Ces contrôles ne remplacent pas la révision historique et pédagogique.</p>
+      <details id="validation-details"><summary>Voir les vérifications</summary><ul id="validation-results" style="list-style:none;margin-top:.7rem"></ul></details>
+      <button type="button" class="btn-secondary" onclick="runQuestionValidation()" style="margin-top:.8rem">Vérifier maintenant</button>
+    </section>
     <!-- ACTIONS -->
     <div class="actions" id="section-actions">
       <button class="btn-primary" id="btn-publier" onclick="publier()">Publier sur GitHub</button>
@@ -505,7 +513,7 @@ const BRANCH = 'main';
 // jour-là venaient d'un onglet obsolète). ADMIN_BUILD doit être incrémenté à
 // chaque modification d'admin.html ; isAdminStale() compare avec la version
 // réellement déployée avant chaque publication.
-const ADMIN_BUILD = '2026-07-19-1';
+const ADMIN_BUILD = '2026-10-02-1';
 async function isAdminStale() {
   try {
     const r = await fetch(`admin.html?t=${Date.now()}`, { cache: 'no-store' });
@@ -1366,6 +1374,7 @@ async function uploadImage() {
 }
 
 let IMAGES = [];
+let validationImagesKnown = false;
 let RECENT_IMAGES = [];
 let currentQuestions = [];
 let currentReglettes = {};
@@ -1458,6 +1467,7 @@ async function init() {
   await Promise.all([loadQuestionsJs(), loadImages(), loadReglettesJs(), loadRecentImages()]);
   // Rafraîchit les selects après que loadRecentImages ait rempli RECENT_IMAGES
   refreshImageSelects();
+  scheduleQuestionValidation();
   if(await isAdminStale()) showStaleBanner();
   setInterval(async () => { if(await isAdminStale()) showStaleBanner(); }, 5 * 60 * 1000);
 }
@@ -1472,6 +1482,7 @@ function refreshImageSelects() {
 }
 
 async function loadImages() {
+  validationImagesKnown = false;
   let sansToken = false;
   for(let tentative = 0; tentative < 3; tentative++) {
     try {
@@ -1487,7 +1498,9 @@ async function loadImages() {
       const data = await r.json();
       if(!Array.isArray(data)) throw new Error('Réponse inattendue de l’API GitHub');
       IMAGES = data.filter(f => f.name !== '.gitkeep').map(f => f.name).sort();
+      validationImagesKnown = data.length < 1000; // Contents API peut tronquer les gros répertoires.
       refreshImageSelects();
+      scheduleQuestionValidation();
       return;
     } catch(e) {
       if(tentative < 2) await new Promise(res => setTimeout(res, 1200 * (tentative + 1)));
@@ -2180,6 +2193,50 @@ function validateForm() {
   return VALIDATION_RULES.filter(rule => !rule.check()).map(rule => rule.message);
 }
 
+// Rapport visible et garde de publication utilisent exactement les mêmes contrôles.
+function runQuestionValidation() {
+  const q = buildQuestion();
+  const presets = REGLETTES_PRESET[q.oi] || [];
+  const preset = presets[parseInt(document.getElementById('reg-preset').value)];
+  const results = validateQuestionData(q, {
+    oiConfig: OI_CONFIG, periodsByLevel: PERIODES_PAR_NIVEAU,
+    aspectsByPeriod: ASPECTS_PAR_PERIODE, questions: currentQuestions, questionsKnown: !!questionsFileSha, editingId,
+    reglette: buildReglette(q.id) || currentReglettes[q.id],
+    imageFiles: validationImagesKnown ? new Set(IMAGES) : null, imageDb: currentImageDb,
+    expectedPreset: (SOUSTAG_AUTO[q.oi] || {})[q.soustag]?.preset,
+    selectedPreset: preset?.label
+  });
+  const fieldErrors = validateForm();
+  if(fieldErrors.length) results.push({label: 'Champs du formulaire', status: 'error', messages: fieldErrors});
+  const errors = results.filter(r => r.status === 'error').length;
+  const warnings = results.filter(r => r.status === 'warning').length;
+  const passed = results.filter(r => r.status === 'ok').length;
+  const summary = document.getElementById('validation-summary');
+  summary.textContent = `${errors ? '⛔ Publication bloquée' : warnings ? '⚠ Question à vérifier' : '✅ Question valide'} · ${passed}/${results.length} vérifications réussies · ${errors} erreur(s) · ${warnings} avertissement(s)`;
+  summary.style.color = errors ? 'var(--red)' : warnings ? '#705000' : 'var(--green)';
+  const list = document.getElementById('validation-results');
+  list.replaceChildren();
+  for (const result of results) {
+    const item = document.createElement('li');
+    item.style.cssText = 'padding:.4rem 0;font-size:.85rem';
+    item.textContent = `${result.status === 'ok' ? '✓' : result.status === 'warning' ? '⚠' : '⛔'} ${result.label}${result.messages.length ? ' — ' + result.messages.join(' ') : ''}`;
+    list.appendChild(item);
+  }
+  return results;
+}
+let questionValidationTimer;
+function scheduleQuestionValidation() {
+  clearTimeout(questionValidationTimer);
+  questionValidationTimer = setTimeout(runQuestionValidation, 200);
+}
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.container');
+  for (const event of ['input', 'change', 'click']) container.addEventListener(event, scheduleQuestionValidation);
+  // Les chargements et réinitialisations programmatiques ne déclenchent pas input/change.
+  new MutationObserver(scheduleQuestionValidation).observe(document.getElementById('docs-list'), {childList:true, subtree:true});
+  scheduleQuestionValidation();
+});
+
 // Rétention des backups : conserve les plus récents, supprime les plus anciens.
 // Best-effort, fire-and-forget, plafonné pour éviter les rafales d'appels API.
 // (Le contenu supprimé reste récupérable dans l'historique git.)
@@ -2239,8 +2296,9 @@ async function putQuestionsJsWithRetry(token, commitMsg, mutate) {
 
 // ── PUBLIER ───────────────────────────────────────────────────────────
 async function publier() {
-  const errors = validateForm();
-  if(errors.length) { toast('Champs manquants : ' + errors.join(', '), 'err'); return; }
+  const report = runQuestionValidation();
+  const errors = report.filter(result => result.status === 'error').flatMap(result => result.messages);
+  if(errors.length) { document.getElementById('validation-details').open = true; document.getElementById('validation-title').scrollIntoView({block:'center'}); toast('Publication bloquée : ' + errors.join(', '), 'err'); return; }
 
   // Verrouiller tout de suite, avant le fetch réseau de isAdminStale() ci-dessous :
   // sans ça, un clic sur Dupliquer/Réinitialiser/une autre question pendant cette

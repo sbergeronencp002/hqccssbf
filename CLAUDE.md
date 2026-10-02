@@ -529,3 +529,9 @@ La parade actuelle : `rvFetchStableQuestionsJs` (revision.html), `fetchStableQue
 - Le secret du Worker est un **secret partagé statique** (pas de rotation automatique, pas de durée de vie courte) : quiconque le lit dans `localStorage` peut publier/supprimer des questions indéfiniment tant qu'il n'est pas changé.
 - ⚠️ Contrairement à la voie PUT GitHub directe (3 tentatives avec re-fetch SHA sur conflit 409), l'appel `/publish` au Worker **n'a aucune logique de retry côté client** — la gestion de concurrence dépend entièrement du code du Worker (hors de ce dépôt, non auditable ici).
 - Si le secret Worker fuite ou doit être renouvelé : le régénérer côté Cloudflare, puis le recoller dans le champ correspondant d'admin.html (même mécanisme que le PAT GitHub — jamais écrit dans un fichier commité).
+
+## Validateur de publication (2026-10-02)
+
+`question-validator.js?v=1` fournit `validateQuestionData(question, contexte)`, une fonction pure chargée par admin.html. Le rapport visible se recalcule après les interactions du formulaire et au clic sur Publier. Les erreurs bloquent la publication ; les avertissements (source, guide, absence d’espace de réponse, réglette habituelle différente ou liste des images indisponible) ne la bloquent pas. La compatibilité sous-tag/réglette est comparée à SOUSTAG_AUTO, sans imposer ces conventions comme contraintes ministérielles. La liste des fichiers provenant du mode secours IMAGE_DB n’est pas une preuve d’existence. Les dates manquantes des anciennes questions sont automatiquement générées par buildQuestion lors de la publication. Aucun changement aux données de la banque.
+
+`node tools/test-question-validator.mjs` teste les métadonnées, l’unicité en création et édition, les points, les images, les avertissements, les guides vides et la syntaxe de l’admin. Il est inclus dans `tools/check-all.mjs`. `ADMIN_BUILD` vaut désormais `2026-10-02-1`.
