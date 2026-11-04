@@ -18,6 +18,7 @@ const CHECKS = [
   ['Tests de fumée', 'tools/smoke-test.mjs'],
   ['Validateur de publication', 'tools/test-question-validator.mjs'],
   ['Panier', 'tools/test-panier.mjs'],
+  ['Aperçu au survol', 'tools/test-tile-preview.mjs'],
   ['Scanner anti-XSS', 'tools/check-escaping.mjs'],
 ];
 
