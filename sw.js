@@ -8,10 +8,10 @@
 // ⚠️ CACHE doit être incrémenté à chaque changement de PRECACHE (cf. CLAUDE.md, table
 // « Cache-bust actuel ») — sinon les navigateurs déjà visités gardent l'ancienne liste
 // indéfiniment (self.skipWaiting()/clients.claim() ne rechargent pas les onglets ouverts).
-const CACHE = 'hqc-v9';
+const CACHE = 'hqc-v10';
 const PRECACHE = [
-  './style.css?v=33',
-  './app.js?v=53',
+  './style.css?v=34',
+  './app.js?v=54',
   './filters.js?v=1',
   './oi-config.js?v=1',
 ];

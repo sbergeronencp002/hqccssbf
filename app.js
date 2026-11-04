@@ -512,7 +512,16 @@ function copyQuestion() {
 
 function updateTileState(id) {
   const tile = document.getElementById('tile-' + id);
-  if(tile) tile.classList.toggle('in-panier', panier.includes(id));
+  if(tile) {
+    const selected = panier.includes(id);
+    tile.classList.toggle('in-panier', selected);
+    const button = tile.querySelector('.q-tile-check');
+    if(button) {
+      button.textContent = selected ? '✓' : '+';
+      button.setAttribute('aria-pressed', String(selected));
+      button.setAttribute('aria-label', (selected ? 'Retirer du panier : ' : 'Ajouter au panier : ') + id);
+    }
+  }
 }
 
 function updateQModalBtn(id) {
@@ -554,9 +563,9 @@ function buildTileHtml(q) {
       <div class="q-tile-aspect" style="font-size:0.9rem;font-weight:400;color:#6B6560;margin-top:2px">${escLine(aspect)}</div>
       ${tagsHtml}
     </div>
-    <span class="q-tile-check" role="button" tabindex="0" aria-label="Ajouter ou retirer du panier"
+    <span class="q-tile-check" role="button" tabindex="0" aria-label="${inPanier ? 'Retirer du panier : ' : 'Ajouter au panier : '}${escAttr(q.id)}" aria-pressed="${inPanier}"
       onclick="event.stopPropagation();togglePanier('${q.id}')"
-      onkeydown="if(event.key==='Enter'||event.key===' '){event.stopPropagation();event.preventDefault();togglePanier('${q.id}')}">✓</span>
+      onkeydown="if(event.key==='Enter'||event.key===' '){event.stopPropagation();event.preventDefault();togglePanier('${q.id}')}">${inPanier ? '✓' : '+'}</span>
   </div>`;
 }
 
@@ -1237,13 +1246,15 @@ function togglePanier(id) {
 }
 
 function refreshPanierButtons() {
-  panier.forEach(id => updateTileState(id));
+  document.querySelectorAll('.q-tile[id^="tile-"]').forEach(tile => updateTileState(tile.id.slice(5)));
 }
 
 function updatePanierBar() {
   const bar = document.getElementById('panier-bar');
   const count = document.getElementById('panier-count');
   const totalPts = panier.reduce((s, id) => { const q = Q_MAP.get(id); return s+(q?q.points:0); }, 0);
+  const headerCount = document.getElementById('header-panier-count');
+  if(headerCount) headerCount.textContent = panier.length;
   count.textContent = panier.length + ' / 20  ·  ' + totalPts + ' pt' + (totalPts !== 1 ? 's' : '');
   bar.classList.toggle('visible', panier.length > 0);
   try { localStorage.setItem('hqc_panier', JSON.stringify(panier)); } catch(e) {}
