@@ -1,0 +1,30 @@
+import vm from 'node:vm';
+import {readFileSync} from 'node:fs';
+import assert from 'node:assert/strict';
+let nextTimer=0;const timers=new Map(),els=new Map();
+const get=id=>{if(!els.has(id))els.set(id,{hidden:true,style:{},offsetWidth:480,offsetHeight:400,textContent:'',innerHTML:'',contains:()=>false,querySelectorAll:()=>[]});return els.get(id);};
+const ctx=vm.createContext({console,setTimeout(fn){timers.set(++nextTimer,fn);return nextTimer;},clearTimeout(id){timers.delete(id);},
+ document:{getElementById:get,addEventListener(){}},window:{innerWidth:1100,innerHeight:800,matchMedia:()=>({matches:true}),addEventListener(){}},localStorage:{getItem:()=>null}});
+for(const f of ['oi-config.js','contexte.js','app.js'])vm.runInContext(readFileSync(new URL('../'+f,import.meta.url),'utf8'),ctx);
+vm.runInContext("Q_MAP = new Map([['Q1',{id:'Q1',oi:'Établir des faits',enonce:'Question un'}],['Q2',{id:'Q2',oi:'Établir des faits',enonce:'Question deux',documents:[{type:'textes',cols:[{texte:'<script>adverse</script>'}]}]}]]);",ctx);
+const anchor={isConnected:true,getBoundingClientRect:()=>({right:1050,left:850,top:700})};
+const mouse={pointerType:'mouse'};
+const flush=()=>{const tasks=[...timers.values()];timers.clear();return tasks.map(fn=>fn());};
+ctx.queueTilePreview(anchor,'Q1',{pointerType:'touch'});assert.equal(timers.size,0);
+ctx.queueTilePreview(anchor,'Q1',mouse);ctx.leaveTilePreview();flush();assert.equal(get('tile-preview').hidden,true);
+let resolveData;
+ctx.ensureDataLoaded=()=>new Promise(resolve=>{resolveData=resolve;});
+ctx.queueTilePreview(anchor,'Q1',mouse);const [pending]=flush();
+assert.equal(get('tile-preview').hidden,false);assert.match(get('tile-preview-question').innerHTML,/Question un/);
+assert.equal(get('tile-preview').style.left,'358px');assert.equal(get('tile-preview').style.top,'388px');
+ctx.hideTilePreview();resolveData();await pending;assert.equal(get('tile-preview').hidden,true);
+// Un résultat de Q1 arrivé après Q2 ne doit pas remplacer l’aperçu courant.
+let finishOld;ctx.ensureDataLoaded=()=>new Promise(resolve=>finishOld=resolve);
+ctx.queueTilePreview(anchor,'Q1',mouse);const [old]=flush();
+ctx.ensureDataLoaded=()=>Promise.resolve();ctx.queueTilePreview(anchor,'Q2',mouse);await Promise.all(flush());
+finishOld();await old;assert.match(get('tile-preview-title').textContent,/Q2/);
+assert.ok(!get('tile-preview-documents').innerHTML.includes('<script>'));
+ctx.leaveTilePreview();ctx.keepTilePreview();assert.equal(timers.size,0);
+ctx.ensureDataLoaded=()=>Promise.reject(new Error('offline'));
+ctx.queueTilePreview(anchor,'Q1',mouse);await Promise.all(flush());assert.match(get('tile-preview-documents').textContent,/indisponibles/);
+console.log('✓ Aperçu : énoncé immédiat, survol souris, fermeture, déplacement, résultats tardifs, erreur et échappement HTML.');

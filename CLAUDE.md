@@ -53,7 +53,7 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 `uploadImage()` redimensionne à 1200 px max puis **choisit le format le plus léger** : PNG si l'image a de la transparence, sinon le plus petit entre PNG et JPEG 0.85 (l'extension du nom suit le format choisi). Évite les PNG 24 bits non compressés (cause des images à 2,5 Mo). Le remplacement (`documents.html`) encode selon l'extension de la cible.
 
 ### Cache-bust actuel
-`app.js?v=54`, `style.css?v=34`, `oi-config.js?v=1`, `questions-io.js?v=3`, `filters.js?v=1`, `reglettes.js?v=3` (admin) — incrémenter à chaque changement majeur.
+`app.js?v=55`, `style.css?v=35`, `oi-config.js?v=1`, `questions-io.js?v=3`, `filters.js?v=1`, `reglettes.js?v=3` (admin) — incrémenter à chaque changement majeur.
 `index.html` charge `filters.js?v=1` (avant `app.js`) puis `questions-index.js?v=1` (index allégé, 200 Ko) — `questions.js` est chargé en lazy par app.js sans version fixe (cache-bust par timestamp).
 `documents.html` charge `oi-config.js?v=1` + `questions-io.js?v=3` ; `questions.js` est chargé via l'API GitHub Contents en priorité (comme admin.html), repli sur le fetch du site statique puis sur une balise `<script>` si l'API échoue — jamais en `<script src>` statique direct.
 `revision.html` charge `oi-config.js?v=1` + `questions-io.js?v=3` + `contexte.js` + `filters.js?v=1` ; `questions.js` est chargé de la même façon (API GitHub en priorité).
@@ -64,7 +64,7 @@ Site statique GitHub Pages — aucun backend. Tout tourne dans le navigateur.
 ⚠️ Cette table doit être mise à jour à chaque incrément de `?v=` dans le HTML — sinon un futur agent repart d'un mauvais numéro de version.
 
 ### Service worker (`sw.js`)
-Précache `style.css`, `app.js`, `filters.js`, `oi-config.js` (avec leur `?v=N` — un futur bump de version doit aussi être répercuté dans le tableau `PRECACHE` de `sw.js`, sinon l'ancienne version reste précachée). `index.html` et `contexte.js` sont précachés mais **toujours revalidés réseau-first** (comme `questions.js`/`questions-index.js`) car leur contenu peut changer sans que leur URL change. `CACHE` (actuellement `hqc-v10`) doit être incrémenté à chaque changement de la liste `PRECACHE` (pas nécessaire pour un simple changement de logique dans le handler `fetch` — voir images ci-dessous — puisque ça ne change pas ce qui est précaché).
+Précache `style.css`, `app.js`, `filters.js`, `oi-config.js` (avec leur `?v=N` — un futur bump de version doit aussi être répercuté dans le tableau `PRECACHE` de `sw.js`, sinon l'ancienne version reste précachée). `index.html` et `contexte.js` sont précachés mais **toujours revalidés réseau-first** (comme `questions.js`/`questions-index.js`) car leur contenu peut changer sans que leur URL change. `CACHE` (actuellement `hqc-v11`) doit être incrémenté à chaque changement de la liste `PRECACHE` (pas nécessaire pour un simple changement de logique dans le handler `fetch` — voir images ci-dessous — puisque ça ne change pas ce qui est précaché).
 
 `admin.html`, `documents.html`, `revision.html`, `examen.html` sont **aussi réseau-first** (même traitement que `questions.js`/`index.html`) : ce sont des pages d'édition/outils dont le JS change au fil des correctifs — un cache SW figé sur une ancienne version peut réintroduire un bug déjà corrigé, parce que la page obsolète ignore encore le correctif (vécu le 2026-07-13 : un correctif de lecture via l'API GitHub dans revision.html ne pouvait pas prendre effet tant que l'ancien revision.html restait servi depuis le cache).
 
@@ -538,3 +538,6 @@ La parade actuelle : `rvFetchStableQuestionsJs` (revision.html), `fetchStableQue
 
 ## Accès au panier (2026-11-04)
 Le bouton « Panier » dans l’en-tête reste visible quand le panier est vide et affiche son compteur. Chaque tuile affiche un + pour ajouter sans charger les documents, puis une coche pour retirer. updateTileState met à jour le libellé et aria-pressed ; refreshPanierButtons rafraîchit toutes les tuiles visibles, y compris après retrait depuis un autre onglet. tools/test-panier.mjs teste ces comportements et est inclus dans check-all.
+
+## Aperçu au survol (2026-11-04)
+Survol souris de 250 ms : affiche l’énoncé de l’index immédiatement, puis les documents via ensureDataLoaded (requête partagée). Le panneau permet la lecture et le défilement sans modal. Un numéro de requête invalide les résultats tardifs, avec maintien au passage vers le panneau et fermeture à Échap, au défilement extérieur, au filtrage, au clic ou au redimensionnement. Le clic et le tactile conservent le modal. Échec du chargement : un nouveau survol permet un nouvel essai. Correction de la cible d’ouverture initiale du modal (q-modal-overlay) et invalidation à sa fermeture. Tests dans tools/test-tile-preview.mjs, inclus dans check-all.

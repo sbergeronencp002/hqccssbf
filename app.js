@@ -118,7 +118,8 @@ async function ensureDataLoaded() {
     }
     _dataLoaded = true;
   })();
-  return _dataLoadPromise;
+  try { return await _dataLoadPromise; }
+  catch(e) { _dataLoadPromise = null; throw e; }
 }
 
 function populateFilters() {
@@ -174,6 +175,7 @@ function debouncedApplyFilters() {
 }
 
 function applyFilters() {
+  hideTilePreview();
   const oi      = document.getElementById('f-oi').value;
   const aspect  = document.getElementById('f-aspect').value;
   const periode = document.getElementById('f-periode').value;
@@ -405,6 +407,7 @@ function buildReglettHTML(q) {
 
 let _qModalReqSeq = 0;
 async function openQModal(id) {
+  hideTilePreview();
   const reqId = ++_qModalReqSeq;
   _tzStore.length = 0;
   const q = Q_MAP.get(id);
@@ -413,17 +416,17 @@ async function openQModal(id) {
 
   // Ouvrir le modal tout de suite avec un spinner, puis remplir après chargement des données
   if(!_dataLoaded) {
-    const modal = document.getElementById('q-modal');
+    const modal = document.getElementById('q-modal-overlay');
     if(modal) {
       document.getElementById('q-modal-body').innerHTML =
         '<div style="text-align:center;padding:2rem;color:var(--ink-3)">Chargement…</div>';
       modal.classList.add('open');
-      document.body.classList.add('modal-open');
+
     }
     try { await ensureDataLoaded(); } catch(e) {
       if(reqId !== _qModalReqSeq) return;
       document.getElementById('q-modal-body').innerHTML =
-        '<div style="color:red;padding:1rem">Erreur de chargement : ' + e.message + '</div>';
+        '<div style="color:red;padding:1rem">Erreur de chargement : ' + escLine(e.message) + '</div>';
       return;
     }
     // Un autre appel a été lancé entre-temps (double clic) — on abandonne ce rendu périmé
@@ -485,6 +488,7 @@ async function openQModal(id) {
 }
 
 function closeQModal() {
+  _qModalReqSeq++;
   document.getElementById('q-modal-overlay').classList.remove('open');
 }
 
@@ -541,6 +545,91 @@ function togglePanierModal() {
   if(!wasInPanier && panier.includes(id)) closeQModal();
 }
 
+// Aperçu léger : l’énoncé est disponible immédiatement dans l’index.
+let tilePreviewTimer;
+let tilePreviewCloseTimer;
+let tilePreviewSeq = 0;
+let tilePreviewAnchor = null;
+function hideTilePreview() {
+  clearTimeout(tilePreviewTimer);
+  clearTimeout(tilePreviewCloseTimer);
+  tilePreviewSeq++;
+  tilePreviewAnchor = null;
+  const panel = document.getElementById('tile-preview');
+  if(panel) panel.hidden = true;
+}
+function leaveTilePreview() {
+  clearTimeout(tilePreviewTimer);
+  tilePreviewCloseTimer = setTimeout(hideTilePreview, 160);
+}
+function keepTilePreview() { clearTimeout(tilePreviewCloseTimer); }
+function positionTilePreview(anchor) {
+  const panel = document.getElementById('tile-preview');
+  const rect = anchor.getBoundingClientRect();
+  const width = panel.offsetWidth;
+  let left = rect.right + 12;
+  if(left + width > window.innerWidth - 12) left = rect.left - width - 12;
+  left = Math.max(12, Math.min(left, window.innerWidth - width - 12));
+  const top = Math.max(12, Math.min(rect.top, window.innerHeight - panel.offsetHeight - 12));
+  panel.style.left = left + 'px';
+  panel.style.top = top + 'px';
+}
+function renderTilePreviewDocuments(q) {
+  const docs = q.documents || [];
+  if(!docs.length) return '<p class="tile-preview-note">Aucun document associé.</p>';
+  return docs.map(doc => {
+    const cols = doc.cols || [doc];
+    return cols.map(col => {
+      let html = '<div class="tile-preview-document">';
+      if(col.titre) html += '<strong>' + escLine(col.titre) + '</strong>';
+      if(col.soustitre) html += '<p><em>' + escLine(col.soustitre) + '</em></p>';
+      if(col.texte) html += '<div>' + formatTexte(col.texte) + '</div>';
+      if(col.ref) {
+        const img = IMAGE_DB[col.ref];
+        html += img ? '<img src="' + escAttr(img.src) + '" alt="' + escAttr(col.titre || 'Document') + '">'
+          : '<p>Image indisponible.</p>';
+      }
+      if(col.source) html += '<p class="tile-preview-note">' + escLine(col.source) + '</p>';
+      return html + '</div>';
+    }).join('');
+  }).join('');
+}
+function queueTilePreview(anchor, id, event) {
+  if(event.pointerType !== 'mouse' || !window.matchMedia('(hover: hover)').matches) return;
+  hideTilePreview();
+  const seq = tilePreviewSeq;
+  tilePreviewTimer = setTimeout(async () => {
+    const q = Q_MAP.get(id);
+    if(!q || !anchor.isConnected) return;
+    tilePreviewAnchor = anchor;
+    const panel = document.getElementById('tile-preview');
+    document.getElementById('tile-preview-title').textContent = q.id + ' · ' + q.oi;
+    document.getElementById('tile-preview-question').innerHTML = formatTexte(q.enonce || '');
+    const docs = document.getElementById('tile-preview-documents');
+    docs.textContent = 'Chargement des documents…';
+    panel.hidden = false;
+    positionTilePreview(anchor);
+    try {
+      await ensureDataLoaded();
+      if(seq !== tilePreviewSeq || !anchor.isConnected) return;
+      docs.innerHTML = renderTilePreviewDocuments(Q_MAP.get(id));
+      docs.querySelectorAll('img').forEach(img => img.addEventListener('load', () => {
+        if(seq === tilePreviewSeq && tilePreviewAnchor === anchor) positionTilePreview(anchor);
+      }, {once:true}));
+      positionTilePreview(anchor);
+    } catch(e) {
+      if(seq !== tilePreviewSeq) return;
+      docs.textContent = 'Documents indisponibles pour le moment. Survolez à nouveau pour réessayer.';
+    }
+  }, 250);
+}
+window.addEventListener('resize', hideTilePreview);
+document.addEventListener('scroll', event => {
+  const panel = document.getElementById('tile-preview');
+  if(!panel || !panel.contains(event.target)) hideTilePreview();
+}, true);
+document.addEventListener('keydown', event => { if(event.key === 'Escape') hideTilePreview(); });
+
 const PAGE_SIZE = 50;
 let currentFiltered = [];
 
@@ -555,6 +644,7 @@ function buildTileHtml(q) {
     : '';
   return `<div class="q-tile${inPanier ? ' in-panier' : ''}" id="tile-${q.id}"
     role="button" tabindex="0" aria-label="${escAttr(q.oi + (aspect ? ' — ' + aspect : ''))}"
+    onpointerenter="queueTilePreview(this, '${q.id}', event)" onpointerleave="leaveTilePreview()"
     style="--tile-color:${st.color};background:#fff" onclick="openQModal('${q.id}')"
     onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openQModal('${q.id}')}">
     <div class="q-tile-bar" style="display:none"></div>

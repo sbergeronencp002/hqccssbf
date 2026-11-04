@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&display=swap">
-<link rel="stylesheet" href="style.css?v=34">
+<link rel="stylesheet" href="style.css?v=35">
 </head>
 <body>
 <noscript><div style="padding:2rem;text-align:center;font-family:sans-serif;color:#1a1814">Ce site nécessite JavaScript pour fonctionner.</div></noscript>
@@ -179,6 +179,12 @@
   </div>
 </div>
 
+<aside id="tile-preview" class="tile-preview" aria-labelledby="tile-preview-title" onpointerenter="keepTilePreview()" onpointerleave="leaveTilePreview()" hidden>
+  <h2 id="tile-preview-title"></h2>
+  <div id="tile-preview-question" class="tile-preview-question"></div>
+  <div id="tile-preview-documents"></div>
+  <p class="tile-preview-note">Cliquez sur la tuile pour ouvrir la question complète.</p>
+</aside>
 <div class="warn-toast" id="warn-toast"></div>
 
 <!-- Mode examen -->
@@ -201,7 +207,7 @@
 <script src="contexte.js"></script>
 <script src="oi-config.js?v=1"></script>
 <script src="filters.js?v=1"></script>
-<script src="app.js?v=54"></script>
+<script src="app.js?v=55"></script>
 <script>
   // Charge questions-index.js (~200 Ko, champs grille seulement) pour affichage immédiat.
   // Les données complètes (documents, réponse, guide, réglettes) sont chargées en lazy
